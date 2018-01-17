@@ -6,4 +6,4 @@ node_modules/
 public/
 .deploy*/
 .deploy_git
-/package-lock.json
+package-lock.json
