@@ -8,13 +8,13 @@ my little laboratory
 ## 개요
 deploy 설정을 master 브랜치로 하게 되어 있음.
 ```bash
-	npm install
-	hexo d -g  # deploy하면서 generate
+npm install
+hexo d -g  # deploy하면서 generate
 ```
 
 ## 글 작성
 ```bash
-	hexo new [파일명]
+hexo new [파일명]
 ```
 
 ## 글 수정
