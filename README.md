@@ -9,6 +9,7 @@ my little laboratory
 deploy 설정을 master 브랜치로 하게 되어 있음.
 ```bash
 npm install
+npm install -g hexo-cli
 hexo d -g  # deploy하면서 generate
 ```
 
