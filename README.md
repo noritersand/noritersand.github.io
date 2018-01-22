@@ -20,3 +20,4 @@ hexo new [파일명]
 
 ## 글 수정
 `source\_posts` 폴더 아래의 md 파일을 직접 수정
+
