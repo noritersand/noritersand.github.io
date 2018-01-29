@@ -2,8 +2,7 @@
 title: test
 date: 2018-01-17 15:11:08
 categories:
-- first-category
-- second-category
+- 분류음슴
 tags: 
 - a
 - b

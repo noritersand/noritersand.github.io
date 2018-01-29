@@ -1,7 +1,7 @@
 ---
 title: markdown syntax
 categories:
-  - uncategorized
+  - 분류음슴
 date: 2018-01-24 16:19:25
 tags:
 ---
@@ -47,5 +47,7 @@ _이탤릭_
 
 [링크 걸기](#항상-H2부터-시작)
 
+## embed image
+![바쁜 라상무](/images/kakao-ryon.png)
 
 끗.
