@@ -1,7 +1,7 @@
 ---
 title: draft test
 categories:
-  - uncategorized
+  - 분류음슴
 date: 2018-01-25 09:17:27
 tags:
 ---
