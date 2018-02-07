@@ -3,26 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>debugging log: 원격 데스크톱 연결 시 &#34;내부 오류가 발생했습니다.&#34; | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+    <title>Git: 레퍼런스란? | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="debugging log,remote desktop,windows" />
+        <meta name="keywords" content="git,reference" />
     
-    <meta name="description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서 레지스트리:  HKEY_LOCAL_MACH">
-<meta name="keywords" content="debugging log,remote desktop,windows">
+    <meta name="description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
+<meta name="keywords" content="git,reference">
 <meta property="og:type" content="article">
-<meta property="og:title" content="debugging log: 원격 데스크톱 연결 시 &quot;내부 오류가 발생했습니다.&quot;">
-<meta property="og:url" content="http://noritersand.github.io/os/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/index.html">
+<meta property="og:title" content="Git: 레퍼런스란?">
+<meta property="og:url" content="http://noritersand.github.io/git/Git-레퍼런스란/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서 레지스트리:  HKEY_LOCAL_MACH">
+<meta property="og:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://noritersand.github.io/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png">
-<meta property="og:updated_time" content="2018-02-07T04:23:15.526Z">
+<meta property="og:updated_time" content="2018-02-07T04:21:50.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="debugging log: 원격 데스크톱 연결 시 &quot;내부 오류가 발생했습니다.&quot;">
-<meta name="twitter:description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서 레지스트리:  HKEY_LOCAL_MACH">
-<meta name="twitter:image" content="http://noritersand.github.io/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png">
+<meta name="twitter:title" content="Git: 레퍼런스란?">
+<meta name="twitter:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
     
 
     
@@ -133,18 +131,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/os/">os</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/os/windows/">windows</a>
+    <a class="page-title-link" href="/categories/git/">git</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-Git-레퍼런스란" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        debugging log: 원격 데스크톱 연결 시 &#34;내부 오류가 발생했습니다.&#34;
+        Git: 레퍼런스란?
         </h1>
     
 
@@ -154,32 +152,23 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/os/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/" class="article-date">
-            <time datetime="2018-01-26T08:49:59.000Z" itemprop="datePublished">2018-01-26</time>
+        <a href="/git/Git-레퍼런스란/" class="article-date">
+            <time datetime="2018-02-07T04:19:55.000Z" itemprop="datePublished">2018-02-07</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/debugging-log/">debugging log</a>, <a class="tag-link" href="/tags/remote-desktop/">remote desktop</a>, <a class="tag-link" href="/tags/windows/">windows</a>
+        <a class="tag-link" href="/tags/git/">git</a>, <a class="tag-link" href="/tags/reference/">reference</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h4 id="관련-문서"><a href="#관련-문서" class="headerlink" title="관련 문서"></a>관련 문서</h4><ul>
-<li><a href="http://www.dsun.kr/78" target="_blank" rel="noopener">http://www.dsun.kr/78</a></li>
-</ul>
-<p><img src="/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png" alt=""></p>
-<p>위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은,</p>
-<p>우선 원격으로 접속 당할(?) 컴퓨터에서 레지스트리:</p>
-<ul>
-<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp\PortNumber</li>
-<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber<br>를 3389에서 원하는 포트로 변경한 뒤 윈도우 방화벽 인바운드 규칙을 생성해주고</li>
-</ul>
-<p>원격으로 접속하는 쪽에서 <code>123.123.123.123:9093</code> 처럼 세미콜론과 함께 포트를 명시하면 끝.</p>
+            <p>레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.<br>예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">'master'</span></span><br><span class="line">Your branch is up to date with <span class="string">'origin/master'</span>.</span><br><span class="line"></span><br><span class="line">$ git show HEAD</span><br><span class="line">commit f38273c9ecbea5a009667316425883a556f9ca47 (HEAD -&gt; master, origin/master, origin/HEAD)</span><br><span class="line"></span><br><span class="line">$ cat .git/refs/heads/master</span><br><span class="line">f38273c9ecbea5a009667316425883a556f9ca47</span><br></pre></td></tr></table></figure></p>
+<p>.git/refs/heads/master 파일을 열어보면 master 브랜치의 마지막 커밋에 해당하는 체크섬이 저장되어 있는걸 확인할 수 있다.</p>
 
         </div>
         <footer class="article-footer">
@@ -187,7 +176,7 @@
 
 
 
-    <a data-url="http://noritersand.github.io/os/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/" data-id="cjdcgrvfe000mm05ylyiq4z29" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://noritersand.github.io/git/Git-레퍼런스란/" data-id="cjdckfg2e0000505y6ml5ufxd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -324,16 +313,22 @@
         
 <nav id="article-nav">
     
-        <a href="/dbms/oracle/프로시저-호출방법/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            프로시저 호출방법
+            윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
+    
+        <a href="/git/Gist를-이용한-소스-관리-링크/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Gist를 이용한 소스 관리(링크)</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -534,7 +529,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://noritersand.github.io/os/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/';
+    var disqus_url = 'http://noritersand.github.io/git/Git-레퍼런스란/';
     
     (function() {
     var dsq = document.createElement('script');
