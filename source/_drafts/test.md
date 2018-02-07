@@ -2,12 +2,13 @@
 title: test
 date: 2018-01-17 15:11:08
 categories:
-- 분류음슴
+  - 분류음슴
 tags: 
 - a
 - b
 - c
 ---
+
 # 큰제목
 ## 둘째 
 ### 셋째

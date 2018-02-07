@@ -5,7 +5,11 @@ categories:
   - windows
 date: 2018-01-26 17:49:59
 tags:
+  - debugging log
+  - remote desktop
+  - windows
 ---
+
 #### 관련 문서
 - http://www.dsun.kr/78
 
