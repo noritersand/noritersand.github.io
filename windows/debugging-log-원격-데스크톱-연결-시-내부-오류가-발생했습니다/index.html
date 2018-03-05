@@ -3,24 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>윈도우10 시작화면 앱 실행 바로가기 추가하는 방법. | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+    <title>debugging log: 원격 데스크톱 연결 시 &#34;내부 오류가 발생했습니다.&#34; | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="windows" />
+        <meta name="keywords" content="debugging log,remote desktop,windows" />
     
-    <meta name="description" content="윈도우 인스톨러로 설치한 앱일 때윈도우 검색(윈도우키+S) 후 [우클릭] - [시작 화면에 고정] 실행파일만 있는 앱일 때이클립스 패키지 버전이나 톰캣처럼 윈도우 인스톨러를 이용하지 않는 앱일 때,우선 사용자폴더\AppData\Roaming\Microsoft\Windows\Start Menu\Programs 에 실행파일의 바로가기를 추가한다. 그리고 추가한">
-<meta name="keywords" content="windows">
+    <meta name="description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서  1 레지스트리:  HKEY_LOCAL_M">
+<meta name="keywords" content="debugging log,remote desktop,windows">
 <meta property="og:type" content="article">
-<meta property="og:title" content="윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.">
-<meta property="og:url" content="http://noritersand.github.io/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/index.html">
+<meta property="og:title" content="debugging log: 원격 데스크톱 연결 시 &quot;내부 오류가 발생했습니다.&quot;">
+<meta property="og:url" content="http://noritersand.github.io/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="윈도우 인스톨러로 설치한 앱일 때윈도우 검색(윈도우키+S) 후 [우클릭] - [시작 화면에 고정] 실행파일만 있는 앱일 때이클립스 패키지 버전이나 톰캣처럼 윈도우 인스톨러를 이용하지 않는 앱일 때,우선 사용자폴더\AppData\Roaming\Microsoft\Windows\Start Menu\Programs 에 실행파일의 바로가기를 추가한다. 그리고 추가한">
+<meta property="og:description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서  1 레지스트리:  HKEY_LOCAL_M">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-07T04:24:10.345Z">
+<meta property="og:image" content="http://noritersand.github.io/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png">
+<meta property="og:updated_time" content="2018-03-05T10:20:20.694Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.">
-<meta name="twitter:description" content="윈도우 인스톨러로 설치한 앱일 때윈도우 검색(윈도우키+S) 후 [우클릭] - [시작 화면에 고정] 실행파일만 있는 앱일 때이클립스 패키지 버전이나 톰캣처럼 윈도우 인스톨러를 이용하지 않는 앱일 때,우선 사용자폴더\AppData\Roaming\Microsoft\Windows\Start Menu\Programs 에 실행파일의 바로가기를 추가한다. 그리고 추가한">
+<meta name="twitter:title" content="debugging log: 원격 데스크톱 연결 시 &quot;내부 오류가 발생했습니다.&quot;">
+<meta name="twitter:description" content="관련 문서 http://www.dsun.kr/78   위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은, 우선 원격으로 접속 당할(?) 컴퓨터에서  1 레지스트리:  HKEY_LOCAL_M">
+<meta name="twitter:image" content="http://noritersand.github.io/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png">
     
 
     
@@ -72,7 +74,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/build-tool/">build-tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/dbms/">dbms</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/git/">git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/os/">os</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tools/">tools</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/web/">web</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/build-tool/">build-tool</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/dbms/">dbms</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/git/">git</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/tools/">tools</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/web/">web</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/windows/">windows</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/about/index.html">About</a>
@@ -131,18 +133,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/os/">os</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/os/windows/">windows</a>
+    <a class="page-title-link" href="/categories/windows/">windows</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-윈도우10-시작화면-앱-실행-바로가기-추가하는-방법" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.
+        debugging log: 원격 데스크톱 연결 시 &#34;내부 오류가 발생했습니다.&#34;
         </h1>
     
 
@@ -152,23 +154,35 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="article-date">
-            <time datetime="2018-02-07T04:22:25.000Z" itemprop="datePublished">2018-02-07</time>
+        <a href="/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/" class="article-date">
+            <time datetime="2018-01-26T08:49:59.000Z" itemprop="datePublished">2018-01-26</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/windows/">windows</a>
+        <a class="tag-link" href="/tags/debugging-log/">debugging log</a>, <a class="tag-link" href="/tags/remote-desktop/">remote desktop</a>, <a class="tag-link" href="/tags/windows/">windows</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="윈도우-인스톨러로-설치한-앱일-때"><a href="#윈도우-인스톨러로-설치한-앱일-때" class="headerlink" title="윈도우 인스톨러로 설치한 앱일 때"></a>윈도우 인스톨러로 설치한 앱일 때</h2><p>윈도우 검색(윈도우키+S) 후 [우클릭] - [시작 화면에 고정]</p>
-<h2 id="실행파일만-있는-앱일-때"><a href="#실행파일만-있는-앱일-때" class="headerlink" title="실행파일만 있는 앱일 때"></a>실행파일만 있는 앱일 때</h2><p>이클립스 패키지 버전이나 톰캣처럼 윈도우 인스톨러를 이용하지 않는 앱일 때,<br>우선 사용자폴더\AppData\Roaming\Microsoft\Windows\Start Menu\Programs 에 실행파일의 바로가기를 추가한다. 그리고 추가한 바로가기는 윈도우 검색으로 검색할 수 있으니 검색 후 [우클릭] - [시작 화면에 고정] 하면 된다.</p>
+            <h4 id="관련-문서"><a href="#관련-문서" class="headerlink" title="관련 문서"></a>관련 문서</h4><ul>
+<li><a href="http://www.dsun.kr/78" target="_blank" rel="noopener">http://www.dsun.kr/78</a></li>
+</ul>
+<p><img src="/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png" alt=""></p>
+<p>위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은,</p>
+<p>우선 원격으로 접속 당할(?) 컴퓨터에서 </p>
+<p>1 레지스트리:</p>
+<ul>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp\PortNumber</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber</li>
+</ul>
+<p>를 3389에서 원하는 포트로 변경, </p>
+<p>2 윈도우 방화벽 인바운드 규칙(1에서 변경한 포트로)을 생성 후 재시작한다.</p>
+<p>원격으로 접속하는 쪽에서는 <code>123.123.123.123:9093</code> 처럼 세미콜론과 함께 포트를 명시하면 끝.</p>
 
         </div>
         <footer class="article-footer">
@@ -176,7 +190,7 @@
 
 
 
-    <a data-url="http://noritersand.github.io/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" data-id="cjedhre9z001c685y6zcltfax" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://noritersand.github.io/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/" data-id="cjedhre9r000z685yed1r48o1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -313,22 +327,16 @@
         
 <nav id="article-nav">
     
-        <a href="/build-tool/링크-메이븐-넥서스에-jar-업로드-하기/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/dbms/oracle/프로시저-호출방법/" id="article-nav-newer" class="article-nav-link-wrap">
         <strong class="article-nav-caption">newer</strong>
         <p class="article-nav-title">
         
-            (링크) 메이븐 넥서스에 jar 업로드 하기
+            프로시저 호출방법
         
         </p>
         <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
     </a>
     
-    
-        <a href="/git/Git-레퍼런스란/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Git: 레퍼런스란?</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
     
 </nav>
 
@@ -365,7 +373,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="thumbnail">
+                            <a href="/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -376,8 +384,8 @@
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/os/">os</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/os/windows/">windows</a></p>
-                            <p class="item-title"><a href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="title">윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/windows/">windows</a></p>
+                            <p class="item-title"><a href="/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="title">윈도우10 시작화면 앱 실행 바로가기 추가하는 방법.</a></p>
                             <p class="item-date"><time datetime="2018-02-07T04:22:25.000Z" itemprop="datePublished">2018-02-07</time></p>
                         </div>
                     </li>
@@ -451,7 +459,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/build-tool/">build-tool</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/build-tool/">build-tool</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a><span class="category-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -529,7 +537,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://noritersand.github.io/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/';
+    var disqus_url = 'http://noritersand.github.io/windows/debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다/';
     
     (function() {
     var dsq = document.createElement('script');
