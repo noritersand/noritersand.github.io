@@ -414,12 +414,15 @@
 </ul>
 <p><img src="/images/capture1-debugging-log-원격-데스크톱-연결-시-내부-오류가-발생했습니다.png" alt=""></p>
 <p>위와 같은 경고창이 나타나고 연결이 안되는 경우엔, 매우 높은 확률로 방화벽 장비에서 윈도우 원격 접속 기본 포트인 3389를 차단하고 있을 가능성이 크다. 이 때는 차단 중인 포트를 다른 번호로 변경해야 하는데 방법은,</p>
-<p>우선 원격으로 접속 당할(?) 컴퓨터에서 레지스트리:</p>
+<p>우선 원격으로 접속 당할(?) 컴퓨터에서 </p>
+<p>1 레지스트리:</p>
 <ul>
 <li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp\PortNumber</li>
-<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber<br>를 3389에서 원하는 포트로 변경한 뒤 윈도우 방화벽 인바운드 규칙을 생성해주고</li>
+<li>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\PortNumber</li>
 </ul>
-<p>원격으로 접속하는 쪽에서 <code>123.123.123.123:9093</code> 처럼 세미콜론과 함께 포트를 명시하면 끝.</p>
+<p>를 3389에서 원하는 포트로 변경, </p>
+<p>2 윈도우 방화벽 인바운드 규칙(1에서 변경한 포트로)을 생성 후 재시작한다.</p>
+<p>원격으로 접속하는 쪽에서는 <code>123.123.123.123:9093</code> 처럼 세미콜론과 함께 포트를 명시하면 끝.</p>
 
       
     </div>
