@@ -5,6 +5,7 @@ categories:
 tags:
   - git
   - note
+  - todo
 ---
 
 ## git으로 파일내용이나 커밋로그 검색하기

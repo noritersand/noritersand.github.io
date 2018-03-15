@@ -2,7 +2,7 @@
 title: 'Pinpoint: 애플리케이션 성능 모니터링'
 tags:
   - pinpoint
-  - pinpoint
+  - todo
 ---
 
 #### 관련 문서
