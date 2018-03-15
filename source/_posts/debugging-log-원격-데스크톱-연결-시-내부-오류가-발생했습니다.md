@@ -1,7 +1,7 @@
 ---
 title: 'debugging log: 원격 데스크톱 연결 시 "내부 오류가 발생했습니다."'
 categories:
-  - os
+  - OS
   - windows
 date: 2018-01-26 17:49:59
 tags:

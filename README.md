@@ -45,3 +45,6 @@ hexo는 기본적으로 유닉스 개행 문자(LF)를 사용한다. 이 때문�
 warning: LF will be replaced by CRLF in source/_drafts/draf.md.
 The file will have its original line endings in your working directory.
 ```
+
+## 카테고리와 태그는 소문자로 작성.
+단, DBMS, Oracle, OS는 제외.

@@ -1,7 +1,7 @@
 ---
 title: 윈도우 쉘 명령어 windows shell commands
 categories:
-  - os
+  - OS
   - windows
 tags:
   - cmd
