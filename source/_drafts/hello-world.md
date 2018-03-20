@@ -1,7 +1,5 @@
 ---
 title: Hello World
-categories:
-  - 분류음슴
 tags:
   - todo
 ---

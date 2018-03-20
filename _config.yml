@@ -54,7 +54,7 @@ index_generator:
   order_by: -date
   
 # Category & Tag
-default_category: 분류음슴
+default_category: uncategorized
 category_map:
 tag_map:
 
@@ -73,8 +73,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-# theme: landscape
-theme: hueman
+theme: landscape
+# theme: hueman
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

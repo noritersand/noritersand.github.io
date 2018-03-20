@@ -5,6 +5,6 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - [https://github.com/naver/pinpoint](https://github.com/naver/pinpoint)
 - [https://github.com/naver/pinpoint/wiki](https://github.com/naver/pinpoint/wiki)

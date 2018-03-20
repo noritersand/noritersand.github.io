@@ -1,11 +1,8 @@
 ---
 title: 'Git: note'
-categories:
-  - git
 tags:
-  - git
-  - note
   - todo
+  - note
 ---
 
 ## git으로 파일내용이나 커밋로그 검색하기

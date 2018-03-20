@@ -1,11 +1,8 @@
 ---
 title: '자바스크립트 프레임워크: Aurelia'
 tags:
-  - javascript
-  - aurelia
-  - framework
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - [http://aurelia.io/docs/overview/what-is-aurelia/](http://aurelia.io/docs/overview/what-is-aurelia/)

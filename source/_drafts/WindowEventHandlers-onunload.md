@@ -1,8 +1,5 @@
 ---
 title: WindowEventHandlers.onunload
-categories:
-  - javascript
-date: 2018-03-15 13:21:20
 tags:
   - browser
   - eventhandlers
@@ -14,7 +11,7 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload
 
 ```js

@@ -1,22 +1,10 @@
 ---
 title: markdown syntax
-categories:
-  - 분류음슴
-date: 2018-01-24 16:19:25
 tags:
-  - todo
+  - test
 ---
 
-<h4>목차</h4>
-<ul>
-	<li><a href="#항상-제목2부터-시작">항상 제목2부터 시작</a></li>
-	<ul>
-		<li><a href="#코드-블럭">코드 블럭</a></li>
-		<ul>
-			<li><a href="#제목4">제목4</a></li>
-		</ul>
-	</ul>
-</ul>
+<h4>목차</h4><ul><li><a href="#항상-제목2부터-시작">항상 제목2부터 시작</a></li><ul><li><a href="#코드-블럭">코드 블럭</a></li><ul><li><a href="#제목4">제목4</a></li></ul></ul></ul>
 
 [TOC]
 
@@ -25,11 +13,11 @@ tags:
 
 ### 코드 블럭
 ```java
-	public class Test {
-		public static void main(String... args) {
-			System.out.println("야이야이야"); // dasfasdf
-		}
-	}
+  public class Test {
+    public static void main(String... args) {
+      System.out.println("야이야이야"); // dasfasdf
+    }
+  }
 ```
 
 #### 제목4

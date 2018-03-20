@@ -1,13 +1,10 @@
 ---
 title: 'HTML standard: Input elements should have autocomplete attributes'
-categories:
-  - web
-  - html
 tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - [https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute)
 
 HTML5
