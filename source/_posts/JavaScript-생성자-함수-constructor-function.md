@@ -24,7 +24,7 @@ function Person(name){
   if (!(this instanceof Person)) {
     return new Person(name);
   }
-    this.name = name;
+  this.name = name;
 }
 
 var bob = new Person('bob');
