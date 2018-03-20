@@ -42,7 +42,7 @@ console.debug(MY_OBJECT); // Object { key: "otherValue" }
 객체를 완전히 보호하고 싶다면 [Object.freeze()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
 
 ## let
-let은 자바스크립트 1.7(ECMAScript 2015, ES6)부터 신규 추가된 키워드다. const와 마찬가지로 var를 대체할 수 있다.
+let은 자바스크립트 1.7(ES2015)부터 신규 추가된 키워드다. const와 마찬가지로 var를 대체할 수 있다.
 ```
 let var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]];
 ```

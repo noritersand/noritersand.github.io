@@ -179,7 +179,7 @@ for (var prop in arr) {
 
 ### for-of
 for-of는 for-in과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. 단, iterable object만 for-of로 반복할 수 있는데, iterable object에 해당되는 타입은 Array, String, TypedArray, Map 그리고 arguments object가 있다.
-for-of는 [ES6(ECMAScript 2015)에 신규 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
+for-of는 [ES2015에 신규 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
 ```js
 var arr = ['a', 'b', 'c', 'd'];
 for (var ele of arr) {
