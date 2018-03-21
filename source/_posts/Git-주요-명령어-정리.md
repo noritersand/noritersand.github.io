@@ -659,8 +659,21 @@ git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테�
 #### 커밋 되돌리기 #2
 1회 전의 커밋으로 되돌리되 단순히 헤드를 이동하고 끝나는게 아니라, 되돌려지는 내용을 기록한 새로운 커밋을 생성한다.
 ```bash
-git revert HEAD
+git revert HEAD  # 직전 커밋의 revert 커밋 생성
 ```
+위의 경우 헤드가 가리키는 커밋을 기준으로 1회 전의 커밋에서 발생한 변경사항을 되돌리는 커밋을 생성한다.
+가령 직전의 커밋이 'fix-a-lot.md'라는 파일을 생성한 커밋이라면 `git revert HEAD`는 'fix-a-lot.md'를 삭제하는 커밋을 만드는 것이다.
+```bash
+git revert HEAD~1  # 1회 전 커밋의 revert 커밋 생성
+git revert HEAD~3  # 3회 전 커밋의 revert 커밋 생성
+git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  # 3bd505 커밋의 revert 커밋 생성
+git revert HEAD~4..HEAD  # 직전 커밋부터 3회전 커밋까지의 변경사항을 되돌린 커밋 생성
+```
+
+**options**:
+- `--continue` 충돌이 발생했을 때 사용 가능한 옵션. 충돌을 해결하고 이 옵션을 사용하면 처음 지정한 커밋으로 revert를 진행한다.
+- `--abort` 충돌이 발생했을 때 사용 가능한 옵션. revert를 중단하고 원래 상태로 돌아간다.
+- `-n` 지정한 커밋의 변경사항을 되돌리되 커밋은 하지 않고 파일만 되돌린다.
 
 ## rm
 
