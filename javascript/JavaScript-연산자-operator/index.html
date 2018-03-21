@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>JavaScript: 연산자 operator | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드 http://noritersand.tistory.com/538  산술 연산1+   -">
+<meta name="keywords" content="javascript,ecmascript,operator">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript: 연산자 operator">
+<meta property="og:url" content="http://noritersand.github.io/javascript/JavaScript-연산자-operator/index.html">
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
+<meta property="og:description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드 http://noritersand.tistory.com/538  산술 연산1+   -">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-03-21T00:06:11.060Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript: 연산자 operator">
+<meta name="twitter:description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드 http://noritersand.tistory.com/538  산술 연산1+   -">
+  
+    <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript-연산자-operator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/javascript/JavaScript-연산자-operator/" class="article-date">
+  <time datetime="2018-03-20T05:57:36.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript: 연산자 operator
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators</a></li>
+<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
+<li><a href="http://noritersand.tistory.com/538" target="_blank" rel="noopener">http://noritersand.tistory.com/538</a></li>
+</ul>
+<h2 id="산술-연산"><a href="#산술-연산" class="headerlink" title="산술 연산"></a>산술 연산</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+   -   *   /   %   ++   --</span><br></pre></td></tr></table></figure>
+<p>덧셈 연산자는 피연산자 중 하나가 문자열일 때 나머지 피연산자도 문자열로 변환하려고 시도한다. 그래서 <code>&#39;nan&#39; + 1</code>의 결과는 ‘nan1’이 된다.<br>증가/증감<code>++ --</code> 연산자는 피연산자를 가능할 경우 숫자 타입으로 변경한다. 가령 <code>x++</code>에서 x가 문자열 <code>&quot;1&quot;</code>이면 x는 숫자 1로 바뀌며 이후 1씩 증가된다. x가 숫자로 바꿀 수 없는 문자열일 경우 NaN을 반환한다.</p>
+<h2 id="할당-연산"><a href="#할당-연산" class="headerlink" title="할당 연산"></a>할당 연산</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">=    +=    -=    *=    /=    %=</span><br><span class="line">&amp;=    ^=    |=    &lt;&lt;=    &gt;&gt;=    &gt;&gt;&gt;=</span><br></pre></td></tr></table></figure>
+<h2 id="비교-연산"><a href="#비교-연산" class="headerlink" title="비교 연산"></a>비교 연산</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">==    ===    !=    !==    &gt;    &lt;    &gt;=    &lt;=</span><br></pre></td></tr></table></figure>
+<p>===는 일치연산자 혹은 엄격한 동등 연산자라고 한다. ==는 동등(equal)을 판단하며 ===는 일치(identical)하는지 판단한다. 둘은 같음을 정의하는 기준이 다르다. 가령 ===는 값이 같아도(형변환을 통해 같다고 판단되는 값. 가령 1과 ‘1’은 동등하다.) 타입이 다를 경우 둘이 서로 다른것으로 판단한다.</p>
+<p>동등 연산(==)의 판단 기준:</p>
+<ul>
+<li>두 값의 타입이 같은 경우, 두 값이 일치하면 둘은 동등하다.</li>
+<li>두 값의 타입이 다른 경우에도 여전히 동등할 여지가 있으므로 타입 변환이 사용된다.</li>
+<li>두 값 중 하나가 null이고 다른 하나가 undefined라면 두 값은 동등하다.</li>
+<li>두 값 중 하나가 문자열이고 다른 하나가 숫자면 문자열을 숫자로 변환한다.</li>
+<li>두 값 중 하나가 true이면 이를 1로 변환, false일 땐 0으로 변환 후 비교한다.</li>
+<li>한 값이 객체고 다른 하나가 숫자 또는 문자열이면 객체를 원시 타입으로 변환 후 비교한다. 객체의 원시 타입 변환에는 해당 객체의 toString() 메서드나 valueOf() 메서드가 사용된다.</li>
+</ul>
+<p>일치 연산(===)의 판단 기준:</p>
+<ul>
+<li>두 값의 타입이 서로 다르면 두 값은 일치하지 않는다.</li>
+<li>두 값이 모두 null이거나 undefined면, 두 값은 일치한다.</li>
+<li>두 값이 모두 불리언 값 true이거나 false일 경우에 두 값은 일치한다.</li>
+<li>적어도 하나의 값이 NaN이면 두 값은 일치하지 않는다. NaN 값은 자기 자신을 포함해 다른 어떠한 값과도 일치하지 않는다. 임의의 값 x가 NaN인지 검사하기 위해서는 x !== x와 같이 사용한다. 앞의 표현식이 참을 만족 할 때만 x의 값이 NaN이 된다.</li>
+<li>두 값이 모두 숫자고 같은 값을 갖는다면, 두 값은 일치한다. 만약 하나의 값이 0이고 다른 하나의 값이 -0일지라도, 두 값은 일치한다.</li>
+<li>두 값이 모두 문자열이고, 같은 위치에 정확히 같은 16비트 문자열 값을 갖고 있다면, 두 값은 일치한다. 만약 문자열의 길이나 내용이 다를 경우, 두 값은 일치하지 않는다. 두 문자열이 같은 의미를 갖고, 육안상 같은 문자열을 갖더라도 16비트 값의 순서가 다르게 인코딩되어 있을 수도 있다. </li>
+<li>자바스크립트에서는 유니코드 문자열에 대해서 정규화 과정을 수행하지 않는다. 또한 ===나 == 연산자를 사용해 유니코드 문자열의 동등 비교를 할 수 없다. 이와 같은 문자열을 비교하려면 String.localeCompare()를 사용한다.</li>
+<li>두 값이 모두 같은 객체나 배열 또는 함수를 참조하고 있으면, 두 값은 일치한다. 두 값이 서로 다른 객체를 참조할 경우에 설사 두 객체의 프로퍼티가 일치하더라도 두 값은 일치하지 않는다.</li>
+</ul>
+<h2 id="논리-연산"><a href="#논리-연산" class="headerlink" title="논리 연산"></a>논리 연산</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;&amp;    ||    !</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>, b = <span class="number">1</span>;</span><br><span class="line">a == <span class="number">0</span> &amp;&amp; b == <span class="number">1</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">true</span> &amp;&amp; b == <span class="number">0</span>; <span class="comment">// false</span></span><br><span class="line">a != b || b != b; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || <span class="literal">true</span>; <span class="comment">// true</span></span><br><span class="line"><span class="literal">false</span> || (<span class="literal">true</span> &amp;&amp; <span class="literal">false</span>); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>논리 연산자 &amp;&amp;, || 는 피연산자가 관계 표현식 또는 boolean 타입이거나 괄호로 감싼 논리 표현식일 땐 일반적인 AND와 OR연산을 수행한다.<br>만약 피연산자가 boolean이 아닐 때 해당 피연산자는 boolean 타입으로 변환된다. 이후 규칙에 따라 값을 반환하는데, 반환되는 값은 boolean이 아니라 boolean으로 변환되기 전인 원래의 값이 반환된다. 가령 다음을 보면:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">undefined</span> &amp;&amp; <span class="number">1</span>; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure></p>
+<p>undefined가 false로 변환되고 연산식을 평가한 후 다시 원래의 값인 undefined가 반환된다.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> &amp;&amp; <span class="number">2</span>; <span class="comment">// 2</span></span><br><span class="line"><span class="number">3</span> &amp;&amp; <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">0</span> &amp;&amp; <span class="literal">undefined</span>; <span class="comment">// 0</span></span><br><span class="line"><span class="literal">undefined</span> &amp;&amp; <span class="number">0</span>; <span class="comment">// undefined</span></span><br><span class="line"><span class="number">123</span> &amp;&amp; <span class="literal">null</span>; <span class="comment">// null</span></span><br><span class="line"><span class="literal">null</span> &amp;&amp; <span class="number">123</span>; <span class="comment">// null</span></span><br></pre></td></tr></table></figure></p>
+<p>&amp;&amp;는 다음 규칙을 따른다:</p>
+<ul>
+<li>피연산자가 모두 true일 땐 우변 피연산자의 값을 반환</li>
+<li>피연산자가 모두 false일 땐 좌변 피연산자의 값을 반환</li>
+<li>둘 중 하나가 false일 땐 false로 평가되는 값을 반환</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[] || &#123;&#125;; <span class="comment">// Array [  ]</span></span><br><span class="line"><span class="string">"123"</span> || <span class="built_in">window</span>; <span class="comment">// "123"</span></span><br><span class="line"><span class="literal">null</span> || <span class="literal">undefined</span>; <span class="comment">// undefined</span></span><br><span class="line"><span class="literal">undefined</span> || <span class="literal">null</span>; <span class="comment">// null</span></span><br><span class="line"><span class="number">0</span> || <span class="number">1</span>; <span class="comment">// 1</span></span><br><span class="line"><span class="number">1</span> || <span class="number">0</span>; <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>||는 다음 규칙을 따른다:</p>
+<ul>
+<li>피연산자가 모두 true일 땐 좌변 피연산자의 값을 반환</li>
+<li>피연산자가 모두 false일 땐 우변 피연산자의 값을 반환</li>
+<li>둘 중 하나가 false일 땐 true로 평가되는 값을 반환</li>
+</ul>
+<p>다른 연산자도 마찬가지지만 논리 연산자 또한 피연산자를 비교하기 전에 각 피연산자를 평가(evaluate)하는 과정을 거친다. 표현식이나 호출식을 먼저 실행한 후 비교한다고 생각하면 된다. 그리고 상황에 따라 우변의 피연산자는 평가될 수도 있고 평가되지 않을 수도 있다는 것을 주의해야 한다. 다음 예를 보면:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="number">1</span>) || alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>OR 연산은 좌변이 false(window.alert의 리턴값은 undefined)일 때 우변도 평가한다. 따라서 경고창은 두 번 나타난다.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="number">1</span>) &amp;&amp; alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>AND 연산은 좌변이 false일 때 우변을 평가하지 않는다. 따라서 경고창은 한 번 나타난다.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> || alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>OR 연산은 좌변이 true일 때 우변을 평가하지 않는다. 이 경우 경고창이 나타나지 않는다.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">true</span> &amp;&amp; alert(<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<p>AND 연산은 좌변이 true일 때 우변을 평가한다. 경고창이 나타난다.</p>
+<p>다음은 논리 연산자로 삼항 연산을 흉내낸 것이다:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> result = (a == <span class="number">1</span>) &amp;&amp; <span class="string">'equal'</span> || <span class="string">'not equal'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// "equal"</span></span><br></pre></td></tr></table></figure></p>
+<p>OR 연산자의 좌변과 우변이 모두 true로 평가되는 값일 때만 제대로 작동하는 한계가 있지만…</p>
+<h2 id="비트-연산"><a href="#비트-연산" class="headerlink" title="비트 연산"></a>비트 연산</h2><ul>
+<li><code>~</code> 비트단위 NOT</li>
+<li><code>&amp;</code> 비트단위 AND</li>
+<li><code>|</code> 비트단위 OR</li>
+<li><code>^</code> 비트단위 XOR</li>
+<li><code>&lt;&lt;</code> 왼쪽으로 이동</li>
+<li><code>&gt;&gt;</code> 부호 비트를 확장하면서 오른쪽으로 이동</li>
+<li><code>&gt;&gt;&gt;</code> 부호 비트 확장 없이 오른쪽으로 이동</li>
+</ul>
+<h2 id="삼항-연산자"><a href="#삼항-연산자" class="headerlink" title="삼항 연산자"></a>삼항 연산자</h2><p>조건 연산자 또는 선택 연산자. TRUE 혹은 FALSE에 해당하는 값을 반환한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">조건 ? TRUE : FALSE</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> result = (a == <span class="number">1</span>) ? <span class="string">"일"</span> : <span class="string">"일 아님"</span>;</span><br><span class="line"><span class="built_in">console</span>.log(result); <span class="comment">// "일"</span></span><br></pre></td></tr></table></figure>
+<h2 id="instanceof"><a href="#instanceof" class="headerlink" title="instanceof"></a>instanceof</h2><p>객체의 프로토타입 체인에 생성자의 프로토타입이 존재하는지 테스트한다. 좌변의 피연산자로 객체를 받고 우변의 피연산자로 생성자를 받는다. 이 연산자로 객체가 특정 타입의 인스턴스인지 판단할 수 있다. 우변은 반드시 함수 이름이어야 하는데, 만약 함수가 아니면 TypeError가 발생할 것이다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">object instanceof constructor</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// blah blah blah</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn <span class="keyword">instanceof</span> <span class="built_in">Function</span>;  <span class="comment">// true</span></span><br><span class="line">alert <span class="keyword">instanceof</span> <span class="built_in">Function</span>;  <span class="comment">// true</span></span><br><span class="line"><span class="string">""</span> <span class="keyword">instanceof</span> <span class="built_in">String</span>; <span class="comment">// false, 문자열 자체는 원시 타입이기 때문</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">String</span>() <span class="keyword">instanceof</span> <span class="built_in">String</span>;  <span class="comment">// true, String 래퍼 객체는 String의 인스턴스</span></span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Array</span>; <span class="comment">// true, [].__proto__ === Array.prototype</span></span><br><span class="line">[] <span class="keyword">instanceof</span> <span class="built_in">Object</span>; <span class="comment">// true, 모든 객체는 Object의 인스턴스</span></span><br></pre></td></tr></table></figure>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>연산자 다음에오는 변수, 함수, 객체 또는 표현식의 타입을 반환한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof expression</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">"John"</span>                <span class="comment">// "string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="number">3.14</span>                   <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">NaN</span>                    <span class="comment">// "number"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">false</span>                  <span class="comment">// "boolean"</span></span><br><span class="line"><span class="keyword">typeof</span> [ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span> ]           <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span> &#123; <span class="attr">name</span>: <span class="string">'John'</span>, <span class="attr">age</span>: <span class="number">34</span> &#125;  <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">Date</span>()             <span class="comment">// "object"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;         <span class="comment">// "function"</span></span><br><span class="line"><span class="keyword">typeof</span> myCar                  <span class="comment">// "undefined" (if myCar is not declared)</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="literal">null</span>                   <span class="comment">// "object"</span></span><br></pre></td></tr></table></figure>
+<h2 id="in"><a href="#in" class="headerlink" title="in"></a>in</h2><p>객체나 배열에 특정 프로퍼티가 존재하는지 확인한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">expression in Object</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Arrays</span></span><br><span class="line"><span class="keyword">var</span> cars = [ <span class="string">"Saab"</span>, <span class="string">"Volvo"</span>, <span class="string">"BMW"</span> ];</span><br><span class="line"><span class="string">"Saab"</span> <span class="keyword">in</span> cars          <span class="comment">// false, 'Saab'은 프로퍼티의 이름이 아니라 값이므로 false</span></span><br><span class="line"><span class="number">0</span> <span class="keyword">in</span> cars               <span class="comment">// true</span></span><br><span class="line"><span class="number">1</span> <span class="keyword">in</span> cars               <span class="comment">// true</span></span><br><span class="line"><span class="number">4</span> <span class="keyword">in</span> cars               <span class="comment">// false, cars의 길이는 3이므로 배열의 4번째 인덱스는 없다.</span></span><br><span class="line"><span class="string">"length"</span> <span class="keyword">in</span> cars        <span class="comment">// true, Array 래퍼 객체에 length란 프로퍼티가 존재함.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Objects</span></span><br><span class="line"><span class="keyword">var</span> person = &#123; <span class="attr">firstName</span>: <span class="string">"John"</span>, <span class="attr">lastName</span>: <span class="string">"Doe"</span>, <span class="attr">age</span>: <span class="number">50</span> &#125;;</span><br><span class="line"><span class="string">"firstName"</span> <span class="keyword">in</span> person   <span class="comment">// true</span></span><br><span class="line"><span class="string">"age"</span> <span class="keyword">in</span> person         <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Predefined objects</span></span><br><span class="line"><span class="string">"PI"</span> <span class="keyword">in</span> <span class="built_in">Math</span>            <span class="comment">// true</span></span><br><span class="line"><span class="string">"NaN"</span> <span class="keyword">in</span> <span class="built_in">Number</span>         <span class="comment">// true</span></span><br><span class="line"><span class="string">"length"</span> <span class="keyword">in</span> <span class="built_in">String</span>      <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>또한 in은 for-in 반복문에서 사용된다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for (variable in object) &#123; ... &#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>object: 반복할 객체. 객체의 프로퍼티 만큼 반복된다.</li>
+<li>variable: 매번 반복될 때마다 프로퍼티의 key를 할당한다. 만약 반복되는 객체가 배열일 경우 인덱스를 할당할 것이다.</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = &#123; <span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">var</span> propNames = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> ele <span class="keyword">in</span> foo) &#123;</span><br><span class="line">   propNames.push(ele);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(propNames); <span class="comment">// [ "a", "b" ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo2 = [ <span class="string">'aaa'</span>, <span class="string">'bbb'</span>, <span class="string">'ccc'</span> ];</span><br><span class="line"><span class="keyword">var</span> idxs = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> ele <span class="keyword">in</span> foo2) &#123;</span><br><span class="line">  idxs.push(ele);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(idxs); <span class="comment">// [ "0", "1", "2" ]</span></span><br></pre></td></tr></table></figure>
+<h2 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h2><p>프로퍼티를 삭제한다. 삭제에 성공했을 때 true를, 실패했을 때 false를 반환한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete Object.property</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = &#123; <span class="attr">word</span>: <span class="string">"hi"</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(fn.word);   <span class="comment">// "hi"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">delete</span> fn.word; <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(fn.word); <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<p>var문으로 정의된 변수(전역 객체의 프로퍼티라 하더라도), 함수 선언문(또는 함수 구문)으로 정의된 함수, 함수 매개변수로 선언한 함수는 삭제할 수 없다.<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">delete</span> a; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123; &#125;</span><br><span class="line"><span class="keyword">delete</span> fn; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">callee</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">	<span class="built_in">console</span>.debug(<span class="keyword">delete</span> callback); <span class="comment">// false</span></span><br><span class="line">&#125;</span><br><span class="line">callee(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="void"><a href="#void" class="headerlink" title="void"></a>void</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">void expression</span><br></pre></td></tr></table></figure>
+<p>void 연산자는 피연산자를 실행하고 undefined를 반환한다. 피연산자를 실행해야 하지만 결과를 노출하고 싶지 않을때 사용한다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void window.open()"</span>&gt;</span>open<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>void는 같은 이름의 함수가 존재하는데:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span>(<span class="number">0</span>); <span class="comment">// undefined</span></span><br><span class="line"><span class="keyword">void</span>(); <span class="comment">// SyntaxError: expected expression, got ')'</span></span><br></pre></td></tr></table></figure></p>
+<p>연산자와 마찬가지로 항상 undefined를 반환하는 함수다. 전달인자는 어느 값이어도 상관 없지만 할당하지 않으면 에러가 발생한다. 이동할 주소가 없는 앵커 태그가 필요할 때 종종 사용된다.<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0)"</span>&gt;</span>test<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-연산자-operator/" data-id="cjf0fwp9g001vq85y95yzdwfj" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/operator/">operator</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/javascript/JavaScript-제어문-control-statement/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Neuer</strong>
+      <div class="article-nav-title">
+        
+          JavaScript: 제어문 control statement
+        
+      </div>
+    </a>
+  
+  
+    <a href="/javascript/JavaScript-기본/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">JavaScript: 기본</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildtool/">buildtool</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Window/">Window</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/XMLHttpRequest/">XMLHttpRequest</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anchor/">anchor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buildtool/">buildtool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closures/">closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/constructor/">constructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conversion/">conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbms/">dbms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugger/">debugger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging-log/">debugging log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eval/">eval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gist/">gist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jst/">jst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nexus/">nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powershell/">powershell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/">reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote-desktop/">remote desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strict-mode/">strict-mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/type/">type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with/">with</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrapper/">wrapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wst/">wst</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Window/" style="font-size: 10px;">Window</a> <a href="/tags/XMLHttpRequest/" style="font-size: 10px;">XMLHttpRequest</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/buildtool/" style="font-size: 10px;">buildtool</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 12px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 14px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/function/" style="font-size: 14px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict-mode</a> <a href="/tags/todo/" style="font-size: 14px;">todo</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/windows/" style="font-size: 18px;">windows</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/git/Git-주요-명령어-정리/">Git: 주요 명령어 정리</a>
+          </li>
+        
+          <li>
+            <a href="/javascript/JavaScript-생성자-함수-constructor-function/">JavaScript: 생성자 함수 constructor function</a>
+          </li>
+        
+          <li>
+            <a href="/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/">JavaScript: Window.postMessage 교차 출처간 메시지 통신</a>
+          </li>
+        
+          <li>
+            <a href="/javascript/JavaScript-Ajax/">JavaScript: Ajax</a>
+          </li>
+        
+          <li>
+            <a href="/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/">JavaScript: pseudo protocol 앵커(a) 태그로 스크립트 실행 시 주의사항</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 놀이터흙이제맛<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
