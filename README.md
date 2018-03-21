@@ -46,5 +46,5 @@ warning: LF will be replaced by CRLF in source/_drafts/draf.md.
 The file will have its original line endings in your working directory.
 ```
 
-## 카테고리와 태그는 소문자로 작성.
-단, DBMS, Oracle, OS는 제외.
+## builder와 site의 싱크가 안맞을 떄
+public 폴더를 삭제하고 다시 generate하면 된다. (특히 대소문자 변경했을 떄)

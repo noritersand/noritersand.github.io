@@ -1,7 +1,7 @@
 ---
 title: '윈도우: 쉘 명령어 windows shell commands'
 categories:
-  - OS
+  - os
   - windows
 date: 2018-03-15 13:46:15
 tags:
