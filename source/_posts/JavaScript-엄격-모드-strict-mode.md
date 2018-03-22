@@ -145,7 +145,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 })(); // SyntaxError: strict mode code may not contain 'with' statements
 ```
 
-###this의 변화
+### this의 변화
 함수가 메서드가 아닌 함수로 호출될 때 this는 undefined가 된다(표준 모드에선 함수로 호출될 때의 this는 전역 객체다). 이를 이용하면 엄격 모드의 지원 여부를 판단할 수 있다. (단, 자바스크립트 구현체에 따라 엄격 모드를 지원하지 않는 경우가 있으니 주의)
 ```js
 var hasStrictMode = (function() {
