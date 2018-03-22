@@ -7,18 +7,18 @@
   
   <title>프로시저 호출방법 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="이런 프로시저가 있을 때:1234567891011CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END">
+  <meta name="description" content="이런 프로시저가 있을 때:CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END&apos;;END;/ 아래처럼">
 <meta name="keywords" content="dbms,sql,oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="프로시저 호출방법">
 <meta property="og:url" content="http://noritersand.github.io/dbms/oracle/프로시저-호출방법/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="이런 프로시저가 있을 때:1234567891011CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END">
+<meta property="og:description" content="이런 프로시저가 있을 때:CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END&apos;;END;/ 아래처럼">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-03-21T01:58:07.471Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="프로시저 호출방법">
-<meta name="twitter:description" content="이런 프로시저가 있을 때:1234567891011CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END">
+<meta name="twitter:description" content="이런 프로시저가 있을 때:CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(   PARAMETER1 IN VARCHAR2,   RESULT OUT VARCHAR2)ASBEGIN  RESULT := &apos;BEGIN&apos;;  DBMS_OUTPUT.PUT_LINE(PARAMETER1);  RESULT := &apos;END&apos;;END;/ 아래처럼">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -91,15 +91,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>이런 프로시저가 있을 때:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">PROCEDURE</span> TEST_PROCEDURE_01( </span><br><span class="line">  PARAMETER1 <span class="keyword">IN</span> VARCHAR2, </span><br><span class="line">  <span class="keyword">RESULT</span> <span class="keyword">OUT</span> VARCHAR2</span><br><span class="line">)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">RESULT</span> := <span class="string">'BEGIN'</span>;</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(PARAMETER1);</span><br><span class="line">  RESULT := '<span class="keyword">END</span><span class="string">';</span></span><br><span class="line"><span class="string">END;</span></span><br><span class="line"><span class="string">/</span></span><br></pre></td></tr></table></figure></p>
-<p>아래처럼 호출하면:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  <span class="keyword">RESULT</span> VARCHAR2(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  TEST_PROCEDURE_BY_NORITER(<span class="string">'hello!'</span>, <span class="keyword">RESULT</span>);</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(RESULT);</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
-<p>요로코롬 찍힌다:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello!</span><br><span class="line">END</span><br></pre></td></tr></table></figure></p>
+        <p>이런 프로시저가 있을 때:<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">PROCEDURE</span> TEST_PROCEDURE_01( </span><br><span class="line">  PARAMETER1 <span class="keyword">IN</span> VARCHAR2, </span><br><span class="line">  <span class="keyword">RESULT</span> <span class="keyword">OUT</span> VARCHAR2</span><br><span class="line">)</span><br><span class="line"><span class="keyword">AS</span></span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  <span class="keyword">RESULT</span> := <span class="string">'BEGIN'</span>;</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(PARAMETER1);</span><br><span class="line">  RESULT := '<span class="keyword">END</span><span class="string">';</span></span><br><span class="line"><span class="string">END;</span></span><br><span class="line"><span class="string">/</span></span><br></pre></td></tr></table></figure></p>
+<p>아래처럼 호출하면:<br><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DECLARE</span></span><br><span class="line">  <span class="keyword">RESULT</span> VARCHAR2(<span class="number">100</span>);</span><br><span class="line"><span class="keyword">BEGIN</span></span><br><span class="line">  TEST_PROCEDURE_BY_NORITER(<span class="string">'hello!'</span>, <span class="keyword">RESULT</span>);</span><br><span class="line">  DBMS_OUTPUT.PUT_LINE(RESULT);</span><br><span class="line"><span class="keyword">END</span>;</span><br><span class="line"><span class="keyword">COMMIT</span>;</span><br></pre></td></tr></table></figure></p>
+<p>요로코롬 찍힌다:<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hello!</span><br><span class="line">END</span><br></pre></td></tr></table></figure></p>
 <p>끗.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/dbms/oracle/프로시저-호출방법/" data-id="cjf0fwpa8003kq85ytaau3cxf" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/dbms/oracle/프로시저-호출방법/" data-id="cjf21g3f0003j285y6zhlyx12" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/dbms/">dbms</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sql/">sql</a></li></ul>

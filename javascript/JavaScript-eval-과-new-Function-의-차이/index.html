@@ -7,18 +7,18 @@
   
   <title>JavaScript: eval()과 new Function()의 차이 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  123456789101112function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.deb">
+  <meta name="description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.debug(a); // 222&amp;#">
 <meta name="keywords" content="javascript,eval">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript: eval()과 new Function()의 차이">
 <meta property="og:url" content="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  123456789101112function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.deb">
+<meta property="og:description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.debug(a); // 222&amp;#">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-03-21T00:06:10.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript: eval()과 new Function()의 차이">
-<meta name="twitter:description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  123456789101112function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.deb">
+<meta name="twitter:description" content="참고한 글 http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing  function test1() &amp;#123;  var a = 111;  eval(&apos;console.debug(a); a = 222;&apos;); // 111  console.debug(a); // 222&amp;#">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -94,14 +94,14 @@
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
 <li><a href="http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing" target="_blank" rel="noopener">http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing</a></li>
 </ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">111</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">'console.debug(a); a = 222;'</span>); <span class="comment">// 111</span></span><br><span class="line">  <span class="built_in">console</span>.debug(a); <span class="comment">// 222</span></span><br><span class="line">&#125;</span><br><span class="line">test1();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">333</span>;</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'console.debug(b);'</span>)(); <span class="comment">// ReferenceError: b is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">test2();</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">111</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">'console.debug(a); a = 222;'</span>); <span class="comment">// 111</span></span><br><span class="line">  <span class="built_in">console</span>.debug(a); <span class="comment">// 222</span></span><br><span class="line">&#125;</span><br><span class="line">test1();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">333</span>;</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'console.debug(b);'</span>)(); <span class="comment">// ReferenceError: b is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">test2();</span><br></pre></td></tr></table></figure>
 <p>내부동작과 유효범위(혹은 scope)의 차이가 있다.</p>
 <p><strong>eval()</strong>: 자바스크립트 표현식으로 문자열을 자바스크립트 코드로 해석한 후 이를 평가한다. 이 때 eval()을 호출하는 시점의 변수 환경이 사용하기 때문에 실행 범위 내의 지역변수에 접근 할 수 있다.<br><strong>new Function()</strong>: 주어진 문자열을 자바스크립트 코드로 파싱하여 호출 가능한 객체에 저장하며 별도의 함수 영역으로 분리되기 때문에 지역변수에 접근 할 수 없다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/" data-id="cjf0fwp930018q85yjrqyplid" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/" data-id="cjf21g3dt0015285yhnmoaxqb" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eval/">eval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

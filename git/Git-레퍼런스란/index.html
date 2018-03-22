@@ -7,18 +7,18 @@
   
   <title>Git: 레퍼런스란? | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
+  <meta name="description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.$ git checkout masterSwitched to branch &apos;master&apos;Your bra">
 <meta name="keywords" content="git,reference">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git: 레퍼런스란?">
 <meta property="og:url" content="http://noritersand.github.io/git/Git-레퍼런스란/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
+<meta property="og:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.$ git checkout masterSwitched to branch &apos;master&apos;Your bra">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-03-06T05:06:39.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 레퍼런스란?">
-<meta name="twitter:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.123456789$ git checkout masterSwitched to branch &apos;master">
+<meta name="twitter:description" content="레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.$ git checkout masterSwitched to branch &apos;master&apos;Your bra">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -91,13 +91,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.<br>예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">'master'</span></span><br><span class="line">Your branch is up to date with <span class="string">'origin/master'</span>.</span><br><span class="line"></span><br><span class="line">$ git show HEAD</span><br><span class="line">commit f38273c9ecbea5a009667316425883a556f9ca47 (HEAD -&gt; master, origin/master, origin/HEAD)</span><br><span class="line"></span><br><span class="line">$ cat .git/refs/heads/master</span><br><span class="line">f38273c9ecbea5a009667316425883a556f9ca47</span><br></pre></td></tr></table></figure></p>
+        <p>레퍼런스란 커밋 체크섬을 이름으로 사용할 수 있도록 관리되는 파일 시스템이다.<br>예를 들어 master라는 브랜치는 사실 특정 커밋을 가리키는 포인터인데, 이 포인터가 어느 커밋을 가리키는지를 알 수 있도록 master라는 파일에 해당 커밋의 체크섬을 저장한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git checkout master</span><br><span class="line">Switched to branch <span class="string">'master'</span></span><br><span class="line">Your branch is up to date with <span class="string">'origin/master'</span>.</span><br><span class="line"></span><br><span class="line">$ git show HEAD</span><br><span class="line">commit f38273c9ecbea5a009667316425883a556f9ca47 (HEAD -&gt; master, origin/master, origin/HEAD)</span><br><span class="line"></span><br><span class="line">$ cat .git/refs/heads/master</span><br><span class="line">f38273c9ecbea5a009667316425883a556f9ca47</span><br></pre></td></tr></table></figure></p>
 <p>.git/refs/heads/master 파일을 열어보면 master 브랜치의 마지막 커밋에 해당하는 체크섬이 저장되어 있는걸 확인할 수 있다.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-레퍼런스란/" data-id="cjf0fwp8t000sq85yp2m91vca" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/git/Git-레퍼런스란/" data-id="cjf21g3dg000o285ylx8qss2h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/reference/">reference</a></li></ul>

@@ -7,17 +7,17 @@
   
   <title>JavaScript: 정규식 모음 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="숫자 - 통화 변환1&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #11&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #21&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
+  <meta name="description" content="숫자 - 통화 변환&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #1&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #2&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript: 정규식 모음">
 <meta property="og:url" content="http://noritersand.github.io/javascript/JavaScript-정규식-모음/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="숫자 - 통화 변환1&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #11&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #21&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
+<meta property="og:description" content="숫자 - 통화 변환&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #1&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #2&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
 <meta property="og:locale" content="en">
 <meta property="og:updated_time" content="2018-03-09T08:54:58.026Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript: 정규식 모음">
-<meta name="twitter:description" content="숫자 - 통화 변환1&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #11&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #21&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
+<meta name="twitter:description" content="숫자 - 통화 변환&apos;1000000&apos;.replace(/(\d)(?=(\d&amp;#123;3&amp;#125;)+(?!\d))/g, &apos;$1,&apos;); 통화 - 숫자 변환 #1&apos;1,000,000&apos;.replace(/[^0-9]/g, &apos;&apos;); 통화 - 숫자 변환 #2&apos;123,123,123&apos;.replace(/\,/g, &apos;&apos;);">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -90,13 +90,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="숫자-통화-변환"><a href="#숫자-통화-변환" class="headerlink" title="숫자 - 통화 변환"></a>숫자 - 통화 변환</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1000000'</span>.replace(<span class="regexp">/(\d)(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">'$1,'</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="통화-숫자-변환-1"><a href="#통화-숫자-변환-1" class="headerlink" title="통화 - 숫자 변환 #1"></a>통화 - 숫자 변환 #1</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'1,000,000'</span>.replace(<span class="regexp">/[^0-9]/g</span>, <span class="string">''</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="통화-숫자-변환-2"><a href="#통화-숫자-변환-2" class="headerlink" title="통화 - 숫자 변환 #2"></a>통화 - 숫자 변환 #2</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'123,123,123'</span>.replace(<span class="regexp">/\,/g</span>, <span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+        <h3 id="숫자-통화-변환"><a href="#숫자-통화-변환" class="headerlink" title="숫자 - 통화 변환"></a>숫자 - 통화 변환</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">'1000000'</span>.replace(<span class="regexp">/(\d)(?=(\d&#123;3&#125;)+(?!\d))/g</span>, <span class="string">'$1,'</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="통화-숫자-변환-1"><a href="#통화-숫자-변환-1" class="headerlink" title="통화 - 숫자 변환 #1"></a>통화 - 숫자 변환 #1</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">'1,000,000'</span>.replace(<span class="regexp">/[^0-9]/g</span>, <span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="통화-숫자-변환-2"><a href="#통화-숫자-변환-2" class="headerlink" title="통화 - 숫자 변환 #2"></a>통화 - 숫자 변환 #2</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">'123,123,123'</span>.replace(<span class="regexp">/\,/g</span>, <span class="string">''</span>);</span><br></pre></td></tr></table></figure>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-정규식-모음/" data-id="cjf0fwp9k0023q85y2f7stut3" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-정규식-모음/" data-id="cjf21g3e5001u285yuinovewr" class="article-share-link">Teilen</a>
       
       
     </footer>
