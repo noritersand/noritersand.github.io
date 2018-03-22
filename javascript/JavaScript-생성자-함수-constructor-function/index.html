@@ -16,7 +16,7 @@
 <meta property="og:description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor https://developer.">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://noritersand.github.io/images/prototype-constructor.png">
-<meta property="og:updated_time" content="2018-03-21T00:06:11.132Z">
+<meta property="og:updated_time" content="2018-03-22T00:12:50.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript: 생성자 함수 constructor function">
 <meta name="twitter:description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor https://developer.">
@@ -58,7 +58,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -100,17 +100,17 @@
 <li><a href="http://tobyho.com/2010/11/22/javascript-constructors-and/" target="_blank" rel="noopener">http://tobyho.com/2010/11/22/javascript-constructors-and/</a></li>
 </ul>
 <p><img src="/images/prototype-constructor.png" alt=""></p>
-<h2 id="생성자-함수가-일반-함수로-호출되는것을-방지하는-방법"><a href="#생성자-함수가-일반-함수로-호출되는것을-방지하는-방법" class="headerlink" title="생성자 함수가 일반 함수로 호출되는것을 방지하는 방법"></a>생성자 함수가 일반 함수로 호출되는것을 방지하는 방법</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Person)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Person(name);</span><br><span class="line">  &#125;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bob = <span class="keyword">new</span> Person(<span class="string">'bob'</span>);</span><br><span class="line"><span class="keyword">var</span> bob2 = Person(<span class="string">'bob'</span>);</span><br><span class="line">bob <span class="keyword">instanceof</span> Person; <span class="comment">// true</span></span><br><span class="line">bob2 <span class="keyword">instanceof</span> Person; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h2 id="생성자-함수가-일반-함수로-호출되는것을-방지하는-방법"><a href="#생성자-함수가-일반-함수로-호출되는것을-방지하는-방법" class="headerlink" title="생성자 함수가 일반 함수로 호출되는것을 방지하는 방법"></a>생성자 함수가 일반 함수로 호출되는것을 방지하는 방법</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (!(<span class="keyword">this</span> <span class="keyword">instanceof</span> Person)) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Person(name);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bob = <span class="keyword">new</span> Person(<span class="string">'bob'</span>);</span><br><span class="line"><span class="keyword">var</span> bob2 = Person(<span class="string">'bob'</span>);</span><br><span class="line">bob <span class="keyword">instanceof</span> Person; <span class="comment">// true</span></span><br><span class="line">bob2 <span class="keyword">instanceof</span> Person; <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p>new Object()와 Object()의 결과가 같은 이유는 Object 함수가 위처럼 되어 있기 때문이다. 생성자 함수가 new 키워드 없이 일반 함수로써 호출되면 this는 생성자 함수의 프로토타입이 아니라 함수를 소유하고있는 객체가 된다. (실행기가 브라우저라면 this는 Window다.)</p>
-<h2 id="생성자의-메서드"><a href="#생성자의-메서드" class="headerlink" title="생성자의 메서드"></a>생성자의 메서드</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>위의 코드는 다음처럼 작성하는게 좋다:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="생성자의-메서드"><a href="#생성자의-메서드" class="headerlink" title="생성자의 메서드"></a>생성자의 메서드</h2><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">  <span class="keyword">this</span>.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>위의 코드는 다음처럼 작성하는게 좋다:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br><span class="line">Person.prototype.sayHi = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">'Hi, I am '</span> + <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>왜냐하면 첫 번째 코드는 생성되는 인스턴스 개수만큼 sayHi() 메서드가 생성되지만 두 번째 코드는 프로토타입의 메서드로 딱 한 번만 생성되고 Person의 인스턴스들은 이 프로토타입의 메서드를 공유하기 때문이다. 즉, 불필요한 함수 생성으로 메모리가 낭비되는걸 방지 할 수 있다.</p>
-<h2 id="생성자-메서드"><a href="#생성자-메서드" class="headerlink" title="생성자 메서드"></a>생성자 메서드</h2><p>생성자 메서드(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor" target="_blank" rel="noopener">constructor method</a>)는 ES2015(ES6)에 추가된 구문인 class 구문 내에서 사용한다. <strong>생성자 함수가 아니다.</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(length) &#123;</span><br><span class="line">    <span class="comment">// Here, it calls the parent class' constructor with lengths</span></span><br><span class="line">    <span class="comment">// provided for the Polygon's width and height</span></span><br><span class="line">    <span class="keyword">super</span>(length, length);</span><br><span class="line">    <span class="comment">// Note: In derived classes, super() must be called before you</span></span><br><span class="line">    <span class="comment">// can use 'this'. Leaving this out will cause a reference error.</span></span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Square'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get area() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.height * <span class="keyword">this</span>.width;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  set area(value) &#123;</span><br><span class="line">    <span class="keyword">this</span>.area = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="생성자-메서드"><a href="#생성자-메서드" class="headerlink" title="생성자 메서드"></a>생성자 메서드</h2><p>생성자 메서드(<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor" target="_blank" rel="noopener">constructor method</a>)는 ES2015(ES6)에 추가된 구문인 class 구문 내에서 사용한다. <strong>생성자 함수가 아니다.</strong><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Polygon</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(length) &#123;</span><br><span class="line">    <span class="comment">// Here, it calls the parent class' constructor with lengths</span></span><br><span class="line">    <span class="comment">// provided for the Polygon's width and height</span></span><br><span class="line">    <span class="keyword">super</span>(length, length);</span><br><span class="line">    <span class="comment">// Note: In derived classes, super() must be called before you</span></span><br><span class="line">    <span class="comment">// can use 'this'. Leaving this out will cause a reference error.</span></span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'Square'</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  get area() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.height * <span class="keyword">this</span>.width;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  set area(value) &#123;</span><br><span class="line">    <span class="keyword">this</span>.area = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-생성자-함수-constructor-function/" data-id="cjf0fwp9c001lq85y8gomne0n" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-생성자-함수-constructor-function/" data-id="cjf0fwp9c001lq85y8gomne0n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/constructor/">constructor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
@@ -122,7 +122,7 @@
 <nav id="article-nav">
   
     <a href="/git/Git-주요-명령어-정리/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           Git: 주요 명령어 정리
@@ -132,7 +132,7 @@
   
   
     <a href="/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">JavaScript: Window.postMessage 교차 출처간 메시지 통신</div>
     </a>
   
@@ -147,7 +147,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildtool/">buildtool</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
     </div>
@@ -176,7 +176,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -186,7 +186,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
