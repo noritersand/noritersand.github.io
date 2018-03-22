@@ -664,16 +664,29 @@ git revert HEAD  # 직전 커밋의 revert 커밋 생성
 위의 경우 헤드가 가리키는 커밋을 기준으로 1회 전의 커밋에서 발생한 변경사항을 되돌리는 커밋을 생성한다.
 가령 직전의 커밋이 'fix-a-lot.md'라는 파일을 생성한 커밋이라면 `git revert HEAD`는 'fix-a-lot.md'를 삭제하는 커밋을 만드는 것이다.
 ```bash
-git revert HEAD~1  # 1회 전 커밋의 revert 커밋 생성
-git revert HEAD~3  # 3회 전 커밋의 revert 커밋 생성
-git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  # 3bd505 커밋의 revert 커밋 생성
+git revert HEAD~1  # 1회 전 커밋의 리버트 커밋 생성
+git revert HEAD~3  # 3회 전 커밋의 리버트 커밋 생성
+git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  # 3bd505 커밋의 리버트 커밋 생성
 git revert HEAD~4..HEAD  # 직전 커밋부터 3회전 커밋까지의 변경사항을 되돌린 커밋 생성
 ```
 
 **options**:
-- `--continue` 충돌이 발생했을 때 사용 가능한 옵션. 충돌을 해결하고 이 옵션을 사용하면 처음 지정한 커밋으로 revert를 진행한다.
-- `--abort` 충돌이 발생했을 때 사용 가능한 옵션. revert를 중단하고 원래 상태로 돌아간다.
+- `--continue` 충돌이 발생했을 때 사용 가능한 옵션. 충돌을 해결하고 이 옵션을 사용하면 처음 지정한 커밋으로 리버트를 진행한다.
+- `--abort` 충돌이 발생했을 때 사용 가능한 옵션. 리버트를 중단하고 원래 상태로 돌아간다.
 - `-n` 지정한 커밋의 변경사항을 되돌리되 커밋은 하지 않고 파일만 되돌린다.
+- `-m` 머지 커밋을 리버트 할 때 반드시 지정해야 하는 옵션.
+
+#### 머지 커밋을 되돌리기
+```bash
+commit fc30cfe9255837f6810eb75adacaf93696828afe (HEAD -> revert-test)
+Merge: 7be20ca ca433d3
+# 7be20ca에 ca433d3를 머지하여 만들어진 fc30cf 커밋을 조회한 로그
+```
+머지 커밋을 되돌릴 때는 깃이 어느 부모 커밋을 되돌려야하는지 알 수 있도록 `-m` 옵션과 함께 부모 커밋을 가리키는 숫자를 입력해줘야 한다:
+```bash
+git revert fc30cf -m 1
+```
+여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 이 경우 7be20ca로 돌아가는 커밋이라서 ca433d3의 변경사항이 되돌려진다.
 
 ## rm
 
