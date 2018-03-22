@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
 <meta property="og:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-22T01:57:06.743Z">
+<meta property="og:updated_time" content="2018-03-22T04:30:48.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 주요 명령어 정리">
 <meta name="twitter:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
@@ -54,9 +54,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Buscar"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -261,17 +261,15 @@
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git reset --soft HEAD~2  <span class="comment"># 헤드만 2회 이전 커밋으로 이동</span></span><br><span class="line">git reset --hard 4990ef  <span class="comment"># 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 동일하게 변경</span></span><br></pre></td></tr></table></figure>
 <h2 id="revert"><a href="#revert" class="headerlink" title="revert"></a>revert</h2><h4 id="커밋-되돌리기-2"><a href="#커밋-되돌리기-2" class="headerlink" title="커밋 되돌리기 #2"></a>커밋 되돌리기 #2</h4><p>1회 전의 커밋으로 되돌리되 단순히 헤드를 이동하고 끝나는게 아니라, 되돌려지는 내용을 기록한 새로운 커밋을 생성한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert HEAD  <span class="comment"># 직전 커밋의 revert 커밋 생성</span></span><br></pre></td></tr></table></figure></p>
-<p>위의 경우 헤드가 가리키는 커밋을 기준으로 1회 전의 커밋에서 발생한 변경사항을 되돌리는 커밋을 생성한다.<br>가령 직전의 커밋이 ‘fix-a-lot.md’라는 파일을 생성한 커밋이라면 <code>git revert HEAD</code>는 ‘fix-a-lot.md’를 삭제하는 커밋을 만드는 것이다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert HEAD~1  <span class="comment"># 1회 전 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert HEAD~3  <span class="comment"># 3회 전 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  <span class="comment"># 3bd505 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert HEAD~4..HEAD  <span class="comment"># 직전 커밋부터 3회전 커밋까지의 변경사항을 되돌린 커밋 생성</span></span><br></pre></td></tr></table></figure></p>
+<p>위의 경우 헤드 기준으로 가장 마지막 커밋의 변경사항을 되돌리는 커밋을 생성한다.<br>가령 직전의 커밋이 ‘fix-a-lot.md’라는 파일을 생성한 커밋이라면 <code>git revert HEAD</code>는 ‘fix-a-lot.md’를 삭제하는 커밋을 만드는 것이다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert HEAD~1  <span class="comment"># 1회 전 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert HEAD~3  <span class="comment"># 3회 전 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  <span class="comment"># 3bd505 커밋의 리버트 커밋 생성</span></span><br><span class="line">git revert HEAD~4..HEAD  <span class="comment"># 직전 커밋부터 3회전 커밋까지의 변경사항을 되돌린 커밋 생성</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>options</strong>:</p>
 <ul>
-<li><code>--continue</code> 충돌이 발생했을 때 사용 가능한 옵션. 충돌을 해결하고 이 옵션을 사용하면 처음 지정한 커밋으로 리버트를 진행한다.</li>
-<li><code>--abort</code> 충돌이 발생했을 때 사용 가능한 옵션. 리버트를 중단하고 원래 상태로 돌아간다.</li>
-<li><code>-n</code> 지정한 커밋의 변경사항을 되돌리되 커밋은 하지 않고 파일만 되돌린다.</li>
-<li><code>-m</code> 머지 커밋을 리버트 할 때 반드시 지정해야 하는 옵션.</li>
+<li><code>-n</code> | <code>--no-commit</code> 워킹 트리와 인덱스의 상태만 되돌리고 커밋은 생성하지 않는다.</li>
+<li><code>-m</code> | <code>--mainline</code> 머지 커밋을 리버트 할 때 사용하는 옵션.</li>
 </ul>
-<h4 id="머지-커밋을-되돌리기"><a href="#머지-커밋을-되돌리기" class="headerlink" title="머지 커밋을 되돌리기"></a>머지 커밋을 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">commit fc30cfe9255837f6810eb75adacaf93696828afe (HEAD -&gt; revert-test)</span><br><span class="line">Merge: 7be20ca ca433d3</span><br><span class="line"><span class="comment"># 7be20ca에 ca433d3를 머지하여 만들어진 fc30cf 커밋을 조회한 로그</span></span><br></pre></td></tr></table></figure>
-<p>머지 커밋을 되돌릴 때는 깃이 어느 부모 커밋을 되돌려야하는지 알 수 있도록 <code>-m</code> 옵션과 함께 부모 커밋을 가리키는 숫자를 입력해줘야 한다:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert fc30cf -m 1</span><br></pre></td></tr></table></figure></p>
-<p>여기서 1이란 <code>git log</code>에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 이 경우 7be20ca로 돌아가는 커밋이라서 ca433d3의 변경사항이 되돌려진다.</p>
+<h4 id="머지-커밋을-되돌리기"><a href="#머지-커밋을-되돌리기" class="headerlink" title="머지 커밋을 되돌리기"></a>머지 커밋을 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">commit fc30cfe9255837f6810eb75adacaf93696828afe (HEAD -&gt; revert-test)</span><br><span class="line">Merge: 7be20ca ca433d3</span><br><span class="line"><span class="comment"># 7be20ca에 ca433d3을 머지하여 만들어진 커밋 fc30cf를 조회한 로그</span></span><br></pre></td></tr></table></figure>
+<p>머지 커밋을 되돌릴 때는 깃이 어느 부모가 메인라인이 되야하는지 알 수 있도록 <code>-m</code> 옵션과 함께 부모 번호(1부터 시작하는 부모 커밋을 가리키는 숫자)를 입력해줘야 한다:<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git revert fc30cf -m 1</span><br></pre></td></tr></table></figure></p>
+<p>여기서 1이란 <code>git log</code>에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 이 경우 7be20ca가 메인라인이 되며 ca433d3의 변경사항이 되돌려진다.</p>
 <h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2><h4 id="파일-폴더-삭제"><a href="#파일-폴더-삭제" class="headerlink" title="파일/폴더 삭제"></a>파일/폴더 삭제</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm readme.txt</span><br></pre></td></tr></table></figure>
 <p>rm 명령어는 깃이 추적중인 파일 혹은 폴더에만 사용할 수 있다.</p>
 <h4 id="깃의-추적을-중단시키기"><a href="#깃의-추적을-중단시키기" class="headerlink" title="깃의 추적을 중단시키기"></a>깃의 추적을 중단시키기</h4><p>실제 파일은 남기고 깃의 관리대상에서만 제외한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git rm --cached readme.txt</span><br></pre></td></tr></table></figure></p>
@@ -307,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-주요-명령어-정리/" data-id="cjf0fwp8v000vq85yd2dtpb39" class="article-share-link">Compartir</a>
+      <a data-url="http://noritersand.github.io/git/Git-주요-명령어-정리/" data-id="cjf0fwp8v000vq85yd2dtpb39" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -320,7 +318,7 @@
   
   
     <a href="/javascript/JavaScript-생성자-함수-constructor-function/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Viejo</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">JavaScript: 생성자 함수 constructor function</div>
     </a>
   
@@ -335,7 +333,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorías</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildtool/">buildtool</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
     </div>
@@ -355,7 +353,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nube de Tags</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Window/" style="font-size: 10px;">Window</a> <a href="/tags/XMLHttpRequest/" style="font-size: 10px;">XMLHttpRequest</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/buildtool/" style="font-size: 10px;">buildtool</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 12px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/eclipse/" style="font-size: 10px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 14px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/function/" style="font-size: 14px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 16px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/shell/" style="font-size: 12px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict-mode</a> <a href="/tags/todo/" style="font-size: 14px;">todo</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/windows/" style="font-size: 18px;">windows</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a>
     </div>
@@ -364,7 +362,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archivos</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -374,7 +372,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Posts recientes</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
@@ -411,7 +409,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 놀이터흙이제맛<br>
-      Construido por <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
