@@ -766,7 +766,7 @@ git status
 
 ## svn
 
-####SVN 저장소 복제
+#### SVN 저장소 복제
 ```
 git svn clone SVN저장소주소
 ```
