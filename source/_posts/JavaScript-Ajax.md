@@ -79,9 +79,9 @@ var xhr = new XMLHttpRequest();
 ```
 XMLHttpRequest.open( method, url [ , async ] )
 ```
-- **method** HTTP 메서드 타입 (get/post)
-- **url** 서버 경로
-- **async** 비동기 여부. (true/false)
+- **method**: HTTP 메서드 타입 (get/post)
+- **url**: 서버 경로
+- **async**: 비동기 여부. (true/false)
 
 request의 유형을 지정한다. send()로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. method와 url은 필수지만 async는 기본값이 true로 생략할 수 있는 항목이다. async를 false로 지정할 경우 send() 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
 ```js
@@ -94,8 +94,8 @@ xhr.open('GET', 'test2.html');
 ```
 XMLHttpRequest.setRequestHeader( header, value )
 ```
-- **header** 헤더의 이름
-- **value** 헤더의 값
+- **header**: 헤더의 이름
+- **value**: 헤더의 값
 
 HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 나중에 호출되어야 한다.
 
@@ -103,7 +103,7 @@ HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 �
 ```
 XMLHttpRequest.send( [ string ] )
 ```
-- **string** 폼 데이터로 전송할 문자열
+- **string**: 폼 데이터로 전송할 문자열
 
 서버로 request 송신. open()에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 setRequestHeader()로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.
 ```js
@@ -134,7 +134,7 @@ xhr.getAllResponseHeaders();
 ```
 XMLHttpRequest.getResponseHeader( header )
 ```
-- **header** 헤더의 이름
+- **header**: 헤더의 이름
 
 response 헤더 중 특정한 값만 리턴한다.
 ```js
@@ -159,11 +159,11 @@ xhr.getResponseHeader('Content-Type')
 
 #### XMLHttpRequest.readyState
 XMLHttpRequest의 현재 상태를 의미한다.
-- `0` request not initialized.
-- `1` server connection established
-- `2` request received
-- `3` processing request
-- `4` request finished and response is ready
+- `0`: request not initialized.
+- `1`: server connection established
+- `2`: request received
+- `3`: processing request
+- `4`: request finished and response is ready
 
 ## Attach callback function
 통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 XMLHttpRequest의 onreadystatechange() 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 EventTarget.addEventListener() 이용하는 방법이 있다.
@@ -185,8 +185,8 @@ onreadystatechange()는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저�
 ```
 EventTarget.addEventListener( eventType, callback )
 ```
-- **eventType** callback이 실행될 이벤트의 유형 (ex: 'load')
-- **callback** eventType에 지정한 이벤트가 발생했을 때 실행할 함수
+- **eventType**: callback이 실행될 이벤트의 유형 (ex: 'load')
+- **callback**: eventType에 지정한 이벤트가 발생했을 때 실행할 함수
 
 addEventListener()는 IE8에서 지원되지 않으니 주의할 것. ~~악의 축~~
 ```js
@@ -229,10 +229,10 @@ xhr.open('GET', 'test2.html');
 xhr.send();
 ```
 XMLHttpRequestEventTarget은 XMLHttpRequest의 슈퍼클래스다. 상속받는 메서드는 다음과 같다:
-- `onabort` abort 이벤트가 발생하면 호출된다.
-- `onerror` 서버의 응답이 200이 아닐 때 호출된다.
-- `onloadstart` XHR 요청을 시작할 때 호출된다.
-- `onloadend` XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.
-- `onprogress` onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.
-- `onload` XHR 요청이 '성공적으로' 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.
-- `ontimeout` XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.
+- `onabort`: abort 이벤트가 발생하면 호출된다.
+- `onerror`: 서버의 응답이 200이 아닐 때 호출된다.
+- `onloadstart`: XHR 요청을 시작할 때 호출된다.
+- `onloadend`: XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.
+- `onprogress`: onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.
+- `onload`: XHR 요청이 '성공적으로' 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.
+- `ontimeout`: XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.

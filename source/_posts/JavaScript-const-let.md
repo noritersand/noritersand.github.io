@@ -39,7 +39,7 @@ MY_OBJECT = {"OTHER_KEY": "value"}; // SyntaxError: redeclaration of const MY_OB
 MY_OBJECT.key = "otherValue";
 console.debug(MY_OBJECT); // Object { key: "otherValue" }
 ```
-객체를 완전히 보호하고 싶다면 [Object.freeze()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
+객체를 완전히 보호하고 싶다면 [`Object.freeze()`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
 
 ## let
 let은 자바스크립트 1.7(ES2015)부터 신규 추가된 키워드다. const와 마찬가지로 var를 대체할 수 있다.
@@ -61,7 +61,7 @@ function fn() {
 }
 fn();
 ```
-유효범위가 함수 단위인 var를 사용한 변수 w는 블록 밖에서도 참조 가능한 반면, let을 사용하여 선언된 변수는 해당 지역을 감싼 블록과 그 하위의 중첩 블록에서만 유효한 블록 단위의 유효범위를 갖기 때문에 블록을 벗어난 지역에서는 참조 에러가 발생한다.
+유효범위가 함수 단위인 var를 사용한 변수 `w`는 블록 밖에서도 참조 가능한 반면, let을 사용하여 선언된 변수는 해당 지역을 감싼 블록과 그 하위의 중첩 블록에서만 유효한 블록 단위의 유효범위를 갖기 때문에 블록을 벗어난 지역에서는 참조 에러가 발생한다.
 
 이를 활용하면 제어문의 표현식 내에서 생성된 변수의 유효범위를 해당 제어문 내로 제한할 수 있다. 예를 들어:
 ```js
@@ -73,6 +73,6 @@ console.debug(arr[ele1]); // 'c'
 for (let ele2 in arr) {}
 console.debug(arr[ele2]); // ReferenceError: ele2 is not defined
 ```
-let으로 선언된 ele2는 for문 밖에서 참조할 수 없다.
+let으로 선언된 `ele2`는 for문 밖에서 참조할 수 없다.
 
 IE는 11과 edge에서만 사용 가능 https://msdn.microsoft.com/en-us/library/s4esdbwz(v=vs.94).aspx

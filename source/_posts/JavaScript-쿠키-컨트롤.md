@@ -21,13 +21,13 @@ document.cookie = "cookiename=value; path=/; expires=0; domain=.tistory.com"
 document.cookie = "cookiename=value; secure"  // HTTPS 전송만 가능
 ```
 #### options
-- expires: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
-- domain: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
-- path: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
-- secure: SSL 통신에서만 사용가능한 쿠키가 생성된다. HTTP 문서에서는 접근할 수 없다. 이 옵션을 활성화하지 않는한 HTTP/HTTPS 어느쪽에서 생성한 쿠키든 서로 공유한다.
+- **expires**: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
+- **domain**: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
+- **path**: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
+- **secure**: SSL 통신에서만 사용가능한 쿠키가 생성된다. HTTP 문서에서는 접근할 수 없다. 이 옵션을 활성화하지 않는한 HTTP/HTTPS 어느쪽에서 생성한 쿠키든 서로 공유한다.
 
 ## 주의사항
-쿠키의 값에는 쉼표(,)와 세미콜론(;)을 포함하면 안된다.
+쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다.
 http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value
 
 ## examples

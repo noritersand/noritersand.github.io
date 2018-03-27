@@ -19,8 +19,8 @@ tags:
 eval( jsString )
 uneval( object )
 ```
-- jsString: 코드로 읽어들일 문자열
-- object: 문자열로 변환할 객체
+- **jsString**: 코드로 읽어들일 문자열
+- **object**: 문자열로 변환할 객체
 
 문자열 리터럴을 자바스크립트 코드로 읽고 실행하거나 반대로 코드나 객체를 문자열로 변환한다.
 
@@ -41,7 +41,7 @@ uneval()은 비표준 함수로 chrome에서 지원되지 않는다.
 encodeURI( jsString )
 decodeURI( jsString )
 ```
-- jsString: 변환할 문자열
+- **jsString**: 변환할 문자열
 
 문자열을 HTTP 전송에 적합한 코드로 암호화하거나 복호화한다.
 ```js
@@ -55,7 +55,7 @@ decodeURI('%EA%B0%80');  // "가"
 encodeURIComponent( jsString )
 decodeURIComponent( jsString )
 ```
-- jsString: 변환할 문자열
+- **jsString**: 변환할 문자열
 
 encodeURI()는 jsString을 쿼리스트링의 전체라고 보며 "?", "=", "&"를 변환하지 않는다.
 반면 encodeURIComponent()는 jsString을 쿼리스트링의 일부분이라 보며 예외 없이 모든 문자를 변환한다.
@@ -69,13 +69,13 @@ encodeURIComponent('?=&');  // "%3F%3D%26"
 ```
 isFinite( testValue )
 ```
-- testValue: 테스트할 수치
+- **testValue**: 테스트할 수치
 
 수치가 무효 수치인가, 유효한 수치인가를 판명한다. 유효수치이면 true 값을 반환하고(return), 무효수치이면 false 값을 반환한다. isNaN() 과는 반대 결과를 반환한다.
 ```
 isNaN( testValue )
 ```
-- testValue: 테스트할 수치
+- **testValue**: 테스트할 수치
 
 isNaN()은 isFinite()의 반대격으로 무효수치이면 true 값을 반환하고(return), 유효수치이면 false 값을 반환한다. (문자열 앞의 공백은 검사할 수 없다.)
 ```js
@@ -92,7 +92,7 @@ isNaN("Hello");  // true
 ```
 parseFloat( object )
 ```
-- object: 변환할 수치
+- **object**: 변환할 수치
 
 값을 부동 소수점 실수로 변환 한다.
 ```js
@@ -104,8 +104,8 @@ parseFloat("5.4321e6") // 5432100
 ```
 parseInt( object [, radix ] )
 ```
-- object: 변환할 수치.
-- radix: 기수 (진수구분)
+- **object**: 변환할 수치.
+- **radix**: 기수 (진수 구분)
 
 값을 정수로 변환한다. 숫자로 변환 불가능한 값을 입력받으면 NaN을 리턴한다.
 ```js

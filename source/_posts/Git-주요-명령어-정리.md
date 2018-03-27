@@ -65,7 +65,7 @@ git branch --no-merged
 ```
 
 #### 현재 브랜치를 다른 브랜치에 덮어쓰기
-새 브랜치를 생성할 때 -f 옵션을 사용하면 이미 존재하는 브랜치를 무시하고 덮어쓴다.
+새 브랜치를 생성할 때 `-f` 옵션을 사용하면 이미 존재하는 브랜치를 무시하고 덮어쓴다.
 ```
 git branch -f 대상브랜치 [커밋]
 ```
@@ -82,7 +82,7 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 ```
 
 ## blame
-바보같은 커밋을 비난하기 위한 명령어 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
+~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
 
 #### 파일 커밋 정보 줄 단위로 보기
 ```
@@ -142,7 +142,7 @@ git checkout HEAD .  # 현재 경로의 모든 파일 되돌리기
 ```
 
 #### fetch 시점으로 헤드 이동
-fetch로 리모트 저장소의 데이터를 받아왔을때 "FETCH_HEAD"라는 포인터가 생성된다. 해당 포인터의 스냅샷을 확인 후 원하는 브랜치로 이동해 머지한다.
+fetch로 리모트 저장소의 데이터를 받아왔을때 'FETCH_HEAD'라는 포인터가 생성된다. 해당 포인터의 스냅샷을 확인 후 원하는 브랜치로 이동해 머지한다.
 ```
 git checkout FETCH_HEAD
 git checkout 리모트저장소/리모트브랜치
@@ -195,15 +195,15 @@ git cherry-pick -n 커밋명
 git clean -f
 git clean -f -d -x  # ignore 설정된 파일을 포함하며 추적중이지 않은 파일과 폴더를 모두 삭제한다.
 ```
-clean.requireForce 설정이 true가 아니면 clean 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 그리고 현재 폴더를 기준으로 하위를 재귀탐색하기 때문에 recursive 옵션은 따로 없다.
+`clean.requireForce` 설정이 true가 아니면 clean 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 기본적으로 현재 폴더를 기준으로 하위를 재귀탐색하기 때문에 recursive 옵션은 따로 없다.
 
 **options**:
-- `-f` | `--force` 삭제 기본 옵션. 설정에 따라 생략할 수도 있다.
-- `-i` | `--interactive` 대화 모드로 삭제
-- `-n` | `--dry-run` 지워질 파일 목록 미리보기
-- `-d` 폴더도 삭제한다.
-- `-x` ignore 룰이 적용된 파일**도** 삭제한다.
-- `-X` ignore 룰이 적용된 파일**만** 삭제한다.
+- `-f` | `--force`: 삭제 기본 옵션. 설정에 따라 생략할 수도 있다.
+- `-i` | `--interactive`: 대화 모드로 삭제
+- `-n` | `--dry-run`: 지워질 파일 목록 미리보기
+- `-d`: 폴더도 삭제한다.
+- `-x`: ignore 룰이 적용된 파일**도** 삭제한다.
+- `-X`: ignore 룰이 적용된 파일**만** 삭제한다.
 
 ## clone
 
@@ -227,7 +227,7 @@ git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제�
 ```
 
 ## commit
-변경내용을 확정함. staged 상태인 파일을 깃 디렉토리에 저장한다. 커밋 메시지를 입력받기 위해, 지정되어있는 에디터가 자동으로 실행되며 메시지를 작성하고 에디터를 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 주석(#으로 시작하는 라인)으로만 작성되어 있으면 커밋은 취소된다.
+staged 상태인 파일을 깃 디렉토리에 저장한다. 커밋 메시지를 입력받기 위해, 지정되어있는 에디터가 자동으로 실행되며 메시지를 작성하고 에디터를 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 주석(#으로 시작하는 라인)으로만 작성되어 있으면 커밋은 취소된다.
 ```bash
 git commit
 ```
@@ -239,7 +239,7 @@ git commit -m "hello this is test commit"
 ```
 
 #### Signed-off-by 추가
-커밋 메시지에 Signed-off-by를 추가한다. `-s` 혹은 `--signoff` 옵션을 사용하면 커밋 메시지에 user.name과 user.email이 자동으로 추가된다.
+커밋 메시지에 Signed-off-by를 추가한다. `-s` 혹은 `--signoff` 옵션을 사용하면 커밋 메시지에 `user.name`과 `user.email`이 자동으로 추가된다.
 ```bash
 git commit -s -m 'commit message test'
 [master 1204311] commit message test
@@ -385,16 +385,16 @@ git log
 ```
 
 **options**:
-- `-p` 각 커밋에 적용된 패치(patch, 반영된 변경사항)를 보여준다.
-- `--stat` 각 커밋에서 수정된 파일의 통계정보를 보여준다.
-- `--shortstat` --stat 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
-- `--name-only` 커밋 정보중에서 수정된 파일의 목록만 보여준다.
-- `--name-status` 수정된 파일의 목록을 보여줄 뿐만 아니라 파일을 추가한 것인지, 수정한 것인지, 삭제한 것인지도 보여준다.
-- `--abbrev-commit` 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
-- `--relative-date` 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
-- `--graph` 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
-- `--pretty` 지정한 형식으로 보여준다. 이 옵션에는 oneline, short, full, fuller, format이 있다. format은 원하는 형식으로 출력하고자 할 때 사용한다.
-- `--walk-reflogs` 헤드가 이동한 순서대로 로그 출력
+- `-p`: 각 커밋에 적용된 패치(patch, 반영된 변경사항)를 보여준다.
+- `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
+- `--shortstat`: --stat 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
+- `--name-only`: 커밋 정보중에서 수정된 파일의 목록만 보여준다.
+- `--name-status`: 수정된 파일의 목록을 보여줄 뿐만 아니라 파일을 추가한 것인지, 수정한 것인지, 삭제한 것인지도 보여준다.
+- `--abbrev-commit`: 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
+- `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
+- `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
+- `--pretty`: 지정한 형식으로 보여준다. 이 옵션에는 oneline, short, full, fuller, format이 있다. format은 원하는 형식으로 출력하고자 할 때 사용한다.
+- `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
 
 ```bash
 git log -p -2  # 2개의 항목과 패치내용만 보인다.
@@ -405,21 +405,21 @@ git log --oneline --decorate --graph --all  # 현재 브랜치의 모든 커밋 
 ```
 
 **pretty=format의 placeholder**:
-- `%H` Commit hash
-- `%h` Abbreviated commit hash
-- `%T` Tree hash
-- `%t` Abbreviated tree hash
-- `%P` Parent hashes
-- `%p` Abbreviated parent hashes
-- `%an` Author name
-- `%ae` Author e-mail
-- `%ad` Author date (format respects the --date= option)
-- `%ar` Author date, relative
-- `%cn` Committer name
-- `%ce` Committer email
-- `%cd` Committer date
-- `%cr` Committer date, relative
-- `%s` Subject
+- `%H`: Commit hash
+- `%h`: Abbreviated commit hash
+- `%T`: Tree hash
+- `%t`: Abbreviated tree hash
+- `%P`: Parent hashes
+- `%p`: Abbreviated parent hashes
+- `%an`: Author name
+- `%ae`: Author e-mail
+- `%ad`: Author date (format respects the --date= option)
+- `%ar`: Author date, relative
+- `%cn`: Committer name
+- `%ce`: Committer email
+- `%cd`: Committer date
+- `%cr`: Committer date, relative
+- `%s`: Subject
 
 ```bash
 git log --pretty=format:"%h %s" --graph
@@ -427,11 +427,11 @@ git log --pretty=format:"%h %s" --graph
 더 많은 내용은 [공식 도움말](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0) 참고
 
 **조회 범위 제한 옵션**:
-- `-(n)` 최근 n 개의 커밋만 조회한다.
-- `--since` | `--after` 명시한 날짜 이후의 커밋만 검색한다.
-- `--until` | `--before` 명시한 날짜 이전의 커밋만 조회한다.
-- `--author` 입력한 저자의 커밋만 보여준다.
-- `--committer` 입력한 커미터의 커밋만 보여준다.
+- `-(n)`: 최근 n 개의 커밋만 조회한다.
+- `--since` | `--after`: 명시한 날짜 이후의 커밋만 검색한다.
+- `--until` | `--before`: 명시한 날짜 이전의 커밋만 조회한다.
+- `--author`: 입력한 저자의 커밋만 보여준다.
+- `--committer`: 입력한 커미터의 커밋만 보여준다.
 
 ```bash
 git log --since=2.weeks
@@ -642,12 +642,12 @@ git reset HEAD [파일]
 ```
 
 #### 커밋 되돌리기 #1
-체크섬이나 'HEAD~숫자'를 사용해서 헤드가 지난 커밋을 가리키게 할 수 있다.
+체크섬이나 `HEAD~숫자`를 사용해서 헤드가 지난 커밋을 가리키게 할 수 있다.
 
 **options**:
-- `--soft` 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
-- `--mixed` 명시하지 않을때의 기본값. 스테이징 에어리어를 헤드와 동일하게 변경한다. 워킹 트리는 유지
-- `--hard` 헤드와 스테이징 에어리어, 워킹 트리를 모두 동일하게 변경한다.
+- `--soft`: 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
+- `--mixed`: 명시하지 않을때의 기본값. 스테이징 에어리어를 헤드와 동일하게 변경한다. 워킹 트리는 유지
+- `--hard`: 헤드와 스테이징 에어리어, 워킹 트리를 모두 동일하게 변경한다.
 
 ```bash
 git reset --soft HEAD~2  # 헤드만 2회 이전 커밋으로 이동
@@ -671,8 +671,8 @@ git revert HEAD~4..HEAD  # 직전 커밋부터 3회전 커밋까지의 변경사
 ```
 
 **options**:
-- `-n` | `--no-commit` 워킹 트리와 인덱스의 상태만 되돌리고 커밋은 생성하지 않는다.
-- `-m` | `--mainline` 머지 커밋을 리버트 할 때 사용하는 옵션.
+- `-n` | `--no-commit`: 워킹 트리와 인덱스의 상태만 되돌리고 커밋은 생성하지 않는다.
+- `-m` | `--mainline`: 머지 커밋을 리버트 할 때 사용하는 옵션.
 
 #### 머지 커밋을 되돌리기
 ```bash

@@ -272,7 +272,8 @@ try는 '예외가 발생할지도 모르는' 코드 블록을 정의한다. 이�
 ```
 try { 구문 } catch (error) { 구문 } finally { 구문 }
 ```
-- error: Error.prototype의 인스턴스. name(에러 타입), message(에러 메시지), lineNumber(예외 발생 지점의 라인 번호), fileName(파일명)을 프로퍼티로 갖는다.
+- **error**: Error.prototype의 인스턴스. name(에러 타입), message(에러 메시지), lineNumber(예외 발생 지점의 라인 번호), fileName(파일명)을 프로퍼티로 갖는다.
+
 ```js
 var obj = {};
 try {

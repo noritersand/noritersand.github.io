@@ -18,7 +18,7 @@ tags:
 ```html
 <a href="javascript:getSome()"> 눌러요 </a>
 ```
-'javascript: pseudo protocol' 혹은 그냥 'javascript protocol', 'javascript prefix'라고 하는 이 방식은 사실 a 태그의 매우 잘못된 사용법이다. 대신 `<button>` 태그와 onclick의 조합이 권장되는데, 불가피하게 `<a>` 태그를 꼭 사용해야 한다면 최소한 아래 내용은 숙지하는게 좋다.
+'javascript: pseudo protocol' 혹은 그냥 'javascript protocol', 'javascript prefix'라고 하는 이 방식은 사실 `<a>` 태그의 매우 잘못된 사용법이다. 대신 `<button>` 태그와 onclick 속성의 조합이 권장되는데, 불가피하게 `<a>` 태그를 꼭 사용해야 한다면 최소한 아래 내용은 숙지하는게 좋다.
 ```html
 <!DOCTYPE html>
 <html>
@@ -35,14 +35,14 @@ tags:
 </body>
 </html>
 ```
-위 코드를 브라우저로 열어서 a 태그를 클릭하면 무슨 일이 일어날까?
+위 코드를 브라우저로 열어서 `<a>` 태그를 클릭하면 무슨 일이 일어날까?
 
 ![첨부이미지1](/images/JavaScript-pseudo-protocol-1.png)
 
 파이어폭스와 익스플로러는 앵커에 의해 스크립트가 실행될 때, 해당 스크립트가 리턴하는 undefined 이외의 값을 URL로 간주하는 경향이 있다. 위 스샷은 이 때문에 발생하는 현상이다. 에러라면 에러라고 할 수 있는 현상인데, 이를 방지하기 위해선 아래 방법 중 하나를 따른다. (크롬과 오페라는 해당 없음. 사파리는 패스)
 
-#### 함수가 undefined를 리턴
-자바스크립트의 함수는 브레이스( } ) 혹은 return을 만났을 때 undefined를 리턴한다. 즉, 아무것도 리턴하지 않게 하는 방법이다.
+#### 함수가 undefined를 반환
+자바스크립트의 함수는 브레이스`}`  혹은 return을 만났을 때 undefined를 반환한다. 즉, 반환값을 명시하지 않는 방법이다.
 ```html
 <script>
   function fn() {
@@ -54,7 +54,7 @@ tags:
 ```
 
 #### onclick="return false"
-return 값을 정의할 수 없는 함수를 호출할 때 사용한다. (가령 거의 대부분 객체를 리턴하는 jQuery의 메서드들) 이러한 경우에 onclick 이벤트 핸들러가 false를 리턴하게 하여 브라우저의 기본동작을 막아버리는 방법이다. (이벤트 핸들러가 false를 리턴하면 태그의 기본동작과 이벤트 전파(버블링, 캡처링)를 차단하는 효과가 있다.)
+반환값을 정의할 수 없는 함수를 호출할 때 사용한다. (가령 거의 대부분 객체를 리턴하는 jQuery의 메서드들) 이러한 경우에 onclick 이벤트 핸들러가 false를 리턴하게 하여 브라우저의 기본동작을 막아버리는 방법이다. (이벤트 핸들러가 false를 리턴하면 태그의 기본동작과 이벤트 전파(버블링, 캡처링)를 차단하는 효과가 있다.)
 ```html
 <script>
   function fn() {
