@@ -476,20 +476,20 @@
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>i am waldo<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h2 id="XMLHttpRequest의-프로퍼티"><a href="#XMLHttpRequest의-프로퍼티" class="headerlink" title="XMLHttpRequest의 프로퍼티"></a>XMLHttpRequest의 프로퍼티</h2><h4 id="XMLHttpRequest-open"><a href="#XMLHttpRequest-open" class="headerlink" title="XMLHttpRequest.open()"></a>XMLHttpRequest.open()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.open( method, url [ , async ] )</span><br></pre></td></tr></table></figure>
 <ul>
-<li>method: HTTP 메서드 타입 (get/post)</li>
-<li>url: 서버 경로</li>
-<li>async: 비동기 여부. (true/false)</li>
+<li><code>method</code> HTTP 메서드 타입 (get/post)</li>
+<li><code>url</code> 서버 경로</li>
+<li><code>async</code> 비동기 여부. (true/false)</li>
 </ul>
 <p>request의 유형을 지정한다. send()로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. method와 url은 필수지만 async는 기본값이 true로 생략할 수 있는 항목이다. async를 false로 지정할 경우 send() 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'test2.html'</span>);</span><br><span class="line"><span class="comment">// GET 방식으로 요청할 URL 설정</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="XMLHttpRequest-setRequestHeader"><a href="#XMLHttpRequest-setRequestHeader" class="headerlink" title="XMLHttpRequest.setRequestHeader()"></a>XMLHttpRequest.setRequestHeader()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.setRequestHeader( header, value )</span><br></pre></td></tr></table></figure>
 <ul>
-<li>header: 헤더의 이름</li>
-<li>value: 헤더의 값</li>
+<li><code>header</code> 헤더의 이름</li>
+<li><code>value</code> 헤더의 값</li>
 </ul>
 <p>HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 나중에 호출되어야 한다.</p>
 <h4 id="XMLHttpRequest-send"><a href="#XMLHttpRequest-send" class="headerlink" title="XMLHttpRequest.send()"></a>XMLHttpRequest.send()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.send( [ string ] )</span><br></pre></td></tr></table></figure>
 <ul>
-<li>string: 폼 데이터로 전송할 문자열</li>
+<li><code>string</code> 폼 데이터로 전송할 문자열</li>
 </ul>
 <p>서버로 request 송신. open()에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 setRequestHeader()로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'test4.html'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">xhr.send(<span class="string">'first=111&amp;second=222'</span>);</span><br></pre></td></tr></table></figure></p>
 <h4 id="XMLHttpRequest-abort"><a href="#XMLHttpRequest-abort" class="headerlink" title="XMLHttpRequest.abort()"></a>XMLHttpRequest.abort()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xhr.abort();</span><br></pre></td></tr></table></figure>
@@ -497,7 +497,7 @@
 <h4 id="XMLHttpRequest-getAllResponseHeaders"><a href="#XMLHttpRequest-getAllResponseHeaders" class="headerlink" title="XMLHttpRequest.getAllResponseHeaders()"></a>XMLHttpRequest.getAllResponseHeaders()</h4><p>response 헤더 정보를 출력한다. send()를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xhr.getAllResponseHeaders();</span><br><span class="line"><span class="comment">// "Server: Apache-Coyote/1.1</span></span><br><span class="line"><span class="comment">// Content-Type: text/html;charset=UTF-8</span></span><br><span class="line"><span class="comment">// Content-Length: 22</span></span><br><span class="line"><span class="comment">// Date: Wed, 27 Jan 2016 15:19:02 GMT</span></span><br><span class="line"><span class="comment">// "</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="XMLHttpRequest-getResponseHeader"><a href="#XMLHttpRequest-getResponseHeader" class="headerlink" title="XMLHttpRequest.getResponseHeader()"></a>XMLHttpRequest.getResponseHeader()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.getResponseHeader( header )</span><br></pre></td></tr></table></figure>
 <ul>
-<li>header: 헤더의 이름</li>
+<li><code>header</code> 헤더의 이름</li>
 </ul>
 <p>response 헤더 중 특정한 값만 리턴한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xhr.getResponseHeader(<span class="string">'Content-Type'</span>)</span><br><span class="line"><span class="comment">// "text/html;charset=UTF-8"</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="XMLHttpRequest-timeout"><a href="#XMLHttpRequest-timeout" class="headerlink" title="XMLHttpRequest.timeout"></a>XMLHttpRequest.timeout</h4><p>지정한 시간을 초과하면 XMLHttpRequestEventTarget.ontimeout을 호출한다. 단위는 밀리초(milliseconds)</p>
@@ -507,31 +507,31 @@
 <h4 id="XMLHttpRequest-statusText"><a href="#XMLHttpRequest-statusText" class="headerlink" title="XMLHttpRequest.statusText"></a>XMLHttpRequest.statusText</h4><p>응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 404일 때 리턴되는 값은 “Not Found”</p>
 <h4 id="XMLHttpRequest-readyState"><a href="#XMLHttpRequest-readyState" class="headerlink" title="XMLHttpRequest.readyState"></a>XMLHttpRequest.readyState</h4><p>XMLHttpRequest의 현재 상태를 의미한다.</p>
 <ul>
-<li>0: request not initialized.</li>
-<li>1: server connection established</li>
-<li>2: request received</li>
-<li>3: processing request</li>
-<li>4: request finished and response is ready</li>
+<li><code>0</code> request not initialized.</li>
+<li><code>1</code> server connection established</li>
+<li><code>2</code> request received</li>
+<li><code>3</code> processing request</li>
+<li><code>4</code> request finished and response is ready</li>
 </ul>
 <h2 id="Attach-callback-function"><a href="#Attach-callback-function" class="headerlink" title="Attach callback function"></a>Attach callback function</h2><p>통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 XMLHttpRequest의 onreadystatechange() 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 EventTarget.addEventListener() 이용하는 방법이 있다.</p>
 <h4 id="XMLHttpRequest-onreadystatechange"><a href="#XMLHttpRequest-onreadystatechange" class="headerlink" title="XMLHttpRequest.onreadystatechange"></a>XMLHttpRequest.onreadystatechange</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'complete'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://somewhere'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <p>onreadystatechange()는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.</p>
 <h4 id="EventTarget-addEventListener"><a href="#EventTarget-addEventListener" class="headerlink" title="EventTarget.addEventListener()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">EventTarget.addEventListener()</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EventTarget.addEventListener( eventType, callback )</span><br></pre></td></tr></table></figure>
 <ul>
-<li>eventType: callback이 실행될 이벤트의 유형 (ex: ‘load’)</li>
-<li>callback: eventType에 지정한 이벤트가 발생했을 때 실행할 함수</li>
+<li><code>eventType</code> callback이 실행될 이벤트의 유형 (ex: ‘load’)</li>
+<li><code>callback</code> eventType에 지정한 이벤트가 발생했을 때 실행할 함수</li>
 </ul>
 <p>addEventListener()는 IE8에서 지원되지 않으니 주의할 것. <del>악의 축</del><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reqListener</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText); <span class="comment">// this == xhr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.addEventListener(<span class="string">'load'</span>, reqListener);</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://example.org/example.txt'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure></p>
 <h4 id="XMLHttpRequestEventTarget"><a href="#XMLHttpRequestEventTarget" class="headerlink" title="XMLHttpRequestEventTarget"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget" target="_blank" rel="noopener">XMLHttpRequestEventTarget</a></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.debug(xhr);</span><br><span class="line">xhr.onabort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onabort - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onerror - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'xhr.status: '</span> + xhr.status);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onloadstart = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onloadstart - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onloadend - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'progress - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loaded: '</span> + event.loaded);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'size: '</span> + event.size);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'complete'</span>);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'test2.html'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
 <p>XMLHttpRequestEventTarget은 XMLHttpRequest의 슈퍼클래스다. 상속받는 메서드는 다음과 같다:</p>
 <ul>
-<li>onabort: abort 이벤트가 발생하면 호출된다.</li>
-<li>onerror: 서버의 응답이 200이 아닐 때 호출된다.</li>
-<li>onloadstart: XHR 요청을 시작할 때 호출된다.</li>
-<li>onloadend: XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.</li>
-<li>onprogress: onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.</li>
-<li>onload:: XHR 요청이 ‘성공적으로’ 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.</li>
-<li>ontimeout: XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.</li>
+<li><code>onabort</code> abort 이벤트가 발생하면 호출된다.</li>
+<li><code>onerror</code> 서버의 응답이 200이 아닐 때 호출된다.</li>
+<li><code>onloadstart</code> XHR 요청을 시작할 때 호출된다.</li>
+<li><code>onloadend</code> XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.</li>
+<li><code>onprogress</code> onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.</li>
+<li><code>onload</code> XHR 요청이 ‘성공적으로’ 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.</li>
+<li><code>ontimeout</code> XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.</li>
 </ul>
 
       
