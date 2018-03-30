@@ -899,6 +899,6 @@ git update-index --assume-unchanged IGNORE_ME  # IGNORE_ME 파일을 변경되�
 
 #### '변경되지 않음' 되돌리기
 ```bash
-git update-index --no-assume-unchanged IGNORE_ME
-git update-index --really-refresh
+git update-index --no-assume-unchanged IGNORE_ME  # 1
+git update-index --really-refresh  # 2
 ```
