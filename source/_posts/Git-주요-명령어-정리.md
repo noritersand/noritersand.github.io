@@ -897,8 +897,12 @@ git tag -d v0.9
 git update-index --assume-unchanged IGNORE_ME  # IGNORE_ME 파일을 변경되지 않은 것으로 간주함.
 ```
 
-#### '변경되지 않음' 되돌리기
+#### '변경되지 않음' 되돌리기 #1
 ```bash
-git update-index --no-assume-unchanged IGNORE_ME  # 1
-git update-index --really-refresh  # 2
+git update-index --no-assume-unchanged IGNORE_ME
+```
+
+#### '변경되지 않음' 되돌리기 #2
+```bash
+git update-index --really-refresh
 ```
