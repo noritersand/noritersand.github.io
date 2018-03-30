@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
 <meta property="og:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-27T03:47:54.292Z">
+<meta property="og:updated_time" content="2018-03-30T01:23:21.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 주요 명령어 정리">
 <meta name="twitter:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
@@ -98,6 +98,12 @@
 <h2 id="add"><a href="#add" class="headerlink" title="add"></a>add</h2><h4 id="staging-do-track"><a href="#staging-do-track" class="headerlink" title="staging / do track"></a>staging / do track</h4><p>작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add *</span><br><span class="line">git add .</span><br><span class="line">git add *.java</span><br><span class="line">git add README.TXT</span><br></pre></td></tr></table></figure></p>
 <h4 id="모든-추적-및-추적되지-않는-파일의-변경-내용을-추가"><a href="#모든-추적-및-추적되지-않는-파일의-변경-내용을-추가" class="headerlink" title="모든 추적 및 추적되지 않는 파일의 변경 내용을 추가"></a>모든 추적 및 추적되지 않는 파일의 변경 내용을 추가</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add -A</span><br><span class="line">git add --all</span><br><span class="line"><span class="comment"># git rm을 쓰지 않고 직접 삭제한 파일도 모두 스테이징할 때 쓰면 유용하다.</span></span><br></pre></td></tr></table></figure>
 <h4 id="대화형으로-파일-스테이징"><a href="#대화형으로-파일-스테이징" class="headerlink" title="대화형으로 파일 스테이징"></a>대화형으로 파일 스테이징</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git add -i</span><br></pre></td></tr></table></figure>
+<h2 id="blame"><a href="#blame" class="headerlink" title="blame"></a>blame</h2><p><del>바보같은 커밋을 비난하기 위한 명령어</del> 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. <a href="https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0" target="_blank" rel="noopener">Git으로 버그 찾기</a></p>
+<h4 id="파일-커밋-정보-줄-단위로-보기"><a href="#파일-커밋-정보-줄-단위로-보기" class="headerlink" title="파일 커밋 정보 줄 단위로 보기"></a>파일 커밋 정보 줄 단위로 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame 파일</span><br></pre></td></tr></table></figure>
+<h4 id="특정-라인만-보기"><a href="#특정-라인만-보기" class="headerlink" title="특정 라인만 보기"></a>특정 라인만 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -L 시작라인,종료라인 파일</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git blame -L 12,22 simplegit.rb</span><br></pre></td></tr></table></figure>
+<h4 id="파일의-줄-단위의-복사-붙여넣기-이동-정보-보기"><a href="#파일의-줄-단위의-복사-붙여넣기-이동-정보-보기" class="headerlink" title="파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기"></a>파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -M 파일</span><br></pre></td></tr></table></figure>
+<h4 id="파일의-줄-단위의-이동과-원본-파일-정보-보기"><a href="#파일의-줄-단위의-이동과-원본-파일-정보-보기" class="headerlink" title="파일의 줄 단위의 이동과 원본 파일 정보 보기"></a>파일의 줄 단위의 이동과 원본 파일 정보 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -C -C 파일</span><br></pre></td></tr></table></figure>
 <h2 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h2><h4 id="브랜치-생성"><a href="#브랜치-생성" class="headerlink" title="브랜치 생성"></a>브랜치 생성</h4><p>현재 브랜치 기반의 신규 브랜치를 생성한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch mybranch</span><br></pre></td></tr></table></figure></p>
 <h4 id="다른-커밋-기반의-브랜치-생성"><a href="#다른-커밋-기반의-브랜치-생성" class="headerlink" title="다른 커밋 기반의 브랜치 생성"></a>다른 커밋 기반의 브랜치 생성</h4><p>‘체크아웃으로 헤드 이동 후 브랜치 생성’의 단축형. 여기서 커밋은 체크섬 외에 다른 브랜치나 태그가 올 수도 있다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch 브랜치명 커밋</span><br></pre></td></tr></table></figure></p>
 <h4 id="브랜치-확인"><a href="#브랜치-확인" class="headerlink" title="브랜치 확인"></a>브랜치 확인</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch  <span class="comment"># 로컬 저장소의 브랜치만 출력</span></span><br><span class="line">git branch -r  <span class="comment"># 리모트 브랜치 목록 보기</span></span><br><span class="line">git branch -a  <span class="comment"># 로컬과 리모트 브랜치 모두 보기</span></span><br><span class="line">git branch -v  <span class="comment"># 마지막 커밋 메시지도 함께 출력한다</span></span><br><span class="line">git branch -vv  <span class="comment"># 추적중인 브랜치 확인</span></span><br></pre></td></tr></table></figure>
@@ -105,12 +111,6 @@
 <h4 id="현재-브랜치를-다른-브랜치에-덮어쓰기"><a href="#현재-브랜치를-다른-브랜치에-덮어쓰기" class="headerlink" title="현재 브랜치를 다른 브랜치에 덮어쓰기"></a>현재 브랜치를 다른 브랜치에 덮어쓰기</h4><p>새 브랜치를 생성할 때 <code>-f</code> 옵션을 사용하면 이미 존재하는 브랜치를 무시하고 덮어쓴다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git branch -f 대상브랜치 [커밋]</span><br></pre></td></tr></table></figure></p>
 <h4 id="브랜치-이름변경"><a href="#브랜치-이름변경" class="headerlink" title="브랜치 이름변경"></a>브랜치 이름변경</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -m NAME_FROM NAME_TO</span><br></pre></td></tr></table></figure>
 <h4 id="브랜치-삭제"><a href="#브랜치-삭제" class="headerlink" title="브랜치 삭제"></a>브랜치 삭제</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git branch -d mybranch</span><br><span class="line">git branch -D mybranch  <span class="comment"># 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)</span></span><br></pre></td></tr></table></figure>
-<h2 id="blame"><a href="#blame" class="headerlink" title="blame"></a>blame</h2><p><del>바보같은 커밋을 비난하기 위한 명령어</del> 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. <a href="https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0" target="_blank" rel="noopener">Git으로 버그 찾기</a></p>
-<h4 id="파일-커밋-정보-줄-단위로-보기"><a href="#파일-커밋-정보-줄-단위로-보기" class="headerlink" title="파일 커밋 정보 줄 단위로 보기"></a>파일 커밋 정보 줄 단위로 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame 파일</span><br></pre></td></tr></table></figure>
-<h4 id="특정-라인만-보기"><a href="#특정-라인만-보기" class="headerlink" title="특정 라인만 보기"></a>특정 라인만 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -L 시작라인,종료라인 파일</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git blame -L 12,22 simplegit.rb</span><br></pre></td></tr></table></figure>
-<h4 id="파일의-줄-단위의-복사-붙여넣기-이동-정보-보기"><a href="#파일의-줄-단위의-복사-붙여넣기-이동-정보-보기" class="headerlink" title="파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기"></a>파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -M 파일</span><br></pre></td></tr></table></figure>
-<h4 id="파일의-줄-단위의-이동과-원본-파일-정보-보기"><a href="#파일의-줄-단위의-이동과-원본-파일-정보-보기" class="headerlink" title="파일의 줄 단위의 이동과 원본 파일 정보 보기"></a>파일의 줄 단위의 이동과 원본 파일 정보 보기</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git blame -C -C 파일</span><br></pre></td></tr></table></figure>
 <h2 id="checkout"><a href="#checkout" class="headerlink" title="checkout"></a>checkout</h2><h4 id="브랜치-이동"><a href="#브랜치-이동" class="headerlink" title="브랜치 이동"></a>브랜치 이동</h4><p>다른 브랜치의 마지막 커밋(가장 최근 커밋)으로 헤드만 이동한다. 이 말은 깃 디렉토리만 다른 커밋의 스냅샷으로 변경된다는 뜻이다. 워킹 트리(working tree, 실제 작업공간)와 스테이징 에어리어(staging area, 인덱스)는 그대로 유지된다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git checkout master</span><br><span class="line"><span class="comment"># 만약 master라는 브랜치가 로컬에 존재하지 않으면 리모트 저장소의 데이터를 체크아웃한다.</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="다른-커밋으로-헤드-이동"><a href="#다른-커밋으로-헤드-이동" class="headerlink" title="다른 커밋으로 헤드 이동"></a>다른 커밋으로 헤드 이동</h4><p>특정 커밋의 체크섬이나 태그를 입력해 해당 시점의 스냅샷으로 이동하는 것을 의미한다. 브랜치를 만들지 않고 헤드를 이동할 수 있다.</p>
 <p>체크아웃으로 과거의 이력에 해당하는 커밋으로 이동했을 때, 깃은 이를 ‘분리된 헤드(detached HEAD)’ 상태에 있다고 하며 이 상태에서 바로 작업하는 것보다 브랜치를 생성하여 작업할 것을 권장하고 있다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git checkout 체크섬</span><br><span class="line">git checkout 태그</span><br></pre></td></tr></table></figure></p>
@@ -208,6 +208,18 @@
 <li><code>--committer</code>: 입력한 커미터의 커밋만 보여준다.</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">log</span> --since=2.weeks</span><br><span class="line">git <span class="built_in">log</span> --pretty=<span class="string">"%h - %s"</span> --author=gitster --since=<span class="string">"2008-10-01"</span> \ --before=<span class="string">"2008-11-01"</span> --no-merges -- t/</span><br></pre></td></tr></table></figure>
+<h2 id="ls-files"><a href="#ls-files" class="headerlink" title="ls-files"></a>ls-files</h2><p>인덱스나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀탐색한다.</p>
+<p><strong>options</strong>:</p>
+<ul>
+<li><code>-c</code> | <code>--cached</code>: </li>
+<li><code>-d</code> | <code>--deleted</code>: </li>
+<li><code>-m</code> | <code>--modified</code>: </li>
+<li><code>-o</code> | <code>--others</code>: </li>
+<li><code>-i</code> | <code>--ignored</code>: </li>
+<li><code>-s</code> | <code>--stage</code>:</li>
+<li><code>-v</code>: 파일의 상태를 표시하되 실제로는 변경되었으나 그렇지 않은것으로 간주된(assume unchanged) 파일은 소문자로 표시한다.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git ls-files -v | grep ^h  <span class="comment"># assume unchanged 파일만 표시</span></span><br></pre></td></tr></table></figure>
 <h2 id="merge"><a href="#merge" class="headerlink" title="merge"></a>merge</h2><p>현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 표시해준다.</p>
 <p>깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 ‘한 부모의 모든 작업내역과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업내역을 포함한다’라는 의미가 있다.1<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge 브랜치1 [브랜치2 브랜치3 브랜치3 ...]</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git merge iss123  <span class="comment"># 헤드 브랜치(현재 브랜치)에 iss123 브랜치를 머지</span></span><br><span class="line">git merge iss123 hotfix  <span class="comment"># 헤드 브랜치에 iss123과 hotfix를 머지</span></span><br></pre></td></tr></table></figure>
@@ -301,6 +313,18 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -s v1.5 -m <span class="string">"my signed 1.5 tag"</span></span><br></pre></td></tr></table></figure>
 <h4 id="태그-서명-검증"><a href="#태그-서명-검증" class="headerlink" title="태그 서명 검증"></a>태그 서명 검증</h4><p>태그서명에 사용된 키가 공개키인지 검증한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -v v1.0</span><br></pre></td></tr></table></figure></p>
 <h4 id="태그-삭제"><a href="#태그-삭제" class="headerlink" title="태그 삭제"></a>태그 삭제</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git tag -d v0.9</span><br></pre></td></tr></table></figure>
+<h2 id="update-index"><a href="#update-index" class="headerlink" title="update-index"></a>update-index</h2><p>파일을 인덱스에 등록하거나 수정한다.</p>
+<p><strong>options</strong>:</p>
+<ul>
+<li><code>--add</code>:</li>
+<li><code>--remove</code>:</li>
+<li><code>--refresh</code>: 워킹트리에 대한 인덱스를 갱신한다.</li>
+<li><code>--really-refresh</code>: <code>--refresh</code>와 비슷하지만, 이 옵션은 ‘변경되지 않음’ 상태인 파일도 갱신한다.</li>
+<li><code>--assume-unchanged</code>: 특정 파일을 변경되지 않은 것으로 간주한다. 이후 해당 파일은 스테이지 목록에 나타나지 않는다.</li>
+<li><code>--no-assume-unchanged</code>: ‘변경되지 않음’ 상태의 파일을 되돌린다.</li>
+</ul>
+<h4 id="변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기"><a href="#변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기" class="headerlink" title="변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기"></a>변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --assume-unchanged IGNORE_ME  <span class="comment"># IGNORE_ME 파일을 변경되지 않은 것으로 간주함.</span></span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기"><a href="#‘변경되지-않음’-되돌리기" class="headerlink" title="‘변경되지 않음’ 되돌리기"></a>‘변경되지 않음’ 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME</span><br><span class="line">git update-index --really-refresh</span><br></pre></td></tr></table></figure>
 
       
     </div>
