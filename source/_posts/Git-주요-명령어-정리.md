@@ -34,6 +34,32 @@ git add --all
 git add -i
 ```
 
+## blame
+~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
+
+#### 파일 커밋 정보 줄 단위로 보기
+```
+git blame 파일
+```
+
+#### 특정 라인만 보기
+```
+git blame -L 시작라인,종료라인 파일
+```
+```bash
+git blame -L 12,22 simplegit.rb
+```
+
+#### 파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기
+```
+git blame -M 파일
+```
+
+#### 파일의 줄 단위의 이동과 원본 파일 정보 보기
+```
+git blame -C -C 파일
+```
+
 ## branch
 
 #### 브랜치 생성
@@ -79,32 +105,6 @@ git branch -m NAME_FROM NAME_TO
 ```bash
 git branch -d mybranch
 git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)
-```
-
-## blame
-~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
-
-#### 파일 커밋 정보 줄 단위로 보기
-```
-git blame 파일
-```
-
-#### 특정 라인만 보기
-```
-git blame -L 시작라인,종료라인 파일
-```
-```bash
-git blame -L 12,22 simplegit.rb
-```
-
-#### 파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기
-```
-git blame -M 파일
-```
-
-#### 파일의 줄 단위의 이동과 원본 파일 정보 보기
-```
-git blame -C -C 파일
 ```
 
 ## checkout
@@ -436,6 +436,22 @@ git log --pretty=format:"%h %s" --graph
 ```bash
 git log --since=2.weeks
 git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
+```
+
+## ls-files
+인덱스나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀탐색한다.
+
+**options**:
+- `-c` | `--cached`: 
+- `-d` | `--deleted`: 
+- `-m` | `--modified`: 
+- `-o` | `--others`: 
+- `-i` | `--ignored`: 
+- `-s` | `--stage`:
+- `-v`: 파일의 상태를 표시하되 실제로는 변경되었으나 그렇지 않은것으로 간주된(assume unchanged) 파일은 소문자로 표시한다.
+
+```bash
+git ls-files -v | grep ^h  # assume unchanged 파일만 표시
 ```
 
 ## merge
@@ -863,4 +879,26 @@ git tag -v v1.0
 #### 태그 삭제
 ```bash
 git tag -d v0.9
+```
+
+## update-index
+파일을 인덱스에 등록하거나 수정한다.
+
+**options**:
+- ``--add``:
+- ``--remove``:
+- ``--refresh``: 워킹트리에 대한 인덱스를 갱신한다.
+- ``--really-refresh``: `--refresh`와 비슷하지만, 이 옵션은 '변경되지 않음' 상태인 파일도 갱신한다.
+- ``--assume-unchanged``: 특정 파일을 변경되지 않은 것으로 간주한다. 이후 해당 파일은 스테이지 목록에 나타나지 않는다.
+- ``--no-assume-unchanged``: '변경되지 않음' 상태의 파일을 되돌린다.
+
+#### 변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기
+```bash
+git update-index --assume-unchanged IGNORE_ME  # IGNORE_ME 파일을 변경되지 않은 것으로 간주함.
+```
+
+#### '변경되지 않음' 되돌리기
+```bash
+git update-index --no-assume-unchanged IGNORE_ME
+git update-index --really-refresh
 ```
