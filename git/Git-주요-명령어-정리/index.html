@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
 <meta property="og:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-30T01:23:21.756Z">
+<meta property="og:updated_time" content="2018-03-30T01:34:28.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 주요 명령어 정리">
 <meta name="twitter:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
@@ -56,7 +56,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -324,12 +324,12 @@
 <li><code>--no-assume-unchanged</code>: ‘변경되지 않음’ 상태의 파일을 되돌린다.</li>
 </ul>
 <h4 id="변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기"><a href="#변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기" class="headerlink" title="변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기"></a>변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --assume-unchanged IGNORE_ME  <span class="comment"># IGNORE_ME 파일을 변경되지 않은 것으로 간주함.</span></span><br></pre></td></tr></table></figure>
-<h4 id="‘변경되지-않음’-되돌리기"><a href="#‘변경되지-않음’-되돌리기" class="headerlink" title="‘변경되지 않음’ 되돌리기"></a>‘변경되지 않음’ 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME</span><br><span class="line">git update-index --really-refresh</span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기"><a href="#‘변경되지-않음’-되돌리기" class="headerlink" title="‘변경되지 않음’ 되돌리기"></a>‘변경되지 않음’ 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME  <span class="comment"># 1</span></span><br><span class="line">git update-index --really-refresh  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-주요-명령어-정리/" data-id="cjf9831ee000v485yu36th91b" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-주요-명령어-정리/" data-id="cjf9831ee000v485yu36th91b" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -341,7 +341,7 @@
 <nav id="article-nav">
   
     <a href="/javascript/JavaScript-WindowEventHandlers-onunload/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
+      <strong class="article-nav-caption">Neuer</strong>
       <div class="article-nav-title">
         
           JavaScript: WindowEventHandlers.onunload
@@ -351,7 +351,7 @@
   
   
     <a href="/javascript/JavaScript-생성자-함수-constructor-function/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Älter</strong>
       <div class="article-nav-title">JavaScript: 생성자 함수 constructor function</div>
     </a>
   
@@ -366,7 +366,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildtool/">buildtool</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
     </div>
@@ -395,7 +395,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -405,7 +405,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
