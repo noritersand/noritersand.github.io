@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
 <meta property="og:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-30T01:34:28.279Z">
+<meta property="og:updated_time" content="2018-03-30T01:37:25.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 주요 명령어 정리">
 <meta name="twitter:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
@@ -324,7 +324,8 @@
 <li><code>--no-assume-unchanged</code>: ‘변경되지 않음’ 상태의 파일을 되돌린다.</li>
 </ul>
 <h4 id="변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기"><a href="#변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기" class="headerlink" title="변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기"></a>변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --assume-unchanged IGNORE_ME  <span class="comment"># IGNORE_ME 파일을 변경되지 않은 것으로 간주함.</span></span><br></pre></td></tr></table></figure>
-<h4 id="‘변경되지-않음’-되돌리기"><a href="#‘변경되지-않음’-되돌리기" class="headerlink" title="‘변경되지 않음’ 되돌리기"></a>‘변경되지 않음’ 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME  <span class="comment"># 1</span></span><br><span class="line">git update-index --really-refresh  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기-1"><a href="#‘변경되지-않음’-되돌리기-1" class="headerlink" title="‘변경되지 않음’ 되돌리기 #1"></a>‘변경되지 않음’ 되돌리기 #1</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME</span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기-2"><a href="#‘변경되지-않음’-되돌리기-2" class="headerlink" title="‘변경되지 않음’ 되돌리기 #2"></a>‘변경되지 않음’ 되돌리기 #2</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --really-refresh</span><br></pre></td></tr></table></figure>
 
       
     </div>

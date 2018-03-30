@@ -371,7 +371,8 @@
 <li><code>--no-assume-unchanged</code>: ‘변경되지 않음’ 상태의 파일을 되돌린다.</li>
 </ul>
 <h4 id="변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기"><a href="#변경된-파일을-스테이지-대상-목록-Unstaged-Changes-에서-제외하기" class="headerlink" title="변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기"></a>변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --assume-unchanged IGNORE_ME  <span class="comment"># IGNORE_ME 파일을 변경되지 않은 것으로 간주함.</span></span><br></pre></td></tr></table></figure>
-<h4 id="‘변경되지-않음’-되돌리기"><a href="#‘변경되지-않음’-되돌리기" class="headerlink" title="‘변경되지 않음’ 되돌리기"></a>‘변경되지 않음’ 되돌리기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME  <span class="comment"># 1</span></span><br><span class="line">git update-index --really-refresh  <span class="comment"># 2</span></span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기-1"><a href="#‘변경되지-않음’-되돌리기-1" class="headerlink" title="‘변경되지 않음’ 되돌리기 #1"></a>‘변경되지 않음’ 되돌리기 #1</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --no-assume-unchanged IGNORE_ME</span><br></pre></td></tr></table></figure>
+<h4 id="‘변경되지-않음’-되돌리기-2"><a href="#‘변경되지-않음’-되돌리기-2" class="headerlink" title="‘변경되지 않음’ 되돌리기 #2"></a>‘변경되지 않음’ 되돌리기 #2</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git update-index --really-refresh</span><br></pre></td></tr></table></figure>
 
       
     </div>
