@@ -6,7 +6,7 @@ categories:
 tags:
   - javascript
   - ajax
-  - XMLHttpRequest
+  - xmlhttprequest
 ---
 
 #### 참고한 글
