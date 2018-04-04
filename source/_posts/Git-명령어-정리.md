@@ -1,5 +1,5 @@
 ---
-title: 'Git: 주요 명령어 정리'
+title: 'Git: 명령어 정리'
 categories:
   - git
 date: 2018-03-21 10:16:45

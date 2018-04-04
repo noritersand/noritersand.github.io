@@ -1,5 +1,7 @@
 ---
 title: 'Datadog: 인프라 모니터링'
+categories:
+  - etc
 tags:
   - todo
 ---

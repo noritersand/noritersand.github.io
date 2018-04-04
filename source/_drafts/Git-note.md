@@ -1,5 +1,7 @@
 ---
 title: 'Git: note'
+categories:
+  - git
 tags:
   - todo
   - note

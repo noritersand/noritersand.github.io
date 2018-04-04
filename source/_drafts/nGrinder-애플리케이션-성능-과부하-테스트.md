@@ -1,5 +1,7 @@
 ---
 title: ' nGrinder: 애플리케이션 성능(과부하) 테스트'
+categories:
+  - etc
 tags:
   - todo
   - ngrinder

@@ -1,5 +1,7 @@
 ---
 title: 'note#2'
+categories:
+  - etc
 tags:
   - todo
   - note

@@ -1,5 +1,7 @@
 ---
 title: 'HTML standard: Input elements should have autocomplete attributes'
+categories:
+  - etc
 tags:
   - todo
 ---

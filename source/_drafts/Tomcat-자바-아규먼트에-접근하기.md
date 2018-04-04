@@ -1,5 +1,7 @@
 ---
 title: 'Tomcat: 자바 아규먼트에 접근하기'
+categories:
+  - etc
 tags:
   - tomcat
   - java

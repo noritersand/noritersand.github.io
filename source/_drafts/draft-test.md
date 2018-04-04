@@ -1,5 +1,7 @@
 ---
 title: draft test
+categories:
+  - etc
 tags:
   - todo
 ---

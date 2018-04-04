@@ -1,5 +1,7 @@
 ---
 title: test
+categories:
+  - etc
 tags: 
   - test
 ---

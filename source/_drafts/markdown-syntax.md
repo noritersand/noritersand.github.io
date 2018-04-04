@@ -1,5 +1,7 @@
 ---
 title: markdown syntax
+categories:
+  - etc
 tags:
   - test
 ---
