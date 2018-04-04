@@ -4,7 +4,7 @@ date: 2018-03-20 17:15:34
 categories:
   - javascript
 tags:
-  - window
+  - windows
   - postMessage
 ---
 

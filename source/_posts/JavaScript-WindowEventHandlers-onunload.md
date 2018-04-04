@@ -10,7 +10,7 @@ tags:
   - onclose
   - onunload
   - web
-  - window
+  - windows
   - todo
 ---
 
