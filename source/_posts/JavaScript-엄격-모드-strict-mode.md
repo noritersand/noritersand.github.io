@@ -5,7 +5,7 @@ categories:
   - javascript
 tags:
   - javascript
-  - strict-mode
+  - strict mode
 ---
 
 #### 참고한 글
