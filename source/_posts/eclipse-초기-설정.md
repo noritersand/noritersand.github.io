@@ -1,0 +1,87 @@
+---
+title: 'eclipse: 초기 설정'
+categories:
+  - tools
+date: 2018-04-17 11:20:58
+tags:
+  - eclipse
+---
+
+#### 참고한 글
+- http://www.eclipse.org/downloads
+- http://tomcat.apache.org
+
+## 자바독 자동완성
+[Window] - [Preferences] - [Java] - [Code Style] - [Code Templates] 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
+```java
+/**
+ * @Since ${date}
+ * @Version 1.0
+ * @Author ${user}
+ * ${tags}
+ */
+```
+`${date}` 태그는 기본포멧이 yyyy.mm.dd. 으로 되어 있다.
+```
+${date}  --> 2015. 7. 1.
+```
+만약 포맷을 yyyy-MM-dd로 바꾸고 싶다면 이클립스 실행파일과 같은 폴더에 있는 eclipse.ini 에 다음 줄을 추가하고 이클립스를 재시작한다.
+```bash
+-Duser.language=fr-CA
+```
+위 방법은 Neon.1a Release (4.6.1) 에선 통하지 않고 (2016-11-19 확인) 템플릿 변수 `${date}`를 다음처럼 작성해야 된다.
+```
+${id:date('yyyy-MM-dd')}
+```
+
+## Formatter
+[Window] - [Preferences] - [Java] - [Code Style] - [Formatter] 메뉴로 이동 - [New...]를 클릭해서 새 프로파일을 생성한다. 이후 자동으로 프로파일 에딧창으로 이동되는데 여기서 [Comments] 탭으로 이동 -> `New line after @param tags`를 체크 해제한다.
+![](/images/eclipse-1.png)
+이 작업을 [JavaScript] - [Code Style] - [Formatter] 에서도 반복한다.
+
+## JSP 템플릿
+새로운 JSP 페이지를 작성 할 때 구성하는 템플릿 파일을 다음과 같이 변경 가능 하다. [Window] - [Perferences] - [Web] - [JSP Files] - [Editor] - [Template] 오른쪽 화면의 "New JSP File(html)" 을 선택 하고 "Edit" 버튼. 수정 후 "Ok".
+```html
+<%@ page language="java" contentType="text/html; charset=${encoding}" pageEncoding="${encoding}"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=${encoding}">
+    <!-- if HTML5 -->
+    <!-- meta charset=${encoding}" -->
+    <title></title>
+</head>
+<body>
+${cursor}
+</body>
+</html>
+```
+
+## 작성자가 쓰는 단축키 설정
+- Save All: `f9` (In Windows, File)
+- Open Implementation: `f4` (In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
+- Open Type Hierarchy: `unbined`
+- Find Text In File: `ctrl+alt+f` (In Windows, Search)
+- File Search: `ctrl+h` (In Windows, Search)
+- Open Search Dialog: `unbined`
+- Watch: `ctrl+alt+w` (In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
+- Compare with HEAD Revision: `ctrl+alt+pagedown` (In Windows, Git)
+- Show in History: `ctrl+alt+pageup` (In Windows, Git)
+- Show Key Assist: `ctrl+0` (In Dialogs and Windows, Window)
+- Add Bookmark: `ctrl+shift+z`
+- Build Automatically: `ctrl+alt+insert` (In Dialogs and Windows, Project)
+
+Show History 같은 써드 파티 플러그인의 기능은 단축키가 작동하지 않을때가 있는데 이 때는 [Customize Perspective] - [Action Set Availability]에서 해당 플러그인의 영역을 추가해야 한다. (show history는 SVN을 체크)
+
+## DEBUG 모드로 구동할 때 uncaught exception에서 브레이크 걸지 않기
+- [Window] - [Preferences] - [Suspend execution on uncaught exceptions] 체크 해제
+
+## 인코딩 환경 설정
+- eclipse.ini에 `-Dfile.encoding=UTF-8` 추가
+- [General] - [Workspace] 의 Text file encoding을 [Other-UTF-8]로 변경
+- [Window] - [Preferences...] - Web - CSS Files - UTF-8
+- [Window] - [Preferences...] - Web - Jsp Files - UTF-8
+- [Window] - [Preferences...] - Web - HTML Files - 우측 화면의 Encoding 에 "ISO 10646/Unicode(UTF-8)" 로 변경 후 [Ok] 버튼 클릭
+
+## 자바 스크립트 파일 한글 인코딩을 UTF-8로 변경
+- [Window] - [Preferences...] - General - Contents type - 우측 화면의 Text-Javascript 의 Default encoding 에  "utf-8" 로 변경 후 [update] 버튼 클릭
