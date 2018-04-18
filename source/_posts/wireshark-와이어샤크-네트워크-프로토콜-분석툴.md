@@ -5,7 +5,9 @@ categories:
 tags:
   - wireshark
   - todo
+date: 2018-04-18 18:06:23
 ---
+
 
 #### 참고한 글
 - https://www.wireshark.org/download.html
@@ -15,7 +17,10 @@ tags:
 - http://blog.daum.net/coy486/9
 - [로컬호스트 트래픽 캡쳐하기](http://credemol.blogspot.kr/2012/10/wireshark-localhost.html)
 
+```js
+tcp.port eq 80
+and http
+and (ip.src eq 127.0.0.1 or ip.dst eq 127.0.0.1)
+and http.request.uri eq "/product/productDetail"
 ```
-tcp.port eq 80 and http and (ip.src eq 127.0.0.1 or ip.dst eq 127.0.0.1) and http.request.uri eq "/product/productDetail"
-```
-tcp and http and port가 80 and 127.0.0.1 IP와 주거나 받은거 and URI가 '/product/productDetail' 것만 필터링
+tcp 이면서 http 이고 port가 80이며 127.0.0.1 IP와 주거나 받은것 중 URI가 '/product/productDetail' 것만 필터링.
