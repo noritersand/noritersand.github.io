@@ -4,7 +4,7 @@ categories:
   - tools
 date: 2018-04-17 13:32:10
 tags:
-  - sublime
+  - sublime text
 ---
 
 ## package control 설치
