@@ -17,15 +17,9 @@ tags:
 ## 항상 제목2부터 시작
 내용내용
 
-### 코드 블럭
-```java
-    public class Test {
-	    public static void main(String... args) {
-	        System.out.println("야이야이야"); // dasfasdf
-	    }
-    }
-```
-
+# 큰제목
+## 둘째
+### 셋째
 #### 제목4
 
 리스트:
@@ -38,34 +32,31 @@ _이탤릭_
 ~~스트라이크~~
 
 수평선
+------
 
----
+[링크 걸기](#항상-제목2부터-시작)
 
-[링크 걸기](#항상-H2부터-시작)
-
-## embed image
-~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
-
-# 큰제목
-## 둘째
-### 셋째
+## 코드 블럭
 ```
-	코드 블럭은 되나
+	코드 블럭
 ```
-이건 자바
 ```java
-	System.out.println("aaaa");
+    public class Test {
+	    public static void main(String... args) {
+	        System.out.println("야이야이야"); // dasfasdf
+	    }
+    }
 ```
+
+`inline codeblock`
+`` 코드블럭 안에 backticks(=graves) 표시하기 ` ``
 
 ## 테이블
 |                  | String      | Number | Boolean | Object                 |
 |------------------|-------------|--------|---------|------------------------|
 | undefined        | "undefined" | NaN    | false   | TypeError              |
-| null             | "null"      | 0      | false   | TypeError              |
 | true             | "true"      | 1      |         | new Boolean(true)      |
-| false            | "false"     | 0      |         | new Boolean(false)     |
-| "" (null-string) |             | 0      | false   | new String("")         |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
 
-
-끗.
+## embed image
+~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
