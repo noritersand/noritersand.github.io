@@ -8,7 +8,7 @@ subtitle:
 description: 놀이터흙이제맛의 블로그
 author: 놀이터흙이제맛
 language: en # 언어 (기본은 en) - 기본언어로 `메뉴와 도움말` 정도 입니다.
-timezone: Asia/Seoul # 타임존 (기본은 현재 PC의 시간값)
+timezone: # Asia/Seoul # 타임존 (기본은 현재 PC의 시간값)
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -43,7 +43,7 @@ highlight:
   line_number: false
   auto_detect: false
   tab_replace:
-  
+
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -52,7 +52,7 @@ index_generator:
   path: ''
   per_page: 20
   order_by: -date
-  
+
 # Category & Tag
 default_category: uncategorized
 category_map:
@@ -78,7 +78,12 @@ theme: landscape
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy: 
+deploy:
   type: git
   repo: https://github.com/noritersand/noritersand.github.io
   branch: master
+
+# sitemap auto generator
+sitemap:
+    path: sitemap.xml
+
