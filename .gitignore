@@ -7,3 +7,4 @@ public/
 .deploy*/
 .deploy_git
 package-lock.json
+.project
