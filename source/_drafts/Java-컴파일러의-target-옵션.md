@@ -39,13 +39,13 @@ javac -target 8 Test.java
 사족으로, 이클립스는 컴파일 에러가 나는 자바파일도 일단 class 파일로 만든다. 이게 이클립스만 그러는건지는 아직 확실하지 않은데, 일단은 메서드 단위로 컴파일한다는게 확인되었다.
 ```java
 public class Test {
-  public void m01() {
-    System.out.println("hi");
-  }
+    public void m01() {
+        System.out.println("hi");
+    }
 
-  public void m02() {
-    throw new Error("Unresolved compilation problem: \n\tabc cannot be resolved to a variable\n");
-  }
+    public void m02() {
+        throw new Error("Unresolved compilation problem: \n\tabc cannot be resolved to a variable\n");
+    }
 }
 ```
 요딴식으로.
