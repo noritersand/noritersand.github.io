@@ -37,6 +37,20 @@ javac -target 8 Test.java
 ```
 
 사족으로, 이클립스는 컴파일 에러가 나는 자바파일도 일단 class 파일로 만든다. 이게 이클립스만 그러는건지는 아직 확실하지 않은데, 일단은 메서드 단위로 컴파일한다는게 확인되었다.
+
+이럴때:
+```java
+public class Test {
+    public void m01() {
+        System.out.println("hi");
+    }
+
+    public void m02() {
+        System.out.println(abc); // compile error: abc cannot be resolved to a variable
+    }
+}
+```
+요딴식으로:
 ```java
 public class Test {
     public void m01() {
@@ -48,4 +62,3 @@ public class Test {
     }
 }
 ```
-요딴식으로.
