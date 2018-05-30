@@ -15,10 +15,9 @@ tags:
 `Window` > `Preferences` > `Java` > `Code Style` > `Code Templates` 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
 ```java
 /**
- * @Since ${date}
- * @Version 1.0
- * @Author ${user}
  * ${tags}
+ * @since ${id:date('yyyy-MM-dd')}
+ * @author ${user}
  */
 ```
 `${date}` 태그는 기본포멧이 yyyy.mm.dd. 으로 되어 있다.

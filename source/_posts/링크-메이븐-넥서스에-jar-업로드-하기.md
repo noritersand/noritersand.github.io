@@ -1,11 +1,11 @@
 ---
 title: (링크) 메이븐 넥서스에 jar 업로드 하기
 categories:
-  - buildtool
+ - buildsystem
 date: 2018-02-22 13:58:28
 tags:
  - maven
- - buildtool
+ - buildsystem
  - nexus
 ---
 
