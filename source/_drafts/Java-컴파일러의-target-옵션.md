@@ -1,5 +1,5 @@
 ---
-title: Java 컴파일러의 target 옵션
+title: Java: 컴파일러의 target 옵션
 categories:
   - java
 tags:
