@@ -40,3 +40,7 @@ https://packagecontrol.io/packages/BracketHighlighter
 ## Compare Side-By-Side
 FileDiffs보다 보기 좋은 diff 뷰어.
 https://packagecontrol.io/packages/Compare%20Side-By-Side
+
+## Sync View Scroll
+여러 view의 스크롤을 동기화하는 플러그인. 심지어 좌우 스크롤도 동기화된다.
+https://packagecontrol.io/packages/Sync%20View%20Scroll
