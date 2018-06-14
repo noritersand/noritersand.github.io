@@ -146,13 +146,13 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 ```
 
 ### this의 변화
-함수가 메서드가 아닌 함수로 호출될 때 this는 undefined가 된다(표준 모드에선 함수로 호출될 때의 this는 전역 객체다). 이를 이용하면 엄격 모드의 지원 여부를 판단할 수 있다. (단, 자바스크립트 구현체에 따라 엄격 모드를 지원하지 않는 경우가 있으니 주의)
+함수가 메서드가 아닌 함수로 호출될 때 this는 undefined가 된다(표준 모드에선 함수로 호출될 때의 this는 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
 ```js
-var hasStrictMode = (function() {
+var supportStrictMode = (function() {
   'use strict';
   return this === undefined;
 })();
-console.debug(hasStrictMode);
+console.debug(supportStrictMode);
 ```
 그리고 함수가 `call()`이나 `apply()`로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 표준 모드에선 첫 번째 인자가 원시 타입이면 this는 래퍼 객체가 된다.
 ```js
