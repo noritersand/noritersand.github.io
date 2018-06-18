@@ -1,11 +1,12 @@
 ---
 title: 'Node.js: 기본 모듈'
 categories:
- - node.js
+  - javascript
+  - node.js
 tags:
- - node.js
- - fundamental object
- - todo
+  - node.js
+  - fundamental object
+  - todo
 ---
 
 #### 참고한 글
