@@ -4,11 +4,12 @@ date: 2018-03-20 16:24:15
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - strict mode
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 - http://www.w3schools.com/js/js_strict.asp
 - http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드

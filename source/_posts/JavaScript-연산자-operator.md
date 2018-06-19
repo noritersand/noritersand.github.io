@@ -9,7 +9,7 @@ tags:
   - operator
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
 - http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드
 - http://noritersand.tistory.com/538

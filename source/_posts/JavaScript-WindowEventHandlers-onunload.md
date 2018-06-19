@@ -14,7 +14,7 @@ tags:
   - todo
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload
 
 ```js

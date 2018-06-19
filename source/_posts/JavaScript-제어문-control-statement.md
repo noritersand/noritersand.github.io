@@ -9,7 +9,7 @@ tags:
   - control-statement
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration

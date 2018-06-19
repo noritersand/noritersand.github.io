@@ -4,11 +4,13 @@ date: 2018-03-20 17:15:34
 categories:
   - javascript
 tags:
+  - ecmascript
+  - javascript
   - windows
   - postMessage
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
 
 #### 브라우저 호환

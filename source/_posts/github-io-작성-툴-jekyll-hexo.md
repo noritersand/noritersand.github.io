@@ -10,7 +10,7 @@ tags:
   - github
 ---
 
-#### 참고한 글
+#### 관련 문서
 - [https://jekyllrb.com](https://jekyllrb.com)
 - [https://hexo.io](https://hexo.io)
 

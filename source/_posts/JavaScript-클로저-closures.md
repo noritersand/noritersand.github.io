@@ -4,11 +4,12 @@ date: 2018-03-20 16:46:26
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - closures
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
 - https://opentutorials.org/course/743/6544
 - http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드

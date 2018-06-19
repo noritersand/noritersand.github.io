@@ -6,5 +6,5 @@ tags:
   - todo
 ---
 
-#### 참고한 글
+#### 관련 문서
 - [http://aurelia.io/docs/overview/what-is-aurelia/](http://aurelia.io/docs/overview/what-is-aurelia/)

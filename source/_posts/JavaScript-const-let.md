@@ -4,12 +4,13 @@ date: 2018-03-20 16:40:10
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - const
   - let
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const
 
 #### 테스트 환경
@@ -46,7 +47,7 @@ let은 자바스크립트 1.7(ES2015)부터 신규 추가된 키워드다. const
 ```
 let var1 [= value1] [, var2 [= value2]] [, ..., varN [= valueN]];
 ```
-let은 자바스크립트의 변수가 갖는 함수 유효범위를 블록 유효범위로 제한하기 위해 사용한다. 
+let은 자바스크립트의 변수가 갖는 함수 유효범위를 블록 유효범위로 제한하기 위해 사용한다.
 가령 다음의 경우:
 ```js
 function fn() {

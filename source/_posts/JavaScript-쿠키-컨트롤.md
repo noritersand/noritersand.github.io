@@ -4,11 +4,12 @@ date: 2018-03-20 16:36:55
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - cookie
 ---
 
-#### 참고한 글
+#### 관련 문서
 - http://www.w3schools.com/js/js_cookies.asp
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 

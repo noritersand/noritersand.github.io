@@ -9,7 +9,7 @@ date: 2018-04-18 18:06:23
 ---
 
 
-#### 참고한 글
+#### 관련 문서
 - https://www.wireshark.org/download.html
 - https://wiki.wireshark.org/DisplayFilters#Examples
 - https://openmaniak.com/kr/wireshark_filters.php#display

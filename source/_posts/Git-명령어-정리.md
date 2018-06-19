@@ -7,7 +7,7 @@ tags:
   - git
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://git-scm.com/book/ko/v2
 - http://learnbranch.urigit.com/
 

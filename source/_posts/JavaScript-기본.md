@@ -4,11 +4,12 @@ categories:
   - javascript
 date: 2018-03-20 14:40:10
 tags:
+  - ecmascript
   - javascript
   - basic
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 - http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드

@@ -9,7 +9,7 @@ tags:
   - hot code replace
 ---
 
-#### 참고한 글
+#### 관련 문서
 - http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/
 
 이클립스에선 JVM을 디버그 모드로 구동한 후, 런타임이 종료되지 않은 상태에서(WAS를 띄워놓은 것과 같은 상태) 클래스 파일의 변경이 감지되면 JVM 재시작 없이 변경된 클래스파일을 교체하는 hot code replace 기능을 제공한다. (hot deploy 또는 hot swap 이라고도 한다.) 유료 플러그인인 JRebel과 비교하면 초라하지만... 없는 것보단 낫다.

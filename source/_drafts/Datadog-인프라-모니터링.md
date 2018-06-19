@@ -6,7 +6,7 @@ tags:
   - todo
 ---
 
-#### 참고한 글
+#### 관련 문서
 - [https://www.datadoghq.com/](https://www.datadoghq.com/)
 
 

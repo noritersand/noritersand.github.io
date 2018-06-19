@@ -9,7 +9,7 @@ tags:
   - jqgrid
 ---
 ![](/images/jquery-jqgrid-1.png)
-#### 참고한 글
+#### 관련 문서
 - http://www.trirand.com
 - [github](https://github.com/tonytomov/jqGrid/tree/master)
 - [wiki](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs)

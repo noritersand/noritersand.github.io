@@ -9,7 +9,7 @@ tags:
   - todo
 ---
 
-#### 참고한 글
+#### 관련 문서
 - http://www.nodejs.org/api
 - http://nodejs.sideeffect.kr/docs
 

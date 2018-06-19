@@ -4,6 +4,7 @@ date: 2018-03-20 16:45:07
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - arguments
 ---
@@ -14,7 +15,7 @@ function argsTest() {
     // ... 생략
     arguments[2]; // 'arg3'
 }
- 
+
 argsTest('arg1', 'arg2', 'arg3');
 ```
 위의 `argsTest()` 호출 시 전달된 세 개의 문자열은 배열로 생성되며 `arguments` 프로퍼티를 통해 접근한다.

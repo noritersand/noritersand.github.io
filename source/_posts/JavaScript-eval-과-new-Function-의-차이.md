@@ -4,11 +4,12 @@ date: 2018-03-20 16:58:02
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - eval
 ---
 
-#### 참고한 글
+#### 관련 문서
 - http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing
 
 ```js

@@ -2,13 +2,14 @@
 title: 'JavaScript: 함수 Function'
 date: 2018-03-20 15:59:09
 categories:
-- javascript
+  - javascript
 tags:
-- javascript
-- function
+  - ecmascript
+  - javascript
+  - function
 ---
 
-#### 참고한 글
+#### 관련 문서
 - http://www.w3schools.com/Js/js_function_definition.asp
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function
 
@@ -35,7 +36,7 @@ var a = function() {
   // ...
 })();
 ```
-함수 정의 표현식은 말 그대로 함수를 정의하는 표현식이다. '함수 리터럴'이라 하기도 한다. 함수 선언문과 다르게 이름이 필요하지 않아 익명 함수라 부르기도 한다. 위의 코드 중 첫 번째는 함수 정의 표현식으로 생성한 함수를 변수에 할당하는 형태다. 두 번째는 함수를 생성하고 스스로 호출하는 자기 호출 함수(self invoking function)다. 
+함수 정의 표현식은 말 그대로 함수를 정의하는 표현식이다. '함수 리터럴'이라 하기도 한다. 함수 선언문과 다르게 이름이 필요하지 않아 익명 함수라 부르기도 한다. 위의 코드 중 첫 번째는 함수 정의 표현식으로 생성한 함수를 변수에 할당하는 형태다. 두 번째는 함수를 생성하고 스스로 호출하는 자기 호출 함수(self invoking function)다.
 
 ## 함수의 끌어올림(hoisting)
 함수 선언문은 코드 중간에 삽입되어 있어도 항상 최상위에서 실행된다. 이것은 함수의 끌어올림(hoisting)이라 부른다. 가령 다음의 경우:
@@ -72,4 +73,3 @@ fnExpression = function() {
   console.debug('im not');
 };
 ```
-

@@ -9,7 +9,7 @@ tags:
   - volatile
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html
 - https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
 - https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html

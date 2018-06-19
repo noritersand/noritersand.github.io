@@ -1,11 +1,12 @@
 ---
 title: 'JavaScript: 변수의 유효범위와 끌어올림hoisting'
 categories:
-- javascript
+  - javascript
 date: 2018-03-20 15:57:09
 tags:
-- javascript
-- hoisting
+  - ecmascript
+  - javascript
+  - hoisting
 ---
 
 ## 함수 단위의 유효범위

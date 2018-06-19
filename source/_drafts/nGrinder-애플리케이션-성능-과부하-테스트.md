@@ -7,7 +7,7 @@ tags:
   - ngrinder
 ---
 
-#### 참고한 글
+#### 관련 문서
 - [http://naver.github.io/ngrinder/](http://naver.github.io/ngrinder/)
 - [https://github.com/naver/ngrinder/wiki/Installation-Guide](https://github.com/naver/ngrinder/wiki/Installation-Guide)
 

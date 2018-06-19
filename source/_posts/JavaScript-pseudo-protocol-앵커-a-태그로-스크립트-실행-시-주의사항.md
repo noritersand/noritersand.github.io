@@ -4,6 +4,7 @@ date: 2018-03-20 17:00:42
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - anchor
 ---

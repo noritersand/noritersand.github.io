@@ -4,13 +4,14 @@ date: 2018-03-20 17:19:12
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
   - constructor
   - function
   - todo
 ---
 
-#### 참고한 글
+#### 관련 문서
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
@@ -74,14 +75,5 @@ class Square extends Polygon {
   set area(value) {
     this.area = value;
   }
-} 
+}
 ```
-
- 
- 
- 
- 
- 
- 
-
-

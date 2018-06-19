@@ -4,6 +4,9 @@ categories:
   - javascript
 date: 2018-03-09 17:53:21
 tags:
+  - ecmascript
+  - javascript
+  - regex
 ---
 
 ### 숫자 - 통화 변환
