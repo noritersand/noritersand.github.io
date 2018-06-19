@@ -1,5 +1,5 @@
 ---
-title: 'Atom: 초기설정'
+title: 'Atom: 초기 설정'
 date: 2018-06-19 11:12:54
 categories:
   - tools
