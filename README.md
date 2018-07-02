@@ -39,12 +39,5 @@ hexo publish 파일명
 ## 글 수정
 `source\_posts`, `source\_drafts` 폴더 아래의 md 파일을 직접 수정
 
-## 개행 문자 경고 메시지
-hexo는 기본적으로 유닉스 개행 문자(LF)를 사용한다. 이 때문에 다음과 같은 경고 메시지가 발생할 수 있다:
-```bash
-warning: LF will be replaced by CRLF in source/_drafts/draf.md.
-The file will have its original line endings in your working directory.
-```
-
 ## builder와 site의 싱크가 안맞을 떄
 public 폴더를 삭제하고 다시 generate하면 된다. (특히 대소문자 변경했을 떄)
