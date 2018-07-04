@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/tools/sublime-text-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/</loc>
+        <lastmod>2018-07-04T00:59:05.197Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/javascript/JavaScript-Window-postMessage-%EA%B5%90%EC%B0%A8-%EC%B6%9C%EC%B2%98%EA%B0%84-%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%86%B5%EC%8B%A0/</loc>
         <lastmod>2018-07-04T00:33:50.904Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,14 +25,6 @@
     <url>
         <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%9B%90%EA%B2%A9-%EB%8D%B0%EC%8A%A4%ED%81%AC%ED%86%B1-%EC%97%B0%EA%B2%B0-%EC%8B%9C-%EB%82%B4%EB%B6%80-%EC%98%A4%EB%A5%98%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4/</loc>
         <lastmod>2018-07-02T04:34:07.346Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tools/sublime-text-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/</loc>
-        <lastmod>2018-07-02T04:34:07.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
