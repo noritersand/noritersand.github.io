@@ -20,18 +20,18 @@ ga('send', 'pageview');
   
   <title>JavaScript: Window.postMessage 교차 출처간 메시지 통신 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명,">
+  <meta name="description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그">
 <meta name="keywords" content="ecmascript,javascript,windows,postMessage">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript: Window.postMessage 교차 출처간 메시지 통신">
 <meta property="og:url" content="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명,">
+<meta property="og:description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-02T04:34:07.320Z">
+<meta property="og:updated_time" content="2018-07-04T00:32:44.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript: Window.postMessage 교차 출처간 메시지 통신">
-<meta name="twitter:description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명,">
+<meta name="twitter:description" content="관련 문서 https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage  브라우저 호환IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… 악의축 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -107,7 +107,7 @@ ga('send', 'pageview');
         <h4 id="관련-문서"><a href="#관련-문서" class="headerlink" title="관련 문서"></a>관련 문서</h4><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</a></li>
 </ul>
-<h4 id="브라우저-호환"><a href="#브라우저-호환" class="headerlink" title="브라우저 호환"></a>브라우저 호환</h4><p>IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… <del>악의축</del></p>
+<h4 id="브라우저-호환"><a href="#브라우저-호환" class="headerlink" title="브라우저 호환"></a>브라우저 호환</h4><p>IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… <del>악의축</del></p>
 <p>자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그리고 포트번호가 완전히 일치하지 않을때, 두 윈도우간의 상호작용을 차단한다. 이것은 <a href="https://developer.mozilla.org/ko/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">동일 출처 원칙(same origin policy)</a>의 제약사항이며 출처가 다른 두 윈도우를 교차 출처(cross origin) 상태에 있다고 한다.</p>
 <p>교차 출처인 윈도우의 변수나 함수 즉, 프로퍼티로의 접근은 대부분 차단된다고 생각하면 된다. 가령 A 윈도우에서 교차 출처인 B 윈도우의 주소를 Location을 통해 가져오려고 하면 DOMException이 발생하면서 스크립트가 중단되는 식이다. 참고로 교차 출처 상태일 때 location으로 주소를 알아낼 수는 없지만 주소를 바꿀 수는 있다.</p>
 <p>하여간 이런 동일 출처 원칙의 제약을 우회할 수 있는게(비록 엄격한 조건 하에서만 가능하지만) 바로 Window.postMessage다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">otherWindow.postMessage(message, targetOrigin, [transfer]);</span><br></pre></td></tr></table></figure></p>
@@ -130,7 +130,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" data-id="cjj3yvkg4004cesuo7vrg5j7e" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" data-id="cjj5clw3a0045jsuoxn790t6p" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>

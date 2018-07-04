@@ -156,13 +156,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/postMessage/</loc>
-        <lastmod>2018-07-02T04:34:07.320Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/const/</loc>
         <lastmod>2018-07-02T04:34:07.321Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -310,20 +303,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/ecmascript/</loc>
-        <lastmod>2018-07-02T04:34:07.339Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/javascript/</loc>
-        <lastmod>2018-07-02T04:34:07.339Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/maven/</loc>
         <lastmod>2018-07-02T04:34:07.339Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -436,13 +415,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/windows/</loc>
-        <lastmod>2018-07-02T04:34:07.346Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/debugging-log/</loc>
         <lastmod>2018-07-02T04:34:07.346Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -452,6 +424,34 @@
     <url>
         <loc>http://noritersand.github.io/tags/remote-desktop/</loc>
         <lastmod>2018-07-02T04:34:07.346Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/ecmascript/</loc>
+        <lastmod>2018-07-04T00:32:44.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/javascript/</loc>
+        <lastmod>2018-07-04T00:32:44.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/windows/</loc>
+        <lastmod>2018-07-04T00:32:44.961Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/postMessage/</loc>
+        <lastmod>2018-07-04T00:32:44.961Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
