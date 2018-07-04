@@ -14,7 +14,7 @@ tags:
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
 
 #### 브라우저 호환
-IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로... ~~악의축~~
+IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로... ~~악의축~~
 
 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그리고 포트번호가 완전히 일치하지 않을때, 두 윈도우간의 상호작용을 차단한다. 이것은 [동일 출처 원칙(same origin policy)](https://developer.mozilla.org/ko/docs/Web/Security/Same-origin_policy)의 제약사항이며 출처가 다른 두 윈도우를 교차 출처(cross origin) 상태에 있다고 한다.
 
