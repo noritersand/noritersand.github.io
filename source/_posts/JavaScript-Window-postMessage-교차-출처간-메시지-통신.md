@@ -14,7 +14,7 @@ tags:
 - https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
 
 #### 브라우저 호환
-IE는 11부터만 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로... ~~악의축~~
+IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로... ~~악의축~~
 
 자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그리고 포트번호가 완전히 일치하지 않을때, 두 윈도우간의 상호작용을 차단한다. 이것은 [동일 출처 원칙(same origin policy)](https://developer.mozilla.org/ko/docs/Web/Security/Same-origin_policy)의 제약사항이며 출처가 다른 두 윈도우를 교차 출처(cross origin) 상태에 있다고 한다.
 
@@ -27,6 +27,7 @@ otherWindow.postMessage(message, targetOrigin, [transfer]);
 - **message**: 다른 윈도우에 전달할 메시지
 - **targetOrigin**: 메시지를 전달할 윈도우의 출처를 명시한다. 대상 윈도우의 스킴, 호스트명, 포트번호가 targetOrigin에 명시된 것과 정확히 일치하지 않으면 메시지는 차단된다.
 - **transfer**: Is a sequence of Transferable objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.
+
 아래는 교차 출처인 A 윈도우 `http://tistory.com`과 B 윈도우 `https://secure.tistory.com`이 서로 메시지를 주고받는 코드다.
 
 ```js
