@@ -67,7 +67,7 @@ ga('send', 'pageview');
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -77,6 +77,254 @@ ga('send', 'pageview');
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Git-로컬-디스크에-원격-저장소-만들기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/git/Git-로컬-디스크에-원격-저장소-만들기/" class="article-date">
+  <time datetime="2018-07-06T07:25:33.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/git/Git-로컬-디스크에-원격-저장소-만들기/">Git: 로컬 디스크에 원격 저장소 만들기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다.</p>
+<p>bare로 생성하는 이유는 다음 링크를 참조할 것: <a href="http://bit.ly/175mFLh" target="_blank" rel="noopener">http://bit.ly/175mFLh</a></p>
+<p>어쨌거나 bare-repository를 생성해서 원격 저장소로 등록해보자.</p>
+<h4 id="테스트-환경"><a href="#테스트-환경" class="headerlink" title="테스트 환경"></a>테스트 환경</h4><ul>
+<li>windows7</li>
+<li>git for windows &amp; git bash</li>
+</ul>
+<p>clone을 이용한 방법<br>$ git init –bare<br>Initialized empty Git repository in c:/Users/fixalot/work/gitserver/</p>
+<p>$ git clone file://c:/Users/fixalot/work/gitserver myrepository<br>Cloning into ‘myrepository’…<br>warning: You appear to have cloned an empty repository.<br>Checking connectivity… done<br>여기서는 file 프로토콜을 사용했는데 생략할 수도 있다.</p>
+<p>$ git clone c:/Users/fixalot/work/gitserver myrepository2<br>Cloning into ‘myrepository2’…<br>warning: You appear to have cloned an empty repository.<br>done.</p>
+<p>$ git clone ~/work/gitserver myrepository3<br>Cloning into ‘myrepository3’…<br>warning: You appear to have cloned an empty repository.<br>done.<br>file 프로토콜 사용여부에 따른 차이는 다음 링크에서 확인할 수 있다.</p>
+<p><a href="http://git-scm.com/book/ko/Git-%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C" target="_blank" rel="noopener">http://git-scm.com/book/ko/Git-%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C</a></p>
+<p>remote를 이용한 방법<br>저장소 생성까지는 clone과 같다.</p>
+<p>$ git init –bare<br>Initialized empty Git repository in c:/Users/fixalot/work/gitserver/<br>그리고 다음처럼 깃 저장소 등록 후 서버를 추가한다:</p>
+<p>$ git init<br>Initialized empty Git repository in c:/Users/fixalot/work/test/.git/</p>
+<p>$ git remote add origin file://c:/Users/fixalot/work/gitserver<br>$ git remote -v<br>origin  file://c:/Users/fixalot/work/gitserver (fetch)<br>origin  file://c:/Users/fixalot/work/gitserver (push)<br>하지만 이렇게 할 경우 에러가 발생할 수 있다. 바로 다음과 같은 에러들인데:</p>
+<p>$ git push -u origin master<br>error: src refspec master does not match any.<br>error: failed to push some refs to ‘file://c:/Users/fixalot/work/gitserver’</p>
+<p>$ git pull -u origin master<br>fatal: Couldn’t find remote ref master<br>fatal: The remote end hung up unexpectedly<br>이건 아무 파일이나 생성 -&gt; 커밋 -&gt; 푸싱으로 간단하게 해결할 수 있다. 왜그러는지몰러</p>
+<p>$ touch readme<br>$ git add .<br>$ git commit -m “init”<br>[master (root-commit) 1a90f6d] init<br> 1 file changed, 0 insertions(+), 0 deletions(-)<br> create mode 100644 readme</p>
+<p>$ git push -u origin master<br>Counting objects: 3, done.<br>Writing objects: 100% (3/3), 198 bytes | 0 bytes/s, done.<br>Total 3 (delta 0), reused 0 (delta 0)<br>To file://c:/Users/fixalot/work/gitserver</p>
+<ul>
+<li>[new branch]      master -&gt; master<br>Branch master set up to track remote branch master from origin.</li>
+</ul>
+<p>$ git pull -u origin master<br>From file://c:/Users/fixalot/work/gitserver</p>
+<ul>
+<li>branch            master     -&gt; FETCH_HEAD<br>Already up-to-date.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/git/Git-로컬-디스크에-원격-저장소-만들기/" data-id="cjj9odgdo004g80uoogm0cymb" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/repository/">repository</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Unix-Linux-파일-내용-읽어서-환경변수로-설정하기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/" class="article-date">
+  <time datetime="2018-07-06T07:13:07.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/unix-linux/">unix/linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/">Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>쉽죠잉<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">export VARIABLE_NAME = $( cat FILE_LOCATION )</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> PID=$(cat /usr/<span class="built_in">local</span>/tomcat8.5-6/bin/catalina.pid)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$PID</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/" data-id="cjj9odgh800eq80uobezcq23l" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/evironment-variable/">evironment variable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Unix-Linux-Vim-단축키-jpg" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/os/unix-linux/Unix-Linux-Vim-단축키-jpg/" class="article-date">
+  <time datetime="2018-07-06T06:57:35.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/unix-linux/">unix/linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/os/unix-linux/Unix-Linux-Vim-단축키-jpg/">Unix/Linux: Vim 단축키.jpg</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>위키: <a href="http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim" target="_blank" rel="noopener">http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim</a></p>
+<p><img src="/images/Unix-Linux-Vim-단축키-1.png" alt=""><br><img src="/images/Unix-Linux-Vim-단축키-2.jpeg" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-Vim-단축키-jpg/" data-id="cjj9odgei006580uo25xmgmsv" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-윈도우-pscp-원격-서버에-파일-업로드" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/os/windows/윈도우-pscp-원격-서버에-파일-업로드/" class="article-date">
+  <time datetime="2018-07-06T06:53:54.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/windows/">windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/os/windows/윈도우-pscp-원격-서버에-파일-업로드/">윈도우: pscp 원격 서버에 파일 업로드</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>PSCP, PuTTY Secure Copy client</strong></p>
+<p>윈도우에서 <a href="https://putty.org" target="_blank" rel="noopener">putty</a>를 설치하고 명령 프롬프트나 파워쉘에서 사용할 수 있다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pscp 보낼파일경로 사용자@호스트:목적지경로</span><br></pre></td></tr></table></figure></p>
+<h3 id="example"><a href="#example" class="headerlink" title="example"></a>example</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pscp C:/project/workspace/myfile.js someuser@12.34.56.78:/<span class="built_in">test</span>/myfile.js <span class="comment"># 비밀번호 별도 입력</span></span><br><span class="line">pscp -pw P@ssWord C:/project/workspace/myfile.js someuser@12.34.56.78:/<span class="built_in">test</span>/myfile.js <span class="comment"># 비밀번호도 같이</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/os/windows/윈도우-pscp-원격-서버에-파일-업로드/" data-id="cjj9odgi400gd80uo867s2q8r" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pscp/">pscp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-윈도우-보호된-프로세스-날리기" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/os/windows/윈도우-보호된-프로세스-날리기/" class="article-date">
+  <time datetime="2018-07-06T06:52:40.000Z" itemprop="datePublished">2018-07-06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/windows/">windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/os/windows/윈도우-보호된-프로세스-날리기/">윈도우: 보호된 프로세스 날리기</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>프로세스나 서비스 강제종료 시 “액세스가 거부되었습니다.” 현상이 발생한다면?</p>
+<p><a href="http://processhacker.sourceforge.net/index.php" target="_blank" rel="noopener">http://processhacker.sourceforge.net/index.php</a></p>
+<p>???</p>
+<p>PROFIT!!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/os/windows/윈도우-보호된-프로세스-날리기/" data-id="cjj9odgi600gh80uofz11adb5" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/process-kill/">process kill</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-Atom-초기-설정" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -111,7 +359,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/Atom-초기-설정/" data-id="cjj5clw35003yjsuow1cq7rlp" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/Atom-초기-설정/" data-id="cjj9odgdh004580uomb2yukgj" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom/">atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -163,7 +411,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/wireshark-와이어샤크-네트워크-프로토콜-분석툴/" data-id="cjj5clw4t006yjsuoakkayg96" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/wireshark-와이어샤크-네트워크-프로토콜-분석툴/" data-id="cjj9odgic00gr80uol2zcfoyh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wireshark/">wireshark</a></li></ul>
@@ -214,7 +462,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/sublime-text-쓸만한-패키지-모음/" data-id="cjj5clw4m006jjsuodd2ua9g3" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/sublime-text-쓸만한-패키지-모음/" data-id="cjj9odgi100g680uozt6kue4l" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li></ul>
@@ -257,7 +505,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-easy-console-grepper-권장-설정/" data-id="cjj5clw48005ojsuoev2uj7dz" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-easy-console-grepper-권장-설정/" data-id="cjj9odghu00fs80uo6y6tuemr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -302,7 +550,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-svn-repository-접근권한-초기화-방법/" data-id="cjj5clw4g0068jsuo9q6dw1yt" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-svn-repository-접근권한-초기화-방법/" data-id="cjj9odgi300ga80uob1p9xa76" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -362,7 +610,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-hot-code-replace/" data-id="cjj5clw4e0064jsuohd0ua30r" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-hot-code-replace/" data-id="cjj9odghw00fw80uoonh0jay3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li></ul>
@@ -493,7 +741,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/개발툴-유틸리티-링크-모음/" data-id="cjj5clw4o006njsuo38nxhef7" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/개발툴-유틸리티-링크-모음/" data-id="cjj9odgie00gu80uossp7kl6n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/link/">link</a></li></ul>
@@ -539,7 +787,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/sublime-text-초기-설정/" data-id="cjj5clw4r006vjsuorztev9s5" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/sublime-text-초기-설정/" data-id="cjj9odgi800gk80uokq70d1ie" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -619,7 +867,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-초기-설정/" data-id="cjj5clw4j006gjsuo4x6jyemx" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-초기-설정/" data-id="cjj9odghy00fz80uokvxvru4h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -666,7 +914,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-WindowEventHandlers-onunload/" data-id="cjj5clw370042jsuo2jjatzvt" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-WindowEventHandlers-onunload/" data-id="cjj9odgdv004r80uoz4cshjfu" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onclose/">onclose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onunload/">onunload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -943,7 +1191,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjj5clw8e00hsjsuo8essjzj7" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjj9odgjl00jw80uo6bbgzpif" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -998,7 +1246,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-생성자-함수-constructor-function/" data-id="cjj5clw3u004zjsuobiq2l20b" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-생성자-함수-constructor-function/" data-id="cjj9odge7005i80uoecj546qm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/constructor/">constructor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li></ul>
@@ -1063,7 +1311,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" data-id="cjj5clw3a0045jsuoxn790t6p" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" data-id="cjj9odgds004k80uosyghpx2z" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -1176,7 +1424,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-Ajax/" data-id="cjj5clw7w00gijsuohyafarjo" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-Ajax/" data-id="cjj9odghg00f180uoktxki0y3" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
@@ -1232,261 +1480,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/" data-id="cjj5clw3c0048jsuobv3617fr" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/" data-id="cjj9odgdz005380uoovtft65a" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anchor/">anchor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript-eval-과-new-Function-의-차이" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/javascript/JavaScript-eval-과-new-Function-의-차이/" class="article-date">
-  <time datetime="2018-03-20T07:58:02.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript/JavaScript-eval-과-new-Function-의-차이/">JavaScript: eval()과 new Function()의 차이</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
-<li><a href="http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing" target="_blank" rel="noopener">http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing</a></li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">111</span>;</span><br><span class="line">  <span class="built_in">eval</span>(<span class="string">'console.debug(a); a = 222;'</span>); <span class="comment">// 111</span></span><br><span class="line">  <span class="built_in">console</span>.debug(a); <span class="comment">// 222</span></span><br><span class="line">&#125;</span><br><span class="line">test1();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">333</span>;</span><br><span class="line">  <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'console.debug(b);'</span>)(); <span class="comment">// ReferenceError: b is not defined</span></span><br><span class="line">&#125;</span><br><span class="line">test2();</span><br></pre></td></tr></table></figure>
-<p>내부동작과 유효범위(혹은 scope)의 차이가 있다.</p>
-<ul>
-<li><code>eval()</code>: 자바스크립트 표현식으로 문자열을 자바스크립트 코드로 해석한 후 이를 평가한다. 이 때 eval()을 호출하는 시점의 변수 환경이 사용하기 때문에 실행 범위 내의 지역변수에 접근 할 수 있다.</li>
-<li><code>new Function()</code>: 주어진 문자열을 자바스크립트 코드로 파싱하여 호출 가능한 객체에 저장하며 별도의 함수 영역으로 분리되기 때문에 지역변수에 접근 할 수 없다.</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/" data-id="cjj5clw3h004fjsuovdpnw1t6" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eval/">eval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript-콜백-함수란-callback-functions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/javascript/JavaScript-콜백-함수란-callback-functions/" class="article-date">
-  <time datetime="2018-03-20T07:54:14.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript/JavaScript-콜백-함수란-callback-functions/">JavaScript: 콜백 함수란 callback functions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>자바스크립트의 함수(function)는 하나의 완성된 객체다. 클래스에 종속적이며 클래스 없이는 접근이 불가능한 자바의 메서드(method)와는 다르다. 자바의 메서드가 단지 인스턴스화 될 클래스의 템플릿으로 존재하는 반면, 함수는 독립적인 객체로 존재하기 때문에 함수만으로 접근이 가능하고 개별선언도 가능하다.<br>하여간 이러한 특징 덕분에 자바에서는 상상도 못할일이 자바스크립트에선 가능한데… 그건 바로 파라미터로 함수 객체를 전달하는 것.</p>
-<p>요딴 식이다:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">say</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(word);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">execute</span>(<span class="params">someFunction, value</span>) </span>&#123;</span><br><span class="line">  someFunction(value);</span><br><span class="line">&#125;</span><br><span class="line">execute(say, <span class="string">"Hello"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>코드 출처 - manuel kiessling의 ‘The Node Beginner Book’</p>
-<p>다음의 더욱 해괴한 코드를 보면:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">execute</span>(<span class="params">someFunction, value</span>) </span>&#123;</span><br><span class="line">  someFunction(value);</span><br><span class="line">&#125;</span><br><span class="line">execute(<span class="function"><span class="keyword">function</span>(<span class="params">word</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(word)</span><br><span class="line">&#125;, <span class="string">"Hello"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>이 코드는 사실 맨 처음 예를 든 코드의 단축형이다.</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">③ execute ( ①익명함수, ②파라미터 );</span><br></pre></td></tr></table></figure>
-<p>3을 호출하는데 1을 첫번째 파라미터로 넘겨준다. 그런데 여기서 첫번째 파라미터는 함수 리터럴, 함수의 정의부분이다. 즉, 뭔가 작동을 해야할 몸체는 아직 아무것도 없다. 그리고 두번째 파라미터 2를 넘겨준다. <code>execute</code>는 전달받은 첫번째 파라미터를 실행하는데 그것은 함수다. 그리고 두번째 파라미터를, 첫번째 파라미터(함수객체)의  매개변수로 전달한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">  response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type"</span>: <span class="string">"text/plain"</span>&#125;);</span><br><span class="line">  response.write(<span class="string">"Hello World"</span>);</span><br><span class="line">  response.end();</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br></pre></td></tr></table></figure></p>
-<p>위에서 두번째로 예를 든 코드와 다를바가 없다. 아주 약간 복잡한 함수가 api로 제공될 뿐이다.<br>createServer()는 첫 번째 파라미터로 함수를 받는다. 그리고 <code>createServer()</code> 메서드가 리턴한 객체의 <code>listen()</code> 함수로 http 리스너를 등록한다. 그리곤 request 이벤트가 발생할때마다 첫 번째 파라미터인 리터럴로 작성한 함수가 실행된다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-콜백-함수란-callback-functions/" data-id="cjj5clw400059jsuoimu93igd" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/callback/">callback</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript-클로저-closures" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/javascript/JavaScript-클로저-closures/" class="article-date">
-  <time datetime="2018-03-20T07:46:26.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript/JavaScript-클로저-closures/">JavaScript: 클로저 closures</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
-<li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures</a></li>
-<li><a href="https://opentutorials.org/course/743/6544" target="_blank" rel="noopener">https://opentutorials.org/course/743/6544</a></li>
-<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
-</ul>
-<h2 id="클로저란"><a href="#클로저란" class="headerlink" title="클로저란?"></a>클로저란?</h2><blockquote>
-<p>대다수의 현대 프로그래밍 언어와 마찬가지로 자바스크립트 또한 어휘적 유효범위(Lexical scoping)을 사용한다. 이는 함수를 호출하는 시점에서의 변수 유효범위가 아니라, 함수가 정의되었을 때의 변수 유효범위를 사용하여 함수가 실행된다는 뜻이다. 이러한 어휘적 유효범위를 구현하기 위해, 자바스크립트 함수객체는 내부 상태에 함수 자체의 코드뿐만 아니라 현재 유효범위 체인에 대한 참조도 포함하고 있다. 함수 객체와 함수의 변수가 해석되는 범위(변수 바인딩의 집합)의 조합은 컴퓨터 과학 문헌에서 클로저(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.</sup></sup></p>
-</blockquote>
-<ul>
-<li>1: 이는 함수의 변수가 유효범위 체인에 바인딩되어 있고, 따라서 그 함수는 함수의 변수에 ‘따라 닫힌다’는 뜻에서 유래한 용어다.</li>
-<li>2: (역자주) 함수 내에서 선언된 변수는 보통 함수의 실행이 끝나면 같이 소멸해야 한다. 하지만, 함수의 실행이 끝나더라도 유효범위 체인 상에서 함수 내의 변수가 계속 살아있어야 하는 상황이라면, 내부 변수가 살아있으므로 그 함수는 ‘닫힐’ 수 없다. 해당 함수가 완전히 ‘닫힐’ 수 있는 경우는 함수 내에서 정의한 변수들을 참조하는 곳이 없어야 하는 상황이므로, 함수의 닫힘 가능 여부는 해당 함수의 실행 종료 여부가 아니라 변수 유효 여부에 달린 것이다.</li>
-<li>출처: 자바스크립트 완벽가이드 (JavaScript the definitive guide 6/E), David Flanagan</li>
-</ul>
-<p>간단히 말해서 함수 객체나 함수 내의 변수가 유효범위를 벗어나도 참조가 유지되는 한 소멸하지 않는 환경 혹은 그러한 함수가 클로저다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="string">'still alive'</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> inner;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> inner = outer();</span><br><span class="line">inner(); <span class="comment">// 'still alive', inner 함수의 참조가 종료될 때까지 a도 소멸하지 않는다.</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="클로저인가-클로져인가"><a href="#클로저인가-클로져인가" class="headerlink" title="클로저인가 클로져인가?"></a>클로저인가 클로져인가?</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">closure [klóuʒər]</span><br></pre></td></tr></table></figure>
-<p>국립국어원은 “마찰음<code>Ʒ</code>와 파찰음<code>dʒ, ts, dz, t∫</code>가 모음 앞에 올 때에는 ‘지, 치’가 아니라 ‘ㅈ, ㅊ’으로 적으므로 항상 ‘자, 저, 조, 주’, ‘차, 처, 초, 추’로 표기”라고 한다. 따라서 클로저가 올바른 표기법. 이에 따르면 우리가 알고 있는 ‘피카츄’도 올바른 표기법이 아니다. ‘피카추’가 맞다. (…)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-클로저-closures/" data-id="cjj5clw43005gjsuoyzfj3bk5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closures/">closures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript-비정형-인자-arguments" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/javascript/JavaScript-비정형-인자-arguments/" class="article-date">
-  <time datetime="2018-03-20T07:45:07.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript/JavaScript-비정형-인자-arguments/">JavaScript: 비정형 인자 arguments</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>자바스크립트에는 선언부에 명시되지 않은 파라미터를 별도로 저장하는 프로퍼티가 존재한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">argsTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ... 생략</span></span><br><span class="line">    <span class="built_in">arguments</span>[<span class="number">2</span>]; <span class="comment">// 'arg3'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">argsTest(<span class="string">'arg1'</span>, <span class="string">'arg2'</span>, <span class="string">'arg3'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>위의 <code>argsTest()</code> 호출 시 전달된 세 개의 문자열은 배열로 생성되며 <code>arguments</code> 프로퍼티를 통해 접근한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">argsTest</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">arguments</span>.length &lt; <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'usage: argsTest(url, 파라미터1, 파라미터2, ...)'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">1</span> &amp;&amp; <span class="keyword">typeof</span> <span class="built_in">arguments</span>[i] != <span class="string">'string'</span>) &#123;</span><br><span class="line">            alert(<span class="string">'argsTest()의 인수는 문자열만 가능합니다.'</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-비정형-인자-arguments/" data-id="cjj5clw3j004jjsuo6r1co4fw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arguments/">arguments</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaScript-with-debugger" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/javascript/JavaScript-with-debugger/" class="article-date">
-  <time datetime="2018-03-20T07:43:07.000Z" itemprop="datePublished">2018-03-20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/javascript/">javascript</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/javascript/JavaScript-with-debugger/">JavaScript: with, debugger</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with</a></li>
-</ul>
-<h2 id="with"><a href="#with" class="headerlink" title="with"></a>with</h2><p>주로 깊이 중첩된 구조를 갖는 객체의 프로퍼티 접근 표현식을 생략하기 위해 사용된다. 다만 사용이 권장되지 않는다. David Flanagan은 최적화가 힘들고 코드 실행 속도가 느리기 때문이라 한다. MDN은 “혼란스러운 버그를 유발하고 호환성에 문제가 있어서 비권장”한다. 게다가 엄격 모드(strict mode)에선 사용조차 불가하니 실제 쓸 일은 없어 보인다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line">obj.inner = &#123;&#125;;</span><br><span class="line">obj.inner.number = <span class="number">1234</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> (obj.inner) &#123;</span><br><span class="line">  <span class="built_in">console</span>.debug(number); <span class="comment">// 1234</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="debugger"><a href="#debugger" class="headerlink" title="debugger"></a>debugger</h2><p>디버거의 브레이크 포인트 역할을 하는 키워드. 실제로 사용해보면 debugger 키워드가 있는 지점에 브레이크가 걸린다. 단 실제 작동은 자바스크립트 구현체에 따라 달라질 수 있다. 인터넷 브라우저에선 크롬51, 파폭47, IE11, 엣지에서 정상 작동하는걸 확인함.</p>
-<p>브라우저 개발자 도구를 열어놓고 아래 코드를 실행해보자:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">'debugger test'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">debugger</span>;</span><br><span class="line">  <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-with-debugger/" data-id="cjj5clw3o004rjsuo21whx3gh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debugger/">debugger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/with/">with</a></li></ul>
 
     </footer>
   </div>
@@ -1499,7 +1496,7 @@ ga('send', 'pageview');
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -1508,9 +1505,9 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildsystem/">buildsystem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildsystem/">buildsystem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/unix-linux/">unix/linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li></ul>
     </div>
   </div>
 
@@ -1520,7 +1517,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anchor/">anchor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buildsystem/">buildsystem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closures/">closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/constructor/">constructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conversion/">conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbms/">dbms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugger/">debugger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging-log/">debugging log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eval/">eval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gist/">gist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jst/">jst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link/">link</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link-post/">link post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nexus/">nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onclose/">onclose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onunload/">onunload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powershell/">powershell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/">reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote-desktop/">remote desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strict-mode/">strict mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/type/">type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wireshark/">wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with/">with</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrapper/">wrapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wst/">wst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anchor/">anchor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buildsystem/">buildsystem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closures/">closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/constructor/">constructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conversion/">conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbms/">dbms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugger/">debugger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging-log/">debugging log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eval/">eval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evironment-variable/">evironment variable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gist/">gist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jst/">jst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link/">link</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link-post/">link post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nexus/">nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onclose/">onclose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onunload/">onunload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powershell/">powershell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/process-kill/">process kill</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pscp/">pscp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/">reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote-desktop/">remote desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/repository/">repository</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strict-mode/">strict mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/type/">type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wireshark/">wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with/">with</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrapper/">wrapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wst/">wst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
     </div>
   </div>
 
@@ -1530,16 +1527,16 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/buildsystem/" style="font-size: 10px;">buildsystem</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 11.43px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/easy-console-grepper/" style="font-size: 10px;">easy console grepper</a> <a href="/tags/eclipse/" style="font-size: 15.71px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 18.57px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/eventhandlers/" style="font-size: 10px;">eventhandlers</a> <a href="/tags/function/" style="font-size: 12.86px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 14.29px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hot-code-replace/" style="font-size: 10px;">hot code replace</a> <a href="/tags/hot-deploy/" style="font-size: 10px;">hot deploy</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/link-post/" style="font-size: 10px;">link post</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/onclose/" style="font-size: 10px;">onclose</a> <a href="/tags/onunload/" style="font-size: 10px;">onunload</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 11.43px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/shell/" style="font-size: 11.43px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict mode</a> <a href="/tags/sublime-text/" style="font-size: 11.43px;">sublime text</a> <a href="/tags/todo/" style="font-size: 15.71px;">todo</a> <a href="/tags/tools/" style="font-size: 11.43px;">tools</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows/" style="font-size: 17.14px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a> <a href="/tags/xmlhttprequest/" style="font-size: 10px;">xmlhttprequest</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/buildsystem/" style="font-size: 10px;">buildsystem</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 11.67px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/easy-console-grepper/" style="font-size: 10px;">easy console grepper</a> <a href="/tags/eclipse/" style="font-size: 15px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 18.33px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/eventhandlers/" style="font-size: 10px;">eventhandlers</a> <a href="/tags/evironment-variable/" style="font-size: 10px;">evironment variable</a> <a href="/tags/function/" style="font-size: 13.33px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hot-code-replace/" style="font-size: 10px;">hot code replace</a> <a href="/tags/hot-deploy/" style="font-size: 10px;">hot deploy</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/link-post/" style="font-size: 10px;">link post</a> <a href="/tags/linux/" style="font-size: 11.67px;">linux</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/onclose/" style="font-size: 10px;">onclose</a> <a href="/tags/onunload/" style="font-size: 10px;">onunload</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 11.67px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/process-kill/" style="font-size: 10px;">process kill</a> <a href="/tags/pscp/" style="font-size: 10px;">pscp</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/repository/" style="font-size: 10px;">repository</a> <a href="/tags/shell/" style="font-size: 11.67px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict mode</a> <a href="/tags/sublime-text/" style="font-size: 11.67px;">sublime text</a> <a href="/tags/todo/" style="font-size: 15px;">todo</a> <a href="/tags/tools/" style="font-size: 11.67px;">tools</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/unix/" style="font-size: 11.67px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows/" style="font-size: 16.67px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a> <a href="/tags/xmlhttprequest/" style="font-size: 10px;">xmlhttprequest</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
   </div>
 
@@ -1547,28 +1544,28 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/tools/Atom-초기-설정/">Atom: 초기 설정</a>
+            <a href="/git/Git-로컬-디스크에-원격-저장소-만들기/">Git: 로컬 디스크에 원격 저장소 만들기</a>
           </li>
         
           <li>
-            <a href="/tools/wireshark-와이어샤크-네트워크-프로토콜-분석툴/">wireshark: 와이어샤크 네트워크 프로토콜 분석툴</a>
+            <a href="/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/">Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기</a>
           </li>
         
           <li>
-            <a href="/tools/sublime-text-쓸만한-패키지-모음/">sublime text: 쓸만한 패키지 모음</a>
+            <a href="/os/unix-linux/Unix-Linux-Vim-단축키-jpg/">Unix/Linux: Vim 단축키.jpg</a>
           </li>
         
           <li>
-            <a href="/tools/eclipse-easy-console-grepper-권장-설정/">eclipse: easy console grepper 권장 설정</a>
+            <a href="/os/windows/윈도우-pscp-원격-서버에-파일-업로드/">윈도우: pscp 원격 서버에 파일 업로드</a>
           </li>
         
           <li>
-            <a href="/tools/eclipse-svn-repository-접근권한-초기화-방법/">eclipse: svn repository 접근권한 초기화 방법</a>
+            <a href="/os/windows/윈도우-보호된-프로세스-날리기/">윈도우: 보호된 프로세스 날리기</a>
           </li>
         
       </ul>
