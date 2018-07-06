@@ -9,7 +9,7 @@ tags:
   - regex
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html
 
 

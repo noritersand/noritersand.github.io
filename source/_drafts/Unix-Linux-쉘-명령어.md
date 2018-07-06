@@ -9,7 +9,7 @@ tags:
   - linux
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/
 
 #### 테스트 환경

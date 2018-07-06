@@ -10,7 +10,7 @@ tags:
   - conversion
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/
 
 ## 암시적 타입 변환

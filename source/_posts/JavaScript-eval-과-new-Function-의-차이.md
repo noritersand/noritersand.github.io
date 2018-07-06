@@ -9,7 +9,7 @@ tags:
   - eval
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing
 
 ```js

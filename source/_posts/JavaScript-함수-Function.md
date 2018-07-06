@@ -9,7 +9,7 @@ tags:
   - function
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.w3schools.com/Js/js_function_definition.asp
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function
 

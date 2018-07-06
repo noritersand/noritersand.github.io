@@ -9,7 +9,7 @@ tags:
   - linux
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://www.cmsfactory.net/node/10299
 - http://blog.daum.net/question0921/808
 

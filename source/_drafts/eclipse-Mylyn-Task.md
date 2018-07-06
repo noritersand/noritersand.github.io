@@ -7,7 +7,7 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.eclipse.org/mylyn/
 
 TODO TODO TODO

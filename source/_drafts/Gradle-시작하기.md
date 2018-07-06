@@ -8,7 +8,7 @@ tags:
   - gradle
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://docs.gradle.org
 - https://www.slipp.net/wiki/pages/viewpage.action?pageId=11632703
 - http://kwonnam.pe.kr/wiki/gradle

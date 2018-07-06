@@ -7,7 +7,7 @@ tags:
   - eclipse
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.eclipse.org/downloads
 - http://tomcat.apache.org
 

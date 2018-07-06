@@ -10,7 +10,7 @@ tags:
   - debugger
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with
 
 ## with

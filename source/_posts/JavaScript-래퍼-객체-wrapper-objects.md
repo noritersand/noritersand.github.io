@@ -9,7 +9,7 @@ tags:
   - wrapper
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/
 - http://wiki.codekin.com/index.php/3.13_기본_데이터_타입_래퍼_객체
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object

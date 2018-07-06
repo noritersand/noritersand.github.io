@@ -7,6 +7,6 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - http://www.codejava.net/ides/eclipse/monitoring-http-requests-and-responses-using-tcpip-monitor-in-eclipse
 - http://www.avajava.com/tutorials/lessons/how-do-i-monitor-http-communication-in-eclipse.html

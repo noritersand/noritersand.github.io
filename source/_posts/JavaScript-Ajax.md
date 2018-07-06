@@ -10,7 +10,7 @@ tags:
   - xmlhttprequest
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://xhr.spec.whatwg.org/
 - http://www.w3schools.com/ajax/
 - https://developer.mozilla.org/ko/docs/XMLHttpRequest

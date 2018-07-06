@@ -7,7 +7,7 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://projects.eclipse.org/projects/technology.recommenders
 - http://www.eclipse.org/recommenders/
 

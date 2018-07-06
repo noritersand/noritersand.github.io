@@ -9,7 +9,7 @@ tags:
   - strict mode
 ---
 
-#### 관련 문서
+#### 참고한 글
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 - http://www.w3schools.com/js/js_strict.asp
 - http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드
