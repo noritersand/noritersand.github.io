@@ -21,13 +21,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/git/</loc>
-        <lastmod>2018-07-02T04:34:07.318Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/categories/buildsystem/</loc>
         <lastmod>2018-07-02T04:34:07.339Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -36,35 +29,42 @@
 
     <url>
         <loc>http://noritersand.github.io/categories/web/</loc>
-        <lastmod>2018-07-02T04:34:07.342Z</lastmod>
+        <lastmod>2018-07-06T01:54:39.496Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/os/</loc>
-        <lastmod>2018-07-02T04:34:07.346Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/os/windows/</loc>
-        <lastmod>2018-07-02T04:34:07.346Z</lastmod>
+        <loc>http://noritersand.github.io/categories/git/</loc>
+        <lastmod>2018-07-06T01:54:39.516Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://noritersand.github.io/categories/javascript/</loc>
-        <lastmod>2018-07-04T00:33:50.904Z</lastmod>
+        <lastmod>2018-07-06T01:54:39.550Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/</loc>
+        <lastmod>2018-07-06T01:54:39.551Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/windows/</loc>
+        <lastmod>2018-07-06T01:54:39.551Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://noritersand.github.io/categories/tools/</loc>
-        <lastmod>2018-07-04T00:59:05.197Z</lastmod>
+        <lastmod>2018-07-06T01:54:39.552Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
