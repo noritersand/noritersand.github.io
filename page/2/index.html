@@ -78,6 +78,240 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript-Window-postMessage-교차-출처간-메시지-통신" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" class="article-date">
+  <time datetime="2018-03-20T08:15:34.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/">JavaScript: Window.postMessage 교차 출처간 메시지 통신</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage</a></li>
+</ul>
+<h4 id="브라우저-호환"><a href="#브라우저-호환" class="headerlink" title="브라우저 호환"></a>브라우저 호환</h4><p>IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로… <del>악의축</del></p>
+<p>자바스크립트에서는 어떤 윈도우와 또 다른 윈도우의 스킴과 호스트명, 그리고 포트번호가 완전히 일치하지 않을때, 두 윈도우간의 상호작용을 차단한다. 이것은 <a href="https://developer.mozilla.org/ko/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">동일 출처 원칙(same origin policy)</a>의 제약사항이며 출처가 다른 두 윈도우를 교차 출처(cross origin) 상태에 있다고 한다.</p>
+<p>교차 출처인 윈도우의 변수나 함수 즉, 프로퍼티로의 접근은 대부분 차단된다고 생각하면 된다. 가령 A 윈도우에서 교차 출처인 B 윈도우의 주소를 Location을 통해 가져오려고 하면 DOMException이 발생하면서 스크립트가 중단되는 식이다. 참고로 교차 출처 상태일 때 location으로 주소를 알아낼 수는 없지만 주소를 바꿀 수는 있다.</p>
+<p>하여간 이런 동일 출처 원칙의 제약을 우회할 수 있는게(비록 엄격한 조건 하에서만 가능하지만) 바로 Window.postMessage다.<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">otherWindow.postMessage(message, targetOrigin, [transfer]);</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>message</strong>: 다른 윈도우에 전달할 메시지</li>
+<li><strong>targetOrigin</strong>: 메시지를 전달할 윈도우의 출처를 명시한다. 대상 윈도우의 스킴, 호스트명, 포트번호가 targetOrigin에 명시된 것과 정확히 일치하지 않으면 메시지는 차단된다.</li>
+<li><strong>transfer</strong>: Is a sequence of Transferable objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.</li>
+</ul>
+<p>아래는 교차 출처인 A 윈도우 <code>http://tistory.com</code>과 B 윈도우 <code>https://secure.tistory.com</code>이 서로 메시지를 주고받는 코드다.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// B 윈도우에서 핸들러 설정</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveBeginningMessage</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (event.origin !== <span class="string">"http://tistory.com"</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(event.data); <span class="comment">// A 윈도우에서 보낸 메시지</span></span><br><span class="line">  event.source.postMessage(<span class="string">"my location is "</span> + location.href, event.origin);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, receiveBeginningMessage);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A 윈도우에서 핸들러 설정</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">receiveReturnMessage</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(event.data); <span class="comment">// B 윈도우에서 보낸 메시지</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">"message"</span>, receiveReturnMessage);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A 윈도우에서 Window.postMessage 사용</span></span><br><span class="line"><span class="keyword">var</span> child = frames[<span class="number">0</span>];</span><br><span class="line">child.postMessage(<span class="string">"whispering"</span>, <span class="string">"https://secure.tistory.com"</span>);</span><br></pre></td></tr></table></figure>
+<p>순서는 대략:</p>
+<ul>
+<li>양쪽 윈도우에 메시지 이벤트 핸들러 등록</li>
+<li>A 윈도우에서 Window.postMessage 호출</li>
+<li>B 윈도우에서 메시지 이벤트가 발생하고 핸들러 작동. 이 때 로그로 A 윈도우가 보낸 message를 출력하고 A 윈도우로 메시지 이벤트를 발생시킴</li>
+<li>A 윈도우에서 메시지 이벤트 핸들러 작동하며 B 윈도우가 보낸 메시지 출력</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-Window-postMessage-교차-출처간-메시지-통신/" data-id="cjj9r05r2004o2kuoxpoyj23m" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript-Ajax" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/javascript/JavaScript-Ajax/" class="article-date">
+  <time datetime="2018-03-20T08:08:18.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/javascript/JavaScript-Ajax/">JavaScript: Ajax</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
+<li><a href="https://xhr.spec.whatwg.org/" target="_blank" rel="noopener">https://xhr.spec.whatwg.org/</a></li>
+<li><a href="http://www.w3schools.com/ajax/" target="_blank" rel="noopener">http://www.w3schools.com/ajax/</a></li>
+<li><a href="https://developer.mozilla.org/ko/docs/XMLHttpRequest" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/XMLHttpRequest</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest</a></li>
+<li><a href="http://huns.me/development/1291" target="_blank" rel="noopener">http://huns.me/development/1291</a></li>
+</ul>
+<h2 id="Ajax란"><a href="#Ajax란" class="headerlink" title="Ajax란?"></a>Ajax란?</h2><p>Ajax는 ‘Asynchronous JavaScript and XML’의 약자로 웹 애플리케이션 개발 기법의 하나다. Ajax는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 Ajax를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.</p>
+<p>Ajax를 사용하려면 먼저 브라우저의 내장 함수로 XMLHttpRequest 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 ActiveXObject라는 소름 돋는 이름의 생성자를 사용했지만, 웹 사용자의 최소 환경이 IE8인 요즘엔 사용하지 않는다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xmlReq = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123; <span class="comment">// Non-Microsoft browsers</span></span><br><span class="line">  xmlReq = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    xmlReq = <span class="keyword">new</span> ActiveXObject(<span class="string">'Msxml2.XMLHTTP'</span>);</span><br><span class="line">    <span class="comment">// XMLHttpRequest in later versions of Internet Explorer</span></span><br><span class="line">  &#125; <span class="keyword">catch</span> (e1) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      xmlReq = <span class="keyword">new</span> ActiveXObject(<span class="string">'Microsoft.XMLHTTP'</span>);</span><br><span class="line">      <span class="comment">// Try version supported by older versions of Internet Explorer</span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e2) &#123;</span><br><span class="line">      <span class="comment">// Unable to create an XMLHttpRequest with ActiveX</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>마소가 폭주하던 2000년대에나 쓰이던 코드. 지금은 그냥 아래 한 줄로 해결된다:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure></p>
+<p>아래 두 예시를 각각 test1.html, test2.html로 만들어서 테스트 해보자:<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>test1.html<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">loadDoc</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">    xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">      <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="built_in">document</span>.getElementById(<span class="string">'demo'</span>).innerHTML = xhr.responseText;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="javascript">    xhr.open(<span class="string">'GET'</span>, <span class="string">'test2.html'</span>);</span></span><br><span class="line"><span class="undefined">    xhr.send();</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"loadDoc()"</span>&gt;</span>who r u<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>i am waldo<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="XMLHttpRequest의-프로퍼티"><a href="#XMLHttpRequest의-프로퍼티" class="headerlink" title="XMLHttpRequest의 프로퍼티"></a>XMLHttpRequest의 프로퍼티</h2><h4 id="XMLHttpRequest-open"><a href="#XMLHttpRequest-open" class="headerlink" title="XMLHttpRequest.open()"></a>XMLHttpRequest.open()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.open( method, url [ , async ] )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>method</strong>: HTTP 메서드 타입 (get/post)</li>
+<li><strong>url</strong>: 서버 경로</li>
+<li><strong>async</strong>: 비동기 여부. (true/false)</li>
+</ul>
+<p>request의 유형을 지정한다. send()로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. method와 url은 필수지만 async는 기본값이 true로 생략할 수 있는 항목이다. async를 false로 지정할 경우 send() 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'test2.html'</span>);</span><br><span class="line"><span class="comment">// GET 방식으로 요청할 URL 설정</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="XMLHttpRequest-setRequestHeader"><a href="#XMLHttpRequest-setRequestHeader" class="headerlink" title="XMLHttpRequest.setRequestHeader()"></a>XMLHttpRequest.setRequestHeader()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.setRequestHeader( header, value )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>header</strong>: 헤더의 이름</li>
+<li><strong>value</strong>: 헤더의 값</li>
+</ul>
+<p>HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 나중에 호출되어야 한다.</p>
+<h4 id="XMLHttpRequest-send"><a href="#XMLHttpRequest-send" class="headerlink" title="XMLHttpRequest.send()"></a>XMLHttpRequest.send()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.send( [ string ] )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>string</strong>: 폼 데이터로 전송할 문자열</li>
+</ul>
+<p>서버로 request 송신. open()에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 setRequestHeader()로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">'POST'</span>, <span class="string">'test4.html'</span>);</span><br><span class="line">xhr.setRequestHeader(<span class="string">'Content-type'</span>, <span class="string">'application/x-www-form-urlencoded'</span>);</span><br><span class="line">xhr.send(<span class="string">'first=111&amp;second=222'</span>);</span><br></pre></td></tr></table></figure></p>
+<h4 id="XMLHttpRequest-abort"><a href="#XMLHttpRequest-abort" class="headerlink" title="XMLHttpRequest.abort()"></a>XMLHttpRequest.abort()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xhr.abort();</span><br></pre></td></tr></table></figure>
+<p>수행 중인 통신을 중단한다. 이미 날라간 request는 어쩔 수 없고 단지 응답을 무시할 뿐. <del>통수</del></p>
+<h4 id="XMLHttpRequest-getAllResponseHeaders"><a href="#XMLHttpRequest-getAllResponseHeaders" class="headerlink" title="XMLHttpRequest.getAllResponseHeaders()"></a>XMLHttpRequest.getAllResponseHeaders()</h4><p>response 헤더 정보를 출력한다. send()를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xhr.getAllResponseHeaders();</span><br><span class="line"><span class="comment">// "Server: Apache-Coyote/1.1</span></span><br><span class="line"><span class="comment">// Content-Type: text/html;charset=UTF-8</span></span><br><span class="line"><span class="comment">// Content-Length: 22</span></span><br><span class="line"><span class="comment">// Date: Wed, 27 Jan 2016 15:19:02 GMT</span></span><br><span class="line"><span class="comment">// "</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="XMLHttpRequest-getResponseHeader"><a href="#XMLHttpRequest-getResponseHeader" class="headerlink" title="XMLHttpRequest.getResponseHeader()"></a>XMLHttpRequest.getResponseHeader()</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">XMLHttpRequest.getResponseHeader( header )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>header</strong>: 헤더의 이름</li>
+</ul>
+<p>response 헤더 중 특정한 값만 리턴한다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line">xhr.getResponseHeader(<span class="string">'Content-Type'</span>)</span><br><span class="line"><span class="comment">// "text/html;charset=UTF-8"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="XMLHttpRequest-timeout"><a href="#XMLHttpRequest-timeout" class="headerlink" title="XMLHttpRequest.timeout"></a>XMLHttpRequest.timeout</h4><p>지정한 시간을 초과하면 XMLHttpRequestEventTarget.ontimeout을 호출한다. 단위는 밀리초(milliseconds)</p>
+<h4 id="XMLHttpRequest-responseText"><a href="#XMLHttpRequest-responseText" class="headerlink" title="XMLHttpRequest.responseText"></a>XMLHttpRequest.responseText</h4><p>서버의 응답을 문자열로 리턴.</p>
+<h4 id="XMLHttpRequest-responseXML"><a href="#XMLHttpRequest-responseXML" class="headerlink" title="XMLHttpRequest.responseXML"></a>XMLHttpRequest.responseXML</h4><p>서버의 응답을 XMLDocument로 파싱해 리턴. 파싱이 불가능하면 null을 리턴한다.</p>
+<h4 id="XMLHttpRequest-status"><a href="#XMLHttpRequest-status" class="headerlink" title="XMLHttpRequest.status"></a>XMLHttpRequest.status</h4><p>응답의 상태코드를 숫자로 리턴한다.</p>
+<h4 id="XMLHttpRequest-statusText"><a href="#XMLHttpRequest-statusText" class="headerlink" title="XMLHttpRequest.statusText"></a>XMLHttpRequest.statusText</h4><p>응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 404일 때 리턴되는 값은 “Not Found”</p>
+<h4 id="XMLHttpRequest-readyState"><a href="#XMLHttpRequest-readyState" class="headerlink" title="XMLHttpRequest.readyState"></a>XMLHttpRequest.readyState</h4><p>XMLHttpRequest의 현재 상태를 의미한다.</p>
+<ul>
+<li><code>0</code>: request not initialized.</li>
+<li><code>1</code>: server connection established</li>
+<li><code>2</code>: request received</li>
+<li><code>3</code>: processing request</li>
+<li><code>4</code>: request finished and response is ready</li>
+</ul>
+<h2 id="Attach-callback-function"><a href="#Attach-callback-function" class="headerlink" title="Attach callback function"></a>Attach callback function</h2><p>통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 XMLHttpRequest의 onreadystatechange() 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 EventTarget.addEventListener() 이용하는 방법이 있다.</p>
+<h4 id="XMLHttpRequest-onreadystatechange"><a href="#XMLHttpRequest-onreadystatechange" class="headerlink" title="XMLHttpRequest.onreadystatechange"></a>XMLHttpRequest.onreadystatechange</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span> &amp;&amp; xhr.status == <span class="number">200</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'complete'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://somewhere'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>onreadystatechange()는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.</p>
+<h4 id="EventTarget-addEventListener"><a href="#EventTarget-addEventListener" class="headerlink" title="EventTarget.addEventListener()"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">EventTarget.addEventListener()</a></h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">EventTarget.addEventListener( eventType, callback )</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>eventType</strong>: callback이 실행될 이벤트의 유형 (ex: ‘load’)</li>
+<li><strong>callback</strong>: eventType에 지정한 이벤트가 발생했을 때 실행할 함수</li>
+</ul>
+<p>addEventListener()는 IE8에서 지원되지 않으니 주의할 것. <del>악의 축</del><br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">reqListener</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>.responseText); <span class="comment">// this == xhr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">xhr.addEventListener(<span class="string">'load'</span>, reqListener);</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'http://example.org/example.txt'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure></p>
+<h4 id="XMLHttpRequestEventTarget"><a href="#XMLHttpRequestEventTarget" class="headerlink" title="XMLHttpRequestEventTarget"></a><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget" target="_blank" rel="noopener">XMLHttpRequestEventTarget</a></h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line"><span class="built_in">console</span>.debug(xhr);</span><br><span class="line">xhr.onabort = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onabort - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onerror = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onerror - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'xhr.status: '</span> + xhr.status);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onloadstart = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onloadstart - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'onloadend - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onprogress = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'progress - xhr.readyState: '</span> + xhr.readyState);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'loaded: '</span> + event.loaded);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'size: '</span> + event.size);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'complete'</span>);</span><br><span class="line">&#125;;</span><br><span class="line">xhr.open(<span class="string">'GET'</span>, <span class="string">'test2.html'</span>);</span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>XMLHttpRequestEventTarget은 XMLHttpRequest의 슈퍼클래스다. 상속받는 메서드는 다음과 같다:</p>
+<ul>
+<li><code>onabort</code>: abort 이벤트가 발생하면 호출된다.</li>
+<li><code>onerror</code>: 서버의 응답이 200이 아닐 때 호출된다.</li>
+<li><code>onloadstart</code>: XHR 요청을 시작할 때 호출된다.</li>
+<li><code>onloadend</code>: XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.</li>
+<li><code>onprogress</code>: onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.</li>
+<li><code>onload</code>: XHR 요청이 ‘성공적으로’ 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.</li>
+<li><code>ontimeout</code>: XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-Ajax/" data-id="cjj9r05wk00k02kuo9qzd57w3" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/" class="article-date">
+  <time datetime="2018-03-20T08:00:42.000Z" itemprop="datePublished">2018-03-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/">JavaScript: pseudo protocol 앵커(a) 태그로 스크립트 실행 시 주의사항</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="테스트-환경"><a href="#테스트-환경" class="headerlink" title="테스트 환경"></a>테스트 환경</h4><ul>
+<li>explorer 10</li>
+<li>chrome 43</li>
+<li>firefox 38</li>
+<li>opera 30</li>
+</ul>
+<p>문서의 어느 한 요소를 클릭했을 때 지정한 함수를 호출하도록 HTML을 작성한다고 하자. 이럴 때 흔히들 <code>&lt;a&gt;</code> 태그의 href 속성을 이용하여 스크립트를 실행하곤 한다.<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:getSome()"</span>&gt;</span> 눌러요 <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>‘javascript: pseudo protocol’ 혹은 그냥 ‘javascript protocol’, ‘javascript prefix’라고 하는 이 방식은 사실 <code>&lt;a&gt;</code> 태그의 매우 잘못된 사용법이다. 대신 <code>&lt;button&gt;</code> 태그와 onclick 속성의 조합이 권장되는데, 불가피하게 <code>&lt;a&gt;</code> 태그를 꼭 사용해야 한다면 최소한 아래 내용은 숙지하는게 좋다.<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> <span class="literal">true</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:fn()"</span>&gt;</span>pushme<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>위 코드를 브라우저로 열어서 <code>&lt;a&gt;</code> 태그를 클릭하면 무슨 일이 일어날까?</p>
+<p><img src="/images/JavaScript-pseudo-protocol-1.png" alt="첨부이미지1"></p>
+<p>파이어폭스와 익스플로러는 앵커에 의해 스크립트가 실행될 때, 해당 스크립트가 리턴하는 undefined 이외의 값을 URL로 간주하는 경향이 있다. 위 스샷은 이 때문에 발생하는 현상이다. 에러라면 에러라고 할 수 있는 현상인데, 이를 방지하기 위해선 아래 방법 중 하나를 따른다. (크롬과 오페라는 해당 없음. 사파리는 패스)</p>
+<h4 id="함수가-undefined를-반환"><a href="#함수가-undefined를-반환" class="headerlink" title="함수가 undefined를 반환"></a>함수가 undefined를 반환</h4><p>자바스크립트의 함수는 브레이스<code>}</code>  혹은 return을 만났을 때 undefined를 반환한다. 즉, 반환값을 명시하지 않는 방법이다.<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:fn()"</span>&gt;</span>pushme<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="onclick-”return-false”"><a href="#onclick-”return-false”" class="headerlink" title="onclick=”return false”"></a>onclick=”return false”</h4><p>반환값을 정의할 수 없는 함수를 호출할 때 사용한다. (가령 거의 대부분 객체를 리턴하는 jQuery의 메서드들) 이러한 경우에 onclick 이벤트 핸들러가 false를 리턴하게 하여 브라우저의 기본동작을 막아버리는 방법이다. (이벤트 핸들러가 false를 리턴하면 태그의 기본동작과 이벤트 전파(버블링, 캡처링)를 차단하는 효과가 있다.)<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="string">'hi'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">return</span> <span class="string">'arrrrgh'</span>;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:fn()"</span> <span class="attr">onclick</span>=<span class="string">"return false"</span>&gt;</span>pushme<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="void-연산자-사용"><a href="#void-연산자-사용" class="headerlink" title="void 연산자 사용"></a>void 연산자 사용</h4><p>void 연산자가 피연산자를 실행하되 피연산자의 값을 무시하고 무조건 undefined를 반환하는 특성을 이용한 방법이다.<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void window.open()"</span>&gt;</span>open<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-pseudo-protocol-앵커-a-태그로-스크립트-실행-시-주의사항/" data-id="cjj9r05re005d2kuomp4po31s" class="article-share-link">Teilen</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/anchor/">anchor</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaScript-eval-과-new-Function-의-차이" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/javascript/JavaScript-eval-과-new-Function-의-차이/" class="article-date">
@@ -117,7 +351,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/" data-id="cjj9odgdy004z80uof08sfm18" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-eval-과-new-Function-의-차이/" data-id="cjj9r05r900532kuo4l43z1n7" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eval/">eval</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -167,7 +401,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-콜백-함수란-callback-functions/" data-id="cjj9odgec005u80uoh7u0gm6e" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-콜백-함수란-callback-functions/" data-id="cjj9r05rv006c2kuo8ef3q4xw" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/callback/">callback</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -208,7 +442,7 @@ ga('send', 'pageview');
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
 <li><a href="https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures" target="_blank" rel="noopener">https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures</a></li>
 <li><a href="https://opentutorials.org/course/743/6544" target="_blank" rel="noopener">https://opentutorials.org/course/743/6544</a></li>
-<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h2 id="클로저란"><a href="#클로저란" class="headerlink" title="클로저란?"></a>클로저란?</h2><blockquote>
 <p>대다수의 현대 프로그래밍 언어와 마찬가지로 자바스크립트 또한 어휘적 유효범위(Lexical scoping)을 사용한다. 이는 함수를 호출하는 시점에서의 변수 유효범위가 아니라, 함수가 정의되었을 때의 변수 유효범위를 사용하여 함수가 실행된다는 뜻이다. 이러한 어휘적 유효범위를 구현하기 위해, 자바스크립트 함수객체는 내부 상태에 함수 자체의 코드뿐만 아니라 현재 유효범위 체인에 대한 참조도 포함하고 있다. 함수 객체와 함수의 변수가 해석되는 범위(변수 바인딩의 집합)의 조합은 컴퓨터 과학 문헌에서 클로저(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.</sup></sup></p>
@@ -225,7 +459,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-클로저-closures/" data-id="cjj9odgek006980uon9gmj52h" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-클로저-closures/" data-id="cjj9r05rq00602kuoil1i13hh" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/closures/">closures</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -269,7 +503,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-비정형-인자-arguments/" data-id="cjj9odge5005f80uokhlf1l6k" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-비정형-인자-arguments/" data-id="cjj9r05rn005s2kuogp5lewsa" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/arguments/">arguments</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -317,7 +551,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-with-debugger/" data-id="cjj9odgdw004v80uo7ayambp8" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-with-debugger/" data-id="cjj9r05rd005a2kuop1i84r44" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/debugger/">debugger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/with/">with</a></li></ul>
@@ -376,7 +610,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-const-let/" data-id="cjj9odgdt004n80uobpdh6wwm" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-const-let/" data-id="cjj9r05ra00552kuove3hgowt" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/const/">const</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/let/">let</a></li></ul>
@@ -432,7 +666,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-쿠키-컨트롤/" data-id="cjj9odgef005x80uo0cjmpn3q" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-쿠키-컨트롤/" data-id="cjj9r05rz006k2kuo3t2m8kkc" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cookie/">cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -473,7 +707,7 @@ ga('send', 'pageview');
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</a></li>
 <li><a href="http://www.w3schools.com/js/js_strict.asp" target="_blank" rel="noopener">http://www.w3schools.com/js/js_strict.asp</a></li>
-<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h4 id="테스트-환경"><a href="#테스트-환경" class="headerlink" title="테스트 환경"></a>테스트 환경</h4><ul>
 <li>파이어 폭스 47</li>
@@ -518,7 +752,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-엄격-모드-strict-mode/" data-id="cjj9odghk00f880uomsmtyef3" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-엄격-모드-strict-mode/" data-id="cjj9r05wo00k42kuocx7uckcc" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/strict-mode/">strict mode</a></li></ul>
@@ -557,7 +791,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
-<li><a href="http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/" target="_blank" rel="noopener">http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h2 id="암시적-타입-변환"><a href="#암시적-타입-변환" class="headerlink" title="암시적 타입 변환"></a>암시적 타입 변환</h2><p>자바스크립트는 필요에 따라 타입 변환을 자동으로 수행한다. 가령 문자열이 필요한 위치에 할당된 값이 문자열이 아니면 문자열 타입으로 변환을 시도할 것이다. 이 과정에서 타입이 올바르지 않아 에러가 발생하는 경우는 거의 없다. 다음은 암시적 타입 변환의 사례들이다:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="number">1</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'1 is true'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="string">''</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'null string is false'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (<span class="string">'false'</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'"false" is true'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>if문의 조건으로 불리언이 아닌 값이 할당되면 이 값은 불리언 타입으로 변환된다.<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">a = a + <span class="string">''</span>;</span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">// "string"</span></span><br><span class="line"><span class="keyword">typeof</span> +a; <span class="comment">// "number"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> b = <span class="string">"2"</span>;</span><br><span class="line"><span class="keyword">typeof</span> b++; <span class="comment">// "number"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="string">"xxx"</span>;</span><br><span class="line">-c; <span class="comment">// NaN</span></span><br><span class="line">c++; <span class="comment">// NaN</span></span><br></pre></td></tr></table></figure></p>
@@ -732,7 +966,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-타입-변환-type-conversion/" data-id="cjj9odgeg006280uok20w60wd" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-타입-변환-type-conversion/" data-id="cjj9r05rs00642kuoms66t2us" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/conversion/">conversion</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/type/">type</a></li></ul>
@@ -771,9 +1005,8 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
-<li><a href="http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/" target="_blank" rel="noopener">http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/</a></li>
-<li><a href="http://wiki.codekin.com/index.php/3.13_기본_데이터_타입_래퍼_객체" target="_blank" rel="noopener">http://wiki.codekin.com/index.php/3.13_기본_데이터_타입_래퍼_객체</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h2 id="래퍼-객체란"><a href="#래퍼-객체란" class="headerlink" title="래퍼 객체란?"></a>래퍼 객체란?</h2><p>이름처럼 래퍼(wrapper)는 원시(primitive) 타입의 값을 감싸는 형태의 객체다. number, string, boolean, symbol 데이터 타입에 각각 대응하는 Number, String, Boolean, Symbol이 제공된다. 래퍼 객체와 원시 타입간의 변환은 자바스크립트가 알아서 해주기 때문에 우리는 이를 신경쓰지 않아도 되며 명시적인 처리가 필요한 경우도 거의 없다.</p>
 <p>다만 래퍼 객체를 아예 모르는 상태에선 종종 보이는 ‘이상한’ 현상에 당황할 수도… 아래를 보자:<br><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">"abc"</span>;</span><br><span class="line"><span class="keyword">typeof</span> s; <span class="comment">// "string"</span></span><br><span class="line">s.substring(<span class="number">1</span>, <span class="number">2</span>); <span class="comment">// 'b'</span></span><br></pre></td></tr></table></figure></p>
@@ -791,7 +1024,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-래퍼-객체-wrapper-objects/" data-id="cjj9odge2005780uoei4bhaz2" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-래퍼-객체-wrapper-objects/" data-id="cjj9r05r5004w2kuo8nd1l9mi" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wrapper/">wrapper</a></li></ul>
@@ -846,7 +1079,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-함수-Function/" data-id="cjj9odghp00fi80uoesstxzcl" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-함수-Function/" data-id="cjj9r05rx006g2kuo8n3wusj6" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -894,7 +1127,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-변수의-유효범위와-끌어올림hoisting/" data-id="cjj9odge3005a80uosyqj9f80" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-변수의-유효범위와-끌어올림hoisting/" data-id="cjj9r05ri005l2kuo7m8zp98n" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -988,7 +1221,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-전역-함수-global-functions/" data-id="cjj9odgeb005p80uoogqji5ju" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-전역-함수-global-functions/" data-id="cjj9r05rp005x2kuon2rijag8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/function/">function</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -1073,7 +1306,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-제어문-control-statement/" data-id="cjj9odghn00ff80uofmleumlq" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-제어문-control-statement/" data-id="cjj9r05wt00ke2kuo3xy55qta" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -1113,8 +1346,7 @@ ga('send', 'pageview');
       
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators</a></li>
-<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
-<li><a href="http://noritersand.tistory.com/538" target="_blank" rel="noopener">http://noritersand.tistory.com/538</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h2 id="산술-연산"><a href="#산술-연산" class="headerlink" title="산술 연산"></a>산술 연산</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+   -   *   /   %   ++   --</span><br></pre></td></tr></table></figure>
 <p>덧셈 연산자는 피연산자 중 하나가 문자열일 때 나머지 피연산자도 문자열로 변환하려고 시도한다. 그래서 <code>&#39;nan&#39; + 1</code>의 결과는 ‘nan1’이 된다.<br>증가/증감<code>++ --</code> 연산자는 피연산자를 가능할 경우 숫자 타입으로 변경한다. 가령 <code>x++</code>에서 x가 문자열 <code>&quot;1&quot;</code>이면 x는 숫자 1로 바뀌며 이후 1씩 증가된다. x가 숫자로 바꿀 수 없는 문자열일 경우 NaN을 반환한다.</p>
@@ -1137,7 +1369,7 @@ ga('send', 'pageview');
 <li>두 값이 모두 불리언 값 true이거나 false일 경우에 두 값은 일치한다.</li>
 <li>적어도 하나의 값이 NaN이면 두 값은 일치하지 않는다. NaN 값은 자기 자신을 포함해 다른 어떠한 값과도 일치하지 않는다. 임의의 값 x가 NaN인지 검사하기 위해서는 <code>x !== x</code>와 같이 사용한다. 앞의 표현식이 참을 만족 할 때만 x의 값이 NaN이 된다.</li>
 <li>두 값이 모두 숫자고 같은 값을 갖는다면, 두 값은 일치한다. 만약 하나의 값이 0이고 다른 하나의 값이 -0일지라도, 두 값은 일치한다.</li>
-<li>두 값이 모두 문자열이고, 같은 위치에 정확히 같은 16비트 문자열 값을 갖고 있다면, 두 값은 일치한다. 만약 문자열의 길이나 내용이 다를 경우, 두 값은 일치하지 않는다. 두 문자열이 같은 의미를 갖고, 육안상 같은 문자열을 갖더라도 16비트 값의 순서가 다르게 인코딩되어 있을 수도 있다. </li>
+<li>두 값이 모두 문자열이고, 같은 위치에 정확히 같은 16비트 문자열 값을 갖고 있다면, 두 값은 일치한다. 만약 문자열의 길이나 내용이 다를 경우, 두 값은 일치하지 않는다. 두 문자열이 같은 의미를 갖고, 육안상 같은 문자열을 갖더라도 16비트 값의 순서가 다르게 인코딩되어 있을 수도 있다.</li>
 <li>자바스크립트에서는 유니코드 문자열에 대해서 정규화 과정을 수행하지 않는다. 또한 <code>===</code>나 <code>==</code> 연산자를 사용해 유니코드 문자열의 동등 비교를 할 수 없다. 이와 같은 문자열을 비교하려면 <code>String.localeCompare()</code>를 사용한다.</li>
 <li>두 값이 모두 같은 객체나 배열 또는 함수를 참조하고 있으면, 두 값은 일치한다. 두 값이 서로 다른 객체를 참조할 경우에 설사 두 객체의 프로퍼티가 일치하더라도 두 값은 일치하지 않는다.</li>
 </ul>
@@ -1199,7 +1431,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-연산자-operator/" data-id="cjj9odghl00fb80uo7wkq6ete" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-연산자-operator/" data-id="cjj9r05ws00kb2kuoouoa8n6e" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/operator/">operator</a></li></ul>
@@ -1240,7 +1472,7 @@ ga('send', 'pageview');
         <h4 id="참고한-글"><a href="#참고한-글" class="headerlink" title="참고한 글"></a>참고한 글</h4><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures</a></li>
-<li><a href="http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드" target="_blank" rel="noopener">http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드</a></li>
+<li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C" target="_blank" rel="noopener">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
 </ul>
 <h2 id="주석-처리"><a href="#주석-처리" class="headerlink" title="주석 처리"></a>주석 처리</h2><h3 id="SingleLine-Comment"><a href="#SingleLine-Comment" class="headerlink" title="SingleLine Comment"></a>SingleLine Comment</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 주석처리될 문자열</span></span><br></pre></td></tr></table></figure>
 <h3 id="MultiLine-Comment"><a href="#MultiLine-Comment" class="headerlink" title="MultiLine Comment"></a>MultiLine Comment</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  주석</span></span><br><span class="line"><span class="comment">  처리될</span></span><br><span class="line"><span class="comment">  문자열</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
@@ -1431,7 +1663,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-기본/" data-id="cjj9odghi00f480uo4qsb6c82" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-기본/" data-id="cjj9r05wq00k72kuofpcbif33" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/basic/">basic</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -1480,185 +1712,10 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우10-파워쉘-명령어-windows10-powershell-commands/" data-id="cjj9odgim00h880uo0rbhu92i" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/os/windows/윈도우10-파워쉘-명령어-windows10-powershell-commands/" data-id="cjj9r05sz008g2kuojuui9cvq" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/powershell/">powershell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-윈도우10-단축키-모음" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/os/windows/윈도우10-단축키-모음/" class="article-date">
-  <time datetime="2018-03-19T06:24:11.000Z" itemprop="datePublished">2018-03-19</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/windows/">windows</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/os/windows/윈도우10-단축키-모음/">윈도우10: 단축키 모음</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="전역-단축키"><a href="#전역-단축키" class="headerlink" title="전역 단축키"></a>전역 단축키</h2><ul>
-<li><code>WIN + A</code>: 알림 센터 열기</li>
-<li><code>WIN + B</code>: 트레이 아이콘 선택</li>
-<li><code>WIN + D</code>: 바탕화면 보기 - 다시 WIN + D를 누르면 이전 상태로 돌아온다</li>
-<li><code>WIN + E</code>: 윈도우 탐색기(내 PC) 실행</li>
-<li><code>WIN + G</code>: 게임 표시줄 열기. 화면 캡처 혹은 녹화 등의 기능을 제공</li>
-<li><code>WIN + I</code>: Metro 설정 열기</li>
-<li><code>WIN + K</code>: 연결(무선 디스플레이 및 오디오)</li>
-<li><code>WIN + L</code>: 컴퓨터 잠금. 비밀번호 입력 화면으로 바뀜.</li>
-<li><code>WIN + M</code>: 모든 창 최소화 - WIN + SHIFT + M을 누르면 이전 상태로 돌아옴</li>
-<li><code>WIN + P</code>: 프로젝트. 다중 화면 설정</li>
-<li><code>WIN + R</code>: 실행창 열기</li>
-<li><code>WIN + S</code>: 윈도우 검색. 앱, 파일 등을 찾을 수 있음</li>
-<li><code>WIN + T</code>: 작업 표시줄 단추 선택. 실행 중인 창을 선택</li>
-<li><code>WIN + W</code>: windows Ink 열기</li>
-<li><code>WIN + X</code>: 시작 메뉴 열기</li>
-<li><code>WIN + PrtSc</code>: 화면 캡처 후 파일로 저장</li>
-<li><code>WIN + Pause</code>: 시스템 정보 창 열기</li>
-<li><code>WIN + +/-/=</code>: 돋보기 실행(확대/축소)</li>
-<li><code>WIN + Enter</code>: 내레이터 설정</li>
-<li><code>WIN + 방향키</code>: 창 위치/크기</li>
-<li><code>WIN + SHIFT + ↑</code>: 현재 창 수직 최대화</li>
-<li><code>WIN + SHIFT + ←,→</code>: 현재 창 이전/다음 모니터로 이동</li>
-<li><code>WIN + 숫자키</code>: 작업 표시줄에 있는 프로그램 실행 혹은 활성화</li>
-<li><code>WIN + SHIFT + 숫자키</code>: 작업 표시줄에 있는 프로그램 실행</li>
-<li><code>WIN + Ctrl + C</code>: 흑백/컬러 전환</li>
-<li><code>Ctrl + SHIFT + ESC</code>: 작업 관리자 실행</li>
-<li><code>Alt + PrtSc</code>: 화면 캡처 후 클립보드에 저장</li>
-<li><code>SHIFT + F10</code>: 마우스 우클릭</li>
-</ul>
-<h2 id="탐색기-단축키"><a href="#탐색기-단축키" class="headerlink" title="탐색기 단축키"></a>탐색기 단축키</h2><ul>
-<li><code>ALT + LEFT ARROW</code>: 뒤로</li>
-<li><code>ALT + RIGHT ARROW</code>: 앞으로</li>
-<li><code>ALT + UP ARROW</code>: 위로</li>
-<li><code>CTRL + MOUSEWHEEL</code>: 보기변경</li>
-<li><code>CTRL + SHIFT + N</code>: 새폴더</li>
-</ul>
-<h2 id="스티커메모-단축키"><a href="#스티커메모-단축키" class="headerlink" title="스티커메모 단축키"></a>스티커메모 단축키</h2><ul>
-<li><code>CTRL + B, I, U</code>: 굵게, 이탤릭, 밑줄</li>
-<li><code>CTRL + T</code>: 취소선</li>
-<li><code>CTRL + SHIFT + &gt;</code>: 폰트크게</li>
-<li><code>CTRL + SHIFT + &lt;</code>: 폰트작게</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우10-단축키-모음/" data-id="cjj9odgig00gy80uo514bnruj" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-윈도우-쉘-명령어-windows-shell-commands" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/os/windows/윈도우-쉘-명령어-windows-shell-commands/" class="article-date">
-  <time datetime="2018-03-15T04:46:15.000Z" itemprop="datePublished">2018-03-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/windows/">windows</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/os/windows/윈도우-쉘-명령어-windows-shell-commands/">윈도우: 쉘 명령어 windows shell commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="netstat"><a href="#netstat" class="headerlink" title="netstat"></a>netstat</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">netstat -nao <span class="comment"># PID와 함께 모든 연결과 수신대기 포트를 숫자형식으로 출력하되</span></span><br><span class="line">netstat -nao | findstr <span class="string">'8081'</span> <span class="comment"># '8081'로 필터링</span></span><br></pre></td></tr></table></figure>
-<h2 id="tasklist"><a href="#tasklist" class="headerlink" title="tasklist"></a>tasklist</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">tasklist | findstr <span class="string">'18292'</span> <span class="comment"># 프로세스 목록을 출력하되 '18292'로 필터링</span></span><br></pre></td></tr></table></figure>
-<h2 id="taskkill"><a href="#taskkill" class="headerlink" title="taskkill"></a>taskkill</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">taskkill /f /pid 5888 <span class="comment"># PID가 5888인 프로세스 중지</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우-쉘-명령어-windows-shell-commands/" data-id="cjj9odgi900gn80uoinmdwm5e" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cmd/">cmd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shell/">shell</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-윈도우10-시작화면-앱-실행-바로가기-추가하는-방법" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" class="article-date">
-  <time datetime="2018-03-15T04:22:25.000Z" itemprop="datePublished">2018-03-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/os/">os</a>►<a class="article-category-link" href="/categories/os/windows/">windows</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/">윈도우10: 시작화면 앱 실행 바로가기 추가하는 방법.</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="윈도우-인스톨러로-설치한-앱일-때"><a href="#윈도우-인스톨러로-설치한-앱일-때" class="headerlink" title="윈도우 인스톨러로 설치한 앱일 때"></a>윈도우 인스톨러로 설치한 앱일 때</h2><p>윈도우 검색(윈도우키+S) 후 [우클릭] - [시작 화면에 고정]</p>
-<h2 id="실행파일만-있는-앱일-때"><a href="#실행파일만-있는-앱일-때" class="headerlink" title="실행파일만 있는 앱일 때"></a>실행파일만 있는 앱일 때</h2><p>톰캣이나 이클립스 패키지 버전(압축 버전)처럼 설치 없이 바로 실행할 수 있는 앱일 때,<br>우선 <code>사용자폴더\AppData\Roaming\Microsoft\Windows\Start Menu\Programs</code>에 실행파일의 바로가기를 추가한다. 그리고 추가한 바로가기는 윈도우 검색으로 검색할 수 있으니 검색 후 [우클릭] - [시작 화면에 고정] 하면 된다.</p>
-<p>관련 폴더로 <code>C:\ProgramData\Microsoft\Windows\Start Menu\Programs</code>가 있다.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우10-시작화면-앱-실행-바로가기-추가하는-방법/" data-id="cjj9odgik00h580uotq4akxft" class="article-share-link">Teilen</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
 
     </footer>
   </div>
@@ -1692,7 +1749,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anchor/">anchor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buildsystem/">buildsystem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closures/">closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/constructor/">constructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conversion/">conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbms/">dbms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugger/">debugger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging-log/">debugging log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eval/">eval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evironment-variable/">evironment variable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gist/">gist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jst/">jst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link/">link</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link-post/">link post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nexus/">nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onclose/">onclose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onunload/">onunload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powershell/">powershell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/process-kill/">process kill</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pscp/">pscp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/">reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote-desktop/">remote desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/repository/">repository</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strict-mode/">strict mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/type/">type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wireshark/">wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with/">with</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrapper/">wrapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wst/">wst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/anchor/">anchor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/arguments/">arguments</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/atom/">atom</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bare-repository/">bare repository</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/basic/">basic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/buildsystem/">buildsystem</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/callback/">callback</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/closures/">closures</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmd/">cmd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/const/">const</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/constructor/">constructor</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/continuation-passing-style/">continuation passing style</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/control-statement/">control-statement</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/conversion/">conversion</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cps/">cps</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/dbms/">dbms</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugger/">debugger</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debugging-log/">debugging log</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eval/">eval</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/evironment-variable/">evironment variable</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/function/">function</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gist/">gist</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitblit/">gitblit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitignore/">gitignore</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hoisting/">hoisting</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hotkey/">hotkey</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jekyll/">jekyll</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jst/">jst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/let/">let</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link/">link</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/link-post/">link post</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nexus/">nexus</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onclose/">onclose</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/onunload/">onunload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/operator/">operator</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/plugin/">plugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/postMessage/">postMessage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/powershell/">powershell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/process-kill/">process kill</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/pscp/">pscp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reference/">reference</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/regex/">regex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/remote-desktop/">remote desktop</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shell/">shell</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/shortcut/">shortcut</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql/">sql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/strict-mode/">strict mode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/todo/">todo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tools/">tools</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/type/">type</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/unix/">unix</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wireshark/">wireshark</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/with/">with</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wrapper/">wrapper</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wst/">wst</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/xmlhttprequest/">xmlhttprequest</a></li></ul>
     </div>
   </div>
 
@@ -1702,7 +1759,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/buildsystem/" style="font-size: 10px;">buildsystem</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 11.67px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/easy-console-grepper/" style="font-size: 10px;">easy console grepper</a> <a href="/tags/eclipse/" style="font-size: 15px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 18.33px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/eventhandlers/" style="font-size: 10px;">eventhandlers</a> <a href="/tags/evironment-variable/" style="font-size: 10px;">evironment variable</a> <a href="/tags/function/" style="font-size: 13.33px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hot-code-replace/" style="font-size: 10px;">hot code replace</a> <a href="/tags/hot-deploy/" style="font-size: 10px;">hot deploy</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/link-post/" style="font-size: 10px;">link post</a> <a href="/tags/linux/" style="font-size: 11.67px;">linux</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/onclose/" style="font-size: 10px;">onclose</a> <a href="/tags/onunload/" style="font-size: 10px;">onunload</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 11.67px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/process-kill/" style="font-size: 10px;">process kill</a> <a href="/tags/pscp/" style="font-size: 10px;">pscp</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/repository/" style="font-size: 10px;">repository</a> <a href="/tags/shell/" style="font-size: 11.67px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict mode</a> <a href="/tags/sublime-text/" style="font-size: 11.67px;">sublime text</a> <a href="/tags/todo/" style="font-size: 15px;">todo</a> <a href="/tags/tools/" style="font-size: 11.67px;">tools</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/unix/" style="font-size: 11.67px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows/" style="font-size: 16.67px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a> <a href="/tags/xmlhttprequest/" style="font-size: 10px;">xmlhttprequest</a>
+      <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/anchor/" style="font-size: 10px;">anchor</a> <a href="/tags/arguments/" style="font-size: 10px;">arguments</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/bare-repository/" style="font-size: 10px;">bare repository</a> <a href="/tags/basic/" style="font-size: 10px;">basic</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/buildsystem/" style="font-size: 10px;">buildsystem</a> <a href="/tags/callback/" style="font-size: 10px;">callback</a> <a href="/tags/closures/" style="font-size: 10px;">closures</a> <a href="/tags/cmd/" style="font-size: 11.43px;">cmd</a> <a href="/tags/const/" style="font-size: 10px;">const</a> <a href="/tags/constructor/" style="font-size: 10px;">constructor</a> <a href="/tags/continuation-passing-style/" style="font-size: 10px;">continuation passing style</a> <a href="/tags/control-statement/" style="font-size: 10px;">control-statement</a> <a href="/tags/conversion/" style="font-size: 10px;">conversion</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/cps/" style="font-size: 10px;">cps</a> <a href="/tags/dbms/" style="font-size: 10px;">dbms</a> <a href="/tags/debugger/" style="font-size: 10px;">debugger</a> <a href="/tags/debugging-log/" style="font-size: 10px;">debugging log</a> <a href="/tags/easy-console-grepper/" style="font-size: 10px;">easy console grepper</a> <a href="/tags/eclipse/" style="font-size: 14.29px;">eclipse</a> <a href="/tags/ecmascript/" style="font-size: 18.57px;">ecmascript</a> <a href="/tags/eval/" style="font-size: 10px;">eval</a> <a href="/tags/eventhandlers/" style="font-size: 10px;">eventhandlers</a> <a href="/tags/evironment-variable/" style="font-size: 10px;">evironment variable</a> <a href="/tags/function/" style="font-size: 12.86px;">function</a> <a href="/tags/gist/" style="font-size: 10px;">gist</a> <a href="/tags/git/" style="font-size: 15.71px;">git</a> <a href="/tags/gitblit/" style="font-size: 10px;">gitblit</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/gitignore/" style="font-size: 10px;">gitignore</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/hoisting/" style="font-size: 10px;">hoisting</a> <a href="/tags/hot-code-replace/" style="font-size: 10px;">hot code replace</a> <a href="/tags/hot-deploy/" style="font-size: 10px;">hot deploy</a> <a href="/tags/hotkey/" style="font-size: 10px;">hotkey</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jekyll/" style="font-size: 10px;">jekyll</a> <a href="/tags/jst/" style="font-size: 10px;">jst</a> <a href="/tags/let/" style="font-size: 10px;">let</a> <a href="/tags/link/" style="font-size: 10px;">link</a> <a href="/tags/link-post/" style="font-size: 10px;">link post</a> <a href="/tags/linux/" style="font-size: 11.43px;">linux</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/nexus/" style="font-size: 10px;">nexus</a> <a href="/tags/onclose/" style="font-size: 10px;">onclose</a> <a href="/tags/onunload/" style="font-size: 10px;">onunload</a> <a href="/tags/operator/" style="font-size: 10px;">operator</a> <a href="/tags/oracle/" style="font-size: 10px;">oracle</a> <a href="/tags/plugin/" style="font-size: 11.43px;">plugin</a> <a href="/tags/postMessage/" style="font-size: 10px;">postMessage</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/process-kill/" style="font-size: 10px;">process kill</a> <a href="/tags/pscp/" style="font-size: 10px;">pscp</a> <a href="/tags/reference/" style="font-size: 10px;">reference</a> <a href="/tags/regex/" style="font-size: 10px;">regex</a> <a href="/tags/remote-desktop/" style="font-size: 10px;">remote desktop</a> <a href="/tags/shell/" style="font-size: 11.43px;">shell</a> <a href="/tags/shortcut/" style="font-size: 10px;">shortcut</a> <a href="/tags/sql/" style="font-size: 10px;">sql</a> <a href="/tags/strict-mode/" style="font-size: 10px;">strict mode</a> <a href="/tags/sublime-text/" style="font-size: 11.43px;">sublime text</a> <a href="/tags/todo/" style="font-size: 14.29px;">todo</a> <a href="/tags/tools/" style="font-size: 11.43px;">tools</a> <a href="/tags/type/" style="font-size: 10px;">type</a> <a href="/tags/unix/" style="font-size: 11.43px;">unix</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/windows/" style="font-size: 17.14px;">windows</a> <a href="/tags/wireshark/" style="font-size: 10px;">wireshark</a> <a href="/tags/with/" style="font-size: 10px;">with</a> <a href="/tags/wrapper/" style="font-size: 10px;">wrapper</a> <a href="/tags/wst/" style="font-size: 10px;">wst</a> <a href="/tags/xmlhttprequest/" style="font-size: 10px;">xmlhttprequest</a>
     </div>
   </div>
 
@@ -1724,23 +1781,23 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/javascript/JavaScript-continuation-passing-style/">JavaScript: continuation-passing style</a>
+          </li>
+        
+          <li>
+            <a href="/git/Git-윈도우에-Git-서버-설치하기/">Git: 윈도우에 Git 서버 설치하기</a>
+          </li>
+        
+          <li>
+            <a href="/git/Git-파일-무시하기-gitignore/">Git: 파일 무시하기 .gitignore</a>
+          </li>
+        
+          <li>
             <a href="/git/Git-로컬-디스크에-원격-저장소-만들기/">Git: 로컬 디스크에 원격 저장소 만들기</a>
           </li>
         
           <li>
             <a href="/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/">Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기</a>
-          </li>
-        
-          <li>
-            <a href="/os/unix-linux/Unix-Linux-Vim-단축키-jpg/">Unix/Linux: Vim 단축키.jpg</a>
-          </li>
-        
-          <li>
-            <a href="/os/windows/윈도우-pscp-원격-서버에-파일-업로드/">윈도우: pscp 원격 서버에 파일 업로드</a>
-          </li>
-        
-          <li>
-            <a href="/os/windows/윈도우-보호된-프로세스-날리기/">윈도우: 보호된 프로세스 날리기</a>
           </li>
         
       </ul>
