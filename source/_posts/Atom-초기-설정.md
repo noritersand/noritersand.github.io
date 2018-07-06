@@ -17,3 +17,6 @@ atom 1.27.2 기준.
 ## 붙여넣기 시 자동 들여쓰기 해제
 `Settings` > `Editor`에서
 `Auto Indent On Paste` 체크 해제.
+
+## 플러그인 설치
+- [url-encode](https://atom.io/packages/url-encode)

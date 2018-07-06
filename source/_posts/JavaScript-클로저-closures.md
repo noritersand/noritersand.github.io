@@ -12,7 +12,7 @@ tags:
 #### 참고한 글
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
 - https://opentutorials.org/course/743/6544
-- http://www.insightbook.co.kr/books/programming-insight/자바스크립트-완벽-가이드
+- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 클로저란?
 > 대다수의 현대 프로그래밍 언어와 마찬가지로 자바스크립트 또한 어휘적 유효범위(Lexical scoping)을 사용한다. 이는 함수를 호출하는 시점에서의 변수 유효범위가 아니라, 함수가 정의되었을 때의 변수 유효범위를 사용하여 함수가 실행된다는 뜻이다. 이러한 어휘적 유효범위를 구현하기 위해, 자바스크립트 함수객체는 내부 상태에 함수 자체의 코드뿐만 아니라 현재 유효범위 체인에 대한 참조도 포함하고 있다. 함수 객체와 함수의 변수가 해석되는 범위(변수 바인딩의 집합)의 조합은 컴퓨터 과학 문헌에서 클로저(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.

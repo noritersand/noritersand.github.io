@@ -11,7 +11,7 @@ tags:
 ---
 
 #### 참고한 글
-- http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/
+- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 암시적 타입 변환
 자바스크립트는 필요에 따라 타입 변환을 자동으로 수행한다. 가령 문자열이 필요한 위치에 할당된 값이 문자열이 아니면 문자열 타입으로 변환을 시도할 것이다. 이 과정에서 타입이 올바르지 않아 에러가 발생하는 경우는 거의 없다. 다음은 암시적 타입 변환의 사례들이다:

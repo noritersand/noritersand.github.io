@@ -10,9 +10,8 @@ tags:
 ---
 
 #### 참고한 글
-- http://www.insightbook.co.kr/도서-목록/programming-insight/자바스크립트-완벽-가이드/
-- http://wiki.codekin.com/index.php/3.13_기본_데이터_타입_래퍼_객체
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object
+- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 래퍼 객체란?
 이름처럼 래퍼(wrapper)는 원시(primitive) 타입의 값을 감싸는 형태의 객체다. number, string, boolean, symbol 데이터 타입에 각각 대응하는 Number, String, Boolean, Symbol이 제공된다. 래퍼 객체와 원시 타입간의 변환은 자바스크립트가 알아서 해주기 때문에 우리는 이를 신경쓰지 않아도 되며 명시적인 처리가 필요한 경우도 거의 없다.
