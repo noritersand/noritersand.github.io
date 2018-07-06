@@ -1,5 +1,5 @@
 ---
-title: Gist를 이용한 소스 관리(링크)
+title: Gist를 이용한 소스 관리
 categories:
   - git
 date: 2018-02-07 11:21:27
