@@ -1,4 +1,4 @@
-# hugo branch for generating html
+# hexo branch for generating html
 
 ## environments
 - node.js
