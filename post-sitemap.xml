@@ -7,6 +7,54 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%8C%8C%EC%9B%8C%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows10-powershell-commands/</loc>
+        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%AA%A8%EC%9D%8C/</loc>
+        <lastmod>2018-07-11T00:15:13.214Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows-shell-commands/</loc>
+        <lastmod>2018-07-11T00:15:13.213Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tools/%EA%B0%9C%EB%B0%9C%ED%88%B4-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0-%EB%A7%81%ED%81%AC-%EB%AA%A8%EC%9D%8C/</loc>
+        <lastmod>2018-07-11T00:15:13.211Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tools/eclipse-svn-repository-%EC%A0%91%EA%B7%BC%EA%B6%8C%ED%95%9C-%EC%B4%88%EA%B8%B0%ED%99%94-%EB%B0%A9%EB%B2%95/</loc>
+        <lastmod>2018-07-11T00:15:13.208Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tools/eclipse-easy-console-grepper-%EA%B6%8C%EC%9E%A5-%EC%84%A4%EC%A0%95/</loc>
+        <lastmod>2018-07-11T00:15:13.207Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/javascript/JavaScript-continuation-passing-style/</loc>
         <lastmod>2018-07-06T08:54:39.208Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -343,56 +391,8 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tools/%EA%B0%9C%EB%B0%9C%ED%88%B4-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0-%EB%A7%81%ED%81%AC-%EB%AA%A8%EC%9D%8C/</loc>
-        <lastmod>2018-05-15T05:12:39.941Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tools/eclipse-svn-repository-%EC%A0%91%EA%B7%BC%EA%B6%8C%ED%95%9C-%EC%B4%88%EA%B8%B0%ED%99%94-%EB%B0%A9%EB%B2%95/</loc>
-        <lastmod>2018-05-15T05:12:39.932Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tools/eclipse-easy-console-grepper-%EA%B6%8C%EC%9E%A5-%EC%84%A4%EC%A0%95/</loc>
-        <lastmod>2018-05-15T05:12:39.929Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%AA%A8%EC%9D%8C/</loc>
-        <lastmod>2018-05-09T02:30:28.302Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/dbms/oracle/%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80-%ED%98%B8%EC%B6%9C%EB%B0%A9%EB%B2%95/</loc>
         <lastmod>2018-03-21T01:58:07.471Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%8C%8C%EC%9B%8C%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows10-powershell-commands/</loc>
-        <lastmod>2018-03-21T01:57:22.035Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows-shell-commands/</loc>
-        <lastmod>2018-03-21T01:57:21.900Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

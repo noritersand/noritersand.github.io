@@ -35,29 +35,8 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/os/windows/</loc>
-        <lastmod>2018-07-06T06:58:34.767Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/os/</loc>
-        <lastmod>2018-07-06T07:27:56.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/categories/os/unix-linux/</loc>
         <lastmod>2018-07-06T07:27:56.466Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/tools/</loc>
-        <lastmod>2018-07-06T08:08:15.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -72,6 +51,27 @@
     <url>
         <loc>http://noritersand.github.io/categories/javascript/</loc>
         <lastmod>2018-07-06T08:54:39.208Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/tools/</loc>
+        <lastmod>2018-07-11T00:15:13.211Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/</loc>
+        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/windows/</loc>
+        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
