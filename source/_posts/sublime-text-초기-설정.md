@@ -31,12 +31,20 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 #### key bindings - user
 ```json
 [
-	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
-	{ "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
 	{ "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
 	{ "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
 	{ "keys": ["f9"], "command": "save_all" },
 	{ "keys": ["f8"], "command": "sort_lines", "args": {"case_sensitive": false} },
 	{ "keys": ["ctrl+f8"], "command": "sort_lines", "args": {"case_sensitive": true} }
+]
+```
+
+#### key bindings - 예전에 쓰던거
+```json
+[
+  { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
+  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" }
 ]
 ```
