@@ -19,23 +19,23 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 #### settings - user
 ```json
 {
-	"auto_complete_commit_on_tab": true,
-	"fallback_encoding": "UTF-8",
-	"font_face": "Consolas",
-	"font_size": 11,
-	"show_encoding": true,
-	"show_line_endings": true
+  "auto_complete_commit_on_tab": true,
+  "fallback_encoding": "UTF-8",
+  "font_face": "Consolas",
+  "font_size": 11,
+  "show_encoding": true,
+  "show_line_endings": true
 }
 ```
 
 #### key bindings - user
 ```json
 [
-	{ "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
-	{ "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
-	{ "keys": ["f9"], "command": "save_all" },
-	{ "keys": ["f8"], "command": "sort_lines", "args": {"case_sensitive": false} },
-	{ "keys": ["ctrl+f8"], "command": "sort_lines", "args": {"case_sensitive": true} }
+  { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
+  { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
+  { "keys": ["f9"], "command": "save_all" },
+  { "keys": ["f8"], "command": "sort_lines", "args": {"case_sensitive": false} },
+  { "keys": ["ctrl+f8"], "command": "sort_lines", "args": {"case_sensitive": true} }
 ]
 ```
 
