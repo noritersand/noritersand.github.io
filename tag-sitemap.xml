@@ -345,22 +345,8 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/tools/</loc>
-        <lastmod>2018-07-06T08:05:45.734Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/atom/</loc>
         <lastmod>2018-07-06T08:05:45.734Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
-        <lastmod>2018-07-06T08:08:15.056Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -529,6 +515,20 @@
     <url>
         <loc>http://noritersand.github.io/tags/powershell/</loc>
         <lastmod>2018-07-11T00:15:13.215Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
+        <lastmod>2018-07-12T08:54:16.696Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/tools/</loc>
+        <lastmod>2018-07-12T08:54:16.696Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
