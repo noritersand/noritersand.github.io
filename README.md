@@ -3,6 +3,9 @@
 ## environments
 - ruby
 
+## 블로그 프레임워크 설정 파일
+- \_config.yml
+
 ## RubyGems로 Bundler와 Jekyll 설치
 ```bash
 gem install bundler jekyll
@@ -13,6 +16,8 @@ gem install bundler jekyll
 jekyll new ./ -f
 ```
 만약 현재 폴더에 사이트 레이아웃의 기본 파일들이 있으면 `-f` 옵션으로 덮어쓰게 함.
+
+##
 
 ## 글 작성
 ```bash
