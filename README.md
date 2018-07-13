@@ -1,4 +1,4 @@
-# site builder by jekyll
+# Site builder by jekyll
 
 ## environments
 - ruby
