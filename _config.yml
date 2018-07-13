@@ -16,7 +16,7 @@
 title: 내 아이큐 80, 너도 80, 둘이 합쳐 160
 email: noritersand@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Hello there.
+  This is my useless description.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://noritersand.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
