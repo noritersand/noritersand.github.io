@@ -2,15 +2,13 @@
 layout: post
 title:  "markdown syntax"
 date:   2018-07-13 13:45:00 +0900
-categories: test
+categories: jekyll update
 ---
 
 #### 참고한 글
 - [어디어디](/assad)
 
 <h4>목차</h4><ul><li><a href="#항상-제목2부터-시작">항상 제목2부터 시작</a></li><ul><li><a href="#코드-블럭">코드 블럭</a></li><ul><li><a href="#제목4">제목4</a></li></ul></ul></ul>
-
-[TOC]
 
 ## 항상 제목2부터 시작
 내용내용
@@ -29,27 +27,32 @@ categories: test
 _이탤릭_
 ~~스트라이크~~
 
-수평선
-------
+---
+
 
 [링크 걸기](#항상-제목2부터-시작)
 
 ## 코드 블럭
+
 ```
-	코드 블럭
+  코드 블럭
 ```
 ```java
-    public class Test {
-	    public static void main(String... args) {
-	        System.out.println("야이야이야"); // dasfasdf
-	    }
+  public class Test {
+    public static void main(String... args) {
+      System.out.println("야이야이야"); // dasfasdf
     }
+  }
 ```
 
 `inline codeblock`
-`` 코드블럭 안에 backticks(=graves) 표시하기 ` ``
+
+```
+코드블럭 안에 backticks(=graves) 표시하기 `d`
+```
 
 ## 테이블
+
 |                  | String      | Number | Boolean | Object                 |
 |------------------|-------------|--------|---------|------------------------|
 | undefined        | "undefined" | NaN    | false   | TypeError              |
