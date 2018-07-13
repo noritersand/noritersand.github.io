@@ -1,9 +1,9 @@
-# jekyll branch
+# site builder by jekyll
 
 ## environments
 - ruby
 
-## 블로그 프레임워크 설정 파일
+## 설정 파일
 - \_config.yml
 
 ## RubyGems로 Bundler와 Jekyll 설치
@@ -11,7 +11,7 @@
 gem install bundler jekyll
 ```
 
-## 현재 폴터에 사이트 레이아웃 구성하기
+## 현재 폴더에 사이트 레이아웃 구성하기
 ```bash
 jekyll new . --force
 ```
