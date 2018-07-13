@@ -1,6 +1,11 @@
 ---
 title: 'Java: 람다 코드 모음'
+categories:
+  - java
 tags:
+  - java
+  - todo
+  - lambda
 ---
 
 ## 파일명 일괄 변경하기
