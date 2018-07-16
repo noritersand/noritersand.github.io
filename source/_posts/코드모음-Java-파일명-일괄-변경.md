@@ -1,16 +1,21 @@
 ---
-title: 'Java: 람다 코드 모음'
+title: '코드모음-Java: 파일명 일괄 변경'
+date: 2018-07-16 09:36:25
 categories:
-  - java
+  - 코드모음
 tags:
   - java
-  - todo
   - lambda
+  - stream
+  - JDK8
+  - file
 ---
 
-## 파일명 일괄 변경하기
+#### required
+- JDK8 or higher
 
 ```java
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -19,17 +24,23 @@ import java.nio.file.StandardCopyOption;
 import java.util.stream.Stream;
 
 public class ReplaceFileName {
+	private static final String targetLocation = "c:/temp";
+	private static final String prefix = "02-alarm-";
+	private static final String suffix = "";
+	private static final String destLocation = "c:/dest";
+
 	public static void main(String[] args) throws Exception {
-		Path path = new File("c:/temp").toPath();
+		Path path = new File(targetLocation).toPath();
 		Stream<Path> list = Files.list(path);
 
 		// list.forEach(System.out::println);
 
 		list.forEach((k) -> {
 			final String fileName = k.toString();
-			final String newFileName = "02-alarm-"
-					+ fileName.substring(fileName.lastIndexOf("\\") + 1, fileName.length());
-			Path newPath = new File("c:\\temp\\" + newFileName).toPath();
+			final String newFileName = prefix
+					+ fileName.substring(fileName.lastIndexOf(File.separator) + 1, fileName.length())
+					+ suffix;
+			Path newPath = new File(destLocation, newFileName).toPath();
 			try {
 				Files.move(k, newPath, StandardCopyOption.REPLACE_EXISTING);
 			} catch (IOException e) {
