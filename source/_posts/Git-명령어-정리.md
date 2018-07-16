@@ -325,17 +325,6 @@ git config --list | grep alias
 git config --global --unset alias.ss
 ```
 
-#### 이름과 이메일 재설정
-```bash
-git config --global --unset-all user.name
-git config --global --unset-all user.email
-
-git config user.name noritersand
-git config user.email noritersand@gmail.com
-
-git config -l | grep user
-```
-
 #### SSL 검증 비활성화
 ```bash
 git config --global http.sslVerify false
