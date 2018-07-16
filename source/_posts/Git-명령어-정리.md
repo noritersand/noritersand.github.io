@@ -325,6 +325,17 @@ git config --list | grep alias
 git config --global --unset alias.ss
 ```
 
+#### 이름과 이메일 재설정
+```bash
+git config --global --unset-all user.name
+git config --global --unset-all user.email
+
+git config user.name noritersand
+git config user.email noritersand@gmail.com
+
+git config -l | grep user
+```
+
 #### SSL 검증 비활성화
 ```bash
 git config --global http.sslVerify false
@@ -442,11 +453,11 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 인덱스나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀탐색한다.
 
 **options**:
-- `-c` | `--cached`: 
-- `-d` | `--deleted`: 
-- `-m` | `--modified`: 
-- `-o` | `--others`: 
-- `-i` | `--ignored`: 
+- `-c` | `--cached`:
+- `-d` | `--deleted`:
+- `-m` | `--modified`:
+- `-o` | `--others`:
+- `-i` | `--ignored`:
 - `-s` | `--stage`:
 - `-v`: 파일의 상태를 표시하되 실제로는 변경되었으나 그렇지 않은것으로 간주된(assume unchanged) 파일은 소문자로 표시한다.
 
