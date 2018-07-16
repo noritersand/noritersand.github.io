@@ -7,50 +7,29 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/dbms/</loc>
-        <lastmod>2018-03-21T01:58:07.471Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/dbms/oracle/</loc>
-        <lastmod>2018-03-21T01:58:07.471Z</lastmod>
+        <loc>http://noritersand.github.io/categories/javascript/</loc>
+        <lastmod>2018-07-11T00:15:13.204Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://noritersand.github.io/categories/buildsystem/</loc>
-        <lastmod>2018-07-02T04:34:07.339Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/web/</loc>
-        <lastmod>2018-07-06T01:54:39.496Z</lastmod>
+        <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://noritersand.github.io/categories/os/unix-linux/</loc>
-        <lastmod>2018-07-06T07:27:56.466Z</lastmod>
+        <lastmod>2018-07-11T00:15:13.206Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/git/</loc>
-        <lastmod>2018-07-06T08:47:19.133Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/javascript/</loc>
-        <lastmod>2018-07-06T08:54:39.208Z</lastmod>
+        <loc>http://noritersand.github.io/categories/web/</loc>
+        <lastmod>2018-07-11T00:15:13.209Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -70,8 +49,36 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/categories/dbms/</loc>
+        <lastmod>2018-07-11T00:15:13.216Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/dbms/oracle/</loc>
+        <lastmod>2018-07-11T00:15:13.216Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/categories/tools/</loc>
-        <lastmod>2018-07-12T08:58:42.563Z</lastmod>
+        <lastmod>2018-07-13T09:00:53.004Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/git/</loc>
+        <lastmod>2018-07-16T00:33:35.783Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C/</loc>
+        <lastmod>2018-07-16T00:37:15.349Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
