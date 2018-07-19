@@ -401,13 +401,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/wireshark/</loc>
-        <lastmod>2018-07-11T00:15:13.210Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/process-kill/</loc>
         <lastmod>2018-07-11T00:15:13.212Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -445,13 +438,6 @@
     <url>
         <loc>http://noritersand.github.io/tags/hotkey/</loc>
         <lastmod>2018-07-11T00:15:13.214Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/todo/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -506,20 +492,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
-        <lastmod>2018-07-12T08:58:42.563Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/tools/</loc>
-        <lastmod>2018-07-12T08:58:42.563Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/link/</loc>
         <lastmod>2018-07-13T09:00:53.004Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -564,6 +536,34 @@
     <url>
         <loc>http://noritersand.github.io/tags/git/</loc>
         <lastmod>2018-07-16T00:59:06.432Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/todo/</loc>
+        <lastmod>2018-07-19T05:39:29.954Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/wireshark/</loc>
+        <lastmod>2018-07-19T05:39:29.954Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
+        <lastmod>2018-07-19T06:00:20.936Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/tools/</loc>
+        <lastmod>2018-07-19T06:00:20.936Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
