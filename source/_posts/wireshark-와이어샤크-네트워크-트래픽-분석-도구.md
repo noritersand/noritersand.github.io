@@ -1,5 +1,5 @@
 ---
-title: 'wireshark: 와이어샤크 네트워크 프로토콜 분석툴'
+title: 'wireshark: 와이어샤크 네트워크 트래픽 분석 도구'
 categories:
   - tools
 tags:
