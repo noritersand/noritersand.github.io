@@ -28,7 +28,7 @@ ga('send', 'pageview');
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
 <meta property="og:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-16T00:33:35.783Z">
+<meta property="og:updated_time" content="2018-07-16T00:59:06.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 명령어 정리">
 <meta name="twitter:description" content="참고한 글 https://git-scm.com/book/ko/v2 http://learnbranch.urigit.com/  addstaging / do track작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.git add *git add .git add *.javagit add README.TXT 모든 추적 및 추적되지 않는 파일의 변">
@@ -69,7 +69,7 @@ ga('send', 'pageview');
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -169,7 +169,6 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global alias.unstage <span class="string">'reset HEAD --'</span></span><br><span class="line">git config --global alias.visual <span class="string">'!gitk'</span></span><br><span class="line">git config --global alias.ss <span class="string">'status'</span></span><br></pre></td></tr></table></figure>
 <h4 id="단축어-목록-보기"><a href="#단축어-목록-보기" class="headerlink" title="단축어 목록 보기"></a>단축어 목록 보기</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --get-regexp <span class="built_in">alias</span></span><br><span class="line">git config --list | grep <span class="built_in">alias</span></span><br></pre></td></tr></table></figure>
 <h4 id="단축어-삭제"><a href="#단축어-삭제" class="headerlink" title="단축어 삭제"></a>단축어 삭제</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span> alias.ss</span><br></pre></td></tr></table></figure>
-<h4 id="이름과-이메일-재설정"><a href="#이름과-이메일-재설정" class="headerlink" title="이름과 이메일 재설정"></a>이름과 이메일 재설정</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global --<span class="built_in">unset</span>-all user.name</span><br><span class="line">git config --global --<span class="built_in">unset</span>-all user.email</span><br><span class="line"></span><br><span class="line">git config user.name noritersand</span><br><span class="line">git config user.email noritersand@gmail.com</span><br><span class="line"></span><br><span class="line">git config -l | grep user</span><br></pre></td></tr></table></figure>
 <h4 id="SSL-검증-비활성화"><a href="#SSL-검증-비활성화" class="headerlink" title="SSL 검증 비활성화"></a>SSL 검증 비활성화</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git config --global http.sslVerify <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <h2 id="diff"><a href="#diff" class="headerlink" title="diff"></a>diff</h2><h4 id="unstaged와-staged의-비교"><a href="#unstaged와-staged의-비교" class="headerlink" title="unstaged와 staged의 비교"></a>unstaged와 staged의 비교</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff</span><br><span class="line">git diff --check  <span class="comment"># 충돌 문자가 있거나 공백 에러가 있는지 확인</span></span><br></pre></td></tr></table></figure>
 <h4 id="staged와-commited의-비교"><a href="#staged와-commited의-비교" class="headerlink" title="staged와 commited의 비교"></a>staged와 commited의 비교</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git diff --cached</span><br><span class="line">git diff --staged</span><br></pre></td></tr></table></figure>
@@ -344,7 +343,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjjnjn4io00m39kuoaoxuarl1" class="article-share-link">Teilen</a>
+      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjjnjn4io00m39kuoaoxuarl1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -356,7 +355,7 @@ ga('send', 'pageview');
 <nav id="article-nav">
   
     <a href="/javascript/JavaScript-WindowEventHandlers-onunload/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Neuer</strong>
+      <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
           JavaScript: WindowEventHandlers.onunload
@@ -366,7 +365,7 @@ ga('send', 'pageview');
   
   
     <a href="/javascript/JavaScript-생성자-함수-constructor-function/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Älter</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">JavaScript: 생성자 함수 constructor function</div>
     </a>
   
@@ -381,7 +380,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Kategorien</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildsystem/">buildsystem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/unix-linux/">unix/linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/코드모음/">코드모음</a></li></ul>
     </div>
@@ -410,7 +409,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -420,7 +419,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         

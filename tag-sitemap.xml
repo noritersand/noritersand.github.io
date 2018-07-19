@@ -527,13 +527,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/git/</loc>
-        <lastmod>2018-07-16T00:33:35.783Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/java/</loc>
         <lastmod>2018-07-16T00:37:15.349Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -564,6 +557,13 @@
     <url>
         <loc>http://noritersand.github.io/tags/file/</loc>
         <lastmod>2018-07-16T00:37:15.349Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/git/</loc>
+        <lastmod>2018-07-16T00:59:06.432Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
