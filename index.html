@@ -67,7 +67,7 @@ ga('send', 'pageview');
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://noritersand.github.io"></form>
@@ -107,12 +107,12 @@ ga('send', 'pageview');
         <h4 id="required"><a href="#required" class="headerlink" title="required"></a>required</h4><ul>
 <li>JDK8 or higher</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.StandardCopyOption;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReplaceFileName</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String targetLocation = <span class="string">"c:/temp"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String prefix = <span class="string">"02-alarm-"</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String suffix = <span class="string">""</span>;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String destLocation = <span class="string">"c:/dest"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">		Path path = <span class="keyword">new</span> File(targetLocation).toPath();</span><br><span class="line">		Stream&lt;Path&gt; list = Files.list(path);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// list.forEach(System.out::println);</span></span><br><span class="line"></span><br><span class="line">		list.forEach((k) -&gt; &#123;</span><br><span class="line">			<span class="keyword">final</span> String fileName = k.toString();</span><br><span class="line">			<span class="keyword">final</span> String newFileName = prefix</span><br><span class="line">					+ fileName.substring(fileName.lastIndexOf(File.separator) + <span class="number">1</span>, fileName.length())</span><br><span class="line">					+ suffix;</span><br><span class="line">			Path newPath = <span class="keyword">new</span> File(destLocation, newFileName).toPath();</span><br><span class="line">			<span class="keyword">try</span> &#123;</span><br><span class="line">				Files.move(k, newPath, StandardCopyOption.REPLACE_EXISTING);</span><br><span class="line">			&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">				System.err.println(e);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		list.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Files;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.Path;</span><br><span class="line"><span class="keyword">import</span> java.nio.file.StandardCopyOption;</span><br><span class="line"><span class="keyword">import</span> java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReplaceFileName</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String targetLocation = <span class="string">"c:/temp"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String prefix = <span class="string">"02-alarm-"</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String suffix = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String destLocation = <span class="string">"c:/dest"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        Path path = <span class="keyword">new</span> File(targetLocation).toPath();</span><br><span class="line">        Stream&lt;Path&gt; list = Files.list(path);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// list.forEach(System.out::println);</span></span><br><span class="line"></span><br><span class="line">        list.forEach((k) -&gt; &#123;</span><br><span class="line">            <span class="keyword">final</span> String fileName = k.toString();</span><br><span class="line">            <span class="keyword">final</span> String newFileName = prefix</span><br><span class="line">                    + fileName.substring(fileName.lastIndexOf(File.separator) + <span class="number">1</span>, fileName.length())</span><br><span class="line">                    + suffix;</span><br><span class="line">            Path newPath = <span class="keyword">new</span> File(destLocation, newFileName).toPath();</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                Files.move(k, newPath, StandardCopyOption.REPLACE_EXISTING);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                System.err.println(e);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        list.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/코드모음/코드모음-Java-파일명-일괄-변경/" data-id="cjjnjn4eo008b9kuoo70j40ie" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/코드모음/코드모음-Java-파일명-일괄-변경/" data-id="cjjnjn4eo008b9kuoo70j40ie" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JDK8/">JDK8</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/file/">file</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/lambda/">lambda</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stream/">stream</a></li></ul>
@@ -155,7 +155,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-continuation-passing-style/" data-id="cjjnjn4d4004z9kuooekbbxzr" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-continuation-passing-style/" data-id="cjjnjn4d4004z9kuooekbbxzr" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/continuation-passing-style/">continuation passing style</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cps/">cps</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ecmascript/">ecmascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -204,7 +204,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-윈도우에-Git-서버-설치하기/" data-id="cjjnjn4cw004g9kuo6tqee0s8" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-윈도우에-Git-서버-설치하기/" data-id="cjjnjn4cw004g9kuo6tqee0s8" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitblit/">gitblit</a></li></ul>
@@ -265,7 +265,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-파일-무시하기-gitignore/" data-id="cjjnjn4cz004o9kuoqdag7igm" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-파일-무시하기-gitignore/" data-id="cjjnjn4cz004o9kuoqdag7igm" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitignore/">gitignore</a></li></ul>
@@ -317,7 +317,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-로컬-디스크에-원격-저장소-만들기/" data-id="cjjnjn4cs00489kuokas03i2h" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-로컬-디스크에-원격-저장소-만들기/" data-id="cjjnjn4cs00489kuokas03i2h" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bare-repository/">bare repository</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -361,7 +361,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/" data-id="cjjnjn4du006k9kuol459alvs" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-파일-내용-읽어서-환경변수로-설정하기/" data-id="cjjnjn4du006k9kuol459alvs" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/evironment-variable/">evironment variable</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li></ul>
@@ -405,7 +405,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-Vim-단축키-jpg/" data-id="cjjnjn4dt006g9kuouzwx7tig" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/os/unix-linux/Unix-Linux-Vim-단축키-jpg/" data-id="cjjnjn4dt006g9kuouzwx7tig" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/unix/">unix</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vim/">vim</a></li></ul>
@@ -450,7 +450,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우-pscp-원격-서버에-파일-업로드/" data-id="cjjnjn4ej00839kuohkf2pild" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/os/windows/윈도우-pscp-원격-서버에-파일-업로드/" data-id="cjjnjn4ej00839kuohkf2pild" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pscp/">pscp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -496,7 +496,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/os/windows/윈도우-보호된-프로세스-날리기/" data-id="cjjnjn4ef007r9kuoz2dll4lv" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/os/windows/윈도우-보호된-프로세스-날리기/" data-id="cjjnjn4ef007r9kuoz2dll4lv" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/process-kill/">process kill</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -544,7 +544,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/Atom-초기-설정/" data-id="cjjnjn4cp00439kuo8fw1e7ac" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/Atom-초기-설정/" data-id="cjjnjn4cp00439kuo8fw1e7ac" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/atom/">atom</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -596,7 +596,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/wireshark-와이어샤크-네트워크-트래픽-분석-도구/" data-id="cjjs5d6i6000084uo7pzlcz94" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/wireshark-와이어샤크-네트워크-트래픽-분석-도구/" data-id="cjjs5d6i6000084uo7pzlcz94" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wireshark/">wireshark</a></li></ul>
@@ -647,7 +647,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/sublime-text-쓸만한-패키지-모음/" data-id="cjjnjn4e9007j9kuoodl7qhn4" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/sublime-text-쓸만한-패키지-모음/" data-id="cjjnjn4e9007j9kuoodl7qhn4" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plugin/">plugin</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li></ul>
@@ -690,7 +690,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-easy-console-grepper-권장-설정/" data-id="cjjnjn4e200749kuortmued9w" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-easy-console-grepper-권장-설정/" data-id="cjjnjn4e200749kuortmued9w" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/easy-console-grepper/">easy console grepper</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -735,7 +735,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-svn-repository-접근권한-초기화-방법/" data-id="cjjnjn4e6007c9kuovbsranbg" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-svn-repository-접근권한-초기화-방법/" data-id="cjjnjn4e6007c9kuovbsranbg" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -795,7 +795,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-hot-code-replace/" data-id="cjjnjn4e300789kuoecvq4o6k" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-hot-code-replace/" data-id="cjjnjn4e300789kuoecvq4o6k" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hot-code-replace/">hot code replace</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hot-deploy/">hot deploy</a></li></ul>
@@ -918,7 +918,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/개발툴-유틸리티-링크-모음/" data-id="cjjnjn4eh007v9kuolms3bitn" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/개발툴-유틸리티-링크-모음/" data-id="cjjnjn4eh007v9kuolms3bitn" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/link/">link</a></li></ul>
@@ -959,12 +959,12 @@ ga('send', 'pageview');
         <h2 id="package-control-설치"><a href="#package-control-설치" class="headerlink" title="package control 설치"></a>package control 설치</h2><p>ctrl+shift+p 로 팔레트를 열고 install package control</p>
 <h2 id="한글-인코딩-지원-패키지-설치"><a href="#한글-인코딩-지원-패키지-설치" class="headerlink" title="한글 인코딩 지원 패키지 설치"></a>한글 인코딩 지원 패키지 설치</h2><p>ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] &gt; ConvertToUTF8</p>
 <h2 id="작성자-저장용-사용자-설정"><a href="#작성자-저장용-사용자-설정" class="headerlink" title="작성자 저장용 사용자 설정"></a>작성자 저장용 사용자 설정</h2><h4 id="settings-user"><a href="#settings-user" class="headerlink" title="settings - user"></a>settings - user</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"auto_complete_commit_on_tab"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"fallback_encoding"</span>: <span class="string">"UTF-8"</span>,</span><br><span class="line">  <span class="attr">"font_face"</span>: <span class="string">"Consolas"</span>,</span><br><span class="line">  <span class="attr">"font_size"</span>: <span class="number">11</span>,</span><br><span class="line">  <span class="attr">"show_encoding"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"show_line_endings"</span>: <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="key-bindings-user"><a href="#key-bindings-user" class="headerlink" title="key bindings - user"></a>key bindings - user</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+c"</span>], <span class="attr">"command"</span>: <span class="string">"toggle_comment"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"block"</span>: <span class="literal">false</span> &#125; &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+/"</span>], <span class="attr">"command"</span>: <span class="string">"toggle_comment"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"block"</span>: <span class="literal">true</span> &#125; &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+d"</span>], <span class="attr">"command"</span>: <span class="string">"run_macro_file"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"file"</span>: <span class="string">"res://Packages/Default/Delete Line.sublime-macro"</span>&#125; &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+k"</span>], <span class="attr">"command"</span>: <span class="string">"duplicate_line"</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+k"</span>], <span class="attr">"command"</span>: <span class="string">"do_nothing"</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+backspace"</span>], <span class="attr">"command"</span>: <span class="string">"do_nothing"</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"f9"</span>], <span class="attr">"command"</span>: <span class="string">"save_all"</span> &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"f8"</span>], <span class="attr">"command"</span>: <span class="string">"sort_lines"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"case_sensitive"</span>: <span class="literal">false</span>&#125; &#125;,</span><br><span class="line">	&#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+f8"</span>], <span class="attr">"command"</span>: <span class="string">"sort_lines"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"case_sensitive"</span>: <span class="literal">true</span>&#125; &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="key-bindings-user"><a href="#key-bindings-user" class="headerlink" title="key bindings - user"></a>key bindings - user</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+c"</span>], <span class="attr">"command"</span>: <span class="string">"toggle_comment"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"block"</span>: <span class="literal">false</span> &#125; &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+/"</span>], <span class="attr">"command"</span>: <span class="string">"toggle_comment"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"block"</span>: <span class="literal">true</span> &#125; &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+d"</span>], <span class="attr">"command"</span>: <span class="string">"run_macro_file"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"file"</span>: <span class="string">"res://Packages/Default/Delete Line.sublime-macro"</span>&#125; &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+shift+k"</span>], <span class="attr">"command"</span>: <span class="string">"duplicate_line"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+k"</span>], <span class="attr">"command"</span>: <span class="string">"do_nothing"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+k"</span>, <span class="string">"ctrl+backspace"</span>], <span class="attr">"command"</span>: <span class="string">"do_nothing"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"f9"</span>], <span class="attr">"command"</span>: <span class="string">"save_all"</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"f8"</span>], <span class="attr">"command"</span>: <span class="string">"sort_lines"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"case_sensitive"</span>: <span class="literal">false</span>&#125; &#125;,</span><br><span class="line">  &#123; <span class="attr">"keys"</span>: [<span class="string">"ctrl+f8"</span>], <span class="attr">"command"</span>: <span class="string">"sort_lines"</span>, <span class="attr">"args"</span>: &#123;<span class="attr">"case_sensitive"</span>: <span class="literal">true</span>&#125; &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/sublime-text-초기-설정/" data-id="cjjnjn4ei007z9kuo4pg3zixo" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/sublime-text-초기-설정/" data-id="cjjnjn4ei007z9kuo4pg3zixo" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -1044,7 +1044,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/tools/eclipse-초기-설정/" data-id="cjjnjn4e8007f9kuouf18zosz" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/tools/eclipse-초기-설정/" data-id="cjjnjn4e8007f9kuouf18zosz" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
@@ -1091,7 +1091,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/javascript/JavaScript-WindowEventHandlers-onunload/" data-id="cjjnjn4d2004v9kuof7rne99s" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/javascript/JavaScript-WindowEventHandlers-onunload/" data-id="cjjnjn4d2004v9kuof7rne99s" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/browser/">browser</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eventhandlers/">eventhandlers</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onclose/">onclose</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/onunload/">onunload</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/todo/">todo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
@@ -1368,7 +1368,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjjnjn4io00m39kuoaoxuarl1" class="article-share-link">Share</a>
+      <a data-url="http://noritersand.github.io/git/Git-명령어-정리/" data-id="cjjnjn4io00m39kuoaoxuarl1" class="article-share-link">Teilen</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -1384,7 +1384,7 @@ ga('send', 'pageview');
 
   <nav id="page-nav">
     
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">weiter &raquo;</a>
   </nav>
 
 </section>
@@ -1393,7 +1393,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">Kategorien</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/buildsystem/">buildsystem</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/">dbms</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/dbms/oracle/">oracle</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/">os</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/os/unix-linux/">unix/linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/os/windows/">windows</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/코드모음/">코드모음</a></li></ul>
     </div>
@@ -1422,7 +1422,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Archiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a></li></ul>
     </div>
@@ -1432,7 +1432,7 @@ ga('send', 'pageview');
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">letzter Beitrag</h3>
     <div class="widget">
       <ul>
         
