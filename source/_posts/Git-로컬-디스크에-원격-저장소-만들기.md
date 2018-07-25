@@ -10,9 +10,7 @@ tags:
 
 일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 'git init'으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다.
 
-bare로 생성하는 이유는 다음 링크를 참조할 것: http://bit.ly/175mFLh
-
-어쨌거나 bare-repository를 생성해서 원격 저장소로 등록해보자.
+bare-repository를 생성해서 원격 저장소로 등록해보자.
 
 ## clone을 이용한 방법
 ```bash
