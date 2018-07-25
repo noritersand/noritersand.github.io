@@ -23,13 +23,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/bare-repository/</loc>
-        <lastmod>2018-07-11T00:15:13.187Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/gitblit/</loc>
         <lastmod>2018-07-11T00:15:13.188Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -366,13 +359,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/eclipse/</loc>
-        <lastmod>2018-07-11T00:15:13.208Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/plugin/</loc>
         <lastmod>2018-07-11T00:15:13.209Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -443,34 +429,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/shell/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/windows/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/cmd/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/powershell/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/dbms/</loc>
         <lastmod>2018-07-11T00:15:13.216Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -494,20 +452,6 @@
     <url>
         <loc>http://noritersand.github.io/tags/link/</loc>
         <lastmod>2018-07-13T09:00:53.004Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/git/</loc>
-        <lastmod>2018-07-16T00:59:06.432Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/todo/</loc>
-        <lastmod>2018-07-19T05:39:29.954Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -564,6 +508,62 @@
     <url>
         <loc>http://noritersand.github.io/tags/file/</loc>
         <lastmod>2018-07-19T06:05:21.101Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/eclipse/</loc>
+        <lastmod>2018-07-24T01:59:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/git/</loc>
+        <lastmod>2018-07-25T05:56:30.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/bare-repository/</loc>
+        <lastmod>2018-07-25T05:56:30.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/todo/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/shell/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/windows/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/cmd/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/powershell/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

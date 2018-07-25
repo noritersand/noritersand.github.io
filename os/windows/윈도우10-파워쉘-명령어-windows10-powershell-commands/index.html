@@ -20,18 +20,18 @@ ga('send', 'pageview');
   
   <title>윈도우10: 파워쉘 명령어 powershell commands | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Start-Process기본 별칭: sapsStart-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능) Get-Content기본 별칭: typeGet-Content -Path nexus-2.14.5-02\log">
+  <meta name="description" content="Get-Alias기본 별칭: gal, alias설정된 별칭 목록을 출력한다.Get-Alias # 설정된 모든 별칭 출력alias | Select-String -Pattern &apos;jb&apos; -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력 Start-">
 <meta name="keywords" content="todo,shell,windows,cmd,powershell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="윈도우10: 파워쉘 명령어 powershell commands">
 <meta property="og:url" content="http://noritersand.github.io/os/windows/윈도우10-파워쉘-명령어-windows10-powershell-commands/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="Start-Process기본 별칭: sapsStart-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능) Get-Content기본 별칭: typeGet-Content -Path nexus-2.14.5-02\log">
+<meta property="og:description" content="Get-Alias기본 별칭: gal, alias설정된 별칭 목록을 출력한다.Get-Alias # 설정된 모든 별칭 출력alias | Select-String -Pattern &apos;jb&apos; -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력 Start-">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-11T00:15:13.215Z">
+<meta property="og:updated_time" content="2018-07-25T06:46:55.639Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="윈도우10: 파워쉘 명령어 powershell commands">
-<meta name="twitter:description" content="Start-Process기본 별칭: sapsStart-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능) Get-Content기본 별칭: typeGet-Content -Path nexus-2.14.5-02\log">
+<meta name="twitter:description" content="Get-Alias기본 별칭: gal, alias설정된 별칭 목록을 출력한다.Get-Alias # 설정된 모든 별칭 출력alias | Select-String -Pattern &apos;jb&apos; -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력 Start-">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -104,7 +104,8 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Start-Process"><a href="#Start-Process" class="headerlink" title="Start-Process"></a>Start-Process</h2><p>기본 별칭: saps<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Start-Process powershell –verb runAs <span class="comment"># 관리자 권한으로 파워쉘 실행</span></span><br><span class="line">Start-Process explorer . <span class="comment"># 현재 경로로 탐색기 실행(Start-Process는 생략 가능)</span></span><br></pre></td></tr></table></figure></p>
+        <h2 id="Get-Alias"><a href="#Get-Alias" class="headerlink" title="Get-Alias"></a>Get-Alias</h2><p>기본 별칭: gal, alias<br>설정된 별칭 목록을 출력한다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Get-Alias <span class="comment"># 설정된 모든 별칭 출력</span></span><br><span class="line"><span class="built_in">alias</span> | Select-String -Pattern <span class="string">'jb'</span> -CaseSensitive <span class="comment"># 소문자 jb가 포함된 모든 별칭 출력</span></span><br><span class="line">gal -Definition Get-Alias <span class="comment"># 설정된 별칭 중에 Get-Alias의 별칭 출력</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="Start-Process"><a href="#Start-Process" class="headerlink" title="Start-Process"></a>Start-Process</h2><p>기본 별칭: saps<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Start-Process powershell –verb runAs <span class="comment"># 관리자 권한으로 파워쉘 실행</span></span><br><span class="line">Start-Process explorer . <span class="comment"># 현재 경로로 탐색기 실행(Start-Process는 생략 가능)</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Get-Content"><a href="#Get-Content" class="headerlink" title="Get-Content"></a>Get-Content</h2><p>기본 별칭: type<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait <span class="comment"># 'tail -f'와 같음</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Write-Output"><a href="#Write-Output" class="headerlink" title="Write-Output"></a>Write-Output</h2><p>기본 별칭: echo<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Write-Output <span class="variable">$null</span> &gt;&gt; dummy-for-commit.txt <span class="comment"># 'touch'와 같음</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="Get-ChildItem"><a href="#Get-ChildItem" class="headerlink" title="Get-ChildItem"></a>Get-ChildItem</h2><p>기본 별칭: ls</p>

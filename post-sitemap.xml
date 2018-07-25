@@ -7,6 +7,30 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%8C%8C%EC%9B%8C%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows10-powershell-commands/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/git/Git-%EB%A1%9C%EC%BB%AC-%EB%94%94%EC%8A%A4%ED%81%AC%EC%97%90-%EC%9B%90%EA%B2%A9-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
+        <lastmod>2018-07-25T05:56:30.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tools/eclipse-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/</loc>
+        <lastmod>2018-07-24T01:59:16.122Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C-Java-%ED%8C%8C%EC%9D%BC%EB%AA%85-%EC%9D%BC%EA%B4%84-%EB%B3%80%EA%B2%BD/</loc>
         <lastmod>2018-07-19T06:05:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +73,6 @@
     <url>
         <loc>http://noritersand.github.io/dbms/oracle/%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80-%ED%98%B8%EC%B6%9C%EB%B0%A9%EB%B2%95/</loc>
         <lastmod>2018-07-11T00:15:13.216Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/os/windows/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%8C%8C%EC%9B%8C%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows10-powershell-commands/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -128,14 +144,6 @@
 
     <url>
         <loc>http://noritersand.github.io/tools/eclipse-svn-repository-%EC%A0%91%EA%B7%BC%EA%B6%8C%ED%95%9C-%EC%B4%88%EA%B8%B0%ED%99%94-%EB%B0%A9%EB%B2%95/</loc>
-        <lastmod>2018-07-11T00:15:13.208Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tools/eclipse-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/</loc>
         <lastmod>2018-07-11T00:15:13.208Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -385,14 +393,6 @@
     <url>
         <loc>http://noritersand.github.io/git/Git-%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90-Git-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/</loc>
         <lastmod>2018-07-11T00:15:13.188Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/git/Git-%EB%A1%9C%EC%BB%AC-%EB%94%94%EC%8A%A4%ED%81%AC%EC%97%90-%EC%9B%90%EA%B2%A9-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/</loc>
-        <lastmod>2018-07-11T00:15:13.187Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

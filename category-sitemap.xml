@@ -35,20 +35,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/os/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/categories/os/windows/</loc>
-        <lastmod>2018-07-11T00:15:13.215Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/categories/dbms/</loc>
         <lastmod>2018-07-11T00:15:13.216Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -63,22 +49,36 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/git/</loc>
-        <lastmod>2018-07-16T00:59:06.432Z</lastmod>
+        <loc>http://noritersand.github.io/categories/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C/</loc>
+        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>http://noritersand.github.io/categories/tools/</loc>
-        <lastmod>2018-07-19T06:02:15.382Z</lastmod>
+        <lastmod>2018-07-24T01:59:16.122Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
+        <loc>http://noritersand.github.io/categories/git/</loc>
+        <lastmod>2018-07-25T05:56:30.080Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/os/windows/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

@@ -20,18 +20,18 @@ ga('send', 'pageview');
   
   <title>Git: 로컬 디스크에 원격 저장소 만들기 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare로 생성하는 이유는 다음 링크를 참조할 것: http://bit.ly/175mFLh 어쨌거나 ba">
+  <meta name="description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare-repository를 생성해서 원격 저장소로 등록해보자. clone을 이용한 방법$ git in">
 <meta name="keywords" content="git,bare repository">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git: 로컬 디스크에 원격 저장소 만들기">
 <meta property="og:url" content="http://noritersand.github.io/git/Git-로컬-디스크에-원격-저장소-만들기/index.html">
 <meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160">
-<meta property="og:description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare로 생성하는 이유는 다음 링크를 참조할 것: http://bit.ly/175mFLh 어쨌거나 ba">
+<meta property="og:description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare-repository를 생성해서 원격 저장소로 등록해보자. clone을 이용한 방법$ git in">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-11T00:15:13.187Z">
+<meta property="og:updated_time" content="2018-07-25T05:56:30.080Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git: 로컬 디스크에 원격 저장소 만들기">
-<meta name="twitter:description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare로 생성하는 이유는 다음 링크를 참조할 것: http://bit.ly/175mFLh 어쨌거나 ba">
+<meta name="twitter:description" content="일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다. bare-repository를 생성해서 원격 저장소로 등록해보자. clone을 이용한 방법$ git in">
   
     <link rel="alternate" href="/atom.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" type="application/atom+xml">
   
@@ -105,8 +105,7 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>일반적인 깃 저장소(원격 저장소가 따로 존재하는 로컬 저장소)는 ‘git init’으로 생성하지만 원격(서버) 저장소라면 bare-repository로 생성해야 한다. bare-repository는 워킹 트리가 없고 변경사항만 추적하는 저장소를 말한다.</p>
-<p>bare로 생성하는 이유는 다음 링크를 참조할 것: <a href="http://bit.ly/175mFLh" target="_blank" rel="noopener">http://bit.ly/175mFLh</a></p>
-<p>어쨌거나 bare-repository를 생성해서 원격 저장소로 등록해보자.</p>
+<p>bare-repository를 생성해서 원격 저장소로 등록해보자.</p>
 <h2 id="clone을-이용한-방법"><a href="#clone을-이용한-방법" class="headerlink" title="clone을 이용한 방법"></a>clone을 이용한 방법</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git init --bare</span><br><span class="line">Initialized empty Git repository <span class="keyword">in</span> c:/Users/fixalot/work/gitserver/</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> file://c:/Users/fixalot/work/gitserver myrepository</span><br><span class="line">Cloning into <span class="string">'myrepository'</span>...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br><span class="line">Checking connectivity... <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 <p>여기서는 file 프로토콜을 사용했는데 생략할 수도 있다.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> c:/Users/fixalot/work/gitserver myrepository2</span><br><span class="line">Cloning into <span class="string">'myrepository2'</span>...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br><span class="line"><span class="keyword">done</span>.</span><br><span class="line"></span><br><span class="line">$ git <span class="built_in">clone</span> ~/work/gitserver myrepository3</span><br><span class="line">Cloning into <span class="string">'myrepository3'</span>...</span><br><span class="line">warning: You appear to have cloned an empty repository.</span><br><span class="line"><span class="keyword">done</span>.</span><br></pre></td></tr></table></figure></p>
 <p>file 프로토콜 사용여부에 따른 차이는 <a href="https://git-scm.com/book/ko/v2/Git-%EC%84%9C%EB%B2%84-%ED%94%84%EB%A1%9C%ED%86%A0%EC%BD%9C" target="_blank" rel="noopener">여기</a>에서 확인할 수 있다.</p>
