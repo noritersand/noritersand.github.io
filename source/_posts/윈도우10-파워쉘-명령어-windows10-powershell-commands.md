@@ -12,6 +12,15 @@ tags:
   - windows
 ---
 
+## Get-Alias
+기본 별칭: gal, alias
+설정된 별칭 목록을 출력한다.
+```bash
+Get-Alias # 설정된 모든 별칭 출력
+alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력
+gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
+```
+
 ## Start-Process
 기본 별칭: saps
 ```bash
