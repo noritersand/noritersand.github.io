@@ -28,13 +28,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/categories/web/</loc>
-        <lastmod>2018-07-11T00:15:13.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/categories/dbms/</loc>
         <lastmod>2018-07-11T00:15:13.216Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -79,6 +72,13 @@
     <url>
         <loc>http://noritersand.github.io/categories/os/windows/</loc>
         <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/categories/web/</loc>
+        <lastmod>2018-07-26T02:38:26.318Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

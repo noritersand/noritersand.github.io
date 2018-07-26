@@ -58,13 +58,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/browser/</loc>
-        <lastmod>2018-07-11T00:15:13.191Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/eventhandlers/</loc>
         <lastmod>2018-07-11T00:15:13.191Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -80,13 +73,6 @@
 
     <url>
         <loc>http://noritersand.github.io/tags/onunload/</loc>
-        <lastmod>2018-07-11T00:15:13.191Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/web/</loc>
         <lastmod>2018-07-11T00:15:13.191Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -268,7 +254,7 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/buildsystem/</loc>
+        <loc>http://noritersand.github.io/tags/vim/</loc>
         <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -276,6 +262,13 @@
 
     <url>
         <loc>http://noritersand.github.io/tags/maven/</loc>
+        <lastmod>2018-07-11T00:15:13.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/buildsystem/</loc>
         <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -290,13 +283,6 @@
 
     <url>
         <loc>http://noritersand.github.io/tags/link-post/</loc>
-        <lastmod>2018-07-11T00:15:13.205Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/vim/</loc>
         <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -338,6 +324,13 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/tags/easy-console-grepper/</loc>
+        <lastmod>2018-07-11T00:15:13.207Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/tags/hot-deploy/</loc>
         <lastmod>2018-07-11T00:15:13.207Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -352,35 +345,7 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/easy-console-grepper/</loc>
-        <lastmod>2018-07-11T00:15:13.207Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/plugin/</loc>
-        <lastmod>2018-07-11T00:15:13.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/jekyll/</loc>
-        <lastmod>2018-07-11T00:15:13.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/hexo/</loc>
-        <lastmod>2018-07-11T00:15:13.209Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/github/</loc>
         <lastmod>2018-07-11T00:15:13.209Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -464,14 +429,14 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
+        <loc>http://noritersand.github.io/tags/tools/</loc>
         <lastmod>2018-07-19T06:02:15.382Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/tools/</loc>
+        <loc>http://noritersand.github.io/tags/sublime-text/</loc>
         <lastmod>2018-07-19T06:02:15.382Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -492,14 +457,14 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/JDK8/</loc>
+        <loc>http://noritersand.github.io/tags/stream/</loc>
         <lastmod>2018-07-19T06:05:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/stream/</loc>
+        <loc>http://noritersand.github.io/tags/JDK8/</loc>
         <lastmod>2018-07-19T06:05:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -534,21 +499,14 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/todo/</loc>
-        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/shell/</loc>
-        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/windows/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/todo/</loc>
         <lastmod>2018-07-25T06:46:55.639Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -562,8 +520,43 @@
     </url>
 
     <url>
+        <loc>http://noritersand.github.io/tags/shell/</loc>
+        <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>http://noritersand.github.io/tags/powershell/</loc>
         <lastmod>2018-07-25T06:46:55.639Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/browser/</loc>
+        <lastmod>2018-07-26T02:38:26.318Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/web/</loc>
+        <lastmod>2018-07-26T02:38:26.318Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/chrome/</loc>
+        <lastmod>2018-07-26T02:38:26.318Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/firefox/</loc>
+        <lastmod>2018-07-26T02:38:26.318Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
