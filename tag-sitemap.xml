@@ -79,20 +79,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/const/</loc>
-        <lastmod>2018-07-11T00:15:13.192Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/let/</loc>
-        <lastmod>2018-07-11T00:15:13.192Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/cps/</loc>
         <lastmod>2018-07-11T00:15:13.192Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -101,6 +87,20 @@
 
     <url>
         <loc>http://noritersand.github.io/tags/continuation-passing-style/</loc>
+        <lastmod>2018-07-11T00:15:13.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/const/</loc>
+        <lastmod>2018-07-11T00:15:13.192Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/let/</loc>
         <lastmod>2018-07-11T00:15:13.192Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -149,14 +149,14 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/hoisting/</loc>
+        <loc>http://noritersand.github.io/tags/arguments/</loc>
         <lastmod>2018-07-11T00:15:13.197Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/arguments/</loc>
+        <loc>http://noritersand.github.io/tags/hoisting/</loc>
         <lastmod>2018-07-11T00:15:13.197Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -254,13 +254,6 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/vim/</loc>
-        <lastmod>2018-07-11T00:15:13.205Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>http://noritersand.github.io/tags/maven/</loc>
         <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -283,6 +276,13 @@
 
     <url>
         <loc>http://noritersand.github.io/tags/link-post/</loc>
+        <lastmod>2018-07-11T00:15:13.205Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>http://noritersand.github.io/tags/vim/</loc>
         <lastmod>2018-07-11T00:15:13.205Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -352,14 +352,14 @@
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/process-kill/</loc>
+        <loc>http://noritersand.github.io/tags/pscp/</loc>
         <lastmod>2018-07-11T00:15:13.212Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>http://noritersand.github.io/tags/pscp/</loc>
+        <loc>http://noritersand.github.io/tags/process-kill/</loc>
         <lastmod>2018-07-11T00:15:13.212Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -438,41 +438,6 @@
     <url>
         <loc>http://noritersand.github.io/tags/sublime-text/</loc>
         <lastmod>2018-07-19T06:02:15.382Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/java/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/lambda/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/stream/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/JDK8/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>http://noritersand.github.io/tags/file/</loc>
-        <lastmod>2018-07-19T06:05:21.101Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
