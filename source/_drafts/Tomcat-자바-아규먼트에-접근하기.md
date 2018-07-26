@@ -1,7 +1,7 @@
 ---
 title: 'Tomcat: 자바 아규먼트에 접근하기'
 categories:
-  - etc
+  - apache/tomcat
 tags:
   - tomcat
   - java
@@ -20,4 +20,3 @@ java ... -DhttpPort=8080 ... org.apache.catalina.startup.Bootstrap start
     redirectPort="8443" />
 ```
 이렇게 쓸 수 있음.
-
