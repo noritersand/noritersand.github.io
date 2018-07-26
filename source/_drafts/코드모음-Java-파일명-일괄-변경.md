@@ -1,6 +1,5 @@
 ---
 title: '코드모음-Java: 파일명 일괄 변경'
-date: 2018-07-16 09:36:25
 categories:
   - 코드모음
 tags:
