@@ -14,7 +14,7 @@ java ... -DhttpPort=8080 ... org.apache.catalina.startup.Bootstrap start
 ```
 일 때
 
-```markup
+```xml
   <Connector port="${httpPort}" protocol="HTTP/1.1"
     connectionTimeout="20000"
     redirectPort="8443" />
