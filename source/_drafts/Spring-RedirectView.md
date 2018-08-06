@@ -25,4 +25,4 @@ public ModelAndView redirection() {
     return modelAndView;
 }
 ```
-핵심은 `setHttp10Compatible`. 다른건 크게 상관 없다.
+`setHttp10Compatible` api 문서에 따르면 true로 설정했을 때 303 대신 302로 응답한다고 한다. (HTTP 1.0 클라이언트는 303 응답코드를 이해하지 못함)
