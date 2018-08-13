@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: with, debugger'
+layout: post
 date: 2018-03-20 16:43:07 +09:00
+title: 'JavaScript: with, debugger'
 categories:
   - javascript
 tags:

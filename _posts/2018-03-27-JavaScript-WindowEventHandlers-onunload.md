@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: WindowEventHandlers.onunload'
+layout: post
 date: 2018-03-27 12:50:10 +09:00
+title: 'JavaScript: WindowEventHandlers.onunload'
 categories:
   - javascript
 tags:

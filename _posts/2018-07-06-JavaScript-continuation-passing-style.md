@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: continuation-passing style'
+layout: post
 date: 2018-07-06 17:52:58 +09:00
+title: 'JavaScript: continuation-passing style'
 categories:
   - javascript
 tags:

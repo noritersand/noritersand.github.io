@@ -1,6 +1,7 @@
 ---
-title: '윈도우10: 파워쉘 명령어 powershell commands'
+layout: post
 date: 2018-03-19 18:27:24 +09:00
+title: '윈도우10: 파워쉘 명령어 powershell commands'
 categories:
   - os
   - windows

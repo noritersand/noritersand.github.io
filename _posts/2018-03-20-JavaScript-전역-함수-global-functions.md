@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 전역 함수 global functions'
+layout: post
 date: 2018-03-20 15:40:02 +09:00
+title: 'JavaScript: 전역 함수 global functions'
 categories:
   - javascript
 tags:

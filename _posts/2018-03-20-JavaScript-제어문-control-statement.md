@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 제어문 control statement'
+layout: post
 date: 2018-03-20 15:10:49 +09:00
+title: 'JavaScript: 제어문 control statement'
 categories:
   - javascript
 tags:

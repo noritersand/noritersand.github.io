@@ -1,6 +1,7 @@
 ---
-title: 'eclipse: hot code replace'
+layout: post
 date: 2018-04-18 11:02:53 +09:00
+title: 'eclipse: hot code replace'
 categories:
   - tools
 tags:

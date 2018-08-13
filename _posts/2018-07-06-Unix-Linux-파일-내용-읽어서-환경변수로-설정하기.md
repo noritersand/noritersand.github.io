@@ -1,6 +1,7 @@
 ---
-title: 'Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기'
+layout: post
 date: 2018-07-06 16:13:07 +09:00
+title: 'Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기'
 categories:
   - os
   - unix/linux

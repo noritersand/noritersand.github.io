@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 쿠키 컨트롤'
+layout: post
 date: 2018-03-20 16:36:55 +09:00
+title: 'JavaScript: 쿠키 컨트롤'
 categories:
   - javascript
 tags:

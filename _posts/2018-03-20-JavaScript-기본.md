@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 기본'
+layout: post
 date: 2018-03-20 14:40:10 +09:00
+title: 'JavaScript: 기본'
 categories:
   - javascript
 tags:

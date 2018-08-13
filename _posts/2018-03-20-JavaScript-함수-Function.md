@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 함수 Function'
+layout: post
 date: 2018-03-20 15:59:09 +09:00
+title: 'JavaScript: 함수 Function'
 categories:
   - javascript
 tags:

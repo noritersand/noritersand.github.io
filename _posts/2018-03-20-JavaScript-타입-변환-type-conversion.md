@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 타입 변환 type conversion'
+layout: post
 date: 2018-03-20 16:15:11 +09:00
+title: 'JavaScript: 타입 변환 type conversion'
 categories:
   - javascript
 tags:

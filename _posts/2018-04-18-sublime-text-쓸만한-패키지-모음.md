@@ -1,6 +1,7 @@
 ---
-title: 'sublime text: 쓸만한 패키지 모음'
+layout: post
 date: 2018-04-18 17:39:17 +09:00
+title: 'sublime text: 쓸만한 패키지 모음'
 categories:
   - tools
 tags:

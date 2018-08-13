@@ -1,6 +1,7 @@
 ---
-title: 'eclipse: svn repository 접근권한 초기화 방법'
+layout: post
 date: 2018-04-18 11:30:42 +09:00
+title: 'eclipse: svn repository 접근권한 초기화 방법'
 categories:
   - tools
 tags:

@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 연산자 operator'
+layout: post
 date: 2018-03-20 14:57:36 +09:00
+title: 'JavaScript: 연산자 operator'
 categories:
   - javascript
 tags:

@@ -1,6 +1,7 @@
 ---
-title: 'Git: 파일 무시하기 .gitignore'
+layout: post
 date: 2018-07-06 16:59:40 +09:00
+title: 'Git: 파일 무시하기 .gitignore'
 categories:
   - git
 tags:

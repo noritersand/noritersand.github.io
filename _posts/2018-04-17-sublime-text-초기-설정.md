@@ -1,6 +1,7 @@
 ---
-title: 'sublime text: 초기 설정'
+layout: post
 date: 2018-04-17 13:32:10 +09:00
+title: 'sublime text: 초기 설정'
 categories:
   - tools
 tags:

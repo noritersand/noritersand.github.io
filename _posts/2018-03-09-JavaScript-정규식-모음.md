@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 정규식 모음'
+layout: post
 date: 2018-03-09 17:53:21 +09:00
+title: 'JavaScript: 정규식 모음'
 categories:
   - javascript
 tags:

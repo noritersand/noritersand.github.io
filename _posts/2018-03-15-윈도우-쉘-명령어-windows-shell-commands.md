@@ -1,6 +1,7 @@
 ---
-title: '윈도우: 쉘 명령어 windows shell commands'
+layout: post
 date: 2018-03-15 13:46:15 +09:00
+title: '윈도우: 쉘 명령어 windows shell commands'
 categories:
   - os
   - windows

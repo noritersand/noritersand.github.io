@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: eval()과 new Function()의 차이'
+layout: post
 date: 2018-03-20 16:58:02 +09:00
+title: 'JavaScript: eval()과 new Function()의 차이'
 categories:
   - javascript
 tags:

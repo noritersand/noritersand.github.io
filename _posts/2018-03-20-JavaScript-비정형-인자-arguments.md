@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: 비정형 인자 arguments'
+layout: post
 date: 2018-03-20 16:45:07 +09:00
+title: 'JavaScript: 비정형 인자 arguments'
 categories:
   - javascript
 tags:

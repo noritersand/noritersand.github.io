@@ -1,6 +1,7 @@
 ---
-title: 'JavaScript: Ajax'
+layout: post
 date: 2018-03-20 17:08:18 +09:00
+title: 'JavaScript: Ajax'
 categories:
   - javascript
 tags:
