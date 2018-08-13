@@ -94,3 +94,4 @@ jekyll build
 jekyll serve
 # bundle exec jekyll serve
 ```
+로컬 서버에서는 한글 파일명을 인식하지 못하는 문제가 있음.(2018-08-13 기준)
