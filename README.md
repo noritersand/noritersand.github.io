@@ -1,4 +1,4 @@
-# jekyll branch
+# powered by jekyll
 
 ## environments
 - [ruby](https://www.ruby-lang.org/ko/)
