@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "jekyll collections test"
 date: 1970-01-01 00:00:00 +0900
+title: "jekyll collections test"
 categories:
   - etc
 tags:

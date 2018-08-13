@@ -1,0 +1,58 @@
+---
+layout: post
+date: 1970-01-01 00:00:00 +0900
+title: '코드모음-JavaScript: 날짜 입력란 포맷 맞춰주기'
+categories:
+  - 코드모음
+tags:
+  - javascript
+---
+
+#### required:
+- jQuery 1.7 or higher
+
+입력한 날짜가 유효하지 않으면 직전의 유효했던 날짜로 바꿔치기 하는 코드.
+
+```html
+<input type="text" id="calendarStartDt" maxlength="8" title="검색시작일" value="1970-01-01" />
+<input type="text" id="calendarEndDt" maxlength="8" title="검색종료일" value="2012-12-12" />
+<script>
+$('#calendarStartDt, #calendarEndDt').on({
+  'keyup': function(event) {
+    var $ele = $(event.target);
+    var value = $ele.val().replace(/[^0-9]+/g, "");
+    $ele.val(value);
+    if (value.length < 8) {
+      return;
+    }
+    var dateTxt = calendarDtValidate(value);
+    if (!dateTxt) {
+      $ele.val($ele.data("value-backup"));
+      return;
+    }
+    $ele.val(dateTxt);
+  },
+  'focus': function(event) {
+    var $ele = $(event.target);
+    $ele.data("value-backup", $ele.val());
+    $ele.val("");
+  },
+  'blur': function(event) {
+    var $ele = $(event.target);
+    if (!calendarDtValidate($ele.val().replaceAll("-", ""))) {
+      $ele.val($ele.data("value-backup"));
+    }
+  }
+});
+function calendarDtValidate(value) {
+  if (value.length < 8) {
+    return null;
+  }
+  var dateTxt = value.substring(0, 4) + "-" + value.substring(4, 6) + "-" + value.substring(6, 8);
+  if (isNaN(new Date(dateTxt))) {
+    return null;
+  }
+  return dateTxt;
+}
+</script>
+```
