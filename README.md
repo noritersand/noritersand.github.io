@@ -73,16 +73,6 @@ jekyll serve --no-watch
 # `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
 ```
 
-## 글 작성
-```bash
-
-```
-
-## 비공개 글 작성
-```bash
-
-```
-
 ## 사이트 빌드
 ``` bash
 jekyll build
