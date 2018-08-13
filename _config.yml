@@ -29,7 +29,7 @@ plugins:
   - jekyll-feed
 
 timezone: Asia/Seoul
-encoding: utf-8
+encoding: "utf-8"
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
