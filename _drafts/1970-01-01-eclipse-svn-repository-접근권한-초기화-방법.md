@@ -1,0 +1,21 @@
+---
+layout: post
+date: 2018-08-22 17:03:00 +09:00
+title: 'eclipse: 원격 서버 디버깅'
+categories:
+  - tools
+tags:
+  - eclipse
+  - todo
+---
+
+#### 참고한 글
+- https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-remotejava_launch_config.htm
+- https://dzone.com/articles/how-debug-remote-java-applicat
+- http://wiki.javajigi.net/pages/viewpage.action?pageId=743
+
+이클립스 메뉴에서 `Run` > `Debug configurations` > `Remote Java Application`이 있는데 이걸로 붙으면 원격지에서 돌아가는 자바 애플리케이션을 디버깅할 수 있다.
+
+그냥은 안되고 원격지에 설정을 따로 해줘야 한다.
+
+끄는 방법은 Debug view에서 끄면 됨.
