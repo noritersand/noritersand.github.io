@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-03-20 17:00:42 +09:00
+date: 2018-03-20 17:00:42 +0900
 title: 'JavaScript: pseudo protocol 앵커(a) 태그로 스크립트 실행 시 주의사항'
 categories:
   - javascript

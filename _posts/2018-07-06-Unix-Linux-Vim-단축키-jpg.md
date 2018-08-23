@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-07-06 15:57:35 +09:00
+date: 2018-07-06 15:57:35 +0900
 title: 'Unix/Linux: Vim 단축키.jpg'
 categories:
   - os

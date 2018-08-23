@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-03-20 16:46:26 +09:00
+date: 2018-03-20 16:46:26 +0900
 title: 'JavaScript: 클로저 closures'
 categories:
   - javascript

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-03-20 14:57:36 +09:00
+date: 2018-03-20 14:57:36 +0900
 title: 'JavaScript: 연산자 operator'
 categories:
   - javascript

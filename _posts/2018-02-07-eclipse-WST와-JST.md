@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-02-07 11:10:53 +09:00
+date: 2018-02-07 11:10:53 +0900
 title: 'eclipse: WST와 JST'
 categories:
   - tools

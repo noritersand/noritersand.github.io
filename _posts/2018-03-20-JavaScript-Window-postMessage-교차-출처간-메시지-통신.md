@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-03-20 17:15:34 +09:00
+date: 2018-03-20 17:15:34 +0900
 title: 'JavaScript: Window.postMessage 교차 출처간 메시지 통신'
 categories:
   - javascript

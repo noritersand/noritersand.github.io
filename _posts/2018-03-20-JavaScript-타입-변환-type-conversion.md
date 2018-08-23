@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2018-03-20 16:15:11 +09:00
+date: 2018-03-20 16:15:11 +0900
 title: 'JavaScript: 타입 변환 type conversion'
 categories:
   - javascript
