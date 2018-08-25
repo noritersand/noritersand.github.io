@@ -12,7 +12,7 @@ tags:
 ---
 
 #### 참고한 글
-- https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
 #### 브라우저 호환
 IE는 11부터 완전히 지원하고 IE8, IE9는 프레임에서만, IE10은 제한적으로만 지원한다. 그 외 브라우저는 모두 가능한걸로... ~~악의축~~

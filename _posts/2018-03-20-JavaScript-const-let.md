@@ -12,7 +12,7 @@ tags:
 ---
 
 #### 참고한 글
-- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
 
 #### 테스트 환경
 - 파이어폭스 47.0

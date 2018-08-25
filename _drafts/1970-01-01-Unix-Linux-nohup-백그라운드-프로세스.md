@@ -12,7 +12,7 @@ tags:
 ---
 
 #### 참고한 글
-- http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html
+- [http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html](http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html)
 
 ``` bash
 nohup java -jar example.jar &

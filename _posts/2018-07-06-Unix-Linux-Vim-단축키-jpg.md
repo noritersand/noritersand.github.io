@@ -11,7 +11,7 @@ tags:
   - vim
 ---
 
-위키: http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim
+위키: [http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim](http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim)
 
 ![](/images/Unix-Linux-Vim-단축키-1.png)
 ![](/images/Unix-Linux-Vim-단축키-2.jpeg)

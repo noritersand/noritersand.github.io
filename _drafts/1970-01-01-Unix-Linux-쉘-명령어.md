@@ -12,7 +12,7 @@ tags:
 ---
 
 #### 참고한 글
-- https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/
+- [https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/](https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/)
 
 #### 테스트 환경
 - CentOS Linux release 7.1.1503 (Core)

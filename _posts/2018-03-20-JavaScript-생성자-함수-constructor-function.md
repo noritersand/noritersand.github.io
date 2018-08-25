@@ -13,10 +13,10 @@ tags:
 ---
 
 #### 참고한 글
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new
-- http://tobyho.com/2010/11/22/javascript-constructors-and/
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
+- [http://tobyho.com/2010/11/22/javascript-constructors-and/](http://tobyho.com/2010/11/22/javascript-constructors-and/)
 
 ![](/images/prototype-constructor.png)
 

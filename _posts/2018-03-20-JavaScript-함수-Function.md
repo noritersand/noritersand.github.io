@@ -11,8 +11,8 @@ tags:
 ---
 
 #### 참고한 글
-- http://www.w3schools.com/Js/js_function_definition.asp
-- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function
+- [http://www.w3schools.com/Js/js_function_definition.asp](http://www.w3schools.com/Js/js_function_definition.asp)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 ## 함수란?
 함수란 독립적으로 분리된 로직으로, 미리 정의되어 있거나 사용자 정의에 의해 만들어진 실행가능한 단위를 일컫는 말이다. 자바스크립트에선 함수는 객체로 존재하며 동시에 1급 함수다. 이것은 함수 객체를 변수나 데이터 구조 안에 담거나 전달인자 혹은 반환값으로 사용할 수 있다는 의미다.

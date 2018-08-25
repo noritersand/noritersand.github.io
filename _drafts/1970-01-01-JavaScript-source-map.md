@@ -11,8 +11,8 @@ tags:
 ---
 
 #### 참고한 글
-- https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/
-- https://blog.outsider.ne.kr/916
+- [https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
+- [https://blog.outsider.ne.kr/916](https://blog.outsider.ne.kr/916)
 
 ```js
 //# sourceMappingURL=maps/swiper.min.js.map

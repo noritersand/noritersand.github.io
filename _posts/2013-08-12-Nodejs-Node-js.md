@@ -14,8 +14,8 @@ tags:
 
 #### 참고한 글
 
-- https://nodejs.org/en/docs/
-- http://www.nodebeginner.org/index-kr.html
+- [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
+- [http://www.nodebeginner.org/index-kr.html](http://www.nodebeginner.org/index-kr.html)
 
 
 ## 시작하기
@@ -23,7 +23,7 @@ tags:
 ### 설치
 
 아래 링크에서 OS에 맞는 파일을 받아 설치한다.
-https://nodejs.org/en/download/
+[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
 안될 경우 `NODE_PATH = C:\Users\noriter\AppData\Roaming\npm\node_modules` 패스 추가.
 
@@ -208,7 +208,7 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 ```
 
 이 경우 노드는 ./myModule/lib/temp.js 를 찾는다.
-관련 내용을 설명한 블로그: http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules
+[관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
 
 ## exports/require
 

@@ -11,5 +11,5 @@ tags:
   - continuation passing style
 ---
 
-원문: http://matt.might.net/articles/by-example-continuation-passing-style/
-한글번역: http://dogfeet.github.io/articles/2012/by-example-continuation-passing-style-in-javascript.html
+- 원문: [http://matt.might.net/articles/by-example-continuation-passing-style/](http://matt.might.net/articles/by-example-continuation-passing-style/)
+- 한글번역: [http://dogfeet.github.io/articles/2012/by-example-continuation-passing-style-in-javascript.html](http://dogfeet.github.io/articles/2012/by-example-continuation-passing-style-in-javascript.html)

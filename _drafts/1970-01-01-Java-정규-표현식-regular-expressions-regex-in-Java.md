@@ -12,7 +12,7 @@ tags:
 ---
 
 #### 참고한 글
-- http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html
+- [http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html](http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html)
 
 
 정규 표현식(줄여서 정규식)

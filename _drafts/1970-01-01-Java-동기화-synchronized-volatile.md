@@ -12,11 +12,11 @@ tags:
 ---
 
 #### 참고한 글
-- https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html
-- https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html
-- https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html
-- http://thswave.github.io/java/2015/03/08/java-volatile.html
-- http://blog.javarouka.me/2012/04/volatile-keyword-in-java.html
+- [https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html)
+- [https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html)
+- [https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/atomic.html)
+- [http://thswave.github.io/java/2015/03/08/java-volatile.html](http://thswave.github.io/java/2015/03/08/java-volatile.html)
+- [http://blog.javarouka.me/2012/04/volatile-keyword-in-java.html](http://blog.javarouka.me/2012/04/volatile-keyword-in-java.html)
 
 ## synchronized
 synchronized 키워드는 메서드나 메서드 내부의 특정 지역을 동기화 처리할 때 사용한다.

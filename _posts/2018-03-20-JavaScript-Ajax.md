@@ -12,11 +12,11 @@ tags:
 ---
 
 #### 참고한 글
-- https://xhr.spec.whatwg.org/
-- http://www.w3schools.com/ajax/
-- https://developer.mozilla.org/ko/docs/XMLHttpRequest
-- https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest
-- http://huns.me/development/1291
+- [https://xhr.spec.whatwg.org/](https://xhr.spec.whatwg.org/)
+- [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
+- [https://developer.mozilla.org/ko/docs/XMLHttpRequest](https://developer.mozilla.org/ko/docs/XMLHttpRequest)
+- [https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [http://huns.me/development/1291](http://huns.me/development/1291)
 
 ## Ajax란?
 Ajax는 'Asynchronous JavaScript and XML'의 약자로 웹 애플리케이션 개발 기법의 하나다. Ajax는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 Ajax를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.

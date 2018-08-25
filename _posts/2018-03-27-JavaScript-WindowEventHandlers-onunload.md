@@ -16,7 +16,7 @@ tags:
 ---
 
 #### 참고한 글
-- https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload
+- [https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload](https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload)
 
 ```js
 window.onunload = funcRef;

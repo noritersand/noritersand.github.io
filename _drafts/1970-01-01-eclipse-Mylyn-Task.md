@@ -10,7 +10,7 @@ tags:
 ---
 
 #### 참고한 글
-- http://www.eclipse.org/mylyn/
+- [http://www.eclipse.org/mylyn/](http://www.eclipse.org/mylyn/)
 
 TODO TODO TODO
 

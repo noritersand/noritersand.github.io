@@ -11,7 +11,7 @@ tags:
 ---
 
 #### 참고한 글
-- http://docs.oracle.com/javase/9/docs/api/java/lang/System.html
+- [http://docs.oracle.com/javase/9/docs/api/java/lang/System.html](http://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
 
 ## getProperty()
 ```java

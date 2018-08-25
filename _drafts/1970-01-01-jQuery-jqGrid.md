@@ -11,8 +11,9 @@ tags:
   - jqgrid
 ---
 ![](/images/jquery-jqgrid-1.png)
+
 #### 참고한 글
-- http://www.trirand.com
+- [http://www.trirand.com](http://www.trirand.com)
 - [github](https://github.com/tonytomov/jqGrid/tree/master)
 - [wiki](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs)
 - [demo](http://trirand.com/blog/jqgrid/jqgrid.html)
@@ -21,7 +22,9 @@ jqGrid는 데이터 리스트를 표현하는 grid 플러그인이다. 페이징
 
 ## 수정모드 강제종료
 jqGrid에서 특정셀을 수정 가능하도록 설정(colmodel option - editable: true)한 경우 해당셀을 선택하면 옵션에 따라 `<input>` 혹은 `<select>` 등의 입력폼으로 바뀌게 되어 있다.
+
 ![](/images/jquery-jqgrid-2.png)
+
 위 사진처럼 입력폼으로 바뀐 셀의 상태를 수정모드라고 했을 때, 수정모드를 종료하지 않고 해당 셀의 값을 가져오려고 하면 화면상에 보이는것 처럼 200이 아닌 다른값이 나온다. (이 값은 null string이나 입력폼 태그 자체가 나올 수도 있다)
 
 따라서 만약 셀을 수정하고 그 데이터를 submit등으로 처리해야 한다면 반드시 셀들의 현 상태를 체크하는 코드가 선행되어야 한다. (물론 사용자가 엔터 등으로 수정모드를 손수 종료시키고 다음 행동을 한다면 문제가 없겠지만...) 셀을 수정중인 상태에서 아래 코드를 실행시켜보면 수정모드가 즉시 종료되는것을 확인할 수 있다.

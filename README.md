@@ -22,7 +22,7 @@ jekyll new . --force
 - `.jekyll-metadata`: 몲
 
 ## 환경설정 도움말
-https://jekyllrb-ko.github.io/docs/configuration/
+- [https://jekyllrb-ko.github.io/docs/configuration/](https://jekyllrb-ko.github.io/docs/configuration/)
 
 ## 지킬 명령어 도움말 보기
 ```bash
