@@ -40,6 +40,7 @@ diff 기능은 최강이지만 유료다. (35달러)
 
 ## Compare Side-By-Side
 FileDiffs보다 보기 좋은 diff 뷰어.
+단축키는 Jump to next: Alt+Shift+Down, Jump to previous: Alt+Shift+Up
 [https://packagecontrol.io/packages/Compare%20Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)
 
 ## Sync View Scroll
