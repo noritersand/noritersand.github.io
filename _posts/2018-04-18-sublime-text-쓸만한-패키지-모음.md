@@ -46,3 +46,7 @@ FileDiffs보다 보기 좋은 diff 뷰어.
 ## Sync View Scroll
 여러 view의 스크롤을 동기화하는 플러그인. 심지어 좌우 스크롤도 동기화된다.
 [https://packagecontrol.io/packages/Sync%20View%20Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll)
+
+## URLEncode
+URL 인코드-디코드 기능 제공.
+[https://packagecontrol.io/packages/URLEncode](https://packagecontrol.io/packages/URLEncode)
