@@ -11,7 +11,7 @@ tags:
   - linux
 ---
 
-![](/images/Unix-Linux-권한-설정-chmod-chown-umask-image.png)
+![](/images/chmod-chown-umask-image.png)
 
 [이미지 출처](http://endlessgeek.com/2014/02/chmod-explained-linux-file-permissions)
 

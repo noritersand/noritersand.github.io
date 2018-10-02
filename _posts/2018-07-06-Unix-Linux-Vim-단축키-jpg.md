@@ -13,5 +13,5 @@ tags:
 
 위키: [http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim](http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim)
 
-![](/images/Unix-Linux-Vim-단축키-1.png)
-![](/images/Unix-Linux-Vim-단축키-2.jpeg)
+![](/images/Vim-hotkey-1.png)
+![](/images/Vim-hotkey-2.jpeg)
