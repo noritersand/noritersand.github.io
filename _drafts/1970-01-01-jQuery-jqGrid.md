@@ -9,7 +9,7 @@ tags:
   - jquery
   - jqgrid
 ---
-![](/images/jquery-jqgrid-1.png)
+![](/images/image-jqgrid-1.png)
 
 #### 참고한 글
 - [http://www.trirand.com](http://www.trirand.com)
@@ -22,7 +22,7 @@ jqGrid는 데이터 리스트를 표현하는 grid 플러그인이다. 페이징
 ## 수정모드 강제종료
 jqGrid에서 특정셀을 수정 가능하도록 설정(colmodel option - editable: true)한 경우 해당셀을 선택하면 옵션에 따라 `<input>` 혹은 `<select>` 등의 입력폼으로 바뀌게 되어 있다.
 
-![](/images/jquery-jqgrid-2.png)
+![](/images/image-jqgrid-2.png)
 
 위 사진처럼 입력폼으로 바뀐 셀의 상태를 수정모드라고 했을 때, 수정모드를 종료하지 않고 해당 셀의 값을 가져오려고 하면 화면상에 보이는것 처럼 200이 아닌 다른값이 나온다. (이 값은 null string이나 입력폼 태그 자체가 나올 수도 있다)
 
@@ -50,7 +50,9 @@ for(var i=0; i<selRows.length; i++) {
 
 ## onSelectRow, onCellSelect, onSelectCell의 차이
 [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events)
-![](/images/jquery-jqgrid-3.png)
+
+![](/images/image-jqgrid-3.png)
+
 셋 다 이벤트 발생 시점은 grid에 mouseclick, 혹은 keydown 이벤트가 발생했을때로 동일하지만 적용범위에서 차이가 있다:
 - onSelectRow는 체크박스(multiselect: true)에 마우스 클릭했을 때 작동한다. 전체선택에 해당되는 머리글의 체크박스는 제외.
 - onCellSelect는 머리글 셀이 아닌 모든 셀을 클릭했을 때 작동한다. 체크박스가 있는 셀에서 체크박스가 아닌 나머지 셀의 부분을 클릭해도 onCellSelect이벤트가 발생한다.

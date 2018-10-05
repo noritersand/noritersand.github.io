@@ -9,7 +9,7 @@ tags:
   - nodejs
 ---
 
-![](/images/node-js-1.png)
+![](/images/image-node-js-1.png)
 > node에서는 모든게 병렬로 수행된다. 당신 code만 빼고
 
 #### 참고한 글
