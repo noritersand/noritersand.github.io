@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-01 01:00:00 +0900
-title: "Oracle: sys, etc"
+title: 'Oracle: sys, etc'
 categories:
   - dbms
   - oracle
