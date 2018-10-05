@@ -3,10 +3,9 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'sublime text: 단축키'
 categories:
-  - tools
+  - devtool
 tags:
-  - sublime text
-  - todo
+  - sublimetext
 ---
 
 Build 3126 기준

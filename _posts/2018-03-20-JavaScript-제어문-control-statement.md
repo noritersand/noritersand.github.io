@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - control-statement
+  - control statement
 ---
 
 #### 참고한 글

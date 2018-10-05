@@ -8,9 +8,9 @@ tags:
   - browser
   - eventhandlers
   - javascript
+  - ecmascript
   - onclose
   - onunload
-  - web
   - windows
   - todo
 ---

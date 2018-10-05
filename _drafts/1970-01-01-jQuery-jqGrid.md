@@ -6,7 +6,6 @@ categories:
   - javascript
   - jquery
 tags:
-  - todo
   - jquery
   - jqgrid
 ---

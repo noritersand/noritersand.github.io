@@ -3,7 +3,7 @@ layout: post
 date: 2018-04-18 18:06:23 +0900
 title: 'wireshark: 와이어샤크 네트워크 트래픽 분석 도구'
 categories:
-  - tools
+  - devtool
 tags:
   - wireshark
   - todo

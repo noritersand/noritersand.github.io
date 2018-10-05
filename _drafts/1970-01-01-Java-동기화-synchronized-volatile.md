@@ -5,7 +5,6 @@ title: 'Java: 동기화 synchronized, volatile'
 categories:
   - java
 tags:
-  - todo
   - java
   - synchronized
   - volatile

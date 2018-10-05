@@ -7,7 +7,6 @@ categories:
 tags:
   - java
   - byte
-  - todo
 ---
 
 #### 참고한 글

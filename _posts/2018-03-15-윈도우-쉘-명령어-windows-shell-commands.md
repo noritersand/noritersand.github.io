@@ -8,7 +8,6 @@ categories:
 tags:
   - cmd
   - shell
-  - todo
   - windows
 ---
 

@@ -4,9 +4,9 @@ date: 2013-08-24 00:00:00 +0900
 title: "mocha: javaScript test Framework"
 categories:
   - javascript
-  - node.js
+  - nodejs
 tags:
-  - node.js
+  - nodejs
   - mocha
   - unit test
 ---

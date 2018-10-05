@@ -6,7 +6,6 @@ categories:
   - java
   - spring
 tags:
-  - todo
   - spring
   - SpEL
 ---

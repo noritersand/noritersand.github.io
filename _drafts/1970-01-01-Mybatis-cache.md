@@ -6,7 +6,6 @@ categories:
   - java
   - mybatis
 tags:
-  - todo
   - mybatis
 ---
 

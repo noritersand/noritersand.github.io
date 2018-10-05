@@ -6,7 +6,6 @@ categories:
   - html
 tags:
   - html
-  - todo
 ---
 
 #### 참고한 글

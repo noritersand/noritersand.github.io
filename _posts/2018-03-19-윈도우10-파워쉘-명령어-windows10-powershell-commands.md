@@ -9,8 +9,8 @@ tags:
   - cmd
   - shell
   - powershell
-  - todo
   - windows
+  - todo
 ---
 
 ## Get-Alias

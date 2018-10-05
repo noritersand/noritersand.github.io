@@ -5,7 +5,6 @@ title: 'cross-site HTTP 요청 활성화(CORS, Cross-Origin Resource Sharing)'
 categories:
   - web
 tags:
-  - todo
   - http
   - cors
 ---

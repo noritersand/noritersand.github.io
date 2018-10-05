@@ -4,9 +4,9 @@ date: 2013-08-12 16:36:00 +0900
 title: "Node.js"
 categories:
   - javascript
-  - node.js
+  - nodejs
 tags:
-  - node.js
+  - nodejs
 ---
 
 ![](/images/node-js-1.png)

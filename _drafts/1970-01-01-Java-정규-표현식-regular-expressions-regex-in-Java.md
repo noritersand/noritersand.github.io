@@ -5,7 +5,6 @@ title: 'Java: 정규 표현식 regular expressions(regex) in Java'
 categories:
   - java
 tags:
-  - todo
   - java
   - pattern
   - regex

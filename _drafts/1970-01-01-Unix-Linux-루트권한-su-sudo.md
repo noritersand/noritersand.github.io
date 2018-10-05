@@ -6,7 +6,6 @@ categories:
   - os
   - unix/linux
 tags:
-  - todo
   - unix
   - linux
 ---

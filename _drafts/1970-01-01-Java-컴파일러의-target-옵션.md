@@ -8,7 +8,6 @@ tags:
   - java
   - javac
   - compiler
-  - todo
 ---
 
 자바 컴파일러인 javac는 target 옵션이 존재한다. 이 옵션은 특정 Java 버전(보통은 현재 사용중인 JDK보다 낮은)에서도 실행가능한 클래스 파일을 만드는 옵션이다.

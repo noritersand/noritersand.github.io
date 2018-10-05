@@ -4,11 +4,10 @@ date: 1970-01-01 00:00:00 +0900
 title: 'Node.js: Global Objects'
 categories:
   - javascript
-  - node.js
+  - nodejs
 tags:
-  - node.js
+  - nodejs
   - global objects
-  - todo
 ---
 
 #### 참고한 글
