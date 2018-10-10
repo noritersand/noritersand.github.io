@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 2018-04-18 17:39:17 +0900
 title: 'sublime text: 쓸만한 패키지 모음'
 categories:

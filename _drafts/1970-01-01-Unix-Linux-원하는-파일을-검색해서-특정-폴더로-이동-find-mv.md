@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: 원하는 파일을 검색해서 특정 폴더로 이동(find + mv)'
 categories:

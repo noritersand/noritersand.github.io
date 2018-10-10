@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 2018-03-20 16:45:07 +0900
 title: 'JavaScript: 비정형 인자 arguments'
 categories:

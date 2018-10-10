@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'cross-site HTTP 요청 활성화(CORS, Cross-Origin Resource Sharing)'
 categories:

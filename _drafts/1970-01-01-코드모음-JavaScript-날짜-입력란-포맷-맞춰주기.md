@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 1970-01-01 00:00:00 +0900
 title: '코드모음-JavaScript: 날짜 입력란 포맷 맞춰주기'
 categories:

@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: post
 date: 2018-03-19 18:27:24 +0900
 title: '윈도우10: 파워쉘 명령어 powershell commands'
 categories:
