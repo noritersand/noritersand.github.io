@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-03-15 13:46:15 +0900
 title: '윈도우: 쉘 명령어 windows shell commands'
 categories:

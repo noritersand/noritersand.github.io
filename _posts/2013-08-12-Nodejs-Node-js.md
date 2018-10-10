@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2013-08-12 16:36:00 +0900
 title: 'Node.js'
 categories:

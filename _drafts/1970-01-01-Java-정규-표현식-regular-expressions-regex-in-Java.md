@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 1970-01-01 00:00:00 +0900
 title: 'Java: 정규 표현식 regular expressions(regex) in Java'
 categories:

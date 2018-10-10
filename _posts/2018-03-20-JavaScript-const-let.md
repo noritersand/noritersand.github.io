@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-03-20 16:40:10 +0900
 title: 'JavaScript: const, let'
 categories:

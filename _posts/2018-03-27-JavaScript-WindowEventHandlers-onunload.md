@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-03-27 12:50:10 +0900
 title: 'JavaScript: WindowEventHandlers.onunload'
 categories:

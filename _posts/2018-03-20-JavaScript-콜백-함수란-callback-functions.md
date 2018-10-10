@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-03-20 16:54:14 +0900
 title: 'JavaScript: 콜백 함수란 callback functions'
 categories:

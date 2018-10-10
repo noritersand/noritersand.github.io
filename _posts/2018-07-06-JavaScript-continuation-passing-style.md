@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-07-06 17:52:58 +0900
 title: 'JavaScript: continuation-passing style'
 categories:

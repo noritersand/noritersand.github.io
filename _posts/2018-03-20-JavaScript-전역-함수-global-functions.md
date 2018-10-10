@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2018-03-20 15:40:02 +0900
 title: 'JavaScript: 전역 함수 global functions'
 categories:

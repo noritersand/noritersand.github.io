@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: article
 date: 2013-07-01 03:00:00 +0900
 title: 'Oracle: DML'
 categories:
