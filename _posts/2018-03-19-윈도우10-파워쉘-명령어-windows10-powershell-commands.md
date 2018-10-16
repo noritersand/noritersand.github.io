@@ -66,3 +66,11 @@ Remove-Item Env:\test # 환경 변수 'test' 삭제
 [Environment]::SetEnvironmentVariable("test", $null, "User") # 사용자 환경 변수 'test' 삭제
 [Environment]::SetEnvironmentVariable("test2", $null, "Machine") # 시스템 환경 변수 'test2' 삭제
 ```
+
+## Invoke-WebRequest
+
+웹 리퀘스트 날리는 명령어. `curl`과 거어어어어의 같음.
+
+```bash
+Invoke-WebRequest -Uri "https://google.com"
+```
