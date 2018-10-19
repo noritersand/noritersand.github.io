@@ -1,49 +1,57 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site Settings
+encoding: UTF-8
+exclude: ["*.gem", "*.gemspec", "Gemfile", "Gemfile.lock", "node_modules", "Rakefile", "starter-kit", "vendor"]
+lang: en # Language code as defined in _data/i18n.yml. en, en-gb, en-us, zh, zh-cn, zh-tw etc.
+permalink: /:year/:month/:day/:title/
+remote_theme: yizeng/jekyll-theme-simple-texture
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: 내 아이큐 80, 너도 80, 둘이 합쳐 160
-email: noritersand@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  This is my useless description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://noritersand.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username: noritersand
-
-# Build settings
-markdown: kramdown
-theme: minima
+whitelist: [jekyll-feed, jekyll-redirect-from, jekyll-seo-tag, jekyll-sitemap]
 plugins:
   - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
-timezone: Asia/Seoul
-encoding: "utf-8"
+markdown: kramdown
+kramdown:
+  auto_id_prefix: 'heading-'
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  toc_levels: 1..3
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+sass:
+  style: compressed
 
-#collections:
-#  myawesomedirectory:
-#    output: true
-#    permalink: /:collection/:name
+# Site Data
+url: # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: # the subpath of your site, e.g. /blog
+title: 내 아이큐 80, 너도 80, 둘이 합쳐 160
+description: "A gem-based responsive simple texture styled Jekyll theme."
+keywords: 'jekyll,theme,gem-based,blog'
+author:
+  name:
+  job_title:
+  location: south korea
+  email:
+  social_links:
+    - name: github
+      url: https://github.com/noritersand
+home:
+  section1: <h1>Simple Texutre</h1>
+  section2: <h2>A gem-based responsive simple texture styled Jekyll theme</h2>
+  section3: <div class="social-links"><a class="ico-github btn" href="https://github.com/yizeng/jekyll-theme-simple-texture" title="View on GitHub"></a></div>
+blog:
+  cc_license: http://creativecommons.org/licenses/by-sa/4.0/ # A link to CC License of your choice.
+  cc_license_image: /assets/images/theme/cc-by-sa.png # An image of your CC License.
+  footer_content: A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.
+
+disqus:
+  shortname: # e.g. yizeng
+  public_key: # e.g. ULZ0b9TFefCUJHKQd4JCKv2v3u27YoG7YG8zXPewkWrT333Z0Se9YnxLzoV6VM8W
+google_tag_manager: # e.g. 'GTM-KCQJXZ8F'
+addthis_public_id: # AddThis sharing plugin. See http://www.addthis.com/. E.g. ra-53329e27694534j5
+
+paths:
+  home: /
+  blog: /blog/
+  categories: /categories/
+  tags: /tags/
