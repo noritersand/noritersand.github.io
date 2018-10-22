@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Spring: SpEL, Spring Expression Language | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Spring: SpEL, Spring Expression Language" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="참고한 글 http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html https://blog.outsider.ne.kr/835" />
+<meta property="og:description" content="참고한 글 http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html https://blog.outsider.ne.kr/835" />
+<link rel="canonical" href="http://localhost:4000/1970/01/01/Spring-SpEL-Spring-Expression-Language/" />
+<meta property="og:url" content="http://localhost:4000/1970/01/01/Spring-SpEL-Spring-Expression-Language/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="1970-01-01T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Spring: SpEL, Spring Expression Language","dateModified":"1970-01-01T00:00:00+09:00","datePublished":"1970-01-01T00:00:00+09:00","url":"http://localhost:4000/1970/01/01/Spring-SpEL-Spring-Expression-Language/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/1970/01/01/Spring-SpEL-Spring-Expression-Language/"},"description":"참고한 글 http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html https://blog.outsider.ne.kr/835","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="spring,SpEL" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">Spring: SpEL, Spring Expression Language</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="1970-01-01T00:00:00+09:00" datetime="1970-01-01T00:00:00+09:00">January 01, 1970 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#java" title="java">
+            java <span>11</span></a>
+        </li>
+     
+        <li>
+            <a href="/categories/#spring" title="spring">
+            spring <span>4</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#SpEL" title="SpEL">SpEL <span>1</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#spring" title="spring">spring <span>4</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h4 id="heading-참고한-글">참고한 글</h4>
+<ul>
+  <li><a href="http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html">http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html</a></li>
+  <li><a href="https://blog.outsider.ne.kr/835">https://blog.outsider.ne.kr/835</a></li>
+</ul>
+
+<h2 id="heading-스프링-빈-접근자">스프링 빈 접근자(#)</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#{ beanId }</span>
+</code></pre></div></div>
+
+<h4 id="heading-스프링-빈의-프로퍼티에-접근">스프링 빈의 프로퍼티에 접근</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#{ beanId.propertyName }</span>
+<span class="c">#{ beanId[ 'propertyName' ] }</span>
+</code></pre></div></div>
+
+<h4 id="heading-example1">example#1</h4>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;</span>
+<span class="nt">&lt;properties&gt;</span>
+	<span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">"some.test.prop"</span><span class="nt">&gt;</span>hi hello<span class="nt">&lt;/entry&gt;</span>
+<span class="nt">&lt;/properties&gt;</span>
+</code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;util:properties</span> <span class="na">id=</span><span class="s">"testProperties"</span> <span class="na">location=</span><span class="s">"classpath:/config/test-properties.xml"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Resource</span><span class="o">(</span><span class="n">name</span> <span class="o">=</span> <span class="s">"testProperties"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="n">Properties</span> <span class="n">testProperties</span><span class="o">;</span>
+
+<span class="c1">// 생략</span>
+
+<span class="n">String</span> <span class="n">someProp</span> <span class="o">=</span> <span class="n">testProperties</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"some.test.prop"</span><span class="o">);</span>
+</code></pre></div></div>
+
+<h4 id="heading-example2">example#2</h4>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"&gt;</span>
+<span class="nt">&lt;properties&gt;</span>
+	<span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">"web.root"</span><span class="nt">&gt;</span>file://C:/dev/workspace/laboratory/src/main/webapp<span class="nt">&lt;/entry&gt;</span>
+<span class="nt">&lt;/properties&gt;</span>
+</code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;util:properties</span> <span class="na">id=</span><span class="s">"storageProp"</span> <span class="na">location=</span><span class="s">"classpath:/config/storage.xml"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;util:map</span> <span class="na">id=</span><span class="s">"fileResourceMap"</span> <span class="na">key-type=</span><span class="s">"java.lang.String"</span> <span class="na">value-type=</span><span class="s">"org.springframework.core.io.Resource"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;entry</span> <span class="na">key=</span><span class="s">"webRoot"</span> <span class="na">value=</span><span class="s">"#{storageProp['web.root']}"</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/util:map&gt;</span>
+</code></pre></div></div>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Value</span><span class="o">(</span><span class="s">"#{fileResourceMap}"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Resource</span><span class="o">&gt;</span> <span class="n">fileResourceMap</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="heading-자바-프로퍼티-접근자">자바 프로퍼티 접근자($)</h2>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${</span><span class="p"> propertyName </span><span class="k">}</span>
+</code></pre></div></div>
+
+<p>자바 프로퍼티(혹은 JVM 프로퍼티)란 jvm을 시작할 때 옵션<code class="highlighter-rouge">-D</code>으로 추가가능한 값들을 말한다.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>java <span class="nt">-Dproperty1</span><span class="o">=</span>value1 <span class="nt">-Dproperty2</span><span class="o">=</span>value2 Mainclass
+</code></pre></div></div>
+
+<h4 id="heading-자바-프로퍼티-기본값-설정">자바 프로퍼티 기본값 설정</h4>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">${</span><span class="p"> propertyName</span>:defaultValue<span class="p"> </span><span class="k">}</span>
+</code></pre></div></div>
+<p>기본값 설정은 매우 중요한데, 만약 다음의 경우:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Value</span><span class="o">(</span><span class="s">"${not-exist-property}"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="n">String</span> <span class="n">prop</span><span class="o">;</span>
+</code></pre></div></div>
+<p>not-exist-property라는 프로퍼티가 없으면 변수 prop의 값은 "${not-exist-property}"로 초기화된다.
+그래서 다음처럼:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Value</span><span class="o">(</span><span class="s">"${not-exist-property:}"</span><span class="o">)</span>
+<span class="kd">private</span> <span class="n">String</span> <span class="n">prop</span><span class="o">;</span>
+</code></pre></div></div>
+<p>끝에 <code class="highlighter-rouge">:</code>을 붙여줘서 프로퍼티가 없을 때 nullstring으로 초기화되도록 하는게 좋다.</p>
+
+<h2 id="heading-todo">TODO</h2>
+<p><code class="highlighter-rouge">#{systemProperties['PROPERTY_NAME']}</code>, <code class="highlighter-rouge">#{systemEnvironment['ENV_VARIABLE_NAME']}</code> 둘의 차이 확인할 것.</p>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/1970/01/01/Spring-RedirectView/" title=" 'Spring: RedirectView'"> ← Spring: RedirectView</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/1970/01/01/Tomcat-%EC%9E%90%EB%B0%94-%EC%95%84%EA%B7%9C%EB%A8%BC%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/" title="Next Post 'Tomcat: 자바 아규먼트에 접근하기'">Tomcat: 자바 아규먼트에 접근하기 → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

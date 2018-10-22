@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Oracle: sys, etc | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Oracle: sys, etc" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="관리자 페이지" />
+<meta property="og:description" content="관리자 페이지" />
+<link rel="canonical" href="http://localhost:4000/2013/07/01/Oracle-sys-etc/" />
+<meta property="og:url" content="http://localhost:4000/2013/07/01/Oracle-sys-etc/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-01T01:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Oracle: sys, etc","dateModified":"2013-07-01T01:00:00+09:00","datePublished":"2013-07-01T01:00:00+09:00","url":"http://localhost:4000/2013/07/01/Oracle-sys-etc/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/07/01/Oracle-sys-etc/"},"description":"관리자 페이지","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="oracle,sys" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">Oracle: sys, etc</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2013-07-01T01:00:00+09:00" datetime="2013-07-01T01:00:00+09:00">July 01, 2013 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#dbms" title="dbms">
+            dbms <span>6</span></a>
+        </li>
+     
+        <li>
+            <a href="/categories/#oracle" title="oracle">
+            oracle <span>6</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#oracle" title="oracle">oracle <span>6</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#sys" title="sys">sys <span>1</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h2 id="heading-관리자-페이지">관리자 페이지</h2>
+
+<ul>
+  <li>Oracle Enterprise Manager 데이터베이스 컨트롤 URL: http://ADMIN:1158/em (em 실행(관리자 영역) / ADMIN은 사용자계정 혹은 IP)</li>
+  <li>iSQL Plus URL: http://ADMIN:5560/isqlplus  (iSQL Plus 실행)</li>
+  <li>iSQL Plus DBA URL: http://ADMIN:5560/isqlplus/dba</li>
+</ul>
+
+<h2 id="heading-서버-시작종료">서버 시작/종료</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- 오라클 인스턴스 종료, DB마운트 해제</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="n">shutdown</span> <span class="k">immediate</span>
+
+<span class="c1">-- 오라클 인스턴스 시작, DB마운트</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="n">startup</span>
+</code></pre></div></div>
+
+<p>휴지인스턴스 문제 발생 시 startup 혹은 윈도우 서비스에서 해당 항목을 시작한다</p>
+
+<h2 id="heading-리스너-시작종료">리스너 시작/종료</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 리스너컨트롤 시작하기</span>
+C:<span class="se">\&gt;</span>lsnrctl
+
+<span class="c"># 리스너 관련 명령어들</span>
+LSNRCTL&gt; start
+LSNRCTL&gt; stop
+LSNRCTL&gt; reload
+LSNRCTL&gt; status
+LSNRCTL&gt; <span class="nb">help</span>
+
+<span class="c"># 혹은</span>
+
+c:<span class="se">\&gt;</span> lsnrctl start <span class="c"># start | stop | status</span>
+
+<span class="c"># SID 확인</span>
+c:<span class="se">\&gt;</span> lsnrctl services
+</code></pre></div></div>
+
+<h2 id="heading-로그인로그오프콘솔">로그인/로그오프/콘솔</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">console</span><span class="o">&gt;</span> <span class="n">sqlplus</span> <span class="err">계정명</span><span class="o">/</span><span class="err">암호</span>
+<span class="n">console</span><span class="o">&gt;</span> <span class="n">sqlplus</span> <span class="o">/</span> <span class="k">as</span> <span class="n">sysdba</span>
+
+<span class="c1">-- tnsnames.ora 에 정의된 connect_identifier 으로 접속</span>
+<span class="n">CMD</span><span class="o">&gt;</span> <span class="n">sqlplus</span> <span class="err">사용자명</span><span class="o">/</span><span class="nv">"암호"</span><span class="o">@</span><span class="n">orcl</span>
+
+<span class="c1">-- SQLPLUS연결을 유지한체 운영체제의 콘솔로 빠져나간다. disconnet와 다름</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">host</span>
+
+<span class="c1">-- 콘솔빠져나가기(to sqlplus)</span>
+<span class="n">console</span><span class="o">&gt;</span> <span class="n">exit</span>
+
+<span class="c1">-- 리눅스나 유닉스라면 ! cls</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">host</span> <span class="n">cls</span>
+
+<span class="c1">-- 로그오프</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="n">disconn</span>
+
+<span class="c1">-- 로그인</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="n">conn</span> <span class="n">sys</span><span class="o">/</span><span class="p">[</span><span class="n">PASSWORD</span><span class="p">]</span> <span class="k">as</span> <span class="n">sysdba</span>
+</code></pre></div></div>
+
+<h2 id="heading-계정-생성삭제">계정 생성/삭제</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">SQL</span><span class="o">&gt;</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="p">[</span><span class="n">user_name</span><span class="p">]</span>
+  <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="p">[</span><span class="n">password</span><span class="p">]</span>
+  <span class="k">DEFAULT</span> <span class="n">TABLESPACE</span> <span class="p">[</span><span class="n">tablespace_name</span><span class="p">]</span>
+  <span class="k">TEMPORARY</span> <span class="n">TABLESPACE</span> <span class="k">TEMP</span><span class="p">;</span>
+
+<span class="n">ex</span><span class="p">)</span> <span class="k">CREATE</span> <span class="k">USER</span> <span class="n">nextree</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="n">nextree</span> <span class="k">DEFAULT</span> <span class="n">TABLESPACE</span> <span class="n">NEXTREE</span> <span class="k">TEMPORARY</span> <span class="n">TABLESPACE</span> <span class="k">TEMP</span><span class="p">;</span>
+
+<span class="k">CREATE</span> <span class="k">USER</span> <span class="p">[</span><span class="err">아이디</span><span class="p">]</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="p">[</span><span class="err">비밀번호</span><span class="p">];</span>
+
+<span class="c1">-- 계정삭제</span>
+<span class="k">DROP</span> <span class="k">USER</span> <span class="p">[</span><span class="err">아이디</span><span class="p">]</span> <span class="k">CASCADE</span><span class="p">;</span>
+
+<span class="c1">-- 생성한 USER로 ORACLE에 접속하기</span>
+<span class="n">sqlplus</span> <span class="n">nextree</span><span class="o">/</span><span class="n">nextree</span><span class="p">[</span><span class="o">@</span><span class="n">db_sid</span><span class="p">]</span>
+
+<span class="c1">-- Oracle db xe버전에서 scott 계정 불러오기</span>
+<span class="n">sqlplus</span><span class="o">&gt;</span> <span class="o">@</span><span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">oraclexe</span><span class="err">\</span><span class="n">app</span><span class="err">\</span><span class="n">oracle</span><span class="err">\</span><span class="n">product</span><span class="err">\</span><span class="mi">11</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span><span class="err">\</span><span class="n">server</span><span class="err">\</span><span class="n">RDBMS</span><span class="err">\</span><span class="k">ADMIN</span><span class="err">\</span><span class="n">scott</span><span class="p">.</span><span class="k">sql</span>
+</code></pre></div></div>
+
+<h2 id="heading-파일관리">파일관리</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- sqlplus 에서 *.sql 파일 실행. 파일이 존재하는 경로에서 sqlplus를 실행하고, "@파일명" 명령을 실행하면 된다.</span>
+<span class="k">SQL</span><span class="o">&gt;@</span><span class="n">ex</span><span class="p">.</span><span class="k">sql</span>
+
+<span class="c1">-- 경로를 지정하여 실행</span>
+<span class="k">SQL</span><span class="o">&gt;@</span><span class="n">d</span><span class="p">:</span><span class="err">\</span><span class="k">sql</span><span class="err">\</span><span class="n">ex</span><span class="p">.</span><span class="k">sql</span>
+
+<span class="c1">-- sqlplus 에서 sql 작업 내용 자동 저장하기</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="n">spool</span> <span class="n">d</span><span class="p">:</span><span class="err">\</span><span class="k">sql</span><span class="err">\</span><span class="n">test</span><span class="p">.</span><span class="n">txt</span>
+
+<span class="c1">-- d:\sql\test.txt 파일 생성</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">insa</span><span class="p">;</span>
+
+<span class="c1">-- 스풀 정지</span>
+<span class="k">SQL</span><span class="o">&gt;</span><span class="n">spool</span> <span class="k">off</span>
+</code></pre></div></div>
+
+<h2 id="heading-조회">조회</h2>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">-- SID 확인</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="n">instance</span> <span class="k">from</span> <span class="n">v</span><span class="err">$</span><span class="n">thread</span>
+
+<span class="c1">-- 접속된 user의 모든 테이블 검색</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">TAB</span><span class="p">;</span>         
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">DESC</span><span class="p">[</span><span class="n">RIBE</span><span class="p">]</span> <span class="n">insa</span><span class="p">;</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">v</span><span class="err">$</span><span class="n">pwfile_users</span><span class="p">;</span>
+<span class="k">SQL</span><span class="o">&gt;</span> <span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">all_users</span><span class="p">;</span>
+
+<span class="c1">-- sysdba, sys는 데이터베이스의 모든 권한을 갖는 관리자 계정을 말한다.</span>
+<span class="c1">-- sysoper, system은 운영자를 의미하며 오라클서버의 on/off 조작만 가능하다.</span>
+
+<span class="c1">-- 사용자 확인(sys 계정)</span>
+<span class="k">SELECT</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">created</span> <span class="k">FROM</span> <span class="n">DBA_USERS</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">,</span> <span class="n">created</span> <span class="k">FROM</span> <span class="n">DBA_USERS</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span><span class="s1">'SCOTT'</span><span class="p">;</span>
+
+<span class="c1">-- 테이블 컬럼 확인</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">cols</span> <span class="k">WHERE</span> <span class="k">table_name</span> <span class="o">=</span> <span class="s1">'테이블명'</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">user_tab_columns</span> <span class="k">WHERE</span> <span class="k">table_name</span><span class="o">=</span><span class="s1">'테이블명'</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">all_tab_columns</span> <span class="k">WHERE</span> <span class="k">owner</span> <span class="o">=</span><span class="s1">'디비계정'</span> <span class="k">and</span> <span class="k">table_name</span> <span class="o">=</span> <span class="s1">'테이블명'</span>
+
+<span class="c1">-- 코멘트 확인</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">all_tab_comments</span><span class="p">;</span> <span class="c1">-- 테이블 코멘트</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">from</span> <span class="n">all_col_comments</span><span class="p">;</span> <span class="c1">-- 컬럼 코멘트</span>
+
+<span class="c1">-- 제약조건 확인</span>
+<span class="k">DESC</span> <span class="n">user_constraints</span><span class="p">;</span> <span class="c1">--user_constraints 구조 확인</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">USER_constraints</span> <span class="k">WHERE</span> <span class="k">table_name</span><span class="o">=</span><span class="s1">'INSA'</span><span class="p">;</span>
+<span class="c1">-- 어떤 컬럼에 제약조건이 부여되었는지는 확인할 수 없다.</span>
+<span class="c1">-- P : 기본키, C : NOT NULL 등, U : UNIQUE, R : 참조키 등</span>
+<span class="k">SELECT</span> <span class="k">constraint_name</span><span class="p">,</span> <span class="k">table_name</span><span class="p">,</span> <span class="n">constraint_type</span> <span class="k">FROM</span> <span class="n">user_constraints</span><span class="p">;</span>
+
+<span class="c1">-- 현재 user가 가지고 있는 column에 할당된 제약조건에 대한 정보</span>
+<span class="c1">-- 어떤 컬럼에 기본키가 부여되었는지 확인 가능</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">USER_cons_columns</span><span class="p">;</span>
+
+<span class="c1">-- procedure, function 목록 확인</span>
+<span class="k">SELECT</span> <span class="n">object_name</span> <span class="k">FROM</span> <span class="n">user_procedures</span><span class="p">;</span>
+
+<span class="c1">-- 테이블의 프로시저, 함수, 패키지 등 상호 참조되는 관계 확인</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">user_dependencies</span><span class="p">;</span>
+
+<span class="c1">-- 트리거 확인</span>
+<span class="k">SELECT</span> <span class="k">trigger_name</span><span class="p">,</span> <span class="n">trigger_type</span><span class="p">,</span> <span class="k">table_name</span> <span class="k">FROM</span> <span class="n">user_triggers</span><span class="p">;</span>
+
+<span class="c1">-- 프로시저, 함수등의 소스 확인</span>
+<span class="k">SELECT</span> <span class="n">TEXT</span> <span class="k">FROM</span> <span class="n">user_source</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">user_source</span> <span class="k">WHERE</span> <span class="k">TYPE</span> <span class="o">=</span> <span class="s1">'PROCEDURE'</span> <span class="k">AND</span> <span class="n">NAME</span> <span class="o">=</span> <span class="s1">'PCD_EMPLOYEE_1'</span><span class="p">;</span>
+
+<span class="c1">-- 뷰 목록, 소스 확인</span>
+<span class="k">SELECT</span> <span class="n">view_name</span><span class="p">,</span> <span class="n">text</span> <span class="k">FROM</span> <span class="n">user_views</span><span class="p">;</span>
+
+<span class="c1">-- 시퀀스 목록 확인</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">seq</span><span class="p">;</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">user_sequences</span><span class="p">;</span>
+</code></pre></div></div>
+
+<h2 id="heading-권한-role">권한 ROLE</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">CONNECT ROLE</code>: 오라클에 접속 할 수 있는 세션 생성 및 테이블을 생성하거나 조회 할 수 있는 가장 일반적인 권한들로 이루어져 있다. CONNECT ROLE이 없으면 유저를 생성하고서도 Oracle에 접속 할 수가 없다.</li>
+  <li><code class="highlighter-rouge">RESOURCE ROLE</code>: Store Procedure나 Trigger와 같은 PL/SQL을 사용할 수 있는 권한 들로 이루어져 있다. PL/SQL을 사용하려면 RESOURCE ROLE을 부여해야 한다. 유저를 생성하면 일반적으로 CONNECT, RESOURCE롤을 부여 한다.</li>
+  <li><code class="highlighter-rouge">DBA ROLE</code>: 모든 시스템 권한이 부여된 ROLE 이다. DBA ROLE은 데이터베이스 관리자에게만 부여해야 한다.</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SQL&gt; CREATE USER id IDENTIFIED BY <span class="s2">"password"</span><span class="p">;</span>
+SQL&gt; GRANT CREATE SESSION TO id<span class="p">;</span>
+SQL&gt; GRANT CREATE TABLE TO id<span class="p">;</span>
+SQL&gt; GRANT CONNECT, RESOURCE TO id<span class="p">;</span>
+SQL&gt; grant create view to scott<span class="p">;</span>
+SQL&gt; alter user scott account unlock<span class="p">;</span> <span class="c"># scott 잠금해제</span>
+SQL&gt; alter user scott account lock<span class="p">;</span> <span class="c"># scottt 잠금</span>
+SQL&gt; alter user scott account unlock<span class="p">;</span>
+SQL&gt; alter user scott account lock<span class="p">;</span>
+SQL&gt; alter user scott identified by 1234<span class="p">;</span>
+SQL&gt; alter user hr identified by 1234 account unlock<span class="p">;</span>
+SQL&gt; grant sysdba to scott<span class="p">;</span>
+SQL&gt; grant sysoper to scott<span class="p">;</span>
+SQL&gt; revoke sysdba from scott<span class="p">;</span>
+
+GRANT CREATE SESSION TO 유저명 <span class="c"># 데이터베이스에 접근할 수 있는 권한</span>
+GRANT CREATE DATABASE LINK TO 유저명
+GRANT CREATE MATERIALIZED VIEW TO 유저명
+GRANT CREATE PROCEDURE TO 유저명
+GRANT CREATE PUBLIC SYNONYM TO 유저명
+GRANT CREATE ROLE TO 유저명
+GRANT CREATE SEQUENCE TO 유저명
+GRANT CREATE SYNONYM TO 유저명
+GRANT CREATE TABLE TO 유저명 <span class="c"># 테이블을 생성할 수 있는 권한</span>
+GRANT DROP ANY TABLE TO 유저명 <span class="c"># 테이블을 제거할 수 있는 권한</span>
+GRANT CREATE TRIGGER TO 유저명
+GRANT CREATE TYPE TO 유저명
+GRANT CREATE VIEW TO 유저명
+GRANT CREATE SESSION ,CREATE TABLE ,CREATE SEQUENCE ,CREATE VIEW TO 유저명<span class="p">;</span>
+GRANT <span class="o">[</span>role1] <span class="o">[</span>,role2] <span class="o">[</span>,role3] <span class="o">[</span>,...] TO <span class="o">[</span>user_name]<span class="p">;</span>
+GRANT connect, resource, dba TO kh301402<span class="p">;</span>
+</code></pre></div></div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/1970/01/01/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C-JavaScript-%EB%82%A0%EC%A7%9C-%EC%9E%85%EB%A0%A5%EB%9E%80-%ED%8F%AC%EB%A7%B7-%EB%A7%9E%EC%B6%B0%EC%A3%BC%EA%B8%B0/" title=" '코드모음-JavaScript: 날짜 입력란 포맷 맞춰주기'"> ← 코드모음-JavaScript: 날짜 입력란 포맷 맞춰주기</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/2013/07/01/Oracle-DDL/" title="Next Post 'Oracle: DDL'">Oracle: DDL → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

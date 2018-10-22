@@ -1,0 +1,885 @@
+[
+  
+    {
+      "title"      : "Tomcat: server.xml의 autoDeploy 사용시 주의할 점",
+      "url"        : "/2018/10/05/Tomcat-server.xml%EC%9D%98-autoDeploy-%EC%82%AC%EC%9A%A9%EC%8B%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90/",
+      "date"       : "2018-10-05 15:17:00 +0900",
+      "shortdate"  : "October 05, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 탐색기 아이콘 오버레이 우선순위 설정",
+      "url"        : "/2018/10/04/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%83%90%EC%83%89%EA%B8%B0-%EC%95%84%EC%9D%B4%EC%BD%98-%EC%98%A4%EB%B2%84%EB%A0%88%EC%9D%B4-%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84-%EC%84%A4%EC%A0%95/",
+      "date"       : "2018-10-04 15:13:00 +0900",
+      "shortdate"  : "October 04, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 텔넷 활성화",
+      "url"        : "/2018/09/20/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%85%94%EB%84%B7-%ED%99%9C%EC%84%B1%ED%99%94/",
+      "date"       : "2018-09-20 10:54:00 +0900",
+      "shortdate"  : "September 20, 2018"
+    } ,
+  
+    {
+      "title"      : "HTTP: 요청-응답간 케릭터셋이 미치는 영향",
+      "url"        : "/2018/08/28/HTTP-%EC%9A%94%EC%B2%AD-%EC%9D%91%EB%8B%B5%EA%B0%84-%EC%BC%80%EB%A6%AD%ED%84%B0%EC%85%8B%EC%9D%B4-%EB%AF%B8%EC%B9%98%EB%8A%94-%EC%98%81%ED%96%A5/",
+      "date"       : "2018-08-28 00:00:00 +0900",
+      "shortdate"  : "August 28, 2018"
+    } ,
+  
+    {
+      "title"      : "XML 템플릿",
+      "url"        : "/2018/08/23/XML-%ED%85%9C%ED%94%8C%EB%A6%BF/",
+      "date"       : "2018-08-23 10:20:00 +0900",
+      "shortdate"  : "August 23, 2018"
+    } ,
+  
+    {
+      "title"      : "HTML: HTML5 템플릿",
+      "url"        : "/2018/08/23/HTML5-%ED%85%9C%ED%94%8C%EB%A6%BF/",
+      "date"       : "2018-08-23 10:17:00 +0900",
+      "shortdate"  : "August 23, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: 원격 서버 디버깅",
+      "url"        : "/2018/08/22/eclipse-%EC%9B%90%EA%B2%A9-%EC%84%9C%EB%B2%84-%EB%94%94%EB%B2%84%EA%B9%85/",
+      "date"       : "2018-08-22 17:03:00 +0900",
+      "shortdate"  : "August 22, 2018"
+    } ,
+  
+    {
+      "title"      : "HTML: 메타 태그로 페이지 가로폭 줄이기(모바일)",
+      "url"        : "/2018/08/21/HTML-%EB%A9%94%ED%83%80-%ED%83%9C%EA%B7%B8%EB%A1%9C-%ED%8E%98%EC%9D%B4%EC%A7%80-%EA%B0%80%EB%A1%9C%ED%8F%AD-%EC%A4%84%EC%9D%B4%EA%B8%B0-%EB%AA%A8%EB%B0%94%EC%9D%BC/",
+      "date"       : "2018-08-21 01:30:00 +0900",
+      "shortdate"  : "August 21, 2018"
+    } ,
+  
+    {
+      "title"      : "브라우저의 숨겨진 설정 페이지",
+      "url"        : "/2018/07/26/%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EC%9D%98-%EC%88%A8%EA%B2%A8%EC%A7%84-%EC%84%A4%EC%A0%95-%ED%8E%98%EC%9D%B4%EC%A7%80/",
+      "date"       : "2018-07-26 10:40:57 +0900",
+      "shortdate"  : "July 26, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: continuation-passing style",
+      "url"        : "/2018/07/06/JavaScript-continuation-passing-style/",
+      "date"       : "2018-07-06 17:52:58 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Git: 윈도우에 Git 서버 설치하기",
+      "url"        : "/2018/07/06/Git-%EC%9C%88%EB%8F%84%EC%9A%B0%EC%97%90-Git-%EC%84%9C%EB%B2%84-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/",
+      "date"       : "2018-07-06 17:45:19 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Git: 파일 무시하기 .gitignore",
+      "url"        : "/2018/07/06/Git-%ED%8C%8C%EC%9D%BC-%EB%AC%B4%EC%8B%9C%ED%95%98%EA%B8%B0-gitignore/",
+      "date"       : "2018-07-06 16:59:40 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Git: 로컬 디스크에 원격 저장소 만들기",
+      "url"        : "/2018/07/06/Git-%EB%A1%9C%EC%BB%AC-%EB%94%94%EC%8A%A4%ED%81%AC%EC%97%90-%EC%9B%90%EA%B2%A9-%EC%A0%80%EC%9E%A5%EC%86%8C-%EB%A7%8C%EB%93%A4%EA%B8%B0/",
+      "date"       : "2018-07-06 16:25:33 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기",
+      "url"        : "/2018/07/06/Unix-Linux-%ED%8C%8C%EC%9D%BC-%EB%82%B4%EC%9A%A9-%EC%9D%BD%EC%96%B4%EC%84%9C-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%EB%A1%9C-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0/",
+      "date"       : "2018-07-06 16:13:07 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: Vim 단축키.jpg",
+      "url"        : "/2018/07/06/Unix-Linux-Vim-%EB%8B%A8%EC%B6%95%ED%82%A4-jpg/",
+      "date"       : "2018-07-06 15:57:35 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우: pscp 원격 서버에 파일 업로드",
+      "url"        : "/2018/07/06/%EC%9C%88%EB%8F%84%EC%9A%B0-pscp-%EC%9B%90%EA%B2%A9-%EC%84%9C%EB%B2%84%EC%97%90-%ED%8C%8C%EC%9D%BC-%EC%97%85%EB%A1%9C%EB%93%9C/",
+      "date"       : "2018-07-06 15:53:54 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우: 보호된 프로세스 날리기",
+      "url"        : "/2018/07/06/%EC%9C%88%EB%8F%84%EC%9A%B0-%EB%B3%B4%ED%98%B8%EB%90%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4-%EB%82%A0%EB%A6%AC%EA%B8%B0/",
+      "date"       : "2018-07-06 15:52:40 +0900",
+      "shortdate"  : "July 06, 2018"
+    } ,
+  
+    {
+      "title"      : "Atom: 초기 설정",
+      "url"        : "/2018/06/19/Atom-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/",
+      "date"       : "2018-06-19 11:12:54 +0900",
+      "shortdate"  : "June 19, 2018"
+    } ,
+  
+    {
+      "title"      : "wireshark: 와이어샤크 네트워크 트래픽 분석 도구",
+      "url"        : "/2018/04/18/wireshark-%EC%99%80%EC%9D%B4%EC%96%B4%EC%83%A4%ED%81%AC-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%ED%8A%B8%EB%9E%98%ED%94%BD-%EB%B6%84%EC%84%9D-%EB%8F%84%EA%B5%AC/",
+      "date"       : "2018-04-18 18:06:23 +0900",
+      "shortdate"  : "April 18, 2018"
+    } ,
+  
+    {
+      "title"      : "sublime text: 쓸만한 패키지 모음",
+      "url"        : "/2018/04/18/sublime-text-%EC%93%B8%EB%A7%8C%ED%95%9C-%ED%8C%A8%ED%82%A4%EC%A7%80-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "2018-04-18 17:39:17 +0900",
+      "shortdate"  : "April 18, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: easy console grepper 권장 설정",
+      "url"        : "/2018/04/18/eclipse-easy-console-grepper-%EA%B6%8C%EC%9E%A5-%EC%84%A4%EC%A0%95/",
+      "date"       : "2018-04-18 17:28:49 +0900",
+      "shortdate"  : "April 18, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: svn repository 접근권한 초기화 방법",
+      "url"        : "/2018/04/18/eclipse-svn-repository-%EC%A0%91%EA%B7%BC%EA%B6%8C%ED%95%9C-%EC%B4%88%EA%B8%B0%ED%99%94-%EB%B0%A9%EB%B2%95/",
+      "date"       : "2018-04-18 11:30:42 +0900",
+      "shortdate"  : "April 18, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: hot code replace",
+      "url"        : "/2018/04/18/eclipse-hot-code-replace/",
+      "date"       : "2018-04-18 11:02:53 +0900",
+      "shortdate"  : "April 18, 2018"
+    } ,
+  
+    {
+      "title"      : "개발툴, 유틸리티 링크 모음",
+      "url"        : "/2018/04/17/%EA%B0%9C%EB%B0%9C%ED%88%B4-%EC%9C%A0%ED%8B%B8%EB%A6%AC%ED%8B%B0-%EB%A7%81%ED%81%AC-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "2018-04-17 18:47:33 +0900",
+      "shortdate"  : "April 17, 2018"
+    } ,
+  
+    {
+      "title"      : "sublime text: 초기 설정",
+      "url"        : "/2018/04/17/sublime-text-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/",
+      "date"       : "2018-04-17 13:32:10 +0900",
+      "shortdate"  : "April 17, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: 초기 설정",
+      "url"        : "/2018/04/17/eclipse-%EC%B4%88%EA%B8%B0-%EC%84%A4%EC%A0%95/",
+      "date"       : "2018-04-17 11:20:58 +0900",
+      "shortdate"  : "April 17, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: WindowEventHandlers.onunload",
+      "url"        : "/2018/03/27/JavaScript-WindowEventHandlers-onunload/",
+      "date"       : "2018-03-27 12:50:10 +0900",
+      "shortdate"  : "March 27, 2018"
+    } ,
+  
+    {
+      "title"      : "Git: 명령어 정리",
+      "url"        : "/2018/03/21/Git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC/",
+      "date"       : "2018-03-21 10:16:45 +0900",
+      "shortdate"  : "March 21, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 생성자 함수 constructor function",
+      "url"        : "/2018/03/20/JavaScript-%EC%83%9D%EC%84%B1%EC%9E%90-%ED%95%A8%EC%88%98-constructor-function/",
+      "date"       : "2018-03-20 17:19:12 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: Window.postMessage 교차 출처간 메시지 통신",
+      "url"        : "/2018/03/20/JavaScript-Window-postMessage-%EA%B5%90%EC%B0%A8-%EC%B6%9C%EC%B2%98%EA%B0%84-%EB%A9%94%EC%8B%9C%EC%A7%80-%ED%86%B5%EC%8B%A0/",
+      "date"       : "2018-03-20 17:15:34 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: Ajax",
+      "url"        : "/2018/03/20/JavaScript-Ajax/",
+      "date"       : "2018-03-20 17:08:18 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: pseudo protocol 앵커(a) 태그로 스크립트 실행 시 주의사항",
+      "url"        : "/2018/03/20/JavaScript-pseudo-protocol-%EC%95%B5%EC%BB%A4-a-%ED%83%9C%EA%B7%B8%EB%A1%9C-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%A4%ED%96%89-%EC%8B%9C-%EC%A3%BC%EC%9D%98%EC%82%AC%ED%95%AD/",
+      "date"       : "2018-03-20 17:00:42 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: eval()과 new Function()의 차이",
+      "url"        : "/2018/03/20/JavaScript-eval-%EA%B3%BC-new-Function-%EC%9D%98-%EC%B0%A8%EC%9D%B4/",
+      "date"       : "2018-03-20 16:58:02 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 콜백 함수란 callback functions",
+      "url"        : "/2018/03/20/JavaScript-%EC%BD%9C%EB%B0%B1-%ED%95%A8%EC%88%98%EB%9E%80-callback-functions/",
+      "date"       : "2018-03-20 16:54:14 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 클로저 closures",
+      "url"        : "/2018/03/20/JavaScript-%ED%81%B4%EB%A1%9C%EC%A0%80-closures/",
+      "date"       : "2018-03-20 16:46:26 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 비정형 인자 arguments",
+      "url"        : "/2018/03/20/JavaScript-%EB%B9%84%EC%A0%95%ED%98%95-%EC%9D%B8%EC%9E%90-arguments/",
+      "date"       : "2018-03-20 16:45:07 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: with, debugger",
+      "url"        : "/2018/03/20/JavaScript-with-debugger/",
+      "date"       : "2018-03-20 16:43:07 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: const, let",
+      "url"        : "/2018/03/20/JavaScript-const-let/",
+      "date"       : "2018-03-20 16:40:10 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 쿠키 컨트롤",
+      "url"        : "/2018/03/20/JavaScript-%EC%BF%A0%ED%82%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4/",
+      "date"       : "2018-03-20 16:36:55 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 엄격 모드 strict mode",
+      "url"        : "/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/",
+      "date"       : "2018-03-20 16:24:15 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 타입 변환 type conversion",
+      "url"        : "/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/",
+      "date"       : "2018-03-20 16:15:11 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 래퍼 객체 wrapper objects",
+      "url"        : "/2018/03/20/JavaScript-%EB%9E%98%ED%8D%BC-%EA%B0%9D%EC%B2%B4-wrapper-objects/",
+      "date"       : "2018-03-20 16:08:35 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 함수 Function",
+      "url"        : "/2018/03/20/JavaScript-%ED%95%A8%EC%88%98-Function/",
+      "date"       : "2018-03-20 15:59:09 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 변수의 유효범위와 끌어올림 hoisting",
+      "url"        : "/2018/03/20/JavaScript-%EB%B3%80%EC%88%98%EC%9D%98-%EC%9C%A0%ED%9A%A8%EB%B2%94%EC%9C%84%EC%99%80-%EB%81%8C%EC%96%B4%EC%98%AC%EB%A6%BChoisting/",
+      "date"       : "2018-03-20 15:57:09 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 전역 함수 global functions",
+      "url"        : "/2018/03/20/JavaScript-%EC%A0%84%EC%97%AD-%ED%95%A8%EC%88%98-global-functions/",
+      "date"       : "2018-03-20 15:40:02 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 제어문 control statement",
+      "url"        : "/2018/03/20/JavaScript-%EC%A0%9C%EC%96%B4%EB%AC%B8-control-statement/",
+      "date"       : "2018-03-20 15:10:49 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 연산자 operator",
+      "url"        : "/2018/03/20/JavaScript-%EC%97%B0%EC%82%B0%EC%9E%90-operator/",
+      "date"       : "2018-03-20 14:57:36 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 기본",
+      "url"        : "/2018/03/20/JavaScript-%EA%B8%B0%EB%B3%B8/",
+      "date"       : "2018-03-20 14:40:10 +0900",
+      "shortdate"  : "March 20, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 파워쉘 명령어 powershell commands",
+      "url"        : "/2018/03/19/%EC%9C%88%EB%8F%84%EC%9A%B010-%ED%8C%8C%EC%9B%8C%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows10-powershell-commands/",
+      "date"       : "2018-03-19 18:27:24 +0900",
+      "shortdate"  : "March 19, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 단축키 모음",
+      "url"        : "/2018/03/19/%EC%9C%88%EB%8F%84%EC%9A%B010-%EB%8B%A8%EC%B6%95%ED%82%A4-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "2018-03-19 15:24:11 +0900",
+      "shortdate"  : "March 19, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우: 쉘 명령어 windows shell commands",
+      "url"        : "/2018/03/15/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4-windows-shell-commands/",
+      "date"       : "2018-03-15 13:46:15 +0900",
+      "shortdate"  : "March 15, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 시작화면 앱 실행 바로가기 추가하는 방법.",
+      "url"        : "/2018/03/15/%EC%9C%88%EB%8F%84%EC%9A%B010-%EC%8B%9C%EC%9E%91%ED%99%94%EB%A9%B4-%EC%95%B1-%EC%8B%A4%ED%96%89-%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0-%EC%B6%94%EA%B0%80%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/",
+      "date"       : "2018-03-15 13:22:25 +0900",
+      "shortdate"  : "March 15, 2018"
+    } ,
+  
+    {
+      "title"      : "JavaScript: 정규식 모음",
+      "url"        : "/2018/03/09/JavaScript-%EC%A0%95%EA%B7%9C%EC%8B%9D-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "2018-03-09 17:53:21 +0900",
+      "shortdate"  : "March 09, 2018"
+    } ,
+  
+    {
+      "title"      : "Maven: 메이븐 넥서스에 jar 업로드 하기",
+      "url"        : "/2018/02/22/Maven-%EB%A9%94%EC%9D%B4%EB%B8%90-%EB%84%A5%EC%84%9C%EC%8A%A4%EC%97%90-jar-%EC%97%85%EB%A1%9C%EB%93%9C-%ED%95%98%EA%B8%B0/",
+      "date"       : "2018-02-22 13:58:28 +0900",
+      "shortdate"  : "February 22, 2018"
+    } ,
+  
+    {
+      "title"      : "Git: 레퍼런스란?",
+      "url"        : "/2018/02/07/Git-%EB%A0%88%ED%8D%BC%EB%9F%B0%EC%8A%A4%EB%9E%80/",
+      "date"       : "2018-02-07 13:19:55 +0900",
+      "shortdate"  : "February 07, 2018"
+    } ,
+  
+    {
+      "title"      : "Gist를 이용한 소스 관리",
+      "url"        : "/2018/02/07/Gist%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-%EC%86%8C%EC%8A%A4-%EA%B4%80%EB%A6%AC-%EB%A7%81%ED%81%AC/",
+      "date"       : "2018-02-07 11:21:27 +0900",
+      "shortdate"  : "February 07, 2018"
+    } ,
+  
+    {
+      "title"      : "eclipse: WST와 JST",
+      "url"        : "/2018/02/07/eclipse-WST%EC%99%80-JST/",
+      "date"       : "2018-02-07 11:10:53 +0900",
+      "shortdate"  : "February 07, 2018"
+    } ,
+  
+    {
+      "title"      : "프로시저 호출방법",
+      "url"        : "/2018/02/05/%ED%94%84%EB%A1%9C%EC%8B%9C%EC%A0%80-%ED%98%B8%EC%B6%9C%EB%B0%A9%EB%B2%95/",
+      "date"       : "2018-02-05 15:25:02 +0900",
+      "shortdate"  : "February 05, 2018"
+    } ,
+  
+    {
+      "title"      : "윈도우: 원격 데스크톱 연결 시 &quot;내부 오류가 발생했습니다.&quot;",
+      "url"        : "/2018/01/26/%EC%9C%88%EB%8F%84%EC%9A%B0-%EC%9B%90%EA%B2%A9-%EB%8D%B0%EC%8A%A4%ED%81%AC%ED%86%B1-%EC%97%B0%EA%B2%B0-%EC%8B%9C-%EB%82%B4%EB%B6%80-%EC%98%A4%EB%A5%98%EA%B0%80-%EB%B0%9C%EC%83%9D%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4/",
+      "date"       : "2018-01-26 17:49:59 +0900",
+      "shortdate"  : "January 26, 2018"
+    } ,
+  
+    {
+      "title"      : "Node.js: Mocha, JavaScript test Framework",
+      "url"        : "/2013/08/24/Nodejs-mocha-javaScript-test-Framework/",
+      "date"       : "2013-08-24 00:00:00 +0900",
+      "shortdate"  : "August 24, 2013"
+    } ,
+  
+    {
+      "title"      : "Node.js: 요청(request) 정보 분석",
+      "url"        : "/2013/08/22/Nodejs-%EC%9A%94%EC%B2%AD-request-%EC%A0%95%EB%B3%B4-%EB%B6%84%EC%84%9D/",
+      "date"       : "2013-08-22 00:00:00 +0900",
+      "shortdate"  : "August 22, 2013"
+    } ,
+  
+    {
+      "title"      : "Node.js",
+      "url"        : "/2013/08/12/Nodejs-Node-js/",
+      "date"       : "2013-08-12 16:36:00 +0900",
+      "shortdate"  : "August 12, 2013"
+    } ,
+  
+    {
+      "title"      : "Oracle: join, union, subquery...",
+      "url"        : "/2013/07/06/Oracle-join-union-subquery/",
+      "date"       : "2013-07-06 19:50:00 +0900",
+      "shortdate"  : "July 06, 2013"
+    } ,
+  
+    {
+      "title"      : "Oracle: DQL",
+      "url"        : "/2013/07/06/Oracle-DQL/",
+      "date"       : "2013-07-06 18:53:00 +0900",
+      "shortdate"  : "July 06, 2013"
+    } ,
+  
+    {
+      "title"      : "Oracle: DML",
+      "url"        : "/2013/07/01/Oracle-DML/",
+      "date"       : "2013-07-01 03:00:00 +0900",
+      "shortdate"  : "July 01, 2013"
+    } ,
+  
+    {
+      "title"      : "Oracle: DDL",
+      "url"        : "/2013/07/01/Oracle-DDL/",
+      "date"       : "2013-07-01 02:00:00 +0900",
+      "shortdate"  : "July 01, 2013"
+    } ,
+  
+    {
+      "title"      : "Oracle: sys, etc",
+      "url"        : "/2013/07/01/Oracle-sys-etc/",
+      "date"       : "2013-07-01 01:00:00 +0900",
+      "shortdate"  : "July 01, 2013"
+    } ,
+  
+    {
+      "title"      : "코드모음-JavaScript: 날짜 입력란 포맷 맞춰주기",
+      "url"        : "/1970/01/01/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C-JavaScript-%EB%82%A0%EC%A7%9C-%EC%9E%85%EB%A0%A5%EB%9E%80-%ED%8F%AC%EB%A7%B7-%EB%A7%9E%EC%B6%B0%EC%A3%BC%EA%B8%B0/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "코드모음-Java: 파일명 일괄 변경",
+      "url"        : "/1970/01/01/%EC%BD%94%EB%93%9C%EB%AA%A8%EC%9D%8C-Java-%ED%8C%8C%EC%9D%BC%EB%AA%85-%EC%9D%BC%EA%B4%84-%EB%B3%80%EA%B2%BD/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "자바스크립트 프레임워크: Aurelia",
+      "url"        : "/1970/01/01/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC-Aurelia/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 기본설정의 환경변수들",
+      "url"        : "/1970/01/01/%EC%9C%88%EB%8F%84%EC%9A%B010-%EA%B8%B0%EB%B3%B8%EC%84%A4%EC%A0%95%EC%9D%98-%ED%99%98%EA%B2%BD%EB%B3%80%EC%88%98%EB%93%A4/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "윈도우10: 개발용 환경 변수 목록",
+      "url"        : "/1970/01/01/%EC%9C%88%EB%8F%84%EC%9A%B010-%EA%B0%9C%EB%B0%9C%EC%9A%A9-%ED%99%98%EA%B2%BD-%EB%B3%80%EC%88%98-%EB%AA%A9%EB%A1%9D/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "블로그 내 링크 모음",
+      "url"        : "/1970/01/01/%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%82%B4-%EB%A7%81%ED%81%AC-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "sublime text: 빠른 명령어 탐색창에서 실행가능한 명령어 목록",
+      "url"        : "/1970/01/01/sublime-text-%EB%B9%A0%EB%A5%B8-%EB%AA%85%EB%A0%B9%EC%96%B4-%ED%83%90%EC%83%89%EC%B0%BD%EC%97%90%EC%84%9C-%EC%8B%A4%ED%96%89%EA%B0%80%EB%8A%A5%ED%95%9C-%EB%AA%85%EB%A0%B9%EC%96%B4-%EB%AA%A9%EB%A1%9D/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "sublime text: 단축키",
+      "url"        : "/1970/01/01/sublime-text-%EB%8B%A8%EC%B6%95%ED%82%A4/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Quick kramdown demo",
+      "url"        : "/1970/01/01/quick-kramdown-demo/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "note#2",
+      "url"        : "/1970/01/01/note-2/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "note#1",
+      "url"        : "/1970/01/01/note-1/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : " nGrinder: 애플리케이션 성능(과부하) 테스트",
+      "url"        : "/1970/01/01/nGrinder-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%84%B1%EB%8A%A5-%EA%B3%BC%EB%B6%80%ED%95%98-%ED%85%8C%EC%8A%A4%ED%8A%B8/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "markdown syntax",
+      "url"        : "/1970/01/01/markdown-syntax/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "jekyll collections test",
+      "url"        : "/1970/01/01/jekyll-collections-test/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "jQuery: jquery.fileDownload.js",
+      "url"        : "/1970/01/01/jQuery-jquery-fileDownload-js/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "jQuery: jqGrid",
+      "url"        : "/1970/01/01/jQuery-jqGrid/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: 플러그인 모음",
+      "url"        : "/1970/01/01/eclipse-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8-%EB%AA%A8%EC%9D%8C/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: 웹 트래픽 모니터링",
+      "url"        : "/1970/01/01/eclipse-%EC%9B%B9-%ED%8A%B8%EB%9E%98%ED%94%BD-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: 무료 hot deploy 플러그인",
+      "url"        : "/1970/01/01/eclipse-%EB%AC%B4%EB%A3%8C-hot-deploy-%ED%94%8C%EB%9F%AC%EA%B7%B8%EC%9D%B8/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: 다른 프로젝트를 포함하여 export 하는 방법",
+      "url"        : "/1970/01/01/eclipse-%EB%8B%A4%EB%A5%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%ED%8F%AC%ED%95%A8%ED%95%98%EC%97%AC-export-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: orion project",
+      "url"        : "/1970/01/01/eclipse-orion-project/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: context information",
+      "url"        : "/1970/01/01/eclipse-context-information/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: Mylyn Task",
+      "url"        : "/1970/01/01/eclipse-Mylyn-Task/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "eclipse: Code Recommenders",
+      "url"        : "/1970/01/01/eclipse-Code-Recommenders/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "cross-site HTTP 요청 활성화(CORS, Cross-Origin Resource Sharing)",
+      "url"        : "/1970/01/01/cross-site-HTTP-%EC%9A%94%EC%B2%AD-%ED%99%9C%EC%84%B1%ED%99%94-CORS-Cross-Origin-Resource-Sharing/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix: 현재 시간 출력",
+      "url"        : "/1970/01/01/Unix-%ED%98%84%EC%9E%AC-%EC%8B%9C%EA%B0%84-%EC%B6%9C%EB%A0%A5/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 원하는 파일을 검색해서 특정 폴더로 이동(find + mv)",
+      "url"        : "/1970/01/01/Unix-Linux-%EC%9B%90%ED%95%98%EB%8A%94-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EA%B2%80%EC%83%89%ED%95%B4%EC%84%9C-%ED%8A%B9%EC%A0%95-%ED%8F%B4%EB%8D%94%EB%A1%9C-%EC%9D%B4%EB%8F%99-find-mv/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 시스템 서비스 관리 systemctl, service",
+      "url"        : "/1970/01/01/Unix-Linux-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EC%84%9C%EB%B9%84%EC%8A%A4-%EA%B4%80%EB%A6%AC-systemctl-service/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 쉘 스크립트 시작줄",
+      "url"        : "/1970/01/01/Unix-Linux-%EC%89%98-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%8B%9C%EC%9E%91%EC%A4%84/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 쉘 명령어",
+      "url"        : "/1970/01/01/Unix-Linux-%EC%89%98-%EB%AA%85%EB%A0%B9%EC%96%B4/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 메모",
+      "url"        : "/1970/01/01/Unix-Linux-%EB%A9%94%EB%AA%A8/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 루트권한 su, sudo",
+      "url"        : "/1970/01/01/Unix-Linux-%EB%A3%A8%ED%8A%B8%EA%B6%8C%ED%95%9C-su-sudo/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: 권한 설정 chmod, chown, umask",
+      "url"        : "/1970/01/01/Unix-Linux-%EA%B6%8C%ED%95%9C-%EC%84%A4%EC%A0%95-chmod-chown-umask/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: nohup 백그라운드 프로세스 생성",
+      "url"        : "/1970/01/01/Unix-Linux-nohup-%EB%B0%B1%EA%B7%B8%EB%9D%BC%EC%9A%B4%EB%93%9C-%ED%94%84%EB%A1%9C%EC%84%B8%EC%8A%A4/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Unix/Linux: audit 디스크 액세스 관리",
+      "url"        : "/1970/01/01/Unix-Linux-audit-%EB%94%94%EC%8A%A4%ED%81%AC-%EC%95%A1%EC%84%B8%EC%8A%A4-%EA%B4%80%EB%A6%AC/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Tomcat: 자바 아규먼트에 접근하기",
+      "url"        : "/1970/01/01/Tomcat-%EC%9E%90%EB%B0%94-%EC%95%84%EA%B7%9C%EB%A8%BC%ED%8A%B8%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EA%B8%B0/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Spring: SpEL, Spring Expression Language",
+      "url"        : "/1970/01/01/Spring-SpEL-Spring-Expression-Language/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Spring: RedirectView",
+      "url"        : "/1970/01/01/Spring-RedirectView/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Spring: MultiActionController",
+      "url"        : "/1970/01/01/Spring-MultiActionController/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Spring: ModelMap",
+      "url"        : "/1970/01/01/Spring-ModelMap/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "SSLv3",
+      "url"        : "/1970/01/01/SSLv3/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Pinpoint: 애플리케이션 성능 모니터링",
+      "url"        : "/1970/01/01/Pinpoint-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%84%B1%EB%8A%A5-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Node.js: 기본 모듈",
+      "url"        : "/1970/01/01/Node-js-%EA%B8%B0%EB%B3%B8-%EB%AA%A8%EB%93%88/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Node.js: Global Objects",
+      "url"        : "/1970/01/01/Node-js-Global-Objects/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Mybatis: cache",
+      "url"        : "/1970/01/01/Mybatis-cache/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Maven: 원격 저장소에 배포하기",
+      "url"        : "/1970/01/01/Maven-%EC%9B%90%EA%B2%A9-%EC%A0%80%EC%9E%A5%EC%86%8C%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "JavaScript: this란",
+      "url"        : "/1970/01/01/JavaScript-this%EB%9E%80/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "JavaScript: source map",
+      "url"        : "/1970/01/01/JavaScript-source-map/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "JavaScript: JSONP(JSON with Padding)",
+      "url"        : "/1970/01/01/JavaScript-JSONP-JSON-with-Padding/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Java: 컴파일러의 target 옵션",
+      "url"        : "/1970/01/01/Java-%EC%BB%B4%ED%8C%8C%EC%9D%BC%EB%9F%AC%EC%9D%98-target-%EC%98%B5%EC%85%98/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Java: 정규 표현식 regular expressions(regex) in Java",
+      "url"        : "/1970/01/01/Java-%EC%A0%95%EA%B7%9C-%ED%91%9C%ED%98%84%EC%8B%9D-regular-expressions-regex-in-Java/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Java: 동기화 synchronized, volatile",
+      "url"        : "/1970/01/01/Java-%EB%8F%99%EA%B8%B0%ED%99%94-synchronized-volatile/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Java: java.lang.System",
+      "url"        : "/1970/01/01/Java-java-lang-System/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Java: java.lang.Byte",
+      "url"        : "/1970/01/01/Java-java-lang-Byte/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "JSP: 본문 내용을 그대로 파일로... ",
+      "url"        : "/1970/01/01/JSP-%EB%B3%B8%EB%AC%B8-%EB%82%B4%EC%9A%A9%EC%9D%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%ED%8C%8C%EC%9D%BC%EB%A1%9C/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "HTML standard: Input elements should have autocomplete attributes",
+      "url"        : "/1970/01/01/HTML-standard-Input-elements-should-have-autocomplete-attributes/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Gradle: 시작하기",
+      "url"        : "/1970/01/01/Gradle-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Git: note",
+      "url"        : "/1970/01/01/Git-note/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } ,
+  
+    {
+      "title"      : "Datadog: 인프라 모니터링",
+      "url"        : "/1970/01/01/Datadog-%EC%9D%B8%ED%94%84%EB%9D%BC-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81/",
+      "date"       : "1970-01-01 00:00:00 +0900",
+      "shortdate"  : "January 01, 1970"
+    } 
+  
+]

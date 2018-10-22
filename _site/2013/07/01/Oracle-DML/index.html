@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Oracle: DML | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Oracle: DML" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="INSERT" />
+<meta property="og:description" content="INSERT" />
+<link rel="canonical" href="http://localhost:4000/2013/07/01/Oracle-DML/" />
+<meta property="og:url" content="http://localhost:4000/2013/07/01/Oracle-DML/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-07-01T03:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Oracle: DML","dateModified":"2013-07-01T03:00:00+09:00","datePublished":"2013-07-01T03:00:00+09:00","url":"http://localhost:4000/2013/07/01/Oracle-DML/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/07/01/Oracle-DML/"},"description":"INSERT","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="oracle,dml" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">Oracle: DML</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2013-07-01T03:00:00+09:00" datetime="2013-07-01T03:00:00+09:00">July 01, 2013 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#dbms" title="dbms">
+            dbms <span>6</span></a>
+        </li>
+     
+        <li>
+            <a href="/categories/#oracle" title="oracle">
+            oracle <span>6</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#dml" title="dml">dml <span>1</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#oracle" title="oracle">oracle <span>6</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h2 id="heading-insert">INSERT</h2>
+
+<p>테이블에 레코드(행)을 추가하는 명령어.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO 테이블명 (컬럼1, 컬럼2...) VALUES (값1, 값2...)
+</code></pre></div></div>
+
+<p>작성 규칙:</p>
+<ul>
+  <li>컬럼리스트는 테이블의 모든 컬럼을 기재할 필요 없다.</li>
+  <li>컬럼리스트는 순서가 바뀌어도 되지만 이 경우엔 값도 같은 순서가 되어야 한다.</li>
+  <li>null값이 허용되어 있는 컬럼은 기재를 생략해도 된다. (null 입력 가능)</li>
+  <li>default 설정이 되어있는 컬럼은 insert에서 생략을 해도 되고 명시적으로 values(default) 사용해도 된다.</li>
+</ul>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">memo</span> <span class="p">(</span><span class="n">seq</span><span class="p">,</span> <span class="n">memo</span><span class="p">,</span> <span class="n">category</span><span class="p">,</span> <span class="n">regDate</span><span class="p">,</span> <span class="n">ck</span><span class="p">,</span> <span class="n">rname</span><span class="p">,</span> <span class="n">rmemo</span><span class="p">)</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">memo_seq</span><span class="p">.</span><span class="n">nextval</span><span class="p">,</span> <span class="s1">'메모입니다.'</span><span class="p">,</span> <span class="s1">'A'</span><span class="p">,</span> <span class="n">sysdate</span><span class="p">,</span> <span class="s1">'n'</span><span class="p">,</span> <span class="s1">'하하하'</span><span class="p">,</span> <span class="s1">'꼭확인바람'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>컬럼명을 생략할 수도 있으나 이 경우엔 값리스트의 순서와 개수는 원본 테이블의 구조와 일치해야 한다:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">memo</span>
+<span class="k">VALUES</span> <span class="p">(</span><span class="n">memo_seq</span><span class="p">.</span><span class="n">nextval</span><span class="p">,</span> <span class="s1">'메모메모'</span><span class="p">,</span> <span class="k">default</span><span class="p">,</span> <span class="k">default</span><span class="p">,</span> <span class="k">default</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="k">null</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="heading-insert-into-select">INSERT INTO SELECT</h2>
+<p>INSERT INTO SELECT문은 데이터를 다른 테이블에서 참조한다. INSERT문과 달리 한 번에 여러개의 데이터가 생성될 수 있다. (생성되는 데이터의 수는 SELECT문에 따라 달라짐)</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INSERT INTO table2 SELECT * FROM table1
+INSERT INTO table2 (column_name) SELECT column_name FROM table1;
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">Customers</span> <span class="p">(</span>
+    <span class="n">CustomerName</span><span class="p">,</span>
+    <span class="n">Country</span>
+<span class="p">)</span>
+<span class="k">SELECT</span> <span class="n">SupplierName</span><span class="p">,</span>
+    <span class="n">Country</span>
+<span class="k">FROM</span> <span class="n">Suppliers</span>
+</code></pre></div></div>
+
+<p><a href="https://www.w3schools.com/sql/sql_select_into.asp">SELECT INTO</a>와 다르다.</p>
+
+<h2 id="heading-update">UPDATE</h2>
+
+<p>테이블의 모든 레코드 혹은 일부 레코드의 특정 컬럼값(1개 이상)을 수정하는 명령어</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>UPDATE 테이블 SET 컬럼 = 수정값, 컬럼명 = 수정값... [where]
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">UPDATE</span> <span class="n">country</span> <span class="k">SET</span> <span class="n">capital</span> <span class="o">=</span> <span class="s1">'인천'</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="n">country</span>
+<span class="k">SET</span> <span class="n">capital</span> <span class="o">=</span> <span class="s1">'인천'</span><span class="p">,</span> <span class="n">cont</span> <span class="o">=</span> <span class="s1">'kr'</span><span class="p">,</span> <span class="n">area</span> <span class="o">=</span> <span class="mi">999</span>
+<span class="k">WHERE</span> <span class="n">capital</span> <span class="o">=</span> <span class="s1">'서울'</span><span class="p">;</span>
+
+<span class="k">UPDATE</span> <span class="n">tbl_test</span>
+<span class="k">SET</span> <span class="n">cnt</span> <span class="o">=</span> <span class="n">cnt</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">WHERE</span> <span class="n">id</span> <span class="o">=</span> <span class="s1">'guest'</span><span class="p">;</span>
+<span class="c1">-- where절이 없는 update는 모든 레코드를 수정함</span>
+</code></pre></div></div>
+
+<h2 id="heading-delete">DELETE</h2>
+
+<p>특정 레코드를 삭제하는 명령어. where절이 생략되면 해당 테이블의 모든 레코드를 삭제한다.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE FROM 테이블명 [where]
+</code></pre></div></div>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">DELETE</span> <span class="k">FROM</span> <span class="n">rent</span> <span class="k">WHERE</span> <span class="n">rentDate</span> <span class="o">&lt;=</span> <span class="s1">'2013-01-31'</span>
+</code></pre></div></div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/2013/07/01/Oracle-DDL/" title=" 'Oracle: DDL'"> ← Oracle: DDL</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/2013/07/06/Oracle-DQL/" title="Next Post 'Oracle: DQL'">Oracle: DQL → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

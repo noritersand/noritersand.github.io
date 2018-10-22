@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Node.js | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="Node.js" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="node에서는 모든게 병렬로 수행된다. 당신 code만 빼고" />
+<meta property="og:description" content="node에서는 모든게 병렬로 수행된다. 당신 code만 빼고" />
+<link rel="canonical" href="http://localhost:4000/2013/08/12/Nodejs-Node-js/" />
+<meta property="og:url" content="http://localhost:4000/2013/08/12/Nodejs-Node-js/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2013-08-12T16:36:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Node.js","dateModified":"2013-08-12T16:36:00+09:00","datePublished":"2013-08-12T16:36:00+09:00","url":"http://localhost:4000/2013/08/12/Nodejs-Node-js/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2013/08/12/Nodejs-Node-js/"},"description":"node에서는 모든게 병렬로 수행된다. 당신 code만 빼고","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="nodejs" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">Node.js</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2013-08-12T16:36:00+09:00" datetime="2013-08-12T16:36:00+09:00">August 12, 2013 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#javascript" title="javascript">
+            javascript <span>34</span></a>
+        </li>
+     
+        <li>
+            <a href="/categories/#nodejs" title="nodejs">
+            nodejs <span>5</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#nodejs" title="nodejs">nodejs <span>5</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <p><img src="/images/image-node-js-1.png" alt="" /></p>
+<blockquote>
+  <p>node에서는 모든게 병렬로 수행된다. 당신 code만 빼고</p>
+</blockquote>
+
+<h4 id="heading-참고한-글">참고한 글</h4>
+
+<ul>
+  <li><a href="https://nodejs.org/en/docs/">https://nodejs.org/en/docs/</a></li>
+  <li><a href="http://www.nodebeginner.org/index-kr.html">http://www.nodebeginner.org/index-kr.html</a></li>
+</ul>
+
+<h2 id="heading-시작하기">시작하기</h2>
+
+<h3 id="heading-설치">설치</h3>
+
+<p>아래 링크에서 OS에 맞는 파일을 받아 설치한다.
+<a href="https://nodejs.org/en/download/">https://nodejs.org/en/download/</a></p>
+
+<p>안될 경우 <code class="highlighter-rouge">NODE_PATH = C:\Users\noriter\AppData\Roaming\npm\node_modules</code> 패스 추가.</p>
+
+<h3 id="heading-구동">구동</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node 파일명
+</code></pre></div></div>
+
+<p>node 명령어는 단독으로 사용했을 때 REFL이라고 하는 node.js shell로 진입한다. 위 처럼 파일명과 같이 사용하면 해당 파일을 node.js로 실행하라는 의미이다.</p>
+
+<h3 id="heading-syncasync">sync/async</h3>
+
+<p>동기 방식의 blocking I/O가 아래처럼 동작한다면:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">puts</span><span class="p">(</span><span class="s2">"이름을 입력하세요"</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nx">gets</span><span class="p">();</span>
+<span class="nx">puts</span><span class="p">(</span><span class="s2">"당신의 이름은"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"입니다."</span><span class="p">);</span>
+</code></pre></div></div>
+<p>비동기 방식의 non-blocking I/O는 아래와 같이 동작한다:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">puts</span><span class="p">(</span><span class="s2">"이름을 입력하세요"</span><span class="p">);</span>
+<span class="nx">gets</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">puts</span><span class="p">(</span><span class="s2">"당신의 이름은"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"입니다."</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="heading-이벤트-루프란">이벤트 루프란?</h3>
+
+<p>프로세스의 처리과정을 이벤트의 순환으로 구현한 것 혹은, 이벤트를 처리하는 스택구조 자체를 이벤트루프라 함.</p>
+
+<h3 id="heading-노드-표준-코딩-관례">노드 표준 코딩 관례</h3>
+
+<ul>
+  <li>들여쓰기: 공백 2칸</li>
+  <li>문장종결: 문장의 끝은 자바스크립트의 관례대로 세미콜론(;)을 사용함</li>
+  <li>문자열: 문자열은 쌍따옴표("") 대신 홑따옴표('')를 사용한다.</li>
+  <li>블록을 시작하는 중괄호는 시작하는 문장과 같은 라인에 작성한다.</li>
+  <li>변수와 프로퍼티: 소문자로 시작하는 카멜케이스를 사용한다.</li>
+  <li>클래스: 대문자로 시작하는 카멜케이스를 사용한다.</li>
+  <li>동등 비교: == 대신 ===를 사용한다.</li>
+  <li>콜백 함수: 콜백 함수에서 첫 파라미터(혹은 인자)는 노드 코어의 콜백 함수처럼 에러 파라미터로 사용한다.</li>
+  <li><a href="/attachments/nodejs-style-guide-eng.pdf">nodejs style guide(eng).pdf</a></li>
+  <li><a href="/attachments/nodejs-style-guide-kor.pdf">nodejs style guide(kor).pdf</a></li>
+</ul>
+
+<h2 id="heading-npm">npm</h2>
+
+<p><del>Node Package Manager</del> npm is not an acronym. Node.js의  모듈관리 도구다. https://npmjs.org</p>
+
+<h3 id="heading-모듈-설치">모듈 설치</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>node install
+<span class="c"># package.json 의 "dependencies"를 참조하여 자동설치</span>
+
+npm install 모듈1[, 모듈2, 모듈3]
+<span class="c"># 로컬 모듈로 설치</span>
+
+npm install 모듈명 <span class="nt">-g</span>
+<span class="c"># 글로벌 모듈로 설치</span>
+
+npm install 모듈명 <span class="nt">--save</span>
+<span class="c"># package.json 이 있다면 dependencies 항목에 설치한 모듈을 추가한다.</span>
+
+npm install nodemon <span class="nt">-g</span>
+<span class="c"># nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈</span>
+
+nodemon server.js
+<span class="c"># server.js를 nodemon으로 실행</span>
+</code></pre></div></div>
+
+<h3 id="heading-조회">조회</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nt">-v</span>
+<span class="c"># 설치된 npm의 버전을 확인한다.</span>
+
+npm <span class="nb">ls</span>
+<span class="c"># 현재 경로의 로컬 모듈 확인</span>
+
+npm <span class="nb">ls</span> <span class="nt">-g</span>
+<span class="c"># 글로벌 모듈 확인</span>
+</code></pre></div></div>
+
+<h3 id="heading-업데이트">업데이트</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm update <span class="o">[</span>모듈명]
+<span class="c"># 모듈명을 명시 하지 않으면 로컬 모듈을 모두 업데이트</span>
+
+npm updata <span class="o">[</span>모듈명] <span class="nt">-g</span>
+<span class="c"># 모듈명을 명시 하지 않으면 글로벌 모듈을 모두 업데이트</span>
+</code></pre></div></div>
+
+<h3 id="heading-모듈-삭제">모듈 삭제</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm uninstall 모듈명
+<span class="c"># 로컬 모듈 삭제</span>
+
+npm uninstall 모듈명 <span class="nt">-g</span>
+<span class="c"># 글로벌 모듈 삭제</span>
+</code></pre></div></div>
+
+<h3 id="heading-packagejson-자동생성">package.json 자동생성</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm init
+</code></pre></div></div>
+
+<h3 id="heading-packagejson-구성요소">package.json 구성요소</h3>
+
+<p>npm init 으로 자동생성되는 요소들</p>
+
+<ul>
+  <li>name: 프로젝트 이름. 배포 시 필수 항목</li>
+  <li>version: 버전. 배포 시 필수 항목</li>
+  <li>description: 프로젝트 설명</li>
+  <li>main:</li>
+  <li>scripts: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. (npm help scripts로 확인할 것)</li>
+  <li>author: 작성자</li>
+  <li>license:</li>
+  <li>dependencies: 필요한 native 모듈 정보를 적는다. npm install 명령으로 자동 설치된다.</li>
+  <li>devDependencies: 개발 시에만 필요한 모듈을 명시한다. config(package.json의 config와는 다르다. npm config list -l 명령으로 설정목록을 확인 할 수 있고 production 값을 바꾸려면 npm config set production true를 사용한다.)에 production이 true일 때는 배포버전이라 간주하고 설치하지 않는다.</li>
+  <li>repository:</li>
+  <li>keywords: 키워드</li>
+</ul>
+
+<h3 id="heading-그-외-추가-가능한-요소">그 외 추가 가능한 요소</h3>
+
+<ul>
+  <li>homepage: 프로젝트의 홈페이지</li>
+  <li>contributors: 공헌자 정보</li>
+  <li>config: scripts가 사용할 수 있는 환경 변수</li>
+  <li>private: npm 저장소 배포 여부. true로 지정하면 배포하지 않는다.</li>
+  <li>engine: 프로젝트의 기반 엔진을 표시한다.</li>
+</ul>
+
+<h3 id="heading-example">example</h3>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>
+  <span class="s2">"name"</span><span class="p">:</span> <span class="s2">"jstest"</span><span class="p">,</span>
+  <span class="s2">"version"</span><span class="p">:</span> <span class="s2">"0.0.0"</span><span class="p">,</span>
+  <span class="s2">"description"</span><span class="p">:</span> <span class="s2">"example project"</span><span class="p">,</span>
+  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"globaltest.js"</span><span class="p">,</span>
+  <span class="s2">"scripts"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"start"</span> <span class="p">:</span> <span class="s2">"node app.js"</span>
+  <span class="p">},</span>
+  <span class="s2">"author"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"name"</span> <span class="p">:</span> <span class="s2">"noriter"</span><span class="p">,</span>
+    <span class="s2">"email"</span> <span class="p">:</span> <span class="s2">"xxx@xxx.com"</span>
+  <span class="p">},</span>
+  <span class="s2">"license"</span><span class="p">:</span> <span class="s2">"none"</span><span class="p">,</span>
+  <span class="s2">"dependencies"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"express"</span><span class="p">:</span> <span class="s2">"~3.3.5"</span>
+  <span class="p">},</span>
+  <span class="s2">"devDependencies"</span><span class="p">:</span> <span class="p">{},</span>
+  <span class="s2">"repository"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"type"</span><span class="p">:</span> <span class="s2">"git"</span><span class="p">,</span>
+    <span class="s2">"url"</span><span class="p">:</span> <span class="s2">"none"</span>
+  <span class="p">},</span>
+  <span class="s2">"keywords"</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"keywordA"</span><span class="p">,</span>
+    <span class="s2">"keywordB"</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="heading-모듈을-폴더단위로-관리하기">모듈을 폴더단위로 관리하기</h3>
+
+<p>package.json을 조작하면 한 폴더에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">myModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./myModule'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>모듈 로드 시 위와 같은 방식으로 폴더를 지정할 수 있는데, 이 경우 노드는 해당 폴더 내에서 모듈을 찾는다. 노드는 이 폴더가 패키지라고 가정하고 패키지 정의를 찾는다. <code class="highlighter-rouge">package.json</code> 파일이 없다면 <code class="highlighter-rouge">index.js</code> 파일을 기준으로 루트라 가정한다. <code class="highlighter-rouge">/myModule/index.js</code> 가 있다면 노드는 myModule을 루트라 가정하고 그 경로 아래에서 파일을 찾는다.</p>
+
+<p>package.json 에서 시작점의 상대경로를 지정하는 방법은:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span>  
+  <span class="s2">"main"</span><span class="p">:</span> <span class="s2">"./lib/temp.js"</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>이 경우 노드는 ./myModule/lib/temp.js 를 찾는다.
+<a href="http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules">관련 내용을 설명한 블로그</a></p>
+
+<h2 id="heading-exportsrequire">exports/require</h2>
+
+<p>노드에서 하나의 자바스크립트 파일은 하나의 모듈이 된다. 기본적으로 노드는 각 자바스크립트 파일을 익명함수로 감싸 외부에서 접근할 수 없게 만드는데 이것을 모듈화라고 하며 모듈간 참조와 호출을 위해 글로벌 객체 module의 exports/require를 사용한다.</p>
+
+<p>함수나 변수는 <code class="highlighter-rouge">module.exports</code>에 할당하면 외부에서 접근할 수 있다(단, 명시적인 함수 이름이 있는 경우만).</p>
+
+<h3 id="heading-moduleexports">module.exports</h3>
+
+<p>모듈로 내보내기.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Syntex 1: module.exports.내보낼함수명 = 함수명</span>
+<span class="kd">function</span> <span class="nx">drawCircle</span><span class="p">()</span> <span class="p">{</span>
+  <span class="p">...</span>
+<span class="p">}</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">drawCircle</span> <span class="o">=</span> <span class="nx">drawCircle</span><span class="p">;</span>
+
+<span class="c1">//Syntex 2: module.exports = 함수리터럴 혹은 익명함수</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">fibonacchi</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="c1">//Syntex 3: 변수 = module.exports = 함수</span>
+<span class="kd">var</span> <span class="nx">show</span> <span class="o">=</span> <span class="nx">exports</span><span class="p">.</span><span class="nx">show</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'hi'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>module은 전역객체라서 객체명을 명시하지 않아도 된다.</p>
+
+<h3 id="heading-require">require()</h3>
+
+<p>모듈 불러오기.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>require<span class="o">(</span>경로/파일명<span class="o">)</span><span class="p">;</span>
+</code></pre></div></div>
+
+<p>경로는 문자열<code class="highlighter-rouge">' '</code>로 표시하며 경로를 생략할 경우 기본모듈이나 확장모듈(node.js가 기본적으로 제공하는 모듈 혹은 npm으로 설치한 모듈을 말하며 이 둘을 native module이라 한다.)을 불러온다.</p>
+
+<p>같은 경로내에 불러올 js 파일이 있다면 경로는 <code class="highlighter-rouge">./</code>가 되고 한 단계 상위의 폴더라면 경로는 <code class="highlighter-rouge">../</code>가 된다.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">userModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'./user_module'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">require()</code>로 불려진 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 리턴된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나 functio을 리턴해 new로 인스턴스를 생성해서 사용한다.</p>
+
+<p>객체의 프로퍼티로 내보내기:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">printA</span><span class="p">(){};</span>
+<span class="kd">var</span> <span class="nx">PI</span> <span class="o">=</span> <span class="mf">3.14</span><span class="p">;</span>
+
+<span class="nx">exports</span><span class="p">.</span><span class="nx">printA</span> <span class="o">=</span> <span class="nx">printA</span><span class="p">;</span>
+<span class="nx">exports</span><span class="p">.</span><span class="nx">PI</span> <span class="o">=</span> <span class="nx">PI</span><span class="p">;</span>
+
+<span class="c1">// 위에서 내보낸 모듈은 다음처럼 불러온다</span>
+<span class="kd">var</span> <span class="nx">userModule</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'[js를 제외한 파일 경로]'</span><span class="p">);</span>
+<span class="nx">userModule</span><span class="p">.</span><span class="nx">printA</span><span class="p">();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userModule</span><span class="p">.</span><span class="nx">PI</span><span class="p">);</span>
+</code></pre></div></div>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/2013/07/06/Oracle-join-union-subquery/" title=" 'Oracle: join, union, subquery...'"> ← Oracle: join, union, subquery...</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/2013/08/22/Nodejs-%EC%9A%94%EC%B2%AD-request-%EC%A0%95%EB%B3%B4-%EB%B6%84%EC%84%9D/" title="Next Post 'Node.js: 요청(request) 정보 분석'">Node.js: 요청(request) 정보 분석 → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

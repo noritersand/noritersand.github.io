@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>note#2 | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="note#2" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="자바스크립트는 어떻게 작동하는가: 엔진, 런타임, 콜스택 개관: https://engineering.huiseoul.com/자바스크립트는-어떻게-작동하는가-엔진-런타임-콜스택-개관-ea47917c8442" />
+<meta property="og:description" content="자바스크립트는 어떻게 작동하는가: 엔진, 런타임, 콜스택 개관: https://engineering.huiseoul.com/자바스크립트는-어떻게-작동하는가-엔진-런타임-콜스택-개관-ea47917c8442" />
+<link rel="canonical" href="http://localhost:4000/1970/01/01/note-2/" />
+<meta property="og:url" content="http://localhost:4000/1970/01/01/note-2/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="1970-01-01T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"note#2","dateModified":"1970-01-01T00:00:00+09:00","datePublished":"1970-01-01T00:00:00+09:00","url":"http://localhost:4000/1970/01/01/note-2/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/1970/01/01/note-2/"},"description":"자바스크립트는 어떻게 작동하는가: 엔진, 런타임, 콜스택 개관: https://engineering.huiseoul.com/자바스크립트는-어떻게-작동하는가-엔진-런타임-콜스택-개관-ea47917c8442","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="note" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">note#2</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="1970-01-01T00:00:00+09:00" datetime="1970-01-01T00:00:00+09:00">January 01, 1970 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#etc" title="etc">
+            etc <span>7</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#note" title="note">note <span>6</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <ul>
+  <li>자바스크립트는 어떻게 작동하는가: 엔진, 런타임, 콜스택 개관: <a href="https://engineering.huiseoul.com/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EB%8A%94-%EC%96%B4%EB%96%BB%EA%B2%8C-%EC%9E%91%EB%8F%99%ED%95%98%EB%8A%94%EA%B0%80-%EC%97%94%EC%A7%84-%EB%9F%B0%ED%83%80%EC%9E%84-%EC%BD%9C%EC%8A%A4%ED%83%9D-%EA%B0%9C%EA%B4%80-ea47917c8442">https://engineering.huiseoul.com/자바스크립트는-어떻게-작동하는가-엔진-런타임-콜스택-개관-ea47917c8442</a></li>
+</ul>
+
+<h2 id="heading-s3tldr-web-performance-workshop">s3/tldr-web-performance-workshop</h2>
+<ul>
+  <li>2017년 프론트엔드 트랜드  https://www.slideshare.net/rlaxogns/2017-75371537</li>
+  <li>Optimising the front end for the browser https://dev.to/sanjsanj/optimising-the-front-end-for-thebrowser</li>
+  <li>link rel=preload/prefetch에 대한 아주 자세한 설명. 굿. https://t.co/MN3DnvKk0p</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Prefetching, preloading, prebrowsing</td>
+          <td>CSS-Tricks https://css-tricks.com/prefetching-preloading-prebrowsing/</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>웹 화면은 어떻게 렌더링 되는가. 좋은 글이네요. https://bitsofco.de/understanding-the-critical-rendering-path/?utm_source=CSS-Weekly&amp;utm_campaign=Issue-250&amp;utm_medium=email</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>나만 모르고 있던 - HTTP/2</td>
+          <td>Popit http://www.popit.kr/나만-모르고-있던-http2/</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Ant Design - One Design Language  https://ant.design/docs/spec/introduce</li>
+  <li>모던 웹 스택 심층 분석 https://medium.com/@manyoung/모던-웹-스택-심층-분석-713eb1492f4e</li>
+  <li>서버 비용을 70%나 줄인 온디맨드 리사이징 이야기  http://engineering.vcnc.co.kr/2016/05/ondemand-image-resizing/</li>
+  <li>[번역] 프로그레시브 웹 앱 : 탭에서 벗어나기 http://han41858.tistory.com/13</li>
+  <li>Microinteractions: 좋은 앱의 비밀 https://brunch.co.kr/@byeon/7</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>웹 폰트를 로컬 스토리지에 저장하는 기법 - 캐시 안정성 증가, 글꼴 깜빡임 현상 제거</td>
+          <td>웹으로 말하기 http://mytory.net/2016/06/15/webfont-best-practice.html</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>Sass Guidelines — Korean translation https://sass-guidelin.es/ko/</li>
+</ul>
+
+<h2 id="heading-api">API</h2>
+<ul>
+  <li>REST API의 이해와 설계-#1 개념 소개 http://bcho.tistory.com/953</li>
+  <li>REST API 이해와 설계 - #2 API 설계 가이드 http://bcho.tistory.com/954</li>
+  <li>REST API의 이해와 설계-#3 API 보안 http://bcho.tistory.com/955</li>
+  <li>API Gateway : Tyk 구글 엔지니어들이 go 언어 기반으로 제작 https://tyk.io/features/</li>
+  <li>API Gateway: Kong 서버는 무료인데 UI가 유료 https://getkong.org</li>
+  <li>ZooKeeper를 활용한 Redis Cluster 관리 http://d2.naver.com/helloworld/294797</li>
+  <li>CORS, Preflight, 인증 처리 관련 삽질 http://www.popit.kr/cors-preflight-인증-처리-관련-삽질/</li>
+  <li>REST - 당신이 만든 건 REST가 아니지만 괜찮아 https://youngiggy.github.io/2017/06/28/rest-the-coclusion/</li>
+  <li>REST APIs are REST-in-Peace APIs. Long Live GraphQL https://medium.freecodecamp.org/rest-apis-are-rest-in-peace-apis-long-live-graphql-d412e559d8e4</li>
+  <li>신규 Web 서비스시 고려해 볼 사항http://kwonnam.pe.kr/wiki/web/신규서비스</li>
+  <li>API 보안 체크리스트 https://github.com/mingrammer/API-Security-Checklist/blob/master/README-ko.md</li>
+  <li>Rest 2.0 is here its name is graphql https://www.sitepoint.com/rest-2-0-graphql/</li>
+  <li>Enterprise Integration Using REST https://martinfowler.com/articles/enterpriseREST.html</li>
+  <li>REST의 representation이란 무엇인가 https://blog.npcode.com/2017/04/03/rest의-representation이란-무엇인가/</li>
+  <li>rest에서 graph ql과 relay로 갈아타기 이정우 https://www.slideshare.net/mobile/deview/112rest-graph-ql-relay</li>
+  <li>멀티 시스템의 RESET API를 사용하면서 Transaction을 달성하는 방법 https://www.dropbox.com/s/gaw78094mhp04tz/TccForRestApi.pdf?dl=0</li>
+  <li>바쁜 개발자들을 위한 REST 논문 요약 https://blog.npcode.com/2017/03/02/바쁜-개발자들을-위한-rest-논문-요약/</li>
+  <li>RESTful APIs, the big lie https://mmikowski.github.io/the_lie/</li>
+  <li>Replace RESTful APIs with JSON-Pure https://mmikowski.github.io/json-pure/</li>
+  <li>서 고민했던 기술적인 부분을 정리한 글입니다. react, redux에 대해 어느정도 알고 있다고 가정하고 작성되었음을 참고 https://okjungsoo.wordpress.com/2017/04/15/패스-웹-회고/</li>
+  <li>redux 구현하기 A to Z 번역판. 정리 잘 되어 있음. https://deminoth.github.io/redux</li>
+  <li>10 React mini-patterns https://hackernoon.com/10-react-mini-patterns-c1da92f068c5</li>
+  <li>(번역) 과연 Vue.js가 앵귤러나 리엑트보다 좋을까? http://blog.jeonghwan.net/vue/2017/03/29/is-vue-better-than-angular-react.html</li>
+  <li>React Component 설계 패턴. Presentational Component vs Container Component.  Presentational Component 는 보여지는 것 담당. 데이터가 어떻게 로드되고 변경되는지 알 필요 없다.  Container Component는 stateful 하며 data source처럼 동작. Presentational 또는 다른 Container를 내포함. https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.8csbbcv4n</li>
+  <li>MVVM 아키텍처 패턴 https://justhackem.wordpress.com/2017/03/05/mvvm-architectural-pattern/</li>
+  <li>자바스크립트 Start-up 성능  https://github.com/nhnent/fe.javascript/wiki/February-6—February-10,-2017</li>
+  <li>Redux Step by Step : 실제 앱을위한 간단하고 탄탄한 워크 플로 https://www.vobour.com/book/view/SiDR6QXtoCayx7afd</li>
+  <li>React.js 실서비스 적용기 http://slides.com/roto/react-js-live-service#/</li>
+  <li>올 한해, ReactJS개발은 접다. https://brunch.co.kr/@matthew-chang/14</li>
+  <li>React 렌더링 빠르게 하기 https://github.com/nhnent/fe.javascript/wiki/May-16—May-20,-2016</li>
+  <li>Redux 와 Webpack 을 사용할 때 알아두면 도움이 될 9 가지 http://1ambda.github.io/tips-redux-and-webpack/</li>
+  <li>다른 프레임워크와 vue.js 비교 http://haruair.com/blog/3605</li>
+</ul>
+
+<h2 id="heading-server-side-rendering">Server side rendering</h2>
+<ul>
+  <li>react-router :: 3장. 서버사이드 렌더링 https://velopert.com/3425</li>
+  <li>왜 React와 서버 사이드 렌더링인가? https://subicura.com/2016/06/20/server-side-rendering-with-react.html</li>
+  <li>Hypernova 불필요하게 express 띄우지 않고 server side rendering만 수행해주는 서버. 에어비앤비 제작  https://github.com/airbnb/hypernova</li>
+  <li>[번역] Client-side rendering VS. Server-sde rendering https://jongmin92.github.io/2017/06/06/JavaScript/client-side-rendering-vs-server-side-rendering/</li>
+  <li>prerender.cloud https://www.prerender.cloud</li>
+  <li>애니메타의 React 서버 렌더링 아키텍쳐 http://blog.sapzil.org/2016/07/29/animeta-react-ssr/</li>
+</ul>
+
+<h2 id="heading-web">Web</h2>
+<ul>
+  <li>Redirect After Post http://www.theserverside.com/news/1365146/Redirect-After-Post</li>
+  <li>나쁜 유저 인터페이스를 고치는 법 https://t.co/mhM5KtUheQ</li>
+  <li>프로그래시브 웹앱 성능에 대한 React, Preact 케이스 스터디 : Treebo https://github.com/nhnent/fe.javascript/wiki/October-23-October-27,-2017</li>
+  <li>responsive web https://developers.google.com/web/fundamentals/design-and-ux/responsive/</li>
+  <li>You Do Not Understand Browser History https://madhatted.com/2013/6/16/you-do-not-understand-browser-history</li>
+  <li>Please Respect The “Back” Button https://www.telerik.com/blogs/please-respect-the-back-button</li>
+  <li>Don’t forget the back button in your single page app http://www.tivix.com/blog/dont-forget-the-back-button-in-your-single-page-ap</li>
+  <li>PRPL 패턴 https://developers.google.com/web/fundamentals/performance/prpl-pattern/</li>
+  <li>파일명 해싱 https://webpack.js.org/guides/caching/</li>
+  <li>홈쇼핑처럼 개발후기. 개발에 사용된 기술과 이유, 뒷이야기가 재미있음 https://subicura.com/2016/05/30/likehs-develop-log.html</li>
+  <li>When the UI Is Too Fast https://www.nngroup.com/articles/too-fast-ux/</li>
+  <li>HTTP/2 is here, let’s optimize! https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM/edit#slide=id.p19</li>
+  <li>critical - Critical extracts &amp; inlines critical-path (above-the-fold) CSS from HTML https://t.co/JS2XYThQXA</li>
+  <li>RT 웹페이지 작성할 때 최초 로딩부준을 인라인으로 작성해서 속도 최적화하는 걸 항상 다 만들고 나면 너무 힘들었는데 이런 도구가 있었네</li>
+  <li>정적 파일 버저닝해서 CDN 제공 관련 아이디어 https://spring.io/blog/2014/07/24/spring-framework-4-1-handling-static-web-resources</li>
+  <li>더 빠른 웹을 위하여 - 웹 캐쉬 (WEB CACHE) http://cyberx.tistory.com/9</li>
+  <li>BBuzzArt 프론트엔드 작업 경험담 https://bbuzzart.github.io/5/</li>
+  <li>CSS 방법론 http://nalragg.tistory.com/69</li>
+  <li>웹 브라우저 렌더링 http://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&amp;memberNo=34176766</li>
+  <li>Progressive Web App Libaries in Production https://medium.com/@koh.yesl/progressive-web-app-libaries-in-production-991da49cc97</li>
+  <li>Preload, Prefetch And Priorities in Chrome https://medium.com/@koh.yesl/preload-prefetch-and-priorities-in-chrome-15d77326f646</li>
+  <li>크롬 개발자의 웹페이지 성능 올리기 https://speakerdeck.com/addyosmani/the-browser-hackers-guide-to-instant-loading</li>
+  <li>대규모 엔지니어링 팀의 모던 프론트엔드 스택 스타일 가이드와 소개 https://github.com/grab/front-end-guide</li>
+  <li>웹 퍼포먼스 관련 튜토리얼 세션 자료. 정리가 잘 되어있습니다. https://www.slideshare.net/GarethHughe</li>
+</ul>
+
+<h2 id="heading-first-reading">First Reading</h2>
+<ul>
+  <li>프론트 엔드 가이드(Grab Front End Guide )https://m.blog.naver.com/magnking/221149133410</li>
+  <li>Resource Timing의 이해 https://developers.google.com/web/tools/chrome-devtools/network-performance/understanding-resource-timing</li>
+  <li>Web developer roadmap in 2017 https://t.co/JrOah3QMeZ</li>
+</ul>
+
+<h2 id="heading-javascript">Javascript</h2>
+<ul>
+  <li>안티 패턴 https://github.com/nhnent/fe.javascript/wiki/안티-패턴</li>
+  <li>JavaScript in 2017: 옛날 사람 탈출하기 http://meshlabs.ghost.io/javascript-in-2017/</li>
+  <li>모던 자바스크립트 애플리케이션 해부학 https://github.com/nhnent/fe.javascript/wiki/May-22—May-26,-2017</li>
+  <li>ES2015+ Cheatsheet https://devhints.io/es6</li>
+  <li>ES6, 잘 쓰고 계시죠? https://www.slideshare.net/janghyunhan/es6-75043772</li>
+  <li>[Tool] (번역) Everything you need to know about BabelJS https://jaeyeophan.github.io/2017/05/16/Everything-about-babel/</li>
+  <li>ES6의 제너레이터를 사용한 비동기 프로그래밍 https://github.com/nhnent/fe.javascript/wiki/April-4—April-8,-2016</li>
+  <li>자바스크립트 모듈, 모듈 포맷, 모듈 로더와 모듈 번들러에 대한 10분 입문서 https://github.com/nhnent/fe.javascript/wiki/April-10—April-14,-2017</li>
+  <li>[번역]ES6 축약코딩 기법 19가지 https://chanspark.github.io/2017/11/28/ES6-꿀팁.html</li>
+  <li>웹팩 대안 https://parceljs.org</li>
+  <li>자바스크립트 모듈, 모듈 포맷, 모듈 로더와 모듈 번들러에 대한 10분 입문서 https://github.com/nhnent/fe.javascript/wiki/April-10—April-14,-2017</li>
+  <li>웹팩 가이드 https://webpack.academy</li>
+  <li>어떻게 JavaScript 로딩은 사이트를 느리게 하는가 (비동기임에도 불구하고!) https://medium.com/@koh.yesl/how-loading-javascript-can-slow-websites-down-even-if-its-asynchronous-2c9d35016649</li>
+  <li>꼭 알아야하는 Javascript 디자인 패턴 4가지 https://kkd927.github.io/general/web/javascript/2017/04/12/4-JavaScript-Design-Patterns-You-Should-Know.html</li>
+  <li>(Webpack 2) 최적화하기 https://perfectacle.github.io/2017/04/18/webpack2-optimize/index.html</li>
+  <li>Airbnb의 ES6 자바스크립트 스타일 가이드 - Firejune http://firejune.com/1794/Airbnb의+ES6+자바스크립트+스타일+가이드#newcomment-1794</li>
+  <li>실시간 트랜스파일과 모듈화된 프론트앤드 개발환경 - Firejune http://firejune.com/1797/실시간+트랜스파일과+모듈화된+프론트앤드+개발환경</li>
+</ul>
+
+<h2 id="heading-client-side-rendering">Client Side Rendering</h2>
+<ul>
+  <li>한국어로 배우는 리액트 https://github.com/reactkr/learn-react-in-korean/blob/master/readme.md</li>
+  <li>https://kr.vuejs.org/v2/guide/</li>
+  <li>Vue.js 입문서 - 프론트엔드 개발자를 위한 https://joshua1988.github.io/web_dev/vuejs-tutorial-for-beginner/</li>
+  <li>React 인가 Vue 인가? https://joshua1988.github.io/web-development/translation/vue-or-react/</li>
+  <li>Angular 2 대신에 Vue.js를 선택한 이유 (그리고 React를 선택하지 않은 이유)  https://joshua1988.github.io/web-development/translation/why-we-moved-from-angular2-to-vuejs/</li>
+  <li>React 프로젝트의 디렉토리 구조 https://medium.com/@FourwingsY/react-프로젝트의-디렉토리-구조-bb183c0a426e</li>
+  <li>Redux로의 카툰 안내서 http://bestalign.github.io/2015/10/26/cartoon-intro-to-redux/</li>
+  <li>React 애플리케이션 아키텍처 - 아무도 알려주지 않아서 혼자서 삽질했다. https://www.slideshare.net/byungdaesohn/react-76078368</li>
+  <li>[번역] Redux 아키텍쳐를 위한 10가지 팁 https://rhostem.github.io/posts/2017-01-23-10-Tips-for-Better-Redux-Architecture/</li>
+  <li>[번역] 프레젠테이션 컴포넌트와 컨테이너 컴포넌트 https://blueshw.github.io/2017/06/26/presentaional-component-container-component/</li>
+  <li>The disadvantages of single page applications https://adamsilver.io/articles/the-disadvantages-of-single-page-applications/</li>
+  <li>Single Page Application &amp; Routing http://poiemaweb.com/js-spa</li>
+  <li>4 AJAX patterns for Vue.js APps https://dzone.com/articles/4-ajax-patterns-for-vuejs-apps</li>
+  <li>Redux https://okjungsoo.wordpress.com/2015/12/27/redux/</li>
+  <li>Redux-Saga: 사이드 이펙트 관리 https://github.com/nhnent/fe.javascript/wiki/November-20—November-24,-2017</li>
+  <li>VROONG TMS 매니저웹 폴더 구조 변천사 http://meshlabs.ghost.io/vroong-tms-folder-structure/</li>
+  <li>Redux가 필요하다는 것을 언제 알 수 있나요? https://medium.com/@Dev_Bono/redux가-필요하다는-것을-언제-알-수-있나요-426a148da64d</li>
+  <li>Pure ui control https://medium.com/@asolove/pure-ui-control-ac8d1be97a8d?source=safariShare-d41c6dc304b6-1500798741</li>
+  <li>Angular 2 대신에 Vue.js를 선택한 이유 (그리고 React를 선택하지 않은 이유) https://joshua1988.github.io/web-development/translation/why-we-moved-from-angular2-to-vuejs/</li>
+  <li>React 인가 Vue 인가? https://joshua1988.github.io/web-development/translation/vue-or-react/</li>
+  <li>Vue를 만드는 여정은 개발자로 성장하는 여정이었다 - 비전공자가 Vue.js를 창작하기까지: http://blog.naver.com/PostThumbnailView.nhn?blogId=fastcampus&amp;logNo=220969253285&amp;categoryNo=216&amp;parentCategoryNo=43</li>
+  <li>Dynamic Components in Vue.js https://coligo.io/dynamic-components-in-vuejs/</li>
+  <li>2016년에 자바스크립트를 배우는 기분 http://www.looah.com/article/view/2054</li>
+  <li>패스 웹 프로젝트를 회고하면</li>
+</ul>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/1970/01/01/note-1/" title=" 'note#1'"> ← note#1</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/1970/01/01/quick-kramdown-demo/" title="Next Post 'Quick kramdown demo'">Quick kramdown demo → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

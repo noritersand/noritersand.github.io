@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>JavaScript: 엄격 모드 strict mode | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="JavaScript: 엄격 모드 strict mode" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode http://www.w3schools.com/js/js_strict.asp http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드" />
+<meta property="og:description" content="참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode http://www.w3schools.com/js/js_strict.asp http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드" />
+<link rel="canonical" href="http://localhost:4000/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/" />
+<meta property="og:url" content="http://localhost:4000/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-20T16:24:15+09:00" />
+<script type="application/ld+json">
+{"headline":"JavaScript: 엄격 모드 strict mode","dateModified":"2018-03-20T16:24:15+09:00","datePublished":"2018-03-20T16:24:15+09:00","url":"http://localhost:4000/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/"},"description":"참고한 글 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode http://www.w3schools.com/js/js_strict.asp http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="ecmascript,javascript,strict mode" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">JavaScript: 엄격 모드 strict mode</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2018-03-20T16:24:15+09:00" datetime="2018-03-20T16:24:15+09:00">March 20, 2018 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#javascript" title="javascript">
+            javascript <span>34</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#ecmascript" title="ecmascript">ecmascript <span>25</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#javascript" title="javascript">javascript <span>27</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#strict-mode" title="strict mode">strict mode <span>1</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h4 id="heading-참고한-글">참고한 글</h4>
+<ul>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode</a></li>
+  <li><a href="http://www.w3schools.com/js/js_strict.asp">http://www.w3schools.com/js/js_strict.asp</a></li>
+  <li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
+</ul>
+
+<h4 id="heading-테스트-환경">테스트 환경</h4>
+<ul>
+  <li>파이어 폭스 47</li>
+  <li>크롬 51</li>
+</ul>
+
+<h2 id="heading-엄격-모드란">엄격 모드란?</h2>
+<p>'strict mode(이하 엄격 모드)'는 ECMAScript 5부터 새로 추가된 기능이다. 스크립트의 시작 부분이나 함수 코드 블록의 시작부분에 <code class="highlighter-rouge">use strict</code>를 작성하는 것으로 엄격 모드임을 지시한다. 엄격 모드가 아닌 지역은 '표준 모드'로 구분된다. (표준 모드는 'non-strict', 'sloppy mode'라고도 함.)</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="c1">// 이 함수는 엄격 모드가 적용됨.</span>
+<span class="p">}</span>
+<span class="c1">// 스크립트 시작 부분에 지시어가 없으면 엄격 모드가 적용되지 않음.</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">use strict</code>를 함수 머리에 작성하면 엄격 모드의 적용 범위는 해당 함수로 제한된다. 위의 경우 최상위 스코프는 엄격 모드가 적용되지 않는다.</p>
+
+<blockquote>
+  <p>표준 모드: 살짝 문제가 있지만… 그냥 넘어가지 뭐.
+엄격 모드: 응 에러</p>
+</blockquote>
+
+<p>엄격 모드의 가장 큰 특징은 '잘못된 구문(bad syntax)'을 어물쩡 넘어가지 않는다는 것이다. 표준 모드는 비록 잘못된 구문이 있더라도 정말 심각한 오류가 아니라면 알아서 보완하거나 단지 false를 반환하는 것으로 그치는데 비해, 엄격 모드에선 잘못된 구문을 항상 에러로 내뱉는다. 에러가 발생했으니 남은 코드의 실행이 중단되는 것은 덤.</p>
+
+<h2 id="heading-엄격-모드에서-에러가-발생하는-잘못된-구문들">엄격 모드에서 에러가 발생하는 잘못된 구문들</h2>
+<p>아래는 표준 모드에서도 문제가 있거나 실패하는 구문이지만 에러가 발생하지는 않던 구문들이다. 엄격 모드에선 에러가 발생한다.</p>
+
+<h3 id="heading-var로-선언된-변수와-함수-선언문으로-생성된-함수-함수의-파라미터-삭제-불가">var로 선언된 변수와 함수 선언문으로 생성된 함수, 함수의 파라미터 삭제 불가</h3>
+<p>단순히 실패만 하던 삭제 시도는 이제 에러가 발생한다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">deleteParameter</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="k">delete</span> <span class="nx">param</span><span class="p">;</span> <span class="c1">// SyntaxError: applying the 'delete' operator to an unqualified name is deprecated</span>
+<span class="p">}</span>
+<span class="nx">deleteParameter</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">deleteFunctionObject</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">function</span> <span class="nx">aaa</span><span class="p">()</span> <span class="p">{}</span>
+  <span class="k">delete</span> <span class="nx">aaa</span><span class="p">;</span> <span class="c1">// SyntaxError: applying the 'delete' operator to an unqualified name is deprecated</span>
+<span class="p">}</span>
+<span class="nx">deleteFunctionObject</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">deleteVariable</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+  <span class="k">delete</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">// SyntaxError: applying the 'delete' operator to an unqualified name is deprecated</span>
+<span class="p">}</span>
+<span class="nx">deleteVariable</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="heading-non-extensiblenon-writablenon-configurable">non-extensible/non-writable/non-configurable</h3>
+<p>non-extensible 객체에 프로퍼티를 추가할 때와 non-writable 프로퍼티의 값을 변경할 때, non-configurable 프로퍼티를 지우려고 할 때 타입 에러가 발생한다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">nonextensible</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">preventExtensions</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// TypeError: can't define property "a": Object is not extensible</span>
+<span class="p">}</span>
+<span class="nx">nonextensible</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">nonwritable</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+    <span class="na">writable</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">});</span>
+  <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span> <span class="o">=</span> <span class="mi">456</span><span class="p">;</span> <span class="c1">// TypeError: "a" is read-only</span>
+<span class="p">}</span>
+<span class="nx">nonwritable</span><span class="p">();</span>
+
+<span class="kd">function</span> <span class="nx">nonconfigurable</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span>
+  <span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="s1">'a'</span><span class="p">,</span> <span class="p">{</span>
+    <span class="na">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="na">configurable</span><span class="p">:</span> <span class="kc">false</span>
+  <span class="p">});</span>
+  <span class="k">delete</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// TypeError: property "a" is non-configurable and can't be deleted</span>
+<span class="p">}</span>
+<span class="nx">nonconfigurable</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="heading-객체-리터럴에-같은-이름의-프로퍼티-중복-불가"><del>객체 리터럴에 같은 이름의 프로퍼티 중복 불가</del></h3>
+<p>ES2015(ES6)에서 허용됨.</p>
+
+<h3 id="heading-함수에-동일한-이름의-파라미터가-존재할-수-없음">함수에 동일한 이름의 파라미터가 존재할 수 없음</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">strict</span><span class="p">(</span><span class="nx">param</span><span class="p">,</span> <span class="nx">param</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// SyntaxError: Duplicate parameter name not allowed in this context</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="heading-getter만-있고-setter가-없는-객체의-프로퍼티에-값-할당-불가">getter만 있고 setter가 없는 객체의 프로퍼티에 값 할당 불가</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 'use strict';</span>
+<span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="kd">get</span> <span class="nx">x</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">};</span>
+<span class="nx">obj</span><span class="p">.</span><span class="nx">x</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// TypeError: setting a property that has only a getter</span>
+</code></pre></div></div>
+
+<h3 id="heading-원시-타입의-래퍼-객체에-프로퍼티-추가-불가">원시 타입의 래퍼 객체에 프로퍼티 추가 불가</h3>
+<p>원시 타입이 변환된 래퍼 객체에 프로퍼티를 추가하거나 기존 프로퍼티의 값을 바꾸는 것은 불가능하며 타입 에러가 발생한다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="kc">false</span><span class="p">.</span><span class="kc">true</span> <span class="o">=</span> <span class="s1">''</span><span class="p">;</span> <span class="c1">// TypeError: can't assign to properties of (new Boolean(false)): not an object</span>
+<span class="p">(</span><span class="mi">14</span><span class="p">).</span><span class="nx">sailing</span> <span class="o">=</span> <span class="s1">'home'</span><span class="p">;</span> <span class="c1">// TypeError: can't assign to properties of (new Number(14)): not an object</span>
+<span class="s1">'BBK'</span><span class="p">.</span><span class="nx">include</span> <span class="o">=</span> <span class="s1">'MB'</span><span class="p">;</span> <span class="c1">// TypeError: can't assign to properties of (new String("BBK")): not an object</span>
+</code></pre></div></div>
+
+<h2 id="heading-엄격-모드에서-다르게-작동하는-구문들">엄격 모드에서 다르게 작동하는 구문들</h2>
+<p>아래는 표준 모드와 다르게 작동하는 구문들이다. 엄격 모드에서 사용이 금지되거나 허용되지 않는 것도 포함한다.</p>
+
+<h3 id="heading-암시적-변수-선언">암시적 변수 선언</h3>
+<p>모든 변수는 선언되지 않고 사용할 수 없다. 표준 모드에선 var 키워드 없이 생성된 변수는 마치 전역 변수인 것처럼 자동으로 생성되고 사용할 수 있었지만 엄격 모드에서는 허용되지 않는다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="nx">obj</span> <span class="o">=</span> <span class="p">{};</span> <span class="c1">// ReferenceError: assignment to undeclared variable obj</span>
+</code></pre></div></div>
+
+<h3 id="heading-with문-사용불가">with문 사용불가</h3>
+<p>유효 범위 체인을 변경하는 with문은 엄격 모드에서 사용할 수 없다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="kd">with</span> <span class="p">(</span><span class="nb">Math</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">})();</span> <span class="c1">// SyntaxError: strict mode code may not contain 'with' statements</span>
+</code></pre></div></div>
+
+<h3 id="heading-this의-변화">this의 변화</h3>
+<p>함수가 메서드가 아닌 함수로 호출될 때 this는 undefined가 된다(표준 모드에선 함수로 호출될 때의 this는 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">supportStrictMode</span> <span class="o">=</span> <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="k">this</span> <span class="o">===</span> <span class="kc">undefined</span><span class="p">;</span>
+<span class="p">})();</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="nx">supportStrictMode</span><span class="p">);</span>
+</code></pre></div></div>
+<p>그리고 함수가 <code class="highlighter-rouge">call()</code>이나 <code class="highlighter-rouge">apply()</code>로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 표준 모드에선 첫 번째 인자가 원시 타입이면 this는 래퍼 객체가 된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">standard</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// Number { 123 }</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">typeof</span> <span class="k">this</span><span class="p">);</span> <span class="c1">// object</span>
+<span class="p">}</span>
+<span class="nx">standard</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">strict</span><span class="p">(</span><span class="nx">arg</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">this</span><span class="p">);</span> <span class="c1">// 123</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="k">typeof</span> <span class="k">this</span><span class="p">);</span> <span class="c1">// number</span>
+<span class="p">}</span>
+<span class="nx">strict</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="heading-eval-함수의-유효범위">eval() 함수의 유효범위</h3>
+<p>엄격 모드에서 <code class="highlighter-rouge">eval()</code> 함수는 함수 안의 중첩된 유효 범위로 취급된다. 때문에 <code class="highlighter-rouge">eval()</code>의 전달인자에 의해 생성된 변수나 함수가 있다면 이것은 <code class="highlighter-rouge">eval()</code> 내에서만 존재하게 된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="kr">eval</span><span class="p">(</span><span class="s1">'function a() { console.debug(123); }'</span><span class="p">);</span>
+<span class="nx">a</span><span class="p">();</span> <span class="c1">// ReferenceError: a is not defined</span>
+</code></pre></div></div>
+
+<h3 id="heading-arguments-객체의-분리">arguments 객체의 분리</h3>
+<p>표준 모드에선 arguments의 원소와 함수의 파라미터의 참조값이 같다. 엄격 모드에선 이 둘이 분리된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">standard</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">param</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// 1</span>
+<span class="p">}</span>
+<span class="nx">standard</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+
+<span class="kd">function</span> <span class="nx">strict</span><span class="p">(</span><span class="nx">param</span><span class="p">)</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="nx">param</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="kr">arguments</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="c1">// 123</span>
+<span class="p">}</span>
+<span class="nx">strict</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h3 id="heading-8진수-리터럴-사용-불가">8진수 리터럴 사용 불가</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">debug</span><span class="p">(</span><span class="mi">010</span><span class="p">);</span> <span class="c1">// SyntaxError: octal literals and octal escape sequences are deprecated</span>
+</code></pre></div></div>
+
+<h3 id="heading-함수의-프로퍼티인-arguments-caller-callee에-접근-불가">함수의 프로퍼티인 arguments, caller, callee에 접근 불가</h3>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+  <span class="k">return</span> <span class="kr">arguments</span><span class="p">.</span><span class="nx">callee</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="nx">fn</span><span class="p">();</span> <span class="c1">// TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them</span>
+<span class="nx">fn</span><span class="p">.</span><span class="nx">caller</span><span class="p">;</span> <span class="c1">// TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them</span>
+<span class="nx">fn</span><span class="p">.</span><span class="kr">arguments</span><span class="p">;</span> <span class="c1">// TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them</span>
+</code></pre></div></div>
+
+<h3 id="heading-eval과-arguments는-키워드로-취급됨">eval과 arguments는 키워드로 취급됨</h3>
+<p>키워드는 식별자로 사용할 수 없음.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s1">'use strict'</span><span class="p">;</span>
+<span class="kd">var</span> <span class="kr">eval</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// SyntaxError: redefining eval is deprecated</span>
+<span class="kd">var</span> <span class="kr">arguments</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span> <span class="c1">// SyntaxError: redefining arguments is deprecated</span>
+</code></pre></div></div>
+
+<h3 id="heading-엄격-모드에서-사용할-수-없는-예약어들">엄격 모드에서 사용할 수 없는 예약어들</h3>
+<p>다음 목록은 키워드로 예약되어 있어서 식별자로 사용할 수 없다. (변수, 함수, 파라미터, 레이블의 이름으로 사용 불가)</p>
+<ul>
+  <li>implements</li>
+  <li>interface</li>
+  <li>let</li>
+  <li>package</li>
+  <li>private</li>
+  <li>protected</li>
+  <li>public</li>
+  <li>static</li>
+  <li>yield</li>
+</ul>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/" title=" 'JavaScript: 타입 변환 type conversion'"> ← JavaScript: 타입 변환 type conversion</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/2018/03/20/JavaScript-%EC%BF%A0%ED%82%A4-%EC%BB%A8%ED%8A%B8%EB%A1%A4/" title="Next Post 'JavaScript: 쿠키 컨트롤'">JavaScript: 쿠키 컨트롤 → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>

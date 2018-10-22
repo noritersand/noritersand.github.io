@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+<!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>JavaScript: 타입 변환 type conversion | 내 아이큐 80, 너도 80, 둘이 합쳐 160</title>
+<meta name="generator" content="Jekyll v3.7.3" />
+<meta property="og:title" content="JavaScript: 타입 변환 type conversion" />
+<meta property="og:locale" content="en" />
+<meta name="description" content="참고한 글 http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드" />
+<meta property="og:description" content="참고한 글 http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드" />
+<link rel="canonical" href="http://localhost:4000/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/" />
+<meta property="og:url" content="http://localhost:4000/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/" />
+<meta property="og:site_name" content="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-20T16:15:11+09:00" />
+<script type="application/ld+json">
+{"headline":"JavaScript: 타입 변환 type conversion","dateModified":"2018-03-20T16:15:11+09:00","datePublished":"2018-03-20T16:15:11+09:00","url":"http://localhost:4000/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/03/20/JavaScript-%ED%83%80%EC%9E%85-%EB%B3%80%ED%99%98-type-conversion/"},"description":"참고한 글 http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<meta name="keywords" content="ecmascript,javascript,type,conversion" />
+
+
+
+
+
+<link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="내 아이큐 80, 너도 80, 둘이 합쳐 160" />
+    <link href='/assets/stylesheets/blog.css' rel="stylesheet" type="text/css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+<script>window.Modernizr || document.write('<script src="/assets/javascripts/modernizr-2.8.3.min.js"><\/script>')</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    window.jQuery || document.write('<script src="/assets/javascripts/jquery-3.3.1.min.js"><\/script>')
+</script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+<script>
+    window.Pace || document.write('<script src="/assets/javascripts/pace.min.js"><\/script>')
+</script>
+
+    
+</head>
+
+<body>
+    
+
+    <!--[if IE]>
+    <p class="site-notice">You are using an outdated browser. Please <a href="http://browsehappy.com/" target="_blank">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true" target="_blank">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<noscript>
+    <p class="site-notice">This site requires JavaScript. Here are the instructions <a href="http://www.enable-javascript.com/" target="_blank">how to enable JavaScript in your web browser</a>.</p>
+</noscript>
+
+    <div class="nav-wrapper overlay-wrapper">
+    <div class="nav-form overlay-form">
+        <span class="overlay-header menu">Menu</span>
+        <a class="btn-close">Close</a>
+        <div class="results">
+            <ul>
+                <li><a href="/categories/">Categories</a></li>
+                <li><a href="/tags/">Tags</a></li>
+                <li><a href="/">About</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="search-wrapper overlay-wrapper">
+    <div class="search-form overlay-form">
+        <input type="text" class="overlay-header search-field" placeholder="Search...">
+        <a class="btn-close">Close</a>
+        <ul class="results"></ul>
+    </div>
+</div>
+
+
+    <div id="page" class="hentry">
+        <header class="the-header">
+    <div class="unit-head">
+        <div class="unit-inner unit-head-inner">
+            <nav class="nav-global">
+                <ul>
+                    <li class="logo nav-link">
+                        <button class="btn-menu" title="Menu"></button>
+                        <a href="/blog/">내 아이큐 80, 너도 80, 둘이 합쳐 160</a>
+                        <!--[if !IE]> -->
+                        <button class="btn-search" title="Search"></button>
+                        <!-- <![endif]-->
+                    </li>
+                    <li class="nav-link"><a title="Categories" href="/categories/">Categories</a></li>
+                    <li class="nav-link"><a title="Tags" href="/tags/">Tags</a></li>
+                    <!--[if !IE]> -->
+                    <li class="nav-link"><a title="Search" class="btn-search" href="#">Search</a></li>
+                    <!-- <![endif]-->
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+        <div class="body animated fadeInDown" role="main">
+            <div class="unit-body">
+                <div class="unit-inner unit-body-inner">
+                    <div class="entry-content">
+                        <article class="unit-article layout-post">
+    <div class="unit-inner unit-article-inner">
+        <div itemscope itemtype="http://schema.org/Article" class="content">
+            <header>
+                <div class="unit-head">
+                    <div class="unit-inner unit-head-inner">
+                        <h1 class="entry-title" itemprop="name">JavaScript: 타입 변환 type conversion</h1>
+                    </div>
+                </div>
+            </header>
+            <div class="bd article-content">
+                <div class="entry-content">
+                    <div class="meta">
+                        <p class="date-publish">
+                            Published:
+                            <time itemprop="datePublished" class="date-pub updated"
+                                title="2018-03-20T16:15:11+09:00" datetime="2018-03-20T16:15:11+09:00">March 20, 2018 </time>
+                            by
+                            <a class="author" href="/" rel="author" title="Show Author">
+                                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    <span itemprop="name"></span>
+                                </span>
+                            </a>
+                            
+                                <a class="license-icon" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" title="Show License">
+                                    <img alt="Creative Commons Licence" style="border-width:0" src="/assets/images/theme/cc-by-sa.png"  height="16" width="80"/>
+                                </a>
+                            
+                            
+                        </p>
+                        <ul class="list-category list-linear">
+                            <li class="list-head">Categories: </li>
+                             
+     
+        <li>
+            <a href="/categories/#javascript" title="javascript">
+            javascript <span>34</span></a>
+        </li>
+    
+
+
+
+                        </ul>
+                        <ul class="list-tag list-linear">
+                            <li class="list-head">Tags: </li>
+                             
+    
+        
+        <li>
+            <a href="/tags/#conversion" title="conversion">conversion <span>1</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#ecmascript" title="ecmascript">ecmascript <span>25</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#javascript" title="javascript">javascript <span>27</span></a>
+        </li>
+    
+        
+        <li>
+            <a href="/tags/#type" title="type">type <span>1</span></a>
+        </li>
+    
+
+
+
+
+                        </ul>
+                    </div>
+                    <div itemprop="articleBody">
+                        <h4 id="heading-참고한-글">참고한 글</h4>
+<ul>
+  <li><a href="http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C">http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드</a></li>
+</ul>
+
+<h2 id="heading-암시적-타입-변환">암시적 타입 변환</h2>
+<p>자바스크립트는 필요에 따라 타입 변환을 자동으로 수행한다. 가령 문자열이 필요한 위치에 할당된 값이 문자열이 아니면 문자열 타입으로 변환을 시도할 것이다. 이 과정에서 타입이 올바르지 않아 에러가 발생하는 경우는 거의 없다. 다음은 암시적 타입 변환의 사례들이다:</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'1 is true'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="s1">''</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'null string is false'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">if</span> <span class="p">(</span><span class="s1">'false'</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'"false" is true'</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>if문의 조건으로 불리언이 아닌 값이 할당되면 이 값은 불리언 타입으로 변환된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">a</span> <span class="o">=</span> <span class="nx">a</span> <span class="o">+</span> <span class="s1">''</span><span class="p">;</span>
+<span class="k">typeof</span> <span class="nx">a</span><span class="p">;</span> <span class="c1">// "string"</span>
+<span class="k">typeof</span> <span class="o">+</span><span class="nx">a</span><span class="p">;</span> <span class="c1">// "number"</span>
+
+<span class="kd">var</span> <span class="nx">b</span> <span class="o">=</span> <span class="s2">"2"</span><span class="p">;</span>
+<span class="k">typeof</span> <span class="nx">b</span><span class="o">++</span><span class="p">;</span> <span class="c1">// "number"</span>
+
+<span class="kd">var</span> <span class="nx">c</span> <span class="o">=</span> <span class="s2">"xxx"</span><span class="p">;</span>
+<span class="o">-</span><span class="nx">c</span><span class="p">;</span> <span class="c1">// NaN</span>
+<span class="nx">c</span><span class="o">++</span><span class="p">;</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+<p>산술 연산자 <code class="highlighter-rouge">+</code>는 피연산자가 문자열일 때 다른 피연산자를 문자열로 변환한다. <code class="highlighter-rouge">+</code>가 단항 연산자로 사용되면 피연산자를 숫자로 변환한다. 단항 연산자 <code class="highlighter-rouge">-</code>와 증감 연사자 <code class="highlighter-rouge">--</code>, <code class="highlighter-rouge">++</code>의 암시적 변환도 동일하게 작동한다. 만약 숫자로 변환할 수 없는 문자열이면 NaN으로 변환된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="mi">1</span> <span class="o">==</span> <span class="s2">"1"</span><span class="p">;</span> <span class="c1">// "1"은 1로 변환</span>
+<span class="kc">true</span> <span class="o">==</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// true는 1로 변환</span>
+<span class="kc">false</span> <span class="o">==</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// false는 0으로 변환</span>
+<span class="s2">"1"</span> <span class="o">==</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// "1"은 true로 변환</span>
+<span class="p">[</span><span class="s1">'a'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'a'</span><span class="p">;</span> <span class="c1">// 객체는 toString()이나 valueOf()를 사용해 문자열로 변환</span>
+</code></pre></div></div>
+<p>동등 연산자 <code class="highlighter-rouge">==</code>는 피연산자들이 서로 타입이 다를 때 타입 변환을 시도한다.
+규칙은 다음과 같다:</p>
+<ul>
+  <li>둘 중 하나가 숫자이고 나머지 하나가 문자열일 때 문자열을 숫자로 변환한다.</li>
+  <li>둘 중 하나가 불리언이고 나머지 하나가 숫자일 때 불리언을 숫자로 변환한다.</li>
+  <li>둘 중 하나가 문자열이고 나머지 하나가 불리언일 때 문자열을 불리언으로 변환한다.</li>
+  <li>둘 중 하나가 객체고 나머지 하나가 숫자 또는 문자열이면 객체를 문자열로 변환한다. 이 때 해당 객체의 <code class="highlighter-rouge">toString()</code>이나 <code class="highlighter-rouge">valueOf()</code>가 사용된다.</li>
+</ul>
+
+<h2 id="heading-명시적-타입-변환">명시적 타입 변환</h2>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Boolean</span><span class="p">(</span><span class="s1">'abcd'</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="nb">String</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span> <span class="c1">// "123"</span>
+<span class="nb">String</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span> <span class="c1">// "true"</span>
+<span class="nb">Number</span><span class="p">(</span><span class="s1">'123'</span><span class="p">);</span> <span class="c1">// 123</span>
+<span class="nb">Number</span><span class="p">(</span><span class="s1">'a123'</span><span class="p">);</span> <span class="c1">// NaN</span>
+<span class="nb">Object</span><span class="p">(</span><span class="mi">123</span><span class="p">);</span> <span class="c1">// new Number(123)과 같다.</span>
+</code></pre></div></div>
+<p>자동으로 수행되는 타입 변환 말고도 명시적인 타입 변환이 필요할 수 있다. 원시 타입으로의 변환을 원할 경우엔 단순히 <code class="highlighter-rouge">Boolean()</code>, <code class="highlighter-rouge">Number()</code>, <code class="highlighter-rouge">String()</code>, <code class="highlighter-rouge">Object()</code> 함수를 사용하면 된다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Boolean</span><span class="p">({</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span> <span class="p">});</span> <span class="c1">// true, 객체는 모두 true로 변환된다.</span>
+</code></pre></div></div>
+<p>객체를 불리언으로 변환할 때는 단 하나의 규칙만 기억하면 된다: 객체는 무조건 true다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span> <span class="na">a</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="na">b</span><span class="p">:</span> <span class="mi">2</span> <span class="p">};</span>
+<span class="nb">String</span><span class="p">(</span><span class="nx">obj</span><span class="p">);</span> <span class="c1">// [object Object]</span>
+
+<span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+<span class="nb">String</span><span class="p">(</span><span class="nx">arr</span><span class="p">);</span> <span class="c1">// "1,2,3"</span>
+
+<span class="kd">function</span> <span class="nx">fn</span><span class="p">()</span> <span class="p">{</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'do something'</span><span class="p">);</span> <span class="p">}</span>
+<span class="nb">String</span><span class="p">(</span><span class="nx">fn</span><span class="p">);</span> <span class="c1">// "function fn() { console.log('do something');}"</span>
+
+<span class="nb">String</span><span class="p">(</span><span class="sr">/D/g</span><span class="p">);</span> <span class="c1">// ""/D/g"</span>
+<span class="nb">String</span><span class="p">(</span><span class="k">new</span> <span class="nb">Date</span><span class="p">());</span> <span class="c1">// "Thu Jul 07 2016 15:32:36 GMT+0900"</span>
+</code></pre></div></div>
+<p>객체를 문자열로 변환하려고 할 때 객체가 <code class="highlighter-rouge">toString()</code> 메서드를 갖고 있다면 자바스크립트는 이 메서드를 호출할 것이다. 만약 <code class="highlighter-rouge">toString()</code>을 갖고 있지 않거나 원시 타입을 반환하지 않으면 <code class="highlighter-rouge">toString()</code> 대신 <code class="highlighter-rouge">valueOf()</code>를 찾는다. <code class="highlighter-rouge">valueOf()</code>가 원시 타입을 반환하면 이 값을 문자열로 변환하겠지만 만약 <code class="highlighter-rouge">valueOf()</code>가 없거나 원시 타입을 반환하지 않으면 TypeError가 발생한다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">Number</span><span class="p">([]);</span> <span class="c1">// 0</span>
+<span class="nb">Number</span><span class="p">([</span><span class="mi">1</span><span class="p">]);</span> <span class="c1">// 1</span>
+<span class="nb">Number</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]);</span> <span class="c1">// NaN</span>
+</code></pre></div></div>
+<p>객체를 숫자로 변환할 땐 문자열과 반대로 <code class="highlighter-rouge">valueOf()</code>를 먼저 찾는다. <code class="highlighter-rouge">valueOf()</code>가 있고 원시 타입을 반환하면 이 값을 숫자로 변환하여 돌려준다. <code class="highlighter-rouge">valueOf()</code>가 없거나 원시 타입을 반환하지 않으면 자바스크립트는 <code class="highlighter-rouge">toString()</code>을 찾으며 같은 작업을 수행한다. 만약 <code class="highlighter-rouge">toString()</code>이 없거나 원시 타입을 반환하지 않으면 TypeError가 발생할 것이다.</p>
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s2">"abcdef"</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span> <span class="c1">// "abcdef"</span>
+<span class="sr">/D/g</span><span class="p">.</span><span class="nx">valueOf</span><span class="p">();</span> <span class="c1">// /D/g</span>
+<span class="k">new</span> <span class="nb">Date</span><span class="p">().</span><span class="nx">valueOf</span><span class="p">();</span> <span class="c1">// 1467874589125, 1970-01-01 부터 지난 시간을 밀리초로 표현한 값</span>
+</code></pre></div></div>
+<p><code class="highlighter-rouge">valueOf()</code> 메서드는 오직 래퍼 객체와 정규식, Date 타입에서만 의미 있다. 기본적으로 <code class="highlighter-rouge">valueOf()</code>는 원시 타입으로 변환된 값을 돌려주도록 되어 있는데 대부분의 객체가 원시 타입으로 변환될 수 없으므로 단지 자기 자신(객체 자체)을 돌려줄 뿐이다. 빈 배열이 숫자 0으로 변환되는 것은 이런 특성탓이라 설명할 수 있다.
+Array 타입은 <code class="highlighter-rouge">valueOf()</code> 대신 <code class="highlighter-rouge">toString()</code>을 호출한다(규칙에 따라 <code class="highlighter-rouge">valueOf()</code>를 먼저 찾았으나 원시 타입이 아닌 객체를 돌려주므로 <code class="highlighter-rouge">toString()</code>을 대신 호출하는 것). <code class="highlighter-rouge">toString()</code>은 빈 배열을 빈 문자열로 돌려주며 빈 문자열을 숫자로 바꾸면 0이 되는 것이다.</p>
+
+<h2 id="heading-자바스크립트-타입-변환-표">자바스크립트 타입 변환 표</h2>
+<p>출처: JavasScript: The Definitive Guide. David Flanagan 저. 6판. 58쪽</p>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>String</th>
+      <th>Number</th>
+      <th>Boolean</th>
+      <th>Object</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>undefined</td>
+      <td>"undefined"</td>
+      <td>NaN</td>
+      <td>false</td>
+      <td>TypeError</td>
+    </tr>
+    <tr>
+      <td>null</td>
+      <td>"null"</td>
+      <td>0</td>
+      <td>false</td>
+      <td>TypeError</td>
+    </tr>
+    <tr>
+      <td>true</td>
+      <td>"true"</td>
+      <td>1</td>
+      <td> </td>
+      <td>new Boolean(true)</td>
+    </tr>
+    <tr>
+      <td>false</td>
+      <td>"false"</td>
+      <td>0</td>
+      <td> </td>
+      <td>new Boolean(false)</td>
+    </tr>
+    <tr>
+      <td>"" (null-string)</td>
+      <td> </td>
+      <td>0</td>
+      <td>false</td>
+      <td>new String("")</td>
+    </tr>
+    <tr>
+      <td>"1.2"</td>
+      <td> </td>
+      <td>1.2</td>
+      <td>true</td>
+      <td>new String("1.2")</td>
+    </tr>
+    <tr>
+      <td>"one"</td>
+      <td> </td>
+      <td>NaN</td>
+      <td>true</td>
+      <td>new String("one")</td>
+    </tr>
+    <tr>
+      <td>" "</td>
+      <td> </td>
+      <td>0</td>
+      <td>true</td>
+      <td>new String(" ")</td>
+    </tr>
+    <tr>
+      <td>123</td>
+      <td>"123"</td>
+      <td> </td>
+      <td>true</td>
+      <td>new Number(123)</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>"-1"</td>
+      <td> </td>
+      <td>true</td>
+      <td>new Number(-1)</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>"0"</td>
+      <td> </td>
+      <td>false</td>
+      <td>new Number(0)</td>
+    </tr>
+    <tr>
+      <td>-0</td>
+      <td>"0"</td>
+      <td> </td>
+      <td>false</td>
+      <td>new Number(-0)</td>
+    </tr>
+    <tr>
+      <td>NaN</td>
+      <td>"NaN"</td>
+      <td> </td>
+      <td>false</td>
+      <td>new Number(NaN)</td>
+    </tr>
+    <tr>
+      <td>Infinity</td>
+      <td>"Infinity"</td>
+      <td> </td>
+      <td>true</td>
+      <td>new Number(Infinity)</td>
+    </tr>
+    <tr>
+      <td>-Infinity</td>
+      <td>"-Infinity"</td>
+      <td> </td>
+      <td>true</td>
+      <td>new Number(-Infinity)</td>
+    </tr>
+    <tr>
+      <td>{ }</td>
+      <td> </td>
+      <td> </td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[ ]</td>
+      <td> </td>
+      <td>0</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[9]</td>
+      <td>"9"</td>
+      <td>9</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>["a"]</td>
+      <td> </td>
+      <td>NaN</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>[1, 2]</td>
+      <td> </td>
+      <td>NaN</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>function() { }</td>
+      <td> </td>
+      <td>NaN</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+                    </div>
+                </div>
+            </div>
+            <footer class="unit-foot">
+                <div class="unit-inner unit-foot-inner">
+                    <div class="post-buttons">
+                        <a class="internal gotop" href="#page" title="Back to Top">Back to Top</a>
+                        
+                    </div>
+                    <nav class="pagination">
+                        
+                            <a class="internal" rel="prev" href="/2018/03/20/JavaScript-%EB%9E%98%ED%8D%BC-%EA%B0%9D%EC%B2%B4-wrapper-objects/" title=" 'JavaScript: 래퍼 객체 wrapper objects'"> ← JavaScript: 래퍼 객체 wrapper objects</a>
+                        
+                        
+                            <a class="internal" rel="next" href="/2018/03/20/JavaScript-%EC%97%84%EA%B2%A9-%EB%AA%A8%EB%93%9C-strict-mode/" title="Next Post 'JavaScript: 엄격 모드 strict mode'">JavaScript: 엄격 모드 strict mode → </a>
+                        
+                    </nav>
+                </div>
+            </footer>
+            <div class="misc-content">
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="the-footer">
+    <div class="unit-foot">
+        <div class="unit-inner unit-foot-inner">
+            <div class="misc vcard">
+                <div class="about">
+                    <h4><a href="/">About</a></h4>
+                    
+                        <p>A gem-based responsive simple texture styled <a href="http://jekyllrb.com/">Jekyll</a> theme.</p>
+                    
+                    <p><small>Theme <a href="https://github.com/yizeng/jekyll-theme-simple-texture" target="_blank">Simple Texture</a> developed by <a href="https://yizeng.me" target="_blank">Yi Zeng</a>, powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>.</small></p>
+                </div>
+                <div class="social-links">
+                    
+                    <a class="ico-rss" href="/feed.xml" rel="me" target="_blank" title="feed"></a>
+                    
+                        
+                            <a class="ico-github" href="https://github.com/noritersand" rel="me" target="_blank" title="github"></a>
+                        
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="internal back-to-top">Back to Top</a>
+</footer>
+
+    </div>
+
+    <script>
+$(document).ready(function () {
+    var offset = 50,
+        duration = 500,
+        width = 960;
+    $(window).scroll(function () {
+        if ($(window).width() > width) {
+            if ($(this).scrollTop() > offset) {
+                $('footer').css('top', '20px');
+                $('footer .back-to-top').fadeIn(duration);
+            } else {
+                $('footer').css('top', 'auto');
+                $('footer .back-to-top').fadeOut(duration);
+            }
+        }
+    });
+    $(window).resize(function () {
+        if ($(window).width() < width) {
+            $('footer').css('top', 'auto');
+            $('footer .back-to-top').fadeOut(duration);
+        }
+        if ($(window).width() >= width && $(this).scrollTop() > offset) {
+            $('footer').css('top', '20px');
+            $('footer .back-to-top').fadeIn(duration);
+        }
+    });
+
+    $('footer .back-to-top, .gotop').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 0
+        }, duration);
+        return false;
+    });
+
+    $('.show-hidden').on('click', function () {
+        $(this).parent().next().toggleClass("hidden");
+        $(this).toggleClass("hidden");
+    });
+});
+</script>
+
+<!-- Show menu overlay + Jekyll Simple Search option -->
+<script src="/assets/javascripts/jekyll-search.jquery.js"></script>
+<script>
+$(document).ready(function () {
+    $('.search-field').simpleJekyllSearch({
+      jsonFile: '/search.json',
+      template: '<li><a href="{url}">{title} <span class="entry-date"><time datetime="{date}">{shortdate}</time></span></a></li>',
+      searchResults: '.search-wrapper .results',
+      searchResultsTitle: '<h4>Search results</h4>',
+      noResults: '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
+    });
+});
+
+(function ($, window, undefined) {
+    var closeOverlay = function () {
+        $('.nav-wrapper, .search-wrapper').removeAttr('style');
+        $(".nav-form, .search-form").removeClass('active');
+        $("body").removeClass('nav-overlay search-overlay');
+    };
+
+    $('.nav-global .btn-search').on('click', function () {
+        $('.search-wrapper').css({display: "block"});
+        $(".search-form").addClass('active');
+        $(".search-form").find('input').focus();
+        $("body").addClass('search-overlay');
+    });
+
+    $('.nav-global .btn-menu').on('click', function () {
+        $('.nav-wrapper').css({display: "block"});
+        $(".nav-form").addClass('active');
+        $(".nav-form .search-field").prop('disabled', true);
+        $("body").addClass('nav-overlay');
+    });
+
+    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+        closeOverlay();
+    });
+
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
+        }
+    });
+})(jQuery, window);
+</script>
+
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-buttons.min.js'></script>
+<script src="/assets/javascripts/unveil/jquery.unveil.min.js"></script>
+
+<script>
+    window.jQuery.fancybox || document.write('<script src="/assets/javascripts/fancybox/jquery.fancybox.pack.js?v=2.1.4"><\/script>')
+    window.jQuery.fancybox.helpers.buttons || document.write('<script src="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"><\/script>')
+</script>
+
+<script>
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/jquery.fancybox.css?v=2.1.4" type="text/css" />');
+    $("head").append('<link rel="stylesheet" href="/assets/javascripts/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" type="text/css" />');
+    $(".post-image").fancybox({
+        prevEffect: 'none',
+        nextEffect: 'none',
+        closeBtn: true,
+        helpers: {
+            title: {
+                type: 'float'
+            }
+        }
+    });
+    $(document).ready(function () {
+        $(".post-image > img").unveil(450);
+    });
+</script>
+
+</body>
+
+</html>
