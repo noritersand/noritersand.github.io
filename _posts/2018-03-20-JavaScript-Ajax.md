@@ -11,9 +11,6 @@ tags:
   - xmlhttprequest
 ---
 
-* Kramdown table of contents
-{:toc .toc}
-
 #### 참고한 글
 - [https://xhr.spec.whatwg.org/](https://xhr.spec.whatwg.org/)
 - [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)

@@ -3,14 +3,11 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'markdown syntax'
 categories:
-  - demo
-tags:
+  - html
   - markdown
-  - demo
+tags:
+  - test
 ---
-
-* Kramdown table of contents
-{:toc .toc}
 
 #### 참고한 글
 - [어디어디](/assad)
