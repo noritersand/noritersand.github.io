@@ -42,3 +42,19 @@ taskkill /f /pid 5888
 # 실제 경로는 \dest 디렉토리인 \slink 바로가기 링크 생성 (관리자 권한 필요)
 mklink /d \slink \dest
 ```
+
+## 정품 인증 관련
+
+```bash
+# 키 확인
+wmic path softwarelicensingservice get OA3xOriginalProductKey
+
+# 온라인으로 정품 인증
+slmgr.vbs /ato
+
+# 만료날짜 확인
+slmgr.vbs -xpr
+
+# 라이센스 등록 정보 확인
+slmgr.vbs -dlv
+```
