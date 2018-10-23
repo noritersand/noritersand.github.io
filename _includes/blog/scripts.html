@@ -63,7 +63,7 @@ $(document).ready(function () {
     var openSearchOverlay = function() {
         $('.search-wrapper').css({display: "block"});
         $(".search-form").addClass('active');
-        $(".search-form").find('input').focus().val('');
+        $(".search-form").find('input').focus();
         $("body").addClass('search-overlay');
     }
 
