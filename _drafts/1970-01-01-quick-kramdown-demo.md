@@ -1,11 +1,10 @@
 ---
 layout: post
+date: 1970-01-01 00:00:00 +0900
 title: "Quick kramdown demo"
 description: "A quick demo post to some kramdown features."
 categories: [demo]
 tags: [demo, jekyll]
-redirect_from:
-  - /2017/05/25/
 ---
 
 > This is [kramdown][kramdown] formatting test page for [Simple Texture][Simple Texture] theme.

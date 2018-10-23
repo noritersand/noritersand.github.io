@@ -60,15 +60,11 @@ $(document).ready(function () {
         $("body").removeClass('nav-overlay search-overlay');
     };
 
-    var openSearchOverlay = function() {
+    $('.nav-global .btn-search').on('click', function () {
         $('.search-wrapper').css({display: "block"});
         $(".search-form").addClass('active');
         $(".search-form").find('input').focus();
         $("body").addClass('search-overlay');
-    }
-
-    $('.nav-global .btn-search').on('click', function () {
-        openSearchOverlay();
     });
 
     $('.nav-global .btn-menu').on('click', function () {
@@ -82,15 +78,9 @@ $(document).ready(function () {
         closeOverlay();
     });
 
-    $(document).on({
-        keyup: function(e) {
-            if (e.keyCode === 27) {
-                closeOverlay();
-            }
-        }, keydown: function(e) {
-            if ((e.keyCode || e.which) === 70) {
-                openSearchOverlay();
-            }
+    $(document).on('keyup', function (e) {
+        if (e.keyCode === 27) {
+            closeOverlay();
         }
     });
 })(jQuery, window);
