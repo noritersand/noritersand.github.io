@@ -83,11 +83,11 @@ $(document).ready(function () {
     });
 
     $(document).on({
-        keyup: function() {
+        keyup: function(e) {
             if (e.keyCode === 27) {
                 closeOverlay();
             }
-        }, keydown: function() {
+        }, keydown: function(e) {
             if ((e.keyCode || e.which) === 70) {
                 openSearchOverlay();
             }
