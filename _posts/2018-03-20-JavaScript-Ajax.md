@@ -80,7 +80,7 @@ var xhr = new XMLHttpRequest();
 
 ## XMLHttpRequest의 프로퍼티
 
-#### XMLHttpRequest.open()
+### XMLHttpRequest.open()
 ```
 XMLHttpRequest.open( method, url [ , async ] )
 ```
@@ -95,7 +95,7 @@ xhr.open('GET', 'test2.html');
 // GET 방식으로 요청할 URL 설정
 ```
 
-#### XMLHttpRequest.setRequestHeader()
+### XMLHttpRequest.setRequestHeader()
 ```
 XMLHttpRequest.setRequestHeader( header, value )
 ```
@@ -104,7 +104,7 @@ XMLHttpRequest.setRequestHeader( header, value )
 
 HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 나중에 호출되어야 한다.
 
-#### XMLHttpRequest.send()
+### XMLHttpRequest.send()
 ```
 XMLHttpRequest.send( [ string ] )
 ```
@@ -118,13 +118,13 @@ xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 xhr.send('first=111&second=222');
 ```
 
-#### XMLHttpRequest.abort()
+### XMLHttpRequest.abort()
 ```
 xhr.abort();
 ```
 수행 중인 통신을 중단한다. 이미 날라간 request는 어쩔 수 없고 단지 응답을 무시할 뿐. ~~통수~~
 
-#### XMLHttpRequest.getAllResponseHeaders()
+### XMLHttpRequest.getAllResponseHeaders()
 response 헤더 정보를 출력한다. send()를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드
 ```js
 xhr.getAllResponseHeaders();
@@ -135,7 +135,7 @@ xhr.getAllResponseHeaders();
 // "
 ```
 
-#### XMLHttpRequest.getResponseHeader()
+### XMLHttpRequest.getResponseHeader()
 ```
 XMLHttpRequest.getResponseHeader( header )
 ```
@@ -147,22 +147,22 @@ xhr.getResponseHeader('Content-Type')
 // "text/html;charset=UTF-8"
 ```
 
-#### XMLHttpRequest.timeout
+### XMLHttpRequest.timeout
 지정한 시간을 초과하면 XMLHttpRequestEventTarget.ontimeout을 호출한다. 단위는 밀리초(milliseconds)
 
-#### XMLHttpRequest.responseText
+### XMLHttpRequest.responseText
 서버의 응답을 문자열로 리턴.
 
-#### XMLHttpRequest.responseXML
+### XMLHttpRequest.responseXML
 서버의 응답을 XMLDocument로 파싱해 리턴. 파싱이 불가능하면 null을 리턴한다.
 
-#### XMLHttpRequest.status
+### XMLHttpRequest.status
 응답의 상태코드를 숫자로 리턴한다.
 
-#### XMLHttpRequest.statusText
+### XMLHttpRequest.statusText
 응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 404일 때 리턴되는 값은 "Not Found"
 
-#### XMLHttpRequest.readyState
+### XMLHttpRequest.readyState
 XMLHttpRequest의 현재 상태를 의미한다.
 - `0`: request not initialized.
 - `1`: server connection established
@@ -173,7 +173,7 @@ XMLHttpRequest의 현재 상태를 의미한다.
 ## Attach callback function
 통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 XMLHttpRequest의 onreadystatechange() 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 EventTarget.addEventListener() 이용하는 방법이 있다.
 
-#### XMLHttpRequest.onreadystatechange
+### XMLHttpRequest.onreadystatechange
 ```js
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
@@ -186,7 +186,7 @@ xhr.send();
 ```
 onreadystatechange()는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
 
-#### [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+### [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 ```
 EventTarget.addEventListener( eventType, callback )
 ```
@@ -205,7 +205,7 @@ xhr.open('GET', 'http://example.org/example.txt');
 xhr.send();
 ```
 
-#### [XMLHttpRequestEventTarget](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget)
+### [XMLHttpRequestEventTarget](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget)
 ```js
 var xhr = new XMLHttpRequest();
 console.debug(xhr);

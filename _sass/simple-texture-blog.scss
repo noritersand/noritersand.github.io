@@ -39,7 +39,8 @@ h4 {
 
 .h1,
 h1 {
-    font-size: 1.725em;
+    //font-size: 1.725em;
+    font-size: 2.425em;
     line-height: 42px;
 
     margin-top: 42px;
@@ -48,11 +49,12 @@ h1 {
 
 .h2,
 h2 {
-    font-size: 1.575em;
+    // font-size: 1.575em;
     line-height: 42px;
-
     margin-top: 34px;
     margin-bottom: 16px;
+    font-size: 1.825em;
+    border-bottom: 1px solid #e6e6e6;
 }
 
 .h3,
