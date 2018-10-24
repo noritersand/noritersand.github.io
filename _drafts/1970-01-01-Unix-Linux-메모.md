@@ -10,6 +10,9 @@ tags:
   - linux
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 별칭같은 설정은 일반적으로
 유저 `/home/user/.bashrc`
 루트 `/etc/rc.d/rc.local`

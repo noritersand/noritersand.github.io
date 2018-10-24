@@ -10,6 +10,9 @@ tags:
   - control statement
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 #### 참고한 글
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling

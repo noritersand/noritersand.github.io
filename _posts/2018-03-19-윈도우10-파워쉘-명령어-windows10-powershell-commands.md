@@ -13,6 +13,9 @@ tags:
   - todo
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## Get-Alias
 기본 별칭: gal, alias
 설정된 별칭 목록을 출력한다.
