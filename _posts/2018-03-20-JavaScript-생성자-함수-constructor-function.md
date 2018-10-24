@@ -39,7 +39,7 @@ bob2 instanceof Person; // true
 ```
 `new Object()`와 `Object()`의 결과가 같은 이유는 Object 함수가 위처럼 되어 있기 때문이다. 생성자 함수가 new 키워드 없이 일반 함수로써 호출되면 `this`는 생성자 함수의 프로토타입이 아니라 함수를 소유하고있는 객체가 된다. (실행기가 브라우저라면 `this`는 Window다.)
 
-## 생성자의 메서드
+## 생성자'의' 메서드
 ```js
 function Person(name){
   this.name = name;
