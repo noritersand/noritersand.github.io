@@ -10,6 +10,9 @@ tags:
   - global objects
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 #### 참고한 글
 - http://www.nodejs.org/api/globals.html
 - http://nodejs.sideeffect.kr/docs
