@@ -17,7 +17,7 @@ javac -target 8 Test.java
 ```
 
 이클립스에서는 이 옵션이 `Window` > `Preferences` 혹은 각 프로젝트의 `Properties` 설정화면에 `Java Compiler` 메뉴로 제공된다.
-![](/images/image-comiler-target-1.png)
+![](/images/compiler-target-1.png)
 
 메이븐에선 pom.xml에서 컴파일러 플러그인 설정으로 target을 지정할 수 있다.
 ```xml

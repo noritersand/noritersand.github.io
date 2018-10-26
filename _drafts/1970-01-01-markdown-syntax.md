@@ -16,7 +16,7 @@ tags:
 - [어디어디](/assad)
 
 ## embed image
-~~![바쁜 라상무](/images/image-kakao-ryon-busy.png)~~
+~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
 <h4>목차</h4><ul><li><a href="#항상-제목2부터-시작">항상 제목2부터 시작</a></li><ul><li><a href="#코드-블럭">코드 블럭</a></li><ul><li><a href="#제목4">제목4</a></li></ul></ul></ul>
 
