@@ -41,12 +41,17 @@ readValue( arg, type )
 - arg: 지정된 타입으로 변환할 대상
 - type: 대상을 어떤 타입으로 변환할것인지 클래스를 명시한다. Class객체, TypeReference객체가 올 수 있다.
 
+```java
 mapper.readValue(arg, ArrayList.class);
 mapper.readValue(arg, new ArrayList<HashMap<String, String>>().getClass());
 mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>(){});
-map
+```
+
+### map
+
 맵 타입이 JSON 형식의 String 타입으로 변환된다. 자바스크립트에 JSON을 넘겨줄 때 유용하다.
 
+```java
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Test2 {
@@ -66,8 +71,11 @@ public class Test2 {
 
 // {age=32, name=steave, job=baker}
 // {"age":"32","name":"steave","job":"baker"}
+```
+
 위와 반대로 JSON을 맵 타입으로 변환하려면 다음처럼 작성한다:
 
+```java
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -87,9 +95,12 @@ public class Test2 {
 }
 
 // {name=steave, age=32, job=baker}
-List<Map>
-다음은 view에 전달할 model이 List<map<?, ?>> 타입일 때 이를 JSON으로 변환하는 방법이다. 사용방법은 크게 다르지 않고 writeValueAsString, readValue 메서드를 사용하되 타입 명시만 달리한다.
+```
 
+### List<Map>
+다음은 view에 전달할 model이 `List<map<?, ?>>` 타입일 때 이를 JSON으로 변환하는 방법이다. 사용방법은 크게 다르지 않고 `writeValueAsString()`, `readValue()` 메서드를 사용하되 타입 명시만 달리한다.
+
+```java
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -126,6 +137,6 @@ public class Test2 {
     }
 }
 
-
 // [{"age":"32","name":"steave","job":"baker"},{"age":"25","name":"matt","job":"soldier"}]
 // [{name=steave, age=32, job=baker}, {name=matt, age=25, job=soldier}]
+```
