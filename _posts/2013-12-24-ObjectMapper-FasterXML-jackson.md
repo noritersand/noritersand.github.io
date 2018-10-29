@@ -31,15 +31,17 @@ tags:
 ```
 writeValueAsString( value )
 ```
-- value: String 타입으로 변환할 대상
+
+- `value`: String 타입으로 변환할 대상
 
 ### readValue()
 
 ```
 readValue( arg, type )
 ```
-- arg: 지정된 타입으로 변환할 대상
-- type: 대상을 어떤 타입으로 변환할것인지 클래스를 명시한다. Class객체, TypeReference객체가 올 수 있다.
+
+- `arg`: 지정된 타입으로 변환할 대상
+- `type`: 대상을 어떤 타입으로 변환할것인지 클래스를 명시한다. Class, TypeReference 타입이 올 수 있다.
 
 ```java
 mapper.readValue(arg, ArrayList.class);
