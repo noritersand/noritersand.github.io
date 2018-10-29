@@ -14,8 +14,8 @@ tags:
 
 #### 관련 문서
 
-- http://fasterxml.com/
-- https://github.com/FasterXML
+- [http://fasterxml.com](http://fasterxml.com)
+- [https://github.com/FasterXML](https://github.com/FasterXML)
 - [jackson-core-2.9.7.jar](/attachment/jackson-core-2.9.7.jar)
 - [jackson-annotations-2.9.7.jar](/attachment/jackson-annotations-2.9.7.jar)
 - [jackson-databind-2.9.7.jar](/attachment/jackson-databind-2.9.7.jar)
@@ -26,23 +26,20 @@ tags:
 
 ## Map - JSON간 변환
 
-#### writeValueAsString()
+### writeValueAsString()
 
 ```
 writeValueAsString( value )
-
-- value: String 타입으로 변환할 대상
 ```
--
+- value: String 타입으로 변환할 대상
 
-#### readValue()
+### readValue()
 
 ```
 readValue( arg, type )
-
+```
 - arg: 지정된 타입으로 변환할 대상
 - type: 대상을 어떤 타입으로 변환할것인지 클래스를 명시한다. Class객체, TypeReference객체가 올 수 있다.
-```
 
 mapper.readValue(arg, ArrayList.class);
 mapper.readValue(arg, new ArrayList<HashMap<String, String>>().getClass());
