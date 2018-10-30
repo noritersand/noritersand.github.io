@@ -10,6 +10,9 @@ tags:
   - ddl
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## CREATE
 
 ```

@@ -10,6 +10,9 @@ tags:
   - dml
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## INSERT
 
 테이블에 레코드(행)을 추가하는 명령어.

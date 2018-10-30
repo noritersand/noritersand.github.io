@@ -1,5 +1,10 @@
 # powered by jekyll
 
+**카테고리와 태그는 반드시 소문자로 작성할 것.** 파일 시스템에 영향을 주기 때문에 대소문자 혼용하면 꼬일 위험이 있다.
+
+* Kramdown table of contents
+{:toc .toc}
+
 ## environments
 - [ruby](https://www.ruby-lang.org/ko/)
 
@@ -88,7 +93,7 @@ jekyll serve
 
 ## 파일 수정 가이드
 
-#### CSS
+### CSS
 
 - 폰트: `_sass\simple-texture\blog\_variables.scss`
 - 헤더 태그: `_sass\simple-texture-blog.scss`
