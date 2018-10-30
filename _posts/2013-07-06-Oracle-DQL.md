@@ -86,6 +86,48 @@ SELECT NAME 이름, capital "수도 이름" FROM dual;
 SELECT * FROM tab_sample ex1;
 ```
 
+## CASE
+
+```sql
+SELECT
+    CASE 'A' -- 비교대상
+      WHEN 'A' THEN 1 -- 비교대상이 'A'와 같으면 1 반환
+      WHEN 'B' THEN 2 -- 비교대상이 'B'와 같으면 2 반환
+      ELSE 3 -- 그 외 모든 조건에 3 반환
+    END AS ex
+FROM DUAL
+
+ EX
+ --
+  1
+```
+
+단, 위의 경우 EQUAL 비교만 가능하다.
+
+```sql
+SELECT
+    CASE WHEN 'A' > 'A'
+      THEN 1 WHEN 'A' > 'B'
+      THEN 2 ELSE 3
+    END AS ex
+FROM DUAL
+
+ EX
+ --
+  3
+```
+
+#### case example: 성별과 나이 구하기
+
+```sql
+SELECT NAME as "사원명", ssn as "주민번호",
+  CASE WHEN substr(ssn, 7, 1) IN ('1', '3') THEN '남' ELSE '여' END AS "성별",
+  (EXTRACT(YEAR FROM SYSDATE)
+  - (to_number(substr(ssn, 1, 2))
+  + CASE WHEN substr(ssn, 7, 1) in ('1', '2') then 1900 else 2000 end)) + 1 as "나이"
+FROM insa
+```
+
 ### DISTINCT
 
 중복되는 데이터를 표시하지 않게 하는 연산자.

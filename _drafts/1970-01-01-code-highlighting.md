@@ -1,11 +1,10 @@
 ---
 layout: post
+date: 1970-01-01 00:00:00 +0900
 title: "A quick demo of Simple Texture theme's code highlighting features"
 description: "A quick demo of Simple Texture theme's code highlighting features"
 categories: [demo]
 tags: [demo, jekyll]
-redirect_from:
-  - /2017/05/27/
 ---
 
 > This is code blocks and highlighting test page for [Simple Texture][Simple Texture] theme.
