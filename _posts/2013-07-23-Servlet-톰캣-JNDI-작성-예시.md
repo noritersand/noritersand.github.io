@@ -8,7 +8,7 @@ tags:
   - java
   - tomcat
   - connection
-  - ojbc
+  - jdbc
   - jndi
   - 코드모음
 ---
@@ -21,7 +21,7 @@ tags:
 
 <Resource name="jdbc/myoracle" type="javax.sql.DataSource"
     driverClassName="oracle.jdbc.driver.OracleDriver"
-    url="jdbc:oracle:thin:@220.76.176.66:1521:orcl"
+    url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
     username="noritersand" password="java301$!" maxActive="20" maxIdle="10"
     maxWait="-1" />
 </Context>
