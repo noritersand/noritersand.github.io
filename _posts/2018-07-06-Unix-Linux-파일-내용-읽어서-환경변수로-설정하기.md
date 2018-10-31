@@ -12,9 +12,11 @@ tags:
 ---
 
 쉽죠잉
+
 ```
 export VARIABLE_NAME = $( cat FILE_LOCATION )
 ```
+
 ```bash
 export PID=$(cat /usr/local/tomcat8.5-6/bin/catalina.pid)
 echo $PID
