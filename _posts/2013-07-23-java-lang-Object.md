@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 12:59:00 +0900
-title: 'java.lang.Object'
+title: 'Java: java.lang.Object'
 categories:
   - java
 tags:

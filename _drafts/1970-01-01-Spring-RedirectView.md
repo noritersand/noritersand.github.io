@@ -16,8 +16,8 @@ tags:
 
 ## POST 파라미터를 같이 넘기는 방법
 ```java
-@RequestMapping("/redirection")
-public ModelAndView redirection() {
+@RequestMapping("/testRV")
+public ModelAndView testRV() {
     ModelAndView modelAndView = new ModelAndView();
     RedirectView redirectView = new RedirectView("http://landing-url.com");
     redirectView.setStatusCode(HttpStatus.TEMPORARY_REDIRECT);
