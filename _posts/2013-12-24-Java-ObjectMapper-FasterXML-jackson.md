@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-12-24 10:15:00 +0900
-title: 'ObjectMapper (FasterXML/jackson)'
+title: 'Java: ObjectMapper (FasterXML/jackson)'
 categories:
   - java
 tags:
