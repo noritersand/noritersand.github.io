@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 03:42:00 +0900
-title: '비정형 인자 arguments'
+title: 'Java: 비정형 인자 arguments'
 categories:
   - java
 tags:
