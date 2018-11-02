@@ -16,7 +16,7 @@ tags: [demo, jekyll]
 
 This is a normal paragraph.
 
-This is [a link](https://yizeng.me) to my homepage.
+This is [a link](https://yizeng.me/2013/04/22/hello-world/) to my homepage.
 A [link](https://yizeng.me/blog "Yi Zeng's Blog") can also have a title.
 
 This is a ***text with light and strong emphasis***.
