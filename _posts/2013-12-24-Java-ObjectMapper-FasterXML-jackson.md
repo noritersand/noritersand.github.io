@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 글
 
 - [http://fasterxml.com](http://fasterxml.com)
 - [https://github.com/FasterXML](https://github.com/FasterXML)

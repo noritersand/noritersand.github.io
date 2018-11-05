@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 글
 
 - [http://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html](http://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html)
 
