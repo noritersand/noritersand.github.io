@@ -12,14 +12,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-![](/images/node-js-1.png)
-> node에서는 모든게 병렬로 수행된다. 당신 code만 빼고
-
 #### 참고한 글
 
 - [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
 - [http://www.nodebeginner.org/index-kr.html](http://www.nodebeginner.org/index-kr.html)
 
+![](/images/node-js-1.png)
+> node에서는 모든게 병렬로 수행된다. 당신 code만 빼고
 
 ## 시작하기
 

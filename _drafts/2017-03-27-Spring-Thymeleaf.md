@@ -6,7 +6,6 @@ categories:
   - java
   - spring
 tags:
-  - java
   - spring
   - thymeleaf
 ---

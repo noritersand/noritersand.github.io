@@ -3,9 +3,9 @@ layout: post
 date: 2015-03-31 18:03:00 +0900
 title: 'MyBatis-Spring 마이바티스 스프링 연동'
 categories:
+  - java
   - mybatis
 tags:
-  - java
   - mybatis
   - spring
 ---
