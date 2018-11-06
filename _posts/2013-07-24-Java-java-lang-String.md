@@ -20,18 +20,18 @@ tags:
 
 | Escape sequence | Meaning                                                                                                     |
 |-----------------|-------------------------------------------------------------------------------------------------------------|
-| \\b              | Backspace                                                                                                   |
-| \\f              | Form feed (rarely used)                                                                                     |
-| \\n              | Line feed (newline)                                                                                         |
-| \\r              | Carriage return. Use with the line feed (\\r\\n) to format output.                                            |
-| \\t              | Horizontal tab                                                                                              |
-| \\v              | Vertical tab. Not compliant with ECMAScript standard and incompatible with Microsoft Internet Explorer 6.0. |
-| \\'              | Single quote (')                                                                                            |
-| \\"              | Double quote (")                                                                                            |
-| \\\\              | Backslash (\\)                                                                                               |
-| \\n              | ASCII character represented by the octal number n. The value of n must be in the range 0 to 377 (octal).    |
-| \\xhh            | ASCII character represented by the two-digit hexadecimal number hh.                                         |
-| \\uhhhh          | Unicode character represented by the four-digit hexadecimal number hhhh.                                    |
+| `\b`              | Backspace                                                                                                   |
+| `\f`              | Form feed (rarely used)                                                                                     |
+| `\n`              | Line feed (newline)                                                                                         |
+| `\r`              | Carriage return. Use with the line feed `\r\n` to format output.                                            |
+| `\t`              | Horizontal tab                                                                                              |
+| `\v`              | Vertical tab. Not compliant with ECMAScript standard and incompatible with Microsoft Internet Explorer 6.0. |
+| `\'`              | Single quote `'`                                                                                            |
+| `\"`              | Double quote `"`                                                                                            |
+| `\\`              | Backslash `\`                                                                                               |
+| `\n`              | ASCII character represented by the octal number n. The value of n must be in the range 0 to 377 (octal).    |
+| `\xhh`            | ASCII character represented by the two-digit hexadecimal number hh.                                         |
+| `\uhhhh`          | Unicode character represented by the four-digit hexadecimal number hhhh.                                    |
 
 ## 주요 메서드
 

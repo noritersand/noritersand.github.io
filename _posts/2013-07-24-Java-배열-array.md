@@ -42,7 +42,7 @@ int[] score = new int[5]; // 배열의 선언과 생성
 | 자료형      | 기본값        |
 |-------------|---------------|
 | boolean     | false         |
-| char        | '\\u000'       |
+| char        | `'\u000'`       |
 | byte        | 0             |
 | short       | 0             |
 | int         | 0             |
