@@ -1,13 +1,12 @@
 ---
 layout: post
 date: 2017-02-05 23:45:10 +0900
-title: 'JavaScript: Object deep copy 깊은 객체 복사'
+title: 'JavaScript: Object deep copy'
 categories:
   - javascript
 tags:
   - ecmascript
   - javascript
-  - object
   - deep copy
 ---
 
@@ -18,11 +17,12 @@ tags:
 
 - [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
 
-`JSON.stringify()`와 `JSON.parse()`를 이용한 깊은 복사 방법.
+`JSON.stringify()`와 `JSON.parse()`를 이용한 객체 복사 방법.
 
 ```js
+// 복사 대상
 var copyme = {
-  prop: {
+  child: {
     grandson: {
       txt: 'peek-a-boo!',
       fn: function() {
@@ -32,10 +32,12 @@ var copyme = {
   },
   txt: 'yo'
 };
+
+// 복사
 var newone = JSON.parse(JSON.stringify(copyme));
 
-console.log(newone.prop.grandson.txt); // peek-a-boo!
-console.log(typeof newone.prop.grandson.fn == 'undefined'); // true, 함수는 복사 불가
+console.log(newone.child.grandson.txt); // peek-a-boo!
+console.log(typeof newone.child.grandson.fn == 'undefined'); // true, 함수는 복사 불가
 ```
 
-단, 이 방법은 프로퍼티가 함수일 경우 복사하지 못한다. (JSON으로는 함수를 표현할 수 없기 때문)
+단, 함수는 JSON으로 표현할 수 없기 때문에 복사하지 못한다.
