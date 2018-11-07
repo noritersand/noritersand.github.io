@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-05 23:45:10 +0900
-title: 'JavaScript: object deep copy 깊은 객체 복사'
+title: 'JavaScript: Object deep copy 깊은 객체 복사'
 categories:
   - javascript
 tags:
@@ -22,20 +22,20 @@ tags:
 
 ```js
 var copyme = {
-	prop: {
-		grandchild: {
-			txt: 'peek-a-boo!',
-			fn: function() {
-				console.log('don\'t leave me!')
-			}
-		}
-	},
-	txt: 'yo'
+  prop: {
+    grandson: {
+      txt: 'peek-a-boo!',
+      fn: function() {
+        console.log('don\'t leave me!')
+      }
+    }
+  },
+  txt: 'yo'
 };
 var newone = JSON.parse(JSON.stringify(copyme));
 
-console.log(newone.prop.grandchild.txt); // peek-a-boo!
-console.log(typeof newone.prop.grandchild.fn == 'undefined'); // true, 함수는 복사 불가
+console.log(newone.prop.grandson.txt); // peek-a-boo!
+console.log(typeof newone.prop.grandson.fn == 'undefined'); // true, 함수는 복사 불가
 ```
 
 단, 이 방법은 프로퍼티가 함수일 경우 복사하지 못한다. (JSON으로는 함수를 표현할 수 없기 때문)
