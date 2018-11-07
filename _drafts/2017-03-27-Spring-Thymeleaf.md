@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 
 - [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
 

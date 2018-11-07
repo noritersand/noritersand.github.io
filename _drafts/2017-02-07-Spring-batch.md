@@ -13,6 +13,6 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 
 - [https://spring.io/projects/spring-batch](https://spring.io/projects/spring-batch)

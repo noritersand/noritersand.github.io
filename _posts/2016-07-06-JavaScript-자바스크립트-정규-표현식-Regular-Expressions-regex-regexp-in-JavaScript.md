@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 
 - [http://www.regexr.com/](http://www.regexr.com/)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
@@ -74,7 +74,7 @@ var re = new RegExp("ab+c", "i");
 | `$`      |  입력 문자열의 끝 위치를 검색. `A$` 는 검색하고자 하는 문장의 마지막문자가 A인지를 검사                                                      |
 | `*`      |  0개 이상의 문자를 검색(모든 것이라는 의미 → `{0,}` 같은 의미). `cg*`는 'c', 'cginjs' 등..                                                 |
 | `+`      |  1개 이상의 문자를 검색(`{1,}` 같은 의미). `cg+`는 'cg', 'cginjs' 등이지만 'c'는 아니다.                                                   |
-| `?`      |  0 또는 1개의 문자 의미.(`{0,1}` 같은 의미). ' C?j' 라면 C라는 문자와 j라는 문자 사이에 문자가 0개 또는 1개 가 들어갈 수 있다는 의미           |
+| `?`      |  0 또는 1개의 문자 의미.(`{0,1}` 같은 의미). `C?j` 라면 C라는 문자와 j라는 문자 사이에 문자가 0개 또는 1개 가 들어갈 수 있다는 의미           |
 | `.`      |  `\n`을 제외한 모든 단일 문자를 검색. `\n`을 포함한 모든 문자를 찾으려면 `[.\n]` 패턴을 사용                                               |
 | `()`     |  한번 match를 수행해서 나온 결과를 기억함. `/(cnj)/` 는 cnj라는 단어를 검색한 후, 그 단어를 배열등과 같은 저장장소에 남겨두어 나중에 다시 호출할 수 있도록 함. `(.)\1`은 연속적으로 나오는 동일한 문자 두 개를 찾는다. |
 | `|`      |  부분합연산(OR)                                                                                                                       |

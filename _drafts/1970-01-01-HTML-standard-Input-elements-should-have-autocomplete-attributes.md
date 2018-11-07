@@ -8,7 +8,7 @@ tags:
   - html
 ---
 
-#### 참고한 글
+#### 관련 문서
 - [https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute](https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#autofilling-form-controls:-the-autocomplete-attribute)
 
 HTML5

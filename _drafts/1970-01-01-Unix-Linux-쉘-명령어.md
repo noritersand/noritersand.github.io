@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 - [https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/](https://wiki.kldp.org/HOWTO/html/Adv-Bash-Scr-HOWTO/)
 
 #### 테스트 환경

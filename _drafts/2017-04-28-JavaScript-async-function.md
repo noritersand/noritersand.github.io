@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/async_function)

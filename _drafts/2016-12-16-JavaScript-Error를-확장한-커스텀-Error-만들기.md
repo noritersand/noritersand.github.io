@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 글
+#### 관련 문서
 
 - [http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript](http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript)
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)
