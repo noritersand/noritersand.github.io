@@ -44,29 +44,33 @@ tags:
 
 아래 창에서 아무 키나 입력해보자:
 
-<p><input id="inptKeyCodeTest" type="text"><br />
+<input id="inptKeyCodeTest" type="text"><br />
 <table id="tabKeyCodeTest">
-  <tbody><tr>
-    <td><p>keydown.event.keyCode: </p></td><td></td><td id="result1"></td>
+  <tr>
+    <td><p>keydown.event.keyCode: </p></td>
+    <td id="result1"></td>
   </tr>
   <tr>
-    <td><p>keydown.event.which: </p></td><td></td><td id="result2"></td>
+    <td><p>keydown.event.which: </p></td>
+    <td id="result2"></td>
   </tr>
   <tr>
-    <td><p>keypress.event.keyCode: </p></td><td></td><td id="result3"></td>
+    <td><p>keypress.event.keyCode: </p></td>
+    <td id="result3"></td>
   </tr>
   <tr>
-    <td style="height: 21px;"><p>keypress.event.which: </p></td><td style="height: 21px;"></td><td id="result4" style="height: 21px;"></td>
+    <td><p>keypress.event.which: </p></td>
+    <td id="result4"></td>
   </tr>
   <tr>
-    <td><p></p>
-<p>keyup.event.keyCode: </p>
-<p></p></td><td></td><td id="result5"></td>
+    <td><p>keyup.event.keyCode: </p></td>
+    <td id="result5"></td>
   </tr>
   <tr>
-    <td><p>keyup.event.which: </p></td><td></td><td id="result6"></td>
+    <td><p>keyup.event.which: </p></td>
+    <td id="result6"></td>
   </tr>
-</tbody></table>
+</table>
 <script>
   document.getElementById('inptKeyCodeTest').onkeydown = function(e) {
     document.getElementById('result1').innerHTML = "<p>" + e.keyCode + "</p>";
