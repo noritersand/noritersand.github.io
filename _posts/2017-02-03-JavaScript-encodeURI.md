@@ -38,13 +38,13 @@ https://www.google.co.kr/search?q=%ED%95%9C%EA%B8%80
 
 <table id="tabKeyCodeTest">
   <tr>
-    <td style="padding: 0">
+    <td>
       <input id="uri-encode-input" type="text" placeholder="아무 텍스트나 입력해 보세요." onkeyup="keyupHandler()"
           style="width: 500px; border: 0">
     </td>
   </tr>
   <tr>
-    <td style="padding: 0">
+    <td>
       <textarea id="uri-encode-result" style="width: 500px; height: 100px; border: 0" readonly></textarea>
     </td>
   </tr>
