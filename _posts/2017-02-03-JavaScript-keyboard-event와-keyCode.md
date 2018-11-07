@@ -12,6 +12,9 @@ tags:
   - javascript object literal notation
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 자바스크립트로 키보드 이벤트 발생 시의 keycode를 확인하는 방법은:
 
 ```html
