@@ -45,7 +45,7 @@ tags:
 아래 창에서 아무 키나 입력해보자:
 
 <table>
-  <tr><td><input id="inptKeyCodeTest" type="text"></td></tr>
+  <tr><td><input id="inptKeyCodeTest" type="text" style="border: 0"></td></tr>
 </table>
 <table id="tabKeyCodeTest">
   <tr>
