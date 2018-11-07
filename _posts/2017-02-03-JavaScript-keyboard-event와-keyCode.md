@@ -44,7 +44,9 @@ tags:
 
 아래 창에서 아무 키나 입력해보자:
 
-<input id="inptKeyCodeTest" type="text"><br />
+<table>
+  <tr><td><input id="inptKeyCodeTest" type="text"></td></tr>
+</table>
 <table id="tabKeyCodeTest">
   <tr>
     <td></td>
@@ -126,7 +128,7 @@ tags:
 |      |              |      |              |      |           |      |               |      |              |
 | 150  |              | 160  |              | 170  |           | 180  |               | 190  | `.>`         |
 | 151  |              | 161  |              | 171  |           | 181  |               | 191  | `/?`         |
-| 152  |              | 162  |              | 172  |           | 182  | My Computer   | 192  | ``~`         |
+| 152  |              | 162  |              | 172  |           | 182  | My Computer   | 192  | ``` `~```         |
 | 153  |              | 163  |              | 173  |           | 183  | My Calculator | 193  |              |
 | 154  |              | 164  |              | 174  |           | 184  |               | 194  |              |
 | 155  |              | 165  |              | 175  |           | 185  |               | 195  |              |

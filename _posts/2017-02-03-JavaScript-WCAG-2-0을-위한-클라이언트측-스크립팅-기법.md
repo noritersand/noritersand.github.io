@@ -11,10 +11,5 @@ tags:
   - 웹 접근성
 ---
 
-* Kramdown table of contents
-{:toc .toc}
-
-#### 관련 문서
-
 - [원문](https://www.w3.org/TR/WCAG20-TECHS/client-side-script.html)
 - [번역](http://www.wah.or.kr/TR/WCAG20-TECHS/client-side-script.HTML)
