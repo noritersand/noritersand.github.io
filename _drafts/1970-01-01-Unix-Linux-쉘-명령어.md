@@ -160,7 +160,7 @@ less  # more를 보완한 명령어 ( less 옵션 파일명 )
 cp test.txt testfolder  # (내부경로) test.txt 파일을 testfolder 디렉토리 내부에 복사
 cp -a ... ...  # 파일의 소유권과 각종 정보 유지하여 복사 (위의 경우는 유지안됨)
 ```
-* 파일 복사나 이동은 대상 경로의 존재여부에 따라 결과가 달라진다. [이에 대해 잘 정리된 문서 링크](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90%EC%84%9C_%ED%8F%B4%EB%8D%94_%ED%86%B5%EC%A7%B8%EB%A1%9C_%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0).
+**주의**: 파일 복사나 이동은 대상 경로의 존재여부에 따라 결과가 달라진다. [이에 대해 잘 정리된 문서 링크](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90%EC%84%9C_%ED%8F%B4%EB%8D%94_%ED%86%B5%EC%A7%B8%EB%A1%9C_%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0).
 
 ## mkdir
 디렉토리(폴더) 생성

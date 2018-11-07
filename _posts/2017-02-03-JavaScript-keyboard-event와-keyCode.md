@@ -90,7 +90,7 @@ tags:
 
 [표 출처](https://lael.be/55)
 
-* keydown 이벤트 발생 시의 keyCode이며 keypress의 경우 얻는 값이 다를 수 있으니 주의할 것.
+**주의**: keydown 이벤트 발생 시의 keyCode이며 keypress의 경우 얻는 값이 다를 수 있으니 주의할 것.
 
 | code | key          | code | key          | code | key       | code | key           | code | key          |
 |------|--------------|------|--------------|------|-----------|------|---------------|------|--------------|
