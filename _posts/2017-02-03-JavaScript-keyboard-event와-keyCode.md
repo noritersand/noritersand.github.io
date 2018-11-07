@@ -47,27 +47,23 @@ tags:
 <input id="inptKeyCodeTest" type="text"><br />
 <table id="tabKeyCodeTest">
   <tr>
-    <td><p>keydown.event.keyCode: </p></td>
-    <td id="result1"></td>
+    <td></td>
+    <td>event.keyCode</td>
+    <td>event.which</td>
   </tr>
   <tr>
-    <td><p>keydown.event.which: </p></td>
+    <td><p>onkeydown</p></td>
+    <td id="result1"></td>
     <td id="result2"></td>
   </tr>
   <tr>
-    <td><p>keypress.event.keyCode: </p></td>
+    <td><p>onkeypress</p></td>
     <td id="result3"></td>
-  </tr>
-  <tr>
-    <td><p>keypress.event.which: </p></td>
     <td id="result4"></td>
   </tr>
   <tr>
-    <td><p>keyup.event.keyCode: </p></td>
+    <td><p>onkeyup</p></td>
     <td id="result5"></td>
-  </tr>
-  <tr>
-    <td><p>keyup.event.which: </p></td>
     <td id="result6"></td>
   </tr>
 </table>
