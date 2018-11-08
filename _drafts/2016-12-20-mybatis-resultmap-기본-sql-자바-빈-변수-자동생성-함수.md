@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-20 20:55:00 +0900
-title: 'MyBatis: resultmap, 기본 sql, 자바 빈 변수 자동생성 함수'
+title: 'MyBatis: 마이바티스용 resultmap, 기본 sql, 자바 빈 변수 자동생성 함수'
 categories:
   - java
   - mybatis

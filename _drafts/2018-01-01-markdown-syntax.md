@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 2018-01-01 00:00:00 +0900
 title: 'markdown syntax'
 categories:
   - html
@@ -16,6 +16,12 @@ tags:
 
 - [어디어디](/assad)
 
+## header2
+
+### header3
+
+#### header4
+
 ## embed image
 
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
@@ -26,14 +32,6 @@ tags:
 
 내용내용
 
-# 큰제목
-
-## 둘째
-
-### 셋째
-
-#### 제목4
-
 리스트:
 - 첫
 - 두
@@ -43,8 +41,9 @@ tags:
 _이탤릭_
 ~~스트라이크~~
 
----
+## 수평선
 
+---
 
 [링크 걸기](#항상-제목2부터-시작)
 
@@ -75,3 +74,5 @@ _이탤릭_
 | undefined        | "undefined" | NaN    | false   | TypeError              |
 | true             | "true"      | 1      |         | new Boolean(true)      |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
+
+# header1

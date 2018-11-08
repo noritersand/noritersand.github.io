@@ -35,6 +35,7 @@ CREATE 테이블명 (
     ...
 )
 ```
+
 ```sql
 CREATE TABLE test2 (
     num NUMBER,
