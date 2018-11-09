@@ -1,10 +1,11 @@
 ---
 layout: post
 date: 2016-11-02 10:11:00 +0900
-title: 'Code convention: 줄 나누기'
+title: 'Java: Code convention: 줄 나누기'
 categories:
-  - etc
+  - java
 tags:
+  - java
   - code convention
   - coding guide
 ---
