@@ -6,7 +6,8 @@ categories:
   - java
   - servlet
 tags:
-  - java
+  - servlet
+  - jsp
   - tomcat
   - connection
   - jdbc

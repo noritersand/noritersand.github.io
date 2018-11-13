@@ -1,12 +1,15 @@
 ---
 layout: post
 date: 2013-08-14 05:00:00 +0900
-title: 'Servlet: 자바 서블릿 Java Servlet'
+title: 'Servlet-JSP: 자바 서블릿 Java Servlet'
 categories:
   - java
   - servlet
 tags:
   - servlet
+  - jsp
+  - genericservlet
+  - httpservlet
 ---
 
 * Kramdown table of contents
