@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-14 05:00:00 +0900
-title: 'Servlet-JSP: 자바 서블릿 Java Servlet'
+title: 'Servlet-JSP: 자바 서블릿 작성하기 기본'
 categories:
   - java
   - servlet
