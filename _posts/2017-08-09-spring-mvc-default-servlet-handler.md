@@ -14,9 +14,9 @@ tags:
 {:toc .toc}
 
 #### 관련 문서
+
 - [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-default-servlet-handler](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-default-servlet-handler)
 - [http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/resource/DefaultServletHttpRequestHandler.html](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/resource/DefaultServletHttpRequestHandler.html)
-
 
 개발자가 작성한 서블릿에 매핑된 URL이 아닐때 정적 자원(css, js 등)을 처리하는 기본 서블릿으로 요청을 넘기는 설정. 아주 간단하게 REST 스타일의 URL을 매핑할 수 있다.
 
@@ -32,6 +32,7 @@ tags:
 ```
 
 ### dispatcher-servlet.xml
+
 ```xml
 <mvc:default-servlet-handler />
 ```
