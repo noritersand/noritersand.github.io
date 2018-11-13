@@ -1,0 +1,260 @@
+---
+layout: post
+date: 2013-08-14 05:00:00 +0900
+title: 'Servlet: 자바 서블릿 Java Servlet'
+categories:
+  - java
+  - servlet
+tags:
+  - servlet
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+#### 관련 문서
+
+- [http://www.oracle.com/technetwork/java/javaee/documentation/index.html](http://www.oracle.com/technetwork/java/javaee/documentation/index.html)
+- [http://docs.oracle.com/javaee/7/api/](http://docs.oracle.com/javaee/7/api/)
+
+## life cycle
+
+Servlet은 javax.servlet.GenericServlet 클래스나 javax.servlet.HttpServlet 클래스를 상속받아서 작성하며, init, service, destory의 세 개의 메서드에 의한 생명주기를 갖는다.
+
+init 메서드는 서블릿이 로딩될 때 호출되는 메서드다. 서블릿 객체가 더 이상 서비스를 하지 않고 있는 경우 호출되어지는 메서드는 destroy 메서드이다. destroy 메서드가 호출되면 가비지컬렉터에 의해 객체가 메모리에서 제거된다. init과 destroy는 단 한번 호출하게 되며 service 메서드는 요청이 있을 때 마다 호출하게 된다.
+
+service 메서드는 GenericServlet 클래스에 정의되어 있고 HttpServlet 클래스는 GenericServlet 클래스를 상속한다. 따라서 HttpServlet 클래스를 상속받은 클래스는 service 메서드를 갖게 된다. 또한 service 메서드는 doGet 또는 doPost를 실행하도록 정의되어 있다. 만약 요청 방식(GET/POST)을 알 수 없다면 doGet을 호출한다.
+
+1. 클라이언트의 요청 발생. (HTTP Request)
+1. 서블릿 Handler 8080포트에서 요청을 받음.
+1. 서블릿 컨테이너에서 매핑된 서블릿 검색.
+1. 서블릿은 요청을 처리하고 결과를 응답한다. (HTTP Response)
+
+## web.xml
+
+web.xml은 deployment descriptor의 한 종류로 톰캣의 환경설정 파일이다. Java Servlet을 구성하기 위한 첫 번째 설정 파일로 webroot/WEB-INF 아래에 위치한다. 아래는 servlet 스펙 3.1[^1] 기준으로 작성된 web.xml의 예시다:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+
+    <display-name>servlet-test</display-name>
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <servlet>
+        <servlet-name>testServlet</servlet-name>
+        <servlet-class>com.test.servlet.TestServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>testServlet</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+
+`톰캣설치폴더/conf` 아래에 web.xml의 샘플이 있으니 참고할 것.
+
+## URL pattern 유형
+
+- Exactly matching: 반드시  `/`로 시작해야 한다. (ex: `/User/abc`)
+- Directory matching: 반드시  `/`로 시작하고,  `*`로 끝나야 한다. (ex: `/User/*`)
+- Extension matching:  `/`로 시작하면 안 되고, 확장자로 끝나야 한다. (ex: `*.do`)
+- Default Servlet override: `/` 만 설정한다. (주의: 톰캣의 디폴트 서블릿을 사용하지 못하게 되면서 문제가 발생할 수 있다.)
+
+## 서블릿 작성 방법
+
+javax 패키지만으로 서블릿을 구현하려면 GenericServlet 혹은 HttpServlet을 상속받는 서블릿 클래스를 작성하면 된다.
+
+### GenericServlet
+
+GenericServlet 클래스를 상속하는 서블릿 클래스를 작성하여 service 메서드를 재정의 한다.
+
+```java
+public class FirstServlet extends GenericServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public void service(ServletRequest req, ServletResponse resp)
+            throws ServletException, IOException {
+        // service: 클라이언트가 요청할 때마다 호출되는 메서드
+        Calendar now = Calendar.getInstance();
+        String str = String.format("%1$tF %1$tT", now);
+
+        // 서버에서 클라이언트에게 전송하는 문서타입 설정
+        resp.setContentType("text/html;charset=UTF-8");
+
+        // 서버에서 클라이언트로 전송하기 위한 출력 스트림
+        PrintWriter out = resp.getWriter();
+
+        // 서버에서 클라이언트로 데이터 전송
+        out.println("");
+        out.println("");
+        out.println("처음 작성해 보는 서블릿 프로그램");
+        out.println("현재 날짜 및 시간 : " + str);
+        out.println("");
+        out.println("");
+    }
+}
+```
+
+```java
+public class DemoServlet extends GenericServlet {
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    public void destroy() {
+        // 서블릿이 메모리에서 해제되기 직전에 한 번만 실행
+    }
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        // 서블릿이 메모리에 로딩됨과 동시에 한 번만 실행. 초기화 목적으로 사용
+    }
+
+    /*
+     * service 메서드 클라이언트가 호출할 때 마다 실행되어지는 메서드
+     * ServletRequest: 클라이언트의 요청을 전달 받기 위한 클래스 (클라이언트 -> 서버)
+     * ServletResponse: 클라이언트에게 응답하기 위한 클래스 (서버 -> 클라이언트)
+     */
+
+    @Override
+    public void service(ServletRequest req, ServletResponse resp)
+            throws ServletException, IOException {
+        // 클라이언트에서 서버로 전송되는 인코딩 설정
+        req.setCharacterEncoding("UTF-8");
+
+        // 클라이언트에서 전송된 데이터 받기
+        String name = req.getParameter("name");
+        int age = Integer.parseInt(req.getParameter("age"));
+        String msg = name + "님";
+        if (age >= 19) {
+            msg += "의 나이는 " + age + "세이고 성인입니다.";
+        } else {
+            msg += "의 나이는 " + age + "세이고 미성년자입니다.";
+        }
+
+        // 서버에서 클라이언트로 전솓되는 문자 타입
+        resp.setContentType("text/html;charset=UTF-8");
+
+        // 서버에서 클라이언트로 전송하기 위한 출력 스트림
+        PrintWriter out = resp.getWriter();
+
+        // 전송하기
+        out.println("");
+        out.println(msg);
+        out.println("");
+    }
+}
+```
+
+### HttpServlet
+
+HttpServlet 클래스를 상속하는 서블릿 클래스를 작성하여 doGet 혹은 doPost 메서드를 재정의 한다.
+
+```java
+package com.test.servlet;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class TestServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    private static final String JSP_PREFIX = "/WEB-INF/jsp/";
+    private static final String JSP_SUFIX = ".jsp";
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        process(req, resp);
+    }
+
+    private void forward(HttpServletRequest req, HttpServletResponse resp, String path)
+            throws ServletException, IOException {
+        RequestDispatcher rd = req.getRequestDispatcher(path);
+        rd.forward(req, resp);
+    }
+
+    /**
+     * 요청 파라미터를 콘솔에 출력
+     */
+    private void printParameters(HttpServletRequest req) {
+        Map<String, String[]> parameterMap = req.getParameterMap();
+        Set<String> keySet = parameterMap.keySet();
+        Iterator<String> iterator = keySet.iterator();
+        while (iterator.hasNext()) {
+            String key = iterator.next();
+            String[] values = parameterMap.get(key);
+            System.out.println(key + ": " + Arrays.toString(values));
+        }
+    }
+
+    protected void process(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        this.printParameters(req);
+
+        req.setCharacterEncoding("UTF-8");
+
+        String contextPath = req.getContextPath();
+        contextPath = contextPath.length() == 0 ? "/" : contextPath;
+
+        String requestURI = req.getRequestURI();
+        requestURI = (contextPath.length() > 1)
+                ? requestURI.substring(contextPath.length(), requestURI.length())
+                : requestURI;
+
+        System.out.println("contextPath: " + contextPath);
+        System.out.println("requestURI: " + requestURI);
+
+        requestURI = requestURI.substring(0, requestURI.lastIndexOf("."));
+        StringBuilder builder = new StringBuilder(JSP_PREFIX).append(requestURI).append(JSP_SUFIX);
+        forward(req, resp, builder.toString());
+
+        /*
+        switch (requestURI) {
+        case "/a.do":
+            this.forward(req, resp, "/WEB-INF/jsp/sample.jsp");
+            break;
+        default:
+            resp.sendRedirect(contextPath);
+            break;
+        }
+        */
+    }
+}
+```
+
+[^1]: 톰캣8.5
