@@ -15,6 +15,12 @@ tags:
   - 코드모음
 ---
 
+#### 관련 문서
+
+- [http://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html](http://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html)
+- [http://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html](http://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html)
+- [http://beyondj2ee.tumblr.com/post/14508592466/tomcat-7-환경에서-jndi-datasource-spring-연동-방법](http://beyondj2ee.tumblr.com/post/14508592466/tomcat-7-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C-jndi-datasource-spring-%EC%97%B0%EB%8F%99-%EB%B0%A9%EB%B2%95)
+
 #### context.xml
 
 ```xml
