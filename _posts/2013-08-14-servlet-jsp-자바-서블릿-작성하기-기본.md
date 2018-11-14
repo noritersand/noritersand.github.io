@@ -70,11 +70,11 @@ web.xml은 deployment descriptor의 한 종류로 톰캣의 환경설정 파일�
 - Extension matching:  `/`로 시작하면 안 되고, 확장자로 끝나야 한다. (ex: `*.do`)
 - Default Servlet override: `/` 만 설정한다. (주의: 톰캣의 디폴트 서블릿을 사용하지 못하게 되면서 문제가 발생할 수 있다.)
 
-## 서블릿 작성 방법
+## 서블릿 작성 예시
 
 javax 패키지만으로 서블릿을 구현하려면 GenericServlet 혹은 HttpServlet을 상속받는 서블릿 클래스를 작성하면 된다.
 
-### GenericServlet
+### GenericServlet을 확장
 
 GenericServlet 클래스를 상속하는 서블릿 클래스를 작성하여 service 메서드를 재정의 한다.
 
@@ -156,7 +156,7 @@ public class DemoServlet extends GenericServlet {
 }
 ```
 
-### HttpServlet
+### HttpServlet을 확장
 
 HttpServlet 클래스를 상속하는 서블릿 클래스를 작성하여 doGet 혹은 doPost 메서드를 재정의 한다.
 
