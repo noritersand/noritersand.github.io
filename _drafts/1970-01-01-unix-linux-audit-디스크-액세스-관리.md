@@ -4,9 +4,8 @@ date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: audit 디스크 액세스 관리'
 categories:
   - os
-  - unix/linux
+  - linux
 tags:
-  - unix
   - linux
   - audit
 ---

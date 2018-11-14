@@ -4,10 +4,12 @@ date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: 권한 설정 chmod, chown, umask'
 categories:
   - os
-  - unix/linux
-tags:
-  - unix
   - linux
+tags:
+  - linux
+  - chmod
+  - chown
+  - umask
 ---
 
 ![](/images/chmod-chown-umask-image.png)

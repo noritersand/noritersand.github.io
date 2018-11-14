@@ -4,10 +4,11 @@ date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: 쉘 명령어'
 categories:
   - os
-  - unix/linux
-tags:
-  - unix
   - linux
+tags:
+  - linux
+  - shell
+  - bash
 ---
 
 * Kramdown table of contents
