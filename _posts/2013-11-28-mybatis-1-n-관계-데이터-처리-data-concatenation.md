@@ -140,7 +140,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
     <collection property="attachList" javaType="java.util.ArrayList" resultMap="bbsAttachResultMap"/>
 </resultMap>
 ```
-type을 자바빈이 아닌 HashMap으로 받는것 외엔 차이가 없다. 그러나 위처럼 resultMap으로 매핑할 경우 단순히 컬럼명과 프로퍼티명의 불일치만 해결해주는 것이 아니라 중복되는 결과를 받았을 때 이를 자동으로 걸러내주는 효과도 있다. 이는 하위 요소인 `<id>`를 사용했기 때문이다. `<id>`는 해당 컬럼이 식별자임을 명시하며 전반적인 성능을 향상시킨다고 한다. (더 이상 설명이 없어서...1)
+type을 자바빈이 아닌 HashMap으로 받는것 외엔 차이가 없다. 그러나 위처럼 resultMap으로 매핑할 경우 단순히 컬럼명과 프로퍼티명의 불일치만 해결해주는 것이 아니라 중복되는 결과를 받았을 때 이를 자동으로 걸러내주는 효과도 있다. 이는 하위 요소인 `<id>`를 사용했기 때문이다. `<id>`는 해당 컬럼이 식별자임을 명시하며 전반적인 성능을 향상시킨다고 한다. (더 이상 설명이 없어서...[^1])
 
 그리고 `<collection>`은 **child rows**(1:N의 관계로 설정된 테이블에서 N의 레코드)를 처리하는 방법을 나타낸다. 여기서는 bbsAttachResultMap을 참조하고 있고 이는 다음과 같다:
 

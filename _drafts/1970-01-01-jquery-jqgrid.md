@@ -12,6 +12,7 @@ tags:
 ![](/images/jqgrid-1.png)
 
 #### 관련 문서
+
 - [http://www.trirand.com](http://www.trirand.com)
 - [github](https://github.com/tonytomov/jqGrid/tree/master)
 - [wiki](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:jqgriddocs)
@@ -20,6 +21,7 @@ tags:
 jqGrid는 데이터 리스트를 표현하는 grid 플러그인이다. 페이징, 셀의 수정/추가/삭제 등 다양한 기능을 지원한다.
 
 ## 수정모드 강제종료
+
 jqGrid에서 특정셀을 수정 가능하도록 설정(colmodel option - editable: true)한 경우 해당셀을 선택하면 옵션에 따라 `<input>` 혹은 `<select>` 등의 입력폼으로 바뀌게 되어 있다.
 
 ![](/images/jqgrid-2.png)
@@ -49,6 +51,7 @@ for(var i=0; i<selRows.length; i++) {
 ```
 
 ## onSelectRow, onCellSelect, onSelectCell의 차이
+
 [http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events](http://www.trirand.com/jqgridwiki/doku.php?id=wiki:events)
 
 ![](/images/jqgrid-3.png)

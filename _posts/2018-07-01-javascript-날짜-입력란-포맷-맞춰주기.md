@@ -7,7 +7,7 @@ categories:
   - jquery
 tags:
   - javascript
-  - ecmascript
+  - jquery
   - date
   - format
   - 코드모음

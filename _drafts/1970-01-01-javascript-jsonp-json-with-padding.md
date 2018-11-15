@@ -29,6 +29,7 @@ DOM에 script라는 객체를 생성한 후 거기에 외부 소스를 불러서
 ## TODO: jQuery 말고 JavaScript로 코드 수정할 것
 
 ### request
+
 정상적인 데이터를 돌려받기 위해서는 아래와 같이 작성해야 한다.
 ```js
 $.getJSON("http://127.0.0.1:8080/jsp/upload?id=user&callback=?"
@@ -52,6 +53,7 @@ $.ajax({
 ```
 
 ### response
+
 ```java
 protected void doGet(HttpServletRequest req, HttpServletResponse res)
         throws ServletException, IOException {
