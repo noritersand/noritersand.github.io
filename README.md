@@ -114,3 +114,14 @@ jekyll serve
 
 - 폰트: `_sass\simple-texture\blog\_variables.scss`
 - 헤더 태그: `_sass\simple-texture-blog.scss`
+
+## 지킬 빌드 디버깅 로그
+
+### on 태그는 빌드 불가
+
+```bash
+      Remote Theme: Using theme yizeng/jekyll-theme-simple-texture
+  Liquid Exception: Liquid error (line 40): comparison of TrueClass with String failed in /_layouts/post.html
+             Error: Liquid error (line 40): comparison of TrueClass with String failed
+             Error: Run jekyll build --trace for more information.
+```
