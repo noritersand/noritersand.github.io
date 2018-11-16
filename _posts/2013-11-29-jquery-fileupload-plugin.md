@@ -106,7 +106,7 @@ add에서 submit하지 않으면 데이터 전송이 이뤄지지 않으니 주�
 
 ## response example
 
-
+```java
 @RequestMapping(value="/sample/file/upload", produces="application/json")
 @ResponseBody
 public String upload(HttpServletRequest req) throws IOException {
@@ -115,28 +115,33 @@ public String upload(HttpServletRequest req) throws IOException {
 
     return "{\"code\":\"1\", \"msg\":\"file upload success.\"}";
 }
-파일첨부 시 즉시 검증(validation)
+```
+
+## 파일첨부 시 즉시 검증(validation)
+
 FileUpload plugin을 사용하면 파일첨부 시점에 add 메서드가 실행되는 점을 이용하여 첨부된 파일의 검증만을 수행한다.
 
+```js
 $(document).ready(function() {
-    $('#upFile').fileupload({
-        url : '/sample/file/uploadProcessJson.action',
-        dataType: 'json',
-        replaceFileInput: false,
-        add: function(e, data){
-            var isValid = true;
-            var uploadFile = data.files[0];
-            if (!(/png|jpe?g|gif/i).test(uploadFile.name)) {
-                alert('png, jpg, gif 만 가능합니다');
-                isValid = false;
-            } else if (uploadFile.size > 5000000) { // 5mb
-                alert('파일 용량은 5메가를 초과할 수 없습니다.');
-                isValid = false;
-            }
+  $('#upFile').fileupload({
+    url : '/sample/file/uploadProcessJson.action',
+    dataType: 'json',
+    replaceFileInput: false,
+    add: function(e, data){
+      var isValid = true;
+      var uploadFile = data.files[0];
+      if (!(/png|jpe?g|gif/i).test(uploadFile.name)) {
+        alert('png, jpg, gif 만 가능합니다');
+        isValid = false;
+      } else if (uploadFile.size > 5000000) { // 5mb
+        alert('파일 용량은 5메가를 초과할 수 없습니다.');
+        isValid = false;
+      }
 
-            if (!isValid) {
-                // 후처리
-            {
-        }
-    });
+      if (!isValid) {
+        // 후처리
+      {
+    }
+  });
 });
+```
