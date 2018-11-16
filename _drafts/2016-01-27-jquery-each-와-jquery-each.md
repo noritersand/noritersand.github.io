@@ -6,6 +6,7 @@ categories:
   - javascript
   - jquery
 tags:
+  - javascript
   - jquery
   - each
 ---
