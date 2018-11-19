@@ -16,9 +16,9 @@ tags:
 
 #### 관련 문서
 
-- http://www.w3schools.com/tags/att_input_required.asp
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity
-- https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity
+- [http://www.w3schools.com/tags/att_input_required.asp](http://www.w3schools.com/tags/att_input_required.asp)
+- [https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity)
+- [https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity)
 
 #### 테스트 환경
 
@@ -72,4 +72,4 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 <button type="button" onclick="test02(event)">BUTTON</button>
 ```
 
-거의 똑같이 돌아가긴 하지만 `HTMLFormElement.reportValidity()`는 익스플로러에서 지원하지 않는 문제가 있다. ~~익스 없는 세상은 언제 오나~~
+거의 똑같이 돌아가긴 하지만 [`HTMLFormElement.reportValidity()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity)는 익스플로러에서 지원하지 않는 문제가 있다. ~~익스 없는 세상은 언제 오나~~
