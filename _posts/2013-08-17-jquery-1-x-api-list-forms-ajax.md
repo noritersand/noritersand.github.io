@@ -337,7 +337,8 @@ $.get('example.php', function() {
 ### Deprecation Notice
 
 > The jqXHR.success(), jqXHR.error(), and jqXHR.complete() callback methods introduced in jQuery 1.5 are deprecated as of jQuery 1.8. To prepare your code for their eventual removal, use jqXHR.done(), jqXHR.fail(), and jqXHR.always() instead.
-<br><br>[https://api.jquery.com/jQuery.Ajax/#jqXHR](https://api.jquery.com/jQuery.Ajax/#jqXHR)
+>
+>[https://api.jquery.com/jQuery.Ajax/#jqXHR](https://api.jquery.com/jQuery.Ajax/#jqXHR)
 
 `jqXHR.success()`, `jqXHR.error()`, `jqXHR.complete()`는 1.8 버전 이후로 사용이 권장되지 않는다. (1.11 버전 기준 아직 삭제되진 않았음)
 

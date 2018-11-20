@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-11-15 12:36:26 +0900
-title: 'jQuery: .on()'
+title: 'jQuery: blueimp 파일 업로드 플러그인'
 categories:
   - javascript
   - jquery
@@ -17,7 +17,7 @@ tags:
 
 #### 관련 문서
 
-- [https://github.com/blueimp/jQuery-File-Upload/wiki](https://github.com/blueimp/jQuery-File-Upload/wiki)
+- [https://github.com/blueimp/jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)
 
 #### required
 
