@@ -117,7 +117,7 @@ public String upload(HttpServletRequest req) throws IOException {
 }
 ```
 
-## 파일첨부 시 즉시 검증(validation)
+## 파일첨부 시 즉시 검증
 
 FileUpload plugin을 사용하면 파일첨부 시점에 add 메서드가 실행되는 점을 이용하여 첨부된 파일의 검증만을 수행한다.
 

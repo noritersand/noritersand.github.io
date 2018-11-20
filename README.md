@@ -6,16 +6,23 @@
 
 ## 글 작성 도움말
 
-#### 주의 사항
+### 주의 사항
 
 파일명과 카테고리, 태그는 반드시 소문자로 작성할 것. 파일명과 카테고리는 파일 시스템에 영향을 주기 때문이고 태그는 대소문자 혼용하면 일원화가 힘들다.
 
-#### kramdown 목차 자동 생성
+### kramdown 목차 자동 생성
 
 ```html
 * Kramdown table of contents
 {:toc .toc}
 ```
+
+### 파일 수정 가이드
+
+#### CSS
+
+- 폰트: `_sass\simple-texture\blog\_variables.scss`
+- 헤더 태그: `_sass\simple-texture-blog.scss`
 
 ## 환경 설정
 
@@ -107,13 +114,6 @@ jekyll serve
 ```
 
 로컬 서버에서는 한글 파일명을 인식하지 못하는 문제가 있음.(2018-08-13 기준)
-
-## 파일 수정 가이드
-
-#### CSS
-
-- 폰트: `_sass\simple-texture\blog\_variables.scss`
-- 헤더 태그: `_sass\simple-texture-blog.scss`
 
 ## 지킬 빌드 디버깅 로그
 
