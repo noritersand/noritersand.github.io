@@ -19,10 +19,13 @@
 
 ### 파일 수정 가이드
 
-#### CSS
+#### 폰트
 
-- 폰트: `_sass\simple-texture\blog\_variables.scss`
-- 헤더 태그: `_sass\simple-texture-blog.scss`
+- `_sass\simple-texture\blog\_variables.scss`
+
+#### 헤더 태그
+
+- `_sass\simple-texture-blog.scss`
 
 ## 환경 설정
 
