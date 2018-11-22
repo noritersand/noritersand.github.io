@@ -32,7 +32,7 @@ window.open( URL, name [ , specs ] [ , replace ] )
 ```js
 function openNewWindow(url, name) {
   var specs = "left=10,top=10,width=372,height=466";
-  specs += ",toolbar=no,menubar=no,status=no,scrollbars=no,resizable=no";
+  specs += ",toolbar=yes,menubar=no,status=yes,scrollbars=yes,resizable=yes";
   window.open(url, name, specs);
 }
 ```
@@ -65,3 +65,14 @@ specs += ",top=" + top;
 
 window.open("/test.jsp", "팝업", specs);
 ```
+
+## 브라우저별 특성
+
+### 크롬
+
+새 창 옵션 중 menubar가 yes일 경우 크롬은 새 창 팝업 대신 새 탭 팝업으로 열린다.
+
+### 파이어폭스
+
+
+### 엣지
