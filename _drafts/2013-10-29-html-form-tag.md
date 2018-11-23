@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-29 14:59:00 +0900
-title: 'HTML: <form> tag'
+title: 'HTML: form tag'
 categories:
   - html
 tags:

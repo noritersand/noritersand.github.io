@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-26 23:04:00 +0900
-title: 'Java: java.lang.Class<T>'
+title: 'Java: java.lang.Class'
 categories:
   - java
 tags:
@@ -18,9 +18,11 @@ tags:
 - [http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Field.html](http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Field.html)
 
 
-## java.lang.Class
+## java.lang.Class`<T>`
 
-Class 클래스는 특정 클래스나 인터페이스에 관한 메타정보를 검색할 수 있는 메서드를 포함하고 있다. T는 이 Class 객체에 의해 모델화 되는 클래스의 형태로 예를 들어 String 클래스의 형태는 `Class<String>`이다. 모델화 되는 클래스가 명확하지 않는 경우 `Class<?>`라고 명시한다.
+다른 모든 클래스를 정의하는 제네릭 클래스. Class 클래스의 인스턴스는 실행중인 다른 클래스나 인터페이스를 의미한다.
+
+Class 클래스에선 다른 클래스나 인터페이스의 메타 정보를 검색할 수 있는 메서드가 제공된다. T는 이 Class 객체에 의해 모델화 되는 클래스의 형태로 예를 들어 String 클래스의 형태는 `Class<String>`이다. 모델화 되는 클래스가 명확하지 않는 경우 `Class<?>`라고 명시한다.
 
 대부분의 메서드가 `sun.java.Reflection`을 통해 작동한다.
 

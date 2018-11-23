@@ -31,7 +31,7 @@ document.querySelector('TARGET_FRAME_SELECTOR').contentWindow.location.replace('
 ### replaceState
 
 ```
-replaceState(data, title: string, url?: string)
+replaceState(data, title, url)
 ```
 
 - `data`:
