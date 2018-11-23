@@ -1,13 +1,12 @@
 ---
 layout: post
 date: 2018-10-18 15:43:00 +0900
-title: 'Servlet-JSP: HttpServletRequestWrapper'
+title: 'Servlet: HttpServletRequestWrapper'
 categories:
   - java
   - servlet
 tags:
   - servlet
-  - jsp
   - httpservletrequest
 ---
 
