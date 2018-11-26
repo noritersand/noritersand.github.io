@@ -7,6 +7,7 @@ categories:
   - servlet
 tags:
   - servlet
+  - java
   - httpservletrequest
 ---
 
