@@ -22,6 +22,15 @@ netstat -nao
 netstat -nao | findstr '8081'
 ```
 
+## certutil
+
+```bash
+certutil -hashfile .\example.txt
+# SHA1의 .\example.txt 해시:
+# 63e64496bdcaa77d4920891844e3a3299da17e45
+# CertUtil: -hashfile 명령이 성공적으로 완료되었습니다.
+```
+
 ## tasklist
 
 ```bash
