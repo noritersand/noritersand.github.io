@@ -86,7 +86,7 @@ curl http://tistory.com
 wget http://www.example.com/
 
 # GNU FTP 사이트로부터 Wget의 소스 코드 내려받기.
-wget ftp://ftp.gnu.org/pub/gnu/wget/wget-latest.tar.gz
+wget ftp://ftp.gnu.org/pub/gnu/wget/somefile
 ```
 
 ## find
@@ -109,7 +109,7 @@ rm 대상파일경로
 rmdir 대상디렉토리경로
 ```
 ```bash
-rm -rf ./target # target 디렉토리 내의 모든 파일과 하위 디렉토리를 프롬프트 없이 삭제
+rm -rf ./trash # trash 디렉토리 내의 모든 파일과 하위 디렉토리를 프롬프트 없이 삭제
 rm -f ./some-link # 심볼릭 링크 삭제
 rmdir ./test-folder # 비어있는 디렉토리 삭제
 ```
@@ -345,7 +345,7 @@ history  # 명령 이력 보기
 
 ## zip/unzip
 
-압축/압축해제
+zip 압축/압축해제
 
 ```
 zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
@@ -356,6 +356,34 @@ unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]
 zip -r ../archive.zip ./*  # 현재 디렉토리의 모든 파일을 상위/archive.zip 파일로 압축
 unzip archive.zip -d unarchive  # unarchive 디렉토리에 archive.zip 파일을 압축 해제
 ```
+
+## tar
+
+tar 압축/압축해제. tar는 특별한 옵션을 사용하지 않는한 기본적으로 여러 파일과 폴더를 하나의 파일로 묶는 기능이다. 용량을 줄이는 진짜 압축(compress)은 gunzip(확장자 gz) 옵션을 적용해야 한다.
+
+```bash
+# 현재 경로의 모든 파일을 xxx.tar.gz로 압축
+tar cvzf example.tar.gz *
+
+# 권한(permission)이 없는 파일 패스하며, 해당 경로의 모든 파일을 example.tar.gz로 압축
+tar cvzf example.tar.gz * --ignore-failed-read
+
+# 현재 폴더에 압축 해제
+tar xfvz example.tar.gz
+
+# test 폴더에 압축 해제
+tar xfvz example.tar.gz -C test
+```
+
+#### options
+
+- `x`: 묶음을 해제
+- `c`: 파일을 묶음
+- `v`: 묶음/해제 과정을 화면에 표시
+- `z`: gunzip을 사용.
+- `f`: 파일 이름을 지정
+- `p`: 권한(permission)을 원본과 동일하게 유지
+
 
 ## 기타
 
