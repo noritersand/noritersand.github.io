@@ -78,6 +78,7 @@ _이탤릭_
 | undefined        | "undefined" | NaN    | false   | TypeError              |
 | true             | "true"      | 1      |         | new Boolean(true)      |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
+| pipe            |  p\|i\|p\|e  |        |         |                        |
 
 ## 인용구
 
