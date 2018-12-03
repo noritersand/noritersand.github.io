@@ -6,6 +6,7 @@ categories:
   - java
   - servlet
 tags:
+  - java
   - servlet
   - MultipartRequest
   - oreilly
