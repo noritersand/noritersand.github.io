@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-14 23:56:00 +0900
-title: 'Servlet: Session 다루기'
+title: 'Servlet: Session 세션 다루기'
 categories:
   - java
 tags:
