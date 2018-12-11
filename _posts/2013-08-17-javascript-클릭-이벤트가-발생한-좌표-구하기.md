@@ -1,0 +1,46 @@
+---
+layout: post
+date: 2013-08-17 03:11:00 +0900
+title: 'JavaScript: 클릭 이벤트가 발생한 좌표 구하기'
+categories:
+  - javascript
+tags:
+  - ecmascript
+  - javascript
+  - click
+  - offset
+  - 코드모음
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+```html
+<script type="text/javascript">
+  function pos(event) {
+    var str = "";
+    str = "offsetX: " + (event.offsetX == undefined ? event.layerX : event.offsetX);
+    str += ", offsetY: " + (event.offsetY == undefined ? event.layerY : event.offsetY);
+    str += "<br/>screenX: " + event.screenX;
+    str += ", screenY : " + event.screenY;
+    str += "<br/>clientX : " + event.clientX;
+    str += ", clientY : " + event.clientY;
+    str += "<br/>pageX : " + event.pageX;
+    str += ", pageY : " + event.pageY;
+    document.getElementById("result").innerHTML = str;
+  }
+</script>
+</head>
+<body>
+    <div onclick="pos(event);" style="position:absolute; top:100px; left:200px; width:200px; height:200px; border:1px solid #ff0000;"></div>
+    <div id="result"></div>
+</body>
+```
+
+#### 좌표 관련 프로퍼티
+
+- `offset`: 이벤트가 걸려있는 DOM 객체를 기준으로 좌표를 출력한다.
+- `layer`: offset과 같음. 파폭에서 사용한다.
+- `screen`: 화면 출력 크기가 기준인 절대좌표. 브라우저를 움직여도 값은 같다.
+- `client`: 브라우저가 기준인 좌표. 브라우저 상에서 어느 지점에 위치하는지를 의미하기 때문에 스크롤해도 값은 변하지 않는다.
+- `page`: 문서가 기준인 좌표. client와 비슷하지만 문서 전체 크기가 기준이라 스크롤 시 값이 바뀐다.

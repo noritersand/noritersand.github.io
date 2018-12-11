@@ -1,0 +1,41 @@
+---
+layout: post
+date: 2014-08-19 09:09:00 +0900
+title: 'JavaScript: 숫자 외(문자) 입력 막기'
+categories:
+  - javascript
+tags:
+  - ecmascript
+  - javascript
+  - only number
+  - 코드모음
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+```js
+$('#inptHp2, #inptHp3').keydown(function(e) {
+  var k = e.keyCode;
+  // console.log(k);
+  if ((90 >= k && k >= 65) // a ~ z
+      || (111 >= k && k >= 106) // keypad operator
+      || (192 >= k && k >= 186) // -,=./;
+      || (222 >= k && k >= 219) // ']\[
+      || k == 32 // space bar
+      || k == 59 // FF ;
+      || k == 61 // FF =
+      || k == 173 // FF -
+      ) {
+    e.preventDefault();
+  }
+});
+```
+
+사실 이 방법보단 정규식으로 replace 하는게 낫다.
+
+한글을 막으려면 아래처럼 스타일 속성을 추가한다:
+
+```html
+<input type="text" style="ime-mode: disabled;"/>
+```
