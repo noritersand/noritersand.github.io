@@ -9,7 +9,11 @@ tags:
   - byte
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 #### 관련 문서
+
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/Byte.html](http://docs.oracle.com/javase/9/docs/api/java/lang/Byte.html)
 
 Byte 타입 자료형을 지원하는 클래스. byte 타입은 일반적으로 입출력, 전송 시에 사용한다. 변수에 Byte 혹은 byte 타입을 선언할 경우 할당할 수 있는 범위는 -128 ~ 127이다.
