@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-24 16:22:00 +0900
-title: 'Java: @lombok'
+title: 'Java: Lombok'
 categories:
   - java
 tags:
@@ -12,16 +12,24 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-@Data
+#### 관련 문서
 
-@EqualsAndHashCode(callSuper=false)
+- [https://projectlombok.org/](https://projectlombok.org/)
 
-@ToString(callSuper=true)
+## val
 
-@Getter
 
-@Setter
 
-@Slf4j
+## @Data
+
+## @EqualsAndHashCode(callSuper=false)
+
+## @ToString(callSuper=true)
+
+## @Getter
+
+## @Setter
+
+## @Slf4j
 
 자동 getter setter
