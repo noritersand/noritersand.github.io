@@ -6,6 +6,7 @@ categories:
   - etc
 tags:
   - ms chat support
+  - etc
 ---
 
 인바운드를 줄이려는지 페이지 찾기 겁나 힘들게 해놨다.
