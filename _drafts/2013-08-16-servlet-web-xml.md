@@ -1,11 +1,13 @@
 ---
 layout: post
 date: 2013-08-16 03:53:00 +0900
-title: 'Tomcat: web.xml'
+title: 'Servlet: web.xml'
 categories:
-  - was/webserver
-  - tomcat
+  - java
+  - servlet
 tags:
+  - java
+  - servlet
   - tomcat
   - web.xml
   - config
@@ -14,7 +16,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-web.xml은 톰캣의 실행환경에 대한 정보를 담당하는 '환경설정' 파일이다. 각종 servlet의 설정과 servlet 매핑, 필터, 인코딩 등을 담당하며 톰캣에 있는 모든 web application의 기본설정을 정의한다.
+#### 관련 문서
+
+- [뀨](뀨)
+- [https://docs.oracle.com/cd/E13222_01/wls/docs92/webapp/configureservlet.html](https://docs.oracle.com/cd/E13222_01/wls/docs92/webapp/configureservlet.html)
+- [https://docs.oracle.com/javase/jndi/tutorial/beyond/env/source.html](https://docs.oracle.com/javase/jndi/tutorial/beyond/env/source.html)
+
+web.xml은 WAS의 실행환경에 대한 정보를 담당하는 '환경설정' 파일이다. 각종 servlet의 설정과 servlet 매핑, 필터, 인코딩 등을 담당하며 WAS에 있는 모든 web application의 기본설정을 정의한다.
 
 web.xml은 각 application이 deploy될 때 각 application의 `WEB-INF/web.xml` deployment descripter에 따라서 처리가 된다.
 
@@ -25,7 +33,7 @@ web.xml은 각 application이 deploy될 때 각 application의 `WEB-INF/web.xml`
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
-    <display-name>웹앱이름</display-name>
+    <display-name>web app name</display-name>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -37,6 +45,39 @@ web.xml은 각 application이 deploy될 때 각 application의 `WEB-INF/web.xml`
 </web-app>
 ```
 ▲ servlet spec 3.1의 web.xml
+
+## JESSIONID 이름 바꾸기
+
+JAVA WAS는 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'라는 쿠키를 생성한다. 만약 이 쿠키의 이름을 바꾸고 싶다면 다음을 web.xml에 추가한다:
+
+```xml
+<session-config>
+    <cookie-config>
+        <name>MYJSESSIONID</name>
+    </cookie-config>
+</session-config>
+```
+
+## 시스템 프로퍼티에 접근
+
+```
+<filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+        <param-name>encoding</param-name>
+        <param-value>${file.encoding}</param-value>
+    </init-param>
+</filter>
+```
+
+**TODO**: `${}` 표현식으로 시스템 프로퍼티(JVM의 `-D` 옵션)에 설정한 값을 가져올 수 있다.
+
+## load-on-startup
+
+## init-param
+
+## HttpServlet 오버라이드 메서드들
 
 ## 태그 종류
 
@@ -104,16 +145,4 @@ Tomcat 5.0 이하에서는  elements의 순서 순서를 지키지 않으면 web
 <servlet>
 <servlet-mapping>
 <servlet-mapping> <!-- 권장 -->
-```
-
-## JESSIONID 이름 바꾸기
-
-톰캣은 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'라는 쿠키를 생성한다. 만약 이 쿠키의 이름을 바꾸고 싶다면 다음을 web.xml에 추가한다:
-
-```xml
-<session-config>
-    <cookie-config>
-        <name>MYJSESSIONID</name>
-    </cookie-config>
-</session-config>
 ```
