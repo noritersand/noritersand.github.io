@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2013-08-16 03:53:00 +0900
+date: 2015-08-16 03:53:00 +0900
 title: 'Servlet: web.xml'
 categories:
   - java
