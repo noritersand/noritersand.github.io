@@ -1,0 +1,53 @@
+---
+layout: post
+date: 2018-12-18 21:32:54 +0900
+title: 'Visual Studio Code: 초기 설정'
+categories:
+  - devtool
+tags:
+  - vscode
+---
+
+atom 1.32.0 기준.
+
+## 기본 설정
+
+#### 자동완성 설정 변경
+
+json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Settings (JSON)' > `엔터`) 아래 항목 추가:
+
+```json
+"editor.quickSuggestions": {
+    "other": false,
+    "comments": false,
+    "strings": false
+}
+```
+
+## 단축키
+
+커맨드 팔레트`ctrl+shift+p`에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력 후 엔터. 이 후 열리는 keybindings.json을 아래처럼 변경:
+
+```json
+[
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    }
+]
+```
+
+## 플러그인
+
+- change-case
+- Java Server Pages (JSP)
