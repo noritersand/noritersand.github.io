@@ -22,3 +22,7 @@ tags:
 내용
 
 끗.
+
+## maven dependency
+
+pom.xml의 dependency 설정에 추가한 프로젝트가 들어오는걸로 추정됨.
