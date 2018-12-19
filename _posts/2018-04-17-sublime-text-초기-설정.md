@@ -29,7 +29,6 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
   "show_encoding": true,
   "show_line_endings": true
 }
-
 ```
 
 #### key bindings - user
