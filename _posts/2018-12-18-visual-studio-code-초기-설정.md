@@ -5,7 +5,7 @@ title: 'Visual Studio Code: 초기 설정'
 categories:
   - devtool
 tags:
-  - vscode
+  - visual studio code
 ---
 
 atom 1.32.0 기준.

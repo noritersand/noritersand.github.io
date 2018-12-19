@@ -6,6 +6,7 @@ categories:
   - devtool
 tags:
   - eclipse
+  - mylyn task
 ---
 
 #### 관련 문서
