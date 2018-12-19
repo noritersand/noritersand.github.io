@@ -19,7 +19,7 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 #### settings - user
 ```json
 {
-  "auto_complete_commit_on_tab": true,
+  "auto_complete": false,
   "fallback_encoding": "UTF-8",
   "font_face": "Consolas",
   "font_size": 11,
