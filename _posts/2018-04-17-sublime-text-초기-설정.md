@@ -9,14 +9,17 @@ tags:
 ---
 
 ## package control 설치
+
 ctrl+shift+p 로 팔레트를 열고 install package control
 
 ## 한글 인코딩 지원 패키지 설치
+
 ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > ConvertToUTF8
 
 ## 작성자 저장용 사용자 설정
 
 #### settings - user
+
 ```json
 {
   "auto_complete": false,
@@ -26,9 +29,11 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
   "show_encoding": true,
   "show_line_endings": true
 }
+
 ```
 
 #### key bindings - user
+
 ```json
 [
   { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
