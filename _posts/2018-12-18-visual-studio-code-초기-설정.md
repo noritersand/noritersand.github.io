@@ -47,6 +47,45 @@ json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Se
 ]
 ```
 
+### 서브라임처럼 키 설정 바꾸기
+
+일단 'Sublime Text Keymap and Settings Importer' 플러그인 설치한다. 그리고 keybindings.json을 아래처럼 변경:
+
+```json
+[
+    {
+        "key": "ctrl+shift+k",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    }
+]
+```
+
 ## 플러그인
 
 - change-case

@@ -35,8 +35,6 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 
 ```json
 [
-  { "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
-  { "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
   { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
   { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
   { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
