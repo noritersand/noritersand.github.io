@@ -35,13 +35,13 @@ json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Se
         "command": "-workbench.view.debug"
     },
     {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines",
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
     }
 ]
