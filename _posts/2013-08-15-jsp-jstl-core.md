@@ -30,7 +30,7 @@ directive: <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 body 위치에서 실행되는 코드의 예외를 잡아내는 역할을 담당한다.
 
-```
+```html
 <c:catch var="name">
   body content
 </c:catch>
@@ -87,7 +87,7 @@ line2
 
 `<c:choose/>` 태그는 java의 switch 문과 같지만, 조건에 문자열 비교도 가능하고 쓰임의 범위가 넓다. 또한 `<c:if/>` 태그에 else가 없기 때문에 이의 대체 기능도 수행한다.
 
-```
+```html
 <c:choose>
   body content
   (하나 이상의 <when>과 하나 이하의 <otherwise> 서브태그)
@@ -160,7 +160,7 @@ line2
 
 ### Syntax 1: 객체 전체에 걸쳐서 반복
 
-```
+```html
 <c:forEach [var="varName"] items="collection" [varStatus="varStatusName"]
   [begin="begin"] [end="end"] [step="step"]>
   body content
@@ -169,7 +169,7 @@ line2
 
 ### Syntax 2: 지정한 횟수만큼 반복
 
-```
+```html
 <c:forEach [var="varName"] [varStatus="varStatusName"]
   begin="begin" end="end" [step="step"]>
   body content
@@ -248,7 +248,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 
 `<c:forTokens/>`는 java.util.StringTokenizer의 기능을 태그로 구현한 것이다.
 
-```
+```html
 <c:forTokens items="stringOfTokens" delims="delimiters"
   [var="varName"] [varStatus="varStatusName"]  [begin="begin"]  [end="end"]  [step="step"]>
   body  content
@@ -290,7 +290,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 
 ### Syntax 1: 해당 주소를 바로 출력하거나 String 에 담아놓는다.
 
-```
+```html
 <c:import url="url" [context="context"]
     [var="varName"]  [scope="{page|request|session|application}"]
     [charEncoding="charEncoding"]>
@@ -300,7 +300,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 
 ### Syntax 2: 해당 주소의 컨텐츠를  Reader 객체로
 
-```
+```html
 <c:import url="url" [context="context"]
     varReader="varReaderName"
     [charEncoding="charEncoding"]>
@@ -344,13 +344,13 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 
 ### Syntax 1: Body 없는 경우
 
-```
+```html
 <c:if test="testCondition" var="varName" [scope="{page|request|session|application}"]/>
 ```
 
 ### Syntax 2: Body 있는 경우
 
-```
+```html
 <c:if test="testCondition" [var="varName"] [scope="{page|request|session|application}"]>
   body content
 </c:if>
@@ -403,13 +403,13 @@ JSP expression[^1]을 대체하는 태그로 가장 많이 사용된다... 는 �
 
 ### Syntax 1: body 없는 경우
 
-```
+```html
 <c:out value="value" [escapeXml="{true|false}"] [default="value가 없을 때 표시될 문자"]  />
 ```
 
 ### Syntax 2: body 있는 경우
 
-```
+```html
 <c:out value="value" [escapeXml="{true|false}"]  />
   value가 없을 때 표시될 문자
 </c:out>
@@ -436,7 +436,7 @@ escapeXml 속성은 XML Entities의 치환여부를 의미한다. 생략 혹은 
 
 보통 import, redirect, url 태그와 같이 쓰이는 태그. "파라미터=값" 형식을 표현한다.
 
-```
+```html
 <c:param 속성="값".../>
 ```
 
@@ -455,13 +455,13 @@ escapeXml 속성은 XML Entities의 치환여부를 의미한다. 생략 혹은 
 
 ### Syntax 1: Body 없는 경우
 
-```
+```html
 <c:redirect url="value" [context="context"]/>
 ```
 
 ### Syntax 2: Body 있는 경우 쿼리 스트링 파라미터 지정
 
-```
+```html
 <c:redirect url="value" [context="context"]/>
   <c:param> 서브태그
 </c:redirect>
@@ -482,13 +482,13 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  (page, request
 
 ### Syntax 1: scope 에 해당하는 변수에 속성 값을 정한다.
 
-```
+```html
 <c:set value="value" var="varName" [scope="{page|request|session|application}"]/>
 ```
 
 ### Syntax 2: scope 에 해당하는 변수에  body 값을 정한다.
 
-```
+```html
 <c:set var="varName" [scope="{page|request|session|application}"]>
   body content
 </c:set>
@@ -496,13 +496,13 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  (page, request
 
 ### Syntax 3: 속성 값으로  target 객체의 프로퍼티 값을 정한다.
 
-```
+```html
 <c:set value="value" target="target" property="propertyName"/>
 ```
 
 ### Syntax 4: body 값으로  target 객체의 프로퍼티 값을 정한다.
 
-```
+```html
 <c:set target="target" property="propertyName">
   body content
 </c:set>
@@ -547,13 +547,13 @@ target속성은 jsp에서 객체 생성 후 사용하거나 기존 객체의 get
 
 ### Syntax 1: Body 없는 경우
 
-```
+```html
 <c:url value="value" [context="context"] [var="varName"] [scope="{page|request|session|application}"]/>
 ```
 
 ### Syntax 2: Body 있는 경우 파라미터 지정
 
-```
+```html
 <c:url value="value" [context="context"] [var="varName"] [scope="{page|request|session|application}"]>
   <c:param> 서브태그
 </c:url>
