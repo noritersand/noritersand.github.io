@@ -71,29 +71,25 @@ $(document).ready(function () {
   $('.nav-global .btn-search').on('click', function () {
     searchOverlay.open()
   });
-
-  $('body').on('keypress', function(event) {
-    var key = event.keyCode || event.which;
-    if (key == 63) {
-      searchOverlay.open();
-    }
-  });
-
   $('.nav-global .btn-menu').on('click', function () {
       $('.nav-wrapper').css({display: "block"});
       $(".nav-form").addClass('active');
       $(".nav-form .search-field").prop('disabled', true);
       $("body").addClass('nav-overlay');
   });
-
   $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
       searchOverlay.close();
   });
 
+  $(document).on('keypress', function(e) {
+    if ((e.keyCode || e.which) === 63) {
+      searchOverlay.open();
+    }
+  });
   $(document).on('keyup', function (e) {
-      if (e.keyCode === 27) {
-          searchOverlay.close();
-      }
+    if ((e.keyCode || e.which) === 27) {
+      searchOverlay.close();
+    }
   });
 })(jQuery, window);
 </script>
