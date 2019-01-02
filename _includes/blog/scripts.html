@@ -54,46 +54,47 @@ $(document).ready(function () {
 });
 
 (function ($, window, undefined) {
-    var closeOverlay = function () {
-        $('.nav-wrapper, .search-wrapper').removeAttr('style');
-        $(".nav-form, .search-form").removeClass('active');
-        $("body").removeClass('nav-overlay search-overlay');
-    };
-
-    function showSearchLayer() {
+  var searchOverlay = {
+    open: function() {
       $('.search-wrapper').css({display: "block"});
       $(".search-form").addClass('active');
       $(".search-form").find('input').focus();
       $("body").addClass('search-overlay');
+    },
+    close: function() {
+      $('.nav-wrapper, .search-wrapper').removeAttr('style');
+      $(".nav-form, .search-form").removeClass('active');
+      $("body").removeClass('nav-overlay search-overlay');
     }
+  };
 
-    $('.nav-global .btn-search').on('click', function () {
-      showSearchLayer()
-    });
+  $('.nav-global .btn-search').on('click', function () {
+    searchOverlay.open()
+  });
 
-    $('body').on('keypress', function(event) {
-      var key = event.keyCode || event.which;
-      if (key == 63) {
-        showSearchLayer();
+  $('body').on('keypress', function(event) {
+    var key = event.keyCode || event.which;
+    if (key == 63) {
+      searchOverlay.open();
+    }
+  });
+
+  $('.nav-global .btn-menu').on('click', function () {
+      $('.nav-wrapper').css({display: "block"});
+      $(".nav-form").addClass('active');
+      $(".nav-form .search-field").prop('disabled', true);
+      $("body").addClass('nav-overlay');
+  });
+
+  $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
+      searchOverlay.close();
+  });
+
+  $(document).on('keyup', function (e) {
+      if (e.keyCode === 27) {
+          searchOverlay.close();
       }
-    });
-
-    $('.nav-global .btn-menu').on('click', function () {
-        $('.nav-wrapper').css({display: "block"});
-        $(".nav-form").addClass('active');
-        $(".nav-form .search-field").prop('disabled', true);
-        $("body").addClass('nav-overlay');
-    });
-
-    $('.nav-wrapper .btn-close, .search-wrapper .btn-close').on('click', function () {
-        closeOverlay();
-    });
-
-    $(document).on('keyup', function (e) {
-        if (e.keyCode === 27) {
-            closeOverlay();
-        }
-    });
+  });
 })(jQuery, window);
 </script>
 
