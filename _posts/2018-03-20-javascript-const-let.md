@@ -80,4 +80,4 @@ console.debug(arr[ele2]); // ReferenceError: ele2 is not defined
 ```
 let으로 선언된 `ele2`는 for문 밖에서 참조할 수 없다.
 
-IE는 11과 edge에서만 사용 가능 https://msdn.microsoft.com/en-us/library/s4esdbwz(v=vs.94).aspx
+IE는 11과 edge에서만 사용 가능 [https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
