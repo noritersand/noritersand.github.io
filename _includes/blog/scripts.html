@@ -60,11 +60,22 @@ $(document).ready(function () {
         $("body").removeClass('nav-overlay search-overlay');
     };
 
+    function showSearchLayer() {
+      $('.search-wrapper').css({display: "block"});
+      $(".search-form").addClass('active');
+      $(".search-form").find('input').focus();
+      $("body").addClass('search-overlay');
+    }
+
     $('.nav-global .btn-search').on('click', function () {
-        $('.search-wrapper').css({display: "block"});
-        $(".search-form").addClass('active');
-        $(".search-form").find('input').focus();
-        $("body").addClass('search-overlay');
+      showSearchLayer()
+    });
+
+    $('body').on('keypress', function(event) {
+      var key = event.keyCode || event.which;
+      if (key == 63) {
+        showSearchLayer();
+      }
     });
 
     $('.nav-global .btn-menu').on('click', function () {
