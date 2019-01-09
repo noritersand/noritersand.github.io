@@ -111,6 +111,8 @@ public HashMap<String, String> testMethod(Model model) {
 
 TODO
 
+반대격으로 `consumes`가 있는걸로 **추정된다.**
+
 ## example
 
 ```java
