@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-02-09 13:24:00 +0900
-title: '안드로이드: intent 모음'
+title: 'Android: intent 모음 (비공개)'
 categories:
   - android
 tags:
@@ -10,12 +10,15 @@ tags:
   - 코드모음
 ---
 
-관련 문서
-https://developer.chrome.com/multidevice/android/intents
+**비공개 글**
+
+#### 관련 문서
+
+- [https://developer.chrome.com/multidevice/android/intents](https://developer.chrome.com/multidevice/android/intents)
 
 ## syntax
 
-```
+```js
 intent:
    HOST/URI-path // Optional host
    #Intent;
@@ -27,7 +30,7 @@ intent:
    end;
 ```
 
-```
+```js
 intent://#Intent;scheme=스킴명;package=패키지명;end
 ```
 
