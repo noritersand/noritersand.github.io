@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-09 17:53:21 +0900
-title: 'JavaScript: 정규식 모음'
+title: 'JavaScript: regex 정규식 모음'
 categories:
   - javascript
 tags:
