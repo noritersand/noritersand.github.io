@@ -89,7 +89,7 @@ SELECT NAME 이름, capital "수도 이름" FROM dual;
 SELECT * FROM tab_sample ex1;
 ```
 
-## CASE
+### CASE
 
 ```sql
 SELECT
