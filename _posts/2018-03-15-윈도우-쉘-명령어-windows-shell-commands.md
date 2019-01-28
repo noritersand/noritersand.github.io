@@ -24,10 +24,18 @@ netstat -nao | findstr '8081'
 
 ## certutil
 
+https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
+
+### 해시값 체크
+
 ```bash
-certutil -hashfile .\example.txt
+certutil -hashfile 파일명 [해시방식]
+```
+
+```bash
+certutil -hashfile .\example.txt MD5
 # SHA1의 .\example.txt 해시:
-# 63e64496bdcaa77d4920891844e3a3299da17e45
+# f9c3df25f671c015100347d51cef76ee
 # CertUtil: -hashfile 명령이 성공적으로 완료되었습니다.
 ```
 

@@ -25,7 +25,32 @@ concat
 
 
 
-스택기능:
+## 스택기능
+
+
+### Array.prototype.push()
+
+배열의 맨 뒤에 요소를 더하고 배열의 길이를 반환한다.
+
+```js
+var arr = [];
+arr.push('a'); // 1
+arr.push('b', 'c', 'd'); // 4
+console.log(arr); // ['a', 'b', 'c', 'd']
+```
+
+### Array.prototype.unshift()
+
+`push()`와 반대로 배열의 맨 앞에 요소를 더하고 배열의 길이를 반환한다.
+
+```js
+var arr = [];
+arr.unshift('a'); // 1
+arr.unshift('b', 'c', 'd'); // 4
+console.log(arr); // ['b', 'c', 'd', 'a']
+```
+
+
 
 push
 
