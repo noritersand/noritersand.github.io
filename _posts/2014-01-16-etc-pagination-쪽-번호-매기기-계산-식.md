@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-16 14:00:00 +0900
-title: 'JSP: Pagination 쪽 번호 매기기 계산 식'
+title: 'etc: Pagination 쪽 번호 매기기 계산 식'
 categories:
   - java
   - jsp
@@ -41,15 +41,15 @@ pageLength = totalRows / rowsPerPage + ((totalRows % rowsPerPage == 0) ? 0 : 1)
 
 이때 `totalRows / rowsPerPage`의 소숫점 이하는 버린다.
 
-#### indexPerPage(혹은 numberPerPage)
+#### indexesPerPage
 
 Number of indexes per page, 한 페이지에서 표시 가능한 최대 인덱스 수. pageLength가 이 값보다 큰 경우 페이지 자체도 인덱싱이 가능해야 한다.
 
-그림으로 설명하면 indexPerPage가 5이고 pageLength가 6일 때
+그림으로 설명하면 indexesPerPage가 5이고 pageLength가 6일 때
 
 ![](/images/page-index-1.png)
 
-위처럼 indexPerPage를 초과하는 페이지는 한번에 표시하지 않으며 버튼 클릭 시 나타나도록 구현한다.
+위처럼 indexesPerPage를 초과하는 페이지는 한번에 표시하지 않으며 버튼 클릭 시 나타나도록 구현한다.
 
 ![](/images/page-index-2.png)
 
