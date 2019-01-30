@@ -35,11 +35,18 @@ total number of rows, 모든 데이터의 개수. `SELECT COUNT(*)`의 값을 �
 
 총 페이지 수를 의미하며 아래처럼 계산한다.
 
-```java
+```js
 pageLength = totalRows / rowsPerPage + ((totalRows % rowsPerPage == 0) ? 0 : 1)
 ```
 
-이때 `totalRows / rowsPerPage`의 소숫점 이하는 버린다.
+이 때 `totalRows / rowsPerPage`의 소숫점 이하는 버린다.
+
+혹은 간단하게
+
+```js
+// 자바스크립트일 때, Math.ceil()은 매개변수를 소수점 올림하여 정수를 반환하는 함수.
+pageLength = Math.ceil(totalRows / rowsPerPage)
+```
 
 #### indexesPerPage
 
