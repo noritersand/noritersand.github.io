@@ -81,7 +81,7 @@ $('#searchForm').valid();
 
 앞서 `validate()` 부분에서 잠시 언급했지만 기본적으로 `validate()` 메서드는 jQuery 셀렉터로 선택된 HTML 노드에 이벤트 핸들러를 할당하며 이후 'submit' 이벤트가 발생하면 JSON으로 작성된 옵션과 함께 플러그인을 실행한다. 따라서 우리는 `valid()`를 호출하지 않고도 `submit()` 만으로도 플러그인을 작동시킬 수 있다.
 
-`valid()` 메서드가 호출되고 validation 결과가 true일 떄 validator는 submitHandler를 실행한다. 다음을 보자:
+`valid()` 메서드가 호출되고 validation 결과가 true일 때 validator는 submitHandler를 실행한다. 다음을 보자:
 
 ```js
 function search() {

@@ -16,7 +16,7 @@ tags:
 public static final ThreadLocal<String> LOCAL_VARIABLE = new ThreadLocal<String>() {
     @Override
     protected String initialValue() {
-        return "hello"; // LOCAL_VARIABLE은 매 쓰레드가 종료되면(시작할떄?) 'hello'로 초기화된다.
+        return "hello"; // LOCAL_VARIABLE은 매 쓰레드가 종료되면(시작할 때?) 'hello'로 초기화된다.
     }
 }
 ```
