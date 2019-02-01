@@ -18,7 +18,7 @@ tags:
 
 #### 관련 문서
 
-- [어디어디](/assad)
+- [somewhere](/somewhere)
 
 ## attr()
 

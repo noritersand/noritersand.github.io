@@ -14,7 +14,7 @@ tags:
 
 #### 관련 문서
 
-- [어디어디](/assad)
+- [somewhere](/somewhere)
 
 
 JDK 몇 부터 추가된거더라?
