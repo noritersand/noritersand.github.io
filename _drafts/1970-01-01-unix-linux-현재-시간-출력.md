@@ -1,11 +1,12 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Unix: 현재 시간 출력'
+title: 'Unix/Linux: 현재 시간 출력'
 categories:
-  - linux
+  - unix/linux
 tags:
   - os
+  - unix
   - linux
   - date
 ---

@@ -3,9 +3,10 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: 메모'
 categories:
-  - linux
+  - unix/linux
 tags:
   - os
+  - unix
   - linux
   - memo
 ---

@@ -3,9 +3,10 @@ layout: post
 date: 2018-07-06 15:57:35 +0900
 title: 'Unix/Linux: Vim 단축키.jpg'
 categories:
-  - linux
+  - unix/linux
 tags:
   - os
+  - unix
   - linux
   - vim
 ---
