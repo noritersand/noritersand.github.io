@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-16 04:29:00 +0900
 title: 'Servlet: ServletConfig, ServletContext'
 categories:
-  - java
   - servlet
 tags:
   - java

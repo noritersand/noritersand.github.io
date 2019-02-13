@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-15 00:00:00 +0900
 title: 'JSP: JSTL-Core'
 categories:
-  - java
   - jsp
 tags:
   - java
@@ -273,7 +272,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 <h4><c:forTokens></h4>
 <c:forTokens var="one" items="서울|인천,대전,대구,부산,광주,평양"
              delims="," varStatus="sts">
-     <c:out value="${sts.count}:${one}"/>, 
+     <c:out value="${sts.count}:${one}"/>,
 </c:forTokens>
 <hr/>
 

@@ -3,9 +3,9 @@ layout: post
 date: 2017-08-09 15:44:00 +0900
 title: 'Spring: mvc:resources'
 categories:
-  - java
   - spring
 tags:
+  - java
   - spring
   - mvc
   - resources

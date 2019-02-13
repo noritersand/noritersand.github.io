@@ -3,7 +3,6 @@ layout: post
 date: 2018-07-01 00:00:00 +0900
 title: 'jQuery: 날짜 입력란 포맷 맞춰주기'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

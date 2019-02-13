@@ -5,6 +5,7 @@ title: 'Oracle: tablespace, 테이블 스페이스'
 categories:
   - oracle
 tags:
+  - dbms
   - oracle
   - tablespace
 ---

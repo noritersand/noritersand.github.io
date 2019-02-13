@@ -3,7 +3,6 @@ layout: post
 date: 2016-01-24 20:17:00 +0900
 title: 'Spring: @Controller'
 categories:
-  - java
   - spring
 tags:
   - java

@@ -3,9 +3,9 @@ layout: post
 date: 2016-09-08 18:47:28 +0900
 title: 'Maven: 메이븐은 src/main/java 아래의 xml을 무시한다'
 categories:
-  - buildtool
   - maven
 tags:
+  - buildtool
   - maven
   - pom.xml
 ---

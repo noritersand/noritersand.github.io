@@ -3,9 +3,9 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'Unix/Linux: 쉘 스크립트 시작줄'
 categories:
-  - os
   - linux
 tags:
+  - os
   - linux
   - bash
   - shell

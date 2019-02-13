@@ -3,7 +3,6 @@ layout: post
 date: 2013-11-21 11:49:26 +0900
 title: 'jQuery: node 생성하기'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

@@ -3,11 +3,11 @@ layout: post
 date: 2018-12-18 10:48:00 +0900
 title: 'Spring: Cache 스프링 캐시'
 categories:
-  - java
   - spring
 tags:
+  - java
   - spring
-  - spring boot
+  - spring-boot
   - cache
   - tag me
 ---

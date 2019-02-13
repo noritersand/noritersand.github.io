@@ -3,9 +3,9 @@ layout: post
 date: 2015-10-20 22:47:00 +0900
 title: 'AngularJS: 핸들러에서 이벤트가 발생한 노드에 접근하는 방법'
 categories:
-  - javascript
   - angularjs
 tags:
+  - javascript
   - angularjs
   - event
   - selector

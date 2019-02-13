@@ -3,9 +3,9 @@ layout: post
 date: 2019-01-17 17:25:00 +0900
 title: 'MyBatis-Spring: RefreshableSqlSessionFactoryBean'
 categories:
-  - java
   - mybatis
 tags:
+  - java
   - mybatis
   - spring
   - hot deploy

@@ -3,7 +3,6 @@ layout: post
 date: 2014-12-12 11:40:00 +0900
 title: 'Spring: AOP annotation'
 categories:
-  - java
   - spring
 tags:
   - java

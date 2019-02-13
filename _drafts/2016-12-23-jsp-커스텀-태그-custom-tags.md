@@ -3,7 +3,6 @@ layout: post
 date: 2016-12-23 13:00:00 +0900
 title: 'JSP: 커스텀 태그 Custom tags'
 categories:
-  - java
   - jsp
 tags:
   - java

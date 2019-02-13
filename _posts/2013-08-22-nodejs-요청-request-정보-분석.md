@@ -3,9 +3,9 @@ layout: post
 date: 2013-08-22 00:00:00 +0900
 title: 'Node.js: 요청(request) 정보 분석'
 categories:
-  - javascript
   - nodejs
 tags:
+  - javascript
   - nodejs
   - request
 ---

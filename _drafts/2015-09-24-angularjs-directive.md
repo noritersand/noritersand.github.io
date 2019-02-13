@@ -3,9 +3,9 @@ layout: post
 date: 2015-09-24 14:41:00 +0900
 title: 'AngularJS: directive'
 categories:
-  - javascript
   - angularjs
 tags:
+  - javascript
   - angularjs
   - directive
 ---

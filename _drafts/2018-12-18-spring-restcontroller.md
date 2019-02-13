@@ -3,9 +3,9 @@ layout: post
 date: 2018-12-18 10:58:00 +0900
 title: 'Spring: @RestController'
 categories:
-  - java
   - spring
 tags:
+  - java
   - spring
   - restcontroller
 ---
@@ -19,3 +19,5 @@ tags:
 - [https://spring.io/guides/gs/rest-service/](https://spring.io/guides/gs/rest-service/)
 
 @RestController
+
+@

@@ -3,7 +3,6 @@ layout: post
 date: 2017-01-10 10:04:00 +0900
 title: 'Spring: RequestMapping으로 설정한 path 값 얻기'
 categories:
-  - java
   - spring
 tags:
   - java

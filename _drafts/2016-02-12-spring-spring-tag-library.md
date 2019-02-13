@@ -3,7 +3,6 @@ layout: post
 date: 2016-02-12 17:31:00 +0900
 title: 'Spring: Spring tag library'
 categories:
-  - java
   - spring
 tags:
   - java

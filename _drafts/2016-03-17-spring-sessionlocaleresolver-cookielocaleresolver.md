@@ -3,7 +3,6 @@ layout: post
 date: 2016-03-17 12:02:00 +0900
 title: 'Spring: SessionLocaleResolver, CookieLocaleResolver'
 categories:
-  - java
   - spring
 tags:
   - java

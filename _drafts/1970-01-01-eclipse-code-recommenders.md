@@ -5,6 +5,7 @@ title: 'eclipse: Code Recommenders'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
 ---
 

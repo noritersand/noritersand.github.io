@@ -3,7 +3,6 @@ layout: post
 date: 2016-03-11 14:46:00 +0900
 title: 'Spring: InitializingBean'
 categories:
-  - java
   - spring
 tags:
   - java

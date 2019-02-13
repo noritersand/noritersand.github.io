@@ -3,7 +3,6 @@ layout: post
 date: 2016-11-21 00:42:00 +0900
 title: 'Servlet: web.xml 없이 서블릿 설정하기'
 categories:
-  - java
   - servlet
 tags:
   - java

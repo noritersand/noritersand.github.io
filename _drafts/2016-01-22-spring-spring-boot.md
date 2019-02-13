@@ -3,12 +3,11 @@ layout: post
 date: 2016-01-22 16:36:00 +0900
 title: 'Spring: Spring Boot'
 categories:
-  - java
   - spring
 tags:
   - java
   - spring
-  - spring boot
+  - spring-boot
 ---
 
 * Kramdown table of contents

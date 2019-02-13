@@ -5,6 +5,7 @@ title: 'eclipse: easy console grepper 권장 설정'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - easy console grepper
 ---

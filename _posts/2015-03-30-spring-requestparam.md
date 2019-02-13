@@ -3,7 +3,6 @@ layout: post
 date: 2015-03-30 17:23:00 +0900
 title: 'Spring: @RequestParam'
 categories:
-  - java
   - spring
 tags:
   - java

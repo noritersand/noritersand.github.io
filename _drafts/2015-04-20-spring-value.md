@@ -3,7 +3,6 @@ layout: post
 date: 2015-04-20 10:19:00 +0900
 title: 'Spring: @Value'
 categories:
-  - java
   - spring
 tags:
   - java

@@ -5,6 +5,7 @@ title: 'eclipse: context information'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
 ---
 

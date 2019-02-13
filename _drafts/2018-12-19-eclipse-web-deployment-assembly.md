@@ -5,6 +5,7 @@ title: 'eclipse: Web Deployment Assembly'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - web deployment assembly
   - was

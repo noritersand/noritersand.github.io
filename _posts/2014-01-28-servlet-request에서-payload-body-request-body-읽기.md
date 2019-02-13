@@ -3,7 +3,6 @@ layout: post
 date: 2014-01-28 14:05:00 +0900
 title: 'Servlet: Request에서 payload body(request body) 읽기'
 categories:
-  - java
   - servlet
 tags:
   - java

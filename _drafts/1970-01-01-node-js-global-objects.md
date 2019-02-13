@@ -3,9 +3,9 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: 'Node.js: Global Objects'
 categories:
-  - javascript
   - nodejs
 tags:
+  - javascript
   - nodejs
   - global objects
 ---

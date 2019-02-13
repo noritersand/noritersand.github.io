@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-17 03:08:00 +0900
 title: 'Servlet: HttpSessionListener로 접속자 수 구하기'
 categories:
-  - java
   - servlet
 tags:
   - java

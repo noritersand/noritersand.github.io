@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-17 19:55:00 +0900
 title: 'Spring: forward/redirection'
 categories:
-  - java
   - spring
 tags:
   - java

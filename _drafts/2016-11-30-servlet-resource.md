@@ -3,7 +3,6 @@ layout: post
 date: 2016-11-30 19:17:00 +0900
 title: 'Servlet: @Resource'
 categories:
-  - java
   - servlet
 tags:
   - java

@@ -3,7 +3,6 @@ layout: post
 date: 2015-05-21 15:38:00 +0900
 title: 'Spring: org.springframework.util.MultiValueMap'
 categories:
-  - java
   - spring
 tags:
   - java

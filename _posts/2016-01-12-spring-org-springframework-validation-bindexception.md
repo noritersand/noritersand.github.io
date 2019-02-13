@@ -3,7 +3,6 @@ layout: post
 date: 2016-01-12 19:24:00 +0900
 title: 'Spring: org.springframework.validation.BindException'
 categories:
-  - java
   - spring
 tags:
   - java

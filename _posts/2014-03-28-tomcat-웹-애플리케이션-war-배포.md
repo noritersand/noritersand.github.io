@@ -3,9 +3,9 @@ layout: post
 date: 2014-03-28 20:42:00 +0900
 title: 'Tomcat: 웹 애플리케이션(WAR) 배포'
 categories:
-  - was/webserver
   - tomcat
 tags:
+  - was
   - tomcat
   - deploy
   - distribute

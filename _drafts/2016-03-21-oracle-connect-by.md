@@ -3,9 +3,9 @@ layout: post
 date: 2016-03-21 21:05:00 +0900
 title: 'Oracle: connect by'
 categories:
-  - dbms
   - oracle
 tags:
+  - dbms
   - oracle
   - sql
   - connect by

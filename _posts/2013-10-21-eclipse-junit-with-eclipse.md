@@ -3,8 +3,9 @@ layout: post
 date: 2013-10-21 15:05:00 +0900
 title: 'eclipse: JUnit with eclipse'
 categories:
-  - eclipse
+  - devtool
 tags:
+  - devtool
   - eclipse
   - junit
   - java

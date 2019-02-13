@@ -3,10 +3,9 @@ layout: post
 date: 2018-11-01 00:00:00 +0900
 title: 'JavaScript: 해시'
 categories:
-  - html
-  - markdown
+  - javascript
 tags:
-  - test
+  - javascript
 ---
 
 * Kramdown table of contents

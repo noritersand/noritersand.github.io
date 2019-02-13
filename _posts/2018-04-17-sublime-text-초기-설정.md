@@ -5,6 +5,7 @@ title: 'sublime text: 초기 설정'
 categories:
   - devtool
 tags:
+  - devtool
   - sublimetext
 ---
 

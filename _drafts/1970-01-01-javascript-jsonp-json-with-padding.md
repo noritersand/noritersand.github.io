@@ -4,7 +4,6 @@ date: 1970-01-01 00:00:00 +0900
 title: 'JavaScript: JSONP(JSON with Padding)'
 categories:
   - javascript
-  - jquery
 tags:
   - javascript
   - jquery

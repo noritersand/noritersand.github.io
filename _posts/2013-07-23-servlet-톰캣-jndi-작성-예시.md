@@ -3,9 +3,9 @@ layout: post
 date: 2013-07-23 02:42:00 +0900
 title: 'Servlet: 톰캣 JNDI 작성 예시'
 categories:
-  - java
   - servlet
 tags:
+  - java
   - servlet
   - tomcat
   - connection

@@ -3,7 +3,6 @@ layout: post
 date: 2013-10-21 17:14:00 +0900
 title: 'Spring: 트랜잭션 관리 managing transactions'
 categories:
-  - java
   - spring
 tags:
   - java

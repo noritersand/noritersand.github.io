@@ -5,6 +5,7 @@ title: 'sublime text: 단축키'
 categories:
   - devtool
 tags:
+  - devtool
   - sublimetext
 ---
 

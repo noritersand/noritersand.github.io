@@ -5,6 +5,7 @@ title: 'eclipse: 다른 프로젝트를 포함하여 export 하는 방법'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - deployment
 ---

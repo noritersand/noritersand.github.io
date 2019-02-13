@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-14 04:41:00 +0900
 title: 'JSP: java server page 기본'
 categories:
-  - java
   - jsp
 tags:
   - java

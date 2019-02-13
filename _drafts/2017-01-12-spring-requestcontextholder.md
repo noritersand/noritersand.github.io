@@ -3,7 +3,6 @@ layout: post
 date: 2017-01-12 15:28:00 +0900
 title: 'Spring: RequestContextHolder'
 categories:
-  - java
   - spring
 tags:
   - java

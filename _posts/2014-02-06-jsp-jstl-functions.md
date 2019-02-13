@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-06 17:47:00 +0900
 title: 'JSP: JSTL-Functions'
 categories:
-  - java
   - jsp
 tags:
   - java

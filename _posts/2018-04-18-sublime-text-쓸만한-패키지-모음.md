@@ -5,6 +5,7 @@ title: 'sublime text: 쓸만한 패키지 모음'
 categories:
   - devtool
 tags:
+  - devtool
   - sublimetext
   - plugin
 ---

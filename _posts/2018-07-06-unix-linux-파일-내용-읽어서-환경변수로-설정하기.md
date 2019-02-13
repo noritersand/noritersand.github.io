@@ -3,9 +3,9 @@ layout: post
 date: 2018-07-06 16:13:07 +0900
 title: 'Unix/Linux: 파일 내용 읽어서 환경변수로 설정하기'
 categories:
-  - os
   - linux
 tags:
+  - os
   - linux
   - evironment variable
 ---

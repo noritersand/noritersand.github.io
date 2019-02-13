@@ -5,6 +5,7 @@ title: 'eclipse: hot code replace'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - hot deploy
   - hot code replace

@@ -3,9 +3,9 @@ layout: post
 date: 2014-07-16 10:53:00 +0900
 title: 'Oracle: data concatenation'
 categories:
-  - dbms
   - oracle
 tags:
+  - dbms
   - oracle
   - concatenation
 ---

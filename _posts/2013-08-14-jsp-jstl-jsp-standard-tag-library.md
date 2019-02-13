@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-14 13:47:00 +0900
 title: 'JSP: JSTL, JSP Standard Tag Library'
 categories:
-  - java
   - jsp
 tags:
   - java

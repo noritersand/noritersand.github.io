@@ -3,7 +3,7 @@ layout: post
 date: 2013-08-14 23:19:00 +0900
 title: 'Servlet: Cookie 쿠키 다루기'
 categories:
-  - java
+  - servlet
 tags:
   - java
   - servlet

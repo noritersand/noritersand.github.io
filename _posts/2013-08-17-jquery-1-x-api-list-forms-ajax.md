@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-17 05:00:26 +0900
 title: 'jQuery-1.x API list: Forms, Ajax'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

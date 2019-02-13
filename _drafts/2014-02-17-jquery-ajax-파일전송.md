@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-17 14:25:00 +0900
 title: 'jQuery: 비동기 파일 전송'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

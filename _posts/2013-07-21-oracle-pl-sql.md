@@ -3,9 +3,9 @@ layout: post
 date: 2013-07-21 01:00:00 +0900
 title: 'Oracle: PL/SQL (Procedure)'
 categories:
-  - dbms
   - oracle
 tags:
+  - dbms
   - oracle
   - procedure
 ---

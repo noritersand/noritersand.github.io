@@ -3,7 +3,6 @@ layout: post
 date: 2014-02-05 18:17:00 +0900
 title: 'jQuery: 파일 입력필드 초기화, reset input type="file"'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

@@ -3,9 +3,9 @@ layout: post
 date: 2017-04-24 10:49:00 +0900
 title: 'Tomcat: webapp 이름이 ROOT가 아니며 path가 "/"일 때'
 categories:
-  - was/webserver
   - tomcat
 tags:
+  - was
   - tomcat
   - appbase
   - docbase

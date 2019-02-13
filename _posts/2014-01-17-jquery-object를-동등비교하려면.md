@@ -3,7 +3,6 @@ layout: post
 date: 2014-01-17 15:58:26 +0900
 title: 'jQuery: jQuery object를 동등비교하려면?'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

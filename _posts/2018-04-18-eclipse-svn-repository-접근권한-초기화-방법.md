@@ -5,6 +5,7 @@ title: 'eclipse: svn repository 접근권한 초기화 방법'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
 ---
 

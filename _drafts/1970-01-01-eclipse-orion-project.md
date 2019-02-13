@@ -5,5 +5,6 @@ title: 'eclipse: orion project'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
 ---

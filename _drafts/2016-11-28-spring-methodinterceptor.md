@@ -3,7 +3,6 @@ layout: post
 date: 2016-11-28 10:19:00 +0900
 title: 'Spring: MethodInterceptor'
 categories:
-  - java
   - spring
 tags:
   - java

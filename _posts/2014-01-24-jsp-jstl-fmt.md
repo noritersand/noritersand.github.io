@@ -3,7 +3,6 @@ layout: post
 date: 2014-01-24 14:48:00 +0900
 title: 'JSP: JSTL-fmt'
 categories:
-  - java
   - jsp
 tags:
   - java

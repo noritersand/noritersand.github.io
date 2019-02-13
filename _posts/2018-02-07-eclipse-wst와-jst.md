@@ -5,6 +5,7 @@ title: 'eclipse: WST와 JST'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - plugin
   - wst

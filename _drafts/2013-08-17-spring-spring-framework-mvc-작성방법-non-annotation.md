@@ -3,12 +3,11 @@ layout: post
 date: 2013-08-17 01:57:00 +0900
 title: 'Spring: Spring Framework: MVC 작성방법 (non-annotation)'
 categories:
-  - java
   - spring
 tags:
   - java
   - spring
-  - spring mvc
+  - spring-mvc
 ---
 
 * Kramdown table of contents

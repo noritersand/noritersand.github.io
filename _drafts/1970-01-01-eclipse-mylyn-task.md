@@ -5,6 +5,7 @@ title: 'eclipse: Mylyn Task'
 categories:
   - devtool
 tags:
+  - devtool
   - eclipse
   - mylyn task
 ---

@@ -3,9 +3,9 @@ layout: post
 date: 2013-11-28 15:03:00 +0900
 title: 'MyBatis: 1:N 관계 데이터 처리 data concatenation'
 categories:
-  - java
   - mybatis
 tags:
+  - java
   - mybatis
   - concat
   - concatenation

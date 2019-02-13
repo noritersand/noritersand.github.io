@@ -3,7 +3,6 @@ layout: post
 date: 2013-08-17 21:26:00 +0900
 title: 'Spring Framework: 자주 쓰는 annotation 정리 #1'
 categories:
-  - java
   - spring
 tags:
   - java

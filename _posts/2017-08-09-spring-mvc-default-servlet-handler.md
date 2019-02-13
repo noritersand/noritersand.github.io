@@ -3,9 +3,9 @@ layout: post
 date: 2017-08-09 15:30:00 +0900
 title: 'Spring: mvc:default-servlet-handler'
 categories:
-  - java
   - spring
 tags:
+  - java
   - spring
   - defaultservlethandler
 ---

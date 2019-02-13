@@ -3,9 +3,9 @@ layout: post
 date: 2017-04-25 11:40:00 +0900
 title: 'Tomcat: HTTPS(TLS/SSL) 설정'
 categories:
-  - was/webserver
   - tomcat
 tags:
+  - was
   - tomcat
   - HTTPS
   - TLS

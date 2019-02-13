@@ -3,12 +3,11 @@ layout: post
 date: 2016-02-29 13:54:00 +0900
 title: 'MyBatis: Enum타입 사용하기'
 categories:
-  - java
   - mybatis
 tags:
+  - java
   - mybatis
   - enum
-  - java
 ---
 
 * Kramdown table of contents

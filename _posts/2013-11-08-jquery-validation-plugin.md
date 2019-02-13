@@ -3,7 +3,6 @@ layout: post
 date: 2013-11-08 11:44:26 +0900
 title: 'jQuery: jQuery Validation plugin'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

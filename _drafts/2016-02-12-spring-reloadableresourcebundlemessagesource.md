@@ -3,7 +3,6 @@ layout: post
 date: 2016-02-12 17:26:00 +0900
 title: 'Spring: ReloadableResourceBundleMessageSource'
 categories:
-  - java
   - spring
 tags:
   - java

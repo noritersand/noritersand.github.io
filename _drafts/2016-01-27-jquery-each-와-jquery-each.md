@@ -3,7 +3,6 @@ layout: post
 date: 2016-01-27 02:02:00 +0900
 title: 'jQuery: .each()와 jQuery.each()'
 categories:
-  - javascript
   - jquery
 tags:
   - javascript

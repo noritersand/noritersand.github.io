@@ -5,6 +5,7 @@ title: 'eclipse: 무료 hot deploy 플러그인'
 categories:
   - devtool
 tags:
+  - devtool
   - hot deploy
   - hot code replace
   - eclipse

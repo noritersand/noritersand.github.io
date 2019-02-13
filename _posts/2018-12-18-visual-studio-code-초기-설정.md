@@ -5,6 +5,7 @@ title: 'Visual Studio Code: 초기 설정'
 categories:
   - devtool
 tags:
+  - devtool
   - visual studio code
 ---
 

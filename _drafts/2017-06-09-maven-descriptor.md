@@ -3,9 +3,9 @@ layout: post
 date: 2017-06-09 19:12:00 +0900
 title: 'Maven: descriptor'
 categories:
-  - buildtool
   - maven
 tags:
+  - buildtool
   - maven
   - descriptor
 ---
