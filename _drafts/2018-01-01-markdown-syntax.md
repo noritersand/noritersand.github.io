@@ -6,6 +6,7 @@ categories:
   - demo
 tags:
   - test
+  - markdown
 ---
 
 * Kramdown table of contents

@@ -3,8 +3,11 @@ layout: post
 date: 2018-01-01 00:00:00 +0900
 title: "Quick kramdown demo"
 description: "A quick demo post to some kramdown features."
-categories: [demo]
-tags: [demo, jekyll]
+categories:
+  - demo
+tags: 
+  - demo
+  - jekyll
 ---
 
 > This is [kramdown][kramdown] formatting test page for [Simple Texture][Simple Texture] theme.
