@@ -41,6 +41,7 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
   { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
   { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
   { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
-  { "keys": ["ctrl+shift+s"], "command": "save_all" }
+  { "keys": ["ctrl+shift+s"], "command": "save_all" },
+  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} }
 ]
 ```
