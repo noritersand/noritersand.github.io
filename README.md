@@ -20,11 +20,11 @@
 
 ### 파일 수정 가이드
 
-#### 폰트
+#### scss 변수
 
 - `_sass\simple-texture\blog\_variables.scss`
 
-#### 헤더 태그
+#### 헤더 폰트 등
 
 - `_sass\simple-texture-blog.scss`
 
