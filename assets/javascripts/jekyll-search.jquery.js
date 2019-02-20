@@ -5,7 +5,7 @@
             template            : '<a href="{url}" title="{desc}">{title}</a>',
             searchResults       : '.results',
             searchResultsTitle  : '<h4>Search results</h4>',
-            limit               : '10',
+            limit               : '30',
             noResults           : '<p>Oh shucks<br/><small>Nothing found :(</small></p>'
         }, options);
 
@@ -39,7 +39,7 @@
                 if(e.which === 13){
                     if(matches)
                         window.location = matches[0].url;
-                        
+
                     //follow the first link
                     // if(searchResults.children().length)
                 }
