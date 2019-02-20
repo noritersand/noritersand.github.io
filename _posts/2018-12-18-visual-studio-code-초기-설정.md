@@ -55,35 +55,30 @@ json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Se
 ```json
 [
     {
-        "key": "ctrl+shift+k",
-        "command": "editor.action.copyLinesDownAction",
-        "when": "editorFocus"
-    },
-    {
         "key": "ctrl+shift+d",
-        "command": "-editor.action.copyLinesDownAction",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
+        "command": "-workbench.view.debug"
     },
     {
         "key": "ctrl+shift+k",
         "command": "-editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
-    }
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.deleteLines"
+    },
+	{
+		"key": "ctrl+k s",
+		"command": "-workbench.action.files.saveAll"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "-workbench.action.files.saveAs"
+	},
+	{
+		"key": "ctrl+shift+s",
+		"command": "workbench.action.files.saveAll"
+	}
 ]
 ```
 
