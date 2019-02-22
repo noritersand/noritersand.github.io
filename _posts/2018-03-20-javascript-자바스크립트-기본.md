@@ -18,6 +18,12 @@ tags:
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
+## 버전 넘버링
+
+JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6, ... 처럼 단순 넘버링이었다가, ES2015(ES6), ES2016(ES7), ... 처럼 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다.
+
+이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019(ES10)인데, 이 경우 ES2019라고만 적어도 되지만 이전 방식의 버전을 병기하기도 한다.
+
 ## 코멘트 처리
 
 ### SingleLine Comment
