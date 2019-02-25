@@ -64,25 +64,25 @@ Outer.Nested.innerMember; //private이기 때문에 접근불가
 
 ```java
 class Outer {
-	private static String a = "static outer member";
-	private String b = "non-static outer member";
+    private static String a = "static outer member";
+    private String b = "non-static outer member";
 
-	private class Inner {
-//		private static String c = "static inner member"; // non-static 내부 클래스에는 스태틱 멤버를 선언할 수 없음
-		private String d = "non-static inner member";
+    private class Inner {
+//        private static String c = "static inner member"; // non-static 내부 클래스에는 스태틱 멤버를 선언할 수 없음
+        private String d = "non-static inner member";
 
-		private void innerMethod() {
-			System.out.println(Outer.a); // private이어도 접근 가능
-			Outer out = new Outer();
-			System.out.println(out.b); // private이어도 접근 가능
-		}
-	}
+        private void innerMethod() {
+            System.out.println(Outer.a); // private이어도 접근 가능
+            Outer out = new Outer();
+            System.out.println(out.b); // private이어도 접근 가능
+        }
+    }
 
-	public void outerMethod() {
-		Inner inner = new Inner();
-		System.out.println(inner.d); // private이어도 접근 가능
-		inner.innerMethod();
-	}
+    public void outerMethod() {
+        Inner inner = new Inner();
+        System.out.println(inner.d); // private이어도 접근 가능
+        inner.innerMethod();
+    }
 }
 ```
 
@@ -93,30 +93,30 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class NestedTest {
-	@Test
-	public void test() {
-		Outer outer = new Outer();
-		Assert.assertEquals("invoking innerMethod", outer.outerMethod());
+    @Test
+    public void test() {
+        Outer outer = new Outer();
+        Assert.assertEquals("invoking innerMethod", outer.outerMethod());
 
-		Outer.Inner inner = new Outer().getInner();
-		Assert.assertEquals("invoking innerMethod", inner.innerMethod());
-	}
+        Outer.Inner inner = new Outer().getInner();
+        Assert.assertEquals("invoking innerMethod", inner.innerMethod());
+    }
 }
 
 class Outer {
-	public Inner getInner() {
-		return new Inner();
-	}
+    public Inner getInner() {
+        return new Inner();
+    }
 
-	public class Inner {
-		public String innerMethod() {
-			return "invoking innerMethod";
-		}
-	}
+    public class Inner {
+        public String innerMethod() {
+            return "invoking innerMethod";
+        }
+    }
 
-	public String outerMethod() {
-		return new Inner().innerMethod();
-	}
+    public String outerMethod() {
+        return new Inner().innerMethod();
+    }
 }
 ```
 
@@ -124,27 +124,27 @@ class Outer {
 
 ```java
 public class NestedEnumTest {
-	@Test
-	public void test() {
-		NestedEnumTestBean.InsertType insertType = NestedEnumTestBean.InsertType.APPEND;
-		Assert.assertEquals("APPEND", insertType.toString());
-	}
+    @Test
+    public void test() {
+        NestedEnumTestBean.InsertType insertType = NestedEnumTestBean.InsertType.APPEND;
+        Assert.assertEquals("APPEND", insertType.toString());
+    }
 }
 
 class NestedEnumTestBean {
-	private InsertType emailInsertType;
+    private InsertType emailInsertType;
 
-	public enum InsertType {
-		APPEND, NEW;
-	}
+    public enum InsertType {
+        APPEND, NEW;
+    }
 
-	public InsertType getEmailInsertType() {
-		return emailInsertType;
-	}
+    public InsertType getEmailInsertType() {
+        return emailInsertType;
+    }
 
-	public void setEmailInsertType(InsertType emailInsertType) {
-		this.emailInsertType = emailInsertType;
-	}
+    public void setEmailInsertType(InsertType emailInsertType) {
+        this.emailInsertType = emailInsertType;
+    }
 }
 ```
 
