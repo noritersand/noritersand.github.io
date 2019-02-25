@@ -60,62 +60,56 @@ Outer.Nested.innerMember; //private이기 때문에 접근불가
 
 ## (non-static)nested class
 
-스태틱 중첩 클래스와 비교하면 단순히 static만 빠진 형태. 스태틱 멤버를 선언할 수 없다. 외부에서 접근하려면 인스턴스를 생성해야 한다.
+스태틱 중첩 클래스와 비교하면 단순히 static만 빠진 형태. 스태틱 멤버를 선언할 수 없다.
 
-```java
-class Outer {
-    private static String a = "static outer member";
-    private String b = "non-static outer member";
-
-    private class Inner {
-//        private static String c = "static inner member"; // non-static 내부 클래스에는 스태틱 멤버를 선언할 수 없음
-        private String d = "non-static inner member";
-
-        private void innerMethod() {
-            System.out.println(Outer.a); // private이어도 접근 가능
-            Outer out = new Outer();
-            System.out.println(out.b); // private이어도 접근 가능
-        }
-    }
-
-    public void outerMethod() {
-        Inner inner = new Inner();
-        System.out.println(inner.d); // private이어도 접근 가능
-        inner.innerMethod();
-    }
-}
-```
-
-다른 클래스에선 내부클래스에 직접 접근할 수 없으므로 우선 외부클래스의 인스턴스를 만들고 외부클래스의 getter를 통해 내부클래스의 인스턴스를 얻어야 한다. (물론 이런 getter가 제공될리가 없겠지만)
+내부 클래스가 public이냐 private이냐에 따라 사용법이 달라지는데, public이면 외부 클래스를 통해 인스턴스를 직접 얻을 수 있지만 private이면 인스턴스 접근은 불가능하고 외부 클래스 메서드를 경유한 방식만 허용된다.
 
 ```java
 import org.junit.Assert;
 import org.junit.Test;
 
-public class NestedTest {
-    @Test
-    public void test() {
-        Outer outer = new Outer();
-        Assert.assertEquals("invoking innerMethod", outer.outerMethod());
+public class NestedFactoryTest {
+    private static final Logger logger = LoggerFactory.getLogger(NestedFactoryTest.class);
 
-        Outer.Inner inner = new Outer().getInner();
-        Assert.assertEquals("invoking innerMethod", inner.innerMethod());
+    @Test
+    public void shouldBeNotNull() {
+        // #1 내부 클래스가 public일 때: 인스턴스 직접 접근
+        NestedClass inner = NestedClassFactory.getNestedClass();
+        Assert.assertNotNull(inner);
+
+        // #2 내부 클래스가 private일 때: 인스턴스 직접 접근 불가.
+        // compile error: The type NestedClassFactory.NestedHiddenClass is not visible
+        // NestedClassFactory.NestedHiddenClass inner2 = NestedClassFactory.getNestedHiddenClass();
+        Assert.assertEquals("fire egg", NestedClassFactory.getValueOfNestedHiddenClass());
     }
 }
 
-class Outer {
-    public Inner getInner() {
-        return new Inner();
+class NestedClassFactory {
+
+    private NestedClassFactory() {}
+
+    public class NestedClass {
     }
 
-    public class Inner {
-        public String innerMethod() {
-            return "invoking innerMethod";
+    private class NestedHiddenClass {
+        public String getValue() {
+            return "fire egg";
         }
     }
 
-    public String outerMethod() {
-        return new Inner().innerMethod();
+    public static NestedClass getNestedClass() {
+        NestedClass inner = new NestedClassFactory().new NestedClass();
+        return inner;
+    }
+
+    public static NestedHiddenClass getNestedHiddenClass() {
+        NestedHiddenClass inner = new NestedClassFactory().new NestedHiddenClass();
+        return inner;
+    }
+
+    public static String getValueOfNestedHiddenClass() {
+        NestedHiddenClass inner = new NestedClassFactory().new NestedHiddenClass();
+        return inner.getValue();
     }
 }
 ```
