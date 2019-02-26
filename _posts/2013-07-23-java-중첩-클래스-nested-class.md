@@ -23,13 +23,13 @@ tags:
 
 중첩 클래스란 클래스 내부에 또 다른 클래스를 선언하는 기법을 말한다. 클래스를 클래스의 멤버처럼 취급하며 프로그램의 구조를 간략화하는 특징이 있다. 제한적인 지역에서만 필요한 클래스를 선언할 때 사용한다. 내부 클래스라고도 한다.
 
-**이 글에서 내부 클래스란 nested class 자신을, 외부 클래스란 nested class를 소유한 클래스를 의미함.**
+**이 글에서 내부 클래스란 중첩 클래스 자신을, 외부 클래스란 중첩 클래스를 소유한 클래스를 의미함.**
 
 중첩 클래스는 외부 클래스의 클래스명에 달러표시`$`와 자기 자신의 클래스명이 붙은 형태로 컴파일된다. 예를 들어 Parent 클래스 내에 Child라는 중첩클래스가 있으면 컴파일 후 Parent$Child.class 라는 파일이 생성된다. 만약 중첩 클래스가 익명일 경우엔 선언된 순서에 따라 숫자로 대체된다(Parent.java의 맨 위에서부터 첫 번째 익명 클래스는 Parent$1.class, 두 번째 익명 클래스는 Parent$2.class 이런 식).
 
 ## static nested class
 
-클래스 내부에 static으로 선언된 중첩 클래스를 말한다. 스태틱 중첩 클래스는 외부 클래스에서 마치 독립된 클래스를 다루듯이 접근할 수 있다.
+클래스 내부에 스태틱으로 선언된 중첩 클래스를 말한다. 스태틱 중첩 클래스는 외부 클래스에서 마치 독립된 클래스를 다루듯이 접근할 수 있다.
 
 ```java
 class Outer {
@@ -60,9 +60,9 @@ Outer.Nested.innerMember; //private이기 때문에 접근불가
 
 ## (non-static)nested class
 
-스태틱 중첩 클래스와 비교하면 단순히 static만 빠진 형태. 스태틱 멤버를 선언할 수 없다.
+스태틱이 아닌 중첩 클래스. 스태틱 멤버를 선언할 수 없다.
 
-내부 클래스가 public이냐 private이냐에 따라 사용법이 달라지는데, public이면 외부 클래스를 통해 인스턴스를 직접 얻을 수 있지만 private이면 인스턴스 접근은 불가능하고 외부 클래스 메서드를 경유한 방식만 허용된다.
+내부 클래스가 public이냐 private이냐에 따라 사용법이 달라지는데, public이면 외부 클래스를 통해 인스턴스를 직접 얻을 수 있지만 private이면 인스턴스 접근은 불가능하고 외부 클래스를 경유하는 방식만 허용된다.
 
 ```java
 import org.junit.Assert;
@@ -84,19 +84,13 @@ public class NestedFactoryTest {
 }
 
 class NestedClassFactory {
-    /**
-     * 인스턴스 생성 방지용 생성자 선언. 중첩 클래스와는 관계 없음.
-     */
+    /** 인스턴스 생성 방지용 생성자 선언. 중첩 클래스와는 관계 없음. */
     private NestedClassFactory() {}
 
-    /**
-     * 중첩 클래스 #1
-     */
+    /** 중첩 클래스 #1 */
     public class NestedClass {}
 
-    /**
-     * 중첩 클래스 #2
-     */
+    /** 중첩 클래스 #2 */
     private class NestedHiddenClass {
         public String getValue() {
             return "fire egg";
