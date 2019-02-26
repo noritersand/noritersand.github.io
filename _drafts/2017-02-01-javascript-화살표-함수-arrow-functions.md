@@ -16,9 +16,9 @@ tags:
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)
 
+## 화살표 함수
 
-화살표 함수가 람다 함수겠지?
-
+화살표 함수가 람다 함수겠지? 이름이야 어쨋든 익명 함수를 구현하는 간단한 표현식 되겠다.
 
 ```js
 (param1, param2, …, paramN) => { statements }
@@ -34,3 +34,9 @@ singleParam => { statements }
 ```
 
 IE는 지원하지 않는다. ~~그럼그렇지~~
+
+`setTimeout()` 함수를 예로 들면 다음과 같다:
+
+```js
+setTimeout(() => console.log('time out'), 1000); // 1초 후 'time out'
+```
