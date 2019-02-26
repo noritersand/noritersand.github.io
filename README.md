@@ -20,13 +20,12 @@
 
 ### 파일 수정 가이드
 
-#### scss 변수
+#### 주요 scss 파일
 
-- `_sass\simple-texture\blog\_variables.scss`
-
-#### 헤더 폰트 등
-
-- `_sass\simple-texture-blog.scss`
+- `_sass/simple-texture-home.scss`
+- `_sass/simple-texture-blog.scss`
+- `_sass/simple-texture/blog/_variables.scss`
+- `_sass/simple-texture/blog/_content.scss`
 
 ## 환경 설정
 
