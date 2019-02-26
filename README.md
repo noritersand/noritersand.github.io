@@ -25,6 +25,7 @@
 - `_sass/simple-texture-home.scss`
 - `_sass/simple-texture-blog.scss`
 - `_sass/simple-texture/blog/_variables.scss`
+- `_sass/simple-texture/blog/_header.scss`
 - `_sass/simple-texture/blog/_content.scss`
 
 ## 환경 설정
