@@ -23,13 +23,15 @@ tags:
 
 중첩 클래스란 클래스 내부에 또 다른 클래스를 선언하는 기법을 말한다. 클래스를 클래스의 멤버처럼 취급하며 프로그램의 구조를 간략화하는 특징이 있다. 제한적인 지역에서만 필요한 클래스를 선언할 때 사용한다. 내부 클래스라고도 한다.
 
-**이 글에서 내부 클래스란 중첩 클래스 자신을, 외부 클래스란 중첩 클래스를 소유한 클래스를 의미함.**
+이 글에서 내부 클래스란 중첩 클래스 자신을, 외부 클래스란 중첩 클래스를 소유한 클래스를 의미한다.
+
+## 중첩 클래스의 컴파일
 
 중첩 클래스는 외부 클래스의 클래스명에 달러표시`$`와 자기 자신의 클래스명이 붙은 형태로 컴파일된다. 예를 들어 Parent 클래스 내에 Child라는 중첩클래스가 있으면 컴파일 후 Parent$Child.class 라는 파일이 생성된다. 만약 중첩 클래스가 익명일 경우엔 선언된 순서에 따라 숫자로 대체된다(Parent.java의 맨 위에서부터 첫 번째 익명 클래스는 Parent$1.class, 두 번째 익명 클래스는 Parent$2.class 이런 식).
 
-## static nested class
+## 스태틱 중첩 클래스 static nested class
 
-클래스 내부에 스태틱으로 선언된 중첩 클래스를 말한다. 스태틱 중첩 클래스는 외부 클래스에서 마치 독립된 클래스를 다루듯이 접근할 수 있다.
+클래스 내부에 스태틱으로 선언된 중첩 클래스를 말한다. private이 아닌 스태틱 중첩 클래스는 다른 클래스에서 마치 독립된 클래스를 다루듯이 접근할 수 있다.
 
 ```java
 class Outer {
@@ -45,20 +47,19 @@ class Outer {
 
     public static void outerMethod() {
         System.out.println(outerMember + Nested.innerMember);
-              // 외부메서드에서도 내부 클래스의 멤버에 접근할 수 있다.
-              // 같은 클래스로 간주하기 때문에 private은 무시된다.
+        // 외부 클래스의 메서드에서 내부 클래스의 멤버에 접근제어에 상관 없이 접근할 수 있다.
     }
 }
 ```
 
-다른 클래스에서 접근하는 방법은:
+다른 클래스에서는 아래처럼 접근한다:
 
 ```java
 Outer.Nested.nestedM();
-Outer.Nested.innerMember; //private이기 때문에 접근불가
+// Outer.Nested.innerMember; //private이기 때문에 접근불가
 ```
 
-## (non-static)nested class
+## 중첩 클래스 non-static nested class
 
 스태틱이 아닌 중첩 클래스. 스태틱 멤버를 선언할 수 없다.
 
@@ -142,7 +143,7 @@ class NestedEnumTestBean {
 }
 ```
 
-## local class
+## 로컬 클래스 local class
 
 메서드 블록 내에서 선언한 클래스로, 일회성 클래스가 필요할 때 사용한다.
 
@@ -164,9 +165,9 @@ class Outer {
 
 로컬 클래스는 선언한 메서드에서만, 위와 같은 경우엔 `outerM()` 메서드 안에서만 사용할 수 있다. 인스턴스 생성은 불가능하며 static을 사용할 수 없다.
 
-## anonymous class
+## 익명 클래스 anonymous class
 
-익명 클래스. **이름이 없는 로컬 클래스다.** 익명 클래스는 반드시 어떠한 클래스를 상속받거나 인터페이스의 구현체 형태여야 한다.
+이름이 없는 로컬 클래스. 익명 클래스는 반드시 어떠한 클래스를 상속받거나 인터페이스의 구현체 형태여야 한다.
 
 ```java
 class Outer {
@@ -177,16 +178,14 @@ class Outer {
 
             @Override
             public String toString() {
-                return "오버라이딩";
+                return "overrided";
             }
         };
     }
 }
 
 Outer o = new Outer();
-System.out.print(o.outerM());
-
-→ 오버라이딩
+System.out.print(o.outerM()); // overrided
 ```
 
 인터페이스 구현체를 익명 클래스로 작성하는 방식은 다음과 같다:
@@ -204,11 +203,9 @@ public class Outer {
                 System.out.println("overrided");
             }
         };
-        inner.printMessage();
+        inner.printMessage(); // "overrided"
     }
 }
-
--> "overrided"
 ```
 
 익명 클래스를 활용하면 메서드의 내용을 호출부(caller)에서 작성하고 피호출부(callee)에서 해당 메서드를 실행하는 콜백(callback) 구조를 만들 수 있다.
