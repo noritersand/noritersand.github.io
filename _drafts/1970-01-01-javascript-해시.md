@@ -5,6 +5,7 @@ title: 'JavaScript: 해시'
 categories:
   - javascript
 tags:
+  - ecmascript
   - javascript
 ---
 

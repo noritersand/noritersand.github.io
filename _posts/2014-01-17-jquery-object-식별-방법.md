@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-17 15:58:26 +0900
-title: 'jQuery: jQuery object를 동등비교하려면?'
+title: 'jQuery: jQuery Object 식별 방법'
 categories:
   - jquery
 tags:
@@ -17,7 +17,36 @@ tags:
 
 - [https://learn.jquery.com/using-jquery-core/jquery-object/](https://learn.jquery.com/using-jquery-core/jquery-object/)
 
-## jQuery object는 배열, 배열은 동등비교 불가
+## selector가 문자열인지 객체인지 판단
+
+```
+jQuery.type( obj )
+```
+
+```js
+var selector1 = 'body';
+var selector2 = document.querySelector('body');
+var selector3 = $('body');
+
+$.type(selector1); // 'string'
+$.type(selector2); // 'object'
+$.type(selector3); // 'object'
+```
+
+## jQuery 객체인지 판단
+
+```js
+var selector1 = document.querySelector('body');
+var selector2 = $('body');
+
+selector1 instanceof $; // false
+selector2 instanceof $; // true
+selector2 instanceof jQuery; // true
+```
+
+`$()` 혹은 `jQuery()`는 셀렉터이면서 jQuery 객체의 생성자이기 때문에 가능한 방법.
+
+## 동등 비교
 
 ```html
 <!DOCTYPE html>
