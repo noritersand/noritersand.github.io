@@ -16,7 +16,7 @@ tags:
 
 #### 관련 문서
 
-- [https://api.jquery.com/category/traversing/filtering/](/https://api.jquery.com/category/traversing/filtering/)
+- [https://api.jquery.com/category/traversing/filtering/](https://api.jquery.com/category/traversing/filtering/)
 
 ## .filter()
 
