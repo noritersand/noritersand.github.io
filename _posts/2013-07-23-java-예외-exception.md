@@ -18,7 +18,7 @@ Exception이란 런타임에서 발생하는 일종의 의도적으로 만들어
 
 참고: [differences-between-exception-and-error](https://stackoverflow.com/questions/912334/differences-between-exception-and-error)
 
-API(JDK 혹은 써드파티의 메서드들)에 따라 예외를 내부에서 알아서 처리하거나 사용자에게 미루기도 하는데, API에서 예외를 미루는 경우 사용자 측에서 반드시 예외처리(`try-catch` 혹은 `throws`)를 명시해야 한다.
+API에 따라 예외를 내부에서 알아서 처리(`try-catch`)하거나 선언부에서 던지기도(`throws`) 하는데, 선언부에서 던지는 경우 호출부에서 예외처리(`try-catch` 혹은 `throws`)를 명시해야 한다. 단, 이 규칙은 `RuntimeException`이나 파생 타입일 땐 적용하지 않는다.
 
 예외를 미루는 대표적인 API로는:
 
@@ -27,6 +27,16 @@ API(JDK 혹은 써드파티의 메서드들)에 따라 예외를 내부에서 �
 - 메모리 & 파일 입출력
 
 가 있다.
+
+## RuntimeException
+
+JVM 실행 중에 발생하는 예외를 의미한다. JDK의 자바독을 보면 다음처럼 명시되어 있다.
+
+>RuntimeException and its subclasses are uncheckedexceptions. Unchecked exceptions do not need to bedeclared in a method or constructor's throws clause if theycan be thrown by the execution of the method or constructor andpropagate outside the method or constructor boundary.
+
+~~뭐라는거야~~ 대충 해석해보면 Unchecked exception으로 분류되며 이 유형은 메서드나 생성자에 의해 상위 스택으로 전파가 가능하다면 예외 처리를 명시하지 않아도 된다고 한다.
+
+아님 말고.
 
 ## try-catch
 
