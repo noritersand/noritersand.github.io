@@ -19,4 +19,6 @@ tags:
 
 spring-boot + maven 환경이었는데 어떻게 한건지는 모름.
 
-`src/main/resources/static` 경로에 있는 스크립트 파일들이 `WEB-INF/classes/static`으로 배포가 되며(WAR 기준. 메이븐 output 폴더 기준으로는 `target/classes/static`), 이 스크립트를 브라우저에서 직접 접근 가능하다.
+`src/main/resources/static` 경로에 있는 스크립트 파일들이 `WEB-INF/classes/static`으로 배포가 되며(WAR 기준. 메이븐 output 폴더 기준으로는 `target/classes/static`), 이 스크립트를 URL로 직접 접근이 가능했다.
+
+동시에 다른 프로젝트의 resources를 복사해오는 메이븐 플러그인도 적용함.
