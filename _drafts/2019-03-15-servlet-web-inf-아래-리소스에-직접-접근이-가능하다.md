@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-03-15 17:37:00 +0900
-title: 'Servlet: WEB-INF 아래의 리소스 접근이 가능하다?'
+title: 'Servlet: WEB-INF 아래 리소스에 직접 접근이 가능하다?'
 categories:
   - servlet
 tags:
