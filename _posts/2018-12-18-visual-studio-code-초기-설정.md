@@ -55,17 +55,17 @@ ${activeEditorLong}${separator}${rootName}
         "when": "textInputFocus && !editorReadonly"
     },
     {
-  		"key": "ctrl+k s",
-  		"command": "-workbench.action.files.saveAll"
-  	},
-  	{
-  		"key": "ctrl+shift+s",
-  		"command": "-workbench.action.files.saveAs"
-  	},
-  	{
-  		"key": "ctrl+shift+s",
-  		"command": "workbench.action.files.saveAll"
-  	}
+      "key": "ctrl+k s",
+      "command": "-workbench.action.files.saveAll"
+    },
+    {
+      "key": "ctrl+shift+s",
+      "command": "-workbench.action.files.saveAs"
+    },
+    {
+      "key": "ctrl+shift+s",
+      "command": "workbench.action.files.saveAll"
+    }
 ]
 ```
 
