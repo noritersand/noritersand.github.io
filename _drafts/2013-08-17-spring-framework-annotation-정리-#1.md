@@ -433,7 +433,7 @@ public class ExController{
                        , @PathVariable String userId) throws Exception    {
 
         req.setAttribute("userId", userId);
-        return "restful/result";
+        return "aaa/result";
     }
 }
 ```

@@ -7,6 +7,7 @@ categories:
 tags:
   - devtool
   - visual studio code
+  - vscode
 ---
 
 atom 1.32.0 기준.
@@ -23,6 +24,14 @@ json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Se
     "comments": false,
     "strings": false
 }
+```
+
+#### 타이틀에 파일 전체 경로 표시
+
+settings(`ctrl+,`)에서 'window.title' 검색 후 입력란에 아래 추가:
+
+```
+${activeEditorLong}${separator}${rootName}
 ```
 
 ## 단축키
@@ -44,41 +53,19 @@ json으로 된 설정 파일을 열어서(`ctrl+shift+p` > 'Preferences: Open Se
         "key": "ctrl+shift+d",
         "command": "editor.action.deleteLines",
         "when": "textInputFocus && !editorReadonly"
-    }
-]
-```
-
-### 서브라임처럼 키 설정 바꾸기
-
-일단 'Sublime Text Keymap and Settings Importer' 플러그인 설치한다. 그리고 keybindings.json을 아래처럼 변경:
-
-```json
-[
-    {
-        "key": "ctrl+shift+d",
-        "command": "-workbench.view.debug"
     },
     {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines"
-    },
-	{
-		"key": "ctrl+k s",
-		"command": "-workbench.action.files.saveAll"
-	},
-	{
-		"key": "ctrl+shift+s",
-		"command": "-workbench.action.files.saveAs"
-	},
-	{
-		"key": "ctrl+shift+s",
-		"command": "workbench.action.files.saveAll"
-	}
+  		"key": "ctrl+k s",
+  		"command": "-workbench.action.files.saveAll"
+  	},
+  	{
+  		"key": "ctrl+shift+s",
+  		"command": "-workbench.action.files.saveAs"
+  	},
+  	{
+  		"key": "ctrl+shift+s",
+  		"command": "workbench.action.files.saveAll"
+  	}
 ]
 ```
 

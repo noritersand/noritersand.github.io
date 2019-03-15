@@ -16,5 +16,22 @@ tags:
 #### 관련 문서
 
 - [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
+- [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 
-## 기본 문법
+## 표현식
+
+### `${}`
+
+객체 표현식
+
+### `*{}`
+
+객체의 프로퍼티 표현식
+
+### `#{}`
+
+메시지 표현식
+
+### `@{}`
+
+링크 표현식

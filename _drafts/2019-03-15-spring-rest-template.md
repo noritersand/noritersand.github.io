@@ -15,8 +15,7 @@ tags:
 
 #### 관련 문서
 
-- [https://spring.io/guides/tutorials/rest/](https://spring.io/guides/tutorials/rest/)
-- [https://spring.io/guides/gs/rest-service/](https://spring.io/guides/gs/rest-service/)
+- [https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html)
 
 ## RestTemplate
 
