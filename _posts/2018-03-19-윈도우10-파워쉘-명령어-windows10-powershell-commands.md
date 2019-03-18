@@ -16,6 +16,12 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 공통 매개변수?
+
+- `-r`: recursive
+- TODO
+- 공통이란게 있나...
+
 ## Get-Alias
 
 기본 별칭: gal, alias
@@ -55,6 +61,27 @@ Write-Output $null >> dummy-for-commit.txt # 'touch'와 같음
 ## Get-ChildItem
 
 기본 별칭: ls
+
+## Copy-Item
+
+기본 별칭: copy
+
+```bash
+Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
+```
+
+## Remove-Item
+
+기본 별칭: del
+
+```bash
+Remove-Item .\copy\ -r -Force
+```
+
+#### 매개변수
+
+- `-r`: 재귀삭제
+- `-Force`: 확인 없이 삭제
 
 ## 환경 변수
 

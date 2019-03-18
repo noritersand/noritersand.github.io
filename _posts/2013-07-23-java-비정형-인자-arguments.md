@@ -94,7 +94,7 @@ public static int m1(int... args) {
 public static void main(String[] args) { ... }
 ```
 
-콘솔에서 값을 입력받아 main 메서드에 매게변수로 전달할 때 사용된다.
+콘솔에서 값을 입력받아 main 메서드에 매개변수로 전달할 때 사용된다.
 
 다음과 같은 클래스가 있을 때:
 
