@@ -15,26 +15,26 @@ tags:
 
 #### 관련 문서
 
-- [http://www.thymeleaf.org/](http://www.thymeleaf.org/)
+- [https://www.thymeleaf.org/](https://www.thymeleaf.org/)
 - [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
+
+템플릿 엔진 타임리프 사용법 정리.
 
 ## 표현식
 
-어째선지 HTML 속성 내에서가 아니면 `[[`, `]]` 이걸로 양쪽을 감싸줘야 사용 가능.
-
-### 변수 표현식 `${}`
+### 변수 표현식 `${...}`
 
 Variable expressions. 객체 표현식으로 봐도 된다.
 
-### 선택 변수 표현식 `*{}`
+### 선택 변수 표현식 `*{...}`
 
 Selection variable expressions. 이건 객체의 프로퍼티 표현식이다.
 
-### 메시지 표현식 `#{}`
+### 메시지 표현식 `#{...}`
 
 Message expressions.
 
-### 링크 표현식 `@{}`
+### 링크 표현식 `@{...}`
 
 Link URL expressions.
 
@@ -50,7 +50,7 @@ Link URL expressions.
 <p>Hello, <span th:text="${session.user.name}">Sebastian</span>!</p>
 ```
 
-인라인 표현식은 `[[...]]` 혹은 `[(...)]` 이런식으로 가능하며 `[[...]]` 이 표현식은 `th:text`와 같고(HTML-escaping) `[(...)]` 이 표현식은 `th:utext`와 같다(HTML-unescaping).
+인라인 표현식은 괄호 두 개를 쌍으로 감싸는 형태(`[[...]]` 혹은 `[(...)]`)로 사용한다. `[[...]]` 표현식은 `th:text`와 같고(HTML-escaping), `[(...)]` 표현식은 `th:utext`와 같다(HTML-unescaping).
 
 ## 연산자
 
@@ -66,7 +66,7 @@ Link URL expressions.
 
 ## HTML5 data-* 표기법
 
-`th:href` 같은 표기가 HTML 문법 에러로 검출되는게 싫다면 `data-th-href` 이런식으로 표기할 수 있다.
+`th:href`와 같은 표기가 HTML 문법 에러로 검출되는게 싫다면 `data-th-href`로 표기할 수 있다.
 
 ```html
 <!DOCTYPE html>
