@@ -78,7 +78,7 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 Remove-Item .\copy\ -r -Force
 ```
 
-#### 매개변수
+#### options
 
 - `-r`: 재귀삭제
 - `-Force`: 확인 없이 삭제
