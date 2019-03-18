@@ -84,7 +84,7 @@ private Map<String, Resource> fileResourceMap;
 ${ propertyName }
 ```
 
-시스템 프로퍼티(혹은 JVM 프로퍼티)란 jvm을 시작할 때 옵션`-D`으로 추가가능한 값들을 말한다.
+시스템 프로퍼티(혹은 JVM 프로퍼티)란 jvm을 시작할 때 옵션`-D`으로 추가 가능한 값들을 말한다.
 
 ```bash
 java -Dproperty1=value1 -Dproperty2=value2 Mainclass
