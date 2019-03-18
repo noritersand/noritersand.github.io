@@ -16,12 +16,6 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## 공통 매개변수?
-
-- `-r`: recursive
-- TODO
-- 공통이란게 있나...
-
 ## Get-Alias
 
 기본 별칭: gal, alias
