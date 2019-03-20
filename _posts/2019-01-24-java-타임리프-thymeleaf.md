@@ -20,6 +20,24 @@ tags:
 
 템플릿 엔진 타임리프 사용법 정리.
 
+## 코멘트
+
+### 라인 코멘트
+
+```html
+<!--/* This code will be removed at Thymeleaf parsing time! */-->
+```
+
+### 블록 코멘트
+
+```html
+<!--/*-->
+  <div>
+     you can see me only before Thymeleaf processes me!
+  </div>
+<!--*/-->
+```
+
 ## 기본 객체
 
 ### [Expression Basic Objects](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#appendix-a-expression-basic-objects)
@@ -119,6 +137,14 @@ ctx.getVariable("today");
 
 ```html
 <p th:utext="#{home.welcome(${user.name})}">
+  Welcome to our grocery store, Sebastian Pepper!
+</p>
+```
+
+아래처럼 변수를 키로 사용 가능:
+
+```html
+<p th:utext="#{${welcomeMsgKey}(${session.user.name})}">
   Welcome to our grocery store, Sebastian Pepper!
 </p>
 ```
@@ -283,6 +309,165 @@ instead of:
 ```html
 <div th:class="'content'">...</div>
 ```
+
+### Thymeleaf prototype-only comment blocks
+
+Thymeleaf allows the definition of special comment blocks marked to be comments when the template is open statically (i.e. as a prototype), but considered normal markup by Thymeleaf when executing the template.
+
+```html
+<span>hello!</span>
+<!--/*/
+  <div th:text="${...}">
+    ...
+  </div>
+/*/-->
+<span>goodbye!</span>
+```
+
+Thymeleaf’s parsing system will simply remove the <!--/*/ and /*/--> markers, but not its contents, which will be left therefore uncommented. So when executing the template, Thymeleaf will actually see this:
+
+```html
+<span>hello!</span>
+
+  <div th:text="${...}">
+    ...
+  </div>
+
+<span>goodbye!</span>
+```
+
+As with parser-level comment blocks, this feature is dialect-independent.
+
+### Synthetic th:block tag
+
+표현식 작성만을 위한 태그다. `th:block` 태그 열고 닫는 부분은 파싱할 때 코멘트라인으로 처리된다.
+
+Thymeleaf’s only element processor (not an attribute) included in the Standard Dialects is th:block.
+
+th:block is a mere attribute container that allows template developers to specify whichever attributes they want. Thymeleaf will execute these attributes and then simply make the block, but not its contents, disappear.
+
+So it could be useful, for example, when creating iterated tables that require more than one <tr> for each element:
+
+```html
+<table>
+  <th:block th:each="user : ${users}">
+    <tr>
+        <td th:text="${user.login}">...</td>
+        <td th:text="${user.name}">...</td>
+    </tr>
+    <tr>
+        <td colspan="2" th:text="${user.address}">...</td>
+    </tr>
+  </th:block>
+</table>
+```
+
+And especially useful when used in combination with prototype-only comment blocks:
+
+```html
+<table>
+    <!--/*/ <th:block th:each="user : ${users}"> /*/-->
+    <tr>
+        <td th:text="${user.login}">...</td>
+        <td th:text="${user.name}">...</td>
+    </tr>
+    <tr>
+        <td colspan="2" th:text="${user.address}">...</td>
+    </tr>
+    <!--/*/ </th:block> /*/-->
+</table>
+```
+
+Note how this solution allows templates to be valid HTML (no need to add forbidden <div> blocks inside <table>), and still works OK when open statically in browsers as prototypes!
+
+## 제어문
+
+### 분기
+
+#### if
+
+```html
+<a href="comments.html"
+   th:href="@{/product/comments(prodId=${prod.id})}"
+   th:if="${not #lists.isEmpty(prod.comments)}">view</a>
+```
+
+Note that the th:if attribute will not only evaluate boolean conditions. Its capabilities go a little beyond that, and it will evaluate the specified expression as true following these rules:
+
+- If value is not null:
+  - If value is a boolean and is true.
+  - If value is a number and is non-zero
+  - If value is a character and is non-zero
+  - If value is a String and is not “false”, “off” or “no”
+  - If value is not a boolean, a number, a character or a String.
+- (If value is null, th:if will evaluate to false).
+
+#### unless
+
+`th:if`의 역.
+
+```html
+<a href="comments.html"
+   th:href="@{/comments(prodId=${prod.id})}"
+   th:unless="${#lists.isEmpty(prod.comments)}">view</a>
+```
+
+#### switch
+
+```html
+<div th:switch="${user.role}">
+  <p th:case="'admin'">User is an administrator</p>
+  <p th:case="#{roles.manager}">User is a manager</p>
+  <p th:case="*">User is some other thing</p>
+</div>
+```
+
+`th:case="*"`: default를 의미한다.
+
+### 반복
+
+```html
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>PRICE</th>
+    <th>IN STOCK</th>
+  </tr>
+  <tr th:each="prod, iterStat : ${prods}" th:class="${iterStat.odd}? 'odd'">
+    <td th:text="${prod.name}">Onions</td>
+    <td th:text="${prod.price}">2.41</td>
+    <td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+  </tr>
+</table>
+```
+
+여기서 `iterStat`이란 반복문의 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 타임리프는 `prod`에 'Stat'을 접미사로 붙여서 `prodStat`으로 자동으로 정의한다.
+
+#### status 변수의 프로퍼티:
+
+- The current iteration index, starting with 0. This is the index property.
+- The current iteration index, starting with 1. This is the count property.
+- The total amount of elements in the iterated variable. This is the size property.
+- The iter variable for each iteration. This is the current property.
+- Whether the current iteration is even or odd. These are the even/odd boolean properties.
+- Whether the current iteration is the first one. This is the first boolean property.
+- Whether the current iteration is the last one. This is the last boolean property.
+
+
+### 분기-반복 혼합 사용
+
+```html
+<!--/*imageList의 각 요소만큼 반복하되 요소의 sizeCode가 '280'일 때만 `<li>` 태그가 생성된다.*/-->
+<li th:each="imageEle : *{imageList}" th:if="${imageEle.sizeCode} == '280'">
+  <img th:src="|https://my-image-host.com/${imageEle.parent}/${imageEle.file}" alt="상품이미지">
+</li>
+```
+
+## 변수 설정
+
+`th:with`
+
+TODO: 이거 어떻게 쓰는겨?
 
 ## HTML5 data-* 표기법
 
