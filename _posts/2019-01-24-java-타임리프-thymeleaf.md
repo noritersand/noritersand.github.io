@@ -153,6 +153,23 @@ ctx.getVariable("today");
 
 링크 표현식.
 
+Because of their importance, URLs are first-class citizens in web application templates, and the Thymeleaf Standard Dialect has a special syntax for them, the @ syntax: @{...}
+
+There are different types of URLs:
+
+- Absolute URLs: http://www.thymeleaf.org
+- Relative URLs, which can be:
+  - Page-relative: user/login.html
+  - Context-relative: /itemdetails?id=3 (context name in server will be added automatically)
+  - Server-relative: ~/billing/processInvoice (allows calling URLs in another context (= application) in the same server.
+  - Protocol-relative URLs: //code.jquery.com/jquery-2.0.3.min.js
+
+The real processing of these expressions and their conversion to the URLs that will be output is done by implementations of the org.thymeleaf.linkbuilder.ILinkBuilder interface that are registered into the ITemplateEngine object being used.
+
+By default, a single implementation of this interface is registered of the class org.thymeleaf.linkbuilder.StandardLinkBuilder, which is enough for both offline (non-web) and also web scenarios based on the Servlet API. Other scenarios (like integration with non-ServletAPI web frameworks) might need specific implementations of the link builder interface.
+
+Let’s use this new syntax. Meet the th:href attribute:
+
 ```html
 <!-- Will produce 'http://localhost:8080/gtvg/order/details?orderId=3' (plus rewriting) -->
 <a href="details.html"
@@ -163,6 +180,23 @@ ctx.getVariable("today");
 
 <!-- Will produce '/gtvg/order/3/details' (plus rewriting) -->
 <a href="details.html" th:href="@{/order/{orderId}/details(orderId=${o.id})}">view</a>
+```
+
+Some things to note here:
+
+- th:href is a modifier attribute: once processed, it will compute the link URL to be used and set that value to the href attribute of the <a> tag.
+- We are allowed to use expressions for URL parameters (as you can see in orderId=${o.id}). The required URL-parameter-encoding operations will also be automatically performed.
+- If several parameters are needed, these will be separated by commas: @{/order/process(execId=${execId},execType='FAST')}
+- Variable templates are also allowed in URL paths: @{/order/{orderId}/details(orderId=${orderId})}
+- Relative URLs starting with / (eg: /order/details) will be automatically prefixed by the application context name.
+- If cookies are not enabled or this is not yet known, a ";jsessionid=..." suffix might be added to relative URLs so that the session is preserved. This is called URL Rewriting and Thymeleaf allows you to plug in your own rewriting filters by using the response.encodeURL(...) mechanism from the Servlet API for every URL.
+- The th:href attribute allows us to (optionally) have a working static href attribute in our template, so that our template links remained navigable by a browser when opened directly for prototyping purposes.
+
+As was the case with the message syntax `#{...}`, URL bases can also be the result of evaluating another expression:
+
+```html
+<a th:href="@{${url}(orderId=${o.id})}">view</a>
+<a th:href="@{'/details/'+${user.login}(orderId=${o.id})}">view</a>
 ```
 
 ### Fragment Expressions: `~{...}`
@@ -192,6 +226,41 @@ ctx.getVariable("today");
 ```
 
 인라인 표현식은 괄호 두 개를 쌍으로 감싸는 형태(`[[...]]` 혹은 `[(...)]`)로 사용한다. `[[...]]` 표현식은 `th:text`와 같고(HTML-escaping), `[(...)]` 표현식은 `th:utext`와 같다(HTML-unescaping).
+
+### Preprocessing Expressions `__${expressions}__`
+
+전처리 표현식
+
+In addition to all these features for expression processing, Thymeleaf has the feature of preprocessing expressions.
+
+Preprocessing is an execution of the expressions done before the normal one that allows for modification of the expression that will eventually be executed.
+
+Preprocessed expressions are exactly like normal ones, but appear surrounded by a double underscore symbol (like `__${expression}__`).
+
+Let’s imagine we have an i18n Messages_fr.properties entry containing an OGNL expression calling a language-specific static method, like:
+
+```java
+article.text=@myapp.translator.Translator@translateToFrench({0})
+```
+
+…and a Messages_es.properties equivalent:
+
+```java
+article.text=@myapp.translator.Translator@translateToSpanish({0})
+```
+We can create a fragment of markup that evaluates one expression or the other depending on the locale. For this, we will first select the expression (by preprocessing) and then let Thymeleaf execute it:
+
+```html
+<p th:text="${__#{article.text('textVar')}__}">Some text here...</p>
+```
+
+Note that the preprocessing step for a French locale will be creating the following equivalent:
+
+```html
+<p th:text="${@myapp.translator.Translator@translateToFrench(textVar)}">Some text here...</p>
+```
+
+The preprocessing String `__` can be escaped in attributes using `\_\_`.
 
 ## 연산자
 
@@ -486,4 +555,128 @@ TODO: 이거 어떻게 쓰는겨?
   <p data-th-text="#{home.welcome}">Welcome to our grocery store!</p>
 </body>
 </html>
+```
+
+## How to access data
+
+### contexts
+
+- `${x}`: will return a variable x stored into the Thymeleaf context or as a request attribute.
+- `${param.x}` will return a request parameter called x (which might be multivalued).
+- `${session.x}` will return a session attribute called x.
+- `${application.x}` will return a servlet context attribute called x.
+
+### Request parameters
+
+```html
+<!-- single -->
+<p th:text="${param.q}">Test</p>
+
+<!-- multivalue -->
+<p th:text="${param.q[0] + ' ' + param.q[1]}" th:unless="${param.q == null}">Test</p>
+```
+
+```html
+<p th:text="${#request.getParameter('q')}" th:unless="${#request.getParameter('q') == null}">Test</p>
+```
+
+### Request attributes
+
+```html
+<tr th:each="message : ${messages}">
+  <td th:text="${message.id}">1</td>
+  <td><a href="#" th:text="${message.title}">Title ...</a></td>
+  <td th:text="${message.text}">Text ...</td>
+</tr>
+```
+
+### Session attributes
+
+```html
+<p th:text="${session.mySessionAttribute}" th:unless="${session == null}">[...]</p>
+```
+
+```html
+<p th:text="${#session.getAttribute('mySessionAttribute')}"></p>
+```
+
+### ServletContext attributes
+
+```html
+<table>
+    <tr>
+        <td>My context attribute</td>
+        <!-- Retrieves the ServletContext attribute 'myContextAttribute' -->
+        <td th:text="${#servletContext.getAttribute('myContextAttribute')}">42</td>
+    </tr>
+    <tr th:each="attr : ${#servletContext.getAttributeNames()}">
+        <td th:text="${attr}">javax.servlet.context.tempdir</td>
+        <td th:text="${#servletContext.getAttribute(attr)}">/tmp</td>
+    </tr>
+</table>
+```
+
+### Spring beans
+
+Thymeleaf allows accessing beans registered at the Spring Application Context with the `@beanName` syntax, for example:
+
+```html
+<div th:text="${@urlService.getApplicationUrl()}">...</div>
+```
+
+In the above example, @urlService refers to a Spring Bean registered at your context, e.g.
+
+```java
+@Configuration
+public class MyConfiguration {
+    @Bean(name = "urlService")
+    public UrlService urlService() {
+        return () -> "domain.com/myapp";
+    }
+}
+
+public interface UrlService {
+    String getApplicationUrl();
+}
+```
+
+This is fairly easy and useful in some scenarios.
+
+## 그 밖에 기타 등등
+
+### 금액 표시
+
+```html
+<td>$ <span th:text="${#numbers.formatDecimal(value, 0, 'COMMA', 2, 'POINT')}">10.00</span></td>
+```
+
+### 날짜 형식 표시
+
+```html
+<div th:text="${#dates.format(value, 'yyyy-MM-dd HH:mm:ss')}"></div>
+```
+
+### escape 하지 않는 표현식에서 특정 컨텍스트 접근 불가
+
+`th:utext` 같은 unescape 표현식은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
+
+```html
+<span th:utext="${#request.getParameter('productNumber')}"></span>
+```
+
+```java
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to request parameters is forbidden in this context. Note some restrictions apply to variable access. For example, direct access to request parameters is forbidden in preprocessing and unescaped expressions, in TEXT template mode, in fragment insertion specifications and in some specific attribute processors.
+	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.createRestrictedParameterAccessException(RestrictedRequestAccessUtils.java:87)
+	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.getParameter(RestrictedRequestAccessUtils.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+  ...
+```
+
+아마 파라미터 말고도 더 있을것 같은데, 타임리프의 보안정책으로 추정되며 아래처럼 escape하는 표현식에선 아무 문제 없다:
+
+```html
+<span th:text="${#request.getParameter('productNumber')}"></span>
 ```
