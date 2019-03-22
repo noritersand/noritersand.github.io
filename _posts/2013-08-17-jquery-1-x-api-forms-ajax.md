@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-17 05:00:26 +0900
-title: 'jQuery-1.x API list: Forms, Ajax'
+title: 'jQuery-1.x API: Forms, Ajax'
 categories:
   - jquery
 tags:
@@ -79,16 +79,16 @@ select 이벤트에 실행할 함수를 할당한다.
 
 ```js
 $.ajax({
-  method: "POST",
-  url: "/sample/testAjax.do",
+  method: 'POST',
+  url: '/sample/testAjax.do',
   data: $('#testForm').serialize(),  // 폼데이터 직렬화
-  contentType: "application/x-www-form-urlencoded; charset=utf-8",
-  dataType: "json",   // 데이터타입을 JSON형식으로 지정
+  contentType: 'application/x-www-form-urlencoded; charset=utf-8',
+  dataType: 'json',   // 데이터타입을 JSON형식으로 지정
   success: function(data) { // data: 백엔드에서 requestBody 형식으로 보낸 데이터를 받는다.
     if(data.code == '0') {
-      alert("code:"+ data.code + "\n" + "msg:" + data.msg);
+      alert('code:'+ data.code + '\n' + 'msg:' + data.msg);
     } else {
-      alert("code:" + data.code);
+      alert('code:' + data.code);
     }
   },
   error: function(jqXHR, textStatus, errorThrown) {
@@ -150,11 +150,11 @@ var url = 'test4_ok.jsp';
 var params = 'num1=' + num1 + '&num2=' + num2 + '&oper=' + o;
 
 $.ajax({
-  method: "post",
+  method: 'post',
   url: url,
   data: params,
-  contentType: "application/json; charset=utf-8", // 전송 데이터 타입
-  dataType: "json", // 응답 데이터 타입
+  contentType: 'application/json; charset=utf-8', // 전송 데이터 타입
+  dataType: 'json', // 응답 데이터 타입
   beforeSend: showRequest, //ajax로 전송 전 호출할 함수
   success: function(data){
     $('#result').html(data);

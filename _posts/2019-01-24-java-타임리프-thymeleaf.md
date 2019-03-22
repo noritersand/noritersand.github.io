@@ -17,6 +17,7 @@ tags:
 
 - [https://www.thymeleaf.org/](https://www.thymeleaf.org/)
 - [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
+- [https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
 
 템플릿 엔진 타임리프 사용법 정리.
 
