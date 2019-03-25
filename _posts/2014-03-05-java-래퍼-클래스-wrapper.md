@@ -12,6 +12,10 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 참고 문서
+
+- [https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html](https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html)
+
 기본형(primitive, 원시형) 타입의 변수를 객체로 다루기 위해 만들어진 클래스를 래퍼(wrapper) 클래스라고 한다. 가령 int 타입의 래퍼 클래스는 Integer고 실제 코드는 다음처럼 구성되어 있다:
 
 ```java
