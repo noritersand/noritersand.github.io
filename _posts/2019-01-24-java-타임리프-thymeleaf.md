@@ -657,9 +657,9 @@ This is fairly easy and useful in some scenarios.
 <div th:text="${#dates.format(value, 'yyyy-MM-dd HH:mm:ss')}"></div>
 ```
 
-### escape 하지 않는 표현식에서 특정 컨텍스트 접근 불가
+### unescape 표현식에서 특정 컨텍스트 접근 불가
 
-`th:utext` 같은 unescape 표현식은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
+unescape 표현식(`th:utext="..."`, `[(...)]`)은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
 
 ```html
 <span th:utext="${#request.getParameter('productNumber')}"></span>
