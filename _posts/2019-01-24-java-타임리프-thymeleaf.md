@@ -82,6 +82,10 @@ Besides these basic objects, Thymeleaf will offer us a set of utility objects th
 - `#aggregates`: methods for creating aggregates on arrays or collections.
 - `#ids`: methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).
 
+```html
+<div class="inner" th:if="*{#lists.size(unitList)} == 1">
+```
+
 ## 표현식
 
 ### Variable Expressions: `${...}`
@@ -680,4 +684,12 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
 
 ```html
 <span th:text="${#request.getParameter('productNumber')}"></span>
+```
+
+### Safe navigation operator
+
+SPEL의 고것임.
+
+```
+<td th:text="${user?.address?.city}"></td>
 ```
