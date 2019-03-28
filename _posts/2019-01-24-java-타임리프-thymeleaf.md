@@ -29,6 +29,8 @@ tags:
 <!--/* This code will be removed at Thymeleaf parsing time! */-->
 ```
 
+주의: `<!--`, `-->` 얘네들하고 `/*`, `*/` 얘네들 사이에 공백이 있으면 안됨.
+
 ### 블록 코멘트
 
 ```html
@@ -323,6 +325,17 @@ x = f() ? f() : g()
 x = f() ?: g()
 ```
 
+### Safe navigation operator
+
+SPEL의 고것임.
+
+```
+<td th:text="${user?.address?.city}"></td>
+```
+
+- user가 null이면 address를 찾지 않는다.
+- address가 null이면 city를 찾지 않는다.
+
 ## 리터럴
 
 ### Text literals
@@ -414,7 +427,7 @@ As with parser-level comment blocks, this feature is dialect-independent.
 
 ### Synthetic th:block tag
 
-표현식 작성만을 위한 태그다. `th:block` 태그 열고 닫는 부분은 파싱할 때 코멘트라인으로 처리된다.
+표현식 작성만을 위한 태그다. `th:block` 태그는 파싱할 때 코멘트로 처리된다. (열고 닫는 태그만 코멘트 처리되며 내부의 코드엔 영향이 없다.)
 
 Thymeleaf’s only element processor (not an attribute) included in the Standard Dialects is th:block.
 
@@ -684,12 +697,4 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
 
 ```html
 <span th:text="${#request.getParameter('productNumber')}"></span>
-```
-
-### Safe navigation operator
-
-SPEL의 고것임.
-
-```
-<td th:text="${user?.address?.city}"></td>
 ```
