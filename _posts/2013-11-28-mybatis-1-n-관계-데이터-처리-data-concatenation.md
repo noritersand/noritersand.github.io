@@ -21,7 +21,7 @@ tags:
 
 ## 컬럼명과 필드명의 불일치의 해결은 아주 간단.
 
-보통의 경우, SELECT 결과값은 자바 클래스(자바빈 or POJO), HashMap, 단일 값이라면 String 등으로 resultType을 결정한다.
+보통의 경우, SELECT 결과값은 자바 클래스(자바빈 or Plain Object), HashMap, 단일 값이라면 String 등으로 resultType을 결정한다.
 
 ```java
 public class User {

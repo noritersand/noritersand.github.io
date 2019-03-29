@@ -34,7 +34,7 @@ tags:
 </select>
 ```
 
-#### 결과값이 여러개일 경우 - POJO
+#### 결과값이 여러개일 경우 - Plain Object
 
 ```xml
 <select id="selectUsers" parameterType="int" resultType="com.someapp.model.User">

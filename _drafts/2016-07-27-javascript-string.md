@@ -7,7 +7,8 @@ categories:
 tags:
   - javascript
   - ecmascript
-  - number
+  - string
+  - standard built-in objects
 ---
 
 * Kramdown table of contents
@@ -17,5 +18,4 @@ tags:
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-
-ㅁㄴㅇㄹ
+Standard built-in Objects: String

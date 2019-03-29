@@ -5,9 +5,10 @@ title: 'JavaScript: Number'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - number
+  - standard built-in objects
 ---
 
 * Kramdown table of contents
@@ -17,5 +18,4 @@ tags:
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
 
-
-ㅁㄴㅇㄹ
+Standard built-in Objects: Number

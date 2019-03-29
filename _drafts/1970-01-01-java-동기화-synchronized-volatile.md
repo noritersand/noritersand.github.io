@@ -37,7 +37,7 @@ public class LogicTest {
 ```
 synchronized 블록의 표현식은 동기화의 기준이 된다. 여기서 기준이란 caller에 따라 동기화를 할 지 말지를 결정함을 의미한다. this나 Object.class로 작성할 경우 (아마도)VM 기준, 모든 caller가 동기화 대상이 된다. TODO: 확인할 것
 
-synchronized 메서드는 synchronized 블럭의 표현식이 this인 것과 같다. 인스턴스를 기준으로 동기화된다.
+synchronized 메서드는 synchronized 블록의 표현식이 this인 것과 같다. 인스턴스를 기준으로 동기화된다.
 
 ## volatile
 TODO: 이건 뭐지

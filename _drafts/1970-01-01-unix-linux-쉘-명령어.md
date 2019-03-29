@@ -75,7 +75,11 @@ ln -s ~/was/upload ./upload
 지정한 경로로 HTTP 요청을 전송한다.
 
 ```bash
+# plain get request
 curl http://tistory.com
+
+# post request with header
+curl -X POST "http://take-my-json-attack.com" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"prdId\": \"123456\"}"
 ```
 
 ## wget

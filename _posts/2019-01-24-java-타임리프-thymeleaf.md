@@ -17,8 +17,29 @@ tags:
 
 - [https://www.thymeleaf.org/](https://www.thymeleaf.org/)
 - [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
+- [https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
 
 템플릿 엔진 타임리프 사용법 정리.
+
+## 코멘트
+
+### 라인 코멘트
+
+```html
+<!--/* This code will be removed at Thymeleaf parsing time! */-->
+```
+
+주의: `<!--`, `-->` 얘네들하고 `/*`, `*/` 얘네들 사이에 공백이 있으면 안됨.
+
+### 블록 코멘트
+
+```html
+<!--/*-->
+  <div>
+     you can see me only before Thymeleaf processes me!
+  </div>
+<!--*/-->
+```
 
 ## 기본 객체
 
@@ -62,6 +83,10 @@ Besides these basic objects, Thymeleaf will offer us a set of utility objects th
 - `#maps`: methods for maps.
 - `#aggregates`: methods for creating aggregates on arrays or collections.
 - `#ids`: methods for dealing with id attributes that might be repeated (for example, as a result of an iteration).
+
+```html
+<div class="inner" th:if="*{#lists.size(unitList)} == 1">
+```
 
 ## 표현식
 
@@ -123,9 +148,34 @@ ctx.getVariable("today");
 </p>
 ```
 
+아래처럼 변수를 키로 사용 가능:
+
+```html
+<p th:utext="#{${welcomeMsgKey}(${session.user.name})}">
+  Welcome to our grocery store, Sebastian Pepper!
+</p>
+```
+
 ### Link URL Expressions: `@{...}`
 
 링크 표현식.
+
+Because of their importance, URLs are first-class citizens in web application templates, and the Thymeleaf Standard Dialect has a special syntax for them, the @ syntax: @{...}
+
+There are different types of URLs:
+
+- Absolute URLs: http://www.thymeleaf.org
+- Relative URLs, which can be:
+  - Page-relative: user/login.html
+  - Context-relative: /itemdetails?id=3 (context name in server will be added automatically)
+  - Server-relative: ~/billing/processInvoice (allows calling URLs in another context (= application) in the same server.
+  - Protocol-relative URLs: //code.jquery.com/jquery-2.0.3.min.js
+
+The real processing of these expressions and their conversion to the URLs that will be output is done by implementations of the org.thymeleaf.linkbuilder.ILinkBuilder interface that are registered into the ITemplateEngine object being used.
+
+By default, a single implementation of this interface is registered of the class org.thymeleaf.linkbuilder.StandardLinkBuilder, which is enough for both offline (non-web) and also web scenarios based on the Servlet API. Other scenarios (like integration with non-ServletAPI web frameworks) might need specific implementations of the link builder interface.
+
+Let’s use this new syntax. Meet the th:href attribute:
 
 ```html
 <!-- Will produce 'http://localhost:8080/gtvg/order/details?orderId=3' (plus rewriting) -->
@@ -137,6 +187,23 @@ ctx.getVariable("today");
 
 <!-- Will produce '/gtvg/order/3/details' (plus rewriting) -->
 <a href="details.html" th:href="@{/order/{orderId}/details(orderId=${o.id})}">view</a>
+```
+
+Some things to note here:
+
+- th:href is a modifier attribute: once processed, it will compute the link URL to be used and set that value to the href attribute of the <a> tag.
+- We are allowed to use expressions for URL parameters (as you can see in orderId=${o.id}). The required URL-parameter-encoding operations will also be automatically performed.
+- If several parameters are needed, these will be separated by commas: @{/order/process(execId=${execId},execType='FAST')}
+- Variable templates are also allowed in URL paths: @{/order/{orderId}/details(orderId=${orderId})}
+- Relative URLs starting with / (eg: /order/details) will be automatically prefixed by the application context name.
+- If cookies are not enabled or this is not yet known, a ";jsessionid=..." suffix might be added to relative URLs so that the session is preserved. This is called URL Rewriting and Thymeleaf allows you to plug in your own rewriting filters by using the response.encodeURL(...) mechanism from the Servlet API for every URL.
+- The th:href attribute allows us to (optionally) have a working static href attribute in our template, so that our template links remained navigable by a browser when opened directly for prototyping purposes.
+
+As was the case with the message syntax `#{...}`, URL bases can also be the result of evaluating another expression:
+
+```html
+<a th:href="@{${url}(orderId=${o.id})}">view</a>
+<a th:href="@{'/details/'+${user.login}(orderId=${o.id})}">view</a>
 ```
 
 ### Fragment Expressions: `~{...}`
@@ -167,6 +234,41 @@ ctx.getVariable("today");
 
 인라인 표현식은 괄호 두 개를 쌍으로 감싸는 형태(`[[...]]` 혹은 `[(...)]`)로 사용한다. `[[...]]` 표현식은 `th:text`와 같고(HTML-escaping), `[(...)]` 표현식은 `th:utext`와 같다(HTML-unescaping).
 
+### Preprocessing Expressions `__${expressions}__`
+
+전처리 표현식
+
+In addition to all these features for expression processing, Thymeleaf has the feature of preprocessing expressions.
+
+Preprocessing is an execution of the expressions done before the normal one that allows for modification of the expression that will eventually be executed.
+
+Preprocessed expressions are exactly like normal ones, but appear surrounded by a double underscore symbol (like `__${expression}__`).
+
+Let’s imagine we have an i18n Messages_fr.properties entry containing an OGNL expression calling a language-specific static method, like:
+
+```java
+article.text=@myapp.translator.Translator@translateToFrench({0})
+```
+
+…and a Messages_es.properties equivalent:
+
+```java
+article.text=@myapp.translator.Translator@translateToSpanish({0})
+```
+We can create a fragment of markup that evaluates one expression or the other depending on the locale. For this, we will first select the expression (by preprocessing) and then let Thymeleaf execute it:
+
+```html
+<p th:text="${__#{article.text('textVar')}__}">Some text here...</p>
+```
+
+Note that the preprocessing step for a French locale will be creating the following equivalent:
+
+```html
+<p th:text="${@myapp.translator.Translator@translateToFrench(textVar)}">Some text here...</p>
+```
+
+The preprocessing String `__` can be escaped in attributes using `\_\_`.
+
 ## 연산자
 
 ### Arithmetic operations:
@@ -181,7 +283,7 @@ ctx.getVariable("today");
 
 ### Comparisons and equality:
 
-- Comparators: `>`, `<`, `>=`, `<=` (`gt`, `lt`, `ge`, `le`)
+- Comparators: `<`, `>`, `<=`, `>=` (`lt`, `gt`, `le`, `ge`)
 - Equality operators: `==`, `!=` (`eq`, `ne`)
 
 ### Conditional operators:
@@ -222,6 +324,17 @@ x = f() ? f() : g()
 ```js
 x = f() ?: g()
 ```
+
+### Safe navigation operator
+
+SPEL의 고것임.
+
+```
+<td th:text="${user?.address?.city}"></td>
+```
+
+- user가 null이면 address를 찾지 않는다.
+- address가 null이면 city를 찾지 않는다.
 
 ## 리터럴
 
@@ -284,6 +397,165 @@ instead of:
 <div th:class="'content'">...</div>
 ```
 
+### Thymeleaf prototype-only comment blocks
+
+Thymeleaf allows the definition of special comment blocks marked to be comments when the template is open statically (i.e. as a prototype), but considered normal markup by Thymeleaf when executing the template.
+
+```html
+<span>hello!</span>
+<!--/*/
+  <div th:text="${...}">
+    ...
+  </div>
+/*/-->
+<span>goodbye!</span>
+```
+
+Thymeleaf’s parsing system will simply remove the <!--/*/ and /*/--> markers, but not its contents, which will be left therefore uncommented. So when executing the template, Thymeleaf will actually see this:
+
+```html
+<span>hello!</span>
+
+  <div th:text="${...}">
+    ...
+  </div>
+
+<span>goodbye!</span>
+```
+
+As with parser-level comment blocks, this feature is dialect-independent.
+
+### Synthetic th:block tag
+
+표현식 작성만을 위한 태그다. `th:block` 태그는 파싱할 때 코멘트로 처리된다. (열고 닫는 태그만 코멘트 처리되며 내부의 코드엔 영향이 없다.)
+
+Thymeleaf’s only element processor (not an attribute) included in the Standard Dialects is th:block.
+
+th:block is a mere attribute container that allows template developers to specify whichever attributes they want. Thymeleaf will execute these attributes and then simply make the block, but not its contents, disappear.
+
+So it could be useful, for example, when creating iterated tables that require more than one <tr> for each element:
+
+```html
+<table>
+  <th:block th:each="user : ${users}">
+    <tr>
+        <td th:text="${user.login}">...</td>
+        <td th:text="${user.name}">...</td>
+    </tr>
+    <tr>
+        <td colspan="2" th:text="${user.address}">...</td>
+    </tr>
+  </th:block>
+</table>
+```
+
+And especially useful when used in combination with prototype-only comment blocks:
+
+```html
+<table>
+    <!--/*/ <th:block th:each="user : ${users}"> /*/-->
+    <tr>
+        <td th:text="${user.login}">...</td>
+        <td th:text="${user.name}">...</td>
+    </tr>
+    <tr>
+        <td colspan="2" th:text="${user.address}">...</td>
+    </tr>
+    <!--/*/ </th:block> /*/-->
+</table>
+```
+
+Note how this solution allows templates to be valid HTML (no need to add forbidden <div> blocks inside <table>), and still works OK when open statically in browsers as prototypes!
+
+## 제어문
+
+### 분기
+
+#### if
+
+```html
+<a href="comments.html"
+   th:href="@{/product/comments(prodId=${prod.id})}"
+   th:if="${not #lists.isEmpty(prod.comments)}">view</a>
+```
+
+Note that the th:if attribute will not only evaluate boolean conditions. Its capabilities go a little beyond that, and it will evaluate the specified expression as true following these rules:
+
+- If value is not null:
+  - If value is a boolean and is true.
+  - If value is a number and is non-zero
+  - If value is a character and is non-zero
+  - If value is a String and is not “false”, “off” or “no”
+  - If value is not a boolean, a number, a character or a String.
+- (If value is null, th:if will evaluate to false).
+
+#### unless
+
+`th:if`의 역.
+
+```html
+<a href="comments.html"
+   th:href="@{/comments(prodId=${prod.id})}"
+   th:unless="${#lists.isEmpty(prod.comments)}">view</a>
+```
+
+#### switch
+
+```html
+<div th:switch="${user.role}">
+  <p th:case="'admin'">User is an administrator</p>
+  <p th:case="#{roles.manager}">User is a manager</p>
+  <p th:case="*">User is some other thing</p>
+</div>
+```
+
+`th:case="*"`: default를 의미한다.
+
+### 반복
+
+```html
+<table>
+  <tr>
+    <th>NAME</th>
+    <th>PRICE</th>
+    <th>IN STOCK</th>
+  </tr>
+  <tr th:each="prod, iterStat : ${prods}" th:class="${iterStat.odd}? 'odd'">
+    <td th:text="${prod.name}">Onions</td>
+    <td th:text="${prod.price}">2.41</td>
+    <td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+  </tr>
+</table>
+```
+
+여기서 `iterStat`이란 반복문의 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 타임리프는 `prod`에 'Stat'을 접미사로 붙여서 `prodStat`으로 자동으로 정의한다.
+
+#### status 변수의 프로퍼티:
+
+- The current iteration index, starting with 0. This is the index property.
+- The current iteration index, starting with 1. This is the count property.
+- The total amount of elements in the iterated variable. This is the size property.
+- The iter variable for each iteration. This is the current property.
+- Whether the current iteration is even or odd. These are the even/odd boolean properties.
+- Whether the current iteration is the first one. This is the first boolean property.
+- Whether the current iteration is the last one. This is the last boolean property.
+
+
+### 분기-반복 혼합 사용
+
+```html
+<!--/*imageList의 각 요소만큼 반복하되 요소의 sizeCode가 '280'일 때만 `<li>` 태그가 생성된다.*/-->
+<li th:each="imageEle : *{imageList}" th:if="${imageEle.sizeCode} == '280'">
+  <img th:src="|https://my-image-host.com/${imageEle.parent}/${imageEle.file}" alt="상품이미지">
+</li>
+```
+
+## 변수 설정
+
+`th:with`
+
+TODO: 이거 어떻게 쓰는겨?
+
 ## HTML5 data-* 표기법
 
 `th:href`와 같은 표기가 HTML 문법 에러로 검출되는게 싫다면 `data-th-href`로 표기할 수 있다.
@@ -301,4 +573,128 @@ instead of:
   <p data-th-text="#{home.welcome}">Welcome to our grocery store!</p>
 </body>
 </html>
+```
+
+## How to access data
+
+### contexts
+
+- `${x}`: will return a variable x stored into the Thymeleaf context or as a request attribute.
+- `${param.x}` will return a request parameter called x (which might be multivalued).
+- `${session.x}` will return a session attribute called x.
+- `${application.x}` will return a servlet context attribute called x.
+
+### Request parameters
+
+```html
+<!-- single -->
+<p th:text="${param.q}">Test</p>
+
+<!-- multivalue -->
+<p th:text="${param.q[0] + ' ' + param.q[1]}" th:unless="${param.q == null}">Test</p>
+```
+
+```html
+<p th:text="${#request.getParameter('q')}" th:unless="${#request.getParameter('q') == null}">Test</p>
+```
+
+### Request attributes
+
+```html
+<tr th:each="message : ${messages}">
+  <td th:text="${message.id}">1</td>
+  <td><a href="#" th:text="${message.title}">Title ...</a></td>
+  <td th:text="${message.text}">Text ...</td>
+</tr>
+```
+
+### Session attributes
+
+```html
+<p th:text="${session.mySessionAttribute}" th:unless="${session == null}">[...]</p>
+```
+
+```html
+<p th:text="${#session.getAttribute('mySessionAttribute')}"></p>
+```
+
+### ServletContext attributes
+
+```html
+<table>
+    <tr>
+        <td>My context attribute</td>
+        <!-- Retrieves the ServletContext attribute 'myContextAttribute' -->
+        <td th:text="${#servletContext.getAttribute('myContextAttribute')}">42</td>
+    </tr>
+    <tr th:each="attr : ${#servletContext.getAttributeNames()}">
+        <td th:text="${attr}">javax.servlet.context.tempdir</td>
+        <td th:text="${#servletContext.getAttribute(attr)}">/tmp</td>
+    </tr>
+</table>
+```
+
+### Spring beans
+
+Thymeleaf allows accessing beans registered at the Spring Application Context with the `@beanName` syntax, for example:
+
+```html
+<div th:text="${@urlService.getApplicationUrl()}">...</div>
+```
+
+In the above example, @urlService refers to a Spring Bean registered at your context, e.g.
+
+```java
+@Configuration
+public class MyConfiguration {
+    @Bean(name = "urlService")
+    public UrlService urlService() {
+        return () -> "domain.com/myapp";
+    }
+}
+
+public interface UrlService {
+    String getApplicationUrl();
+}
+```
+
+This is fairly easy and useful in some scenarios.
+
+## 그 밖에 기타 등등
+
+### 금액 표시
+
+```html
+<td>$ <span th:text="${#numbers.formatDecimal(value, 0, 'COMMA', 2, 'POINT')}">10.00</span></td>
+```
+
+### 날짜 형식 표시
+
+```html
+<div th:text="${#dates.format(value, 'yyyy-MM-dd HH:mm:ss')}"></div>
+```
+
+### unescape 표현식에서 특정 컨텍스트 접근 불가
+
+unescape 표현식(`th:utext`, `[(...)]`)은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
+
+```html
+<span th:utext="${#request.getParameter('productNumber')}"></span>
+```
+
+```java
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to request parameters is forbidden in this context. Note some restrictions apply to variable access. For example, direct access to request parameters is forbidden in preprocessing and unescaped expressions, in TEXT template mode, in fragment insertion specifications and in some specific attribute processors.
+	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.createRestrictedParameterAccessException(RestrictedRequestAccessUtils.java:87)
+	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.getParameter(RestrictedRequestAccessUtils.java:68)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+  ...
+```
+
+아마 파라미터 말고도 더 있을것 같은데, 타임리프의 보안정책으로 추정되며 escape 표현식(`th:text`, `[[...]]`)에선 아무 문제 없다:
+
+```html
+<span th:text="${#request.getParameter('productNumber')}"></span>
 ```
