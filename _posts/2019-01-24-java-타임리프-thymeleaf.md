@@ -283,7 +283,7 @@ The preprocessing String `__` can be escaped in attributes using `\_\_`.
 
 ### Comparisons and equality:
 
-- Comparators: `>`, `<`, `>=`, `<=` (`gt`, `lt`, `ge`, `le`)
+- Comparators: `<`, `>`, `<=`, `>=` (`lt`, `gt`, `le`, `ge`)
 - Equality operators: `==`, `!=` (`eq`, `ne`)
 
 ### Conditional operators:
@@ -676,7 +676,7 @@ This is fairly easy and useful in some scenarios.
 
 ### unescape 표현식에서 특정 컨텍스트 접근 불가
 
-unescape 표현식(`th:utext="..."`, `[(...)]`)은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
+unescape 표현식(`th:utext`, `[(...)]`)은 특정 컨텍스트에 접근할 때 `TemplateProcessingException`이 발생한다.
 
 ```html
 <span th:utext="${#request.getParameter('productNumber')}"></span>
@@ -693,7 +693,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
   ...
 ```
 
-아마 파라미터 말고도 더 있을것 같은데, 타임리프의 보안정책으로 추정되며 아래처럼 escape하는 표현식에선 아무 문제 없다:
+아마 파라미터 말고도 더 있을것 같은데, 타임리프의 보안정책으로 추정되며 escape 표현식(`th:text`, `[[...]]`)에선 아무 문제 없다:
 
 ```html
 <span th:text="${#request.getParameter('productNumber')}"></span>

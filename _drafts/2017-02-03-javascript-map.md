@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - map
+  - standard built-in objects
 ---
 
 * Kramdown table of contents

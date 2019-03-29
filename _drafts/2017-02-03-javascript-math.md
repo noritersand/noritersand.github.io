@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - math
+  - standard built-in objects
 ---
 
 * Kramdown table of contents
@@ -18,4 +19,4 @@ tags:
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math)
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math)
 
-map
+Standard built-in Objects: Math
