@@ -62,10 +62,14 @@ unshift
 shift
 
 
-
+```
 forEach( callback [, thisArg ] )
+```
 
+여기서 `callback`은:
+```
 forEach( element, index, object )
+```
 
 map
 

@@ -33,7 +33,7 @@ singleParam => { statements }
 () => { statements }
 ```
 
-IE는 지원하지 않는다. ~~그럼그렇지~~
+**IE는 지원하지 않는다.**
 
 `setTimeout()` 함수를 예로 들면 다음과 같다:
 

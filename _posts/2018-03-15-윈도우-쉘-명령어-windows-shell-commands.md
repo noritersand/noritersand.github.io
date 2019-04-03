@@ -16,7 +16,7 @@ tags:
 파일과 디렉토리 트리를 복사하는 명령어.
 
 ```bash
-xcopy A B /s /e /y
+xcopy SOURCE DESTINATION /s /e /y
 ```
 
 #### options
