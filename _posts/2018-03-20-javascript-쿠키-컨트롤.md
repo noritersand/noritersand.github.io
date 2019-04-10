@@ -14,10 +14,12 @@ tags:
 {:toc .toc}
 
 #### 관련 문서
+
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)
 - [https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 
 ## document.cookie
+
 ```js
 document.cookie = "cookiename=value;"
 document.cookie = "cookiename=value; path=/;"
@@ -34,10 +36,12 @@ document.cookie = "cookiename=value; secure"  // HTTPS 전송만 가능
 이 외에 원래 쿠키에는 `HttpOnly`라는 http 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
 
 ## 주의사항
+
 쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다.
 http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value
 
-## examples
+## examples #1
+
 ```js
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -69,6 +73,9 @@ function checkCookie() {
     }
 }
 ```
+
+## examples #2
+
 ```js
 /*\
 |*|
@@ -95,7 +102,7 @@ function checkCookie() {
 \*/
 
 var docCookies = {
-  getItem: function (sKey) {
+  getItem: function(sKey) {
     if (!sKey) {
       return null;
     }
@@ -103,7 +110,7 @@ var docCookies = {
             + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&")
             + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   },
-  setItem: function (sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+  setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
     if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
     var sExpires = "";
     if (vEnd) {
@@ -127,7 +134,7 @@ var docCookies = {
             + (bSecure ? "; secure" : "");
     return true;
   },
-  removeItem: function (sKey, sPath, sDomain) {
+  removeItem: function(sKey, sPath, sDomain) {
     if (!this.hasItem(sKey)) {
         return false;
     }
@@ -136,14 +143,14 @@ var docCookies = {
             + (sPath ? "; path=" + sPath : "");
     return true;
   },
-  hasItem: function (sKey) {
+  hasItem: function(sKey) {
     if (!sKey) {
         return false;
     }
     return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&")
         + "\\s*\\=")).test(document.cookie);
   },
-  keys: function () {
+  keys: function() {
     var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "")
             .split(/\s*(?:\=[^;]*)?;\s*/);
     for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) {
