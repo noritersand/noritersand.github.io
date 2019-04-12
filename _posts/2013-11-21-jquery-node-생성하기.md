@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-자바스크립트에선 다음처럼 `Document.createElement()` 메서드를 이용해 노드를 생성한다:
+자바스크립트에선 다음처럼 `Document.createElement()` 함수로 노드를 생성한다:
 
 ```js
 function makeone() {
@@ -40,13 +40,17 @@ $("#do3").click(function() {
 #### jQuery Object
 
 ```js
+var obj = { label: 'some object' };
 $("#do2").click(function() {
   $("#result2").append($('<div>', {
     id: 'field',
-    text: '새로 생성된 div'
+    text: '새로 생성된 div',
+    data-obj: obj;
   }));
 });
 ```
+
+**주의**: 태그 속성을 위 처럼 작성하면 자바스크립트 객체(위 예시에서는 `obj`)는 객체 자체가 아니라 객체의 `toString()` 실행 결과가 할당된다.
 
 #### jQuery Object-Function 사용
 
@@ -72,7 +76,8 @@ jQuery(document).ready(function() {
 #### method call chaining
 
 ```js
+var obj = { label: 'some object' };
 $("#do3").click(function() {
-    $("<img>").attr("src","test.gif").append("body");
+    $("<img>").attr("src","test.gif").data('obj', obj).append("body");
 });
 ```

@@ -532,13 +532,13 @@ Note that the th:if attribute will not only evaluate boolean conditions. Its cap
 
 #### status 변수의 프로퍼티:
 
-- The current iteration index, starting with 0. This is the index property.
-- The current iteration index, starting with 1. This is the count property.
-- The total amount of elements in the iterated variable. This is the size property.
-- The iter variable for each iteration. This is the current property.
-- Whether the current iteration is even or odd. These are the even/odd boolean properties.
-- Whether the current iteration is the first one. This is the first boolean property.
-- Whether the current iteration is the last one. This is the last boolean property.
+- `index`: The current iteration index, starting with 0.
+- `count`: The current iteration index, starting with 1.
+- `size`: The total amount of elements in the iterated variable.
+- `current`: The iter variable for each iteration.
+- `even/odd`: Whether the current iteration is even or odd.
+- `first`: Whether the current iteration is the first one.
+- `last`: Whether the current iteration is the last one.
 
 
 ### 분기-반복 혼합 사용
