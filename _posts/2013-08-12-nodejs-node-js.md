@@ -35,7 +35,7 @@ tags:
 node 파일명
 ```
 
-node 명령어는 단독으로 사용했을 때 REFL이라고 하는 node.js shell로 진입한다. 위 처럼 파일명과 같이 사용하면 해당 파일을 node.js로 실행하라는 의미이다.
+node 명령어는 단독으로 사용했을 때 REFL이라고 하는 node.js shell로 진입한다. 위처럼 파일명과 같이 사용하면 해당 파일을 node.js로 실행하라는 의미이다.
 
 ### sync/async
 

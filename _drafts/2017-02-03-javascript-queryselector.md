@@ -22,11 +22,12 @@ document.querySelector( selector )
 이때, 클래스이름이나 태그이름으로 불러와도 배열이 아닌, 맨 앞 객체 하나만 불러오게 된다.
 해당 메서드는 Internet Explorer 8, FireFox 3.5 이상의 브라우저에서 지원된다.
 
-```
+```js
 var container = document.querySelector('#container'); // id selector
 var box = document.querySelector('.box'); // class selector
 var body = document.querySelector('body'); // tag selector
 var input = document.querySelector('[name=inp_box]'); // attribute selector
+var dropZone = document.querySelector('div[data-name="drop-zone"]'); // attribute selector
 ```
 
 

@@ -528,7 +528,7 @@ Note that the th:if attribute will not only evaluate boolean conditions. Its cap
 </table>
 ```
 
-여기서 `iterStat`이란 반복문의 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 타임리프는 `prod`에 'Stat'을 접미사로 붙여서 `prodStat`으로 자동으로 정의한다.
+위에서 `iterStat`이란 반복문의 상태를 알 수 있는 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 타임리프는 요소가 할당되는 변수의 이름 뒤에 'Stat'을 붙여서 자동으로 정의한다. 위 예시의 경우 `iterStat`이 생략되면 status 변수는 `prodStat`이 된다.
 
 #### status 변수의 프로퍼티:
 
@@ -539,7 +539,6 @@ Note that the th:if attribute will not only evaluate boolean conditions. Its cap
 - `even/odd`: Whether the current iteration is even or odd.
 - `first`: Whether the current iteration is the first one.
 - `last`: Whether the current iteration is the last one.
-
 
 ### 분기-반복 혼합 사용
 

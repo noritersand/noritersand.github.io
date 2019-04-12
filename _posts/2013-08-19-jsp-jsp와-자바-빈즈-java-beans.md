@@ -205,7 +205,7 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 <jsp:setProperty name="myBean" property="name"/>
 ```
 
-위 처럼 작성할 수 없고 이런 경우에는 다음과 같이 param 속성을 이용한다:
+위처럼 작성할 수 없고 이런 경우에는 다음과 같이 param 속성을 이용한다:
 
 ```html
 <jsp:setProperty name="myBean" property="name" param="username"/>

@@ -28,7 +28,6 @@ concat
 
 ## 스택기능
 
-
 ### Array.prototype.push()
 
 배열의 맨 뒤에 요소를 더하고 배열의 길이를 반환한다.
@@ -39,6 +38,10 @@ arr.push('a'); // 1
 arr.push('b', 'c', 'd'); // 4
 console.log(arr); // ['a', 'b', 'c', 'd']
 ```
+
+### Array.prototype.pop()
+
+TODO
 
 ### Array.prototype.unshift()
 
@@ -51,16 +54,11 @@ arr.unshift('b', 'c', 'd'); // 4
 console.log(arr); // ['b', 'c', 'd', 'a']
 ```
 
+### Array.prototype.shift()
 
+## 탐색
 
-push
-
-pop
-
-unshift
-
-shift
-
+### Array.prototype.forEach()
 
 ```
 forEach( callback [, thisArg ] )
@@ -71,18 +69,18 @@ forEach( callback [, thisArg ] )
 forEach( element, index, object )
 ```
 
-map
+### Array.prototype.map()
 
-some
+### Array.prototype.some()
 
-every
+### Array.prototype.every()
 
-filter
+### Array.prototype.filter()
 
-reduce
+### Array.prototype.reduce()
 
+## ~~주작~~조작
 
+### Array.prototype.slice()
 
-slice()
-
-splice()
+### Array.prototype.splice()

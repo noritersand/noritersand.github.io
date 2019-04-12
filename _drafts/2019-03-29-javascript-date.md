@@ -19,3 +19,10 @@ tags:
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
 
 Standard built-in Objects: Date
+
+## Date.UTC()
+
+```js
+new Date(Date.UTC(2019, 4, 12, 11, 45))
+// Sun May 12 2019 20:45:00 GMT+0900 (한국 표준시)
+```

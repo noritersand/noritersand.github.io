@@ -1,0 +1,92 @@
+---
+layout: post
+date: 2019-01-15 15:24:00 +0900
+title: 'jQuery: attr(), prop(), data()'
+categories:
+  - jquery
+tags:
+  - javascript
+  - jquery
+  - attr
+  - prop
+  - data
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+#### 관련 문서
+
+- [https://api.jquery.com/attr/](/https://api.jquery.com/attr/)
+- [https://api.jquery.com/prop/](/https://api.jquery.com/prop/)
+- [https://api.jquery.com/data/](/https://api.jquery.com/data/)
+
+## .attr(name, value),<br>.attr(object)
+
+태그 속성을 변경한다.
+
+## .prop(name, value)
+
+TODO
+
+## .data(name, value),<br>.data(object)
+
+태그 데이터를 변경한다.
+
+```js
+$(element).data('a', 123);
+$(element).data({ 'b': 456 });
+```
+
+```js
+var obj = { label: 'some object' };
+$("#do3").click(function() {
+    $("<img>").attr("src","test.gif").data('obj', obj).append("body");
+});
+```
+
+단순 문자열이 아니라 자바스크립트 객체를 담을 수도 있다.
+
+태그 속성을 아래처럼 작성하면 이건 각 속성을 `.attr()`로 할당한것과 같다.
+
+```js
+var obj = { label: 'some object' };
+$("#do2").click(function() {
+  $("#result2").append($('<div>', {
+    id: 'field',
+    text: '새로 생성된 div',
+    data-obj: obj;
+  }));
+});
+```
+
+## 셋의 차이점
+
+- `.attr()`은 문자열만 할당할 수 있다.
+- `.attr()`로 변경한 데이터는 prop에 영향이 있을 수도 있고 없을 수도 있다. (경우에 따라 다름. 테스트 필요) 반면 `.prop()`은 attr에 영향이 있다.
+- `.prop()`으로 변경한 데이터는 data에 영향 음슴.
+- `.data()`로 데이터를 변경하면 attr은 변화 없음. 반면 `.attr()`로 변경한 데이터는 data에도 영향이 있다.
+
+세 번째가 매우 중요한데, 만약 태그가 아래와 같을 때:
+
+```html
+<div id="no-one" data-name="drop-zone"></div>
+```
+
+태그 랜더링 후 스크립트로 속성값을 수정할 때 `.data()`를 사용하면 jQuery attribute selector로 찾을 수 없다:
+
+```js
+$('#no-one').data('name', 'forget-me-not');
+console.log($('[data-name="forget-me-not"]').length); // 0
+```
+
+따라서 이런 경우에는 `.attr()`을 사용한다:
+
+```js
+$('#no-one').attr('data-name', 'forget-me-not');
+console.log($('[data-name="forget-me-not"]').length); // 1
+```
+
+## 결론
+
+태그에 js 객체를 할당할 때는 `.data()` 쓰면 된다. 그 외에는 `.attr()`.
