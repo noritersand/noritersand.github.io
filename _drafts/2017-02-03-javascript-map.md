@@ -20,3 +20,10 @@ tags:
 
 
 map
+
+
+set
+
+get
+
+clear
