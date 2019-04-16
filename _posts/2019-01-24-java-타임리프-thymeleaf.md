@@ -697,3 +697,23 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
 ```html
 <span th:text="${#request.getParameter('productNumber')}"></span>
 ```
+
+### th:block 태그에서 th:replace 사용 가능
+
+layout.html
+
+```html
+<th:block th:replace="/some-where/file-name :: grenade"></th:block>
+```
+
+file-name.html
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="grenade">
+  <!-- 중략 -->
+</th:block>
+```
+
+요딴식으로 하면 마크업이 마치 하나의 파일인것 처럼 보여짐.
