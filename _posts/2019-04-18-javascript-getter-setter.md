@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2016-07-21 16:51:00 +0900
+date: 2019-04-18 17:50:00 +0900
 title: 'JavaScript: getter/setter'
 categories:
   - javascript
