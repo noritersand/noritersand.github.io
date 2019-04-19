@@ -76,7 +76,7 @@ $("#do2").click(function() {
 <div id="no-one" data-name="drop-zone"></div>
 ```
 
-태그 랜더링 후 스크립트로 속성값을 수정할 때 `.data()`를 사용하면 jQuery attribute selector로 찾을 수 없다:
+태그 랜더링 후 스크립트로 속성값을 수정할 때 `.data()`를 사용하면 attr이 바뀌는게 아니기 때문에 jQuery attribute selector로 찾을 수 없다:
 
 ```js
 $('#no-one').data('name', 'forget-me-not');
@@ -88,6 +88,17 @@ console.log($('[data-name="forget-me-not"]').length); // 0
 ```js
 $('#no-one').attr('data-name', 'forget-me-not');
 console.log($('[data-name="forget-me-not"]').length); // 1
+```
+
+`.data()`로 데이터를 변경했으면 attribute selector 대신 filtering을 해야 한다.
+
+```js
+$('#no-one').data('name', 'forget-me-not');
+$('div').filter(function() {
+  if ($(this).data('name') == 'forget-me-not') {
+    return true;
+  }
+});
 ```
 
 ## 결론

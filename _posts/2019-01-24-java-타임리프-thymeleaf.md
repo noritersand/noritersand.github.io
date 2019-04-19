@@ -50,7 +50,7 @@ tags:
 - `#ctx`: the context object.
 - `#vars`: the context variables.
 - `#locale`: the context locale.
-- `#request`: (only in Web Contexts) the HttpServletRequest object.
+- `#request`: (only in Web Contexts) the HttpServletRequest object. `#httpServletRequest`의 단축형.
 - `#response`: (only in Web Contexts) the HttpServletResponse object.
 - `#session`: (only in Web Contexts) the HttpSession object.
 - `#servletContext`: (only in Web Contexts) the ServletContext object.
@@ -205,6 +205,11 @@ As was the case with the message syntax `#{...}`, URL bases can also be the resu
 <a th:href="@{${url}(orderId=${o.id})}">view</a>
 <a th:href="@{'/details/'+${user.login}(orderId=${o.id})}">view</a>
 ```
+
+#### Server root relative URLs
+
+An additional syntax can be used to create server-root-relative (instead of context-root-relative) URLs in order to link to different contexts in the same server. These URLs will be specified like `@{~/path/to/something}`
+
 
 ### Fragment Expressions: `~{...}`
 
