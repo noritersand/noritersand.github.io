@@ -39,13 +39,13 @@ function Newbie() {
   this.trait = 'Know nothing';
 }
 
-let newbie = new Newbie();
+let noob = new Newbie();
 ```
 
-`Newbie`로 만들어진 객체 `newbie`의 프로토타입은 `Newbie.prototype`이다. (다시 언급하지만 `Newbie`는 생성자 함수다.)
+`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`이다. (다시 언급하지만 `Newbie`는 생성자 함수다.)
 
 ```js
-newbie.__proto__ === Newbie.prototype; // true
+noob.__proto__ === Newbie.prototype; // true
 ```
 
 그리고 `Newbie.prototype`의 프로토타입은 `Object.prototype`이다:
@@ -62,10 +62,10 @@ Object.prototype.__proto__ === null; // true
 
 ### 곁다리: 그럼 생성자 함수의 프로토타입은?
 
-`newbie`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다:
+`noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다:
 
 ```js
-newbie.constructor === Newbie; // true
+noob.constructor === Newbie; // true
 Newbie.constructor === Function; // true
 ```
 
