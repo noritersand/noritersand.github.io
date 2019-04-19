@@ -89,11 +89,11 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 복잡하면 그냥 이 글 맨 위의 (그리는데 20분 걸린) 그림을 보자.
 
-## 속성의 가려짐(property shadowing)
+## 속성의 가려짐 property shadowing
 
 TODO
 
-## 메서드 오버라이딩, method overriding
+## 메서드 오버라이딩 method overriding
 
 TODO
 
