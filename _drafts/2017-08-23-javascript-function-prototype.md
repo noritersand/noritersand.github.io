@@ -15,6 +15,7 @@ tags:
 {:toc .toc}
 
 #### 관련 문서
+
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
 - [https://stackoverflow.com/questions/38736902/settimeout-bind-and-this](https://stackoverflow.com/questions/38736902/settimeout-bind-and-this)
 

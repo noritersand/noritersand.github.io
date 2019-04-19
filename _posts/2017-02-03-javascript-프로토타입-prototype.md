@@ -19,7 +19,7 @@ tags:
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 
-![](/images/javascript-prototype2.png)
+![](/images/javascript-prototype.png)
 
 ## 프로토타입이란?
 
