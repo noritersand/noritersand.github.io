@@ -27,15 +27,15 @@ tags:
 
 ```js
 var obj = {
-	_findMe: 'Hello',
-	get findMe() {
-		// return this._findMe;
-		return 'Nope';
-	},
-	set findMe(value) {
-		// this._findMe = value;
-		console.log('Denied');
-	}     
+  _findMe: 'Hello',
+  get findMe() {
+    // return this._findMe;
+    return 'Nope';
+  },
+  set findMe(value) {
+    // this._findMe = value;
+    console.log('Denied');
+  }     
 };
 
 obj._findMe; // 'Hello'
