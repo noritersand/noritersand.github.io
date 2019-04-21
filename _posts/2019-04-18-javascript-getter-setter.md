@@ -46,11 +46,11 @@ class Newbie {
 
 let noob = new Newbie();
 
-noob.trait; // know nothing
+noob.trait; // "know nothing"
 noob.levelUp(); // I feel stronger.
-noob.trait; // barely shooting an arrow
+noob.trait; // "barely shooting an arrow"
 noob.trait = 'crawl';
-noob.trait; // crawl
+noob.trait; // "crawl"
 ```
 
 ## 객체 리터럴에서
@@ -68,8 +68,8 @@ var obj = {
   }     
 };
 
-obj._findMe; // 'Hello'
-obj.findMe; // 'Nope'
-obj.findMe = 1234; // 'Denied' 출력
-obj.findMe; // 'Nope'
+obj._findMe; // "Hello"
+obj.findMe; // "Nope"
+obj.findMe = 1234; // Denied
+obj.findMe; // "Nope"
 ```
