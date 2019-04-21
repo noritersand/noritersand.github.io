@@ -36,7 +36,7 @@ function Newbie() {
   if (!(this instanceof Newbie)) {
     return new Newbie(name);
   }
-  this.trait = 'Know nothing';
+  this.trait = 'know nothing';
 }
 
 let noob = new Newbie();
@@ -78,7 +78,7 @@ Function.constructor.constructor.constructor === Function; // true
 Function.constructor.constructor.constructor.constructor === Function; // true
 ```
 
-방향을 살짝 틀어서 `Newbie`의 프로토타입과 `Function`의 프로토타입은 `function ()`를 가리킨다. (이게 정확히 뭔지는 몲) `function ()`의 프로토타입은 `Object.prototype`이다:
+방향을 살짝 틀어서 `Newbie`의 프로토타입과 `Function`의 프로토타입은 `function ()`(이게 정확히 뭔지는 몲. 아마 익명 함수?)를 가리킨다. `function ()`의 프로토타입은 `Object.prototype`이다:
 
 ```js
 Newbie.__proto__; // function ()
@@ -91,11 +91,57 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 ## 속성의 가려짐 property shadowing
 
-TODO
+객체는 '자기만의 속성(own properties)'과 프로토타입의 속성이 동시에 존재할 수 있다. 이 경우 '자기만의 속성'이 우선되며, 프로토타입의 속성은 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '속성의 가려짐'이라고 한다.
+
+```js
+let f = function() {
+    this.a = 1;
+    this.b = 2;
+}
+let o = new f();
+
+f.prototype.b = 3;
+f.prototype.c = 4;
+
+o.a; // 1
+o.__proto__.a; // undefined
+o.b; // 2
+o.__proto__.b; // 3
+o.c; // 4
+o.__proto__.c; // 4
+```
 
 ## 메서드 오버라이딩 method overriding
 
 TODO
+
+## 프로토타입 확장
+
+### class 선언 사용한 방법
+
+```js
+class Arr extends Array {
+	get doubleLength() {
+		return this.length * 2
+	}
+}
+Arr.prototype.spitout = function() {
+	while (this.length) {
+		this.pop();
+	}
+}
+
+let arr = new Arr();
+arr.push('a');
+arr.push('b');
+arr.push('c');
+
+console.log(arr); // Array(3) [ "a", "b", "c" ]
+console.log(arr.doubleLength); // 6
+
+arr.spitout();
+console.log(arr.length); // 0
+```
 
 ## ETC
 
