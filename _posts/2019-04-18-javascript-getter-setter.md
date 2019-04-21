@@ -29,26 +29,17 @@ tags:
 
 ```js
 class Newbie {
-  constructor(trait) {
-    this._trait = trait;
-  }
   get trait() {
     return this._trait || 'know nothing';
   }
   set trait(arg) {
     this._trait = arg;
   }
-  levelUp() {
-    console.log('I feel stronger.');
-    this._trait = 'barely shooting an arrow';
-  }
 }
 
 let noob = new Newbie();
 
 noob.trait; // "know nothing"
-noob.levelUp(); // I feel stronger.
-noob.trait; // "barely shooting an arrow"
 noob.trait = 'crawl';
 noob.trait; // "crawl"
 ```
