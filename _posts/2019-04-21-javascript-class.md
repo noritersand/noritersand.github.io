@@ -3,9 +3,12 @@ layout: post
 date: 2019-04-21 22:29:00 +0900
 title: 'JavaScript: class'
 categories:
-  - etc
+  - javascript
 tags:
-  - tag me
+  - javascript
+  - ecmascript
+  - class
+  - classes
 ---
 
 * Kramdown table of contents
