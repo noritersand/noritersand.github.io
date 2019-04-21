@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)
 - [http://www.w3schools.com/tags/att_global_data.asp](http://www.w3schools.com/tags/att_global_data.asp)

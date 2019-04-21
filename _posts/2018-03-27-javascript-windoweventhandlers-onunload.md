@@ -15,7 +15,7 @@ tags:
   - todo
 ---
 
-#### 관련 문서
+#### 참고 문서
 - [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
 - [https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload](https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload)
 

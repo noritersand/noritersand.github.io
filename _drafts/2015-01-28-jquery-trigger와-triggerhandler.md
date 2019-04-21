@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://api.jquery.com/trigger/](https://api.jquery.com/trigger/)
 - [https://api.jquery.com/triggerHandler/](https://api.jquery.com/triggerHandler/)

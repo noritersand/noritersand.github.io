@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://www.w3schools.com/tags/tag_meta.asp](https://www.w3schools.com/tags/tag_meta.asp)
 - [https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta](https://developer.mozilla.org/ko/docs/Web/HTML/Element/meta)

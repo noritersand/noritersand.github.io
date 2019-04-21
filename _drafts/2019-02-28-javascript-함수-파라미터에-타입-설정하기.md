@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://stackoverflow.com/questions/8407622/set-type-for-function-parameters](/https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 

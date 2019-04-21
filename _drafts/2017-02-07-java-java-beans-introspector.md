@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/beans/Introspector.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.desktop/java/beans/Introspector.html)
 

@@ -10,7 +10,7 @@ tags:
   - SpEL
 ---
 
-#### 관련 문서
+#### 참고 문서
 
 - [http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html)
 - [https://blog.outsider.ne.kr/835](https://blog.outsider.ne.kr/835)

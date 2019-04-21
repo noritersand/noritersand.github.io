@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [http://www.programcreek.com/2011/11/java-access-level-public-protected-private/
 ](http://www.programcreek.com/2011/11/java-access-level-public-protected-private/

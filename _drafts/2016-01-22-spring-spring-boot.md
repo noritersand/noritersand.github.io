@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [http://projects.spring.io/spring-boot/](http://projects.spring.io/spring-boot/)
 - [http://start.goodtime.co.kr/2014/10/이제는-spring-boot를-써야할-때다/](http://start.goodtime.co.kr/2014/10/이제는-spring-boot를-써야할-때다/)
