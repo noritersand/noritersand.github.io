@@ -33,6 +33,8 @@ $.type(selector2); // 'object'
 $.type(selector3); // 'object'
 ```
 
+`typeof`와 차이점은 [여기서](https://stackoverflow.com/questions/19921838/difference-between-jquery-type-and-typeof-which-is-faster).
+
 ## jQuery 객체인지 판단
 
 ```js

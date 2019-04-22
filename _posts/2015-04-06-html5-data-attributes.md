@@ -15,11 +15,12 @@ tags:
 
 #### 관련 문서
 
-- [https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)
-- [http://www.w3schools.com/tags/att_global_data.asp](http://www.w3schools.com/tags/att_global_data.asp)
+- [mdn: data-*](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/data-*)
+- [mdn: HTMLElement​.dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)
+- [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
 - [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
 
-HTML5부터 제공되는 global attribute 중 하나. 사용자 정의 속성이라고 보면 된다.
+HTML5에서 정의된 global attribute 중 하나. '사용자 정의 속성' 혹은 '전용 데이터 속성'이라 부른다.
 
 ```html
 <div id="soldier" data-recent-status="idle"></div>
