@@ -64,3 +64,22 @@ obj.findMe; // "Nope"
 obj.findMe = 1234; // Denied
 obj.findMe; // "Nope"
 ```
+
+## 재정의 불가능한 프로퍼티
+
+요딴식으로 setter 없이 getter만 정의하면:
+
+```js
+class Newbie {
+  get name() {
+    return 'fresh newbie';
+  }
+}
+
+let noob = new Newbie();
+noob.name; // "fresh newbie";
+noob.name = 'spoiled';
+noob.name; // "fresh newbie";
+```
+
+`name`은 일종의 immutable property가 된다.
