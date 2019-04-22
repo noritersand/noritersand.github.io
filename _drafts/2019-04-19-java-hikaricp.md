@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [HikariCP 공식 사이트](https://brettwooldridge.github.io/HikariCP/)
 

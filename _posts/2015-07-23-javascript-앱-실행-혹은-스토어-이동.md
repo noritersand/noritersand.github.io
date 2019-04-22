@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://github.com/hampusohlsson/browser-deeplink](https://github.com/hampusohlsson/browser-deeplink)
 

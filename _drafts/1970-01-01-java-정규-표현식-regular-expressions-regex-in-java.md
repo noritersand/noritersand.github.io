@@ -10,7 +10,7 @@ tags:
   - regex
 ---
 
-#### 관련 문서
+#### 참고 문서
 - [http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html](http://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html)
 
 

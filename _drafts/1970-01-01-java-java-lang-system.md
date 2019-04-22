@@ -9,7 +9,7 @@ tags:
   - system
 ---
 
-#### 관련 문서
+#### 참고 문서
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/System.html](http://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
 
 ## getProperty()

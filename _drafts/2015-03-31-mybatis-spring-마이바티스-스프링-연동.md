@@ -10,7 +10,7 @@ tags:
   - spring
 ---
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://mybatis.github.io/spring/ko/getting-started.html](https://mybatis.github.io/spring/ko/getting-started.html)
 

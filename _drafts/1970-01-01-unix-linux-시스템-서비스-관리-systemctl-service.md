@@ -12,7 +12,7 @@ tags:
   - service
 ---
 
-#### 관련 문서
+#### 참고 문서
 - [https://www.cmsfactory.net/node/10299](https://www.cmsfactory.net/node/10299)
 - [http://blog.daum.net/question0921/808](http://blog.daum.net/question0921/808)
 

@@ -11,7 +11,7 @@ tags:
 ---
 
 
-#### 관련 문서
+#### 참고 문서
 - [https://www.wireshark.org/download.html](https://www.wireshark.org/download.html)
 - [https://wiki.wireshark.org/DisplayFilters#Examples](https://wiki.wireshark.org/DisplayFilters#Examples)
 - [https://openmaniak.com/kr/wireshark_filters.php#display](https://openmaniak.com/kr/wireshark_filters.php#display)

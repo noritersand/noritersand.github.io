@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://blogs.oracle.com/java-platform-group/entry/java_8_s_new_type](https://blogs.oracle.com/java-platform-group/entry/java_8_s_new_type)
 

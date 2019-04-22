@@ -9,7 +9,7 @@ tags:
   - eclipse
 ---
 
-#### 관련 문서
+#### 참고 문서
 - [https://projects.eclipse.org/projects/technology.recommenders](https://projects.eclipse.org/projects/technology.recommenders)
 - [http://www.eclipse.org/recommenders/](http://www.eclipse.org/recommenders/)
 

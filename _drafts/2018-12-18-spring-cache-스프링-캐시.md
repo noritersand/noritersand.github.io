@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://spring.io/guides/gs/caching/](https://spring.io/guides/gs/caching/)
 - [https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-caching.html](https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-caching.html)

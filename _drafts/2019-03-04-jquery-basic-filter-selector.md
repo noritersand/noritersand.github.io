@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://api.jquery.com/category/selectors/basic-filter-selectors/](https://api.jquery.com/category/selectors/basic-filter-selectors/)
 

@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
 

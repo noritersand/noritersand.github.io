@@ -15,14 +15,14 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new)
 - [http://tobyho.com/2010/11/22/javascript-constructors-and/](http://tobyho.com/2010/11/22/javascript-constructors-and/)
 
-![](/images/prototype-constructor-1.png)
+![](/images/javascript-prototype.png)
 
 ## 생성자 함수가 일반 함수로 호출되는것을 방지하는 방법
 

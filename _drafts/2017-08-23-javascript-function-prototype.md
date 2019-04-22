@@ -14,7 +14,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
+
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function)
 - [https://stackoverflow.com/questions/38736902/settimeout-bind-and-this](https://stackoverflow.com/questions/38736902/settimeout-bind-and-this)
 
@@ -24,7 +25,7 @@ tags:
 
 > bind() 메서드는 호출될 때 그 this 키워드를 제공된 값으로 설정하고 새로운 함수가 호출될 때 제공되는 주어진 순서의 선행 인수가 있는 새로운 함수를 생성합니다.
 
-~~이게 도데체 뭔소리여~~
+~~이게도데체뭔소리여~~
 
 아래는 스택오버플로우에서 본 예:
 
