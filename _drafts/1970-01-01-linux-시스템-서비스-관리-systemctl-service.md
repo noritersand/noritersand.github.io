@@ -1,12 +1,11 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Unix/Linux: 시스템 서비스 관리 systemctl, service'
+title: 'Linux: 시스템 서비스 관리 systemctl, service'
 categories:
-  - unix/linux
+  - linux
 tags:
   - os
-  - unix
   - linux
   - systemctl
   - service
