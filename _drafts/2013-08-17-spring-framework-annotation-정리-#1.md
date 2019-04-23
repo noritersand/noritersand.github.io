@@ -418,22 +418,3 @@ public ArrayList<Object> getVocTypeList() throws Exception {
     return (ArrayList<Object>) vocData.get("data");
 }
 ```
-
-## @PathVariable
-
-URL의 일부를 파라미터 혹은 변수로 사용한다.
-
-```java
-package com.sp.ex;
-
-@Controller("ex.exController")
-public class ExController{
-    @RequestMapping(value="/blog/{userId}/main.action", method=RequestMethod.GET)
-    public String main(HttpServletRequest req
-                       , @PathVariable String userId) throws Exception    {
-
-        req.setAttribute("userId", userId);
-        return "aaa/result";
-    }
-}
-```

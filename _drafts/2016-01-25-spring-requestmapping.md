@@ -8,6 +8,7 @@ tags:
   - java
   - spring
   - requestmapping
+  - pathvariable
 ---
 
 * Kramdown table of contents
@@ -81,8 +82,8 @@ public String myMethod() {
 특정 헤더의 값에 따라 매핑한다.
 
 ```java
-headers = "someHader=someValue"'
-headers = "someHader"', 'headers="!someHader"
+headers = "someHader=someValue"
+headers = "someHader", headers="!someHader"
 ```
 
 와일드 카드 표현*도 지원한다.
@@ -143,6 +144,25 @@ public class SampleController3 {
     @RequestMapping("/main.action")
     public returntype m01() {
         // ...
+    }
+}
+```
+
+## @PathVariable
+
+`@RequestMapping`과 연계하여 사용하는 어노테이션. URL의 일부를 파라미터 혹은 변수로 사용한다.
+
+```java
+package com.sp.ex;
+
+@Controller("ex.exController")
+public class ExController{
+    @RequestMapping(value="/blog/{userId}/main.action", method=RequestMethod.GET)
+    public String main(HttpServletRequest req
+                       , @PathVariable String userId) throws Exception    {
+
+        req.setAttribute("userId", userId);
+        return "aaa/result";
     }
 }
 ```
