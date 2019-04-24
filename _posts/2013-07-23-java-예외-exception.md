@@ -34,17 +34,15 @@ JVM 실행 중에 발생하는 예외를 의미한다. JDK의 자바독을 보�
 
 >RuntimeException and its subclasses are uncheckedexceptions. Unchecked exceptions do not need to bedeclared in a method or constructor's throws clause if theycan be thrown by the execution of the method or constructor andpropagate outside the method or constructor boundary.
 
-~~뭐라는거야~~ 대충 해석해보면 Unchecked exception으로 분류되며 이 유형은 메서드나 생성자에 의해 상위 스택으로 전파가 가능하다면 예외 처리를 명시하지 않아도 된다고 한다.
-
-아님 말고.
+~~뭐라는거야~~ 대충 해석해보면 Unchecked exception으로 분류되며 이 유형은 메서드나 생성자에 의해 상위 스택으로 전파가 가능하다면 예외 처리를 명시하지 않아도 된다고 한다. ~~아님 말고~~
 
 ## try-catch
 
 ```
 try {
-   비즈니스코드 블록
+   비즈니스 코드 블록
 } catch(Exception e) {
-   예외처리코드 블록, 예외 발생 시에만 실행
+   예외 처리 코드 블록, 예외 발생 시에만 실행
 } finally {
    try, catch 뒤에 오며 예외 발생 여부와 관계없이 무조건 실행된다.
 }
@@ -60,7 +58,7 @@ try {
 }
 ```
 
-ArrayIndexOutOfBoundsException의 경우 배열의 범위를 초과할 때 발생하는 예외인데 아래처럼 코드작성 시 해당 예외가 발생할 것을 예측하여 작성할 수 있다:
+`ArrayIndexOutOfBoundsException`의 경우 배열의 범위를 초과할 때 발생하는 예외인데 아래처럼 코드작성 시 해당 예외가 발생할 것을 예측하여 작성할 수 있다:
 
 ```java
 int[] nums = new int[] {10, 20, 30, 40, 50};
@@ -88,7 +86,7 @@ try {
 
 ## throw / throws
 
-`throw`, `throws` 키워드는 예외가 발생한 지역이 아니라 예외를 발생시킨 메서드를 호출한 지역, 즉 caller에서 예외를 처리하도록 할 때 사용된다. 다음은 `m01()` 메서드에서 발생한 예외를 caller인 `main()`에서 처리하는 예다:
+`throw`, `throws` 키워드는 예외가 발생한 지역이 아니라 예외를 발생시킨 메서드를 호출한 지역, 즉 caller에게 예외를 떠넘길 때 사용한다. 다음은 `m01()` 메서드에서 발생한 예외를 caller인 `main()`에서 처리하는 예다:
 
 ```java
 public class Test {
