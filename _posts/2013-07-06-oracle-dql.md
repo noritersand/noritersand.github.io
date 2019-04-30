@@ -144,6 +144,8 @@ SELECT DISTINCT 컬럼명 FROM 테이블
 SELECT DISTINCT deptno FROM emp
 ```
 
+주의: DISTINCT와 ORDER BY를 같이 사용할 땐, ORDER BY에서 사용되는 컬럼을 SELECT문에서 모두 명시해야 한다.
+
 ### ROWNUM
 
 현재 레코드셋에서 레코드들의 순서를 매기는 역할, 유령컬럼이라고도 한다. 조건절은 포함한(ORDER BY 제외) 결과셋의 인덱스 역할을 한다.
