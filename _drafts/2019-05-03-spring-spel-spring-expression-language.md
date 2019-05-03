@@ -19,16 +19,11 @@ tags:
 
 ```bash
 #{ beanId }
-```
-
-**TODO**: `#{systemProperties['PROPERTY_NAME']}`, `#{systemEnvironment['ENV_VARIABLE_NAME']}` 둘의 차이 확인할 것.
-
-#### 스프링 빈의 프로퍼티에 접근
-
-```bash
 #{ beanId.propertyName }
 #{ beanId[ 'propertyName' ] }
 ```
+
+**TODO**: `#{systemProperties['PROPERTY_NAME']}`, `#{systemEnvironment['ENV_VARIABLE_NAME']}` 둘의 차이 확인할 것.
 
 #### example#1
 
