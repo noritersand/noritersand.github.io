@@ -664,7 +664,7 @@ public interface UrlService {
 
 This is fairly easy and useful in some scenarios.
 
-## 그 밖에 기타 등등
+## 그 밖에
 
 ### 금액 표시
 
@@ -722,3 +722,19 @@ file-name.html
 ```
 
 요딴식으로 하면 fragment 쓴다고 불필요한 태그를 추가하지 않아도 된다.
+
+### spring 환경일 때 타입(=클래스) 특정
+
+SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 있다.
+
+```html
+<div>[[${T(java.util.Date).class}]]</div>
+<div>[[${T(Integer).MAX_VALUE eq 2147483647}]]</div>
+```
+
+위 코드의 결과:
+
+```html
+<div>class java.lang.Class</div>
+<div>true</div>
+```
