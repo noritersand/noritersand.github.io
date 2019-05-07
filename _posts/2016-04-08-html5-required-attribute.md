@@ -36,7 +36,6 @@ required는 HTML5부터 추가된 유효성 검사 속성이다. 적용 가능�
 - `<input type="email">`
 - `<input type="password">`
 - `<input type="date">`
-- `<input type="pickers">`
 - `<input type="number">`
 - `<input type="checkbox">`
 - `<input type="radio">`
