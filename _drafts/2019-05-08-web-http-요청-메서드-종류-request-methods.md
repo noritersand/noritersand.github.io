@@ -1,11 +1,13 @@
 ---
 layout: post
-date: 2019-01-10 10:37:00 +0900
-title: 'web: HTTP 메서드'
+date: 2019-05-08 13:55:00 +0900
+title: 'web: HTTP 요청 메서드 종류 request methods'
 categories:
   - web
 tags:
   - http
+  - request
+  - method
 ---
 
 * Kramdown table of contents
@@ -15,6 +17,20 @@ tags:
 
 - [https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
 - [https://developer.mozilla.org/ko/docs/Web/HTTP/Methods](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
+
+HTTP 요청 메서드 간단 정리 글.
+
+2019-05-08 기준, 총 아홉 종류의 메서드가 있다:
+
+- HEAD
+- GET
+- POST
+- PUT
+- DELETE
+- CONNECT
+- OPTIONS
+- TRACE
+- PATCH
 
 ## HEAD
 
