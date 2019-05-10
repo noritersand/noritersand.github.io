@@ -31,7 +31,7 @@ EventTarget.addEventListener( type, listener [ , useCapture ] );
 
 - `type`:
 - `listener`:
-- `useCapture`:
+- `useCapture`: 캡처링 사용 여부. 생략하면 false
 
 ```js
 <button type="button" id="btn">push me</button>

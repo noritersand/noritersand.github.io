@@ -373,7 +373,7 @@ Kevin                           50 Shipping
 메인쿼리에 사용된 테이블의 컬럼이 서브쿼리의 조건절(where, having)에 사용되는 쿼리문
 
 ```sql
-SELECT employee_id , first_name || ' ' || last_name , salary , department_id
+SELECT employee_id, first_name || ' ' || last_name, salary, department_id
  ,(SELECT count(*) FROM employees WHERE salary > M.salary ) + 1 AS "순위" --rank over
  ,(SELECT count(*) FROM employees WHERE department_id = M.department_id and salary > M.salary)
   + 1 AS "부서내순위" --partition by rank over

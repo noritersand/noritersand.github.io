@@ -325,7 +325,7 @@ SELECT empno, ename, sal FROM emp ORDER BY sal DESC;
 SELECT empno, ename, sal FROM emp WHERE sal <= 1000 ORDER BY sal;
 
 -- 다중정렬
-SELECT * FROM insa ORDER BY buseo , city DESC;
+SELECT * FROM insa ORDER BY buseo, city DESC;
 
 -- 별칭으로 정렬
 SELECT first_name || ' ' || last_name AS NAME FROM employees ORDER BY NAME
