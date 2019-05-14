@@ -18,6 +18,7 @@ tags:
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
+- [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
 ![](/images/javascript-prototype.png)
 
@@ -42,7 +43,7 @@ function Newbie() {
 let noob = new Newbie();
 ```
 
-`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`이다. (다시 언급하지만 `Newbie`는 생성자 함수다.)
+`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`이다.
 
 ```js
 noob.__proto__ === Newbie.prototype; // true
@@ -117,18 +118,18 @@ TODO
 
 ## 프로토타입 확장
 
-### class 선언 사용한 방법
+### class를 사용한 확장
 
 ```js
 class Arr extends Array {
-	get doubleLength() {
-		return this.length * 2
-	}
+  get doubleLength() {
+    return this.length * 2
+  }
 }
 Arr.prototype.spitout = function() {
-	while (this.length) {
-		this.pop();
-	}
+  while (this.length) {
+    this.pop();
+  }
 }
 
 let arr = new Arr();
@@ -143,7 +144,7 @@ arr.spitout();
 console.log(arr.length); // 0
 ```
 
-## ETC
+## 프로토타입의 함수
 
 ```js
 let HelloWorld = function(word) {
@@ -170,4 +171,4 @@ let helloWorld = new HelloWorld('hi');
 helloWorld.say();
 ```
 
-첫 번째 코드는 인스턴스마다 메서드가 생성되고, 두 번째 코드는 인스턴스에 관계없이 프로토타입의 메서드 딱 하나만 생성된다.
+첫 번째 코드는 인스턴스마다 함수가 생성되고, 두 번째 코드는 인스턴스에 관계없이 프로토타입의 함수로 딱 하나만 생성된다.

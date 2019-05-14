@@ -341,6 +341,18 @@ SPEL의 고것임.
 - user가 null이면 address를 찾지 않는다.
 - address가 null이면 city를 찾지 않는다.
 
+이 연산자는 매우 유용한데, 예를 들어 아래 코드에서:
+
+```html
+<ul>
+  <li th:each="image : ${pojo?.imageList}">
+    <p>[[${image}]]</p>
+  </li>
+</ul>
+```
+
+`?.` 연산자 대신 접근 연산자 `.`를 사용하면 `imageList`가 null일 때 에러가 발생한다.
+
 ## 리터럴
 
 ### Text literals
@@ -737,4 +749,28 @@ SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 
 ```html
 <div>class java.lang.Class</div>
 <div>true</div>
+```
+
+### null safety - plain object
+
+타입이 plain object일 때 프로퍼티의 null safety 처리는 `?.` 연산자를 쓰면 된다:
+
+```html
+<ul>
+  <li th:each="image : ${pojo?.imageList}">
+    <p>[[${image}]]</p>
+  </li>
+</ul>
+```
+
+### null safety - map
+
+map의 프로퍼티는 `.` 혹은 `?.` 연산자로 때울 수 없고, `maps` 유틸리티를 사용해야 한다:
+
+```html
+<th:block th:if="${ooobject} and ${#maps.containsKey(ooobject, 'jabberList')}">
+  <li th:each="jabber : ${ooobject.jabberList}">
+    <p>[[${jabber}]]</p>
+  </li>
+</th:block>
 ```
