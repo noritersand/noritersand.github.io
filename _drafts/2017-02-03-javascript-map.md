@@ -19,11 +19,10 @@ tags:
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 
-map
+## map
 
+## set
 
-set
+## get
 
-get
-
-clear
+## clear
