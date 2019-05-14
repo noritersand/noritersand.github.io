@@ -62,7 +62,7 @@ class Sorcerer {}
 
 TODO
 
-## 빌트인 프로토타입의 확장
+## 예시: 빌트인 프로토타입의 확장
 
 ```js
 Number.prototype.format = function(n, x) {
