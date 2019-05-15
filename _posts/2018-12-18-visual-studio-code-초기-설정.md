@@ -73,3 +73,7 @@ ${activeEditorLong}${separator}${rootName}
 
 - change-case
 - Java Server Pages (JSP)
+- open in browser
+- Open file
+- Bookmarks
+- Auto Close Tag

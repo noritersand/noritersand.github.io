@@ -681,7 +681,8 @@ This is fairly easy and useful in some scenarios.
 ### 금액 표시
 
 ```html
-<td>$ <span th:text="${#numbers.formatDecimal(value, 0, 'COMMA', 2, 'POINT')}">10.00</span></td>
+<!-- 123,456.00 -->
+<td>$<span th:text="${#numbers.formatDecimal(123456, 0, 'COMMA', 2, 'POINT')}">10.00</span></td>
 ```
 
 ### 날짜 형식 표시

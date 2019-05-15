@@ -22,7 +22,7 @@ tags:
 
 - IE에서 사용 불가
 
-[ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 프로토타입을 정의하는 문법.
+[ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 프로토타입을 정의하는 새로운 문법이다.
 
 구문의 의미가 분명해서 사용하긴 편하지만 IE 때문에 웹에서 쓸 수 있는 날은 멀었다.
 
