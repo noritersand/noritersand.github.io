@@ -16,15 +16,6 @@ tags:
 
 - [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwj02-n5ppffAhUBWbwKHUq9CgEQFjAAegQIBxAC&url=http%3A%2F%2Fcfile30.uf.tistory.com%2Fattach%2F26613D375537C8D71B6149&usg=AOvVaw0d13LGC4OGxmQj2UCEE2jC)
 
-
- Java 객체 직렬화에 대해 당신이 모르고 있던 5가지.pdf
-목차
-직렬화, serialize
-역직렬화, deserialize
-transient
-serialVersionUID
-직렬화된 데이터의 암호화
-
 ## 직렬화란?
 
 객체에 저장된 데이터를 스트림에 쓰기 위해 연속적인 데이터로 변환하는 것을 말한다. 반대로 스트림에서 데이터를 읽어 객체로 변환하는 것을 역직렬화(deserialization)라 한다.
@@ -188,7 +179,7 @@ public class VO implements Serializable {
 
 만약 직렬화 시점의 serialVersion과 역직렬화 시점의 serialVersion이 일치하지 않는다면 아래처럼 java.io.InvalidClassException이 발생하면서 역직렬화는 실패한다.
 
-```java
+```
 Exception in thread "main" java.io.InvalidClassException: com.test.VO;
 local class incompatible: stream classdesc serialVersionUID = 1001, local class serialVersionUID = 1002
 ```
