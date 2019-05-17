@@ -8,7 +8,6 @@ tags:
   - java
   - oop
   - demeter
-  - note
 ---
 
 * Kramdown table of contents

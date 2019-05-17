@@ -21,6 +21,22 @@ tags:
 
 템플릿 엔진 타임리프 사용법 정리.
 
+## HTML 템플릿
+
+```html
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="content">
+    </div>
+</body>
+</html>
+```
+
 ## 코멘트
 
 ### 라인 코멘트

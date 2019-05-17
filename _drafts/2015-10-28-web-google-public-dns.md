@@ -6,8 +6,8 @@ categories:
   - web
 tags:
   - web
-  - note
   - dns
+  - google
 ---
 
 * Kramdown table of contents
