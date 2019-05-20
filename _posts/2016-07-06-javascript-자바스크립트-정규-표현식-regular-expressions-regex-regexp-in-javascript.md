@@ -9,6 +9,7 @@ tags:
   - javascript
   - regex
   - regexp
+  - standard built-in objects
 ---
 
 * Kramdown table of contents

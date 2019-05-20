@@ -69,6 +69,10 @@ ${activeEditorLong}${separator}${rootName}
 ]
 ```
 
+## 기억해둘 기본 단축키
+
+- Trigger Parameter Hints: `ctrl + shift + space`
+
 ## 플러그인
 
 - change-case
