@@ -79,6 +79,14 @@ TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/b
 
 ### Array.prototype.filter()
 
+```js
+let arr = [1, 2, 3, 4];
+let even = arr.filter(function(element) {
+  return element % 2 == 0;
+});
+even; // [2, 4]
+```
+
 ### Array.prototype.reduce()
 
 ## ~~주작~~조작
