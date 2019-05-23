@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwj02-n5ppffAhUBWbwKHUq9CgEQFjAAegQIBxAC&url=http%3A%2F%2Fcfile30.uf.tistory.com%2Fattach%2F26613D375537C8D71B6149&usg=AOvVaw0d13LGC4OGxmQj2UCEE2jC)
+- [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](/attachments/j-5things.pdf)
 
 ## 직렬화란?
 
