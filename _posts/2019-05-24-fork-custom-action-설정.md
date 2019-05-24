@@ -23,4 +23,4 @@ tags:
 - script path: `$git`
 - parameters: `update-index --assume-unchanged $filepath`
 
-변경 목록 화면에서 우클릭 - 커스텀 액션 실행
+변경 목록 화면에서 우클릭 - 커스텀 액션 실행. 단, 파일 하나씩만 가능.

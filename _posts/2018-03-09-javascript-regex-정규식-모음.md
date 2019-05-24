@@ -179,22 +179,40 @@ for (var loop = 0; loop < text.length; loop++){
 /^[a-zA-Z0-9]{5,50}$/
 ```
 
-### 영문 대소문자, 숫자, 언더바(_), 하이픈(-), 2~5자 길이의 정규표현식
-
-```js
-/^[a-zA-Z0-9_-]{2,5}$/
-```
-
-### 숫자와 하이픈(-)만 true, 자릿수 체크 안함
-
-```js
-/^((\d+)(\-?)(\d+))+$/.test('010-0000-0000')
-```
-
 ### 아스키 코드는 1, 유니코드는 3으로 치환하여 전체 문자열 길이 계산
 
 ```js
 string.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,"$&$1$2").length
+```
+
+### 특수문자가 있으면 true
+
+```js
+function existSpecialchar(str) {
+	var pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+	if (pattern.test(str) == true) {
+		return true;
+	}
+	return false;
+}
+```
+
+### 숫자만 있으면 true
+
+```js
+function isOnlyNumber(str) {
+	var pattern = /^(\d+)$/gi;
+	return pattern.test(str);
+}
+```
+
+### 한글과 공백만 있으면 true
+
+```js
+function isOnlyKoreanWithSpaces(str) {
+	var pattern = /^[가-힣\s]+$/gi;
+	return pattern.test(str);
+}
 ```
 
 ### HTML에서 특정 속성 검색
@@ -215,4 +233,16 @@ placeholder=[\"']?([^>\"']+)[\"']?[^>]
 
 ```js
 /^[a-zA-Z0-9._]*$/.test('123abcABC_.');
+```
+
+### 영문 대소문자, 숫자, 언더바(_), 하이픈(-), 2~5자 길이의 정규표현식
+
+```js
+/^[a-zA-Z0-9_-]{2,5}$/
+```
+
+### 숫자와 하이픈(-)만 true, 자릿수 체크 안함
+
+```js
+/^((\d+)(\-?)(\d+))+$/.test('010-0000-0000')
 ```
