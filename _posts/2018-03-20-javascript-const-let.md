@@ -16,7 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
+- [MDN: const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
+- [MDN: let](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let)
 
 #### 테스트 환경
 
