@@ -7,6 +7,9 @@ categories:
 tags:
   - ecmascript
   - javascript
+  - hash
+  - location
+  - history
 ---
 
 * Kramdown table of contents

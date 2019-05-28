@@ -50,4 +50,4 @@ loadScript('example.js', function () {
 
 [코드 출처](https://d2.naver.com/helloworld/591319)
 
-사실 위 코드는 AMD의 필요성을 강조하기 위한 예시임.
+사실 위 코드는 [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD)의 필요성을 강조하기 위한 예시임.
