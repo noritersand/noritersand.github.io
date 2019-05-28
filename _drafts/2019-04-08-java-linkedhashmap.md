@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html](/https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
+- [https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
 
 ## LinkedHashMap
 

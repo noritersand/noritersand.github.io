@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams](/https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+- [https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 
 ```js
 var paramsString = "q=URLUtils.searchParams&topic=api";

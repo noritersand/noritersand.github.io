@@ -39,7 +39,7 @@ function uuidv4() {
 console.log(uuidv4());
 ```
 
-[소스 출처](/https://zetawiki.com/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_UUID_%EC%83%9D%EC%84%B1)
+[소스 출처](https://zetawiki.com/wiki/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_UUID_%EC%83%9D%EC%84%B1)
 
 ```js
 function guid() {

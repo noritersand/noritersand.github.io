@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [https://api.jquery.com/attr/](/https://api.jquery.com/attr/)
-- [https://api.jquery.com/prop/](/https://api.jquery.com/prop/)
-- [https://api.jquery.com/data/](/https://api.jquery.com/data/)
+- [https://api.jquery.com/attr/](https://api.jquery.com/attr/)
+- [https://api.jquery.com/prop/](https://api.jquery.com/prop/)
+- [https://api.jquery.com/data/](https://api.jquery.com/data/)
 
 ## .attr(name, value),<br>.attr(object)
 
