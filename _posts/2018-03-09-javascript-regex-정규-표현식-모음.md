@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-09 17:53:21 +0900
-title: 'JavaScript: regex 정규식 모음'
+title: 'JavaScript: regex 정규 표현식 모음'
 categories:
   - javascript
 tags:
@@ -10,6 +10,22 @@ tags:
   - regex
   - 코드모음
 ---
+
+## expression
+
+### 공백 줄(empty line)
+
+```js
+^\s*$
+```
+
+### 영문 대소문자, 숫자, 언더바`_`, 하이픈`-`, 2~5자 길이의 정규 표현식
+
+```js
+/^[a-zA-Z0-9_-]{2,5}$/
+```
+
+## 함수 사용 예시
 
 ### 숫자 - 통화 변환
 
@@ -41,6 +57,12 @@ a.replace(/^\s*[\r\n]/gm, "");
 ```js
 'q!1@2#3뀨?asd한글'.replace(/[^A-Za-z0-9]/gi, '뿅');
 // 'q뿅1뿅2뿅3뿅뿅asd뿅뿅'
+```
+
+### 아스키 코드는 1, 유니코드는 3으로 치환
+
+```js
+string.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,"$&$1$2").length
 ```
 
 ### 내용의 값의 빈공백을 trim(앞/뒤)
@@ -140,7 +162,7 @@ if (! /^(\d+)$/.test(f.age.value)) {
 }
 ```
 
-### 날짜 형식 검사 정규표현식(yyyy-MM-dd)
+### 날짜 형식 검사 정규 표현식(yyyy-MM-dd)
 
 ```js
 function isValidDateFormat(data) {
@@ -173,27 +195,27 @@ for (var loop = 0; loop < text.length; loop++){
 }
 ```
 
-### 영문 대소문자, 숫자, 5~50자 길이의 정규표현식
+### 영문 대소문자, 숫자, 5~50자 길이의 정규 표현식
 
 ```js
 /^[a-zA-Z0-9]{5,50}$/
 ```
 
-### 아스키 코드는 1, 유니코드는 3으로 치환하여 전체 문자열 길이 계산
+### 숫자와 알파벳 대소문자, 쉼표`.`, 언더바`_` 이외의 문자가 있을 경우 false
 
 ```js
-string.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,"$&$1$2").length
+/^[a-zA-Z0-9._]*$/.test('123abcABC_.');
 ```
 
 ### 특수문자가 있으면 true
 
 ```js
 function existSpecialchar(str) {
-	var pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
-	if (pattern.test(str) == true) {
-		return true;
-	}
-	return false;
+  var pattern = /[`~!@#$%^&*|\\\'\";:\/?]/gi;
+  if (pattern.test(str) == true) {
+    return true;
+  }
+  return false;
 }
 ```
 
@@ -201,8 +223,8 @@ function existSpecialchar(str) {
 
 ```js
 function isOnlyNumber(str) {
-	var pattern = /^(\d+)$/gi;
-	return pattern.test(str);
+  var pattern = /^(\d+)$/gi;
+  return pattern.test(str);
 }
 ```
 
@@ -210,35 +232,9 @@ function isOnlyNumber(str) {
 
 ```js
 function isOnlyKoreanWithSpaces(str) {
-	var pattern = /^[가-힣\s]+$/gi;
-	return pattern.test(str);
+  var pattern = /^[가-힣\s]+$/gi;
+  return pattern.test(str);
 }
-```
-
-### HTML에서 특정 속성 검색
-
-```js
-placeholder=[\"']?([^>\"']+)[\"']?[^>]
-```
-
-`placeholder="abc"`는 찾지만 `placeholder=""`는 못찾음.
-
-### 공백 줄(empty line)
-
-```js
-^\s*$
-```
-
-### 숫자와 알파벳 대소문자, 쉼표(.), 언더바(_) 이외의 문자가 있을 경우 false
-
-```js
-/^[a-zA-Z0-9._]*$/.test('123abcABC_.');
-```
-
-### 영문 대소문자, 숫자, 언더바(_), 하이픈(-), 2~5자 길이의 정규표현식
-
-```js
-/^[a-zA-Z0-9_-]{2,5}$/
 ```
 
 ### 숫자와 하이픈(-)만 true, 자릿수 체크 안함
@@ -246,3 +242,13 @@ placeholder=[\"']?([^>\"']+)[\"']?[^>]
 ```js
 /^((\d+)(\-?)(\d+))+$/.test('010-0000-0000')
 ```
+
+### HTML에서 특정 속성 검색
+
+```js
+var p = /placeholder=[\"']?([^>\"']+)[\"']?[^>]/;
+p.test('placeholder="abc"'); // true
+p.test('placeholder=""'); // false
+```
+
+`placeholder="abc"`는 찾지만 `placeholder=""`는 못찾음.

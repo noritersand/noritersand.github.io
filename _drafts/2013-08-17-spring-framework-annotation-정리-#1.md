@@ -85,7 +85,7 @@ http://sourceforge.net/projects/cglib/
 
 - annotation: 클랙스에 지정한 어노테이션이 적용됐는지의 여부. expression 속성에서는 "org.example.SomeAnnotation"와 같은 어노테이션 이름을 입력한다.
 - assignable: 클래스가 지정한 타입으로 할당 가능한지의 여부.  expression 속성에는 `org.exampleSomeClass` 와 같은 타입 이름을 입력한다.
-- regex: 클래스 이름이 정규 표현식에 매칭되는 지의 여부.  expression 속성에는 `org\.example\.Default.*` 와 같이 정규표현식을 입력한다.
+- regex: 클래스 이름이 정규 표현식에 매칭되는 지의 여부.  expression 속성에는 `org\.example\.Default.*` 와 같이 정규 표현식을 입력한다.
 - aspectj: 클래스 이름이 AspectJ 의 표현식에 매칭되는 지의 여부.  expression 속성에는 `org.example..*Service+` 와 같이 AspectJ 의 표현식을 입력한다.
 
 ## @Required

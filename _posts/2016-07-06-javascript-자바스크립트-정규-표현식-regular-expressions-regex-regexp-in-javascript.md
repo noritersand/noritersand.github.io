@@ -57,7 +57,7 @@ var re = new RegExp("ab+c", "i");
 - `m`: 멀티 라인 검색
 - `y`: Perform a "sticky" search that matches starting at the current position in the target string.
 
-## 정규표현식과 함께 사용하는 함수
+## 정규 표현식과 함께 사용하는 함수
 
 - `String.search( regexp )`: 정규식 패턴에 첫 번째로 일치하는 부분 문자열의 위치를 반환 하며 존재하지 않으면 -1을 리턴 한다.
 - `String.match( regexp )`: 지정된 패턴과 동일한 패턴을 검색하여 배열 또는 null 문자를 리턴 한다.
