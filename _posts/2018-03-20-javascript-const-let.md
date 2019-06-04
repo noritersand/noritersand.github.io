@@ -19,6 +19,10 @@ tags:
 - [MDN: const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
 - [MDN: let](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let)
 
+#### 브라우저 호환
+
+- IE는 11과 edge에서만 사용 가능 [https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
+
 #### 테스트 환경
 
 - 파이어폭스 47.0
@@ -95,5 +99,3 @@ console.debug(arr[ele2]); // ReferenceError: ele2 is not defined
 ```
 
 let으로 선언된 `ele2`는 for문 밖에서 참조할 수 없다.
-
-IE는 11과 edge에서만 사용 가능 [https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
