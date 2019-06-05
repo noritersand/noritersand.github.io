@@ -23,7 +23,7 @@ return "/member/login.do"; // request forward
 return "redirect:/member/login.do"; // request redirect
 ```
 
-리다이렉트땐 `redirect:` 이후 꺽쇠`/`의 여부에 따라 클라이언트에 전달할 경로가 달라질 수 있다. 가령 Context 경로가 `/FO`이고 컨트롤러에 매핑된 경로의 최상단(`/FO` 바로 다음)이 `/member`라고 했을 때 `redirect:member/login.do` 를 리턴하면 실제 전달되는 경로는 '/bo/member/member/login.do' 가 된다.
+리디렉트땐 `redirect:` 이후 꺽쇠`/`의 여부에 따라 클라이언트에 전달할 경로가 달라질 수 있다. 가령 Context 경로가 `/FO`이고 컨트롤러에 매핑된 경로의 최상단(`/FO` 바로 다음)이 `/member`라고 했을 때 `redirect:member/login.do` 를 리턴하면 실제 전달되는 경로는 '/bo/member/member/login.do' 가 된다.
 
 ## return ModelAndView
 
