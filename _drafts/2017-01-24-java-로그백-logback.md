@@ -35,6 +35,21 @@ tags:
 
 로거는 루트의 설정(레벨, 어펜더)을 상속받는걸로 추정됨.
 
+## 로컬/안로컬 구분
+
+뭐 이런게 있드라
+
+```xml
+  ...
+    <springProfile name="local">
+      ...
+    </springProfile>
+    <springProfile name="!local">
+      ...
+    </springProfile>
+  ...
+```
+
 ## example
 
 ```xml
