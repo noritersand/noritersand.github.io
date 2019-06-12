@@ -368,7 +368,7 @@ Kevin                           50 Shipping
  107개의 행이 선택됨
 ```
 
-### 상관서브쿼리 correlateds subquery
+### 상관 서브쿼리 correlateds subquery
 
 메인쿼리에 사용된 테이블의 컬럼이 서브쿼리의 조건절(where, having)에 사용되는 쿼리문
 
@@ -379,8 +379,9 @@ SELECT employee_id, first_name || ' ' || last_name, salary, department_id
   + 1 AS "부서내순위" --partition by rank over
 FROM employees M
 ORDER BY 순위;
+```
 
-
+```sql
 EMPLOYEE_ID FIRST_NAME||''||LAST_NAME                          SALARY DEPARTMENT_ID         순위      부서내순위
 ----------- ---------------------------------------------- ---------- ------------- ---------- ----------
         100 Steven King                                         24000            90          1          1

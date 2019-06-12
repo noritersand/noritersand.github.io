@@ -784,7 +784,7 @@ SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 
 
 #### map
 
-map의 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 수 없다. 대신 `maps` 유틸리티를 사용해야 한다:
+map에서 특정 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 수 없다. 대신 `maps` 유틸리티를 사용한다:
 
 ```html
 <th:block th:if="${ooobject} and ${#maps.containsKey(ooobject, 'jabberList')}">
@@ -796,7 +796,7 @@ map의 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 수 없다. 
 
 #### list
 
-`th:if`는 list가 비었는지를 판단할 수 없다. 따라서 `lists` 유틸리티로 확인한다:
+`th:if`와 `?.` 연산자는 list가 비었는지를 판단하지 못한다. 대신 `lists` 유틸리티를 사용한다:
 
 ```html
 <dt class="img" th:if="${imageList} and ${lists.size(imageList) > 0}">
