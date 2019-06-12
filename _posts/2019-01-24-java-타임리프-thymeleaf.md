@@ -768,7 +768,7 @@ SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 
 <div>true</div>
 ```
 
-### null safety - plain object
+### plain object의 null safety 처리
 
 타입이 plain object일 때 프로퍼티의 null safety 처리는 `?.` 연산자를 쓰면 된다:
 
@@ -780,9 +780,11 @@ SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 
 </ul>
 ```
 
-### null safety - map
+### 컬렉션의 empty check
 
-map의 프로퍼티는 `.` 혹은 `?.` 연산자로 때울 수 없고, `maps` 유틸리티를 사용해야 한다:
+#### map
+
+map의 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 수 없다. 대신 `maps` 유틸리티를 사용해야 한다:
 
 ```html
 <th:block th:if="${ooobject} and ${#maps.containsKey(ooobject, 'jabberList')}">
@@ -790,4 +792,14 @@ map의 프로퍼티는 `.` 혹은 `?.` 연산자로 때울 수 없고, `maps` �
     <p>[[${jabber}]]</p>
   </li>
 </th:block>
+```
+
+#### list
+
+`th:if`는 list가 비었는지를 판단할 수 없다. 따라서 `lists` 유틸리티로 확인한다:
+
+```html
+<dt class="img" th:if="${imageList} and ${lists.size(imageList) > 0}">
+  <img th:src="${imageList[0].location}">
+</dt>
 ```
