@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - regex
+  - regexp
   - 코드모음
 ---
 

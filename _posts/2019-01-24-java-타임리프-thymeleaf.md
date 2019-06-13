@@ -313,7 +313,7 @@ The preprocessing String `__` can be escaped in attributes using `\_\_`.
 - If-then-else: (if) `?` (then) `:` (else)
 - Default: (value) `?:` (defaultvalue)
 
-위에서 세 번째는 Elvis operator라고도 하는데, 일종의 단축 표현이다:
+`?:` 연산자는 Elvis operator라고도 하는데, 일종의 단축 표현이다:
 
 ```js
 x = f() ? f() : g()
@@ -348,7 +348,7 @@ x = f() ?: g()
 
 SPEL의 고것임.
 
-```
+```html
 <td th:text="${user?.address?.city}"></td>
 ```
 
