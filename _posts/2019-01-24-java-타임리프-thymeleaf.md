@@ -309,9 +309,21 @@ The preprocessing String `__` can be escaped in attributes using `\_\_`.
 
 ### Conditional operators:
 
-- If-then: (if) ? (then)
-- If-then-else: (if) ? (then) : (else)
-- Default: (value) ?: (defaultvalue)
+- If-then: (if) `?` (then)
+- If-then-else: (if) `?` (then) `:` (else)
+- Default: (value) `?:` (defaultvalue)
+
+위에서 세 번째는 Elvis operator라고도 하는데, 일종의 단축 표현이다:
+
+```js
+x = f() ? f() : g()
+```
+
+위는 아래와 같다:
+
+```js
+x = f() ?: g()
+```
 
 ### Special tokens:
 
@@ -330,20 +342,6 @@ The preprocessing String `__` can be escaped in attributes using `\_\_`.
 
 <!-- 혼합 사용 -->
 <span th:text="${onevar} + ' ' + |${twovar}, ${threevar}|">
-```
-
-### Elvis operator `?:`
-
-삼항 연산자의 단축형.
-
-```js
-x = f() ? f() : g()
-```
-
-위는 아래와 같다:
-
-```js
-x = f() ?: g()
 ```
 
 ### Safe navigation operator

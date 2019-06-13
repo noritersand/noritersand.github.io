@@ -13,14 +13,19 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 브라우저 호환
+
+- IE8 이상
+
+## document.querySelector
+
 ```js
 document.querySelector( selector )
 ```
 
 태그의 아이디, 클래스, 이름 등으로 태그 객체를 반환하는 메서드.
-셀렉터는 CSS에서 사용하는 태그 셀렉터 ("#아이디" , ".클래스이름", "태그이름", "태그이름 하위태그이름" 등 ) 을 사용한다.
-이때, 클래스이름이나 태그이름으로 불러와도 배열이 아닌, 맨 앞 객체 하나만 불러오게 된다.
-해당 메서드는 Internet Explorer 8, FireFox 3.5 이상의 브라우저에서 지원된다.
+
+`selector`는 [CSS 셀렉터](https://www.w3schools.com/cssref/css_selectors.asp)를 사용한다. 이때, 클래스이름이나 태그이름으로 불러와도 배열이 아닌, 맨 앞 객체 하나만 불러오게 된다.
 
 ```js
 var container = document.querySelector('#container'); // id selector
@@ -30,16 +35,15 @@ var input = document.querySelector('[name=inp_box]'); // attribute selector
 var dropZone = document.querySelector('div[data-name="drop-zone"]'); // attribute selector
 ```
 
+## document.querySelectorAll
 
 ```js
 document.querySelectorAll( selector )
 ```
 
 태그의 아이디, 클래스, 이름 등으로 태그 객체를 반환하는 메서드.
-셀렉터는 CSS에서 사용하는 태그 셀렉터 ("#아이디" , ".클래스이름", "태그이름", "태그이름 하위태그이름" 등 ) 을 사용한다.
-document.querySelector와 다르게 여러 개의 태그 객체를 담는 배열을 반환한다. (아이디로 불러왔을 경우에도 배열 반환)
-해당 메서드는 Internet Explorer 8, FireFox 3.5 이상의 브라우저에서 지원된다.
 
+`selector` [CSS 셀렉터](https://www.w3schools.com/cssref/css_selectors.asp)를 사용한다. `document.querySelector`와 다르게 여러 개의 태그 객체를 담는 배열을 반환한다. 아이디로 찾을 때도 마찬가지다.
 
 ```js
 var containerArr = document.querySelectorAll('#container'); // id selector, 배열

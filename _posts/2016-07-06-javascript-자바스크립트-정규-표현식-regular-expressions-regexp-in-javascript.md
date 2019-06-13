@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-06 16:55:10 +0900
-title: 'JavaScript: 자바스크립트 정규 표현식, Regular Expressions(regex, regexp) in JavaScript'
+title: 'JavaScript: 자바스크립트 정규 표현식, Regular Expressions(regexp) in JavaScript'
 categories:
   - javascript
 tags:
