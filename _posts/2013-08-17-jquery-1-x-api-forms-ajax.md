@@ -375,11 +375,11 @@ $.ajax({
 
 아래 나열한 메서드들은 전역으로 설정가능한 ajax 이벤트 핸들러로 1.9.x 버전부터는 document에만 할당 할 수 있도록 변경되었다. 핸들러를 할당하고 난 뒤에는 문서에서 발생한 모든 Ajax 이벤트에 반응한다.
 
-- `.ajaxStart( callback )`: Ajax request의 송신 전 active request가 없는 경우에 실행되는 함수를 지정한다.
-- `.ajaxSend( callback( event, jqXHR, ajaxOptions ) )`: Ajax request의 송신 전 실행되는 함수를 지정한다.
-- `.ajaxSuccess( callback( event, jqXHR, ajaxOptions, data ) )`: Ajax request의 송신 성공 시 실행되는 함수를 지정한다.
-- `.ajaxError( callback( event, jqXHR, ajaxSettings, thrownError ) )`: Ajax request의 송신 실패 시 실행되는 함수를 지정한다.
-- `.ajaxComplete( callback( event, jqXHR, ajaxOptions ) )`: Ajax request의 송신 완료 시 실행되는 함수를 지정한다.
+- `.ajaxStart( callback( jqEvent ) )`: Ajax request의 송신 전 active request가 없는 경우에 실행되는 함수를 지정한다.
+- `.ajaxSend( callback( jqEvent, jqXHR, ajaxOptions ) )`: Ajax request의 송신 전 실행되는 함수를 지정한다.
+- `.ajaxSuccess( callback( jqEvent, jqXHR, ajaxOptions, data ) )`: Ajax request의 송신 성공 시 실행되는 함수를 지정한다.
+- `.ajaxError( callback( jqEvent, jqXHR, ajaxSettings, thrownError ) )`: Ajax request의 송신 실패 시 실행되는 함수를 지정한다.
+- `.ajaxComplete( callback( jqEvent, jqXHR, ajaxOptions ) )`: Ajax request의 송신 완료 시 실행되는 함수를 지정한다.
 - `.ajaxStop( callback )`: Ajax request의 송신 종료 시 실행되는 함수를 지정한다.
 
 ```js
