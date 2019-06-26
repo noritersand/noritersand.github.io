@@ -207,12 +207,12 @@ Let’s use this new syntax. Meet the th:href attribute:
 
 Some things to note here:
 
-- th:href is a modifier attribute: once processed, it will compute the link URL to be used and set that value to the href attribute of the <a> tag.
-- We are allowed to use expressions for URL parameters (as you can see in orderId=${o.id}). The required URL-parameter-encoding operations will also be automatically performed.
-- If several parameters are needed, these will be separated by commas: @{/order/process(execId=${execId},execType='FAST')}
-- Variable templates are also allowed in URL paths: @{/order/{orderId}/details(orderId=${orderId})}
+- th:href is a modifier attribute: once processed, it will compute the link URL to be used and set that value to the href attribute of the `<a>` tag.
+- We are allowed to use expressions for URL parameters (as you can see in `orderId=${o.id})`. The required URL-parameter-encoding operations will also be automatically performed.
+- If several parameters are needed, these will be separated by commas: `@{/order/process(execId=${execId},execType='FAST')}`
+- Variable templates are also allowed in URL paths: `@{/order/{orderId}/details(orderId=${orderId})}`
 - Relative URLs starting with / (eg: /order/details) will be automatically prefixed by the application context name.
-- If cookies are not enabled or this is not yet known, a ";jsessionid=..." suffix might be added to relative URLs so that the session is preserved. This is called URL Rewriting and Thymeleaf allows you to plug in your own rewriting filters by using the response.encodeURL(...) mechanism from the Servlet API for every URL.
+- If cookies are not enabled or this is not yet known, a ";jsessionid=..." suffix might be added to relative URLs so that the session is preserved. This is called URL Rewriting and Thymeleaf allows you to plug in your own rewriting filters by using the `response.encodeURL(...)` mechanism from the Servlet API for every URL.
 - The th:href attribute allows us to (optionally) have a working static href attribute in our template, so that our template links remained navigable by a browser when opened directly for prototyping purposes.
 
 As was the case with the message syntax `#{...}`, URL bases can also be the result of evaluating another expression:
@@ -785,16 +785,27 @@ SPEL을 쓸 수 있는 환경이라면 `T` 연산자로 타입을 특정할 수 
 map에서 특정 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 수 없다. 대신 `maps` 유틸리티를 사용한다:
 
 ```html
-<th:block th:if="${ooobject} and ${#maps.containsKey(ooobject, 'jabberList')}">
-  <li th:each="jabber : ${ooobject.jabberList}">
-    <p>[[${jabber}]]</p>
-  </li>
+<th:block th:if="${not #maps.isEmpty(motherShip)} and ${#maps.containsKey(motherShip, 'bomber')}">
+  <p>[[${bomber}]]</p>
 </th:block>
 ```
+
+- `maps.isEmpty(obj)`: obj가 null이거나 null이 아니어도 비어있으면 true
+- `maps.containsKey(obj, name)`: obj에 name으로 지정된 요소가 있으면 true
 
 #### list
 
 `th:if`와 `?.` 연산자는 list가 비었는지를 판단하지 못한다. 대신 `lists` 유틸리티를 사용한다:
+
+```html
+<div th:unless="${#lists.isEmpty(imageList)}">
+  <img th:src="${imageList[0].location}">
+</div>
+```
+
+- `lists.isEmpty(obj)`: obj가 null이거나 null이 아니어도 비어있으면 true
+
+아래같은 방법도 있지만 두 번 확인해야 해서 귀찮:
 
 ```html
 <dt class="img" th:if="${imageList} and ${lists.size(imageList) > 0}">
