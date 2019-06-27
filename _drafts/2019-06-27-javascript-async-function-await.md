@@ -18,8 +18,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN: async function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/await)
-- [MDN: await](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
+- [MDN: async function](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/async_function)
+- [MDN: await](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/await)
 - [MDN: Promise](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 `async`는 async function 선언 시 사용되는 키워드이며,
