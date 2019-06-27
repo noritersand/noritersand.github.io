@@ -48,3 +48,21 @@ fetch(url, {
   html => console.log(html)
 );
 ```
+
+```js
+await fetch("http://127.0.0.1:8080/test/doughnutList", {
+    "credentials": "include",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0",
+        "Accept": "text/html, */*; q=0.01",
+        "Accept-Language": "ko-KR,ko;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "X-Requested-With": "XMLHttpRequest",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "http://127.0.0.1:8080/krispy-doughnut.html",
+    "method": "POST",
+    "mode": "cors"
+});
+```
