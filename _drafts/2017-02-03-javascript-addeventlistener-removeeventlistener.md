@@ -29,15 +29,15 @@ tags:
 EventTarget.addEventListener( type, listener [ , useCapture ] );
 ```
 
-- `type`:
-- `listener`:
+- `type`: 이벤트 종류
+- `listener`: 이벤트가 발생하면 실행할 함수. 유일한 인자로 event 객체가 전달된다.
 - `useCapture`: 캡처링 사용 여부. 생략하면 false
 
 ```js
 <button type="button" id="btn">push me</button>
 <script>
   var foo = document.querySelector('#btn');
-  foo.addEventListener('click', function() {
+  foo.addEventListener('click', function(event) {
     alert('who? me?');
   });
 </script>
