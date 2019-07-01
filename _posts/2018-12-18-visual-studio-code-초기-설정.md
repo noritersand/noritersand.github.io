@@ -81,3 +81,4 @@ ${activeEditorLong}${separator}${rootName}
 - Open file
 - Bookmarks
 - Auto Close Tag
+- Go to Next/Previous Member
