@@ -25,7 +25,7 @@ tags:
 
 **TODO**: `#{systemProperties['PROPERTY_NAME']}`, `#{systemEnvironment['ENV_VARIABLE_NAME']}` 둘의 차이 확인할 것.
 
-#### example#1
+#### example\#1
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,7 +48,7 @@ private Properties testProperties;
 String someProp = testProperties.getProperty("some.test.prop");
 ```
 
-#### example#2
+#### example\#2
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

@@ -40,7 +40,7 @@ document.cookie = "cookiename=value; secure"  // HTTPS 전송만 가능
 쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다.
 http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value
 
-## examples #1
+## examples \#1
 
 ```js
 function setCookie(cname, cvalue, exdays) {
@@ -74,7 +74,7 @@ function checkCookie() {
 }
 ```
 
-## examples #2
+## examples \#2
 
 ```js
 /*\

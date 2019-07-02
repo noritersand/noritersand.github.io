@@ -36,7 +36,7 @@ singleParam => { statements }
 () => { statements }
 ```
 
-아아아아아아주 간단한 예시#1:
+아아아아아아주 간단한 예시\#1:
 
 ```js
 // 아래 둘은 같다.
@@ -48,7 +48,7 @@ var b = (arg) => { console.log(arg); };
 var b = function(arg) { console.log(arg); };
 ```
 
-아아아아아아주 간단한 예시#2:
+아아아아아아주 간단한 예시\#2:
 
 ```js
 function repeatTwice(fn) {
