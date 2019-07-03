@@ -7,6 +7,7 @@ categories:
 tags:
   - java
   - sonarqube
+  - code quality
 ---
 
 * Kramdown table of contents
