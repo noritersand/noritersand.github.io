@@ -111,7 +111,7 @@ private String prop;
 
 ## Types
 
-`T` 연산자를 사용하면 클래스패스 내의 타입을 특정할 수 있다. 이 방법으로 스태틱 메서드 호출도 가능하다고 한다. `java.lang` 패키지의 타입을 패키지를 명시하지 않아도 된다.
+`T` 연산자를 사용하면 클래스패스 내의 타입을 특정할 수 있다. 이 방법으로 스태틱 메서드 호출도 가능하다고 한다. `java.lang` 패키지의 타입은 패키지를 생략해도 된다.
 
 > You can use the special `T` operator to specify an instance of `java.lang.Class` (the type). Static methods are invoked by using this operator as well. The `StandardEvaluationContext` uses a `TypeLocator` to find types, and the `StandardTypeLocator` (which can be replaced) is built with an understanding of the `java.lang` package. This means that T() references to types within `java.lang` do not need to be fully qualified, but all other type references must be. The following example shows how to use the T operator:
 >
