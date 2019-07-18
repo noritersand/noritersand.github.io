@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-### MySql 혹은 MariaDB
+### MySQL 혹은 MariaDB
 
 ```xml
 SELECT PRD_ID
