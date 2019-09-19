@@ -22,7 +22,10 @@ tags:
 
 ```
 $(selector).each( function )
+
 ```
+
+- function: `Function(index, element)`
 
 설명
 
@@ -46,9 +49,9 @@ index는 선택한 jQuery 객체 배열의 순번을 의미한다.
 ```js
 $(function() {
   $(document.body).click(function () {
-    $("div").each(function (index) {
-      if (this.style.color != "blue") {
-        $(this).css("color", "blue");
+    $('div').each(function(index) {
+      if (this.style.color != 'blue') {
+        $(this).css('color', 'blue');
         //this.style.color = "blue";
       } else {
         this.style.color = "";
