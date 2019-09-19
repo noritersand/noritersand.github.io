@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://www.w3schools.com/jsref/prop_win_opener.asp](http://www.w3schools.com/jsref/prop_win_opener.asp)
 - [https://developer.mozilla.org/en-US/docs/Web/API/Window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window.opener)

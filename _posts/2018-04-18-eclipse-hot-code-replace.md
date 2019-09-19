@@ -11,12 +11,14 @@ tags:
   - hot code replace
 ---
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/](http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/)
 
 이클립스에선 JVM을 디버그 모드로 구동한 후, 런타임이 종료되지 않은 상태에서(WAS를 띄워놓은 것과 같은 상태) 클래스 파일의 변경이 감지되면 JVM 재시작 없이 변경된 클래스파일을 교체하는 hot code replace 기능을 제공한다. (hot deploy 또는 hot swap 이라고도 한다.) 유료 플러그인인 JRebel과 비교하면 초라하지만... 없는 것보단 낫다.
 
 ## 설정
+
 여기선 톰캣 플러그인을 예로 든다. 우선 톰캣 서버 설정(서버 이름을 더블클릭 해서 진입한다. 서버 목록은 이클립스에서 Servers view를 활성화해야 볼 수 있다.)의 Overview 탭에서 'Automatically publish when resources change' 항목에 체크하고 (만약 'Serve modules without publishing'을 활성화했다면 이 과정은 생략해도 된다):
 
 ![](/images/hot-code-replace-1.png)
@@ -25,7 +27,9 @@ Modules 탭에서 보이는 Edit 버튼을 눌러 Auto reloading enabled의 체�
 이후 WAS를 디버그 모드로 구동한 뒤 소스를 수정하면 된다.
 
 ## 주의사항
+
 hot code replace의 적용 범위는 메서드 본문에만 한정된다. 다음에 해당하는 코드를 추가하거나 변경할 땐 replace가 불가능하며 반드시 JVM을 재시작해야 한다:
+
 - 클래스와 메서드의 선언부
 - 클래스 변수 혹은 인스턴스 변수
 - 스태틱 블록

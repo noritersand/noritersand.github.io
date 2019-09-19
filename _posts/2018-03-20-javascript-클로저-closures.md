@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
 - https://opentutorials.org/course/743/6544

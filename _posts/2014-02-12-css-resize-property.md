@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://www.w3schools.com/cssref/css3_pr_resize.asp](http://www.w3schools.com/cssref/css3_pr_resize.asp)
 - [http://www.w3schools.com/cssref/playit.asp?filename=playcss_resize&preval=both](http://www.w3schools.com/cssref/playit.asp?filename=playcss_resize&preval=both)

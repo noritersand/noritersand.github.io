@@ -10,11 +10,12 @@ tags:
   - nohup
 ---
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html](http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html)
 
 ``` bash
 nohup java -jar example.jar &
 ```
 
-& 만 쳐도 되는모양?
+`&` 만 쳐도 되는모양?

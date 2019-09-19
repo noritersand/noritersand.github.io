@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/cache/package-summary.html](http://docs.guava-libraries.googlecode.com/git/javadoc/com/google/common/cache/package-summary.html)
 

@@ -13,7 +13,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing](http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing)
 
 ```js
@@ -30,6 +31,7 @@ function test2() {
 }
 test2();
 ```
+
 내부동작과 유효범위(혹은 scope)의 차이가 있다.
 
 - `eval()`: 자바스크립트 표현식으로 문자열을 자바스크립트 코드로 해석한 후 이를 평가한다. 이 때 eval()을 호출하는 시점의 변수 환경이 사용하기 때문에 실행 범위 내의 지역변수에 접근 할 수 있다.

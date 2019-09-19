@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://spring.io/guides/tutorials/rest/](https://spring.io/guides/tutorials/rest/)
 - [https://spring.io/guides/gs/rest-service/](https://spring.io/guides/gs/rest-service/)

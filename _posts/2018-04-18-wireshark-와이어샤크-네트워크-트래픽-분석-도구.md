@@ -11,7 +11,8 @@ tags:
 ---
 
 
-#### 참고 문서
+#### 관련 문서
+
 - [https://www.wireshark.org/download.html](https://www.wireshark.org/download.html)
 - [https://wiki.wireshark.org/DisplayFilters#Examples](https://wiki.wireshark.org/DisplayFilters#Examples)
 - [https://openmaniak.com/kr/wireshark_filters.php#display](https://openmaniak.com/kr/wireshark_filters.php#display)
@@ -25,4 +26,5 @@ and http
 and (ip.src eq 127.0.0.1 or ip.dst eq 127.0.0.1)
 and http.request.uri eq "/product/productDetail"
 ```
+
 tcp 이면서 http 이고 port가 80이며 127.0.0.1 IP와 주거나 받은것 중 URI가 '/product/productDetail' 것만 필터링.

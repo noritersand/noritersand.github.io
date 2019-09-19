@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://ko.wikipedia.org/wiki/%ED%95%98%ED%8A%B8%EB%B8%94%EB%A6%AC%EB%93%9C](https://ko.wikipedia.org/wiki/%ED%95%98%ED%8A%B8%EB%B8%94%EB%A6%AC%EB%93%9C)
 

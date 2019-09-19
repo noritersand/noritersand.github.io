@@ -11,7 +11,7 @@ tags:
 ---
 ![](/images/jqgrid-1.png)
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://www.trirand.com](http://www.trirand.com)
 - [github](https://github.com/tonytomov/jqGrid/tree/master)

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [W3C: HTTP Archive (HAR) format](https://w3c.github.io/web-performance/specs/HAR/Overview.html)
 - [위키피디아: .har](https://en.wikipedia.org/wiki/.har)

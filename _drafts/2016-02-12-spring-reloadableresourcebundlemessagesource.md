@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://stackoverflow.com/questions/8744003/automatic-reloading-of-resources-in-spring](http://stackoverflow.com/questions/8744003/automatic-reloading-of-resources-in-spring)
 - [http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/ReloadableResourceBundleMessageSource.html](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/support/ReloadableResourceBundleMessageSource.html)

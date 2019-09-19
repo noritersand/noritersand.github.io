@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](/attachments/j-5things.pdf)
 

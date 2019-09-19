@@ -12,7 +12,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html](http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html)
 - [http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html](http://docs.oracle.com/javase/8/docs/api/java/lang/Object.html)
 

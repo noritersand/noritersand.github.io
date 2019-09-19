@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://spring.io](http://spring.io)
 - [https://github.com/spring-projects/spring-framework/releases](https://github.com/spring-projects/spring-framework/releases)

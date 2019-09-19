@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-caching-static-resources](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-caching-static-resources)
 

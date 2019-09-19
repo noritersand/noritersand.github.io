@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://docs.oracle.com/javase/7/docs/api/javax/annotation/Resource.html](https://docs.oracle.com/javase/7/docs/api/javax/annotation/Resource.html)
 

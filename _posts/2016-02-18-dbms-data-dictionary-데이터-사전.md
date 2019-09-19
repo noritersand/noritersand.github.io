@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://www.gurubee.net/lecture/1520](http://www.gurubee.net/lecture/1520)
 

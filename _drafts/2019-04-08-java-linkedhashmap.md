@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html)
 

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://docs.spring.io/autorepo/docs/spring/current/javadoc-api/org/springframework/web/bind/annotation/ModelAttribute.html](http://docs.spring.io/autorepo/docs/spring/current/javadoc-api/org/springframework/web/bind/annotation/ModelAttribute.html)
 - [http://hnsnmn.blogspot.kr/2014/02/modelattribute.html](http://hnsnmn.blogspot.kr/2014/02/modelattribute.html)

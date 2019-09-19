@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://logback.qos.ch/](https://logback.qos.ch/)
 - [https://logback.qos.ch/manual/layouts.html](https://logback.qos.ch/manual/layouts.html)

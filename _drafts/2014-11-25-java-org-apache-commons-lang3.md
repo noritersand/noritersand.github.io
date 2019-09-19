@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html](http://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html)
 

@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - https://ko.wikipedia.org/wiki/매개변수_(컴퓨터_프로그래밍)
 - [https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29](https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29)

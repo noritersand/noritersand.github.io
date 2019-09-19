@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/i18n/SessionLocaleResolver.html](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/i18n/SessionLocaleResolver.html)
 - [http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/i18n/CookieLocaleResolver.html](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/servlet/i18n/CookieLocaleResolver.html)

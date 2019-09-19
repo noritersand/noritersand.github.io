@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://www.sonarqube.org](https://www.sonarqube.org)
 - [http://ashismo.github.io/java-code%20quality%20analyzer/2015/05/12/SONAR-the-Java-Code-Analyzer](http://ashismo.github.io/java-code%20quality%20analyzer/2015/05/12/SONAR-the-Java-Code-Analyzer)

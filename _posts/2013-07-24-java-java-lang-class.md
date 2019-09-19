@@ -12,7 +12,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://docs.oracle.com/javase/10/docs/api/java/lang/Class.html](http://docs.oracle.com/javase/10/docs/api/java/lang/Class.html)
 - [http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Method.html](http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Method.html)
 - [http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Field.html](http://docs.oracle.com/javase/10/docs/api/java/lang/reflect/Field.html)

@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://ko.wikipedia.org/wiki/데이터베이스_정규화](https://ko.wikipedia.org/wiki/데이터베이스_정규화)
 - [https://yayoi109.iptime.org/Yuchiwiki/index.php?title=정규화](https://yayoi109.iptime.org/Yuchiwiki/index.php?title=정규화)

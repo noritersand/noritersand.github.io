@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [뀨](뀨)
 - [https://docs.oracle.com/cd/E13222_01/wls/docs92/webapp/configureservlet.html](https://docs.oracle.com/cd/E13222_01/wls/docs92/webapp/configureservlet.html)

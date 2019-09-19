@@ -13,12 +13,14 @@ tags:
 ---
 
 ## WST
+
 - [Link](https://eclipse.org/webtools/wst/main.php)
 - Stands for web standard tools
 - provides support for building multi-tier Web applications
 - The server component contains the Server Tools framework and adapters for selected servers. At the WST level, the server component is a very generic infrastructure.
 
 ## JST
+
 - [Link](https://eclipse.org/webtools/jst/main.php)
 - Stands for j2ee Standard Tools
 - provides support for building multi-tier J2EE applications

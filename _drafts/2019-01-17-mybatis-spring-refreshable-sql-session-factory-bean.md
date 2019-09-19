@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://www.mybatis.org/spring/ko/factorybean.html](http://www.mybatis.org/spring/ko/factorybean.html)
 - [http://bryan7.tistory.com/117](http://bryan7.tistory.com/117)

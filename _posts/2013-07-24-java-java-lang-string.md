@@ -12,7 +12,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://docs.oracle.com/javase/10/docs/api/java/lang/String.html](http://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
 - [http://d2.naver.com/helloworld/76650](http://d2.naver.com/helloworld/76650)
 

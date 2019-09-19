@@ -9,17 +9,21 @@ tags:
   - system
 ---
 
-#### 참고 문서
+#### 관련 문서
+
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/System.html](http://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
 
 ## getProperty()
+
 ```java
 System.getProperty("java.version");
 System.getProperty("user.language");
 ```
+
 system arguments(eclipse.ini 혹은 tomcat Arguments로 지정된 값들)를 이 메서드로 조회할 수 있음.
 
 ## getProperties()
+
 ```
 file.separator : \
 java.class.path : C:\Users\fixalot\work\workspace\image\build\class...
@@ -41,10 +45,13 @@ user.name : fixalot
 ```
 
 ## getEnv()
+
 환경설정 값 가져오기
+
 ```java
 System.getenv("path");
 ```
 
 ## currentTimeMillis()와 nanoTime()의 차이
+
 [http://mussebio.blogspot.kr/2012/05/java-api.html](http://mussebio.blogspot.kr/2012/05/java-api.html)

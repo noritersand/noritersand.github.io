@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [https://www.w3schools.com/cssref/css3_pr_opacity.asp](https://www.w3schools.com/cssref/css3_pr_opacity.asp)
 - [https://www.w3schools.com/css/css_image_transparency.asp](https://www.w3schools.com/css/css_image_transparency.asp)

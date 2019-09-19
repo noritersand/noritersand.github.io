@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고 문서
+#### 관련 문서
 
 - [http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html](http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
 
