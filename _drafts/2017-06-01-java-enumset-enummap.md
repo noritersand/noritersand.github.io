@@ -19,4 +19,4 @@ tags:
 - [https://docs.oracle.com/javase/10/docs/api/java/util/EnumSet.html](https://docs.oracle.com/javase/10/docs/api/java/util/EnumSet.html)
 - [https://docs.oracle.com/javase/10/docs/api/java/util/EnumMap.html](https://docs.oracle.com/javase/10/docs/api/java/util/EnumMap.html)
 
-EnumSet과 EnumMap은 JDK 1.5부터 추가된 컬렉션으로... ~~이편지는영국으로부터시작되어...~~
+EnumSet과 EnumMap은 JDK 1.5부터 추가된 컬렉션으로... 

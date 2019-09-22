@@ -21,4 +21,4 @@ public interface UserMapper {
 }
 ```
 
-~~아닛!? 신세계로구나!~~
+아닛!? 신세계로구나!

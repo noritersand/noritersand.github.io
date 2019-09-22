@@ -18,4 +18,4 @@ tags:
 
 - [http://java.ihoney.pe.kr/218](http://java.ihoney.pe.kr/218)
 
-여기 참고혀. ~~참고만하고언제쓰냐~~
+여기 참고혀. 참고만하고 언제쓰냐.

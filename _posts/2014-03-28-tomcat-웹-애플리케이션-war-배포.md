@@ -29,7 +29,7 @@ tags:
 
 ## export WAR
 
-먼저 배포할 프로젝트를 WAR로 추출한다. 참고로 WAR는 web application archive의 약자로 웹 애플리케이션을 배포하기 위한 파일들의 압축이다. ~~[WAAAGH!!](https://namu.wiki/w/WAAAGH!!)~~
+먼저 배포할 프로젝트를 WAR로 추출한다. 참고로 WAR는 web application archive의 약자로 웹 애플리케이션을 배포하기 위한 파일들의 압축이다. [이게](https://namu.wiki/w/WAAAGH!!) 아니다.
 
 추출에 사용된 툴과 옵션에 따라 내용은 다를 수 있다. 가령 이클립스에서 생성한 Dynamic Web Project를 Export 할 때 서버 런타임을 톰캣으로 선택한다면 해당 프로젝트-WebContent 하위의 모든 폴더와 파일을 내보내게 된다. 프로젝트에 자바 소스가 존재하면 컴파일된 클래스 파일을 WAR에 포함시키며 WEB-INF/classes 아래 경로에 위치하게 된다.
 

@@ -30,7 +30,7 @@ DI 관련 어노테이션
 @Autowired[( required = true | false )]
 ```
 
-- `required`: 필수 여부, ~~~ 하면 예외가 발생한다. 생략했을때 true로 설정된다.
+- `required`: 필수 여부. 필수로 지정된 bean을 찾을 수 없으면 예외가 발생한다. 생략했을때 true로 설정된다.
 
 설명
 

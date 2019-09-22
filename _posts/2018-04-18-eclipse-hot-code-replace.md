@@ -42,4 +42,4 @@ replace에 실패했으니 무시하던지, JVM을 종료하던지, 아니면 �
 
 대화창이 나타나는게 귀찮다면 옵션에서 아예 꺼버릴 수도 있다. 이클립스 mars 기준으로 `Preferences` > `Java` > `Debug` > `Hot Code Replace` > `show error when hot code replace fails.` 체크박스를 해제하면 된다.
 
-그리고 간혹 익명 클래스나 중첩 클래스의 내용을 변경할 때 hot code replace가 이상하게 작동하는 때가 있다. 이 때는 그냥 재시작 하면 된다. ~~하여간안되면껏다켜는게진리~~
+그리고 간혹 익명 클래스나 중첩 클래스의 내용을 변경할 때 hot code replace가 이상하게 작동하는 때가 있다. 이 때는 그냥 재시작 하면 된다. 하여간 안되면 재실행이 답.
