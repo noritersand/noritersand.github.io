@@ -93,9 +93,9 @@ SELECT * FROM tab_sample ex1;
 
 ```sql
 SELECT
-    CASE 'A' -- 비교대상
-      WHEN 'A' THEN 1 -- 비교대상이 'A'와 같으면 1 반환
-      WHEN 'B' THEN 2 -- 비교대상이 'B'와 같으면 2 반환
+    CASE COL1 -- 비교대상
+      WHEN 'A' THEN 1 -- COL1의 값이 'A'와 같으면 1 반환
+      WHEN 'B' THEN 2 -- COL1의 값이 'B'와 같으면 2 반환
       ELSE 3 -- 그 외 모든 조건에 3 반환
     END AS ex
 FROM DUAL
@@ -109,9 +109,10 @@ FROM DUAL
 
 ```sql
 SELECT
-    CASE WHEN 'A' > 'A'
-      THEN 1 WHEN 'A' > 'B'
-      THEN 2 ELSE 3
+    CASE
+      WHEN COL1 = 'A' THEN 1 -- COL1의 값이 'A'와 같으면 1 반환
+      WHEN COL1 = 'B' THEN 2 -- COL1의 값이 'B'와 같으면 2 반환
+      ELSE 3
     END AS ex
 FROM DUAL
 
@@ -120,7 +121,19 @@ FROM DUAL
   3
 ```
 
-#### case example: 성별과 나이 구하기
+#### ORDER BY 절에서 CASE 사용하기
+
+```sql
+SELECT COL1
+FROM DUAL
+ORDER BY CASE COL1
+  WHEN 'A' THEN 0
+  WHEN 'B' THEN 1
+  ELSE 3
+END
+```
+
+#### CASE example: 성별과 나이 구하기
 
 ```sql
 SELECT NAME as "사원명", ssn as "주민번호",
