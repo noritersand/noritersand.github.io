@@ -24,3 +24,10 @@ tags:
 ## 오라클의 데이터 사전
 
 [Oracle help center: database reference](http://docs.oracle.com/cd/B28359_01/server.111/b28320/index.htm)
+
+### 주요 테이블
+
+- ALL_COL_COMMENTS: 모든 컬럼 코멘트
+- ALL_TAB_COMMENTS: 모든 테이블 코멘트
+- USER_COL_COMMENTS: 사용자 컬럼 코멘트
+- USER_TAB_COMMENTS: 사용자 테이블 코멘트
