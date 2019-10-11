@@ -75,10 +75,11 @@ ${activeEditorLong}${separator}${rootName}
 
 ## 플러그인
 
-- change-case: wmaurer.change-case
-- Java Server Pages (JSP): pthorsson.vscode-jsp
-- open in browser: techer.open-in-browser
-- Open file: fr43nk.seito-openfile
-- Bookmarks:
-- Auto Close Tag: formulahendry.auto-close-tag
-- Go to Next/Previous Member: mishkinf.goto-next-previous-member
+- change-case(wmaurer.change-case)
+- Java Server Pages (JSP)(pthorsson.vscode-jsp)
+- open in browser(techer.open-in-browser)
+- Open file(fr43nk.seito-openfile)
+- Bookmarks(alefragnani.bookmarks)
+- Auto Close Tag(formulahendry.auto-close-tag)
+- Go to Next/Previous Member(mishkinf.goto-next-previous-member)
+- Highlight Matching Tag(vincaslt.highlight-matching-tag)
