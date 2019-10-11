@@ -3,9 +3,12 @@ layout: post
 date: 2019-10-11 14:59:00 +0900
 title: 'Java: 구글의 log4jdbc 라이브러리'
 categories:
-  - etc
+  - java
 tags:
-  - tag me
+  - java
+  - log4jdbc
+  - log4j
+  - logging
 ---
 
 * Kramdown table of contents
@@ -15,7 +18,14 @@ tags:
 
 - [somewhere](somewhere)
 
-com.googlecode의 log4jdbc 라이브러리를 사용할 때는 아래처럼:
+```xml
+  <bean id="cimsdb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!--     	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> -->
+      <property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
+        <!-- 생략 -->
+```
+
+요딴 설정으로 쿼리를 로깅할 때는 googlecode의 log4jdbc 라이브러리를 사용해야 하는데, 이 때 아래처럼:
 
 ```xml
 <dependency>
