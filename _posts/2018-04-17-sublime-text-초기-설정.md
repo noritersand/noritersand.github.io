@@ -46,7 +46,7 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 ]
 ```
 
-## 쓸만한 패키지(플러그인)
+## 추천 패키지(플러그인)
 
 #### StyleToken
 
