@@ -73,7 +73,7 @@ ${activeEditorLong}${separator}${rootName}
 
 - Trigger Parameter Hints: `ctrl + shift + space`
 
-## 플러그인
+## 쓸만한 확장 기능(플러그인)
 
 - change-case(wmaurer.change-case)
 - Java Server Pages (JSP)(pthorsson.vscode-jsp)
