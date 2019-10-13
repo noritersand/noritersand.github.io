@@ -85,7 +85,7 @@ console.debug(n === N); // false
 ```js
 var sym = new Symbol(); // TypeError
 ```
-원시 타입 변수에 대해 명시적인 래퍼 객체를 만드는 것은 ES2015(ES6)부터 금지되었다. 실제로 Symbol 타입은 new 연산자를 사용할 경우 TypeError가 발생한다. '레거시(legacy) 요인'으로 아직 가능하다는 말로 봐선 추후 버전에선 Boolean, String, Number 타입도 마찬가지로 금지될 가능성이 높아보인다. [출처](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol#%EC%84%A4%EB%AA%85)
+원시 타입 변수에 대해 명시적인 래퍼 객체를 만드는 것(= new 키워드의 사용)은 ES2015(ES6)부터 금지되었다. 실제로 Symbol 타입은 new 연산자를 사용할 경우 TypeError가 발생한다. '레거시(legacy) 요인'으로 아직 가능하다는 말로 봐선 추후 버전에선 Boolean, String, Number 타입도 마찬가지로 금지될 가능성이 높아보인다. [출처](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol#%EC%84%A4%EB%AA%85)
 
 ```js
 var prmt = 1234;
