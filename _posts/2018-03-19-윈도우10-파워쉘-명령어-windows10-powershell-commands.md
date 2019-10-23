@@ -18,8 +18,8 @@ tags:
 
 #### 관련 문서
 
-- https://aka.ms/powershell
-- https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core
+- [Microsoft PowerShell 제품 설명서](https://aka.ms/powershell)
+- [Microsoft Docs: PowerShell](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
 
 ## Get-Alias
 
