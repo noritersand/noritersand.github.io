@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-15 13:46:15 +0900
-title: '윈도우: 쉘 명령어 windows shell commands'
+title: '윈도우: 명령 프롬프트 명령어 windows command prompt commands'
 categories:
   - windows
 tags:
@@ -14,6 +14,8 @@ tags:
 #### 관련 문서
 
 - [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
+
+명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. **대부분** Powershell에서도 쓸 수 있다.
 
 ## xcopy
 
