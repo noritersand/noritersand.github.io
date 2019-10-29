@@ -1,11 +1,12 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'nodejs-gruntjs'
+title: 'nodejs: gruntjs'
 categories:
-  - etc
+  - nodejs
 tags:
-  - tag me
+  - javascript
+  - nodejs
 ---
 
 * Kramdown table of contents

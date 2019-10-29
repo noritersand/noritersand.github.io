@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Pinpoint: 애플리케이션 성능 모니터링'
+title: 'misc: Pinpoint, 애플리케이션 성능 모니터링'
 categories:
-  - etc
+  - misc
 tags:
   - pinpoint
 ---

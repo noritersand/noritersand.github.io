@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-04-30 16:19:00 +0900
-title: 'etc: 매개변수(parameter)와 전달인자(argument)의 차이'
+title: 'misc: 매개변수(parameter)와 전달인자(argument)의 차이'
 categories:
-  - etc
+  - misc
 tags:
   - parameter
   - argument
@@ -14,7 +14,7 @@ tags:
 
 #### 관련 문서
 
-- https://ko.wikipedia.org/wiki/매개변수_(컴퓨터_프로그래밍)
+- [위키피디아: 매개변수](https://ko.wikipedia.org/wiki/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98)
 - [https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29](https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29)
 - [https://msdn.microsoft.com/en-us/library/9kewt1b3.aspx](https://msdn.microsoft.com/en-us/library/9kewt1b3.aspx)
 - [https://developer.mozilla.org/en-US/docs/Glossary/Parameter](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)

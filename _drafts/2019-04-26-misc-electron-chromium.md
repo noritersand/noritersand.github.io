@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2019-04-26 10:07:00 +0900
-title: 'etc: Electron/Chromium'
+title: 'misc: Electron/Chromium'
 categories:
-  - etc
+  - misc
 tags:
   - electron
   - chromium

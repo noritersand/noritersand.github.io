@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2017-01-30 11:05:00 +0900
-title: 'Heartbleed, OpenSSL 보안 취약점, 2014-04'
+title: 'misc: Heartbleed, OpenSSL 보안 취약점, 2014-04'
 categories:
-  - etc
+  - misc
 tags:
   - openssl
   - heartbleed
