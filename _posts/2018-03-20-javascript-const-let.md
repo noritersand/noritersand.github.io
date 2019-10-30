@@ -21,7 +21,7 @@ tags:
 
 #### 브라우저 호환
 
-- IE는 11과 edge에서만 사용 가능 [https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
+- IE10 이하 사용 불가 [https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information](https://docs.microsoft.com/ko-kr/microsoft-edge/dev-guide/whats-new/javascript-version-information)
 
 #### 테스트 환경
 

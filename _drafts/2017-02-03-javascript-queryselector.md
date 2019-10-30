@@ -13,9 +13,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 관련 문서
+
+- [MDN: Document.querySelector](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector)
+
 #### 브라우저 호환
 
-- IE8 이상
+- 브라우저 제한 없음
 
 ## document.querySelector
 

@@ -21,7 +21,7 @@ tags:
 
 #### 브라우저 호환
 
-- IE9 이상부터 사용 가능
+- IE8 이하는 사용 불가
 
 [ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. `get`, `set` 키워드가 붙은 함수는 객체의 프로퍼티처럼 작동한다.
 
