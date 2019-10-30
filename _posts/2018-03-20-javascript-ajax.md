@@ -98,7 +98,7 @@ XMLHttpRequest.open( method, url [ , async ] )
 - **url**: 서버 경로
 - **async**: 비동기 여부. (true/false)
 
-request의 유형을 지정한다. send()로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. method와 url은 필수지만 async는 기본값이 true로 생략할 수 있는 항목이다. async를 false로 지정할 경우 send() 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
+request의 유형을 지정한다. `send()`로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. `method`와 `url`은 필수지만 `async`는 기본값이 true로 생략할 수 있는 항목이다. `async`를 false로 지정할 경우 `send()` 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -115,7 +115,7 @@ XMLHttpRequest.setRequestHeader( header, value )
 - **header**: 헤더의 이름
 - **value**: 헤더의 값
 
-HttpRequest 헤더의 값을 설정하는 메서드로 반드시 open()보다 나중에 호출되어야 한다.
+HttpRequest 헤더의 값을 설정하는 메서드로 반드시 `open()`보다 나중에 호출되어야 한다.
 
 ### XMLHttpRequest.send()
 
@@ -125,7 +125,7 @@ XMLHttpRequest.send( [ string ] )
 
 - **string**: 폼 데이터로 전송할 문자열
 
-서버로 request 송신. open()에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 setRequestHeader()로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.
+서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 `setRequestHeader()`로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -140,11 +140,11 @@ xhr.send('first=111&second=222');
 xhr.abort();
 ```
 
-수행 중인 통신을 중단한다. 이미 날라간 request는 어쩔 수 없고 단지 응답을 무시할 뿐. 통수.
+수행 중인 통신을 중단한다. 이미 날라간 request는 어쩔 수 없고 단지 응답을 무시할 뿐.
 
 ### XMLHttpRequest.getAllResponseHeaders()
 
-response 헤더 정보를 출력한다. send()를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드
+response 헤더 정보를 출력한다. `send()`를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드.
 
 ```js
 xhr.getAllResponseHeaders();
@@ -201,7 +201,7 @@ XMLHttpRequest의 현재 상태를 의미한다.
 
 ## Attach callback function
 
-통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 XMLHttpRequest의 onreadystatechange() 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 EventTarget.addEventListener() 이용하는 방법이 있다.
+통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 `XMLHttpRequest.onreadystatechange()` 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 `EventTarget.addEventListener()` 이용하는 방법이 있다.
 
 ### XMLHttpRequest.onreadystatechange
 
@@ -215,7 +215,7 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'http://somewhere');
 xhr.send();
 ```
-onreadystatechange()는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
+`onreadystatechange()`는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
 
 ### [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
@@ -226,7 +226,7 @@ EventTarget.addEventListener( eventType, callback )
 - **eventType**: callback이 실행될 이벤트의 유형 (ex: 'load')
 - **callback**: eventType에 지정한 이벤트가 발생했을 때 실행할 함수
 
-addEventListener()는 IE8에서 지원되지 않으니 주의할 것. 악의 축 마소.
+`addEventListener()`는 IE8에서 지원되지 않으니 주의할 것.
 
 ```js
 function reqListener () {
@@ -269,7 +269,7 @@ xhr.open('GET', 'test2.html');
 xhr.send();
 ```
 
-XMLHttpRequestEventTarget은 XMLHttpRequest의 슈퍼클래스다. 상속받는 메서드는 다음과 같다:
+XMLHttpRequestEventTarget의 프로퍼티:
 
 - `onabort`: abort 이벤트가 발생하면 호출된다.
 - `onerror`: 서버의 응답이 200이 아닐 때 호출된다.

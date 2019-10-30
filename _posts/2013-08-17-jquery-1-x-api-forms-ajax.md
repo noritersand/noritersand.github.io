@@ -99,7 +99,7 @@ $.ajax({
 
 ### .serializeArray()
 
-`serialize()`와 같지만 query string 형식의 문자가 아니라 JSON 객체를 돌려준다.
+`serialize()`와 같지만 query string 형식의 문자가 아니라 JSON 객체를 돌려준다. 이 메서드를 쓰느니 [jquery-serialize-object](https://github.com/macek/jquery-serialize-object)를 쓰는게 낫다.
 
 ### .submit()
 
