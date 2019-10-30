@@ -94,9 +94,9 @@ var xhr = new XMLHttpRequest();
 XMLHttpRequest.open( method, url [ , async ] )
 ```
 
-- **method**: HTTP 메서드 타입 (get/post)
-- **url**: 서버 경로
-- **async**: 비동기 여부. (true/false)
+- `method`: HTTP 메서드 타입 (get/post)
+- `url`: 서버 경로
+- `async`: 비동기 여부. (true/false)
 
 request의 유형을 지정한다. `send()`로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. `method`와 `url`은 필수지만 `async`는 기본값이 true로 생략할 수 있는 항목이다. `async`를 false로 지정할 경우 `send()` 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
 
@@ -112,8 +112,8 @@ xhr.open('GET', 'test2.html');
 XMLHttpRequest.setRequestHeader( header, value )
 ```
 
-- **header**: 헤더의 이름
-- **value**: 헤더의 값
+- `header`: 헤더의 이름
+- `value`: 헤더의 값
 
 HttpRequest 헤더의 값을 설정하는 메서드로 반드시 `open()`보다 나중에 호출되어야 한다.
 
@@ -123,7 +123,7 @@ HttpRequest 헤더의 값을 설정하는 메서드로 반드시 `open()`보다 
 XMLHttpRequest.send( [ string ] )
 ```
 
-- **string**: 폼 데이터로 전송할 문자열
+- `string`: 폼 데이터로 전송할 문자열
 
 서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 `setRequestHeader()`로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.
 
@@ -161,7 +161,7 @@ xhr.getAllResponseHeaders();
 XMLHttpRequest.getResponseHeader( header )
 ```
 
-- **header**: 헤더의 이름
+- `header`: 헤더의 이름
 
 response 헤더 중 특정한 값만 리턴한다.
 
@@ -223,8 +223,8 @@ xhr.send();
 EventTarget.addEventListener( eventType, callback )
 ```
 
-- **eventType**: callback이 실행될 이벤트의 유형 (ex: 'load')
-- **callback**: eventType에 지정한 이벤트가 발생했을 때 실행할 함수
+- `eventType`: callback이 실행될 이벤트의 유형 (ex: 'load')
+- `callback`: eventType에 지정한 이벤트가 발생했을 때 실행할 함수
 
 `addEventListener()`는 IE8에서 지원되지 않으니 주의할 것.
 
