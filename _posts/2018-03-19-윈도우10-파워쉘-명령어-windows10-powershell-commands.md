@@ -20,6 +20,7 @@ tags:
 
 - [Microsoft PowerShell 제품 설명서](https://aka.ms/powershell)
 - [Microsoft Docs: PowerShell](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
+- [크로스 플랫폼 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
 
 ## Get-Alias
 

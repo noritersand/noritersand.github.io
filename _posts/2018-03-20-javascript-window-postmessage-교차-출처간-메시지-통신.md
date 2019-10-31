@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - windows
+  - window
   - postMessage
 ---
 

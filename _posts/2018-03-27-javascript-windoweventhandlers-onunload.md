@@ -11,7 +11,7 @@ tags:
   - ecmascript
   - onclose
   - onunload
-  - windows
+  - window
   - todo
 ---
 
