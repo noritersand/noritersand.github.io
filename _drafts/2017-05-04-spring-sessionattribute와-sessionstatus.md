@@ -46,7 +46,7 @@ public class TestController {
 이렇게 SessionAttributes로 설정된 값은 `SessionStatus.setComplete()`로 세션을 초기화(서블릿 세션을 날리는게 아님)하기 전까지는 아래처럼 꺼낼 수 있다:
 
 ```java
-  @RequestMapping("/엇썸한-웹-경로")
+  @RequestMapping("/엇썸한-유알엘")
   public ModelAndView forkYou(@ModelAttribute("loginId") String loginId) throws Exception {
     logger.debug(loginId); // "나의-엇썸한-아이디"
   }
