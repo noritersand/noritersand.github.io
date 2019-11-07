@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-04 11:18:00 +0900
-title: 'Spring: @SessionAttribute와 SessionStatus'
+title: '[Spring] @SessionAttribute와 SessionStatus'
 categories:
   - spring
 tags:

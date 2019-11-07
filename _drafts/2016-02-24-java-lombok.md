@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-24 16:22:00 +0900
-title: 'Java: Lombok'
+title: '[Java] Lombok'
 categories:
   - java
 tags:

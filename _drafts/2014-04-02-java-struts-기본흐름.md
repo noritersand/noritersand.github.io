@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-04-02 18:59:00 +0900
-title: 'Java: struts 기본흐름'
+title: '[Java] struts 기본흐름'
 categories:
   - java
 tags:

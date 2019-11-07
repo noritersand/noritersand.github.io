@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-03-05 14:21:00 +0900
-title: 'Java: java.sql.ResultSet'
+title: '[Java] java.sql.ResultSet'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:43:00 +0900
-title: 'JavaScript: Map'
+title: '[JavaScript] Map'
 categories:
   - javascript
 tags:

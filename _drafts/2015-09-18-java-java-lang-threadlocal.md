@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-09-18 18:55:00 +0900
-title: 'Java: java.lang.ThreadLocal'
+title: '[Java] java.lang.ThreadLocal'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:00:00 +0900
-title: 'Java: 추상 클래스와 인터페이스, abstract classes, interfaces'
+title: '[Java] 추상 클래스와 인터페이스, abstract classes, interfaces'
 categories:
   - java
 tags:

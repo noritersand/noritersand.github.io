@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-15 17:58:00 +0900
-title: 'Java: 초기화 블록 Initialization Block'
+title: '[Java] 초기화 블록 Initialization Block'
 categories:
   - java
 tags:

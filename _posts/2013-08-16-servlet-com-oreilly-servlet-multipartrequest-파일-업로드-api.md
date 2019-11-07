@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-16 05:00:00 +0900
-title: 'Servlet: com.oreilly.servlet.MultipartRequest 파일 업로드 API'
+title: '[Servlet] com.oreilly.servlet.MultipartRequest 파일 업로드 API'
 categories:
   - servlet
 tags:

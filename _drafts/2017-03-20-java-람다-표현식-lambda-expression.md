@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-20 13:28:00 +0900
-title: 'Java: 람다 표현식 lambda expression'
+title: '[Java] 람다 표현식 lambda expression'
 categories:
   - java
 tags:

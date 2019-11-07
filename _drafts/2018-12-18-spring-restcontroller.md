@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-12-18 10:58:00 +0900
-title: 'Spring: @RestController'
+title: '[Spring] @RestController'
 categories:
   - spring
 tags:

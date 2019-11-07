@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-22 19:00:10 +0900
-title: 'JavaScript: apply(), call()'
+title: '[JavaScript] apply(), call()'
 categories:
   - javascript
 tags:

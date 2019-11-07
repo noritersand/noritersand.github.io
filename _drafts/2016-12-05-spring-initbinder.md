@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-05 18:03:00 +0900
-title: 'Spring: @InitBinder'
+title: '[Spring] @InitBinder'
 categories:
   - spring
 tags:

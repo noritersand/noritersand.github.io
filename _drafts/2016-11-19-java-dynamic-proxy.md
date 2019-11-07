@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-11-19 20:03:00 +0900
-title: 'Java: dynamic proxy'
+title: '[Java] dynamic proxy'
 categories:
   - java
 tags:

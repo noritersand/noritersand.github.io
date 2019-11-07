@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-04-07 13:46:00 +0900
-title: 'Spring: Spring Framework 배포판 다운로드'
+title: '[Spring] Spring Framework 배포판 다운로드'
 categories:
   - spring
 tags:

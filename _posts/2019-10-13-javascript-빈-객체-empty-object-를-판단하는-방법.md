@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-10-13 19:32:00 +0900
-title: 'Javascript: 빈 객체(empty object)를 판단하는 방법'
+title: '[JavaScript] 빈 객체(empty object)를 판단하는 방법'
 categories:
   - javascript
 tags:

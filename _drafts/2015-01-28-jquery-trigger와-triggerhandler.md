@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-01-28 14:52:00 +0900
-title: 'jQuery: .trigger()와 .triggerHandler()'
+title: '[jQuery] .trigger()와 .triggerHandler()'
 categories:
   - jquery
 tags:

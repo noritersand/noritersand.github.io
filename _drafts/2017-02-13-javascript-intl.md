@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-13 18:03:00 +0900
-title: 'JavaScript: Intl'
+title: '[JavaScript] Intl'
 categories:
   - javascript
 tags:

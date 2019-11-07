@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-04-13 18:58:00 +0900
-title: 'Spring: @ModelAttribute'
+title: '[Spring] @ModelAttribute'
 categories:
   - spring
 tags:

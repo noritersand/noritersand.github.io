@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-07-23 17:39:00 +0900
-title: 'Java: URLConnection'
+title: '[Java] URLConnection'
 categories:
   - java
 tags:

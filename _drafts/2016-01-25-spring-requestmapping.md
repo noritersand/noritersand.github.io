@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-01-25 16:42:00 +0900
-title: 'Spring: @RequestMapping'
+title: '[Spring] @RequestMapping'
 categories:
   - spring
 tags:

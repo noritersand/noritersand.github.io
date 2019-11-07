@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-17 11:41:00 +0900
-title: 'JavaScript: IE7, IE8에 없는 함수 추가'
+title: '[JavaScript] IE7, IE8에 없는 함수 추가'
 categories:
   - javascript
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-25 10:46:00 +0900
-title: 'JavaScript: Fetch'
+title: '[JavaScript] Fetch'
 categories:
   - javascript
 tags:

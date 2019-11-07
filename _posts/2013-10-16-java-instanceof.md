@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-16 15:56:00 +0900
-title: 'Java: instanceof'
+title: '[Java] instanceof'
 categories:
   - java
 tags:

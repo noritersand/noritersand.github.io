@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-19 13:51:00 +0900
-title: 'Java: javax.validation'
+title: '[Java] javax.validation'
 categories:
   - java
 tags:

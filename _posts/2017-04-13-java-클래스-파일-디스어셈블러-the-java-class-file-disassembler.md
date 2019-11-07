@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-13 11:09:00 +0900
-title: 'Java: 클래스 파일 디스어셈블러 The Java Class File Disassembler'
+title: '[Java] 클래스 파일 디스어셈블러 The Java Class File Disassembler'
 categories:
   - java
 tags:

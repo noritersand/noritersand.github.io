@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:41:10 +0900
-title: 'JavaScript: 특정 문자를 클립보드로 복사하기'
+title: '[JavaScript] 특정 문자를 클립보드로 복사하기'
 categories:
   - javascript
 tags:

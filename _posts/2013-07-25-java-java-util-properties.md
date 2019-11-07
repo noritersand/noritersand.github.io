@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-25 21:30:00 +0900
-title: 'Java: java.util.Properties'
+title: '[Java] java.util.Properties'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-25 22:53:00 +0900
-title: 'JavaScript: DOM 조작하기'
+title: '[JavaScript] DOM 조작하기'
 categories:
   - javascript
 tags:

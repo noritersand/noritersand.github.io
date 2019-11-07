@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-08-11 00:00:00 +0900
-title: 'jQuery: serialize object'
+title: '[jQuery] serialize object'
 categories:
   - jquery
 tags:

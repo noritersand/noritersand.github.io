@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 00:05:00 +0900
-title: 'Java: 싱글턴패턴으로 connection 객체 생성'
+title: '[Java] 싱글턴패턴으로 connection 객체 생성'
 categories:
   - java
 tags:

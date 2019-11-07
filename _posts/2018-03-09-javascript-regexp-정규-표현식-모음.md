@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-09 17:53:21 +0900
-title: 'JavaScript: regexp 정규 표현식 모음'
+title: '[JavaScript] regexp 정규 표현식 모음'
 categories:
   - javascript
 tags:

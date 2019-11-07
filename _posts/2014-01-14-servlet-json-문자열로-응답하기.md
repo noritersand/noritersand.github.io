@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-14 14:03:00 +0900
-title: 'Servlet: JSON 문자열로 응답하기'
+title: '[Servlet] JSON 문자열로 응답하기'
 categories:
   - servlet
 tags:

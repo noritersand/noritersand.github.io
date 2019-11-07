@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:38:10 +0900
-title: 'JavaScript: Window.opener'
+title: '[JavaScript] Window.opener'
 categories:
   - javascript
 tags:

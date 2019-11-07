@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-11 17:05:00 +0900
-title: 'Oracle: comment'
+title: '[Oracle] comment'
 categories:
   - oracle
 tags:

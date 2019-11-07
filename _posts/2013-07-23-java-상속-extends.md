@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:00:00 +0900
-title: 'Java: 상속 extends'
+title: '[Java] 상속 extends'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-11-20 23:06:00 +0900
-title: 'Java: AspectJ'
+title: '[Java] AspectJ'
 categories:
   - java
 tags:

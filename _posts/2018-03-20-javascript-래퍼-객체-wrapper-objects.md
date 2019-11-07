@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:08:35 +0900
-title: 'JavaScript: 래퍼 객체 wrapper objects'
+title: '[JavaScript] 래퍼 객체 wrapper objects'
 categories:
   - javascript
 tags:

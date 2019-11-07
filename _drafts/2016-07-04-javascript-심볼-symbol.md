@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-04 15:59:00 +0900
-title: 'JavaScript: 심볼 Symbol'
+title: '[JavaScript] 심볼 Symbol'
 categories:
   - javascript
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-17 15:08:00 +0900
-title: 'Java: try-multi-catch'
+title: '[Java] try-multi-catch'
 categories:
   - java
 tags:

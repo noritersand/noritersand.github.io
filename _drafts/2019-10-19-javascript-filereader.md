@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-10-19 23:11:00 +0900
-title: 'JavaScript: FileReader'
+title: '[JavaScript] FileReader'
 categories:
   - javascript
 tags:

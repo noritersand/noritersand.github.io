@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-02 14:41:00 +0900
-title: 'JavaScript: URL()'
+title: '[JavaScript] URL()'
 categories:
   - javascript
 tags:

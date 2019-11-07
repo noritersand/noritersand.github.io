@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Java: 컴파일러의 target 옵션'
+title: '[Java] 컴파일러의 target 옵션'
 categories:
   - java
 tags:

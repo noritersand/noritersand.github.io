@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:42:10 +0900
-title: 'JavaScript: userAgent 확인'
+title: '[JavaScript] userAgent 확인'
 categories:
   - javascript
 tags:

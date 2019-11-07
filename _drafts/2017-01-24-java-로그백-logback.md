@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-01-24 10:10:00 +0900
-title: 'Java: 로그백 LOGBack'
+title: '[Java] 로그백 LOGBack'
 categories:
   - java
 tags:

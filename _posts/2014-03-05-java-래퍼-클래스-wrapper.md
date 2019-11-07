@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-03-05 15:47:00 +0900
-title: 'Java: 래퍼 클래스 wrapper'
+title: '[Java] 래퍼 클래스 wrapper'
 categories:
   - java
 tags:

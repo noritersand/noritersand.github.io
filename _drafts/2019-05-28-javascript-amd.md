@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-28 10:05:00 +0900
-title: 'JavaScript: AMD'
+title: '[JavaScript] AMD'
 categories:
   - javascript
 tags:

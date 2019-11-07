@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-02-28 16:37:00 +0900
-title: 'jQuery: filtering'
+title: '[jQuery] filtering'
 categories:
   - jquery
 tags:

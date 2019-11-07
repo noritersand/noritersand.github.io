@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-12-05 17:11:00 +0900
-title: 'Java: 자바 리플렉션 reflection'
+title: '[Java] 자바 리플렉션 reflection'
 categories:
   - java
 tags:

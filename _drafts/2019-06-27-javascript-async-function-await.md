@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-06-27 17:38:00 +0900
-title: 'JavaScript: async function과 await'
+title: '[JavaScript] async function과 await'
 categories:
   - javascript
 tags:

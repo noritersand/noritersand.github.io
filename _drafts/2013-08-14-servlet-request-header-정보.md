@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-14 23:24:00 +0900
-title: 'Servlet: Request header 정보'
+title: '[Servlet] Request header 정보'
 categories:
   - servlet
 tags:

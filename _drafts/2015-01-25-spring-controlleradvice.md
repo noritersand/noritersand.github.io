@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-01-25 22:54:00 +0900
-title: 'Spring: @ControllerAdvice'
+title: '[Spring] @ControllerAdvice'
 categories:
   - spring
 tags:

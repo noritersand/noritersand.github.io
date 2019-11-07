@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-07 17:23:00 +0900
-title: 'Java: java.beans.Introspector'
+title: '[Java] java.beans.Introspector'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-07 10:43:00 +0900
-title: 'JavaScript: 웹 워커 Web Workers'
+title: '[JavaScript] 웹 워커 Web Workers'
 categories:
   - javascript
 tags:

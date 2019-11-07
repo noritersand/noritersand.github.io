@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 17:08:18 +0900
-title: 'JavaScript: Ajax'
+title: '[JavaScript] Ajax'
 categories:
   - javascript
 tags:

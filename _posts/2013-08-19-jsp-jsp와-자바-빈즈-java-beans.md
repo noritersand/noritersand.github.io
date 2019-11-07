@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-19 15:04:00 +0900
-title: 'JSP: JSP와 자바 빈즈(Java Beans)'
+title: '[JSP] JSP와 자바 빈즈(Java Beans)'
 categories:
   - jsp
 tags:

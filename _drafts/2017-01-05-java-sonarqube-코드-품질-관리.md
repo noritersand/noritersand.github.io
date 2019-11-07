@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-01-05 11:25:00 +0900
-title: 'Java: SonarQube 코드 품질 관리'
+title: '[Java] SonarQube 코드 품질 관리'
 categories:
   - java
 tags:

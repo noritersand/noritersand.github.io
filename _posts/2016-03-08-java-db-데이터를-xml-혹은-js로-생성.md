@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-08 19:44:00 +0900
-title: 'Java: DriverManager 사용 예시'
+title: '[Java] DriverManager 사용 예시'
 categories:
   - java
 tags:

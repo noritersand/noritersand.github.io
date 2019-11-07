@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 22:13:00 +0900
-title: 'Java: 표준입력 STDIN'
+title: '[Java] 표준입력 STDIN'
 categories:
   - java
 tags:

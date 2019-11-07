@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-28 11:53:00 +0900
-title: 'Spring: @Resource'
+title: '[Spring] @Resource'
 categories:
   - spring
 tags:

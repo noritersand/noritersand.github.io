@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Java: java.lang.System'
+title: '[Java] java.lang.System'
 categories:
   - java
 tags:

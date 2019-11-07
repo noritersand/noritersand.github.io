@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-08-19 09:09:00 +0900
-title: 'JavaScript: 숫자 외(문자) 입력 막기'
+title: '[JavaScript] 숫자 외(문자) 입력 막기'
 categories:
   - javascript
 tags:

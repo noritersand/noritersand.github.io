@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-10-29 13:32:00 +0900
-title: 'JavaScript: 자바스크립트 동적 호출'
+title: '[JavaScript] 자바스크립트 동적 호출'
 categories:
   - javascript
 tags:

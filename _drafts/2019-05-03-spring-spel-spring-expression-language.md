@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-03 14:08:00 +0900
-title: 'Spring: SpEL, Spring Expression Language'
+title: '[Spring] SpEL, Spring Expression Language'
 categories:
   - spring
 tags:

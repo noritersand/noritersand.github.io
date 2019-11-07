@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-28 16:28:00 +0900
-title: 'JavaScript: Object.create()'
+title: '[JavaScript] Object.create()'
 categories:
   - javascript
 tags:

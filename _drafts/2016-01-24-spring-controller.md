@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-01-24 20:17:00 +0900
-title: 'Spring: @Controller'
+title: '[Spring] @Controller'
 categories:
   - spring
 tags:

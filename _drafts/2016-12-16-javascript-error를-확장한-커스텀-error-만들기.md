@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-16 15:17:00 +0900
-title: 'JavaScript: Error를 확장한 커스텀 Error 만들기'
+title: '[JavaScript] Error를 확장한 커스텀 Error 만들기'
 categories:
   - javascript
 tags:

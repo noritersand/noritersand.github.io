@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-03-21 17:36:00 +0900
-title: 'JavaScript: URLSearchParams'
+title: '[JavaScript] URLSearchParams'
 categories:
   - javascript
 tags:

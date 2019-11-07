@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-12 21:31:00 +0900
-title: 'Java: classpth* vs classpath'
+title: '[Java] classpth* vs classpath'
 categories:
   - java
 tags:

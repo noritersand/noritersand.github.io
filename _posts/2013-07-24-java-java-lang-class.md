@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-26 23:04:00 +0900
-title: 'Java: java.lang.Class'
+title: '[Java] java.lang.Class'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-05-15 15:24:00 +0900
-title: 'Java: java.lang.reflect.Proxy'
+title: '[Java] java.lang.reflect.Proxy'
 categories:
   - java
 tags:

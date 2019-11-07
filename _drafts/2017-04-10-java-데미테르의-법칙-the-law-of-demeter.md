@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-10 17:00:00 +0900
-title: 'Java: 데미테르의 법칙, The Law Of Demeter'
+title: '[Java] 데미테르의 법칙, The Law Of Demeter'
 categories:
   - java
 tags:

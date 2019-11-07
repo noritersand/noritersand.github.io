@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-10-09 22:17:00 +0900
-title: 'JavaScript: MutationObserver'
+title: '[JavaScript] MutationObserver'
 categories:
   - javascript
 tags:

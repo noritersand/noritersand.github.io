@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-18 17:50:00 +0900
-title: 'JavaScript: getter/setter'
+title: '[JavaScript] getter/setter'
 categories:
   - javascript
 tags:

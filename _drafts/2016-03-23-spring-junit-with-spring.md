@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-23 14:40:00 +0900
-title: 'Spring: JUnit with Spring'
+title: '[Spring] JUnit with Spring'
 categories:
   - spring
 tags:

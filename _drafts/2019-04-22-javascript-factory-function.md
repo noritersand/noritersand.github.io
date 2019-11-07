@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-22 09:45:00 +0900
-title: 'JavaScript: Factory function'
+title: '[JavaScript] Factory function'
 categories:
   - javascript
 tags:

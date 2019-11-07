@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:46:00 +0900
-title: 'JavaScript: History'
+title: '[JavaScript] History'
 categories:
   - javascript
 tags:

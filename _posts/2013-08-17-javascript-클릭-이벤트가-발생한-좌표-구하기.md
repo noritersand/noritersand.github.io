@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-17 03:11:00 +0900
-title: 'JavaScript: 클릭 이벤트가 발생한 좌표 구하기'
+title: '[JavaScript] 클릭 이벤트가 발생한 좌표 구하기'
 categories:
   - javascript
 tags:

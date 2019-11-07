@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-21 18:17:10 +0900
-title: 'JavaScript: 객체 리터럴 표기법과 JSON은 같지 않다'
+title: '[JavaScript] 객체 리터럴 표기법과 JSON은 같지 않다'
 categories:
   - javascript
 tags:

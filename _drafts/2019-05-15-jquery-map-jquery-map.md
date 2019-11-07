@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-15 09:48:00 +0900
-title: 'jQuery: .map(), jQuery.map()'
+title: '[jQuery] .map(), jQuery.map()'
 categories:
   - jquery
 tags:

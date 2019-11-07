@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-01 14:10:00 +0900
-title: 'JavaScript: 화살표 함수 arrow functions'
+title: '[JavaScript] 화살표 함수 arrow functions'
 categories:
   - javascript
 tags:

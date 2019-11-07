@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 15:57:09 +0900
-title: 'JavaScript: 변수의 유효범위와 끌어올림 hoisting'
+title: '[JavaScript] 변수의 유효범위와 끌어올림 hoisting'
 categories:
   - javascript
 tags:

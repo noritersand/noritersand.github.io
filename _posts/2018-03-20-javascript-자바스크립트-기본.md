@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 14:40:10 +0900
-title: 'JavaScript: 자바스크립트 기본'
+title: '[JavaScript] 자바스크립트 기본'
 categories:
   - javascript
 tags:

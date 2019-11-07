@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-23 14:09value:00 +0900
-title: 'Spring: @Value'
+title: '[Spring] @Value'
 categories:
   - spring
 tags:

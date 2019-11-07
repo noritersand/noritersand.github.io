@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:44:00 +0900
-title: 'JavaScript: 함수 선언 응용'
+title: '[JavaScript] 함수 선언 응용'
 categories:
   - javascript
 tags:

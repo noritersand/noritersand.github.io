@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 22:17:00 +0900
-title: 'Java: Input/Output Stream'
+title: '[Java] Input/Output Stream'
 categories:
   - java
 tags:

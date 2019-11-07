@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-24 17:38:00 +0900
-title: 'Java: java.lang.String'
+title: '[Java] java.lang.String'
 categories:
   - java
 tags:

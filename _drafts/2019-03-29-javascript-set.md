@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-03-29 00:00:00 +0900
-title: 'JavaScript: Set'
+title: '[JavaScript] Set'
 categories:
   - javascript
 tags:

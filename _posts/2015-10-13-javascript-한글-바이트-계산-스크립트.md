@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-10-13 22:10:00 +0900
-title: 'JavaScript: 한글 바이트 계산 스크립트'
+title: '[JavaScript] 한글 바이트 계산 스크립트'
 categories:
   - javascript
 tags:

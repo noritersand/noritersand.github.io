@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-15 15:24:00 +0900
-title: 'jQuery: attr(), prop(), data()'
+title: '[jQuery] attr(), prop(), data()'
 categories:
   - jquery
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-19 14:55:00 +0900
-title: 'Java: HikariCP'
+title: '[Java] HikariCP'
 categories:
   - java
 tags:

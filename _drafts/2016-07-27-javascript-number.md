@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-27 12:04:00 +0900
-title: 'JavaScript: Number'
+title: '[JavaScript] Number'
 categories:
   - javascript
 tags:

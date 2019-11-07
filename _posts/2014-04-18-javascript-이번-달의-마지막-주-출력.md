@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-04-18 18:49:00 +0900
-title: 'JavaScript: 이번 달의 마지막 주 출력'
+title: '[JavaScript] 이번 달의 마지막 주 출력'
 categories:
   - javascript
 tags:

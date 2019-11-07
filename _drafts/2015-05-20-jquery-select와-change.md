@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-05-20 18:35:00 +0900
-title: 'jQuery: .select()와 .change()'
+title: '[jQuery] .select()와 .change()'
 categories:
   - jquery
 tags:

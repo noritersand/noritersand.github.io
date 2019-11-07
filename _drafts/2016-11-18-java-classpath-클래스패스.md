@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-11-18 13:14:00 +0900
-title: 'Java: classpath 클래스패스'
+title: '[Java] classpath 클래스패스'
 categories:
   - java
 tags:

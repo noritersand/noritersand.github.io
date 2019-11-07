@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:39:10 +0900
-title: 'JavaScript: window.opener에 권한 문제로 접근할 수 없는 경우 해결방법'
+title: '[JavaScript] window.opener에 권한 문제로 접근할 수 없는 경우 해결방법'
 categories:
   - javascript
 tags:

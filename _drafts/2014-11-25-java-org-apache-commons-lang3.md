@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-11-25 15:44:00 +0900
-title: 'Java: org.apache.commons.lang3'
+title: '[Java] org.apache.commons.lang3'
 categories:
   - java
 tags:

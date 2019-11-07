@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-03-10 18:25:00 +0900
-title: 'Java: 객체 직렬화 serialization'
+title: '[Java] 객체 직렬화 serialization'
 categories:
   - java
 tags:

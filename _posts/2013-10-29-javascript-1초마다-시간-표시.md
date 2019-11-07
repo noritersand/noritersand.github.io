@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-29 19:00:00 +0900
-title: 'JavaScript: 1초마다 시간 표시'
+title: '[JavaScript] 1초마다 시간 표시'
 categories:
   - javascript
 tags:

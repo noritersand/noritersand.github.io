@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-24 00:27:00 +0900
-title: 'Java: 배열 array'
+title: '[Java] 배열 array'
 categories:
   - java
 tags:

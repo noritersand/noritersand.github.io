@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-03-04 11:05:00 +0900
-title: 'jQuery: basic filter selector'
+title: '[jQuery] basic filter selector'
 categories:
   - jquery
 tags:

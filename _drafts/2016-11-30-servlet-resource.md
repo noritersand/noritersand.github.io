@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-11-30 19:17:00 +0900
-title: 'Servlet: @Resource'
+title: '[Servlet] @Resource'
 categories:
   - servlet
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-03 17:57:00 +0900
-title: 'Java: 제어자, modifier'
+title: '[Java] 제어자, modifier'
 categories:
   - java
 tags:

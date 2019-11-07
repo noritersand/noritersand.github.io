@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-01 11:04:00 +0900
-title: 'Java: EnumSet, EnumMap'
+title: '[Java] EnumSet, EnumMap'
 categories:
   - java
 tags:

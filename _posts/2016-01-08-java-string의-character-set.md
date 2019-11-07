@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-01-08 17:16:00 +0900
-title: 'Java: Java: character set'
+title: '[Java] Java: character set'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-12-18 10:48:00 +0900
-title: 'Spring: Cache 스프링 캐시'
+title: '[Spring] Cache 스프링 캐시'
 categories:
   - spring
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Java: AssertJ: 자바 유닛 테스트 라이브러리'
+title: '[Java] AssertJ: 자바 유닛 테스트 라이브러리'
 categories:
   - java
 tags:

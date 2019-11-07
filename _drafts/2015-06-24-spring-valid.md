@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-06-24 16:58:00 +0900
-title: 'Spring: @Valid'
+title: '[Spring] @Valid'
 categories:
   - spring
 tags:

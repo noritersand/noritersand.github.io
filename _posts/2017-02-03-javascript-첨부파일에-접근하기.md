@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:38:10 +0900
-title: 'JavaScript: 첨부파일에 접근하기'
+title: '[JavaScript] 첨부파일에 접근하기'
 categories:
   - javascript
 tags:

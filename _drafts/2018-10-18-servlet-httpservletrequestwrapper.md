@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-10-18 15:43:00 +0900
-title: 'Servlet: HttpServletRequestWrapper'
+title: '[Servlet] HttpServletRequestWrapper'
 categories:
   - servlet
 tags:

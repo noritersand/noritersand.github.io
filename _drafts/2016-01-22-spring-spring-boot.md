@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-01-22 16:36:00 +0900
-title: 'Spring: Spring Boot'
+title: '[Spring] Spring Boot'
 categories:
   - spring
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-11-29 00:00:00 +0900
-title: 'jQuery: blueimp 파일 업로드 플러그인'
+title: '[jQuery] blueimp 파일 업로드 플러그인'
 categories:
   - jquery
 tags:

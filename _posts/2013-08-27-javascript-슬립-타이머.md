@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-27 15:11:00 +0900
-title: 'JavaScript: 슬립 타이머'
+title: '[JavaScript] 슬립 타이머'
 categories:
   - javascript
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-16 04:13:00 +0900
-title: 'Servlet: forward, redirect'
+title: '[Servlet] forward, redirect'
 categories:
   - servlet
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-07-23 13:07:00 +0900
-title: 'JavaScript: 앱 실행 혹은 스토어 이동'
+title: '[JavaScript] 앱 실행 혹은 스토어 이동'
 categories:
   - javascript
 tags:

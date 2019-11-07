@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-19 16:16:00 +0900
-title: 'JavaScript: UUID 생성 함수'
+title: '[JavaScript] UUID 생성 함수'
 categories:
   - javascript
 tags:

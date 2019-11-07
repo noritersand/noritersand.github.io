@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:21:00 +0900
-title: 'Java: 제네릭 generic'
+title: '[Java] 제네릭 generic'
 categories:
   - java
 tags:

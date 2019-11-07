@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-14 19:28:00 +0900
-title: 'Java: java.util.Formatter'
+title: '[Java] java.util.Formatter'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:44:00 +0900
-title: 'JavaScript: 프로토타입 Prototype'
+title: '[JavaScript] 프로토타입 Prototype'
 categories:
   - javascript
 tags:

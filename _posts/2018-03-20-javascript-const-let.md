@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:40:10 +0900
-title: 'JavaScript: const, let'
+title: '[JavaScript] const, let'
 categories:
   - javascript
 tags:

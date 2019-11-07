@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-01-15 13:55:00 +0900
-title: 'Servlet: Servlet 3.1'
+title: '[Servlet] Servlet 3.1'
 categories:
   - servlet
 tags:

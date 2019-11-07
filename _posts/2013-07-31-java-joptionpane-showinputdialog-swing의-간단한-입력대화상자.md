@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-31 23:36:00 +0900
-title: 'Java: JOptionPane.showInputDialog(swing의 간단한 입력대화상자)'
+title: '[Java] JOptionPane.showInputDialog(swing의 간단한 입력대화상자)'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-03-06 18:24:00 +0900
-title: 'Java: static import'
+title: '[Java] static import'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-01-06 16:16:00 +0900
-title: 'jQuery: 파일 첨부 이벤트에 submit 하기'
+title: '[jQuery] 파일 첨부 이벤트에 submit 하기'
 categories:
   - jquery
 tags:

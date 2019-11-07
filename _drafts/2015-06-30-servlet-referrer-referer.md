@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-06-30 11:00:00 +0900
-title: 'Servlet: referrer? referer?'
+title: '[Servlet] referrer? referer?'
 categories:
   - servlet
 tags:

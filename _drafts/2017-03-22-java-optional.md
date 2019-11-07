@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-22 10:19:00 +0900
-title: 'Java: optional'
+title: '[Java] optional'
 categories:
   - java
 tags:

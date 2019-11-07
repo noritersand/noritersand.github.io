@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-17 15:58:26 +0900
-title: 'jQuery: jQuery Object 식별 방법'
+title: '[jQuery] jQuery Object 식별 방법'
 categories:
   - jquery
 tags:

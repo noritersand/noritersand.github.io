@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-05 23:45:10 +0900
-title: 'JavaScript: js객체 깊은 복사 Object deep copy'
+title: '[JavaScript] js객체 깊은 복사 Object deep copy'
 categories:
   - javascript
 tags:

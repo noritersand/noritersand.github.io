@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 23:14:00 +0900
-title: 'Java: 중첩 클래스 nested class'
+title: '[Java] 중첩 클래스 nested class'
 categories:
   - java
 tags:

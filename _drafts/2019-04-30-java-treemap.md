@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-30 12:09:00 +0900
-title: 'Java: TreeMap'
+title: '[Java] TreeMap'
 categories:
   - java
 tags:

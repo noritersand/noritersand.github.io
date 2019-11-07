@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-09 14:28:00 +0900
-title: 'Java: error와 exception의 차이'
+title: '[Java] error와 exception의 차이'
 categories:
   - java
 tags:

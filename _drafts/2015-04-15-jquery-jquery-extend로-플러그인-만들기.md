@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-04-15 10:16:00 +0900
-title: 'jQuery: jQuery.extend()로 플러그인 만들기'
+title: '[jQuery] jQuery.extend()로 플러그인 만들기'
 categories:
   - jquery
 tags:

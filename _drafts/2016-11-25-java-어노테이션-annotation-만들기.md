@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-11-25 16:14:00 +0900
-title: 'Java: 어노테이션(annotation) 만들기'
+title: '[Java] 어노테이션(annotation) 만들기'
 categories:
   - java
 tags:

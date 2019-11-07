@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-15 00:00:00 +0900
-title: 'JSP: JSTL-Core'
+title: '[JSP] JSTL-Core'
 categories:
   - jsp
 tags:

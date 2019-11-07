@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:42:00 +0900
-title: 'JavaScript: 크롬/사파리 - 지연된 객체에 의한 window.open() 호출'
+title: '[JavaScript] 크롬/사파리 - 지연된 객체에 의한 window.open() 호출'
 categories:
   - javascript
 tags:

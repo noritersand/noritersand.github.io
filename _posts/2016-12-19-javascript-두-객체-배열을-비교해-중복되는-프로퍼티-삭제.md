@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-19 11:29:00 +0900
-title: 'JavaScript: 두 객체 배열을 비교해 중복되는 프로퍼티 삭제'
+title: '[JavaScript] 두 객체 배열을 비교해 중복되는 프로퍼티 삭제'
 categories:
   - javascript
 tags:

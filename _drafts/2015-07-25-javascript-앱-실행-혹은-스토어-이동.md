@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-07-25 21:05:00 +0900
-title: 'JavaScript: 앱 실행 혹은 스토어 이동 (비공개)'
+title: '[JavaScript] 앱 실행 혹은 스토어 이동 (비공개)'
 categories:
   - javascript
 tags:

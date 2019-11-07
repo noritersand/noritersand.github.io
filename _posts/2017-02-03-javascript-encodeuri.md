@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:38:10 +0900
-title: 'JavaScript: encodeURI'
+title: '[JavaScript] encodeURI'
 categories:
   - javascript
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-04-10 09:19:00 +0900
-title: 'JavaScript: 새 창 혹은 팝업 창에서 submit'
+title: '[JavaScript] 새 창 혹은 팝업 창에서 submit'
 categories:
   - javascript
 tags:

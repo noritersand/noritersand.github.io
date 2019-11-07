@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-23 15:48:00 +0900
-title: 'Java: try with resources'
+title: '[Java] try with resources'
 categories:
   - java
 tags:

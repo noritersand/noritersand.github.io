@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-27 14:56:00 +0900
-title: 'Java: FreeMarker'
+title: '[Java] FreeMarker'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-08-16 03:53:00 +0900
-title: 'Servlet: web.xml'
+title: '[Servlet] web.xml'
 categories:
   - servlet
 tags:

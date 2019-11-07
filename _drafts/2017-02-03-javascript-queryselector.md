@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:42:00 +0900
-title: 'JavaScript: querySelector()'
+title: '[JavaScript] querySelector()'
 categories:
   - javascript
 tags:

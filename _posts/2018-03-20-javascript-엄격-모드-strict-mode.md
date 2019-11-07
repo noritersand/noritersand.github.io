@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:24:15 +0900
-title: 'JavaScript: 엄격 모드 strict mode'
+title: '[JavaScript] 엄격 모드 strict mode'
 categories:
   - javascript
 tags:

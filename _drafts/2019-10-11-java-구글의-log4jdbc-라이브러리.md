@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-10-11 14:59:00 +0900
-title: 'Java: 구글의 log4jdbc 라이브러리'
+title: '[Java] 구글의 log4jdbc 라이브러리'
 categories:
   - java
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-04-15 19:09:00 +0900
-title: 'Spring: JavaConfig'
+title: '[Spring] JavaConfig'
 categories:
   - spring
 tags:
