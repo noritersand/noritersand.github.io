@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-23 11:48:00 +0900
-title: 'HTML: 취소선 strike through line'
+title: '[HTML] 취소선 strike through line'
 categories:
   - html
 tags:

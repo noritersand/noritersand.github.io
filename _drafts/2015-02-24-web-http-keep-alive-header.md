@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-02-24 17:29:00 +0900
-title: 'web: HTTP keep-alive header'
+title: '[web] HTTP keep-alive header'
 categories:
   - web
 tags:

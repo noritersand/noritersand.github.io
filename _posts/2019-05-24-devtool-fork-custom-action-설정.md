@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-24 14:50:00 +0900
-title: 'Fork: custom action 설정'
+title: '[devtool] Fork custom action 설정'
 categories:
   - devtool
 tags:

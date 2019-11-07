@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-19 22:26:00 +0900
-title: 'Tomcat: tomcat 8.x 이상 버전에서 톰캣이 생성하는 파일의 권한이 640으로 생성될 때'
+title: '[Tomcat] tomcat 8.x 이상 버전에서 톰캣이 생성하는 파일의 권한이 640으로 생성될 때'
 categories:
   - tomcat
 tags:

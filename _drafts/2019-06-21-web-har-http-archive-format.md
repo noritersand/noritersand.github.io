@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-06-21 12:09:00 +0900
-title: 'web: HAR, Http ARchive format'
+title: '[web] HAR, Http ARchive format'
 categories:
   - web
 tags:

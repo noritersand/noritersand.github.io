@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-10-05 15:17:00 +0900
-title: 'Tomcat: server.xml의 autoDeploy 사용시 주의할 점'
+title: '[Tomcat] server.xml의 autoDeploy 사용시 주의할 점'
 categories:
   - tomcat
 tags:

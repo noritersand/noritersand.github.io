@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-02-12 13:29:00 +0900
-title: 'CSS: resize property'
+title: '[CSS] resize property'
 categories:
   - css
 tags:

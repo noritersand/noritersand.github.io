@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-28 10:55:00 +0900
-title: 'CSS: 클릭 방지용 레이어 (aka. 딤 dimm)'
+title: '[CSS] 클릭 방지용 레이어 (aka. 딤 dimm)'
 categories:
   - css
 tags:

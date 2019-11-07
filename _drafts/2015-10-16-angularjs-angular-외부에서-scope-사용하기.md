@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-10-16 18:27:00 +0900
-title: 'AngularJS: angular 외부(?)에서 $scope 사용하기'
+title: '[AngularJS] angular 외부(?)에서 $scope 사용하기'
 categories:
   - angularjs
 tags:

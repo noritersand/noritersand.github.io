@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-23 18:01:00 +0900
-title: 'Tomcat: 서브도메인간 세션 공유: JSESSIONID를 .도메인 쿠키로 만들기'
+title: '[Tomcat] 서브도메인간 세션 공유: JSESSIONID를 .도메인 쿠키로 만들기'
 categories:
   - tomcat
 tags:

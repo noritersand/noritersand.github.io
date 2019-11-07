@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-18 00:00:00 +0900
-title: 'DBMS: data dictionary 데이터 사전'
+title: '[DBMS] data dictionary 데이터 사전'
 categories:
   - dbms
 tags:

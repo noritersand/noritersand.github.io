@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-04-17 13:32:10 +0900
-title: 'sublime text: 초기 설정'
+title: '[devtool] sublime text 초기 설정'
 categories:
   - devtool
 tags:

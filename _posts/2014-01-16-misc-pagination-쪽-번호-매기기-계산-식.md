@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-16 14:00:00 +0900
-title: 'misc: Pagination 쪽 번호 매기기 계산 식'
+title: '[misc] Pagination 쪽 번호 매기기 계산 식'
 categories:
   - misc
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-15 13:46:15 +0900
-title: '윈도우: 명령 프롬프트 명령어 windows command prompt commands'
+title: '[Windows] 명령 프롬프트 명령어 windows command prompt commands'
 categories:
   - windows
 tags:

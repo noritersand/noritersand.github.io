@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-03-24 17:51:00 +0900
-title: 'web: REST: put과 post의 차이'
+title: '[web] REST: put과 post의 차이'
 categories:
   - web
 tags:

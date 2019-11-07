@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'HTML standard: Input elements should have autocomplete attributes'
+title: '[HTML] HTML standard: Input elements should have autocomplete attributes'
 categories:
   - html
 tags:

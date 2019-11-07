@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-04-30 16:19:00 +0900
-title: 'misc: 매개변수(parameter)와 전달인자(argument)의 차이'
+title: '[misc] 매개변수(parameter)와 전달인자(argument)의 차이'
 categories:
   - misc
 tags:

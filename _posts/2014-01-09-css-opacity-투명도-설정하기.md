@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-09 17:17:00 +0900
-title: 'CSS: opacity 투명도 설정하기'
+title: '[CSS] opacity 투명도 설정하기'
 categories:
   - css
 tags:

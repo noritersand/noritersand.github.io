@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-24 00:00:00 +0900
-title: 'Node.js: Mocha, JavaScript test Framework'
+title: '[Node.js] Mocha, JavaScript test Framework'
 categories:
   - nodejs
 tags:

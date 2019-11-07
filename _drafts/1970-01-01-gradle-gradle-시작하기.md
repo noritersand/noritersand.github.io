@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: 'Gradle: 시작하기'
+title: '[Gradle] Gradle 시작하기'
 categories:
   - gradle
 tags:

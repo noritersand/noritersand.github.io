@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-18 17:25:00 +0900
-title: 'MyBatis-Spring: org.mybatis.spring.mapper.MapperScannerConfigurer'
+title: '[Mybatis] MyBatis-Spring: org.mybatis.spring.mapper.MapperScannerConfigurer'
 categories:
   - mybatis
 tags:

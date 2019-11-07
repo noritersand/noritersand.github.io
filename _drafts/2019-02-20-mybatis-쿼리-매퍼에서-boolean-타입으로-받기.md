@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-02-20 19:36:00 +0900
-title: 'MyBatis: 쿼리 매퍼에서 boolean 타입으로 받기(?)'
+title: '[Mybatis] 쿼리 매퍼에서 boolean 타입으로 받기(?)'
 categories:
   - mybatis
 tags:

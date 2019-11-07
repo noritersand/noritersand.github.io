@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-21 14:15:00 +0900
-title: 'MyBatis: log4jdbc.dump.sql.maxlinelength=0: 쿼리 예쁘게 출력'
+title: '[Mybatis] log4jdbc.dump.sql.maxlinelength=0: 쿼리 예쁘게 출력'
 categories:
   - mybatis
 tags:

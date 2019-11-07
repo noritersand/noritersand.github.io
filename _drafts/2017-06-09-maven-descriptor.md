@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-09 19:12:00 +0900
-title: 'Maven: descriptor'
+title: '[Maven] descriptor'
 categories:
   - maven
 tags:

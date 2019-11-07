@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-16 10:12:00 +0900
-title: 'Windows: NotMyFault'
+title: '[Windows] NotMyFault'
 categories:
   - windows
 tags:

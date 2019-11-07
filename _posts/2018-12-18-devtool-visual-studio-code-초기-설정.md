@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-12-18 21:32:54 +0900
-title: 'Visual Studio Code: 초기 설정'
+title: '[devtool] Visual Studio Code: 초기 설정'
 categories:
   - devtool
 tags:

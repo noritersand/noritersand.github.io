@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-09 16:17:00 +0900
-title: 'Maven: 메이븐 라이프사이클 lifecycle'
+title: '[Maven] 메이븐 라이프사이클 lifecycle'
 categories:
   - maven
 tags:

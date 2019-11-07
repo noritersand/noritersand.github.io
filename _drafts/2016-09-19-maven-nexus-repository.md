@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-09-19 12:20:28 +0900
-title: 'Maven: nexus repository'
+title: '[Maven] nexus repository'
 categories:
   - maven
 tags:

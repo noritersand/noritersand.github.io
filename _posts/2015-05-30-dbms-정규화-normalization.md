@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-05-30 00:00:00 +0900
-title: 'DBMS: 정규화 normalization'
+title: '[DBMS] 정규화 normalization'
 categories:
   - dbms
 tags:

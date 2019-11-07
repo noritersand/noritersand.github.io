@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:47:00 +0900
-title: 'HTML5: XMLHttpRequest Level 2'
+title: '[HTML5] XMLHttpRequest Level 2'
 categories:
   - html
 tags:

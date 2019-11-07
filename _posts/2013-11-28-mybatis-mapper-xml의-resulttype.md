@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-11-28 12:13:00 +0900
-title: 'MyBatis: Mapper XML의 resultType'
+title: '[Mybatis] Mapper XML의 resultType'
 categories:
   - mybatis
 tags:

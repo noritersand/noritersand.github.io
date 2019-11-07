@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-09-19 12:35:00 +0900
-title: 'HTML: meta tag'
+title: '[HTML] meta tag'
 categories:
   - html
 tags:

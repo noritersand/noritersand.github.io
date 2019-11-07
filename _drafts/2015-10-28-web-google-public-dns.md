@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-10-28 14:14:00 +0900
-title: 'web: Google public DNS'
+title: '[web] Google public DNS'
 categories:
   - web
 tags:

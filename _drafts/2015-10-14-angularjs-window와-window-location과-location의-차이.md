@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-10-14 10:01:00 +0900
-title: 'AngularJS: $window와 window, $location과 location의 차이'
+title: '[AngularJS] $window와 window, $location과 location의 차이'
 categories:
   - angularjs
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: '자바스크립트 프레임워크: Aurelia'
+title: '[JavaScript] Aurelia: 자바스크립트 프레임워크'
 categories:
   - javascript
 tags:

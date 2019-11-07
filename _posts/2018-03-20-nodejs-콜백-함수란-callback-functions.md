@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:54:14 +0900
-title: 'Node.js: 콜백 함수란 callback functions'
+title: '[Node.js] 콜백 함수란 callback functions'
 categories:
   - nodejs
 tags:

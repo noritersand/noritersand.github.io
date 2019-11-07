@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-17 17:25:00 +0900
-title: 'MyBatis-Spring: RefreshableSqlSessionFactoryBean'
+title: '[Mybatis] MyBatis-Spring: RefreshableSqlSessionFactoryBean'
 categories:
   - mybatis
 tags:

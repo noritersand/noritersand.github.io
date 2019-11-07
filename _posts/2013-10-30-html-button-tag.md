@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-30 12:23:00 +0900
-title: 'HTML: button tag'
+title: '[HTML] button tag'
 categories:
   - html
 tags:

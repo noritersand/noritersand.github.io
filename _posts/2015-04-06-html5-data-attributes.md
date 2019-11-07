@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-04-06 15:33:00 +0900
-title: 'HTML5: data-* Attributes'
+title: '[HTML5] data-* Attributes'
 categories:
   - html
 tags:

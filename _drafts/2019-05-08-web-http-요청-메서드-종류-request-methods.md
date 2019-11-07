@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-05-08 13:55:00 +0900
-title: 'web: HTTP 요청 메서드 종류 request methods'
+title: '[web] HTTP 요청 메서드 종류 request methods'
 categories:
   - web
 tags:

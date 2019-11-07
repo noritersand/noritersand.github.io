@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-04-08 11:48:00 +0900
-title: 'HTML5: required Attribute'
+title: '[HTML5] required Attribute'
 categories:
   - html
 tags:
