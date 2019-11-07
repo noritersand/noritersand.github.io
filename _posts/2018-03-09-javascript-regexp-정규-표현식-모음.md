@@ -92,13 +92,7 @@ function isValidEmail(data){
 }
 ```
 
-이메일 검사 패턴. 만든이는 99%만 보장한다(...). 이 패턴은 쓰기가 좀 그런게 도메인을 제한하고 있어서 wiki 같은 특이한 도메인은 걸러지지 않는다.
-
-```js
-/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i
-```
-
-소스 출처: [http://emailregex.com/](http://emailregex.com/)
+이메일 검사 패턴. 아니면 [이곳](http://emailregex.com/) 참고.
 
 ### 한글 필터링
 
