@@ -786,7 +786,7 @@ map에서 특정 프로퍼티의 존재 유무는 `?.` 연산자로 확인할 �
 
 ```html
 <th:block th:if="${not #maps.isEmpty(motherShip)} and ${#maps.containsKey(motherShip, 'bomber')}">
-  <p>[[${bomber}]]</p>
+  <p>[[${motherShip.bomber}]]</p>
 </th:block>
 ```
 
