@@ -113,7 +113,7 @@ URL 인코드-디코드 기능 제공.
 
 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.
 
-두문자어를 무시하고 싶은 경우 `Preferences` > `Package Settings` > `Case Conversion` > `Settings`로 진입한 뒤 아래를 붙여넣으면 된다:
+두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences` > `Package Settings` > `Case Conversion` > `Settings`로 진입한 뒤 아래를 붙여넣으면 된다:
 
 ```json
 { "detect_acronyms": false }

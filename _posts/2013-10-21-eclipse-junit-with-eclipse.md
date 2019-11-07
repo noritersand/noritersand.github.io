@@ -9,6 +9,7 @@ tags:
   - eclipse
   - junit
   - java
+  - code test
 ---
 
 * Kramdown table of contents
