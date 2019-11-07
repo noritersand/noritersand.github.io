@@ -177,7 +177,7 @@ int[] number = { 1, 2, 3, 4, 5 };
 int[] newNumber = new int[number.length];
 
 for (int loop = 0; loop < number.length; loop++) {
-	newNumber[loop] = number[loop];
+    newNumber[loop] = number[loop];
 }
 ```
 

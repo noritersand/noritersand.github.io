@@ -81,8 +81,8 @@ enum SystemDivision {
     BACK_OFFICE, FRONT_OFFICE
 
     public String getValue() {
-		return super.toString();
-	}
+        return super.toString();
+    }
 }
 
 public class SearchCondition {

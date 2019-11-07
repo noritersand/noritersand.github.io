@@ -19,22 +19,22 @@ tags:
 
 ```xml
 <plugin>
-	<!-- assamble static content -->
-	<artifactId>maven-assembly-plugin</artifactId>
-	<configuration>
-		<descriptors>
-			<descriptor>src/main/resources/static.xml</descriptor>
-		</descriptors>
-	</configuration>
-	<executions>
-		<execution>
-			<id>make-assembly</id>
-			<phase>package</phase>
-			<goals>
-				<goal>single</goal>
-			</goals>
-		</execution>
-	</executions>
+    <!-- assamble static content -->
+    <artifactId>maven-assembly-plugin</artifactId>
+    <configuration>
+        <descriptors>
+            <descriptor>src/main/resources/static.xml</descriptor>
+        </descriptors>
+    </configuration>
+    <executions>
+        <execution>
+            <id>make-assembly</id>
+            <phase>package</phase>
+            <goals>
+                <goal>single</goal>
+            </goals>
+        </execution>
+    </executions>
 </plugin>
 ```
 
@@ -43,30 +43,30 @@ tags:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <assembly>
-	<id>static</id>
-	<formats>
-		<format>zip</format>
-	</formats>
-	<includeBaseDirectory>false</includeBaseDirectory>
-	<fileSets>
-		<fileSet>
-			<directory>src/main/webapp</directory>
-			<includes>
-				<include>/api/**/*</include>
-				<include>/css/**/*</include>
-				<include>/error/**/*</include>
-				<include>/guide/**/*</include>
-				<include>/img/**/*</include>
-				<include>/js/**/*</include>
-				<include>/pub/**/*</include>
-				<include>/template/**/*</include>
-			</includes>
-			<excludes>
-				<exclude>WEB-INF/*</exclude>
-			</excludes>
-			<outputDirectory></outputDirectory>
-		</fileSet>
-	</fileSets>
+    <id>static</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <fileSet>
+            <directory>src/main/webapp</directory>
+            <includes>
+                <include>/api/**/*</include>
+                <include>/css/**/*</include>
+                <include>/error/**/*</include>
+                <include>/guide/**/*</include>
+                <include>/img/**/*</include>
+                <include>/js/**/*</include>
+                <include>/pub/**/*</include>
+                <include>/template/**/*</include>
+            </includes>
+            <excludes>
+                <exclude>WEB-INF/*</exclude>
+            </excludes>
+            <outputDirectory></outputDirectory>
+        </fileSet>
+    </fileSets>
 </assembly>
 ```
 

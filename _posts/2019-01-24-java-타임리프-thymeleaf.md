@@ -715,12 +715,12 @@ unescape 표현식(`th:utext`, `[(...)]`)은 특정 컨텍스트에 접근할 �
 
 ```java
 Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to request parameters is forbidden in this context. Note some restrictions apply to variable access. For example, direct access to request parameters is forbidden in preprocessing and unescaped expressions, in TEXT template mode, in fragment insertion specifications and in some specific attribute processors.
-	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.createRestrictedParameterAccessException(RestrictedRequestAccessUtils.java:87)
-	at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.getParameter(RestrictedRequestAccessUtils.java:68)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
+    at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.createRestrictedParameterAccessException(RestrictedRequestAccessUtils.java:87)
+    at org.thymeleaf.standard.expression.RestrictedRequestAccessUtils$RestrictedRequestWrapper.getParameter(RestrictedRequestAccessUtils.java:68)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
   ...
 ```
 

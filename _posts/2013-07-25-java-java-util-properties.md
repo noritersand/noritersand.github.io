@@ -88,30 +88,30 @@ loadFromXML( InputStream in )
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-	<comment>URL information</comment>
-	<entry key="image.root">http://tistory.com</entry>
-	<entry key="some.korean">한글</entry>
+    <comment>URL information</comment>
+    <entry key="image.root">http://tistory.com</entry>
+    <entry key="some.korean">한글</entry>
 </properties>
 ```
 
 ```java
 @Test
 public void testPropFromXml() throws IOException {
-	FileInputStream fis = new FileInputStream("src\\test\\resources\\properties\\url.xml");
-	Properties prop = new Properties();
-	prop.loadFromXML(fis);
-	fis.close();
-	Assert.assertEquals("{some.korean=한글, image.root=http://tistory.com}",
-			prop.toString());
+    FileInputStream fis = new FileInputStream("src\\test\\resources\\properties\\url.xml");
+    Properties prop = new Properties();
+    prop.loadFromXML(fis);
+    fis.close();
+    Assert.assertEquals("{some.korean=한글, image.root=http://tistory.com}",
+            prop.toString());
 
-	Enumeration<Object> keys = prop.keys();
-	while (keys.hasMoreElements()) {
-		String key = (String) keys.nextElement();
-		System.out.println("key: " + key + ", value: " + prop.getProperty(key));
-	}
+    Enumeration<Object> keys = prop.keys();
+    while (keys.hasMoreElements()) {
+        String key = (String) keys.nextElement();
+        System.out.println("key: " + key + ", value: " + prop.getProperty(key));
+    }
 
-	// key: some.korean, value: 한글
-	// key: image.root, value: http://tistory.com
+    // key: some.korean, value: 한글
+    // key: image.root, value: http://tistory.com
 }
 ```
 

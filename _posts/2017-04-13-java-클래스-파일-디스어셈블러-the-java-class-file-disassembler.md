@@ -88,22 +88,22 @@ public class TestClass {
 TestClass
 public class TestClass {
 
-	public String concatTest1() {
-		String str = "111" + "222" + "333";
-		return str;
-	}
+    public String concatTest1() {
+        String str = "111" + "222" + "333";
+        return str;
+    }
 
-	public String concatTest2() {
-		String str = "444";
-		str += "555";
-		str += "666";
-		return str;
-	}
+    public String concatTest2() {
+        String str = "444";
+        str += "555";
+        str += "666";
+        return str;
+    }
 
-	public String concatTest3() {
-		String str = "777".concat("888").concat("999");
-		return str;
-	}
+    public String concatTest3() {
+        String str = "777".concat("888").concat("999");
+        return str;
+    }
 }
 ```
 

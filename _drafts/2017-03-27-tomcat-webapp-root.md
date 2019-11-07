@@ -40,8 +40,8 @@ web.xml을 쓰지 않고 @WebListener(혹은 ServletContextListener의 구현체
 
 ```xml
 <context-param>
-	<param-name>webAppRootKey</param-name>
-	<param-value>ecbase.root</param-value>
+    <param-name>webAppRootKey</param-name>
+    <param-value>ecbase.root</param-value>
 </context-param>
 ```
 

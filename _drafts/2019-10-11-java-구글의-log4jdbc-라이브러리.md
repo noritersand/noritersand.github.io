@@ -20,7 +20,7 @@ tags:
 
 ```xml
   <bean id="cimsdb" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-<!--     	<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> -->
+<!--  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/> -->
       <property name="driverClassName" value="net.sf.log4jdbc.DriverSpy"/>
         <!-- 생략 -->
 ```

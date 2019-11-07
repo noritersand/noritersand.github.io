@@ -33,9 +33,9 @@ function.apply( thisArg, [argsArray] )
 
 ```js
 function fn() {
-	console.debug(this); // Number { 123456 }
-	console.debug(arguments[0]); // a
-	console.debug(arguments[1]); // b
+  console.debug(this); // Number { 123456 }
+  console.debug(arguments[0]); // a
+  console.debug(arguments[1]); // b
 }
 fn.apply(123456, ['a', 'b']);
 ```
@@ -50,9 +50,9 @@ function.call( thisArg [, arg1 [, arg2 [, ... ] ] ] )
 
 ```js
 function fn() {
-	console.debug(this); // Number { 123456 }
-	console.debug(arguments[0]); // a
-	console.debug(arguments[1]); // b
+  console.debug(this); // Number { 123456 }
+  console.debug(arguments[0]); // a
+  console.debug(arguments[1]); // b
 }
 fn.call(123456, 'a', 'b'); // apply()와는 전달인자의 형태만 다르다.
 ```
@@ -63,13 +63,13 @@ fn.call(123456, 'a', 'b'); // apply()와는 전달인자의 형태만 다르다.
 
 ```js
 function standard() {
-	console.debug(this); // Boolean { false }, 이 값은 원시값을 감싼 래퍼 객체다.
+  console.debug(this); // Boolean { false }, 이 값은 원시값을 감싼 래퍼 객체다.
 }
 standard.call(false);
 
 function strict() {
-	'use strict';
-	console.debug(this); // true
+  'use strict';
+  console.debug(this); // true
 }
 strict.call(true);
 ```

@@ -23,9 +23,9 @@ tags:
 
 ```js
 if (window.Worker) {
-	// web worker available
+  // web worker available
 } else {
-    // not available
+  // not available
 }
 ```
 

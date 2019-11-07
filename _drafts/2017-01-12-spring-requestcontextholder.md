@@ -43,8 +43,8 @@ HttpSession session = request.getSession();
 
 Enumeration<String> enumeration = session.getAttributeNames();
 while (enumeration.hasMoreElements()) {
-	String string = (String) enumeration.nextElement();
-	logger.debug("AttributeNames: {}", string);
+    String string = (String) enumeration.nextElement();
+    logger.debug("AttributeNames: {}", string);
 }
 ```
 

@@ -30,24 +30,24 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HTMLTagFilter implements Filter {
-	@SuppressWarnings("unused")
-	private FilterConfig config;
+    @SuppressWarnings("unused")
+    private FilterConfig config;
 
-	@Override
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		// HttpRequest 구현부(implementaion) 변경
-		chain.doFilter(new HTMLTagFilterRequestWrapper((HttpServletRequest) request), response);
-	}
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        // HttpRequest 구현부(implementaion) 변경
+        chain.doFilter(new HTMLTagFilterRequestWrapper((HttpServletRequest) request), response);
+    }
 
-	@Override
-	public void init(FilterConfig config) throws ServletException {
-		this.config = config;
-	}
+    @Override
+    public void init(FilterConfig config) throws ServletException {
+        this.config = config;
+    }
 
-	@Override
-	public void destroy() {
+    @Override
+    public void destroy() {
 
-	}
+    }
 }
 ```
 
@@ -60,23 +60,23 @@ import javax.servlet.http.HttpServletRequestWrapper;
  */
 public class HTMLTagFilterRequestWrapper extends HttpServletRequestWrapper {
 
-	public HTMLTagFilterRequestWrapper(HttpServletRequest request) {
-		super(request);
-	}
+    public HTMLTagFilterRequestWrapper(HttpServletRequest request) {
+        super(request);
+    }
 
-	@Override
-	public String[] getParameterValues(String parameter) {
-		String[] values = super.getParameterValues(parameter);
-		// 재정의할 메서드 본문
-		return values;
-	}
+    @Override
+    public String[] getParameterValues(String parameter) {
+        String[] values = super.getParameterValues(parameter);
+        // 재정의할 메서드 본문
+        return values;
+    }
 
-	@Override
-	public String getParameter(String parameter) {
-		String value = super.getParameter(parameter);
-		// 재정의할 메서드 본문
-		return value;
-	}
+    @Override
+    public String getParameter(String parameter) {
+        String value = super.getParameter(parameter);
+        // 재정의할 메서드 본문
+        return value;
+    }
 }
 ```
 

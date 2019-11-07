@@ -21,9 +21,9 @@ webapp 이름이 ROOT가 아니며 path가 `/`일 때, 예를 들어, 컨텍스�
 ```xml
 <!-- 생략 -->
 <Host name="localhost" appBase="webapps"
-		unpackWARs="true" autoDeploy="true">
-	<!-- 생략 -->
-	<Context docBase="backweb" path="/" reloadable="true" privileged="true"/>
+        unpackWARs="true" autoDeploy="true">
+    <!-- 생략 -->
+    <Context docBase="backweb" path="/" reloadable="true" privileged="true"/>
 </Host>
 <!-- 생략 -->
 ```

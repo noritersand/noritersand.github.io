@@ -19,12 +19,12 @@ tags:
 ```html
 <style>
 div.clickPreventer {
-	z-index: 999;
-	width: 100%;
-	height: 100%;
-	position: fixed;
-	opacity: 0.15;
-	background-color: black;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: 0.15;
+    background-color: black;
 }
 </style>
 

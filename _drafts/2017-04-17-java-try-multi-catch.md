@@ -21,8 +21,8 @@ JDK 몇 부터 추가된거더라?
 
 ```java
 try {
-	// do something normal
+    // do something normal
 } catch (NotFoundException | IOException e) {
-	log.error(e.getMessage(), e);
+    log.error(e.getMessage(), e);
 }
 ```

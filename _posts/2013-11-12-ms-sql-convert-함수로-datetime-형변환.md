@@ -20,8 +20,8 @@ CONVERT( data_type [( length )] , expression [, style ])
 
 ```sql
 SELECT
-	GETDATE() AS ex1,
-	CONVERT(VARCHAR, GETDATE(), 120) AS ex2
+  GETDATE() AS ex1,
+  CONVERT(VARCHAR, GETDATE(), 120) AS ex2
 FROM dbo.bod_faq
 
 ex1

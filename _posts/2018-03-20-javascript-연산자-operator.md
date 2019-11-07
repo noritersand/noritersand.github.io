@@ -295,7 +295,7 @@ function fn() { }
 delete fn; // false
 
 function callee(callback) {
-	console.debug(delete callback); // false
+  console.debug(delete callback); // false
 }
 callee(function() {});
 ```

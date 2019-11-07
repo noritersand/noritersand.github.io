@@ -22,9 +22,9 @@ tags:
 
 ```js
 var owner = {
-	fn: function() {
-		return this;
-	}
+  fn: function() {
+    return this;
+  }
 };
 
 owner === owner.fn();

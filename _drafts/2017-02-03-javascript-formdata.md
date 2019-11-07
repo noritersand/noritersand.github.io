@@ -40,9 +40,9 @@ asd
 ```js
 var xhr = new XMLHttpRequest();
 xhr.onreadystatechange = function() {
-	if (xhr.readyState == 4) {
-		console.log('xhr:', xhr);
-	}
+  if (xhr.readyState == 4) {
+    console.log('xhr:', xhr);
+  }
 };
 
 // post method#2
