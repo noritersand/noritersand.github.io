@@ -16,6 +16,7 @@ tags:
 
 #### 관련 문서
 
+- [https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
 - [https://stackoverflow.com/questions/8407622/set-type-for-function-parameters](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
 ## 함수 파라미터의 타입 설정
@@ -24,8 +25,10 @@ tags:
 /**
  * @param {Date} myDate The date
  * @param {string} myString The string
+ * @param {string|number} myArg i dunno
+ * @return {string} return string
  */
-function myFunction(myDate, myString) {
+function myFunction(myDate, myString, myArg) {
     //do stuff
 }
 ```
