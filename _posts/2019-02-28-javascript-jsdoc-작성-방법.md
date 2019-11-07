@@ -1,13 +1,12 @@
 ---
 layout: post
 date: 2019-02-28 00:00:00 +0900
-title: '[JavaScript] 함수 JSDoc 작성 방법'
+title: '[JavaScript] JSDoc 작성 방법'
 categories:
   - javascript
 tags:
   - ecmascript
   - javascript
-  - parameter
   - jsdoc
 ---
 

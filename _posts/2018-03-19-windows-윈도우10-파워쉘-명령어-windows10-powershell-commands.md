@@ -22,6 +22,8 @@ tags:
 - [Microsoft Docs: PowerShell](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
 - [크로스 플랫폼 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
 
+악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
+
 ## Get-Alias
 
 기본 별칭: gal, alias

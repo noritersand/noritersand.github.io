@@ -226,7 +226,7 @@ EventTarget.addEventListener( eventType, callback )
 - `eventType`: callback이 실행될 이벤트의 유형 (ex: 'load')
 - `callback`: eventType에 지정한 이벤트가 발생했을 때 실행할 함수
 
-`addEventListener()`는 IE8에서 지원되지 않으니 주의할 것.
+`addEventListener()`는 IE8에서 지원되지 않으니 주의할 것. ~~악의축 마소~~
 
 ```js
 function reqListener () {

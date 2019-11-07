@@ -70,7 +70,7 @@ noob.constructor === Newbie; // true
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function`의 생성자 함수는 `Function`이며, `Function`의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이다. 고만해미친놈아:
+그리고 `Function`의 생성자 함수는 `Function`이며, `Function`의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true
