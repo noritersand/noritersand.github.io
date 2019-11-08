@@ -3,7 +3,7 @@ layout: post
 date: 2018-04-18 11:02:53 +0900
 title: '[Eclipse] hot code replace'
 categories:
-  - devtool
+  - eclipse
 tags:
   - devtool
   - eclipse

@@ -3,7 +3,7 @@ layout: post
 date: 1970-01-01 00:00:00 +0900
 title: '[Eclipse] 다른 프로젝트를 포함하여 export 하는 방법'
 categories:
-  - devtool
+  - eclipse
 tags:
   - devtool
   - eclipse

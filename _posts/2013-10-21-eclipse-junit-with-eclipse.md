@@ -3,7 +3,7 @@ layout: post
 date: 2013-10-21 15:05:00 +0900
 title: '[Eclipse] JUnit with eclipse'
 categories:
-  - devtool
+  - eclipse
 tags:
   - devtool
   - eclipse
