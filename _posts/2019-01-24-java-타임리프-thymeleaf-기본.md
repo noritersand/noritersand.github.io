@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-24 15:04:00 +0900
-title: '[Java] 타임리프 Thymeleaf'
+title: '[Java] 타임리프 Thymeleaf 기본'
 categories:
   - java
 tags:
