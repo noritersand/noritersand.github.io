@@ -59,11 +59,11 @@ div { color: hsl(0, 100%, 50%); }
 
 #### RGBA, HSLA
 
-A는 ALPHA의 줄임말이며 불투명도(opacity)를 의미한다. RGB와 HSL 코드 끝에 불투명도를 지정하는 식이다. 불투명도의 표현 범위는 0부터 1까지다.
+A는 ALPHA의 줄임말이며 불투명도(opacity)를 의미한다. RGB와 HSL 코드 끝에 불투명도를 지정하는 식이다. 불투명도의 표현 범위는 0.0부터 1.0까지다.
 
 ```css
 /* red with opacity */
-div { background-color: rgba(255, 0, 0, 0.3); }
+div { color: rgba(255, 0, 0, 0.3); }
 /* green with opacity */
-div { background-color: hsla(120, 100%, 50%, 0.3); }
+div { color: hsla(120, 100%, 50%, 0.3); }
 ```
