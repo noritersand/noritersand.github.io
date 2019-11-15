@@ -84,6 +84,12 @@ String.prototype.trim = function() {
 ### 이메일 형식 검사
 
 ```js
+var reg = /[a-zA-Z0-9]+(?:(\.|_)[A-Za-z0-9!#$%&'*+/=?^`{|}~-]+)*@(?!([a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.))(?:[A-Za-z0-9](?:[a-zA-Z0-9-]*[A-Za-z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/g;
+var value = 'abc@qwe.org';
+console.assert(reg.test(value), '이메일 형식이 아님');
+```
+
+```js
 function isValidEmail(data){
   var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
   if (data.search(format) != -1)
@@ -92,7 +98,7 @@ function isValidEmail(data){
 }
 ```
 
-이메일 검사 패턴. 아니면 [이곳](http://emailregex.com/) 참고.
+[이곳](http://emailregex.com/) 참고.
 
 ### 한글 필터링
 

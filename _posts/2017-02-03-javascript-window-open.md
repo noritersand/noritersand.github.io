@@ -16,7 +16,7 @@ tags:
 #### 관련 문서
 
 - [http://www.w3schools.com/jsref/met_win_open.asp](http://www.w3schools.com/jsref/met_win_open.asp)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window.open](https://developer.mozilla.org/en-US/docs/Web/API/Window.open)
+- [MDN: Window.open()](https://developer.mozilla.org/ko/docs/Web/API/Window/open)
 
 ## open()
 
@@ -26,13 +26,13 @@ window.open( URL, name [ , specs ] [ , replace ] )
 
 - `URL`: 문서의 URL
 - `name`: URL이 로드될 창의 이름을 지정하거나 기존의 창 이름을 지정할 경우 해당 윈도우를 재사용한다.
-- `specs`: 창의 위치와 크기, 기능 등 창이 갖는 특성을 지정한다.
+- `specs`: 창의 위치와 크기, 기능 등 창이 갖는 특성을 지정한다. 이 값은 브라우저/버전마다 적용이 되기도 하고 무시되기도 한다. 가령 `location`은 과거엔(IE 구버전에선 아직도 적용됨) 숨길 수 있었으나, 최근엔 대부분의 브라우저에서 보안상의 이유로 무시하는 값이다.
 - `replace`: true일 땐 새 문서가 이전의 문서와 교체된다. false이거나 지정되지 않으면 새 문서는 창의 브라우징 히스토리에 새 항목으로 추가된다.
 
 ```js
 function openNewWindow(url, name) {
   var specs = "left=10,top=10,width=372,height=466";
-  specs += ",toolbar=yes,menubar=no,status=yes,scrollbars=yes,resizable=yes";
+  specs += ",menubar=no,toolbar=yes,location=no,status=yes,titlebar=no,scrollbars=yes,resizable=yes";
   window.open(url, name, specs);
 }
 ```

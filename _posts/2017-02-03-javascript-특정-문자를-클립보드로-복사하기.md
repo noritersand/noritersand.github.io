@@ -25,7 +25,7 @@ document.execCommand(aCommandName [, aShowDefaultUI, aValueArgument] )
 
 command가 지원되지 않거나 사용할 수 없는 상태면 false 반환.
 
-주의: 복사할 문자는 반드시 selection이 가능한 입력필드(input, textarea 태그 중 hide 상태가 아닌것)의 값이어야 한다.
+주의: 복사할 문자는 반드시 selection이 가능한 입력필드(input, textarea)의 값이어야 하며 숨겨진 상태가 아니어야 한다. 따라서 `<input type="hidden">`은 복사 불가.
 
 ```html
 <!DOCTYPE html>
