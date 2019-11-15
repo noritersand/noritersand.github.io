@@ -24,7 +24,7 @@ CSS 색상 코드를 정리한 글.
 
 #### 색상 이름
 
-RED, BLUE등의 미리 정해진 색상 이름을 사용한다. 사용 가능한 이름은 [여기](https://www.w3schools.com/colors/colors_names.asp)에서 확인.
+red, blue 등의 미리 정해진 색상 이름을 사용한다. 사용 가능한 이름은 [여기](https://www.w3schools.com/colors/colors_names.asp)에서 확인.
 
 ```css
 div { color: red; }
