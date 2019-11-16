@@ -15,7 +15,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 **TODO**: 제목 이상하니 수정할 것.
 

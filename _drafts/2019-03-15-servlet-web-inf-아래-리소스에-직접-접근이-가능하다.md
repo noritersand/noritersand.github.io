@@ -15,7 +15,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 spring-boot + maven 환경이었는데 어떻게 한건지는 모름.
 

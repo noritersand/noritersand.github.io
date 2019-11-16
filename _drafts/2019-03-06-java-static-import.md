@@ -15,7 +15,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 ```
 import static org.junit.Assert.*;

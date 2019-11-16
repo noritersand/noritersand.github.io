@@ -14,7 +14,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 
 JDK 몇 부터 추가된거더라?

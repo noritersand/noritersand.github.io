@@ -13,7 +13,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 ```js
 var polcDescEditor = CKEDITOR.replace('polcDesc', {

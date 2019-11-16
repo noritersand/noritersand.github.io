@@ -14,7 +14,8 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
+- [https://www.markdownguide.org/](https://www.markdownguide.org/)
 
 ## header2
 
@@ -49,7 +50,7 @@ _이탤릭_
 
 ---
 
-[링크 걸기](#항상-제목2부터-시작)
+[글 내부 링크 걸기](#항상-제목2부터-시작)
 
 ## 코드 블록
 
@@ -107,3 +108,9 @@ _이탤릭_
 ## unescape
 
 - `\#`: '#'를 그대로
+
+## 각주 footnotes
+
+요것[^1]은 각주 표기법이다. 기본 마크다운 표준인지는 모르겠음.
+
+- [^1]: 룰루랄라

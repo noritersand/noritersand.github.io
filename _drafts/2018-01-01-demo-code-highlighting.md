@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2018-01-01 00:00:00 +0900
-title: '[demo] A quick demo of Simple Texture theme's code highlighting features'
-description: 'A quick demo of Simple Texture theme's code highlighting features'
+title: "[demo] A quick demo of Simple Texture theme's code highlighting features"
+description: "A quick demo of Simple Texture theme's code highlighting features"
 categories:
   - demo
 tags:

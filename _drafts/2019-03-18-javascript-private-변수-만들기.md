@@ -15,7 +15,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 여러 방법이 있는것 같은데...
 

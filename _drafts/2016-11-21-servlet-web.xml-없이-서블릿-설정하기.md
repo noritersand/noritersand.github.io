@@ -16,7 +16,7 @@ tags:
 
 #### 관련 문서
 
-- [somewhere](/somewhere)
+- [somewhere](somewhere)
 
 서블릿 3.0부터는 web.xml 없이 서블릿을 설정할 수 있는 방법을 제공한다.
 
