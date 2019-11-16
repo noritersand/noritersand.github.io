@@ -249,8 +249,8 @@ var person = { firstName: "John", lastName: "Doe", age: 50 };
 for (variable in object) { ... }
 ```
 
-- **object**: 반복할 객체. 객체의 프로퍼티 만큼 반복된다.
-- **variable**: 매번 반복될 때마다 프로퍼티의 key를 할당한다. 만약 반복되는 객체가 배열일 경우 인덱스를 할당한다.
+- `object`: 반복할 객체. 객체의 프로퍼티 만큼 반복된다.
+- `variable`: 매번 반복될 때마다 프로퍼티의 key를 할당한다. 만약 반복되는 객체가 배열일 경우 인덱스를 할당한다.
 
 ```js
 var foo = { a: 1, b: 2};

@@ -34,9 +34,9 @@ tags:
 otherWindow.postMessage(message, targetOrigin, [transfer]);
 ```
 
-- **message**: 다른 윈도우에 전달할 메시지
-- **targetOrigin**: 메시지를 전달할 윈도우의 출처를 명시한다. 대상 윈도우의 스킴, 호스트명, 포트번호가 targetOrigin에 명시된 것과 정확히 일치하지 않으면 메시지는 차단된다.
-- **transfer**: Is a sequence of Transferable objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.
+- `message`: 다른 윈도우에 전달할 메시지
+- `targetOrigin`: 메시지를 전달할 윈도우의 출처를 명시한다. 대상 윈도우의 스킴, 호스트명, 포트번호가 targetOrigin에 명시된 것과 정확히 일치하지 않으면 메시지는 차단된다.
+- `transfer`: Is a sequence of Transferable objects that are transferred with the message. The ownership of these objects is given to the destination side and they are no longer usable on the sending side.
 
 아래는 교차 출처인 A 윈도우 `http://tistory.com`과 B 윈도우 `https://secure.tistory.com`이 서로 메시지를 주고받는 코드다.
 
