@@ -20,10 +20,9 @@ tags:
 - [http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm](http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm)
 - [http://programmingsummaries.tistory.com/357](http://programmingsummaries.tistory.com/357)
 
-join
+#### Array.prototype.join()
 
-concat
-
+#### Array.prototype.concat()
 
 
 ## 스택기능
