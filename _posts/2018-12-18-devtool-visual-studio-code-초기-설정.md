@@ -12,6 +12,10 @@ tags:
 
 atom 1.32.0 기준.
 
+## 기억해둘 기본 단축키
+
+- Trigger Parameter Hints: `ctrl + shift + space`
+
 ## 기본 설정
 
 #### 자동완성 설정 변경
@@ -68,10 +72,6 @@ ${activeEditorLong}${separator}${rootName}
     }
 ]
 ```
-
-## 기억해둘 기본 단축키
-
-- Trigger Parameter Hints: `ctrl + shift + space`
 
 ## 추천 확장 기능(플러그인)
 
