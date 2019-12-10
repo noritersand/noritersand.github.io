@@ -92,8 +92,8 @@ FileDiffs보다 보기 좋은 diff 뷰어.
 
 단축키는:
 
-- Jump to next: `alt+n`
-- Jump to previous: `alt+p`
+- Jump to next: `alt + n`
+- Jump to previous: `alt + p`
 
 #### Sync View Scroll
 
@@ -118,3 +118,9 @@ URL 인코드-디코드 기능 제공.
 ```json
 { "detect_acronyms": false }
 ```
+
+#### HexViewer
+
+[https://packagecontrol.io/packages/HexViewer](https://packagecontrol.io/packages/HexViewer)
+
+주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 플러그인. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어가 아주 훌륭함.
