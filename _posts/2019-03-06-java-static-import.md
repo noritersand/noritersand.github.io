@@ -24,14 +24,22 @@ tags:
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+public class ImportTest {
+
+    public void test() {
+        assertEquals(1, 2);
+        assertTrue(false);
+    }
+}
 ```
 
-특정 클래스의 스태틱 멤버를 접근연산자 없이 호출할 수 있게 하는 import문의 일종이다. 위 코드에서 첫 번째 줄은 `org.junit.Assert` 클래스의 모든 스태틱 멤버를 import한다는 의미이며, 셋 째줄은 `org.junit.Assert` 클래스의 `assertTrue()`메서드만 import한다는 의미다. (여기선 예시로 적어놔서 그렇지 사실 첫 째줄이 있으면 둘 째, 셋 째줄은 쓸모 없다.)
+특정 클래스의 스태틱 멤버를 접근연산자 없이 호출할 수 있게 하는 import문의 일종이다. 위 코드에서 첫 번째 줄은 `org.junit.Assert` 클래스의 모든 스태틱 멤버를 import한다는 뜻이다. 따라서 둘 째, 셋 째줄은 무쓸모한 코드다.
 
 
 #### 이클립스를 사용한다면
 
-다음처럼 모든 스태틱 멤버를 import 하도록 작성된 코드는:
+아래 코드는:
 
 ```java
 import static org.junit.Assert.*;
