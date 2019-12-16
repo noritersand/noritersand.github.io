@@ -87,3 +87,7 @@ settings(`ctrl + ,`)에서 'exclude' 검색 후 추가하면 된다. 'Files: Exc
 - Auto Close Tag(formulahendry.auto-close-tag)
 - Go to Next/Previous Member(mishkinf.goto-next-previous-member)
 - Highlight Matching Tag(vincaslt.highlight-matching-tag)
+
+### Debugger for Firefox(firefox-devtools.vscode-firefox-debug)
+
+안써봤지만 파폭이니 일단 적어둠. 설명을 보면 파폭용 디버거라는데 실제로 어떻게 작동하는지는 몲겠다.
