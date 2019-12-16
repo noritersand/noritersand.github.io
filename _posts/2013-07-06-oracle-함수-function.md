@@ -71,11 +71,13 @@ SELECT LENGTH('abcdefg') FROM dual -- 7
 ```
 L/RPAD( str1, length, str2 )
 ```
+
 str1의 길이에서 length를 뺀 나머지 길이만큼 str2로 채운다.
 
 ```
 LPAD( str, length )
 ```
+
 str의 길이에서 length를 뺀 나머지 길이만큼 공백으로 채운다.
 
 ```sql
@@ -137,11 +139,13 @@ FROM DUAL
 ```
 ASCII( A )
 ```
+
 A의 아스키코드값을 구한다.
 
 ```
 CHR( B )
 ```
+
 아스키코드값 B의 문자를 구한다.
 
 ```sql
@@ -160,11 +164,13 @@ FROM DUAL;
 ```
 ROUND( A )
 ```
+
 B를 생략할 경우 소수점 첫째자리에서 반올림
 
 ```
 ROUND( A, B )
 ```
+
 A를 B번째 소수점자리에서 반올림
 
 ```sql
@@ -179,6 +185,7 @@ FROM DUAL
 ```
 TRUNC( A [, B] )
 ```
+
 A를 소수점 자리 B+1부터 버린다. B를 생략할 경우 소수점 아래는 모두 버린다.
 
 ```sql
@@ -193,6 +200,7 @@ FROM DUAL
 ```
 CEIL( A )
 ```
+
 A의 소수점 이하를 올림.
 
 ```sql
@@ -204,6 +212,7 @@ SELECT CEIL(1.1919) FROM DUAL -- 2
 ```
 FLOOR( A )
 ```
+
 A의 소수점 이하를 내림.
 
 ```sql
@@ -215,6 +224,7 @@ SELECT FLOOR(1.1919) FROM DUAL -- 1
 ```
 MOD( A, B )
 ```
+
 A를 B로 나눈 나머지(나누지 못하면 A 반환).
 
 ```sql
@@ -226,6 +236,7 @@ SELECT MOD(6, 3) FROM DUAL -- 0
 ```
 ABS( A )
 ```
+
 A의 절대값 반환.
 
 ```sql
@@ -237,6 +248,7 @@ SELECT ABS(-11) FROM DUAL -- 11
 ```
 SQRT( A )
 ```
+
 A의 제곱근 반환.
 
 ```sql
@@ -248,6 +260,7 @@ SELECT SQRT(121) FROM DUAL -- 11
 ```
 SIGN( A )
 ```
+
 A의 부호를 반환(1, -1, 0)
 
 ```sql
@@ -259,6 +272,7 @@ SELECT SIGN(-8) FROM DUAL -- -1
 ```
 POWER( A, B )
 ```
+
 A의 B제곱을 구한다.
 
 ```sql
@@ -280,6 +294,7 @@ SELECT SYSDATE FROM DUAL -- 2013-07-09 15:57:56.0
 ```
 ADD_MONTHS( A, B )
 ```
+
 A 값에 B만큼 월수를 더함. A는 날짜형 데이터만 가능.
 
 ```sql
@@ -292,6 +307,7 @@ SELECT ADD_MONTHS(TO_DATE('20130101 131313', 'YYYYMMDD HH24MISS'), 1) FROM DUAL;
 ```
 MONTHS_BETWEEN( A, B )
 ```
+
 A에서 B까지의 기간을 월로 반환한다. 날짜값의 +연산은 일자계산을 기준으로 한다.
 
 ```sql
@@ -303,6 +319,7 @@ SELECT MONTHS_BETWEEN(SYSDATE, SYSDATE+365) FROM DUAL -- -12
 ```
 NEXT_DAY( A, B )
 ```
+
 A를 기준으로 명시된 요일(B)이 돌아오는 날짜를 구한다.
 
 ```sql
@@ -331,6 +348,7 @@ SELECT LAST_DAY(SYSDATE) FROM DUAL -- 2013-07-31 16:15:36.0
 ```
 EXTRACT( A FROM B )
 ```
+
 B에서 A를 추출.
 
 ```sql
@@ -419,11 +437,13 @@ FROM dual
 ```
 NVL( A, B )
 ```
+
 A가 null이면 B로 출력.
 
 ```
 NVL2( A, B, C )
 ```
+
 A가 not null이면 B, null이면 C 출력
 
 ```sql
@@ -436,6 +456,7 @@ SELECT NVL2('im not null', 10101, 79) FROM DUAL; -- 10101
 ```
 DECODE( VALUE, A1, B1, A2, B2, A3, B3 ... )
 ```
+
 VALUE가 A1이면 B1, A2면 B2, A3면 B3을 반환...
 
 ```
@@ -445,18 +466,23 @@ SELECT DECODE('DATA', 'DB', 'is DB', 'DATE', 'is DATE', 'neither') FROM DUAL -- 
 ## 집합 함수 (그룹함수 또는 복수행함수)
 
 ### SUM(value)
+
 value의 합계
 
 ### MAX(value)
+
 최고값
 
 ### MIN(value)
+
 최소값
 
 ### AVG(value)
+
 평균값
 
 ### COUNT(column)
+
 지정된 항목의 개수집합 함수 (그룹함수 또는 복수행함수)
 
 ```sql
@@ -536,6 +562,7 @@ ORDER BY deptno, sal DESC;
      20  7369 SMITH   800   3
      30  7698 BLAKE  2850   1
 ...
+
 ```
 
 분석함수에서 파티션 설정을 생략하고 사용하는 경우도 있다:
