@@ -15,7 +15,7 @@ tags:
 
 - [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
 
-명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. **대부분** Powershell에서도 쓸 수 있다.
+명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다. 참고로 윈도우 설치 화면에서는 `shift + f10`으로 cmd에 진입할 수 있음.
 
 ## xcopy
 
@@ -41,6 +41,63 @@ netstat -nao
 netstat -nao | findstr '8081'
 ```
 
+## tasklist
+
+```bash
+# 프로세스 목록을 출력하되 '18292'로 필터링
+tasklist | findstr '18292'
+```
+
+## taskkill
+
+```bash
+# PID가 5888인 프로세스 중지
+taskkill /f /pid 5888
+```
+
+## diskpart
+
+윈도우 전통의 디스크 관리 명령어. 디스크, 파티션, 볼륨 등을 확인하고 지정/변경할 수 있다.
+
+```
+Microsoft Windows [Version 10.0.18363.535]
+(c) 2019 Microsoft Corporation. All rights reserved.
+
+C:\Users\noriter>diskpart
+
+Microsoft DiskPart 버전 10.0.18362.1
+
+Copyright (C) Microsoft Corporation.
+컴퓨터: NORITERSAND-LAPTOP
+
+DISKPART> list volume
+
+  볼륨 ###  Ltr  레이블      Fs    형식       크기     상태          정보
+  --------  ---  ----------  ----  ---------  -------  ------------  --------
+  Volume 0         시스템 예약       NTFS   파티션          549 MB  정상         시스템
+  Volume 1     C                NTFS   파티션          237 GB  정상         부팅
+  Volume 2     D                NTFS   파티션          931 GB  정상
+
+DISKPART> list disk
+
+  디스크 ###  상태           크기     사용 가능     Dyn  Gpt
+  ----------  -------------  -------  ------------  ---  ---
+  디스크 0    온라인        238 GB       1024 KB
+  디스크 1    온라인        931 GB           0 B
+
+DISKPART> select disk 0
+
+0 디스크가 선택한 디스크입니다.
+
+DISKPART> list partition
+
+  파티션 ###  종류              크기     오프셋
+  ----------  ----------------  -------  -------
+  파티션 1    주                  549 MB  1024 KB
+  파티션 2    주                  237 GB   550 MB
+  파티션 3    복구                 562 MB   237 GB
+```
+
 ## certutil
 
 https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
@@ -56,20 +113,6 @@ certutil -hashfile .\example.txt MD5
 # SHA1의 .\example.txt 해시:
 # f9c3df25f671c015100347d51cef76ee
 # CertUtil: -hashfile 명령이 성공적으로 완료되었습니다.
-```
-
-## tasklist
-
-```bash
-# 프로세스 목록을 출력하되 '18292'로 필터링
-tasklist | findstr '18292'
-```
-
-## taskkill
-
-```bash
-# PID가 5888인 프로세스 중지
-taskkill /f /pid 5888
 ```
 
 ## mklink
