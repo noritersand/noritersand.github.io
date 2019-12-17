@@ -15,7 +15,7 @@ tags:
 
 - [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
 
-명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다. 참고로 윈도우 설치 화면에서는 `shift + f10`으로 cmd에 진입할 수 있음.
+명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다. **윈도우 설치 화면에서는 `shift + f10`으로 cmd에 진입할 수 있음.**
 
 ## xcopy
 
@@ -98,9 +98,7 @@ DISKPART> list partition
   파티션 3    복구                 562 MB   237 GB
 ```
 
-## certutil
-
-https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil
+## [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 
 ### 해시값 체크
 

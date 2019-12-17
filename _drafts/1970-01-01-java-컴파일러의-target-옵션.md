@@ -11,6 +11,7 @@ tags:
 ---
 
 자바 컴파일러인 javac는 target 옵션이 존재한다. 이 옵션은 특정 Java 버전(보통은 현재 사용중인 JDK보다 낮은)에서도 실행가능한 클래스 파일을 만드는 옵션이다.
+
 ```bash
 javac -target 8 Test.java
 # Test.java 파일을 컴파일하되 Java 8에서 실행 가능하도록 호환처리한다.
@@ -19,7 +20,10 @@ javac -target 8 Test.java
 이클립스에서는 이 옵션이 `Window` > `Preferences` 혹은 각 프로젝트의 `Properties` 설정화면에 `Java Compiler` 메뉴로 제공된다.
 ![](/images/compiler-target-1.png)
 
+'Compiler Compliance Level'이 1.8이면 사용중인 Java의 버전이 10이라도 8 버전으로 컴파일한다.
+
 메이븐에선 pom.xml에서 컴파일러 플러그인 설정으로 target을 지정할 수 있다.
+
 ```xml
 <build>
   <finalName>laboratory</finalName>
@@ -40,6 +44,7 @@ javac -target 8 Test.java
 사족으로, 이클립스는 컴파일 에러가 나는 자바파일도 일단 class 파일로 만든다. 이게 이클립스만 그러는건지는 아직 확실하지 않은데, 일단은 메서드 단위로 컴파일한다는게 확인되었다.
 
 이럴때:
+
 ```java
 public class Test {
     public void m01() {
@@ -51,7 +56,9 @@ public class Test {
     }
 }
 ```
+
 요딴식으로:
+
 ```java
 public class Test {
     public void m01() {
