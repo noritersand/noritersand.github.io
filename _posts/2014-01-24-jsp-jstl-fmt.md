@@ -68,7 +68,7 @@ properties 확장자를 사용하는 자원 파일을 읽어오는 역할을 한
 </fmt:bundle>
 ```
 
-basename 속성에 지정된 properties 파일을 찾아서 locale에 따라 읽어들인다. properties 파일은 보통 `WEB-INF/classes` 아래에 위치하며 디렉토리의 깊이에 따라서 패키지형식의 이름으로 설정한다. TestBundle.properties 파일이 `com/test/msg` 디렉토리에 있다면 `basename="com.test.msg.TestBundle"`  이라고 지정하면 된다. locale이 ko라면 TestBundle_ko.properties 파일을 읽어오게 되며, locale이 맞지 않는 경우에는 TestBundle.properties처럼 코드가 붙지 않은 파일을 읽어온다. prefix 속성은 key 명칭이 공통적인 부분을 지정해서 body에서 표현되는 key를 단축시킨다. import 에서 패키지 명을 지정하면 클래스명만 쓸 수 있는 것과 같이 생각할 수 있다.
+basename 속성에 지정된 properties 파일을 찾아서 locale에 따라 읽어들인다. properties 파일은 보통 `WEB-INF/classes` 아래에 위치하며 디렉터리의 깊이에 따라서 패키지형식의 이름으로 설정한다. TestBundle.properties 파일이 `com/test/msg` 디렉터리에 있다면 `basename="com.test.msg.TestBundle"`  이라고 지정하면 된다. locale이 ko라면 TestBundle_ko.properties 파일을 읽어오게 되며, locale이 맞지 않는 경우에는 TestBundle.properties처럼 코드가 붙지 않은 파일을 읽어온다. prefix 속성은 key 명칭이 공통적인 부분을 지정해서 body에서 표현되는 key를 단축시킨다. import 에서 패키지 명을 지정하면 클래스명만 쓸 수 있는 것과 같이 생각할 수 있다.
 
 ## setBundle
 

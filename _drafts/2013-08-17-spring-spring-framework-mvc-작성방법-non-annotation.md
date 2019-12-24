@@ -84,7 +84,7 @@ SimpleUrlHandlerMapping의 mappings 프로퍼티는 java.util.Properties 타입�
 
 - `?`: 1개의 문자와 매칭
 - `*`: 0개 이상의 문자와 매칭
-- `**`: 0개 이상의 디렉토리와 매칭
+- `**`: 0개 이상의 디렉터리와 매칭
 
 ## Controller
 
