@@ -68,8 +68,14 @@ _이탤릭_
 
 `inline codeblock`
 
+### 인라인 코드블록 안에 grave(=backtick) 표시하기
+
+이렇게 ``` ` ``` 하면 됨.
+
+### 코드블록 안에 grave 표시하기
+
 ```
-코드블록 안에 backticks(=graves) 표시하기 `d`
+`d`
 ```
 
 ## 테이블
