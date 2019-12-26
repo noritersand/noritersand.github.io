@@ -18,7 +18,7 @@ tags:
 
 - [아스키 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD%EC%A0%95%EB%B3%B4%EA%B5%90%ED%99%98%ED%91%9C%EC%A4%80%EB%B6%80%ED%98%B8)
 
-이 글은 남궁성 저 'Java의 정석'을 참고하여 작성되었음.  http://cafe.naver.com/javachobostudy.cafe
+이 글은 남궁성 저 'Java의 정석'을 참고하여 작성함.  http://cafe.naver.com/javachobostudy.cafe
 
 #### 인코딩, encoding이란?
 
@@ -32,7 +32,7 @@ tags:
 
 바이트 기반 스트림은 바이트단위로 데이터를 전송하는 클래스로 InputStream과 OutputStream을 상속받는 FileStream, ByteArrayStream, PipedStream, AudioStream, StringBufferStream 등이 있다.
 
-바이트기반 스트림은 종류에 따라 `mark()`와 `reset()`을 사용해 특정 지점을 마킹하고 그 지점에서 다시 읽는것이 가능하다. `flush()`는 버퍼가 있는 출력용 스트림(OutputStream을 확장한 클래스들)의 경우에만 의미가 있고, OutputStream에 정의된 `flush()`는 아무것도 하지 않는다.
+바이트 기반 스트림은 종류에 따라 `mark()`와 `reset()`을 사용해 특정 지점을 마킹하고 그 지점에서 다시 읽는것이 가능하다. `flush()`는 버퍼가 있는 출력용 스트림(OutputStream을 확장한 클래스들)의 경우에만 의미가 있고, OutputStream에 정의된 `flush()`는 아무것도 하지 않는다.
 
 ### FileIntputstream/FileOutputStream
 
@@ -117,7 +117,7 @@ BufferedInputStream bis = new BufferedInputStream(fis);
 bis.read();
 ```
 
-위를 보면 BufferedInputStream의 `read()`를 사용한 것 같지만 실제 입력기능은 기반 스트림은 FileInputStream이 수행하고 BufferedInputStream은 버퍼 기능만 제공한다.
+위를 보면 BufferedInputStream의 `read()`를 사용한 것 같지만 실제 입력기능은 기반 스트림인 FileInputStream이 수행하고 BufferedInputStream은 버퍼 기능만 제공한다.
 
 이처럼 보조 스트림의 경우 대부분 입출력에 버퍼를 이용한다는 특징이 있는데 얼핏 별거 없어 보이지만 데이터의 양이 많을 수록 버퍼가 처리 속도에 상당한 영향을 끼친다.
 
