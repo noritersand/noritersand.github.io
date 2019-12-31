@@ -29,7 +29,8 @@ ctrl+shift+p 누른후 보이는 커맨드 창에서 install package [enter] > C
 	"font_size": 11,
 	"show_encoding": true,
 	"show_line_endings": true,
-	"tab_completion": false
+	"tab_completion": false,
+	"file_exclude_patterns": ["*.sublime-workspace"]
 }
 ```
 
