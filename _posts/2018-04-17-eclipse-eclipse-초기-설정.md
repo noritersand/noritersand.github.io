@@ -54,8 +54,11 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Print: `unbined`
 - Quick Search: `ctrl + alt + l` (In Windows, Quick Search) ~~STS 플러그인 깔았을 때 쓸 수 있는 빠른 검색창~~ 최근 버전은 기본 탑재.
 - Next Editor: `ctrl + 6` (In Windows, Window)
+- Previous Editor: `ctrl + shift + 6` (In Windows, Window)
 - Next Veiw: `ctrl + 7` (In Windows, Window) 이 키 조합의 기존 기능인 `Toggle Comment`는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
+- Previous Veiw: `ctrl + shift + 7` (In Windows, Window)
 - Next Perspective: `ctrl + 8` (In Windows, Window)
+- Previous Perspective: `ctrl + shift + 8` (In Windows, Window)
 
 Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective` > `Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
 
