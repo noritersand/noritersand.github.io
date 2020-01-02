@@ -20,7 +20,7 @@ atom 1.32.0 기준.
 
 #### 자동완성 설정 변경
 
-json으로 된 설정 파일을 열어서(`ctrl + shift + p` > 'Preferences: Open Settings (JSON)' > `엔터`) 아래 항목 추가:
+json으로 된 설정 파일을 열어서(`ctrl + shift + p` > 'Preferences: Open Settings (JSON)' 입력 후 엔터) 아래 항목 추가:
 
 ```json
 "editor.quickSuggestions": {
@@ -40,7 +40,7 @@ ${activeEditorLong}${separator}${rootName}
 
 #### 파일 제외하기
 
-settings(`ctrl + ,`)에서 'exclude' 검색 후 추가하면 된다. 'Files: Exclude'는 Explorer에서 표시 제외, 'Search: Exclude'는 빠른 열기와 검색에서 제외임.
+settings(`ctrl + ,`)에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 ## 단축키
 
