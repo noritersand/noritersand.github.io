@@ -200,7 +200,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 잡다한 유틸리가 있는 확장 기능. HTML 기호 <-> entities, camelCase <-> SNAKE_CASE 변환용으로 쓴다. 설치 후 아래 설정할 것:
 
 - `Window` > `Preferences` > `General` > `Editors` > `AnyEdit Tools` > `Auto Convert`에서 `Remove trailing whitespace` 체크 해제
-- 키 설정에서 `HTML Entities to Chars`, `Calmel <-> Pascal` 단축키 삭제
+- 키 설정에서 'AnyEdit Tools' 카테고리 중 `Convert Camel <-> Underscores`, `Convert Chars to Html Entities` **빼고 다** 삭제
 
 ### [eclipse-pmd](https://marketplace.eclipse.org/content/eclipse-pmd)
 
