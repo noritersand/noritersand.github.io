@@ -42,7 +42,7 @@ public void showArgs(int... args) {
 }
 ```
 
-향상된 포문을 활용할 경우 다음과 같다:
+향상된 반복문을 활용할 경우 다음과 같다:
 
 ```java
 public void showArgs(int... args) {

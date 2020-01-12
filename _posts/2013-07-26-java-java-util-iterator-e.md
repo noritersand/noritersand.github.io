@@ -61,7 +61,7 @@ public class LogicTest {
 
 ## 컬렉션과 이터레이터
 
-컬렉션 중 하나인 List는 인덱스가 존재하여 Iterator 없이도 향상된 포문을 사용할 수 있다:
+컬렉션 중 하나인 List는 인덱스가 존재하여 Iterator 없이도 향상된 반복문을 사용할 수 있다:
 
 ```java
 ArrayList<String> list = new ArrayList<String>();
@@ -98,7 +98,7 @@ for (Integer ele : set) {
 3
 ```
 
-Map 타입의 컬렉션에서도 순서대로 값을 가져오고 싶다면 어떻게 해야할까. 맵은 약간 다른 방식으로 접근해야한다.
+Map 타입에서도 순서대로 값을 가져오고 싶다면 어떻게 해야할까. 맵은 약간 다른 방식으로 접근해야한다.
 
 List와 Set에서 Iterator를 사용하려면:
 
@@ -138,14 +138,14 @@ map.put("이공이", 202);
 map.put("삼공삼", 303);
 ```
 
-여기서 keySet() 메서드로 key값을 Set 컬렉션으로 추출한다:
+여기서 `keySet()` 메서드로 key값을 `Set`으로 추출한다:
 
 ```java
 Set<String> set = map.keySet();
 logger.debug(set);
 ```
 
-set은 Iterator가 있기 때문에 반복문으로 value를 가져올 수 있다:
+`Set`은 Iterator가 있기 때문에 반복문으로 value를 가져올 수 있다:
 
 ```java
 Iterator<String> it = set.iterator();
@@ -157,7 +157,7 @@ while(it.hasNext()) {
 }
 ```
 
-번거롭다면 향상된 포문을 써도 된다:
+번거롭다면 향상된 반복문을 써도 된다:
 
 ```java
 Iterator<String> it = set.iterator();

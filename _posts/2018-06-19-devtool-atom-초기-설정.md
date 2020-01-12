@@ -50,9 +50,18 @@ atom 1.32.0 기준.
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-d': 'editor:delete-line'
+  'ctrl-shift-up': 'editor:move-line-up'
+  'ctrl-shift-down': 'editor:move-line-down'
+
+'atom-text-editor':
+  'ctrl-up': 'keyboard-scroll:scrollUp'
+  'ctrl-down': 'keyboard-scroll:scrollDown'
+  'alt-up': 'nothing'
+  'alt-down': 'nothing'
 ```
 
 ## 플러그인
 
+- [keyboard-scroll](https://atom.io/packages/keyboard-scroll): **필수** 다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.
 - [url-encode](https://atom.io/packages/url-encode)
 - [goto-last-edit](https://atom.io/packages/goto-last-edit): `ctrl+i` 혹은 `ctrl+alt+i`로 마지막 수정 이력 이동

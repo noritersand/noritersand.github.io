@@ -188,7 +188,7 @@ line2
 </table>
 ```
 
-컬렉션의 멤버들 사이를 반복할 때 `<c:forEach>` 태그의 추가 애트리뷰트인 items 애트리뷰트가 사용된다.
+컬렉션의 요소를 반복할 때 `<c:forEach>` 태그의 추가 애트리뷰트인 items 애트리뷰트가 사용된다.
 
 ```html
 <c:forEach var="dto" items="${list}">

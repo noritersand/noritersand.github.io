@@ -15,11 +15,11 @@ tags:
 {:toc .toc}
 
 ```
-기능: 문자열, 컬렉션 처리
+기능: 문자열, 맵/컬렉션 처리
 directive: <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 ```
 
-JSTL functions은 문자열이나 컬렉션의 가공/변환/분석을 위해 사용하는 함수다. 단독으로는 쓸 수 없고 반드시 EL 표현식과 조합해야 한다.
+JSTL functions은 문자열이나 맵/컬렉션의 가공/변환/분석을 위해 사용하는 함수다. 단독으로는 쓸 수 없고 반드시 EL 표현식과 조합해야 한다.
 
 ## contains, containsIgnoreCase
 
