@@ -47,7 +47,7 @@ if (window.XMLHttpRequest) { // Non-Microsoft browsers
 }
 ```
 
-마소가 폭주하던 2000년대에나 쓰이던 코드. 지금은 그냥 아래 한 줄로 해결된다:
+마소가 IE들고 미쳐 날뛸 때 쓰이던 코드. 지금은 그냥 아래 한 줄로 해결된다:
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -192,12 +192,13 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.readyState
 
-XMLHttpRequest의 현재 상태를 의미한다.
-- `0`: request not initialized.
-- `1`: server connection established
-- `2`: request received
-- `3`: processing request
-- `4`: request finished and response is ready
+XMLHttpRequest의 현재 상태를 의미한다:
+
+- 0: request not initialized.
+- 1: server connection established
+- 2: request received
+- 3: processing request
+- 4: request finished and response is ready
 
 ## Attach callback function
 
@@ -215,6 +216,7 @@ xhr.onreadystatechange = function() {
 xhr.open('GET', 'http://somewhere');
 xhr.send();
 ```
+
 `onreadystatechange()`는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
 
 ### [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)

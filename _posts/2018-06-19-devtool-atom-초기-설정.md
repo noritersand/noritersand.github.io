@@ -54,14 +54,16 @@ atom 1.32.0 기준.
   'ctrl-shift-down': 'editor:move-line-down'
 
 'atom-text-editor':
-  'ctrl-up': 'keyboard-scroll:scrollUp'
-  'ctrl-down': 'keyboard-scroll:scrollDown'
+  # 'ctrl-up': 'keyboard-scroll:scrollUp'
+  # 'ctrl-down': 'keyboard-scroll:scrollDown'
+  'ctrl-up': 'nothing'
+  'ctrl-down': 'nothing'
   'alt-up': 'nothing'
   'alt-down': 'nothing'
 ```
 
 ## 플러그인
 
-- [keyboard-scroll](https://atom.io/packages/keyboard-scroll): **필수** 다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.
+- ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll): 다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~ 멀티 커서 증식(?)키`ctrl-alt-up/down`가 이상작동하는 현상이 있음.
 - [url-encode](https://atom.io/packages/url-encode)
 - [goto-last-edit](https://atom.io/packages/goto-last-edit): `ctrl+i` 혹은 `ctrl+alt+i`로 마지막 수정 이력 이동
