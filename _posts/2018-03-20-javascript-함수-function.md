@@ -78,7 +78,7 @@ var fnExpression = function() {
 };
 ```
 
-fnExpression의 호출문이 표현식보다 먼저 왔을때 타입에러가 발생한다. 왜 참조에러가 아니고 타입에러일까? 위 코드는 실제로 아래처럼 작동하기 때문이다.
+fnExpression의 호출문이 표현식보다 먼저 왔을때 타입 에러가 발생한다. 왜 참조 에러가 아니고 타입 에러일까? 위 코드는 실제로 아래처럼 작동하기 때문이다.
 
 ```js
 function fnDeclaration() {
