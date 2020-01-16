@@ -58,7 +58,7 @@ JSTL은 태생이 커스텀태그이기 때문에 jsp와 밀접하게 관계가 
 
 ## 환경설정
 
-기존의 컨텍스트에서 JSTL을 사용하려면 웹 어플리케이이션의 WEB-INF/lib 디렉터리에 필요한 라이브러리를 복사한다. JSTL의 주된 라이브러리 파일은 jstl.jar, standard.jar이고, XML에서 지원되는 기능을 사용하려면 jaxen-full.jar, saxpath.jar, jaxp-api.jar 파일 등이 필요하다.
+기존의 컨텍스트에서 JSTL을 사용하려면 웹 어플리케이이션의 WEB-INF/lib 디렉터리에 필요한 라이브러리를 위치시킨다. JSTL의 주된 라이브러리 파일은 jstl.jar, standard.jar이고, XML에서 지원되는 기능을 사용하려면 jaxen-full.jar, saxpath.jar, jaxp-api.jar 파일 등이 필요하다.
 
 [http://tomcat.apache.org/taglibs/standard/](http://tomcat.apache.org/taglibs/standard/)
 

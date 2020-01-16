@@ -19,7 +19,7 @@ tags:
 
 ## xcopy
 
-파일과 디렉터리 트리를 복사하는 명령어.
+파일과 폴더 트리를 복사하는 명령어.
 
 ```bash
 xcopy SOURCE DESTINATION /s /e /y
@@ -27,8 +27,8 @@ xcopy SOURCE DESTINATION /s /e /y
 
 #### options
 
-- `/S`: 비어 있지 않은 디렉터리와 하위 디렉터리를 복사.
-- `/E`: 비어 있는 경우를 포함하여 디렉터리와 하위 디렉터리를 복사. /S /E 스위치와 같다.
+- `/S`: 비어 있지 않은 폴더와 하위 폴더를 복사.
+- `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사. /S /E 스위치와 같다.
 - `/Y`: 기존 대상 파일을 덮어쓸지 여부를 묻지 않는다.
 
 ## netstat
@@ -116,7 +116,7 @@ certutil -hashfile .\example.txt MD5
 ## mklink
 
 ```bash
-# 실제 경로는 \dest 디렉터리인 \slink 바로가기 링크 생성 (관리자 권한 필요)
+# 실제 경로는 \dest 폴더인 \slink 바로가기 링크 생성 (관리자 권한 필요)
 mklink /d \slink \dest
 ```
 

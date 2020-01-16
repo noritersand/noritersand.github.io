@@ -92,7 +92,7 @@ JAVA WAS는 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'�
 - `servlet-mapping`: 상대 url  경로를 좀  더 쉽게  다루기 위해  기본 url를  변경 할  때 사용
 - `session-config`: 일정 시간 동안 세션으로 접근이 없을 경우 서버는 메모리를 절약하기 위해 사용하지 않는 메모리를 삭제한다. 세션의 시간 유지 기능
 - `mime-mapping`: 특정한 mime형을 가진 파일을 웹 어플리케이션에  넣어 두고 싶은  경우 사용
-- `welcome-file-list`: url이 파일명이 아닌 디렉터리 명으로 받았을 경우 기본적으로 불러올 파일명을 지정하는데 사용
+- `welcome-file-list`: 요청 URL이 파일명이 아닌 특정 디렉터리명으로 끝나는 경우 사용할 default 파일명을 지정하는데 사용
 - `error-page`: http 상태코드가 반환되거나 예외가 발생했을 때 그 내용을 출력하는 페이지
 - `tag-lib`: 태그라이브러리 설명자 파일의 별칭을 지정하는데 사용
 - `resource-envref`: 자원(resource)과  연관되어 관리되는 객체를 선언하는 역할을 한다.
