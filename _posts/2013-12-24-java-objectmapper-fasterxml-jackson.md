@@ -21,7 +21,7 @@ tags:
 - 1.x: org.codehaus.jackson
 - 2.x: com.fasterxml.jackson
 
-## Map - JSON간 변환
+## Map/Collections - JSON간 변환
 
 ### writeValueAsString()
 
@@ -96,7 +96,8 @@ public class Test2 {
 // {name=steave, age=32, job=baker}
 ```
 
-### List<Map>
+### Collections<Map>
+
 다음은 view에 전달할 model이 `List<map<?, ?>>` 타입일 때 이를 JSON으로 변환하는 방법이다. 사용방법은 크게 다르지 않고 `writeValueAsString()`, `readValue()` 메서드를 사용하되 타입 명시만 달리한다.
 
 ```java
