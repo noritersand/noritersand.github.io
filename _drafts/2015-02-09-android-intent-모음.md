@@ -1,13 +1,14 @@
 ---
 layout: post
 date: 2015-02-09 13:24:00 +0900
-title: '[Android] intent 모음 (비공개)'
+title: '[Android] intent 모음'
 categories:
   - android
 tags:
   - android
   - intent
   - 코드모음
+  - 비공개
 ---
 
 **비공개 글**
