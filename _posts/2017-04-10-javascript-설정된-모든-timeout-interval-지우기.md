@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-04-10 16:53:00 +0900
-title: '[JavaScript] 설정된 모든 timeout 지우기'
+title: '[JavaScript] 설정된 모든 timeout, interval 지우기'
 categories:
   - javascript
 tags:
