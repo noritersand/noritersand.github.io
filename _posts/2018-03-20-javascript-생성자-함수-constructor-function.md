@@ -9,7 +9,6 @@ tags:
   - javascript
   - constructor
   - function
-  - todo
 ---
 
 * Kramdown table of contents

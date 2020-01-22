@@ -10,7 +10,6 @@ tags:
   - shell
   - powershell
   - windows
-  - todo
 ---
 
 * Kramdown table of contents

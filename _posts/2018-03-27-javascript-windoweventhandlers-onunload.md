@@ -12,7 +12,6 @@ tags:
   - onclose
   - onunload
   - window
-  - todo
 ---
 
 #### 관련 문서
