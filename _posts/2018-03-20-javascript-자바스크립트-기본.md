@@ -454,7 +454,7 @@ arry[2][1]; // "3-1"
 ```js
 var complex = {
   numeric: 123,
-  alphabet: 'abc...',
+  alphabet: 'abc',
   hangul: ['가', '나', '다']
 };
 complex.hangul[0]; // "가"

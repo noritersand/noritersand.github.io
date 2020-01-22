@@ -246,7 +246,7 @@ var person = { firstName: "John", lastName: "Doe", age: 50 };
 또한 in은 for-in 반복문에서 사용된다.
 
 ```
-for (variable in object) { ... }
+for (variable in object) { }
 ```
 
 - `object`: 반복할 객체. 객체의 프로퍼티 만큼 반복된다.
