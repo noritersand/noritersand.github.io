@@ -89,7 +89,7 @@ isFinite( testValue )
 
 - `testValue`: 테스트할 수치
 
-수치가 무효 수치인가, 유효한 수치인가를 판명한다. 유효수치이면 true 값을 반환하고(return), 무효수치이면 false 값을 반환한다. `isNaN()` 과는 반대 결과를 반환한다.
+수치가 유효(=숫자로 표현 가능한 값인지)한지, 무효한지를 판명한다. 유효수치이면 true 값을 반환하고(return), 무효수치이면 false 값을 반환한다. `isNaN()` 과는 반대 결과를 반환한다.
 
 ```
 isNaN( testValue )
