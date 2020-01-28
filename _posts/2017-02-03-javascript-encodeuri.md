@@ -35,7 +35,7 @@ https://www.google.co.kr/search?q=%ED%95%9C%EA%B8%80
 
 위 `%ED%95%9C%EA%B8%80`는 '한글'을 의미한다. 이것은 HTTP 스펙에 따른 변환으로, '한글'을 UTF-8로 인코딩한 뒤 바이트마다 앞에 '%'를 붙여준 값이다. ('한'을 UTF-8로 인코딩하면 10진수로 `237 149 156`, 16진수로 `ed 95 9c`)
 
-## 입력 테스트
+## 변환 테스트
 
 <table id="tabKeyCodeTest">
   <tr>
