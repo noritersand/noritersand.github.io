@@ -17,6 +17,22 @@ tags:
 - [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
 - [https://www.markdownguide.org/](https://www.markdownguide.org/)
 
+**결정 못한 작성 규칙**
+
+- 나열할 리스트의 제목을 본문 서식 vs 제목4 서식
+
+리스트:
+
+- 첫
+- 두
+- 세
+
+#### 리스트:
+
+- `code`
+- `code`
+- `code`
+
 ## header2
 
 ### header3
@@ -36,11 +52,6 @@ tags:
 ## 항상 제목2부터 시작
 
 내용내용
-
-리스트:
-- 첫
-- 두
-- 세
 
 **굵게**
 _이탤릭_
@@ -85,7 +96,7 @@ _이탤릭_
 | undefined        | "undefined" | NaN    | false   | TypeError              |
 | true             | "true"      | 1      |         | new Boolean(true)      |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
-| pipe            |  p\|i\|p\|e  |        |         |                        |
+| pipe             | p\|i\|p\|e  |        |         |                        |
 
 ## 인용구
 
@@ -99,9 +110,9 @@ _이탤릭_
 >>>> 어디까지 가나 보자
 >>>>> 독수리오형제
 >>>>>> 씩쓰투스
->>>>>>> WX-칠
->>>>>>>> 팔이
->>>>>>>>> 비둘기야먹자
+>>>>>>> WX-78
+>>>>>>>> 팔푼이
+>>>>>>>>> 비둘기야먹자 구구 구구궄
 
 ## 인용구2
 

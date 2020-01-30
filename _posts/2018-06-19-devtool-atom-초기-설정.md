@@ -45,6 +45,16 @@ atom 1.32.0 기준.
 커맨드 팔레트`ctrl+shift+p`에서 'Application: Open Your Keymap' 입력 후 엔터. 이 후 열리는 keymap.cson을 아래처럼 변경:
 
 ```yml
+'.platform-win32, .platform-win32 .command-palette atom-text-editor':
+  'ctrl-shift-P': 'command-palette:toggle'
+  'f1': 'command-palette:toggle'
+
+'atom-workspace':
+  'ctrl-i': 'nothing'
+  'ctrl-alt-i': 'nothing'
+  'alt--': 'goto-last-edit:back'
+  'alt-shift--': 'goto-last-edit:forward'
+
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-shift-k': 'editor:duplicate-lines'
 
@@ -66,4 +76,4 @@ atom 1.32.0 기준.
 
 - ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll): 다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~ 멀티 커서 증식(?)키`ctrl-alt-up/down`가 이상작동하는 현상이 있음.
 - [url-encode](https://atom.io/packages/url-encode)
-- [goto-last-edit](https://atom.io/packages/goto-last-edit): `ctrl+i` 혹은 `ctrl+alt+i`로 마지막 수정 이력 이동
+- [goto-last-edit](https://atom.io/packages/goto-last-edit): `ctrl+i` 혹은 `ctrl+alt+i`로 마지막 수정 이력 이동...인데 서브라임이랑 같도록 바꿔서 씀.
