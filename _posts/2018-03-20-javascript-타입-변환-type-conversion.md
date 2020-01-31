@@ -27,7 +27,7 @@ if (1) {
   console.log('1 is true');
 }
 if (!'') {
-  console.log('null string is false');
+  console.log('empty string is false');
 }
 if ('false') {
   console.log('"false" is true');
@@ -129,7 +129,7 @@ Array 타입은 `valueOf()` 대신 `toString()`을 호출한다(규칙에 따라
 | null             | "null"      | 0      | false   | TypeError              |
 | true             | "true"      | 1      |         | new Boolean(true)      |
 | false            | "false"     | 0      |         | new Boolean(false)     |
-| "" (null-string) |             | 0      | false   | new String("")         |
+| "" (empty string) |             | 0      | false   | new String("")         |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
 | "one"            |             | NaN    | true    | new String("one")      |
 | " "              |             | 0      | true    | new String(" ")        |

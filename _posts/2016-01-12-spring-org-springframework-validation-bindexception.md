@@ -39,9 +39,9 @@ public class ExampleBean {
 
 이런식으로 객체타입과 원시타입의 변수가 혼합되어 있는 모델이다.
 
-스프링은 화면에서 넘어간 값이 null string(빈 문자열, `""`)이거나 null일 때 변수에도 이 값을 그대로 할당하려고 사도하는데, 원시타입의 변수들은 null string이나 null을 할당할 수 없기 때문에 타입 캐스팅 중에 에러가 발생하는 것이다.
+스프링은 화면에서 넘어간 값이 empty string(빈 문자열, `""`)이거나 null일 때 변수에도 이 값을 그대로 할당하려고 사도하는데, 원시타입의 변수들은 empty string이나 null을 할당할 수 없기 때문에 타입 캐스팅 중에 에러가 발생하는 것이다.
 
-다음의 에러메시지는 null string이 넘어온 경우고:
+다음의 에러메시지는 empty string이 넘어온 경우고:
 
 ```java
 org.springframework.validation.BindException: org.springframework.validation.BeanPropertyBindingResult: 1 errors
@@ -86,7 +86,7 @@ Field error in object 'exampleBean' on field 'intValue': rejected value [null]; 
 "/setModelTest.do?stringLiteral=imnotempty" // correct
 ```
 
-추천하는 방법은 파라미터를 바인딩하는 용도의 빈에는 원시타입을 사용하지 않는것이다. 이렇게하면 null string일 때 null로 초기화된다:
+추천하는 방법은 파라미터를 바인딩하는 용도의 빈에는 원시타입을 사용하지 않는것이다. 이렇게하면 empty string일 때 null로 초기화된다:
 
 ```java
 public class ExampleBean {

@@ -107,7 +107,7 @@ not-exist-property라는 프로퍼티가 없으면 변수 prop의 값은 "${not-
 private String prop;
 ```
 
-끝에 `:`을 붙여줘서 프로퍼티가 없을 때 nullstring으로 초기화되도록 하는게 좋다.
+끝에 `:`을 붙여줘서 프로퍼티가 없을 때 empty string으로 초기화되도록 하는게 좋다.
 
 ## Types
 
