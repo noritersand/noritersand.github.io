@@ -16,16 +16,16 @@ tags:
 
 #### 관련 문서
 
-- [https://www.ietf.org/rfc/rfc2396.txt](https://www.ietf.org/rfc/rfc2396.txt)
-- [https://www.w3.org/Protocols/rfc2616/rfc2616.html](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
-- [http://www.w3schools.com/tags/ref_urlencode.asp](http://www.w3schools.com/tags/ref_urlencode.asp)
-- [HTTP 1.1 기술명세서](http://coffeenix.net/doc/network/http11.txt)
-- [ASCII 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD_%EC%A0%95%EB%B3%B4_%EA%B5%90%ED%99%98_%ED%91%9C%EC%A4%80_%EB%B6%80%ED%98%B8)
-- [유니코드 A000~AFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF)
-- [유니코드 B000~BFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_B000~BFFF)
-- [유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
-- [유니코드 D000~DFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_D000~DFFF)
+- [URI Generic Syntax RFC 2396](https://www.ietf.org/rfc/rfc2396.txt)
 - [UTF-8 encoding table and Unicode characters](https://www.utf8-chartable.de/unicode-utf8-table.pl?start=54528&unicodeinhtml=dec)
+- [HTTP/1.1 RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+- [하이퍼텍스트 전송규약 1.1 표준안](http://coffeenix.net/doc/network/http11.txt)
+- [w3schools: HTML URL Encoding Reference](http://www.w3schools.com/tags/ref_urlencode.asp)
+- [위키백과: ASCII 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD_%EC%A0%95%EB%B3%B4_%EA%B5%90%ED%99%98_%ED%91%9C%EC%A4%80_%EB%B6%80%ED%98%B8)
+- [위키백과: 유니코드 A000~AFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF)
+- [위키백과: 유니코드 B000~BFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_B000~BFFF)
+- [위키백과: 유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
+- [위키백과: 유니코드 D000~DFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_D000~DFFF)
 
 ## URI 인코딩이란
 
@@ -33,7 +33,7 @@ tags:
 https://www.google.co.kr/search?q=%ED%95%9C%EA%B8%80
 ```
 
-위 `%ED%95%9C%EA%B8%80`는 '한글'을 의미한다. 이것은 HTTP 스펙에 따른 변환으로, '한글'을 UTF-8로 인코딩한 뒤 바이트마다 앞에 '%'를 붙여준 값이다. ('한'을 UTF-8로 인코딩하면 10진수로 `237 149 156`, 16진수로 `ed 95 9c`)
+위 `%ED%95%9C%EA%B8%80`는 '한글'을 의미한다. 이것은 HTTP 스펙에 따른 변환으로, '한글'을 UTF-8로 인코딩한 뒤 바이트마다 앞에 '%'를 붙여준 값이다. ('한'을 UTF-8로 인코딩하면 16진수로 `ed 95 9c`)
 
 ## 변환 테스트
 
