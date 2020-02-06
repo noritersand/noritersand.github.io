@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - basic
+  - language
 ---
 
 * Kramdown table of contents
