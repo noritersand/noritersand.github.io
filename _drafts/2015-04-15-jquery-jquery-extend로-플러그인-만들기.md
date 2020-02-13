@@ -33,12 +33,12 @@ jQuery.fn.extend( object )
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script>
 jQuery.fn.extend({
-  check : function() {
+  check: function() {
     return this.each(function() {
       this.checked = true;
     });
   },
-  uncheck : function() {
+  uncheck: function() {
     return this.each(function() {
       this.checked = false;
     });
