@@ -486,7 +486,8 @@ value의 합계
 지정된 항목의 개수집합 함수 (그룹함수 또는 복수행함수)
 
 ```sql
-SELECT COUNT(1), SUM(salary), MAX(salary), MIN(salary), AVG(salary) FROM employees;
+SELECT COUNT(1), SUM(salary), MAX(salary), MIN(salary), AVG(salary)
+FROM employees;
 
  COUNT(1) SUM(SALARY) MAX(SALARY) MIN(SALARY) AVG(SALARY)
  -------- ----------- ----------- ----------- -----------------------------------------
@@ -494,14 +495,16 @@ SELECT COUNT(1), SUM(salary), MAX(salary), MIN(salary), AVG(salary) FROM employe
 
 
 --집합 함수는 null을 계산할 수 없다.
-SELECT COUNT(salary), COUNT(commission_pct) FROM employees;
+SELECT COUNT(salary), COUNT(commission_pct)
+FROM employees;
 
  COUNT(SALARY) COUNT(COMMISSION_PCT)
  ------------- ---------------------
            107                    35
 
 
-SELECT AVG(commission_pct), AVG(NVL(commission_pct, 0)) FROM employees;
+SELECT AVG(commission_pct), AVG(NVL(commission_pct, 0))
+FROM employees;
 
  AVG(COMMISSION_PCT)                        AVG(NVL(COMMISSION_PCT,0))
  ------------------------------------------ -----------------------------------------
@@ -514,8 +517,8 @@ SELECT AVG(commission_pct), AVG(NVL(commission_pct, 0)) FROM employees;
 --GROUP BY절을 이용하여 기준이 되는 PATITION을 정하여 각각의 평균을 구할 수 있다.
 --GROUP BY절을 이용할 시 SELECT 절에는 GROUP BY절에 사용한 단일 항목만 사용할 수 있다.
 SELECT deptno, COUNT(*), ROUND(AVG(sal), 1)
- FROM emp
- GROUP BY deptno;
+FROM emp
+GROUP BY deptno;
 
   DEPTNO COUNT(*) ROUND(AVG(SAL),1)
  ------ -------- -----------------
@@ -530,9 +533,9 @@ SELECT deptno, COUNT(*), ROUND(AVG(sal), 1)
 --집합함수를 조건으로 사용할 경우 WHERE절에 사용할 수 없다
 --HAVING절을 사용하여 GROUP BY에 대한 조건을 명시할 수 있다
 SELECT deptno, COUNT(*), ROUND(AVG(sal), 1)
- FROM emp
- GROUP BY deptno
- HAVING COUNT(*) >= 5;
+FROM emp
+GROUP BY deptno
+HAVING COUNT(*) >= 5;
 
  DEPTNO COUNT(*) ROUND(AVG(SAL),1)
  ------ -------- -----------------
@@ -543,12 +546,15 @@ SELECT deptno, COUNT(*), ROUND(AVG(sal), 1)
 
 ### ROW_NUMBER() OVER(조건)
 
-조건을 통하여 고유한 순위를 반환.
+조건을 통하여 고유한 서수를 반환.
+
+#### 부서별 급여 순위 조회
+
+같은 부서 내`PARTITION BY deptno`에서 급여순 정렬`ORDER BY sal DESC` 후 서수`ROW_NUMBER()`를 적용:
 
 ```sql
--- emp 테이블에서 부서번호, 사원번호, 이름, 급여 및 각 부서별 급여순위를 내림차순 조회
 SELECT deptno, empno, ename, sal,
-    ROW_NUMBER() OVER(PARTITION BY deptno ORDER BY SAL DESC) AS rnk
+    ROW_NUMBER() OVER(PARTITION BY deptno ORDER BY sal DESC) AS rnk
 FROM EMP
 ORDER BY deptno, sal DESC;
 
@@ -562,15 +568,17 @@ ORDER BY deptno, sal DESC;
      20  7369 SMITH   800   3
      30  7698 BLAKE  2850   1
 ...
-
 ```
 
-분석함수에서 파티션 설정을 생략하고 사용하는 경우도 있다:
+#### 급여 순위 조회
+
+분석함수는 `PARTITION BY`를 생략하고 사용하는 경우도 있다.
+
+급여순으로 정렬`ORDER BY sal DESC` 후 서수(`ROW_NUMBER()`)를 적용:
 
 ```sql
--- 급여순으로 정렬 후 서수를 적용함. (rank와 매우 흡사)
 SELECT deptno, empno, ename, sal,
-    ROW_NUMBER() OVER(ORDER BY SAL DESC) AS rnk
+    ROW_NUMBER() OVER(ORDER BY sal DESC) AS rnk
 FROM EMP
 ORDER BY rnk;
 
@@ -585,7 +593,7 @@ ORDER BY rnk;
 ...
 ```
 
-다음은 게시판 pagination에 적용되는 쿼리다:
+#### ROW_NUMBER()를 이용한 pagination
 
 ```sql
 SELECT *
@@ -596,18 +604,21 @@ FROM (
      FROM bbs
 )  
 WHERE rnum >= #{start} AND rnum <= #{end}  
-
--- #: 숫자형 매개변수
 ```
+
+- `#{뿅뿅}`: Java 마이바티스 매개변수
 
 ### FIRST_VALUE(값) OVER(조건)
 
 조건을 통하여 조회된 값 중 첫번째 값을 반환
 
+#### 부서별 최고 급여 조회
+
+같은 부서 내`PARTITION BY deptno`에서 급여순 정렬`ORDER BY sal DESC` 후 가장 처음의 급여`FIRST_VALUE(sal)` 조회:
+
 ```sql
--- emp 테이블에서 부서번호, 사원번호, 이름, 급여 및 각 부서별 최고급여 출력
-SELECT deptno, empno, ename, sal
-        ,FIRST_VALUE(sal) OVER(partition by deptno ORDER BY sal DESC) AS max_sal
+SELECT deptno, empno, ename, sal,
+  FIRST_VALUE(sal) OVER(PARTITION BY deptno ORDER BY sal DESC) AS max_sal
 FROM emp
 ORDER BY deptno, empno;
 
@@ -620,20 +631,20 @@ ORDER BY deptno, empno;
         20       7566 JONES            2975       3000
         20       7902 FORD             3000       3000
         30       7499 ALLEN            1600       2850
-...  
--- PARTITION BY deptno : 부서번호 별
--- ORDER BY sal DESC : 급여를 내림차순으로 정렬
+...
 ```
 
 ### COUNT(값) OVER(조건)
 
 조건을 통하여 누적 COUNT 수 반환.
 
+#### 부서별 누적 건수 조회
+
+같은 부서 내`PARTITION BY deptno`에서 급여순 정렬`ORDER BY sal` 후 누적 건수`COUNT(*)` 조회. 여기서 '누적 건수'는 서수와 같다고 봐도 된다:
+
 ```sql
--- emp 테이블에서 부서번호, 사원번호, 이름, 급여 및 각 부서별 급여 내림차순 정렬 후
--- 각 부서별 해당 레코드의 누적된 인덱스값을 출력한다.
-SELECT deptno, empno, ename, sal
-        ,COUNT(*) OVER(partition by deptno ORDER BY sal) AS cnt
+SELECT deptno, empno, ename, sal,
+  COUNT(*) OVER(PARTITION BY deptno ORDER BY sal) AS cnt
 FROM emp
 ORDER BY deptno, sal;
 
@@ -647,11 +658,16 @@ ORDER BY deptno, sal;
         20       7902 FORD             3000          3
         30       7900 JAMES             950          1
 ...
+```
 
+#### 직업별 누적 건수 조회
 
--- emp 테이블의 직업과 이름, 직업별 COUNT값 출력
--- 분석함수에서 ORDER BY절은 경우에 따라 생략할 수도 있다.
-SELECT job ,ename, COUNT(*) OVER(PARTITION BY job) FROM emp;
+`ORDER BY`도 `PARTITION BY`처럼 경우에 따라 없이 사용하기도 한다. `COUNT(*) OVER()`의 경우 `ORDER BY`를 생략하면 누적 건수가 아니라 `PARTITION BY`로 지정된 컬럼별 전체 건수를 계산한다:
+
+```sql
+SELECT job ,ename,
+  COUNT(*) OVER(PARTITION BY job)
+FROM emp;
 
 JOB       ENAME      COUNT(*)OVER(PARTITIONBYJOB)
 --------- ---------- ----------------------------
@@ -675,10 +691,13 @@ SALESMAN  MARTIN                                4
 
 조건을 통하여 누적된 값의 합을 반환
 
+#### 부서별 누적급여 조회
+
+같은 부서 내`PARTITION BY deptno`의 급여의 합`SUM(sal)`을 계산하되, 사번 순`ORDER BY empno`으로 누적치를 표시한다:
+
 ```sql
--- emp 테이블에서 부서번호, 사원번호, 이름, 급여 및 각 부서별 누적급여 조회
-SELECT deptno, empno, ename, sal
-        ,SUM(sal) OVER(partition by deptno ORDER BY empno) AS sum_sal
+SELECT deptno, empno, ename, sal,
+  SUM(sal) OVER(PARTITION BY deptno ORDER BY empno) AS sum_sal
 FROM emp;
 
     DEPTNO      EMPNO ENAME             SAL    SUM_SAL
@@ -695,33 +714,39 @@ FROM emp;
 
 ### RANK() OVER(조건)
 
-조건을 통해 순위를 반환한다. 해당 조건을 만족하면서 동일한 값이 있는 경우 동일 순위로 매겨지며, 다음 순위는 동일한 값의 수만큼 증가
+조건을 통해 순위를 반환한다. 해당 조건을 만족하면서 동일한 값이 있는 경우 동일 순위로 매겨지며, 다음 순위는 동일한 값이 있는 만큼 증가(2위가 두 명이면 다음 순위는 4위)한다.
+
+#### 부서별 급여순위(내림차순) 조회
+
+같은 부서 내`PARTITION BY deptno`에서 급여가 많은 순`ORDER BY sal DESC`으로 순위`RANK()` 표시:
 
 ```sql
--- emp 테이블에서 각 부서별 급여순위(내림차순) 조회
-SELECT deptno, empno, ename, sal
-        ,RANK() OVER(PARTITION BY deptno ORDER BY sal DESC) AS RK
+SELECT deptno, empno, ename, sal,
+  RANK() OVER(PARTITION BY deptno ORDER BY sal DESC) AS RK
 FROM emp
 ORDER BY deptno, sal DESC;
 
     DEPTNO      EMPNO ENAME             SAL         RK
 ---------- ---------- ---------- ---------- ----------
 ...
-        30       7499 ALLEN            1600          2
-        30       7844 TURNER           1500          3
-        30       7521 WARD             1250          4
-        30       7654 MARTIN           1250          4
-        30       7900 JAMES             950          6
+        30       7499 ALLEN            1600          1
+        30       7844 TURNER           1500          2
+        30       7521 WARD             1250          3
+        30       7654 MARTIN           1250          3
+        30       7900 JAMES             950          5
 ```
 
 ### DENSE_RANK() OVER(조건)
 
-조건을 통해 순위를 반환한다. 해당 조건을 만족하면서 동일한 값이 있는 경우 동일 순위로 매겨지며, 다음 순위는 1만큼 증가한다.
+조건을 통해 순위를 반환한다. 해당 조건을 만족하면서 동일한 값이 있는 경우 동일 순위로 매겨지며, 다음 순위는 1만큼 증가한다(2위가 두 명이어도 다음 순위는 3위).
+
+#### 부서별 급여순위(내림차순) 조회
+
+같은 부서 내`PARTITION BY deptno`에서 급여가 많은 순`ORDER BY sal DESC`으로 순위`DENSE_RANK()` 표시:
 
 ```sql
--- emp 테이블에서 각 부서별 급여순위(내림차순) 조회
-SELECT deptno, empno, ename, sal
-        ,DENSE_RANK() OVER(PARTITION BY deptno ORDER BY sal DESC) AS RK
+SELECT deptno, empno, ename, sal,
+  DENSE_RANK() OVER(PARTITION BY deptno ORDER BY sal DESC) AS RK
 FROM emp
 ORDER BY deptno, sal DESC;
 
@@ -743,7 +768,6 @@ ORDER BY deptno, sal DESC;
 - COVAR_POP
 - COVAR_SAMP
 - CUME_DIST
-- DENSE_RANK
 - FIRST
 - GROUP_ID
 - GROUPING
@@ -762,7 +786,4 @@ ORDER BY deptno, sal DESC;
 ```sql
 -- 이름과 이름의 레코드 수만큼 avg(basicpay)를 출력한다.
 SELECT NAME, AVG(BASICPAY) OVER() FROM INSA;
-
--- insa 테이블의 이름과 도시, 이름이 속한 도시의 count(*)값을 가져온다
-SELECT NAME, CITY, COUNT(*) OVER(PARTITION BY CITY) FROM INSA;
 ```
