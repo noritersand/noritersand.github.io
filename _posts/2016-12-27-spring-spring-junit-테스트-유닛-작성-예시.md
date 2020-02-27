@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-12-27 16:32:00 +0900
-title: 'Spring-JUnit: 테스트 유닛 작성 예시'
+title: '[Spring] Spring-JUnit: 테스트 유닛 작성 예시'
 categories:
   - spring
 tags:

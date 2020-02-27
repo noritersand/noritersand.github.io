@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-02-25 16:15:00 +0900
-title: 'JavaScript: console'
+title: '[JavaScript] console'
 categories:
   - javascript
 tags:
