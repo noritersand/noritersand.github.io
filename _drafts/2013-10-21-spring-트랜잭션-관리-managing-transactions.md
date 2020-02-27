@@ -48,7 +48,7 @@ public class TransactionSample {
 }
 ```
 
-`@Transactional` 어노테이션이 없는 메서드에서 같은 클래스 내에 있는 `@Transactional` 메서드를 호출할 때엔 트렌젝션이 제대로 적용되지 않으니 주의해야 한다. [관련 글 링크.](http://stackoverflow.com/questions/3423972/spring-transaction-method-call-by-the-method-within-the-same-class-does-not-wo). 이것은 스프링이 `@Transactional`을 처리하기 위해 동적으로 생성하는 프록시의 특성 때문이다. 동적 생성된 프록시는 어노테이션이 있는 메서드를 제외하곤 모두 원본이 되는 메서드를 delegate 형식으로 오버라이드 하고 있는데 이 delegate 메서드를 직접 호출해버리면 프록시가 아닌 원본 객체를 경유하기 때문에 프록시 내에 구현된 트렌젝션 처리를 무시해버리는 현상이라고 보면 된다.
+`@Transactional` 어노테이션이 없는 메서드에서 같은 클래스 내에 있는 `@Transactional` 메서드를 호출할 때엔 트렌젝션이 제대로 적용되지 않으니 주의해야 한다. [관련 글 링크.](http://stackoverflow.com/questions/3423972/spring-transaction-method-call-by-the-method-within-the-same-class-does-not-wo). 이것은 스프링이 `@Transactional`을 처리하기 위해 동적으로 생성하는 프록시의 특성 때문이다. 동적 생성된 프록시는 어노테이션이 있는 메서드를 제외하곤 모두 원본이 되는 메서드를 delegate 형식으로 오버라이드 하고 있는데 이 delegate 메서드를 직접 호출해버리면 프록시가 아닌 원본 객체를 경유하기 때문에 프록시 내에 구현된 트렌젝션 처리를 무시해버리는 현상이라고 보면 된다. (왜 이렇게 써놨는지 이해가 안된다. 확인 필요)
 
 ## DataSourceTransactionManager를 이용한 처리
 

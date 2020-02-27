@@ -21,7 +21,7 @@ tags:
 - [HTTP/1.1 RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
 - [하이퍼텍스트 전송규약 1.1 표준안](http://coffeenix.net/doc/network/http11.txt)
 - [w3schools: HTML URL Encoding Reference](http://www.w3schools.com/tags/ref_urlencode.asp)
-- [위키백과: ASCII 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD_%EC%A0%95%EB%B3%B4_%EA%B5%90%ED%99%98_%ED%91%9C%EC%A4%80_%EB%B6%80%ED%98%B8)
+- [위키백과: ASCII](https://ko.wikipedia.org/wiki/ASCII)
 - [위키백과: 유니코드 A000~AFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF)
 - [위키백과: 유니코드 B000~BFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_B000~BFFF)
 - [위키백과: 유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
