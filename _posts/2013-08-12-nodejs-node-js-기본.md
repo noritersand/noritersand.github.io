@@ -73,7 +73,7 @@ gets(function(name) {
 
 ## npm
 
-~~Node Package Manager~~ npm is not an acronym. Node.js의  모듈관리 도구다. https://npmjs.org
+~~Node Package Manager~~ npm is not an acronym. Node.js의 모듈관리 도구다. https://npmjs.org
 
 ### 모듈 설치
 
@@ -211,6 +211,28 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 이 경우 노드는 ./myModule/lib/temp.js 를 찾는다.
 [관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
+
+### npm scripts
+
+package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어로 미리 정해진 스크립트를 실행할 수 있다.
+
+예를 들어 React.js는 튜토리얼용 패키지 설치 후 바로 `npm start`, `npm run build`, `npm test` 등의 명령어를 사용할 수 있는데, 이게 다 package.json에 `scripts` 항목으로 미리 등록되어 있기 때문에 가능한 것이다:
+
+```js
+{
+  "name": "my-react-app",
+  // 생략
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+  // 생략
+}
+```
+
+요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js`와 같다고 볼 수 있다.
 
 ## exports/require
 
