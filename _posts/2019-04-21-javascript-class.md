@@ -50,6 +50,8 @@ let noob = new Newbie();
 noob.trait; // "know nothing"
 noob.levelUp(); // I feel stronger.
 noob.trait; // "barely shooting an arrow"
+noob.trait = '12 hours continuous sleep';
+noob.trait; // "12 hours continuous sleep"
 ```
 
 함수 선언과 다르게 끌어올림은 발생하지 않는다:
@@ -75,9 +77,11 @@ Number.prototype.format = function(n, x) {
 (123456).format(0); // "123,456"
 ```
 
-Number 프로토타입을 확장하는 코드. [소스 출처](http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript)
+[소스 출처](http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript)
 
-사실 이런식으로 빌트인 프로토타입을 확장하는 것은 추천되지 않는다. 대신 아래처럼 새로운 프로토타입을 정의한다:
+위는 Number 프로토타입에 `format` 함수를 추가하는 코드다. 사실 이런식으로 빌트인 프로토타입을 확장하는 것은 추천하지 않는다.
+
+대신 아래처럼 class 문법으로 새로운 프로토타입을 정의한다:
 
 ```js
 class Numeric extends Number {
@@ -88,4 +92,15 @@ class Numeric extends Number {
 }
 
 new Numeric(123456).format(0); // "123,456"
+```
+
+## 생성자 함수와의 차이점
+
+### 생성자의 프로퍼티인 `caller`, `arguments`에 접근할 수 없다.
+
+```js
+class Test {}
+let t = new Test();
+t.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
+t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```
