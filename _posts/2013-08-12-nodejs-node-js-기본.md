@@ -201,15 +201,14 @@ var myModule = require('./myModule');
 
 모듈 로드 시 위와 같은 방식으로 폴더를 지정할 수 있는데, 이 경우 노드는 해당 폴더 내에서 모듈을 찾는다. 노드는 이 폴더가 패키지라고 가정하고 패키지 정의를 찾는다. `package.json` 파일이 없다면 `index.js` 파일을 기준으로 루트라 가정한다. `/myModule/index.js` 가 있다면 노드는 myModule을 루트라 가정하고 그 경로 아래에서 파일을 찾는다.
 
-package.json 에서 시작점의 상대경로를 지정하는 방법은:
-
+package.json 에서 시작점의 상대경로를 지정하는 방법은:  
 ```js
 {  
   "main": "./lib/temp.js"
 }
 ```
 
-이 경우 노드는 ./myModule/lib/temp.js 를 찾는다.
+이 경우 노드는 `./myModule/lib/temp.js` 를 찾는다.  
 [관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
 
 ### npm scripts
