@@ -15,14 +15,25 @@ tags:
 #### 관련 문서
 
 - [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
-- [https://www.markdownguide.org/](https://www.markdownguide.org/)
+- [https://www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax)
 
-**결정 못한 작성 규칙**
+## 줄 바꾸기
 
-- 나열할 리스트의 제목을 본문 서식 vs 제목4 서식
+엔터 두 번은
 
-리스트:
+`<p>` 태그로 분리하는 것과 같음.
 
+스페이스바 2개 + 엔터 한 번은  
+`<br>` 태그와 같음.
+
+아니면 그냥 이렇게<br>
+`<br>` 태그를 직접 작성해도 됨.
+
+## 리스트
+
+결정 못한 작성 규칙: 나열할 리스트의 제목을 본문 서식으로 할 지 vs h4 서식으로 할 지
+
+리스트:  
 - 첫
 - 두
 - 세
@@ -33,11 +44,25 @@ tags:
 - `code`
 - `code`
 
-## header2
+## 헤더(이건 h2)
 
-### header3
+```
+# h1
+## h2
+### h3
+#### h4
+##### h5
+```
 
-#### header4
+### 헤더3 header3
+
+#### 헤더4 header4
+
+##### 헤더5 header5
+
+###### 헤더6 header6
+
+이쯤 되면 본문보다 작을 수도 있다.
 
 ## embed image
 
