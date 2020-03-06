@@ -132,6 +132,6 @@ slmgr.vbs /ato
 # 만료날짜 확인
 slmgr.vbs -xpr
 
-# 라이센스 등록 정보 확인
+# 라이선스 등록 정보 확인
 slmgr.vbs -dlv
 ```
