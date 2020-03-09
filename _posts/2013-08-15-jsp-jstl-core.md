@@ -48,7 +48,7 @@ ${1 gt 3} <c:out value="${1 gt 3}"/>
 
 \$표시 <c:out value="${'${'}test}"/>
 
-escapeXml 속성 기본 값은  false
+escapeXml 속성 기본 값은 false
 false: <c:out value="<b>bold</b> <,>,&,',\" " escapeXml="false"/>
 true: <c:out value="<b>bold</b> <,>,&,',\" " escapeXml="true"/>
 
@@ -84,7 +84,7 @@ line2
 
 ## choose-when-otherwise
 
-`<c:choose/>` 태그는 java의 switch 문과 같지만, 조건에 문자열 비교도 가능하고 쓰임의 범위가 넓다. 또한 `<c:if/>` 태그에 else가 없기 때문에 이의 대체 기능도 수행한다.
+`<c:choose/>` 태그는 java의 `switch` 문과 같지만, 조건에 문자열 비교도 가능하고 쓰임의 범위가 넓다. 또한 `<c:if/>` 태그에 else가 없기 때문에 이의 대체 기능도 수행한다.
 
 ```html
 <c:choose>
@@ -175,7 +175,7 @@ line2
 </c:forEach>
 ```
 
-`<c:forEach/>` 태그는 여러 가지로 활용이 가능하다. 원하는 구간만큼 반복할 수도 있고, 객체를 받아와서 그 객체의 길이만큼 반복할 수도 있다. begin, end 속성은 시작번호와 끝 번호를 지정하고, step 속성을 이용해서 증가 구간을 정할 수 있다. var 속성에서 정한 변수로 반복되는 내부 구간에서 사용할 수 있다.
+`<c:forEach/>` 태그는 여러 가지로 활용이 가능하다. 원하는 구간만큼 반복할 수도 있고, 객체를 받아와서 그 객체의 길이만큼 반복할 수도 있다. `begin`, `end` 속성은 시작번호와 끝 번호를 지정하고, `step` 속성을 이용해서 증가 구간을 정할 수 있다. `var` 속성에서 정한 변수로 반복되는 내부 구간에서 사용할 수 있다.
 
 ```html
 <table>
@@ -188,7 +188,7 @@ line2
 </table>
 ```
 
-컬렉션의 요소를 반복할 때 `<c:forEach>` 태그의 추가 애트리뷰트인 items 애트리뷰트가 사용된다.
+컬렉션의 요소를 반복할 때 `<c:forEach>` 태그의 추가 속성인 `items` 속성이 사용된다.
 
 ```html
 <c:forEach var="dto" items="${list}">
@@ -196,8 +196,7 @@ line2
 </c:forEach>
 ```
 
-varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
-
+`varStatus`는 루프 자체의 메타정보다:  
 - current: 현재 아이템
 - index: 0부터의 순서
 - count: 1부터의 순서
@@ -245,7 +244,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 
 ## forTokens
 
-`<c:forTokens/>`는 java.util.StringTokenizer의 기능을 태그로 구현한 것이다.
+`<c:forTokens/>`는 `java.util.StringTokenizer`의 기능을 태그로 구현한 것이다.
 
 ```html
 <c:forTokens items="stringOfTokens" delims="delimiters"
@@ -381,7 +380,7 @@ varStatus은 상태 값을 의미하며 다음의 값을 갖는다.
 </c:if>
 ```
 
-`<c:if/>` 에서 나온 결과를 varName 변수에 넣고, 나중에 활용이 가능하다. 변수의 scope는 임의로 지정할 수 있고, 생략될 경우 기본 값은 page 이며 else 문은 존재 하지 않는다.
+`<c:if/>` 에서 나온 결과를 `var` 속성으로 지정하고 나중에 활용이 가능하다. `scope` 속성은 생략할 경우 기본 값은 `page`이다. 참고로 `<c:else>` 태그는 없다.
 
 ### 자바스크립트 제어
 
@@ -427,13 +426,13 @@ Hello <c:out value="${user.username}" default="Guest"/>!
 <c:out value="&lt; &gt;" escapeXml="false"/> <!-- &lt;&gt; -->
 ```
 
-escapeXml 속성은 XML Entities의 치환여부를 의미한다. 생략 혹은 true로 설정할 경우 value에 XML entities로 치환가능한 특수문자가 있을 경우 치환하여 표시한다. 반대로 false는 value를 있는 그대로 표시한다.
+`escapeXml` 속성은 XML Entities의 치환여부를 의미한다. 생략 혹은 `true`로 설정할 경우 `value`에 XML entities로 치환가능한 특수문자가 있을 경우 치환하여 표시한다. 반대로 `false`는 `value`를 있는 그대로 표시한다.
 
-다시 정리하면, `&#58;`라는 값을 출력할 때 `escapeXml="false"`일 땐 `&#58;` 문자 그대로 응답하고 브라우저가 이를 `:`으로 치환한다. 반면 `escapeXml="true"`면 `&#58;`를 그대로 출력하기 전에 한 번 더 escape 해서 `&amp;#58;`라는 문자를 응답한다. 브라우저가 보기에 `&amp;#58;`에서 치환해야하는 문자는 `&amp;` 뿐이므로 최종적으로는 `&;#58;`가 페이지에 표시되는 것이다. 헥헥
+가령 `&#58;`라는 값을 출력할 때 `escapeXml="false"`일 땐 `&#58;` 문자 그대로 내보내고 브라우저가 이를 `:`으로 치환한다. 반면 `escapeXml="true"`면 `&#58;`를 그대로 출력하기 전에 한 번 더 escape 해서 `&amp;#58;`라는 문자를 응답한다. 브라우저가 보기에 `&amp;#58;`에서 치환해야하는 문자는 `&amp;` 뿐이므로 최종적으로는 `&;#58;`가 페이지에 표시되는 것이다.
 
 ## param
 
-보통 import, redirect, url 태그와 같이 쓰이는 태그. "파라미터=값" 형식을 표현한다.
+보통 `import`, `redirect`, `url` 태그와 같이 쓰이는 태그. `파라미터=값` 형식을 표현한다.
 
 ```html
 <c:param 속성="값".../>
@@ -475,9 +474,9 @@ escapeXml 속성은 XML Entities의 치환여부를 의미한다. 생략 혹은 
 
 ## set, remove
 
-set은 `HttpServletRequest.setAttribute()`와 역할이 같다. scope 속성으로 page, request, session, application 중 하나의 유효범위를 설정할 수 있다.
+set은 `HttpServletRequest.setAttribute()`와 역할이 같다. `scope` 속성으로 `page`, `request`, `session`, `application` 중 하나의 유효범위를 설정할 수 있다.  
 
-remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  (page, request, session, application) 범위의 변수(속성)를 제거한다.
+remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `request`, `session`, `application` 범위의 변수를 제거한다.
 
 ### Syntax 1: scope 에 해당하는 변수에 속성 값을 정한다.
 
@@ -507,14 +506,14 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  (page, request
 </c:set>
 ```
 
-scope 속성이 생략될 경우 기본 값은 page다. 그리고 var 속성과 target 속성은 동시에 사용할 수 없다.
+`scope` 속성이 생략될 경우 기본 값은 `page다`. 그리고 `var` 속성과 `target` 속성은 동시에 사용할 수 없다.
 
 ```html
 <c:set var="testObject" value="hello world!"/> // request.setAttribute("testObject", "hello world!")
 <c:out value="${testObject}"/> // request.getAttribute("testObject")
 ```
 
-var속성의 경우는 비교적 간단하다:
+`var` 속성의 경우는 비교적 간단하다:
 
 ```html
 <jsp:useBean id="map" class="java.util.HashMap"/>
@@ -538,11 +537,11 @@ var속성의 경우는 비교적 간단하다:
 </c:forEach>
 ```
 
-target속성은 jsp에서 객체 생성 후 사용하거나 기존 객체의 getter/setter를 이용하는 방식이다.
+`target` 속성은 jsp에서 객체 생성 후 사용하거나 기존 객체의 getter/setter를 이용하는 방식이다.
 
 ## url
 
-`<c:url/>` 태그는 컨텍스트를 자동으로 추가해서 주소를 자동으로 생성해준다.  context 속성이 지정되었을 경우 value와 context 의 값은 `/`로 시작을 해야  된다. context 속성이 생략되면 당연히 현재의 컨텍스트가 적용된다.
+`<c:url/>` 태그는 컨텍스트를 자동으로 추가해서 주소를 자동으로 생성해준다.  `context` 속성이 지정되었을 경우 `value`와 `context`의 값은 `/`로 시작을 해야  된다. `context` 속성이 생략되면 당연히 현재의 컨텍스트가 적용된다.
 
 ### Syntax 1: Body 없는 경우
 
