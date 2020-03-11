@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-톰캣의 JVM 프로퍼티 추가:
+톰캣의 VM arguments 추가:
 
 ```bash
 -Dlog4jdbc.dump.sql.maxlinelength=0

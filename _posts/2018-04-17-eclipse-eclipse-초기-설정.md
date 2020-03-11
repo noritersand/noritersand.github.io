@@ -18,11 +18,11 @@ tags:
 - [http://tomcat.apache.org](http://tomcat.apache.org)
 - [https://wiki.eclipse.org/Eclipse.ini](https://wiki.eclipse.org/Eclipse.ini)
 
-## 시스템 프로퍼티 설정
+## VM arguments 설정
 
 ### user
 
-eclipse.ini에 `-Duser.name=이름` 추가. 이클립스 시스템 프로퍼티명은 `user`임.
+eclipse.ini에 `-Duser.name=이름` 추가. 이클립스 VM arguments(=시스템 프로퍼티)명은 `user`임.
 
 ### vm 경로 지정 방법
 

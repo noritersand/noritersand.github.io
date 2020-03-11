@@ -57,7 +57,7 @@ JAVA WAS는 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'�
 </session-config>
 ```
 
-## 시스템 프로퍼티에 접근
+## VM arguments에 접근
 
 ```
 <filter>
@@ -70,7 +70,7 @@ JAVA WAS는 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'�
 </filter>
 ```
 
-**TODO**: `${}` 표현식으로 시스템 프로퍼티(JVM의 `-D` 옵션)에 설정한 값을 가져올 수 있다.
+**TODO**: `${}` 표현식으로 VM arguments(JVM의 `-D` 옵션)에 설정한 값을 가져올 수 있다.
 
 ## load-on-startup
 

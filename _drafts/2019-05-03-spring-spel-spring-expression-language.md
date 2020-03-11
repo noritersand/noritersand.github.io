@@ -73,19 +73,19 @@ String someProp = testProperties.getProperty("some.test.prop");
 private Map<String, Resource> fileResourceMap;
 ```
 
-## 시스템 프로퍼티 접근자($)
+## VM arguments 접근자($)
 
 ```bash
 ${ propertyName }
 ```
 
-시스템 프로퍼티(혹은 JVM 프로퍼티)란 jvm을 시작할 때 옵션`-D`으로 추가 가능한 값들을 말한다.
+VM arguments(=시스템 프로퍼티)란 jvm을 시작할 때 옵션`-D`으로 추가 가능한 값들을 말한다.
 
 ```bash
 java -Dproperty1=value1 -Dproperty2=value2 Mainclass
 ```
 
-#### 시스템 프로퍼티 기본값 설정
+#### VM arguments 기본값 설정
 
 ```bash
 ${ propertyName:defaultValue }

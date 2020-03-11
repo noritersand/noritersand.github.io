@@ -94,9 +94,9 @@ public static int m1(int... args) {
 public static void main(String[] args) { ... }
 ```
 
-콘솔에서 값을 입력받아 main 메서드에 매개변수로 전달할 때 사용된다.
+_program arguments_ 라고 하며, java 프로그램 실행 시 입력받는 매개변수다.
 
-다음과 같은 클래스가 있을 때:
+예를 들어 다음과 같은 클래스가 있을 때:
 
 ```java
 public class MainTest {
