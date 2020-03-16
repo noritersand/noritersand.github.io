@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2015-11-10 12:49:00 +0900
-title: '[misc] 스프레드 시트 함수 서식 모음'
+title: '[misc] MS Office 엑셀 트릭 모음'
 categories:
   - misc
 tags:
-  - spreadsheet
   - excel
+  - spreadsheet
   - 코드모음
 ---
 

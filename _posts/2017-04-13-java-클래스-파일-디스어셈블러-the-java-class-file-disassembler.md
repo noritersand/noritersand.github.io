@@ -16,12 +16,13 @@ tags:
 
 - [http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html)
 
+클래스 파일의 바이트 코드를 확인할 수 있는 명령어. 컴파일 후 사용한다.
+
 #### syntax
 
 ```
 javap -c 클래스명
 ```
-
 
 #### example
 
