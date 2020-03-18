@@ -21,9 +21,9 @@ tags:
 - [http://blog.naver.com/PostView.nhn?blogId=dethgray&logNo=80087298541](http://blog.naver.com/PostView.nhn?blogId=dethgray&logNo=80087298541)
 - [http://blog.saltfactory.net/191](http://blog.saltfactory.net/191)
 
-중첩 클래스란 클래스 내부에 또 다른 클래스를 선언하는 기법을 말한다. 클래스를 클래스의 멤버처럼 취급하며 프로그램의 구조를 간략화하는 특징이 있다. 제한적인 지역에서만 필요한 클래스를 선언할 때 사용한다. 내부 클래스라고도 한다.
+중첩 클래스란 클래스 내부에 또 다른 클래스를 선언하는 기법을 말한다. 클래스를 클래스의 멤버처럼 취급하며 프로그램의 구조를 간략화하는 특징이 있다. 제한적인 지역에서만 필요한 클래스를 선언할 때 사용한다. 중첩 클래스라고도 한다.
 
-**이 글에서 내부 클래스란 중첩 클래스 자신을, 외부 클래스란 중첩 클래스를 소유한 클래스를 의미한다.**
+**이 글에서 외부 클래스란 중첩 클래스를 소유한 클래스를 의미한다.**
 
 ## 중첩 클래스의 컴파일
 
@@ -47,7 +47,7 @@ class Outer {
 
     public static void outerMethod() {
         System.out.println(outerMember + Nested.innerMember);
-        // 외부 클래스의 메서드에서 내부 클래스의 멤버에 접근제어에 상관 없이 접근할 수 있다.
+        // 외부 클래스에서 중첩 클래스 멤버의 접근제어에 영향을 받지 않는다.
     }
 }
 ```
@@ -61,9 +61,8 @@ Outer.Nested.nestedM();
 
 ## 중첩 클래스 non-static nested class
 
-스태틱이 아닌 중첩 클래스. 스태틱 멤버를 선언할 수 없다.
-
-내부 클래스가 public이냐 private이냐에 따라 사용법이 달라지는데, public이면 외부 클래스를 통해 인스턴스를 직접 얻을 수 있지만 private이면 인스턴스 접근은 불가능하고 외부 클래스를 경유하는 방식만 허용된다.
+스태틱이 아닌 중첩 클래스. 스태틱 멤버를 선언할 수 없다.  
+public이냐 private이냐에 따라 사용법이 달라지는데, public이면 외부 클래스를 통해 인스턴스를 직접 얻을 수 있지만 private이면 인스턴스 접근은 불가능하고 외부 클래스를 경유하는 방식만 허용된다.
 
 ```java
 import org.junit.Assert;
@@ -73,11 +72,11 @@ public class NestedFactoryTest {
 
     @Test
     public void test() {
-        // #1 내부 클래스가 public일 때: 인스턴스 직접 접근
+        // #1 중첩 클래스가 public일 때: 인스턴스 직접 접근
         NestedClass inner = NestedClassFactory.getNestedClass();
         Assert.assertNotNull(inner);
 
-        // #2 내부 클래스가 private일 때: 인스턴스 직접 접근 불가.
+        // #2 중첩 클래스가 private일 때: 인스턴스 직접 접근 불가.
         // compile error: The type NestedClassFactory.NestedHiddenClass is not visible
         // NestedClassFactory.NestedHiddenClass inner2 = NestedClassFactory.getNestedHiddenClass();
         Assert.assertEquals("fire egg", NestedClassFactory.getValueOfNestedHiddenClass());
@@ -228,7 +227,7 @@ public class Caller {
     public static void main(String[] args) {
 
         final String phone = "010-xxx1-4xxx";
-        // 내부 클래스에서 참조하는 지역변수는 반드시 파이널 변수여야 함.
+        // 중첩 클래스에서 참조하는 지역변수는 반드시 파이널 변수여야 함.
 
         Callback callback = new Callback() {
             @Override
