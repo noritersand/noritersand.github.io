@@ -17,25 +17,17 @@ tags:
 
 #### 관련 문서
 
-- [http://keycode.info/](http://keycode.info/)
+- [MDN: KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
+- [JavaScript Event KeyCodes](http://keycode.info/)
 
-자바스크립트로 키보드 이벤트 발생 시의 keycode를 확인하는 방법은:
+자바스크립트로 키보드 이벤트의 keycode를 확인하는 방법은:
 
 ```html
 <script>
-  // document.getElementById("tt")[0].onkeydown = function(event) {
-  //   console.log('keydown - keyCode : ' + event.keyCode);
-  //   console.log('keydown - which : ' + event.which);
-  // };
-
   function keydownHandler(event) {
-    var keyCode = event.keyCode ? event.keyCode : event.which;
-    // which: 구 버전 파이어폭스는 호환 처리
-    // 혹은
-    keyCode = event.keyCode || event.which;
+    var keyCode = event.keyCode || event.which;
     console.log('keydown:' + keyCode);
   }
-
   function keypressHandler(event) {
     var keyCode = event.keyCode || event.which;
     console.log('keypress:' + keyCode);
