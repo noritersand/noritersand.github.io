@@ -81,8 +81,8 @@ $(document).ready(function () {
       searchOverlay.close();
   });
 
-  $(document).on('keypress', function(e) {
-    if ((e.keyCode || e.which) === 63) {
+  $(document).on('keyup', function(e) {
+    if ((e.keyCode || e.which) === 8) {
       searchOverlay.open();
     }
   });
