@@ -57,14 +57,14 @@ tags:
 <table id="tabKeyCodeTest">
   <tr>
     <th></th>
-    <th>event.keyCode</th>
-    <th>event.which</th>
-    <th>event.ctrlKey</th>
-    <th>event.altKey</th>
-    <th>event.shiftKey</th>
-    <th>event.key</th>
-    <th>event.code</th>
-    <th>event.charCode</th>
+    <th>keyCode</th>
+    <th>which</th>
+    <th>ctrlKey</th>
+    <th>altKey</th>
+    <th>shiftKey</th>
+    <th>key</th>
+    <th>code</th>
+    <th>charCode</th>
   </tr>
   <tr>
     <td>onkeydown</td>
