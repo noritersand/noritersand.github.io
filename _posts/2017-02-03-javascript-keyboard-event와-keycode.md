@@ -56,40 +56,82 @@ tags:
 </table>
 <table id="tabKeyCodeTest">
   <tr>
-    <td></td>
-    <td>event.keyCode</td>
-    <td>event.which</td>
+    <th></th>
+    <th>event.keyCode</th>
+    <th>event.which</th>
+    <th>event.ctrlKey</th>
+    <th>event.altKey</th>
+    <th>event.shiftKey</th>
+    <th>event.key</th>
+    <th>event.code</th>
+    <th>event.charCode</th>
   </tr>
   <tr>
-    <td><p>onkeydown</p></td>
-    <td id="result1"></td>
-    <td id="result2"></td>
+    <td>onkeydown</td>
+    <td id="keydown-keyCode"></td>
+    <td id="keydown-which"></td>
+    <td id="keydown-ctrlKey"></td>
+    <td id="keydown-altKey"></td>
+    <td id="keydown-shiftKey"></td>
+    <td id="keydown-key"></td>
+    <td id="keydown-code"></td>
+    <td id="keydown-charCode"></td>
   </tr>
   <tr>
-    <td><p>onkeypress</p></td>
-    <td id="result3"></td>
-    <td id="result4"></td>
+    <td>onkeypress</td>
+    <td id="keypress-keyCode"></td>
+    <td id="keypress-which"></td>
+    <td id="keypress-ctrlKey"></td>
+    <td id="keypress-altKey"></td>
+    <td id="keypress-shiftKey"></td>
+    <td id="keypress-key"></td>
+    <td id="keypress-code"></td>
+    <td id="keypress-charCode"></td>
   </tr>
   <tr>
-    <td><p>onkeyup</p></td>
-    <td id="result5"></td>
-    <td id="result6"></td>
+    <td>onkeyup</td>
+    <td id="keyup-keyCode"></td>
+    <td id="keyup-which"></td>
+    <td id="keyup-ctrlKey"></td>
+    <td id="keyup-altKey"></td>
+    <td id="keyup-shiftKey"></td>
+    <td id="keyup-key"></td>
+    <td id="keyup-code"></td>
+    <td id="keyup-charCode"></td>
   </tr>
 </table>
 <script>
-  document.getElementById('inptKeyCodeTest').onkeydown = function(e) {
-    document.getElementById('result1').innerHTML = "<p>" + e.keyCode + "</p>";
-    document.getElementById('result2').innerHTML = "<p>" + e.which + "</p>";
+  document.querySelector('#inptKeyCodeTest').onkeydown = function(event) {
+    document.querySelector('#keydown-keyCode').textContent = event.keyCode;
+    document.querySelector('#keydown-which').textContent = event.which;
+    document.querySelector('#keydown-ctrlKey').textContent = event.ctrlKey;
+    document.querySelector('#keydown-altKey').textContent = event.altKey;
+    document.querySelector('#keydown-shiftKey').textContent = event.shiftKey;
+    document.querySelector('#keydown-key').textContent = event.key;
+    document.querySelector('#keydown-code').textContent = event.code;
+    document.querySelector('#keydown-charCode').textContent = event.charCode;
   };
 
-  document.getElementById('inptKeyCodeTest').onkeypress = function(e) {
-    document.getElementById('result3').innerHTML = "<p>" + e.keyCode + "</p>";
-    document.getElementById('result4').innerHTML = "<p>" + e.which + "</p>";
+  document.querySelector('#inptKeyCodeTest').onkeypress = function(event) {
+    document.querySelector('#keypress-keyCode').textContent = event.keyCode;
+    document.querySelector('#keypress-which').textContent = event.which;
+    document.querySelector('#keypress-ctrlKey').textContent = event.ctrlKey;
+    document.querySelector('#keypress-altKey').textContent = event.altKey;
+    document.querySelector('#keypress-shiftKey').textContent = event.shiftKey;
+    document.querySelector('#keypress-key').textContent = event.key;
+    document.querySelector('#keypress-code').textContent = event.code;
+    document.querySelector('#keypress-charCode').textContent = event.charCode;
   };
 
-  document.getElementById('inptKeyCodeTest').onkeyup = function(e) {
-    document.getElementById('result5').innerHTML = "<p>" + e.keyCode + "</p>";
-    document.getElementById('result6').innerHTML = "<p>" + e.which + "</p>";
+  document.querySelector('#inptKeyCodeTest').onkeyup = function(event) {
+    document.querySelector('#keyup-keyCode').textContent = event.keyCode;
+    document.querySelector('#keyup-which').textContent = event.which;
+    document.querySelector('#keyup-ctrlKey').textContent = event.ctrlKey;
+    document.querySelector('#keyup-altKey').textContent = event.altKey;
+    document.querySelector('#keyup-shiftKey').textContent = event.shiftKey;
+    document.querySelector('#keyup-key').textContent = event.key;
+    document.querySelector('#keyup-code').textContent = event.code;
+    document.querySelector('#keyup-charCode').textContent = event.charCode;
   };
 </script>
 
@@ -97,7 +139,7 @@ tags:
 
 [표 출처](https://lael.be/55)
 
-**주의**: keydown 이벤트 발생 시의 keyCode이며 keypress의 경우 얻는 값이 다를 수 있으니 주의할 것.
+**주의**: keydown 이벤트의 `keyCode`이며 keypress의 경우 얻는 값이 다를 수 있음.
 
 | code | key          | code | key          | code | key       | code | key           | code | key          |
 |------|--------------|------|--------------|------|-----------|------|---------------|------|--------------|
@@ -153,127 +195,3 @@ tags:
 | 207  |              | 217  |              | 227  |           | 227  |               | 227  |              |
 | 208  |              | 218  |              | 228  |           | 238  |               | 248  |              |
 | 209  |              | 219  | `[{`         | 229  |           | 239  |               | 249  |              |
-
-## 테스트용 코드
-
-```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<title>KeyboardEvent.keyCode test</title>
-<meta charset="utf-8">
-<link rel="stylesheet" href="/static/css/style.css"/>
-<style>
-table {
-	border-collapse: collapse;
-	border: 1px solid black;
-}
-table tr, table th, table td {
-	border: 1px solid black;
-	padding: 5px;
-}
-</style>
-<script>
-function keydownHandler(event) {
-	// window.aa = event;
-	document.querySelector('#keydown1').textContent = event.keyCode;
-	document.querySelector('#keydown2').textContent = event.which;
-	document.querySelector('#keydown3').textContent = event.ctrlKey;
-	document.querySelector('#keydown4').textContent = event.altKey;
-	document.querySelector('#keydown5').textContent = event.shiftKey;
-	document.querySelector('#keydown6').textContent = event.key;
-	document.querySelector('#keydown7').textContent = event.code;
-	document.querySelector('#keydown8').textContent = event.charCode;
-}
-function keypressHandler(event) {
-	// window.aa = event;
-	document.querySelector('#keypress1').textContent = event.keyCode;
-	document.querySelector('#keypress2').textContent = event.which;
-	document.querySelector('#keypress3').textContent = event.ctrlKey;
-	document.querySelector('#keypress4').textContent = event.altKey;
-	document.querySelector('#keypress5').textContent = event.shiftKey;
-	document.querySelector('#keypress6').textContent = event.key;
-	document.querySelector('#keypress7').textContent = event.code;
-	document.querySelector('#keypress8').textContent = event.charCode;
-}
-function keyupHandler(event) {
-	// window.aa = event;
-	document.querySelector('#keyup1').textContent = event.keyCode;
-	document.querySelector('#keyup2').textContent = event.which;
-	document.querySelector('#keyup3').textContent = event.ctrlKey;
-	document.querySelector('#keyup4').textContent = event.altKey;
-	document.querySelector('#keyup5').textContent = event.shiftKey;
-	document.querySelector('#keyup6').textContent = event.key;
-	document.querySelector('#keyup7').textContent = event.code;
-	document.querySelector('#keyup8').textContent = event.charCode;
-}
-function attach() {
-	window.addEventListener('keydown', keydownHandler);
-	window.addEventListener('keypress', keypressHandler);
-	window.addEventListener('keyup', keyupHandler);
-}
-function detach() {
-	window.removeEventListener('keydown', keydownHandler);
-	window.removeEventListener('keypress', keypressHandler);
-	window.removeEventListener('keyup', keyupHandler);
-}
-</script>
-</head>
-<body>
-<div class="align-center">
-	<h1>KeyboardEvent.keyCode test</h1>
-	<div>
-		<button type="button" onclick="attach()">이벤트 리스닝 시작</button>
-		<button type="button" onclick="detach()">이벤트 리스닝 종료</button>
-	</div>
-	<hr>
-	<table id="tb">
-		<tr>
-			<th></th>
-			<th>keyCode</th>
-			<th>which</th>
-			<th>ctrlKey</th>
-			<th>altKey</th>
-			<th>shiftKey</th>
-			<th>key</th>
-			<th>code</th>
-			<th>charCode</th>
-		</tr>
-		<tr>
-			<td>keydown</td>
-			<td id="keydown1"></td>
-			<td id="keydown2"></td>
-			<td id="keydown3"></td>
-			<td id="keydown4"></td>
-			<td id="keydown5"></td>
-			<td id="keydown6"></td>
-			<td id="keydown7"></td>
-			<td id="keydown8"></td>
-		</tr>
-		<tr>
-			<td>keypress</td>
-			<td id="keypress1"></td>
-			<td id="keypress2"></td>
-			<td id="keypress3"></td>
-			<td id="keypress4"></td>
-			<td id="keypress5"></td>
-			<td id="keypress6"></td>
-			<td id="keypress7"></td>
-			<td id="keypress8"></td>
-		</tr>
-		<tr>
-			<td>keyupp</td>
-			<td id="keyup1"></td>
-			<td id="keyup2"></td>
-			<td id="keyup3"></td>
-			<td id="keyup4"></td>
-			<td id="keyup5"></td>
-			<td id="keyup6"></td>
-			<td id="keyup7"></td>
-			<td id="keyup8"></td>
-		</tr>
-	</table>
-</div>
-</body>
-</html>
-```
