@@ -124,7 +124,7 @@ public class NumberTest {
 }
 ```
 
-실행한다. 단축키는 `alt + shift + x`, `t`
+실행한다. 단축키는 <kbd>alt + shift + x</kbd>, <kbd>t</kbd>
 
 ![](/images/junit-with-eclipse-6.png)
 

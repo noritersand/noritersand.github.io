@@ -15,7 +15,7 @@ ctrl+shift+p 로 팔레트를 열고 install package control
 
 ## 한글 인코딩 지원 패키지 설치
 
-`ctrl + shift + p`로 보이는 커맨드 창에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택
+<kbd>ctrl + shift + p</kbd>로 보이는 커맨드 창에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택
 
 ## 작성자 저장용 사용자 설정
 
@@ -78,8 +78,8 @@ diff 기능이 매우 좋은 플러그인이지만 유료다. (35달러)
 FileDiffs보다 보기 좋은 diff 뷰어.  
 단축키는:  
 
-- Jump to next: `alt + n`
-- Jump to previous: `alt + p`
+- Jump to next: <kbd>alt + n</kbd>
+- Jump to previous: <kbd>alt + p</kbd>
 
 #### [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll)
 

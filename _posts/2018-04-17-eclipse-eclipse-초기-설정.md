@@ -37,34 +37,34 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 ## 작성자가 쓰는 단축키 설정
 
-- ~~Save All: `f9` (In Windows, File)~~
-- Open Implementation: `f4` (In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
-- Open Type Hierarchy: `unbined`
-- Find Text In File: `ctrl + alt + f` (In Windows, Search)
-- File Search: `ctrl + h` (In Windows, Search)
-- Open Search Dialog: `unbined`
-- Watch: `ctrl + alt + w` (In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
-- Compare with HEAD Revision: `ctrl + alt + pageup` (In Windows, Git)
-- Compare with Previous Revision: `ctrl + alt + home` (In Windows, Git)
-- Show in History: `ctrl + alt + pagedown` (In Windows, Git)
-- Show Key Assist: `ctrl + 0` (In Dialogs and Windows, Window)
-- Add Bookmark: `ctrl + alt + z`
-- Build Automatically: `ctrl + alt + insert` (In Dialogs and Windows, Project)
-- Show Revision Information: `ctrl + alt + a` (In Windows, Git)
-- Print: `unbined`
-- Quick Search: `ctrl + alt + l` (In Windows, Quick Search) ~~STS 플러그인 깔았을 때 쓸 수 있는 빠른 검색창~~ 최근 버전은 기본 탑재.
-- Next Editor: `ctrl + 6` (In Windows, Window)
-- Previous Editor: `ctrl + shift + 6` (In Windows, Window)
-- Next Veiw: `ctrl + 7` (In Windows, Window) 이 키 조합의 기존 기능인 `Toggle Comment`는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
-- Previous Veiw: `ctrl + shift + 7` (In Windows, Window)
-- Next Perspective: `ctrl + 8` (In Windows, Window)
-- Previous Perspective: `ctrl + shift + 8` (In Windows, Window)
+- ~~Save All: <kbd>f9</kbd>(In Windows, File)~~
+- Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
+- Open Type Hierarchy: <kbd>unbined</kbd>
+- Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
+- File Search: <kbd>ctrl + h</kbd>(In Windows, Search)
+- Open Search Dialog: <kbd>unbined</kbd>
+- Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
+- Compare with HEAD Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
+- Compare with Previous Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
+- Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
+- Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)
+- Add Bookmark: <kbd>ctrl + alt + z</kbd>
+- Build Automatically: <kbd>ctrl + alt + insert</kbd>(In Dialogs and Windows, Project)
+- Show Revision Information: <kbd>ctrl + alt + a</kbd>(In Windows, Git)
+- Print: <kbd>unbined</kbd>
+- Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search) ~~STS 플러그인 깔았을 때 쓸 수 있는 빠른 검색창~~ 최근 버전은 기본 탑재.
+- Next Editor: <kbd>ctrl + 6</kbd>(In Windows, Window)
+- Previous Editor: <kbd>ctrl + shift + 6</kbd>(In Windows, Window)
+- Next Veiw: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
+- Previous Veiw: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
+- Next Perspective: <kbd>ctrl + 8</kbd>(In Windows, Window)
+- Previous Perspective: <kbd>ctrl + shift + 8</kbd>(In Windows, Window)
 
 Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective` > `Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
 
 ## 검색 창 설정 변경
 
-- 검색 창`ctrl + h`에서 `Customize` 진입, `Task` 체크 해제, `Remember last used page` 체크.
+- 검색 창<kbd>ctrl + h</kbd>에서 `Customize` 진입, `Task` 체크 해제, `Remember last used page` 체크.
 
 ## 파일 자동 갱신
 
@@ -219,7 +219,7 @@ SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 
 
 ### [AutoDeriv](http://nodj.github.io/AutoDeriv/#install)
 
-**마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기(`ctrl + shift + r`)의 대상에서 제외되는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
+**마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외되는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
 이 확장 기능은 설치만 하면 끝나는게 아니라, workspace 아래에 `.derived` 파일을 만들고 아래처럼 내용을 작성해야 한다:
 
 ```bash

@@ -19,7 +19,8 @@ atom 1.32.0 기준.
 
 #### 자동완성 설정 변경
 
-`Settings` > `Installed Packages` > `autocomplete-plus`의 설정에서 `Show Suggestions On Keystroke`를 체크해제한다. 이 항목이 체크 되어 있으면 타이핑 할 때마다 자동완성 목록이 나타나는데 이게 꽤 귀찮다. 그냥 필요할 때 단축키로 사용할 것. 자동완성 단축키: `ctrl+space`
+`Settings` > `Installed Packages` > `autocomplete-plus`의 설정에서 `Show Suggestions On Keystroke`를 체크해제한다. 이 항목이 체크 되어 있으면 타이핑 할 때마다 자동완성 목록이 나타나는데 이게 꽤 귀찮다. 그냥 필요할 때 단축키로 사용할 것.  
+자동완성 단축키: <kbd>ctrl + space</kbd>
 
 #### 마크다운 미리보기 설정 변경
 
@@ -42,7 +43,7 @@ atom 1.32.0 기준.
 
 ## 단축키
 
-커맨드 팔레트`ctrl+shift+p`에서 'Application: Open Your Keymap' 입력 후 엔터. 이 후 열리는 keymap.cson을 아래처럼 변경:
+커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Application: Open Your Keymap' 입력 후 엔터. 이 후 열리는 keymap.cson을 아래처럼 변경:
 
 ```yml
 '.platform-win32, .platform-win32 .command-palette atom-text-editor':
@@ -77,7 +78,7 @@ atom 1.32.0 기준.
 #### ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll)~~
 
 ~~다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~  
-멀티 커서 증식(?)키`ctrl-alt-up/down`가 이상작동하는 현상이 있음.
+멀티 커서 증식(?)키<kbd>ctrl + alt + up/down</kbd>가 이상작동하는 현상이 있음.
 
 #### [url-encode](https://atom.io/packages/url-encode)
 
@@ -85,4 +86,4 @@ atom 1.32.0 기준.
 
 #### [goto-last-edit](https://atom.io/packages/goto-last-edit)
 
-`ctrl+i` 혹은 `ctrl+alt+i`로 마지막 수정 이력 이동...인데 서브라임이랑 같도록 바꿔서 씀.
+<kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동...인데 서브라임이랑 같도록 바꿔서 씀.
