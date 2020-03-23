@@ -28,7 +28,7 @@
 
 #### 검색 관련 파일
 
-현재 `ctrl`+`/` 키 조합으로 검색 기능을 사용할 수 있게 해놓음.
+참고: <kbd>ctrl + /</kbd>로 검색창 띄움.
 
 - `assets\javascripts\jekyll-search.jquery.js`
 - `_includes\blog\scripts.html`

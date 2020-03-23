@@ -23,6 +23,42 @@ tags:
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
 
+## | (파이프)
+
+둘이상의 명령어를 연결. 리눅스와 비슷하다.
+
+## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
+
+파워쉘의 `grep` 쯤에 위치하는 명령어.
+
+```bash
+# 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단
+'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
+
+# rogue.log 파일을 출력하되 대소문자 구분 없이 'exception'이 포함된 라인만 출력
+Get-Content .\rogue.log | Select-String 'exception'
+```
+
+#### parameters
+
+- `-CaseSensitive`: 대소문자를 구분하여 찾음. 생략하면 대소문자 무시.
+- `-Pattern`: 이어지는 문자로 각 줄에서 찾을 텍스트를 지정함. 패턴 값은 정규식으로 취급됨.
+- `-SimpleMatch`: 정규식 일치가 아니라 단순 일치로 필터링.
+- TODO
+
+#### Select-String AND, OR, NOT
+
+```bash
+# 'c'와 '1'이 모두 포함된 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String 'c' | Select-String '1'
+
+# 'z' 혹은 '1'이 포함된 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String 'z|1'
+
+# 'abc'가 없는 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
+```
+
 ## Get-Alias
 
 기본 별칭: gal, alias
