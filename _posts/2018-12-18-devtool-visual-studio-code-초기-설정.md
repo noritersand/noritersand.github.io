@@ -6,7 +6,7 @@ categories:
   - devtool
 tags:
   - devtool
-  - visual studio code
+  - visual-studio-code
   - vscode
 ---
 

@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - jsp
-  - custom tags
+  - custom-tags
 ---
 
 * Kramdown table of contents

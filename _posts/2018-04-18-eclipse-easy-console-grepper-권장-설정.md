@@ -7,7 +7,7 @@ categories:
 tags:
   - devtool
   - eclipse
-  - easy console grepper
+  - easy-console-grepper
 ---
 
 ![](/images/easy-console-grepper-1.png)

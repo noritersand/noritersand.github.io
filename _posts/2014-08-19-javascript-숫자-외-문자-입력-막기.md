@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - only number
+  - only-number
   - 코드모음
 ---
 

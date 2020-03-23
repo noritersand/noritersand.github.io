@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - jsp
-  - java beans
+  - java-beans
 ---
 
 * Kramdown table of contents

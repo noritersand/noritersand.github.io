@@ -8,7 +8,7 @@ tags:
   - buildtool
   - maven
   - nexus
-  - maven repository
+  - maven-repository
 ---
 
 Manager 접속:

@@ -8,7 +8,7 @@ tags:
   - javascript
   - jquery
   - selector
-  - basic filter
+  - basic-filter
 ---
 
 * Kramdown table of contents

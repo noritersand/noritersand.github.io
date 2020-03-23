@@ -8,7 +8,7 @@ tags:
   - java
   - spring
   - junit
-  - code test
+  - code-test
   - 코드모음
 ---
 

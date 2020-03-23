@@ -7,7 +7,7 @@ categories:
 tags:
   - javascript
   - nodejs
-  - global objects
+  - global-objects
 ---
 
 * Kramdown table of contents

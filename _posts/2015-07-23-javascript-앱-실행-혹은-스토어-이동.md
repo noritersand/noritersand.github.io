@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - mobile web
+  - mobile-web
   - package
   - intent
 ---

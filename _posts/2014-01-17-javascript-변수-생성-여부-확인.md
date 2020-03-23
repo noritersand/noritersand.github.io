@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - variable check
+  - variable
   - 코드모음
 ---
 

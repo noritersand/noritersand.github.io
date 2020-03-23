@@ -7,7 +7,7 @@ categories:
 tags:
   - javascript
   - jquery
-  - file upload
+  - file-upload
   - 코드모음
 ---
 

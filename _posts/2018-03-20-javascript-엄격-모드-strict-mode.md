@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - strict mode
+  - strict-mode
 ---
 
 * Kramdown table of contents

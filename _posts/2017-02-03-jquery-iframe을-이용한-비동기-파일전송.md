@@ -8,7 +8,7 @@ tags:
   - javascript
   - jquery
   - iframe
-  - file upload
+  - file-upload
   - 코드모음
 ---
 

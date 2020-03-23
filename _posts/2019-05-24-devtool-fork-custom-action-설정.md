@@ -7,7 +7,7 @@ categories:
 tags:
   - devtool
   - fork
-  - git gui
+  - git-gui
 ---
 
 * Kramdown table of contents

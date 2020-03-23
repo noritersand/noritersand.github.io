@@ -6,7 +6,7 @@ categories:
   - java
 tags:
   - java
-  - standard input
+  - standard-input
   - stdin
 ---
 

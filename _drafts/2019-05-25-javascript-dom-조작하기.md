@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - jquery 탈출 프로젝트
+  - jquery-탈출-프로젝트
   - dom
 ---
 

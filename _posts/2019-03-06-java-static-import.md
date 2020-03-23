@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - import
-  - static import
+  - static-import
 ---
 
 * Kramdown table of contents

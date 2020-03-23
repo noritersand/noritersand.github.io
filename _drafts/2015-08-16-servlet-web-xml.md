@@ -8,7 +8,6 @@ tags:
   - java
   - servlet
   - tomcat
-  - web.xml
   - config
 ---
 

@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - servlet
-  - MultipartRequest
+  - multipartrequest
   - oreilly
   - file
 ---

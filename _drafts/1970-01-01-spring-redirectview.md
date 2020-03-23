@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - spring
-  - RedirectView
+  - redirectview
 ---
 
 블라블라

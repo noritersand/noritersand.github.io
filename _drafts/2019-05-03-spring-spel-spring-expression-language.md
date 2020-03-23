@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - spring
-  - SpEL
+  - spel
 ---
 
 #### 관련 문서

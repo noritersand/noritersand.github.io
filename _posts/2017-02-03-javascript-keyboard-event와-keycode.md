@@ -9,7 +9,7 @@ tags:
   - javascript
   - json
   - literal
-  - javascript object literal notation
+  - javascript-object-literal-notation
 ---
 
 * Kramdown table of contents

@@ -8,7 +8,7 @@ tags:
   - javascript
   - ecmascript
   - async
-  - async function
+  - async-function
   - await
   - promise
 ---

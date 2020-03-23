@@ -5,7 +5,7 @@ title: '[misc] untitled'
 categories:
   - misc
 tags:
-  - tag me
+  - tag-me
 ---
 
 * Kramdown table of contents

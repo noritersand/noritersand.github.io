@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - mybatis
-  - sql mapper
+  - sql-mapper
   - resulttype
 ---
 

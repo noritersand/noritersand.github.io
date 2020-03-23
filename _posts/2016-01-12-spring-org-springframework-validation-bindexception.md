@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - spring
-  - BindException
+  - bindexception
 ---
 
 * Kramdown table of contents

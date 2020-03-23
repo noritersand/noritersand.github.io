@@ -8,7 +8,7 @@ tags:
   - javascript
   - ecmascript
   - string
-  - standard built-in objects
+  - standard-built-in-objects
 ---
 
 * Kramdown table of contents

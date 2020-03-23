@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - empty object
+  - empty-object
 ---
 
 * Kramdown table of contents

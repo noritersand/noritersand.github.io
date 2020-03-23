@@ -6,7 +6,7 @@ categories:
   - java
 tags:
   - java
-  - code convention
+  - code-convention
   - coding guide
 ---
 

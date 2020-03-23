@@ -8,7 +8,7 @@ tags:
   - dbms
   - oracle
   - sql
-  - connect by
+  - connect-by
 ---
 
 * Kramdown table of contents

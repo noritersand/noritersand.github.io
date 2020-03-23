@@ -7,8 +7,8 @@ categories:
 tags:
   - devtool
   - eclipse
-  - hot deploy
-  - hot code replace
+  - hot-deploy
+  - hot-code-replace
 ---
 
 #### 관련 문서

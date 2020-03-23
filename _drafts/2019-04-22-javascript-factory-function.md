@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - factory function
+  - factory-function
   - create
 ---
 

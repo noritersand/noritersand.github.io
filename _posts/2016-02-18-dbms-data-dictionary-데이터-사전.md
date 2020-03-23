@@ -6,7 +6,7 @@ categories:
   - dbms
 tags:
   - dbms
-  - data dictionary
+  - data-dictionary
   - meta
 ---
 

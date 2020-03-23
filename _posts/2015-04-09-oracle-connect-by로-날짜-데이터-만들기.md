@@ -7,7 +7,7 @@ categories:
 tags:
   - dbms
   - oracle
-  - connect by
+  - connect-by
   - 코드모음
 ---
 

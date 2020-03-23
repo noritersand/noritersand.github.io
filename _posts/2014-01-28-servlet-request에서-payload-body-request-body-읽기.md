@@ -7,8 +7,8 @@ categories:
 tags:
   - java
   - serlvet
-  - request body
-  - payload body
+  - request-body
+  - payload-body
 ---
 
 * Kramdown table of contents

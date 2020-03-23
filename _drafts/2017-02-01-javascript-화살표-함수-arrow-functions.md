@@ -7,8 +7,8 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - arrow function
-  - lambda function
+  - arrow-function
+  - lambda-function
 ---
 
 #### 관련 문서

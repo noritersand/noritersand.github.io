@@ -8,7 +8,7 @@ tags:
   - ecmascript
   - javascript
   - wcag
-  - 웹 접근성
+  - 웹접근성
 ---
 
 - [원문](https://www.w3.org/TR/WCAG20-TECHS/client-side-script.html)

@@ -7,9 +7,9 @@ categories:
 tags:
   - was
   - tomcat
-  - HTTPS
-  - TLS
-  - SSL
+  - https
+  - tls
+  - ssl
 ---
 
 * Kramdown table of contents

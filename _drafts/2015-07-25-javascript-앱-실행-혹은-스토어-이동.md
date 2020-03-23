@@ -7,9 +7,9 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - launch app
-  - app store
-  - mobile web
+  - launch-app
+  - app-store
+  - mobile-web
   - 코드모음
   - 비공개
 ---

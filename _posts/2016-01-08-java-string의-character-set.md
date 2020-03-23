@@ -6,7 +6,7 @@ categories:
   - java
 tags:
   - java
-  - character set
+  - character-set
 ---
 
 * Kramdown table of contents

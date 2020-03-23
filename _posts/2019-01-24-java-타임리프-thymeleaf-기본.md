@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - thymeleaf
-  - template engine
+  - template-engine
 ---
 
 * Kramdown table of contents

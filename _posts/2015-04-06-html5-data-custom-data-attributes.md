@@ -1,13 +1,14 @@
 ---
 layout: post
 date: 2015-04-06 15:33:00 +0900
-title: '[HTML5] data-* Attributes'
+title: '[HTML5] data-* custom data attributes'
 categories:
   - html
 tags:
   - html
   - html5
   - data-*
+  - custom-attributes
 ---
 
 * Kramdown table of contents
@@ -15,8 +16,8 @@ tags:
 
 #### 관련 문서
 
-- [mdn: data-*](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/data-*)
-- [mdn: HTMLElement​.dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)
+- [MDN: data-*](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/data-*)
+- [MDN: HTMLElement​.dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)
 - [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
 - [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
 

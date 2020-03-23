@@ -8,7 +8,7 @@ tags:
   - javascript
   - jquery
   - 코드모음
-  - JSON
+  - json
   - serialize
   - object
   - form

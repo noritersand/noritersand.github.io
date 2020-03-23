@@ -6,7 +6,7 @@ categories:
   - java
 tags:
   - java
-  - initialization block
+  - initialization-block
 ---
 
 * Kramdown table of contents

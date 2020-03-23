@@ -5,7 +5,7 @@ title: '[web] JSON, JavaScript Object Notation'
 categories:
   - web
 tags:
-  - JSON
+  - json
 ---
 
 * Kramdown table of contents

@@ -7,7 +7,6 @@ categories:
 tags:
   - java
   - servlet
-  - web.xml
   - servletcontextlistener
 ---
 

@@ -8,7 +8,7 @@ tags:
   - ecmascript
   - javascript
   - date
-  - last week
+  - last-week
   - 코드모음
 ---
 

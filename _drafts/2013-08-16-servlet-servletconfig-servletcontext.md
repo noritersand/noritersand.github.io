@@ -7,8 +7,8 @@ categories:
 tags:
   - java
   - servlet
-  - ServletConfig
-  - ServletContext
+  - servletconfig
+  - servletcontext
 ---
 
 * Kramdown table of contents

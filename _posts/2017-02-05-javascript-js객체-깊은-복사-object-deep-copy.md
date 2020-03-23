@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - deep copy
+  - deep-copy
 ---
 
 * Kramdown table of contents

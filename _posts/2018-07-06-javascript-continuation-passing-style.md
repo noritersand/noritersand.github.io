@@ -8,7 +8,7 @@ tags:
   - ecmascript
   - javascript
   - cps
-  - continuation passing style
+  - continuation-passing-style
 ---
 
 - 원문: [http://matt.might.net/articles/by-example-continuation-passing-style/](http://matt.might.net/articles/by-example-continuation-passing-style/)

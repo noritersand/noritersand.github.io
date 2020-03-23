@@ -9,7 +9,7 @@ tags:
   - jquery
   - input
   - file
-  - form field
+  - form-field
   - reset
 ---
 

@@ -8,7 +8,7 @@ tags:
   - java
   - mybatis
   - spring
-  - hot deploy
+  - hot-deploy
 ---
 
 * Kramdown table of contents
