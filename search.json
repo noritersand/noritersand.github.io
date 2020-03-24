@@ -6,7 +6,7 @@
       "title"      : "{{ post.title | escape }}",
       "url"        : "{{ post.url }}",
       "date"       : "{{ post.date }}",
-      "shortdate"  : "{{ post.date | date: '%B %d, %Y' }}"
+      "shortdate"  : "{{ post.date | date: '%Y-%m-%d' }}"
     } {% if forloop.last %}{% else %},{% endif %}
   {% endfor %}
 ]
