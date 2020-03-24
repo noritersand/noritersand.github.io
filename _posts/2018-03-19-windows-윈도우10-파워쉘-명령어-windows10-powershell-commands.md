@@ -61,8 +61,8 @@ Get-Content .\rogue.log | Select-String 'exception'
 
 ## Get-Alias
 
-기본 별칭: gal, alias
 설정된 별칭 목록을 출력한다.
+기본 별칭: `gal`, `alias`  
 
 ```bash
 Get-Alias # 설정된 모든 별칭 출력
@@ -72,7 +72,7 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 
 ## Start-Process
 
-기본 별칭: saps
+기본 별칭: `saps`
 
 ```bash
 Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
@@ -81,7 +81,7 @@ Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 �
 
 ## Get-Content
 
-기본 별칭: type
+기본 별칭: `type`
 
 ```bash
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
@@ -89,7 +89,7 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 ## Write-Output
 
-기본 별칭: echo
+기본 별칭: `echo`
 
 ```bash
 Write-Output $null >> dummy-for-commit.txt # 'touch'와 같음
@@ -97,11 +97,11 @@ Write-Output $null >> dummy-for-commit.txt # 'touch'와 같음
 
 ## Get-ChildItem
 
-기본 별칭: ls
+기본 별칭: `ls`
 
 ## Copy-Item
 
-기본 별칭: copy
+기본 별칭: `copy`
 
 ```bash
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
@@ -109,7 +109,7 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 
 ## Remove-Item
 
-기본 별칭: del
+기본 별칭: `del`
 
 ```bash
 Remove-Item .\copy\ -r -Force
