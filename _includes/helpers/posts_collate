@@ -12,9 +12,9 @@
     <li>
         <a class="active internal" href="{{ post.url | relative_url }}">{{ post.title }}</a>
         {% if post.last_updated %}
-            <span title="{{ site.data.i18n[site.lang].last_updated }}: {{ post.last_updated | date: "%b %d, %Y" }}" class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+            <span title="{{ site.data.i18n[site.lang].last_updated }}: {{ post.last_updated | date: "%Y-%m-%d" }}" class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
         {% else %}
-            <span class="date">{{ post.date | date: "%b %d, %Y" }}</span>
+            <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
         {% endif %}
     </li>
 
