@@ -12,17 +12,77 @@ tags:
   - 코드모음
 ---
 
+## 사용법
+
+### String.match
+
+검색한 문자들을 배열로 반환한다. `g` 플래그가 없으면 맨 처음 찾은 하나만 반환.
+
+```js
+"ecmascript javascript".match(/script/g); // [ "script", "script" ]
+```
+
+### String.search
+
+검색한 문자의 인덱스 반환
+
+```js
+"javascript".search(/va/); // 2
+```
+
+### String.replace( regexp, replaceText )
+
+지정된 패턴과 검색하여 replaceText로 대체
+
+```js
+TODO
+```
+
+### RegExp.exec( testString )
+
+지정된 패턴과 같은 패턴을 검색하여 배열 또는 null 문자를 리턴
+
+```js
+TODO
+```
+
+### RegExp.test( testString )
+
+지정된 패턴과 같은 패턴을 검색하여 검색하면 true 를 리턴하며 그렇지 않으면 false 리턴
+
+```js
+TODO
+```
+
 ## expression
 
 ### 공백 줄(empty line)
 
 ```js
-^\n
+/^\n/
 ```
 
 ```js
-^\s*$
+/^\s*$/
 ```
+
+### 문자의 시작과 끝으로 범위 검색
+
+```js
+// 'a'와 'b'로 시작하며 줄바꿈을 제외한 모든 문자를 포함한 문자
+/a.*b/
+// 'a'와 'b'로 시작하며 줄바꿈을 제외한 모든 문자를 하나 이상 포함한 문자
+/a.+b/
+```
+
+```js
+// 'ja'로 시작하고 `pt`로 끝나는 문자 중 밑줄, 알파벳, 숫자가 하나 이상 포함된 문자
+/ja\w+pt/
+// 위랑 비슷하지만 'japt'처럼 중간 문자가 없어도 됨.
+/ja\w*pt/
+```
+
+TODO 위에서 공백을 제외하는 방법을 찾아야됨.
 
 ### 영문 대소문자, 숫자, 언더바`_`, 하이픈`-`, 2~5자 길이의 정규 표현식
 
