@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2018-01-01 00:00:00 +0900
-title: '[demo] markdown syntax'
+title: '[misc] markdown syntax'
 categories:
-  - demo
+  - misc
 tags:
   - test
   - markdown
@@ -17,7 +17,7 @@ tags:
 - [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
 - [https://www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax)
 
-## 줄 바꾸기
+## 줄 바꾸기 🤔
 
 엔터 두 번은
 
@@ -107,7 +107,7 @@ _이탤릭_
 
 이렇게 ``` ` ``` 하면 됨. 이렇게 <code>\`</code> 하던가.
 
-### 코드블록 안에 grave 표시하기
+### 코드블록 안에 grave 표시하기 😏
 
 ```
 `d`
@@ -123,7 +123,7 @@ _이탤릭_
 
 키 입력을 표현할 땐 코드 블록 `ctrl + alt + shift + a`보다 이걸로 <kbd>ctrl + alt + shift + a</kbd>
 
-## 테이블(표)
+## 테이블(표) 🙄
 
 파이프`|`와 하이픈`-`으로 작성하며, 헤더 구분선의 콜론`:` 위치에 따라 좌/우/가운데 정렬함. 생략하면 좌측 정렬. 하이픈의 개수는 표의 모양과 상관없다.
 
@@ -154,7 +154,7 @@ _이탤릭_
 
 - `\#`: '#'를 그대로
 
-## 루비 문자
+## 루비 문자 😥
 
 <ruby><rb>으아아아</rb><rp>(</rp><rt>호옹이</rt><rp>)</rp></ruby>
 

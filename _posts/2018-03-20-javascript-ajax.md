@@ -26,7 +26,7 @@ tags:
 
 Ajax는 'Asynchronous JavaScript and XML'의 약자로 웹 애플리케이션 개발 기법의 하나다. Ajax는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 Ajax를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.
 
-Ajax를 사용하려면 먼저 브라우저의 내장 함수로 XMLHttpRequest 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 ActiveXObject라는 소름 돋는 이름의 생성자를 사용했지만, 웹 사용자의 최소 환경이 IE8인 요즘엔 사용하지 않는다.
+Ajax를 사용하려면 먼저 브라우저의 내장 함수로 `XMLHttpRequest` 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 `ActiveXObject`라는 소름 돋는 이름의 생성자를 사용했지만, 웹 사용자의 최소 환경이 IE8인 요즘엔 사용하지 않는다.
 
 ```js
 var xmlReq = false;
@@ -94,11 +94,11 @@ var xhr = new XMLHttpRequest();
 XMLHttpRequest.open( method, url [ , async ] )
 ```
 
-- `method`: HTTP 메서드 타입 (get/post)
+- `method`: HTTP 메서드 타입 `get`|`post`
 - `url`: 서버 경로
-- `async`: 비동기 여부. (true/false)
+- `async`: 비동기 여부. `true`|`false`
 
-request의 유형을 지정한다. `send()`로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. `method`와 `url`은 필수지만 `async`는 기본값이 true로 생략할 수 있는 항목이다. `async`를 false로 지정할 경우 `send()` 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
+request의 유형을 지정한다. `send()`로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. `method`와 `url`은 필수지만 `async`는 기본값이 `true`로 생략할 수 있는 항목이다. `async`를 `false`로 지정할 경우 `send()` 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -125,7 +125,7 @@ XMLHttpRequest.send( [ string ] )
 
 - `string`: 폼 데이터로 전송할 문자열
 
-서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. string은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 `setRequestHeader()`로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 string은 반드시 쿼리스트링 형태로 작성되어야 한다.
+서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. `string`은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 `setRequestHeader()`로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 `string`은 반드시 쿼리스트링 형태로 작성되어야 한다.
 
 ```js
 var xhr = new XMLHttpRequest();
@@ -172,7 +172,7 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.timeout
 
-지정한 시간을 초과하면 XMLHttpRequestEventTarget.ontimeout을 호출한다. 단위는 밀리초(milliseconds)
+지정한 시간을 초과하면 `XMLHttpRequestEventTarget.ontimeout`을 호출한다. 단위는 밀리초(milliseconds)
 
 ### XMLHttpRequest.responseText
 
@@ -180,7 +180,7 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.responseXML
 
-서버의 응답을 XMLDocument로 파싱해 리턴. 파싱이 불가능하면 null을 리턴한다.
+서버의 응답을 `XMLDocument`로 파싱해 리턴. 파싱이 불가능하면 `null`을 리턴한다.
 
 ### XMLHttpRequest.status
 
@@ -188,11 +188,11 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.statusText
 
-응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 404일 때 리턴되는 값은 "Not Found"
+응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 `404`일 때 리턴되는 값은 "Not Found"
 
 ### XMLHttpRequest.readyState
 
-XMLHttpRequest의 현재 상태를 의미한다:
+`XMLHttpRequest`의 현재 상태를 의미한다:
 
 - 0: request not initialized.
 - 1: server connection established
@@ -202,7 +202,7 @@ XMLHttpRequest의 현재 상태를 의미한다:
 
 ## Attach callback function
 
-통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 `XMLHttpRequest.onreadystatechange()` 메서드를 이용하거나 XMLHttpRequestEventTarget의 이벤트 핸들러를 이용하는 방법, 그리고 `EventTarget.addEventListener()` 이용하는 방법이 있다.
+통신 후 성공 혹은 실패에 따른 처리가 필요하다면 서버가 응답했을 때 콜백으로 호출되는 프로퍼티에 함수를 할당하면 된다. 콜백 함수를 할당하는 방법은 `XMLHttpRequest.onreadystatechange()` 메서드를 이용하거나 `XMLHttpRequestEventTarget`의 이벤트 핸들러를 이용하는 방법, 그리고 `EventTarget.addEventListener()` 이용하는 방법이 있다.
 
 ### XMLHttpRequest.onreadystatechange
 
@@ -217,7 +217,7 @@ xhr.open('GET', 'http://somewhere');
 xhr.send();
 ```
 
-`onreadystatechange()`는 XMLHttpRequest의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 readyState의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 readyState의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
+`onreadystatechange()`는 `XMLHttpRequest`의 프로퍼티로 콜백 함수를 저장한다. 이 메서드는 `readyState`의 값이 변할 때마다 호출되니 그대로 실행되도록 하면 안 되고 `readyState`의 값을 체크하는 조건 분기를 추가해야 원하는 결과를 얻을 수 있다.
 
 ### [EventTarget.addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
 
@@ -271,7 +271,7 @@ xhr.open('GET', 'test2.html');
 xhr.send();
 ```
 
-XMLHttpRequestEventTarget의 프로퍼티:
+`XMLHttpRequestEventTarget`의 프로퍼티:
 
 - `onabort`: abort 이벤트가 발생하면 호출된다.
 - `onerror`: 서버의 응답이 200이 아닐 때 호출된다.
