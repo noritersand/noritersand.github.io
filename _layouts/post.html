@@ -17,7 +17,7 @@ layout: blog
                         <p class="date-publish">
                             {{ site.data.i18n[site.lang].published }}:
                             <time itemprop="datePublished" class="date-pub {% if page.last_updated == null %}updated{% endif %}"
-                                title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B' }} {{ page.date | date: '%d' }}, {{ page.date | date: '%Y' }} </time>
+                                title="{{ page.date | date_to_xmlschema }}" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y' }}-{{ page.date | date: '%m' }}-{{ page.date | date: '%d' }} </time>
                             by
                             <a class="author" href="/" rel="author" title="{{ site.data.i18n[site.lang].show_author }}">
                                 <span itemprop="author" itemscope itemtype="http://schema.org/Person">

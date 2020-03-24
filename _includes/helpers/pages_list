@@ -6,7 +6,7 @@
             {% else %}
                 <li><a class="internal" href="{{node.url | relative_url }}">{{node.title}}</a>
             {% endif %}
-            <span class="date">{{ node.date | date: "%b %d, %Y" }}</span></li>
+            <span class="date">{{ node.date | date: "%Y-%m-%d" }}</span></li>
         {% endif %}
     {% endif %}
 {% endfor %}
