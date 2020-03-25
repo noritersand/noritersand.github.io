@@ -16,6 +16,13 @@ tags:
 
 - [somewhere](somewhere)
 
+## Customize Perspective
+
+- Toolbar Visibility
+- Menu Visibility
+- Action Set Availability
+- ShortCuts
+
 ## 빌드
 
 #### 용어 참고
