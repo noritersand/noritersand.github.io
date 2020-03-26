@@ -11,11 +11,12 @@ tags:
 
 ## package control 설치
 
-ctrl+shift+p 로 팔레트를 열고 install package control
+커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터
 
 ## 한글 인코딩 지원 패키지 설치
 
-<kbd>ctrl + shift + p</kbd>로 보이는 커맨드 창에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택
+정확히는 유니코드 문자가 포함되어 있으면서 UTF-8이 아닌 파일을 UTF-8로 변환하는 패키지다.  
+커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택
 
 ## 작성자 저장용 사용자 설정
 
@@ -59,19 +60,19 @@ ctrl+shift+p 로 팔레트를 열고 install package control
 
 #### [Sublimerge](http://www.sublimerge.com/)
 
-diff 기능이 매우 좋은 플러그인이지만 유료다. (35달러)
+diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
 
 #### [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8)
 
-서브라임 텍스트가 지원하지 않는 인코딩으로 저장된 파일을 저장하거나 수정할 수 있게 한다. (가령 EUC-KR 같은)
+서브라임 텍스트가 기본 지원하지 않는 인코딩으로 저장된 파일을 저장하거나 수정할 수 있게 한다. (가령 EUC-KR 같은)
 
 #### [WinMerge](https://packagecontrol.io/packages/WinMerge)
 
-서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 플러그인. 물론 WinMerge가 깔려있어야 한다.
+서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
 
 #### [Bracket​Highlighter](https://packagecontrol.io/packages/BracketHighlighter)
 
-괄호의 시작과 끝을 행 번호 영역에 표시해주는 플러그인.
+괄호의 시작과 끝을 행 번호 영역에 표시해주는 패키지.
 
 #### [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)
 
@@ -83,7 +84,7 @@ FileDiffs보다 보기 좋은 diff 뷰어.
 
 #### [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll)
 
-여러 view의 스크롤을 동기화하는 플러그인. 심지어 좌우 스크롤도 동기화된다.
+여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
 
 #### [URLEncode](https://packagecontrol.io/packages/URLEncode)
 
@@ -100,7 +101,7 @@ URL 인코드-디코드 기능 제공.
 
 #### [HexViewer](https://packagecontrol.io/packages/HexViewer)
 
-주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 플러그인. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어가 아주 훌륭함.
+주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어가 아주 훌륭함.
 
 #### [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
 

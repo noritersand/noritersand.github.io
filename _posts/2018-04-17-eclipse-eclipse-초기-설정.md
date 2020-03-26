@@ -197,7 +197,8 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 ### AnyEditTools
 
-잡다한 유틸리가 있는 확장 기능. HTML 기호 <-> entities, camelCase <-> SNAKE_CASE 변환용으로 쓴다. 설치 후 아래 설정할 것:  
+잡다한 유틸리가 있는 확장 기능. 주로 표기법 치환(HTML 기호 <-> entities, camelCase <-> SCREAMING_SNAKE_CASE 등)용으로 쓰임.  
+**설치 후 아래 설정할 것:**
 
 - `Window` > `Preferences` > `General` > `Editors` > `AnyEdit Tools` > `Auto Convert`에서 `Remove trailing whitespace` 체크 해제
 - 키 설정에서 'AnyEdit Tools' 카테고리 중 `Convert Camel <-> Underscores`, `Convert Chars to Html Entities` **빼고 다** 삭제
@@ -219,7 +220,7 @@ SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 
 
 ### [AutoDeriv](http://nodj.github.io/AutoDeriv/#install)
 
-**마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외되는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
+**마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
 이 확장 기능은 설치만 하면 끝나는게 아니라, workspace 아래에 `.derived` 파일을 만들고 아래처럼 내용을 작성해야 한다:
 
 ```bash
@@ -235,4 +236,4 @@ src/include/version.h# this specific file is also generated.
 
 ### [Snyk Security Scanner](https://snyk.io/)
 
-써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ nodejs 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
+써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.

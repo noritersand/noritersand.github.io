@@ -32,7 +32,7 @@ json으로 된 설정 파일을 열어서(<kbd>ctrl + shift + p</kbd> > 'Prefere
 
 #### 타이틀에 파일 전체 경로 표시
 
-settings(<kbd>ctrl + ,</kbd>)에서 'window.title' 검색 후 입력란에 아래 추가:
+settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 추가:
 
 ```
 ${activeEditorLong}${separator}${rootName}
@@ -40,7 +40,7 @@ ${activeEditorLong}${separator}${rootName}
 
 #### 파일 제외하기
 
-settings(<kbd>ctrl + ,</kbd>)에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
+settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 ## 단축키
 

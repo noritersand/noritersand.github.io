@@ -18,7 +18,7 @@ tags:
 
 'Java Command Line Arguments'가 더 정확한 이름이다. 자바 프로그램을 실행할 때 Main Class에 전달하는 인자를 의미한다.
 
-아래처럼 쉘 명령어를 입력하면:
+아래처럼 쉘 명령어로 전달하면:
 
 ```bash
 java MainTest a 1 b c 3 4 d f
