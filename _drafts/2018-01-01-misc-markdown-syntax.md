@@ -67,6 +67,8 @@ tags:
 
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
+![가운데정렬인데아톰에선안될수도](/images/kakao-ryon-busy.png){: .center-block :}
+
 ## HTML 그대로 넣기
 
 <ul>
