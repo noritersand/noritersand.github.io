@@ -173,8 +173,11 @@ $ gem install bundler -v '1.17.3'
              Error: Run jekyll build --trace for more information.
 ```
 
+방법이 없으니 `on` 태그를 안쓰면 된다.
+
 ### Error:  No source of timezone data could be found.
 
+https://jekyllrb.com/docs/installation/windows/#time-zone-management  
 윈도우에서 `tzinfo-data` gem 사용 시 발생할 수 있다고 함. `Gemfile` 파일에 아래 추가:
 
 ```bash
@@ -183,4 +186,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 ###  Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
 
+https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
