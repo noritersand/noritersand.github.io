@@ -67,7 +67,7 @@ tags:
 
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
-![가운데정렬인데아톰에선안될수도](/images/kakao-ryon-busy.png){: .center-block :}
+![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="border: 1px solid red"}  
 
 ## HTML 그대로 넣기
 
