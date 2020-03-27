@@ -276,7 +276,7 @@ xhr.send();
 - `onabort`: abort 이벤트가 발생하면 호출된다.
 - `onerror`: 서버의 응답이 200이 아닐 때 호출된다.
 - `onloadstart`: XHR 요청을 시작할 때 호출된다.
-- `onloadend`: XHR 요청이 완료되면 호출된다. onload()와 다르게 성공/실패 상관없이 호출된다.
-- `onprogress`: onloadstart()와 onloadend() 사이에 호출된다. 파라미터로 ProgressEvent를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.
-- `onload`: XHR 요청이 '성공적으로' 완료되면 호출된다. 즉 XHR.status가 200일 때만 호출되는 메서드.
-- `ontimeout`: XHR.timeout으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 onprogress()와 onload()는 호출되지 않는다.
+- `onloadend`: XHR 요청이 완료되면 호출된다. `onload()`와 다르게 성공/실패 상관없이 호출된다.
+- `onprogress`: `onloadstart()`와 `onloadend()` 사이에 호출된다. 파라미터로 `ProgressEvent`를 전달받으며 이 객체의 프로퍼티는 브라우저마다 다를 수 있다.
+- `onload`: XHR 요청이 '성공적으로' 완료되면 호출된다. 즉 `XHR.status`가 200일 때만 호출되는 메서드.
+- `ontimeout`: `XHR.timeout`으로 설정한 시간 내에 응답이 도착하지 않으면 호출된다. 요청은 실패한 것으로 간주되며 `onprogress()`와 `onload()`는 호출되지 않는다.

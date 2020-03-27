@@ -63,12 +63,6 @@ tags:
 
 나보다 말야
 
-## embed image
-
-~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
-
-![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="border: 1px solid red"}  
-
 ## HTML 그대로 넣기
 
 <ul>
@@ -155,6 +149,12 @@ _이탤릭_
 ## unescape
 
 - `\#`: '#'를 그대로
+
+## embed image
+
+~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
+
+![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="margin:0 auto; display:block;"}
 
 ## 루비 문자 😥
 

@@ -42,7 +42,7 @@ function test() {
 >
 >엄격 모드: 응 에러
 
-엄격 모드의 가장 큰 특징은 '잘못된 구문(bad syntax)'을 어물쩡 넘어가지 않는다는 것이다. 표준 모드는 비록 잘못된 구문이 있더라도 정말 심각한 오류가 아니라면 알아서 보완하거나 단지 false를 반환하는 것으로 그치는데 비해, 엄격 모드에선 잘못된 구문을 항상 에러로 내뱉는다. 에러가 발생했으니 남은 코드의 실행이 중단되는 것은 덤.
+엄격 모드의 가장 큰 특징은 잘못된 구문<sup>bad syntax</sup>을 어물쩡 넘어가지 않는다는 것이다. 표준 모드는 비록 잘못된 구문이 있더라도 정말 심각한 오류가 아니라면 알아서 보완하거나 단지 `false`를 반환하는 것으로 그치는데 비해, 엄격 모드에선 잘못된 구문을 항상 에러로 내뱉는다. 에러가 발생했으니 남은 코드의 실행이 중단되는 것은 덤.
 
 ## 엄격 모드에서 에러가 발생하는 잘못된 구문들
 
@@ -76,7 +76,7 @@ deleteVariable();
 
 ### non-extensible/non-writable/non-configurable
 
-non-extensible 객체에 프로퍼티를 추가할 때와 non-writable 프로퍼티의 값을 변경할 때, non-configurable 프로퍼티를 지우려고 할 때 타입 에러가 발생한다.
+non-extensible 객체에 프로퍼티를 추가할 때, non-writable 프로퍼티의 값을 변경할 때, non-configurable 프로퍼티를 지우려고 할 때 타입 에러가 발생한다.
 
 ```js
 function nonextensible() {
@@ -151,7 +151,7 @@ false.true = ''; // TypeError: can't assign to properties of (new Boolean(false)
 
 ### 암시적 변수 선언
 
-모든 변수는 선언되지 않고 사용할 수 없다. 표준 모드에선 var 키워드 없이 생성된 변수는 마치 전역 변수인 것처럼 자동으로 생성되고 사용할 수 있었지만 엄격 모드에서는 허용되지 않는다.
+모든 변수는 선언되지 않고 사용할 수 없다. 표준 모드에선 `var` 키워드 없이 생성된 변수는 마치 전역 변수인 것처럼 자동으로 생성되고 사용할 수 있었지만 엄격 모드에서는 허용되지 않는다.
 
 ```js
 'use strict';
@@ -160,7 +160,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 
 ### with문 사용불가
 
-유효 범위 체인을 변경하는 with문은 엄격 모드에서 사용할 수 없다.
+유효 범위 체인을 변경하는 `with`문은 엄격 모드에서 사용할 수 없다.
 
 ```js
 (function() {
@@ -173,7 +173,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 
 ### this의 변화
 
-함수가 메서드가 아닌 함수로 호출될 때 this는 undefined가 된다(표준 모드에선 함수로 호출될 때의 this는 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
+함수가 메서드가 아닌 함수로 호출될 때 `this`는 `undefined`가 된다(표준 모드에선 함수로 호출될 때의 `this`는 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
 
 ```js
 var supportStrictMode = (function() {
@@ -183,7 +183,7 @@ var supportStrictMode = (function() {
 console.debug(supportStrictMode);
 ```
 
-그리고 함수가 `call()`이나 `apply()`로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 표준 모드에선 첫 번째 인자가 원시 타입이면 this는 래퍼 객체가 된다.
+그리고 함수가 `call()`이나 `apply()`로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 표준 모드에선 첫 번째 인자가 원시 타입이면 `this`는 래퍼 객체가 된다.
 
 ```js
 function standard(arg) {
@@ -212,7 +212,7 @@ a(); // ReferenceError: a is not defined
 
 ### arguments 객체의 분리
 
-표준 모드에선 arguments의 원소와 함수의 파라미터의 참조값이 같다. 엄격 모드에선 이 둘이 분리된다.
+표준 모드에선 함수의 매개변수와 `arguments` 원소가 같은 참조값을 갖는다. 엄격 모드에선 이 둘이 분리된다.
 
 ```js
 function standard(param) {
