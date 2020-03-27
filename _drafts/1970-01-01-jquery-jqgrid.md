@@ -9,7 +9,7 @@ tags:
   - jquery
   - jqgrid
 ---
-![](/images/jqgrid-1.png){: style="text-align: center"}
+![](/images/jqgrid-1.png)
 
 #### 관련 문서
 
