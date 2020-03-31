@@ -3,6 +3,8 @@
 #### environments
 
 - [ruby](https://www.ruby-lang.org/ko/)
+- [jekyll](https://jekyllrb.com/)
+- [kramdown](https://kramdown.gettalong.org/)
 
 ## TODO
 
@@ -12,7 +14,7 @@
 
 ### 결정 못한 작성 규칙
 
-나열할 리스트의 제목을 본문 서식으로 할 지 vs h4 서식으로 할 지
+나열할 리스트의 제목을 본문 서식으로 할 지 vs `<h4>` 서식으로 할 지
 
 ### 주의 사항
 

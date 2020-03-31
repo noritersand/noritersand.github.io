@@ -14,8 +14,10 @@ tags:
 
 #### 관련 문서
 
-- [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
-- [https://www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax)
+- [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
+- [Markdown Guide: Bsic Syntax](https://www.markdownguide.org/basic-syntax)
+- [kramdown: Quick Reference](https://kramdown.gettalong.org/quickref.html)
+- [kramdown: Syntax](https://kramdown.gettalong.org/syntax.html)
 
 ## 줄 바꾸기 🤣
 
@@ -177,6 +179,8 @@ _이탤릭_
 
 ## 루비 문자
 
+\*팩트: 루비 문자는 마크다운이 아니고 마크업이다.
+
 <ruby><rb>으아아아</rb><rp>(</rp><rt>호옹이</rt><rp>)</rp></ruby>
 
 - `<ruby>`: 루비 문자 영역 전체를 지정.
@@ -186,7 +190,7 @@ _이탤릭_
 
 ## 주석: 첨자 활용
 
-> 뿅뿅이라고(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.
+> 뿅뿅이라고(bbyong-bbyong)<sup>1</sup>라고 일컫는다<sup>2<sup>.
 
 - 1: (역자주) 뿅뿅이란 말이다.
 - 2: 출처: 뿅뿅 해석 완벽 가이드
