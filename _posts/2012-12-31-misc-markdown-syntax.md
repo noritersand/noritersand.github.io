@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 2012-12-31 00:00:00 +0900
 title: '[misc] markdown syntax'
 categories:
   - misc
