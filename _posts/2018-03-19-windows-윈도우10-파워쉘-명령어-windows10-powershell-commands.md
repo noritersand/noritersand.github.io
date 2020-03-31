@@ -49,13 +49,13 @@ Get-Content .\rogue.log | Select-String 'exception'
 #### Select-String AND, OR, NOT
 
 ```bash
-# 'c'와 '1'이 모두 포함된 라인만 출력
+# AND: 'c'와 '1'이 모두 포함된 라인만 출력
 'xyz', 'abc', 'abc123' | Select-String 'c' | Select-String '1'
 
-# 'z' 혹은 '1'이 포함된 라인만 출력
+# OR: 'z' 혹은 '1'이 포함된 라인만 출력
 'xyz', 'abc', 'abc123' | Select-String 'z|1'
 
-# 'abc'가 없는 라인만 출력
+# NOT: 'abc'가 없는 라인만 출력
 'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
 
