@@ -21,16 +21,17 @@
     .task-list-item-checkbox {
       margin-right: 8px;
     }
-    ul, p {
+    [itemprop='articleBody'] > p {
       margin-top: 12px;
       margin-bottom: 12px;
     }
-    /*//added by me*/
-    /*
-    a, p, li {
-      font-weight: 300;
+    ul {
+      margin: 0;
     }
-    */
+    // a, p, li {
+    //   font-weight: 300;
+    // }
+    /*//added by me*/
 
     a {
         font-size: .95em;
