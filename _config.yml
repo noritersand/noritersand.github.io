@@ -12,6 +12,7 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
 
+timezone: "Asia/Seoul"
 markdown: kramdown
 kramdown:
   auto_id_prefix: 'heading-'
