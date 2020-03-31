@@ -1,4 +1,32 @@
 .unit-article {
+    /*added by me*/
+    kbd {
+      display: inline-block;
+      padding: 4px 6px;
+      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+      line-height: 10px;
+      color: #444d56;
+      vertical-align: middle;
+      background-color: #fafbfc;
+      border: 1px solid #d1d5da;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 0 #d1d5da;
+    }
+    .task-list {
+      padding-left: 22px;
+    }
+    .task-list-item {
+      list-style-type: none;
+    }
+    .task-list-item-checkbox {
+      margin-right: 8px;
+    }
+    ul, p {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+    /*//added by me*/
+
     a {
         font-size: .95em;
 
@@ -133,19 +161,6 @@
         font-family: $fonts-code;
         font-size: 14px;
         line-height: 20px;
-    }
-
-    kbd {
-      display: inline-block;
-      padding: 4px 6px;
-      font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-      line-height: 10px;
-      color: #444d56;
-      vertical-align: middle;
-      background-color: #fafbfc;
-      border: 1px solid #d1d5da;
-      border-radius: 3px;
-      box-shadow: inset 0 -1px 0 #d1d5da;
     }
 
     table,

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00
+date: 1970-01-01 00:00:00 +0900
 title: '[misc] markdown syntax'
 categories:
   - misc
@@ -153,12 +153,15 @@ _이탤릭_
 
 ## unescape
 
-- `\#`: \#을 그대로
+백슬래시`\`를 사용해서 마크다운 문자를 이스케이프 하지 않고 그대로 표시  
+\_ \`\`\` \*\* \#\# \-\-\- 뭐 이렇게...
 
 ## embed image
 
+아래는 그냥 기본 정렬  
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
+아래는 가운데 정렬  
 ![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="margin:0 auto; display:block;"}
 
 ## 첨자
