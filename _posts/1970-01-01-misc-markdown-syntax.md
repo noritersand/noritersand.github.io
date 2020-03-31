@@ -17,7 +17,7 @@ tags:
 - [https://daringfireball.net/projects/markdown/syntax](https://daringfireball.net/projects/markdown/syntax)
 - [https://www.markdownguide.org/basic-syntax](https://www.markdownguide.org/basic-syntax)
 
-## 줄 바꾸기 🤔
+## 줄 바꾸기 🤣
 
 엔터 두 번은
 
@@ -148,7 +148,7 @@ _이탤릭_
 
 ## unescape
 
-- `\#`: '#'를 그대로
+- `\#`: \#을 그대로
 
 ## embed image
 
@@ -156,7 +156,18 @@ _이탤릭_
 
 ![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="margin:0 auto; display:block;"}
 
-## 루비 문자 😥
+## 첨자
+
+마크업을 직접 사용함.
+
+- `<sup>`: 위 첨자
+- `<sub>`: 아래 첨자
+
+## 각주 footnotes
+
+요것[^1]은 각주 표기법이다. 기본 마크다운인지는 모르겠음.
+
+## 루비 문자
 
 <ruby><rb>으아아아</rb><rp>(</rp><rt>호옹이</rt><rp>)</rp></ruby>
 
@@ -169,15 +180,9 @@ _이탤릭_
 
 > 뿅뿅이라고(closure)<sup>1</sup>라고 일컫는다<sup>2<sup>.
 
-- 1: 뿅뿅이다.
-- 2: (역자주) 뿅뿅이란 말이다.
-- 출처: 뿅뿅 해석 완벽 가이드
+- 1: (역자주) 뿅뿅이란 말이다.
+- 2: 출처: 뿅뿅 해석 완벽 가이드
 
-- `<sup>`: 위 첨자
-- `<sub>`: 아래 첨자
+---
 
-## 각주 footnotes
-
-요것[^1]은 각주 표기법이다. 기본 마크다운인지는 모르겠음.
-
-- [^1]: 룰루랄라
+[^1]: 룰루랄라
