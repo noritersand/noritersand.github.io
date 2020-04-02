@@ -18,10 +18,19 @@ tags:
 
 ## Customize Perspective
 
-- Toolbar Visibility
-- Menu Visibility
+### Menu Visibility
+
+![](/images/eclipse-menu-visibility.png)  
+요것이 메뉴.
+
+### Toolbar Visibility
+
+![](/images/eclipse-toolbar-visibility.png)  
+요것이 툴바
+
 - Action Set Availability
 - ShortCuts
+- 단축키는 뭐랑 관계 있어?
 
 ## 빌드
 
@@ -38,9 +47,13 @@ tags:
 
 이클립스 빌더에게 소스 파일이 어느 경로에 있는지`Source folers on build path`와 컴파일한 파일을 어디로 내보낼지`Default output folder`를 알려주는 설정이다. 만약 소스 경로에 컴파일 할 수 없는(e.g. xml) 파일이 있으면 별도 작업 없이 그대로 내보내는걸로 추정된다.
 
-### Projects, Libraries
+### Projects
 
-빌드 시 참조할 이클립스 프로젝트 혹은 Jar, class 폴더를 설정한다.
+빌드에 필요한 클래스패스를 지정한다. 이클립스 프로젝트 단위로 추가할 수 있다. 추가된 프로젝트는 빌드 시 프로젝트명.jar로 묶인다.
+
+### Libraries
+
+빌드에 필요한 클래스패스를 지정한다. Jar, class 폴더를 설정한다.
 
 #### maven dependency
 

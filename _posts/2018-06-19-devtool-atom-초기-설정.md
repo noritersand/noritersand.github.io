@@ -63,6 +63,9 @@ atom 1.32.0 기준.
   'ctrl-shift-d': 'editor:delete-line'
   'ctrl-shift-up': 'editor:move-line-up'
   'ctrl-shift-down': 'editor:move-line-down'
+  'f5': 'nothing'
+  'f9': 'sort-lines:case-insensitive-sort'
+  'ctrl-f9': 'sort-lines:sort'
 
 'atom-text-editor':
   # 'ctrl-up': 'keyboard-scroll:scrollUp'
@@ -87,3 +90,7 @@ atom 1.32.0 기준.
 #### [goto-last-edit](https://atom.io/packages/goto-last-edit)
 
 <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동...인데 서브라임이랑 같도록 바꿔서 씀.
+
+#### [sort-lines](https://atom.io/packages/sort-lines)
+
+아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
