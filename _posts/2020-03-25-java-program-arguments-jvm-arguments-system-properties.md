@@ -29,11 +29,11 @@ java MainTest a 1 b c 3 4 d f
 
 ```java
 public class MainTest {
-  public static void main(String[] args) {
-    for (String arg : args) {
-      System.out.println(arg); // a 1 b c 3 4 d f 출력
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println(arg); // a 1 b c 3 4 d f 출력
+        }
     }
-  }
 }
 ```
 
@@ -61,14 +61,14 @@ System properties는 `System` 객체의 `getProperty()`, `getProperties()` 메�
 
 ```java
 public class TryEverything {
-  public static void main(String[] args) {
-    Properties props = System.getProperties();
-    Enumeration<Object> enumerator = props.keys();
-    while (enumerator.hasMoreElements()) {
-      Object ele = enumerator.nextElement();
-      String key = ele.toString();
-      System.out.println(key + ": " + System.getProperty(key));
+    public static void main(String[] args) {
+        Properties props = System.getProperties();
+        Enumeration<Object> enumerator = props.keys();
+        while (enumerator.hasMoreElements()) {
+            Object ele = enumerator.nextElement();
+            String key = ele.toString();
+            System.out.println(key + ": " + System.getProperty(key));
+        }
     }
-  }
 }
 ```
