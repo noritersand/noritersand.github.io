@@ -19,35 +19,35 @@ tags:
 - [https://docs.oracle.com/javaee/7/api/javax/validation/ConstraintViolation.html](https://docs.oracle.com/javaee/7/api/javax/validation/ConstraintViolation.html)
 
 ```java
-public class EcbaseException extends RuntimeException {
-	private static final long serialVersionUID = 480486167019286584L;
+public class SomeException extends RuntimeException {
+    private static final long serialVersionUID = 480486167019286584L;
 
-	private Set<ConstraintViolation> violations;
+    private Set<ConstraintViolation> violations;
 
-	/**
-	 * @param errorCode
-	 * @param violations
-	 */
-	public EcbaseException(String errorCode, Set<ConstraintViolation> violations) {
-		super(errorCode);
-		this.violations = violations;
-	}
+    /**
+     * @param errorCode
+     * @param violations
+     */
+    public SomeException(String errorCode, Set<ConstraintViolation> violations) {
+        super(errorCode);
+        this.violations = violations;
+    }
 
-	/**
-	 * @return
-	 * @author fixalot
-	 */
-	public Set<ConstraintViolation> getViolations() {
-		return violations;
-	}
+    /**
+     * @return
+     * @author fixalot
+     */
+    public Set<ConstraintViolation> getViolations() {
+        return violations;
+    }
 
-	/**
-	 * @param violations
-	 * @author fixalot
-	 */
-	public void setViolations(Set<ConstraintViolation> violations) {
-		this.violations = violations;
-	}
+    /**
+     * @param violations
+     * @author fixalot
+     */
+    public void setViolations(Set<ConstraintViolation> violations) {
+        this.violations = violations;
+    }
 }
 ```
 

@@ -24,14 +24,14 @@ tags:
 
 ```json
 {
-	"auto_complete": false,
-	"fallback_encoding": "UTF-8",
-	"font_face": "Consolas",
-	"font_size": 11,
-	"show_encoding": true,
-	"show_line_endings": true,
-	"tab_completion": false,
-	"file_exclude_patterns": ["*.sublime-workspace"]
+  "auto_complete": false,
+  "fallback_encoding": "UTF-8",
+  "font_face": "Consolas",
+  "font_size": 11,
+  "show_encoding": true,
+  "show_line_endings": true,
+  "tab_completion": false,
+  "file_exclude_patterns": ["*.sublime-workspace"]
 }
 ```
 

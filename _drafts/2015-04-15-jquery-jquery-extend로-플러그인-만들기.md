@@ -153,11 +153,11 @@ $(function() {
     $.fn.hello = function() {
         // this: jQuery 객체 배열
         this.each(function(index, element) {
-	        $(element).click(function() {
-	            var msg = "if you ask me. i'm ";
-	            msg += $(this).prev().val(); // this = JavaScript Object
-	            alert(msg);
-	        });
+          $(element).click(function() {
+              var msg = "if you ask me. i'm ";
+              msg += $(this).prev().val(); // this = JavaScript Object
+              alert(msg);
+          });
         });
     };
     $("button").hello();
@@ -171,16 +171,16 @@ $(function() {
 <button type="button">fire!</button>
 <script>
 $.fn.alert = function(option) {
-	// 이벤트 핸들러 바인딩
-	this.each(function(index, element) {
-		$(element).click(function() {
-	  		$.fireAlert(option);
-	  	});
-	});
+  // 이벤트 핸들러 바인딩
+  this.each(function(index, element) {
+    $(element).click(function() {
+        $.fireAlert(option);
+      });
+  });
 };
 // 함수 구현
 $.fireAlert = function(option) {
-	alert(option.message);
+  alert(option.message);
 }
 
 $.fireAlert({ message: '문서 로딩 직후 나타나는 경고창' }); // 함수 직접 호출

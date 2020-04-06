@@ -45,8 +45,8 @@ console.table(["apples", "oranges", "bananas"]);
 
 ```js
 var c = {
-	header: 'color: black; background-color: #ddd; font-size: 15px; font-weight: bold; padding: 5px',
-	label: 'color: black; background-color: #ddd; padding: 2px',
+  header: 'color: black; background-color: #ddd; font-size: 15px; font-weight: bold; padding: 5px',
+  label: 'color: black; background-color: #ddd; padding: 2px',
   warning: 'color: red; background-color: #ddd; padding: 2px'
 };
 console.log('%cCONSOLE OUTPUT TEST', c.header);
