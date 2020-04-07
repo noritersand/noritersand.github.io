@@ -124,26 +124,26 @@ Array 타입은 `valueOf()` 대신 `toString()`을 호출한다(규칙에 따라
 
 출처: JavasScript: The Definitive Guide. David Flanagan 저. 6판. 58쪽
 
-|                  | String      | Number | Boolean | Object                 |
-|------------------|-------------|--------|---------|------------------------|
-| undefined        | "undefined" | NaN    | false   | TypeError              |
-| null             | "null"      | 0      | false   | TypeError              |
-| true             | "true"      | 1      |         | new Boolean(true)      |
-| false            | "false"     | 0      |         | new Boolean(false)     |
+|                   | String      | Number | Boolean | Object                 |
+|-------------------|-------------|--------|---------|------------------------|
+| undefined         | "undefined" | NaN    | false   | TypeError              |
+| null              | "null"      | 0      | false   | TypeError              |
+| true              | "true"      | 1      |         | new Boolean(true)      |
+| false             | "false"     | 0      |         | new Boolean(false)     |
 | "" (empty string) |             | 0      | false   | new String("")         |
-| "1.2"            |             | 1.2    | true    | new String("1.2")      |
-| "one"            |             | NaN    | true    | new String("one")      |
-| " "              |             | 0      | true    | new String(" ")        |
-| 123              | "123"       |        | true    | new Number(123)        |
-| 0                | "-1"        |        | true    | new Number(-1)         |
-| 0                | "0"         |        | false   | new Number(0)          |
-| -0               | "0"         |        | false   | new Number(-0)         |
-| NaN              | "NaN"       |        | false   | new Number(NaN)        |
-| Infinity         | "Infinity"  |        | true    | new Number(Infinity)   |
-| -Infinity        | "-Infinity" |        | true    | new Number(-Infinity)  |
-| { }              |             |        | true    |                        |
-| [ ]              |             | 0      | true    |                        |
-| [9]              | "9"         | 9      | true    |                        |
-| ["a"]            |             | NaN    | true    |                        |
-| [1, 2]           |             | NaN    | true    |                        |
-| function() { }   |             | NaN    | true    |                        |
+| "1.2"             |             | 1.2    | true    | new String("1.2")      |
+| "one"             |             | NaN    | true    | new String("one")      |
+| " "               |             | 0      | true    | new String(" ")        |
+| 123               | "123"       |        | true    | new Number(123)        |
+| -1                | "-1"        |        | true    | new Number(-1)         |
+| 0                 | "0"         |        | false   | new Number(0)          |
+| -0                | "0"         |        | false   | new Number(-0)         |
+| NaN               | "NaN"       |        | false   | new Number(NaN)        |
+| Infinity          | "Infinity"  |        | true    | new Number(Infinity)   |
+| -Infinity         | "-Infinity" |        | true    | new Number(-Infinity)  |
+| { }               |             |        | true    |                        |
+| [ ]               |             | 0      | true    |                        |
+| [9]               | "9"         | 9      | true    |                        |
+| ["a"]             |             | NaN    | true    |                        |
+| [1, 2]            |             | NaN    | true    |                        |
+| function() { }    |             | NaN    | true    |                        |

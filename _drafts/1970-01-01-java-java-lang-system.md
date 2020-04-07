@@ -13,7 +13,7 @@ tags:
 
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/System.html](http://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
 
-## getProperty()
+## getProperty(String)
 
 ```java
 System.getProperty("java.version");
@@ -24,34 +24,51 @@ system arguments(eclipse.ini 혹은 tomcat Arguments로 지정된 값들)를 이
 
 ## getProperties()
 
-```
-file.separator : \
-java.class.path : C:\Users\fixalot\work\workspace\image\build\class...
-java.home : C:\myapps\Java\jre7
-java.vendor : Oracle Corporation
-java.vendor.url : http://java.oracle.com/
-java.version : 1.7.0_51
-line.separator :
-file.encoding=UTF-8 // platform character set
-
-os.arch : amd64
-os.name : Windows 7
-os.version : 6.1
-path.separator : ;
-user.dir : C:\Users\fixalot\work\workspace\image
-user.home : C:\Users\fixalot
-user.name : fixalot
-// 생략
+```java
+Properties props = System.getProperties();
+Enumeration<?> names = props.propertyNames();
+while (names.hasMoreElements()) {
+    final String propname = (String) names.nextElement();
+    logger.debug("{}={}", propname, props.getProperty(propname));
+}
 ```
 
-## getEnv()
+## getenv(String)
 
-환경설정 값 가져오기
+특정 환경설정 가져오기
 
 ```java
 System.getenv("path");
 ```
 
+## getenv()
+
+모든 환경설정 값 가져오기
+
+```java
+Map<String, String> env = System.getenv();
+Set<String> keySet = env.keySet();
+for (String envname : keySet) {
+    logger.debug("{}={}", envname, env.get(envname));
+}
+```
+
 ## currentTimeMillis()와 nanoTime()의 차이
 
 [http://mussebio.blogspot.kr/2012/05/java-api.html](http://mussebio.blogspot.kr/2012/05/java-api.html)
+
+## load(String)
+
+네이티브 라이브러리 로딩: 파일명으로 지정
+
+```java
+System.load("c:/some-file-name");
+```
+
+## loadLibrary(String)
+
+네이티브 라이브러리 로딩: 라이브러리 이름으로 지정
+
+```java
+System.loadLibrary("some-library-name");
+```

@@ -57,6 +57,19 @@ console.log(arr); // ['b', 'c', 'd', 'a']
 
 ## 탐색
 
+### Array.prototype.map()
+
+주어진 함수가 반환하는 결과로 새로운 배열 생성
+
+```js
+[ 1, 2, 3, 4, 5 ].map(n => n * 2); // [ 2, 4, 6, 8, 10 ]
+
+[ 1, 2, 3, 4, 5 ].map(function(n) {
+  return n == 1;
+});
+// [ true, false, false, false, false ]
+```
+
 ### Array.prototype.forEach()
 
 ```
@@ -70,12 +83,6 @@ forEach( element, index, object )
 
 TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/break 사용이 불가능했는데, js도 그러는지 확인 필요함.
 
-### Array.prototype.map()
-
-### Array.prototype.some()
-
-### Array.prototype.every()
-
 ### Array.prototype.filter()
 
 ```js
@@ -85,6 +92,10 @@ let even = arr.filter(function(element) {
 });
 even; // [2, 4]
 ```
+
+### Array.prototype.some()
+
+### Array.prototype.every()
 
 ### Array.prototype.reduce()
 

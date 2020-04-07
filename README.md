@@ -54,6 +54,10 @@
 
 ## 환경 설정
 
+#### 윈도우용 Ruby + Devkit 설치
+
+https://rubyinstaller.org/downloads/
+
 #### RubyGems으로 Bundler와 Jekyll 설치
 
 ```bash
@@ -158,11 +162,11 @@ https://github.com/rbenv/rbenv/issues/1138
 아래처럼 `Gemfile.lock`에 있는 버전을 강제로 지정해서 해결함.
 
 ```bash
-$ cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
+cat Gemfile.lock | grep -A 1 "BUNDLED WITH"
 BUNDLED WITH
    1.17.3
 
-$ gem install bundler -v '1.17.3'
+gem install bundler -v '1.17.3'
 ```
 
 ### on 태그는 빌드 불가
