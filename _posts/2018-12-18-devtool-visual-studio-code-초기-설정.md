@@ -44,7 +44,7 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 ## 단축키
 
-커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력 후 엔터. 이 후 열리는 keybindings.json을 아래처럼 변경:
+커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력 후 엔터. 그리고 열리는 keybindings.json을 아래처럼 변경:
 
 ```json
 [

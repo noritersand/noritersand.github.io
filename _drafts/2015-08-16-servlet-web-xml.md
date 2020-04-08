@@ -71,6 +71,19 @@ JAVA WAS는 세션을 구분하기 위해 사용자 브라우저에 'JESSIONID'�
 
 **TODO**: `${}` 표현식으로 VM arguments(JVM의 `-D` 옵션)에 설정한 값을 가져올 수 있다.
 
+## Loader
+
+### ~~virtualClasspath~~
+
+```xml
+<Context docBase="backoffice" path="/" reloadable="false" source="org.eclipse.jst.jee.server:backoffice">
+    <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" ... />
+    <Loader className="org.apache.catalina.loader.VirtualWebappLoader" virtualClasspath="C:/somewhere" />
+</Context>
+```
+
+이런식으로 특정 경로를 런타임 클래스패스로 지정하는 옵션이 있었는데 Tomcat 7 까지만 쓰이고 지금은 없어졌다. 굳이 한 마디 덧붙이면, 클래스패스를 이런식으로 관리하면 매우 거시기하다.
+
 ## load-on-startup
 
 ## init-param

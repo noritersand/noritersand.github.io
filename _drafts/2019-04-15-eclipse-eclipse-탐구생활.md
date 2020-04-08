@@ -89,7 +89,16 @@ pom.xml의 dependency 설정에 추가한 프로젝트가 들어오는걸로 추
 
 여기에 추가된 항목은 빌드할 때 사용하긴 하지만 배포할 떄도 그런건 아니다. 배포에 포함하고 싶다면 `Deployment Assembly` 설정에서 추가한다.
 
-**...라고 정리해놨으나, 현장에서 `Deployment Assembly` 설정 없이 돌아가는 배포 환경을 목격함. 실제 배포 대상에 없는 파일을 JST 서버에서 읽는다.** 이건 톰캣7 설정 중 loader-virtualClasspath 속성으로 특정 프로젝트의 실제 경로를 지정하는 방식이었다. 빌드 아웃풋 경로를 WAS 설정에 하드코딩 하다니, 정말 듣도보도 못한 발상이다. 톰캣 버전이 올라가면서 이 속성은 없어진것 같다.
+**...라고 정리해놨으나, 현장에서 `Deployment Assembly` 설정 없이 돌아가는 배포 환경을 목격함. 실제 배포 대상에 없는 파일을 JST 서버에서 읽는다.**
+
+```xml
+<Context docBase="backoffice" path="/" reloadable="false" source="org.eclipse.jst.jee.server:backoffice">
+    <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" ... />
+    <Loader className="org.apache.catalina.loader.VirtualWebappLoader" virtualClasspath="C:/somewhere" />
+</Context>
+```
+
+톰캣7 설정 중 `Loader-virtualClasspath` 속성으로 라이브러리 폴더의 전체 경로를 지정하는 방식이었다. 클래스패스를 WAS 설정에 하드코딩 하다니, 정말 듣도보도 못한 충격적인 발상이다. 톰캣 버전이 올라가면서 이 속성은 없어진것 같다.
 
 ### Deployment Assembly
 
