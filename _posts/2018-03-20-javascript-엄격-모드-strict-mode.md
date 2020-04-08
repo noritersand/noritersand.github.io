@@ -33,6 +33,12 @@ function test() {
   'use strict';
   // 이 함수는 엄격 모드가 적용됨.
 }
+
+(function() {
+  'use strict';
+  x = 1;
+})(); // ReferenceError: assignment to undeclared variable x
+
 // 스크립트 시작 부분에 지시어가 없으면 엄격 모드가 적용되지 않음.
 ```
 

@@ -43,7 +43,7 @@ atom 1.32.0 기준.
 
 ## 단축키
 
-커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Application: Open Your Keymap' 입력 후 엔터. 이 후 열리는 keymap.cson을 아래처럼 변경:
+커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Application: Open Your Keymap' 입력 후 엔터. 그리고 열리는 keymap.cson을 아래처럼 변경:
 
 ```yml
 '.platform-win32, .platform-win32 .command-palette atom-text-editor':
