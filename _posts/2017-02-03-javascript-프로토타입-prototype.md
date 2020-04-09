@@ -18,17 +18,23 @@ tags:
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
+- [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
+- [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
 ![](/images/javascript-prototype.png)
 
 ## 프로토타입이란?
 
-간단히 말해 객체의 원형. 자바에서 클래스 기반으로 객체(혹은 인스턴스)가 만들어지듯, 자바스크립트에선 프로토타입을 기반으로 객체가 만들어진다.
+> 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 동작 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스<sup>class-less</sup>, 프로토타입 지향<sup>prototype-oriented</sup> 혹은 인스턴스 기반<sup>instance-based</sup> 프로그래밍이라고도 한다.
+>
+> https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D
+
+간단히 말해 객체의 원형. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, 자바스크립트는 프로토타입을 복제하는 방식으로 객체를 만든다.
 
 ## 프로토타입 체인
 
-자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 이 프로토타입도 다른 프로토타입에서 파생된 결과물이다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 이것이 프로토타입 체인이라고 하는 일종의 상속과 확장의 개념 되시겠다.
+자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 자신을 만들어낸 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
 
 아래 같은 **생성자 함수** `Newbie`가 있을 때:
 
@@ -43,7 +49,9 @@ function Newbie() {
 let noob = new Newbie();
 ```
 
-`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`이다. (`prototype`, `__proto__`: 객체의 프로토타입을 가리키는 속성)
+`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`\*과 같다:
+
+\* `__proto__`, `prototype`: 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성.
 
 ```js
 noob.__proto__ === Newbie.prototype; // true
@@ -70,7 +78,7 @@ noob.constructor === Newbie; // true
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function`의 생성자 함수는 `Function`이며, `Function`의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이고, `Fuction`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이다. ~~고만해미친놈아~~:
+그리고 `Function`의 생성자 함수는 `Function`이며, `Function`의 생성자 함수의 생성자 함수도 `Function`이고, `Function`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이고, `Function`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true
@@ -143,6 +151,8 @@ console.log(arr.doubleLength); // 6
 arr.spitout();
 console.log(arr.length); // 0
 ```
+
+### 꼐속...
 
 ## 프로토타입의 함수
 

@@ -67,7 +67,7 @@ Person.prototype.sayHi = function() {
 
 ## 생성자 메서드
 
-생성자 메서드([constructor method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 ES2015(ES6)에 추가된 class 구문 내에서 사용한다. **생성자 함수가 아니다.**
+생성자 메서드([constructor method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 ES2015(ES6)에 추가된 class 문법에서 사용한다. **생성자 함수가 아니다.**
 
 ```js
 class Square extends Polygon {

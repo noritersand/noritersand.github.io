@@ -15,8 +15,9 @@ tags:
 
 #### 관련 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [MDN: Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
+- [MDN: Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [MDN: 객체 초기자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 버전 넘버링
@@ -446,6 +447,8 @@ var add = function(a, b) {
 
 #### 객체 리터럴
 
+MDN에 따르면 객체 리터럴은 '리터럴 표기에 의한 객체 생성<sup>creating objects with literal notation</sup>'이라고도 한다.
+
 ```js
 var ob = {}; // new Object()와 같음
 ob.a = 1;
@@ -455,6 +458,24 @@ obj.b; // 2
 obj['b']; // 2, 프로퍼티에 접근하는 표현식으로 obj.b와 같다.
 obj.c.d; // 3
 ```
+
+#### 메서드 리터럴
+
+```js
+var mankind = {
+  walk: function() {}
+};
+mankind.walk();
+```
+
+전통적인 방법은 위와 같고, 아래는 ES2015의(따라서 IE에서 사용 불가) 단축 표기법이다:
+
+```js
+var mankind = {
+  walk() {}
+};
+```
+
 
 #### 배열 리터럴
 
