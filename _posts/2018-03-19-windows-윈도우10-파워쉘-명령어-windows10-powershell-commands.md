@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [Microsoft PowerShell 제품 설명서](https://aka.ms/powershell)
 - [Microsoft Docs: PowerShell](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)

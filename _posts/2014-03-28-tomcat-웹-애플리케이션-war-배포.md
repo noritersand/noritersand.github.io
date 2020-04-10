@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://tomcat.apache.org/tomcat-8.0-doc/config/context.html](https://tomcat.apache.org/tomcat-8.0-doc/config/context.html)
 - [https://tomcat.apache.org/tomcat-9.0-doc/config/context.html](https://tomcat.apache.org/tomcat-9.0-doc/config/context.html)

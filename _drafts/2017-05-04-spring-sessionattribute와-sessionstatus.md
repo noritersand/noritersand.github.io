@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://java.ihoney.pe.kr/218](http://java.ihoney.pe.kr/218)
 - [https://offbyone.tistory.com/333](https://offbyone.tistory.com/333)

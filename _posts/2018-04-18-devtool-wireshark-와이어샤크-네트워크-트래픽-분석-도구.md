@@ -10,7 +10,7 @@ tags:
 ---
 
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://www.wireshark.org/download.html](https://www.wireshark.org/download.html)
 - [https://wiki.wireshark.org/DisplayFilters#Examples](https://wiki.wireshark.org/DisplayFilters#Examples)

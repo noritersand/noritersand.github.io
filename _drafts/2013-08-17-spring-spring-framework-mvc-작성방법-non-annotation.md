@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://spring.io/guides/gs/serving-web-content/](https://spring.io/guides/gs/serving-web-content/)
 

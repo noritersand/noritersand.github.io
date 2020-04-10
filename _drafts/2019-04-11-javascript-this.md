@@ -10,7 +10,7 @@ tags:
   - this
 ---
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 

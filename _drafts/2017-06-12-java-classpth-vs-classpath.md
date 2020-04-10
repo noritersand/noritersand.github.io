@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://blog.carbonfive.com/2007/05/17/using-classpath-vs-classpath-when-loading-spring-resources/](http://blog.carbonfive.com/2007/05/17/using-classpath-vs-classpath-when-loading-spring-resources/)
 - [https://stackoverflow.com/questions/3294423/spring-classpath-prefix-difference](https://stackoverflow.com/questions/3294423/spring-classpath-prefix-difference)

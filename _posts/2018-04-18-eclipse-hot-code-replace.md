@@ -11,7 +11,7 @@ tags:
   - hot-code-replace
 ---
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/](http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/)
 

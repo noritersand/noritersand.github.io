@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://www.w3schools.com/jsref/met_win_open.asp](http://www.w3schools.com/jsref/met_win_open.asp)
 - [MDN: Window.open()](https://developer.mozilla.org/ko/docs/Web/API/Window/open)

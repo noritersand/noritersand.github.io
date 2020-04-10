@@ -10,7 +10,7 @@ tags:
   - pom.xml
 ---
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://stackoverflow.com/questions/9798955/with-maven-clean-package-xml-source-files-are-not-included-in-classpath](http://stackoverflow.com/questions/9798955/with-maven-clean-package-xml-source-files-are-not-included-in-classpath)
 

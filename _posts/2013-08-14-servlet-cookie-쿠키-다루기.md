@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - http://tomcat.apache.org/tomcat-7.0-doc/servletapi/javax/servlet/http/Cookie.html
 

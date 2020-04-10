@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
 - [http://www.nodebeginner.org/index-kr.html](http://www.nodebeginner.org/index-kr.html)

@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://xhr.spec.whatwg.org/](https://xhr.spec.whatwg.org/)
 - [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)

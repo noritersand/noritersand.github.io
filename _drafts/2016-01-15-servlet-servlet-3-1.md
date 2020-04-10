@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://tomcat.apache.org/tomcat-8.0-doc/index.html](http://tomcat.apache.org/tomcat-8.0-doc/index.html)
 - [http://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html](http://tomcat.apache.org/tomcat-8.0-doc/servletapi/index.html)

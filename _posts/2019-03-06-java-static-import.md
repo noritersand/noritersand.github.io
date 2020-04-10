@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html](https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html)
 - [https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3](https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3)

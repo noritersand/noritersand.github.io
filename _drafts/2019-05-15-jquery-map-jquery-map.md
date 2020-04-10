@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://api.jquery.com/map/](http://api.jquery.com/map/)
 - [http://api.jquery.com/jQuery.map/](http://api.jquery.com/jQuery.map/)

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고한 문서
 
 - [http://spring.io/guides/gs/managing-transactions/](http://spring.io/guides/gs/managing-transactions/)
 - [http://wiki.gurubee.net/pages/viewpage.action?pageId=26741432](http://wiki.gurubee.net/pages/viewpage.action?pageId=26741432)
