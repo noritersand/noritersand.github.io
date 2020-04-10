@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2017-02-03 13:44:00 +0900
+date: 2019-04-10 16:25:00 +0900
 title: '[JavaScript] 프로토타입 Prototype'
 categories:
   - javascript
@@ -16,15 +16,15 @@ tags:
 #### 참고한 문서
 
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
+- [MDN: Object.getPrototypeOf](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
+- [MDN: Object.prototype.\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
-- [MDN: Object.prototype.\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
-- [MDN: Object.getPrototypeOf](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
-위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. 그리고 이 글에서도 '프로퍼티' 대신 '속성'이라 작성함.
+위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 여기에도 프로퍼티 대신 속성이라 작성하긴 했는데, 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. (생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함)
 
 ---
 
@@ -40,7 +40,9 @@ tags:
 
 ## 프로토타입 확인
 
-객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성 `Object.prototype.__proto__`를 이용하는 방법이 있다:
+객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성 `Object.prototype.__proto__`\*를 이용하는 방법이 있다:
+
+\* `Object.prototype.__proto__`는 [deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)된 속성이며 사용을 권장하지 않음.
 
 ```js
 let o = new Object();
