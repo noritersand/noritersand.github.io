@@ -1,60 +1,18 @@
 ---
 layout: post
 date: 2018-03-09 17:53:21 +0900
-title: '[JavaScript] regexp 정규 표현식 모음'
+title: '[misc] RegExp 정규 표현식 모음'
 categories:
-  - javascript
+  - misc
 tags:
-  - ecmascript
-  - javascript
   - regex
   - regexp
+  - regular-expression
+  - rational-expression
   - 코드모음
 ---
 
-## 사용법
-
-### String.match
-
-검색한 문자들을 배열로 반환한다. `g` 플래그가 없으면 맨 처음 찾은 하나만 반환.
-
-```js
-"ecmascript javascript".match(/script/g); // [ "script", "script" ]
-```
-
-### String.search
-
-검색한 문자의 인덱스 반환
-
-```js
-"javascript".search(/va/); // 2
-```
-
-### String.replace( regexp, replaceText )
-
-지정된 패턴과 검색하여 replaceText로 대체
-
-```js
-TODO
-```
-
-### RegExp.exec( testString )
-
-지정된 패턴과 같은 패턴을 검색하여 배열 또는 null 문자를 리턴
-
-```js
-TODO
-```
-
-### RegExp.test( testString )
-
-지정된 패턴과 같은 패턴을 검색하여 검색하면 true 를 리턴하며 그렇지 않으면 false 리턴
-
-```js
-TODO
-```
-
-## expression
+## misc
 
 ### 공백 줄(empty line)
 
@@ -323,3 +281,35 @@ p.test('placeholder=""'); // false
 ```
 
 `placeholder="abc"`는 찾지만 `placeholder=""`는 못찾음.
+
+### 언더바`_` 이후 모든 문자
+
+```js
+/_\w+/
+```
+
+### 언더바`_` 이전 모든 문자
+
+```js
+/\w+_/
+```
+
+## 이미지 태그 찾기
+
+### `<img`부터 `src="~~~"` 까지
+
+```js
+/<img [^>]*src="([^"]+)"/
+```
+
+#### 이미지 확장자가 `jpg`, `png`만
+
+```js
+/<img [^>]*src="([^"]+)(([^"]+)(.)(jpg|png))"/
+```
+
+### `<img`부터 `>` 까지
+
+```js
+/<img [^>]*src="([^"]+)"[^>]*>/
+```

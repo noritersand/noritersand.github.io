@@ -18,9 +18,13 @@ tags:
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
+- [MDN: Object.prototype.__proto__](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
+- [MDN: Object.getPrototypeOf](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
+
+위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다.
 
 ![](/images/javascript-prototype.png)
 
@@ -32,26 +36,48 @@ tags:
 
 간단히 말해 객체의 원형. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, 자바스크립트는 프로토타입을 복제하는 방식으로 객체를 만든다.
 
+## 프로토타입 확인
+
+객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성 `Object.prototype.__proto__`를 이용하는 방법이 있다:
+
+```js
+let o = new Object();
+Object.getPrototypeOf(o) === o.__proto__; // true
+```
+
+함수의 속성인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다. 여기서 '함수로 생성된 객체'란, **함수를 선언할 때 자동으로 생성되는 객체** 와 명시적으로 생성자 함수를 호출해 생성된 객체 모두를 말한다.
+
+가령 생성자 함수 `Newbie`와 이 함수로 생성한 객체 `noob`이 있을때:
+
+```js
+function Newbie() {}
+let noob = new Newbie();
+```
+
+자바스크립트는 `Newbie` 함수로 만든 객체를 `Newbie.prototype`에 할당한다. 이 사실은 `Newbie.prototype`의 생성자가 `Newbie`와 일치하며 `noob`의 생성자와도 일치한다는 것으로 확인할 수 있다:
+
+```js
+Newbie.prototype.constructor === Newbie; // true
+Newbie.prototype.constructor === noob.constructor; // true
+```
+
+그리고 함수의 `.prototype` 속성이 가리키는 프로토타입은 `noob`의 프로토타입과 일치한다:
+
+```js
+Newbie.prototype === Object.getPrototypeOf(noob); // true
+Newbie.prototype === noob.__proto__; // true
+```
+
 ## 프로토타입 체인
 
 자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 자신을 만들어낸 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
 
-아래 같은 **생성자 함수** `Newbie`가 있을 때:
-
 ```js
-function Newbie() {
-  if (!(this instanceof Newbie)) {
-    return new Newbie(name);
-  }
-  this.trait = 'know nothing';
-}
-
+function Newbie() {}
 let noob = new Newbie();
 ```
 
-`Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`\*과 같다:
-
-\* `__proto__`, `prototype`: 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성.
+여기서 `Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
 
 ```js
 noob.__proto__ === Newbie.prototype; // true
@@ -69,7 +95,7 @@ Newbie.prototype.__proto__ === Object.prototype; // true
 Object.prototype.__proto__ === null; // true
 ```
 
-### 곁다리: 그럼 생성자 함수의 프로토타입은?
+### 곁다리: 생성자 함수의 생성자
 
 `noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다:
 
@@ -78,7 +104,7 @@ noob.constructor === Newbie; // true
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function`의 생성자 함수는 `Function`이며, `Function`의 생성자 함수의 생성자 함수도 `Function`이고, `Function`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이고, `Function`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function`이다. ~~고만해미친놈아~~:
+그리고 `Function`의 생성자는 `Function`이며, `Function`의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자의 생성자도 `Function`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true
@@ -87,7 +113,15 @@ Function.constructor.constructor.constructor === Function; // true
 Function.constructor.constructor.constructor.constructor === Function; // true
 ```
 
-방향을 살짝 틀어서 `Newbie`의 프로토타입과 `Function`의 프로토타입은 `function ()`(이게 정확히 뭔지는 몲. 아마 익명 함수?)를 가리킨다. `function ()`의 프로토타입은 `Object.prototype`이다:
+### 곁다리: 그럼 생성자 함수의 프로토타입은?
+
+`Function` 함수의 프로토타입은 `Function.__proto__`와 같은데:
+
+```js
+Function.__proto__ == Function.prototype; // true
+```
+
+`Newbie.__proto__`와 `Newbie.prototype`이 동일하지 않는것과 비교해 차이가 있다. 그리고 `Newbie` 함수 자체의 프로토타입과 `Function`의 프로토타입은 같으며, `Function` 함수의 프로토타입의 프로토타입은(?) `Object.prototype`이다:
 
 ```js
 Newbie.__proto__; // function ()
@@ -96,21 +130,25 @@ Newbie.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
-복잡하면 그냥 이 글 맨 위의 그림을 보자.
+이 정도쯤 쓰고 보니 그냥 뻘글이다. 😏
 
 ## 속성의 가려짐 property shadowing
 
-객체는 '자기만의 속성(own properties)'과 프로토타입의 속성이 동시에 존재할 수 있다. 이 경우 '자기만의 속성'이 우선되며, 프로토타입의 속성은 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '속성의 가려짐'이라고 한다.
+객체의 속성은 자기만의 속성<sup>own properties</sup>\*과 프로토타입의 속성으로 나뉜다. 자기만의 속성이 없고 프로토타입의 속성만 있는 객체는 해당 속성을 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
+
+만약 자기만의 속성과 프로토타입의 속성이 동시에 존재한다면, 자기만의 속성이 우선되며 프로토타입의 속성은 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '속성의 가려짐'이라고 한다.
+
+\* 자기만의 속성은 `Object.getOwnPropertyDescriptors(object)`로 확인할 수 있음.
 
 ```js
-let f = function() {
+function Fn() {
     this.a = 1;
     this.b = 2;
 }
-let o = new f();
+let o = new Fn();
 
-f.prototype.b = 3;
-f.prototype.c = 4;
+Fn.prototype.b = 3;
+Fn.prototype.c = 4;
 
 o.a; // 1
 o.__proto__.a; // undefined
@@ -118,6 +156,38 @@ o.b; // 2
 o.__proto__.b; // 3
 o.c; // 4
 o.__proto__.c; // 4
+```
+
+## 프로토타입 재정의
+
+생성자 함수가 가리키는 프로토타입을 재정의:
+
+```js
+function Newbie() {}
+Newbie.prototype; // {}
+a = new Newbie();
+
+Newbie.prototype = { isNoob: true };
+Newbie.prototype; // { isNoob: true }
+b = new Newbie();
+
+a.isNoob; // undefined
+b.isNoob; // true
+
+a.__proto__ != b.__proto__; // true
+```
+
+객체의 프로토타입을 재정의:
+
+```js
+function Newbie() {}
+a = new Newbie();
+b = new Newbie();
+a.__proto__ === b.__proto__; // true
+
+b.__proto__ = { isNoob: true }
+a.isNoob; // undefined
+b.isNoob; // true
 ```
 
 ## 메서드 오버라이딩 method overriding

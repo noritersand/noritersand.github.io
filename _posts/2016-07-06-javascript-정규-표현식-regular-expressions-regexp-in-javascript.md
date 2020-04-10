@@ -59,12 +59,52 @@ var re = new RegExp("ab+c", "i");
 
 ## 정규 표현식과 함께 사용하는 함수
 
-- `String.search( regexp )`: 정규식 패턴에 첫 번째로 일치하는 부분 문자열의 위치를 반환 하며 존재하지 않으면 -1을 리턴 한다.
-- `String.match( regexp )`: 지정된 패턴과 동일한 패턴을 검색하여 배열 또는 null 문자를 리턴 한다.
-- `String.replace( regexp, replaceText )`: 지정된 패턴과 검색하여 replaceText로 대체
-- `RegExp.exec( testString )`: 지정된 패턴과 같은 패턴을 검색하여 배열 또는 null 문자를 리턴 한다.
-- `RegExp.test( testString )`: 지정된 패턴과 같은 패턴을 검색하여 검색하면 true 를 리턴하며 그렇지 않으면 false 리턴 한다.
-- `RegExp.compile( pattern, [ flags ] )`: compile 메서드는 script 수행 중 정규 식 개체를 컴파일 한다. compile 메서드는 단 한번 컴파일하기 위하여 기능함수 생성자로 생성된 RegExp 개체와 함께 사용된다. 그래서 정규식의 반복적인 컴파일을 방지할 수 있다.
+- `String.search( regexp )`: 정규식 패턴에 첫 번째로 일치하는 부분 문자열의 위치를 반환 하며 존재하지 않으면 `-1`을 리턴 한다.
+- `String.match( regexp )`: 지정된 패턴과 동일한 패턴을 검색하여 배열 또는 `null` 문자를 리턴 한다.
+- `String.replace( regexp, replaceText )`: 지정된 패턴과 검색하여 `replaceText`로 대체
+- `RegExp.exec( testString )`: 지정된 패턴과 같은 패턴을 검색하여 배열 또는 `null` 문자를 리턴 한다.
+- `RegExp.test( testString )`: 지정된 패턴과 같은 패턴을 검색하여 검색하면 `true` 를 리턴하며 그렇지 않으면 `false` 리턴 한다.
+- `RegExp.compile( pattern, [ flags ] )`: `compile` 메서드는 script 수행 중 정규 식 개체를 컴파일 한다. `compile` 메서드는 단 한번 컴파일하기 위하여 기능함수 생성자로 생성된 `RegExp` 개체와 함께 사용된다. 그래서 정규식의 반복적인 컴파일을 방지할 수 있다.
+
+### String.match
+
+일치하는 문자들을 배열로 반환한다. `g` 플래그가 없으면 맨 처음 찾은 하나만 반환.
+
+```js
+"ecmascript javascript".match(/script/g); // [ "script", "script" ]
+```
+
+### String.search
+
+검색한 문자의 인덱스 반환. `g` 플래그는 무시함.
+
+```js
+"javascript".search(/va/); // 2
+```
+
+### String.replace( regexp, replaceText )
+
+지정된 패턴과 검색하여 replaceText로 대체
+
+```js
+TODO
+```
+
+### RegExp.exec( testString )
+
+지정된 패턴과 같은 패턴을 검색하여 배열 또는 null 문자를 리턴
+
+```js
+TODO
+```
+
+### RegExp.test( testString )
+
+지정된 패턴과 같은 패턴을 검색하여 검색하면 true 를 리턴하며 그렇지 않으면 false 리턴
+
+```js
+TODO
+```
 
 ## 정규 표현식에서 사용하는 특수문자
 
