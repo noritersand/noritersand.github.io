@@ -18,13 +18,15 @@ tags:
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
 - [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
-- [MDN: Object.prototype.__proto__](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
+- [MDN: Object.prototype.\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
 - [MDN: Object.getPrototypeOf](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
-위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다.
+위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. 그리고 이 글에서도 '프로퍼티' 대신 '속성'이라 작성함.
+
+---
 
 ![](/images/javascript-prototype.png)
 
@@ -130,7 +132,7 @@ Newbie.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
-이 정도쯤 쓰고 보니 그냥 뻘글이다. 😏
+이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
 
 ## 속성의 가려짐 property shadowing
 

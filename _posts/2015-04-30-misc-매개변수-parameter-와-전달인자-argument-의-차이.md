@@ -14,7 +14,7 @@ tags:
 
 #### 참고한 문서
 
-- [위키피디아: 매개변수](https://ko.wikipedia.org/wiki/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98)
+- [위키백과: 매개변수](https://ko.wikipedia.org/wiki/%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98)
 - [https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29](https://en.wikipedia.org/wiki/Parameter_%28computer_programming%29)
 - [https://msdn.microsoft.com/en-us/library/9kewt1b3.aspx](https://msdn.microsoft.com/en-us/library/9kewt1b3.aspx)
 - [https://developer.mozilla.org/en-US/docs/Glossary/Parameter](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
