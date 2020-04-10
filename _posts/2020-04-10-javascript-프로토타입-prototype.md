@@ -16,10 +16,8 @@ tags:
 #### 참고한 문서
 
 - [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
-- [MDN: Object.getPrototypeOf](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getPrototypeOf)
-- [MDN: Object.prototype.\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)
+- [MDN: Object](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object)
 - [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
-- [MDN: Object​.prototype​.constructor](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
@@ -101,11 +99,12 @@ Object.prototype.__proto__ === null; // true
 
 ### 곁다리: 생성자 함수의 생성자
 
-`noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다:
+`noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다. `Function`은 `Object`의 생성자이기도 하다:
 
 ```js
 noob.constructor === Newbie; // true
 Newbie.constructor === Function; // true
+Function === Object.constructor; // true
 ```
 
 그리고 `Function`의 생성자는 `Function`이며, `Function`의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자의 생성자도 `Function`이다. ~~고만해미친놈아~~:
@@ -135,6 +134,33 @@ Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
 이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
+
+## Object.prototype와 Object의 차이
+
+`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성은 상속된다. 따라서 `Object.prototype.__proto__` 속성은 `noob`을 통해 접근할 수 있다:
+
+```js
+Object.prototype.hasOwnProperty('__proto__'); // true
+
+function Newbie() {};
+let noob = new Newbie();
+noob.hasOwnProperty('__proto__'); // false
+
+noob.__proto__.__proto__ === Object.prototype; // true
+```
+
+반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다:
+
+```js
+Newbie.prototype.__proto__ === Object.prototype; // true
+```
+
+함수는 프로토타입이 아니므로 함수의 속성은 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()` 함수는 `Object`의 메서드이므로 `Newbie`나 `noob`을 통해 접근할 수 없다:
+
+```js
+Newbie.getOwnPropertyDescriptors; // undefined
+noob.getOwnPropertyDescriptors; // undefined
+```
 
 ## 속성의 가려짐 property shadowing
 
