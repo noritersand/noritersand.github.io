@@ -68,3 +68,7 @@ encodeURIComponent('?a=b&c=d');  // "%3Fa%3Db%26c%3Dd"
 ```
 
 `encodeURIComponent()`는 인수를 querystring의 일부라고 간주한다. 따라서 `=`, `?`, `&`를 인코딩한다. 반면 `encodeURI()`는 인수를 URI 전체라고 간주하며 파라미터 구분자인 `=`, `?`, `&`를 인코딩하지 않는다.
+
+## 번외: 브라우저 주소창에 보이는 문자 그대로 복사하기
+
+가령 주소가 `https://ko.wikipedia.org/wiki/프로토타입_기반_프로그래밍`인 사이트에 접속 중일 때, 브라우저에서 주소창을 그대로 복사하면 클립보드에는 `https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D` 이렇게 저장된다. 만약 보이는 그대로 복사하고 싶다면 주소의 맨 앞에 스페이스바를 한 칸 넣고 복사하면 된다.
