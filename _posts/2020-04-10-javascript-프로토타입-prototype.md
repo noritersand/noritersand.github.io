@@ -26,8 +26,6 @@ tags:
 
 ## 프로토타입이란?
 
-![](/images/javascript-prototype.png)
-
 > 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 동작 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스<sup>class-less</sup>, 프로토타입 지향<sup>prototype-oriented</sup> 혹은 인스턴스 기반<sup>instance-based</sup> 프로그래밍이라고도 한다.
 >
 > [https://ko.wikipedia.org/wiki/프로토타입_기반_프로그래밍](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
@@ -47,47 +45,49 @@ Object.getPrototypeOf(o) === o.__proto__; // true
 
 함수의 속성인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다. 여기서 '함수로 생성된 객체'란, **함수를 선언할 때 자동으로 생성되는 객체** 와 명시적으로 생성자 함수를 호출해 생성된 객체 모두를 말한다.
 
-가령 생성자 함수 `Newbie`와 이 함수로 생성한 객체 `noob`이 있을때:
+가령 생성자 함수 `Human`와 이 함수로 생성한 객체 `person`이 있을때:
+
+```js
+function Human() {}
+let person = new Human();
+```
+
+자바스크립트는 `Human` 함수로 만든 객체를 `Human.prototype`에 할당한다. 이 사실은 `Human.prototype`의 생성자가 `Human`와 일치하며 `person`의 생성자와도 일치한다는 것으로 확인할 수 있다:
+
+```js
+Human.prototype.constructor === Human; // true
+Human.prototype.constructor === person.constructor; // true
+person.constructor === Human; // true
+```
+
+그리고 함수의 `.prototype` 속성이 가리키는 프로토타입은 `person`의 프로토타입과 일치한다:
+
+```js
+Human.prototype === Object.getPrototypeOf(person); // true
+Human.prototype === person.__proto__; // true
+```
+
+## 프로토타입 체인
+
+![](/images/javascript-prototype.png)
+
+자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 자신을 만들어낸 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
 
 ```js
 function Newbie() {}
 let noob = new Newbie();
 ```
 
-자바스크립트는 `Newbie` 함수로 만든 객체를 `Newbie.prototype`에 할당한다. 이 사실은 `Newbie.prototype`의 생성자가 `Newbie`와 일치하며 `noob`의 생성자와도 일치한다는 것으로 확인할 수 있다:
+여기서 `Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
 
 ```js
-Newbie.prototype.constructor === Newbie; // true
-Newbie.prototype.constructor === noob.constructor; // true
-noob.constructor === Newbie; // true
+noob.__proto__ === Newbie.prototype; // true
 ```
 
-그리고 함수의 `.prototype` 속성이 가리키는 프로토타입은 `noob`의 프로토타입과 일치한다:
+그리고 `Newbie.prototype`의 프로토타입은 `Object.prototype`이다:
 
 ```js
-Newbie.prototype === Object.getPrototypeOf(noob); // true
-Newbie.prototype === noob.__proto__; // true
-```
-
-## 프로토타입 체인
-
-자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 자신을 만들어낸 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
-
-```js
-function Animal() {}
-let sheep = new Animal();
-```
-
-여기서 `Animal`로 만들어진 객체 `sheep`의 프로토타입은 `Animal.prototype`과 같다:
-
-```js
-sheep.__proto__ === Animal.prototype; // true
-```
-
-그리고 `Animal.prototype`의 프로토타입은 `Object.prototype`이다:
-
-```js
-Animal.prototype.__proto__ === Object.prototype; // true
+Newbie.prototype.__proto__ === Object.prototype; // true
 ```
 
 마지막으로 `Object.prototype`의 프로토타입은 `null`이다. 이것은 `Object.prototype`이 최상위 프로토타입임을 의미한다:
@@ -98,11 +98,11 @@ Object.prototype.__proto__ === null; // true
 
 ### 곁다리: 생성자 함수의 생성자
 
-`sheep`의 생성자 함수는 `Animal`인데, `Animal`의 생성자 함수는 `Function`이다. `Function`은 `Object`의 생성자이기도 하다:
+`noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다. `Function`은 `Object`의 생성자이기도 하다:
 
 ```js
-sheep.constructor === Animal; // true
-Animal.constructor === Function; // true
+noob.constructor === Newbie; // true
+Newbie.constructor === Function; // true
 Function === Object.constructor; // true
 ```
 
@@ -123,12 +123,12 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 Function.__proto__ == Function.prototype; // true
 ```
 
-`Animal.__proto__`와 `Animal.prototype`이 동일하지 않는것과 비교해 차이가 있다. 그리고 `Animal` 함수 자체의 프로토타입과 `Function`의 프로토타입은 같으며, `Function` 함수의 프로토타입의 프로토타입은(?) `Object.prototype`이다:
+`Newbie.__proto__`와 `Newbie.prototype`이 동일하지 않는것과 비교해 차이가 있다. 그리고 `Newbie` 함수 자체의 프로토타입과 `Function`의 프로토타입은 같으며, `Function` 함수의 프로토타입의 프로토타입은(?) `Object.prototype`이다:
 
 ```js
-Animal.__proto__; // function ()
-Animal.__proto__ === Function.__proto__; // true
-Animal.__proto__.__proto__ === Object.prototype; // true
+Newbie.__proto__; // function ()
+Newbie.__proto__ === Function.__proto__; // true
+Newbie.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
@@ -149,10 +149,8 @@ Object.prototype; // Object { … }
 반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니다. 따라서 `Object.getOwnPropertyDescriptors()`는 상속되지 않으므로 생성자 함수나 인스턴스를 통해 접근할 수 없다:
 
 ```js
-function Human() {}
-let person = new Human();
-Human.getOwnPropertyDescriptors; // undefined
-person.getOwnPropertyDescriptors; // undefined
+Function.getOwnPropertyDescriptors; // undefined
+({}).getOwnPropertyDescriptors; // undefined
 ```
 
 ## 속성의 가려짐 property shadowing
