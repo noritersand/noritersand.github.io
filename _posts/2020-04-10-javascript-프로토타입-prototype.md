@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-04-10 16:25:00 +0900
+date: 2020-04-10 16:25:00 +0900
 title: '[JavaScript] 프로토타입 Prototype'
 categories:
   - javascript
@@ -24,11 +24,9 @@ tags:
 
 위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. 생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
 
----
+## 프로토타입이란?
 
 ![](/images/javascript-prototype.png)
-
-## 프로토타입이란?
 
 > 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 동작 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스<sup>class-less</sup>, 프로토타입 지향<sup>prototype-oriented</sup> 혹은 인스턴스 기반<sup>instance-based</sup> 프로그래밍이라고도 한다.
 >
