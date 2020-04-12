@@ -22,7 +22,7 @@ tags:
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
-위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 여기에도 프로퍼티 대신 속성이라 작성하긴 했는데, 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. (생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함)
+위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. 생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
 
 ---
 
@@ -61,6 +61,7 @@ let noob = new Newbie();
 ```js
 Newbie.prototype.constructor === Newbie; // true
 Newbie.prototype.constructor === noob.constructor; // true
+noob.constructor === Newbie; // true
 ```
 
 그리고 함수의 `.prototype` 속성이 가리키는 프로토타입은 `noob`의 프로토타입과 일치한다:
@@ -75,20 +76,20 @@ Newbie.prototype === noob.__proto__; // true
 자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 자신을 만들어낸 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
 
 ```js
-function Newbie() {}
-let noob = new Newbie();
+function Animal() {}
+let sheep = new Animal();
 ```
 
-여기서 `Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
+여기서 `Animal`로 만들어진 객체 `sheep`의 프로토타입은 `Animal.prototype`과 같다:
 
 ```js
-noob.__proto__ === Newbie.prototype; // true
+sheep.__proto__ === Animal.prototype; // true
 ```
 
-그리고 `Newbie.prototype`의 프로토타입은 `Object.prototype`이다:
+그리고 `Animal.prototype`의 프로토타입은 `Object.prototype`이다:
 
 ```js
-Newbie.prototype.__proto__ === Object.prototype; // true
+Animal.prototype.__proto__ === Object.prototype; // true
 ```
 
 마지막으로 `Object.prototype`의 프로토타입은 `null`이다. 이것은 `Object.prototype`이 최상위 프로토타입임을 의미한다:
@@ -99,11 +100,11 @@ Object.prototype.__proto__ === null; // true
 
 ### 곁다리: 생성자 함수의 생성자
 
-`noob`의 생성자 함수는 `Newbie`인데, `Newbie`의 생성자 함수는 `Function`이다. `Function`은 `Object`의 생성자이기도 하다:
+`sheep`의 생성자 함수는 `Animal`인데, `Animal`의 생성자 함수는 `Function`이다. `Function`은 `Object`의 생성자이기도 하다:
 
 ```js
-noob.constructor === Newbie; // true
-Newbie.constructor === Function; // true
+sheep.constructor === Animal; // true
+Animal.constructor === Function; // true
 Function === Object.constructor; // true
 ```
 
@@ -124,12 +125,12 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 Function.__proto__ == Function.prototype; // true
 ```
 
-`Newbie.__proto__`와 `Newbie.prototype`이 동일하지 않는것과 비교해 차이가 있다. 그리고 `Newbie` 함수 자체의 프로토타입과 `Function`의 프로토타입은 같으며, `Function` 함수의 프로토타입의 프로토타입은(?) `Object.prototype`이다:
+`Animal.__proto__`와 `Animal.prototype`이 동일하지 않는것과 비교해 차이가 있다. 그리고 `Animal` 함수 자체의 프로토타입과 `Function`의 프로토타입은 같으며, `Function` 함수의 프로토타입의 프로토타입은(?) `Object.prototype`이다:
 
 ```js
-Newbie.__proto__; // function ()
-Newbie.__proto__ === Function.__proto__; // true
-Newbie.__proto__.__proto__ === Object.prototype; // true
+Animal.__proto__; // function ()
+Animal.__proto__ === Function.__proto__; // true
+Animal.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
@@ -137,29 +138,23 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 ## Object.prototype와 Object의 차이
 
-`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성은 상속된다. 따라서 `Object.prototype.__proto__` 속성은 `noob`을 통해 접근할 수 있다:
+`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성은 상속된다. 따라서 `Object.prototype.__proto__` 속성은 객체를 통해 접근할 수 있다:
 
 ```js
 Object.prototype.hasOwnProperty('__proto__'); // true
+Object.prototype; // Object { … }
 
-function Newbie() {};
-let noob = new Newbie();
-noob.hasOwnProperty('__proto__'); // false
-
-noob.__proto__.__proto__ === Object.prototype; // true
+({}).hasOwnProperty('__proto__'); // false
+({}).__proto__; // Object { … }
 ```
 
-반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다:
+반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니다. 따라서 `Object.getOwnPropertyDescriptors()`는 상속되지 않으므로 생성자 함수나 인스턴스를 통해 접근할 수 없다:
 
 ```js
-Newbie.prototype.__proto__ === Object.prototype; // true
-```
-
-함수는 프로토타입이 아니므로 함수의 속성은 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()` 함수는 `Object`의 메서드이므로 `Newbie`나 `noob`을 통해 접근할 수 없다:
-
-```js
-Newbie.getOwnPropertyDescriptors; // undefined
-noob.getOwnPropertyDescriptors; // undefined
+function Human() {}
+let person = new Human();
+Human.getOwnPropertyDescriptors; // undefined
+person.getOwnPropertyDescriptors; // undefined
 ```
 
 ## 속성의 가려짐 property shadowing
@@ -193,16 +188,16 @@ o.__proto__.c; // 4
 생성자 함수가 가리키는 프로토타입을 재정의:
 
 ```js
-function Newbie() {}
-Newbie.prototype; // {}
-a = new Newbie();
+function Apple() {}
+Apple.prototype; // {}
+a = new Apple();
 
-Newbie.prototype = { isNoob: true };
-Newbie.prototype; // { isNoob: true }
-b = new Newbie();
+Apple.prototype = { isFruit: true };
+Apple.prototype; // { isFruit: true }
+b = new Apple();
 
-a.isNoob; // undefined
-b.isNoob; // true
+a.isFruit; // undefined
+b.isFruit; // true
 
 a.__proto__ != b.__proto__; // true
 ```
@@ -210,14 +205,14 @@ a.__proto__ != b.__proto__; // true
 객체의 프로토타입을 재정의:
 
 ```js
-function Newbie() {}
-a = new Newbie();
-b = new Newbie();
+function Orange() {}
+a = new Orange();
+b = new Orange();
 a.__proto__ === b.__proto__; // true
 
-b.__proto__ = { isNoob: true }
-a.isNoob; // undefined
-b.isNoob; // true
+b.__proto__ = { isFruit: true }
+a.isFruit; // undefined
+b.isFruit; // true
 ```
 
 ## 메서드 오버라이딩 method overriding
