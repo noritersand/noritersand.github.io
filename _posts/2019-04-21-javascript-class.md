@@ -22,9 +22,9 @@ tags:
 
 - IE에서 사용 불가
 
-[ES2015(ES6)](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 프로토타입을 정의하는 새로운 문법이다.
+[ES2015(ES6)](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 생성자 함수를 대체하는 새로운 문법이다. 구문들의 의미가 분명해서 사용하긴 편하지만 IE 때문에 웹에서 쓸 수 있는 날은 멀었다.
 
-구문의 의미가 분명해서 사용하긴 편하지만 IE 때문에 웹에서 쓸 수 있는 날은 멀었다.
+MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.
 
 ## class 선언
 
@@ -66,7 +66,15 @@ class Sorcerer {}
 
 TODO
 
-## 예시: 빌트인 프로토타입의 확장
+## static
+
+TODO
+
+## super
+
+TODO
+
+## 빌트인 프로토타입의 확장
 
 ```js
 Number.prototype.format = function(n, x) {

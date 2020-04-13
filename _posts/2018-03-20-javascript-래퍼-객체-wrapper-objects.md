@@ -79,19 +79,3 @@ console.debug(n == N); // true
 console.debug(n === N); // false
 ```
 원시 타입과 래퍼 객체는 거의 동등한 값처럼 다뤄진다. 동등 연산자`==`로는 이 둘을 구분할 수 없지만 엄격한 동등 연산자`===`로 구분할 수 있다.
-
-## 래퍼 객체의 명시적 생성 금지
-
-```js
-var sym = new Symbol(); // TypeError
-```
-원시 타입 변수에 대해 명시적인 래퍼 객체를 만드는 것(`new` 사용)은 ES2015(ES6)부터 금지되었다. 실제로 `Symbol` 타입은 new 연산자를 사용할 경우 `TypeError`가 발생한다. '레거시<sup>legacy</sup> 요인'으로 아직 가능하다는 말로 봐선 추후 버전에선 `Boolean`, `String`, `Number` 타입도 마찬가지로 금지될 가능성이 높아보인다. [출처](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol#%EC%84%A4%EB%AA%85)
-
-```js
-var prmt = 1234;
-typeof prmt; // "number", 원시 타입
-var obj = Object(1234);
-typeof obj; // "object", 래퍼 객체
-```
-
-그래도 써야겠다면 `Object()` 함수를 이용하는 방법이 있다. (하지만 쓸일이 없을껄?)

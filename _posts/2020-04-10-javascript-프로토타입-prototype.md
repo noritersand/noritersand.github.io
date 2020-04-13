@@ -28,7 +28,7 @@ tags:
 
 > 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 동작 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스<sup>class-less</sup>, 프로토타입 지향<sup>prototype-oriented</sup> 혹은 인스턴스 기반<sup>instance-based</sup> 프로그래밍이라고도 한다.
 >
-> [https://ko.wikipedia.org/wiki/프로토타입_기반_프로그래밍](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
+> [위키백과: 프로토타입 기반 프로그래밍](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
 간단히 말해 객체의 원형. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, 자바스크립트는 프로토타입을 복제하는 방식으로 객체를 만든다.
 
@@ -136,20 +136,20 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 ## Object.prototype와 Object의 차이
 
-`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성은 상속된다. 따라서 `Object.prototype.__proto__` 속성은 객체를 통해 접근할 수 있다:
+`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성과 메서드는 상속된다. 따라서 `Object.prototype.__proto__`는 객체를 통해 접근할 수 있다:
 
 ```js
-Object.prototype.hasOwnProperty('__proto__'); // true
-Object.prototype; // Object { … }
-
 ({}).hasOwnProperty('__proto__'); // false
 ({}).__proto__; // Object { … }
 ```
 
-반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니다. 따라서 `Object.getOwnPropertyDescriptors()`는 상속되지 않으므로 생성자 함수나 인스턴스를 통해 접근할 수 없다:
+반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니므로 함수의 속성과 메서드는 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()`는 생성자 함수나 인스턴스를 통해 접근할 수 없다:
 
 ```js
+Function.hasOwnProperty('getOwnPropertyDescriptors'); // false
 Function.getOwnPropertyDescriptors; // undefined
+
+({}).hasOwnProperty('getOwnPropertyDescriptors'); // false
 ({}).getOwnPropertyDescriptors; // undefined
 ```
 
@@ -163,8 +163,8 @@ Function.getOwnPropertyDescriptors; // undefined
 
 ```js
 function Fn() {
-    this.a = 1;
-    this.b = 2;
+  this.a = 1;
+  this.b = 2;
 }
 let o = new Fn();
 
@@ -179,45 +179,46 @@ o.c; // 4
 o.__proto__.c; // 4
 ```
 
+속성의 값으로 함수로 지정되었을 땐 메서드 오버라이딩<sup>method overriding</sup>이라는 용어를 사용한다.
+
 ## 프로토타입 재정의
 
-생성자 함수가 가리키는 프로토타입을 재정의:
+객체의 프로토타입을 변경하는 행위.
 
-```js
-function Apple() {}
-Apple.prototype; // {}
-a = new Apple();
-
-Apple.prototype = { isFruit: true };
-Apple.prototype; // { isFruit: true }
-b = new Apple();
-
-a.isFruit; // undefined
-b.isFruit; // true
-
-a.__proto__ != b.__proto__; // true
-```
-
-객체의 프로토타입을 재정의:
+생성자 함수 `Orange`와 `Tomato`가 있을 때:
 
 ```js
 function Orange() {}
-a = new Orange();
-b = new Orange();
-a.__proto__ === b.__proto__; // true
+Orange.prototype.fruit = true;
 
-b.__proto__ = { isFruit: true }
-a.isFruit; // undefined
-b.isFruit; // true
+function Tomato() {}
+Tomato.prototype.fruit = false;
+
+a = new Orange(), b = new Orange();
+a.fruit; // true
+b.fruit; // true
 ```
 
-## 메서드 오버라이딩 method overriding
+인스턴스가 참조하는 프로토타입을 바꾸거나:
 
-TODO
+```js
+b.__proto__ = Tomato.prototype;
+b.fruit; // false
+```
 
-## 프로토타입 확장
+생성자 함수가 참조하는 프로토타입을 바꾸는 방식이 있다:
 
-### class를 사용한 확장
+```js
+Tomato.prototype = Orange.prototype;
+c = new Tomato();
+c.fruit; // true
+```
+
+## 프로토타입 상속(확장)
+
+프로토타입을 상속하는 방법은 여러가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
+
+### [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
 
 ```js
 class Arr extends Array {
@@ -243,9 +244,45 @@ arr.spitout();
 console.log(arr.length); // 0
 ```
 
-### 꼐속...
+### [Object.create()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
-## 프로토타입의 함수
+`Object.create()`는 첫 번째 파라미터가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
+
+```js
+let grandpapa = {
+  age: 70
+};
+
+let daddy = Object.create(grandpapa);
+daddy.age = 45;
+
+let son = Object.create(daddy);
+son.age = 17;
+
+son.__proto__.__proto__.age; // 70
+son.__proto__.age; // 45
+son.age; // 17
+```
+
+### 프로토타입 재정의로 상속
+
+`class`와 `Object.create()`를 사용할 수 없는 환경에선 프로토타입 재정의 항목에서 언급한 방법을 활용한다:
+
+```js
+let animal = {
+  eats: true
+};
+let rabbit = {
+  jumps: true
+};
+
+rabbit.__proto__ = animal;
+
+rabbit.eats; // true
+rabbit.jumps; // true
+```
+
+## this와 프로토타입의 메서드
 
 ```js
 let HelloWorld = function(word) {
@@ -258,6 +295,8 @@ let HelloWorld = function(word) {
 let helloWorld = new HelloWorld('hi');
 helloWorld.say();
 ```
+
+이 방법은 인스턴스마다 `word`와 `say`가 생성된다. 반면 아래의 경우:
 
 ```js
 function HelloWorld(word) {
@@ -272,4 +311,4 @@ let helloWorld = new HelloWorld('hi');
 helloWorld.say();
 ```
 
-첫 번째 코드는 인스턴스마다 함수가 생성되고, 두 번째 코드는 인스턴스에 관계없이 프로토타입의 메서드로 딱 하나만 생성된다.
+인스턴스에 관계없이 프로토타입의 메서드로 딱 하나만 생성된다는 차이가 있다.
