@@ -15,8 +15,8 @@ tags:
 
 #### 참고한 문서
 
-- https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures
-- https://opentutorials.org/course/743/6544
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Closures)
+- [https://opentutorials.org/course/743/6544](https://opentutorials.org/course/743/6544)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 클로저란?
@@ -28,6 +28,7 @@ tags:
 - 출처: 자바스크립트 완벽가이드 (JavaScript the definitive guide 6/E), David Flanagan
 
 간단히 말해서 함수 객체나 함수 내의 변수가 유효범위를 벗어나도 참조가 유지되는 한 소멸하지 않는 환경 혹은 그러한 함수가 클로저다.
+
 ```js
 function outer() {
   var a = 'still alive';
@@ -37,8 +38,10 @@ function outer() {
   return inner;
 }
 var inner = outer();
-inner(); // 'still alive', inner 함수의 참조가 종료될 때까지 a도 소멸하지 않는다.
+inner(); // 'still alive'
 ```
+
+`inner()` 함수의 참조가 종료될 때까지 `a`도 소멸하지 않는다.
 
 ## 클로저인가 클로져인가?
 
