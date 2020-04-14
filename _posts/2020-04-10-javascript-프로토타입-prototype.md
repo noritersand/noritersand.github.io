@@ -36,7 +36,7 @@ tags:
 
 객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성 `Object.prototype.__proto__`\*를 이용하는 방법이 있다:
 
-\* `Object.prototype.__proto__`는 [deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)된 속성이며 사용을 권장하지 않음.
+\* `Object.prototype.__proto__`는 [deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 상태이며 사용을 권장하지 않음.
 
 ```js
 let o = new Object();
@@ -246,7 +246,7 @@ console.log(arr.length); // 0
 
 ### [Object.create()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
-`Object.create()`는 첫 번째 파라미터가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
+`Object.create(obj)`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
 
 ```js
 let grandpapa = {
@@ -264,7 +264,7 @@ son.__proto__.age; // 45
 son.age; // 17
 ```
 
-### 프로토타입 재정의로 상속
+### \_\_proto\_\_
 
 `class`와 `Object.create()`를 사용할 수 없는 환경에선 프로토타입 재정의 항목에서 언급한 방법을 활용한다:
 
@@ -282,33 +282,27 @@ rabbit.eats; // true
 rabbit.jumps; // true
 ```
 
-## this와 프로토타입의 메서드
+앞서 말했듯이 `__proto__`는 deprecated 속성이라서 쓰면 안되지만 `Object.setPrototypeOf()`는 IE11부터 가능한지라... 그리고 이런식의 상속은 성능 문제가 있다고 한다.
+
+## 객체의 속성 vs 프로토타입의 속성
+
+속성의 소유자가 누구인지의 차이인데, 예를 들어:
 
 ```js
-let HelloWorld = function(word) {
-  this.word = word;
-  this.say = function() {
-    console.log(word);
+function HelloWorld() {
+  this.sayHi = function() {
+    console.log('Hi!');
   };
 };
-
-let helloWorld = new HelloWorld('hi');
-helloWorld.say();
-```
-
-이 방법은 인스턴스마다 `word`와 `say`가 생성된다. 반면 아래의 경우:
-
-```js
-function HelloWorld(word) {
-  this.word = word;
+HelloWorld.prototype.sayHello = function() {
+  console.log('Hello!');
 };
 
-HelloWorld.prototype.say = function() {
-  console.log(this.word);
-};
-
-let helloWorld = new HelloWorld('hi');
-helloWorld.say();
+let helloWorld = new HelloWorld();
+helloWorld.sayHi(); // "Hi!"
+helloWorld.sayHello(); // "Hello!"
 ```
 
-인스턴스에 관계없이 프로토타입의 메서드로 딱 하나만 생성된다는 차이가 있다.
+여기서 `sayHi()`는 객체의 속성, `sayHello()`는 프로토타입의 속성이다.
+
+성능 면에서 보면, 객체의 속성은 인스턴스마다 각각 만들어지고 프로토타입의 속성은 인스턴스의 수와 상관없이 딱 한 번만 만들어지므로(프로토타입이란 놈이 원래 하나만 존재함) 프로토타입 쪽이 유리하다고 할 수 있다.
