@@ -22,7 +22,7 @@ tags:
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
-위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 확실한건 자바스크립트에 attribute란 개념은 없다는 것이다. 생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
+위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 자바스크립트에 attribute란 개념은 없긴 한데... property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
 
 ## 프로토타입이란?
 
@@ -72,7 +72,7 @@ Mankind.prototype === human.__proto__; // true
 
 ![](/images/javascript-prototype.png)
 
-자바스크립트의 모든 객체는 자신을 만들어낸 프로토타입이 있는데, 알고 보면 그 프로토타입도 원형인 프로토타입이 존재한다. 이런 식의 연결은 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
+자바스크립트의 모든 객체는 자신의 원형인 부모 객체가 있다(다른 말로 프로토타입이 있다고 한다). 그런데 알고 보면 그 부모도 부모가 있으며 경우에 따라서는 부모의 부모의 부모도 존재할 수 있다. 이런 식의 연결은 최상위 객체인 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
 
 ```js
 function Newbie() {}
@@ -187,7 +187,7 @@ o.c; // 4
 o.__proto__.c; // 4
 ```
 
-속성의 값으로 함수가 지정되었을 땐 메서드 오버라이딩<sup>method overriding</sup>이라는 용어를 사용하는데, 이름만 다르고 개념은 같다.
+속성의 값으로 함수가 지정되었을 땐 메서드 오버라이딩<sup>method overriding</sup>이라는 용어를 사용한다. 이름만 다르고 개념은 같음.
 
 ## 객체의 속성 vs 프로토타입의 속성
 
@@ -267,11 +267,11 @@ arr.push('a');
 arr.push('b');
 arr.push('c');
 
-console.log(arr); // Array(3) [ "a", "b", "c" ]
-console.log(arr.doubleLength); // 6
+arr; // Array(3) [ "a", "b", "c" ]
+arr.doubleLength; // 6
 
 arr.spitout();
-console.log(arr.length); // 0
+arr.length; // 0
 ```
 
 ### [Object.create()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
@@ -279,11 +279,11 @@ console.log(arr.length); // 0
 `Object.create(obj)`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
 
 ```js
-let grandpapa = {
+let grandpa = {
   age: 70
 };
 
-let daddy = Object.create(grandpapa);
+let daddy = Object.create(grandpa);
 daddy.age = 45;
 
 let son = Object.create(daddy);
@@ -296,20 +296,20 @@ son.age; // 17
 
 ### \_\_proto\_\_
 
-`class`와 `Object.create()`를 사용할 수 없는 환경에선 프로토타입 재정의 항목에서 언급한 방법을 활용한다:
+`class`와 `Object.create()`를 사용할 수 없는 환경에선 `__proto__` 속성으로 상속할 객체를 지정한다:
 
 ```js
-let animal = {
-  eats: true
+let bomb = {
+  explosion: true
 };
-let rabbit = {
-  jumps: true
+let fatboy = {
+  __proto__: bomb,
+  assuredDestruction: true
 };
+// fatboy.__proto__ = bomb; 이렇게 하는거랑 같음
 
-rabbit.__proto__ = animal;
-
-rabbit.eats; // true
-rabbit.jumps; // true
+fatboy.explosion; // true
+fatboy.assuredDestruction; // true
 ```
 
 앞서 말했듯이 `__proto__`는 deprecated 속성이라서 쓰면 안되지만 `Object.setPrototypeOf()`는 IE11부터 가능한지라... 그리고 이런식의 상속은 성능 문제가 있다고 한다.
