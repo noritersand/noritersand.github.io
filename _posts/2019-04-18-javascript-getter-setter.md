@@ -25,6 +25,8 @@ tags:
 
 [ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. `get`, `set` 키워드가 붙은 함수는 객체의 프로퍼티처럼 작동한다.
 
+'접근자 프로퍼티'라고도 하는 모양.
+
 ## class 선언에서
 
 ```js

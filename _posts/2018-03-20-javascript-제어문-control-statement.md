@@ -23,7 +23,7 @@ tags:
 
 ### if-else
 
-표현식이 true일 때(혹은 true로 변환되는 값일 때) 구문을 실행한다.
+표현식이 `true`일 때(혹은 `true`로 변환되는 값일 때) 구문을 실행한다.
 
 ```
 if (표현식) { 구문 }
@@ -47,7 +47,7 @@ else {
 
 ### switch
 
-표현식의 값과 case 레이블의 값이 일치하면 case 다음에 오는 구문을 실행한다. 만약 일치하는 case 레이블이 없으면 default 레이블의 구문을 실행한다.
+표현식의 값과 `case` 레이블의 값이 일치하면 `case` 다음에 오는 구문을 실행한다. 만약 일치하는 `case` 레이블이 없으면 `default` 레이블의 구문을 실행한다.
 
 ```
 switch (표현식) { 구문 }
@@ -69,7 +69,7 @@ switch (a) {
 }
 ```
 
-break나 return으로 끝나지 않은 case 레이블의 코드 블록은 바로 다음에 이어지는 case 레이블의 구문을 실행시킨다:
+`break`나 `return`으로 끝나지 않은 `case` 레이블의 코드 블록은 바로 다음에 이어지는 `case` 레이블의 구문을 실행시킨다:
 
 ```js
 var a = 3;
@@ -92,7 +92,7 @@ switch (a) {
 
 ### while
 
-표현식을 평가해 true일 때 구문을 실행한다. 구문 실행이 끝나면 다시 한번 표현식을 평가하며 표현식이 false로 평가될 때까지 이 과정을 반복한다.
+표현식을 평가해 `true`일 때 구문을 실행한다. 구문 실행이 끝나면 다시 한번 표현식을 평가하며 표현식이 `false`로 평가될 때까지 이 과정을 반복한다.
 
 ```
 while (표현식) { 구문 }
@@ -106,7 +106,7 @@ while (++i < 10) {
 }
 ```
 
-표현식이 true면 무한 루프가 된다:
+표현식이 `true`면 무한 루프가 된다:
 
 ```js
 while (true) {
@@ -116,7 +116,7 @@ while (true) {
 
 ### do-while
 
-우선 do의 구문을 선실행한 후 표현식을 평가한다. 구문을 선실행하는 것만 빼면 while과 같다.
+우선 `do`의 구문을 선실행한 후 표현식을 평가한다. 구문을 선실행하는 것만 빼면 `while`과 같다.
 
 ```
 do { 구문 } while (표현식);
@@ -132,7 +132,7 @@ do {
 
 ### for
 
-루프가 시작되기 전 초기화를 한 번 실행한다. 그 후 표현식을 평가하여 true일 때 구문을 실행한다. 코드 블록의 끝을 만나면 증감식을 실행한 후 다시 표현식을 평가한다. 이 과정은 표현식이 false가 될 때까지 반복된다.
+루프가 시작되기 전 초기화를 한 번 실행한다. 그 후 표현식을 평가하여 `true`일 때 구문을 실행한다. 코드 블록의 끝을 만나면 증감식을 실행한 후 다시 표현식을 평가한다. 이 과정은 표현식이 `false`가 될 때까지 반복된다.
 
 ```
 for (초기화; 테스트 표현식; 증감식) { 구문 }
@@ -164,7 +164,7 @@ for (;;) {
 }
 ```
 
-쉼표 연산자를 사용하면 여러 변수의 초기화나 증감을 for문에 적용할 수 있다:
+쉼표 연산자를 사용하면 여러 변수의 초기화나 증감을 `for`에 적용할 수 있다:
 
 ```js
 for (var i = 0, j = 10; i < 10; i++, j--) {
@@ -173,7 +173,7 @@ for (var i = 0, j = 10; i < 10; i++, j--) {
 }
 ```
 
-다음 코드를 보면 for문에서 초기화되는 변수도 끌어올림(hoisting)이 적용되는것을 확인할 수 있다.
+다음 코드를 보면 `for`에서 초기화되는 변수도 끌어올림<sup>hoisting</sup>이 적용되는것을 확인할 수 있다.
 
 ```js
 var i = 'global';
@@ -191,7 +191,7 @@ var i = 'global';
 >
 > [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
-객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다. 객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 속성에 대한 '속성 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 enumerable이 true인 프로퍼티, 예를 들어 `toString()`은 enumerable이 false라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
+객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다. 객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 속성에 대한 '속성 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 속성이 `true`인 프로퍼티, 예를 들어 `toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
 
 ```
 for (변수 in 객체) { 구문 }
@@ -223,8 +223,8 @@ for (var prop in arr) {
 
 ### for-of
 
-for-of는 for-in과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. 단, iterable object만 for-of로 반복할 수 있는데, iterable object에 해당되는 타입은 Array, String, TypedArray, Map 그리고 arguments object가 있다.
-for-of는 [ES2015에 신규 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
+`for-of`는 `for-in`과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. **단, iterable object만 `for-of`로 반복할 수 있는데**, iterable object에 해당되는 타입은 `arguments object`와 `Array`, `String`, `TypedArray`, `Map`, `NodeList` 등이 있다.  
+[ES2015에서 새로 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
 
 ```js
 var arr = ['a', 'b', 'c', 'd'];

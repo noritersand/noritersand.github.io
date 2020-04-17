@@ -36,7 +36,7 @@ tags:
 
 객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 속성 `Object.prototype.__proto__`\*를 이용하는 방법이 있다:
 
-\* `Object.prototype.__proto__`는 [deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 상태이며 사용을 권장하지 않음.
+\* `Object.prototype.__proto__`는 지원이 중단된([deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)) 기능이다.
 
 ```js
 let o = new Object();
@@ -276,23 +276,43 @@ arr.length; // 0
 
 ### [Object.create()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
-`Object.create(obj)`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
+`Object.create(obj[, descriptors])`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 속성을 추가하는 방식:
 
 ```js
 let grandpa = {
   age: 70
 };
 
-let daddy = Object.create(grandpa);
-daddy.age = 45;
+let daddy = Object.create(grandpa, {
+  age: {
+    value: 45
+  }
+});
 
-let son = Object.create(daddy);
-son.age = 17;
+let son = Object.create(daddy, {
+  age: {
+    value: 17
+  }
+});
 
 son.__proto__.__proto__.age; // 70
 son.__proto__.age; // 45
 son.age; // 17
 ```
+
+역으로 생각해서 `null`을 프로토타입으로 지정하면 순수 사전식<sup>pure dictionary</sup> 객체를 만들 수 있다:
+
+```js
+let plainObject = Object.create(null);
+plainObject.ga = '가';
+plainObject.na = '나';
+
+plainObject; // { ga: "가", na: "나" }
+plainObject.__proto__; // undefined
+plainObject.toString; // undefined
+```
+
+이렇게하면 `Object` 프로토타입의 속성을 하나도 상속받지 않는, 말그대로 아주 단순한 객체가 생성된다.
 
 ### \_\_proto\_\_
 
@@ -312,4 +332,4 @@ fatboy.explosion; // true
 fatboy.assuredDestruction; // true
 ```
 
-앞서 말했듯이 `__proto__`는 deprecated 속성이라서 쓰면 안되지만 `Object.setPrototypeOf()`는 IE11부터 가능한지라... 그리고 이런식의 상속은 성능 문제가 있다고 한다.
+앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
