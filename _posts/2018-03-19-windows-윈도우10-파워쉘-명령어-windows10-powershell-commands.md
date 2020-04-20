@@ -25,7 +25,7 @@ tags:
 
 ## | (파이프)
 
-둘이상의 명령어를 연결. 리눅스와 비슷하다.
+둘 이상의 명령어를 연결. 리눅스와 비슷하다.
 
 ## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 

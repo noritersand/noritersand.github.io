@@ -255,10 +255,10 @@ class Arr extends Array {
   get doubleLength() {
     return this.length * 2
   }
-}
-Arr.prototype.spitout = function() {
-  while (this.length) {
-    this.pop();
+  spitout() {
+    while (this.length) {
+      this.pop();
+    }
   }
 }
 
@@ -314,7 +314,7 @@ plainObject.toString; // undefined
 
 이렇게하면 `Object` 프로토타입의 속성을 하나도 상속받지 않는, 말그대로 아주 단순한 객체가 생성된다.
 
-### \_\_proto\_\_
+### Object.prototype.\_\_proto\_\_
 
 `class`와 `Object.create()`를 사용할 수 없는 환경에선 `__proto__` 속성으로 상속할 객체를 지정한다:
 
@@ -332,4 +332,25 @@ fatboy.explosion; // true
 fatboy.assuredDestruction; // true
 ```
 
-앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
+앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서... 차라리 이것보다는 모양새가 나쁘지만 `Object.prototype` 속성을 쓰는게 낫다.
+
+### Object.prototype
+
+다소 전통적인 방법이며 모든 브라우저에서 사용 가능함.
+
+```js
+function Calculator(number) {
+  this.number = number;
+}
+Calculator.prototype.getDouble = function() {
+  return this.number * 2;
+}
+function Laptop(number) {
+  Calculator.apply(this, arguments);
+}
+Laptop.prototype = Calculator.prototype;
+
+let notebook = new Laptop(256);
+notebook.number; // 256
+notebook.getDouble() // 512
+```
