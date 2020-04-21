@@ -29,7 +29,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 function.apply( thisArg, [argsArray] )
 ```
 
-함수를 호출하되 첫 번째 전달인자를 this로 설정한다. 두 번째 전달인자는 (인자의 개수가 1이라 해도)반드시 배열이어야 하며 이 배열은 함수가 호출될 때 함수 내부의 arguments 객체로 전달된다. 첫 번째 전달인자는 필수지만 두 번째 전달인자는 생략 가능하다.
+함수를 호출하되 첫 번째 전달인자를 this로 설정한다. 두 번째 전달인자는 인자의 개수가 하나여도 반드시 배열이어야 하며, 이 배열은 함수가 호출될 때 함수 내부의 arguments 객체로 전달된다. 첫 번째 전달인자는 필수지만 두 번째 전달인자는 생략 가능하다.
 
 ```js
 function fn() {

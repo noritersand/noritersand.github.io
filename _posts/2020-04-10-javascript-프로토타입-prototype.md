@@ -22,7 +22,7 @@ tags:
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
-위에 링크한 한국어 문서들에서 property를 속성이라고 표현하는데, 왜 이렇게 번역했는지는 잘 몲겠음. 자바스크립트에 attribute란 개념은 없긴 한데... property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
+위에 링크한 한국어 문서들에서 property를 속성이라고 하는데, 왜 이렇게 번역했는지는 모르겠지만 일단 자바스크립트에 attribute란 개념은 없긴 하다. 생각해보면 property를 자산이나 특성이라 번역하면 어감이 이상하긴 함. 그래서 이 글에서도 그냥 속성이라 적는다.
 
 ## 프로토타입이란?
 
@@ -45,15 +45,14 @@ Object.getPrototypeOf(o) === o.__proto__; // true
 
 함수의 속성인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다. 여기서 '함수로 생성된 객체'란, **함수를 선언할 때 자동으로 생성되는 객체** 와 명시적으로 생성자 함수를 호출해 생성된 객체 모두를 말한다.
 
-가령 생성자 함수 `Mankind`와 이 함수로 생성한 객체 `human`이 있을때:
+가령 생성자 함수 `Mankind()`와 이 함수로 생성한 객체 `human`이 있을때:
 
 ```js
 function Mankind() {}
 let human = new Mankind();
 ```
 
-자바스크립트는 `Mankind` 함수에서 자동으로 만들어진 객체를 `Mankind.prototype`에 할당한다. 이 사실은 `Mankind.prototype`의 생성자가 `Mankind`와 일치하며 `human`의 생성자와도 일치한다는 것으로 확인할 수 있다:
-
+자바스크립트는 `Mankind()` 함수에서 자동으로 만들어진 객체를 `Mankind.prototype`에 할당한다. 이 사실은 `Mankind.prototype`의 생성자가 `Mankind()`와 일치하며 `human`의 생성자와도 일치한다는 것으로 확인할 수 있다:
 
 ```js
 Mankind.prototype.constructor === Mankind; // true
@@ -70,16 +69,18 @@ Mankind.prototype === human.__proto__; // true
 
 ## 프로토타입 체인
 
-![](/images/javascript-prototype.png)
+![](/images/javascript-prototype-2.png)
 
-자바스크립트의 모든 객체는 자신의 원형인 부모 객체가 있다(다른 말로 프로토타입이 있다고 한다). 그런데 알고 보면 그 부모도 부모가 있으며 경우에 따라서는 부모의 부모의 부모도 존재할 수 있다. 이런 식의 연결은 최상위 객체인 `Object` 프로토타입까지 이어지며, 요것이 바로 _프로토타입 체인_ 이라 하는 일종의 상속과 확장 개념 되시겠다.
+자바스크립트의 모든 객체는 자신의 원형인 부모 객체가 있다. 부모도 객체이므로 당연히 부모가 있고, 이론상 부모의 부모의 부모의 부모의 부모의 ~~고만해~~ 부모도 있을 수 있지만, 사실 이렇게까지 조상이 많은 경우는 드물고 조부모나 증조부 쯤에서 최상위 객체인 `Object` 프로토타입을 만나 연결이 끝난다.
+
+객체의 속성에 접근할 때 해당 속성이 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인** 이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 속성이 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
 
 ```js
 function Newbie() {}
 let noob = new Newbie();
 ```
 
-여기서 생성자 함수 `Newbie`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
+여기서 생성자 함수 `Newbie()`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
 
 ```js
 noob.__proto__ === Newbie.prototype; // true
@@ -99,13 +100,13 @@ Object.prototype.__proto__ === null; // true
 
 ### 곁다리: 생성자 함수의 생성자
 
-`Newbie`의 생성자는 `Function`이다:
+`Newbie()`의 생성자는 `Function()`이다:
 
 ```js
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function`의 생성자는 `Function`이며, `Function`의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자도 `Function`이고, `Function`의 생성자의 생성자의 생성자의 생성자도 `Function`이다. ~~고만해미친놈아~~:
+그리고 `Function()`의 생성자는 `Function()`이며, `Function()`의 생성자의 생성자도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자의 생성자도 `Function()`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true
@@ -116,7 +117,9 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 
 ### 곁다리: 그럼 생성자 함수의 프로토타입은?
 
-`Function` 함수의 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것과 비교해 차이가 있다:
+`Function` 함수의 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것\*과 비교해 차이가 있다:
+
+\* **주의**: `Newbie.prototype`은 `Newbie` 함수의 프로토타입이 아니라 `Newbie` 함수로 만들어질 객체의 프로토타입임을 기억할 것. `Newbie` 함수의 프로토타입은 `Newbie.__proto__`가 가리킨다.
 
 ```js
 Function.__proto__ === Function.prototype; // true
@@ -128,7 +131,7 @@ Newbie.__proto__; // function ()
 Newbie.prototype; // Object { … }
 ```
 
-그리고 `Newbie`의 프로토타입과 `Function`의 프로토타입은 같으며, `Function`의 프로토타입의 프로토타입은 `Object.prototype`이다:
+그리고 `Newbie()`의 프로토타입은 `Function` 프로토타입이며 `Function` 프로토타입의 프로토타입은 `Object.prototype`이다:
 
 ```js
 Newbie.__proto__; // function ()
@@ -139,9 +142,9 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
 
-## Object.prototype과 Object의 차이
+## Object.prototype과 Object()의 차이
 
-`Object.prototype`은 `Object`로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성과 메서드는 상속된다. 따라서 `Object.prototype.__proto__`는 함수\*나 객체를 통해 접근할 수 있다:
+`Object.prototype`은 `Object()` 함수로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 속성과 메서드는 상속된다. 따라서 `Object.prototype.__proto__`는 함수\*나 객체를 통해 접근할 수 있다:
 
 \* 함수도 객체임
 
@@ -151,7 +154,7 @@ Function.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__; // function ()
 ```
 
-반면 `Object`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니므로 함수의 속성과 메서드는 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()`는 함수나 객체를 통해 접근할 수 없다:
+반면 `Object()`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니므로 함수의 속성과 메서드는 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()`는 함수나 객체를 통해 접근할 수 없다:
 
 ```js
 Function.hasOwnProperty('getOwnPropertyDescriptors'); // false
@@ -215,7 +218,7 @@ helloWorld.sayHello(); // "Hello!"
 ## 프로토타입 재정의
 
 객체의 프로토타입을 변경하는 행위.  
-생성자 함수 `Orange`와 `Tomato`가 있을 때:
+생성자 함수 `Orange()`와 `Tomato()`가 있을 때:
 
 ```js
 function Orange() {}
@@ -249,6 +252,8 @@ c.fruit; // true
 프로토타입을 상속하는 방법은 여러가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
 
 ### [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
+
+추천#1
 
 ```js
 class Arr extends Array {
@@ -314,7 +319,7 @@ plainObject.toString; // undefined
 
 이렇게하면 `Object` 프로토타입의 속성을 하나도 상속받지 않는, 말그대로 아주 단순한 객체가 생성된다.
 
-### Object.prototype.\_\_proto\_\_
+### \_\_proto\_\_
 
 `class`와 `Object.create()`를 사용할 수 없는 환경에선 `__proto__` 속성으로 상속할 객체를 지정한다:
 
@@ -332,11 +337,11 @@ fatboy.explosion; // true
 fatboy.assuredDestruction; // true
 ```
 
-앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서... 차라리 이것보다는 모양새가 나쁘지만 `Object.prototype` 속성을 쓰는게 낫다.
+앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
 
 ### Object.prototype
 
-다소 전통적인 방법이며 모든 브라우저에서 사용 가능함.
+추천#2 모든 브라우저에서 사용 가능한 상속 방법.
 
 ```js
 function Calculator(number) {

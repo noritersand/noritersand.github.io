@@ -15,6 +15,7 @@ tags:
 
 #### 참고한 문서
 
+- [TC39 – Specifying JavaScript.](https://tc39.es/)
 - [MDN: Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
 - [MDN: Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - [MDN: 객체 초기자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
@@ -447,7 +448,7 @@ var add = function(a, b) {
 
 #### 객체 리터럴
 
-MDN에 따르면 객체 리터럴은 '리터럴 표기에 의한 객체 생성<sup>creating objects with literal notation</sup>'이라고도 한다.
+객체 리터럴은 '리터럴 표기에 의한 객체 생성<sup>creating objects with literal notation</sup>'이라고도 한다.
 
 ```js
 var ob = {}; // new Object()와 같음
@@ -458,6 +459,8 @@ obj.b; // 2
 obj['b']; // 2, 프로퍼티에 접근하는 표현식으로 obj.b와 같다.
 obj.c.d; // 3
 ```
+
+객체 리터럴`{}`은 자바스크립트 엔진에 의해 `new Object()`로 변환된다.
 
 #### 메서드 리터럴
 
