@@ -69,7 +69,7 @@ Mankind.prototype === human.__proto__; // true
 
 ## 프로토타입 체인
 
-![](/images/javascript-prototype-3.png)
+![](/images/javascript-prototype-2.png)
 
 자바스크립트의 모든 객체는 자신의 원형인 부모 객체가 있다. 부모도 객체이므로 당연히 부모가 있고, 이론상 부모의 부모의 부모의 부모의 부모의 ~~고만해~~ 부모도 있을 수 있지만, 사실 이렇게까지 조상이 많은 경우는 드물고 조부모나 증조부 쯤에서 최상위 객체인 `Object` 프로토타입을 만나 연결이 끝난다.
 
