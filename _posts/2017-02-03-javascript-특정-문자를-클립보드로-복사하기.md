@@ -23,9 +23,9 @@ tags:
 document.execCommand(aCommandName [, aShowDefaultUI, aValueArgument] )
 ```
 
-command가 지원되지 않거나 사용할 수 없는 상태면 false 반환.
+`command`를 지원하지 않거나 사용할 수 없는 상태면 `false` 반환.
 
-주의: 복사할 문자는 반드시 selection이 가능한 입력필드(input, textarea)의 값이어야 하며 숨겨진 상태가 아니어야 한다. 따라서 `<input type="hidden">`은 복사 불가.
+복사할 문자는 반드시 selection이 가능한 입력필드(`<input>`, `<textarea>`)의 값이어야 하며 숨겨진 상태가 아니어야 한다. 따라서 `<input type="hidden">`은 적용 불가.
 
 ```html
 <!DOCTYPE html>
@@ -34,21 +34,21 @@ command가 지원되지 않거나 사용할 수 없는 상태면 false 반환.
 <meta charset="UTF-8">
 <title>copy to clipboard</title>
 <script>
-    function fn() {
-        var input = document.querySelector('input');
-        try {
-            input.select();
-            // returnValue: A Boolean that is false if the command is not supported or enabled.
-            var returnValue = document.execCommand('copy');
-            console.debug(returnValue);
-            if (!returnValue) {
-                throw new Error();
-            }
-            alert('복사 되었습니다.');
-        } catch (e) {
-            prompt('Copy to clipboard: Ctrl+C, Enter', input.value);
-        }
+  function fn() {
+    var input = document.querySelector('input');
+    try {
+      input.select();
+      // returnValue: A Boolean that is false if the command is not supported or enabled.
+      var returnValue = document.execCommand('copy');
+      console.debug(returnValue);
+      if (!returnValue) {
+        throw new Error();
+      }
+      alert('복사 되었습니다.');
+    } catch (e) {
+      prompt('Copy to clipboard: Ctrl+C, Enter', input.value);
     }
+  }
 </script>
 </head>
 <body>
