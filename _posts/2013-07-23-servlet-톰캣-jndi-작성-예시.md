@@ -11,7 +11,7 @@ tags:
   - connection
   - jdbc
   - jndi
-  - 코드모음
+  - code-snippet
 ---
 
 #### 참고한 문서

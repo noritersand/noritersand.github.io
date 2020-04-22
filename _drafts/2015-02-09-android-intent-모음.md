@@ -7,7 +7,7 @@ categories:
 tags:
   - android
   - intent
-  - 코드모음
+  - code-snippet
   - 비공개
 ---
 

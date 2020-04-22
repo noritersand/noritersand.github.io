@@ -8,7 +8,7 @@ tags:
   - ecmascript
   - javascript
   - ie
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

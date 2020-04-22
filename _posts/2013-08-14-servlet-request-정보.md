@@ -8,7 +8,7 @@ tags:
   - java
   - servlet
   - request
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

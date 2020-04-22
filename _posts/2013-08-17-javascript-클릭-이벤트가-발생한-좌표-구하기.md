@@ -9,7 +9,7 @@ tags:
   - javascript
   - click
   - offset
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

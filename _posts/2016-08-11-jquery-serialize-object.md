@@ -7,7 +7,7 @@ categories:
 tags:
   - javascript
   - jquery
-  - 코드모음
+  - code-snippet
   - json
   - serialize
   - object

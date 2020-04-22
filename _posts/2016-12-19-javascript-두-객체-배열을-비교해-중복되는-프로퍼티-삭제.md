@@ -10,7 +10,7 @@ tags:
   - property
   - object
   - compare
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

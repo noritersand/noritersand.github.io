@@ -8,7 +8,7 @@ tags:
   - ecmascript
   - javascript
   - timeout
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

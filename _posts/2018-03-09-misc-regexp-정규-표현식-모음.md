@@ -9,7 +9,7 @@ tags:
   - regexp
   - regular-expression
   - rational-expression
-  - 코드모음
+  - code-snippet
 ---
 
 ## misc
@@ -296,20 +296,20 @@ p.test('placeholder=""'); // false
 
 ## 이미지 태그 찾기
 
+### `<img`부터 `>` 까지
+
+```js
+/<img [^>]*src="([^"]+)"[^>]*>/
+```
+
 ### `<img`부터 `src="~~~"` 까지
 
 ```js
 /<img [^>]*src="([^"]+)"/
 ```
 
-#### 이미지 확장자가 `jpg`, `png`만
+#### 이미지 확장자가 `jpg`, `png`
 
 ```js
 /<img [^>]*src="([^"]+)(([^"]+)(.)(jpg|png))"/
-```
-
-### `<img`부터 `>` 까지
-
-```js
-/<img [^>]*src="([^"]+)"[^>]*>/
 ```

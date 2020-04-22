@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - jdbc
-  - 코드모음
+  - code-snippet
 ---
 
 ```java

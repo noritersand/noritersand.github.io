@@ -7,7 +7,7 @@ categories:
 tags:
   - excel
   - spreadsheet
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - urlconnection
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents

@@ -8,7 +8,7 @@ tags:
   - dbms
   - oracle
   - connect-by
-  - 코드모음
+  - code-snippet
 ---
 
 * Kramdown table of contents
