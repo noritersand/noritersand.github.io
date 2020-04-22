@@ -73,7 +73,7 @@ Mankind.prototype === human.__proto__; // true
 
 자바스크립트의 모든 객체는 자신의 원형인 부모 객체가 있다. 부모도 객체이므로 당연히 부모가 있고, 이론상 부모의 부모의 부모의 부모의 부모의 ~~고만해~~ 부모도 있을 수 있지만, 사실 이렇게까지 조상이 많은 경우는 드물고 조부모나 증조부 쯤에서 최상위 객체인 `Object` 프로토타입을 만나 연결이 끝난다.
 
-객체의 속성에 접근할 때 해당 속성이 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인** 이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 속성이 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
+객체의 속성을 참조할 때 해당 속성이 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인** 이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 속성이 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
 
 ```js
 function Newbie() {}
@@ -98,6 +98,20 @@ noob.__proto__.__proto__ === Object.prototype; // true
 Object.prototype.__proto__ === null; // true
 ```
 
+### 체인의 조건
+
+프로토타입 체인은 속성을 값을 가져올 때만 작동한다. 속성 값을 할당할 때는 객체에 속성이 있는지 확인하고, 없으면 프로토타입을 탐색하는게 아니라 객체에 해당 속성을 새로 추가한다:
+
+```js
+Object.prototype.aaa = 123;
+noob.aaa; // 123
+
+noob.aaa = 456;
+
+noob.aaa; // 456
+noob.__proto__.aaa; // 123
+```
+
 ### 곁다리: 생성자 함수의 생성자
 
 `Newbie()`의 생성자는 `Function()`이다:
@@ -119,7 +133,7 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 
 `Function` 함수의 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것\*과 비교해 차이가 있다:
 
-\* **주의**: `Newbie.prototype`은 `Newbie` 함수의 프로토타입이 아니라 `Newbie` 함수로 만들어질 객체의 프로토타입임을 기억할 것. `Newbie` 함수의 프로토타입은 `Newbie.__proto__`가 가리킨다.
+\* **주의**: `Newbie.prototype`은 `Newbie()` 함수의 프로토타입이 아니라 `Newbie()` 함수로 만들어질 객체의 프로토타입임을 기억할 것. `Newbie()` 함수의 프로토타입은 `Newbie.__proto__`가 가리킨다.
 
 ```js
 Function.__proto__ === Function.prototype; // true
@@ -321,8 +335,6 @@ plainObject.toString; // undefined
 
 ### \_\_proto\_\_
 
-`class`와 `Object.create()`를 사용할 수 없는 환경에선 `__proto__` 속성으로 상속할 객체를 지정한다:
-
 ```js
 let bomb = {
   explosion: true
@@ -339,7 +351,7 @@ fatboy.assuredDestruction; // true
 
 앞서 말했듯이 `__proto__`는 deprecated 속성인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
 
-### Object.prototype
+### .apply + .prototype
 
 추천#2 모든 브라우저에서 사용 가능한 상속 방법.
 
@@ -359,3 +371,5 @@ let notebook = new Laptop(256);
 notebook.number; // 256
 notebook.getDouble() // 512
 ```
+
+이 방법도 아마 속도 이슈가 있을것 같은데, 그나마 비표준은 아닌데다 모든 브라우저를 지원하니까...
