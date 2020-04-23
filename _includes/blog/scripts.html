@@ -82,7 +82,7 @@ $(document).ready(function () {
   });
 
   $(document).on('keyup', function(e) {
-    if ((e.keyCode || e.which) === 191 && event.ctrlKey) {
+    if ((e.keyCode || e.which) === 191 && e.ctrlKey) {
       searchOverlay.open();
     }
   });
