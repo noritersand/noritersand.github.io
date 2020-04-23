@@ -187,3 +187,14 @@ tags:
 | 207  |              | 217  |              | 227  |           | 227  |               | 227  |              |
 | 208  |              | 218  |              | 228  |           | 238  |               | 248  |              |
 | 209  |              | 219  | `[{`         | 229  |           | 239  |               | 249  |              |
+
+## example
+
+```js
+document.addEventListener('keydown', (event) => {
+  // ctrl + / 입력이면...
+  if ((event.keyCode || event.which) === 191 && event.ctrlKey) {
+    console.log('눌렀다!')
+  }
+});
+```

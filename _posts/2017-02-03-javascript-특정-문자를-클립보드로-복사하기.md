@@ -15,7 +15,8 @@ tags:
 
 #### 참고한 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
+- [MDN: Document.execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
+- [Copying text to clipboard with JavaScript | Hacker Noon](https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f)
 
 ## execCommand
 
@@ -34,26 +35,51 @@ document.execCommand(aCommandName [, aShowDefaultUI, aValueArgument] )
 <meta charset="UTF-8">
 <title>copy to clipboard</title>
 <script>
-  function fn() {
-    var input = document.querySelector('input');
-    try {
-      input.select();
-      // returnValue: A Boolean that is false if the command is not supported or enabled.
-      var returnValue = document.execCommand('copy');
-      console.debug(returnValue);
-      if (!returnValue) {
-        throw new Error();
-      }
-      alert('복사 되었습니다.');
-    } catch (e) {
-      prompt('Copy to clipboard: Ctrl+C, Enter', input.value);
+function copyToClipboard() {
+  var input = document.querySelector('input');
+  try {
+    input.select();
+    // returnValue: A Boolean that is false if the command is not supported or enabled.
+    var returnValue = document.execCommand('copy');
+    console.debug(returnValue);
+    if (!returnValue) {
+      throw new Error('copied nothing');
     }
+    alert('복사 되었습니다.');
+  } catch (e) {
+    prompt('Copy to clipboard: Ctrl+C, Enter', input.value);
   }
+}
 </script>
 </head>
 <body>
 <input type="text" value="아무거나 쓰세요.">
-<button type="button" onclick="fn()">그리고 날 눌러</button>
+<button type="button" onclick="copyToClipboard()">그리고 날 눌러</button>
 </body>
 </html>
 ```
+
+만약 입력필드가 없는 상황이라면 다음처럼 `<textarea>`를 만들었다가 지우는 방식을 쓴다. 이 때 화면이 깜빡거리지 않도록 화면 밖에서 발생하도록 함:
+
+```js
+/**
+ * 클립보드에 val을 복사. 복사에 실패하면 Error 던져짐.
+ * @param {string} val 복사할 문자열
+ */
+function copyToClipboard(val) {
+  const element = document.createElement('textarea');
+  element.value = val;
+  element.setAttribute('readonly', '');
+  element.style.position = 'absolute';
+  element.style.left = '-9999px';
+  document.body.appendChild(element);
+  element.select();
+  var returnValue = document.execCommand('copy');
+  document.body.removeChild(element);
+  if (!returnValue) {
+    throw new Error('copied nothing');
+  }
+}
+```
+
+`document.execCommand('copy')` 명령은 사용자 생성 이벤트(브라우저 사용자의 직접 행동에 의해 발동하는 이벤트)가 아니면 일부 브라우저에서 실행 불가. 실제로 파이어폭스 콘솔창에 직접 명령어를 입력하면: _경고: 짧게 실행되는 사용자 생성 이벤트 핸들러 안에서 호출되지 않았기 때문에 document.execCommand(‘cut’/‘copy’)가 거부되었습니다._ 라고 함.
