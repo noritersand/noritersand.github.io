@@ -23,6 +23,13 @@ tags:
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
 
+## [> , >> (리디렉션)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7)
+
+```bash
+명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
+명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
+```
+
 ## | (파이프)
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다.
