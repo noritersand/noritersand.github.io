@@ -70,9 +70,9 @@ diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
 
 서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
 
-#### [Bracket​Highlighter](https://packagecontrol.io/packages/BracketHighlighter)
+#### [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
 
-괄호의 시작과 끝을 행 번호 영역에 표시해주는 패키지.
+브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
 
 #### [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)
 
@@ -102,7 +102,3 @@ URL 인코드-디코드 기능 제공.
 #### [HexViewer](https://packagecontrol.io/packages/HexViewer)
 
 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어가 아주 훌륭함.
-
-#### [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter)
-
-브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
