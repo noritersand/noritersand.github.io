@@ -8,6 +8,7 @@ tags:
   - java
   - thymeleaf
   - template-engine
+  - basic
 ---
 
 * Kramdown table of contents

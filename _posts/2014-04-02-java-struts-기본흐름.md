@@ -7,6 +7,7 @@ categories:
 tags:
   - java
   - struts
+  - basic
 ---
 
 ![](/images/struts-1.png)

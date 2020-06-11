@@ -7,6 +7,7 @@ categories:
 tags:
   - javascript
   - nodejs
+  - basic
 ---
 
 * Kramdown table of contents
