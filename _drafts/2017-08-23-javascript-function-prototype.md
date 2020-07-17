@@ -29,7 +29,7 @@ tags:
 
 아래는 스택오버플로우에서 본 예:
 
-```java
+```js
 function LateBloomer() {
   console.log(this.constructor);
   this.petalCount = Math.ceil(Math.random() * 12) + 1;
