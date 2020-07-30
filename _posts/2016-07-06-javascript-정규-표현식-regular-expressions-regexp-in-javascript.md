@@ -87,7 +87,7 @@ var re = new RegExp("ab+c", "i");
 지정된 패턴과 검색하여 replaceText로 대체
 
 ```js
-TODO
+'1000000'.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 ```
 
 ### RegExp.exec( testString )
@@ -103,7 +103,7 @@ TODO
 지정된 패턴과 같은 패턴을 검색하여 검색하면 true 를 리턴하며 그렇지 않으면 false 리턴
 
 ```js
-TODO
+/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test(str)
 ```
 
 ## 정규 표현식에서 사용하는 특수문자

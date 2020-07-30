@@ -48,21 +48,65 @@ TODO 위에서 공백을 제외하는 방법을 찾아야됨.
 /^[a-zA-Z0-9_-]{2,5}$/
 ```
 
-## 함수 사용 예시
+### 언더바`_` 이후 모든 문자
 
-### 숫자 - 통화 치환
+```js
+/_\w+/
+```
+
+### 언더바`_` 이전 모든 문자
+
+```js
+/\w+_/
+```
+
+### 날짜 포맷 검사: yyyy-MM-dd
+
+```js
+/[12][0-9]{3}-[0-9]{2}-[0-9]{2}/
+```
+
+### 이미지 태그 찾기
+
+#### `<img`부터 `>` 까지
+
+```js
+/<img [^>]*src="([^"]+)"[^>]*>/
+```
+
+#### `<img`부터 `src="~~~"` 까지
+
+```js
+/<img [^>]*src="([^"]+)"/
+```
+
+#### 이미지 확장자가 `jpg`, `png`
+
+```js
+/<img [^>]*src="([^"]+)(([^"]+)(.)(jpg|png))"/
+```
+
+### 영문 대소문자, 숫자, 5~50자 길이
+
+```js
+/^[a-zA-Z0-9]{5,50}$/
+```
+
+## 자바스크립트에서 정규식 사용 예시
+
+### 숫자를 통화로
 
 ```js
 '1000000'.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 ```
 
-### 통화 - 숫자 치환 \#1
+### 통화를 숫자로
 
 ```js
 '1,000,000'.replace(/[^0-9]/g, '');
 ```
 
-### 통화 - 숫자 치환 \#2
+### 통화를 숫자로 \#2
 
 ```js
 '123,123,123'.replace(/\,/g, '');
@@ -139,7 +183,7 @@ function isValidKorean(data){
 ```js
 function checkKoreanWord(str) {
   var check = /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/;
-  return check.test(str)?true:false;
+  return check.test(str) ? true : false;
 }
 ```
 
@@ -191,22 +235,6 @@ if (! /^(\d+)$/.test(f.age.value)) {
 }
 ```
 
-### 날짜 형식 검사 정규 표현식(yyyy-MM-dd)
-
-```js
-function isValidDateFormat(data) {
-  var format = /[12][0-9]{3}-[0-9]{2}-[0-9]{2}/;
-  if(data.search(format) == -1)
-    return false;
-
-  var _year = data.substr(0,4);
-  var _month= data.substr(5,2);
-  var _day = data.substr(8,2);
-
-  return isValidDate(_year, _month, _day);
-}
-```
-
 ### 영문, 숫자, 특수문자( . ; - )인지 검사
 
 ```js
@@ -222,12 +250,6 @@ for (var loop = 0; loop < text.length; loop++){
     break;
   }
 }
-```
-
-### 영문 대소문자, 숫자, 5~50자 길이의 정규 표현식
-
-```js
-/^[a-zA-Z0-9]{5,50}$/
 ```
 
 ### 숫자와 알파벳 대소문자, 쉼표`.`, 언더바`_` 이외의 문자가 있을 경우 false
@@ -281,35 +303,3 @@ p.test('placeholder=""'); // false
 ```
 
 `placeholder="abc"`는 찾지만 `placeholder=""`는 못찾음.
-
-### 언더바`_` 이후 모든 문자
-
-```js
-/_\w+/
-```
-
-### 언더바`_` 이전 모든 문자
-
-```js
-/\w+_/
-```
-
-## 이미지 태그 찾기
-
-### `<img`부터 `>` 까지
-
-```js
-/<img [^>]*src="([^"]+)"[^>]*>/
-```
-
-### `<img`부터 `src="~~~"` 까지
-
-```js
-/<img [^>]*src="([^"]+)"/
-```
-
-#### 이미지 확장자가 `jpg`, `png`
-
-```js
-/<img [^>]*src="([^"]+)(([^"]+)(.)(jpg|png))"/
-```
