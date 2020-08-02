@@ -61,7 +61,7 @@ var obj = {
 };
 ```
 
-ES2015의 [메서드 단축 표기법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#%EB%A9%94%EC%84%9C%EB%93%9C_%EC%A0%95%EC%9D%98)으로는 이렇게 쓴다:
+ES2015의 [메서드 단축 표기법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#메서드_정의)으로는 이렇게 쓴다:
 
 ```js
 var obj = {
