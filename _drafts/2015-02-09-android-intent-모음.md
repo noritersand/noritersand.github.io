@@ -13,7 +13,7 @@ tags:
 
 **비공개 글**
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [https://developer.chrome.com/multidevice/android/intents](https://developer.chrome.com/multidevice/android/intents)
 

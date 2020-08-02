@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://insanehong.kr/category/javascript/](http://insanehong.kr/category/javascript/)
 

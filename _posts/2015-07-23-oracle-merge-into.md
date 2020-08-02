@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [https://docs.oracle.com/cd/B28359_01/server.111/b28286/statements_9016.htm#SQLRF01606](https://docs.oracle.com/cd/B28359_01/server.111/b28286/statements_9016.htm#SQLRF01606)
 - https://ko.wikipedia.org/wiki/Merge_(SQL)

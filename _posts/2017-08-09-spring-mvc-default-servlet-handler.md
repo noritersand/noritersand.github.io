@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-default-servlet-handler](http://docs.spring.io/spring/docs/current/spring-framework-reference/htmlsingle/#mvc-default-servlet-handler)
 - [http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/resource/DefaultServletHttpRequestHandler.html](http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/resource/DefaultServletHttpRequestHandler.html)

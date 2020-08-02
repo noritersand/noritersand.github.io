@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [MDN: HTML reference](https://developer.mozilla.org/ko/docs/Web/HTML/Reference)
 - [w3schools: HTML Element Reference](https://www.w3schools.com/tags/default.asp)

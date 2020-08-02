@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
 - https://www.w3schools.com/java/java_modifiers.asp

@@ -10,7 +10,7 @@ tags:
   - audit
 ---
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [https://linux.die.net/man/8/auditctl](https://linux.die.net/man/8/auditctl)
 - [https://www.lesstif.com/pages/viewpage.action?pageId=20776444](https://www.lesstif.com/pages/viewpage.action?pageId=20776444)

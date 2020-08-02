@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://hayageek.com/jquery-ajax-form-submit/](http://hayageek.com/jquery-ajax-form-submit/)
 

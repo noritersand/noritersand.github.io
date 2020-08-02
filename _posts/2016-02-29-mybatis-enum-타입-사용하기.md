@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o](https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o)
 

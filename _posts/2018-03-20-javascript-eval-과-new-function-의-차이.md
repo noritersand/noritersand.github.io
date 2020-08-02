@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing](http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing)
 

@@ -10,7 +10,7 @@ tags:
   - volatile
 ---
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/locksync.html)
 - [https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html](https://docs.oracle.com/javase/tutorial/essential/concurrency/sync.html)

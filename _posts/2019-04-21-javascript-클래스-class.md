@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [MDN: Classes](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
 - [PoiemaWeb: 클래스](https://poiemaweb.com/es6-class)

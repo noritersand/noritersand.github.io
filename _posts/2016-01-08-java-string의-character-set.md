@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://d2.naver.com/helloworld/19187](http://d2.naver.com/helloworld/19187)
 - [http://d2.naver.com/helloworld/76650](http://d2.naver.com/helloworld/76650)

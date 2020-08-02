@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://www.eclipse.org/downloads](http://www.eclipse.org/downloads)
 - [http://tomcat.apache.org](http://tomcat.apache.org)

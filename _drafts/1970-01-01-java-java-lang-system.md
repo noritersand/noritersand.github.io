@@ -9,7 +9,7 @@ tags:
   - system
 ---
 
-#### 참고한 문서
+#### 참고한 사이트와 문서
 
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/System.html](http://docs.oracle.com/javase/9/docs/api/java/lang/System.html)
 
