@@ -37,12 +37,9 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 ## 작성자가 쓰는 단축키 설정
 
-- ~~Save All: <kbd>f9</kbd>(In Windows, File)~~
 - Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
 - Open Type Hierarchy: <kbd>unbined</kbd>
 - Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
-- File Search: <kbd>ctrl + h</kbd>(In Windows, Search)
-- Open Search Dialog: <kbd>unbined</kbd>
 - Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
 - Compare with HEAD Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
 - Compare with Previous Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
@@ -55,8 +52,8 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search) ~~STS 플러그인 깔았을 때 쓸 수 있는 빠른 검색창~~ 최근 버전은 기본 탑재.
 - Next Editor: <kbd>ctrl + 6</kbd>(In Windows, Window)
 - Previous Editor: <kbd>ctrl + shift + 6</kbd>(In Windows, Window)
-- Next Veiw: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
-- Previous Veiw: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
+- Next View: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
+- Previous View: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
 - Next Perspective: <kbd>ctrl + 8</kbd>(In Windows, Window)
 - Previous Perspective: <kbd>ctrl + shift + 8</kbd>(In Windows, Window)
 
@@ -191,7 +188,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 ## 추천 확장 기능(플러그인)
 
-### Eclipse Quicksearch
+### ~~Eclipse Quicksearch~~
 
 ~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드 카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
 
