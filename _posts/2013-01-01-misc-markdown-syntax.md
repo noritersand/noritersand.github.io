@@ -13,7 +13,6 @@ tags:
 {:toc .toc}
 
 참고한 사이트와 문서  
-
 - [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
 - [Markdown Guide: Bsic Syntax](https://www.markdownguide.org/basic-syntax)
 - [kramdown: Quick Reference](https://kramdown.gettalong.org/quickref.html)
