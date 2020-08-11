@@ -38,10 +38,6 @@ arr.push('b', 'c', 'd'); // 4
 console.log(arr); // ['a', 'b', 'c', 'd']
 ```
 
-### Array.prototype.pop()
-
-TODO
-
 ### Array.prototype.unshift()
 
 `push()`와 반대로 배열의 맨 앞에 요소를 더하고 배열의 길이를 반환한다.
@@ -53,7 +49,13 @@ arr.unshift('b', 'c', 'd'); // 4
 console.log(arr); // ['b', 'c', 'd', 'a']
 ```
 
+### Array.prototype.pop()
+
+맨 뒤 요소를 뽑음(?)
+
 ### Array.prototype.shift()
+
+맨 앞 요소를 뽑음
 
 ## 탐색
 
