@@ -20,7 +20,7 @@ localStorage는 브라우저 전체에서 공유되는 저장공간이다. 여�
 
 ## sessionStorage
 
-sessionStorage는 localStorage와 다르게 Window마다 분리되는 저장공간이다. 브라우저의 다른 창(혹은 탭)에서는 Window가 다르므로 sessionStorage를 공유하지 않는다. **Java Servlet에서 말하는 세션과는 다른 개념이므로 혼동하지 말자.** 브라우저를 종료하면 자동으로 초기화된다.
+sessionStorage는 localStorage와 다르게 Window마다 분리되는 저장공간이다. 브라우저의 다른 창(혹은 탭)에서는 Window가 다르므로 sessionStorage를 공유하지 않는다. **Java Servlet에서 말하는 세션과는 다른 개념**이므로 혼동하지 말자. 브라우저를 종료하면 자동으로 초기화된다.
 
 ### 쿠키와 뭐가 다른가?
 
