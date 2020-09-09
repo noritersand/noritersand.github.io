@@ -41,7 +41,7 @@ let o = new Object();
 Object.getPrototypeOf(o) === o.__proto__; // true
 ```
 
-함수의 프로퍼티인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다. 여기서 '함수로 생성된 객체'란, **함수를 선언할 때 자동으로 생성되는 객체** 와 명시적으로 생성자 함수를 호출해 생성된 객체 모두를 말한다.
+함수의 프로퍼티인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다.
 
 가령 생성자 함수 `Mankind()`와 이 함수로 생성한 객체 `human`이 있을때:
 
@@ -50,15 +50,7 @@ function Mankind() {}
 let human = new Mankind();
 ```
 
-자바스크립트는 `Mankind()` 함수에서 자동으로 만들어진 객체를 `Mankind.prototype`에 할당한다. 이 사실은 `Mankind.prototype`의 생성자가 `Mankind()`와 일치하며 `human`의 생성자와도 일치한다는 것으로 확인할 수 있다:
-
-```js
-Mankind.prototype.constructor === Mankind; // true
-Mankind.prototype.constructor === human.constructor; // true
-human.constructor === Mankind; // true
-```
-
-그리고 `ManKind.prototype`은 `human`의 프로토타입과 일치한다:
+자바스크립트는 `Mankind()` 함수에서 만들어질 객체의 부모를 `Mankind.prototype`에 할당한다:
 
 ```js
 Mankind.prototype === Object.getPrototypeOf(human); // true
@@ -74,26 +66,26 @@ Mankind.prototype === human.__proto__; // true
 객체의 프로퍼티를 참조할 때 해당 프로퍼티가 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인** 이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 프로퍼티가 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
 
 ```js
-function Newbie() {}
-let noob = new Newbie();
+function Fruit() {}
+let berry = new Fruit();
 ```
 
-여기서 생성자 함수 `Newbie()`로 만들어진 객체 `noob`의 프로토타입은 `Newbie.prototype`과 같다:
+`berry`의 프로토타입은 `Fruit` 프로토타입이다. 앞서 말했듯이 `berry.__proto__`에서 찾을 수 있다:
 
 ```js
-noob.__proto__ === Newbie.prototype; // true
+berry.__proto__ === Fruit.prototype; // true
 ```
 
-그리고 `noob.__proto__`의 프로토타입은 `Object.prototype`이다:
+그리고 `Fruit` 프로토타입의 프로토타입은 `Object` 프로토타입이다:
 
 ```js
-noob.__proto__.__proto__ === Object.prototype; // true
+berry.__proto__.__proto__ === Object.prototype; // true
 ```
 
-마지막으로 `Object.prototype`의 프로토타입은 `null`이다:
+마지막으로 `Object` 프로토타입의 프로토타입은 `null`이다:
 
 ```js
-Object.prototype.__proto__ === null; // true
+berry.__proto__.__proto__.__proto__ === null; // true
 ```
 
 ### 프로토타입 체인의 작동 조건
@@ -102,13 +94,36 @@ Object.prototype.__proto__ === null; // true
 
 ```js
 Object.prototype.aaa = 123;
-noob.aaa; // 123
+berry.aaa; // 123
 
-noob.aaa = 456;
+berry.aaa = 456;
 
-noob.aaa; // 456
-noob.__proto__.aaa; // 123
+berry.aaa; // 456
+berry.__proto__.aaa; // 123
 ```
+
+## .constructor
+
+객체에는 생성자를 가리키는 프로퍼티 `.constructor`가 있다. 가령 다음의 경우:
+
+```js
+function Newbie() {}
+let noob = new Newbie();
+```
+
+`noob`의 생성자는 `Newbie()`를 가리킨다:
+
+```js
+noob.constructor === Newbie; // true
+```
+
+그리고 `Newbie` 프로토타입의 `.constructor` 프로퍼티도 `Newbie()`를 가리키는데:
+
+```js
+noob.__proto__.constructor === Newbie; // true
+```
+
+이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니다**. 말 그대로 가리킬 뿐이니 오해하지 말 것.  
 
 ### 곁다리: 생성자 함수의 생성자
 
