@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-07-20 15:19:00 +0900
-title: '[영어넘모어려워] 문법'
+title: '[영어넘모어려워] 문법 기본 basic grammar'
 categories:
   - english
 tags:
@@ -23,7 +23,7 @@ tags:
 | are  | 2인칭/3인칭 | 단수/복수 | 현재 |
 | were | 2인칭/3인칭 | 단수/복수 | 과거 |
 
-## am/is/are
+## UNIT.1 am/is/are
 
 |      | 평서 | 축약형  | 부정    | 축약형#1     | 축약형#2    | 의문       |
 |------|-----|---------|---------|-------------|-------------|-----------|
@@ -44,7 +44,7 @@ tags:
   - Toronto is not in the US.
   - My hands are cold.
 - 의문문
-  - Am i dead?
+  - Am I dead?
   - Is your job interesting?
   - Are the stores open today?
   - Are they married?
@@ -63,7 +63,7 @@ tags:
 | Yes, you are  | No, you are not  | No, you're not  | No, you aren't  |
 | Yes, they are | No, they are not | No, they're not | No, they aren't |
 
-## was/were: present form, past form
+## UNIT.10 was/were: present form, past form
 
 | 주어 | 평서  | 부정     | 의문문      |
 |------|------|----------|------------|
@@ -119,7 +119,7 @@ tags:
 > --> Yes + subject + was / were.
 > --> No + subject + wasn't / weren't.
 
-## i am doing: 현재진행 present continuous/present progressive
+## UNIT.3 I am doing: 현재진행 present continuous/present progressive
 
 어떤 일이 지금 벌어지고 있는 중을 표현하는 형태.
 
@@ -172,7 +172,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 - stand => standing
 - listen => listening
 
-## are you doing?: 현재진행 의문문 present continuous question statement
+## UNIT.4 are you doing?: 현재진행 의문문 present continuous question statement
 
 어떤 일이 벌어지고 있는지 묻는 형태.
 
@@ -192,7 +192,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 
 ### examples
 
-- Am i saying correctly?
+- Am I saying correctly?
 - Is it rainning?
 - Is that clock working?
 - Are the children playing?
@@ -226,7 +226,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 > INFINITIVE
 > --> base form of a verb
 
-## I do/work/like: 단순현재 simple present
+## UNIT.5 I do/work/like: 단순현재 simple present
 
 단순현재는 일반적인 사실 또는 항상/때때로 일어나는 일에 대해 사용한다.
 
@@ -305,7 +305,7 @@ subject + verb
 - 이 외의 경우 뒤에 `-s`를 붙임: like => likes, cost => costs, work => works
 - 예외는 있음: enjoy => enjoys
 
-## I don't...: 단순현재 부정문 simple present negative
+## UNIT.6 I don't...: 단순현재 부정문 simple present negative
 
 단순현재 부정문은 문장 내에 `do/does + not`이 있어야 한다.
 
@@ -336,7 +336,7 @@ subject + do/does + not + verb
 > C. IMPORTANT REMINDER
 > --> whenever we use do / don't / does / doesn't, the verb that follows will always be in the BASE FORM
 
-## do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
+### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
 
 앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다:
 
@@ -350,7 +350,7 @@ did/didn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원�
 - She *did work*.
 - He *didn't do* that.
 
-## Do you...?: 단순현재 의문문 simple present question
+## UNIT.7 Do you ...?: 단순현재 의문문 simple present question
 
 ```
 do/does + subject + infinitive + ?
@@ -420,7 +420,7 @@ do/does + subject + infinitive + ?
 >  1. YES --> Yes +  I / you / we / they / he / she / it + do / does
 >  2. NO -->  No + I / you / we / they / he / she / it + do not (don't) / does not (doesn't)
 
-## I am doing, I do: 현재진행과 단순현재
+## UNIT.8 I am doing, I do: 현재진행과 단순현재
 
 복습용 단원.
 
@@ -464,21 +464,21 @@ do/does + subject + infinitive + ?
 > D. VERBS THAT CANNOT BE USED IN THE GERUND FORM
 > --> like / love / want / know / understand / remember / depend / prefer / hate / need / mean / believe / forget
 
-## I have..., I've got...
+## UNIT.9 I have ..., I've got ...
 
 소유/관계/질병/사람의 성격/물건의 성질 등을 표현할 때 have 혹은 have got으로 표현함.  
 have got이 더 비형식적이고 흔히 쓰인다.
 
 ```
-평서문:
+평서문(regular/positive):
 have: subject + have
 have-got: subject + have/has + got
 
-부정문:
+부정문(negative):
 have: subject + don't/doesn't + have
 have-got: subject + haven't/hasn't + got
 
-의문문:
+의문문(question):
 have: do/does + subject + have...?
 have-got: have/has + subject + got...?
 ```
@@ -538,7 +538,7 @@ have-got: have/has + subject + got...?
 > --> have : "Yes, I do." / "No, I don't."
 > --> have got : "Yes, I have." / "No, I haven't."
 
-## worked/got/went: 단순과거 simple past
+## UNIT.11 worked/got/went: 단순과거 simple past
 
 과거에 했던 일을 말할 때 사용한다.
 
@@ -601,7 +601,7 @@ have-got: have/has + subject + got...?
 > ~ started
 > ~ needed
 
-## I didn't ... Did you ...?: 단순과거 부정문과 의문문 simple past negative and questions
+## UNIT.12 I didn't ... Did you ...?: 단순과거 부정문과 의문문 simple past negative and questions
 
 단순과거 부정문과 단순과거 의문문은 `did/didn't`가 있어야 함.
 
@@ -674,7 +674,7 @@ did + subject + infinitive + ?
 > --> Yes + subject + did
 > --> No + subject + didn't
 
-## I was doing: 과거진행 past continuous
+## UNIT.13 I was doing: 과거진행 past continuous
 
 ```
 평서문:
@@ -721,7 +721,7 @@ was/were + subject + verb-ing?
 > --> present continuous tense : subject + am / is / are + verb-ing
 > --> past continuous tense : subject + was / were + verb-ing
 
-## I was doing (past continuous) and I did (simple past): 과거진행과 단순과거
+## UNIT.14 I was doing (past continuous) and I did (simple past): 과거진행과 단순과거
 
 과거의 특정 시점을 기준으로 어떤 일이 진행되고 있음을 말하는 것은 과거진행, 이미 완료된 어떤 일을 말하는 것은 단순과거다.
 
@@ -790,7 +790,7 @@ was/were + subject + verb-ing?
 > Doctors treated patients in temporary beds and they tried to do their best in a difficult situation.
 > Past simple : writer chooses to show the events as finished.
 
-## I used to...: ... 하곤 했다
+## UNIT.15 I used to...: ... 하곤 했다
 
 `used to`는 '예전에는 ... 하곤 했다'라는 뜻으로 `I used to work ...`, `she used to have ...`, `they used to be ...`와 같이 쓴다.  
 `used to`의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상황을 가리킬 수 있다.
@@ -839,10 +839,10 @@ wh-question + did + subject + use to + infinitive
 > --> We can only use used to for the past.
 > --> We cannot use it for the present time
 
-## Have you ever ...?: 현재완료 present perfect progressive(continuous)
+## UNIT.16 Have you ever ...?: 현재완료 present perfect
 
-현재완료란 현재 시점에 영향을 끼치는 과거의 어떤 사건을 표현할 때 사용한다.  
-"...한 적이 있다" 보다 "...한 채로 있다"로 이해하는 것이 좋다.
+현재완료는 현재 시점에 영향을 끼치는 과거의 어떤 사건을 표현할 때 사용한다.  
+"...한 적이 있다" 보다 "...한 채로 있다"로 이해하는 것이 좋다고 한다.
 
 ```
 평서문/부정문
@@ -852,21 +852,16 @@ subject + have/has(not) + past participle
 have/has(not) + subject + past participle + ?
 ```
 
-| 평서문         |                              |      | 의문문 |               |      |
-|---------------|-------------------------------|------|------ |---------------|------|
-| I/we/you/they | have ('ve)/have not (haven't) | been | have  | I/we/you/they | been |
-| he/she/it     | has ('s)/has not (hasn't)     | been | has   | he/she/it     | been |
-
 ### examples
 
-- He has been to the Jordan river: 그는 요단강에 가본 적이 있다.
-- He has gone to the Jordan river: 그는 요단강에 가버렸다.
-- We've been to Canada, but we haven't been to Alaska.
-- Mary is an interesting person. She has had many different jobs and has lived in many places.
-- I've seen that woman before, but I can't remember where.
-- Have you read this book?
-- Have you ever been to Japan?
-- Have you won in a race?
+- *Have* you *read* this book?
+- *Have* you *ever been* to Japan?
+- *Have* you *won* in a race?
+- He *has been* to the Jordan river: 그는 요단강에 가본 적이 있다.
+- He *has gone* to the Jordan river: 그는 요단강에 가버렸다.
+- We'*ve been* to Canada, but we haven't been to Alaska.
+- Mary is an interesting person. She *has had* many different jobs and *has lived* in many places.
+- I'*ve seen* that woman before, but I can't remember where.
 
 ### 짧게 답하기
 
@@ -900,17 +895,72 @@ have/has(not) + subject + past participle + ?
 > --> at all times
 > --> used to give stress to what follows (emphasis)
 
-## How long have you ...?: present perfect, present perfect continuous
+## UNIT.17 How long have you ...?: 현재완료 진행 present perfect continuous(progressive)
 
-~~simple present vs present continuous vs present perfect~~
+현재완료 진행은 과거에 시작되었으며 현재까지도 진행중인 어떤 사건을 표현할 때 사용한다.
 
+```
+평서문/부정문
+subject + have/has(not) + been + verb-ing
 
+의문문
+have/has + subject + been + verb-ing + ?
+
+부정의문문
+have/has + subject + not + been + verb-ing + ?
+hasn't/haven't + subject + been + verb-ing + ?
+```
+
+현재완료는 경우에 따라 'been'이 다른 동사로 대체되지만 현재완료 진행은 항상 'been'을 포함한다.
+
+### examples
+
+현재완료:
+
+- I'*ve known* her for a long time.
+- She *has lived* there all her life.
+- I'*ve had* it since April.
+- How long *have* you *known* her?
+- How long *has* she *lived* in Brasilia?
+- How long *have* you *had* your car?
+
+현재완료 진행:
+
+- I'*ve been studying* German for six months.
+- He'*s been watching* TV since 5:00
+- The sun *has been shining* all day.
+- It *has been raining* since this morning.
+- She *has been* waiting for the bus for 10 minutes.
+- How *long have* you *been* studying German?
+- How *long has* he *been* watching TV?
+- How *long has* it *been* raining?
+
+### violet
+
+> A.
+> HOW LONG HAVE YOU...?
+> --> used to express the duration of time a particular activity has been done
+>
+> B.
+> SIMPLE PRESENT TENSE
+> --> be-verbs : is / am / are
+> --> singular : -es / -s
+> --> plural : base form of the verb
+>
+> PRESENT PERFECT TENSE
+> --> has / have + past participle
+>
+> PRESENT CONTINOUS TENSE
+> --> is / am / are + verb-ing
+>
+> PRESENT PERFECT CONTINUOUS TENSE
+> --> has / have + been + verb-ing
+
+## UNIT.18 for, since, ago
 
 
 
 ### examples
-
--
 
 ### violet
 
