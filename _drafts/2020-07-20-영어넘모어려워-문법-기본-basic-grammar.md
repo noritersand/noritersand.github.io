@@ -23,7 +23,7 @@ tags:
 | are  | 2인칭/3인칭 | 단수/복수 | 현재 |
 | were | 2인칭/3인칭 | 단수/복수 | 과거 |
 
-## UNIT.1 am/is/are
+## UNIT 1: am/is/are
 
 |      | 평서 | 축약형  | 부정    | 축약형#1     | 축약형#2    | 의문       |
 |------|-----|---------|---------|-------------|-------------|-----------|
@@ -63,7 +63,7 @@ tags:
 | Yes, you are  | No, you are not  | No, you're not  | No, you aren't  |
 | Yes, they are | No, they are not | No, they're not | No, they aren't |
 
-## UNIT.10 was/were: present form, past form
+## UNIT 10: was/were: present form, past form
 
 | 주어 | 평서  | 부정     | 의문문      |
 |------|------|----------|------------|
@@ -119,7 +119,7 @@ tags:
 > --> Yes + subject + was / were.
 > --> No + subject + wasn't / weren't.
 
-## UNIT.3 I am doing: 현재진행 present continuous/present progressive
+## UNIT 3: I am doing (현재진행 present continuous/present progressive)
 
 어떤 일이 지금 벌어지고 있는 중을 표현하는 형태.
 
@@ -172,7 +172,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 - stand => standing
 - listen => listening
 
-## UNIT.4 are you doing?: 현재진행 의문문 present continuous question statement
+## UNIT 4: are you doing? (현재진행 의문문 present continuous question statement)
 
 어떤 일이 벌어지고 있는지 묻는 형태.
 
@@ -226,7 +226,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 > INFINITIVE
 > --> base form of a verb
 
-## UNIT.5 I do/work/like: 단순현재 simple present
+## UNIT 5: I do/work/like (단순현재 simple present)
 
 단순현재는 일반적인 사실 또는 항상/때때로 일어나는 일에 대해 사용한다.
 
@@ -305,7 +305,7 @@ subject + verb
 - 이 외의 경우 뒤에 `-s`를 붙임: like => likes, cost => costs, work => works
 - 예외는 있음: enjoy => enjoys
 
-## UNIT.6 I don't...: 단순현재 부정문 simple present negative
+## UNIT 6: I don't... (단순현재 부정문 simple present negative)
 
 단순현재 부정문은 문장 내에 `do/does + not`이 있어야 한다.
 
@@ -338,7 +338,7 @@ subject + do/does + not + verb
 
 ### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
 
-앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다:
+**중요**: 앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다:
 
 - Jane *doesn't play* the piano very well.
 - She speaks Spanish, but she *doesn't speak* Italian.
@@ -350,7 +350,7 @@ did/didn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원�
 - She *did work*.
 - He *didn't do* that.
 
-## UNIT.7 Do you ...?: 단순현재 의문문 simple present question
+## UNIT 7: Do you ...? (단순현재 의문문 simple present question)
 
 ```
 do/does + subject + infinitive + ?
@@ -420,7 +420,7 @@ do/does + subject + infinitive + ?
 >  1. YES --> Yes +  I / you / we / they / he / she / it + do / does
 >  2. NO -->  No + I / you / we / they / he / she / it + do not (don't) / does not (doesn't)
 
-## UNIT.8 I am doing, I do: 현재진행과 단순현재
+## UNIT 8: I am doing, I do (현재진행과 단순현재)
 
 복습용 단원.
 
@@ -464,7 +464,7 @@ do/does + subject + infinitive + ?
 > D. VERBS THAT CANNOT BE USED IN THE GERUND FORM
 > --> like / love / want / know / understand / remember / depend / prefer / hate / need / mean / believe / forget
 
-## UNIT.9 I have ..., I've got ...
+## UNIT 9: I have ..., I've got ...
 
 소유/관계/질병/사람의 성격/물건의 성질 등을 표현할 때 have 혹은 have got으로 표현함.  
 have got이 더 비형식적이고 흔히 쓰인다.
@@ -538,7 +538,7 @@ have-got: have/has + subject + got...?
 > --> have : "Yes, I do." / "No, I don't."
 > --> have got : "Yes, I have." / "No, I haven't."
 
-## UNIT.11 worked/got/went: 단순과거 simple past
+## UNIT 11: worked/got/went (단순과거 simple past)
 
 과거에 했던 일을 말할 때 사용한다.
 
@@ -601,7 +601,7 @@ have-got: have/has + subject + got...?
 > ~ started
 > ~ needed
 
-## UNIT.12 I didn't ... Did you ...?: 단순과거 부정문과 의문문 simple past negative and questions
+## UNIT 12: I didn't ... Did you ...? (단순과거 부정문과 의문문 simple past negative and questions)
 
 단순과거 부정문과 단순과거 의문문은 `did/didn't`가 있어야 함.
 
@@ -674,7 +674,7 @@ did + subject + infinitive + ?
 > --> Yes + subject + did
 > --> No + subject + didn't
 
-## UNIT.13 I was doing: 과거진행 past continuous
+## UNIT 13: I was doing (과거진행 past continuous)
 
 ```
 평서문:
@@ -721,7 +721,7 @@ was/were + subject + verb-ing?
 > --> present continuous tense : subject + am / is / are + verb-ing
 > --> past continuous tense : subject + was / were + verb-ing
 
-## UNIT.14 I was doing (past continuous) and I did (simple past): 과거진행과 단순과거
+## UNIT 14: I was doing and I did (과거진행과 단순과거 past continuous and simple past)
 
 과거의 특정 시점을 기준으로 어떤 일이 진행되고 있음을 말하는 것은 과거진행, 이미 완료된 어떤 일을 말하는 것은 단순과거다.
 
@@ -790,7 +790,7 @@ was/were + subject + verb-ing?
 > Doctors treated patients in temporary beds and they tried to do their best in a difficult situation.
 > Past simple : writer chooses to show the events as finished.
 
-## UNIT.15 I used to...: ... 하곤 했다
+## UNIT 15: I used to... (... 하곤 했다)
 
 `used to`는 '예전에는 ... 하곤 했다'라는 뜻으로 `I used to work ...`, `she used to have ...`, `they used to be ...`와 같이 쓴다.  
 `used to`의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상황을 가리킬 수 있다.
@@ -839,10 +839,10 @@ wh-question + did + subject + use to + infinitive
 > --> We can only use used to for the past.
 > --> We cannot use it for the present time
 
-## UNIT.16 Have you ever ...?: 현재완료 present perfect
+## UNIT 16: Have you ever ...? (현재완료 present perfect)
 
 현재완료는 현재 시점에 영향을 끼치는 과거의 어떤 사건을 표현할 때 사용한다.  
-"...한 적이 있다" 보다 "...한 채로 있다"로 이해하는 것이 좋다고 한다.
+'...한 적이 있다' 보다 '...한 채로 있다'로 이해하는 것이 좋다고 한다.
 
 ```
 평서문/부정문
@@ -895,9 +895,10 @@ have/has(not) + subject + past participle + ?
 > --> at all times
 > --> used to give stress to what follows (emphasis)
 
-## UNIT.17 How long have you ...?: 현재완료 진행 present perfect continuous(progressive)
+## UNIT 17: How long have you ...? (현재완료 진행 present perfect continuous/progressive)
 
-현재완료 진행은 과거에 시작되었으며 현재까지도 진행중인 어떤 사건을 표현할 때 사용한다.
+현재완료 진행은 과거에 시작되었으며 현재까지도 진행 중인 어떤 사건을 표현할 때 사용한다.  
+'현재까지도 진행 중'의 의미는 지금 당장 일어나고 있는 사건이라고 이해하면 쉽다. 예를 들어 '1시간 전부터 지금까지도 비가 내리고 있다.'는 현재완료 진행으로 표현한다.
 
 ```
 평서문/부정문
@@ -911,7 +912,7 @@ have/has + subject + not + been + verb-ing + ?
 hasn't/haven't + subject + been + verb-ing + ?
 ```
 
-현재완료는 경우에 따라 'been'이 다른 동사로 대체되지만 현재완료 진행은 항상 'been'을 포함한다.
+현재완료는 경우에 따라 been이 다른 동사로 대체되지만 현재완료 진행은 항상 been을 포함한다.
 
 ### examples
 
@@ -956,13 +957,56 @@ hasn't/haven't + subject + been + verb-ing + ?
 > PRESENT PERFECT CONTINUOUS TENSE
 > --> has / have + been + verb-ing
 
-## UNIT.18 for, since, ago
+## UNIT 18: for, since, ago
 
+for와 since는 기간(period, how long)에 대해 말할 때 사용한다.
 
+```
+for + 기간(three days, two years, ...)
+
+since + 시작점 (Monday, 9:00, 2020, ...)
+```
+
+- Jane is in Brazil. She *has been* there *for three days* *since Monday*.
+
+ago는 이전에(= before now) 라는 뜻이다.
+
+```
+기간(three weeks, ten minutes, ...) + ago
+```
+
+- I had dinner an hour ago.
+
+ago는 대게 단순과거와 함께 사용하지만 다음처럼:
+
+- I've been studying English since three months ago.
+
+현재완료나 현재완료 진행에서 since와 함께 사용하기도 한다.
 
 ### examples
 
+- It's been raining *for* an hour.
+- We've been waiting *for* 20 minutes.
+- Have you known Lisa *for* a long time?
+- My aunt has lived in Australia *since* 15 years.
+- Mexico has been an independent country *since* 1821.
+- Michael has been sick *for* a long time. He has been in the hospital *since* October.
+- Jain arrived in Brazil three days *ago*.
+- I bought these shoes a few days *ago*.
+- Lynn and Mark got married 20 years *ago*.
+
 ### violet
+
+> A.
+> FOR
+> --> period of time
+>
+> SINCE
+> --> stating the start of something
+>
+> B.
+> AGO
+> --> in the past; before the present time; before now
 
 -------------------------------------------------------------------------------
 

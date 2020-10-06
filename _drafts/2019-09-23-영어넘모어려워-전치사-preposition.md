@@ -12,6 +12,10 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+![](/images/prepositions.jpg)
+
+출처: [https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사](https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사)
+
 ## to
 
 - adverb(부사, here, there) 앞에는 to가 필요 없다.
