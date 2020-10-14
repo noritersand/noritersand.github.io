@@ -994,6 +994,7 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 - Jain arrived in Brazil three days *ago*.
 - I bought these shoes a few days *ago*.
 - Lynn and Mark got married 20 years *ago*.
+- David has played the piano *since* he was seven years old.
 
 ### violet
 
@@ -1007,6 +1008,60 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 > B.
 > AGO
 > --> in the past; before the present time; before now
+
+## UNIT 19: I have done, I did (현재완료와 단순과거 1 present perfect and simple past PART1)
+
+현재완료와 단순과거를 비교하는 단원.
+
+### examples
+
+- 현재완료 / 단순과거
+- I*'ve lost* my passport. / I *lost* my passport.
+- She*'s gone* to bed. / She *went* to bed.
+- I *haven't bought* her a present. / I *didn't buy* her a present.
+- Where *has* he *gone*? / Where *did* he *go*?
+- I*'ve lost* it. / I *lost* it.
+- He*'s gone* home. / He *went* home.
+
+## UNIT 20: just, already, yet (현재완료와 단순과거 2)
+
+현재완료 또는 단순과거와 사용하는 부사: just, already, yet을 설명하는 단원
+
+### examples
+
+- 현재완료 / 단순과거
+
+just:
+
+- They*'ve just arrived*. / *They just arrived*
+- I*'ve just had* dinner. / I *just had* dinner.
+- He*'just left*. / He *just left*.
+
+already:
+
+- They*'ve already arrived*. / They *already arrived*.
+- Anna *has already gone* to bed. / Anna *already went* to bed.
+- We*'ve already met*. / We *already met*.
+
+yet:
+
+- They *haven't arrived yet*. / They *didn't arrive yet*.
+- I *haven't told* him *yet*. / I *didn't tell* him *yet*.
+- *Have* Diane and Paul *arrived yet*? / *Did* Diane and Paul *arrive yet*?
+- *Has* Nicole *started* her new job *yet*? / *Did* Nicole *start* her new job *yet*?
+
+### violet
+
+> A.  JUST
+> -- s short time ago
+>
+> B. ALREADY
+> -- before you expected / before I expected
+>
+> C. YET
+> -- until now
+> -- usually used in negative sentences and questions
+> -- usually at the end of the sentence
 
 -------------------------------------------------------------------------------
 
