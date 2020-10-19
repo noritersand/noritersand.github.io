@@ -1009,9 +1009,13 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 > AGO
 > --> in the past; before the present time; before now
 
-## UNIT 19: I have done, I did (현재완료와 단순과거 1 present perfect and simple past PART1)
+## UNIT 19: I have done, I did (현재완료와 단순과거1 present perfect and simple past PART1)
 
-현재완료와 단순과거를 비교하는 단원.
+현재완료는 현재까지 영향을 미치는 과거의 행동에 대해 사용한다.  
+몇몇 상황의 경우 다음처럼 단순과거로 대체할 수 있다:
+
+- "Where's your key?" "I*'ve lost* it." 또는 "I *lost* it".
+- "Is Peter here?" "No, He*'s gone* home." 또는 "He *went* home."
 
 ### examples
 
@@ -1023,9 +1027,15 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 - I*'ve lost* it. / I *lost* it.
 - He*'s gone* home. / He *went* home.
 
-## UNIT 20: just, already, yet (현재완료와 단순과거 2)
+## UNIT 20: just, already, yet (현재완료와 단순과거2 present perfect and simple past PART2)
 
 현재완료 또는 단순과거와 사용하는 부사: just, already, yet을 설명하는 단원
+
+- just: 조금 전
+- already: 벌써(예상보다 먼저)
+- yet: 아직
+
+셋 다 현재완료 또는 단순과거와 사용한다. 이 중 yet은 부정문과 의문문에 사용하며, 주로 문장의 끝에 위치한다.
 
 ### examples
 
@@ -1062,6 +1072,58 @@ yet:
 > -- until now
 > -- usually used in negative sentences and questions
 > -- usually at the end of the sentence
+
+## UNIT 21: I've lost me key. I lost my key last week. (현재완료와 단순과거3 present perfect and simple past PART3)
+
+때로는 현재완료(I have lost, he has gone 등)와 단순과거(I lost, he went 등)를 같은 뜻으로 쓸 수 있다.  
+
+- "Is Peter Here?" "No, he*'s gone* home." 또는 "No, he *went* home."
+
+종결된(지나간) 시간(yesterday, last week, six months ago 등)과 함께 쓸 때는 단순과거만 가능하다. 즉, 현재완료(have arrived, have done, have been 등)는 종결된 시간과 함께 쓰지 않는다.  
+
+- I saw Paula yesterday(o) / I have seen Paula yesterday(x)
+- Where were you on Sunday afternoon?(o) / Where have you been on Sunday afternoon?(x)
+
+`When ...?`, `What time ...?`은 단순과거와 함께 쓴다.
+
+- When did you buy your computer?(o) / When have you bought?(x)
+- What time did Andy go out?
+
+### examples
+
+- I *have lost* my key. / I *lost* my key.
+- Ben *has gone* home. / Ben *went* home.
+- *Have* you *had* lunch? / *Did* you *have* lunch?
+- The letter hasn*'t arrived* yet. / The letter *didn't arrive* yet.
+- *Have* you ever *been* to Spain? / *Did* you *go* to Spain last year?
+- The letter hasn*'t arrived* yet. / The letter *didn't arrive* yesterday.
+- We*'ve lived* in Boston for six years. / We *lived* in Chicago for six years, but now we live in Boston.
+
+### violet
+
+> A.
+> SIMPLE PAST TENSE
+> -- finished time
+>
+> PRESENT PERFECT TENSE
+> -- you cannot use it with a finished time
+>
+> B.
+> PRESENT PERFECT TENSE
+> _____________________________________
+> past               (time until now)                  now
+>
+> SIMPLE PAST TENSE
+> _____________________________________
+> past               (finished time)                  now
+
+## UNIT 22: is done, was done (수동태1)
+
+### examples
+
+-
+
+### violet
 
 -------------------------------------------------------------------------------
 
