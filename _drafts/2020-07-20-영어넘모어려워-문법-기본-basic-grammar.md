@@ -372,7 +372,7 @@ do/does + subject + infinitive + ?
 위 표에 따르면 형식은:
 
 ```
-[wh-question word +] do/does + 주어(subject) + [부사 +] 동사원형(infinitive) [+ 목적어(object)] + ?
+[wh-question +] do/does + 주어(subject) + [부사 +] 동사원형(infinitive) [+ 목적어(object)] + ?
 ```
 
 이지만, 그렇지 않은 경우도 있다: *How much money do we have?*
@@ -479,8 +479,8 @@ have: subject + don't/doesn't + have
 have-got: subject + haven't/hasn't + got
 
 의문문(question):
-have: do/does + subject + have...?
-have-got: have/has + subject + got...?
+have: [wh-question + ]do/does + subject + have...?
+have-got: [wh-question + ]have/has + subject + got...?
 ```
 
 | 주어    | I have... | I've got      | 축약형       |
@@ -610,7 +610,7 @@ have-got: have/has + subject + got...?
 subject + did not (didn't) + infinitive
 
 의문문:
-did + subject + infinitive + ?
+[wh-question + ]did + subject + infinitive + ?
 ```
 
 *did/didn't 다음 동사는 동사원형(infinitive)*임을 기억할 것:
@@ -684,7 +684,7 @@ subject + was/were + verb-ing
 subject + was/were + not + verb-ing
 
 의문문:
-was/were + subject + verb-ing?
+[wh-question + ]was/were + subject + verb-ing?
 ```
 
 | 주어        | 긍정문 |         | 부정문   | 단축형   |          | 의문문 |            |          |
@@ -1011,6 +1011,9 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 
 ## UNIT 19: I have done, I did (현재완료와 단순과거1 present perfect and simple past PART1)
 
+![](/images/present-perfect-tense.png)
+![](/images/simple-past-tense.png)
+
 현재완료는 현재까지 영향을 미치는 과거의 행동에 대해 사용한다.  
 몇몇 상황의 경우 다음처럼 단순과거로 대체할 수 있다:
 
@@ -1019,7 +1022,8 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 
 ### examples
 
-- 현재완료 / 단순과거
+현재완료 / 단순과거:
+
 - I*'ve lost* my passport. / I *lost* my passport.
 - She*'s gone* to bed. / She *went* to bed.
 - I *haven't bought* her a present. / I *didn't buy* her a present.
@@ -1117,13 +1121,72 @@ yet:
 > _____________________________________
 > past               (finished time)                  now
 
-## UNIT 22: is done, was done (수동태1)
+## UNIT 22: is done, was done (수동태1 passive PART1)
+
+수동태: 목적어를 주어 자리에 놓고 말하는 방식.
+
+![](/images/active-voice-vs-passive-voice.jpg)
+
+수동태의 마지막에는 행위자를 표현하는 by-phrase가 오는데, 반드시 와야 하는 문장이 있는가 하면 생략해도 말이 되는 문장이 있다.
+
+- The savannah is roamed by beautiful giraffes: by giraffes가 없으면 말이 안되는 문장
+- At dinner, six shrimp were eaten by Harry: by Harray가 없어도 말이 되는 문장
+
+```
+평서문/부정문
+object + am/is/are/was/were + (not) + past participle
+
+의문문
+[wh-question + ]am/is/are/was/were + object + (not) + past participle
+```
 
 ### examples
 
--
+- Butter *is made* from milk.
+- Oranges *are imported* into Korea.
+- How often *are* these rooms *cleaned*?
+- I *am* never *invited* to parties.
+- These houses *were built* 100 years ago.
+- When *was* the telephone *invented*?
+- We *weren't invited* to the parry last week.
+- Two people *were taken* to the hospital.
+- How *is the word* pronounced.
+
+능동태 / 수동태:
+
+- Somebody *cleans the office* every day. / *The office is cleaned* every day.
+- Somebody *cleaned the office* yesterday. / *The office was cleaned* yesterday.
 
 ### violet
+
+> A.
+> 1. doer of the action -- subject
+> 2. action word -- verb
+> 3. receiver of action -- object
+>
+> PASSIVE VOICE NOTES
+> -- the doer of the action will now be in the by-phrase format
+> -- the by-phrase is sometimes NEEDED or NOT NEEDED in the sentence
+>
+> EXAMPLE OF THE BY-PHRASE BEING NEEDED
+> active voice : Beautiful giraffes roam the savannah.
+> passive voice : The savannah is roamed by beautiful giraffes.
+>
+> EXAMPLE OF THE BY-PHRASE NOT BEING NEEDED
+> active voice : Harry ate six shrimp at dinner.
+> passive voice : At dinner, six shrimp were eaten by Harry.
+>
+> B.
+> PASSIVE VOICE FORMAT
+> -- am/is / are / was / were + (not) + past participle
+>
+> C.
+> WAS / WERE BORN
+> -- never I am born. or He/She/It is born. or They/You are born.
+>
+> D.
+> BY-PHRASE
+> (...please see section A.)
 
 -------------------------------------------------------------------------------
 
