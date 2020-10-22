@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [AngularJs 안의 작은 jQuery - angular.element()](http://programmingsummaries.tistory.com/141)
 

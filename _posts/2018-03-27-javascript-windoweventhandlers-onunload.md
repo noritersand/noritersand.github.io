@@ -14,7 +14,7 @@ tags:
   - window
 ---
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
 - [https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload](https://developer.mozilla.org/ko/docs/Web/API/WindowEventHandlers/onunload)

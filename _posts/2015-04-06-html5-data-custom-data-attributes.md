@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [MDN: data-\*](https://developer.mozilla.org/ko/docs/Web/HTML/Global_attributes/data-\*)
 - [MDN: HTMLElement​.dataset](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/dataset)

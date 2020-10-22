@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html](https://tomcat.apache.org/tomcat-8.5-doc/ssl-howto.html)
 - [https://tomcat.apache.org/tomcat-8.5-doc/config/http.html](https://tomcat.apache.org/tomcat-8.5-doc/config/http.html)

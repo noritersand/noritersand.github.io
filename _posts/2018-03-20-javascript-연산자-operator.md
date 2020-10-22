@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [MDN: 표현식과 연산자](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 - [MDN: 동치 비교 및 동일성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Equality_comparisons_and_sameness#%EB%93%B1%EA%B0%800_%EA%B0%99%EC%9D%8C)

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://docs.oracle.com/javaee/7/api/javax/validation/package-summary.html](https://docs.oracle.com/javaee/7/api/javax/validation/package-summary.html)
 - [https://docs.oracle.com/javaee/7/api/javax/validation/ConstraintViolation.html](https://docs.oracle.com/javaee/7/api/javax/validation/ConstraintViolation.html)

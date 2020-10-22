@@ -12,9 +12,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 참고한 문서
+
+- https://heiswed.tistory.com
+
 ![](/images/prepositions.jpg)
 
-출처: [https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사](https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사)
+이미지 출처: [https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사](https://heiswed.tistory.com/entry/해외-여행을-위한-영어-공부-문법-정리-7편-전치사)
 
 ## to
 

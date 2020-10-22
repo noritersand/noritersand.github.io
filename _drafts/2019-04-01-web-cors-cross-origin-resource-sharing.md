@@ -11,7 +11,7 @@ tags:
   - browser
 ---
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://www.w3.org/TR/cors/](https://www.w3.org/TR/cors/)
 - [https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS)

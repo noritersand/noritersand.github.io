@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [http://lyb1495.tistory.com/73](http://lyb1495.tistory.com/73)
 - [http://junit.sourceforge.net/javadoc/](http://junit.sourceforge.net/javadoc/)

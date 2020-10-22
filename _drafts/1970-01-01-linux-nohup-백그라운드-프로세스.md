@@ -10,7 +10,7 @@ tags:
   - nohup
 ---
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html](http://changpd.blogspot.kr/2013/04/linux-nohup-xxxsh.html)
 

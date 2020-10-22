@@ -10,7 +10,7 @@ tags:
   - sourcemap
 ---
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 - [https://blog.outsider.ne.kr/916](https://blog.outsider.ne.kr/916)

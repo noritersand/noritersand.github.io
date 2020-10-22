@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [공식 사이트](https://vuejs.org/)
 - [공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)

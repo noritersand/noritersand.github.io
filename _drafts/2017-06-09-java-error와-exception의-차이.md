@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [https://stackoverflow.com/questions/912334/differences-between-exception-and-error](https://stackoverflow.com/questions/912334/differences-between-exception-and-error)
 - [https://speakerdeck.com/gousiosg/exception-handling-bug-hazards-on-android?slide=8](https://speakerdeck.com/gousiosg/exception-handling-bug-hazards-on-android?slide=8)

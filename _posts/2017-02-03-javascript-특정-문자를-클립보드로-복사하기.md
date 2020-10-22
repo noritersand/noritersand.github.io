@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 사이트와 문서
+#### 참고한 문서
 
 - [MDN: Document.execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
 - [Copying text to clipboard with JavaScript | Hacker Noon](https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f)
