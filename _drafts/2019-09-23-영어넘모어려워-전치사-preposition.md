@@ -22,5 +22,5 @@ tags:
 
 ## to
 
-- adverb(부사, here, there) 앞에는 to가 필요 없다.
+- adverb(부사, here, there) 앞에는 to가 필요 없다. (there 이미 to의 의미를 포함한다. 거기로, 거기에...)
 - 동사원형일 때 to가 필요하지만 몇몇 동사는 과거분사형일 때 to를 필요로 하지 않는다.

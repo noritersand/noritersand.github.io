@@ -1134,10 +1134,10 @@ yet:
 
 ```
 평서문/부정문
-object + am/is/are/was/were + (not) + past participle
+object + am/is/are/was/were + (not) + past participle [+ by phrase]
 
 의문문
-[wh-question + ]am/is/are/was/were + object + (not) + past participle
+[wh-question + ]am/is/are/was/were + object + (not) + past participle [+ by phrase] + ?
 ```
 
 ### examples
@@ -1188,6 +1188,64 @@ object + am/is/are/was/were + (not) + past participle
 > BY-PHRASE
 > (...please see section A.)
 
+## UNIT 23: is being done, has been done (수동태2 passive PART2)
+
+현재진행형의 수동태는 `BEING` + 과거분사 조합으로 표현한다.
+
+```
+평서문
+subject + is/am/are + BEING + past participle [+ by phrase]
+
+의문문
+is/am/are + subject + BEING + past participle [+ by phrase] + ?
+```
+
+현재완료의 수동태는 `BEEN` + 과거분사 조합으로 표현한다.
+
+```
+평서문
+subject + has/have + BEEN + past participle [+ by phrase]
+
+의문문
+has/have + subject + BEEN + past participle [+ by phrase] + ?
+```
+
+### examples
+
+현재진행 능동태 / 수동태:
+
+- The postman *is delivering* the mail. / The mail *is being delivered* by the postman.
+- Harry Potter *is measuring* the room. / The room *is being measured* by Harry Potter.
+- The coach *is congratulating* the team at the moment. / The team *is being congratulated* by the coach.
+- *Are* they *opening* the gifts now? / *Are* the gifts *being opened* by them? (now)
+
+현재완료 능동태 / 수동태
+
+- They *have cleaned* the clinic. / The clinic *has been cleaned* by them.
+- Thomas *has written* many books. / Many books *have been written* by Thomas.
+- *Have* the police *caught* the man? / *Has* the man *been caught* by the police?
+- UPS *has delivered* the letters. / The letters *have been delivered* by UPS.
+
+### violet
+
+> A.
+> PASSIVE : PRESENT CONTINUOUS TENSE
+> SENTENCE FORMAT: subject + is/am/are + BEING + past participle
+> QUESTION FORMAT: is/am/are + subject + BEING + past participle?
+>
+> ACTIVE : PRESENT CONTINUOUS TENSE
+> SENTENCE FORMAT: subject + is/am/are + verb-ing
+> QUESTION FORMAT: is/am/are + subject + verb-ing?
+>
+> B.
+> PASSIVE : PRESENT PERFECT TENSE
+> SENTENCE FORMAT: subject + has/have + BEEN + past participle + (by phrase)
+> QUESTION FORMAT: has/have + subject + BEEN + past participle + (by phrase)?
+>
+> ACTIVE : PRESENT PERFECT TENSE
+> SENTENCE FORMAT: subject + has/have + past participle
+> QUESTION FORMAT: has/have + subject + past participle?
+
 -------------------------------------------------------------------------------
 
 ## 제목
@@ -1204,7 +1262,7 @@ object + am/is/are/was/were + (not) + past participle
 
 > face north: 북쪽을 바라봐
 
-여기서 face는 전치사(preposition)가 필요없는 타동사임. 타동사는 목적어가 항상 필요하며 전치사 없이 쓰인다.  
+여기서 face는 전치사(preposition)가 필요없는 타동사임. 타동사는 목적어가 항상 필요하며 전치사 없이 쓰인다.
 예외로 to 부정사와 함께 쓰이는 경우가 있는데, **to 부정사는 to를 포함하여 명사로 취급**하기 때문에 전치사라 보면 안된다고 한다.
 
 ## have 과거분사
