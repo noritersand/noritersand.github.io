@@ -1123,7 +1123,7 @@ yet:
 
 ## UNIT 22: is done, was done (수동태1 passive PART1)
 
-수동태: 목적어를 주어 자리에 놓고 말하는 방식.
+수동태: 목적어를 주어 자리에 놓고 말하는 방식. 능동태에선 행위의 주체가 주어, 행위의 대상이 목적어지만, 수동태에선 반대로 행위의 주체가 목적어가 되고 행위의 대상이 주어가 된다.
 
 ![](/images/active-voice-vs-passive-voice.jpg)
 
@@ -1214,6 +1214,8 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 현재진행 능동태 / 수동태:
 
+- Somebody *is repairing* my car. / My car is *is being repaired*.
+- Somebody *is building* some new houses. / Some new houses *are being built* across from the park.
 - The postman *is delivering* the mail. / The mail *is being delivered* by the postman.
 - Harry Potter *is measuring* the room. / The room *is being measured* by Harry Potter.
 - The coach *is congratulating* the team at the moment. / The team *is being congratulated* by the coach.
@@ -1221,6 +1223,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 현재완료 능동태 / 수동태
 
+- todo
 - They *have cleaned* the clinic. / The clinic *has been cleaned* by them.
 - Thomas *has written* many books. / Many books *have been written* by Thomas.
 - *Have* the police *caught* the man? / *Has* the man *been caught* by the police?
@@ -1245,6 +1248,48 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 > ACTIVE : PRESENT PERFECT TENSE
 > SENTENCE FORMAT: subject + has/have + past participle
 > QUESTION FORMAT: has/have + subject + past participle?
+
+## UNIT 24: 현제시제와 과거시제에서 be/have/do
+
+현재진행 todo
+
+- What *are* you *doing* tonight?
+- What *are* you *having* for lunch?
+
+
+### examples
+
+
+### violet
+
+>> A.
+>> PRESENT CONTINUOUS
+>> --> used to express continuing actions or something that is going on now
+>> --> the present continuous can suggest that an action is going to happen in the future, "especially with verbs that convey the idea of a plan or of movement from one place or condition to another
+>> 
+>> Example:
+>> What are you having for lunch? I am having lobster for lunch.
+>> 
+>> --> format : am / is / are + verb-ing
+>> 
+>> PAST CONTINUOUS
+>> --> used to express a continuing action, something that was happening, going on, at some point in the past
+>> --> the past continuous indicates a limited duration of time and is thus a convenient way to indicate that something took place (in the simple past) while something else was happening (INCOMPLETE ACTION)
+>> 
+>> Example:
+>> I was sleeping on the couch when Bertie smashed through the door.
+>> 
+>> --> format : was / were + verb-ing
+>> 
+>> B.
+>> Please see UNIT 22
+>> 
+>> C.
+>> PRESENT PERFECT TENSE
+>> Please see UNITS 16, 17, 19, 20, 21
+>> 
+>> D.
+>> Please see UNITS 6, 7, 12
 
 -------------------------------------------------------------------------------
 
