@@ -1256,7 +1256,6 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 - What *are* you *doing* tonight?
 - What *are* you *having* for lunch?
 
-
 ### examples
 
 
@@ -1266,30 +1265,74 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 >> PRESENT CONTINUOUS
 >> --> used to express continuing actions or something that is going on now
 >> --> the present continuous can suggest that an action is going to happen in the future, "especially with verbs that convey the idea of a plan or of movement from one place or condition to another
->> 
+>>
 >> Example:
 >> What are you having for lunch? I am having lobster for lunch.
->> 
+>>
 >> --> format : am / is / are + verb-ing
->> 
+>>
 >> PAST CONTINUOUS
 >> --> used to express a continuing action, something that was happening, going on, at some point in the past
 >> --> the past continuous indicates a limited duration of time and is thus a convenient way to indicate that something took place (in the simple past) while something else was happening (INCOMPLETE ACTION)
->> 
+>>
 >> Example:
 >> I was sleeping on the couch when Bertie smashed through the door.
->> 
+>>
 >> --> format : was / were + verb-ing
->> 
+>>
 >> B.
 >> Please see UNIT 22
->> 
+>>
 >> C.
 >> PRESENT PERFECT TENSE
 >> Please see UNITS 16, 17, 19, 20, 21
->> 
+>>
 >> D.
 >> Please see UNITS 6, 7, 12
+
+## UNIT 25: 규칙동사와 불규칙동사 Regular and Irregular Verbs
+
+### examples
+
+### violet
+
+> A.
+> REGULAR VERBS
+>
+> 1. If the basic form of the verb ends in a consonant or a vowel other than -e (a / i / o / u), add the letters -ed to the end.
+>
+> EXAMPLES:
+> seem -- seemed
+> laugh -- laughed
+> look -- looked
+>
+> 2. For verbs that end in -e, add -d.
+>
+> EXAMPLES:
+> love -- loved
+> recede -- receded
+> hope -- hoped
+>
+> 3. If the verb ends in a consonant plus -y, change the y to an i before adding -ed.
+>
+> EXAMPLES:
+> hurry -- hurried
+> clarify -- clarified
+> spy -- spied
+> try -- tried
+>
+> 4. If the verb ends in a vowel plus -y, just add -ed.
+>
+> EXAMPLES:
+> play -- played
+> stay -- stayed
+> enjoy -- enjoyed
+> spray -- sprayed
+>
+> B.
+> IRREGULAR VERBS
+> -- There are many irregular verbs that don’t follow the normal rules.
+> -- Note that sometimes the spelling doesn’t change but the pronunciation does (e.g. read).
 
 -------------------------------------------------------------------------------
 
