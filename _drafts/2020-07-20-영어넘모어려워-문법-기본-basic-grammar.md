@@ -544,7 +544,7 @@ have-got: [wh-question + ]have/has + subject + got...?
 
 ### 규칙동사 regular verb
 
-동사의 단순과거는 보통 `-d` 혹은 `-ed`를 붙인다:
+동사의 과거형은 보통 `-d` 혹은 `-ed`를 붙인다:
 
 - love => loved
 - work => worked
@@ -1251,13 +1251,18 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 ## UNIT 24: 현제시제와 과거시제에서 be/have/do
 
-현재진행 todo
+현재진행은 지금도 계속되고 있는 행동이나 어떤 것을 표현할 때 사용한다.  
+그리고 **미래에 어떤 행동이 일어날 것임을 표현할 수 있다**.
 
 - What *are* you *doing* tonight?
-- What *are* you *having* for lunch?
+- "What *are* you *having* for lunch?" "I *am having* lobster for lunch."
 
-### examples
+과거진행은 과거의 어느 특정 시점에서 일어나고 있던 일, 그 시점에서의 계속적인 행동을 표현할 때 사용한다.  
+과거진행은 limited duration을 나타내며, 따라서 어떤 일이 다른 사건에 의해 중단되었음을 나타내는 편리한 방법이다. (incomplete action)
 
+- I *was sleeping* on the couch when Bertie *smashed through* the door.
+
+현재완료와 단순현재, 단순과거는 생략함.
 
 ### violet
 
@@ -1292,7 +1297,38 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 ## UNIT 25: 규칙동사와 불규칙동사 Regular and Irregular Verbs
 
-### examples
+규칙동사의 과거형 철자 규칙
+
+1. 동사의 기본 형태가 `-e` 이외의 모음(`-a`, `-i`, `-o`, `-u`)이나 자음으로 끝나는 경우 `-ed`를 끝에 더한다.
+  - seem - seemed
+  - laugh - laughed
+  - look - looked
+2. `-e`로 끝나는 동사는 끝에 `-d`를 더한다.
+  - love - loved
+  - recede - receded
+  - hope - hoped
+3. 동사가 자음 + `-y`로 끝나는 경우 y를 i로 변경하고 `-ed`를 추가한다.
+  - hurry - hurried
+  - clarify - clarified
+  - spy - spied
+  - try - tried
+4. 동사가 모음 + `-y`로 끝나는 경우 아무것도 변경하지 않고 끝에 `-ed`를 추가한다.
+  - play - played
+  - stay - stayed
+  - enjoy - enjoyed
+  - spray - sprayed
+
+불규칙 동사는 위 규칙을 따르지 않으며 종종 철자가 바뀌지 않는 경우도 있다. 철자가 바뀌지 않는 동사 중 발음은 바뀌는 것이 있으므로 주의할 것.
+
+- go - went - gone
+- begin - began - begun
+- know - knew - known
+- break - broke - broken
+- buy - bought - bought
+- make - made - made
+- find - found - found
+- cut - cut - cut
+- read - read - read (발음만 바뀜)
 
 ### violet
 
