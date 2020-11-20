@@ -1156,6 +1156,9 @@ object + am/is/are/was/were + (not) + past participle [+ by phrase]
 
 - Somebody *cleans the office* every day. / *The office is cleaned* every day.
 - Somebody *cleaned the office* yesterday. / *The office was cleaned* yesterday.
+- Somebody *has to do* the housework. / The housework *has to be done*.
+- Somebody will *repair the machine*. / The *machine* will *be repaired*.
+- SOmebody *wants you* on the phone. / You *are wanted* on the phone.
 
 ### violet
 
@@ -1216,6 +1219,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 - Somebody *is repairing* my car. / My car is *is being repaired*.
 - Somebody *is building* some new houses. / Some new houses *are being built* across from the park.
+- Somebody *is watching* us. / We *are being wached*.
 - The postman *is delivering* the mail. / The mail *is being delivered* by the postman.
 - Harry Potter *is measuring* the room. / The room *is being measured* by Harry Potter.
 - The coach *is congratulating* the team at the moment. / The team *is being congratulated* by the coach.
@@ -1223,7 +1227,8 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 현재완료 능동태 / 수동태
 
-- todo
+- Somebody *has stolen* my keys. / My keys *have been stolen*.
+- Somebody *has eaten* all the bananas. / All the bananas *have been eaten*.
 - They *have cleaned* the clinic. / The clinic *has been cleaned* by them.
 - Thomas *has written* many books. / Many books *have been written* by Thomas.
 - *Have* the police *caught* the man? / *Has* the man *been caught* by the police?
