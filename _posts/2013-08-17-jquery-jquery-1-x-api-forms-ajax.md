@@ -103,10 +103,11 @@ $.ajax({
 
 ### .submit()
 
-submit 이벤트를 실행한다.
+submission 이벤트를 발생시킨다.
 
 ### .submit( handler )
-submit 이벤트에 실행할 함수를 할당한다.
+
+submission 이벤트에 실행할 함수를 할당한다.
 
 ### .val()
 

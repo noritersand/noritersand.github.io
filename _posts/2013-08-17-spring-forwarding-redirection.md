@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-17 19:55:00 +0900
-title: '[Spring] forward, redirection'
+title: '[Spring] forwarding, redirection'
 categories:
   - spring
 tags:
@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-스프링 프레임워크에서 컨트롤러의 메서드가 리턴하는 타입에 따라 forward와 redirect 구현 방법을 간단히 기술한다. 단, 지원되는 resolver는 설정되어 있다고 가정 따로 언급하지 않는다.
+스프링 프레임워크에서 컨트롤러의 메서드가 리턴하는 타입에 따라 포워딩과 리다이렉션 구현 방법을 간단히 기술한다. 단, 지원되는 resolver는 설정되어 있다고 가정 따로 언급하지 않는다.
 
 ## return String
 

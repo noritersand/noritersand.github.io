@@ -30,13 +30,13 @@ tags:
 validate( { options } )
 ```
 
-- `debug`: true일 경우 validation 후 submit을 수행하지 않음. (default: false)
+- `debug`: true일 경우 validation 후 submission을 수행하지 않음. (default: false)
 - `onfocusout`: onblur 시 해당항목을 validation 할 것인지 여부 (default: true)
 - `rules`: 각 항목[^1] 별로 validation rule을 지정한다.
 - `messages`: rules에서 정의된 조건으로 validation에 실패했을 때 화면에 표시할 메시지를 지정한다.
 - `errorPlacement`: validator는 기본적으로 validation 실패 시 실패한 노드 우측에 실패 메시지를 표시하게 되어있다. 작동을 원하지 않으면 내용이 없는 errorPlacement를 선언한다.
 - `invalidHandler`: validation 실패 시의 핸들러를 정의한다. 위의 경우 실패 메시지를 alert으로 표시하도록 되어 있다.
-- `submitHandler`: 유효성 검사가 완료된 뒤 수행할 submit 핸들러를 정의한다. 이 옵션을 명시할 경우 'submit' 이벤트만 발생하기 때문에 formdata의 전송은 별도로 명시해야 한다.
+- `submitHandler`: 유효성 검사가 완료된 뒤 수행할 핸들러를 정의한다. 이 옵션을 명시할 경우 'submit' 이벤트만 발생하기 때문에 formdata의 전송은 별도로 명시해야 한다.
 
 `validate()`는 유효성 검사 대상과 항목, 작동 등을 정의한다.
 

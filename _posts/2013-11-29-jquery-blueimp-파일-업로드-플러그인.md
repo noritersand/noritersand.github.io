@@ -101,7 +101,7 @@ tags:
 
 life cycle은 add - progress - done or fail
 
-add에서 submit하지 않으면 데이터 전송이 이뤄지지 않으니 주의할 것. 이를 이용하여 validation만 적용하는 꼼수가 있다.
+add에서 submission하지 않으면 데이터 전송이 이뤄지지 않으니 주의할 것. 이를 이용하여 validation만 적용하는 꼼수가 있다.
 
 ## response example
 
