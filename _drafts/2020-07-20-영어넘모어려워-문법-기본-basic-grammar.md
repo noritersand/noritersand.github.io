@@ -379,25 +379,26 @@ do/does + subject + infinitive + ?
 
 ### examples
 
-- Do they play tennis/Do toms friends play tennis?
-- Do you play tennis every morning?
-- Do you work on saturdays?
-- Does he like his job?
-- Does it often snow?
-- Does Lucy live near here?
-- Does paul often travel on business?
-- Does your brother speak Enlgish?
-- How do you get to work?
-- How much does it cost to call Mexico?: 멕시코 전화비는 얼마?
-- How often do you watch TV?
-- What do you do in your free time?
-- What do you usually have for breakfast?
-- What do you want for dinner?
-- What does he do?
-- What does this word mean?
-- What time do you start in the morning?
-- What time do you usually go to bed?
-- Where does your sister work?
+- *Do they play* tennis/Do toms friends play tennis?
+- *Do you play* tennis every morning?
+- *Do you work* on saturdays?
+- *Does he like* his job?
+- *Does it* often *snow*?
+- *Does Lucy live* near here?
+- *Does paul* often *travel* on business?
+- *Does your brother speak* Enlgish?
+- How *do you get* to work?
+- How much *does it cost* to call Mexico?: 멕시코 전화비는 얼마?
+- How often *do you watch* TV?
+- What *do you do* in your free time?
+- What *do you* usually *have* for breakfast?
+- What *do you want* for dinner?
+- What *does he do*?
+- What *does this word mean*?
+- What time *do you start* in the morning?
+- What time *do you* usually *go* to bed?
+- Where *does your sister work*?
+- What time *does the movie begin*?
 
 ### violet
 
@@ -1374,6 +1375,54 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 > IRREGULAR VERBS
 > -- There are many irregular verbs that don’t follow the normal rules.
 > -- Note that sometimes the spelling doesn’t change but the pronunciation does (e.g. read).
+
+## UNIT 26: What are you doing tomorrow?
+
+```
+현재진행
+am/is/are + -ing
+```
+
+현재진행은 지금 일어나고 있는 일에 대해 말할 때 사용한다:
+
+- "Where are Sue and Amanda?" "They*'re playing* tennis in the park."
+- Please be quiet. *I'm working*.
+
+현재진행은 미래(tomorrow, next week 등)에 대해 말할 때도 사용한다:
+
+- Andrew *is playing* tennis tomorrow.
+- *I'm* not *working* next week.
+
+또, 이미 예정해놓거나 계획한 일을 표현할 때 사용하기도 한다:
+
+- Sophie *is going* to the dentist on Friday.
+- We*'re having* a party next weekend.
+- *Are* you *meeting* your friends tonight?
+- What *are* you *doing* tomorrow night?
+
+개인적으로 계획해놓은 일에 대해 말할 때는 현재진행을 사용하지만:
+
+- *I'm staying* at home this evening.
+
+**버스 운행, 영화 상영, 수업 시간과 같은 스케줄에 대해서는 단순현재**를 쓴다:
+
+- The plane *arrives* in New York at 7:30 tomorrow morning.
+- What time *does* the movie *end* tonight?
+
+### violet
+
+> A.
+> PRESENT CONTINUOUS TENSE OR PRESENT PROGRESSIVE TENSE
+> -- format : am/is/are + present participle
+> -- used to show that an ongoing action is happening now, either at the moment of speech or now in a > larger sense.
+>
+> B.
+> DOING SOMETHING TOMORROW
+> -- you have arranged or planned to do something in the future
+>
+> C.
+> SIMPLE PRESENT TENSE
+> -- please see UNITS 5, 6, 7, 8
 
 -------------------------------------------------------------------------------
 
