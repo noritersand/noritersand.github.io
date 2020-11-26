@@ -793,8 +793,8 @@ subject + was/were + not + verb-ing
 
 ## UNIT 15: I used to... (... 하곤 했다)
 
-`used to`는 '예전에는 ... 하곤 했다'라는 뜻으로 `I used to work ...`, `she used to have ...`, `they used to be ...`와 같이 쓴다.  
-`used to`의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상황을 가리킬 수 있다.
+used to는 '예전에는 ... 하곤 했다'라는 뜻으로 I used to work ..., she used to have ..., they used to be ...와 같이 쓴다.  
+used to의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상황을 가리킬 수 있다.
 
 ```
 평서문:
@@ -1399,6 +1399,9 @@ am/is/are + -ing
 - We*'re having* a party next weekend.
 - *Are* you *meeting* your friends tonight?
 - What *are* you *doing* tomorrow night?
+- I*'m* not *working* next week.
+
+I am doing something tomorrow는 I am going to do something과 의미가 같다.
 
 개인적으로 계획해놓은 일에 대해 말할 때는 현재진행을 사용하지만:
 
@@ -1424,6 +1427,57 @@ am/is/are + -ing
 > SIMPLE PRESENT TENSE
 > -- please see UNITS 5, 6, 7, 8
 
+## UNIT 27: I'm going to ...
+
+I'm going to do something: ...할 것이다. ...할 계획이다.
+
+```
+be-verb + [not +] going to + verb
+```
+
+미래에 예정된 일을 표현하는 패턴들:
+
+1. will + verb: I will travel to Greece tomorrow
+2. be + going to + verb: I am going to eat a sandwich in Greece tomorrow
+3. be + present participle + something: We are having a party next weekend.
+4. be going to + the base form of the verb: I’m going to take a few exams at the end of the year.
+
+### will과 be going to의 차이
+
+will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be going to는 현재 시점 기준 이전에 정해진 앞으로의 계획(계획적인 미래)을 말한다. 따라서 will은 언제든지 취소할 수 있는 것, be going to는 취소하기 힘든것 정도의 의미 차이가 있다.
+
+어떤 상황에 대해서 표현할 때 근거가 없는 추측이라면 둘 다 사용할 수 있지만, 앞으로의 상황을 충분히 예상할 수 있는 근거가 있는 상황 표현이라면 be going to만 사용할 수 있다. 
+
+### examples
+
+### violet
+
+> A.
+> FORMAT : am / is / are + going to
+> --> used to express the future
+>
+> B.
+> FORMAT : am / is / are + going to + do + something
+> --> used to express something that you have decided to do and you have the intention to do it
+>
+> C.
+> GOING TO HAPPEN
+> --> we can see NOW that something is sure to happen in the future
+>
+>PATTERNS WITH FUTURE MEANINGS
+>
+>1. will + verb
+>EXAMPLE:I will travel to Greece tomorrow
+>
+>2. be + going to + verb
+>EXAMPLE: I am going to eat a sandwich in Greece tomorrow
+>
+>3. be + present participle + something
+>EXAMPLE: We are having a party next weekend.
+>
+>4. be going to + the base form of the verb
+>EXAMPLE: I’m going to take a few exams at the end of the year.
+
 -------------------------------------------------------------------------------
 
 ## 제목
@@ -1436,7 +1490,7 @@ am/is/are + -ing
 
 
 
-## 타동사
+## 타동사 transitive-verb
 
 > face north: 북쪽을 바라봐
 
@@ -1444,3 +1498,9 @@ am/is/are + -ing
 예외로 to 부정사와 함께 쓰이는 경우가 있는데, **to 부정사는 to를 포함하여 명사로 취급**하기 때문에 전치사라 보면 안된다고 한다.
 
 ## have 과거분사
+
+TODO
+
+## 명사절 a noun clause
+
+TODO
