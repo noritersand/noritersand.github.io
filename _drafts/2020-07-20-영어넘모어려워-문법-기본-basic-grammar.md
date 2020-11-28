@@ -1012,14 +1012,14 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 
 ## UNIT 19: I have done, I did (현재완료와 단순과거1 present perfect and simple past PART1)
 
-![](/images/present-perfect-tense.png)
-![](/images/simple-past-tense.png)
-
 현재완료는 현재까지 영향을 미치는 과거의 행동에 대해 사용한다.  
 몇몇 상황의 경우 다음처럼 단순과거로 대체할 수 있다:
 
 - "Where's your key?" "I*'ve lost* it." 또는 "I *lost* it".
 - "Is Peter here?" "No, He*'s gone* home." 또는 "He *went* home."
+
+![](/images/present-perfect-tense.png)
+![](/images/simple-past-tense.png)
 
 ### examples
 
@@ -1401,7 +1401,7 @@ am/is/are + -ing
 - What *are* you *doing* tomorrow night?
 - I*'m* not *working* next week.
 
-I am doing something tomorrow는 I am going to do something과 의미가 같다.
+**I am doing something tomorrow는 I am going to do something tomorrow와 의미가 같다**.
 
 개인적으로 계획해놓은 일에 대해 말할 때는 현재진행을 사용하지만:
 
@@ -1429,26 +1429,27 @@ I am doing something tomorrow는 I am going to do something과 의미가 같다.
 
 ## UNIT 27: I'm going to ...
 
-I'm going to do something: ...할 것이다. ...할 계획이다.
+I'm going to do something: ...할 것이다, ...할 계획이다, ...하기로 결정했다, ...할 작정이다.
 
 ```
 be-verb + [not +] going to + verb
 ```
 
-미래에 예정된 일을 표현하는 패턴들:
+미래에 예정된 일을 표현하는 패턴:
 
-1. will + verb: I will travel to Greece tomorrow
-2. be + going to + verb: I am going to eat a sandwich in Greece tomorrow
-3. be + present participle + something: We are having a party next weekend.
-4. be going to + the base form of the verb: I’m going to take a few exams at the end of the year.
+1. `will + verb`: I will travel to Greece tomorrow
+2. `be + present participle + something`: We are having a party next weekend.
+3. `be going to + the base form of the verb`: I’m going to take a few exams at the end of the year.
 
 ### will과 be going to의 차이
 
 will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be going to는 현재 시점 기준 이전에 정해진 앞으로의 계획(계획적인 미래)을 말한다. 따라서 will은 언제든지 취소할 수 있는 것, be going to는 취소하기 힘든것 정도의 의미 차이가 있다.
 
-어떤 상황에 대해서 표현할 때 근거가 없는 추측이라면 둘 다 사용할 수 있지만, 앞으로의 상황을 충분히 예상할 수 있는 근거가 있는 상황 표현이라면 be going to만 사용할 수 있다. 
+어떤 상황에 대해서 표현할 때 근거가 없는 추측이라면 둘 다 사용할 수 있지만, 앞으로의 상황을 충분히 예상할 수 있는 근거가 있는 상황 표현이라면 be going to만 사용할 수 있다.
 
-### examples
+- Something *is going to happen*: 현재 상황으로 보아 어떤 일이 일어날 것이 분명하다.
+
+![](/images/grammar-talking-about-the-future.png)
 
 ### violet
 
@@ -1469,13 +1470,10 @@ will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be 
 >1. will + verb
 >EXAMPLE:I will travel to Greece tomorrow
 >
->2. be + going to + verb
->EXAMPLE: I am going to eat a sandwich in Greece tomorrow
->
->3. be + present participle + something
+>2. be + present participle + something
 >EXAMPLE: We are having a party next weekend.
 >
->4. be going to + the base form of the verb
+>3. be going to + the base form of the verb
 >EXAMPLE: I’m going to take a few exams at the end of the year.
 
 -------------------------------------------------------------------------------
