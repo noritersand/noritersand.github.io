@@ -1130,8 +1130,8 @@ yet:
 
 수동태의 마지막에는 행위자를 표현하는 by-phrase가 오는데, 반드시 와야 하는 문장이 있는가 하면 생략해도 말이 되는 문장이 있다.
 
-- The savannah is roamed by beautiful giraffes: by giraffes가 없으면 말이 안되는 문장
-- At dinner, six shrimp were eaten by Harry: by Harray가 없어도 말이 되는 문장
+- The *savannah is roamed* by beautiful giraffes: by giraffes가 없으면 말이 안되는 문장
+- At dinner, *six shrimp were eaten* by Harry: by Harray가 없어도 말이 되는 문장
 
 ```
 평서문/부정문
@@ -1373,8 +1373,8 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 >
 > B.
 > IRREGULAR VERBS
-> -- There are many irregular verbs that don’t follow the normal rules.
-> -- Note that sometimes the spelling doesn’t change but the pronunciation does (e.g. read).
+> -- There are many irregular verbs that don't follow the normal rules.
+> -- Note that sometimes the spelling doesn't change but the pronunciation does (e.g. read).
 
 ## UNIT 26: What are you doing tomorrow?
 
@@ -1437,9 +1437,9 @@ be-verb + [not +] going to + verb
 
 미래에 예정된 일을 표현하는 패턴:
 
-1. `will + verb`: I will travel to Greece tomorrow
-2. `be + present participle + something`: We are having a party next weekend.
-3. `be going to + the base form of the verb`: I’m going to take a few exams at the end of the year.
+1. `will + verb`: I *will travel* to Greece tomorrow
+2. `be + present participle + something`: We *are having a party* next weekend.
+3. `be going to + the base form of the verb`: I*'m going to take* a few exams at the end of the year.
 
 ### will과 be going to의 차이
 
@@ -1468,13 +1468,34 @@ will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be 
 >PATTERNS WITH FUTURE MEANINGS
 >
 >1. will + verb
->EXAMPLE:I will travel to Greece tomorrow
+>EXAMPLE: I will travel to Greece tomorrow
 >
 >2. be + present participle + something
 >EXAMPLE: We are having a party next weekend.
 >
 >3. be going to + the base form of the verb
->EXAMPLE: I’m going to take a few exams at the end of the year.
+>EXAMPLE: I'm going to take a few exams at the end of the year.
+
+## UNIT 28: will 1 (will PART 1)
+
+
+
+
+### violet
+
+> A.
+> FORMAT : will (not) + base form
+> -- used to express something that you have just decided suddenly
+>
+> B.
+> FORMAT : will (not) + base form
+> -- used for the future (general sense)
+>
+> COMMON FORMAT : I + think + will (not) + base form of the verb
+>
+> C.
+>  We do not use will for things we have already arranged or decided to do.
+> ** Please see units 26-27.
 
 -------------------------------------------------------------------------------
 
