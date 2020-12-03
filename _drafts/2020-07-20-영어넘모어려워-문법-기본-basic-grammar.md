@@ -1445,7 +1445,7 @@ be-verb + [not +] going to + verb
 
 will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be going to는 현재 시점 기준 이전에 정해진 앞으로의 계획(계획적인 미래)을 말한다. 따라서 will은 언제든지 취소할 수 있는 것, be going to는 취소하기 힘든것 정도의 의미 차이가 있다.
 
-어떤 상황에 대해서 표현할 때 근거가 없는 추측이라면 둘 다 사용할 수 있지만, 앞으로의 상황을 충분히 예상할 수 있는 근거가 있는 상황 표현이라면 be going to만 사용할 수 있다.
+어떤 상황에 대해서 표현할 때 근거가 없는 추측이라면 둘 다 사용할 수 있지만, 앞으로의 상황을 충분히 예상할 수 있는 근거가 있다면 be going to만 사용할 수 있다.
 
 - Something *is going to happen*: 현재 상황으로 보아 어떤 일이 일어날 것이 분명하다.
 
@@ -1478,8 +1478,31 @@ will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be 
 
 ## UNIT 28: will 1 (will PART 1)
 
+I will ...: ...할 것이다, ...일 것이다, ...할 작정이다, ... 하겠다.
 
+```
+평서문/부정문
+subject + will [+ not] + base form of the verb
 
+의문문
+will + subject + base form of the verb + ?
+```
+
+will은 미래 시제를 표현하는 가장 기본적인 방법이다. 방금 결정한 일을 말하거나, 미래에 일어날 일을 예측하는 문장에서 사용한다.  
+UNIT 27에서 설명했듯 이미 결정된 일이거나 취소하기 힘든 일, 그리고 앞으로 일어날 일에 대한 근거가 확실한 경우 will 대신 be goint to를 사용한다.
+
+- I'm sure your aunt *will lend* us some money.
+- Leave the old bread in the yard. The birds *will eat* it.
+- I *won't be* here tomorrow.
+- *Will* you *be* at home tonight?
+- Don't drink coffe before you go to bed. You *won't sleep*.
+- It *won't take* as long.
+
+I think ... will ...이라는 표현이 많이 쓰인다:
+
+- I *think* Kelly *will pass* her driver's test.
+- I *don't think* it *will rain* this afternoon.
+- *Do you think* the test *will be* difficult?
 
 ### violet
 
@@ -1496,6 +1519,62 @@ will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be 
 > C.
 >  We do not use will for things we have already arranged or decided to do.
 > ** Please see units 26-27.
+
+## UNIT 29: will 2 (will PART 2)
+
+```
+subject + will [+ not]
+subject [+ don't/doesn't] + think + will
+```
+
+will은 무언가를 해주겠다고 제안하거나 어떤 것을 하겠다고 결심할 때도 사용한다:
+
+- *I'll carry* it for you.
+- *I'll call* you tomorrow.
+
+어떤 일을 하기로 스스로 결심할 때 I think와 같이 자주 사용된다:
+
+- I'm hungry. *I think I'll buy* something to eat.
+- I'm tired. *I think I'll go* to bed early tonight.
+- It's raining. *I don't think I'll go* out.
+
+이미 결심한 일에 대해선 I'll을 쓰지 않는다:
+
+- I*'m working* tomorrow.
+- There's a good program on TV tonight. I*'m going to watch* it.
+
+Shall I / Shall we ... ?: ...해도 될까요/괜찮을까요? (상대방의 의견을 물어보는 표현)
+
+- *Shall I call* you tonight?
+- What *shall we have* for dinner?
+
+should도 같은 의미로 쓰인다:
+
+- *Should I call* you tonight?: 오늘밤에 전화해도 될까요?
+- What *should we have* for dinner?: 저녁으로 뭘 먹을까요?
+
+### violet
+
+> A.
+> FORMATS TO USE WHEN YOU DECIDE TO DO SOMETHING
+> 1. subject + will
+> 2. subject + think + will / subject + don't/doesn't + think + will
+>
+> REMINDERS
+> -- there are some situations where you cannot use the simple present tense
+> EXAMPLES:
+> 1. I call you tomorrow. ~ I'll call you tomorrow.
+> 2. I go to bed early. ~ I think I'll go to bed early.
+>
+> B.
+> Do not use _subject + will for something you decided before*
+> ** Please see units 26-27
+>
+> C.
+> SHALL + SUBJECT...?
+> -- this is used if you want to ask if something is good/ok to do
+> -- this is used if you want to ask if something is a good idea
+> -- another alternative is the modal verb SHOULD
 
 -------------------------------------------------------------------------------
 
