@@ -94,7 +94,7 @@ var xhr = new XMLHttpRequest();
 XMLHttpRequest.open( method, url [ , async ] )
 ```
 
-- `method`: HTTP 메서드 타입 `get` or `post`
+- `method`: HTTP 메서드 타입. `get` or `post`
 - `url`: 서버 경로
 - `async`: 비동기 여부. `true` or `false`
 
@@ -134,7 +134,7 @@ xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 xhr.send('first=111&second=222');
 ```
 
-`<form>` 필드의 값을 전송하고 싶을땐 [FormData](https://developer.mozilla.org/ko/docs/Web/API/FormData) API를 이용한다.
+`<form>` 필드의 값을 전송하고 싶을땐 [FormData API](https://developer.mozilla.org/ko/docs/Web/API/FormData)를 이용한다.
 
 ### XMLHttpRequest.abort()
 
