@@ -41,7 +41,7 @@ atom 1.45.0 기준.
 
 `Settings` > `Editor`에서 `Tab Type`을 `soft`로 변경. 이 옵션은 탭 문자를 스페이스바로 변경함을 의미한다.
 
-## 단축키
+## 작성자 저장용 단축키 설정
 
 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Application: Open Your Keymap' 입력 후 엔터. 그리고 열리는 keymap.cson을 아래처럼 변경:
 
@@ -94,3 +94,7 @@ atom 1.45.0 기준.
 #### [sort-lines](https://atom.io/packages/sort-lines)
 
 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
+
+## 기억해둘 단축키
+
+todo

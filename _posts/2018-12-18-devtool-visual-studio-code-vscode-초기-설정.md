@@ -42,7 +42,7 @@ ${activeEditorLong}${separator}${rootName}
 
 settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
-## 단축키
+## 작성자 저장용 단축키 설정
 
 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력 후 엔터. 그리고 열리는 keybindings.json을 아래처럼 변경:
 
@@ -91,3 +91,7 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 ### Debugger for Firefox(firefox-devtools.vscode-firefox-debug)
 
 안써봤지만 파폭이니 일단 적어둠. 설명을 보면 파폭용 디버거라는데 실제로 어떻게 작동하는지는 몲겠다.
+
+## 기억해둘 단축키
+
+todo

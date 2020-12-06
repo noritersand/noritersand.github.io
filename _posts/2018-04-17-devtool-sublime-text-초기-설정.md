@@ -131,7 +131,7 @@ Build 3126 기준
 ### overlay
 
 - <kbd>ctrl + \`</kbd>: 콘솔창
-- <kbd>ctrl + shift + p</kbd>: 서브라임 빠른 명령어 탐색창 열기
+- <kbd>ctrl + shift + p</kbd>: Command Palatte 빠른 명령어 탐색창 열기
 - <kbd>ctrl + p</kbd>: (폴더 열기 이후)빠른 파일 탐색창 열기
 - <kbd>ctrl + r</kbd>: 함수 단위 탐색창 열기
 - <kbd>ctrl + g</kbd>: 라인 이동

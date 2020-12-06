@@ -94,9 +94,9 @@ var xhr = new XMLHttpRequest();
 XMLHttpRequest.open( method, url [ , async ] )
 ```
 
-- `method`: HTTP 메서드 타입 `get`|`post`
+- `method`: HTTP 메서드 타입 `get` or `post`
 - `url`: 서버 경로
-- `async`: 비동기 여부. `true`|`false`
+- `async`: 비동기 여부. `true` or `false`
 
 request의 유형을 지정한다. `send()`로 메시지를 날리기 전, 어디에 어떤 방식으로 작동하는지를 정하는 메서드. `method`와 `url`은 필수지만 `async`는 기본값이 `true`로 생략할 수 있는 항목이다. `async`를 `false`로 지정할 경우 `send()` 후 스크립트의 진행을 중단하며 서버로부터 응답이 올 때까지 대기한다.
 
