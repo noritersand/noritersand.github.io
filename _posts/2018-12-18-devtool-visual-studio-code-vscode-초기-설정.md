@@ -10,12 +10,6 @@ tags:
   - vscode
 ---
 
-atom 1.32.0 기준.
-
-## 기억해둘 기본 단축키
-
-- Trigger Parameter Hints: <kbd>ctrl + shift + space</kbd>
-
 ## 기본 설정
 
 #### 자동완성 설정 변경
@@ -94,4 +88,6 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 ## 기억해둘 단축키
 
-todo
+- Trigger Parameter Hints: <kbd>ctrl + shift + space</kbd>
+- Go to Last Edit Location: <kbd>ctrl + k, ctrl + q<kbd>
+- 

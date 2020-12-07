@@ -25,12 +25,12 @@ tags:
 
 코드 실행 위치의 호출 스택 출력.
 
-## console 출력이 스타일 적용하기
+## console 출력에 스타일 적용하기
 
-`%c`부터 `%c`까지 스타일 적용. 두 번째 `%c`를 생략하면 끝까지 적용한다.
+`%c` 이후의 텍스트부터 스타일 적용.
 
 ```js
-console.log("This is %cMy stylish%c message", "color: yellow; font-style: italic; background-color: blue;padding: 2px");
+console.log("This is %cmy message", "color: black; font-weight: bold; background-color: #eee; padding: 2px;");
 ```
 
 ## table

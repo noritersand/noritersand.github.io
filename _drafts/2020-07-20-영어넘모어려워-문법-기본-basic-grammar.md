@@ -297,7 +297,7 @@ subject + verb
 - *subject verb agreement*의 일부인듯?
 - 소유격의 대상(my PC, your book)은 3인칭임.
 
-### 단수 동사(singular verb)의 철자 규칙
+단수 동사(singular verb)의 철자 규칙:
 
 - `-s`, `-sh`, `-ch` 뒤에는 `-es`를 붙임: pass => passes, finish => finishes, watch => watches
 - `-y`는 `-ies`로 대체: study => studies, try => tries
@@ -1303,7 +1303,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 
 ## UNIT 25: 규칙동사와 불규칙동사 Regular and Irregular Verbs
 
-규칙동사의 과거형 철자 규칙
+규칙동사의 과거형 철자 규칙:
 
 1. 동사의 기본 형태가 `-e` 이외의 모음(`-a`, `-i`, `-o`, `-u`)이나 자음으로 끝나는 경우 `-ed`를 끝에 더한다.
   - seem - seemed
