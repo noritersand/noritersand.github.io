@@ -192,7 +192,7 @@ public class UserService {
 ```
 
 ## @Resource
-자바 6 및 JEE5에 추가된 것으로 어플리케이션에서 필요로 하는 자원을 자동 연결할 때 사용 한다. 스프링 2.5 부터 지원하는 어노테이션으로 스프링에서는 의존하는 빈 객체를 전달할 때 사용한다.
+자바 6 및 JEE5에 추가된 것으로 애플리케이션에서 필요로 하는 자원을 자동 연결할 때 사용 한다. 스프링 2.5 부터 지원하는 어노테이션으로 스프링에서는 의존하는 빈 객체를 전달할 때 사용한다.
 
 `@Autowired`와 흡사하지만 `@Autowired`는 타입으로(by type), `@Resource`는 이름으로(by name)으로 연결한다는 점이 다르다.
 
@@ -273,7 +273,7 @@ public void init() {
 
 ## @Inject
 
-SR-330 표준 Annotation으로 Spring 3 부터 지원하는 Annotation이다. 특정 Framework에 종속되지 않은 어플리케이션을 구성하기 위해서는 `@Inject`를 사용할 것을 권장한다. `@Inject`를 사용하기 위해서는 클래스 패스 내에 JSR-330 라이브러리인 javax.inject-x.x.x.jar 파일이 추가되어야 함에 유의해야 한다.
+SR-330 표준 Annotation으로 Spring 3 부터 지원하는 Annotation이다. 특정 Framework에 종속되지 않은 애플리케이션을 구성하기 위해서는 `@Inject`를 사용할 것을 권장한다. `@Inject`를 사용하기 위해서는 클래스 패스 내에 JSR-330 라이브러리인 javax.inject-x.x.x.jar 파일이 추가되어야 함에 유의해야 한다.
 
 ## @Service
 `@Service`를 적용한 Class는 비지니스 로직이 들어가는 Service로 등록이 된다. Controller에 있는 `@Autowired`는 `@Service("xxxService")`에 등록된 xxxService와 변수명이 같아야 하며 Service에 있는 `@Autowired`는 `@Repository("xxxDao")`에 등록된 xxDao와 변수명이 같아야 한다.

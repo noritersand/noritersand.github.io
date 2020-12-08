@@ -53,7 +53,7 @@ public class Temp {
 
 ## 작성 위치
 
-빈즈(클래스 파일)은 `웹 어플리케이션\WEB-INF\classes` 폴더에 존재해야 한다. 따라서 일반적으로 src 폴더를 하나 더 만들고 소스는 src 폴더 작성하고 컴파일 한 후 해당 클래스 파일은 classes 폴더 아래 패키지 폴더를 만들고 만들어진 패키지 폴더에 복사한다.
+빈즈(클래스 파일)은 `웹 애플리케이션\WEB-INF\classes` 폴더에 존재해야 한다. 따라서 일반적으로 src 폴더를 하나 더 만들고 소스는 src 폴더 작성하고 컴파일 한 후 해당 클래스 파일은 classes 폴더 아래 패키지 폴더를 만들고 만들어진 패키지 폴더에 복사한다.
 
 예를 들어 `톰캣루트\webapps\study`에서 작업을 하는 경우 `톰캣루트\webapps\study\WEB-INF\classes` 폴더 및 `톰캣루트\webapps\study\WEB-INF\web.xml` 파일을 작성한다. web.xml 파일은 `톰캣루트\webapps\ROOT\WEB-INF` 파일을 복사한다.
 

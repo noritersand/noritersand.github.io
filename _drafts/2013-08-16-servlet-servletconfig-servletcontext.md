@@ -74,7 +74,7 @@ protected void process(HttpServletRequest req, HttpServletResponse resp)
         throws ServletException, IOException {
     // getServletConfig는 GenericServlet의 메서드다.
     ServletConfig config = getServletConfig(); // 해당 서블릿에서만 사용가능
-    ServletContext context = getServletContext(); // 동일한 웹어플리케이션 어디서든 접근가능
+    ServletContext context = getServletContext(); // 동일한 웹애플리케이션 어디서든 접근가능
 
     String name = config.getInitParameter("name");
     String age = config.getInitParameter("age");
