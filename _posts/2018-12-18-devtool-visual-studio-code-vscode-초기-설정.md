@@ -86,8 +86,17 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 안써봤지만 파폭이니 일단 적어둠. 설명을 보면 파폭용 디버거라는데 실제로 어떻게 작동하는지는 몲겠다.
 
-## 기억해둘 단축키
+## 기본 단축키 메모
 
-- Trigger Parameter Hints: <kbd>ctrl + shift + space</kbd>
-- Go to Last Edit Location: <kbd>ctrl + k, ctrl + q<kbd>
-- 
+- <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
+- <kbd>ctrl + k, ctrl + q<kbd>: Go to Last Edit Location
+
+### 멀티 커서
+
+- <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
+- <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
+
+---
+
+- <kbd></kbd>:

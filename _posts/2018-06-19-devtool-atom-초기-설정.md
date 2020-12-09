@@ -95,6 +95,22 @@ atom 1.45.0 기준.
 
 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
 
-## 기억해둘 단축키
+## 기본 단축키 메모
 
-- 
+- <kbd>ctrl + 1</kbd>: 에디터로 포커스
+- <kbd>ctrl + \\</kbd>: 파일 탐색창 토글
+- <kbd>ctrl + shift + \\</kbd>: 파일 탐색창 열면서 현재 보고있는 파일의 위치로 이동
+- <kbd>ctrl + 8</kbd>: GitHub 창으로 포커스 이동
+- <kbd>ctrl + shift + 8</kbd>: Git/GitHub창 토글
+- <kbd>ctrl + 9</kbd>: Git 창으로 포커스 이동
+- <kbd>ctrl + shift + 9</kbd>: Git/GitHub창 토글
+
+### 멀티 커서
+
+- <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
+- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
+
+---
+
+- <kbd></kbd>:
