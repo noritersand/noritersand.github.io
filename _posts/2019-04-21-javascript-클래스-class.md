@@ -36,24 +36,24 @@ class Newbie {
     this._trait = trait;
   }
   get trait() {
-    return this._trait || 'know nothing';
+    return this._trait || 'Know nothing.';
   }
   set trait(arg) {
     this._trait = arg;
   }
   levelUp() {
     console.log('I feel stronger.');
-    this._trait = 'barely shooting an arrow';
+    this._trait = 'Can barely shoot an arrow.';
   }
 }
 
 let noob = new Newbie();
 
-noob.trait; // "know nothing"
+noob.trait; // "Know nothing."
 noob.levelUp(); // I feel stronger.
-noob.trait; // "barely shooting an arrow"
-noob.trait = '12 hours continuous sleep';
-noob.trait; // "12 hours continuous sleep"
+noob.trait; // "Can barely shoot an arrow."
+noob.trait = 'Can sleep for 12 hours in a row.';
+noob.trait; // "Can sleep for 12 hours in a row."
 ```
 
 함수 선언과 다르게 끌어올림은 발생하지 않는다:

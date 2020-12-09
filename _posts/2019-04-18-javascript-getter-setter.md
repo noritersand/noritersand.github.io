@@ -80,7 +80,7 @@ class Newbie {
 
 let noob = new Newbie();
 noob.name; // "fresh newbie";
-noob.name = 'spoiled';
+noob.name = 'spoiled'; // strict 모드일 땐 TypeError: setting getter-only property 'name' 발생함.
 noob.name; // "fresh newbie";
 ```
 
