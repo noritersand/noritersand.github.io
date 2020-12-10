@@ -74,6 +74,7 @@ atom 1.45.0 기준.
   'ctrl-down': 'nothing'
   'alt-up': 'nothing'
   'alt-down': 'nothing'
+  'alt-shift-i': 'editor:split-selections-into-lines'
 ```
 
 ## 플러그인
@@ -100,16 +101,21 @@ atom 1.45.0 기준.
 - <kbd>ctrl + 1</kbd>: 에디터로 포커스
 - <kbd>ctrl + \\</kbd>: 파일 탐색창 토글
 - <kbd>ctrl + shift + \\</kbd>: 파일 탐색창 열면서 현재 보고있는 파일의 위치로 이동
-- <kbd>ctrl + 8</kbd>: GitHub 창으로 포커스 이동
-- <kbd>ctrl + shift + 8</kbd>: Git/GitHub창 토글
-- <kbd>ctrl + 9</kbd>: Git 창으로 포커스 이동
-- <kbd>ctrl + shift + 9</kbd>: Git/GitHub창 토글
 
 ### 멀티 커서
 
 - <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
+- <kbd>ctrl + u</kbd>: 멀티 커서 추가 되돌리기
 - <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
 - <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
+
+### Git
+
+- <kbd>ctrl + 8</kbd>: GitHub 창으로 포커스 이동
+- <kbd>ctrl + shift + 8</kbd>: Git/GitHub창 토글
+- <kbd>ctrl + 9</kbd>: Git 창으로 포커스 이동
+- <kbd>ctrl + shift + 9</kbd>: Git/GitHub창 토글
+- <kbd>alt + g, p</kbd>: push
 
 ---
 

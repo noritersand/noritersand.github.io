@@ -94,8 +94,10 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 ### 멀티 커서
 
 - <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
+- <kbd>ctrl + u</kbd>: 멀티 커서 추가 되돌리기
 - <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
 - <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
+- <kbd>alt + shift + i</kbd>: add cursors to line ends, 선택한 영역에서 각 라인마다 커서 분리한다.
 
 ---
 

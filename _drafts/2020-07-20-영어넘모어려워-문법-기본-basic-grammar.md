@@ -1576,6 +1576,20 @@ should도 같은 의미로 쓰인다:
 > -- this is used if you want to ask if something is a good idea
 > -- another alternative is the modal verb SHOULD
 
+## UNIT 30: might
+
+might/possibly는 may/maybe/perhaps에 비해 덜 확신할 때 사용한다.
+
+- I `might` play tennis tomorrow.
+- I `may` play tennis tomorrow.
+- I `will` possibly play tennis tomorrow.
+- `Maybe` I will play tennis tomorrow.
+- `Perhaps` I will play tennis tomorrow.
+
+### examples
+
+### violet
+
 -------------------------------------------------------------------------------
 
 ## 제목
