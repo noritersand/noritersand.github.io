@@ -124,7 +124,7 @@ tags:
 어떤 일이 지금 벌어지고 있는 중을 표현하는 형태.
 
 ```
-subject + [not +] be-verb + verb-ing(gerund)
+subject [+ not] + be-verb + verb-ing(gerund)
 ```
 
 | 주어 | be동사     | 동명사 |
@@ -177,7 +177,7 @@ subject + [not +] be-verb + verb-ing(gerund)
 어떤 일이 벌어지고 있는지 묻는 형태.
 
 ```
-[wh-question word + ]be-verb + subject + [not +] verb-ing(gerund) + ?
+[wh-question word +] be-verb + subject [+ not] + verb-ing(gerund) + ?
 ```
 
 | be동사 | 주어   | gerund  |
@@ -372,7 +372,7 @@ do/does + subject + infinitive + ?
 위 표에 따르면 형식은:
 
 ```
-[wh-question +] do/does + 주어(subject) + [부사 +] 동사원형(infinitive) [+ 목적어(object)] + ?
+[wh-question +] do/does + subject [+ adverb] + infinitive [+ object] + ?
 ```
 
 이지만, 그렇지 않은 경우도 있다: *How much money do we have?*
@@ -481,7 +481,7 @@ have-got: subject + haven't/hasn't + got
 
 의문문(question):
 have: [wh-question + ]do/does + subject + have...?
-have-got: [wh-question + ]have/has + subject + got...?
+have-got: [wh-question +] have/has + subject + got...?
 ```
 
 | 주어    | I have... | I've got      | 축약형       |
@@ -608,10 +608,10 @@ have-got: [wh-question + ]have/has + subject + got...?
 
 ```
 평서문/부정문:
-subject + did not (didn't) + infinitive
+subject [+ did not] + infinitive
 
 의문문:
-[wh-question + ]did + subject + infinitive + ?
+[wh-question +] did + subject + infinitive + ?
 ```
 
 *did/didn't 다음 동사는 동사원형(infinitive)*임을 기억할 것:
@@ -634,6 +634,14 @@ subject + did not (didn't) + infinitive
 | What  | did | you          | do     | last night?   |
 | How   | did | the accident | happen | ?             |
 | Where | did | your parents | go     | for vacation? |
+
+질문의 대답이 아닌 경우 평서문에선 did를 사용하지 않지만 강조를 목적으로 사용하기도 한다:
+
+- I *did* go there: 거기 갔다 왔거든?(거기 갔다는 것을 강조)
+
+이것은 do와 does도 마찬가지다:
+
+- I *do* cook: 나도 요리 하거든?
 
 ### examples
 
@@ -685,7 +693,7 @@ subject + was/were + verb-ing
 subject + was/were + not + verb-ing
 
 의문문:
-[wh-question + ]was/were + subject + verb-ing?
+[wh-question +] was/were + subject + verb-ing?
 ```
 
 | 주어        | 긍정문 |         | 부정문   | 단축형   |          | 의문문 |            |          |
@@ -804,14 +812,14 @@ subject + used to + infinitive
 subject + didn't use to + infinitive
 
 의문문:
-wh-question + did + subject + use to + infinitive
+[wh-question +] did + subject + use to + infinitive
 ```
 
 | 주어                    |         | 동사원형            |
 |-------------------------|---------|--------------------|
 | I/you/we/they/he/she/it | used to | be/work/have/play… |
 
-부정문과 의문문은 *used to*가 아닌 *use to*라고 쓴다.
+**부정문과 의문문은 *used to*가 아닌 *use to*라고 쓴다.**
 
 - When I was a child, I *didn't use to like* tomatoes.
 - Where *did* you *use to live* before you came here?
@@ -847,10 +855,10 @@ wh-question + did + subject + use to + infinitive
 
 ```
 평서문/부정문
-subject + have/has(not) + past participle
+subject + have/has [+ not] + past participle
 
 의문문
-have/has(not) + subject + past participle + ?
+have/has [+ not] + subject + past participle + ?
 ```
 
 ### examples
@@ -1578,17 +1586,57 @@ should도 같은 의미로 쓰인다:
 
 ## UNIT 30: might
 
-might/possibly는 may/maybe/perhaps에 비해 덜 확신할 때 사용한다.
+```
+might + [not +] base form of the verb
+```
 
-- I `might` play tennis tomorrow.
-- I `may` play tennis tomorrow.
-- I `will` possibly play tennis tomorrow.
-- `Maybe` I will play tennis tomorrow.
-- `Perhaps` I will play tennis tomorrow.
+I might = ... 할지도 모른다.
+
+어떠한 일이 이뤄질지 아닐지 확신이 없을 때 사용하는 표현.
+참고로 be going to는 100% 확신할 때 사용한다.
+
+may는 might와 의미가 같다. 단, 가능성을 나타내는 뉘앙스가 다른데, might/possibly는 may/maybe/perhaps에 비해 가능성이 낮을 때 사용한다. 가령 may가 75%의 가능성을 예상한다면, might는 50% 정도라고 볼 수 있다.
+
+- I *might* play tennis tomorrow.
+- I *may* play tennis tomorrow.
+- I will *possibly* play tennis tomorrow.
+- *Maybe* I will play tennis tomorrow.
+- *Perhaps* I will play tennis tomorrow.
+
+**might와 may는 조동사(auxiliary-verb)이므로 동사 없이 사용할 수 없다.**
 
 ### examples
 
+- I *might go* to the movies tonight, but I'm not sure. (= it is possible that I will go)
+- I don't know. She *might call* this afternoon.
+- Take an umbrella with you. It *might rain*.
+- You *might be* lucky. Buy a lottery ticket.
+- I *might not go* to work tomorrow.
+- Sue *might not come* to the party.
+
 ### violet
+
+> A.
+> FORMAT : might + base form of the verb
+>
+> B.
+> MIGHT
+> --> it expresses that it is possible that someone/somebody will
+>
+> MIGHT + BASE FORM OF THE VERB vs BE + VERB-ING
+>
+> 1. MIGHT + BASE FORM OF THE VERB
+> --> it is possible that it will be or not be done
+>
+> 2. BE + VERB-ING
+> --> sure / no doubts / 100% factual
+>
+> C.
+> NEGATIVE FORMAT : might + not + base form of the verb
+>
+> D.
+> MAY vs MIGHT
+> --> you can use may the same way that you use might
 
 -------------------------------------------------------------------------------
 
