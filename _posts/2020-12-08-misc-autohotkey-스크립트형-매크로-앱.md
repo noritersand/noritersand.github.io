@@ -116,7 +116,7 @@ return
 
 <kbd>kbd</kbd> 태그 입력 후 커서 이동하는 스크립트다.
 
-#### #Hotstring
+#### \#Hotstring
 
 Hotstrings의 옵션을 설정하는 명령어.
 

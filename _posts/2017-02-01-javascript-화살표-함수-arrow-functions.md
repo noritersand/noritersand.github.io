@@ -22,7 +22,8 @@ tags:
 
 ## 화살표 함수
 
-화살표 함수가 람다 함수겠지? 이름이야 어쨋든 익명 함수를 구현하는 간단한 표현식 되겠다.
+~~람다 함수가 화살표 함수인가?~~  
+이름이야 어쨋든 익명 함수를 구현하는 간단한 표현식 되겠다.
 
 ```js
 (param1, param2, …, paramN) => { statements }
@@ -36,28 +37,37 @@ singleParam => { statements }
 () => { statements }
 ```
 
-아아아아아아주 간단한 예시\#1:
+#### 이해를 위한 예시 \#1
+
+아래 둘은 같다:
 
 ```js
-// 아래 둘은 같다.
 var a = () => {};
 var a = function() {};
+```
 
-// 얘네도 같다.
+얘네도 같다:
+
+```js
 var b = (arg) => { console.log(arg); };
 var b = function(arg) { console.log(arg); };
 ```
 
-아아아아아아주 간단한 예시\#2:
+#### 이해를 위한 예시 \#2
 
 ```js
 function repeatTwice(fn) {
   return fn() + fn();
 }
+```
+
+이렇게 함수를 인자로 받는 함수가 정의되어 있다고 하자. 여기서 호출식에 화살표 함수를 적용하면 이렇게 된다:
+
+```js
 repeatTwice(() => 'abcd'); // "abcdabcd"
 ```
 
-`setTimeout()` 함수를 예로 들면 다음과 같다:
+`setTimeout()`을 예로 들면:
 
 ```js
 setTimeout(() => console.log('timeout#2'), 2000); // 2초 후 "timeout#2"
@@ -66,3 +76,5 @@ setTimeout(() => {
   console.log('timeout#1');
 }, 1000); // 1초 후 "timeout#1"
 ```
+
+끗.
