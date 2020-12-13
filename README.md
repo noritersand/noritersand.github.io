@@ -28,7 +28,7 @@
 {:toc .toc}
 ```
 
-### 파일 수정 가이드
+### 파일 수정 
 
 #### post 템플릿
 
@@ -36,7 +36,7 @@
 
 #### 검색 관련 파일
 
-참고: <kbd>ctrl + /</kbd>로 검색창 띄움.
+검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd>.
 
 - `assets\javascripts\jekyll-search.jquery.js`
 - `_includes\blog\scripts.html`
@@ -153,7 +153,7 @@ bundle exec jekyll serve
 
 ## 지킬 빌드 디버깅 로그
 
-### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
+#### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
 
 https://github.com/rbenv/rbenv/issues/1138  
 아래처럼 `Gemfile.lock`에 있는 버전을 강제로 지정해서 해결함.
@@ -166,7 +166,7 @@ BUNDLED WITH
 gem install bundler -v '1.17.3'
 ```
 
-### on 태그는 빌드 불가
+#### on 태그는 빌드 불가
 
 ```bash
       Remote Theme: Using theme yizeng/jekyll-theme-simple-texture
@@ -177,7 +177,7 @@ gem install bundler -v '1.17.3'
 
 방법이 없으니 `on` 태그를 안쓰면 된다.
 
-### Error:  No source of timezone data could be found.
+#### Error:  No source of timezone data could be found.
 
 https://jekyllrb.com/docs/installation/windows/#time-zone-management  
 윈도우에서 `tzinfo-data` gem 사용 시 발생할 수 있다고 함. `Gemfile` 파일에 아래 추가:
@@ -186,7 +186,7 @@ https://jekyllrb.com/docs/installation/windows/#time-zone-management
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 ```
 
-###  Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
+#### Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
 
 https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
