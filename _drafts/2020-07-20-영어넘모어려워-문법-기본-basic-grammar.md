@@ -480,7 +480,7 @@ have: subject + don't/doesn't + have
 have-got: subject + haven't/hasn't + got
 
 의문문(question):
-have: [wh-question + ]do/does + subject + have...?
+have: [wh-question + ] do/does + subject + have...?
 have-got: [wh-question +] have/has + subject + got...?
 ```
 
@@ -607,8 +607,8 @@ have-got: [wh-question +] have/has + subject + got...?
 단순과거 부정문과 단순과거 의문문은 `did/didn't`가 있어야 함.
 
 ```
-평서문/부정문:
-subject [+ did not] + infinitive
+부정문:
+subject + did not + infinitive
 
 의문문:
 [wh-question +] did + subject + infinitive + ?
@@ -616,7 +616,7 @@ subject [+ did not] + infinitive
 
 *did/didn't 다음 동사는 동사원형(infinitive)*임을 기억할 것:
 
-| 원형  | 긍정문 |         | 부정문 |         |       | 의문문 |      |        |
+| 원형  | 긍정문 |        | 부정문 |         |       | 의문문 |      |        |
 |-------|------ |---------|------  |---------|-------|-----  |------|--------|
 | play  | I     | played  | I      | did not | play  | did   | I    | play?  |
 | start | we    | started | we     | did not | start | did   | we   | start? |
@@ -628,16 +628,17 @@ subject [+ did not] + infinitive
 
 의문문의 어순:
 
-|       | did | 주어           | 원형     | ?             |
+|       | did | 주어         | 원형   | ?             |
 |-------|-----|--------------|--------|---------------|
 |       | Did | your sister  | call   | you?          |
 | What  | did | you          | do     | last night?   |
 | How   | did | the accident | happen | ?             |
 | Where | did | your parents | go     | for vacation? |
 
-질문의 대답이 아닌 경우 평서문에선 did를 사용하지 않지만 강조를 목적으로 사용하기도 한다:
+**평서문에선 did를 강조를 목적으로 사용한다**:
 
 - I *did* go there: 거기 갔다 왔거든?(거기 갔다는 것을 강조)
+- He *did* look tired: 걔 정말 피곤해 보이더라. (피곤해 보인것을 강조)
 
 이것은 do와 does도 마찬가지다:
 
@@ -911,7 +912,7 @@ have/has [+ not] + subject + past participle + ?
 
 ```
 평서문/부정문
-subject + have/has(not) + been + verb-ing
+subject + have/has [+ not] + been + verb-ing
 
 의문문
 have/has + subject + been + verb-ing + ?
@@ -1143,10 +1144,10 @@ yet:
 
 ```
 평서문/부정문
-object + am/is/are/was/were + (not) + past participle [+ by phrase]
+object + am/is/are/was/were [+ not] + past participle [+ by phrase]
 
 의문문
-[wh-question + ]am/is/are/was/were + object + (not) + past participle [+ by phrase] + ?
+[wh-question + ]am/is/are/was/were + object [+ not] + past participle [+ by phrase] + ?
 ```
 
 ### examples
@@ -1440,7 +1441,7 @@ am/is/are + -ing
 I'm going to do something: ...할 것이다, ...할 계획이다, ...하기로 결정했다, ...할 작정이다.
 
 ```
-be-verb + [not +] going to + verb
+be-verb [+ not] + going to + verb
 ```
 
 미래에 예정된 일을 표현하는 패턴:
@@ -1587,7 +1588,7 @@ should도 같은 의미로 쓰인다:
 ## UNIT 30: might
 
 ```
-might + [not +] base form of the verb
+might [+ not] + base form of the verb
 ```
 
 I might = ... 할지도 모른다.

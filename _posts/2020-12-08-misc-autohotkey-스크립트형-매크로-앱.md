@@ -218,6 +218,18 @@ prefix는 `{}` 안에서 작동하지 않는다.
 
 자주 누르는 일반적인 키(1, 2, a, b, 등등)에 매핑을 할당할 경우 이 스크립트를 항상 포함하는게 편하다.
 
+### 키 히스토리
+
+```c
+#Persistent ; keep running
+#InstallKeybdHook ; Better for keys
+KeyHistory
+
+ESC::return
+```
+
+내가 방금 뭘 눌렀는지 이력으로 보여주는 창을 띄운다. 막 줄은 <kbd>ESC</kbd>로 종료되는 것을 방지한다.
+
 ### 현재 날짜와 시간
 
 ```c
