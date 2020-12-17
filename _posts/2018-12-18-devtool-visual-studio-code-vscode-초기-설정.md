@@ -81,6 +81,8 @@ settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 - Auto Close Tag `formulahendry.auto-close-tag`
 - Go to Next/Previous Member `mishkinf.goto-next-previous-member`
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
+- Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
+- indent-rainbow `oderwat.indent-rainbow`
 
 ### Debugger for Firefox(firefox-devtools.vscode-firefox-debug)
 

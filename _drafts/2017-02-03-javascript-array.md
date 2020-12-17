@@ -80,7 +80,7 @@ forEach( callback [, thisArg ] )
 
 여기서 `callback`은:
 ```
-forEach( element, index, object )
+callback( element, index, object )
 ```
 
 TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/break 사용이 불가능했는데, js도 그러는지 확인 필요함.
