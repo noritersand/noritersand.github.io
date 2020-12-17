@@ -59,7 +59,7 @@ return
 
 ```c
 /*
-요것은 코멘트 블럭
+요것은 코멘트 블록
 */
 ```
 
@@ -158,7 +158,31 @@ F9::SendInput {LShift down}{a}{b}{c}{LShift Up}
 F10::SendInput Hello mother forker
 ```
 
-### 반복문
+## 연산자/표현식
+
+### := 할당 연산자
+
+```
+Var := expression
+```
+
+`Var` 변수(없으면 만듦)에 `expression`의 평가값을 할당한다.
+
+참고로 여기서 `=`는 할당이 아니고 동등비교임.
+
+## 제어문
+
+### Loop
+
+```
+Loop [, Count]
+```
+
+`Count`만큼 바디(블록안의 스크립트 혹은 바로 뒤따르는 한 줄의 스크립트)를 반복한다.
+
+#### 예시
+
+숫자패드의 <kbd>-</kbd>를 누르면 마우스 휠 업 14번 반복 입력하는 스크립트:
 
 ```c
 NumpadSub::
@@ -168,9 +192,51 @@ Loop, 14 {
 return
 ```
 
-숫자패드의 <kbd>-</kbd>를 누르면 마우스 휠 업 14번 반복 입력
+### While
 
-## 주요 키 목록
+```
+While Expression
+While (Expression)
+```
+
+`Expression`이 `True`로 평가되는 값이면 바디를 반복한다.
+
+#### 예시
+
+마우스 좌버튼이 눌려져 있으면 클릭을 반복하게 하는 스크립트:
+
+```c
+SetMouseDelay 30
+LButton::
+while (GetKeyState("LButton", "P")) {
+	Click
+}
+return
+```
+
+## 함수
+
+### SendInput()
+
+TODO
+
+`{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.
+
+### GetKeyState()
+
+```
+KeyIsDown := GetKeyState(KeyName , Mode)
+```
+
+`KeyName`에 해당하는 키가 눌려져 있거나 토글상태인지 확인하는 함수. 키가 눌려져 있으면 `1`을 반환한다.  
+
+`Mode`는 `P`혹은 `T`, 아니면 생략한다. `P`는 press, `T`는 토글을 의미하며, 생략할 경우:
+
+> If omitted, the mode will default to that which retrieves the logical state of the key. This is the state that the OS and the active window believe the key to be in, but is not necessarily the same as the physical state.
+
+라고 한다.
+
+## 키 이름
 
 ### Modifier Keys
 
@@ -240,5 +306,29 @@ return
 ```
 
 `][지금`으로 발동한다.
+
+### 빠른 연타 rapid fire
+
+마우스 좌클릭:
+
+```c
+SetMouseDelay 30
+LButton::
+while GetKeyState("LButton", "P") {
+	Click
+}
+return
+```
+
+키보드 <kbd>d</kbd>:
+
+```c
+<^h::
+While (GetKeyState("h", "P") && GetKeyState("LCtrl", "P")) {
+	SendInput h
+	Sleep 10
+}
+return
+```
 
 ## 꼐속...

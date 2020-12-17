@@ -338,14 +338,14 @@ subject + do/does + not + verb
 
 ### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
 
-**중요**: 앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다:
+**앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다**:
 
 - Jane *doesn't play* the piano very well.
 - She speaks Spanish, but she *doesn't speak* Italian.
 - Bill *doesn't do* his job very well.
 - Paula *doesn't* usually *have* breakfast.
 
-did/didn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원형이다:
+**did/didn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원형이다**:
 
 - She *did work*.
 - He *didn't do* that.
