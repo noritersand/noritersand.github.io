@@ -143,9 +143,9 @@ Build 3126 이후에 기록함.
 ### 조합형 단축키
 
 - <kbd>ctrl + k</kbd>: 단축키 시퀀스 시작
-- <kbd>ctrl + k</kbd>, <kbd>ctrl + u</kbd>: 대문자 변환
-- <kbd>ctrl + k</kbd>, <kbd>ctrl + l</kbd>: 소문자 변환
-- <kbd>ctrl + k</kbd>, <kbd>ctrl + b</kbd>: 사이드 바 토글
+- <kbd>ctrl + k, ctrl + u</kbd>: 대문자 변환
+- <kbd>ctrl + k, ctrl + l</kbd>: 소문자 변환
+- <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글
 
 ---
 

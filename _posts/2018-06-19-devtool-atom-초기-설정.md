@@ -27,7 +27,7 @@ atom 1.45.0 기준.
 `Settings` > `Installed Packages` > `markdown-preview`의 설정에서:
 
 - `Live Update` 체크 해제: 글이 길 때 미리보기가 자동갱신되면 렉이 심함.
-- `Open Preview In Split Pane` 체크 해제: 새 탭으로 열리는게 더 편함.
+- ~~`Open Preview In Split Pane` 체크 해제: 새 탭으로 열리는게 더 편함.~~
 
 #### 붙여넣기 시 자동 들여쓰기 해제
 
@@ -98,9 +98,13 @@ atom 1.45.0 기준.
 
 ## 기본 단축키 메모
 
+### 포커스
+
 - <kbd>ctrl + 1</kbd>: 에디터로 포커스
 - <kbd>ctrl + \\</kbd>: 파일 탐색창 토글
 - <kbd>ctrl + shift + \\</kbd>: 파일 탐색창 열면서 현재 보고있는 파일의 위치로 이동
+- <kbd>ctrl + k, 방향키</kbd>: 지정한 방향으로 pane 나누기
+- <kbd>ctrl + k, ctrl + 방향키</kbd>: 지정한 방향의 pane으로 포커스
 
 ### 멀티 커서
 

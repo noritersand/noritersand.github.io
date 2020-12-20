@@ -47,7 +47,7 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 
 ## 명령줄 구분
 
-2개 이상의 Script 명령을 사용할 경우 세미콜론`:`으로 구분한다.
+2개 이상의 Script 명령을 사용할 경우 세미콜론`;`으로 구분한다.
 
 ```
 표현식1; 표현식2;
@@ -359,7 +359,7 @@ test2();
 
 변수 b처럼 함수 내에서 선언되었어도 `var` 키워드를 생략하면 선언되지 않은 변수<sup>undeclared variable</sup>가 되며, 해당 변수는 마치 미리 선언된 전역 변수처럼 작동한다. 동시에 해당 변수는 전역 객체의 프로퍼티가 된다. (단, strict mode에선 허용되지 않음)
 
-## Literal, 리터럴
+## 리터럴<sup>Literal</sup>
 
 리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. http://www.terms.co.kr/literal.htm
 
