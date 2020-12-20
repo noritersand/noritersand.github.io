@@ -20,6 +20,10 @@ tags:
 
 ## VM arguments 설정
 
+### 파일 기본 인코딩
+
+eclipse.ini에 `-Dfile.encoding=UTF-8` 추가
+
 ### user
 
 eclipse.ini에 `-Duser.name=이름` 추가. 이클립스 VM arguments(=시스템 프로퍼티)명은 `user`임.
@@ -36,6 +40,8 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 `-vmargs` 위에 있지 않으면 적용 안될 수도 있다. 왜인지는 여백이 부족하여 적지 않음(?).
 
 ## 작성자가 쓰는 단축키 설정
+
+**사실 이런 뻘짓하지 말고 내보내기-불러오기 하는게 좋다.**
 
 - Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
 - Open Type Hierarchy: <kbd>unbined</kbd>
@@ -71,11 +77,12 @@ Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 �
 
 ## 인코딩 환경 설정
 
-- eclipse.ini에 `-Dfile.encoding=UTF-8` 추가
-- `General` > `Workspace` 의 Text file encoding을 `UTF-8`로 변경
-- `Window` > `Preferences` > `Web` > `CSS Files` > `UTF-8`
-- `Window` > `Preferences` > `Web` > `Jsp Files` > `UTF-8`
-- `Window` > `Preferences` > `Web` > `HTML Files` > `UTF-8`
+얘네들을 'UTF-8'로 변경한다:
+
+- `General` > `Workspace` 의 Text file encoding
+- `Window` > `Preferences` > `Web` > `CSS Files`
+- `Window` > `Preferences` > `Web` > `Jsp Files`
+- `Window` > `Preferences` > `Web` > `HTML Files`
 
 ## 파일 확장자별 한글 인코딩을 UTF-8로 변경
 
@@ -122,7 +129,7 @@ ${id:date('yyyy-MM-dd')}
 
 ## Syntax Coloring
 
-자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window` > `Preferences` > `Java` > `Editor` > `Syntax Coloring`에서 `Element` 목록 중 `Methods`와 `Inherited method invocations` 수정. 이클립스 버전에 따라 필요 없을 수도 있다.
+자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window` > `Preferences` > `Java` > `Editor` > `Syntax Coloring`에서 `Element` 목록 중 `Methods`와 `Inherited method invocations` 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
 
 ## JSP 템플릿
 
