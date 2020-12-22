@@ -32,6 +32,11 @@ settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 
 ${activeEditorLong}${separator}${rootName}
 ```
 
+#### 들여쓰기 설정 변경
+
+settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
+이 후 `Insert Spaces`나 `Tab Size`는 취향껏...
+
 #### 파일 제외하기
 
 settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.

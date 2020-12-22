@@ -18,7 +18,6 @@ tags:
 - [http://docs.oracle.com/javaee/5/tutorial/doc/bnalj.html](http://docs.oracle.com/javaee/5/tutorial/doc/bnalj.html)
 - [http://gangzzang.tistory.com/entry/JSP-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%83%9C%EA%B7%B8Custom-Tag](http://gangzzang.tistory.com/entry/JSP-%EC%BB%A4%EC%8A%A4%ED%85%80-%ED%83%9C%EA%B7%B8Custom-Tag)
 
-
 커스텀 태그는 JSP 스펙 2.0부터 지원되는 기능이다. JSTL이 기본으로 제공되는 표준 태그 라이브러리라면, 이쪽은 사용자가 만드는 태그 라이브러리라고 보면 된다.
 
 커스텀 태그를 적용하는 방법은 세 가지가 있는데 첫 번째는 JSP taglib 디렉티브에서 tagdir 속성으로 설정하는 방법, 두 번째는 JSP taglib 디렉티브에서 uri 속성으로 설정하는 방법  세 번째는 web.xml에서 jsp-config 항목으로 설정하는 방법이 있다.

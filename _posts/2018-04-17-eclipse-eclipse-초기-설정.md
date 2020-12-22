@@ -195,49 +195,33 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 ## 추천 확장 기능(플러그인)
 
-### ~~Eclipse Quicksearch~~
+- ~~Eclipse Quicksearch~~: ~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드 카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
 
-~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드 카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
+- AnyEditTools: 잡다한 유틸리가 있는 확장 기능. 주로 표기법 치환(HTML 기호 <-> entities, camelCase <-> SCREAMING_SNAKE_CASE 등)용으로 쓰임. **설치 후 아래 설정할 것:**  
+  - `Window` > `Preferences` > `General` > `Editors` > `AnyEdit Tools` > `Auto Convert`에서 `Remove trailing whitespace` 체크 해제
+  - 키 설정에서 'AnyEdit Tools' 카테고리 중 `Convert Camel <-> Underscores`, `Convert Chars to Html Entities` **빼고 다** 삭제
 
-### AnyEditTools
-
-잡다한 유틸리가 있는 확장 기능. 주로 표기법 치환(HTML 기호 <-> entities, camelCase <-> SCREAMING_SNAKE_CASE 등)용으로 쓰임.  
-**설치 후 아래 설정할 것:**
-
-- `Window` > `Preferences` > `General` > `Editors` > `AnyEdit Tools` > `Auto Convert`에서 `Remove trailing whitespace` 체크 해제
-- 키 설정에서 'AnyEdit Tools' 카테고리 중 `Convert Camel <-> Underscores`, `Convert Chars to Html Entities` **빼고 다** 삭제
-
-### [eclipse-pmd](https://marketplace.eclipse.org/content/eclipse-pmd)
-
-코드 정적분석/품질관리 툴이다. PMD 룰 자체에는 의문이 좀 있긴 하지만...
+- [eclipse-pmd](https://marketplace.eclipse.org/content/eclipse-pmd): 코드 정적분석/품질관리 툴이다. PMD 룰 자체에는 의문이 좀 있긴 하지만...
 
 - [eclipse-pmd: getting-started](http://acanda.github.io/eclipse-pmd/getting-started.html)
 
-### [SonarLint](https://www.sonarlint.org/)
+- [SonarLint](https://www.sonarlint.org/): SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 툴.
 
-SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 툴.
-
-### [CodeMix]((https://marketplace.eclipse.org/content/codemix)
-
-파이썬, PHP, 자바스크립트 등을 빠와하게 지원하는 확장 기능이다. 우와웅! 사실 안써봐서 좋은지는 몲.  
+- [CodeMix]((https://marketplace.eclipse.org/content/codemix): 파이썬, PHP, 자바스크립트 등을 빠와하게 지원하는 확장 기능이다. 우와웅! 사실 안써봐서 좋은지는 몲.  
 근데 이거 설치해서 쓸 바에 그냥 vscode 씀. 마소 짱짱맨
 
-### [AutoDeriv](http://nodj.github.io/AutoDeriv/#install)
-
-**마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
+- [AutoDeriv](http://nodj.github.io/AutoDeriv/#install): **마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
 이 확장 기능은 설치만 하면 끝나는게 아니라, workspace 아래에 `.derived` 파일을 만들고 아래처럼 내용을 작성해야 한다:
 
-```bash
-# set the 'target' and 'ext' folders as derived
-target
-ext
-# but don't affect the 'keep' sub-folder
-!target/keep
-# all files with a '.dep' extension are generated
-*.dep
-src/include/version.h# this specific file is also generated.
-```
+  ```bash
+  # set the 'target' and 'ext' folders as derived
+  target
+  ext
+  # but don't affect the 'keep' sub-folder
+  !target/keep
+  # all files with a '.dep' extension are generated
+  *.dep
+  src/include/version.h# this specific file is also generated.
+  ```
 
-### [Snyk Security Scanner](https://snyk.io/)
-
-써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
+- [Snyk Security Scanner](https://snyk.io/): 써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
