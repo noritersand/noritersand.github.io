@@ -14,11 +14,11 @@ tags:
 
 #### Suggestions 기능 설정 변경
 
-Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 추천창이 자동으로 나타나지 않게 하거나 수락하는 키를 바꾸지 않으면 오히려 더 번거롭다.
+Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
-- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 입력에 반응하지 않는다.
-- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 off로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
-- json으로 된 설정 파일을 열어서(<kbd>ctrl + shift + p</kbd> > 'Preferences: Open Settings (JSON)' 입력 후 엔터)에서 아래 항목 추가한다. 이렇게 하면 해당 키를 누르지 않는 이상 추천창이 나타나지 않는다:
+- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크헤제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
+- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
+- 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다. 이렇게 하면 추천창이 자동으로 나타나지 않는다:
 
   ```json
   "editor.quickSuggestions": {
@@ -47,7 +47,7 @@ Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 ## 작성자 저장용 단축키 설정
 
-커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력 후 엔터. 그리고 열리는 keybindings.json을 아래처럼 변경:
+커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. 그리고 열리는 keybindings.json을 아래처럼 변경:
 
 ```json
 [
