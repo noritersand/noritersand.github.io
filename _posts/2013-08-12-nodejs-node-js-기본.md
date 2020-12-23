@@ -79,10 +79,11 @@ gets(function(name) {
 ### 모듈 설치
 
 ```bash
-node install
+npm install
 # package.json 의 "dependencies"를 참조하여 자동설치
+# 예전에는 node install이었는데 바뀐듯
 
-npm install 모듈1[, 모듈2, 모듈3]
+npm install 모듈1[, 모듈2, 모듈3, ...]
 # 로컬 모듈로 설치
 
 npm install 모듈명 -g
@@ -90,6 +91,9 @@ npm install 모듈명 -g
 
 npm install 모듈명 --save
 # package.json 이 있다면 dependencies 항목에 설치한 모듈을 추가한다.
+
+npm install 모듈명 --save-dev
+# --save와 같으나 production 모드로 빌드 시 포함하지 않는다.
 
 npm install nodemon -g
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈

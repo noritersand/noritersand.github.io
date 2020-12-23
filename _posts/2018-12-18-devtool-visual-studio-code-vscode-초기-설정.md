@@ -12,21 +12,25 @@ tags:
 
 ## 기본 설정
 
-#### 자동완성 설정 변경
+#### Suggestions 기능 설정 변경
 
-json으로 된 설정 파일을 열어서(<kbd>ctrl + shift + p</kbd> > 'Preferences: Open Settings (JSON)' 입력 후 엔터) 아래 항목 추가:
+Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 추천창이 자동으로 나타나지 않게 하거나 수락하는 키를 바꾸지 않으면 오히려 더 번거롭다.
 
-```json
-"editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-}
-```
+- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 입력에 반응하지 않는다.
+- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 off로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
+- json으로 된 설정 파일을 열어서(<kbd>ctrl + shift + p</kbd> > 'Preferences: Open Settings (JSON)' 입력 후 엔터)에서 아래 항목 추가한다. 이렇게 하면 해당 키를 누르지 않는 이상 추천창이 나타나지 않는다:
+
+  ```json
+  "editor.quickSuggestions": {
+      "other": false,
+      "comments": false,
+      "strings": false
+  }
+  ```
 
 #### 타이틀에 파일 전체 경로 표시
 
-settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 추가:
+Settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 추가:
 
 ```
 ${activeEditorLong}${separator}${rootName}
@@ -34,12 +38,12 @@ ${activeEditorLong}${separator}${rootName}
 
 #### 들여쓰기 설정 변경
 
-settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
+Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
 이 후 `Insert Spaces`나 `Tab Size`는 취향껏...
 
 #### 파일 제외하기
 
-settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
+Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 ## 작성자 저장용 단축키 설정
 
