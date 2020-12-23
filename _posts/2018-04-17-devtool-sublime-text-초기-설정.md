@@ -48,7 +48,7 @@ tags:
 ]
 ```
 
-## 추천 패키지(플러그인)
+## 추천 패키지
 
 - [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
 
