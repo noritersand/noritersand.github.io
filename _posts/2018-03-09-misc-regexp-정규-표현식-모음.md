@@ -12,6 +12,9 @@ tags:
   - code-snippet
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## misc
 
 ### 공백 줄(empty line)
@@ -68,19 +71,19 @@ TODO 위에서 공백을 제외하는 방법을 찾아야됨.
 
 ### 이미지 태그 찾기
 
-#### `<img`부터 `>` 까지
+#### &lt;img부터 &gt; 까지
 
 ```js
 /<img [^>]*src="([^"]+)"[^>]*>/
 ```
 
-#### `<img`부터 `src="~~~"` 까지
+#### &lt;img부터 src="~~~" 까지
 
 ```js
 /<img [^>]*src="([^"]+)"/
 ```
 
-#### 이미지 확장자가 `jpg`, `png`
+#### 이미지 확장자가 jpg, png
 
 ```js
 /<img [^>]*src="([^"]+)(([^"]+)(.)(jpg|png))"/

@@ -135,7 +135,7 @@ JST 서버별 `Overview` > `Edit Configuration` > `Source`는 직접 설정하�
 
 ## 이클립스의 환경 변수
 
-### `${project_loc:some-project-name}`
+### ${project_loc:some-project-name}
 
 TODO
 

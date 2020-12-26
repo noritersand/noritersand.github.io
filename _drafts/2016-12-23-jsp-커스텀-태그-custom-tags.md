@@ -62,7 +62,7 @@ HTML 본문 내에 태그파일이 위치할 곳에 `<tags>`를 명시한다:
 <h2>hello world!</h2>
 ```
 
-### `<jsp:include>`와의 차이점
+### &lt;jsp:include&gt;와의 차이점
 
 파싱된 java 파일을 보면 `<tags>`는 다음처럼:
 

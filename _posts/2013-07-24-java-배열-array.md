@@ -181,7 +181,7 @@ for (int loop = 0; loop < number.length; loop++) {
 }
 ```
 
-### System.arraycopy() 를 이용한 복사
+### System.arraycopy()를 이용한 복사
 
 ```java
 int[] number = { 1, 2, 3, 4, 5 };
@@ -191,7 +191,7 @@ System.arraycopy(number, 0, newNumber, 0, number.length);
 //number[0]에서 newNumber[0]으로 number.length개의 데이터를 복사
 ```
 
-### `Arrays.copyOf()`를 이용한 복사
+### Arrays.copyOf()를 이용한 복사
 
 ```java
 int[] number = { 1, 2, 3, 4, 5 };
