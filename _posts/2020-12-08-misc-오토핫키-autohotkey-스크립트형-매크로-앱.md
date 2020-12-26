@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-12-08 14:55:00 +0900
-title: '[misc] AutoHotkey 스크립트형 매크로 앱'
+title: '[misc] 오토핫키 AutoHotkey 스크립트형 매크로 앱'
 categories:
   - misc
 tags:
@@ -142,6 +142,11 @@ lo	world!
 
 여기서 `!`를 `{}`로 감싼 이유는 `!`가 <kbd>alt</kbd>의 prefix이기 때문이다.
 
+### {}
+
+`{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.  
+따라서 <kbd>alt + tab</kbd>을 내보내고 싶을땐 `!{Tab}`라고 작성한다.
+
 ### 단순 매핑
 
 ```c
@@ -154,8 +159,9 @@ i::SendInput {WheelDown}
 ### 연속적인 키 입력
 
 ```c
-F9::SendInput {LShift down}{a}{b}{c}{LShift Up}
-F10::SendInput Hello mother forker
+F9::SendInput +{a}+{b}+{c} ; 아래랑 결과 같음
+F10::SendInput {LShift down}{a}{b}{c}{LShift Up} ; 위랑 같음
+F11::SendInput Hello mother forker
 ```
 
 ## 연산자/표현식
@@ -219,8 +225,6 @@ return
 ### SendInput()
 
 TODO
-
-`{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.
 
 ### GetKeyState()
 

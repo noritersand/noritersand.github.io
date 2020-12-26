@@ -16,9 +16,16 @@ tags:
 #### 참고한 문서
 
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Method_definitions](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer)
 
-ES2015에서 사용가능한 프로퍼티와 메서드의 단축 표기 방법을 정리한 글.
+#### 버전 정보
+
+- ES2015에서 소개됨
+- Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
+- IE에서 사용 불가
+
+프로퍼티와 메서드의 단축 표기법을 정리한 글.
 
 ## 단축 프로퍼티명
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-04-08 12:28:00 +0900
-title: '[JavaScript] function*, generator function'
+title: '[JavaScript] 제네레이터 function*, generator function'
 categories:
   - javascript
 tags:
