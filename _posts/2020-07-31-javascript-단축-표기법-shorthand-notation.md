@@ -30,9 +30,7 @@ tags:
 ## 단축 프로퍼티명
 
 ```
-{
-  variable1, variable2[, variable3, ...]
-}
+{ variable1, variable2[, variable3, ...] }
 ```
 
 이미 정의된 변수가 있을 때, 객체 리터럴에서 그 변수를 그대로 사용한다. 이 때 값의 할당을 생략하면 변수에 담겨진 값이 그대로 할당된다.
