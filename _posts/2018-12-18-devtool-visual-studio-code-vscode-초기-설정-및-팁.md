@@ -137,6 +137,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
 - <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
 - <kbd>alt + shift + i</kbd>: add cursors to line ends, 선택한 영역에서 각 라인마다 커서 분리한다.
 
+### 그 외
+
+- <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경 기능임.
+
 ---
 
 - <kbd></kbd>:
