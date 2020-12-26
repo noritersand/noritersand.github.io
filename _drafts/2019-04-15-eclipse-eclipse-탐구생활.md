@@ -86,7 +86,7 @@ pom.xml의 dependency 설정에 추가한 프로젝트가 들어오는걸로 추
 
 ### Projects, Libraries
 
-여기에 추가된 항목은 빌드할 때 사용하긴 하지만 배포할 떄도 그런건 아니다. 배포에 포함하고 싶다면 `Deployment Assembly` 설정에서 추가한다.
+여기에 추가된 항목은 빌드할 때 사용하긴 하지만 배포할 때도 그런건 아니다. 배포에 포함하고 싶다면 `Deployment Assembly` 설정에서 추가한다.
 
 **...라고 정리해놨으나, 현장에서 `Deployment Assembly` 설정 없이 돌아가는 배포 환경을 목격함. 실제 배포 대상에 없는 파일을 JST 서버에서 읽는다.**
 
