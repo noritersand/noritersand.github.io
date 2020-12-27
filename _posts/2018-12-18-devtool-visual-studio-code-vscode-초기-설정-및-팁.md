@@ -115,7 +115,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
 - Open file `fr43nk.seito-openfile`
 - Bookmarks `alefragnani.bookmarks`
 - Auto Close Tag `formulahendry.auto-close-tag`
-- Go to Next/Previous Member `mishkinf.goto-next-previous-member`
+- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. 윈도우일 경우 기본 단축키는 <kbd>ctrl + 방향키 위/아래</kbd>임.
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
@@ -139,7 +139,9 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
 
 ### 그 외
 
-- <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경 기능임.
+- <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경
+- <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts. 단축키 목록 열기
+- <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
 
 ---
 
