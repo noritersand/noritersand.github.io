@@ -191,7 +191,7 @@ var i = 'global';
 >
 > [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
-객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다. 객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 속성에 대한 '속성 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 속성이 `true`인 프로퍼티, 예를 들어 `toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
+객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다. 객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 프로퍼티에 대한 '프로퍼티 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 프로퍼티가 `true`인 프로퍼티, 예를 들어 `toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
 
 ```
 for (변수 in 객체) { 구문 }
@@ -242,7 +242,7 @@ for (var ele of obj) {} // TypeError: obj is not iterable
 
 ### 레이블
 
-특정 구문에 식별자 이름과 콜론으로 레이블을 붙인다. 레이블이 있는 구문은 continue와 break 키워드와 조합하여 점프문으로 사용된다. 보통은 중첩된 루프나 switch문에서 현재 구문이 가장 안쪽에 있지 않을 때 사용한다.
+특정 구문에 식별자 이름과 콜론으로 레이블을 붙인다. 레이블이 있는 구문은 `continue`와 `break` 키워드와 조합하여 점프문으로 사용된다. 보통은 중첩된 루프나 `switch`에서 현재 구문이 가장 안쪽에 있지 않을 때 사용한다.
 
 ```
 식별자:
@@ -266,7 +266,7 @@ for (i = 0; i < 3; i++) {      //The first for statement is labeled "loop1"
 
 ### break
 
-break문을 감싸고 있는 가장 가까운 반복문이나 switch문을 탈출한다. 레이블이 명시되면 해당 레이블(과 연결된 구문)을 탈출한다.
+`break`를 감싸고 있는 가장 가까운 반복문이나 `switch`를 탈출한다. 레이블이 명시되면 현재 어느 위치에 있는지와 상관없이 해당 제어문을 바로 탈출한다.
 
 ```
 break [label];
@@ -284,7 +284,7 @@ while (true) {
 
 ### continue
 
-반복문 내에서 사용하며 break와 달리 반복문을 탈출하지 않고 다음 반복을 진행한다. '이번 반복은 생략'과 같은 의미다. for문을 예로 들면 continue를 만났을 때 증감식을 실행하는 부분부터 다시 시작한다. continue는 반드시 루프문 내에서 사용해야 한다. 그렇지 않으면 SyntaxError가 발생할 것이다. 레이블이 명시되면 해당 레이블부터 다음 반복을 진행한다.
+반복문 내에서 사용하며 `break`와 달리 반복문을 탈출하지 않고 다음 반복을 진행한다. '이번 반복은 생략'과 같은 의미다. `for`를 예로 들면 `continue`를 만났을 때 증감식을 실행하는 부분부터 다시 시작한다. `continue`는 반드시 루프문 내에서 사용해야 한다. 그렇지 않으면 `SyntaxError`가 발생할 것이다. 레이블이 명시되면 해당 레이블부터 다음 반복을 진행한다.
 
 ```
 continue [label];
@@ -301,7 +301,7 @@ for (var idx in arr) {
 return
 ```
 
-함수 내에서만 사용할 수 있는 키워드다. 평가된 표현식의 결과를 함수의 값으로 반환한다. 표현식은 생략될 수 있으며 이 경우 반환되는 값은 undefined. 반환된 값은 함수호출 표현식의 평가 결과가 된다.
+함수 내에서만 사용할 수 있는 키워드다. 평가된 표현식의 결과를 함수의 값으로 반환한다. 표현식은 생략될 수 있으며 이 경우 반환되는 값은 `undefined`. 반환된 값은 함수호출 표현식의 평가 결과가 된다.
 
 ```
 return 표현식;
@@ -328,13 +328,14 @@ add('a', 'b'); // Error: 숫자가 아니네
 ```
 
 ### try-catch-finally
-try는 '예외가 발생할지도 모르는' 코드 블록을 정의한다. 이어지는 catch의 구문은 try 블록에서 예외가 발생했을 때 실행된다. finally는 try 블록의 코드가 일부라도 실행되고 나면 예외 발생 여부와 관계없이 반드시 한 번은 실행되는 코드 블록이다. finally는 생략 가능하다.
+
+try는 '예외가 발생할지도 모르는' 코드 블록을 정의한다. 이어지는 `catch`의 구문은 `try` 블록에서 예외가 발생했을 때 실행된다. `finally`는 `try` 블록의 코드가 일부라도 실행되고 나면 예외 발생 여부와 관계없이 반드시 한 번은 실행되는 코드 블록이다. `finally`는 생략 가능하다.
 
 ```
 try { 구문 } catch (error) { 구문 } finally { 구문 }
 ```
 
-- `error`: Error.prototype의 인스턴스. name(에러 타입), message(에러 메시지), lineNumber(예외 발생 지점의 라인 번호), fileName(파일명)을 프로퍼티로 갖는다.
+- `error`: `Error.prototype`의 인스턴스. `name`(에러 타입), `message`(에러 메시지), `lineNumber`(예외 발생 지점의 라인 번호), `fileName`(파일명)을 프로퍼티로 갖는다.
 
 ```js
 var obj = {};
@@ -347,7 +348,7 @@ try {
 }
 ```
 
-finally의 반드시 한 번은 실행되는 속성은 try 코드 블록에서 return, continue, break를 만났을 때도 유효하다.
+finally의 반드시 한 번은 실행된다는 점은 `try` 코드 블록에서 `return`, `continue`, `break`를 만났을 때도 유효하다.
 
 ```js
 var i = 0;
@@ -361,7 +362,7 @@ while(++i < 4) {
 }
 ```
 
-주의해야 할 점은 try의 점프문에 의해 제어가 finally로 넘어갔을 땐 finally 코드 블록의 점프문이 try보다 우선권을 가진다는 것이다. 다음을 보면 try에서 'abc'를 반환하고 finally에서 undefined를 반환하도록 되어 있는데:
+주의해야 할 점은 `try`의 점프문에 의해 제어가 `finally`로 넘어갔을 땐 `finally` 코드 블록의 점프문이 `try`보다 우선권을 가진다는 것이다. 다음을 보면 `try`에서 'abc'를 반환하고 `finally`에서 `undefined`를 반환하도록 되어 있는데:
 
 ```js
 function fn() {
@@ -376,4 +377,4 @@ function fn() {
 fn(); // undefined
 ```
 
-실제 반환되는 값은 finally의 undefined다.
+실제 반환되는 값은 `finally`의 `undefined`다.

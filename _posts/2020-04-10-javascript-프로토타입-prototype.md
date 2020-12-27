@@ -61,9 +61,9 @@ Mankind.prototype === human.__proto__; // true
 
 ![](/images/javascript-prototype-2.png)
 
-자바스크립트의 모든 객체에는 자신의 원형인 부모 객체, 즉 프로토타입을 가리키는 프로퍼티가 있다. 이 프로퍼티를 따라가면 또 다른 부모 객체 를 가리키는 프로퍼티가 있는데, 이런 엄빠 찾아 떠나는 여정은 최상위 객체인 `Object` 프로토타입을 만날때까지 무한히 반복된다. 🚌
+자바스크립트의 모든 객체에는 자신의 원형인 부모 객체, 즉 프로토타입을 가리키는 프로퍼티가 있다. 이 프로퍼티를 따라가면 또 다른 부모 객체 를 가리키는 프로퍼티가 있는데, 이런 엄빠 찾아 떠나는 여정은 최상위 객체인 `Object` 프로토타입을 만날때까지 무한히 반복된다. 😵
 
-객체의 프로퍼티를 참조할 때 해당 프로퍼티가 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인** 이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 프로퍼티가 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
+객체의 프로퍼티를 참조할 때 해당 프로퍼티가 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인**이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 프로퍼티가 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
 
 ```js
 function Fruit() {}
@@ -347,7 +347,17 @@ plainObject.toString; // undefined
 
 이렇게하면 `Object` 프로토타입의 프로퍼티를 하나도 상속받지 않는, 말그대로 아주 단순한 객체가 생성된다.
 
-### \_\_proto\_\_
+### [\_\_proto\_\_](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#프로토타입_변이)
+
+이 방법은 상속이나 확장이 아니라 변이<sup>mutation</sup>라고 부른다:
+
+```js
+let obj = {};
+Object.getPrototypeOf(obj) === Object.prototype; // true
+
+let obj2 = { __proto__: null };
+Object.getPrototypeOf(obj2) === null; // true
+```
 
 ```js
 let bomb = {
@@ -361,6 +371,7 @@ let fatboy = {
 
 fatboy.explosion; // true
 fatboy.assuredDestruction; // true
+Object.getPrototypeOf(fatboy) === bomb; // true
 ```
 
 앞서 말했듯이 `__proto__`는 지원이 중단된 기능인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...

@@ -300,7 +300,7 @@ public class CallbackTest {
         total.setMaxNumber(50);
         total.setOnMaxNumberCb(callback);
 
-        for(int i=1; i<=11; i++) {
+        for(int i = 1; i <= 11; i++) {
             total.addNumber(i);
         }
 

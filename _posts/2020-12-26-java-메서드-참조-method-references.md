@@ -3,9 +3,10 @@ layout: post
 date: 2020-12-26 08:39:12 +0900
 title: '[Java] 메서드 참조 Method References'
 categories:
-  - misc
+  - java
 tags:
-  - tag-me
+  - java
+  - method-references
 ---
 
 * Kramdown table of contents
@@ -17,7 +18,7 @@ tags:
 
 #### 버전 정보
 
-- Java 8 이상
+- Java 8 이상에서 사용 가능
 
 Java 8부터는 익명 클래스를 정의할 때 람다 식을 이용하여 코드를 단축할 수 있는데, 특정 조건에 한해 메서드 이름만으로도 같은 기능을 하는 코드를 만들 수 있는 아주 획기적인 표현식도 같이 생겼다.
 

@@ -18,7 +18,7 @@ tags:
 
 - [MDN: Object](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object)
 
-`Object.prototype`의 생성자 함수이면서 동시에 객체 관련 유틸성 메서드를 제공하는 표준 내장 객체. `Object`의 속성과 메서드는 상속되지 않는다. (프로토타입이 아니니께)
+`Object.prototype`의 생성자 함수이면서 동시에 객체 관련 유틸성 메서드를 제공하는 표준 내장 객체. `Object`의 프로퍼티와 메서드는 상속되지 않는다. (프로토타입이 아니니께)
 
 ## Object
 

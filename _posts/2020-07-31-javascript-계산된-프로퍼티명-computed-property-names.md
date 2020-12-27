@@ -21,7 +21,7 @@ tags:
 
 #### 버전 정보
 
-- ES2015에서 소개됨
+- ES2015에서 최초 정의
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
 
