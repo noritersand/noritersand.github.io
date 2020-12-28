@@ -29,6 +29,12 @@ tags:
   - Chrome 49/Edge 14/Firefox 44/Opera 17/Safari 10 이상에서 사용 가능
   - IE는 10 이하에서 사용 불가. [11에서 부분적 지원](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Browser_compatibility)
 
+우선 `let`과 `const`의 공통적인 특징으로 **끌어올림(=선언 끌어올리기, 호이스팅)의 적용을 받지 않는다**는 점이 있다:
+
+```js
+TODO
+```
+
 ## const
 
 `const`는 자바스크립트 1.5 이후 버전에서 사용가능한 키워드로, 상수를 정의할 때 사용하며 `var` 키워드를 대체할 수 있다.
