@@ -313,7 +313,7 @@ return
 
 ### 빠른 연타 rapid fire
 
-마우스 좌클릭:
+마우스 좌클릭
 
 ```c
 SetMouseDelay 30
@@ -324,7 +324,7 @@ while GetKeyState("LButton", "P") {
 return
 ```
 
-키보드 <kbd>d</kbd>:
+키보드 <kbd>d</kbd>
 
 ```c
 <^h::

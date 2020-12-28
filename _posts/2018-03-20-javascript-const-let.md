@@ -29,12 +29,6 @@ tags:
   - Chrome 49/Edge 14/Firefox 44/Opera 17/Safari 10 이상에서 사용 가능
   - IE는 10 이하에서 사용 불가. [11에서 부분적 지원](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Browser_compatibility)
 
-우선 `let`과 `const`의 공통적인 특징으로 **끌어올림(=선언 끌어올리기, 호이스팅)의 적용을 받지 않는다**는 점이 있다:
-
-```js
-TODO
-```
-
 ## const
 
 `const`는 자바스크립트 1.5 이후 버전에서 사용가능한 키워드로, 상수를 정의할 때 사용하며 `var` 키워드를 대체할 수 있다.
@@ -107,3 +101,20 @@ console.log(arr[ele2]); // ReferenceError: ele2 is not defined
 ```
 
 `let`으로 선언된 `ele2`는 `for`문 밖에서 참조할 수 없다.
+
+## let과 const는 끌어올림<sup>hoisting</sup> 대상에서 제외
+
+`let`과 `const`는 공통적으로 끌어올림(혹은 선언 끌어올리기)의 적용을 받지 않는다:
+
+```js
+console.log(a); // undefined
+var a;
+
+console.log(b); // ReferenceError: can't access lexical declaration 'b' before initialization
+let b;
+
+console.log(c); // ReferenceError: can't access lexical declaration 'c' before initialization
+const c = 3;
+```
+
+`var`와는 다르게, 선언 전에 참조할 경우 `ReferenceError`가 발생한다.
