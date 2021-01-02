@@ -304,7 +304,7 @@ ESC::return
 
 ```c
 :*:][wlrma::
-FormatTime, CurrentDateTime,, yyyy-M-d hh:mm:ss
+FormatTime, CurrentDateTime,, yyyy-MM-dd hh:mm:ss
 SendInput %CurrentDateTime%
 return
 ```
@@ -334,5 +334,16 @@ While (GetKeyState("h", "P") && GetKeyState("LCtrl", "P")) {
 }
 return
 ```
+
+### 특정 위치로 커서 이동 + 클릭
+
+```c
+[::
+MouseClick, Left, 232, 202
+return
+```
+
+<kbd>[</kbd>를 누르면 지정한 좌표로 이동하여 좌클릭하는 스크립트. `MouseClick, Left`라고만 쓰면 현재 커서 위치에서 좌클릭한다.  
+좌표는 WindowSpy(AutoHotkey 설치 시 같이 깔림) 앱에서 확인하면 되며, [CoordMode](https://www.autohotkey.com/docs/commands/CoordMode.htm)를 사용하지 않는 이상 절대위치가 아닌 앱 별 상대위치로 작동한다.
 
 ## 꼐속...
