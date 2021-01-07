@@ -1641,11 +1641,71 @@ may는 might와 의미가 같다. 단, 가능성을 나타내는 뉘앙스가 �
 
 ## UNIT 31: can과 could (can and could)
 
+can은 어떤일을 할 수 있는지를, 혹은 그 방법을 알고 있는지를 표현하는데 사용한다.
+
+```
+평서문:
+subject + can [+ not] + base form of the verb [sentence]
+
+의문문:
+can [+ not] + subject + base form of the verb? [question]
+```
+
+- I *can play* the piano. My brother *can play* the piano, too.
+- Sarah *can speak* Italian, but she *can't speak* Spanish.
+- *Can* you *swim*?
+- *Can* I *have* change for a dollar, please?
+
+could는 과거에 어떤일을 할 수 있었는지 없었는지에 대해 표현할 때 쓰인다. 이 때 **could/couldn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원형이다**:
+
+- When I was young, I *could run* very fast.
+- Before Maria came to the United States, she *couldn't understand* much English. Now she *can understand* everything.
+- I was tired last night, but I *couldn't sleep*.
+
+의문문에서는 (공식적인 사항이나 규칙따위는 아니지만) 원어민들에게는 can보다 could가 좀 더 공손하게 쓰인다고 한다.
+
+> "could" definitely sounds slightly more polite than "can" to a native speaker since it is less direct and more deferential as a result.
+>
+> "could" is a form of "can", so both are technically asking "are you able to...". this is not the difference between the two.
+
+- *Can you* open the door, please? / *Could you* open the door, please?
+- *Can you* wait a minute, please? / *Could you* wait a minute, please?
+
+
+### violet
+
+> A.
+> FORMAT
+> 1. subject + can (not) + base form of the verb [sentence]
+> 2. can (not) + subject + base form of the verb? [question]
+>
+> B.
+> CAN
+> --> used to express that you know how to do something or it is possible for you to do something
+>
+> C.
+> COULD / COULD NOT
+> --> past tense form of can / cannot
+>
+> D.
+> CAN YOU...? / COULD YOU...?
+> --> used when you want to ask someone to do something
+>
+> CAN I HAVE...? / COULD I HAVE...?
+> --> used when you want to ask someone for something
+>
+> CAN I...? / COULD I...?
+> --> used when you want to ask if it is ok to do something
+
+## UNIT 32: must
+
 
 
 ### examples
 
 ### violet
+
+
 
 -------------------------------------------------------------------------------
 

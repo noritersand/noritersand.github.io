@@ -159,17 +159,17 @@ ${cursor}
 
 ### 로컬 저장소 기본 경로 변경
 
-`Window` > `Preferences` > `Team` > `Git`에서 `Default repository folder`를 다른 경로로 변경한다. (ex: `C:\dev\git`)
+`Window` > `Preferences` > `Version Control` > `Git`에서 `Default repository folder`를 다른 경로로 변경한다. (ex: `C:\dev\git`)
 
 ### 커밋 작성자 글로벌 설정
 
-`Window` > `Preferences` > `Team` > `Git` > `Configuration`에서 `user.name` 항목과 `user.email` 항목을 추가한다.
+`Window` > `Preferences` > `Version Control` > `Git` > `Configuration`에서 `user.name` 항목과 `user.email` 항목을 추가한다.
 
 ### auto crlf 저장소별 설정
 
 [Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다. core.autocrlf 설정으로 이 기능을 켤 수 있다.](https://git-scm.com/book/ko/v1/Git%EB%A7%9E%EC%B6%A4-Git-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
 이클립스에서 설정하는 방법은:
-`Window` > `Preferences` > `Team` > `Git` > `Configuration`에서 `core.autocrlf=true`를 추가.
+`Window` > `Preferences` > `Version Control` > `Git` > `Configuration`에서 `core.autocrlf=true`를 추가.
 
 ## eclipse-jee 버전에 포함된 안쓰는 기능(feature 혹은 software) 삭제
 

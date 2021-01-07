@@ -125,7 +125,7 @@ public class GenericExample {
 }
 ```
 
-## 타입 제한
+## 타입 제한<sup>Bounded Type Parameters</sup>
 
 제네릭 변수의 데이터 타입을 특정 서브타입이나 슈퍼타입으로 제한하는 기능이다. `super` 혹은 `extends` 키워드를 사용한다.
 
@@ -159,24 +159,30 @@ public CustomGeneric {
 }
 ```
 
-해당 메서드의 전달인수가 `BigDecimal`을 상속한 타입이 아니면 컴파일 에러가 발생한다:
+해당 메서드의 전달인수가 `BigDecimal`의 서브타입이 아니면 컴파일 에러가 발생한다:
 
 ```java
 CustomGeneric gen = new CustomGeneric();
 gen.getSome("123"); // 컴파일 에러
-// The method getSome3(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (String)
+// The method getSome(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (String)
 ```
 
-### 컬렉션이나 맵일 때 제네릭 타입 제한
+### 제네릭 타입이 파라미터일 때의 타입 제한
 
 `T`가 와일드카드`?`로 바뀌는 것 빼고 같다:
 
 ```java
 private static List<String> getWeapons(List<? extends Equipment> weaponList) {
-    for (Equipment ele : weaponList) {
-        ...
-    }
+    ...
 }
 ```
 
 이 경우 `extends` 대신 `super`를 적용할 수도 있는데:
+
+```java
+public void getSome2(List<? super TinyDecimal> number) {
+    ...
+}
+```
+
+이러면 `TinyDecimal`의 슈퍼타입으로 제한하는 기능이 된다.
