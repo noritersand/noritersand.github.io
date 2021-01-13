@@ -224,7 +224,7 @@ subject [+ not] + be-verb + verb-ing(gerund)
 > --> verb + ing
 >
 > INFINITIVE
-> --> base form of a verb
+> --> to + base form of a verb
 
 ## UNIT 5: I do/work/like (단순현재 simple present)
 
@@ -336,7 +336,7 @@ subject + do/does + not + verb
 > C. IMPORTANT REMINDER
 > --> whenever we use do / don't / does / doesn't, the verb that follows will always be in the BASE FORM
 
-### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
+### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(base form of the verb)
 
 **앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다**:
 
@@ -608,13 +608,13 @@ have-got: [wh-question +] have/has + subject + got...?
 
 ```
 부정문:
-subject + did not + infinitive
+subject + did not + base form of the verb
 
 의문문:
-[wh-question +] did + subject + infinitive + ?
+[wh-question +] did + subject + base form of the verb + ?
 ```
 
-*did/didn't 다음 동사는 동사원형(infinitive)*임을 기억할 것:
+*did/didn't 다음 동사는 동사원형(base form of the verb)*임을 기억할 것:
 
 | 원형  | 긍정문 |        | 부정문 |         |       | 의문문 |      |        |
 |-------|------ |---------|------  |---------|-------|-----  |------|--------|
@@ -807,13 +807,13 @@ used to의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상�
 
 ```
 평서문:
-subject + used to + infinitive
+subject + used to + base form of the verb
 
 부정문:
-subject + didn't use to + infinitive
+subject + didn't use to + base form of the verb
 
 의문문:
-[wh-question +] did + subject + use to + infinitive
+[wh-question +] did + subject + use to + base form of the verb
 ```
 
 | 주어                    |         | 동사원형            |
@@ -1641,7 +1641,7 @@ might [+ not] + base form of the verb
 
 ## UNIT 31: can과 could (can and could)
 
-can은 어떤일을 할 수 있는지를, 혹은 그 방법을 알고 있는지를 표현하는데 사용한다.
+can은 어떤 일을 할 수 있는지를, 혹은 그 방법을 알고 있는지를 표현하는데 사용한다.
 
 ```
 평서문:
@@ -1656,7 +1656,7 @@ can [+ not] + subject + base form of the verb? [question]
 - *Can* you *swim*?
 - *Can* I *have* change for a dollar, please?
 
-*could*는 과거에 어떤일을 할 수 있었는지 없었는지에 대해 표현할 때 쓰인다.  
+*could*는 과거에 어떤 일을 할 수 있었는지 없었는지에 대해 표현할 때 쓰인다.  
 이 때 **could/couldn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원형이다**:
 
 - When I was young, I *could run* very fast.
@@ -1835,6 +1835,74 @@ should 대신 **ought to**를 사용할 수 있다:
 > F.
 > OUGHT TO
 > --> another way of saying should
+
+## UNIT 34: I have to ...
+
+반드시 해야 하는 어떤 일을 표현할 때 사용한다.
+
+```
+평서문
+subject + have/has/had + infinitive
+```
+
+I have to do ...: ...해야 할 의무가 있다, ...할 필요가 있다
+
+- I'll be late for work tomorrow. I *have to go* to the dentist.
+- You *have to pass* a test before you can get a driver's license.
+
+과거 시제(yesterday/last week)에선 had to...를 사용한다:
+
+- I was late for work yesterday. I *had to go* to the dentist.
+- We *had to wolk* home last night. There were no buses.
+
+```
+부정문:
+subject + don't/doesn't/didn't + have + infinitive
+
+의문문:
+[wh-question +] do/does/don't/doesn't/didn't + subject + have + infinitive + ?
+```
+
+부정문과 의문문에서는 do/does(현재)와 did(과거)를 사용한다:
+
+- What time *do you have to go* to the dentist tomorrow?
+- *Does* Jane *have to work* on Saturdays?
+- Why *did* they *have to leave* the party early?
+
+I don't have to ...: ...할 필요가 없다
+
+- I'm not working tomorrow, so I *don't have to get* up early.
+- Mike *doesn't have to work* very hard. He's got an easy job.
+- We *didn't have to wait* very long for the bus, it came in a few minutes.
+
+have to와 비슷한 must가 있다. UNIT 32 참고.
+
+### examples
+
+### violet
+
+> A.
+> FORMAT : subject + have / has + infinitive
+> INFINITIVE : to + base form of the verb
+>
+> B.
+> PAST TENSE FORMAT
+> --> had + to
+>
+> C.
+> QUESTION AND ANSWER FORMAT
+>
+> 1. present tense
+> --> do / does + subject + have to...? [question]
+> --> subject + don't / doesn't + have to [answer]
+>
+> 2. past tense
+> --> did + subject + have to...? [question]
+> --> subject + didn't have to... [answer]
+>
+> D.
+> MUST
+> --> we use must to say that it is necessary to do something
 
 -------------------------------------------------------------------------------
 

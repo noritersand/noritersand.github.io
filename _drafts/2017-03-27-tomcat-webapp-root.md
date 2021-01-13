@@ -36,7 +36,7 @@ web.xml을 쓰지 않고 @WebListener(혹은 ServletContextListener의 구현체
 
 톰캣 플러그인에서 띄운건 저 로그가 뜨는데, 톰캣으로 직접 띄우면 없다.
 
-이걸 해야하는것 같기도 하고 말이징
+이걸 해야 하는것 같기도 하고 말이징
 
 ```xml
 <context-param>
