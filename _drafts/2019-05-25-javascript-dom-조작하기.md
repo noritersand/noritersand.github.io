@@ -41,7 +41,7 @@ document.getElementById('myContents').appendChild(newElement);
 alert(document.getElementById('newbie') == newElement);  // true, 두번째 추가부터 false
 ```
 
-### `<script>` 태그 동적 삽입
+### &lt;script&gt; 태그 동적 삽입
 
 [코드 출처](https://d2.naver.com/helloworld/591319)
 

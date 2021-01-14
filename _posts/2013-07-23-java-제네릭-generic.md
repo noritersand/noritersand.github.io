@@ -22,12 +22,14 @@ tags:
 
 ## 제네릭 클래스
 
+제네릭 클래스는 제네릭 변수를 멤버로 가지는 클래스를 말하며, 제네릭 변수의 가짓수만큼 클래스명 다음 `<>` 안에 임의의 문자로 정의한다:
+
 ### 선언
 
 ```
-class Generic<T> {
-    public T num;
-    public T num2;
+class Generic< A [, B, C, ...] > {
+    public A name;
+    ...
 }
 ```
 
@@ -61,11 +63,11 @@ public final static T num = 0; // Cannot make a static reference to the non-stat
 
 ### 초기화
 
-데이터 타입을 명시하면서 인스턴스를 생성한다:
+초기화할 땐 반드시 데이터 타입을 명시하며 인스턴스를 생성해야 한다:
 
 ```java
-Gen<Integer> intGen = new Gen<Integer>();
-Gen<Object> obGen = new Gen<Object>();
+Gen<Integer> iGen = new Gen<Integer>();
+Gen<Object> oGen = new Gen<Object>();
 ```
 
 다음은 생성자로 참조값을 전달하고 그 값을 다시 가져오는 클래스를 구현한 예다:
@@ -86,17 +88,17 @@ class GenericExample<T> {
         return parameter;
     }
 }
-
-GenericExample<String> strGen = new GenericExample<String>("ㅎㅇ");
-System.out.println(strGen.getParameter());
-→ ㅎㅇ
-
-GenericExample<Integer> intGen = new GenericExample<Integer>(12);
-System.out.println(intGen.getParameter());
-→ 12
 ```
 
-제네릭 변수의 데이터 타입을 알 수 없기 때문에 내부에서 일반적인 연산은 불가능하다:
+```java
+GenericExample<String> strGen = new GenericExample<String>("ㅎㅇ");
+System.out.println(strGen.getParameter()); // "ㅎㅇ"
+
+GenericExample<Integer> intGen = new GenericExample<Integer>(12);
+System.out.println(intGen.getParameter()); // 12
+```
+
+제네릭 변수는 데이터 타입을 미리 알 수 없기 때문에 일반적인 연산은 할 수 없다:
 
 ```java
 public T getData() {
@@ -123,79 +125,64 @@ public class GenericExample {
 }
 ```
 
-## 타입 제한
+## 타입 제한<sup>Bounded Type Parameters</sup>
 
-제네릭 변수의 데이터 타입을 특정 서브타입으로 제한하는 기능이다. `extends` 키워드와 함께 슈퍼타입을 명시하는 방식으로 사용한다.
+제네릭 변수의 데이터 타입을 특정 서브타입이나 슈퍼타입으로 제한하는 기능이다. `super` 혹은 `extends` 키워드를 사용한다.
 
 ```
+<T super ChildType>
 <T extends ParentType>
 ```
 
-예를 들어, 아래 작성한 `CustomGeneric에서` 제네릭 변수의 데이터 타입은 반드시 `java.math.BigDecimal`의 서브타입이어야 한다:
+제네릭 클래스의 경우 다음처럼 선언한다:
 
 ```java
-public class GenericClassTest {
-    @Test
-    public void test() {
-        CustomGeneric<BigDecimal> gen = new CustomGeneric<>(); // correct
-        CustomGeneric<LittleDecimal> gen2 = new CustomGeneric<>(); // correct
-        CustomGeneric<Integer> gen3 = new CustomGeneric<>(); // wrong
-        // Bound mismatch: The type Integer is not a valid substitute for the bounded parameter <T extends BigDecimal> of the type CustomGeneric<T>
-    }
+class RestrictedGeneric<T extends BigDecimal> {
+    private T value1;
+}
+```
 
-    private class CustomGeneric<T extends BigDecimal> {
-        // T는 BigDecimal의 자식 클래스만 올 수 있음
-    }
+위의 경우 제네릭 변수의 타입은 반드시 `BigDecimal`을 상속한 타입이어야 한다:
 
-    private class LittleDecimal extends BigDecimal {
-        private static final long serialVersionUID = 2718457985045593298L;
-        public LittleDecimal(int val) {
-            super(val);
-        }
+```java
+RestrictedGeneric<Integer> a = new RestrictedGeneric<>(); // 컴파일 에러
+// Bound mismatch: The type Integer is not a valid substitute for the bounded parameter <T extends BigDecimal> of the type RestrictedGeneric<T>
+```
+
+메서드의 경우, 아래처럼 선언하며:
+
+```java
+public CustomGeneric {
+    public <T extends BigDecimal> void getSome(T arg) {
+        ...
     }
 }
 ```
 
+해당 메서드의 전달인수가 `BigDecimal`의 서브타입이 아니면 컴파일 에러가 발생한다:
+
 ```java
-public class GenericMethodTest {
-    @Test
-    public void test() {
-        CustomGeneric gen = new CustomGeneric();
-        gen.getSome(new LittleDecimal(123)); // correct
-        gen.getSome("123"); // wrong
-        // The method getSome(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (String)
-        gen.getSome(123); // wrong
-        // The method getSome(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (int)
-    }
+CustomGeneric gen = new CustomGeneric();
+gen.getSome("123"); // 컴파일 에러
+// The method getSome(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (String)
+```
 
-    private class CustomGeneric {
-        public <T extends BigDecimal> void getSome(T number) {
-            System.out.println(number);
-        }
-    }
+### 제네릭 타입이 파라미터일 때의 타입 제한
 
-    private class LittleDecimal extends BigDecimal {
-        private static final long serialVersionUID = 2718457985045593298L;
-        public LittleDecimal(int val) {
-            super(val);
-        }
-    }
+`T`가 와일드카드`?`로 바뀌는 것 빼고 같다:
+
+```java
+private static List<String> getWeapons(List<? extends Equipment> weaponList) {
+    ...
 }
 ```
 
-### 컬렉션이나 맵일 때 제네릭 타입 제한
-
-`T` 키워드가 `?`로 바뀌는 것 빼고 같다.
+이 경우 `extends` 대신 `super`를 적용할 수도 있는데:
 
 ```java
-    private static List<String> getWeapons(List<? extends Equipment> weaponList) {
-        if (CollectionUtils.isEmpty(weaponList)) {
-            return null;
-        }
-        List<String> nums = new LinkedList<>();
-        for (Equipment ele : weaponList) {
-            nums.add(ele.getName());
-        }
-        return intgEventIds;
-    }
+public void getSome2(List<? super TinyDecimal> number) {
+    ...
+}
 ```
+
+이러면 `TinyDecimal`의 슈퍼타입으로 제한하는 기능이 된다.

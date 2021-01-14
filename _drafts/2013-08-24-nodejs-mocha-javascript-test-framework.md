@@ -30,10 +30,40 @@ var assert = require('assert');
 describe('Array', function() {
   describe('#indexOf()', function() {
     it('should return -1 when the value is not present', function() {
-      assert.equal([1, 2, 3].indexOf(4), -1);
+      assert.strictEqual([1, 2, 3].indexOf(4), -1);
     });
   });
 });
+```
+
+Mocha는 Java의 JUnit과 다르게 **기댓값이 우측**이다😒:
+
+```js
+var assert = require('assert');
+var foo = 'bar';
+describe('test', function() {
+  it('should be fail', function() {
+    assert.strictEqual(foo, 'E');
+  });
+});
+```
+
+```bash
+$ mocha test.js
+
+  ...
+
+  1) test
+       should be fail:
+
+      AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'bar' !== 'E'
+
+      + expected - actual
+
+      -bar
+      +E
 ```
 
 ### 실행

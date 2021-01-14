@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-06-19 11:12:54 +0900
-title: '[devtool] Atom 초기 설정'
+title: '[devtool] Atom 초기 설정 및 팁'
 categories:
   - devtool
 tags:

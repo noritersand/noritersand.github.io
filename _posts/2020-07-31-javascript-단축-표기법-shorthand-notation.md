@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - shorthand-notation
+  - es2015
 ---
 
 * Kramdown table of contents
@@ -16,16 +17,21 @@ tags:
 #### 참고한 문서
 
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Method_definitions](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer)
 
-ES2015에서 사용가능한 프로퍼티와 메서드의 단축 표기 방법을 정리한 글.
+#### 버전 정보
+
+- ES2015에서 최초 정의
+- Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
+- IE에서 사용 불가
+
+프로퍼티와 메서드의 단축 표기법을 정리한 글.
 
 ## 단축 프로퍼티명
 
 ```
-{
-  variable1, variable2[, variable3, ...]
-}
+{ variable1, variable2[, variable3, ...] }
 ```
 
 이미 정의된 변수가 있을 때, 객체 리터럴에서 그 변수를 그대로 사용한다. 이 때 값의 할당을 생략하면 변수에 담겨진 값이 그대로 할당된다.
@@ -34,10 +40,12 @@ ES2015에서 사용가능한 프로퍼티와 메서드의 단축 표기 방법�
 var a = 1;
 var b = 'two';
 var obj = { a, b };
+
 obj; // Object { a: 1, b: "two" }
+obj.a === {a}.a; // true
 ```
 
-자바스크립트는 pass-by-object-reference이므로, 단축 표기에 사용할 변수의 값이 객체타입일 경우엔:
+단축 표기에 사용할 변수의 값이 객체타입일 경우엔:
 
 ```js
 var a = { b: 1 };
@@ -78,3 +86,14 @@ var obj = {
 }
 obj.gen().next(); // "ssup"
 ```
+
+ES2016부터는 단축 표기법으로 생성한 메서드를 생성자 함수로 호출할 때 에러가 발생한다:
+
+```js
+var obj = {
+  notSure() {}
+};
+new obj.notSure(); // TypeError: obj.notSure is not a constructor
+```
+
+끗.

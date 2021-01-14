@@ -110,4 +110,4 @@ public class TestClass {
 
 #### 참고
 
-JDK 1.8인가 1.7인가 부터 문자열 + 연산을 컴파일러가 알아서 StringBuilder를 사용하도록 바꿔줌.
+Java 1.8인가 1.7인가 부터 문자열 + 연산을 컴파일러가 알아서 StringBuilder를 사용하도록 바꿔줌.

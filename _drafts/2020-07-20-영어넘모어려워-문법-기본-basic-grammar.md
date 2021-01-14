@@ -224,7 +224,7 @@ subject [+ not] + be-verb + verb-ing(gerund)
 > --> verb + ing
 >
 > INFINITIVE
-> --> base form of a verb
+> --> to + base form of a verb
 
 ## UNIT 5: I do/work/like (단순현재 simple present)
 
@@ -336,7 +336,7 @@ subject + do/does + not + verb
 > C. IMPORTANT REMINDER
 > --> whenever we use do / don't / does / doesn't, the verb that follows will always be in the BASE FORM
 
-### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(infinitive)
+### do/don't/does/doesn't/did/didn't 다음 동사는 동사원형(base form of the verb)
 
 **앞의 does/doesn't가 3인칭 단수이므로 뒤따르는 동사는 동사원형이다**:
 
@@ -608,13 +608,13 @@ have-got: [wh-question +] have/has + subject + got...?
 
 ```
 부정문:
-subject + did not + infinitive
+subject + did not + base form of the verb
 
 의문문:
-[wh-question +] did + subject + infinitive + ?
+[wh-question +] did + subject + base form of the verb + ?
 ```
 
-*did/didn't 다음 동사는 동사원형(infinitive)*임을 기억할 것:
+*did/didn't 다음 동사는 동사원형(base form of the verb)*임을 기억할 것:
 
 | 원형  | 긍정문 |        | 부정문 |         |       | 의문문 |      |        |
 |-------|------ |---------|------  |---------|-------|-----  |------|--------|
@@ -807,13 +807,13 @@ used to의 두 번째 용법으로, 반복적인 행동이나 상태 혹은 상�
 
 ```
 평서문:
-subject + used to + infinitive
+subject + used to + base form of the verb
 
 부정문:
-subject + didn't use to + infinitive
+subject + didn't use to + base form of the verb
 
 의문문:
-[wh-question +] did + subject + use to + infinitive
+[wh-question +] did + subject + use to + base form of the verb
 ```
 
 | 주어                    |         | 동사원형            |
@@ -1541,7 +1541,7 @@ will은 무언가를 해주겠다고 제안하거나 어떤 것을 하겠다고 
 - *I'll carry* it for you.
 - *I'll call* you tomorrow.
 
-어떤 일을 하기로 스스로 결심할 때 I think와 같이 자주 사용된다:
+어떤 일을 하기로 스스로 결심할 때 *I think*와 같이 자주 사용된다:
 
 - I'm hungry. *I think I'll buy* something to eat.
 - I'm tired. *I think I'll go* to bed early tonight.
@@ -1552,7 +1552,7 @@ will은 무언가를 해주겠다고 제안하거나 어떤 것을 하겠다고 
 - I*'m working* tomorrow.
 - There's a good program on TV tonight. I*'m going to watch* it.
 
-Shall I / Shall we ... ?: ...해도 될까요/괜찮을까요? (상대방의 의견을 물어보는 표현)
+Shall I / Shall we ... ?: ...해도 될까요/괜찮을까요? (상대방의 의견을 물어보는 표현):
 
 - *Shall I call* you tonight?
 - What *shall we have* for dinner?
@@ -1587,16 +1587,16 @@ should도 같은 의미로 쓰인다:
 
 ## UNIT 30: might
 
+I might: ... 할지도 모른다.
+
 ```
 might [+ not] + base form of the verb
 ```
 
-I might = ... 할지도 모른다.
-
 어떠한 일이 이뤄질지 아닐지 확신이 없을 때 사용하는 표현.
 참고로 be going to는 100% 확신할 때 사용한다.
 
-may는 might와 의미가 같다. 단, 가능성을 나타내는 뉘앙스가 다른데, might/possibly는 may/maybe/perhaps에 비해 가능성이 낮을 때 사용한다. 가령 may가 75%의 가능성을 예상한다면, might는 50% 정도라고 볼 수 있다.
+*may*는 might와 의미가 같다. 단, 가능성을 나타내는 뉘앙스가 다른데, might/possibly는 may/maybe/perhaps에 비해 가능성이 낮을 때 사용한다. 가령 may가 75%의 가능성을 예상한다면, might는 50% 정도라고 볼 수 있다.
 
 - I *might* play tennis tomorrow.
 - I *may* play tennis tomorrow.
@@ -1641,11 +1641,268 @@ may는 might와 의미가 같다. 단, 가능성을 나타내는 뉘앙스가 �
 
 ## UNIT 31: can과 could (can and could)
 
+can은 어떤 일을 할 수 있는지를, 혹은 그 방법을 알고 있는지를 표현하는데 사용한다.
 
+```
+평서문:
+subject + can [+ not] + base form of the verb [sentence]
+
+의문문:
+can [+ not] + subject + base form of the verb? [question]
+```
+
+- I *can play* the piano. My brother *can play* the piano, too.
+- Sarah *can speak* Italian, but she *can't speak* Spanish.
+- *Can* you *swim*?
+- *Can* I *have* change for a dollar, please?
+
+*could*는 과거에 어떤 일을 할 수 있었는지 없었는지에 대해 표현할 때 쓰인다.  
+이 때 **could/couldn't가 이미 시제를 나타내므로 뒤따르는 동사는 동사원형이다**:
+
+- When I was young, I *could run* very fast.
+- Before Maria came to the United States, she *couldn't understand* much English. Now she *can understand* everything.
+- I was tired last night, but I *couldn't sleep*.
+
+의문문에서는 (공식적인 사항이나 규칙따위는 아니지만) 원어민들에게는 can보다 could가 좀 더 공손하게 쓰인다고 한다.
+
+> "could" definitely sounds slightly more polite than "can" to a native speaker since it is less direct and more deferential as a result.
+>
+> "could" is a form of "can", so both are technically asking "are you able to...". this is not the difference between the two.
+
+- *Can you* open the door, please? / *Could you* open the door, please?
+- *Can you* wait a minute, please? / *Could you* wait a minute, please?
+
+### violet
+
+> A.
+> FORMAT
+> 1. subject + can (not) + base form of the verb [sentence]
+> 2. can (not) + subject + base form of the verb? [question]
+>
+> B.
+> CAN
+> --> used to express that you know how to do something or it is possible for you to do something
+>
+> C.
+> COULD / COULD NOT
+> --> past tense form of can / cannot
+>
+> D.
+> CAN YOU...? / COULD YOU...?
+> --> used when you want to ask someone to do something
+>
+> CAN I HAVE...? / COULD I HAVE...?
+> --> used when you want to ask someone for something
+>
+> CAN I...? / COULD I...?
+> --> used when you want to ask if it is ok to do something
+
+## UNIT 32: must
+
+우리가 뭔가 사실이거나 사실이 아니라고 믿을 때, 혹은 뭔가를 할 필요가 있음을 표현하기 위해 사용한다.
+
+```
+subject + must (not) + base form of the verb
+```
+
+must: ...임에 틀림없다:
+
+- You worked 10 hours today. You *must be* tired.
+- My brother has worked at your company for years. You *must know* him.
+
+must not: ...가 아닌게 틀림없다:
+
+- Carlos takes the bus everywhere. He *must not have* a car.
+- The Silvas are always home on Fridays. They *must not work* then.
+
+You must do something: ...해야 한다:
+
+- You *must be* careful with this knife.
+- Workers *must wear* safety glasses at this machine.
+
+과거의 일에 대해서는 had to를 사용한다:
+
+- They were in a dangerous situation. They *had to be* careful.
+- I *had to wait* half an hour for the bus.
+
+You must not do something: ...하지 않아야 한다:
+
+- Bicyclists *must not ride* on the sidewalk.
+- You *must not be* late for school again!
+
+### violet
+
+> A.
+> FORMAT : subject + must (not) + base form of the verb
+>
+> MUST / MUST NOT
+> --> used when we believe that something is true or not true
+>
+> B.
+> OTHER MEANING OF MUST
+> --> we use it to express that something is necessary to do (mandatory)
+>
+> PAST FORM OF MUST
+> --> had to
+>
+> MUST NOT DO SOMETHING
+> --> used to express when something is necessary not to be done
+> --> used to express when something is the wrong thing to do
+
+## UNIT 33: should
+
+should는 어떤한 일이 좋고 옳기 때문에 해야 한다는 표현에서 사용한다.
+
+```
+subject + should (not) + base form of the verb
+```
+
+You *should do* something: ...해야 한다.
+
+- Tome doesn't study enough. He *should study* harder.
+- It's a good movie. You *should go* and see it.
+- When you play tennis, you *should* always *watch* the ball.
+
+Should I/we do something?: ...하는 게 좋을까?/...해야 하나?
+
+- *Should* I *invite* karen to dinner?
+- *Should* we *make* something special for dinner?
+
+You shouldn't do something: ...하지 않는 게 좋다.
+
+- Tom *shouldn't go* to bed so late.
+- You watch TV all the time. You *shouldn't watch* TV so much.
+
+I think ... should: ...하는 게 좋겠다.
+
+- *I think* Lisa *should buy* some new clothes.
+- It's late. *I think* I *should go* home now.
+
+I think와 같이 사용한 should는 강압이나 명령이 아닌 단지 어떻게 생각하는지 의사를 표현하는게 된다.
+
+I don't think ... should: ...하지 않는 게 좋겠다.
+
+- *I don't think* you *should work* so hard.
+- *I don't think* we *should go* yet. It's too early.
+
+Do you think ... should ... ?: ...하는 게 좋을까?
+
+- *Do you think* I *should buy* this hat?
+- What time *do you think* we *should go* home?
+
+반드시 해야해서 미루거나 취소할 수 없는 경우 have to를 사용한다::
+
+- I *should* study tonight, but I think I'll go to the movies. (오늘밤에는 공부를 해야하지만 난 영화를 보러 가야겠어)
+- I *have to* study tonight. I can't go to the movies. (난 오늘밤 공부를 해야해서 극장에 갈 수 없어)
+
+should 대신 **ought to**를 사용할 수 있다:
+
+- I *ought to study* tonight, but I think I'll go to the movies.
+- I think Lisa *ought to buy* some new clothes.
+
+
+### violet
+
+> A.
+> FORMAT : subject + should (not) + base form of the verb
+>
+> B.
+> SHOULD DO
+> --> it is used to express that something is good to do or it is the right thing to do
+>
+> SHOULD (SUBJECT) DO SOMETHING?
+> --> question format
+> --> used to ask if something is a good thing to do
+>
+> C.
+> SHOULD NOT DO SOMETHING
+> --> used to express when something is not good to do
+>
+> D.
+> I THINK (SUBJECT) SHOULD
+> --> used to express an opinion of a person that you think one should do
+>
+> I DON'T THINK (SUBJECT) SHOULD
+> --> used to express an opinion of a person that you think one should not do
+>
+> DO (SUBJECT) THINK SHOULD...?
+> --> used to ask a question about if I should do or not do an opinion of a person
+>
+> E.
+> SHOULD
+> --> different from have to
+>
+> F.
+> OUGHT TO
+> --> another way of saying should
+
+## UNIT 34: I have to ...
+
+반드시 해야 하는 어떤 일을 표현할 때 사용한다.
+
+```
+평서문
+subject + have/has/had + infinitive
+```
+
+I have to do ...: ...해야 할 의무가 있다, ...할 필요가 있다
+
+- I'll be late for work tomorrow. I *have to go* to the dentist.
+- You *have to pass* a test before you can get a driver's license.
+
+과거 시제(yesterday/last week)에선 had to...를 사용한다:
+
+- I was late for work yesterday. I *had to go* to the dentist.
+- We *had to wolk* home last night. There were no buses.
+
+```
+부정문:
+subject + don't/doesn't/didn't + have + infinitive
+
+의문문:
+[wh-question +] do/does/don't/doesn't/didn't + subject + have + infinitive + ?
+```
+
+부정문과 의문문에서는 do/does(현재)와 did(과거)를 사용한다:
+
+- What time *do you have to go* to the dentist tomorrow?
+- *Does* Jane *have to work* on Saturdays?
+- Why *did* they *have to leave* the party early?
+
+I don't have to ...: ...할 필요가 없다
+
+- I'm not working tomorrow, so I *don't have to get* up early.
+- Mike *doesn't have to work* very hard. He's got an easy job.
+- We *didn't have to wait* very long for the bus, it came in a few minutes.
+
+have to와 비슷한 must가 있다. UNIT 32 참고.
 
 ### examples
 
 ### violet
+
+> A.
+> FORMAT : subject + have / has + infinitive
+> INFINITIVE : to + base form of the verb
+>
+> B.
+> PAST TENSE FORMAT
+> --> had + to
+>
+> C.
+> QUESTION AND ANSWER FORMAT
+>
+> 1. present tense
+> --> do / does + subject + have to...? [question]
+> --> subject + don't / doesn't + have to [answer]
+>
+> 2. past tense
+> --> did + subject + have to...? [question]
+> --> subject + didn't have to... [answer]
+>
+> D.
+> MUST
+> --> we use must to say that it is necessary to do something
 
 -------------------------------------------------------------------------------
 

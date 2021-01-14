@@ -19,7 +19,13 @@ tags:
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - [https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer)
 
-ES2015부터 사용가능한 프로퍼티의 이름을 정의하는 새로운 방법을 정리한 글.
+#### 버전 정보
+
+- ES2015에서 최초 정의
+- Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
+- IE에서 사용 불가
+
+프로퍼티의 이름을 정의하는 새로운 방법을 정리한 글.
 
 ```
 {
@@ -66,7 +72,9 @@ obj; // Object { Waldo: "Hello there! Mighty fine morning" }
 
 ```js
 var obj = {
-  ['a' + 'd' + 'd']: '에드... 오빠...'
+  ['john' + 'snow']: function() {
+    console.log('I know nothing.');
+  }
 };
-obj; // Object { add: "에드... 오빠..." }
+obj.johnsnow(); // I know nothing.
 ```

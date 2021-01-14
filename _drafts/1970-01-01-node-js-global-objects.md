@@ -104,7 +104,7 @@ console.log = function(d) {
 ## require.extensions
 
 
-## `__filename`, `__dirname`
+## __filename, __dirname
 
 현재 실행되는 스크립트의 절대경로를 저장하는 전역변수.
 디렉터리 혹은 파일명을 포함한 디렉터리를 나타내며 API 문서에선 전역 범위가 아닌 각 모듈의 지역범위라고 한다.
