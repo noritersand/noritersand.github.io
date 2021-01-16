@@ -34,6 +34,8 @@ tags:
 
 객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 프로퍼티 `Object.prototype.__proto__`\*를 이용하는 방법이 있다:
 
+\* `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
+
 \* `Object.prototype.__proto__`는 지원이 중단된([deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)) 기능이다.
 
 ```js
@@ -63,7 +65,7 @@ Mankind.prototype === human.__proto__; // true
 
 자바스크립트의 모든 객체에는 자신의 원형인 부모 객체, 즉 프로토타입을 가리키는 프로퍼티가 있다. 이 프로퍼티를 따라가면 또 다른 부모 객체 를 가리키는 프로퍼티가 있는데, 이런 엄빠 찾아 떠나는 여정은 최상위 객체인 `Object` 프로토타입을 만날때까지 무한히 반복된다. 😵
 
-객체의 프로퍼티를 참조할 때 해당 프로퍼티가 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인**이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 프로퍼티가 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입의 프로토타입은 `null`이라서 더 이상 찾을 대상이 없기 때문.
+객체의 프로퍼티를 참조할 때 해당 프로퍼티가 객체에 없으면 객체의 프로토타입에서 찾는다. 프로토타입에도 없으면 더 위에 있는 프로토타입에서 찾는다. 이것을 **프로토타입 체인**이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다. 덧붙여서, 만약 `Object` 프로토타입에도 찾는 프로퍼티가 없으면 `undefined`를 반환한다. 왜냐면 `Object` 프로토타입이 최상위 객체라서 더 이상 찾을 대상이 없기 때문.
 
 ```js
 function Fruit() {}
@@ -93,7 +95,7 @@ berry.__proto__.__proto__.__proto__ === null; // true
 프로토타입 체인은 프로퍼티의 값을 가져올 때만 작동한다. 프로퍼티에 값을 할당할 때는 객체에 프로퍼티가 있는지 확인하고, 없으면 프로토타입 체인을 탐색하는게 아니라 객체에 해당 프로퍼티를 새로 추가한다:
 
 ```js
-Object.prototype.aaa = 123;
+berry.__proto__.aaa = 123;
 berry.aaa; // 123
 
 berry.aaa = 456;
@@ -104,7 +106,7 @@ berry.__proto__.aaa; // 123
 
 ## .constructor
 
-객체에는 생성자를 가리키는 프로퍼티 `.constructor`가 있다. 가령 다음의 경우:
+객체에는 생성자를 가리키는 프로퍼티 `constructor`가 있다. 가령 다음의 경우:
 
 ```js
 function Newbie() {}
@@ -118,7 +120,7 @@ noob.constructor === Newbie; // true
 ```
 
 이것은 `noob`을 만들어낸 생성자가 `Newbie()`라는 의미다.  
-다만 주의할 점은, `Newbie` 프로토타입의 `.constructor` 프로퍼티도 `Newbie()`를 가리키는데:
+다만 주의할 점은, `Newbie` 프로토타입의 `constructor` 프로퍼티도 `Newbie()`를 가리키는데:
 
 ```js
 noob.__proto__.constructor === Newbie; // true
@@ -279,9 +281,7 @@ c.fruit; // true
 
 프로토타입을 상속하는 방법은 여러가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
 
-### [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
-
-추천#1
+### [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes) (추천#1)
 
 ```js
 class Arr extends Array {
@@ -376,9 +376,9 @@ Object.getPrototypeOf(fatboy) === bomb; // true
 
 앞서 말했듯이 `__proto__`는 지원이 중단된 기능인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
 
-### .apply + .prototype
+### .apply + .prototype (추천#2)
 
-추천#2 모든 브라우저에서 사용 가능한 상속 방법.
+모든 브라우저에서 사용 가능한 상속 방법.
 
 ```js
 function Calculator(number) {

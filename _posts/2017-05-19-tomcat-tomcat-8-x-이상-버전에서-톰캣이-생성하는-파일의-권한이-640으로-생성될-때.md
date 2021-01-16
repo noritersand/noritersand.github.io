@@ -9,6 +9,7 @@ tags:
   - tomcat
   - umask
   - chmod
+  - debugging-log
 ---
 
 * Kramdown table of contents

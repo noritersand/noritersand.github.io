@@ -129,7 +129,7 @@ string 내에 있는 before를 after로 모두 바꿔서 반환한다.
 ```java
 ${fn:replace("hi hello", "hello", "hi")} // hi hi
 
-// replace 함수는 HTML에서 공백과 줄바꿈을 표현할 때 사용할 수 있다.
+// replace 함수는 HTML에서 공백과 줄 바꿈을 표현할 때 사용할 수 있다.
 ${fn:replace("hell            o          o       ~", " ", " ")} // hell            o          o       ~
 
 <% pageContext.setAttribute("enter","\n"); %>

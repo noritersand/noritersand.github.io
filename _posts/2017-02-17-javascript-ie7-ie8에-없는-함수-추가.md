@@ -9,6 +9,7 @@ tags:
   - javascript
   - ie
   - code-snippet
+  - polyfill
 ---
 
 * Kramdown table of contents

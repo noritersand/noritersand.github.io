@@ -5,8 +5,8 @@ title: '[JavaScript] 구조 분해 할당 Destructuring assignment'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - es2015
   - destructuring-assignment
   - destructuring-expression
@@ -82,7 +82,7 @@ log('hi');
 예를 들어  함수 정의가 아래와 같을 때:
 
 ```js
-function doSomething({a = 1, b = 2, c = 3}) {
+function doSomething({ a = 1, b = 2, c = 3 }) {
   // ...
 }
 ```
@@ -90,9 +90,7 @@ function doSomething({a = 1, b = 2, c = 3}) {
 아래처럼 호출하면:
 
 ```js
-doSomething({
-  b: 65536
-});
+doSomething({ b: 65536 });
 ```
 
 매개변수로 넘겨진 객체에 실제로 존재하는 프로퍼티는 `b` 뿐이므로 `a`와 `c`는 기본값이 할당된다:

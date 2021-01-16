@@ -5,8 +5,8 @@ title: '[JavaScript] Document'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - document
   - html
 ---

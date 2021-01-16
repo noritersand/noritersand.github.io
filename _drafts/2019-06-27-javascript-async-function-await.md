@@ -5,8 +5,8 @@ title: '[JavaScript] async function과 await'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - async
   - async-function
   - await

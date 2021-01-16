@@ -1904,6 +1904,41 @@ have to와 비슷한 must가 있다. UNIT 32 참고.
 > MUST
 > --> we use must to say that it is necessary to do something
 
+## UNIT 35: Would you like ... ? I'd like ...
+
+Do you want ... ? 보다 정중한 표현임.
+
+```
+의문문:
+would + subject + like + infinitive/noun
+
+답변:
+subject + would + like + infinitive/noun
+```
+
+### examples
+
+
+### violet
+
+> A. QUESTION
+> FORMAT : would + subject + like + infinitive
+>
+> B. ANSWER
+> FORMAT : subject + would + like + infinitive
+>
+> C.
+> Do you like...? is used to ask if someone generally enjoys or is partial to something.
+>
+> Would you like...? is a politer way of asking "do you want...?" when offering something.
+> --> In English, as in many languages, the verb "want" is considered very direct, and the conditional serves to soften it a bit.
+
+## 제목
+
+### examples
+
+### violet
+
 -------------------------------------------------------------------------------
 
 ## 제목

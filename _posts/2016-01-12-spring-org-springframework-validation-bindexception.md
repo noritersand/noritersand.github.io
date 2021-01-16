@@ -8,6 +8,7 @@ tags:
   - java
   - spring
   - bindexception
+  - debugging-log
 ---
 
 * Kramdown table of contents

@@ -36,7 +36,7 @@ tags:
 
 ## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 
-파워쉘의 `grep` 쯤에 위치하는 명령어.
+파워쉘판 `grep` 쯤에 위치하는 명령어.
 
 ```bash
 # 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단

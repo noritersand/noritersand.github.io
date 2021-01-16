@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - empty-object
+  - code-snippet
 ---
 
 * Kramdown table of contents

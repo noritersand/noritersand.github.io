@@ -109,12 +109,12 @@ Hotstrings는 일련의 연속적인 키 입력을 트리거로 사용하는 것
 :*:,kbd.::
 SendInput <kbd></kbd>
 Loop, 6 {
-	SendInput {Left}
+  SendInput {Left}
 }
 return
 ```
 
-<kbd>kbd</kbd> 태그 입력 후 커서 이동하는 스크립트다.
+<kbd>kbd</kbd> 태그 입력 후 커서를 왼쪽으로 여섯 번 이동하는 스크립트다.
 
 #### \#Hotstring
 
@@ -127,7 +127,7 @@ Hotstrings의 옵션을 설정하는 명령어.
 
 ### 엔터와 탭
 
-엔터는 <code>\`n</code>, 탭은 <code>\`t</code>로 작성한다.
+엔터는 ``` `n```, 탭은 ``` `t```로 작성한다.
 
 ```c
 :*:qwer::hel`nlo`tworld{!}
@@ -137,14 +137,14 @@ Hotstrings의 옵션을 설정하는 명령어.
 
 ```
 hel
-lo	world!
+lo    world!
 ```
 
 여기서 `!`를 `{}`로 감싼 이유는 `!`가 <kbd>alt</kbd>의 prefix이기 때문이다.
 
 ### {}
 
-`{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.  
+`{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. ~~뭔소리야~~ 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.  
 따라서 <kbd>alt + tab</kbd>을 내보내고 싶을땐 `!{Tab}`라고 작성한다.
 
 ### 단순 매핑
@@ -161,7 +161,7 @@ i::SendInput {WheelDown}
 ```c
 F9::SendInput +{a}+{b}+{c} ; 아래랑 결과 같음
 F10::SendInput {LShift down}{a}{b}{c}{LShift Up} ; 위랑 같음
-F11::SendInput Hello mother forker
+F11::SendInput Fork you
 ```
 
 ## 연산자/표현식
@@ -193,7 +193,7 @@ Loop [, Count]
 ```c
 NumpadSub::
 Loop, 14 {
-	SendInput {WheelUp}
+  SendInput {WheelUp}
 }
 return
 ```
@@ -215,7 +215,7 @@ While (Expression)
 SetMouseDelay 30
 LButton::
 while (GetKeyState("LButton", "P")) {
-	Click
+  Click
 }
 return
 ```
@@ -241,6 +241,8 @@ KeyIsDown := GetKeyState(KeyName , Mode)
 라고 한다.
 
 ## 키 이름
+
+[더 많은 키 목록](https://www.autohotkey.com/docs/KeyList.htm)
 
 ### Modifier Keys
 
@@ -319,7 +321,7 @@ return
 SetMouseDelay 30
 LButton::
 while GetKeyState("LButton", "P") {
-	Click
+  Click
 }
 return
 ```
@@ -329,8 +331,8 @@ return
 ```c
 <^h::
 While (GetKeyState("h", "P") && GetKeyState("LCtrl", "P")) {
-	SendInput h
-	Sleep 10
+  SendInput h
+  Sleep 10
 }
 return
 ```

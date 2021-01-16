@@ -5,10 +5,10 @@ title: '[JavaScript] WindowEventHandlers.onunload'
 categories:
   - javascript
 tags:
+  - ecmascript
+  - javascript
   - browser
   - eventhandlers
-  - javascript
-  - ecmascript
   - onclose
   - onunload
   - window

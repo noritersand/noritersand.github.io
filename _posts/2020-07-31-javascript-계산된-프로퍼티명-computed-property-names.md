@@ -7,8 +7,8 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - computed-property-names
   - es2015
+  - computed-property-names
 ---
 
 * Kramdown table of contents

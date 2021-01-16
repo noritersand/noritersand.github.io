@@ -5,8 +5,8 @@ title: '[JavaScript] History'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - history
 ---
 

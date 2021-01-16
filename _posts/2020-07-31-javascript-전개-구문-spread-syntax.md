@@ -7,6 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
+  - es2015
   - shorthand
   - computed
   - property-names

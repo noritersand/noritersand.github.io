@@ -23,9 +23,9 @@ tags:
 
 ## 버전 넘버링
 
-JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 같은 단순 넘버링이었다가 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다. **ES2015(ES6)**, **ES2016(ES7)**, ...
+JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 같은 단순 넘버링이었다가 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다. ES2015(ES6), ES2016(ES7), ...
 
-이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019인데, 이 경우 **ES2019** 라고만 적어도 되지만 이렇게 **ES2019(ES10)** 이전 방식의 버전을 병기하기도 한다.
+이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019인데, 이 경우 ES2019 라고만 적어도 되지만 ES2019(ES10) 이렇게 이전 방식의 버전을 병기하기도 한다.
 
 ## 코멘트 처리
 
@@ -47,7 +47,7 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 
 ## 명령줄 구분
 
-2개 이상의 Script 명령을 사용할 경우 세미콜론`;`으로 구분한다.
+2개 이상의 스크립트 명령을 사용할 경우 세미콜론`;`으로 구분한다.
 
 ```
 표현식1; 표현식2;
@@ -59,7 +59,7 @@ var a = 1; var b = 2;
 var c = a + b;
 ```
 
-단, 아래처럼 예외적으로 줄바꿈을 세미콜론으로 해석하는 경우가 있다:
+단, 아래처럼 예외적으로 줄 바꿈을 세미콜론으로 해석하는 경우가 있다:
 
 ```js
 var a
@@ -71,7 +71,7 @@ console.log(a)
 // var a; a=3; console.log(a);
 ```
 
-`return`, `break`, `continue` 문 후에 줄바꿈 할 경우:
+`return`, `break`, `continue` 문 후에 줄 바꿈 할 경우:
 
 ```js
 return
@@ -80,9 +80,9 @@ true;
 // return; true;
 ```
 
-```js
-++, -- 후에 줄바꿈 할 경우:
+`++`, `--` 후에 줄 바꿈 할 경우:
 
+```js
 x
 ++
 y
@@ -90,7 +90,7 @@ y
 // x; ++y;
 ```
 
-대부분 현재 구문의 다음에 오는 공백이 아닌 문자를 해석할 수 없을 때 세미콜론으로 해석하는데, 이를 _자동 세미콜론 삽입_ 이라고 한다. 가독성을 위한 줄바꿈을 사용할 때 자동 세미콜론 삽입을 피하기 위해서 생략해도 되는 괄호를 사용하기도 한다.
+대부분 현재 구문의 다음에 오는 공백이 아닌 문자를 해석할 수 없을 때 세미콜론으로 해석하는데, 이를 _자동 세미콜론 삽입_ 이라고 한다. 가독성을 위한 줄 바꿈을 사용할 때 자동 세미콜론 삽입을 피하기 위해서 원래대로면 없어도 되는 괄호를 추가하기도 한다.
 
 ```js
 let a = (
@@ -146,7 +146,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 
 - `\u`: 유니코드 이스케이프 시퀀스
 - `\x`: Latin-1 이스케이프 시퀀스
-- `\n`: 줄바꿈 `\u000A`
+- `\n`: 줄 바꿈 `\u000A`
 - `\b`: 백스페이스 `\u0008`
 - `\t`: 수평 탭 `\u000B`
 - `\v`: 수직 탭 `\u000B`
@@ -155,7 +155,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 - `\f`: 폼 피드 `\u000C`
 - `\"`: 쌍따옴표 `\u0022`
 - `\'`: 홑따옴표 `\u0027`
-- `\r`: 줄바꿈 문자 `\u000A`
+- `\r`: 줄 바꿈 문자 `\u000A`
 - `\\`: 백슬래시 `\u005C`
 
 ## 따옴표 처리
@@ -177,127 +177,52 @@ console.log('"테스트"');   // "테스트"
 - 예약어는 사용할수 없다.
 - 대소문자를 구분한다.
 
-다음 키워드는 식별자로 사용할 수 없다:
+아래 키워드들은 식별자로 사용할 수 없다:
 
-- break
-- delete
-- function
-- return
-- typeof
-- case
-- do
-- if
-- switch
-- var
-- catch
-- else
-- in
-- this
-- void
-- continue
-- false
-- instanceof
-- throw
-- while
-- debugger
-- finally
-- new
-- true
-- with
-- default
-- for
-- null
-- try
+```
+break  delete  function  return  typeof  case
+do  if  switch  var  catch  else
+in  this  void  continue  false  instanceof
+throw  while  debugger  finally  new  true
+with  default  for  null  try
+```
 
-다음은 전역 변수 혹은 전역 함수이므로 식별자로 사용하면 안된다:
+아래 이름들은 전역 변수 혹은 전역 함수이므로 식별자로 사용하면 안된다:
 
-- arguments
-- encodeURI
-- Infinity
-- Number
-- RegExp
-- Array
-- encodeURIComponent
-- isFinite
-- Object
-- String
-- Boolean
-- Error
-- isNaN
-- parseFloat
-- SyntaxError
-- Date
-- eval
-- JSON
-- parseInt
-- TypeError
-- decodeURI
-- EvalError
-- Math
-- RangeError
-- undefined
-- decodeURIComponent
-- Function
-- NaN
-- ReferenceError
-- URIError
+```
+arguments  encodeURI  Infinity  Number  RegExp
+Array  encodeURIComponent  isFinite  Object  String
+Boolean  Error  isNaN  parseFloat  SyntaxError
+Date  eval  JSON  parseInt  TypeError
+decodeURI  EvalError  Math  RangeError  undefined
+decodeURIComponent  Function  NaN  ReferenceError  URIError
+```
 
-다음 키워드는 ECMAScript 5 에서 사용할 수 없다:
+아래 키워드들은 ECMAScript 5 에서 사용할 수 없다:
 
-- class
-- const
-- enum
-- export
-- extends
-- import
-- super
+```
+class  const  enum  export
+extends  import  super
+```
 
-strict mode(엄격 모드)에서는 다음 예약어를 사용할 수 없다:
+strict mode(엄격 모드)에서는 아래 예약어들을 사용할 수 없다:
 
-- implements
-- let
-- private
-- public
-- yield
-- interface
-- package
-- protected
-- static
-- arguments
-- eval
+```
+implements  let  private  public
+yield  interface  package  protected
+static  arguments  eval
+```
 
-다음 키워드는 ECMAScript 3 에서 사용할 수 없다:
+아래 키워드들은 ECMAScript 3 에서 사용할 수 없다:
 
-- abstract
-- double
-- goto
-- native
-- static
-- boolean
-- enum
-- implements
-- package
-- super
-- byte
-- export
-- import
-- private
-- synchronized
-- char
-- extends
-- int
-- protected
-- throws
-- class
-- final
-- interface
-- public
-- transient
-- const
-- float
-- long
-- short
-- volatile
+```
+abstract  double  goto  native  static
+boolean  enum  implements  package  super
+byte  export  import  private  synchronized
+char  extends  int  protected  throws
+class  final  interface  public  transient
+const  float  long  short  volatile
+```
 
 ### 변수의 데이터 타입
 
@@ -361,7 +286,7 @@ test2();
 
 ## 리터럴<sup>Literal</sup>
 
-리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. http://www.terms.co.kr/literal.htm
+리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. [http://www.terms.co.kr/literal.htm](http://www.terms.co.kr/literal.htm)
 
 ### 정수 리터럴
 

@@ -8,6 +8,7 @@ tags:
   - ecmascript
   - javascript
   - deep-copy
+  - code-snippet
 ---
 
 * Kramdown table of contents

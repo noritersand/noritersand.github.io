@@ -7,8 +7,8 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - shorthand-notation
   - es2015
+  - shorthand-notation
 ---
 
 * Kramdown table of contents
@@ -87,7 +87,7 @@ var obj = {
 obj.gen().next(); // "ssup"
 ```
 
-ES2016부터는 단축 표기법으로 생성한 메서드를 생성자 함수로 호출할 때 에러가 발생한다:
+ES2016부터는 단축 표기법으로 생성한 메서드를 생성자 함수로 사용하면 에러가 발생한다:
 
 ```js
 var obj = {

@@ -5,8 +5,8 @@ title: '[JavaScript] 클래스 class'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - class
   - classes
 ---
@@ -117,7 +117,7 @@ new Numeric(123456).format(0); // "123,456"
 
 ## 생성자 함수와의 차이점
 
-### 생성자의 프로퍼티인 `caller`, `arguments`에 접근할 수 없다.
+### 생성자의 프로퍼티인 `caller`, `arguments`에 접근 불가.
 
 ```js
 class Test {}

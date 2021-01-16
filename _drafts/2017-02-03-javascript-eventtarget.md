@@ -5,8 +5,8 @@ title: '[JavaScript] EventTarget'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - eventlistener
   - eventtarget
   - dispatch

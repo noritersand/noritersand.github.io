@@ -5,8 +5,8 @@ title: '[JavaScript] Fetch'
 categories:
   - javascript
 tags:
-  - javascript
   - ecmascript
+  - javascript
   - fetch
 ---
 

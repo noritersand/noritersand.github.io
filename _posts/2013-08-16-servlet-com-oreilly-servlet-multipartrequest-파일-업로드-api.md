@@ -23,19 +23,19 @@ tags:
 - [https://mvnrepository.com/artifact/servlets.com/cos/05Nov2002](https://mvnrepository.com/artifact/servlets.com/cos/05Nov2002)
 - [cos-26Dec2008.zip](/attachments/cos-26Dec2008.zip)
 
-Java Servlet 파일 업로드 API인 MultipartRequest 사용법을 간단히 기술한다.
+Java Servlet 파일 업로드 API인 `MultipartRequest` 사용법을 간단히 기술한다.
 
 ## MultipartRequest
 
-```java
+```
 new MultipartRequest(HttpServletRequest request,
         String saveDirectory[, int maxPostSize, String encoding, FileRenamePolicy policy])
 ```
 
 - `saveDirectory`: 파일 저장 경로
-- `maxPostSize`: 파일의 최대크기, 최대크기를 초과하면 IOException 발생
+- `maxPostSize`: 파일의 최대크기, 최대크기를 초과하면 `IOException` 발생
 - `encoding`: the encoding of the response, such as ISO-8859-1(왜 여기에 응답 인코딩을 지정하는지 모르겠다...)
-- `policy`: 지정한 savaDirectory 내에 같은 이름을 가진 파일이 존재할 경우 덮어쓰기 여부, 명시하지 않으면 덮어쓴다.
+- `policy`: 지정한 `savaDirectory` 내에 같은 이름을 가진 파일이 존재할 경우 덮어쓰기 여부, 명시하지 않으면 덮어쓴다.
 
 MultipartRequest의 생성자는 request body 데이터를 읽어 지정한 경로에 파일을 생성한다. 생성자 호출과 동시에 파일이 생성되는 특징이 있어서 클라이언트가 전송한 파일의 선택적인 생성은 구현할 수 없다.
 
@@ -109,7 +109,7 @@ public class BoardServlet extends HttpServlet {
 }
 ```
 
-폼 태그에서 파일 업로드를 위해 enctype 속성을 `multipart/form-data`로 설정할 경우 해당 폼을 통해 전송된 데이터(이런 데이터는 request의 헤더가 아닌 바디를 통해 전송된다고 하여 request body post data라고 한다.)는 일반적인 방법인 HttpServletRequest의 파라미터로 접근할 수 없다. 실제로 위 소스를 실행해보면 HttpServletRequest의 파라미터는 null이며 대신 MultipartRequest의 파라미터로 가져오는 것을 확인할 수 있을 것이다.
+폼 태그에서 파일 업로드를 위해 `enctype` 속성을 `multipart/form-data`로 설정할 경우 해당 폼을 통해 전송된 데이터(이런 데이터는 요청 헤더가 아닌 바디를 통해 전송된다고 하여 request body post data라고 한다.)는 일반적인 방법인 `HttpServletRequest`의 파라미터로 접근할 수 없다. 실제로 위 소스를 실행해보면 `HttpServletRequest`의 파라미터는 `null`이며 대신 `MultipartRequest`의 파라미터로 가져오는 것을 확인할 수 있을 것이다.
 
 참고로 위 소스를 이클립스-톰캣으로 돌렸을 때 파일이 저장되는 경로는 다음과 같은데:
 

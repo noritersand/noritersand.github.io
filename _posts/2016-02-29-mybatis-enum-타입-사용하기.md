@@ -8,6 +8,7 @@ tags:
   - java
   - mybatis
   - enum
+  - code-snippet
 ---
 
 * Kramdown table of contents
