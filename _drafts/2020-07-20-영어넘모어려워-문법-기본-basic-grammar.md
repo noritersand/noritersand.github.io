@@ -1906,8 +1906,6 @@ have to와 비슷한 must가 있다. UNIT 32 참고.
 
 ## UNIT 35: Would you like ... ? I'd like ...
 
-Do you want ... ? 보다 정중한 표현임.
-
 ```
 의문문:
 would + subject + like + infinitive/noun
@@ -1916,8 +1914,33 @@ would + subject + like + infinitive/noun
 subject + would + like + infinitive/noun
 ```
 
-### examples
+Would you like ... ?: 뭔가를 하자고 청할 때(그렇다고 항상 '나와 같이'라는 의미는 아니다) 사용한다. Do you want보다 공손한 표현이다. (많은 언어에서와 같이 영어에서 want라는 동사는 매우 직접적인 표현으로 간주되며, would는 그것을 약간 부드럽게 만드는 효과가 있다.)
 
+infinitive(to 부정사)가 오는 경우:
+
+- *Would you like to go* for a walk?: 산책하실래요?
+- *Would you like to go* to the movies tonight?
+- What *would you like to drink*?: 뭘 드시겠어요?
+
+명사가 오는 경우:
+
+- *Would you like* a piece of candy?
+- *Would you like* something to eat?
+
+Would you like는 Do you like와 다르다:
+
+- *Would you like* some coffee?: 커피 좀 드시겠어요?
+- *Do you like* coffee?: 커피 좋아하세요?
+
+I'd like ...: 원하는 바를 표현할 때 사용하며 I want 보다 공손한 표현이다.
+
+- I'm thirsty. *I'd like* a drink.
+- *I'd like* some information about hotels, please.
+- I'm feeling tired. *I'd like to stay* home tonight.
+
+대답에 사용할 때:
+
+- "Would you like to have dinner with us on Sunday?" "Yes, *I'd love to*." (= I would love to have dinner with you)
 
 ### violet
 
@@ -1933,11 +1956,84 @@ subject + would + like + infinitive/noun
 > Would you like...? is a politer way of asking "do you want...?" when offering something.
 > --> In English, as in many languages, the verb "want" is considered very direct, and the conditional serves to soften it a bit.
 
-## 제목
+## UNIT 36: I'd rather ...
 
-### examples
+어떤것을 다른것보다 선호한다고 표현할 때 사용한다.
+
+
+```
+평서문(regular/positive):
+I'd rather + base form of the verb
+
+부정문(negative)
+I'd rather + not + base form of the verb
+
+의문문(question)
+Would + subject + rather + base form of the verb...?
+```
+
+I *would rather* do something: 나는 ... 하는게 더 좋다. (= I would prefer to do something)  
+rather 뒤에는 to 없이 동사원형을 사용하는 것이 포인트
+
+- I don't realy want to go out. I*'d rather stay* home. (= I'd prefer to stay home)
+- I'd like to go now, but Tom *would rather wait* until later.
+- I don't like to be late. I*'d rather be* early.
+
+부정문에서 사용:
+
+- I'm feeling tired. I*'d rather not go out* tonight.
+- We're not hungry. We*'d rather not eat* yet.
+- "Would you like to go out tonight?" "I*'d rather not*." (= I'd rather not go out)
+
+의문문에서 사용:
+
+- Which *would* you *rather do* go to the movies or watch a DVD at home?
+- Which *would* you *rather be* a bus driver or an airplane pilot?
+- "*Would* you *rather ahve* milk or juice?" "Juice, please."
+
+I'd rather ... than ...: ...보다 ... 하는 게 더 좋다.
+
+- I*'d rather* go out *than* stay home: 밖에 나가는 것보다 집에 있는 게 더 좋겠다.
+- I*'d rather* have a dog *than* a cat.
+- We*'d rather* go to the movies *than* watch a DVD at home.
+- I*'d rather* be at home right now *than* here.
+
+I would rather와 비슷한 말로 would prefer가 있는데, 이 경우 동사원형이 아니라 to 부정사가 뒤에 온다:
+
+- I*'d rather sit* on the floor. / I*'d prefer to* sit on the floor.
+- Sue *would rather* not *go* out. / Sue *would prefer* not *to go* out.
 
 ### violet
+
+A.
+I'D RATHER
+--> used to express if you prefer to do something over something else
+
+POSITIVE
+--> I'd rather + base form of the verb
+
+NEGATIVE
+--> I'd rather + not + base form of the verb
+
+QUESTION
+--> Would + subject + rather + base form of the verb...?
+
+B.
+TO
+--> don't use the preposition to before the verb
+
+EXAMPLE
+1. (✔︎) I'd rather sit on the floor. = (✘) I'd rather to sit on the floor.
+2. (✔︎) Sue would rather not go out. = (✘) Sue would rather not to go out.
+
+If you want to use preposition to, then use this format instead: I'd prefer + to + base of the verb
+EXAMPLE
+1. I'd prefer to sit on the floor.
+2. Sue would prefer not to go out.
+
+C.
+COMPARATIVE FORM
+--> I'd rather + base form of the verb + than
 
 -------------------------------------------------------------------------------
 
