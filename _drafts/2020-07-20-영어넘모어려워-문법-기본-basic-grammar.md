@@ -2005,47 +2005,89 @@ I would rather와 비슷한 말로 would prefer가 있는데, 이 경우 동사�
 
 ### violet
 
-A.
-I'D RATHER
---> used to express if you prefer to do something over something else
-
-POSITIVE
---> I'd rather + base form of the verb
-
-NEGATIVE
---> I'd rather + not + base form of the verb
-
-QUESTION
---> Would + subject + rather + base form of the verb...?
-
-B.
-TO
---> don't use the preposition to before the verb
-
-EXAMPLE
-1. (✔︎) I'd rather sit on the floor. = (✘) I'd rather to sit on the floor.
-2. (✔︎) Sue would rather not go out. = (✘) Sue would rather not to go out.
-
-If you want to use preposition to, then use this format instead: I'd prefer + to + base of the verb
-EXAMPLE
-1. I'd prefer to sit on the floor.
-2. Sue would prefer not to go out.
-
-C.
-COMPARATIVE FORM
---> I'd rather + base form of the verb + than
+> A.
+> I'D RATHER
+> --> used to express if you prefer to do something over something else
+>
+> POSITIVE
+> --> I'd rather + base form of the verb
+>
+> NEGATIVE
+> --> I'd rather + not + base form of the verb
+>
+> QUESTION
+> --> Would + subject + rather + base form of the verb...?
+>
+> B.
+> TO
+> --> don't use the preposition to before the verb
+>
+> EXAMPLE
+> 1. (✔︎) I'd rather sit on the floor. = (✘) I'd rather to sit on the floor.
+> 2. (✔︎) Sue would rather not go out. = (✘) Sue would rather not to go out.
+>
+> If you want to use preposition to, then use this format instead: I'd prefer + to + base of the verb
+> EXAMPLE
+> 1. I'd prefer to sit on the floor.
+> 2. Sue would prefer not to go out.
+>
+> C.
+> COMPARATIVE FORM
+> --> I'd rather + base form of the verb + than
 
 -------------------------------------------------------------------------------
 
-## 제목
+## UNIT 37: Do this! Don't do that! Let's do this!
 
-### examples
+come, look, go, wait, do, be: 누군가에게 뭔가를 하라고 할 때 사용한다. 보통 명령문이 되지만, 반드시 그렇지만은 않다.
+
+- *Come* here and *look* at this.
+- I don't want to talk to you. *Go* away!
+- I'm not ready yet. Please *wait* for me.
+- Please *be* quiet. I'm working.
+
+have: 뭔가를 권할 때 사용한다
+
+- Bye! *Have* a good trip! / *Have* a nice time! / *Have* fun!
+- *Have* some candy.
+
+don't ...: 부정 명령문
+
+- Be careful! *Don't fall*.
+- Please *don't go*. Stay here with me.
+- Be here on time. *Don't be* late.
+
+Let's(let us) ...: 사람들에게 어떤 것을 같이 하자는 뜻으로 사용한다.
+
+- It's a nice day. *Let's go* out.
+- Come on! *Let's dance*.
+- Are you ready? *Let's go*.
+- *Let's have* fish for dinner tonight.
+
+Let's not ...:
+
+- It's cold outside. *Let's not* go out. Let's stay home.
+- *Let's not* have fish for dinner tonight. Let's have chicken.
+- I'm tired of arguing. *Let's not* do it anymore.
 
 ### violet
 
+> A.
+> COME / LOOK / GO / WAIT / DO / BE
+> --> used to express if you want to tell someone to do something
+>
+> B.
+> DON'T
+> --> used to express if you want to tell someone not to do something
+>
+> C.
+> LET'S
+> --> used to express if you want to tell people to do things with you
+>
+> LET'S NOT
+> --> negative form
+
 -------------------------------------------------------------------------------
-
-
 
 ## 타동사 transitive-verb
 

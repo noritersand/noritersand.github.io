@@ -74,7 +74,7 @@ pom.xml의 dependency 설정에 추가한 프로젝트가 들어오는걸로 추
 
 우선 includeMe 프로젝트의 `Libraries`에서 `Add Jar` 후 `Order and Export`에서 추가된 라이브러리를 export 하도록 체크해야 한다. (이 작업을 하지 않으면 export 대상에서 제외되어 다른 프로젝트에서 라이브러리를 참조할 수 없다.) primary 프로젝트의 `Projects` 탭에서 참조할 프로젝트인 includeMe를 `Add` 하면 끗.
 
-이후 primary 프로젝트에서 includeMe 프로젝트의 jar를 import 할 수 있게된다. 그리고 이건 이클립스 내에서만 잘 돌아가는 설정이다. 만약 WAR로 빌드 후 별도의 WAS에서 구동하면 `Deployment Assembly`에서 includeMe를 추가해도 정상작동 하지 않는다.
+이후 primary 프로젝트에서 includeMe 프로젝트의 jar를 import 할 수 있게된다. 단, 이것은 이클립스 내에서만 잘 돌아가는 설정이다. 만약 WAR로 빌드 후 별도의 WAS에서 구동하면 `Deployment Assembly`에서 includeMe를 추가해도 정상작동 하지 않는다.
 
 ## 빌드 - JST Server Adapter
 

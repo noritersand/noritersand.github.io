@@ -13,11 +13,15 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 참고한 문서
+
+- [마소 공식 도움말: Excel의 바로 가기 키](https://support.microsoft.com/ko-kr/office/excel%EC%9D%98-%EB%B0%94%EB%A1%9C-%EA%B0%80%EA%B8%B0-%ED%82%A4-1798d9d5-842a-42b8-9c99-9b7213f0040f)
+
 ## 단축키
 
-- `alt + q`: 빠른 찾기
-- `f4`: `$` 표시(절대 셀 지정 방식) 토글
-- `ctrl + e`: 자동 채우기
+- <kbd>alt + q</kbd>: 빠른 찾기
+- <kbd>f4</kbd>: `$` 표시(절대 셀 지정 방식) 토글, 셀 선택 후 누르면 뭔가 하는데 뭔지 몲
+- <kbd>ctrl + e</kbd>: 자동 채우기
 
 ## 연산자와 문법
 
