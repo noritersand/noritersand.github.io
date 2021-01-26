@@ -73,3 +73,18 @@ function strict() {
 }
 strict.call(true);
 ```
+
+## TODO
+
+apply에는 특이한게 있는데:
+
+```js
+Math.min(3, 2, 4); // 2
+Math.min([3, 2, 4]); // NaN
+```
+
+원래 `Math.min()`의 인자는 배열이 올 수 없지만, 아래처럼 하면 됨:
+
+```js
+Math.min.apply(Math, [3, 2, 4]); // 2
+```
