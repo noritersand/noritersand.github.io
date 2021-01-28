@@ -78,32 +78,36 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
 
 ```json
 [
-    {
-        "key": "ctrl+shift+d",
-        "command": "-workbench.view.debug"
-    },
-    {
-        "key": "ctrl+shift+k",
-        "command": "-editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-        "key": "ctrl+shift+d",
-        "command": "editor.action.deleteLines",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
-      "key": "ctrl+k s",
-      "command": "-workbench.action.files.saveAll"
-    },
-    {
-      "key": "ctrl+shift+s",
-      "command": "-workbench.action.files.saveAs"
-    },
-    {
-      "key": "ctrl+shift+s",
-      "command": "workbench.action.files.saveAll"
-    }
+  {
+    "key": "ctrl+shift+d",
+    "command": "-workbench.view.debug"
+  },
+  {
+    "key": "ctrl+shift+d",
+    "command": "editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "-editor.action.deleteLines",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.duplicateSelection"
+  },
+  {
+    "key": "ctrl+k s",
+    "command": "-workbench.action.files.saveAll"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-workbench.action.files.saveAs"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "workbench.action.files.saveAll"
+  }
 ]
 ```
 
@@ -126,8 +130,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
 
 ## 기본 단축키 메모
 
+- <kbd>ctrl + k, ctrl + s</kbd>: 키보드 단축키 설정창 열기
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + k, ctrl + q<kbd>: Go to Last Edit Location
+- <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus. 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
 
 ### 멀티 커서
 

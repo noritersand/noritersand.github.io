@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: '[Node.js] 기본 모듈'
+title: '[Node.js] 기본 내장 모듈 Built-in Modules'
 categories:
   - nodejs
 tags:
