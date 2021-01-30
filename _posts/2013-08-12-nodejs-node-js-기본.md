@@ -296,7 +296,7 @@ exports.printA = printA;
 exports.PI = PI;
 
 // 위에서 내보낸 모듈은 다음처럼 불러온다
-var userModule = require('[js를 제외한 파일 경로]');
+var userModule = require('js를_제외한_파일_경로');
 userModule.printA();
 console.log(userModule.PI);
 ```

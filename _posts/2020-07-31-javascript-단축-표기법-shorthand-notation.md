@@ -42,7 +42,7 @@ var b = 'two';
 var obj = { a, b };
 
 obj; // Object { a: 1, b: "two" }
-obj.a === {a}.a; // true
+obj.a === { a }.a; // true
 ```
 
 단축 표기에 사용할 변수의 값이 객체타입일 경우엔:
@@ -57,6 +57,16 @@ obj.a; // Object { b: 2 }
 ```
 
 이렇게 되므로 주의할 것.
+
+#### 선언에서 활용
+
+단축 프로퍼티명의 원리를 이용해서 다음처럼 선언하면:
+
+```js
+const { log } = console;
+```
+
+`log` 상수가 생성되면서 `console.log`가 할당됨.
 
 ## 단축 메서드명
 
