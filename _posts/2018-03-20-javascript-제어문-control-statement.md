@@ -191,7 +191,9 @@ var i = 'global';
 >
 > [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
 
-객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다. 객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 프로퍼티에 대한 '프로퍼티 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 프로퍼티가 `true`인 프로퍼티, 예를 들어 `toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
+객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다.
+
+객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 프로퍼티에 대한 '프로퍼티 설명자'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 프로퍼티가 `true`인 프로퍼티, 예를 들어 `Object.prototype.toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
 
 ```
 for (변수 in 객체) { 구문 }
@@ -223,7 +225,7 @@ for (var prop in arr) {
 
 ### for-of
 
-`for-of`는 `for-in`과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. **단, iterable object만 `for-of`로 반복할 수 있는데**, iterable object에 해당되는 타입은 `arguments object`와 `Array`, `String`, `TypedArray`, `Map`, `NodeList` 등이 있다.  
+`for-of`는 `for-in`과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. **Iterable object만 `for-of`로 반복할 수 있는데**, iterable object에 해당되는 타입은 `arguments object`와 `Array`, `String`, `TypedArray`, `Map`, `Set`, `NodeList` 등이 있다.  
 [ES2015에서 새로 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
 
 ```js

@@ -26,13 +26,25 @@ tags:
 
 ```js
 Object.getOwnPropertyDescriptor(Object.prototype, 'toString')
-// Object.getOwnPropertyDescriptor(Object.prototype, 'toString')
+// {writable: true, enumerable: false, configurable: true, value: ƒ}
 
 Object.getOwnPropertyDescriptor({ a: 1 }, 'a')
 // Object { value: 1, writable: true, enumerable: true, configurable: true }
 ```
 
 ### [Object.defineProperty()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+
+객체에 새로운 속성을 정의하거나 이미 존재하는 속성을 수정하는 메서드.
+
+```js
+Object.defineProperty(Object.prototype, 'name', {
+    value: 'waldo', writable: false, enumerable: true
+});
+
+Object.getOwnPropertyDescriptor(Object.prototype, 'name');
+// { value: "waldo", writable: false, enumerable: true, configurable: false }
+```
+
 
 ### [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create)
 

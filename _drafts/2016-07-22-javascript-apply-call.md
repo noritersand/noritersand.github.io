@@ -74,9 +74,9 @@ function strict() {
 strict.call(true);
 ```
 
-## TODO
+## 배열 전개
 
-apply에는 특이한게 있는데:
+TODO
 
 ```js
 Math.min(3, 2, 4); // 2
@@ -87,4 +87,5 @@ Math.min([3, 2, 4]); // NaN
 
 ```js
 Math.min.apply(Math, [3, 2, 4]); // 2
+// Math.min.apply(null, [3, 2, 4]); // apply() 첫 번째 인자로 null을 전달해도 결과는 같음
 ```

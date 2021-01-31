@@ -23,3 +23,14 @@ Symbol은 기본형(primitive, 원시형) 데이터 타입으로 ECMASScript 201
 이터레이터가 있는 모양?
 
 꼐속...
+
+## 객체가 iterable한지 확인
+
+```js
+function isIterable(obj) {
+  if (obj == null) {
+    return false;
+  }
+  return typeof obj[Symbol.iterator] === 'function';
+}
+```

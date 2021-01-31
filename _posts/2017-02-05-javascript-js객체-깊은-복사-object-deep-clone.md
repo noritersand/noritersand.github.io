@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-05 23:45:10 +0900
-title: '[JavaScript] js객체 깊은 복사 Object deep copy'
+title: '[JavaScript] js객체 깊은 복사 Object deep clone'
 categories:
   - javascript
 tags:
@@ -23,7 +23,7 @@ tags:
 - [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
 - [jQuery: jQuery.extend()](https://api.jquery.com/jquery.extend/)
 
-`Object.assign()`이 있긴한데 이건 얕은 복사(shallow copy)만 가능.
+`Object.assign()`이 있긴한데 이건 얕은 복사<sup>shallow cloning</sup>만 가능.
 
 ## JSON 문자열로 바꾼뒤 다시 객체로 변환
 

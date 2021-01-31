@@ -24,22 +24,185 @@ tags:
 #### 버전 정보
 
 - ES2015에서 최초 정의
+- ES2018에서 객체 초기화 관련 정의
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
 
-전개 구문은 객체나 배열의 요소를 말그대로 전개하거나 분해할 때 사용한다. 단순 전개부터 `apply()`를 대체하거나 `new`에 적용, 배열 복사, 배열 연결, 객체 복사 등에 사용할 수 있다.
+전개 구문은 객체나 배열의 요소를 말그대로 전개하거나 분해할 때 사용한다. 단순 전개부터 `apply()`를 대체하거나 인스턴스 생성, 배열 복사, 배열 연결, 객체 복사 등에 사용할 수 있다.
 
 ```js
+var obj = { a: 1, b: 2 };
+var obj2 = { ...obj };
+
 var n = [1, 2, 3];
 console.log(n); // Array(3) [ 1, 2, 3 ]
 console.log(...n); // 1 2 3
 ```
 
-여기서 점 세개`...`는 전개 연산자<sup>spread operator</sup>라고 부른다.
+전개 구문에서 점 세개`...`는 **전개 연산자<sup>spread operator</sup>**라고 부른다.
+
+## 함수 호출에서: 인수 목록을 위한 전개<sup>spread for argument lists</sup>
+
+### 객체는 안되영
+
+인수 목록에서 plain object는 전개할 수 없다:
+
+```js
+var obj = { a: 1, b: 2 };
+log(...obj); // Uncaught TypeError: obj is not iterable
+```
+
+인수 목록에서 전개하려면 `Array`나 `Map`같은 *Iterable object*여야 함.
+
+### apply() 대체
+
+원래 배열의 요소를 함수의 인자로 활용하려면 `Function.prototype.apply()`로 사용했는데:
+
+```js
+function fn(a, b, c) {
+  return '' + a + b + c;
+}
+```
+
+```js
+fn(3, 2, 1); // 321
+fn.apply(null, [3, 2, 1]); // 321
+
+var arr = [10, 30, 5];
+Math.min.apply(Math, arr); // 5
+```
+
+이제는 전개 구문을 써서:
+
+```js
+fn(...[3, 2, 1]); // 321
+
+var arr = [10, 30, 5];
+Math.min(...arr); // 5
+```
+
+이렇게 간단하게 작성할 수 있다.
+
+그리고 전개 구문은 인수 목록에서 여러번 허용된다:
+
+```js
+var arr = [7, 8];
+fn(...[6], ...arr) // 678
+```
+
+요렇게도 쓸 수 있다는 말.
+
+### new에 적용
+
+배열의 요소를 전개한다는 점을 이용해서 생성자에게 전달할 인수를 작성할 때 사용함:
+
+```js
+function Fn(a, b, c) {
+  this.a = '' + a + b + c;
+}
+
+var o = new Fn(1, 2, 3);
+log(o); // Fn { a: "123" }
+
+var o2 = new Fn(...[1, 2, 3]);
+log(o2); // Fn { a: "123" }
+```
+
+## 배열 리터럴에서의 전개
+
+### 배열 연결
+
+둘 이상의 배열을 연결할 땐 `Array.prototype.concat()`을 사용하곤 했는데:
+
+```js
+var arr1 = [1, 2, 3];
+var arr2 = [4, 5, 6];
+
+var arr3 = arr1.concat(arr2); // [1, 2, 3, 4, 5, 6]
+```
+
+이제는 그냥 이렇게 하면 된다:
+
+```js
+var arr4 = [...arr1, ...arr2];
+```
+
+응용하면 좀 더 유연한 방식의 리터럴 작성이 가능함:
+
+```js
+var def = ['d', 'e', 'f'];
+var alphabet = ['a', 'b', 'c', ...def, 'g'];
+alphabet; // ["a", "b", "c", "d", "e", "f", "g"]
+```
+
+### 배열 복사
+
+기존의 배열과 분리된 복사본(=클론)을 만드는 방법이다:
+
+```js
+var arr = [1, 2, 3];
+var arr2 = [...arr];
+arr === arr2; // false
+arr2; // [1, 2, 3]
+```
+
+단, 배열을 전개해도 여전히 배열인 경우(e.g. 2단 이상의 배열) 분리된 복사본이 아니라 기존 배열을 참조하는게 되니 주의할 것.:
+
+```js
+var arr = [[1, 2], [3]];
+var arr2 = [...arr];
+arr[0]; // [1, 2]
+
+arr2[0].pop(); // 참조하는 배열을 수정해서 arr, arr2 둘 다 영향을 받는다.
+arr2[0]; // [1]
+arr[0]; // [1]
+```
+
+## 객체 리터럴에서의 전개
+
+### 객체 복사
+
+객체의 전개는 `Object.assign()`을 대체하여 객체 복사에 사용할 수 있다:
+
+```js
+var obj = { foo: 'bar', x: 42 };
+
+var clonedObj = { ...obj };
+clonedObj; // Object { foo: "bar", x: 42 }
+clonedObj === obj; // false
+```
+
+배열과 마찬가지로 얕은 복사<sup>shallow cloning</sup>인 것에 주의:
+
+```js
+var obj = {
+  foo: {
+    a: 1, b: 2
+  }
+};
+
+var clonedObj = { ...obj };
+
+obj.foo.a; // 1
+clonedObj.foo.a = 3;
+obj.foo.a; // 3
+```
+
+### 객체 연결
+
+객체의 프로퍼티를 이어 붙여서 새 객체를 만드는 방법. 만약 이름이 같은 프로퍼티가 있다면, 나중에 오는 객체의 프로퍼티가 덮어쓴다:
+
+```js
+var obj1 = { foo: 'bar', x: 42 };
+var obj2 = { foo: 'baz', y: 13 };
+
+var mergedObj = { ...obj1, ...obj2 }; // obj2.foo가 obj1.foo를 덮어쓰게 됨
+mergedObj; // Object { foo: "baz", x: 42, y: 13 }
+```
 
 ## 나머지 구문
 
-구조 분해 할당 표현식에서 사용할 땐 전개 구문 대신 `나머지 구문`이라 부른다:
+구조 분해 할당 표현식에서 사용할 땐 전개 구문 대신 나머지 구문이라 부르며 작동방식이 다르다:
 
 ```js
 var [min = 0, max = Infinity, ...rest] = [1, 2, 3, 4, 5];
@@ -52,3 +215,5 @@ x; // 24
 b; // 2
 y; // { a: 1, c: 3, d: 4 }
 ```
+
+위 코드에서 `...rest`, `...y`가 나머지 구문임.
