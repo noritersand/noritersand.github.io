@@ -78,3 +78,5 @@ var obj = {
 };
 obj.johnsnow(); // I know nothing.
 ```
+
+끝.

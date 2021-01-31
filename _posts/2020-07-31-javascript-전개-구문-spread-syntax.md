@@ -8,9 +8,9 @@ tags:
   - ecmascript
   - javascript
   - es2015
-  - shorthand
-  - computed
-  - property-names
+  - es2018
+  - spread-syntax
+  - rest-syntax
 ---
 
 * Kramdown table of contents
@@ -151,10 +151,9 @@ arr2; // [1, 2, 3]
 ```js
 var arr = [[1, 2], [3]];
 var arr2 = [...arr];
-arr[0]; // [1, 2]
 
-arr2[0].pop(); // 참조하는 배열을 수정해서 arr, arr2 둘 다 영향을 받는다.
-arr2[0]; // [1]
+arr[0]; // [1, 2]
+arr2[0].pop(); // 참조하는 배열을 수정해서 arr도 영향을 받음.
 arr[0]; // [1]
 ```
 
@@ -175,11 +174,7 @@ clonedObj === obj; // false
 배열과 마찬가지로 얕은 복사<sup>shallow cloning</sup>인 것에 주의:
 
 ```js
-var obj = {
-  foo: {
-    a: 1, b: 2
-  }
-};
+var obj = { foo: { a: 1, b: 2 } };
 
 var clonedObj = { ...obj };
 
@@ -217,3 +212,5 @@ y; // { a: 1, c: 3, d: 4 }
 ```
 
 위 코드에서 `...rest`, `...y`가 나머지 구문임.
+
+끗.

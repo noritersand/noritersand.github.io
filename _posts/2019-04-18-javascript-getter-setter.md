@@ -23,9 +23,17 @@ tags:
 
 - IE8 이하는 사용 불가
 
-[ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. `get`, `set` 키워드가 붙은 함수는 객체의 프로퍼티처럼 작동한다.
+[ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. 프로퍼티처럼 접근할 수 있는 함수를 정의한다.
 
-'접근자 프로퍼티'라고도 하는 모양.
+```
+{ get prop() { ... } }
+{ get [expression]() { ... } }
+
+{ set prop(val) { . . . } }
+{ set [expression](val) { . . . } }
+```
+
+getter와 setter는 접근자 프로퍼티<sup>accessor property</sup>에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티<sup>data property</sup>와는 다르게 취급된다. 한 가지 예를 들면 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
 
 ## class 선언에서
 
@@ -85,3 +93,21 @@ noob.name; // "fresh newbie";
 ```
 
 `name`은 일종의 immutable property가 된다.
+
+## 객체 복사에 포함되지 않음
+
+getter/setter는 enumerable한 프로퍼티가 아니므로, `Object.assign()`이나 전개 구문으로 복사할 수 없다:
+
+```js
+var noob = new Newbie();
+noob.trait = 'eating';
+noob; // Object { _trait: "eating" }
+
+var clone = { ...noob };
+clone.trait = 'sleeping';
+clone; // Object { _trait: "eating", trait: "sleeping" }
+
+var clone2 = Object.assign({}, noob);
+clone2.trait = 'do nothing';
+clone2 // Object { _trait: "eating", trait: "do nothing" }
+```
