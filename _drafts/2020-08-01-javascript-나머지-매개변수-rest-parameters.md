@@ -25,4 +25,10 @@ tags:
 - Chrome 49/Edge 79/Firefox 52/Opera 36/Safari 10 이상에서 사용 가능
 - IE에서 사용 불가
 
-TODO
+나머지 매개변수는 함수의 파라미터보다 인수의 수가 많을 때, 언급되지 않은 모든 인수를 하나의 변수에 모두 할당하는 구문이다.
+
+```
+function f(a, b, ...theArgs) {
+  // ...
+}
+```
