@@ -82,9 +82,9 @@ atom 1.45.0 기준.
 - ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll)~~: ~~다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~  
   멀티 커서 증식(?)키<kbd>ctrl + alt + up/down</kbd>가 이상작동하는 현상이 있음.
 - [url-encode](https://atom.io/packages/url-encode): ?
-- [goto-last-edit](https://atom.io/packages/goto-last-edit): <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동... 인데 서브라임이랑 같도록 바꿔서 씀. 키 바꿔서 쓸꺼면 해당 패키지 settings에서 Keybindings는 끌 것
+- [goto-last-edit](https://atom.io/packages/goto-last-edit): <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동... 인데 서브라임이랑 같도록 바꿔서 씀. 키 바꿔서 쓸꺼면 해당 패키지 settings에서 `Keybindings`는 끌 것
 - [sort-lines](https://atom.io/packages/sort-lines): 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
-- [sync-settings](https://atom.io/packages/sync-settings): 아톰 설정을 동기화 하는 패키지. 설정은 깃허브 gist에 업로드한다.
+- [sync-settings](https://atom.io/packages/sync-settings): 아톰 설정을 동기화 하는 패키지. 설정은 깃허브 gist에 업로드한다. settings에서 `Ignore EOL` 체크할 것.
 
 ## 기본 단축키 메모
 

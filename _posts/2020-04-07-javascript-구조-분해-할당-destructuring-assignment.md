@@ -196,6 +196,15 @@ z; // 123
 
 이 때도 그냥 쓰면 `SyntaxError`가 발생하므로 대체할 식별자를 지정할 것.
 
+## 나머지 구문의 위치 제한
+
+나머지 구문은 구조 분해 할당식의 좌변 마지막에만 올 수 있다:
+
+```js
+var [min, ...rest, max] = [1, 2, 3, 4, 5]; // SyntaxError: Rest element must be last element
+var { x, ...y, b } = { a: 1, b: 2, c: 3, d: 4 }; // SyntaxError: Rest element must be last element
+```
+
 ## 중첩된 객체/배열의 구조 분해
 
 여기까진 깊이가 1인 객체의 예시만 들었는데, 만약 2레벨 이상의 객체를 분해하려면 어떻게 해야 할까?
