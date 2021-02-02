@@ -9,7 +9,8 @@ tags:
   - atom
 ---
 
-atom 1.45.0 기준.
+* Kramdown table of contents
+{:toc .toc}
 
 ## 기본 설정
 

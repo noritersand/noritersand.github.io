@@ -10,6 +10,9 @@ tags:
   - vscode
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## 기본 설정
 
 #### Suggestions 기능 설정 변경

@@ -9,6 +9,9 @@ tags:
   - sublimetext
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
 ## package control 설치
 
 커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터
