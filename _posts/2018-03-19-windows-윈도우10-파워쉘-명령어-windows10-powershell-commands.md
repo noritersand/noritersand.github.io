@@ -136,25 +136,26 @@ RSA 키 페어를 생성하는 명령어. 명령 실행 시 이름과 비밀번�
 
 ```bash
 PS C:\Users\user\.ssh> ssh-keygen
+
 Generating public/private rsa key pair.
-Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-ssh-test
+Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your identification has been saved in noritersand-ssh-test.
-Your public key has been saved in noritersand-ssh-test.pub.
+Your identification has been saved in noritersand-test.
+Your public key has been saved in noritersand-test.pub.
 The key fingerprint is:
-SHA256:ZOo+wm0BKnmG1njaqPdnDooGBhpH5OKUZjpN6ggizY4 user@DESKTOP-M8LV2E9
+SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@DESKTOP-1234567
 The key\'s randomart image is:
 +---[RSA 2048]----+
-| ..              |
-| .o              |
-|.*o     o        |
-|OB. .  +         |
-|X**. .. S        |
-|%B+o ..          |
-|E=*.....         |
-| =.ooo*          |
-|=....*o.         |
+| .             o |
+|o .         . =  |
+| =   .       + . |
+|. o +  .      o E|
+| ..oo.. S      =.|
+|.. +.o..      . o|
+|+ o o... +     .o|
+|*. +    + .. . o%|
+|+ ..o    .. o..*%|
 +----[SHA256]-----+
 
 PS C:\Users\user\.ssh> ls
@@ -163,8 +164,8 @@ PS C:\Users\user\.ssh> ls
 
 Mode                LastWriteTime         Length Name
 ----                -------------         ------ ----
--a----     2021-02-02  오전 10:36           1766 noritersand-ssh-test
--a----     2021-02-02  오전 10:36            403 noritersand-ssh-test.pub
+-a----     2021-02-02  오후 12:48           1766 noritersand-test
+-a----     2021-02-02  오후 12:48            403 noritersand-test.pub
 ```
 
 ### ssh-agent, ssh-add
