@@ -461,9 +461,21 @@ git config --global --unset alias.ss
 
 #### SSL 검증 비활성화
 
+윈도우 환경에선 가끔 `SSL Certificate problem: unable to get local issuer certificate` 에러가 터지며 `fetch`나 `push`가 안될때가 있는데, 이럴 때는 아래처럼 SSL 검증을 꺼버리면 해결되긴 한다:
+
 ```bash
 git config --global http.sslVerify false
 ```
+
+다만 이건 급할 때나 쓰는 임시 방편이니 가급적이면 이렇게:
+
+```bash
+git config --global http.sslbackend schannel
+```
+
+`http.sslbackend`를 'Schannel'로 변경하자. ['Schannel'의 원래 이름은 'Secure Channel'이며 윈도우의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)다.
+
+원인은 [Git이 기본적으로 'Linux' crypto backend를 사용하기 때문](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라고 한다.
 
 ## diff
 

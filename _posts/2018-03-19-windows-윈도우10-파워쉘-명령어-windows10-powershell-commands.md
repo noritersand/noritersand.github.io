@@ -183,7 +183,7 @@ Get-Service ssh-agent
 ssh-add ~\.ssh\noritersand-ssh-test
 ```
 
-추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
+이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
 #### options
 
