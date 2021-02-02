@@ -12,11 +12,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## package control 설치
+## 기본 설정
+
+### package control 설치
 
 커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터
 
-## 한글 인코딩 지원 패키지 설치
+### 한글 인코딩 지원 패키지 설치
 
 정확히는 유니코드 문자가 포함되어 있으면서 UTF-8이 아닌 파일을 UTF-8로 변환하는 패키지다.  
 커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택

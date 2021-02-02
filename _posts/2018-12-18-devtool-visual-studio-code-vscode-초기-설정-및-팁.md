@@ -15,7 +15,7 @@ tags:
 
 ## 기본 설정
 
-#### Suggestions 기능 설정 변경
+### Suggestions 기능 설정 변경
 
 Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
@@ -33,7 +33,7 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
 
 개인적으론 세 번째 방법으로 꺼놓는게 편한듯.
 
-#### 타이틀에 파일 전체 경로 표시
+### 타이틀에 파일 전체 경로 표시
 
 Settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 추가:
 
@@ -41,18 +41,18 @@ Settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 
 ${activeEditorLong}${separator}${rootName}
 ```
 
-#### 들여쓰기 설정 변경
+### 들여쓰기 설정 변경
 
 Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
 이 후 `Insert Spaces`나 `Tab Size`는 취향껏...
 
-#### 파일 제외하기
+### 파일 제외하기
 
 Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 ## 팁
 
-#### Code Snippet 추가하기
+### Code Snippet 추가하기
 
 [공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)  
 

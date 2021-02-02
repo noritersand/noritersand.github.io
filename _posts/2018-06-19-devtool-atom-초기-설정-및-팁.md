@@ -14,31 +14,31 @@ tags:
 
 ## 기본 설정
 
-#### 맞춤법 검사 비활성화
+### 맞춤법 검사 비활성화
 
 `Settings` > `Installed Packages` > `spell-check`에서 `disable` 클릭
 
-#### 자동완성 설정 변경
+### 자동완성 설정 변경
 
 `Settings` > `Installed Packages` > `autocomplete-plus`의 설정에서 `Show Suggestions On Keystroke`를 체크해제한다. 이 항목이 체크 되어 있으면 타이핑 할 때마다 자동완성 목록이 나타나는데 이게 꽤 귀찮다. 그냥 필요할 때 단축키로 사용할 것.  
 자동완성 단축키: <kbd>ctrl + space</kbd>
 
-#### 마크다운 미리보기 설정 변경
+### 마크다운 미리보기 설정 변경
 
 `Settings` > `Installed Packages` > `markdown-preview`의 설정에서:
 
 - `Live Update` 체크 해제: 글이 길 때 미리보기가 자동갱신되면 렉이 심함.
 - `Open Preview In Split Pane` 체크 해제: 새 탭으로 열리는게 더 편함.
 
-#### 붙여넣기 시 자동 들여쓰기 해제
+### 붙여넣기 시 자동 들여쓰기 해제
 
 `Settings` > `Editor`에서 `Auto Indent On Paste` 체크 해제.
 
-#### 개행, 탭, 공백 문자 표시
+### 개행, 탭, 공백 문자 표시
 
 `Settings` > `Editor`에서 `Show Invisibles` 체크.
 
-#### 탭 타입 변경
+### 탭 타입 변경
 
 `Settings` > `Editor`에서 `Tab Type`을 `soft`로 변경. 이 옵션은 탭 문자를 스페이스바로 변경함을 의미한다.
 
