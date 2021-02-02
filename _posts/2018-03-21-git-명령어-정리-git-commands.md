@@ -473,9 +473,9 @@ git config --global http.sslVerify false
 git config --global http.sslbackend schannel
 ```
 
-`http.sslbackend`를 'Schannel'로 변경하자. ['Schannel'의 원래 이름은 'Secure Channel'이며 윈도우의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)다.
+`http.sslbackend`를 `schannel`로 변경하자. [Schannel은 윈도우의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)이다. 정식 명칭은 Secure Channel
 
-원인은 [Git이 기본적으로 'Linux' crypto backend를 사용하기 때문](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라고 한다.
+[Git이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
 
 ## diff
 
