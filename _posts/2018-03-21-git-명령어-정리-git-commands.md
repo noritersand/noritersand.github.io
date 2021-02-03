@@ -1044,6 +1044,39 @@ git reset --soft HEAD~2  # 헤드만 2회 이전 커밋으로 이동
 git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 헤드와 동일하게 변경
 ```
 
+## [restore](https://git-scm.com/docs/git-restore)
+
+새로 추가된 워킹 트리를 되돌리는 명령어. new file은 되돌리지 않는다.
+
+```bash
+git restore . # 워킹 트리의 모든 파일을 되돌림
+git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
+```
+
+`-W`와 `-S`는 워킹 트리와 스테이징 에어리어 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다. 쉽쥬?
+
+#### options
+
+- `-s <tree>`, `--source=<tree>`
+- `-p`, `--patch`
+- `-W`, `--worktree`: 워킹 트리만 되돌린다. 지정하지 않았을 때의 기본값이다.
+- `-S`, `--staged`: 스테이징 에어리어만 되돌린다.
+- `-q`, `--quiet`
+- `--progress`
+- `--no-progress`
+- `--ours`
+- `--theirs`
+- `-m`, `--merge`
+- `--conflict=<style>`
+- `--ignore-unmerged`
+- `--ignore-skip-worktree-bits`
+- `--recurse-submodules`
+- `--no-recurse-submodules`
+- `--overlay`
+- `--no-overlay`
+- `--pathspec-from-file=<file>`
+- `--pathspec-file-nul`
+
 ## revert
 
 #### 커밋 되돌리기 \#2
