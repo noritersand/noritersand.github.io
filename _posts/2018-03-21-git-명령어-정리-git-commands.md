@@ -13,6 +13,7 @@ tags:
 
 #### 참고한 문서
 
+- [https://git-scm.com/docs](https://git-scm.com/docs)
 - [https://git-scm.com/book/ko/v2](https://git-scm.com/book/ko/v2)
 - [https://ohshitgit.com/](https://ohshitgit.com/)
 - [https://learngitbranching.js.org/?locale=ko](https://learngitbranching.js.org/?locale=ko)
@@ -708,12 +709,12 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 
 #### options
 
-- `-c` `--cached`:
-- `-d` `--deleted`:
-- `-m` `--modified`:
-- `-o` `--others`:
-- `-i` `--ignored`:
-- `-s` `--stage`:
+- `-c` `--cached`
+- `-d` `--deleted`
+- `-m` `--modified`
+- `-o` `--others`
+- `-i` `--ignored`
+- `-s` `--stage`
 - `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된'<sup>assume unchanged</sup> 파일은 소문자로 표시한다.
 
 ```bash
