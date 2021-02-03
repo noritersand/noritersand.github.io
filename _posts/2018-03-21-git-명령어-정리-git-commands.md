@@ -524,6 +524,19 @@ git fetch --all  # 모든 리모트 저장소에서 fetch
 git fetch --tags
 ```
 
+## gitk
+
+`gitk`는 커밋 이력를 보여주는 GUI 툴이다. `git log`와 동일한 옵션을 사용할 수 있다.
+
+```bash
+gitk [git log options]
+gitk # HEAD의 히스토리 보기
+gitk --all # 저장소의 모든 커밋 보기
+```
+
+![](/images/gitk.png)
+
+
 ## help
 
 도움말 보기
