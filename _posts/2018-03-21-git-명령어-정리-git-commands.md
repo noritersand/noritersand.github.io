@@ -155,7 +155,7 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 
 #### 브랜치 이동
 
-헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 이동한다. 이동할 때 워킹 트리와 스테이징 에어리어가 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged, untracked file, modified 상태의 파일이 있다면 **변경점을 유지하며 이동한다.**
+헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 이동한다. 이동할 때 워킹 트리와 스테이징 에어리어가 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 이동한다.**
 
 ```bash
 # master 브랜치로 이동
@@ -414,10 +414,29 @@ git config --global user.email "이메일"
 git config --global core.editor 편집기
 ```
 
-#### Diff 도구 설정
+#### diff 도구 변경
 
 ```bash
-git config --global merge.tool vimdiff
+git config --global diff.tool vimdiff
+
+# VSCODE를 diff 도구로 설정
+# VSCODE 실행 경로가 path에 추가된 상태여야 함
+# 안될 수도 있다.
+git config --global diff.tool vscode
+git config --global difftool.vscode.cmd 'code --wait --diff $LOCAL $REMOTE'
+```
+
+#### 머지 도구 변경
+
+```bash
+git config --global merge.tool kdiff3
+
+# VSCODE를 머지 도구로 설정
+# VSCODE 실행 경로가 path에 추가된 상태여야 함
+# 얘도 안될 수 있음... 😒
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"'
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 ```
 
 #### 설정 확인
@@ -453,7 +472,7 @@ git config --global --get-regexp alias
 git config --global --list | grep alias
 ```
 
-#### 단축어 삭제
+#### 설정 삭제
 
 ```bash
 git config --global --unset alias.ss
@@ -485,6 +504,61 @@ git config --global http.sslbackend schannel
 git diff
 git diff --check  # 충돌 문자가 있거나 공백 에러가 있는지 확인
 ```
+
+주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 해당 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
+
+```bash
+user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4)
+$ git merge main
+Auto-merging CONFLICT_ME.txt
+CONFLICT (content): Merge conflict in CONFLICT_ME.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
+$ git diff --check
+CONFLICT_ME.txt:2: leftover conflict marker
+CONFLICT_ME.txt:4: leftover conflict marker
+CONFLICT_ME.txt:6: leftover conflict marker
+
+user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
+$ git diff
+diff --cc CONFLICT_ME.txt
+index 6494d80,862c24c..0000000
+--- a/CONFLICT_ME.txt
++++ b/CONFLICT_ME.txt
+@@@ -1,2 -1,2 +1,6 @@@
+  Hello world!
+- 1111
+ -3333
+++<<<<<<< HEAD
+++1111
+++=======
+++3333
+++>>>>>>> main
+
+user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
+$ git status
+On branch test4
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   CONFLICT_ME.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
+아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
+
+#### diff 도구 실행
+
+```bash
+git difftool
+```
+
+`diff.tool`로 지정한 도구를 실행한다.
 
 #### staged와 commited의 비교
 
@@ -530,7 +604,7 @@ git fetch --tags
 
 ```bash
 gitk [git log options]
-gitk # HEAD의 히스토리 보기
+gitk # HEAD의 커밋 이력 보기
 gitk --all # 저장소의 모든 커밋 보기
 ```
 
@@ -564,7 +638,7 @@ git init --bare
 
 ## log
 
-#### 커밋 히스토리 조회
+#### 커밋 이력 조회
 
 ```bash
 git log
@@ -684,10 +758,18 @@ git merge --no-commit
 
 #### 머지 도구 실행
 
-merge에 실패했을때 사용한다. mergetool로 지정된 앱을 실행하면서 .orig 확장자로 백업파일이 생성된다.
-
 ```bash
 git mergetool
+```
+
+머지 도구로 지정된 앱을 실행한다. 이때 `_BACKUP`, `_LOCAL` 등의 이름이 붙은 백업파일들이 자동 생성된다.
+
+#### 머지 취소
+
+충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.
+
+```bash
+git merge --abort
 ```
 
 #### fetch 후 머지
@@ -872,6 +954,7 @@ $ git reflog -5  # 마지막 다섯 번의 헤드 이동 이력을 역순으로 
 ```
 
 참고로 `HEAD@{1}`란 표현은 헤드 변경 이력 중 현재와 비교해 바로 직전의 이력을 의미한다. 이 표현은 `merge` 등의 명령에서도 사용할 수 있다.
+
 ```bash
 git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머지
 ```
