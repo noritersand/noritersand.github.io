@@ -715,7 +715,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 - `-o` `--others`
 - `-i` `--ignored`
 - `-s` `--stage`
-- `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된'<sup>assume unchanged</sup> 파일은 소문자로 표시한다.
+- `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된<sup>assumed unchanged</sup>' 파일은 소문자로 표시한다.
 
 ```bash
 git ls-files -v | grep ^h  # assumed unchanged 파일만 표시
