@@ -144,7 +144,7 @@ Enter same passphrase again:
 Your identification has been saved in noritersand-test.
 Your public key has been saved in noritersand-test.pub.
 The key fingerprint is:
-SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@DESKTOP-1234567
+SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@noritersand-desktop
 The key\'s randomart image is:
 +---[RSA 2048]----+
 | .             o |
