@@ -254,7 +254,7 @@ var { character: { scripts: [ firstScript ] } } = data;
 firstScript; // "Hello there! Mighty fine morning"
 ```
 
-쉽쥬? 😎
+배열 리터럴을 적절히 섞어주면 됨.
 
 ## for-of에서 구조 분해
 
