@@ -495,7 +495,7 @@ git config --global http.sslbackend schannel
 
 `http.sslbackend`를 `schannel`로 변경하자. [Schannel은 윈도우의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)이다. 정식 명칭은 Secure Channel
 
-[Git이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
+[깃이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
 
 작성자 참고용 설정:
 
@@ -1140,7 +1140,7 @@ rm 명령어는 깃이 추적중인 파일 혹은 폴더에만 사용할 수 있
 
 #### 깃의 추적을 중단시키기
 
-실제 파일은 남기고 깃의 관리대상에서만 제외한다.
+실제 파일은 남기고 깃의 관리 대상에서만 제외한다.
 
 ```bash
 git rm --cached readme.txt
