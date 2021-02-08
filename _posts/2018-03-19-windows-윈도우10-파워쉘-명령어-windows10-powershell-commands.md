@@ -34,9 +34,13 @@ tags:
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다.
 
+## [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
+
+TODO
+
 ## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 
-파워쉘판 `grep` 쯤에 위치하는 명령어.
+문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
 ```bash
 # 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단
@@ -44,6 +48,9 @@ tags:
 
 # rogue.log 파일을 출력하되 대소문자 구분 없이 'exception'이 포함된 라인만 출력
 Get-Content .\rogue.log | Select-String 'exception'
+
+# 현재 경로의 모든 파일과 디렉터리를 Stream으로 내보내서 'httpd'가 포함된 라인 출력
+Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 ```
 
 #### parameters
@@ -222,4 +229,13 @@ Remove-Item Env:\test # 환경 변수 'test' 삭제
 
 ```bash
 Invoke-WebRequest -Uri "https://google.com"
+```
+
+## [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
+
+프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
+
+```bash
+# name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
+Get-ChildItem | Where-Object name -eq 'httpd.exe'
 ```

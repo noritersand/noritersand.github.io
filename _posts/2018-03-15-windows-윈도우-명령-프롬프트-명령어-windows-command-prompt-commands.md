@@ -35,7 +35,10 @@ dir | find "Videos" # "Videos"를 포함하는 라인만 출력
 
 `find`와 비슷하지만 정규식을 지원하는 명령어.
 
-TODO
+```bash
+# '8081'로 필터링
+netstat -nao | findstr '8081'
+```
 
 ## xcopy
 
