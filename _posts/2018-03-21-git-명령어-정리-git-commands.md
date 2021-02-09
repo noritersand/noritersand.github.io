@@ -277,6 +277,18 @@ git cherry-pick 376361 # 현재 브랜치에 376361 커밋의 변경사항을 �
 git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가장 마지막 커밋의 변경사항을 반영한 신규 커밋 생성
 ```
 
+#### 주의사항
+
+체리픽이란 쉽게 말해 특정 커밋의 델타만 현재 브랜치에 반영한다는 말인데, 여기서 오해하면 안 되는 점이 있다. 하나의 파일에 한해선 그간의 모든 델타가 반영된다는 것:
+
+![](/images/cherry-pick1.png)
+
+가령 pickme 브랜치에 파일 `CONFLICT_ME.md`를 수정한 커밋이 세 개가 있으며 main 브랜치에 체리픽으로 일부만 반영하려는 상황이라고 가정하자. 이때 수정한 커밋 중 가장 마지막 커밋을 지정해 체리픽을 하면 세 번째 커밋의 델타만 main 브랜치에 반영될 거라 예상할 수도 있을 것이다.
+
+![](/images/cherry-pick2.png)
+
+하지만 실제 결과는 그렇지 않다. 이 경우에는 첫 번째와 두 번째 커밋 둘 다 `CONFLICT_ME.md` 파일에 대한 변경사항을 포함하므로 원래 의도와는 다르게 모든 커밋이 main 브랜치에 반영된다. (체리픽 중에 충돌이 발생하는 건 덤)
+
 #### 커밋하지 않고 체리픽
 
 ```bash
@@ -459,6 +471,7 @@ git config --global alias.사용할키워드 '명령어'
 git config --global alias.ss 'status'
 git config --global alias.br 'branch'
 git config --global alias.ck 'checkout'
+git config --global alias.cp 'cherry-pick'
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.visual '!gitk'
 git config --global alias.hide 'update-index --assume-unchanged'
