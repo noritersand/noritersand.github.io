@@ -16,6 +16,14 @@ tags:
 
 - [somewhere](somewhere)
 
+#### 용어 참고
+
+- `Source`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Source` 탭
+- `Projects`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Projects` 탭
+- `Libraries`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Libraries` 탭
+- `Order and Export`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Order and Export` 탭
+- `Deployment Assembly`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Deployment Assembly` 메뉴
+
 ## Customize Perspective
 
 ### Menu Visibility
@@ -32,15 +40,17 @@ tags:
 - ShortCuts
 - 단축키는 뭐랑 관계 있어?
 
+## Project Properties
+
+### Project Referecnes
+
+- TODO: 이거 뭐... 다른 프로젝트를 컴파일 타임과 WST 서버 띄울때만 참조하는 거였던가...
+
+### Web Project Settings
+
+- Context root: 웹 프로젝트의 컨텍스트 루트 경로를 의미함. WST로 서버를 추가할 때 Context Path가 이 값으로 설정된다.
+
 ## 빌드
-
-#### 용어 참고
-
-- `Source`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Source` 탭
-- `Projects`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Projects` 탭
-- `Libraries`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Libraries` 탭
-- `Order and Export`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Order and Export` 탭
-- `Deployment Assembly`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Deployment Assembly` 메뉴
 
 ### Source
 

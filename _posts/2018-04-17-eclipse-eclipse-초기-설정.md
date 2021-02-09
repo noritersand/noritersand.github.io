@@ -47,8 +47,8 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Open Type Hierarchy: <kbd>unbined</kbd>
 - Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
 - Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
-- Compare with HEAD Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
-- Compare with Previous Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
+- Compare with HEAD Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
+- Compare with Previous Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
 - Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
 - Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)
 - Add Bookmark: <kbd>ctrl + alt + z</kbd>
@@ -67,7 +67,7 @@ Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 �
 
 ## 검색 창 설정 변경
 
-- 검색 창<kbd>ctrl + h</kbd>에서 `Customize` 진입, `Task` 체크 해제, `Remember last used page` 체크.
+- 검색 창<kbd>ctrl + h</kbd>에서 `Customize` 진입, `Task`와 `Plug-in` 체크 해제.
 
 ## 파일 자동 갱신
 
