@@ -18,11 +18,6 @@ tags:
 
 커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터
 
-### 한글 인코딩 지원 패키지 설치
-
-정확히는 유니코드 문자가 포함되어 있으면서 UTF-8이 아닌 파일을 UTF-8로 변환하는 패키지다.  
-커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package' 입력 후 엔터, `ConvertToUTF8` 선택
-
 ## 작성자 저장용 사용자 설정
 
 #### settings - user
@@ -54,6 +49,8 @@ tags:
 ```
 
 ## 추천 패키지
+
+- [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동할 수 있다.
 
 - [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
 
