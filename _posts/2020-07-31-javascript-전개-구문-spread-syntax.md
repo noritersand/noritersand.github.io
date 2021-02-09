@@ -56,7 +56,7 @@ log(...obj); // Uncaught TypeError: obj is not iterable
 
 ### apply() 대체
 
-원래 배열의 요소를 함수의 인자로 활용하려면 `Function.prototype.apply()`로 사용했는데:
+원래 배열의 요소를 함수의 인자로 활용하려면 `Function.prototype.apply()`를 써야 했다:
 
 ```js
 function fn(a, b, c) {
@@ -72,7 +72,7 @@ var arr = [10, 30, 5];
 Math.min.apply(Math, arr); // 5
 ```
 
-이제는 전개 구문을 써서:
+이제는 전개 구문으로:
 
 ```js
 fn(...[3, 2, 1]); // 321
@@ -81,7 +81,7 @@ var arr = [10, 30, 5];
 Math.min(...arr); // 5
 ```
 
-이렇게 간단하게 작성할 수 있다.
+이렇게 간단하게 작성한다.
 
 그리고 전개 구문은 인수 목록에서 여러번 허용된다:
 
