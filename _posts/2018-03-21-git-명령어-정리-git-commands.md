@@ -58,7 +58,7 @@ git add -i
 
 ## blame
 
-~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
+~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Git Documentation: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
 
 #### 파일 커밋 정보 줄 단위로 보기
 
@@ -269,7 +269,7 @@ git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아
 
 특정 커밋 하나만 현재 브랜치에 리베이스한다.
 
-[Git 프로젝트 운영하기](https://git-scm.com/book/ko/v2/%EB%B6%84%EC%82%B0-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-Git-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0#_rebase_cherry_pick)
+[Git Documentation: Rebase와 Cherry-Pick 워크플로](https://git-scm.com/book/ko/v2/%EB%B6%84%EC%82%B0-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-Git-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0#_rebase_cherry_pick)
 
 ```bash
 git cherry-pick 커밋명
@@ -696,7 +696,7 @@ git log --oneline --decorate --graph --all  # 현재 브랜치의 모든 커밋 
 git log --pretty=format:"%h %s" --graph
 ```
 
-[더 많은 옵션](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0)
+[Git Documentation: 더 많은 옵션](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0)
 
 #### 조회 범위 제한 옵션
 
@@ -901,8 +901,8 @@ git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 
 자세한 내용은 아래 링크를 참고:
 
-- [Git브랜치 Rebase하기](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0)
-- [Rebase의 위험성](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0#_rebase_peril)
+- [Git Documentation: Git브랜치 Rebase하기](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0)
+- [Git Documentation: Rebase의 위험성](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0#_rebase_peril)
 
 #### 대화형 리베이스 도구로 여러 커밋 수정
 
@@ -942,11 +942,11 @@ pick 7715f75fa (마지막 커밋 2회 전)
 # Note that empty commits are commented out
 ```
 
-[커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple)
+[Git Documentation: 커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple)
 
 #### rebase로 커밋 합치기
 
-[rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
+[누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
 
 ## reflog
 
