@@ -48,7 +48,7 @@ tags:
 
 ### Web Project Settings
 
-- Context root: 웹 프로젝트의 컨텍스트 루트 경로를 의미함. WST로 서버를 추가할 때 Context Path가 이 값으로 설정된다.
+- Context root: 웹 프로젝트의 컨텍스트 루트 경로를 의미함. WST로 서버를 추가할 때 Context Path가 이 값으로 설정된다. 만약 메이븐 프로젝트라면 **pom.xml의 build > finalName 속성이 우선**권을 가지므로 프로젝트 속성에서 직접 수정하지 않도록 한다.
 
 ## 빌드
 
