@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:36:55 +0900
-title: '[JavaScript] Document.cookie 쿠키 컨트롤'
+title: '[JavaScript] Document.cookie 자바스크립트 쿠키 컨트롤'
 categories:
   - javascript
 tags:
