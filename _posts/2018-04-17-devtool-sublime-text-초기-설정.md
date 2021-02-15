@@ -31,6 +31,8 @@ tags:
   "show_encoding": true,
   "show_line_endings": true,
   "tab_completion": false,
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
   "file_exclude_patterns": ["*.sublime-workspace"]
 }
 ```

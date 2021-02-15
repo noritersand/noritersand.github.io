@@ -40,9 +40,15 @@ tags:
 - ShortCuts
 - 단축키는 뭐랑 관계 있어?
 
+## Preferences
+
+### General
+
+- `Keep next/previous editor, view and perspectives dialog open`: 체크를 헤재하면 에디터, 뷰, perspective 전환 단축키를 때자마자 바로 전환한다.
+
 ## Project Properties
 
-### Project Referecnes
+### Project References
 
 - TODO: 이거 뭐... 다른 프로젝트를 컴파일 타임과 WST 서버 띄울때만 참조하는 거였던가...
 
