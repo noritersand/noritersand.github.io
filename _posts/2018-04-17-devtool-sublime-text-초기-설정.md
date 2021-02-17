@@ -52,7 +52,7 @@ tags:
 ]
 ```
 
-## 추천 패키지
+## 추천 패키지(플러그인)
 
 - [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동할 수 있다.
 
@@ -62,7 +62,7 @@ tags:
 
 - [Sublimerge](http://www.sublimerge.com/): diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
 
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임 텍스트가 기본 지원하지 않는 인코딩으로 저장된 파일을 저장하거나 수정할 수 있게 한다. (가령 EUC-KR 같은)
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
 
 - [WinMerge](https://packagecontrol.io/packages/WinMerge): 서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
 

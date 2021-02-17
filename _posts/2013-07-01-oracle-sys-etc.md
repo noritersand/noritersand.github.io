@@ -217,3 +217,40 @@ GRANT CREATE SESSION, CREATE TABLE, CREATE SEQUENCE, CREATE VIEW TO 유저명;
 GRANT [role1] [,role2] [,role3] [,...] TO [user_name];
 GRANT connect, resource, dba TO kh301402;
 ```
+
+### 권한 확인
+
+```sql
+-- 유저 조회
+SELECT * FROM DBA_USERS ORDER BY USERNAME;
+
+-- ROLE 조회
+SELECT * FROM DBA_ROLES ORDER BY ROLE;
+
+-- 유저나 ROLE에 부여된 ROLE 조회. 이상하지만 ROLE에도 ROLE을 할당할 수 있다.
+SELECT * FROM DBA_ROLE_PRIVS
+WHERE GRANTEE='NORITERSAND'
+ORDER BY GRANTED_ROLE;
+
+-- 유저나 ROLE에 부여된 시스템 권한(privileges) 조회
+SELECT * FROM DBA_SYS_PRIVS
+WHERE GRANTEE = 'SYSTEM'
+ORDER BY GRANTEE, PRIVILEGE;
+
+-- 유저나 ROLE에 부여된 객체 권한 확인
+SELECT * FROM DBA_TAB_PRIVS
+WHERE GRANTEE='SYSTEM'
+ORDER BY GRANTEE;
+```
+
+아래는 현재 접속한 유저의 권한을 조회하는 데이터 사전들이다.  
+코멘트 출처: http://www.gurubee.net/lecture/1009
+
+```sql
+SELECT * FROM USER_TAB_PRIVS; -- 객체권한의 소유자, 객체권한 부여자, 객체권한 피부여자를 볼수 있음
+SELECT * FROM USER_TAB_PRIVS_MADE; -- 사용자가 부여한 모든 객체권한
+SELECT * FROM USER_TAB_PRIVS_RECD; -- 사용자가 부여받은 모든 객체권한
+SELECT * FROM USER_COL_PRIVS; -- 객체권한의 소유자, 객체권한 부여자, 객체권한 피부여자의 컬럼의 객체권한
+SELECT * FROM USER_COL_PRIVS_MADE; -- 사용자가 부여한 객체 컬럼에 대한 모든 객체권한
+SELECT * FROM USER_COL_PRIVS_RECD; -- 사용자가 부여받은 객체 컬럼에 대한 모든 객체권한
+```
