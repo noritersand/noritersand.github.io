@@ -25,7 +25,7 @@ tags:
 - 헤드<sup>HEAD</sup>: 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임.
 - 깃 디렉터리<sup>git directory</sup>: git 사용에 필요한 모든 정보가 있는 로컬 저장소.
 - 델타<sup>delta</sup>: 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
-- 리모트 트래킹 브랜치<sup>Remote-tracking branches</sup>: 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
+- 리모트 트래킹 브랜치<sup>remote-tracking branches</sup>: 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
 
 ![](/images/git-local-operations.png)
 
