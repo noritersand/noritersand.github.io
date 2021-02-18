@@ -19,10 +19,6 @@ tags:
 - [kramdown: Quick Reference](https://kramdown.gettalong.org/quickref.html)
 - [kramdown: Syntax](https://kramdown.gettalong.org/syntax.html)
 
-# H1을 문단 제목으로 쓰면
-
-이렇게 된다.
-
 ## 줄 바꾸기 🤣
 
 엔터 두 번은
@@ -221,5 +217,10 @@ _이탤릭_
 - `<rb>`: Ruby Bottom의 약자. 아래쪽에 들어갈 글자를 지정.
 - `<rp>`: Ruby Parentheses의 약자. 브라우저가 루비를 지원하지 않을 경우 표시할 괄호를 지정.
 - `<rt>`: Ruby Top의 약자. 위쪽에 들어갈 글자를 지정.
+
+# H1을 문단 제목으로 쓰면
+
+이렇게 된다.
+
 
 [^1]: 룰루랄라
