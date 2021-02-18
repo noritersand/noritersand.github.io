@@ -24,6 +24,8 @@ tags:
 - 스테이징 에어리어<sup>staging area</sup>: 인덱스라고도 부른다.
 - 헤드<sup>HEAD</sup>: 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임.
 - 깃 디렉터리<sup>git directory</sup>: git 사용에 필요한 모든 정보가 있는 로컬 저장소.
+- 델타<sup>delta</sup>: 변경사항 혹은 변경내역. 이전 버전과 다음 버전의 차이.
+- 리모트 트래킹 브랜치<sup>Remote-tracking branches</sup>: 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
 
 ![](/images/git-local-operations.png)
 
@@ -910,7 +912,7 @@ git push --tags  # 생성한 태그를 모두 업로드
 git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 ```
 
-위의 경우 현재 브랜치(HEAD)의 델타(변경사항)를 패치<sup>patch</sup>로 만들어놓고, 현재 브랜치를 master의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다.
+위의 경우 현재 브랜치(HEAD)의 델타를 패치<sup>patch</sup>로 만들어놓고, 현재 브랜치를 master의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다.
 
 자세한 내용은 아래 링크를 참고:
 
