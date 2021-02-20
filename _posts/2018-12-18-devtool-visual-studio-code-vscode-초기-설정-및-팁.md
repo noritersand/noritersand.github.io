@@ -77,7 +77,7 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
 
 ## 작성자 저장용 단축키 설정
 
-Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. 그리고 열리는 keybindings.json을 아래처럼 변경:
+Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하면 keybindings.json이 열리는데, 내용을 아래처럼 변경한다:
 
 ```json
 [
@@ -114,6 +114,32 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력. �
   {
     "key": "ctrl+j",
     "command": "editor.action.joinLines"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "-cursorDownSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "-cursorUpSelect",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+shift+down",
+    "command": "gotoNextPreviousMember.nextMember"
+  },
+  {
+    "key": "ctrl+down",
+    "command": "-gotoNextPreviousMember.nextMember"
+  },
+  {
+    "key": "ctrl+shift+up",
+    "command": "gotoNextPreviousMember.previousMember"
+  },
+  {
+    "key": "ctrl+up",
+    "command": "-gotoNextPreviousMember.previousMember"
   }
 ]
 ```
