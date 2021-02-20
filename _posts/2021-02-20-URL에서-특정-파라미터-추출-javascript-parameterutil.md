@@ -20,7 +20,7 @@ URL의 쿼리스트링에서 특정 파라미터를 추출하는 스크립트.
 ```js
 let parameterUtil = {
   /**
-   * url에서 name을 추출해 반환.
+   * URL의 쿼리스트링에서 name을 추출해 반환.
    *
    * @param {string} name url에서 추출할 파라미터의 이름
    * @param {string} url 생략하면 현재 페이지의 주소를 사용함
