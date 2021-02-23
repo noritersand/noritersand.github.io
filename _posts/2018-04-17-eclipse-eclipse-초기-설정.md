@@ -46,7 +46,7 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
 - Open Type Hierarchy: <kbd>unbined</kbd>
 - Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
-- Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
+- Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows 혹은 Debugging Java) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
 - Compare with HEAD Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
 - Compare with Previous Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
 - Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
