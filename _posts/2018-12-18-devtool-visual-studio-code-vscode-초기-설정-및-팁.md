@@ -44,7 +44,7 @@ ${activeEditorLong}${separator}${rootName}
 ### 들여쓰기 설정 변경
 
 Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
-이 후 `Insert Spaces`나 `Tab Size`는 취향껏...
+이후 `Insert Spaces`나 `Tab Size`는 취향껏...
 
 ### 파일 제외하기
 
