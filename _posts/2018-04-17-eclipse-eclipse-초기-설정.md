@@ -62,6 +62,9 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Previous View: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
 - Next Perspective: <kbd>ctrl + 8</kbd>(In Windows, Window)
 - Previous Perspective: <kbd>ctrl + shift + 8</kbd>(In Windows, Window)
+- Push to Upstream: <kbd>ctrl + shift + p</kbd>(In Dialogs and Windows, Git)
+- Pull: <kbd>ctrl + shift + l</kbd>(In Dialogs and Windows, Git)
+- Fetch from Upstream: <kbd>ctrl + shift + f</kbd>(In Dialogs and Windows, Git)
 
 Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective` > `Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
 
