@@ -512,7 +512,7 @@ git config --global http.sslbackend schannel
 
 [깃이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
 
-작성자 참고용 설정:
+그런데 깃 최초 설치 후 확인해보면 이렇게 나옴 🤔:
 
 ```bash
 $ git config -l | grep ssl
