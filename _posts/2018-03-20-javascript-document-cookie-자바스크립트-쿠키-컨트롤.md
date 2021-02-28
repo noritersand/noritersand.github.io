@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 16:36:55 +0900
-title: '[JavaScript] Document.cookie 자바스크립트 쿠키 컨트롤'
+title: '[JavaScript] document.cookie 자바스크립트 쿠키 컨트롤'
 categories:
   - javascript
 tags:
@@ -17,16 +17,17 @@ tags:
 #### 참고한 문서
 
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+- [MDN: Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+- [모던 JavaScript 튜토리얼: 쿠키와 document.cookie](https://ko.javascript.info/cookie)
 
 ## document.cookie
 
 ```js
-document.cookie = "cookiename=value;"
-document.cookie = "cookiename=value; path=/;"
-document.cookie = "cookiename=value; path=/; expires=" + new Date()  // 생성과 동시에 만료된다. 즉 삭제
-document.cookie = "cookiename=value; path=/; expires=0; domain=.tistory.com"
-document.cookie = "cookiename=value; secure"  // HTTPS 전송만 가능
+document.cookie = "cookiename=value; samesite=lax"
+document.cookie = "cookiename=value; samesite=lax; path=/;"
+document.cookie = "cookiename=value; samesite=lax; path=/; expires=" + new Date()  // 생성과 동시에 만료된다. 즉 삭제
+document.cookie = "cookiename=value; samesite=lax; path=/; expires=0; domain=.tistory.com"
+document.cookie = "cookiename=value; samesite=lax; secure"  // HTTPS 전송만 가능
 ```
 
 #### options
@@ -35,16 +36,16 @@ document.cookie = "cookiename=value; secure"  // HTTPS 전송만 가능
 - `;max-age`: `;expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
 - `;domain`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
 - `;path`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
-- `;secure`: SSL 통신에서만 사용가능한 쿠키가 생성된다. HTTP 문서에서는 접근할 수 없다. 이 옵션을 활성화하지 않는한 HTTP/HTTPS 어느쪽에서 생성한 쿠키든 서로 공유한다.
-- `;samesite`: CSRF<sup>사이트간 요청 위조</sup>를 방지하기 위한 옵션. `lax`혹은 `strict`로 설정한다.
-    > The `strict` value will prevent the cookie from being sent by the browser to the target site in all cross-site browsing context, even when following a regular link.
-    > The `lax` value will only send cookies for TOP LEVEL navigation GET requests. This is sufficient for user tracking, but it will prevent many CSRF attacks.
+- `;secure`: SSL 통신에서만 사용가능한 쿠키가 생성된다. 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 공유한다.
+- `;samesite`: CSRF<sup>사이트간 요청 위조</sup>를 방지하기 위한 옵션. `lax` 혹은 `strict`로 설정한다. 명시하지 않거나 `none`으로 설정하면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
+  > The `strict` value will prevent the cookie from being sent by the browser to the target site in all cross-site browsing context, even when following a regular link.  
+  > The `lax` value will only send cookies for TOP LEVEL navigation GET requests. This is sufficient for user tracking, but it will prevent many CSRF attacks.
 
-이 외에 원래 쿠키에는 `HttpOnly`라는 http 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
+이 외에 `HttpOnly`라는 HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
 
 ## 주의사항
 
-쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다.
+쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다:  
 http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value
 
 ## examples \#1
@@ -107,7 +108,6 @@ function checkCookie() {
 |*|  * docCookies.keys()
 |*|
 \*/
-
 var docCookies = {
   getItem: function(sKey) {
     if (!sKey) {
@@ -117,7 +117,8 @@ var docCookies = {
             + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&")
             + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   },
-  setItem: function(sKey, sValue, vEnd, sPath, sDomain, bSecure) {
+  setItem: function(sKey, sValue, sSamesite, vEnd, sPath, sDomain, bSecure) {
+    if (!/^lax$|^strict$/.test(sSamesite = sSamesite.toLowerCase())) { return false; }
     if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
     var sExpires = "";
     if (vEnd) {
@@ -136,6 +137,7 @@ var docCookies = {
       }
     }
     document.cookie = encodeURIComponent(sKey) + "=" + encodeURIComponent(sValue)
+            + "; samesite=" + sSamesite
             + sExpires + (sDomain ? "; domain=" + sDomain : "")
             + (sPath ? "; path=" + sPath : "")
             + (bSecure ? "; secure" : "");

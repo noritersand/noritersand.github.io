@@ -17,6 +17,13 @@ tags:
 
 ## misc
 
+### 특정 문자열 중에 하나와 완전히 일치하는지 검사
+
+```js
+// 'lax' 혹은 'strict'인지
+/^lax$|^strict$/
+```
+
 ### 공백 줄(empty line)
 
 ```js
