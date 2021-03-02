@@ -48,25 +48,24 @@ tags:
 
 ```yml
 '.platform-win32, .platform-win32 .command-palette atom-text-editor':
-  'ctrl-shift-P': 'command-palette:toggle'
-  'f1': 'command-palette:toggle'
+  'f1': 'command-palette:toggle' # f1으로도 명령창 열기
 
 'atom-workspace':
-  'ctrl-i': 'nothing'
-  'ctrl-alt-i': 'nothing'
-  'alt--': 'goto-last-edit:back'
-  'alt-shift--': 'goto-last-edit:forward'
+  'ctrl-i': 'nothing' # goto-last-edit 패키지 키 변경
+  'ctrl-alt-i': 'nothing' # goto-last-edit 패키지 키 변경
+  'alt--': 'goto-last-edit:back' # goto-last-edit 패키지 키 변경. 서브라임하고 맞춤
+  'alt-shift--': 'goto-last-edit:forward' # goto-last-edit 패키지 키 변경. 서브라임하고 맞춤
 
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-shift-k': 'editor:duplicate-lines'
 
 'atom-text-editor:not([mini])':
-  'ctrl-shift-d': 'editor:delete-line'
-  'ctrl-shift-up': 'editor:move-line-up'
-  'ctrl-shift-down': 'editor:move-line-down'
+  'ctrl-shift-d': 'editor:delete-line' # 라인 삭제
+  'ctrl-shift-up': 'editor:move-line-up' # 현재 라인 위로 이동
+  'ctrl-shift-down': 'editor:move-line-down' # 현재 라인 아래로 이동
   'f5': 'nothing'
-  'f9': 'sort-lines:case-insensitive-sort'
-  'ctrl-f9': 'sort-lines:sort'
+  'f9': 'sort-lines:case-insensitive-sort' # sort-lines 패키지 키 변경. f9로 대소문자 구분 없이 정렬
+  'ctrl-f9': 'sort-lines:sort' # sort-lines 패키지 키 변경. 대소문자 구분하는 정렬
 
 'atom-text-editor':
   # 'ctrl-up': 'keyboard-scroll:scrollUp'
@@ -75,7 +74,11 @@ tags:
   'ctrl-down': 'nothing'
   'alt-up': 'nothing'
   'alt-down': 'nothing'
-  'alt-shift-i': 'editor:split-selections-into-lines'
+  'ctrl-shift-l': 'editor:split-selections-into-lines' # 여러 라인을 선택한 상태에서 각 라인에 커서 생성. 서브라임하고 맞춤
+
+'body':
+  'ctrl-shift-pageup': 'pane:move-item-left' # 활성화된 탭을 좌우로 이동
+  'ctrl-shift-pagedown': 'pane:move-item-right' # 활성화된 탭을 좌우로 이동
 ```
 
 ## 추천 패키지(플러그인)
