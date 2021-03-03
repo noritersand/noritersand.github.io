@@ -40,6 +40,19 @@ dir | find "Videos" # "Videos"를 포함하는 라인만 출력
 netstat -nao | findstr '8081'
 ```
 
+## copy
+
+파일 복사
+
+```bash
+copy 원본_파일 복사될_파일
+```
+
+```bash
+c:\dev\code-workspace>copy main.code-workspace main2.code-workspace
+        1개 파일이 복사되었습니다.
+```
+
 ## xcopy
 
 파일과 폴더 트리를 복사하는 명령어.
