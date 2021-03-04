@@ -15,22 +15,12 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-```html
-<script>
-  window.onload = function() {
-    setInterval(function() {
-      var target = document.getElementsByName("dt_now")[0];
-      target.value = new Date();
-    }, 1000);
-  }
-</script>
+코드 출처:
 
-<input type="text" size="32" name="dt_now" value="00" />
-```
+- [https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/)
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
 
-이건 완전 신입 때 만든거고 😂
-
-다음날 00시까지 남은 시간을 구하는 스크립트:
+다음날 00시까지 남은 시간을 초 단위로 구하는 스크립트:
 
 ```js
 // String.prototype.padStart() 폴리필 스크립트(IE는 padStart()가 없음)
