@@ -183,6 +183,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경
 - <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts. 단축키 목록 열기
 - <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
+- <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 
 ---
 
