@@ -7,7 +7,7 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - document
+  - document-object-model
   - html
 ---
 
