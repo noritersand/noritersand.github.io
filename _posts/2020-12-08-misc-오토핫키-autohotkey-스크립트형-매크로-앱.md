@@ -315,7 +315,7 @@ return
 
 ### 빠른 연타 rapid fire
 
-마우스 좌클릭
+마우스 좌클릭:
 
 ```c
 SetMouseDelay 30
@@ -326,12 +326,12 @@ while GetKeyState("LButton", "P") {
 return
 ```
 
-키보드 <kbd>d</kbd>
+<kbd>ctrl + g</kbd> 누르고 있으면 g 반복 입력:
 
 ```c
-<^h::
-While (GetKeyState("h", "P") && GetKeyState("LCtrl", "P")) {
-  SendInput h
+<^g::
+While (GetKeyState("g", "P") && GetKeyState("LCtrl", "P")) {
+  SendInput g
   Sleep 10
 }
 return
