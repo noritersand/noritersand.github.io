@@ -118,7 +118,7 @@ var docCookies = {
             + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   },
   setItem: function(sKey, sValue, sSamesite, vEnd, sPath, sDomain, bSecure) {
-    if (!/^lax$|^strict$/.test(sSamesite = sSamesite.toLowerCase())) { return false; }
+    if (!sSamesite || !/^lax$|^strict$/.test(sSamesite = sSamesite.toLowerCase())) { return false; }
     if (!sKey || /^(?:expires|max\-age|path|domain|secure)$/i.test(sKey)) { return false; }
     var sExpires = "";
     if (vEnd) {

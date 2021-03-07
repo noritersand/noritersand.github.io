@@ -196,6 +196,26 @@ npm init 으로 자동생성되는 요소들
 }
 ```
 
+### 설치한 모듈 실행
+
+[npm Docs: npm-exec](https://docs.npmjs.com/cli/v7/commands/npm-exec)
+
+```bash
+# 로컬에 설치한 mocha 모듈 실행
+npm exec 모듈명
+```
+
+모듈을 전역으로 설치한게 아니라면 이 명령어로 실행해야함.
+
+예시:
+
+```bash
+npm exec mocha test/**
+npm exec http-server -p 9090
+```
+
+`npm exec`와 비슷한 기능으로 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
+
 ### 모듈을 폴더단위로 관리하기
 
 package.json을 조작하면 한 폴더에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다.

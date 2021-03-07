@@ -43,8 +43,11 @@ ${activeEditorLong}${separator}${rootName}
 
 ### 들여쓰기 설정 변경
 
-Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후 `Detect Indentation`은 체크 해제.  
-이후 `Insert Spaces`나 `Tab Size`는 취향껏...
+Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후:
+
+- `Detect Indentation`은 체크 해제
+- `Insert Spaces`나 `Tab Size`는 취향껏...
+- `Editor: Auto Indent`는... 뭘로 바꾸긴 해야 하는데 일단 `Full`은 아님
 
 ### 파일 제외하기
 
