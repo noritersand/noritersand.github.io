@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[Windows] 윈도우10 초기 설정 및 팁'
+title: '[Windows] 윈도우10 초기 설정 및 팁 Windows10 Tips'
 categories:
   - windows
 tags:
