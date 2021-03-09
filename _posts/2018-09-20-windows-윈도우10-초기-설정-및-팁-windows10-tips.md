@@ -465,6 +465,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>alt + up arrow</kbd>: 위로
 - <kbd>ctrl + mousewheel</kbd>: 보기변경
 - <kbd>ctrl + shift + n</kbd>: 새폴더
+- (탐색기 열자 마자) <kbd>spacebar</kbd>: 단축키라기보단 팁인데, 탐색기에서 파일 선택모드로 바로 진입할 수 있음.
 
 ### 스티커메모
 

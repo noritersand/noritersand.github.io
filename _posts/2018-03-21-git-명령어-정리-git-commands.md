@@ -604,6 +604,14 @@ git diff hugo  master ./README.md
 git diff hugo..master ./README.md
 ```
 
+#### 커밋끼리 비교
+
+```bash
+git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md
+```
+
+과거의 커밋을 좌측에 놓는 게 좋다. 왜인지는 써보면 앎.
+
 ## fetch
 
 리모트 저장소의 데이터를 로컬 저장소로 다운로드한다. 서버의 데이터를 모두 가져오지만 로컬 브랜치로의 머지는 생략한다.
