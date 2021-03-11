@@ -520,6 +520,14 @@ http.sslbackend=openssl
 http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
 ```
 
+만약 저장소가 여러개이면서 SSL 문제가 해결이 안되면 다음처럼:
+
+```bash
+git config --global http.https://noritersand.github.io.sslverify false
+```
+
+특정 리모트 주소만 검증을 끄도록 하는 방법도 있다.
+
 ## diff
 
 #### unstaged와 staged의 비교
