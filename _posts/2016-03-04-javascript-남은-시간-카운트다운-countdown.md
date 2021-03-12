@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-04 10:13:36 +0900
-title: '[JavaScript] 남은 시간 카운트다운'
+title: '[JavaScript] 남은 시간 카운트다운 countdown'
 categories:
   - javascript
 tags:
