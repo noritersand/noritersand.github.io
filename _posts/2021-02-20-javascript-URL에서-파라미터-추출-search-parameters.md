@@ -1,14 +1,15 @@
 ---
 layout: post
 date: 2021-02-20 11:24:05 +0900
-title: '[JavaScript] URL에서 특정 파라미터 추출 parameterUtil'
+title: '[JavaScript] URL에서 파라미터 추출 Search Parameters'
 categories:
   - javascript
 tags:
   - ecmascript
   - javascript
   - parameter
-  - parameter-util
+  - search
+  - query-string
   - code-snippet
 ---
 
@@ -57,3 +58,20 @@ console.log(client); // firefox-b-d
 var q = parameterUtil.getByName('q', url);
 console.log(q); // javascript replace
 ```
+
+다른 버전:
+
+```js
+function getUrlSearchParams() {
+  var params = {};
+  window.location.search.replace(
+    /[?&]+([^=&]+)=([^&]*)/gi,
+    function (str, key, value) { params[key] = value; }
+  );
+  return params;
+}
+
+getUrlSearchParams(); // {a: "1", b: "2"} (http://host/?a=1&b=2일 때)
+```
+
+사실 IE를 고려하지 않는다면 [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) 쓰면 됨. ~~하여간 IE~~
