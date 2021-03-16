@@ -29,7 +29,7 @@ tags:
 [Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)  
 [Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
 
-2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 쉘(CMD, 기본 파워쉘, 파워쉘 7.x, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
+2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 쉘(CMD, 파워쉘, 파워쉘 레거시, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
 
 [이 링크](https://www.microsoft.com/ko-kr/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)에서 설치하거나, 스토어에서 'Windows Terminal'을 검색하면 나온다.
 
