@@ -189,7 +189,7 @@ var supportStrictMode = (function() {
 console.debug(supportStrictMode);
 ```
 
-그리고 함수가 `call()`이나 `apply()`로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 표준 모드에선 첫 번째 인자가 원시 타입이면 `this`는 래퍼 객체가 된다.
+함수가 `call()`이나 `apply()`로 호출될 때 this의 값은 호출표현식의 첫 번째 인자값이다. 만약 첫 번째 인자가 원시 타입이면 표준 모드에선 래퍼 객체로 받아오지만, 엄격 모드에선 원시 타입 그대로 받아온다.
 
 ```js
 function standard(arg) {

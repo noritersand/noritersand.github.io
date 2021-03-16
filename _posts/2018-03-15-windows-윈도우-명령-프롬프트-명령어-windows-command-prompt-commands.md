@@ -77,6 +77,15 @@ netstat -nao
 netstat -nao | findstr '8081'
 ```
 
+## [nslookup](https://docs.microsoft.com/ko-kr/windows-server/administration/windows-commands/nslookup)
+
+DNS 인프라 진단용 명령어.
+
+```bash
+# noritersand.github.io 도메인에 대한 DNS 정보 조회
+nslookup noritersand.github.io
+```
+
 ## tasklist
 
 ```bash

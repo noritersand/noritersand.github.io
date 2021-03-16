@@ -492,13 +492,13 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `reque
 </c:set>
 ```
 
-### Syntax 3: 속성 값으로  target 객체의 프로퍼티 값을 정한다.
+### Syntax 3: 속성으로 target 객체의 프로퍼티 값을 정한다.
 
 ```html
 <c:set value="value" target="target" property="propertyName"/>
 ```
 
-### Syntax 4: body 값으로  target 객체의 프로퍼티 값을 정한다.
+### Syntax 4: body에서 target 객체의 프로퍼티 값을 정한다.
 
 ```html
 <c:set target="target" property="propertyName">
@@ -538,6 +538,18 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `reque
 ```
 
 `target` 속성은 jsp에서 객체 생성 후 사용하거나 기존 객체의 getter/setter를 이용하는 방식이다.
+
+### 컬렉션(리스트) 만들기
+
+```xml
+<!-- attr에서 선언 -->
+<c:set var="arr" value="A1,A2,A3,A4,A5,A6,B1,B2"/>
+
+<!-- body에서 선언 -->
+<c:set var="arr2">A1,A2,A3,A4,A5,A6,B1,B2</c:set>
+```
+
+**각 요소를 구분하는 쉼표 뒤에 빈 칸이 있으면 안된다**. 빈 칸을 포함한 문자열로 생성되기 때문.
 
 ## url
 

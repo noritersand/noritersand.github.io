@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-03-04 10:13:36 +0900
-title: '[JavaScript] 남은 시간 카운트다운'
+title: '[JavaScript] 남은 시간 카운트다운 countdown'
 categories:
   - javascript
 tags:
@@ -43,35 +43,32 @@ if (!String.prototype.padStart) {
 
 // ref: 기준 시간. 이 코드에선 다음날 00시
 var ref = new Date();
-ref.setDate(ref.getDate() + 1);
 ref.setHours(0);
 ref.setMinutes(0);
 ref.setSeconds(0);
 ref.setMilliseconds(0);
+ref.setDate(ref.getDate() + 1);
+// var ref = new Date('2021-03-13T00:00:00+09:00');
 
 setInterval(function() {
-  const total = ref.getTime() - new Date().getTime();
-  const seconds = Math.floor( (total/1000) % 60 );
-  const minutes = Math.floor( (total/1000/60) % 60 );
-  const hours = Math.floor( (total/(1000*60*60)) % 24 );
-  // const days = Math.floor( total/(1000*60*60*24) );
-
-  // return {
-  //   total, days, hours, minutes, seconds
-  // };
-
-  console.log(hours.toString().padStart(2, '0')
-      + ':' + minutes.toString().padStart(2, '0')
-      + ':' + seconds.toString().padStart(2, '0'));
+  const now = new Date().getTime();
+  const negative = ref.getTime() < now;
+  const total = ref.getTime() - now;
+  const seconds = negative ? '00' : Math.floor( (total/1000) % 60 ).toString().padStart(2, '0');
+  const minutes = negative ? '00' : Math.floor( (total/1000/60) % 60 ).toString().padStart(2, '0');
+  const hours = negative ? '00' : Math.floor( (total/(1000*60*60)) % 24 ).toString().padStart(2, '0');
+  const days = negative ? '0' : Math.floor( total/(1000*60*60*24) ).toString();
+  // console.log({ total, days, hours, minutes, seconds });
+  console.log(days + ' days, ' + hours + ':' + minutes + ':' + seconds);
 }, 1000);
 
 // 실행 결과:
-// 00:00:03
-// 00:00:02
-// 00:00:01
-// 00:00:00
-// 23:59:59
-// 23:59:58
-// 23:59:57
-// 23:59:56
+// 1 days, 00:00:03
+// 1 days, 00:00:02
+// 1 days, 00:00:01
+// 1 days, 00:00:00
+// 0 days, 23:59:59
+// 0 days, 23:59:58
+// 0 days, 23:59:57
+// 0 days, 23:59:56
 ```

@@ -143,6 +143,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "ctrl+up",
     "command": "-gotoNextPreviousMember.previousMember"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.openWorkspace"
   }
 ]
 ```
@@ -166,12 +170,13 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 ## 기본 단축키 메모
 
-- <kbd>ctrl + k, ctrl + s</kbd>: 키보드 단축키 설정창 열기
+### 자주 쓰는 기능
+
 - <kbd>ctrl + .</kbd>: Quick Fix...
-- <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. 마우스 커서를 올렸을 때 뜨는 툴팁 보기.
-- <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + k, ctrl + q<kbd>: Go to Last Edit Location
-- <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus. 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
+- <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
+- <kbd>f12</kbd>: Go To Definition. 선언부로 이동
+- <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)
 
 ### 멀티 커서
 
@@ -185,9 +190,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 - <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경
 - <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts. 단축키 목록 열기
-- <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
-
+- <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
+- <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus. 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
 ---
-
-- <kbd></kbd>:
