@@ -143,6 +143,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "ctrl+up",
     "command": "-gotoNextPreviousMember.previousMember"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.openWorkspace"
   }
 ]
 ```
