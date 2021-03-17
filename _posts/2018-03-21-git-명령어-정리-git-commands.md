@@ -1050,11 +1050,16 @@ git remote rename NAME_FROM NAME_TO
 git remote rm 리모트저장소이름
 ```
 
-#### 리모트 저장소에서 쓸모가 없어진 브랜치 제거하기
+#### 리모트 저장소에서 삭제된 브랜치를 로컬에서도 제거하기
 
 ```bash
+git prune
+git fetch --prune
 git remote prune 리모트저장소
 ```
+
+셋의 차이는 [여기](https://stackoverflow.com/questions/20106712/what-are-the-differences-between-git-remote-prune-git-prune-git-fetch-prune)를 참고.
+어쨋든 이 명령은 로컬을 정리하는 것이지, 리모트의 뭔가를 지우는게 아니니 안심하고 실행해도 된다.
 
 ## reset
 
