@@ -28,7 +28,7 @@ TODO
 const { log } = console;
 
 let a = new Date('2018-01-01T12:24:48Z');
-let b = new Date('2018-01-01 12:24:48');
+let b = new Date('2018-01-01 12:24:48'); // 얘는 IE, 사파리에서 문제 있음.
 let c = new Date('2016-02-05T09:00:00.000+09:00');
 let d = new Date('2011-12-30');
 let e = new Date('2011/12/30');
