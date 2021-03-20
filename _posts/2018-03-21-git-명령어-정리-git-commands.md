@@ -58,9 +58,11 @@ git add --all
 git add -i
 ```
 
-## blame
+## [blame](https://git-scm.com/docs/git-blame)
 
-~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며 디버깅 용도로 사용한다. [Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
+~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며, 주로 디버깅 용도로 사용한다. 비슷한 명령으로 `bisect`가 있다.
+
+[Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-Git%EC%9C%BC%EB%A1%9C-%EB%B2%84%EA%B7%B8-%EC%B0%BE%EA%B8%B0)
 
 #### 파일 커밋 정보 줄 단위로 보기
 
