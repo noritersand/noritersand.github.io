@@ -28,10 +28,10 @@ document.querySelector('TARGET_FRAME_SELECTOR').contentWindow.location.replace('
 
 ## 주요 메서드
 
-### replaceState
+### history.replaceState()
 
 ```
-replaceState(data, title, url)
+history.replaceState(data, title, url)
 ```
 
 - `data`:

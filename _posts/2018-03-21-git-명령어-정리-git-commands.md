@@ -158,16 +158,16 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 
 ## [checkout](https://git-scm.com/docs/git-checkout)
 
-#### 브랜치 이동
+#### 브랜치 전환
 
-헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 이동한다. 이동할 때 워킹 트리와 스테이징 에어리어가 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 이동한다.**
+헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 전환한다. 전환할 때 워킹 트리와 스테이징 에어리어가 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 전환한다.**
 
 ```bash
-# master 브랜치로 이동
+# master 브랜치로 전환
 git checkout master
 ```
 
-`checkout` 명령은 때에 따라 실패하기도 하는데, 대표적인 예로 현재 브랜치의 변경점을 커밋하지 않았으면서 이동하려는 브랜치와 충돌이 발생하는 경우다.
+`checkout` 명령은 때에 따라 실패하기도 하는데, 대표적인 예로 현재 브랜치의 변경점을 커밋하지 않았으면서 전환하려는 브랜치와 충돌이 발생하는 경우다.
 
 #### 브랜치를 새로 만들면서 체크아웃
 
@@ -227,7 +227,7 @@ git checkout HEAD .
 
 #### fetch 시점으로 헤드 이동
 
-`fetch`로 리모트 저장소의 데이터를 받아왔을때 'FETCH_HEAD'라는 포인터가 생성된다. 해당 포인터의 스냅샷을 확인 후 원하는 브랜치로 이동해 머지한다.
+`fetch`로 리모트 저장소의 데이터를 받아왔을때 'FETCH_HEAD'라는 포인터가 생성된다. 해당 포인터의 스냅샷을 확인 후 원하는 브랜치로 전환해 머지한다.
 
 ```bash
 git checkout FETCH_HEAD
@@ -475,6 +475,8 @@ git config --global alias.사용할키워드 '명령어'
 git config --global alias.ss 'status'
 git config --global alias.br 'branch'
 git config --global alias.ck 'checkout'
+git config --global alias.sw 'switch'
+git config --global alias.rs 'restore'
 git config --global alias.cp 'cherry-pick'
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.visual '!gitk'
@@ -1093,7 +1095,7 @@ git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테�
 
 ## [restore](https://git-scm.com/docs/git-restore)
 
-새로 추가된 워킹 트리를 되돌리는 명령어. new file은 되돌리지 않는다.
+2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 에어리어를 되돌린다. new file은 되돌리지 않는다.
 
 ```bash
 git restore . # 워킹 트리의 모든 파일을 되돌림
@@ -1269,6 +1271,18 @@ git stash branch issue541 stash@{1}  # 두 번째 스태시를 적용한 issue54
 ```bash
 git status
 ```
+
+## [switch](https://git-scm.com/docs/git-switch)
+
+2.23 버전에서 새로 나온 명령어. checkout의 브랜치 전환 기능을 분리한 명령어다.
+
+```bash
+git switch hotfix0401 # hotfix0401 브랜치로 전환
+```
+
+#### options
+
+- TODO
 
 ## svn
 
