@@ -654,6 +654,21 @@ gitk --all # 저장소의 모든 커밋 보기
 
 ![](/images/gitk.png)
 
+## [gc](https://git-scm.com/docs/git-gc)
+
+오래된 이력과 레퍼런스를 정리, 압축해서 저장소를 최적화하는 명령어
+
+```bash
+git gc --aggressive
+```
+
+- `--aggressive`: 더 많은 시간을 들여서 '공격적'으로 최적화하는 옵션이라고 함.
+- `--auto`
+- `--prune=<date>`: 지정한 날짜보다 오래된 객체 중 연결이 끊긴 객체를 정리한다. 날짜를 지정하지 않으면 2주가 기본값이며, `gc` 명령을 옵션없이 실행했을 때의 기본 옵션이다.
+- `--no-prune`
+- `--quiet`
+- `--force`
+- `--keep-largest-pack`
 
 ## help
 
@@ -1222,6 +1237,7 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 ```bash
 git stash  # 스태시 생성. stash save와 같음
 git stash save
+git stash save '스태시 이름'
 git stash -k  # staged 상태의 파일은 무시하고 스테시에 저장
 git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시로 저장
 ```
@@ -1278,11 +1294,28 @@ git status
 
 ```bash
 git switch hotfix0401 # hotfix0401 브랜치로 전환
+git sw -c release origin/release # origin/release를 추적하는 release 브랜치를 생성하며 전환
 ```
 
 #### options
 
-- TODO
+- `-c` `--create <new-branch>`
+- `-C` `--force-create <new-branch>`
+- `-d` `--detach`
+- `--guess` `--no-guess`
+- `-f` `--force`
+- `--discard-changes`
+- `-m` `--merge`
+- `--conflict=<style>``
+- `-q` `--quiet`
+- `--progress`
+- `--no-progress`
+- `-t` `--track`
+- `--no-track`
+- `--orphan <new-branch>``
+- `--ignore-other-worktrees`
+- `--recurse-submodules`
+- `--no-recurse-submodules`
 
 ## svn
 
