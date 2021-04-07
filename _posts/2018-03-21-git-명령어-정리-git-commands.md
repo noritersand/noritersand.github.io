@@ -550,6 +550,7 @@ git diff --staged
 #### 커밋끼리 비교
 
 ```bash
+git diff head~1 # 1회 전 커밋과 헤드의 변경사항 전체 비교
 git diff head~2..head # 2회 전 커밋과 헤드의 변경사항 전체 비교
 git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md # 두 커밋 간 비교하되 README.md 파일만
 ```
