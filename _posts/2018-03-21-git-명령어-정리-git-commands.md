@@ -550,12 +550,12 @@ git diff --staged
 #### 커밋끼리 비교
 
 ```bash
-git diff head~1 # 1회 전 커밋과 헤드의 변경사항 전체 비교
-git diff head~2..head # 2회 전 커밋과 헤드의 변경사항 전체 비교
+git diff head~1 # 마지막 커밋의 변경사항 출력. git diff head~1..head와 같다.
+git diff head~3..head~1 # 3회 전 커밋과 1회 전 커밋의 변경사항 전체 비교.
 git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md # 두 커밋 간 비교하되 README.md 파일만
 ```
 
-좌측 리비전을 기준으로 우측 리비전에서 어떤 내용이 바뀐건지 보여준다. 따라서 시간 순서 상 과거의 커밋을 좌측에 놓는게 좋다.
+좌측 리비전을 기준으로 우측 리비전에서 어떤 내용이 바뀐건지 보여준다. 따라서 시간 순서 상 과거의 커밋을 좌측에 놓는게 좋다. `..`은 공백으로 대체할 수 있다.
 
 #### diff 도구 실행
 
