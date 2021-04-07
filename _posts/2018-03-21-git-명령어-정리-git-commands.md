@@ -666,6 +666,7 @@ gitk --all # 저장소의 모든 커밋 보기
 
 ```bash
 git gc --aggressive
+git gc --prune=now
 ```
 
 - `--aggressive`: 더 많은 시간을 들여서 '공격적'으로 최적화하는 옵션이라고 함.
