@@ -538,10 +538,52 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 ```bash
 git diff
+```
+
+#### staged와 commited의 비교
+
+```bash
+git diff --cached
+git diff --staged
+```
+
+#### 커밋끼리 비교
+
+```bash
+git diff head..head~2 # 헤드와 2회 전 커밋의 변경점 전체 비교
+git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md # 두 커밋 간 비교하되 README.md 파일만
+```
+
+좌측 리비전을 기준으로 우측 리비전에서 무엇이 바뀐건지 보여준다. 따라서 시간 순서 상 과거의 커밋을 좌측에 놓는게 좋다.
+
+#### diff 도구 실행
+
+```bash
+git difftool
+```
+
+`diff.tool`로 지정한 도구를 실행한다.
+
+#### 특정 파일의 브랜치간 비교
+
+```bash
+# 'hugo' 브랜치와 현재 브랜치의 README.md 파일을 비교
+git diff hugo ./README.md
+
+# 'hugo' 브랜치와 'master' 브랜치의 README.md 파일을 비교
+git diff hugo  master ./README.md
+
+# 위와 같음
+git diff hugo..master ./README.md
+```
+
+#### 충돌 문자나 공백 에러 확인
+
+```bash
 git diff --check  # 충돌 문자가 있거나 공백 에러가 있는지 확인
 ```
 
-주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 해당 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
+`--check` 옵션의 주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 해당 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
 
 ```bash
 user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4)
@@ -587,42 +629,6 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
-
-#### diff 도구 실행
-
-```bash
-git difftool
-```
-
-`diff.tool`로 지정한 도구를 실행한다.
-
-#### staged와 commited의 비교
-
-```bash
-git diff --cached
-git diff --staged
-```
-
-#### 특정 파일의 브랜치간 비교
-
-```bash
-# 'hugo' 브랜치와 현재 브랜치의 README.md 파일을 비교
-git diff hugo ./README.md
-
-# 'hugo' 브랜치와 'master' 브랜치의 README.md 파일을 비교
-git diff hugo  master ./README.md
-
-# 위와 같음
-git diff hugo..master ./README.md
-```
-
-#### 커밋끼리 비교
-
-```bash
-git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md
-```
-
-과거의 커밋을 좌측에 놓는 게 좋다. 왜인지는 써보면 앎.
 
 ## fetch
 
@@ -1104,7 +1110,7 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 - `--hard`: 헤드와 스테이징 에어리어, 워킹 트리를 모두 특정 커밋으로 변경한다.
 
 ```bash
-git reset --soft HEAD~2  # 헤드만 2회 이전 커밋으로 이동
+git reset --soft HEAD~2  # 헤드만 2회 전 커밋으로 이동
 git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 헤드와 동일하게 변경
 ```
 
