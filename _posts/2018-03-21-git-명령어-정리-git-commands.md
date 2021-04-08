@@ -631,9 +631,9 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
 
-## fetch
+## [fetch](https://git-scm.com/docs/git-fetch)
 
-리모트 저장소의 데이터를 로컬 저장소로 다운로드한다. 서버의 데이터를 모두 가져오지만 로컬 브랜치로의 머지는 생략한다.
+리모트 저장소의 데이터를 로컬 저장소로 다운로드한다. 옵션 지정이 없을 경우, 서버의 데이터를 모두 가져오지만 로컬 브랜치로의 머지는 생략한다.
 
 ```bash
 git fetch  # origin 저장소에서 모든 브랜치의 데이터 다운로드
@@ -648,6 +648,17 @@ git fetch --all  # 모든 리모트 저장소에서 fetch
 ```bash
 git fetch --tags
 ```
+
+#### 브랜치 전환 없이 merge
+
+Fast-forward 머지에 한해 가능한 방법이다.
+
+```bash
+git fetch . foo:master # 로컬 브랜치 foo를 로컬 브랜치 master로 머지
+git fetch origin foo:foo # 원격 브랜치 foo를 로컬 브랜치 foo로 머지
+```
+
+`:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`, 원격 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
 
 ## gitk
 
