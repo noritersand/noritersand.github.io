@@ -893,7 +893,7 @@ git pull origin master
 
 브랜치를 명시하지 않으면 (가능한 경우) 현재 브랜치만 자동 머지한다. 리모트의 저장소명과 브랜치명 생략은 업스트림 브랜치가 설정되어 있을 경우에만 가능하다.
 
-## push
+## [push](https://git-scm.com/docs/git-push)
 
 로컬 저장소의 데이터를 리모트 저장소에 업로드한다.
 
@@ -913,11 +913,17 @@ Branch master set up to track remote branch master from origin.
 Everything up-to-date
 ```
 
-#### 로컬 브랜치와 리모트 저장소의 브랜치 이름이 다를때 (혹은 리모트 저장소에 다른 브랜치를 생성할 때)
+#### 브랜치 전환 없이 push
+
+```
+git push 리모트저장소 로컬브랜치:서버브랜치
+```
+
+`push` 하려는 브랜치로 전환하기 귀찮거나, 로컬 브랜치의 이름과 리모트 브랜치의 이름이 다를 때 사용한다:
 
 ```bash
-git push 리모트저장소 로컬브랜치:서버브랜치
-git push origin serverfix:awesome  # 현재 로컬 브랜치가 serverfix 일때 리모트 브랜치 awesome을 생성하고 푸시
+git push origin feature:feature # 로컬 feature를 리모트 feature로 push
+git push origin serverfix:awesome  # 현재 로컬 브랜치가 serverfix 일때 리모트 브랜치 awesome을 생성하고 push
 ```
 
 #### 신규 로컬 저장소를 생성하고 리모트에 업로드
