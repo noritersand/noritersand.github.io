@@ -74,6 +74,22 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 나머지 설명은 [도움말](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)을 보자.
 
+### 시작 위치 변경
+
+터미널의 시작 위치를 변경하려면, 터미널 설정에서:
+
+```js
+{
+  "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "hidden": false,
+  "name": "PowerShell",
+  "source": "Windows.Terminal.PowershellCore",
+  "startingDirectory": "C:/dev/git"
+}
+```
+
+이런식으로 `startingDirectory`를 추가하면 된다.
+
 ## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)  
 
 WSL은 가상 머신 등의 설정 없이 윈도우 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
