@@ -22,7 +22,7 @@ tags:
 
 - 워킹 트리<sup>working tree</sup>: 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
 - 스테이징 에어리어<sup>staging area</sup>: 인덱스라고도 부른다.
-- 헤드<sup>HEAD</sup>: 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임.
+- 헤드<sup>HEAD</sup>: 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 가령 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
 - 깃 디렉터리<sup>git directory</sup>: git 사용에 필요한 모든 정보가 있는 로컬 저장소.
 - 델타<sup>delta</sup>: 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
 - 리모트 트래킹 브랜치<sup>remote-tracking branches</sup>: 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
@@ -550,7 +550,7 @@ git diff --staged
 #### 커밋끼리 비교
 
 ```bash
-git diff head~1 # 마지막 커밋의 변경사항 출력. git diff head~1..head와 같다.
+git diff head~1 # HEAD의 변경사항 출력. git diff HEAD~1..HEAD와 같다.
 git diff head~3..head~1 # 3회 전 커밋과 1회 전 커밋의 변경사항 전체 비교.
 git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md # 두 커밋 간 비교하되 README.md 파일만
 ```
@@ -982,13 +982,13 @@ git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 #### 대화형 리베이스 도구로 여러 커밋 수정
 
 ```bash
-git rebase -i HEAD~3  # 헤드부터 HEAD~3까지의 커밋을 대화형으로 수정
+git rebase -i HEAD~3  # 헤드부터 3회 전 커밋 직전까지의 커밋을 대화형으로 수정
 ```
 
 ```bash
-pick d27530d6b (마지막 커밋)
-pick e770ff0be (마지막 커밋 1회 전)
-pick 7715f75fa (마지막 커밋 2회 전)
+pick d27530d6b (HEAD 기준 2회 전)
+pick e770ff0be (HEAD 기준 1회 전)
+pick 7715f75fa (HEAD)
 
 # Rebase 02c62e3c3..7715f75fa onto 02c62e3c3 (3 commands)
 #
@@ -1183,8 +1183,10 @@ git revert HEAD  # 직전 커밋의 revert 커밋 생성
 git revert HEAD~1  # 1회 전 커밋의 리버트 커밋 생성
 git revert HEAD~3  # 3회 전 커밋의 리버트 커밋 생성
 git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  # 3bd505 커밋의 리버트 커밋 생성
-git revert HEAD~4..HEAD  # 직전 커밋부터 3회전 커밋까지의 변경사항을 되돌린 커밋 생성
+git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경사항을 되돌린 커밋 생성
 ```
+
+`HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD4`까지만 쓰면 4회전 커밋이다. 🤔
 
 #### options
 
