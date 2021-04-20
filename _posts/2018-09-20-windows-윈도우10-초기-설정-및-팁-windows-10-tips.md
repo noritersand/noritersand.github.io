@@ -37,6 +37,22 @@ tags:
 
 ~~이거 쓰고 있으면 좀 해커 같아 보임~~
 
+### 시작 위치 변경
+
+터미널의 시작 위치를 변경하려면, 터미널 설정에서:
+
+```js
+{
+  "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+  "hidden": false,
+  "name": "PowerShell",
+  "source": "Windows.Terminal.PowershellCore",
+  "startingDirectory": "C:/dev/git"
+}
+```
+
+이런식으로 `startingDirectory`를 추가하면 된다.
+
 ## [OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
 
 putty는 안녕. 터미널은 이제 파워쉘로 접속한다.
@@ -73,22 +89,6 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
 나머지 설명은 [도움말](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)을 보자.
-
-### 시작 위치 변경
-
-터미널의 시작 위치를 변경하려면, 터미널 설정에서:
-
-```js
-{
-  "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-  "hidden": false,
-  "name": "PowerShell",
-  "source": "Windows.Terminal.PowershellCore",
-  "startingDirectory": "C:/dev/git"
-}
-```
-
-이런식으로 `startingDirectory`를 추가하면 된다.
 
 ## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)  
 
