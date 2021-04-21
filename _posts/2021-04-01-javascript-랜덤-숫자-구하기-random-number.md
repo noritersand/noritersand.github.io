@@ -30,7 +30,7 @@ function fn(){
  *
  * @param {number} range 무작위 굴림의 범위
  * @param {number} minimum 굴림의 최소값
- * @returns
+ * @returns number
  */
 function getRandomNumber(range, minimum) {
   return Math.floor(Math.random() * range + minimum);

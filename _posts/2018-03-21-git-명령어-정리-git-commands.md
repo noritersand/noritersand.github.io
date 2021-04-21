@@ -126,6 +126,8 @@ git branch -u origin/test3  # origin 리모트의 test3 브랜치로 업스트�
 git branch --set-upstream-to=origin/test3  # 같음
 ```
 
+단, 이 방법은 설정하려는 브랜치에 미리 리모트에 만들어져 있는 상태여야만 가능하다. 만약 로컬에서 새로 생성한 브랜치를 업스트림으로 설정하고 싶다면, `git push --set-upstream`을 사용한다.
+
 #### 머지 여부 확인
 
 머지가 완료되었거나 그렇지 않은 브랜치만 표시한다. 삭제해도 되는 브랜치를 조회할 때 사용한다.
@@ -807,6 +809,24 @@ git ls-files -v | grep ^h  # assumed unchanged 파일만 표시
 - `C`: modified/changed
 - `K`: to be killed
 - `?`: other
+
+## [ls-remote](https://git-scm.com/docs/git-ls-remote)
+
+저장소의 정보를 조회하는 명령어. 옵션을 명시하지 않으면 연결된 저장소의 태그, 머지 리퀘스트, 브랜치 등을 모두 조회한다.
+
+```bash
+# 헤드만 보기
+git ls-remote --heads
+
+# 특정 저장소의 헤드만 보기
+git ls-remote -h https://github.com/noritersand/noritersand.github.io
+```
+
+#### options
+
+- `-h` `--heads`: 헤드만 출력, 즉 브랜치만 보는 옵션.
+- `-t` `--tags `: 태그만 출력한다.
+- `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags는 저도 모르니 묻지 마십씨오~~
 
 ## merge
 
