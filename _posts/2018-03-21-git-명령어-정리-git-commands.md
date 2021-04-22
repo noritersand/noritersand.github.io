@@ -158,6 +158,14 @@ git branch -d mybranch
 git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)
 ```
 
+#### 리모트에서 삭제된 브랜치를 로컬에서도 삭제
+
+[출처와 설명](https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c)
+
+```bash
+git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
+```
+
 ## [checkout](https://git-scm.com/docs/git-checkout)
 
 #### 브랜치 전환
@@ -179,7 +187,7 @@ git checkout master
 git checkout -b 브랜치
 ```
 
-#### 원격 저장소에 있는 브랜치를 로컬에 만들기
+#### 리모트 저장소에 있는 브랜치를 로컬에 만들기
 
 ~~이 때 `--track` 옵션을 사용해야 업스트림 브랜치로 설정됨.~~  
 최근 버전에선 생략해도 된다.
@@ -244,7 +252,7 @@ git checkout -b 생성할브랜치 리모트저장소/리모트브랜치
 ```
 
 ```bash
-git checkout -b hotFix anotherServer/master  # 이 명령은 지정한 원격 저장소의 브랜치를 업스트림 브랜치로 만든다.
+git checkout -b hotFix anotherServer/master  # 이 명령은 지정한 리모트 저장소의 브랜치를 업스트림 브랜치로 만든다.
 ```
 
 #### 업스트림 브랜치 설정 \#2
@@ -485,6 +493,7 @@ git config --global alias.visual '!gitk'
 git config --global alias.hide 'update-index --assume-unchanged'
 git config --global alias.unhide 'update-index --no-assume-unchanged'
 git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
+git config --global alias.clear-branch "! git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d"
 ```
 
 #### 단축어 목록 보기
@@ -657,10 +666,10 @@ Fast-forward 머지에 한해 가능한 방법이다.
 
 ```bash
 git fetch . foo:master # 로컬 브랜치 foo를 로컬 브랜치 master로 머지
-git fetch origin foo:foo # 원격 브랜치 foo를 로컬 브랜치 foo로 머지
+git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 머지
 ```
 
-`:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`을, 원격 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
+`:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`을, 리모트 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
 
 ## gitk
 
@@ -1114,7 +1123,7 @@ git remote rename NAME_FROM NAME_TO
 git remote rm 리모트저장소이름
 ```
 
-#### 리모트 저장소에서 삭제된 브랜치를 로컬에서도 제거하기
+#### 리모트 저장소에서 삭제된 브랜치를 로컬의 리모트 트래킹 브랜치 목록에서 제거
 
 ```bash
 git prune
