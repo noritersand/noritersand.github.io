@@ -75,14 +75,23 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 
 ## Get-Alias
 
-설정된 별칭 목록을 출력한다.
-기본 별칭: `gal`, `alias`  
+설정된 별칭 목록을 출력한다. 기본 별칭: `gal`, `alias`
 
 ```bash
 Get-Alias # 설정된 모든 별칭 출력
 alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 ```
+
+## [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
+
+현재 세션에서만 유효한 신규 별칭 추가.
+
+```bash
+New-Alias grep findstr
+```
+
+앞으로의 모든 세션에 적용하려면 [파워쉘 프로파일](https://superuser.com/questions/516700/bash-aliases-equivalent-for-powershell) 파일에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 ## Start-Process
 
@@ -109,6 +118,26 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 Write-Output $null >> dummy-for-commit.txt # 'touch'와 같음
 ```
 
+## [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
+
+명령어 실행 이력 보기. 기본 별칭: `history`
+
+```bash
+Get-History # 모든 명령어 이력 보기
+Get-History 10 # 10번 째로 실행한 명령어 보기
+Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
+```
+
+## [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
+
+기본 별칭: `r`, `ihy`
+
+```bash
+Invoke-History # 마지막 명령어 실행
+Invoke-History -Id 132 # 132번 명령어 실행
+Invoke-History 132 # 위와 같음
+```
+
 ## Get-ChildItem
 
 기본 별칭: `ls`
@@ -128,6 +157,11 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 ```bash
 Remove-Item .\copy\ -r -Force
 ```
+
+#### options
+
+- `-r`: 재귀삭제
+- `-Force`: 확인 없이 삭제
 
 ## SSH
 
@@ -192,11 +226,6 @@ ssh-add ~\.ssh\noritersand-ssh-test
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
-#### options
-
-- `-r`: 재귀삭제
-- `-Force`: 확인 없이 삭제
-
 ## 환경 변수
 
 ### 환경 변수 조회
@@ -223,13 +252,22 @@ Remove-Item Env:\test # 환경 변수 'test' 삭제
 [Environment]::SetEnvironmentVariable("test2", $null, "Machine") # 시스템 환경 변수 'test2' 삭제
 ```
 
-## Invoke-WebRequest
+## [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
 웹 리퀘스트 날리는 명령어. `curl`과 거어어어어의 같음.
 
 ```bash
 Invoke-WebRequest -Uri "https://google.com"
 ```
+
+```bash
+# grave(`)는 파워쉘에서 줄바꿈을 의미함
+Invoke-WebRequest -Method Get `
+  -Uri https://google.com/search `
+  -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
+  -Body @{ 'q' = 'Invoke-WebRequest+headers' }
+```
+
 
 ## [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
 
