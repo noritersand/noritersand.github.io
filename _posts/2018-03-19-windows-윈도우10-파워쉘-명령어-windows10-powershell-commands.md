@@ -23,145 +23,44 @@ tags:
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
 
-## [> , >> (리디렉션)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7)
+## 문법
+
+### [> , >> (리디렉션)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7)
 
 ```bash
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
 
-## | (파이프)
+### | (파이프)
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다.
 
-## [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
+## 환경 변수
 
-TODO
-
-## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
-
-문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
+### 환경 변수 조회
 
 ```bash
-# 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단
-'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
-
-# rogue.log 파일을 출력하되 대소문자 구분 없이 'exception'이 포함된 라인만 출력
-Get-Content .\rogue.log | Select-String 'exception'
-
-# 현재 경로의 모든 파일과 디렉터리를 Stream으로 내보내서 'httpd'가 포함된 라인 출력
-Get-ChildItem | Out-String -Stream | Select-String 'httpd'
+Get-ChildItem Env: # 모든 환경 변수 보기, ls env:와 같음
+Write-Output $env:path # 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
 ```
 
-#### parameters
-
-- `-CaseSensitive`: 대소문자를 구분하여 찾음. 생략하면 대소문자 무시.
-- `-Pattern`: 이어지는 문자로 각 줄에서 찾을 텍스트를 지정함. 패턴 값은 정규식으로 취급됨.
-- `-SimpleMatch`: 정규식 일치가 아니라 단순 일치로 필터링.
-- TODO
-
-#### Select-String AND, OR, NOT
+### 로컬 환경 변수 추가/삭제
 
 ```bash
-# AND: 'c'와 '1'이 모두 포함된 라인만 출력
-'xyz', 'abc', 'abc123' | Select-String 'c' | Select-String '1'
-
-# OR: 'z' 혹은 '1'이 포함된 라인만 출력
-'xyz', 'abc', 'abc123' | Select-String 'z|1'
-
-# NOT: 'abc'가 없는 라인만 출력
-'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
+$env:test = 1234 # 환경 변수 'test' 추가
+[Environment]::SetEnvironmentVariable("test2", "1234", "Process") # 로컬 환경 변수 추가 두 번째 방법
+Remove-Item Env:\test # 환경 변수 'test' 삭제
 ```
 
-## Get-Alias
-
-설정된 별칭 목록을 출력한다. 기본 별칭: `gal`, `alias`
+### 글로벌 환경 변수 추가/삭제
 
 ```bash
-Get-Alias # 설정된 모든 별칭 출력
-alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력
-gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
+[Environment]::SetEnvironmentVariable("test", "1234", "User") # 로그인한 사용자의 환경 변수로 'test' 추가
+[Environment]::SetEnvironmentVariable("test2", "1234", "Machine") # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요하다
+[Environment]::SetEnvironmentVariable("test", $null, "User") # 사용자 환경 변수 'test' 삭제
+[Environment]::SetEnvironmentVariable("test2", $null, "Machine") # 시스템 환경 변수 'test2' 삭제
 ```
-
-## [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
-
-현재 세션에서만 유효한 신규 별칭 추가.
-
-```bash
-New-Alias grep findstr
-```
-
-앞으로의 모든 세션에 적용하려면 [파워쉘 프로파일](https://superuser.com/questions/516700/bash-aliases-equivalent-for-powershell) 파일에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
-
-## Start-Process
-
-기본 별칭: `saps`
-
-```bash
-Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
-Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
-```
-
-## Get-Content
-
-기본 별칭: `type`
-
-```bash
-Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
-```
-
-## Write-Output
-
-기본 별칭: `echo`
-
-```bash
-Write-Output $null >> dummy-for-commit.txt # 'touch'와 같음
-```
-
-## [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
-
-명령어 실행 이력 보기. 기본 별칭: `history`
-
-```bash
-Get-History # 모든 명령어 이력 보기
-Get-History 10 # 10번 째로 실행한 명령어 보기
-Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
-```
-
-## [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
-
-기본 별칭: `r`, `ihy`
-
-```bash
-Invoke-History # 마지막 명령어 실행
-Invoke-History -Id 132 # 132번 명령어 실행
-Invoke-History 132 # 위와 같음
-```
-
-## Get-ChildItem
-
-기본 별칭: `ls`
-
-## Copy-Item
-
-기본 별칭: `copy`
-
-```bash
-Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
-```
-
-## Remove-Item
-
-기본 별칭: `del`
-
-```bash
-Remove-Item .\copy\ -r -Force
-```
-
-#### options
-
-- `-r`: 재귀삭제
-- `-Force`: 확인 없이 삭제
 
 ## SSH
 
@@ -226,31 +125,135 @@ ssh-add ~\.ssh\noritersand-ssh-test
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
-## 환경 변수
+## [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
 
-### 환경 변수 조회
+TODO
 
-```bash
-Get-ChildItem Env: # 모든 환경 변수 보기, ls env:와 같음
-Write-Output $env:path # 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
-```
+## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 
-### 로컬 환경 변수 추가/삭제
+문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
 ```bash
-$env:test = 1234 # 환경 변수 'test' 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Process") # 로컬 환경 변수 추가 두 번째 방법
-Remove-Item Env:\test # 환경 변수 'test' 삭제
+# 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단
+'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
+
+# rogue.log 파일을 출력하되 대소문자 구분 없이 'exception'이 포함된 라인만 출력
+Get-Content .\rogue.log | Select-String 'exception'
+
+# 현재 경로의 모든 파일과 디렉터리를 Stream으로 내보내서 'httpd'가 포함된 라인 출력
+Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 ```
 
-### 글로벌 환경 변수 추가/삭제
+#### parameters
+
+- `-CaseSensitive`: 대소문자를 구분하여 찾음. 생략하면 대소문자 무시.
+- `-Pattern`: 이어지는 문자로 각 줄에서 찾을 텍스트를 지정함. 패턴 값은 정규식으로 취급됨.
+- `-SimpleMatch`: 정규식 일치가 아니라 단순 일치로 필터링.
+- TODO
+
+#### Select-String AND, OR, NOT
 
 ```bash
-[Environment]::SetEnvironmentVariable("test", "1234", "User") # 로그인한 사용자의 환경 변수로 'test' 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Machine") # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요하다
-[Environment]::SetEnvironmentVariable("test", $null, "User") # 사용자 환경 변수 'test' 삭제
-[Environment]::SetEnvironmentVariable("test2", $null, "Machine") # 시스템 환경 변수 'test2' 삭제
+# AND: 'c'와 '1'이 모두 포함된 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String 'c' | Select-String '1'
+
+# OR: 'z' 혹은 '1'이 포함된 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String 'z|1'
+
+# NOT: 'abc'가 없는 라인만 출력
+'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
+
+## Get-Alias
+
+설정된 별칭 목록을 출력한다. 기본 별칭: `gal`, `alias`
+
+```bash
+Get-Alias # 설정된 모든 별칭 출력
+alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력
+gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
+```
+
+## [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
+
+현재 세션에서만 유효한 신규 별칭 추가.
+
+```bash
+New-Alias grep findstr
+```
+
+앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+
+## Start-Process
+
+기본 별칭: `saps`
+
+```bash
+Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
+Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
+```
+
+## Get-Content
+
+기본 별칭: `type`
+
+```bash
+Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
+```
+
+## Write-Output
+
+기본 별칭: `echo`
+
+```bash
+Write-Output $PSHOME # 파워쉘 설치 경로 출력
+Write-Output $null >> dummy-for-commit.txt # 비어있는 파일 생성. 'touch'와 같음
+```
+
+## [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
+
+명령어 실행 이력 보기. 기본 별칭: `history`
+
+```bash
+Get-History # 모든 명령어 이력 보기
+Get-History 10 # 10번 째로 실행한 명령어 보기
+Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
+```
+
+## [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
+
+기본 별칭: `r`, `ihy`
+
+```bash
+Invoke-History # 마지막 명령어 실행
+Invoke-History -Id 132 # 132번 명령어 실행
+Invoke-History 132 # 위와 같음
+```
+
+## Get-ChildItem
+
+기본 별칭: `ls`
+
+## Copy-Item
+
+기본 별칭: `copy`
+
+```bash
+Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
+```
+
+## Remove-Item
+
+기본 별칭: `del`
+
+```bash
+Remove-Item .\copy\ -r -Force
+```
+
+#### options
+
+- `-r`: 재귀삭제
+- `-Force`: 확인 없이 삭제
 
 ## [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
@@ -262,12 +265,10 @@ Invoke-WebRequest -Uri "https://google.com"
 
 ```bash
 # grave(`)는 파워쉘에서 줄바꿈을 의미함
-Invoke-WebRequest -Method Get `
-  -Uri https://google.com/search `
+Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }
 ```
-
 
 ## [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
 
