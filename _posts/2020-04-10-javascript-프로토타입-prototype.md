@@ -36,8 +36,6 @@ tags:
 
 \* `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
 
-\* `Object.prototype.__proto__`는 지원이 중단된([deprecated](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto)) 기능이다.
-
 ```js
 let o = new Object();
 Object.getPrototypeOf(o) === o.__proto__; // true
