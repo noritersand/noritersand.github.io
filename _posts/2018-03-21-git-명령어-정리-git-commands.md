@@ -907,7 +907,7 @@ git merge --squash TARGET_BRANCH
 git mv FILE_FROM FILE_TO
 ```
 
-## pull
+## [pull](https://git-scm.com/docs/git-pull)
 
 fetch 후 자동 머지.
 
@@ -918,11 +918,11 @@ git pull [리모트저장소] [브랜치]
 리모트 저장소에서 데이터를 받아온다는 것은 `fetch`와 같지만 `pull`은 머지까지 한다는 점이 다르다.
 
 ```bash
-git pull  # origin 리모트 저장소에서 현재 브랜치로 pull
-git pull origin master
+git pull  # 업스트림 브랜치를 현재 브랜치로 pull
+git pull origin master # origin 저장소의 master 브랜치를 현재 브랜치로 pull
 ```
 
-브랜치를 명시하지 않으면 (가능한 경우) 현재 브랜치만 자동 머지한다. 리모트의 저장소명과 브랜치명 생략은 업스트림 브랜치가 설정되어 있을 경우에만 가능하다.
+명시한 리모트와 브랜치를 현재 브랜치로 pull 한다는 점에 주의할 것. 브랜치를 명시하지 않으면 업스트림 브랜치를 현재 브랜치에 자동으로 머지한다. 옵션을 따로 지정하지 않았다면, 가능한 경우 FF 머지를 시도한다.
 
 ## [push](https://git-scm.com/docs/git-push)
 

@@ -64,7 +64,7 @@ tags:
 - [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side): FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 <kbd>alt + n</kbd>(다음), <kbd>alt + p</kbd>(이전)
 - [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
 - [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
-- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어가 아주 훌륭함.
+- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
 - [Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs): URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함.
 - [Case Conversion](https://packagecontrol.io/packages/Case%20Conversion): 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.  
   두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences` > `Package Settings` > `Case Conversion` > `Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
