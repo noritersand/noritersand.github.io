@@ -953,6 +953,7 @@ git push 리모트저장소 로컬브랜치:서버브랜치
 `push` 하려는 브랜치로 전환하기 귀찮거나, 로컬 브랜치의 이름과 리모트 브랜치의 이름이 다를 때 사용한다:
 
 ```bash
+git push origin hotfix # 로컬 브랜치인 hotfix를 리모트 hotfix로 push. 만약 리모트에 hotfix 브랜치가 없으면 생성.
 git push origin feature:feature # 로컬 feature를 리모트 feature로 push
 git push origin serverfix:awesome  # 현재 로컬 브랜치가 serverfix 일때 리모트 브랜치 awesome을 생성하고 push
 ```
