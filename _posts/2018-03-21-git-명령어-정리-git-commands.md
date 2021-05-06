@@ -160,16 +160,13 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 
 #### 리모트에서 삭제된 브랜치를 로컬에서도 삭제
 
-[출처1](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
-[출처2](https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c)
-
 주의: 파워쉘에선 안됨
 
 ```bash
-# 1
+# 출처: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
 git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
 
-# 2
+# 출처: https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c
 git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
 ```
 
