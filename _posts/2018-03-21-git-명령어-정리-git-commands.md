@@ -160,10 +160,17 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 
 #### 리모트에서 삭제된 브랜치를 로컬에서도 삭제
 
-[출처와 설명](https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c)
+[출처1](https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote)
+[출처2](https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c)
+
+주의: 파워쉘에선 안됨
 
 ```bash
-git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
+# 1
+git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
+
+# 2
+git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
 ```
 
 ## [checkout](https://git-scm.com/docs/git-checkout)
@@ -493,7 +500,6 @@ git config --global alias.visual '!gitk'
 git config --global alias.hide 'update-index --assume-unchanged'
 git config --global alias.unhide 'update-index --no-assume-unchanged'
 git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
-git config --global alias.clear-branch "! git branch -vv | grep ': gone]'|  grep -v '\*' | awk '{ print $1; }' | xargs -r git branch -d"
 git config --global alias.f 'fetch'
 git config --global alias.fp 'fetch --prune'
 ```
