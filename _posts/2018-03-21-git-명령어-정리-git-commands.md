@@ -735,7 +735,9 @@ git init --bare
 #### 커밋 이력 조회
 
 ```bash
-git log
+git log # 현재 브랜치의 이력 조회
+git log hotfix123 # hotfix123 브랜치 이력 조회
+git log origin/master # origin remote의 master 브랜치 이력 조회
 ```
 
 #### options
