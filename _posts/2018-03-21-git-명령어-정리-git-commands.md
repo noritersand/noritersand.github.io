@@ -697,6 +697,33 @@ git gc --aggressive
 git gc --prune=now
 ```
 
+gc 중 다음과 같은 메시지가 나타날 수 있는데:
+
+```bash
+PS C:\dev\git\noritersand.github.io> git gc --prune=now
+Enumerating objects: 396731, done.
+Counting objects: 100% (396731/396731), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (110001/110001), done.
+Writing objects: 100% (396731/396731), done.
+Total 396731 (delta 254114), reused 396729 (delta 254112), pack-reused 0
+Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.pack' failed. Should I try again? (y/n)
+```
+
+여기선 그냥 'N'을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:
+
+```bash
+# 파워쉘
+$env:GIT_ASK_YESNO = 'false'
+
+# git bash
+export GIT_ASK_YESNO=false
+```
+
+이렇게 환경 변수를 설정해놓고 돌리면 된다. [관련 글](https://stackoverflow.com/questions/4389833/unlink-of-file-failed-should-i-try-again)
+
+#### options
+
 - `--aggressive`: 더 많은 시간을 들여서 '공격적'으로 최적화하는 옵션이라고 함.
 - `--auto`
 - `--prune=<date>`: 지정한 날짜보다 오래된 객체 중 연결이 끊긴 객체를 정리한다. 날짜를 지정하지 않으면 2주가 기본값이며, `gc` 명령을 옵션없이 실행했을 때의 기본 옵션이다.
@@ -1453,7 +1480,7 @@ git svn blame 파일
 
 ## tag
 
-태그 조회
+태그 조회와 생성/삭제 명령어
 
 ```bash
 git tag
@@ -1475,7 +1502,7 @@ git tag v2.2  # 현재 브랜치의 마지막 커밋에 v2.2 태그 생성
 git tag -a v1.1 -m "my version 1.1"
 ```
 
-#### 지나간 커밋에 태그 만들기
+#### 특정 커밋에 태그 만들기
 
 체크섬을 알고 있다면 예전 커밋에도 태그할 수 있다.
 
