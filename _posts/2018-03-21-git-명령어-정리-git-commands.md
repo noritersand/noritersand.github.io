@@ -1384,10 +1384,20 @@ git status
 
 2.23 버전에서 새로 나온 명령어. checkout의 브랜치 전환 기능을 분리한 명령어다.
 
+```
+git switch [<options>] [--no-guess] <branch>
+git switch [<options>] --detach [<start-point>]
+git switch [<options>] (-c|-C) <new-branch> [<start-point>]
+git switch [<options>] --orphan <new-branch>
+```
+
 ```bash
 git switch hotfix0401 # hotfix0401 브랜치로 전환
-git sw -c release origin/release # origin/release를 추적하는 release 브랜치를 생성하며 전환
+git switch -c new-me # 현재 브랜치에서 new-me 브랜치 생성하며 전환
+git switch -c release origin/release # origin/release에서 release 브랜치를 생성하며 전환하고, 업스트림 브랜치로 설정.
 ```
+
+브랜치를 생성하며 전환하는 옵션일 때, `<start-point>`를 명시하지 않으면 현재 브랜치를 기반으로 신규 브랜치를 생성한다. 만약 `<start-point>`가 리모트의 브랜치인 경우 `<start-point>`를 업스트림 브랜치로 설정한다.
 
 #### options
 
