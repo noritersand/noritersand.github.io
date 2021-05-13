@@ -1250,7 +1250,7 @@ git revert 3bd5055389bd059f0f781bfcfe3190bb7dfa9e5e  # 3bd505 커밋의 리버�
 git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경사항을 되돌린 커밋 생성
 ```
 
-`HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD4`까지만 쓰면 4회전 커밋이다. 🤔
+`HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD~4`까지만 쓰면 4회전 커밋이다. 🤔
 
 #### options
 
