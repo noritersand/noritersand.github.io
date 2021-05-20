@@ -548,7 +548,7 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 특정 리모트 주소만 검증을 끄도록 하는 방법도 있다.
 
-## diff
+## [diff](https://git-scm.com/docs/git-diff)
 
 #### unstaged와 staged의 비교
 
@@ -646,6 +646,12 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
+
+#### options
+
+- `--check`: 충돌 문자 혹은 공백 오류가 있는지 확인
+- `--name-only`: 변경된 파일의 이름만 출력
+- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌. 
 
 ## [fetch](https://git-scm.com/docs/git-fetch)
 
