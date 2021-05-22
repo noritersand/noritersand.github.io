@@ -651,7 +651,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 - `--check`: 충돌 문자 혹은 공백 오류가 있는지 확인
 - `--name-only`: 변경된 파일의 이름만 출력
-- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌. 
+- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 
 ## [fetch](https://git-scm.com/docs/git-fetch)
 
@@ -1401,6 +1401,7 @@ git switch [<options>] --orphan <new-branch>
 git switch hotfix0401 # hotfix0401 브랜치로 전환
 git switch -c new-me # 현재 브랜치에서 new-me 브랜치 생성하며 전환
 git switch -c release origin/release # origin/release에서 release 브랜치를 생성하며 전환하고, 업스트림 브랜치로 설정.
+git switch -c abc 4d0dc05b1f # 4d0dc05b1f 커밋에서 abc 브랜치 생성하며 전환
 ```
 
 브랜치를 생성하며 전환하는 옵션일 때, `<start-point>`를 명시하지 않으면 현재 브랜치를 기반으로 신규 브랜치를 생성한다. 만약 `<start-point>`가 리모트의 브랜치인 경우 `<start-point>`를 업스트림 브랜치로 설정한다.
