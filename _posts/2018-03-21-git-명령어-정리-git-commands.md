@@ -499,6 +499,8 @@ git config --global alias.unhide 'update-index --no-assume-unchanged'
 git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
 git config --global alias.f 'fetch'
 git config --global alias.fp 'fetch --prune'
+git config --global alias.log-graph 'log --graph --pretty=oneline'
+git config --global alias.log-oneline 'log --pretty=oneline'
 ```
 
 #### 단축어 목록 보기
