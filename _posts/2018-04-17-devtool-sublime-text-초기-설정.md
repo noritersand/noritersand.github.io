@@ -99,7 +99,7 @@ Build 3126 이후에 기록함.
 
 ### 편집
 
-- <kbd>ctrl + j</kbd>: 라인 단위 병합
+- <kbd>ctrl + shift + j</kbd>: 라인 단위 병합
 - <kbd>F9</kbd>: 대소문자 무시하고 라인 단위 알파벳 오름차순 정렬
 - <kbd>ctrl + F9</kbd>: 라인 단위 알파벳 오름차순 정렬
 - <kbd>ctrl + m</kbd>: 가까운 닫는 괄호<sup>bracket</sup> 혹은 여는 괄호로 이동.

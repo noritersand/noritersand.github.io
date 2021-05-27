@@ -115,7 +115,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
     "command": "-workbench.action.togglePanel"
   },
   {
-    "key": "ctrl+j",
+    "key": "ctrl+shift+j",
     "command": "editor.action.joinLines"
   },
   {
