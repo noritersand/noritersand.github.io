@@ -234,6 +234,23 @@ Invoke-History 132 # 위와 같음
 
 기본 별칭: `ls`
 
+```bash
+# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
+Get-ChildItem -Recurse -Name | findstr main.js
+
+# c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
+Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
+```
+
+#### options
+
+- `Recurse`: 재귀 검색
+- `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
+- `Include`
+- `Exclude`
+- `ErrorAction`
+- `Force`
+
 ## Copy-Item
 
 기본 별칭: `copy`
