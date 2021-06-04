@@ -765,7 +765,7 @@ git init
 git init --bare
 ```
 
-## log
+## [log](https://git-scm.com/docs/git-log)
 
 #### 커밋 이력 조회
 
@@ -777,6 +777,9 @@ git log origin/master # origin remote의 master 브랜치 이력 조회
 
 #### options
 
+- `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
+- `--merges` `--min-parents=2`: 머지 커밋만 출력.
+- `--no-merges` `--max-parents=1`: 머지 커밋이 아닌 것만 출력한다.
 - `-p`: 각 커밋에 적용된 패치<sup>patch</sup>(=반영된 변경사항)를 보여준다.
 - `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
 - `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
