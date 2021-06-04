@@ -125,11 +125,109 @@ ssh-add ~\.ssh\noritersand-ssh-test
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
-## [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
+## Microsoft.Powershell.Core
+
+### [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
+
+명령어 실행 이력 보기. 기본 별칭: `history`
+
+```bash
+Get-History # 모든 명령어 이력 보기
+Get-History 10 # 10번 째로 실행한 명령어 보기
+Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
+```
+
+### [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
+
+기본 별칭: `r`, `ihy`
+
+```bash
+Invoke-History # 마지막 명령어 실행
+Invoke-History -Id 132 # 132번 명령어 실행
+Invoke-History 132 # 위와 같음
+```
+
+### [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
+
+프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
+
+```bash
+# name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
+Get-ChildItem | Where-Object name -eq 'httpd.exe'
+```
+
+## Microsoft.PowerShell.Management
+
+### [Start-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.1)
+
+기본 별칭: `saps`
+
+```bash
+Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
+Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
+```
+
+### [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+
+기본 별칭: `type`
+
+```bash
+Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
+```
+
+### [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
+
+기본 별칭: `ls`
+
+```bash
+# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
+Get-ChildItem -Recurse -Name | findstr main.js
+
+# c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
+Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
+```
+
+#### options
+
+- `Recurse`: 재귀 검색
+- `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
+- `Include`
+- `Exclude`
+- `ErrorAction`
+- `Force`
+
+### [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.1)
+
+기본 별칭: `copy`
+
+```bash
+Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
+```
+
+### [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1)
+
+기본 별칭: `del`
+
+```bash
+Remove-Item .\copy\ -r -Force
+```
+
+#### options
+
+- `-r`: 재귀삭제
+- `-Force`: 확인 없이 삭제
+
+## Microsoft.Powershell.Utility
+
+### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.1)
+
+명령어를 입력하고 있는 호스트 프로그램(=파워쉘)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
+
+### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
 
 TODO
 
-## [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
+### [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
@@ -164,7 +262,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
 
-## Get-Alias
+### [Get-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.1)
 
 설정된 별칭 목록을 출력한다. 기본 별칭: `gal`, `alias`
 
@@ -174,7 +272,7 @@ alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 �
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 ```
 
-## [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
+### [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
 
 현재 세션에서만 유효한 신규 별칭 추가.
 
@@ -184,24 +282,7 @@ New-Alias grep findstr
 
 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
-## Start-Process
-
-기본 별칭: `saps`
-
-```bash
-Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
-Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
-```
-
-## Get-Content
-
-기본 별칭: `type`
-
-```bash
-Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
-```
-
-## Write-Output
+### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
 
 기본 별칭: `echo`
 
@@ -210,69 +291,7 @@ Write-Output $PSHOME # 파워쉘 설치 경로 출력
 Write-Output $null >> dummy-for-commit.txt # 비어있는 파일 생성. 'touch'와 같음
 ```
 
-## [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
-
-명령어 실행 이력 보기. 기본 별칭: `history`
-
-```bash
-Get-History # 모든 명령어 이력 보기
-Get-History 10 # 10번 째로 실행한 명령어 보기
-Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
-```
-
-## [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
-
-기본 별칭: `r`, `ihy`
-
-```bash
-Invoke-History # 마지막 명령어 실행
-Invoke-History -Id 132 # 132번 명령어 실행
-Invoke-History 132 # 위와 같음
-```
-
-## Get-ChildItem
-
-기본 별칭: `ls`
-
-```bash
-# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
-Get-ChildItem -Recurse -Name | findstr main.js
-
-# c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
-Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
-```
-
-#### options
-
-- `Recurse`: 재귀 검색
-- `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
-- `Include`
-- `Exclude`
-- `ErrorAction`
-- `Force`
-
-## Copy-Item
-
-기본 별칭: `copy`
-
-```bash
-Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
-```
-
-## Remove-Item
-
-기본 별칭: `del`
-
-```bash
-Remove-Item .\copy\ -r -Force
-```
-
-#### options
-
-- `-r`: 재귀삭제
-- `-Force`: 확인 없이 삭제
-
-## [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
 웹 리퀘스트 날리는 명령어. `curl`과 거어어어어의 같음.
 
@@ -285,13 +304,4 @@ Invoke-WebRequest -Uri "https://google.com"
 Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }
-```
-
-## [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
-
-프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
-
-```bash
-# name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
-Get-ChildItem | Where-Object name -eq 'httpd.exe'
 ```
