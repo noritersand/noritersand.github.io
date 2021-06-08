@@ -282,7 +282,7 @@ New-Alias grep findstr
 
 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
-난 어떻게 만든건지 `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 여기에 있음 😒
+난 어떻게 만든건지 `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 여기에 있음. 😒
 
 ### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
 

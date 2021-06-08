@@ -31,6 +31,34 @@ tags:
 
 [이미지 출처](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
+## [공통 옵션](https://git-scm.com/docs/git#_options)
+
+- `--version`
+- `--help`
+- `-C <path>`
+- `-c <name>=<value>`: 이번 명령에 한해 적용할 설정을 지정하는 옵션. 다른 설정(`config`로 지정한 값들)보다 우선권을 갖는다.
+- `--config-env=<name>=<envvar>`
+- `--exec-path[=<path>]`
+- `--html-path`
+- `--man-path`
+- `--info-path`
+- `-p`
+- `--paginate`
+- `-P`
+- `--no-pager`
+- `--git-dir=<path>`
+- `--work-tree=<path>`
+- `--namespace=<path>`
+- `--super-prefix=<path>`
+- `--bare`
+- `--no-replace-objects`
+- `--literal-pathspecs`
+- `--glob-pathspecs`
+- `--noglob-pathspecs`
+- `--icase-pathspecs`
+- `--no-optional-locks`: 락이 필요한 선택적 작업을 수행하지 않게 한다.
+- `--list-cmds=group[,group…]`
+
 ## add
 
 #### staging / do track
