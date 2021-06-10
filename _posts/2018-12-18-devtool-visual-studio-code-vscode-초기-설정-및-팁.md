@@ -193,4 +193,3 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus. 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
----
