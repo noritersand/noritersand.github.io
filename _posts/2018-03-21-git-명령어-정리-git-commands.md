@@ -712,22 +712,6 @@ git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 �
 
 `:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`을, 리모트 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
 
-## [gitk](https://git-scm.com/docs/gitk)
-
-```
-gitk [<options>] [<revision range>] [--] [<path>…​]
-```
-
-커밋 이력를 보여주는 GUI 툴. `git log`와 동일한 옵션을 사용할 수 있다.
-
-```bash
-gitk [git log options]
-gitk # HEAD의 커밋 이력 보기
-gitk --all # 저장소의 모든 커밋 보기
-```
-
-![](/images/gitk.png)
-
 ## [gc](https://git-scm.com/docs/git-gc)
 
 오래된 이력과 레퍼런스를 정리, 압축해서 저장소를 최적화하는 명령어
@@ -771,6 +755,22 @@ export GIT_ASK_YESNO=false
 - `--quiet`
 - `--force`
 - `--keep-largest-pack`
+
+## [gitk](https://git-scm.com/docs/gitk)
+
+```
+gitk [<options>] [<revision range>] [--] [<path>…​]
+```
+
+커밋 이력를 보여주는 GUI 툴. `git log`와 동일한 [옵션](https://noritersand.github.io/git/git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC-git-commands/#heading-options-4)을 사용할 수 있다.
+
+```bash
+gitk [git log options]
+gitk # HEAD의 커밋 이력 보기
+gitk --all # 저장소의 모든 커밋 보기
+```
+
+![](/images/gitk.png)
 
 ## help
 
