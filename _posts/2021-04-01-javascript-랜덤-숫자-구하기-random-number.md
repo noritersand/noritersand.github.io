@@ -36,3 +36,8 @@ function getRandomNumber(range, minimum) {
   return Math.floor(Math.random() * range + minimum);
 }
 ```
+
+읽어 볼 만한 글:
+
+- [Wikipedia: Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+- [배열 요소 무작위로 섞기](https://ko.javascript.info/task/shuffle)
