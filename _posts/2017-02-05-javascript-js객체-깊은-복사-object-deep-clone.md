@@ -23,7 +23,15 @@ tags:
 - [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
 - [jQuery: jQuery.extend()](https://api.jquery.com/jquery.extend/)
 
-`Object.assign()`이 있긴한데 이건 얕은 복사<sup>shallow cloning</sup>만 가능.
+## Object.assign()
+
+```js
+let obj = { a: 1 };
+let clone = Object.assign({}, obj);
+clone; // { a: 1 }
+```
+
+이건 얕은 복사<sup>shallow cloning</sup>만 가능하며 IE에서 사용할 수 없다.
 
 ## JSON 문자열로 바꾼뒤 다시 객체로 변환
 
