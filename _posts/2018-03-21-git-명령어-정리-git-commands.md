@@ -812,7 +812,7 @@ git log [<options>] [<revision range>] [[--] <path>…​]
 ```bash
 git log # 현재 브랜치의 이력 조회
 git log hotfix123 # hotfix123 브랜치 이력 조회
-git log origin/master # origin remote의 master 브랜치 이력 조회
+git log master origin/master # 로컬의 master와 origin remote의 master 브랜치 이력 조회
 ```
 
 #### options
