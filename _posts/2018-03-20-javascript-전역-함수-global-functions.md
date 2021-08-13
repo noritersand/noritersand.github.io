@@ -33,7 +33,7 @@ uneval( object )
 
 예를 몇가지 들면:
 
-- `eval('432 * 10')` 의 경우엔 432 x 10의 결과인 4320이 리턴된다.
+- `eval('432 * 10')` 의 경우엔 432 x 10의 결과인 4320이 반환된다.
 - `eval('alert()')` 의 경우 경고창이 띄워진다.
 - 다음 코드는 `form.search_word`의 value를 반환한다: `eval("document.forms[0].search_word.value");`
 - 다음 코드는 name 프로퍼티를 갖는 Javascript Object를 의미한다: `eval('{name="value"}')`
@@ -46,7 +46,7 @@ uneval( object )
 )();
 ```
 
-사실 `uneval()`은 비표준 함수라서 일부 브라우저에선(구글 크롬) 사용할 수 없다.
+\* `uneval()`은 비표준 함수라서 일부 브라우저에선(구글 크롬) 사용할 수 없다.
 
 ## encodeURI(), decodeURI()
 

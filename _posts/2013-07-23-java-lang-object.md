@@ -25,7 +25,7 @@ Object 클래스는 소유한 변수(=멤버변수)가 없고 11개의 메서드
 
 ### clone()
 
-객체 자신의 복사본을 리턴한다. 이 메서드는 변수의 값을 단순 복사하기 때문에 참조값을 소유한 객체를 복사할 때는 주의해서 사용해야 한다. 또한 이 메서드를 사용할 경우 반드시 Cloneable 인터페이스를 implements 해야한다. 그렇지 않으면 CloneNotSupportedException이 발생한다.
+객체 자신의 복사본을 반환한다. 이 메서드는 변수의 값을 단순 복사하기 때문에 참조값을 소유한 객체를 복사할 때는 주의해서 사용해야 한다. 또한 이 메서드를 사용할 경우 반드시 Cloneable 인터페이스를 implements 해야한다. 그렇지 않으면 CloneNotSupportedException이 발생한다.
 
 ```java
 public class LogicTest {
@@ -60,7 +60,7 @@ class Doppelganger implements Cloneable {
 
 ### equals( Object obj )
 
-객체 자신과 obj가 같은 객체인지 불리언값으로 리턴. 참조값을 비교하므로 동등비교 연산자`==`와 결과가 같다.
+객체 자신과 obj가 같은 객체인지 불리언값으로 반환. 참조값을 비교하므로 동등비교 연산자`==`와 결과가 같다.
 
 String의 `equals()` 는 String 클래스에서 오버라이드 된 메서드로 객체가 갖는 문자열 값을 비교하는 반면 이 메서드는 객체 자신의 참조값과 전달인자로 받는 객체의 참조값을 비교하는 차이가 있다.
 
@@ -74,7 +74,7 @@ public boolean equals(Object obj) {
 
 ### toString()
 
-클래스명 + `@` + 해시코드를 16진수로 변환해 리턴한다.
+클래스명 + `@` + 해시코드를 16진수로 변환해 반환한다.
 
 ```java
 public String toString() {
@@ -92,11 +92,11 @@ public String toString() {
 
 ### getClass()
 
-Class 인스턴스를 리턴한다. 이 인스턴스는 객체 자신의 클래스 정보를 갖는다.
+Class 인스턴스를 반환한다. 이 인스턴스는 객체 자신의 클래스 정보를 갖는다.
 
 ### hashCode()
 
-객체 자신의 해시코드 리턴
+객체 자신의 해시코드 반환
 
 ### wait( [long timeout] [, int nanos] )
 

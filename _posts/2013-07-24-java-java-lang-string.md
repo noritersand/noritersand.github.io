@@ -38,7 +38,7 @@ tags:
 
 ### intern()
 
-String 인스턴스의 문자열을 "constant pool (상수 풀)"에 등록한다.  만약 constant pool 에 이미 존재하는 문자열이라면 그 문자열의 참조값을 리턴한다.
+String 인스턴스의 문자열을 "constant pool (상수 풀)"에 등록한다.  만약 constant pool 에 이미 존재하는 문자열이라면 그 문자열의 참조값을 반환한다.
 
 [누군가](http://stackoverflow.com/questions/1091045/is-it-good-practice-to-use-java-lang-string-intern)가 말하길, 동등비교가 가능한 것은 부수효과일 뿐 `intern()`의 원래 목적은 메모리 관리라고 한다.
 
@@ -55,7 +55,7 @@ public static void main(String[] args) {
 
 ### codePointAt()
 
-String의 각 문자에 해당하는 유니코드 코드 포인트를 10진수로 리턴한다.
+String의 각 문자에 해당하는 유니코드 코드 포인트를 10진수로 반환한다.
 
 ```java
 String str = "한글";

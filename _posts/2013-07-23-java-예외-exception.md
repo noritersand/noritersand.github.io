@@ -238,7 +238,7 @@ class MyShopException extends Exception {
         else if (this.code.equals("B001")) number = "200";
         else if (this.code.equals("B002")) number = "210";
 
-        return number; //생성자로 받아온 Exception code를 비교해 해당 문자열을 리턴하는 메서드
+        return number; //생성자로 받아온 Exception code를 비교해 해당 문자열을 반환하는 메서드
     }
 }
 ```

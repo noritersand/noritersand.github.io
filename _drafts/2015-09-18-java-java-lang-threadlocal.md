@@ -82,7 +82,7 @@ public class ThreadVariableRegistry {
     }
 
     /**
-     * (현재 쓰레드의 레퍼런스) + (key) 를 키 값에 저장된 value를 리턴한다.
+     * (현재 쓰레드의 레퍼런스) + (key) 를 키 값에 저장된 value를 반환한다.
      *
      * @param key
      * @return

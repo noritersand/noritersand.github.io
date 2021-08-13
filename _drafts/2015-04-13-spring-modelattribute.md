@@ -52,7 +52,7 @@ public ModelAndView draw(@ModelAttribute("specified") MyModel myModel) {
 @ModelAttribute returnType methodName( ... )
 ```
 
-컨트롤러에서 뷰에 전달할 일종의 공통 모델을 설정한다. 메서드가 리턴하는 값은 Request객체에 전달되며 전달 범위는 해당 메서드가 존재하는 컨트롤러 전체에 해당된다. `@ModelAttribute` 어노테이션이 적용된 메서드는 컨트롤러가 자동으로 호출한다. 단, 매 요청마다 반복 실행되므로 효율성을 고려해야 한다.
+컨트롤러에서 뷰에 전달할 일종의 공통 모델을 설정한다. 메서드가 반환하는 값은 Request객체에 전달되며 전달 범위는 해당 메서드가 존재하는 컨트롤러 전체에 해당된다. `@ModelAttribute` 어노테이션이 적용된 메서드는 컨트롤러가 자동으로 호출한다. 단, 매 요청마다 반복 실행되므로 효율성을 고려해야 한다.
 
 ```java
 @Controller

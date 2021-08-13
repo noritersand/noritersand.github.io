@@ -141,7 +141,7 @@ while (bis.available() > 0) {
 bis.close();
 ```
 
-여기서는 `available()`을 사용했는데 이는 Stream 클래스의 메서드로 스트림으로부터 읽어 올 수 있는 데이터의 크기를 리턴한다.
+여기서는 `available()`을 사용했는데 이는 Stream 클래스의 메서드로 스트림으로부터 읽어 올 수 있는 데이터의 크기를 반환한다.
 
 #### BufferedStream 사용 예
 
@@ -271,7 +271,7 @@ out.close();
 // 읽기
 BufferedReader in = new BufferedReader(new FileReader("c:\\iotest\\buffer.txt"));
 String data;
-while((data = in.readLine()) != null) { //읽을게 없으면 null 리턴
+while((data = in.readLine()) != null) { // 읽을게 없으면 null 반환
     System.out.println(data);
 }
 in.close();
@@ -286,7 +286,7 @@ in.close();
 
 바이트 기반 보조 스트림과 마찬가지로 `flush()`를 실행하거나 스트림을 닫아야 버퍼의 데이터가 출력된다.
 
-`read()`는 stream의 경우와 사용방법은 거의 차이나지 않지만 새롭게 추가된 `readLine()`은 `read()`와 다르게 줄 단위로 데이터를 읽어오며 더 이상 읽을 데이터가 없으면 -1이 아니라 null을 리턴한다.
+`read()`는 stream의 경우와 사용방법은 거의 차이나지 않지만 새롭게 추가된 `readLine()`은 `read()`와 다르게 줄 단위로 데이터를 읽어오며 더 이상 읽을 데이터가 없으면 -1이 아니라 null을 반환한다.
 
 ```java
 // 파일 복사

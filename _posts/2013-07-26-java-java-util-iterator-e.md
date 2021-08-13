@@ -30,8 +30,8 @@ public interface Iterator<E> {
 
 ## 주요 메서드
 
-- `hasNext()`: Iterator 객체가 다음요소를 소유하는지 여부를 불리언으로 리턴.
-- `next()`: 다음요소를 리턴.
+- `hasNext()`: Iterator 객체가 다음요소를 소유하는지 여부를 불리언으로 반환.
+- `next()`: 다음요소를 반환.
 - `remove()`: 컬렉션에서 Iterator 의해 반환된 마지막 요소를 제거.
 
 ## example
@@ -110,8 +110,8 @@ list.add("셋");
 
 Iterator<String> it = list.iterator();
 
-while(it.hasNext()) { //Iterator 객체에 다음 데이터가 있으면 true
-    String ele = it.next(); //다음 데이터를 리턴
+while(it.hasNext()) { // Iterator 객체에 다음 데이터가 있으면 true
+    String ele = it.next(); // 다음 데이터를 반환
     logger.debug(ele);
 }
 

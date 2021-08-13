@@ -119,7 +119,7 @@ undefined || null; // null
 alert(1) || alert(2);
 ```
 
-OR 연산은 좌변이 `false`일 때 우변도 평가한다. (`window.alert`의 리턴값은 `undefined`) 따라서 경고창은 두 번 나타난다.
+OR 연산은 좌변이 `false`일 때 우변도 평가한다. (`window.alert`의 반환값은 `undefined`) 따라서 경고창은 두 번 나타난다.
 
 ```js
 alert(1) && alert(2);

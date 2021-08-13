@@ -80,7 +80,7 @@ console.log('count: %d', count);
 ```
 
 `printf()` 와 같은 방식으로 문자열 포맷을 지정할 수 있다. 만약 첫 문자열에 포맷객체가 없다면 각 요소에 자동으로 util.inspect를 사용한다.
-`util.inspect(object)`: 객체의 문자열 표현을 리턴.
+`util.inspect(object)`: 객체의 문자열 표현을 반환.
 참고로 console.log 함수는 다음처럼 정의되어 있다.
 
 ```js

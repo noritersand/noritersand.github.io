@@ -39,7 +39,7 @@ public class Bean_ClassName [ implements java.io.Serializable ] {
 
 ￼￼￼￼￼￼java.io.Serializable 인터페이스는 생략 가능하나 빈즈 규약에 명시된 내용으로 자바 빈즈에 저장된 프로퍼티를 포함한 채로 파일시스템에 저장되거나 네트워크로 전송될 수 있도록 객체 직렬화를 제공 해야 하므로 implement 한다.
 
-위에서 인스턴스 변수(프로퍼티)의 값을 읽고 쓰는 메서드의 이름은 일반적으로 변수명 앞에 get이나 set을 붙이지만 리턴하는 값이 boolean일 경우엔 is + 변수명으로 명명한다. (get이라 해도 그닥 문제되는건 없음)
+위에서 인스턴스 변수(프로퍼티)의 값을 읽고 쓰는 메서드의 이름은 일반적으로 변수명 앞에 get이나 set을 붙이지만 반환값이 boolean일 경우엔 is + 변수명으로 명명한다. (get이라 해도 그닥 문제되는건 없음)
 
 ```java
 public class Temp {
@@ -67,7 +67,7 @@ javac -d . Test.java
 
 ## example 1
 
-`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더를 작성하고 HelloBean.java 파일을 작성하여 컴파일 한다.
+`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더를 작성하고 HelloBean.java 파일을 작성하여 컴파일한다.
 
 ```java
 package com.test.bean;
@@ -110,7 +110,7 @@ JSP 파일 작성 - HelloBean.jsp(study 폴더에 저장)
 
 ## example 2
 
-`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더에 MemBean.java 파일을 작성하여 컴파일 한다.
+`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더에 MemBean.java 파일을 작성하여 컴파일한다.
 
 ```java
 package com.test.bean;

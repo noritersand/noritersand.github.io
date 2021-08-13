@@ -111,7 +111,7 @@ submission 이벤트에 실행할 함수를 할당한다.
 
 ### .val()
 
-모든 요소의 value 속성을 리턴한다.
+모든 요소의 value 속성을 반환한다.
 
 ### .val( val )
 
@@ -239,7 +239,7 @@ $.get(url, { num1: num1, num2: num2, oper: o }, function(data){
 
 ### jQuery.getJSON()
 
-파라미터로 명시된 URL을 사용하여 서버에 GET 요청을 전송한다. 결과는 JSON 형식의 데이터를 리턴 받는다.
+파라미터로 명시된 URL을 사용하여 서버에 GET 요청을 전송한다. 응답 데이터는 JSON 형식이어야 한다.
 
 ```
 jQuery.getJSON( url [, data ] [, success ] )
@@ -270,7 +270,7 @@ $.getJSON('testJSON.js', function (data) {
 
 ### jQuery.getScript()
 
-매개변수로 명시된 URL을 사용하여 서버에 GET 요청을 전송한다. 결과는 JavaScript 파일 형식의 데이터를 리턴 받는다.
+매개변수로 명시된 URL을 사용하여 서버에 GET 요청을 전송한다. 응답 데이터는 JavaScript 파일 형식이어야 한다.
 
 ```
 jQuery.getScript( url [, success ] )
@@ -308,7 +308,7 @@ $.post(url, { num1: num1, num2: num2, oper: o }, function(data){
 
 ## Local ajax event handlers
 
-`jQuery.ajax()`와 그 파생 메서드들은 jQuery-XMLHttpRequest Object를 리턴하는데, 이를 통해 수신된 결과를 처리하도록 핸들러를 등록할 수 잇다.
+`jQuery.ajax()`와 그 파생 메서드들은 jQuery-XMLHttpRequest Object를 반환하는데, 이를 통해 수신된 결과를 처리하도록 핸들러를 등록할 수 잇다.
 
 ```js
 var jqxhr = $.post('example.php', function() {
@@ -320,7 +320,7 @@ jqxhr.fail(function() {
 });
 ```
 
-그리고 done, fail, always 등의 Ajax 이벤트 관련 메서드는 항상 this를 리턴한다는 점을 이용하여 다음처럼 콜체인 형식으로 작성할 수도 있다.
+그리고 done, fail, always 등의 Ajax 이벤트 관련 메서드는 항상 this를 반환한다는 점을 이용하여 다음처럼 콜체인 형식으로 작성할 수도 있다.
 
 ```js
 $.get('example.php', function() {
@@ -342,7 +342,7 @@ $.get('example.php', function() {
 
 `jqXHR.success()`, `jqXHR.error()`, `jqXHR.complete()`는 1.8 버전 이후로 사용이 권장되지 않는다. (1.11 버전 기준 아직 삭제되진 않았음)
 
-혼동될 수 있는게 폐기 예정인 것은 `ajax()`의 옵션이 아니라 jqXHR의 메서드다. `ajax()`의 옵션[^3]인 success, error, complete는 기존 그대로 사용한다. `ajax()`와 그 파생형인 `get()`, `post()` 등이 리턴하는 jqXHR 객체의 메서드인 success/done, complete/always, error/fail 중에서 success, error, complete가 deprecation 된 것이다.
+혼동될 수 있는게 폐기 예정인 것은 `ajax()`의 옵션이 아니라 jqXHR의 메서드다. `ajax()`의 옵션[^3]인 success, error, complete는 기존 그대로 사용한다. `ajax()`와 그 파생형인 `get()`, `post()` 등이 반환하는 jqXHR 객체의 메서드인 success/done, complete/always, error/fail 중에서 success, error, complete가 deprecation 된 것이다.
 
 아래는 권장사항을 준수한 예시:
 

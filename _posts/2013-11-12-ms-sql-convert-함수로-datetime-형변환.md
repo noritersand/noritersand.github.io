@@ -37,8 +37,8 @@ ex2
 
 org.apache.ibatis.session.SqlSession을 이용한 JDBC의 경우:
 
-MS-SQL의 DATETIME은 java.sql.Timestamp 클래스 타입으로 리턴된다.
-String으로 받고싶다면 CONVERT()를 통해 VARCHAR 타입으로 변환하여 리턴한다.
+MS-SQL의 DATETIME은 java.sql.Timestamp 클래스 타입으로 반환한다.
+String으로 받고싶다면 CONVERT()를 통해 VARCHAR 타입으로 변환한다.
 
 #### style 표
 

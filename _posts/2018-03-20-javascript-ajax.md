@@ -146,7 +146,7 @@ xhr.abort();
 
 ### XMLHttpRequest.getAllResponseHeaders()
 
-response 헤더 정보를 출력한다. `send()`를 실행하기 전에는 빈 값을 리턴한다. 즉, 서버의 응답 후에만 사용 가능한 메서드.
+response 헤더 정보를 출력한다. `send()`를 실행하기 전에는 빈 값을 반환한다. 즉, 서버의 응답 후에만 사용 가능한 메서드.
 
 ```js
 xhr.getAllResponseHeaders();
@@ -165,7 +165,7 @@ XMLHttpRequest.getResponseHeader( header )
 
 - `header`: 헤더의 이름
 
-response 헤더 중 특정한 값만 리턴한다.
+response 헤더 중 특정한 값만 반환한다.
 
 ```js
 xhr.getResponseHeader('Content-Type')
@@ -178,19 +178,19 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.responseText
 
-서버의 응답을 문자열로 리턴.
+서버의 응답을 문자열로 갖는 프로퍼티.
 
 ### XMLHttpRequest.responseXML
 
-서버의 응답을 `XMLDocument`로 파싱해 리턴. 파싱이 불가능하면 `null`을 리턴한다.
+`XMLDocument`로 파싱된 서버의 응답값. 파싱이 불가능하면 `null`이 할당된다.
 
 ### XMLHttpRequest.status
 
-응답의 상태코드를 숫자로 리턴한다.
+응답의 상태코드를 의미하는 숫자값.
 
 ### XMLHttpRequest.statusText
 
-응답의 상태코드를 문자열로 리턴한다. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 `404`일 때 리턴되는 값은 "Not Found"
+응답의 상태코드를 의미하는 문자열. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 `404`일 때 할당되는 값은 "Not Found"
 
 ### XMLHttpRequest.readyState
 

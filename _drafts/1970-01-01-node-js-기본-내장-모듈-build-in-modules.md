@@ -183,7 +183,7 @@ http.createServer(function(request, response) {
 
 기능함수를 제공하는 모듈
 
-#### 객체의 문자열 표현을 리턴
+#### 객체의 문자열 표현을 반환
 
 ```js
 console.log(require('util').inspect(require('http')));

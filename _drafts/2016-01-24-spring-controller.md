@@ -196,16 +196,16 @@ public String addProduct(HttpServletRequest request,
 | 리턴 타입 | 설명 |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |  ModelAndView |  뷰 정보 및 모델 정보를 담고 있는 ModelAndView 객체  |
-|  Model |  뷰에 전달할 객체 정보를 담고 있는 Model을 리턴한다. 이때 뷰 이름은 요청 URL로부터 결정된다. (RequestToViewNameTranslator를 통해 뷰 결정)  |
-|  Map, ModelMap |  뷰에 전달할 객체 정보를 담고 있는 Map 혹은 ModelMap을 리턴한다. 이때 뷰 이름은 요청 URL로부터 결정된다. (RequestToViewNameTranslator를 통해 뷰 결정)  |
-|  String |  뷰 이름을 리턴한다.  |
-|  View 객체 |  View 객체를 직접 리턴. 해당 View 객체를 이용해서 뷰를 생성한다.  |
+|  Model |  뷰에 전달할 객체 정보를 담고 있는 Model을 반환한다. 이때 뷰 이름은 요청 URL로부터 결정된다. (RequestToViewNameTranslator를 통해 뷰 결정)  |
+|  Map, ModelMap |  뷰에 전달할 객체 정보를 담고 있는 Map 혹은 ModelMap을 반환한다. 이때 뷰 이름은 요청 URL로부터 결정된다. (RequestToViewNameTranslator를 통해 뷰 결정)  |
+|  String |  뷰 이름을 반환한다.  |
+|  View 객체 |  View 객체를 직접 반환. 해당 View 객체를 이용해서 뷰를 생성한다.  |
 |  void |  메서드가 ServletResponse나 HttpServletResponse 타입의 파라미터를 갖는 경우 메서드가 직접 응답을 처리한다고 가정한다. 그렇지 않을 경우 요청 URL로부터 결정된 뷰를 보여준다. (RequestToViewNameTranslator를 통해 뷰 결정)  |
-|  `@ResponseBody` 어노테이션 적용 |  메서드에서 `@ResponseBody` 어노테이션이 적용된 경우, 리턴 객체를 HTTP 응답으로 전송한다. HttpMessageConverter를 이용해서 객체를 HTTP 응답 스트림으로 변환한다.  |
+|  `@ResponseBody` 어노테이션 적용 |  메서드에서 `@ResponseBody` 어노테이션이 적용된 경우, 반환된 객체를 HTTP 응답으로 전송한다. HttpMessageConverter를 이용해서 객체를 HTTP 응답 스트림으로 변환한다.  |
 
 ### ModelAndView 객체
 
-View와 Model 정보를 모두 포함한 객체를 리턴하는 경우
+View와 Model 정보를 모두 포함한 객체를 반환하는 경우
 
 ```java
 @RequestMapping(params = "param=addView")
@@ -219,7 +219,7 @@ public ModelAndView addProductView() {
 
 ### Map, ModelMap
 
-Web View로 전달할 데이터만 리턴하는 경우
+Web View로 전달할 데이터만 반환하는 경우
 
 ```java
 @RequestMapping("/productList.do")
@@ -230,7 +230,7 @@ public Map getProductList() {
 }
 ```
 
-여기서 View에 대한 정보를 명시적으로 리턴하지는 않았지만, 내부적으로 View name은 RequestToViewNameTranslator에 의해서 입력된 HTTP Request를 이용하여 생성된다. 예를 들어 DefaultRequestToViewNameTranslator 는 입력된 HTTP Request URI를 변환하여 View name을 다음과 같이 생성한다.
+여기서 View에 대한 정보를 명시적으로 반환하지는 않았지만, 내부적으로 View name은 RequestToViewNameTranslator에 의해서 입력된 HTTP Request를 이용하여 생성된다. 예를 들어 DefaultRequestToViewNameTranslator 는 입력된 HTTP Request URI를 변환하여 View name을 다음과 같이 생성한다.
 
 - http://localhost:8080/test/display.do -> 생성된 View name: 'display'
 - http://localhost:8080/test/admin/index.do -> 생성된 View name: 'admin/index'
@@ -247,7 +247,7 @@ public Map getProductList() {
 
 ### Model
 
-Web View로 전달할 데이터만 리턴하는 경우 Model은 Java5 이상에서 사용할 수 있는 인터페이스이다. 기본적으로 ModelMap과 같은 기능을 제공한다. Model 인터페이스의 구현클래스에는 BindingAwareModelMap 와 ExtendedModelMap 이 있다. View name은 위에서 설명한 바와 같이 RequestToViewNameTranslator에 의해 내부적으로 생성된다.
+Web View로 전달할 데이터만 반환하는 경우 Model은 Java5 이상에서 사용할 수 있는 인터페이스이다. 기본적으로 ModelMap과 같은 기능을 제공한다. Model 인터페이스의 구현클래스에는 BindingAwareModelMap 와 ExtendedModelMap 이 있다. View name은 위에서 설명한 바와 같이 RequestToViewNameTranslator에 의해 내부적으로 생성된다.
 
 ```java
 @RequestMapping("/productList.do")
@@ -261,7 +261,7 @@ public Model getProductList() {
 
 ### String
 
-View name만 리턴하는 경우:
+View name만 반환하는 경우:
 
 ```java
 @RequestMapping(value = {"/addProduct.do", "/updateProduct.do" })

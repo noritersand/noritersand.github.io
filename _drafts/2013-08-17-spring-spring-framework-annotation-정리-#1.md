@@ -406,7 +406,7 @@ public void penaltyInfoDtlUpdate(@RequestBody String body,
 
 참고: http://ismydream.tistory.com/140
 
-클라이언트에 JSON 형식의 값을 응답할 때 유용하다. 메서드에 `@ResponseBody`를 적용한 후 문자열을 리턴하면 그 값은 HTTP response header가 아니라 HTTP response body에 쓰여진다. 객체를 넘길경우 스프링에 내장된 JACKSON에 의해 문자열로 변환될 것이다.
+클라이언트에 JSON 형식의 값을 응답할 때 유용하다. 메서드에 `@ResponseBody`를 적용한 후 문자열을 반환하면 그 값은 HTTP response header가 아니라 HTTP response body에 쓰여진다. 객체를 넘길경우 스프링에 내장된 JACKSON에 의해 문자열로 변환될 것이다.
 
 또한 `@ResponseBody`가 적용된 컨트롤러는 context에 설정된 resolver를 무시한다.
 

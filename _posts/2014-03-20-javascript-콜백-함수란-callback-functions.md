@@ -61,4 +61,4 @@ http.createServer(function(request, response) {
 }).listen(8888);
 ```
 
-위에서 두번째로 예를 든 코드와 크게 다르지 않다. `createServer()`는 첫 번째 파라미터로 함수를 받는다. 그리고 `createServer()` 함수가 리턴한 객체의 `listen()` 함수로 http 리스너를 등록한다. 그리곤 request 이벤트가 발생할때마다 첫 번째 파라미터인 리터럴로 작성한 함수가 실행된다.
+위에서 두번째로 예를 든 코드와 크게 다르지 않다. `createServer()`는 첫 번째 파라미터로 함수를 받는다. 그리고 `createServer()` 함수가 반환한 객체의 `listen()` 함수로 http 리스너를 등록한다. 그리곤 request 이벤트가 발생할때마다 첫 번째 파라미터인 리터럴로 작성한 함수가 실행된다.
