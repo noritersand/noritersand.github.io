@@ -781,6 +781,7 @@ gitk --all # 저장소의 모든 커밋 보기
 ```bash
 git help config
 git config --help
+git help -a # 모든 명령어 보기
 ```
 
 ## init
@@ -1097,8 +1098,11 @@ git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 #### 대화형 리베이스 도구로 여러 커밋 수정
 
 ```bash
-git rebase -i HEAD~3  # 헤드부터 3회 전 커밋 직전까지의 커밋을 대화형으로 수정
+git rebase -i HEAD~3  # 헤드부터 2회 전 커밋까지를 대화형으로 수정
 ```
+
+`HEAD~N`에서 `N`은 다른 명령어와 다르게 N회 전이 아니라 `N-1`회 전 커밋을 의미하는게 특이하다.  
+예를 들어 `git show HEAD~2`로 보이는 커밋(1)과 `git rebase -i HEAD~2`에서 맨 위에 표시되는 커밋(2)은 다른데, (1)은 (2)의 부모 커밋이다.
 
 ```bash
 pick d27530d6b (HEAD 기준 2회 전)
