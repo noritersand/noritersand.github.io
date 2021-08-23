@@ -60,6 +60,15 @@ $("#do2").click(function() {
 });
 ```
 
+### 이벤트 핸들러 가져오기
+
+여담으로 `data()`는 핸들러 함수를 가져올 때 사용하기도 함:
+
+```js
+var events = $('#element').data('events');
+events.click[0]; // {type: "click", origType: "click", data: null, guid: 693, handler: ƒ, …}
+```
+
 ## 셋의 차이점
 
 - `.attr()`은 문자열만 할당할 수 있다.
