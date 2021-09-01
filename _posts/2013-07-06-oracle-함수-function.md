@@ -739,6 +739,30 @@ ORDER BY deptno, sal DESC;
         30       7900 JAMES             950          5
 ```
 
+#### ROW_NUMBER()와의 차이
+
+순위 매기는 방식이 다르다:
+
+```sql
+-- COUNT 값 같아도 동순위 없이 ROWNUM 우선해서 순위 매김
+SELECT MEMBER_NO, CNT, ROW_NUMBER() OVER(ORDER BY CNT DESC) RN
+FROM (
+  SELECT MEMBER_NO, COUNT(*) CNT
+  FROM EVENT_PARTICIPANT
+  WHERE EVENT_NO = '00000000007823'
+  GROUP BY MEMBER_NO
+);
+
+-- COUNT 값 같으면 동순위로 표시
+SELECT MEMBER_NO, CNT, RANK() OVER(ORDER BY CNT DESC) RN
+FROM (
+  SELECT MEMBER_NO, COUNT(*) CNT
+  FROM EVENT_PARTICIPANT
+  WHERE EVENT_NO = '00000000007823'
+  GROUP BY MEMBER_NO
+);
+```
+
 ### DENSE_RANK() OVER(조건)
 
 조건을 통해 순위를 반환한다. 해당 조건을 만족하면서 동일한 값이 있는 경우 동일 순위로 매겨지며, 다음 순위는 1만큼 증가한다(2위가 두 명이어도 다음 순위는 3위).
