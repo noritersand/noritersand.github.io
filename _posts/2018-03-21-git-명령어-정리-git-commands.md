@@ -152,6 +152,7 @@ git branch -vv  # 추적중인 브랜치 확인(업스트림 브랜치 확인)
 ```bash
 git branch -u origin/test3  # origin 리모트의 test3 브랜치로 업스트림 브랜치 설정
 git branch --set-upstream-to=origin/test3  # 같음
+git branch --unset-upstream  # 업스트림 브랜치 지정 해제
 ```
 
 단, 이 방법은 설정하려는 브랜치에 미리 리모트에 만들어져 있는 상태여야만 가능하다. 만약 로컬에서 새로 생성한 브랜치를 업스트림으로 설정하고 싶다면, `git push --set-upstream`을 사용한다.
