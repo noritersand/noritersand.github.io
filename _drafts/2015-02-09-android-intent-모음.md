@@ -45,3 +45,10 @@ intent://#Intent;scheme=스킴명;package=패키지명;end
 - 위챗: `intent://#Intent;scheme=weixin;package=com.tencent.mm;end`
 - 위챗-QR코드 스캔: `intent://dl/scan#Intent;scheme=weixin;package=com.tencent.mm;end`
 - 위챗 스토어로 보내기: http://www.wechat.com/cgi-bin/download302?fr=wechat.com&url=androidMarket&cl=mobile
+
+## 여담
+
+### 사이트 주소 링크로 모바일 앱 실행하기
+
+특정 사이트의 링크를 실행하려고 할 때 설치되어 있는 앱들의 '지원하는 웹 주소' 값을 이용하는 OS 자체 앱 분기(브라우저로 실행할래 특정 앱으로 실행할래를 묻는 팝업)는 사실 도메인만 올바르면 알아서 되는게 정상이다.
+하지만 종종 이 기능이 무력화되는 경우가 있어서 테스트 해봤더니, 카카오톡 등의 웹뷰(=브라우저)를 내장한 앱에서는 소용이 없었음.
