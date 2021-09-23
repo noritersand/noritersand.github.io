@@ -1400,8 +1400,9 @@ git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시�
 ```bash
 git stash list  # 스태시 목록 확인
 git stash show  # 첫 번째 스태시 상세 확인
-git stash show stash@{0} # 리눅스에서만 됨
-git stash show 'stash@{0}' # 윈도우 파워쉘은 이렇게
+git stash show stash@{0}  # 리눅스에서만 됨
+git stash show 'stash@{0}'  # 윈도우 파워쉘은 이렇게
+git stash show 0  # git stash show stash@{0}과 같음
 ```
 
 #### 스태시 적용(임시 저장본 불러오기)
