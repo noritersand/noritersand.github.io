@@ -38,17 +38,17 @@ tags:
 다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 홑따옴표를 사용할 때 무시된다:
 
 ```bash
-PS > $i = 5
-PS > "The value of $i is $i."
+PS> $i = 5
+PS> "The value of $i is $i."
 The value of 5 is 5.
 
-PS > 'The value of $i is $i.'
+PS> 'The value of $i is $i.'
 The value of $i is $i.
 
-PS > "The value of $(2+3) is 5."
+PS> "The value of $(2+3) is 5."
 The value of 5 is 5.
 
-PS > 'The value of $(2+3) is 5.'
+PS> 'The value of $(2+3) is 5.'
 The value of $(2+3) is 5.
 ```
 
