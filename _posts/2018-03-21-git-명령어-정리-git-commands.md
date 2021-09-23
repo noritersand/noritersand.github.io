@@ -1009,7 +1009,8 @@ git pull [리모트저장소] [브랜치]
 
 ```bash
 git pull  # 업스트림 브랜치를 현재 브랜치로 pull
-git pull origin master # origin 저장소의 master 브랜치를 현재 브랜치로 pull
+git pull origin master  # origin 저장소의 master 브랜치를 현재 브랜치로 pull
+git pull --rebase  # fetch 후 머지 대신 리베이스
 ```
 
 명시한 리모트 브랜치를 현재 브랜치로 pull 한다는 점에 주의할 것. 브랜치를 명시하지 않으면 업스트림 브랜치를 현재 브랜치에 자동으로 머지한다. 옵션을 따로 지정하지 않았다면, 가능한 경우 FF 머지를 시도한다.
