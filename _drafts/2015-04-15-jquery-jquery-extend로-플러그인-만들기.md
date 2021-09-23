@@ -215,7 +215,7 @@ object === object1; // true
 
 이 경우 병합 결과가 첫 번째 오브젝트인 object1에 저장되므로 object와 object1은 서로 일치한다. 따라서 변수로 사용된 object는 생략할 수 있다.
 
-deep 옵션이 지정되지 않았거나 false 일 때는 'non recursive merge'로 동작하는데 이 방식은 오브젝트의 프로퍼티가 또 다른 오브젝트일 때 복사하지 않는다.
+deep 옵션이 지정되지 않았거나 false 일 때는 'non recursive merge'로 작동하는데 이 방식은 오브젝트의 프로퍼티가 또 다른 오브젝트일 때 복사하지 않는다.
 
 ### example
 

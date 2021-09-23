@@ -32,6 +32,26 @@ tags:
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
 
+### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)
+
+리터럴 문자열을 표현할 때 큰 따옴표`""`와 작은 따옴표`''`는 대체로 동일한 의미로 쓰인다.  
+다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 홑따옴표를 사용할 때 무시된다:
+
+```bash
+PS > $i = 5
+PS > "The value of $i is $i."
+The value of 5 is 5.
+
+PS > 'The value of $i is $i.'
+The value of $i is $i.
+
+PS > "The value of $(2+3) is 5."
+The value of 5 is 5.
+
+PS > 'The value of $(2+3) is 5.'
+The value of $(2+3) is 5.
+```
+
 ### | (파이프)
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다.

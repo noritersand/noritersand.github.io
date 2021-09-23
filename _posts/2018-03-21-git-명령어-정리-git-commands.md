@@ -839,7 +839,7 @@ git log master origin/master # 로컬의 master와 origin remote의 master 브�
 - `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
 
 ```bash
-git log -p -2  # 2개의 항목과 패치내용만 보인다.
+git log -p -2  # 패치내용을 출력하되 2개의 이력만 표시
 git log --pretty=oneline  # 각 커밋들의 메시지와 체크섬만 한 줄씩 출력된다.
 git log -1 HEAD~3  # 헤드 기준 세번째 전의 커밋 로그 보기
 git log v1.0 v2.4  # v1.0 태그에서 v2.4 태그 사이의 로그 보기

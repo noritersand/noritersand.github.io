@@ -40,14 +40,16 @@ node 명령어는 단독으로 사용했을 때 REFL이라고 하는 node.js she
 
 ### sync/async
 
-동기 방식의 blocking I/O가 아래처럼 동작한다면:
+쉽게 표현해서, 동기 방식인 blocking I/O가 아래처럼 돌아간다면:
 
 ```js
 puts("이름을 입력하세요");
 var name = gets();
 puts("당신의 이름은" + name + "입니다.");
 ```
-비동기 방식의 non-blocking I/O는 아래와 같이 동작한다:
+
+비동기 방식인 non-blocking I/O는 아래와 같다:
+
 ```js
 puts("이름을 입력하세요");
 gets(function(name) {

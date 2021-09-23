@@ -149,21 +149,12 @@ WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 
 
 ## 윈도우10 초기 설정
 
-### 시건 형식 변경
+### 시간 형식 변경
 
 `설정` > `날짜 및 시간 설정` >  `지역` > `데이터 형식 변경`에서
 
 - 시작 요일: 월요일로 변경
 - 간단한/자세한 시간: 12시간제에서 24시간제로 변경
-
-### 텔넷 활성화
-
-쉘(관리자 권한)에서 아래 실행:
-
-```bash
-# PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
-dism /online /Enable-Feature /FeatureName:TelnetClient
-```
 
 ### 멀티 클립보드
 
@@ -176,6 +167,35 @@ dism /online /Enable-Feature /FeatureName:TelnetClient
 ### 바로 가기 키 끄기
 
 `설정` > `접근성 키보드 설정`에서 시프트 연타 등의 바로 가기 키 설정 끄기.
+
+### 텔넷 활성화
+
+쉘(관리자 권한)에서 아래 실행:
+
+```bash
+# PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
+dism /online /Enable-Feature /FeatureName:TelnetClient
+```
+
+### 로캘(로케일) 범주<sup>Locale Categories</sup> 변경
+
+> 로캘 범주는 지역화 루틴에서 사용할 프로그램 로캘 정보 부분을 지정하는 데 사용하는 매니페스트 상수입니다.
+
+~뭔소리야~ 잘 모르겠지만 프로그램에서 지역을 알기 위해 참조하는 환경 변수로 보인다.
+
+어쨋든 파워쉘을 관리자 권한으로 열고 아래 명령을 실행한다:
+
+```bash
+[System.Environment]::SetEnvironmentVariable('LC_ALL', 'ko_KR.UTF-8', 'Machine')
+```
+
+`LC_ALL`은 모든 로케일 관련 범주를 의미하는 환경 변수이며, 몇몇 앱에서는 이 설정이 유효하지 않을 수 있다. (git 히스토리의 한글 깨짐 해결방법으로 검색이 많이 되던데, 정작 gitk에선 효과가 없음)
+
+참고:
+
+- https://docs.microsoft.com/ko-kr/cpp/c-runtime-library/reference/setlocale-wsetlocale?view=msvc-160
+- https://docs.microsoft.com/ko-kr/cpp/c-runtime-library/locale-categories?view=msvc-160
+- https://docs.microsoft.com/ko-kr/cpp/c-runtime-library/locale-names-languages-and-country-region-strings?view=msvc-160
 
 ### 260자 경로 제한 풀기
 
