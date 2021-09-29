@@ -588,6 +588,14 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 ## [diff](https://git-scm.com/docs/git-diff)
 
+지정한 영역끼리의 변경 사항을 출력한다.
+
+#### options
+
+- `--check`: 충돌 문자 혹은 공백 오류가 있는지 확인
+- `--name-only`: 변경된 파일의 이름만 출력
+- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
+
 #### unstaged와 staged의 비교
 
 ```bash
@@ -685,12 +693,6 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
 
-#### options
-
-- `--check`: 충돌 문자 혹은 공백 오류가 있는지 확인
-- `--name-only`: 변경된 파일의 이름만 출력
-- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
-
 ## [fetch](https://git-scm.com/docs/git-fetch)
 
 리모트 저장소의 데이터를 로컬 저장소로 다운로드한다. 옵션 지정이 없을 경우, 서버의 데이터를 모두 가져오지만 로컬 브랜치로의 머지는 생략한다.
@@ -731,7 +733,7 @@ git format-patch 브랜치_커밋아이디_혹은_태그  # 현재 브랜치부�
 git diff > FILE  # diff 출력 내용을 파일로 생성. 검색에서 나오긴 했는데 apply가 안되는건 함정...
 ```
 
-### 생성한 패치 적용하기
+#### 생성한 패치 적용하기
 
 `format-patch`는 파일명 앞에 커밋 순서대로 번호를 붙여주니 오름차순으로 적용하면 된다.
 
@@ -1386,7 +1388,7 @@ git rm log/\*.log  # log/디렉터리의 확장명이 log인 파일 모두 삭�
 git rm \*.~  # ~로 끝나는 파일 모두 삭제
 ```
 
-## show
+## [show](https://git-scm.com/docs/git-show)
 
 커밋 정보 조회
 
@@ -1396,6 +1398,8 @@ git show v1.1  # v1.1 태그의 커밋 정보 조회
 git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b  # 체크섬으로 조회
 git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명시해도 인식한다.
 ```
+
+커밋의 변경사항 표시는 [diff-tree](https://git-scm.com/docs/git-diff-tree)의 옵션(format이나 pretty 등)을 사용해서 조절할 수 있다.
 
 ## [stash](https://git-scm.com/docs/git-stash)
 
@@ -1449,7 +1453,7 @@ git stash pop --index
 
 ```bash
 git stash drop  # 첫 번째 스태시 삭제
-git stash drop stash@{3}  # 네 번째 스태시 삭제
+git stash drop 3  # 네 번째 스태시 삭제
 git stash clear  # 모든 스태시 삭제
 ```
 

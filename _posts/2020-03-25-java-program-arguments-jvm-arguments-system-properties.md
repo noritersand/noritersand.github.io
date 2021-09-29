@@ -52,12 +52,12 @@ java MainTest -classpath C:/somewhere -Dspring.profiles.active=real -XX:+UseG1GC
 System properties는 JVM arguments 중 `-D` 옵션으로 설정한 `이름=값` 형태의 설정값이다.
 
 ```bash
-java MainTest -classpath C:/somewhere -Dspring.profiles.active=real -XX:+UseG1GC -Xms1024m -Xmx2048m -Duser.name=noritersand
+java MainTest -classpath C:/somewhere -Dspring.profiles.active=real -Duser.name=noritersand -Dfile.encoding=UTF-8
 ```
 
-이 중 `-Dspring.profiles.active=real`, `-Duser.name=noritersand` 얘네들이 System properties인데, 사실 이것 외에 `java.vm.name`, `java.home`, `os.version`, `user.home` 같은 JVM 내장 프로퍼티도 포함한다.
+사실 이것 외에 `java.vm.name`, `java.home`, `os.version`, `user.home` 같은 JVM 내장 프로퍼티도 포함한다.
 
-얘네들은 `System` 객체의 `getProperty()`, `getProperties()` 메서드로 얻을 수 있다.
+System properties는 `System` 객체의 `getProperty()`, `getProperties()` 메서드로 얻을 수 있다.
 
 ```java
 public class TryEverything {
