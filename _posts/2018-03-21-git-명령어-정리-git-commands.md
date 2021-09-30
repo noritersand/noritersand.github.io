@@ -535,6 +535,7 @@ git config --global alias.unhide 'update-index --no-assume-unchanged'
 git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
 git config --global alias.f 'fetch'
 git config --global alias.fp 'fetch --prune'
+git config --global alias.log2 'log --all --graph --pretty=oneline'
 git config --global alias.log-graph 'log --graph --pretty=oneline'
 git config --global alias.log-oneline 'log --pretty=oneline'
 ```
@@ -692,6 +693,23 @@ no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
 아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
+
+## [diff-tree](https://git-scm.com/docs/git-diff-tree)
+
+'두 개의 트리 개체를 통해 블롭의 내용과 모드를 비교'한다고 한다. (뭔 소린지...)  
+대충 커밋끼리 파일 단위로 어떻게 다른지 표시해주는 명령어라고 보면 됨.
+
+```bash
+git diff-tree feature  # 현재 브랜치 기준으로 feature 브랜치의 차이점 출력
+git diff-tree feature master  # 현재 feature 브랜치 기준으로 master 브랜치의 차이점 출력
+```
+
+#### options
+
+- `-m`: `diff-tree`는 기본적으로 머지 커밋과의 차이점은 생략하는데, 이 옵션을 지정하면 생략하지 않음
+- `-p` `-u` `--patch`: 패치로 사용할 수 있는 내용을 출력한다.
+- `-s` `--no-patch`: 패치 내용을 출력하지 않게 한다.
+- `--pretty[=<format>]` `--format=<format>`
 
 ## [fetch](https://git-scm.com/docs/git-fetch)
 
@@ -862,7 +880,7 @@ git log master origin/master # 로컬의 master와 origin remote의 master 브�
 - `--abbrev-commit`: 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
 - `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
 - `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
-- `--pretty`: 지정한 형식으로 보여준다. 이 옵션에는 `oneline`, `short`, `full`, `fuller`, `format`이 있다. `format`은 원하는 형식으로 출력하고자 할 때 사용한다.
+- `--pretty[=<format>]` `--format=<format>`: 지정한 형식으로 보여준다. 이 옵션에는 `oneline`, `short`, `full`, `fuller`, `format`이 있다. `format`은 원하는 형식으로 출력하고자 할 때 사용한다.
 - `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
 
 ```bash
@@ -1003,8 +1021,11 @@ git merge --abort
 fetch로 받아온 데이터를 현재 브랜치와 머지한다.
 
 ```bash
+git fetch
 git merge FETCH_HEAD
 ```
+
+주의: `FETCH_HEAD`는 `fetch` 명령을 실행한 시점에 체크아웃하고 있던 브랜치 기준으로 만들어진다. 따라서 `FETCH_HEAD`를 머지할 땐 항상 `fetch`를 먼저 할 것.
 
 #### 여러 커밋을 하나로 묶어서 머지: 스쿼시
 
@@ -1399,7 +1420,7 @@ git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b  # 체크섬으로 조회
 git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명시해도 인식한다.
 ```
 
-커밋의 변경사항 표시는 [diff-tree](https://git-scm.com/docs/git-diff-tree)의 옵션(format이나 pretty 등)을 사용해서 조절할 수 있다.
+커밋의 변경사항 표시는 [diff-tree](https://git-scm.com/docs/git-diff-tree)의 옵션을 사용해서 조절할 수 있다.
 
 ## [stash](https://git-scm.com/docs/git-stash)
 
