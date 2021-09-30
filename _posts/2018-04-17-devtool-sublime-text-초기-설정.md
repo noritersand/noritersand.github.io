@@ -12,6 +12,23 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## 팁
+
+### 터미널에서 서브라임 실행하기
+
+다음 둘 중 하나 수행:
+
+- 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
+- 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.  
+
+터미널 재시작 후 다음처럼 실행
+
+```bash
+subl  # 서브라임 실행
+subl .  # 서브라임 실행하고 현재 경로를 열기
+subl .\.gitignore  # .gitignore를 서브라임으로 열기
+```
+
 ## 기본 설정
 
 ### package control 설치
@@ -49,6 +66,16 @@ tags:
   { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
   { "keys": ["ctrl+shift+s"], "command": "save_all" },
   { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} }
+]
+```
+
+### Sublime Merge 단축키 변경
+
+#### key bindings - user
+
+```json
+[
+  {"keys": ["f1"], "command": "show_command_palette"}
 ]
 ```
 

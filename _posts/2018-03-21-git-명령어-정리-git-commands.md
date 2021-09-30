@@ -994,11 +994,10 @@ git merge A B
 
 현재 브랜치<sup>current branch</sup>에 A 브랜치와 B 브랜치를 머지한다.
 
-#### 커밋하지 않고 머지
+#### options
 
-```bash
-git merge --no-commit
-```
+- `--no-commit`: 커밋하지 않고 머지.
+- `--abort`: 머지 취소. 충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.
 
 #### 머지 도구 실행
 
@@ -1007,14 +1006,6 @@ git mergetool
 ```
 
 머지 도구로 지정된 앱을 실행한다. 이때 `_BACKUP`, `_LOCAL` 등의 이름이 붙은 백업파일들이 자동 생성된다.
-
-#### 머지 취소
-
-충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.
-
-```bash
-git merge --abort
-```
 
 #### fetch 후 머지
 
