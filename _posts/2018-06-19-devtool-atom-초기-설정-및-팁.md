@@ -114,7 +114,3 @@ tags:
 - <kbd>ctrl + 9</kbd>: Git 창으로 포커스 이동
 - <kbd>ctrl + shift + 9</kbd>: Git/GitHub창 토글
 - <kbd>alt + g, p</kbd>: push
-
----
-
-- <kbd></kbd>:
