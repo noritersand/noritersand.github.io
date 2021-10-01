@@ -288,7 +288,7 @@ var show = exports.show = function() {
 }
 ```
 
-위 예시들에서 `exports`만 호출이 가능한 이유는 `module`이 전역 객체이기 때문이다.
+`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다.
 
 ### require()
 
@@ -325,7 +325,7 @@ console.log(userModule.PI);
 
 #### require로 코드 줄이기
 
-자주 사용하는 객체가 있다면 `require`로 해당 객체를 변수화하여 코드를 줄이는 방법이 있다:
+자주 사용하는 메서드가 있다면 `require`로 해당 메서드를 별도의 변수에 담아 코드를 줄이는 방법이 있다:
 
 ```js
 const log = require('console').log;
