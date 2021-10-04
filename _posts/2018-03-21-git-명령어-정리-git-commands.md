@@ -974,7 +974,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 - `-t` `--tags `: 태그만 출력한다.
 - `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags는 저도 모르니 묻지 마십씨오~~
 
-## merge
+## [merge](file:///C:/Program%20Files/Git/mingw64/share/doc/git-doc/git-merge.html)
 
 현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌<sup>conflict</sup>이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 표시해준다.
 
@@ -996,7 +996,10 @@ git merge A B
 
 #### options
 
-- `--no-commit`: 커밋하지 않고 머지.
+- `--ff`: 가능할 경우 Fast-forward 머지를, 안되면 머지 커밋을 생성한다.
+- `--no-ff`: 묻지도 따지지도 않고 머지 커밋을 생성한다.
+- `--ff-only`: Fast-forward 머지가 불가능할 경우 머지를 취소한다.
+- `--no-commit`: 커밋하지 않고 머지. 파일이 변경된 상태에서 머지를 멈춘다고 보면 됨.
 - `--abort`: 머지 취소. 충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.
 
 #### 머지 도구 실행
