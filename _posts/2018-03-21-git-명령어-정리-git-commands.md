@@ -1422,10 +1422,13 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 
 #### options
 
-- `-a` `--all`
-- `-u` `--include-untracked`: 추적중이지 않은 파일도 대상으로 포함
-- `-k` `--keep-index`: staged 파일 무시
-- `-p` `--patch`
+- `-a` `--all`: 무시 대상이거나 추적중이지 않은 파일도 대상으로 포함하고 `git clean` 실행.
+- `-u` `--include-untracked`
+- `--no-include-untracked `
+- `--only-untracked `: 추적중이지 않은 파일을 대상으로 포함하거나 포함하지 않는다. 혹은 추적중이지 않는 파일만 대상으로 한다.
+- `-k` `--keep-index`
+- `--no-keep-index`: This option is only valid for push and save commands. All changes already added to the index are left intact.
+- `-p` `--patch`: 스태시 대상을 대화형으로 선택.
 
 #### 스태시 생성(임시 저장본 만들기)
 
