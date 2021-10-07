@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-01 14:10:00 +0900
-title: '[JavaScript] 화살표 함수 arrow functions'
+title: '[JavaScript] 화살표 함수 Arrow functions'
 categories:
   - javascript
 tags:
@@ -14,7 +14,6 @@ tags:
 #### 참고한 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Functions/%EC%95%A0%EB%A1%9C%EC%9A%B0_%ED%8E%91%EC%85%98)
 
 #### 브라우저 호환
 

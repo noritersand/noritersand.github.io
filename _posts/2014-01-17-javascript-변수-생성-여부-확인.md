@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### try-catch
+## try-catch
 
 ```js
 var flag;
@@ -29,7 +29,7 @@ try {
 console.log(flag);
 ```
 
-#### typeof
+## typeof
 
 ```js
 var flag;
@@ -41,4 +41,35 @@ if (typeof foo == 'undefined') {
 }
 
 console.log(flag);
+```
+
+### 응용: 특정 함수나 객체가 생성될 때까지 대기
+
+```js
+function doSomething() {
+  (function waitUntilDefined() {
+    if (typeof dataLayer === 'undefined') {
+      setTimeout(waitUntilDefined, 500);
+      return;
+    }
+    do진짜로실행해야하는코드();
+  })();
+}
+```
+
+## in
+
+프로퍼티가 있는지 확인하는 방법. 그러니까 로컬 변수에는 적용할 수 없다.
+
+```js
+var abc;
+'abc' in window; // true
+
+function fn() {
+  var def;
+  console.log('def' in window); // false
+  console.log('def' in this); // false
+  console.log('def' in fn); // false
+}
+fn();
 ```

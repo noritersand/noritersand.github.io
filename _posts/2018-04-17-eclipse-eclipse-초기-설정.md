@@ -50,12 +50,12 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Compare with HEAD Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
 - Compare with Previous Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
 - Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
-- Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)
+- ~~Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)~~
 - Add Bookmark: <kbd>ctrl + alt + z</kbd>
 - Build Automatically: <kbd>ctrl + alt + insert</kbd>(In Dialogs and Windows, Project)
 - Show Revision Information: <kbd>ctrl + alt + a</kbd>(In Windows, Git)
 - Print: <kbd>unbined</kbd>
-- Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search) ~~STS 플러그인 깔았을 때 쓸 수 있는 빠른 검색창~~ 최근 버전은 기본 탑재.
+- ~~Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search)~~
 - Next Editor: <kbd>ctrl + 6</kbd>(In Windows, Window)
 - Previous Editor: <kbd>ctrl + shift + 6</kbd>(In Windows, Window)
 - Next View: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.

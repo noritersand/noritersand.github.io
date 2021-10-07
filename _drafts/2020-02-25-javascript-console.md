@@ -17,13 +17,17 @@ tags:
 
 - [MDN: console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
 
-## log, debug, info, warn, error
+## log(), debug(), info(), warn(), error()
 
 일반적인 출력.
 
-## trace
+## trace()
 
 코드 실행 위치의 호출 스택 출력.
+
+## dir()
+
+TODO
 
 ## console 출력에 스타일 적용하기
 
@@ -67,6 +71,14 @@ console.groupEnd();
 console.log('back to the level 0');
 ```
 
+## count()
+
+TODO
+
 ## time, timeLog, timeEnd
 
+TODO
+
 ## assert
+
+TODO
