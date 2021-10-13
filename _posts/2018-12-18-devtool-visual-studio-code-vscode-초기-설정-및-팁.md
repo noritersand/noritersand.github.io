@@ -147,6 +147,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "ctrl+alt+o",
     "command": "workbench.action.openWorkspace"
+  },
+  {
+    "key": "alt+oem_3",
+    "command": "workbench.action.compareEditor.focusOtherSide"
   }
 ]
 ```

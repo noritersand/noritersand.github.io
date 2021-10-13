@@ -46,15 +46,18 @@ console.log(flag);
 ### 응용: 특정 함수나 객체가 생성될 때까지 대기
 
 ```js
-function doSomething() {
-  (function waitUntilDefined() {
-    if (typeof dataLayer === 'undefined') {
-      setTimeout(waitUntilDefined, 500);
-      return;
-    }
-    do진짜로실행해야하는코드();
-  })();
-}
+setTimeout(() => {
+  window.abcd = '';
+}, 3000);
+
+(function waitUntilDefined() {
+  if (typeof abcd === 'undefined') {
+    console.debug('not defined');
+    setTimeout(waitUntilDefined, 500);
+    return;
+  }
+  console.debug('defined');
+})();
 ```
 
 ## in
