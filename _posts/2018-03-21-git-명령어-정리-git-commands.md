@@ -319,7 +319,7 @@ Switched to a new branch 'serverfix'
 git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아웃
 ```
 
-## cherry-pick
+## [cherry-pick](https://git-scm.com/docs/git-cherry-pick)
 
 특정 커밋 하나만 현재 브랜치에 리베이스한다.
 
@@ -330,6 +330,10 @@ git cherry-pick 커밋명
 git cherry-pick 376361 # 현재 브랜치에 376361 커밋의 변경사항을 반영한 신규 커밋 생성
 git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가장 마지막 커밋의 변경사항을 반영한 신규 커밋 생성
 ```
+
+#### options
+
+- `-n` `--no-commit`: 커밋을 만들지 않은 상태로 체리픽 한다.
 
 #### 주의사항
 
@@ -342,12 +346,6 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 ![](/images/cherry-pick2.png)
 
 실제 결과는 그렇지 않다. 세 번째 커밋보다 앞에 있는 첫 번째와 두 번째 커밋 모두 `CONFLICT_ME.md` 파일에 대한 변경이므로 원래 의도와는 다르게 모든 커밋이 main 브랜치에 반영된다. (그 와중의 충돌은 덤)
-
-#### 커밋하지 않고 체리픽
-
-```bash
-git cherry-pick -n 커밋명
-```
 
 ## [clean](https://git-scm.com/docs/git-clean)
 
