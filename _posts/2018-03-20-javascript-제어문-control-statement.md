@@ -238,14 +238,14 @@ for (var ele of arr) {
 var obj = {
   a: 1, b: 2
 }
-for (var ele of obj) {} // TypeError: obj is not iterable
+for (var val of obj) {} // TypeError: obj is not iterable
 ```
 
 ## 점프문
 
 ### 레이블
 
-특정 구문에 식별자 이름과 콜론으로 레이블을 붙인다. 레이블이 있는 구문은 `continue`와 `break` 키워드와 조합하여 점프문으로 사용된다. 보통은 중첩된 루프나 `switch`에서 현재 구문이 가장 안쪽에 있지 않을 때 사용한다.
+특정 구문에 식별자 이름과 콜론으로 레이블을 붙인다. 레이블이 있는 구문은 `continue`와 `break` 키워드와 조합하여 점프문으로 사용된다. 보통은 중첩된 루프나 `switch`에서 사용한다.
 
 ```
 식별자:
