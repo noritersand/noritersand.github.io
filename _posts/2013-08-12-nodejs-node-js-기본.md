@@ -93,9 +93,13 @@ npm install 모듈명 -g
 
 npm install 모듈명 --save
 # package.json 이 있다면 dependencies 항목에 설치한 모듈을 추가한다.
+# 사실 기본값이 true라서 생략해도 결과는 같음
 
 npm install 모듈명 --save-dev
-# --save와 같으나 production 모드로 빌드 시 포함하지 않는다.
+# 해당 모듈은 'devDependencies'일 때만 사용된다. 즉, production 모드로 빌드 시 포함하지 않는다.
+
+npm install 모듈명 --save-optional
+# --save-dev와 비슷한데 이 경우는 'optionalDependencies'
 
 npm install nodemon -g
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈
