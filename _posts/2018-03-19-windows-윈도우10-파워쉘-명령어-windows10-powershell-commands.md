@@ -61,25 +61,27 @@ The value of $(2+3) is 5.
 ### 환경 변수 조회
 
 ```bash
-Get-ChildItem Env: # 모든 환경 변수 보기, ls env:와 같음
-Write-Output $env:path # 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
+Get-ChildItem Env:  # 모든 환경 변수 보기, ls env:와 같음
+Write-Output $env:path  # 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
 ```
 
 ### 로컬 환경 변수 추가/삭제
 
 ```bash
-$env:test = 1234 # 환경 변수 'test' 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Process") # 로컬 환경 변수 추가 두 번째 방법
-Remove-Item Env:\test # 환경 변수 'test' 삭제
+$env:test = 1234  # 환경 변수 'test' 추가
+[Environment]::SetEnvironmentVariable("test2", "1234", "Process")  # 로컬 환경 변수 추가 두 번째 방법
+Remove-Item Env:\test  # 환경 변수 'test' 삭제
 ```
 
 ### 글로벌 환경 변수 추가/삭제
 
 ```bash
-[Environment]::SetEnvironmentVariable("test", "1234", "User") # 로그인한 사용자의 환경 변수로 'test' 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Machine") # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요하다
-[Environment]::SetEnvironmentVariable("test", $null, "User") # 사용자 환경 변수 'test' 삭제
-[Environment]::SetEnvironmentVariable("test2", $null, "Machine") # 시스템 환경 변수 'test2' 삭제
+[Environment]::SetEnvironmentVariable("test", "1234", "User")  # 로그인한 사용자의 환경 변수로 'test' 추가
+[Environment]::SetEnvironmentVariable("test", $null, "User")  # 사용자 환경 변수 'test' 삭제
+[Environment]::SetEnvironmentVariable("path", $env:path + ";원하는경로", "User")  # path 덧붙이기
+
+[Environment]::SetEnvironmentVariable("test2", "1234", "Machine")  # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요함
+[Environment]::SetEnvironmentVariable("test2", $null, "Machine")  # 시스템 환경 변수 'test2' 삭제
 ```
 
 ## SSH

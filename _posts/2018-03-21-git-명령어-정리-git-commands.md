@@ -999,7 +999,7 @@ git merge A B
 - `--ff-only`: Fast-forward 머지가 불가능할 경우 머지를 취소한다.
 - `--no-commit`: 커밋하지 않고 머지. 파일이 변경된 상태에서 머지를 멈춘다고 보면 됨.
 - `--abort`: 머지 취소. 충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.
-- `--autostash`, `--no-autostash`: 스태싱을 자동으로 하거나 하지 않음. 자동 스태싱 때는 `MERGE_AUTOSTASH`라는 참조에 저장한다.
+- `--autostash`, `--no-autostash`: 스태싱을 자동으로 하거나 하지 않음. `MERGE_AUTOSTASH`라는 참조를 사용한다.
 
 #### 머지 도구 실행
 
