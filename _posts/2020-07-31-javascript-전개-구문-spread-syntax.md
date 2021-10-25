@@ -18,8 +18,8 @@ tags:
 
 #### 참고한 문서
 
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#전개_속성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#전개_속성)
+- [MDN: Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+- [MDN: Spread properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#spread_properties)
 
 #### 버전 정보
 

@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
+- [MDN: Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 
 
 Symbol은 기본형(primitive, 원시형) 데이터 타입으로 ECMASScript 2015 (ES6) 부터 추가되었다. 다른 기본형 타입인 Number, String, Boolean과 마찬가지로 [래퍼(wrapper) 객체](http://noritersand.tistory.com/536)가 있다.

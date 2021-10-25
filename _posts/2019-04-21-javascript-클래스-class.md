@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Classes](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes)
+- [MDN: Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 - [PoiemaWeb: 클래스](https://poiemaweb.com/es6-class)
 - [JAVASCRIPT.INFO: 클래스와 기본 문법](https://ko.javascript.info/class)
 

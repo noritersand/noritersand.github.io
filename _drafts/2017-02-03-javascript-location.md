@@ -15,8 +15,8 @@ tags:
 
 #### 참고한 문서
 
-- [https://developer.mozilla.org/ko/docs/Web/API/Location](https://developer.mozilla.org/ko/docs/Web/API/Location)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/location](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)
+- [MDN: Location](https://developer.mozilla.org/en-US/docs/Web/API/Location)
+- [MDN: Window.location](https://developer.mozilla.org/en-US/docs/Web/API/Window/location)
 
 - location.toString
 - location.href

@@ -15,9 +15,9 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: 상속과 프로토타입](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Inheritance_and_the_prototype_chain)
-- [MDN: Object](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object)
-- [MDN: Object.prototype](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/prototype)
+- [MDN: 상속과 프로토타입<sup>Inheritance and the prototype chain</sup>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [MDN: Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- [MDN: Object.prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
@@ -279,7 +279,7 @@ c.fruit; // true
 
 프로토타입을 상속하는 방법은 여러가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
 
-### [class](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Classes) (추천#1)
+### [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) (추천#1)
 
 ```js
 class Arr extends Array {
@@ -305,7 +305,7 @@ arr.spitout();
 arr.length; // 0
 ```
 
-### [Object.create()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
+### [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
 `Object.create(obj[, descriptors])`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 프로퍼티를 추가하는 방식:
 
@@ -345,7 +345,7 @@ plainObject.toString; // undefined
 
 이렇게하면 `Object` 프로토타입의 프로퍼티를 하나도 상속받지 않는, 말그대로 아주 단순한 객체가 생성된다.
 
-### [\_\_proto\_\_](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Object_initializer#프로토타입_변이)
+### [\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#prototype_mutation)
 
 이 방법은 상속이나 확장이 아니라 변이<sup>mutation</sup>라고 부른다:
 

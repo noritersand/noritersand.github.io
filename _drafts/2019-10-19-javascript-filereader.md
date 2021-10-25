@@ -15,8 +15,8 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: FileReader](https://developer.mozilla.org/ko/docs/Web/API/FileReader)
-- [MDN: File](https://developer.mozilla.org/ko/docs/Web/API/File)
+- [MDN: FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
+- [MDN: File](https://developer.mozilla.org/en-US/docs/Web/API/File)
 
 웹 앱의 파일 읽기를 지원하는 API.
 

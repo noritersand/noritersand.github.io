@@ -49,6 +49,6 @@ child 내에서 http 컨텐츠를 불러올 수 없거나 경고 메시지가 �
 
 ## 참고
 
-[CORS](https://developer.mozilla.org/ko/docs/Web/HTTP/Access_control_CORS)로는 위 제한들을 [우회할 수 없다](http://stackoverflow.com/questions/25098021/securityerror-blocked-a-frame-with-origin-from-accessing-a-cross-origin-frame).
+[CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)로는 위 제한들을 [우회할 수 없다](http://stackoverflow.com/questions/25098021/securityerror-blocked-a-frame-with-origin-from-accessing-a-cross-origin-frame).
 
 이럴 때 쓰라고 제한된 조건 하에서 통신이 가능한 [Window.postMessage](http://noritersand.tistory.com/655) 메서드가 있다.

@@ -31,7 +31,7 @@ min 파일과 원본 파일을 연결해주는 소스맵 파일이 있는데, �
 })
 ```
 
-소스맵 키워드였던 `//@`은 앞으로 사용하지 않으니 `//#`으로 [대체하라고 한다](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/Deprecated_source_map_pragma?utm_source=mozilla&utm_medium=firefox-console-errors&utm_campaign=default).
+소스맵 키워드였던 `//@`은 앞으로 사용하지 않으니 `//#`으로 [대체하라고 한다](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map).
 
 V3 스펙에 따른 소스맵 파일 예시:
 

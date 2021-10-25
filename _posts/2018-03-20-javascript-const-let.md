@@ -16,8 +16,8 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: const](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/const)
-- [MDN: let](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let)
+- [MDN: const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [MDN: let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
 #### 버전 정보
 
@@ -27,7 +27,7 @@ tags:
   - IE는 10 이하에서 사용 불가
 - let
   - Chrome 49/Edge 14/Firefox 44/Opera 17/Safari 10 이상에서 사용 가능
-  - IE는 10 이하에서 사용 불가. [11에서 부분적 지원](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/let#Browser_compatibility)
+  - IE는 10 이하에서 사용 불가. [11에서 부분적 지원](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#browser_compatibility)
 
 ## const
 
@@ -61,7 +61,7 @@ MY_OBJECT.key = "otherValue";
 console.log(MY_OBJECT); // Object { key: "otherValue" }
 ```
 
-객체를 완전히 보호하고 싶다면 [`Object.freeze()`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
+객체를 완전히 보호하고 싶다면 [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
 
 ## let
 

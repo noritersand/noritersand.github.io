@@ -19,7 +19,7 @@ tags:
 
 - [jQuery API: Deferred Object](https://api.jquery.com/category/deferred-object/)
 
-Deferred는 사실 자바스크립트의 [`Promise`](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)와 거의 동일하다. 다만, 이쪽은 IE에서도 쓸 수 있다는 장점이 있다.
+Deferred는 사실 자바스크립트의 [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)와 거의 동일하다. 다만, 이쪽은 IE에서도 쓸 수 있다는 장점이 있다.
 
 간단한 예시로 맛을 좀 보자:
 

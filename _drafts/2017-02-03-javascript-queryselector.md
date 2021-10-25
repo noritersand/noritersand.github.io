@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Document.querySelector](https://developer.mozilla.org/ko/docs/Web/API/Document/querySelector)
+- [MDN: Document.querySelector()](https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector)
 
 #### 브라우저 호환
 

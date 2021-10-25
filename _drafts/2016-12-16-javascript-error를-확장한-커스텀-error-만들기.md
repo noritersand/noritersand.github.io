@@ -16,7 +16,7 @@ tags:
 #### 참고한 문서
 
 - [http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript](http://stackoverflow.com/questions/1382107/whats-a-good-way-to-extend-error-in-javascript)
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Error)
+- [MDN: Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)
 
 ```js
 function MyError(message) {

@@ -18,8 +18,8 @@ tags:
 
 - [https://xhr.spec.whatwg.org/](https://xhr.spec.whatwg.org/)
 - [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
-- [https://developer.mozilla.org/ko/docs/XMLHttpRequest](https://developer.mozilla.org/ko/docs/XMLHttpRequest)
-- [https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [MDN: XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [MDN: Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
 - [http://huns.me/development/1291](http://huns.me/development/1291)
 
 ## Ajax란?
@@ -134,7 +134,7 @@ xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 xhr.send('first=111&second=222');
 ```
 
-`<form>` 필드의 값을 전송하고 싶을땐 [FormData API](https://developer.mozilla.org/ko/docs/Web/API/FormData)를 이용한다.
+`<form>` 필드의 값을 전송하고 싶을땐 [FormData API](https://developer.mozilla.org/en-US/docs/Web/API/FormData)를 이용한다.
 
 ### XMLHttpRequest.abort()
 
