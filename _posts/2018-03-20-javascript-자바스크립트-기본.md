@@ -102,7 +102,7 @@ let a = (
 
 ## HTML 문서에 자바스크립트 포함시키기
 
-### Inline JavaScript
+### inline
 
 HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 
@@ -110,7 +110,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 <a href="javascript:location.href='http://daum.net'">다음</a>
 ```
 
-### Embedded JavaScript
+### embedded(internal)
 
 스크립트 블록`<script></script>` 안에 일괄 지정. `<head>`와 `<body>` 어느곳에든 사용할 수 있다.
 
@@ -126,7 +126,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 </html>
 ```
 
-### Linked JavaScript
+### linked(external)
 
 외부 파일을 링크하여 여러개의 파일에 일괄 지정. `<body>`에 사용해도 가능하지만 보통은 `<head>`에 위치한다.
 
