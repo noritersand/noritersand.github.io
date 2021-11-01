@@ -342,7 +342,7 @@ module.exports = {
 #### run-me.js
 
 ```js
-var dbinfo = require('./exports-test.js');
+const dbinfo = require('./exports-test.js');
 console.log('dbinfo.connectString:', dbinfo.connectString);
 console.log('dbinfo.user:', dbinfo.user);
 console.log('dbinfo.password:', dbinfo.password);
