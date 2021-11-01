@@ -312,7 +312,7 @@ var userModule = require('./user_module');
 
 `require()`로 불려진 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 반환된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나, 함수 자체를 내보내 `new`로 인스턴스를 생성해서 사용한다.
 
-객체의 프로퍼티로 내보내기:
+### 작성 예시 \#1
 
 ```js
 function printA(){};
@@ -327,7 +327,37 @@ userModule.printA();
 console.log(userModule.PI);
 ```
 
-#### require로 코드 줄이기
+### 작성 예시 \#2
+
+#### exports-test.js
+
+```js
+module.exports = {
+  connectString: '10.20.30.40:1234/QADB',
+  user: 'fixalot',
+  password: '1234abcd!'
+}
+```
+
+#### run-me.js
+
+```js
+var dbinfo = require('./exports-test.js');
+console.log('dbinfo.connectString:', dbinfo.connectString);
+console.log('dbinfo.user:', dbinfo.user);
+console.log('dbinfo.password:', dbinfo.password);
+```
+
+#### 실행
+
+```bash
+PS> node .\run-me.js
+dbinfo.connectString: 10.20.30.40:1234/QADB
+dbinfo.user: fixalot
+dbinfo.password: 1234abcd!
+```
+
+### require로 코드 줄이기
 
 자주 사용하는 메서드가 있다면 `require`로 해당 메서드를 별도의 변수에 담아 코드를 줄이는 방법이 있다:
 
@@ -341,7 +371,9 @@ const log = require('console').log;
 const { log } = require('console');
 ```
 
-이렇게 된다. 그런데 어차피 `console`은 전역 객체이므로 그냥 이렇게 쓰면 됨:
+이렇게 된다.
+
+그런데 사실 `console`은 어차피 전역 객체이므로 그냥 아래처럼 쓰면 됨:
 
 ```js
 const { log } = console;
