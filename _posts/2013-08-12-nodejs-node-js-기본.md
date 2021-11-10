@@ -268,8 +268,6 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 
 노드에서 하나의 자바스크립트 파일은 하나의 모듈이 된다. 기본적으로 노드는 각 자바스크립트 파일을 익명함수로 감싸 외부에서 접근할 수 없게 만드는데 이것을 모듈화라고 하며 모듈간 참조와 호출을 위해 글로벌 객체 module의 exports/require를 사용한다.
 
-함수나 변수는 `module.exports`에 할당하면 외부에서 접근할 수 있다(단, 명시적인 함수 이름이 있는 경우만).
-
 ### module.exports
 
 모듈로 내보내기.
@@ -292,7 +290,7 @@ var show = exports.show = function() {
 }
 ```
 
-`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다.
+`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, 아래 예시 2처럼 `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
 
 ### require()
 
@@ -332,6 +330,7 @@ console.log(userModule.PI);
 #### exports-test.js
 
 ```js
+// 이렇게 사용할 땐 module을 생략할 수 없음
 module.exports = {
   connectString: '10.20.30.40:1234/QADB',
   user: 'fixalot',
