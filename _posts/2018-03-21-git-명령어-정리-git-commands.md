@@ -870,10 +870,10 @@ git log master origin/master # 로컬의 master와 origin remote의 master 브�
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
 - `-p`: 각 커밋에 적용된 패치<sup>patch</sup>(=반영된 변경사항)를 보여준다.
 - `-c`: 머지 커밋과 부모 커밋을 비교해 변경사항을 모두 출력하는 옵션
-- `--merges`: 머지 커밋만 출력. `--min-parents=2` 옵션과 같음.
-- `--no-merges`: 머지 커밋이 아닌 것만 출력한다. `--max-parents=1` 옵션과 같음
+- `--merges`: 머지 커밋만 출력.
+- `--no-merges`: 머지 커밋이 아닌 것만 출력한다.
 - `--min-parents=<number>` `--max-parents=<number>`: 부모 커밋이 최소(혹은 최대) 몇 개가 있는 커밋인지를 특정할 때 사용하는 옵션이다. 가령 `--max-parents=1`은 부모 커밋이 하나인 커밋만 출력하라는 의미라 `--no-merges`와 같고, `--min-parents=2`는 부모 커밋이 최소 2개여야 한다는 의미니까 `--merges`와 같다.
-- `--no-min-parents` `--no-max-parents`: 기본값을 무시할 때 사용한다. `--no-min-parents`는 `--min-parents=0`과 같은데 모든 커밋을 출력하라는 옵션이다. `--no-max-parents`는 `--max-parents=-1`과 같고 최대 부모 커밋의 제한을 해제한다는 의미다.
+- `--no-min-parents` `--no-max-parents`: 기본값을 무시할 때 사용한다. `--no-min-parents`는 `--min-parents=0`과 같은데 모든 커밋을 출력하라는 옵션이다. `--no-max-parents`는 `--max-parents=-1`과 같고(음수 1 임) 최대 부모 커밋의 제한을 해제한다는 의미다.
 - `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
 - `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
 - `--name-only`: 커밋 정보중에서 수정된 파일의 목록만 보여준다.
