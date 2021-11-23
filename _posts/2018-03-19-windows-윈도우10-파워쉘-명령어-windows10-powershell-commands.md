@@ -147,11 +147,63 @@ ssh-add ~\.ssh\noritersand-ssh-test
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
+## 파워쉘 명령어 기본 별칭
+
+```
+? -> Where-Object                 % -> ForEach-Object               ac -> Add-Content
+cat -> Get-Content                cd -> Set-Location                chdir -> Set-Location
+clc -> Clear-Content              clear -> Clear-Host               clhy -> Clear-History
+cli -> Clear-Item                 clp -> Clear-ItemProperty         cls -> Clear-Host
+clv -> Clear-Variable             cnsn -> Connect-PSSession         compare -> Compare-Object
+copy -> Copy-Item                 cp -> Copy-Item                   cpi -> Copy-Item
+cpp -> Copy-ItemProperty          cvpa -> Convert-Path              dbp -> Disable-PSBreakpoint
+del -> Remove-Item                diff -> Compare-Object            dir -> Get-ChildItem
+dnsn -> Disconnect-PSSession      ebp -> Enable-PSBreakpoint        echo -> Write-Output
+epal -> Export-Alias              epcsv -> Export-Csv               erase -> Remove-Item
+etsn -> Enter-PSSession           exsn -> Exit-PSSession            fc -> Format-Custom
+fhx -> Format-Hex                 fl -> Format-List                 foreach -> ForEach-Object
+ft -> Format-Table                fw -> Format-Wide                 gal -> Get-Alias
+gbp -> Get-PSBreakpoint           gc -> Get-Content                 gcb -> Get-Clipboard
+gci -> Get-ChildItem              gcm -> Get-Command                gcs -> Get-PSCallStack
+gdr -> Get-PSDrive                gerr -> Get-Error                 ghy -> Get-History
+gi -> Get-Item                    gin -> Get-ComputerInfo           gjb -> Get-Job
+gl -> Get-Location                gm -> Get-Member                  gmo -> Get-Module
+gp -> Get-ItemProperty            gps -> Get-Process                gpv -> Get-ItemPropertyValue
+group -> Group-Object             gsn -> Get-PSSession              gsv -> Get-Service
+gtz -> Get-TimeZone               gu -> Get-Unique                  gv -> Get-Variable
+h -> Get-History                  history -> Get-History            icm -> Invoke-Command
+iex -> Invoke-Expression          ihy -> Invoke-History             ii -> Invoke-Item
+ipal -> Import-Alias              ipcsv -> Import-Csv               ipmo -> Import-Module
+irm -> Invoke-RestMethod          iwr -> Invoke-WebRequest          kill -> Stop-Process
+ls -> Get-ChildItem               man -> help                       md -> mkdir
+measure -> Measure-Object         mi -> Move-Item                   mount -> New-PSDrive
+move -> Move-Item                 mp -> Move-ItemProperty           mv -> Move-Item
+nal -> New-Alias                  ndr -> New-PSDrive                ni -> New-Item
+nmo -> New-Module                 nsn -> New-PSSession              nv -> New-Variable
+ogv -> Out-GridView               oh -> Out-Host                    popd -> Pop-Location
+ps -> Get-Process                 pushd -> Push-Location            pwd -> Get-Location
+r -> Invoke-History               rbp -> Remove-PSBreakpoint        rcjb -> Receive-Job
+rcsn -> Receive-PSSession         rd -> Remove-Item                 rdr -> Remove-PSDrive
+ren -> Rename-Item                ri -> Remove-Item                 rjb -> Remove-Job
+rm -> Remove-Item                 rmdir -> Remove-Item              rmo -> Remove-Module
+rni -> Rename-Item                rnp -> Rename-ItemProperty        rp -> Remove-ItemProperty
+rsn -> Remove-PSSession           rv -> Remove-Variable             rvpa -> Resolve-Path
+sajb -> Start-Job                 sal -> Set-Alias                  saps -> Start-Process
+sasv -> Start-Service             sbp -> Set-PSBreakpoint           scb -> Set-Clipboard
+select -> Select-Object           set -> Set-Variable               shcm -> Show-Command
+si -> Set-Item                    sl -> Set-Location                sleep -> Start-Sleep
+sls -> Select-String              sort -> Sort-Object               sp -> Set-ItemProperty
+spjb -> Stop-Job                  spps -> Stop-Process              spsv -> Stop-Service
+start -> Start-Process            stz -> Set-TimeZone               sv -> Set-Variable
+tee -> Tee-Object                 type -> Get-Content               where -> Where-Object
+wjb -> Wait-Job                   write -> Write-Output
+```
+
 ## Microsoft.Powershell.Core
 
 ### [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
 
-명령어 실행 이력 보기. 기본 별칭: `history`
+명령어 실행 이력 보기. 기본 별칭 `history`
 
 ```bash
 Get-History # 모든 명령어 이력 보기
@@ -161,7 +213,7 @@ Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 �
 
 ### [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
 
-기본 별칭: `r`, `ihy`
+기본 별칭 `r`, `ihy`
 
 ```bash
 Invoke-History # 마지막 명령어 실행
@@ -180,18 +232,60 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
 ## Microsoft.PowerShell.Management
 
+### [Get-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.2)
+
+프로세스 가져오기. 기본 별칭은 `ps`.
+
+```bash
+# PID가 2832 혹은 836인 프로세스 출력
+Get-Process -Id 2832, 836
+
+# 프로세스 이름 SoundSwitch인 프로세스 출력
+Get-Process 'SoundSwitch'
+```
+
+#### parameters
+
+- `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러개일 땐 콤마`,`로 구분함
+- `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
+
 ### [Start-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.1)
 
-기본 별칭: `saps`
+프로세스 시작. 기본 별칭은 `saps`.
 
 ```bash
 Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
+### [Stop-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.2)
+
+하나 이상의 프로세스를 중지하는 명령어. 기본 별칭은 `kill`.
+
+```bash
+# 이름이 SoundSwitch인 프로세스를 중지. (Get-Process랑 다르게 -Name 생략 불가)
+Stop-Process -Name 'SoundSwitch'
+```
+
+### [Get-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.2)
+
+서비스 가져오기. 기본 별칭은 `gsv`.
+
+#### parameters
+
+- `-Name`: 파라미터의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
+
+### [Stop-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.2)
+
+하나 이상의 서비스를 중지하는 명령어. 기본 별칭은 `spsv`.
+
+```bash
+Stop-Service -Name "sysmonlog"
+```
+
 ### [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
 
-기본 별칭: `type`
+기본 별칭 `type`
 
 ```bash
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
@@ -199,7 +293,7 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 ### [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
 
-기본 별칭: `ls`
+기본 별칭 `ls`
 
 ```bash
 # 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
@@ -209,7 +303,7 @@ Get-ChildItem -Recurse -Name | findstr main.js
 Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
 ```
 
-#### options
+#### parameters
 
 - `Recurse`: 재귀 검색
 - `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
@@ -220,7 +314,7 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 
 ### [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.1)
 
-기본 별칭: `copy`
+기본 별칭 `copy`
 
 ```bash
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
@@ -228,13 +322,13 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 
 ### [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1)
 
-기본 별칭: `del`
+기본 별칭 `del`
 
 ```bash
 Remove-Item .\copy\ -r -Force
 ```
 
-#### options
+#### parameters
 
 - `-r`: 재귀삭제
 - `-Force`: 확인 없이 삭제
@@ -286,7 +380,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 
 ### [Get-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.1)
 
-설정된 별칭 목록을 출력한다. 기본 별칭: `gal`, `alias`
+설정된 별칭 목록을 출력한다. 기본 별칭 `gal`, `alias`
 
 ```bash
 Get-Alias # 설정된 모든 별칭 출력
@@ -308,7 +402,7 @@ New-Alias grep findstr
 
 ### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
 
-기본 별칭: `echo`
+기본 별칭 `echo`
 
 ```bash
 Write-Output $PSHOME # 파워쉘 설치 경로 출력
