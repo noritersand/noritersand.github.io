@@ -19,8 +19,8 @@ tags:
 
 #### 참고한 문서
 
-- [https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
-- [https://docs.microsoft.com/ko-kr/windows/wsl/install-win10](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)
+- [Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
+- [WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
 
 요즘 들어 혜자로워진 마소의 윈도우10 초기 설정을 정리한 글.
 
@@ -90,9 +90,19 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 나머지 설명은 [도움말](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)을 보자.
 
-## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install-win10)  
+## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install)  
 
 WSL은 가상 머신 등의 설정 없이 윈도우 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
+
+### 설치
+
+이제 그냥 요거 한 방으로 됨:
+
+```bash
+wsl --install
+```
+
+### 이전 설치 방법
 
 설치 방법은 우선 'Linux용 Windows 하위 시스템' 옵션 기능을 사용하도록 설정하고:
 
@@ -117,6 +127,13 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ~~명령어로 다운로드/설치 하면 됨~~  
 오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 쉘 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒
 
+### 서브 시스템의 실제 경로
+
+WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
+예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
+
+**WSL2**: 버전 2에선 쉘의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
+
 ## [Chocolatey](https://chocolatey.org/install)
 
 윈도우판 `apt-get`이다. 파워쉘(관리자 권한)에서 다음 줄 실행:
@@ -139,13 +156,6 @@ choco install firefox-dev googlechrome googlechrome.dev
 ```
 
 이런식으로 앱 설치 가능.
-
-### 서브 시스템의 실제 경로
-
-WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
-예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
-
-**WSL2**: 버전 2에선 쉘의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
 
 ## 윈도우10 초기 설정
 
