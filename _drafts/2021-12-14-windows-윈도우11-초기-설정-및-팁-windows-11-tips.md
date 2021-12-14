@@ -7,7 +7,6 @@ categories:
 tags:
   - os
   - windows
-  - telnet
   - environment
   - setup
   - shortcut

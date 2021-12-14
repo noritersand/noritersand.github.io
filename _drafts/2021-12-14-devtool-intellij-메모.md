@@ -6,7 +6,7 @@ categories:
   - eclipse
 tags:
   - devtool
-  - eclipse
+  - intellij
 ---
 
 * Kramdown table of contents
