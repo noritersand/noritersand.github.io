@@ -460,8 +460,9 @@ sudo apt-get remove byobu hollywood
 - <kbd>win +  +</kbd>: 돋보기 실행. 실행 후 확대/축소는 <kbd>win + -</kbd>/<kbd> wind + =</kbd>
 - <kbd>win + ,</kbd>: 일시적 바탕화면 보기
 - <kbd>win + .</kbd>/<kbd>win + ;</kbd>: 이모지
-- <kbd>win + a</kbd>: 알림 센터 열기
+- <kbd>win + a</kbd>: 알림 센터 열기 (11에서 바뀜)
 - <kbd>win + b</kbd>: 트레이 아이콘 선택
+- <kbd>win + alt + d</kbd>: 날짜 및 시간 표시 (11에서 안됨)
 - <kbd>win + ctrl + c</kbd>: 흑백/컬러 전환
 - <kbd>win + d</kbd>: 바탕화면 보기. 다시 WIN + D를 누르면 이전 상태로 돌아온다
 - <kbd>win + e</kbd>: 윈도우 탐색기(내 PC) 실행
@@ -484,7 +485,6 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + v</kbd>: 클립보드 이력
 - <kbd>win + w</kbd>: Windows Ink 열기
 - <kbd>win + x</kbd>: 시작 메뉴 열기
-- <kbd>win + alt + d</kbd>: 날짜 및 시간 표시
 - <kbd>win + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
 - <kbd>win + shift + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
 - <kbd>win + 스페이스바</kbd>: 입력 언어 및 자판 배열 전환
@@ -515,7 +515,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>alt + up arrow</kbd>: 위로
 - <kbd>ctrl + mousewheel</kbd>: 보기변경
 - <kbd>ctrl + shift + n</kbd>: 새폴더
-- (탐색기 열자 마자) <kbd>spacebar</kbd>: 단축키라기보단 팁인데, 탐색기에서 파일 선택모드로 바로 진입할 수 있음.
+- <kbd>spacebar</kbd>: 단축키라기보단 팁인데, 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
 
 ### 스티커메모
 
