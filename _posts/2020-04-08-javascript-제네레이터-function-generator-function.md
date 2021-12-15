@@ -25,7 +25,7 @@ tags:
 #### 브라우저 호환
 
 - ES2015에서 최초 정의
-- 현재(2021-01-16 05:56) 기준 Chrome 39 이상, Firefox 외에 지원 안 함
+- 2021-01-16 기준 Chrome 39 이상, Firefox 외에 지원 안 함
 
 ## generator function
 
