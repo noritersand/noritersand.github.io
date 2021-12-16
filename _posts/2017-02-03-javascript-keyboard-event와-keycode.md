@@ -17,7 +17,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
+- [\[MDN\] KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 - [JavaScript Event KeyCodes](http://keycode.info/)
 
 자바스크립트로 키보드 이벤트의 keycode를 확인하는 방법은:

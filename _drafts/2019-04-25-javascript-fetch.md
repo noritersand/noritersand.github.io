@@ -15,10 +15,10 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [MDN: Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [MDN: Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
-- [MDN: FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
+- [\[MDN\] Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [\[MDN\] Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [\[MDN\] Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
+- [\[MDN\] FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 
 #### 브라우저 호환
 

@@ -14,7 +14,7 @@ tags:
 
 #### 참고한 문서
 
-- [[MDN] \<button\>: The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+- [\[MDN\] \<button\>: The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
 - [https://www.w3schools.com/tags/tag_button.asp](https://www.w3schools.com/tags/tag_button.asp)
 
 `<button>`태그에 type 속성을 명시하지 않을 경우 type의 기본값은 submit으로 설정된다. 이 때문에 `<form>`안에 위치하게 되면 버튼 클릭 시 `HTMLFormElement.submit()` 메서드가 작동하게 된다.

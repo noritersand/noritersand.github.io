@@ -16,7 +16,7 @@ tags:
 #### 참고한 문서
 
 - [https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
-- [MDN: HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+- [\[MDN\] HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 - [RFC 5789, section 2: Patch method](https://tools.ietf.org/html/rfc5789)
 
 HTTP 요청 메서드 간단 정리 글.

@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [\[MDN\] console](https://developer.mozilla.org/en-US/docs/Web/API/Console)
 
 ## log(), debug(), info(), warn(), error()
 

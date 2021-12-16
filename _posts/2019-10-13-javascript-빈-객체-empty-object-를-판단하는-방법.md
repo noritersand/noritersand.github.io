@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
+- [\[MDN\] Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
 - [https://api.jquery.com/jQuery.isEmptyObject/](https://api.jquery.com/jQuery.isEmptyObject/)
 - [https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object](https://stackoverflow.com/questions/679915/how-do-i-test-for-an-empty-javascript-object)
 

@@ -17,7 +17,7 @@ tags:
 #### 참고한 문서
 
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)
-- [MDN: Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+- [\[MDN\] Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - [모던 JavaScript 튜토리얼: 쿠키와 document.cookie](https://ko.javascript.info/cookie)
 
 ## document.cookie

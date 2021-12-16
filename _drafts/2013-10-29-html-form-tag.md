@@ -14,7 +14,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [\[MDN\] \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - [https://www.w3schools.com/tags/tag_form.asp](https://www.w3schools.com/tags/tag_form.asp)
 
 ## form

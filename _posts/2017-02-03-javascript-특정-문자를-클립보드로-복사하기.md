@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Document.execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
+- [\[MDN\] Document.execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
 - [Copying text to clipboard with JavaScript | Hacker Noon](https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f)
 
 ## execCommand

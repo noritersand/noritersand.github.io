@@ -16,7 +16,7 @@ tags:
 #### 참고한 문서
 
 - [http://www.w3schools.com/jsref/met_win_open.asp](http://www.w3schools.com/jsref/met_win_open.asp)
-- [MDN: Window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
+- [\[MDN\] Window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
 
 ## open()
 

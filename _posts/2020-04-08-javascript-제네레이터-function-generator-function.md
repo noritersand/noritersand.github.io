@@ -18,8 +18,8 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
-- [MDN: function\*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
+- [\[MDN\] Generator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+- [\[MDN\] function\*](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
 - [https://wonism.github.io/javascript-generator/](https://wonism.github.io/javascript-generator/)
 
 #### 브라우저 호환

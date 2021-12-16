@@ -17,10 +17,10 @@ tags:
 #### 참고한 문서
 
 - [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
-- [MDN: WindowEventHandlers.onunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload)
-- [MDN: Window: unload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
-- [MDN: Window: beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
-- [MDN: WindowEventHandlers.onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
+- [\[MDN\] WindowEventHandlers.onunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload)
+- [\[MDN\] Window: unload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
+- [\[MDN\] Window: beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
+- [\[MDN\] WindowEventHandlers.onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
 
 ## unload
 

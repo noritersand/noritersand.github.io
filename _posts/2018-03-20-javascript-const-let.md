@@ -16,8 +16,8 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-- [MDN: let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [\[MDN\] const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [\[MDN\] let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
 #### 버전 정보
 

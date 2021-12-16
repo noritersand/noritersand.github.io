@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
+- [\[MDN\] FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 
 ## FormData
 

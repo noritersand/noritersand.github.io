@@ -17,7 +17,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [\[MDN\] Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 #### 버전 정보
 

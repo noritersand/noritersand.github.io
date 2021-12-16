@@ -17,7 +17,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: HTML reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
+- [\[MDN\] HTML reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
 - [w3schools: HTML Element Reference](https://www.w3schools.com/tags/default.asp)
 
 HTML5 전에는 취소선을 표현하는 태그로 `<strike>`가 있었으나 HTML5부터 `<s>`, `<del>` 태그로 대체되었다.

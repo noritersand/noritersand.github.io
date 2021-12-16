@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [MDN: Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
+- [\[MDN\] Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 
 ## 주요 프로퍼티
 
