@@ -1,13 +1,11 @@
 ---
 layout: post
 date: 2019-01-29 20:18:00 +0900
-title: '[misc] 원한의 대서(사건/사고/삽질 기록 a.k.a. Dammaz Kron)'
+title: '[misc] 사건/사고/삽질/디버깅 기록(a.k.a. Dammaz Kron)'
 categories:
   - misc
 tags:
-  - record
   - history
-  - dammaz-kron
 ---
 
 * Kramdown table of contents
@@ -205,9 +203,7 @@ ASIS에서 사용하던 도메인에 A서버의 임시페이지를 연결해놓�
 - 프로젝트: 이뿅너뿅 차세대
 
 톰캣의 docBase 아래에 이미지 서버로 연결되는 심볼릭 링크를 생성, 이후 톰캣의 autoDeploy 기능이 작동할 때마다 이미지들이 재귀적으로 삭제된 사건. 원인은 톰캣의 autoDeploy 때문이었음.  
-일단 급한대로 autoDeploy 끄고 배포 시 심볼릭 링크를 먼저 제거하도록 스크립트 수정해서 해결함.
-
-웬만하면 이미지 서버(도메인까지 분리된 파일 업로드 용 서버)를 별도로 구성할 것.
+일단 급한대로 autoDeploy 끄고 배포 시 심볼릭 링크를 먼저 제거하도록 스크립트 실행. 이후에 심볼릭 링크의 위치를 변경해서 해결함.
 
 ## 오라클 DB 조회 속도 저하
 
