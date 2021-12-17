@@ -114,30 +114,30 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@3.36.35.105
 
 ```bash
 # Set Key File Variable:
-  New-Variable -Name Key -Value "./PRIVATE_KEY_FILE.pem"
+New-Variable -Name Key -Value "./PRIVATE_KEY_FILE.pem"
 
 # Remove Inheritance:
-  Icacls $Key /c /t /Inheritance:d
+Icacls $Key /c /t /Inheritance:d
 
 # Set Ownership to Owner:
   # Key's within $env:UserProfile:
-    Icacls $Key /c /t /Grant ${env:UserName}:F
+  Icacls $Key /c /t /Grant ${env:UserName}:F
 
-   # Key's outside of $env:UserProfile:
-     TakeOwn /F $Key
-     Icacls $Key /c /t /Grant:r ${env:UserName}:F
+  # Key's outside of $env:UserProfile:
+  TakeOwn /F $Key
+  Icacls $Key /c /t /Grant:r ${env:UserName}:F
 
 # Remove All Users, except for Owner:
-  Icacls $Key /c /t /Remove:g Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users
+Icacls $Key /c /t /Remove:g Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users
 
 # Verify:
-  Icacls $Key
+Icacls $Key
 
 # Remove Variable:
-  Remove-Variable -Name Key
+Remove-Variable -Name Key
 ```
 
-스크립트 출처: https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open
+스크립트 출처: [https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
 
 ## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install)  
 
@@ -185,7 +185,9 @@ WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 
 
 ## [Chocolatey](https://chocolatey.org/install)
 
-윈도우판 `apt-get`이다. 파워쉘(관리자 권한)에서 다음 줄 실행:
+윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)
+
+파워쉘(관리자 권한)에서 다음 줄 실행:
 
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -503,6 +505,7 @@ sudo apt-get remove byobu hollywood
 
 ### 전역
 
+- <kbd>ctrl + esc</kbd>: 시작 열기
 - <kbd>alt + enter</kbd>: 현재 선택된 요소의 속성 창.
 - <kbd>ctrl + shift + esc</kbd>: 작업 관리자 실행
 - <kbd>shift + f10</kbd>: 컨텍스트 메뉴 팝업(=마우스 우클릭)

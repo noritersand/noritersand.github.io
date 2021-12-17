@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 13:09:45 +0900
-title: '[Java] 기록: Log4j에서 Logback으로'
+title: '[Java] Log4j에서 Logback으로 라이브러리 교체 기록'
 categories:
   - misc
 tags:
@@ -28,7 +28,7 @@ tags:
 
 ## application
 
-#### pom.xml
+### pom.xml
 
 ```xml
   <dependency>
@@ -63,7 +63,7 @@ tags:
   </dependency>
 ```
 
-#### web.xml
+### web.xml
 
 ```xml
   <listener>
@@ -75,7 +75,7 @@ tags:
   </context-param>
 ```
 
-#### logback-local.xml
+### logback-local.xml
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -109,7 +109,7 @@ tags:
 </configuration>
 ```
 
-#### log4jdbc.log4j2.properties
+### log4jdbc.log4j2.properties
 
 ```
 log4jdbc.drivers=org.mariadb.jdbc.Driver
@@ -117,7 +117,7 @@ log4jdbc.spylogdelegator.name=net.sf.log4jdbc.log.slf4j.Slf4jSpyLogDelegator
 log4jdbc.dump.sql.maxlinelength=0
 ```
 
-#### context-datasource.xml
+### context-datasource.xml
 
 ```xml
   <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
@@ -125,11 +125,11 @@ log4jdbc.dump.sql.maxlinelength=0
   </bean>
 ```
 
-### WAS
+## WAS
 
 이 프로젝트 요건이 JNDI라서 톰캣 설정에 드라이버 정보 명시:
 
-#### server.xml
+### server.xml
 
 ```xml
   <GlobalNamingResources>
@@ -137,7 +137,7 @@ log4jdbc.dump.sql.maxlinelength=0
   </GlobalNamingResources>
 ```
 
-#### context.xml
+### context.xml
 
 ```xml
   <ResourceLink name="jdbc/MY_JNDI_NAME" global="jdbc/MY_JNDI_NAME" type="javax.sql.DataSource" />
