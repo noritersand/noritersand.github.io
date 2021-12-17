@@ -26,3 +26,4 @@ tags:
 
 - <kbd>win + a</kbd>: ?
 - <kbd>win + n</kbd>: ?
+- <kbd>ctrl + esc</kbd>: 시작 열기
