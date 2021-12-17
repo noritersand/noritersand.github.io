@@ -40,7 +40,7 @@ tags:
 
 ### 파일 에디터
 
-- <kbd>alt + f1</kbd>: 컨텍스트 메뉴 열기인가?
+- <kbd>alt + f1</kbd>: 컨텍스트 메뉴 열기... 인가?
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
 - <kbd>ctrl + alt + l</kbd>: 오토 포매팅
