@@ -55,7 +55,7 @@ tags:
 
 ## [OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
 
-putty는 안녕. 터미널은 이제 파워쉘로 접속한다.
+putty는 안녕. 터미널은 이제 파워쉘로 접속한다. (사실 WSL이 더 편하다)
 
 우선 설치를 하자. 파워쉘(관리자 권한)에서 다음 줄 실행:
 
@@ -89,6 +89,55 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
 나머지 설명은 [도움말](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)을 보자.
+
+### 개인키로 SSH 접속
+
+키는 어떻게 만들었다 치고, 아래처럼 한다
+
+```bash
+ssh -i PRIVATE_KEY_FILE.pem ubuntu@3.36.35.105
+```
+
+이 때 "UNPROTECTED PRIVATE KEY FILE!" 경고가 출력되면서 접속이 안될 수 있는데, 이 때는 해당 파일의 권한을 아래 둘 중 하나의 방법으로 조정해주면 됨.
+
+#### GUI
+
+1. 탐색기에서 파일 속성 > 보안 > 고급
+2. 상속 사용 안 함 > "이 개체에서 상속된 사용 권한을 모두 제거합니다."
+3. 추가 > 보안 주체 선택 > 윈도우 계정명 적고 확인
+4. 기본 권한 중 '읽기 및 실행', '읽기'만 체크
+5. 끗
+
+#### CUI
+
+파워쉘에서 아래 스크립트 실행:
+
+```bash
+# Set Key File Variable:
+  New-Variable -Name Key -Value "./PRIVATE_KEY_FILE.pem"
+
+# Remove Inheritance:
+  Icacls $Key /c /t /Inheritance:d
+
+# Set Ownership to Owner:
+  # Key's within $env:UserProfile:
+    Icacls $Key /c /t /Grant ${env:UserName}:F
+
+   # Key's outside of $env:UserProfile:
+     TakeOwn /F $Key
+     Icacls $Key /c /t /Grant:r ${env:UserName}:F
+
+# Remove All Users, except for Owner:
+  Icacls $Key /c /t /Remove:g Administrator "Authenticated Users" BUILTIN\Administrators BUILTIN Everyone System Users
+
+# Verify:
+  Icacls $Key
+
+# Remove Variable:
+  Remove-Variable -Name Key
+```
+
+스크립트 출처: https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open
 
 ## [WSL<sup>Windows Subsystem for Linux</sup>](https://docs.microsoft.com/ko-kr/windows/wsl/install)  
 
