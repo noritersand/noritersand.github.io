@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 13:09:45 +0900
-title: '[Java] Log4j -> Logback 교체 기록'
+title: '[Java] 기록: Log4j에서 Logback으로'
 categories:
   - misc
 tags:
