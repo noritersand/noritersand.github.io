@@ -157,6 +157,8 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 ## 추천 확장 기능(플러그인)
 
+- ESLint `dbaeumer.vscode-eslint`: JS 분석 도구. 문법 오류 검출 같은 기능이 있음.
+- Prettier - Code formatter `esbenp.prettier-vscode`: code formatter임. JS, JSON, CSS, HTML, Markdown 등을 지원
 - change-case `wmaurer.change-case`
 - Java Server Pages (JSP) `pthorsson.vscode-jsp`
 - open in browser `techer.open-in-browser`
@@ -167,6 +169,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
+- Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 권한 관련된건가... 아직 정확히 뭔지는 몲;;
 
 ### Debugger for Firefox(firefox-devtools.vscode-firefox-debug)
 

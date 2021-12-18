@@ -26,3 +26,4 @@ tags:
 
 - <kbd>win + a</kbd>: ?
 - <kbd>win + n</kbd>: ?
+- <kbd>win + \`</kbd>: 파워쉘 열기

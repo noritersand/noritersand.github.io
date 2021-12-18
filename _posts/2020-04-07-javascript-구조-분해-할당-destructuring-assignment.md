@@ -101,7 +101,7 @@ a; // 1
 b; // 2
 ```
 
-단, 그냥 쓰면 `SyntaxError`가 발생하므로, 괄호`()`로 감싸야 한다. [MDN의 설명](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration)에 따르면 좌변의 `{ a, b }`가 객체 리터럴이 아닌 블록으로 간주되지 때문이라 한다.
+단, 그냥 쓰면 `SyntaxError`가 발생하므로, 괄호`()`로 감싸야 한다. [MDN의 설명](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration)에 따르면 좌변의 `{ a, b }`가 객체 리터럴이 아닌 블록으로 간주되기 때문이라 한다.
 
 ### 새로운 변수 이름으로 할당
 

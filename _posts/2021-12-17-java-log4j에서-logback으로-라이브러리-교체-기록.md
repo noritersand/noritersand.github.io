@@ -24,7 +24,7 @@ tags:
 - Spring 4.3.4
 - log4j 1.2.15
 - slf4j 1.6.6
-- logback 1.2.8
+- logback 1.2.9
 
 ## application
 
@@ -32,24 +32,24 @@ tags:
 
 ```xml
   <dependency>
-    <groupId>org.logback-extensions</groupId>
-    <artifactId>logback-ext-spring</artifactId>
-    <version>0.1.5</version>
+    <groupId>ch.qos.logback</groupId>
+    <artifactId>logback-core</artifactId>
+    <version>1.2.9</version>
   </dependency>
   <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-classic</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9</version>
   </dependency>
   <dependency>
     <groupId>ch.qos.logback</groupId>
     <artifactId>logback-access</artifactId>
-    <version>1.2.8</version>
+    <version>1.2.9</version>
   </dependency>
   <dependency>
-    <groupId>ch.qos.logback</groupId>
-    <artifactId>logback-core</artifactId>
-    <version>1.2.8</version>
+    <groupId>org.logback-extensions</groupId>
+    <artifactId>logback-ext-spring</artifactId>
+    <version>0.1.5</version>
   </dependency>
   <dependency>
     <groupId>org.slf4j</groupId>
