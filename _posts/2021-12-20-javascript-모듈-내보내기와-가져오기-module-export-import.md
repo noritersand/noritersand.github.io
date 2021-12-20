@@ -30,7 +30,7 @@ tags:
 
 ES2015의 새로운 기능인 module(이하 모듈)에 대한 간단한 설명 글. 함수, 객체, 원시 값을 내보내거나 가져올 때 사용한다. RequireJS, React 같은 웹 프레임웤이나 Node.js 사용자라면 이미 익숙할 것이다.
 
-모듈은 export와 import 구문으로 구현되며, 내보내거나 가져오는 모듈은 무조건 엄격 모드로 작동한다는 특징이 있다. 그리고 라이브러리(기존 방식을 말함)를 사용하는 것보다 더 효율적이라는데 그건 잘 모르겠고 ㅎㅎ...
+모듈은 export와 import 구문으로 구현하며, 내보내거나 가져오는 모듈은 무조건 엄격 모드로 작동한다는 특징이 있다. 그리고 라이브러리(기존 방식을 말함)를 사용하는 것보다 더 효율적이라는데 그건 잘 모르겠고 ㅎㅎ...
 
 모듈 기능을 테스트하려면 웹 서버가 필요하다. 브라우저로 HTML 파일을 직접 열면 교차 출처 차단으로 정상 작동하지 않는다.
 
@@ -44,7 +44,7 @@ Access to script at 'file:///C:/dev/git/mdn-js-examples/modules/basic-modules/ma
 index.html:11 GET file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.js net::ERR_FAILED
 ```
 
-여담으로 이 글에서 import의 우리말 표기는 '불러오기'와 '가져오기' 중 검색결과가 약간 더 많은 '가져오기'로 적는다.
+이 글에서 import의 우리말 표기는 '불러오기'와 '가져오기' 중 검색결과가 약간 더 많은 '가져오기'로 적는다.
 
 ## 기본 규칙
 
@@ -52,7 +52,7 @@ index.html:11 GET file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.
 
 스크립트를 모듈로 선언하려면 HTML 페이지에 적용할 때 `type="module"`을 추가해야 한다:
 
-```js
+```html
 <script type="module" src="main.js"></script>
 ```
 
@@ -102,7 +102,7 @@ let reportList = createReportList(myCanvas.id);
 </script>
 ```
 
-주의: **import 된 모듈의 유효범위는 전역이 아니다** ([module features are imported into the scope of a single script](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts)). 따라서 콘솔에서 호출할 수 없다.
+주의: **import 된 모듈의 유효범위는 전역이 아니다**([module features are imported into the scope of a single script](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts)). 따라서 콘솔에서 호출할 수 없다.
 
 ## 하나씩 내보내고 가져오기
 
@@ -216,7 +216,7 @@ console.log(bar); // "def"
 
 ## 가져온 모듈을 다시 내보내기
 
-계층 구조를 갖는 여러 모듈이 있을 때 특정 모듈에서 서브모듈의 기능을 가져와 다시 내보내는 방법이다. `export` 뒤에 `from`이 붙으면 서브모듈이 있다고 보면 된다.
+계층 구조를 갖는 여러 모듈이 있을 때 서브모듈의 기능을 가져와 다시 내보내는 방법이다. `export` 뒤에 `from`이 붙으면 서브모듈이 있다고 보면 된다.
 
 ```js
 // module2.js
@@ -244,7 +244,7 @@ console.log(ZERO); // 0
 
 ## 객체로 가져오기
 
-모듈의 기능(MDN에서 features라고 표현함)을 모듈 객체 안으로 가져오는 방법.
+모듈의 기능(MDN에서 feature라고 표현함)을 모듈 객체 안으로 가져오는 방법.
 
 ```js
 // module1.js
@@ -266,7 +266,7 @@ console.log(math.KAPREKA_NNUMBER); // "495, 6174"
 
 주의: [일부 브라우저에서 제한되는 기능](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#browser_compatibility)임.
 
-모듈 하나 당 딱 하나만 배정된 기본값을 이용해 내보내는 방법. 경우에 따라 내보내는 기능의 이름을 생략할 수 있다.
+**모듈 하나 당 딱 하나만 배정된 기본값**을 이용해 내보내는 방법. 경우에 따라 내보내는 기능의 이름을 생략할 수 있다.
 
 ```js
 // module2.js
@@ -300,7 +300,7 @@ yourName(); // I'm waldo.
 
 ## Dynamic module loading 동적 모듈 로딩
 
-필요할 때만 모듈을 동적으로 가져오는 기능이다. JS 파일을 원하는 시점에 로딩하기 때문에 성능 이점이 있다. 사용하려면 우선 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)에 대해 대충이라도 아는게 좋음.
+필요할 때만 모듈을 동적으로 가져오는 기능이다. 스크립트 파일을 원하는 시점에 로딩하기 때문에 성능 이점이 있다. 사용하려면 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)에 대해 대충이라도 아는게 좋음.
 
 `import()` 함수는 Promise 객체를 반환하는데, 해당 객체를 통해 모듈에서 내보낸 기능에 접근한다. 아래 예시를 보자:
 
@@ -338,3 +338,5 @@ import myDefault, { export1 [ , [...] ] } from "module-name";
 import myDefault, * as name from "module-name";
 import "module-name"; // 변수 바인딩 없이 스크립트를 실행만 할 때 사용한다.
 ```
+
+끝! 🥱
