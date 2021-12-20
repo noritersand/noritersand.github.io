@@ -411,15 +411,18 @@ Write-Output $null >> dummy-for-commit.txt # 비어있는 파일 생성. 'touch'
 
 ### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
-웹 리퀘스트 날리는 명령어. `curl`과 거어어어어의 같음.
+웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다. 기본 별칭은 `iwr`.
 
 ```bash
+# 단순 요청
 Invoke-WebRequest -Uri "https://google.com"
-```
 
-```bash
+# 헤더와 바디를 지정하는 방법
 # grave(`)는 파워쉘에서 줄바꿈을 의미함
 Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }
+
+# 파일 다운로드. OutFile 옵션으로 저장할 파일명을 지정함.
+Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" -OutFile "vscode.exe"
 ```

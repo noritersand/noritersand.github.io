@@ -39,19 +39,33 @@ tags:
 
 ### 시작 위치 변경
 
+**윈도우 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음.**
+
 터미널의 시작 위치를 변경하려면, 설정(<kbd>ctrl + ,</kbd>)에서 `Json 파일 열기`로 설정 파일을 열고:
 
 ```js
-{
-  "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-  "hidden": false,
-  "name": "PowerShell",
-  "source": "Windows.Terminal.PowershellCore",
-  "startingDirectory": "C:/dev/git"
+"profiles": {
+  "defaults": {},
+  "list": [
+    {
+      "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+      "hidden": false,
+      "name": "PowerShell",
+      "source": "Windows.Terminal.PowershellCore",
+      "startingDirectory": "C:/dev"
+    }
+    ... 생략
+  ]
 }
 ```
 
 이런식으로 `startingDirectory`를 추가하면 된다.
+
+참고로 이 설정 파일에서 `list` 배열 안에 있는 객체들의 순서가 바로:
+
+![](/images/windows-terminal-new-tabs.png)
+
+터미널에서 새 탭을 열 때 선택할 수 있는 뇨솤들의 순서다.
 
 ## [OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
 
@@ -106,7 +120,7 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@3.36.35.105
 2. 상속 사용 안 함 > "이 개체에서 상속된 사용 권한을 모두 제거합니다."
 3. 추가 > 보안 주체 선택 > 윈도우 계정명 적고 확인
 4. 기본 권한 중 '읽기 및 실행', '읽기'만 체크
-5. 끗
+5. 끟
 
 #### CUI
 
@@ -183,6 +197,60 @@ WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 
 
 **WSL2**: 버전 2에선 쉘의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
 
+### WSL에서 호스트 디렉토리 접근
+
+우분투 말고는 설치를 안해봐서 정확하진 않으나 `/mnt` 아래에 있는 드라이브들이 호스트(WSL이 설치된 윈도우의 루트 경로) 디렉토리다.
+
+```bash
+$ df -h
+Filesystem      Size  Used Avail Use% Mounted on
+...
+drvfs           476G  100G  377G  21% /mnt/c
+drvfs           930G   69G  862G   8% /mnt/d
+```
+
+### 우분투 터미널 꾸미기: ZSH, Powerlevel10k, ls color
+
+[노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
+
+ZSH는 리눅스 기본 쉘인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
+
+일단 [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)는:
+
+```bash
+# zsh 설치
+sudo apt install zsh
+
+# oh-my-zsh 설치
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# zsh 실행
+zsh
+
+# bash로 돌아가기
+bash
+```
+
+그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.  
+
+윈도우 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json` 우분투 프로파일에 `"fontFace": "MesloLGS NF"`를 추가하면 된다.
+
+[PowerLevel10k](https://github.com/romkatv/powerlevel10k/#oh-my-zsh) 설치는 아래 명령으로:
+
+```bash
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+
+깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정하고 터미널 재실행하면 됨.
+
+마지막으로 ls color는 홈 경로의 `zshrc` 파일 막 줄에 아래 추가:
+
+```bash
+LS_COLORS="ow=01;36;40" && export LS_COLORS
+```
+
+하면 끗.
+
 ## [Chocolatey](https://chocolatey.org/install)
 
 윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)
@@ -207,6 +275,12 @@ choco install firefox-dev googlechrome googlechrome.dev
 ```
 
 이런식으로 앱 설치 가능.
+
+### [Update-SessionEnvironment](https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment)
+
+Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를 다시 불러올 수 있다.
+
+명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
 
 ## 윈도우10 초기 설정
 
@@ -543,7 +617,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + ctrl + 스페이스바</kbd>: 이전 입력으로 전환
 - <kbd>win + /</kbd>: IME 재변환
 
-#### 작업 표시줄
+### 작업 표시줄
 
 - <kbd>win + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 실행 혹은 활성화
 - <kbd>win + shift + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 새 인스턴스 시작
@@ -552,7 +626,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + ctrl + shift + 숫자키</kbd>: 작업 표시줄에 고정된 앱을 **관리자 권한으로 새 인스턴스 시작**
 - <kbd>win + t</kbd> or <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택. 실행 중인 창을 선택
 
-#### 데스크탑
+### 데스크탑
 
 - <kbd>win + tab</kbd>: 모든 데스크탑과 실행중인 앱
 - <kbd>win + ctrl + d</kbd>: 데스크탑 추가
@@ -579,4 +653,8 @@ sudo apt-get remove byobu hollywood
 - <kbd>ctrl + n</kbd>: 새 메모
 - <kbd>ctrl + w</kbd>: 창 닫기
 
-끗.
+### Windows Terminal
+
+- <kbd>win + \`</kbd>: 윈도우 터미널의 기본 쉘로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
+
+끝.
