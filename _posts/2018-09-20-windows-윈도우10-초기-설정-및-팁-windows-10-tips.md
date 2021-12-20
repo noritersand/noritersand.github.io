@@ -233,7 +233,7 @@ bash
 
 그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.  
 
-윈도우 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json` 우분투 프로파일에 `"fontFace": "MesloLGS NF"`를 추가하면 된다.
+윈도우 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json`의 우분투 프로파일에 `"fontFace": "MesloLGS NF"`를 추가하면 된다.
 
 [PowerLevel10k](https://github.com/romkatv/powerlevel10k/#oh-my-zsh) 설치는 아래 명령으로:
 
@@ -241,9 +241,9 @@ bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정하고 터미널 재실행하면 됨.
+깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정 후 터미널 재실행하면 됨.
 
-마지막으로 ls color는 홈 경로의 `zshrc` 파일 막 줄에 아래 추가:
+마지막으로 ls color는 그냥 `~/.zshrc` 파일 막 줄에 아래 추가:
 
 ```bash
 LS_COLORS="ow=01;36;40" && export LS_COLORS
