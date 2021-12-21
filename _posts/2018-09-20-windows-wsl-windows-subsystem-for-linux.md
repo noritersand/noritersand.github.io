@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[windows] WSL, Windows Subsystem for Linux'
+title: '[Windows] WSL, Windows Subsystem for Linux'
 categories:
   - windows
 tags:
@@ -53,6 +53,13 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 
 ~~명령어로 다운로드/설치 하면 됨~~  
 오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 쉘 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒
+
+## 설치 확인
+
+```bash
+# 설치된 모든 WSL 배포버전의 자세한 정보 표시
+wsl -l -v
+```
 
 ## 서브 시스템의 실제 경로
 

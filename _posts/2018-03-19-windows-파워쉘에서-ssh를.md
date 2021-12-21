@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워쉘과 SSH'
+title: '[Windows] 파워쉘에서 SSH를'
 categories:
   - windows
 tags:

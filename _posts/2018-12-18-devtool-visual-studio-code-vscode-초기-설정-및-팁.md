@@ -169,7 +169,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
-- Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 권한 관련된건가... 아직 정확히 뭔지는 몲;;
+- Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
 
 ### Debugger for Firefox(firefox-devtools.vscode-firefox-debug)
 
