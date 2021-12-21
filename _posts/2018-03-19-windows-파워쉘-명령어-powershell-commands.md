@@ -1,11 +1,11 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 윈도우10 파워쉘 명령어 Powershell Commands'
+title: '[Windows] 파워쉘 명령어 Powershell Commands'
 categories:
   - windows
 tags:
-  - os
+  - terminal
   - cmd
   - shell
   - powershell
@@ -83,69 +83,6 @@ Remove-Item Env:\test  # 환경 변수 'test' 삭제
 [Environment]::SetEnvironmentVariable("test2", "1234", "Machine")  # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요함
 [Environment]::SetEnvironmentVariable("test2", $null, "Machine")  # 시스템 환경 변수 'test2' 삭제
 ```
-
-## SSH
-
-[마이크로소프트 공식 도움말: OpenSSH 키 관리](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_keymanagement)
-
-### ssh-keygen
-
-```bash
-ssh-keygen
-```
-
-RSA 키 페어를 생성하는 명령어. 명령 실행 시 이름과 비밀번호를 묻는 프롬프트가 나타나며, 입력을 마치면 현재 경로에 공개키와 비공개키 하나씩 생성된다. 생성 단계에서 묻는 비밀번호는 2단계 인증용 비밀번호이며 입력하지 않아도 된다.
-
-```bash
-PS C:\Users\user\.ssh> ssh-keygen
-
-Generating public/private rsa key pair.
-Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in noritersand-test.
-Your public key has been saved in noritersand-test.pub.
-The key fingerprint is:
-SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@noritersand-desktop
-The key\'s randomart image is:
-+---[RSA 2048]----+
-| .             o |
-|o .         . =  |
-| =   .       + . |
-|. o +  .      o E|
-| ..oo.. S      =.|
-|.. +.o..      . o|
-|+ o o... +     .o|
-|*. +    + .. . o%|
-|+ ..o    .. o..*%|
-+----[SHA256]-----+
-
-PS C:\Users\user\.ssh> ls
-
-    디렉터리: C:\Users\user\.ssh
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----     2021-02-02  오후 12:48           1766 noritersand-test
--a----     2021-02-02  오후 12:48            403 noritersand-test.pub
-```
-
-### ssh-agent, ssh-add
-
-비공개키를 관리하는 서비스와 명령어.
-
-```bash
-# Make sure you're running as an Administrator
-Start-Service ssh-agent
-
-# This should return a status of Running
-Get-Service ssh-agent
-
-# Now load your key files into ssh-agent
-ssh-add ~\.ssh\noritersand-ssh-test
-```
-
-이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
 
 ## 파워쉘 명령어 기본 별칭
 

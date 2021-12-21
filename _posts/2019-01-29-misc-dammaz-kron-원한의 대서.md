@@ -6,7 +6,6 @@ categories:
   - misc
 tags:
   - record
-  - history
   - dammaz-kron
 ---
 
