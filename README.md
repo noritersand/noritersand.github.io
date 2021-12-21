@@ -10,7 +10,7 @@
 - [jekyll](https://jekyllrb.com/)
 - [kramdown](https://kramdown.gettalong.org/)
 
-## 글 작성 도움말
+## 글 작성 가이드
 
 ### 작성 규칙
 
@@ -35,54 +35,7 @@
 {:toc .toc}
 ```
 
-### 파일 수정 시 참고할 것
-
-#### post 템플릿
-
-- `_layouts/post.html`
-
-#### 검색 관련 파일
-
-검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd>.
-
-- `assets\javascripts\jekyll-search.jquery.js`
-- `_includes\blog\scripts.html`
-
-#### 주요 scss 파일
-
-- `_sass/simple-texture-home.scss`
-- `_sass/simple-texture-blog.scss`
-- `_sass/simple-texture/blog/_variables.scss`
-- `_sass/simple-texture/blog/_header.scss`
-- `_sass/simple-texture/blog/_content.scss`
-
-## 환경 설정
-
-#### 윈도우용 Ruby + Devkit 설치
-
-https://rubyinstaller.org/downloads/
-
-#### RubyGems으로 Bundler와 Jekyll 설치
-
-```bash
-gem install bundler jekyll
-```
-
-#### gem 설치
-
-```bash
-bundler install
-```
-
-#### 현재 폴더에 사이트 레이아웃 구성하기
-
-```bash
-jekyll new . --force
-```
-
-만약 현재 폴더에 사이트 레이아웃의 기본 파일들이 있으면 `--force` 옵션으로 덮어쓰게 함.
-
-#### 폴더 및 파일 설명
+## 설정 및 레이아웃 관련 파일
 
 - `_config.yml`: 설정 파일
 - `_posts`: 소스 폴더
@@ -90,13 +43,58 @@ jekyll new . --force
 - `.sass-cache`: 몲
 - `.jekyll-metadata`: 몲
 
-#### \_config.yml 도움말 보기
+### \_config.yml 도움말 보기
 
 - [https://jekyllrb-ko.github.io/docs/configuration/](https://jekyllrb-ko.github.io/docs/configuration/)
 
+### post 템플릿
+
+- `_layouts/post.html`
+
+### 검색 관련 파일
+
+검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd>.
+
+- `assets\javascripts\jekyll-search.jquery.js`
+- `_includes\blog\scripts.html`
+
+### 주요 scss 파일
+
+- `_sass/simple-texture-home.scss`
+- `_sass/simple-texture-blog.scss`
+- `_sass/simple-texture/blog/_variables.scss`
+- `_sass/simple-texture/blog/_header.scss`
+- `_sass/simple-texture/blog/_content.scss`
+
+## Windows에서 Jekyll 빌드 환경 설정
+
+### 윈도우용 Ruby + Devkit 설치
+
+https://rubyinstaller.org/downloads/
+
+### RubyGems으로 Bundler와 Jekyll 설치
+
+```bash
+gem install bundler jekyll
+```
+
+### gem 설치
+
+```bash
+bundler install
+```
+
+### 현재 폴더에 사이트 레이아웃 구성하기
+
+```bash
+jekyll new . --force
+```
+
+만약 현재 폴더에 사이트 레이아웃의 기본 파일들이 있으면 `--force` 옵션으로 덮어쓰게 함.
+
 ## 사이트 빌드
 
-#### 지킬 명령어 도움말 보기
+### 지킬 명령어 도움말 보기
 
 ```bash
 jekyll help
@@ -106,7 +104,7 @@ jekyll build --help
 # 명령어별 도움말
 ```
 
-#### 빌드 방법
+### 빌드 방법
 
 ```bash
 jekyll build
@@ -123,7 +121,7 @@ jekyll build --watch
 # 변경사항이 감지되면, 자동으로 다시 생성.
 ```
 
-#### 로컬 서버 띄우기
+### 로컬 서버 띄우기
 
 ```bash
 jekyll serve
@@ -160,7 +158,7 @@ bundle exec jekyll serve
 
 ## 지킬 빌드 디버깅 로그
 
-#### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
+### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
 
 https://github.com/rbenv/rbenv/issues/1138  
 아래처럼 `Gemfile.lock`에 있는 버전을 강제로 지정해서 해결함.
@@ -173,7 +171,7 @@ BUNDLED WITH
 gem install bundler -v '1.17.3'
 ```
 
-#### on 태그는 빌드 불가
+### on 태그는 빌드 불가
 
 ```bash
       Remote Theme: Using theme yizeng/jekyll-theme-simple-texture
@@ -184,7 +182,7 @@ gem install bundler -v '1.17.3'
 
 방법이 없으니 `on` 태그를 안쓰면 된다.
 
-#### Error:  No source of timezone data could be found.
+### Error:  No source of timezone data could be found.
 
 https://jekyllrb.com/docs/installation/windows/#time-zone-management  
 윈도우에서 `tzinfo-data` gem 사용 시 발생할 수 있다고 함. `Gemfile` 파일에 아래 추가:
@@ -193,7 +191,7 @@ https://jekyllrb.com/docs/installation/windows/#time-zone-management
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 ```
 
-#### Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
+### Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
 
 https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
