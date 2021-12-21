@@ -35,7 +35,7 @@
 {:toc .toc}
 ```
 
-## 설정 및 레이아웃 관련 파일
+## 환경설정 및 레이아웃 관련 파일
 
 - `_config.yml`: 설정 파일
 - `_posts`: 소스 폴더
@@ -43,7 +43,7 @@
 - `.sass-cache`: 몲
 - `.jekyll-metadata`: 몲
 
-### \_config.yml 도움말 보기
+### \_config.yml 도움말
 
 - [https://jekyllrb-ko.github.io/docs/configuration/](https://jekyllrb-ko.github.io/docs/configuration/)
 
