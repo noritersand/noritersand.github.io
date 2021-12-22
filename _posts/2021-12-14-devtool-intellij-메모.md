@@ -26,6 +26,10 @@ tags:
 
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
+## TODO 톰캣 퍼블리싱 폴더는 어디일까
+
+이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
+
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기

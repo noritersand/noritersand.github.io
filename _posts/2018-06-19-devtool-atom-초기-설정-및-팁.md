@@ -30,6 +30,10 @@ tags:
 - `Live Update` 체크 해제: 글이 길 때 미리보기가 자동갱신되면 렉이 심함.
 - `Open Preview In Split Pane` 체크 해제: 새 탭으로 열리는게 더 편함.
 
+### 자동 저장
+
+`Settings` > `Installed Packages` > `autosave`의 설정에서 `Enabled` 체크.
+
 ### 붙여넣기 시 자동 들여쓰기 해제
 
 `Settings` > `Editor`에서 `Auto Indent On Paste` 체크 해제.

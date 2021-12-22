@@ -50,9 +50,7 @@ subl .\.gitignore  # .gitignore를 서브라임으로 열기
   "show_line_endings": true,
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
-  "file_exclude_patterns": [
-    "*.sublime-workspace"
-  ]
+  "save_on_focus_lost": true
 }
 ```
 
