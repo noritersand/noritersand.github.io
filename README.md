@@ -63,7 +63,9 @@
 - `_sass/simple-texture/blog/_header.scss`
 - `_sass/simple-texture/blog/_content.scss`
 
-## Windows에서 Jekyll 빌드 환경 설정
+## 윈도우에서 Jekyll 빌드 환경 설정
+
+만약 WSL-ubuntu에 설치할거면 [여기](https://jekyllrb.com/docs/installation/ubuntu/)를 보자. **절대 Quickstart 페이지만 보고 하면 안됨**.
 
 ### 윈도우용 Ruby + Devkit 설치
 
@@ -75,13 +77,15 @@ https://rubyinstaller.org/downloads/
 gem install bundler jekyll
 ```
 
-### gem 설치
+### 의존하는 패키지 설치
 
 ```bash
 bundler install
 ```
 
 ### 현재 폴더에 사이트 레이아웃 구성하기
+
+**블로그 레이아웃을 처음 만드는 거 아니면 안해도 됨**.
 
 ```bash
 jekyll new . --force
@@ -151,9 +155,12 @@ bundle install # 얘도 했으면 생략
 bundle exec jekyll serve
 ```
 
-그 외에 로컬 서버에서는 한글 파일명을 인식하지 못하는 문제가 있음. (2018-08-13)
-
 ## 지킬 빌드 디버깅 로그
+
+### 한글 파일명 문제
+
+- 로컬 서버에서는 한글 파일명을 인식하지 못하는 문제가 있는데 딱히 해결 방법을 못 찾음. (2018-08-13)
+- WSL에서 띄우니 한글 문제가 사라졌고 3년 만에 모두가 행복해졌다고 한다. (2021-12-23)
 
 ### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
 
