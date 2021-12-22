@@ -5,6 +5,7 @@ title: '[misc] 오토핫키 AutoHotkey 스크립트형 매크로 앱'
 categories:
   - misc
 tags:
+  - misc
   - autohotkey
 ---
 

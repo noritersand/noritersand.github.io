@@ -1,14 +1,17 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: '[misc] jekyll collections test'
+title: '[test] jekyll collections test'
 categories:
-  - misc
+  - test
 tags:
   - test
+  - jekyll
+  - blog
 ---
 
 `_config.yml`에서 아래처럼:
+
 ```bash
 collections:
   myawesomedirectory:

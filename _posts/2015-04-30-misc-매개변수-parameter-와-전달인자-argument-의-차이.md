@@ -5,6 +5,7 @@ title: '[misc] 매개변수(parameter)와 전달인자(argument)의 차이'
 categories:
   - misc
 tags:
+  - misc
   - parameter
   - argument
 ---

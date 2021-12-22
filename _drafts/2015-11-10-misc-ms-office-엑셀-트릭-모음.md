@@ -5,6 +5,7 @@ title: '[misc] MS Office 엑셀 트릭 모음'
 categories:
   - misc
 tags:
+  - misc
   - excel
   - spreadsheet
   - code-snippet

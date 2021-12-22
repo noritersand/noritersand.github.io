@@ -5,8 +5,7 @@ title: '[misc] Pagination 쪽 번호 매기기 계산 식'
 categories:
   - misc
 tags:
-  - java
-  - jsp
+  - misc
   - paging
   - pagination
 ---

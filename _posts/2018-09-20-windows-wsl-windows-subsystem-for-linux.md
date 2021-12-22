@@ -6,9 +6,9 @@ categories:
   - windows
 tags:
   - windows
+  - linux
   - os
   - wsl
-  - linux
 ---
 
 * Kramdown table of contents

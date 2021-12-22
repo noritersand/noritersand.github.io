@@ -3,10 +3,10 @@ layout: post
 date: 2021-12-17 13:09:45 +0900
 title: '[Java] Log4j에서 Logback으로 라이브러리 교체 기록'
 categories:
-  - misc
-tags:
-  - record
   - java
+tags:
+  - java
+  - record
   - spring
   - log4j
   - slf4j

@@ -5,6 +5,7 @@ title: '[misc] ELK Stack 메모'
 categories:
   - misc
 tags:
+  - misc
   - elk
   - elasticsearch
   - logstash

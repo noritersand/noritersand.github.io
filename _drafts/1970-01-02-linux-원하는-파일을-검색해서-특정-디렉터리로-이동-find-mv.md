@@ -1,12 +1,12 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 1970-01-02 00:00:00 +0900
 title: '[Linux] 원하는 파일을 검색해서 특정 디렉터리로 이동(find + mv)'
 categories:
   - linux
 tags:
-  - os
   - linux
+  - os
   - find
   - mv
 ---

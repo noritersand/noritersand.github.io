@@ -3,10 +3,10 @@ layout: post
 date: 2021-12-20 23:44:40 +0900
 title: '[JavaScript] 모듈, 내보내기와 가져오기 module, export, import'
 categories:
-  - misc
-tags:
-  - ecmascript
   - javascript
+tags:
+  - javascript
+  - ecmascript
   - es2015
   - module
   - export

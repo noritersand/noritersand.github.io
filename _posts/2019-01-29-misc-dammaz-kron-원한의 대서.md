@@ -5,6 +5,7 @@ title: '[misc] Dammaz Kron 원한의 대서'
 categories:
   - misc
 tags:
+  - misc
   - record
   - dammaz-kron
 ---
