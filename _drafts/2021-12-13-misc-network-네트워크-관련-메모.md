@@ -1,11 +1,10 @@
 ---
 layout: post
 date: 2021-12-13 22:05:44 +0900
-title: '[misc] 네트워크 관련 메모'
+title: '[misc] Network 네트워크 관련 메모'
 categories:
   - misc
 tags:
-  - misc
   - network
 ---
 

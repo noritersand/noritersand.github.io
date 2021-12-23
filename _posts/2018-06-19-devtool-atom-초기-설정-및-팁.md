@@ -34,6 +34,10 @@ tags:
 
 `Settings` > `Installed Packages` > `autosave`의 설정에서 `Enabled` 체크.
 
+### 자동 저장
+
+`Settings` > `Installed Packages` > `fuzzy-finder`의 설정에서 `Ignored Names`에 file finder<kbd>ctrl + p</kbd>가 무시할 패턴 입력.
+
 ### 붙여넣기 시 자동 들여쓰기 해제
 
 `Settings` > `Editor`에서 `Auto Indent On Paste` 체크 해제.

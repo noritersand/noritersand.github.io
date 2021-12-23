@@ -19,6 +19,10 @@ tags:
 
 Docker(이하 도커) 관련 정리글.
 
+#### 버전 정보
+
+- Docker 20.10.11
+
 ## Docker Desktop on Windows
 
 윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [\[Microsoft\] WSL 2에서 Docker 원격 컨테이너 시작](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.
@@ -31,7 +35,9 @@ Docker(이하 도커) 관련 정리글.
 
 프로세스들이 돌아가는 격리된 공간. 컨테이너는 이미지를 바탕으로 만들어지며, 하나의 이미지로 여러 컨테이너를 생성할 수 있다.
 
-## 시스템 확인/조회
+## 명령어
+
+### 시스템 확인/조회
 
 ```bash
 # 버전 확인
@@ -58,7 +64,7 @@ docker ps -a
 
 `ps`는 `container ls` 별칭이다. 목록 보기는 실행중인 컨테이너만 표시한다. 다 보려면 `-a` 옵션을 붙여야 함.
 
-## 이미지 검색, 다운로드, 삭제
+### 이미지 검색, 다운로드, 삭제
 
 ```bash
 # 도커 서버에 IMAGE_NAME 이름으로 등록된 모든 이미지 검색해서 출력
@@ -76,7 +82,7 @@ docker rmi IMAGE_NAME -f
 
 이미지는 이름 대신 ID를 사용할 수 있고, ID는 앞의 일부만 입력해도 된다.
 
-## 이미지 커밋, 태깅, 업로드
+### 이미지 커밋, 태깅, 업로드
 
 `commit` 명령으로 컨테이너의 스냅샷을 이미지로 저장할 수 있다.
 
@@ -99,7 +105,7 @@ docker push fixalot/testbed
 `push` 명령은 저장소와 이미지 이름이 일치하지 않으면 실패하는 것 같음.
 
 
-## 컨테이너 생성과 삭제
+### 컨테이너 생성과 삭제
 
 컨테이너를 생성하는 명령은 `create`다. 이 명령은 지정한 이미지가 로컬에 없을 경우 도커 서버에서 검색해 자동으로 다운로드(`pull`) 한다.
 
@@ -116,7 +122,7 @@ docker create -p 80:80 IMAGE_NAME
 docker rm CONTAINER_ID
 ```
 
-## 컨테이너 시작/중단
+### 컨테이너 시작/중단
 
 ```bash
 # CONTAINER_ID 컨테이너 시작
@@ -136,7 +142,7 @@ docker kill CONTAINER_ID
 
 대충 검색해보면 안전한 종료(`stop`)인지 안전하지 않은 종료(`kill`)인지의 차이임.
 
-## docker run
+### docker run
 
 `run`은 생성(`create`)하고 시작(`start`)한 뒤 명령어 실행(`exec`)까지 해준다.
 
@@ -157,27 +163,13 @@ docker run -d -p 80:80 docker/getting-started
 
 `--rm` 옵션은 보통 `-it`와 같이 쓰는 모양.
 
-## docker exec
+### docker exec
 
 이미 시작된 컨테이너에는 `exec`로 원하는 명령을 실행한다.
 
 ```bash
 # 백그라운드로 명령어 실행
 docker exec -d CONTAINER_ID COMMAND
-```
-
-## docker-compose
-
-대충 여러 명령을 한 번에 실행하는 도구인가 봄. `docker-compose.yml` 파일을 미리 만들어야 실행할 수 있다.
-
-[마소에서 아주 잘 설명해놨으니 여기](https://docs.microsoft.com/ko-kr/visualstudio/docker/tutorials/use-docker-compose)를 보자.
-
-```bash
-# 버전 확인
-docker-compose version
-
-# 실행
-docker-compose up
 ```
 
 ## 컨테이너의 터미널 접속하기
@@ -219,3 +211,17 @@ root@6fb8d380f766:/#
 ```
 
 `start`에 컨테이너에 전달한 명령어 자리가 없는걸 보면 아마 `start`가 `create`의 옵션과 실행할 명령어 설정에 의존하는 것 같음.
+
+## docker-compose
+
+대충 여러 명령을 한 번에 실행하는 도구인가 봄. `docker-compose.yml` 파일을 미리 만들어야 실행할 수 있다.
+
+[마소에서 아주 잘 설명해놨으니 여기](https://docs.microsoft.com/ko-kr/visualstudio/docker/tutorials/use-docker-compose)를 보자.
+
+```bash
+# 버전 확인
+docker-compose version
+
+# 실행
+docker-compose up
+```

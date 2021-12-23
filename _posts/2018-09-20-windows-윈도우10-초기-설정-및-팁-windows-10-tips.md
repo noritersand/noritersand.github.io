@@ -124,6 +124,9 @@ Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를
 ```bash
 # PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
 dism /online /Enable-Feature /FeatureName:TelnetClient
+
+# localhost:4000 텔넷 접속
+telnet localhost 4000
 ```
 
 ### 로캘(로케일) 범주<sup>Locale Categories</sup> 변경

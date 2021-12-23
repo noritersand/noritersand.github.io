@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-15 13:46:15 +0900
-title: '[Windows] 윈도우 명령 프롬프트 명령어 windows command prompt commands'
+title: '[Windows] 윈도우 명령 프롬프트 명령어 aka CMD'
 categories:
   - windows
 tags:
@@ -15,7 +15,9 @@ tags:
 
 - [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
 
-명령 프롬프트(통칭 cmd. 윈도우 기본 쉘)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다. **윈도우 설치 화면에서는 `shift + f10`으로 cmd에 진입할 수 있음.**
+명령 프롬프트(윈도우 기본 쉘인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
+
+여담으로 윈도우 설치 화면(별도의 설치 디스크로 부팅하면 설치할 디스크와 파티션을 설정하던 그 화면)에서는 `shift + f10`으로 cmd에 진입할 수 있음.
 
 ## 문법
 

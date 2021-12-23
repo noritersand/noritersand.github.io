@@ -1,4 +1,4 @@
----
+
 layout: post
 date: 2018-09-20 10:54:00 +0900
 title: '[Windows] WSL, Windows Subsystem for Linux'
@@ -90,13 +90,13 @@ drvfs           476G  100G  377G  21% /mnt/c
 drvfs           930G   69G  862G   8% /mnt/d
 ```
 
-## 우분투 터미널 꾸미기: ZSH, Powerlevel10k, ls color
+## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
 [노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
 
-ZSH는 리눅스 기본 쉘인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
+Zsh는 리눅스 기본 쉘인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 
-일단 [ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)는:
+일단 [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)는:
 
 ```bash
 # zsh 설치
@@ -122,12 +122,20 @@ bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정 후 터미널 재실행하면 됨.
+깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정.  
+터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
 
-마지막으로 ls color는 그냥 `~/.zshrc` 파일 막 줄에 아래 추가:
+마지막으로 ls color는 아래 실행:
 
 ```bash
-LS_COLORS="ow=01;36;40" && export LS_COLORS
+echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 ```
 
 하면 끗.
+
+기본 쉘 Zsh로 변경하려면 아래 실행:
+
+```bash
+# 로그인 쉘을 Zsh로 바꾸기
+chsh -s $(which zsh)
+```
