@@ -17,15 +17,16 @@ tags:
 - [\[docker docs\] Getting started](https://docs.docker.com/get-started/)
 - [\[서비큐라 기술 블로그\] 초보를 위한 도커 안내서](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html)
 
-Docker(이하 도커) 관련 정리글.
-
 #### 버전 정보
 
 - Docker 20.10.11
 
+Docker(이하 도커) 관련 정리글. 윈도우용 도커가 있다길래 써봤는데 WSL용이었다. -,.-
+
 ## Docker Desktop on Windows
 
-윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [\[Microsoft\] WSL 2에서 Docker 원격 컨테이너 시작](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.
+윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [\[Microsoft\] WSL 2에서 Docker 원격 컨테이너 시작](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.  
+참고로 Docker Desktop이란 앱이 설치되는데 이 앱을 꺼버리면 WSL에서 `docker` 명령도 안먹음.
 
 ## 이미지
 
@@ -62,7 +63,7 @@ docker ps
 docker ps -a
 ```
 
-`ps`는 `container ls` 별칭이다. 목록 보기는 실행중인 컨테이너만 표시한다. 다 보려면 `-a` 옵션을 붙여야 함.
+`ps`는 `container ls` 별칭이다. 목록 보기는 실행 중인 컨테이너만 표시한다. 다 보려면 `-a` 옵션을 붙여야 함.
 
 ### 이미지 검색, 다운로드, 삭제
 
@@ -142,9 +143,18 @@ docker kill CONTAINER_ID
 
 대충 검색해보면 안전한 종료(`stop`)인지 안전하지 않은 종료(`kill`)인지의 차이임.
 
-### docker run
+### 컨테이너에서 명령 실행
 
-`run`은 생성(`create`)하고 시작(`start`)한 뒤 명령어 실행(`exec`)까지 해준다.
+`exec`는 가동 중인 컨테이너에 특정 명령을 실행하는 명령어다.
+
+```bash
+# 백그라운드로 명령 실행
+docker exec -d CONTAINER_ID COMMAND
+```
+
+### 이 모든 것을 한 방에 docker run
+
+`run`은 지정한 이미지가 로컬에 없으면 다운로드 받고 컨테이너를 생성(`create`), 시작(`start`)한 다음 명령어 실행(`exec`)까지 해준다.
 
 ```bash
 # IMAGE_NAME 이미지로 컨테이너 시작(컨테이너 없으면 생성까지)
@@ -162,15 +172,6 @@ docker run -d -p 80:80 docker/getting-started
 ```
 
 `--rm` 옵션은 보통 `-it`와 같이 쓰는 모양.
-
-### docker exec
-
-이미 시작된 컨테이너에는 `exec`로 원하는 명령을 실행한다.
-
-```bash
-# 백그라운드로 명령어 실행
-docker exec -d CONTAINER_ID COMMAND
-```
 
 ## 컨테이너의 터미널 접속하기
 
@@ -210,7 +211,7 @@ $ docker start -i 6fb8d3
 root@6fb8d380f766:/#
 ```
 
-`start`에 컨테이너에 전달한 명령어 자리가 없는걸 보면 아마 `start`가 `create`의 옵션과 실행할 명령어 설정에 의존하는 것 같음.
+`start`는 `COMMAND` 인수 자리가 없다. 아마 `start`가 `create`의 옵션과 실행할 명령어 설정에 의존하는 것 같음.
 
 ## docker-compose
 
