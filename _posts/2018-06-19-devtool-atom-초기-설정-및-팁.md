@@ -28,6 +28,13 @@ tags:
 
 참고: 자동완성 단축키: <kbd>ctrl + space</kbd>
 
+### 검색창 설정
+
+`Settings` > `Installed Packages` > `find-and-replace`의 설정에서:
+
+- `Close Project Find Panel After Search` 묻따지 말고 체크 해제
+- 밑에 내려서 `Scroll To Result On Live-Search` 체크. 요게 incremental 검색 옵션임.
+
 ### 마크다운 미리보기 설정 변경
 
 `Settings` > `Installed Packages` > `markdown-preview`의 설정에서:

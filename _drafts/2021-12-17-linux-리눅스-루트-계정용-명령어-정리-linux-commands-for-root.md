@@ -113,14 +113,6 @@ sudo apt install nodejs
 apt update
 ```
 
-## whereis
-
-설치된 패키지의 파일들이 어디어디 있는지 알려준다.
-
-```bash
-whereis nodejs
-```
-
 ## umask
 
 TODO
@@ -212,7 +204,7 @@ TODO 뭔가를 하는건데...
 아래 `systemctl`의 약어인 것 같지만 전혀 아니다.
 
 ```bash
-# read values from file
+# read values from file. 현재 세션에 변경사항 반영인데 뭐가 대상일까...
 sudo sysctl -p
 ```
 

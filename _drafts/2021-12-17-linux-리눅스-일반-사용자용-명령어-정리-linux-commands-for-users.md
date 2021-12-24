@@ -24,6 +24,25 @@ tags:
 
 리눅스 명령어 간단 정리 글. 항상 루트 권한이 필요한 명령은 다른 글로.
 
+## Ubuntu의 터미널 단축키
+
+### 캐럿 이동, 삭제
+
+- <kbd>ctrl + e</kbd>: 캐럿을 오른쪽 끝으로
+- <kbd>ctrl + a</kbd>: 캐럿을 왼쪽 끝으로
+- <kbd>ctrl + left</kbd>: 왼쪽의 다음 단어로 점프
+- <kbd>ctrl + right</kbd>: 오른쪽의 다음 단어로 점프
+- <kbd>alt + backspace</kbd>: 왼쪽의 단어 삭제. 클립보드 저장도 되는 모양.
+- <kbd>ctrl + delete</kbd>: 오른쪽의 단어 삭제. 얘도 클립보드에 저장 됨.
+
+### 잘라내기, 붙여넣기
+
+- <kbd>ctrl + w</kbd>: 왼쪽의 단어 잘라내기. 클립보드로 저장됨.
+- <kbd>ctrl + y</kbd>: 클립보드 붙여넣기
+- <kbd>ctrl + k</kbd>: 현재 캐럿 기준 오른쪽 끝까지 잘라내기
+- <kbd>ctrl + u</kbd>: 캐럿을 라인의 맨 처음으로 이동하며 모두 잘라내기
+- <kbd>ctrl + l</kbd>: 화면 지우기. 버퍼에는 남아있어서 위로 올리면 보임
+
 ## 문법
 
 ### | (파이프)
@@ -134,13 +153,28 @@ find -name 'a' -o -name 'b' # 'a'와 'b' 같이 찾기
 find ~ ! -name 'sample' # 지정된 경로에서 'sample'을 제외한 모든 파일과 디렉터리 찾기
 ```
 
-#### options
+## which
 
-- `-s`: 하드 링크 대신 심볼릭 링크를 생성한다.
+현재 환경변수 상 지정한 명령어의 실행파일이 어느 경로에 있는지 출력한다.
 
 ```bash
-ln -s ~/was/upload ./upload
-# 현재 경로에 upload라는 심볼릭 링크를 생성한다. 이 링크의 실제 물리경로는 home/was/upload
+# vim 경로 출력
+which vim
+
+# vim 검색 가능한 모든 경로 출력
+which vim
+
+# vim과 vi의 경로 출력
+which vim vi
+```
+
+## whereis
+
+명령 실행을 위한 이진파일, 소스 혹은 메뉴얼 파일들이 어느 경로에 있는지 출력한다.
+
+```bash
+# ls 명령 관련 파일들의 경로 모두 출력
+whereis ls
 ```
 
 ## curl
@@ -190,6 +224,15 @@ rmdir ./test-folder # 비어있는 디렉터리 삭제
 
 ```
 ln target
+```
+
+#### options
+
+- `-s`: 하드 링크 대신 심볼릭 링크를 생성한다.
+
+```bash
+ln -s ~/was/upload ./upload
+# 현재 경로에 upload라는 심볼릭 링크를 생성한다. 이 링크의 실제 물리경로는 home/was/upload
 ```
 
 ## ps
@@ -537,7 +580,7 @@ history  # 명령 이력 보기
 
 ## zip/unzip
 
-zip 압축/압축해제
+zip 파일 압축/압축해제.
 
 ```
 zip [-options] [-b path] [-t mmddyyyy] [-n suffixes] [zipfile list] [-xi list]
@@ -551,7 +594,7 @@ unzip archive.zip -d unarchive  # unarchive 디렉터리에 archive.zip 파일�
 
 ## tar
 
-tar 압축/압축해제. tar는 기본적으로 용량 변화 없이 여러 파일과 디렉터리를 하나의 파일로 묶는 기능이다.
+tar 파일 압축/압축해제. tar는 기본적으로 용량 변화 없이 여러 파일과 디렉터리를 하나의 파일로 묶는 기능이다.
 
 ```bash
 # some-archive-1.0.0 디렉터리에 압축 해제
@@ -562,16 +605,16 @@ tar xvf some-archive-1.0.0.tgz
 
 ```bash
 # 현재 경로의 모든 파일을 xxx.tar.gz로 압축
-tar cvzf example.tar.gz *
+tar cvfz example.tar.gz *
 
 # 권한(permission)이 없는 파일 패스하며, 해당 경로의 모든 파일을 example.tar.gz로 압축
-tar cvzf example.tar.gz * --ignore-failed-read
+tar cvfz example.tar.gz * --ignore-failed-read
 
 # 현재 디렉터리에 압축 해제
-tar xfvz example.tar.gz
+tar xvf example.tar.gz
 
-# test 디렉터리에 압축 해제
-tar xfvz example.tar.gz -C test
+# gunzip 적용하며 test 디렉터리에 압축 해제
+tar xvfz example.tar.gz -C test
 ```
 
 #### options
@@ -579,10 +622,10 @@ tar xfvz example.tar.gz -C test
 - `x`: 묶음을 해제
 - `c`: 파일을 묶음
 - `v`: 묶음/해제 과정을 화면에 표시
-- `z`: gunzip을 사용.
 - `f`: 파일 이름을 지정
 - `p`: 권한(permission)을 원본과 동일하게 유지
 - `C`: 압축을 풀 디렉토리를 지정할 때 쓰는 옵션
+- `z`: gunzip을 사용.
 
 ## 콘솔에 출력
 
