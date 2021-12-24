@@ -50,7 +50,7 @@
 
 ### 검색 관련 파일
 
-검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd>.
+검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd> 혹은 <kbd>shift + /</kbd>
 
 - `assets\javascripts\jekyll-search.jquery.js`
 - `_includes\blog\scripts.html`
