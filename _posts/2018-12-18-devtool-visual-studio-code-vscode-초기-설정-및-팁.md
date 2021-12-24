@@ -19,9 +19,9 @@ tags:
 
 Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
-- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크헤제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
+- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
 - Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
-- Show All Commands<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다. 이렇게 하면 추천창이 자동으로 나타나지 않는다:
+- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
 
   ```json
   "editor.quickSuggestions": {
@@ -30,8 +30,6 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
       "strings": false
   }
   ```
-
-개인적으론 세 번째 방법으로 꺼놓는게 편한듯.
 
 ### 타이틀에 파일 전체 경로 표시
 

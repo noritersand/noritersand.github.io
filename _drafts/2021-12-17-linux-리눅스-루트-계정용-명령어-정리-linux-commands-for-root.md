@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 14:55:05 +0900
-title: '[Linux] 시스템 관련 기능 정리'
+title: '[Linux] 리눅스 루트 계정용 명령어 정리 Linux Commands for root'
 categories:
   - linux
 tags:
@@ -9,9 +9,6 @@ tags:
   - os
   - root
   - sudo
-  - chmod
-  - chown
-  - umask
 ---
 
 * Kramdown table of contents
