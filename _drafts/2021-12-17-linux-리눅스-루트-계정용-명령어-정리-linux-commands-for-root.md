@@ -230,6 +230,14 @@ systemctl enable openvpn@server
 
 `enable`하면 서버가 리부트돼도 자동 시작한다고 함.
 
+## journalctl
+
+`systemctl` 관련 로그 보는 명령인 것 같음...
+
+```bash
+journalctl -xe
+```
+
 ## service
 
 서비스 관리

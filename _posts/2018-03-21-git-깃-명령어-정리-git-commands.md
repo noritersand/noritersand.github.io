@@ -818,7 +818,8 @@ gitk [<options>] [<revision range>] [--] [<path>…​]
 ```bash
 gitk [git log options]
 gitk # HEAD의 커밋 이력 보기
-gitk --all # 저장소의 모든 커밋 보기
+gitk --all # 저장소의 모든 커밋 이력 보기
+gitk main draft/noritersand legacy # main, draft/noritersand, legacy 브랜치의 커밋 이력 보기
 ```
 
 ![](/images/gitk.png)

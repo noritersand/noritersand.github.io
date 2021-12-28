@@ -299,7 +299,7 @@ cd /bin/lib  # bin 하위의 lib으로 이동
 ```bash
 ls  # 파일/폴더 보기
 ls -al --block-size=G # 숨김 파일 포함 리스트형식으로 표시하되 용량은 기가바이트 단위로
-ls -alF # 디렉터리와 압축파일인지 나타내는 기호 표시
+ls -alF # 숨긴 파일 + 리스트형식 + 인디케이터 표시
 ls -tr # -t의 역순(이 경우 수정시각 기준 오름차순) 정렬
 ls -ltri # 리스트 + 수정시각 오름차순 + inode 표시
 ```
@@ -311,6 +311,16 @@ ls -ltri # 리스트 + 수정시각 오름차순 + inode 표시
 - `-t`: 마지막 수정시각 기준으로 내림차순 정렬
 - `-r`: 역으로 정렬
 - `-i`: inode 번호 표시
+- `-F` `--classify`: 파일의 종류에 따라 파일이나 디렉토리 이름 뒤에 인디케이터(`*/=>@|` 중에 하나)를 붙임. 가령 `abc*`로 보이는건 `abc` 파일이 실행파일이란 의미다.
+
+## readlink
+
+심볼릭 링크 혹은 캐노니컬<sup>canonical</sup> 파일 이름을 출력한다.
+
+```bash
+# FILE_NAME 파일의 전체 경로 + 파일명 출력
+readlink -f FILE_NAME
+```
 
 ## cat
 
@@ -384,12 +394,12 @@ ls --help | less
 
 ## vi
 
-파일 편집기.
+VIM 파일 편집기.
 
 ```bash
 vi READ_ME # 해당경로에 READ_ME 파일 편집모드 (파일 없을경우 생성하며 편집모드)
 vi -R READ_ME # 읽기 전용 모드로 열기
-view READ_ME # -R 옵션이 view 명령으로 지정되어 있는 OS도 있음
+view READ_ME # -R 옵션이 view 명령으로 지정된 vim 버전도 있음.
 ```
 
 ## cp
@@ -527,6 +537,22 @@ ip addr
 
 # 'eth0'만 확인
 ip addr show eth0
+```
+
+# nslookup
+
+인터넷 네임 서버에 대화형으로 질의.
+
+```bash
+nslookup icanhazip.com
+```
+
+# dig
+
+`nslookup`이랑 비슷한데 뭔지 잘 모름 ㅋ
+
+```bash
+dig icanhazip.com
 ```
 
 ## ps
