@@ -25,6 +25,8 @@ tags:
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
 
+## 개요
+
 구조 분해 할당은 배열이나 객체의 프로퍼티를 해체하여 개별 변수에 할당하는 표현식을 말한다. 'Destructuring expression'이라고도 함.
 
 ## 배열 구조 분해

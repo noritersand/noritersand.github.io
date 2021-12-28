@@ -27,6 +27,10 @@ tags:
 - ES2015에서 최초 정의
 - 2021-01-16 기준 Chrome 39 이상, Firefox 외에 지원 안 함
 
+## 개요
+
+ECMAScript의 제네레이터에 대한 간단 정리 글.
+
 ## generator function
 
 ```

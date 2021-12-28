@@ -13,9 +13,11 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-[쪽수계산식](/attachments/calculate-for-pagination.xlsx)
+## 개요
 
 쪽 번호 매기기 계산(페이지 인덱싱)식에 관한 정리글.
+
+[쪽수계산식이 적용된 엑셀 표 다운로드 링크](/attachments/calculate-for-pagination.xlsx)
 
 #### currentPage
 

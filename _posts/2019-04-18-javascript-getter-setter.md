@@ -23,6 +23,8 @@ tags:
 
 - IE8 이하는 사용 불가
 
+## 개요
+
 [ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. 프로퍼티처럼 접근할 수 있는 함수를 정의한다.
 
 ```

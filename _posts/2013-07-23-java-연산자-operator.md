@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 용어
+## 용어
 
 - 연산자(Operator): 어떠한 기능을 수행하는 기호
 - 피연산자(Operand): 연산자의 작업 대상

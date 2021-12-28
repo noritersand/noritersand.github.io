@@ -27,6 +27,8 @@ tags:
 - IE에서 사용 불가
 - Safari 14에서 public static 제외 사용 가능
 
+## 개요
+
 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 생성자 함수를 대체하는 새로운 문법이다. 구문들의 의미가 분명해서 사용하긴 편하지만 IE 때문에 웹에서 쓸 수 있는 날은 멀었다.
 
 MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.

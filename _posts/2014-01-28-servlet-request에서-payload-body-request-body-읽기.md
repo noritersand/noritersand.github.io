@@ -20,7 +20,9 @@ tags:
 - [http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome](http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome)
 - [http://kukuta.tistory.com/95](http://kukuta.tistory.com/95)
 
-HTTP에는 어떠한 유형의 내용이 전송되는지를 의미하는 Content-Type 헤더가 있다. Content-Type은 미디어타입(구: MIME)이라고도 한다.
+## 개요
+
+HTTP에는 어떠한 유형의 내용이 전송되는지를 의미하는 Content-Type 헤더가 있다. (Content-Type은 미디어타입 혹은 MIME이라고도 한다.)
 
 서블릿에선 이 헤더의 값이 application/json 혹은 multipart/form-data일 때, 일반적인 경우와 다르게 HTTP 메시지 바디 라인을 직접 읽는 방식을 사용해야만 전송 데이터에 접근할 수 있다.
 

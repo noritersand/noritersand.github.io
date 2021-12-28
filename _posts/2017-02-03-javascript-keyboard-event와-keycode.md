@@ -20,6 +20,8 @@ tags:
 - [\[MDN\] KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 - [JavaScript Event KeyCodes](http://keycode.info/)
 
+## keyCode 확인 방법
+
 자바스크립트로 키보드 이벤트의 keycode를 확인하는 방법은:
 
 ```html

@@ -39,13 +39,13 @@ public final class Integer extends Number implements Comparable {
 
 래퍼 클래스는 형변환 메서드로 `parse()`와 `valueOf()`를 제공한다. `parse()`는 전달받은 문자열을 기본형으로 변환해 돌려주지만 `valueOf()`는 기본형이 아닌 래퍼 클래스로 변환한다는 차이점이 있다.
 
-#### 문자열 -> 기본형
+문자열 -> 기본형:
 
 ```java
 int num = Integer.parseInt("65536");
 ```
 
-#### 문자열 -> 래퍼
+문자열 -> 래퍼:
 
 ```java
 Integer num = Integer.valueOf("65536");

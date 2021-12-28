@@ -18,7 +18,7 @@ tags:
 - [https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html](https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html)
 - [https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3](https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3)
 
-#### static import
+## static import
 
 ```java
 import static org.junit.Assert.*;
@@ -37,7 +37,7 @@ public class ImportTest {
 특정 클래스의 스태틱 멤버를 접근연산자 없이 호출할 수 있게 하는 import문의 일종이다. 위 코드에서 첫 번째 줄은 `org.junit.Assert` 클래스의 모든 스태틱 멤버를 import한다는 뜻이다. 따라서 둘 째, 셋 째줄은 무쓸모한 코드다.
 
 
-#### 이클립스를 사용한다면
+## 이클립스를 사용한다면
 
 아래 코드는:
 

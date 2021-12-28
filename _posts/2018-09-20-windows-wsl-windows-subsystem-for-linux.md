@@ -1,4 +1,4 @@
-
+---
 layout: post
 date: 2018-09-20 10:54:00 +0900
 title: '[Windows] WSL, Windows Subsystem for Linux'
@@ -18,6 +18,8 @@ tags:
 
 - [\[Microsoft\] WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
 - [\[Microsoft\] WSL의 기본 명령](https://docs.microsoft.com/ko-kr/windows/wsl/basic-commands)
+
+## 개요
 
 WSL은 가상 머신 등의 설정 없이 윈도우 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
 

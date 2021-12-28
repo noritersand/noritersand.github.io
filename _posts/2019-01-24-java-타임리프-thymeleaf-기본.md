@@ -20,7 +20,9 @@ tags:
 - [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 - [https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
 
-템플릿 엔진 타임리프 사용법 정리.
+## 개요
+
+자바기반 템플릿 엔진인 타임리프 사용법 정리.
 
 ## HTML 템플릿
 

@@ -20,6 +20,8 @@ tags:
 
 - [Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
 
+## 개요
+
 요즘 들어 혜자로워진 마소의 윈도우10 초기 설정을 정리한 글.
 
 ## Windows 터미널

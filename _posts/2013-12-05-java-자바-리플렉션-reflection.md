@@ -98,7 +98,7 @@ public void setAccessible(boolean flag)
 
 일반적으로 private 인스턴스 변수나 메서드는 해당 클래스의 외부에서는 접근할 수 없다. 가령 다음처럼 private으로 지정된 `some` 변수에 접근하려고 하면 예외가 발생할 것이다.
 
-````java
+```java
 class AccessTest {
     private String some = "yo";
     private String getSome() {
