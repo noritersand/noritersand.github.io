@@ -40,31 +40,64 @@ tags:
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
 - Find Acton...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
+- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
+- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
+- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 커서 생성
+- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 커서 생성
+- Delete Line: <kbd>ctrl + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
+- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제
 
 ## 기본 단축키
 
 ### 전역
 
+- <kbd>esc</kbd>: 파일 에디터로 포커스
+- <kbd>alt + insert</kbd>: 새로 추가. 상황에 따라 구성요소/파일/rule 등을 추가하는 메뉴를 보여줌.
 - <kbd>shift, shift</kbd>: Search Everywhere 모든 것(?) 열기
 - <kbd>ctrl, ctrl</kbd>: Run Anything 모든 것(?) run하기
-- <kbd>ctrl + alt + s</kbd>: 설정
+- <kbd>ctrl + alt + s</kbd>: Settings... 인텔리제이 설정
+- <kbd>ctrl + alt + shift + s</kbd>: Project Structure... 현재 프로젝트 전용 설정
 - <kbd>ctrl + shift + '</kbd>: 포커스가 있는 창 최대화(안되는 것도 있다)
 - <kbd>ctrl + shift + a</kbd>: 실행 가능한 모든 명령 검색창
 - <kbd>ctrl + shift + n</kbd>: Go to File 파일 열기
 - <kbd>ctrl + e</kbd>: Recent Files 최근 파일 목록 보기
-- <kbd>esc</kbd>: 파일 에디터로 포커스
-- <kbd>(파일 에디터에서) shift + f4</kbd>: 현재 파일 새 창에서 보기
 - <kbd>ctrl + f4</kbd>: 창 닫기
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
 
+### 북마크
+
+- <kbd>ctrl + shift + 1 부터 0까지</kbd>: 현재 파일과 라인을 북마크로 지정하거나 해제
+- <kbd>ctrl + 1 부터 0까지</kbd>: 지정한 북마크로 이동
+
+### 윈도우 관련
+
+- <kbd>alt + 1</kbd>: Project 윈도우로 포커싱
+- <kbd>alt + 2</kbd>: Bookmarks 윈도우로 포커싱
+- <kbd>alt + 3</kbd>: Find 윈도우로 포커싱
+- <kbd>alt + 4</kbd>: Run 윈도우로 포커싱
+- <kbd>alt + 5</kbd>: Debug 윈도우로 포커싱
+- <kbd>alt + 6</kbd>: Problems 윈도우로 포커싱
+- <kbd>alt + 7</kbd>: Structure 윈도우로 포커싱
+- <kbd>alt + 8</kbd>: Services 윈도우로 포커싱
+- <kbd>alt + 9</kbd>: Git 윈도우로 포커싱
+- <kbd>alt + 0</kbd>: Commit 윈도우로 포커싱
+- <kbd>ctrl + h</kbd>: Hierarchy 윈도우로 포커싱
+- <kbd>shift + esc</kbd>: 현재 윈도우 최소화
+- <kbd>ctrl + shift + '</kbd>: 현재 윈도우 최대화, 다시 누르면 원래 크기로
+
 ### 파일 에디터
 
-- <kbd>alt + f1</kbd>: 컨텍스트 메뉴 열기... 인가?
+- <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
+- <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
+- <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리펙토링 관련.
+- <kbd>alt + f1</kbd>: Select in... 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
+- <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
 - <kbd>ctrl + alt + l</kbd>: 오토 포매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
+- <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
 
 ## 한글 깨짐 문제
 
@@ -97,6 +130,39 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 잘 모르겠는걸?
 
+## 추천 플러그인
+
+- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+
 ## 새 패키지 만들기
 
 New > Directory가 아니고 Project Settings(<kbd>ctrl + alt + shift + s</kbd>)
+
+## File and Code Templates
+
+TODO
+
+작성 예시:
+
+```java
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+#parse("File Header.java")
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class ${NAME} {
+    private static final Logger logger = LoggerFactory.getLogger(${NAME}.class);
+}
+
+```
+
+## 자동 완성
+
+자동 완성은 'Code Completion'과 'Postfix Completion'으로 나뉘는데, 'Code Completion'이 일반적인 자동완성을 의미한다.
+
+### Postfix Completion
+
+규칙대로 입력한 뒤 'Code Completion'을 발동하면 미리 작성한 코드가 자동으로 입력된다.
+
+TODO
