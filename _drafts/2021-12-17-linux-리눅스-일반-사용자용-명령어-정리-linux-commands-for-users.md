@@ -655,6 +655,18 @@ tar xvfz example.tar.gz -C test
 - `C`: 압축을 풀 디렉토리를 지정할 때 쓰는 옵션
 - `z`: gunzip을 사용.
 
+## date
+
+시스템 시간을 표시한다.
+
+```bash
+# Thu Dec 30 17:40:52 KST 2021
+date
+
+# 2021-12-30 17:40:49
+date +'%Y-%m-%d %k:%M:%S'
+```
+
 ## 콘솔에 출력
 
 ```bash

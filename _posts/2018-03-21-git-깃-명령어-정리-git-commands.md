@@ -599,6 +599,14 @@ git config --global http.https://noritersand.github.io.sslverify false
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 
+#### diff 도구 실행
+
+```bash
+git difftool
+```
+
+`diff.tool`로 지정한 도구를 실행한다.
+
 #### unstaged와 staged의 비교
 
 ```bash
@@ -615,28 +623,30 @@ git diff --staged
 #### 커밋끼리 비교
 
 ```bash
-git diff head~1 # HEAD의 변경사항 출력. git diff HEAD~1..HEAD와 같다.
-git diff head~3..head~1 # 3회 전 커밋과 1회 전 커밋의 변경사항 전체 비교.
+git diff HEAD~1 # HEAD의 변경사항 출력. git diff HEAD~1..HEAD와 같다.
+git diff HEAD~3..HEAD~1 # 3회 전 커밋과 1회 전 커밋의 변경사항 전체 비교.
 git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66acd08c9958c43 ./README.md # 두 커밋 간 비교하되 README.md 파일만
 ```
 
-좌측 리비전을 기준으로 우측 리비전에서 어떤 내용이 바뀐건지 보여준다. 따라서 시간 순서 상 과거의 커밋을 좌측에 놓는게 좋다. `..`은 공백으로 대체할 수 있다.
+좌측 리비전을 기준으로 우측 리비전에서 어떤 내용이 바뀐건지 보여준다. 따라서 더 오래된 커밋을 좌측에 놓는게 좋다. `..`은 공백으로 대체할 수 있다.
 
-#### diff 도구 실행
+#### 브랜치간 비교
 
 ```bash
-git difftool
+# 워킹트리와 draft/noritersand 브랜치의 전체 파일 비교
+git diff draft/noritersand
+
+# HEAD와 draft/noritersand 브랜치의 전체 파일 비교
+git diff draft/noritersand HEAD
 ```
 
-`diff.tool`로 지정한 도구를 실행한다.
-
-#### 특정 파일의 브랜치간 비교
+`HEAD`를 생략하면 워킹트리와 비교하니 주의.
 
 ```bash
-# 'hugo' 브랜치와 현재 브랜치의 README.md 파일을 비교
+# 'hugo' 브랜치와 현재 브랜치의 README.md 파일만 비교
 git diff hugo ./README.md
 
-# 'hugo' 브랜치와 'master' 브랜치의 README.md 파일을 비교
+# 'hugo' 브랜치와 'master' 브랜치의 README.md 파일만 비교
 git diff hugo  master ./README.md
 
 # 위와 같음
@@ -652,19 +662,19 @@ git diff --check  # 충돌 문자가 있거나 공백 에러가 있는지 확인
 `--check` 옵션의 주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 해당 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
 
 ```bash
-user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4)
+user@noritersand-desktop MINGW64 /c/dev/repo/git-test (test4)
 $ git merge main
 Auto-merging CONFLICT_ME.txt
 CONFLICT (content): Merge conflict in CONFLICT_ME.txt
 Automatic merge failed; fix conflicts and then commit the result.
 
-user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
+user@noritersand-desktop MINGW64 /c/dev/repo/git-test (test4|MERGING)
 $ git diff --check
 CONFLICT_ME.txt:2: leftover conflict marker
 CONFLICT_ME.txt:4: leftover conflict marker
 CONFLICT_ME.txt:6: leftover conflict marker
 
-user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
+user@noritersand-desktop MINGW64 /c/dev/repo/git-test (test4|MERGING)
 $ git diff
 diff --cc CONFLICT_ME.txt
 index 6494d80,862c24c..0000000
@@ -679,22 +689,7 @@ index 6494d80,862c24c..0000000
 ++=======
 ++3333
 ++>>>>>>> main
-
-user@noritersand-desktop MINGW64 /c/dev/git/git-test (test4|MERGING)
-$ git status
-On branch test4
-You have unmerged paths.
-  (fix conflicts and run "git commit")
-  (use "git merge --abort" to abort the merge)
-
-Unmerged paths:
-  (use "git add <file>..." to mark resolution)
-        both modified:   CONFLICT_ME.txt
-
-no changes added to commit (use "git add" and/or "git commit -a")
 ```
-
-아직 충돌 파일이 남아 있는 상태라면 해당 파일을 열어서 충돌 문자를 지워주고 적절히 수정한다. 그리고 `add` - `commit`하면 끗.
 
 ## [diff-tree](https://git-scm.com/docs/git-diff-tree)
 
@@ -702,9 +697,11 @@ no changes added to commit (use "git add" and/or "git commit -a")
 대충 커밋끼리 파일 단위로 어떻게 다른지 표시해주는 명령어라고 보면 됨.
 
 ```bash
-git diff-tree feature  # 현재 브랜치 기준으로 feature 브랜치의 차이점 출력
-git diff-tree feature master  # 현재 feature 브랜치 기준으로 master 브랜치의 차이점 출력
+git diff-tree -p feature  # 현재 브랜치 기준으로 feature 브랜치의 차이점 출력
+git diff-tree -p feature master  # 현재 feature 브랜치 기준으로 master 브랜치의 차이점 출력
 ```
+
+TODO 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 결과가 다른데 왜 그런지 몲. 😒
 
 #### options
 

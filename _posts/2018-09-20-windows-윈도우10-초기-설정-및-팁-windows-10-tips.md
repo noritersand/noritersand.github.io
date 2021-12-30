@@ -455,12 +455,17 @@ sudo apt-get remove byobu hollywood
 
 ### 탐색기
 
+- <kbd>space</kbd>: 단축키라기보단 팁인데, 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
+- <kbd>ctrl + tab</kbd>: 포커스가 주소 표시줄이나 검색 상자같은 곳에 있을 때 누르면 파일 목록으로 포커싱한다. 정식 명칭은 Property Tab Navigation인 모양. 탐색기에서만 유효하고 다른 앱에서 
+- <kbd>ctrl + shift + tab</kbd>: 위와 비슷한데, 파일 목록 대신 열 머리 항목으로 포커싱.
 - <kbd>alt + left arrow</kbd>: 뒤로
 - <kbd>alt + right arrow</kbd>: 앞으로
 - <kbd>alt + up arrow</kbd>: 위로
 - <kbd>ctrl + mousewheel</kbd>: 보기변경
 - <kbd>ctrl + shift + n</kbd>: 새폴더
-- <kbd>spacebar</kbd>: 단축키라기보단 팁인데, 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
+- <kbd>ctrl + sfhit + e</kbd>: 좌측의 네비게이션이 현재 폴더 혹은 선택한 폴더로 이동하게 함.
+- <kbd>alt + p</kbd>: 미리 보기 창 표시
+- <kbd>alt + enter</kbd>: 속성 대화 상자 열
 
 ### 스티커메모
 

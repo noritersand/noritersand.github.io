@@ -44,7 +44,7 @@ tags:
 - Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
 - Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 커서 생성
 - Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 커서 생성
-- Delete Line: <kbd>ctrl + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
+- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
 - Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제
 
 ## 기본 단축키
@@ -69,6 +69,8 @@ tags:
 
 - <kbd>ctrl + shift + 1 부터 0까지</kbd>: 현재 파일과 라인을 북마크로 지정하거나 해제
 - <kbd>ctrl + 1 부터 0까지</kbd>: 지정한 북마크로 이동
+- <kbd>ctrl + f11</kbd>: 북마크 등록 창 열기
+- <kbd>ctrl + shift + f11</kbd>: 북마크 이동 창 열기
 
 ### 윈도우 관련
 
@@ -95,9 +97,21 @@ tags:
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
 - <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
+- <kbd>ctrl + f12</kbd>: File Structure  eclipse의 빠른 아웃라인 보기 기능과 같음.
 - <kbd>ctrl + alt + l</kbd>: 오토 포매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
+- <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
+
+### 빌드, 실행
+
+- <kbd>ctrl + f2</kbd>: 실행 중인 앱 중
+- <kbd>ctrl + f9</kbd>: 빌드하기
+- <kbd>ctrl + f10</kbd>: Update Running Application 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남
+- <kbd>shift + f9</kbd>: Debug 모드로 시작
+- <kbd>shift + f10</kbd>: Run 모드로 시작
+- <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
+- <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
 
 ## 한글 깨짐 문제
 
@@ -105,19 +119,11 @@ tags:
 
 ### \#1
 
-Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 아래 추가:
-
-```
--Dfile.encoding=UTF-8
-```
+Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
 
 ### \#2
 
-Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 아래 추가:
-
-```
--Dfile.encoding=UTF-8
-```
+Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
 
 ### \#3
 
