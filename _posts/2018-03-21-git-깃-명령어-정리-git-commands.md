@@ -480,7 +480,7 @@ git config --global user.email "이메일"
 #### 기본 편집기 설정
 
 ```bash
-git config --global core.editor 편집기
+git config --global core.editor vim
 ```
 
 #### diff 도구 변경
@@ -1195,12 +1195,17 @@ pick 7715f75fa (HEAD)
 
 [누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
 
-## reflog
+## [reflog](https://git-scm.com/docs/git-reflog)
 
 `log`와 비슷하지만 `log`가 커밋 이력을 출력한다면 `reflog`는 헤드 이동 이력을 출력한다.
 
 ```bash
-$ git reflog -5  # 마지막 다섯 번의 헤드 이동 이력을 역순으로 출력
+# 마지막 세 번의 헤드 이동 이력과 ISO 형식의 시간을 역순으로 출력
+git reflog -3 --date=iso
+```
+
+```bash
+$ git reflog -5
 
 2fbc899 HEAD@{0}: checkout: moving from master to master
 2fbc899 HEAD@{1}: pull: Merge made by the 'recursive' strategy.
@@ -1209,7 +1214,7 @@ $ git reflog -5  # 마지막 다섯 번의 헤드 이동 이력을 역순으로 
 2bc9237 HEAD@{4}: checkout: moving from c to d
 ```
 
-참고로 `HEAD@{1}`란 표현은 헤드 변경 이력 중 현재와 비교해 바로 직전의 이력을 의미한다. 이 표현은 `merge` 등의 명령에서도 사용할 수 있다.
+참고로 `HEAD@{1}`란 표현은 헤드 변경 이력 중 HEAD 기준 바로 직전의 이력을 의미한다. 이 표현은 `merge` 등의 명령에서도 사용할 수 있다.
 
 ```bash
 git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머지
