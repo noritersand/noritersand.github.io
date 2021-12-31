@@ -198,11 +198,11 @@ Function.getOwnPropertyDescriptors; // undefined
 
 ## 프로퍼티의 가려짐 property shadowing
 
-객체의 프로퍼티는 자기만의 프로퍼티<sup>own properties</sup>\*와 프로토타입의 프로퍼티로 나뉜다. 자기만의 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
+객체의 프로퍼티는 객체 자신이 소유한 프로퍼티<sup>own properties</sup>\*와 프로토타입의 프로퍼티로 나뉜다. 소유한 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
 
-만약 자기만의 프로퍼티와 프로토타입의 프로퍼티가 동시에 존재한다면, 자기만의 프로퍼티가 우선되며 프로토타입의 프로퍼티는 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '프로퍼티의 가려짐'이라고 한다.
+만약 소유한 프로퍼티와 프로토타입의 프로퍼티가 동시에 존재한다면, 소유한 프로퍼티가 우선되며 프로토타입의 프로퍼티는 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '프로퍼티의 가려짐'이라고 한다.
 
-\* 자기만의 프로퍼티는 `Object.getOwnPropertyDescriptors(object)`로 확인할 수 있음.
+\* 객체가 소유한 프로퍼티인지 아닌지는 [`Object.prototype.hasOwnProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)로 확인할 수 있음.
 
 ```js
 function Fn() {
