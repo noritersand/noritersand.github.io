@@ -88,7 +88,7 @@ function fn() {
 fn();
 ```
 
-유효범위가 함수 단위인 `var`로 선언한 변수 `w`는 블록 밖에서도 참조 가능한 반면, `let`으로 선언한 변수 `b`는 해당 지역을 감싼 블록과 그 하위의 중첩 블록에서만 유효한 블록 단위의 유효범위를 갖기 때문에 블록을 벗어난 지역에서는 참조 에러가 발생한다.
+유효범위가 함수 단위인 `w`는 블록 밖에서도 참조 가능한 반면, `let`으로 선언한 변수 `b`는 해당 지역을 감싼 블록과 그 하위의 중첩 블록에서만 유효한 블록 단위의 유효범위를 갖기 때문에 블록을 벗어난 지역에서는 참조 에러가 발생한다.
 
 ```js
 var arr = ['a', 'b', 'c'];
@@ -118,3 +118,61 @@ const c = 3;
 ```
 
 `var`와는 다르게, 선언 전에 참조할 경우 `ReferenceError`가 발생한다.
+
+## 특이사항: for loop와 let
+
+아래처럼 딱 한 바퀴만 도는 for loop가 있다고 하자:
+
+```js
+function getSomeWithVar() {
+  var fn;
+  for (var i = 0; i < 1; ++i) {
+    fn = () => {
+      console.log(i);
+    }
+  }
+  return fn;
+}
+getSomeWithVar()(); // 1
+```
+
+반환된 `fn`에서 참조하는 `i`는 클로저 스코프에 존재한다. 그리고 `i`의 값은 마지막 루프의 증감식`++i`이 수행된 1이다.
+
+그런데 만약 `i`가 `let`이라면?
+
+```js
+function getSomeWithLet() {
+  var fn;
+  for (let i = 0; i < 1; ++i) {
+    fn = () => {
+      console.log(i);
+    }
+  }
+  return fn;
+}
+getSomeWithLet()(); // 0
+```
+
+1이 아니라 0이다.
+
+![](/images/wuuuuut.png)
+
+그래서 찾아봤는데: https://stackoverflow.com/questions/42556873/closure-let-keyword-javascript
+
+> because you use let each anonymous function refers to a different instance of x. There is a different instance on each iteration of the loop. This happens because let has a block-level scope instead of the global function scope that var has.
+
+발번역하면 각 루프가 서로 다른 인스턴스이며, 익명함수가 그 서로 다른 인스턴스를 참조하기 때문이라고 한다. (혼절)
+
+이 답변을 바탕으로 상상회로를 돌려보면 대충 이런 결론이 나온다:
+
+0. 대전제: 유효범위 = 블록 = 스코프 = 인스턴스
+1. 함수의 유효범위 깊이는 1이라 가정.
+2. 자바스크립트의 반복문은 각 루프마다 별도의 인스턴스를 갖는다. (깊이 2)
+3. 증감식은 반복문의 매 루프가 끝날 때 수행된다.
+4. 반복문의 선언식과 증감식은 깊이 2의 인스턴스에서 수행된다.
+5. 반복문의 매 루프는 한 단계 더 들어간 인스턴스에서 수행된다. 따라서 루프끼리는 서로 영향을 줄 수 없다. (깊이 3)
+6. 선언식의 `let` 변수는 깊이 2의 원본을 복사해 깊이 3의 인스턴스로 전달한다. (`var`도 동일함)
+7. 깊이 3의 인스턴스가 종료되면 익명함수가 참조하는 `i`는 클로저 스코프에만 존재한다.
+8. 다음 루프가 시작되면서 깊이 2의 인스턴스의 `i`의 값이 증가하지만 깊이 3의 인스턴스에 있는 `i`는 증감식 수행 전의 값을 유지한다.
+
+🤷‍♂️
