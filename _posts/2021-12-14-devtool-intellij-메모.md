@@ -61,6 +61,7 @@ tags:
 - <kbd>ctrl + shift + a</kbd>: 실행 가능한 모든 명령 검색창
 - <kbd>ctrl + shift + n</kbd>: Go to File 파일 열기
 - <kbd>ctrl + e</kbd>: Recent Files 최근 파일 목록 보기
+- <kbd>ctrl + shift + e</kbd>: Recently Changed Files 최근 변경된 파일 목록 보기
 - <kbd>ctrl + f4</kbd>: 창 닫기
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색

@@ -1071,6 +1071,10 @@ git push  # origin 리모트 저장소에 현재 브랜치를 업로드
 git push origin other  # origin에 other 브랜치 업로드. 리모트에 other 브랜치가 없으면 새로 생성한다.
 ```
 
+#### options
+
+- `--force-with-lease`: `--force` 옵션과 비슷하지만 다른 사람이 올린 커밋이 있을 땐 강제 푸시를 취소한다.
+
 #### 업스트림 브랜치 설정 \#3
 
 로컬 저장소를 `init`으로 생성했거나 로컬에서 새로 생성한 브랜치일 때, `push`와 동시에 업스트림 브랜치를 설정하는 방법이다.
