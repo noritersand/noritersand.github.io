@@ -104,7 +104,7 @@ tags:
 ## 추천 패키지(플러그인)
 
 - ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll)~~: ~~다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~  
-  멀티 커서 증식(?)키<kbd>ctrl + alt + up/down</kbd>가 이상작동하는 현상이 있음.
+  멀티 캐럿 증식(?)키<kbd>ctrl + alt + up/down</kbd>가 이상작동하는 현상이 있음.
 - [url-encode](https://atom.io/packages/url-encode): ?
 - [goto-last-edit](https://atom.io/packages/goto-last-edit): <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동... 인데 서브라임이랑 같도록 바꿔서 씀. 키 바꿔서 쓸꺼면 해당 패키지 settings에서 `Keybindings`는 끌 것
 - [sort-lines](https://atom.io/packages/sort-lines): 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
@@ -120,12 +120,14 @@ tags:
 - <kbd>ctrl + k, 방향키</kbd>: 지정한 방향으로 pane 나누기
 - <kbd>ctrl + k, ctrl + 방향키</kbd>: 지정한 방향의 pane으로 포커스
 
-### 멀티 커서
+### 멀티 캐럿(커서)
 
-- <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
-- <kbd>ctrl + u</kbd>: 멀티 커서 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
-- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
+Add Selection
+
+- <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
+- <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
+- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 
 ### Git
 

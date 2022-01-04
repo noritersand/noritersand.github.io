@@ -32,8 +32,8 @@ tags:
 - Find Acton...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
 - Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
 - Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
-- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 커서 생성
-- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 커서 생성
+- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성
+- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성
 - Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
 - Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제
 
@@ -95,6 +95,14 @@ tags:
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
+
+### 멀티 캐럿(커서)
+
+Select Next Occurrence (멀티 커서 없는 줄 아랏네 😂)
+
+- <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
+- <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소
+- <kbd>ctrl + alt + shift + j</kbd>: 선택한 단어와 동일한 모든 위치에 캐럿 추
 
 ### 빌드, 실행
 

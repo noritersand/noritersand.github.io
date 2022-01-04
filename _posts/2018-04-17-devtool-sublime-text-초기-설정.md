@@ -116,13 +116,18 @@ Build 3126 이후에 기록함.
 - <kbd>alt + shift + 숫자키</kbd>: 레이아웃 나누기
 - <kbd>ctrl + 숫자키</kbd>: 레이아웃이 나눠진 상태에서 다른 레이아웃으로 포커스 이동
 
-### 멀티 커서
+### 멀티 캐럿(커서)
 
-- <kbd>ctrl + d</kbd>: 선택한 단어 기준 멀티 커서
-- <kbd>ctrl + u</kbd>: 멀티 커서 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 커서
-- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 커서
-- <kbd>ctrl + shift + l</kbd>: split selection into lines, 선택한 영역에서 각 라인마다 커서 분리한다.
+Expand Selection
+
+캐럿을 여러개 추가해서 여러 지역을 한 번에 수정하거나 복사/붙이기 할 때 사용하는 기능.  
+에디터마다 부르는 이름이 제각각임: 서브라임은 'Expand Selection', 아톰과 VSCODE는 'Add Selection', 인텔리J는 'Select Next Occurrence' 😒
+
+- <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
+- <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
+- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
+- <kbd>ctrl + shift + l</kbd>: split selection into lines, 선택한 영역에서 각 라인마다 캐럿 분리
 
 ### 편집
 
