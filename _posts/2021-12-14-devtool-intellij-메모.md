@@ -37,7 +37,83 @@ tags:
 - Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
 - Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제
 
-## 기본 단축키
+## Ultimate와 Community 버전 간 차이
+
+지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
+
+자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
+
+## TODO 톰캣 퍼블리싱 폴더는 어디일까
+
+이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
+
+## 빌드나 런타임 에러가 발생하면
+
+Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
+
+![](/images/intellij-project-settings-2.png)
+
+## 한글 깨짐 문제
+
+일단 발견한 인코딩 관련 설정은 요렇게 있다.
+
+### \#1
+
+Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
+
+### \#2
+
+Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
+
+### \#3
+
+Settings > Editor > File Encodings로 이동한 뒤:
+
+- Project Encoding을 UTF-8로 변경
+- Default encoding for properties files를 UTF-8, 그 옆에 Transparent native-to-ascii conversion 체크
+
+### 그래서 되드나?
+
+잘 모르겠는걸?
+
+## 추천 플러그인
+
+- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+
+## 새 패키지 만들기
+
+New > Directory가 아니고 Project Settings(<kbd>ctrl + alt + shift + s</kbd>)
+
+## File and Code Templates
+
+TODO
+
+작성 예시:
+
+```java
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+#parse("File Header.java")
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class ${NAME} {
+    private static final Logger logger = LoggerFactory.getLogger(${NAME}.class);
+}
+
+```
+
+## 자동 완성
+
+자동 완성은 'Code Completion'과 'Postfix Completion'으로 나뉘는데, 'Code Completion'이 일반적인 자동완성을 의미한다.
+
+### Postfix Completion
+
+규칙대로 입력한 뒤 'Code Completion'을 발동하면 미리 작성한 코드가 자동으로 입력된다.
+
+TODO
+
+## 기본 단축키 메모
 
 ### 전역
 
@@ -113,79 +189,3 @@ Select Next Occurrence 없는 줄 아랏네 😂
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
-
-## Ultimate와 Community 버전 간 차이
-
-지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
-
-자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
-
-## TODO 톰캣 퍼블리싱 폴더는 어디일까
-
-이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
-
-## 빌드나 런타임 에러가 발생하면
-
-일단 Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
-
-![](/images/intellij-project-settings-2.png)
-
-## 한글 깨짐 문제
-
-일단 발견한 인코딩 관련 설정은 요렇게 있다.
-
-### \#1
-
-Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
-
-### \#2
-
-Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
-
-### \#3
-
-Settings > Editor > File Encodings로 이동한 뒤:
-
-- Project Encoding을 UTF-8로 변경
-- Default encoding for properties files를 UTF-8, 그 옆에 Transparent native-to-ascii conversion 체크
-
-### 그래서 되드나?
-
-잘 모르겠는걸?
-
-## 추천 플러그인
-
-- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
-
-## 새 패키지 만들기
-
-New > Directory가 아니고 Project Settings(<kbd>ctrl + alt + shift + s</kbd>)
-
-## File and Code Templates
-
-TODO
-
-작성 예시:
-
-```java
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
-#parse("File Header.java")
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public class ${NAME} {
-    private static final Logger logger = LoggerFactory.getLogger(${NAME}.class);
-}
-
-```
-
-## 자동 완성
-
-자동 완성은 'Code Completion'과 'Postfix Completion'으로 나뉘는데, 'Code Completion'이 일반적인 자동완성을 의미한다.
-
-### Postfix Completion
-
-규칙대로 입력한 뒤 'Code Completion'을 발동하면 미리 작성한 코드가 자동으로 입력된다.
-
-TODO
