@@ -96,9 +96,9 @@ tags:
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
 
-### 멀티 캐럿(커서)
+### 멀티 캐럿
 
-Select Next Occurrence (멀티 커서 없는 줄 아랏네 😂)
+Select Next Occurrence 없는 줄 아랏네 😂
 
 - <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
 - <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소

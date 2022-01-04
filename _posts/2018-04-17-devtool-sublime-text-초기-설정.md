@@ -116,12 +116,12 @@ Build 3126 이후에 기록함.
 - <kbd>alt + shift + 숫자키</kbd>: 레이아웃 나누기
 - <kbd>ctrl + 숫자키</kbd>: 레이아웃이 나눠진 상태에서 다른 레이아웃으로 포커스 이동
 
-### 멀티 캐럿(커서)
+### 멀티 캐럿
 
 Expand Selection
 
-캐럿을 여러개 추가해서 여러 지역을 한 번에 수정하거나 복사/붙이기 할 때 사용하는 기능.  
-에디터마다 부르는 이름이 제각각임: 서브라임은 'Expand Selection', 아톰과 VSCODE는 'Add Selection', 인텔리J는 'Select Next Occurrence' 😒
+캐럿을 추가해서 여러 지역을 한 번에 수정하거나 복사/붙이기 할 때 사용하는 기능.  
+에디터마다 부르는 이름이 제각각이다. 서브라임은 Expand Selection, 아톰과 VSCODE는 Add Selection, 인텔리J는 Select Next Occurrence 😒
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기

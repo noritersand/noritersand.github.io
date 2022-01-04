@@ -120,7 +120,7 @@ tags:
 - <kbd>ctrl + k, 방향키</kbd>: 지정한 방향으로 pane 나누기
 - <kbd>ctrl + k, ctrl + 방향키</kbd>: 지정한 방향의 pane으로 포커스
 
-### 멀티 캐럿(커서)
+### 멀티 캐럿
 
 Add Selection
 

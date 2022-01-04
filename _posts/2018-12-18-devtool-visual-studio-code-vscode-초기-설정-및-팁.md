@@ -181,7 +181,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - <kbd>f12</kbd>: Go To Definition. 선언부로 이동
 - <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)
 
-### 멀티 캐럿(커서)
+### 멀티 캐럿
 
 Add Selection
 
@@ -189,12 +189,12 @@ Add Selection
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
 - <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
-- <kbd>alt + shift + i</kbd>: add cursors to line ends, 선택한 영역에서 각 라인마다 캐럿 분리
+- <kbd>alt + shift + i</kbd>: add cursors to line ends 선택한 영역에서 각 라인마다 캐럿 분리
 
 ### 그 외
 
 - <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경
-- <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts. 단축키 목록 열기
+- <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts 단축키 목록 열기
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
-- <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus. 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
+- <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
