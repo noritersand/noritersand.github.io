@@ -26,16 +26,6 @@ tags:
 
 자바 개발자들 사이에선 인텔리J 한 번 써보면 다시는 eclipse로 못돌아간다는 전설이 있다고 하더라. ~~방금지어낸말임~~
 
-## Ultimate와 Community 버전 간 차이
-
-지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
-
-자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
-
-## TODO 톰캣 퍼블리싱 폴더는 어디일까
-
-이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
-
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
@@ -91,12 +81,14 @@ tags:
 
 ### 파일 에디터
 
+- <kbd>ctrl + q</kbd>: Quick Documentation 툴팁창으로 자바독 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리펙토링 관련.
 - <kbd>alt + f1</kbd>: Select in... 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
+- <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 검색
 - <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
 - <kbd>ctrl + f12</kbd>: File Structure  eclipse의 빠른 아웃라인 보기 기능과 같음.
 - <kbd>ctrl + alt + l</kbd>: 오토 포매팅
@@ -113,6 +105,22 @@ tags:
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
+
+## Ultimate와 Community 버전 간 차이
+
+지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
+
+자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
+
+## TODO 톰캣 퍼블리싱 폴더는 어디일까
+
+이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
+
+## 빌드나 런타임 에러가 발생하면
+
+일단 Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
+
+![](/images/intellij-project-settings-2.png)
 
 ## 한글 깨짐 문제
 
