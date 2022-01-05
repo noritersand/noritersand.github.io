@@ -18,15 +18,15 @@ tags:
 
 `Settings` > `Installed Packages` > `spell-check`에서 `disable` 클릭
 
-### 자동완성 설정 변경
+### 자동 완성 설정 변경
 
 `Settings` > `Installed Packages` > `autocomplete-plus`의 설정에서:
 
-- `Show Suggestions On Keystroke`이 체크된 상태면 타이핑 할 때마다 자동완성 목록이 나타남. 취향대로 설정할 것.
+- `Show Suggestions On Keystroke`이 체크된 상태면 타이핑 할 때마다 자동 완성 목록이 나타남. 취향대로 설정할 것.
 - `Keymap For Confirming A Suggestions`을 `tab`으로 변경해서 엔터에는 반응하지 않도록 함.
 - `Use Core Movement Commands`는 체크되어 있는게 편함.
 
-참고: 자동완성 단축키: <kbd>ctrl + space</kbd>
+참고: 자동 완성 단축키: <kbd>ctrl + space</kbd>
 
 ### 검색창 설정
 

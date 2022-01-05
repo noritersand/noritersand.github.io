@@ -9,6 +9,7 @@ tags:
   - mybatis
   - spring
   - hot-deploy
+  - hot-swap
 ---
 
 * Kramdown table of contents

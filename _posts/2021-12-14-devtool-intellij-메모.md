@@ -105,13 +105,49 @@ public class ${NAME} {
 
 ## 자동 완성
 
-자동 완성은 'Code Completion'과 'Postfix Completion'으로 나뉘는데, 'Code Completion'이 일반적인 자동완성을 의미한다.
+### Code Completion
+
+TODO
 
 ### Postfix Completion
 
 규칙대로 입력한 뒤 'Code Completion'을 발동하면 미리 작성한 코드가 자동으로 입력된다.
 
 TODO
+
+### File and Code Templates
+
+`Settings` > `Editor` > `File and Code Templates`
+
+### Live Templates
+
+이클립스에서 특정 키워드 후의 자동 완성과 같은 기능이다.
+
+`Settings` > `Editor` > `Live Templates`으로 이동해서 그룹 선택 후 우측의 십자 모양 아이콘 클릭한 다음 요딴식으로 작성한다:
+
+```java
+Logger logger = LoggerFactory.getLogger($className$.class);
+```
+
+`$className$`은 미리 정해져있는 값이 아니고 `Edit variables`를 눌러서 사용자가 별도로 지정하는 변수다.
+
+마지막으로 `applicable contexts`를 지정하면 끝. (위 예시의 경우 멤버 변수 선언이기 때문에 Java - declaration으로 함)
+
+사전 정의된 변수는 두 개로 `$END$`와 `$SELECTION$`이다. 도움말은 [여기](https://www.jetbrains.com/help/idea/template-variables.html)를 보면 됨.
+
+몇 가지 더 예를 들면:
+
+```java
+// Template Text // 변수 -> Expression, 적용 범위
+logger.info("{}", $aaa$); // $aaa$ -> completeSmart(), expression
+logger.error($var$.getMessage(), $var$); // $var$ -> variableOfType("Exception"), expression
+private static final Logger logger = LoggerFactory.getLogger($className$.class); // $className$ -> className(), declaration
+```
+
+#### 사전 정의된 변수<sup>Predefined template variables﻿</sup>
+
+- `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
 ## 기본 단축키 메모
 
@@ -164,13 +200,16 @@ TODO
 - <kbd>alt + f1</kbd>: Select in... 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
-- <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 검색
+- <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
+- <kbd>ctrl + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색
 - <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
 - <kbd>ctrl + f12</kbd>: File Structure  eclipse의 빠른 아웃라인 보기 기능과 같음.
 - <kbd>ctrl + alt + l</kbd>: 오토 포매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
+- <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
+- <kbd>ctrl + alt + t</kbd>: Surround With... 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
 
 ### 멀티 캐럿
 
@@ -178,11 +217,11 @@ Select Next Occurrence 없는 줄 아랏네 😂
 
 - <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
 - <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소
-- <kbd>ctrl + alt + shift + j</kbd>: 선택한 단어와 동일한 모든 위치에 캐럿 추
+- <kbd>ctrl + alt + shift + j</kbd>: 선택한 단어와 동일한 모든 위치에 캐럿 추가
 
 ### 빌드, 실행
 
-- <kbd>ctrl + f2</kbd>: 실행 중인 앱 중
+- <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
 - <kbd>ctrl + f10</kbd>: Update Running Application 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남
 - <kbd>shift + f9</kbd>: Debug 모드로 시작

@@ -91,7 +91,7 @@ Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 �
 
 - `Window` > `Preferences` > `General` > `Contents type` 우측 화면에서 원하는 항목을 선택하고, `Default encoding`을 `utf-8`로 변경 후 `update` 버튼 클릭
 
-## 자바독 자동완성
+## 자바독 자동 완성
 
 `Window` > `Preferences` > `Java` > `Code Style` > `Code Templates` 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
 
