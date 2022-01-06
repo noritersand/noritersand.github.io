@@ -75,7 +75,7 @@ for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
 
 그리고 Edit variables를 눌러보면:
 
-![](/images/intellij-settings-live-tamplates-edit-var.png)
+![](/images/intellij-settings-live-templates-edit-var.png)
 
 이렇게 돼 있는데 Name 열에선 변수의 이름을, Expression 열에선 해당 변수가 어떤 값으로 채워져야 하는지를 결정한다.
 
