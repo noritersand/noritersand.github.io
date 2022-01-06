@@ -133,7 +133,7 @@ Logger logger = LoggerFactory.getLogger($className$.class);
 
 마지막으로 `applicable contexts`를 지정하면 끝. (위 예시의 경우 멤버 변수 선언이기 때문에 Java - declaration으로 함)
 
-사전 정의된 변수는 두 개로 `$END$`와 `$SELECTION$`이다. 도움말은 [여기](https://www.jetbrains.com/help/idea/template-variables.html)를 보면 됨.
+사전 정의 변수는 두 개로 `$END$`와 `$SELECTION$`이다. 도움말은 [여기](https://www.jetbrains.com/help/idea/template-variables.html)를 보면 됨.
 
 몇 가지 더 예를 들면:
 
@@ -144,7 +144,7 @@ logger.error($var$.getMessage(), $var$); // $var$ -> variableOfType("Exception")
 private static final Logger logger = LoggerFactory.getLogger($className$.class); // $className$ -> className(), declaration
 ```
 
-#### 사전 정의된 변수<sup>Predefined template variables﻿</sup>
+#### 사전 정의 변수<sup>Predefined template variables﻿</sup>
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
