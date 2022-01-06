@@ -40,7 +40,7 @@ tags:
 
 ![](/images/intellij-live-templates-hi.gif)
 
-윈도우 OS일 때 라이브 템플릿 발동 단축키의 기본값은 <kbd>ctrl + space</kbd>이며 그 다음 (필요하면 방향키로 이동해서) <kbd>enter</kbd> 혹은 <kbd>tab</kbd>으로 선택한다.
+윈도우 OS일 때 라이브 템플릿의 단축키는 <kbd>ctrl + space</kbd>이며 그 다음 (필요하면 방향키로 이동해서) <kbd>enter</kbd> 혹은 <kbd>tab</kbd>으로 선택한다.
 
 여기까지는 누가 알려주지 않아도 아는 내용이쥬?
 
@@ -83,18 +83,18 @@ for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
 
 ![](/images/intellij-live-templates-fori.gif)
 
-변수의 이름은 사전에 정의된 변수 두 가지를 제외하고 아무렇게나 작성해도 됨.
+변수의 이름은 사전에 정의된 변수 두 가지를 제외하고 아무렇게나 지어도 된다.
 
 ### 사전 정의 변수
 
-- `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
+- `$END$`: 코드 자동 완성 후 캐럿이 위치할 자리를 지정
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
 
 ## 설정 예시
 
-### LoggerFactory.getLogger
+### logger
 
-우선 클래스 변수 logger를 자동으로 완성하는 방법이다.
+우선 클래스 변수 logger를 자동으로 완성해 주는 템플릿이다.
 
 Abbreviation은 `logger`로, Template Text는 아래처럼 작성한다:
 
@@ -111,7 +111,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 ### logger.info
 
-자주 사용하게 될 로그 출력 코드다.
+자주 사용하게 될 로그 출력용 템플릿.
 
 Abbreviation은 `li`로, Template Text는 아래처럼 작성한다:
 
@@ -119,18 +119,18 @@ Abbreviation은 `li`로, Template Text는 아래처럼 작성한다:
 logger.info("{}", $aaa$);
 ```
 
-`$aaa$`변수의 값은 `completeSmart()`, 적용 범위는 `expression`을 선택한다..
+`$aaa$`변수의 값은 `completeSmart()`, 적용 범위는 `expression`을 선택한다.
 
-- `completeSmart()`: 문맥 상 선택할 수 있는 객체나 변수를 자동으로 보여주는 툴팁을 띄우게 함.
+- `completeSmart()`: 자동 완성 후 문맥에 맞는 변수 선택 툴팁을 띄우게 함.
 - `expression`: 이 템플릿이 메서드 구현부 중 표현식을 작성할 수 있는 지역일 때만 활성화 됨.
 
 ![](/images/intellij-live-templates-li.gif)
 
 ### logger.error
 
-catch 구문 내에서 에러 로그를 출력하는 코드다.
+catch 구문 내에서의 Exception 메시지 출력 템플릿.
 
-Abbreviation은 `le`로, Template Text는 아래처럼 작성:
+Abbreviation은 `le`로, Template Text는 아래처럼 작성한다:
 
 ```java
 logger.error($var$.getMessage(), $var$);
@@ -138,7 +138,7 @@ logger.error($var$.getMessage(), $var$);
 
 `$var$` 변수의 값은 `variableOfType("Exception")`, 적용 범위는 `expression`을 선택한다.
 
-- `variableOfType("Exception")`: 문맥 상 선택 가능한 Exception의 서브 타입 변수를 채워 넣는다.
+- `variableOfType("Exception")`: 문맥에 맞는 Exception의 서브 타입 변수를 채워 넣는다.
 
 ![](/images/intellij-live-templates-le.gif)
 
