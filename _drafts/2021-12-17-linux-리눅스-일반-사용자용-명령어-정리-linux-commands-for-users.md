@@ -420,7 +420,11 @@ cp -a ... ...  # 파일의 소유권과 각종 정보 유지하여 복사 (위�
 디렉터리 생성
 
 ```bash
-mkdir test  # 해당경로에 test 디렉터리 생성
+# 현재 경로에 test 디렉터리 생성
+mkdir test  
+
+# 경로 /home/noritersand/apache2 에 디렉터리를 생성하면서 필요한 경우 부모 디렉터리도 같이 생성
+mkdir -P /home/noritersand/apache2
 ```
 
 ## mv
@@ -639,9 +643,9 @@ tar cvfz example.tar.gz *
 tar cvfz example.tar.gz * --ignore-failed-read
 
 # 현재 디렉터리에 압축 해제
-tar xvf example.tar.gz
+tar xvfz example.tar.gz
 
-# gunzip 적용하며 test 디렉터리에 압축 해제
+# test 디렉터리에 압축 해제
 tar xvfz example.tar.gz -C test
 ```
 
@@ -678,6 +682,44 @@ echo `date +%Y-%m-%d` `date +%H:%M:%S`
 ```bash
 touch `date +%Y-%m-%dT%H:%M:%S`
 ```
+
+## make, make install
+
+make는 대충 설명하면 소스 파일을 받아 직접 컴파일 후 설치하는 명령이다. 패키지 설치(apt)와 비교하면 이런 장점이 있다:
+
+- 관리자 권한 없이 앱 설치 가능.
+- 설치 경로를 직접 지정할 수 있다.
+- 앱 삭제는 단순히 설치 경로를 폴더째로 지워버리면 된다.
+
+[여기](https://jukki.tistory.com/4)에 잘 설명돼 있음.
+
+보통 요딴식으로 진행한다:
+
+```bash
+# 파일 다운로드
+wget https://dlcdn.apache.org//httpd/httpd-2.4.52.tar.gz
+
+# 압축 풀기
+tar xvfz httpd-2.4.52.tar.gz
+
+cd httpd-2.4.52
+
+# configure는 의존성을 확인하고 Makefile을 생성한다.
+# 이 때 prefix 옵션으로 설치할 경로를 지정할 수 있다.
+./configure --prefix=/home/noritersand/apache
+
+# 컴파일
+make
+
+# 지정한 위치로 복붙
+make install
+```
+
+`make install`은 컴파일된 바이너리 파일들을 지정한 위치로 재배치하는 최종 명령어다. 일부 MakeFile은 이 단계에서 재정리와 추가 컴파일을 하기도 한댄다.
+
+> `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
+> `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
+> - https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
 
 ## 기타
 

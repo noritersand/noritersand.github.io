@@ -103,6 +103,12 @@ Debian/Ubuntu 계열 리눅스의 패키지 설치 명령어.
 
 ```bash
 sudo apt install nodejs
+
+# 설치된 패키지 목록 표시
+apt list --installed
+
+# apache2 삭제
+apt remove apache2
 ```
 
 `apt`는 [설치 경로를 지정할 수 없다고 한다](https://www.quora.com/How-do-I-choose-the-installation-path-for-apt-get).
@@ -158,11 +164,12 @@ free
 ## 기본 쉘 변경
 
 ```bash
-# 로그인 쉘을 sh로 바꾸기
-chsh -s $(which sh)
-
 # 로그인 쉘을 Bash로 바꾸기
 chsh -s $(which bash)
+
+# 로그인 쉘을 zsh로 바꾸기
+chsh -s $(which zsh)
+
 
 # 확인#1
 echo $SHELL
