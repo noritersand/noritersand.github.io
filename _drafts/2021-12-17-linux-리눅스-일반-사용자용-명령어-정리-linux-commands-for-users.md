@@ -719,7 +719,7 @@ make install
 
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
-> - https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
+> 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
 
 ## 기타
 

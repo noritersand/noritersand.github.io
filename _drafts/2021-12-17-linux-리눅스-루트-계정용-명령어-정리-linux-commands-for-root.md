@@ -99,27 +99,68 @@ chown tbs:tbs ./some-folder
 
 ## APT<sup>Advanced Packaging Tool</sup>
 
+- [메뉴얼: apt](https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html)
+- [메뉴얼: apt-get](https://manpages.ubuntu.com/manpages/xenial/man8/apt-get.8.html)
+
 Debian/Ubuntu 계열 리눅스의 패키지 설치 명령어.
 
+`apt`는 [설치 경로를 지정할 수 없다고 한다](https://www.quora.com/How-do-I-choose-the-installation-path-for-apt-get).
+
 ```bash
-sudo apt install nodejs
+sudo apt install PACKAGE_NAME
 
 # 설치된 패키지 목록 표시
 apt list --installed
 
-# apache2 삭제
-apt remove apache2
+# PACKAGE_NAME이 사용하는 로컬 저장소를 삭제한다. 쉽게 말해 캐시를 지운다 보면 됨. (잠금 파일은 제외)
+apt clean PACKAGE_NAME
+
+# clean과 비슷하지만, 더 이상 다운로드 불가능하고 대강 봐서 쓸모 없는 것만 지운다고 함
+apt autoclean PACKAGE_NAME
 ```
 
-`apt`는 [설치 경로를 지정할 수 없다고 한다](https://www.quora.com/How-do-I-choose-the-installation-path-for-apt-get).
+### apt와 apt-get의 차이
 
-`apt-get`도 있는데 [검색해보니](https://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get) 대충 `apt`가 최종 사용자용이라고 한다. 그리고 별 차이도 없다 하니 그냥 `apt`만 쳐도 된다.
+https://askubuntu.com/questions/445384/what-is-the-difference-between-apt-and-apt-get
 
-만약 패키지를 찾을 수 없다는 메시지(Unable to locate package)가 나오면 [apt 저장소를 업데이트](https://stackoverflow.com/questions/29929534/docker-error-unable-to-locate-package-git)를 해보자:
+`apt-get`도 있는데 검색해보니 대충 `apt`가 최종 사용자용이라고 한다. 그리고 별 차이도 없다 하니 그냥 `apt`만 쳐도 된다.
+
+### apt 저장소 업데이트
+
+https://stackoverflow.com/questions/29929534/docker-error-unable-to-locate-package-git
+
+만약 패키지를 찾을 수 없다는 메시지(Unable to locate package)가 나오면 apt 저장소를 업데이트를 해보자:
 
 ```bash
 apt update
 ```
+
+### apt로 패키지 삭제
+
+```bash
+# PACKAGE_NAME 삭제
+apt remove PACKAGE_NAME
+
+# PACKAGE_NAME과 종속 패키지들 모두 삭제
+apt autoremove PACKAGE_NAME
+apt remove PACKAGE_NAME --auto-remove
+```
+
+패키지 삭제 명령은 `remove`, `autoremove`, `purge` 세 개가 있다.
+
+`remove`와 `autoremove`는 단순히 패키지만 삭제한다. 이 경우 설정 파일 등의 잔여물이 남을 수 있다. 반면 `purge`는 설정 파일을 포함해 모두 삭제한다고 한다.
+
+> apt remove just removes the binaries of a package. It leaves residue configuration files.  
+> apt purge removes everything related to a package including the configuration files.  
+> 출처: https://itsfoss.com/apt-command-guide/
+
+따라서 깨끗한 삭제를 하려면 `clean` 후:
+
+```bash
+apt purge --auto-remove PACKAGE_NAME
+```
+
+하면 됨.
 
 ## umask
 
@@ -203,8 +244,6 @@ sudo ufw enable
 
 # 확인
 sudo ufw status
-
-
 ```
 
 ## sysctl
@@ -235,6 +274,9 @@ systemctl stop apache2
 
 # 유닛 인스턴스를 활성화, symlink 생성.
 systemctl enable openvpn@server
+
+# 새로 고침 "파일 시스템에서 변경된 구성을 다시 가져와 종속성 트리를 재생성"
+systemctl daemon-reload
 ```
 
 `enable`하면 서버가 리부트돼도 자동 시작한다고 함.
