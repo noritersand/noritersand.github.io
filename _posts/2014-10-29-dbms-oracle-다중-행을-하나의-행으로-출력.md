@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2014-10-29 18:32:00 +0900
-title: '[Oracle] 다중 행을 하나의 행으로 출력'
+title: '[DBMS] Oracle: 다중 행을 하나의 행으로 출력'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

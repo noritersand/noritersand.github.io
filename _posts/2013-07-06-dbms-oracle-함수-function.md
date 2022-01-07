@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2013-07-06 23:45:00 +0900
-title: '[Oracle] 함수 function'
+title: '[DBMS] Oracle: 함수 function'
 categories:
-  - oracle
-tags:
-  - oracle
   - dbms
+tags:
+  - dbms
+  - oracle
   - function
   - sql
 ---

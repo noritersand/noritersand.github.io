@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-06 19:50:00 +0900
-title: '[Oracle] join, union, subquery...'
+title: '[DBMS] Oracle: join, union, subquery...'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

@@ -1,13 +1,13 @@
 ---
 layout: post
 date: 2018-02-05 15:25:02 +0900
-title: '[Oracle] 프로시저 호출방법'
+title: '[DBMS] Oracle: 프로시저 호출방법'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
-  - sql
   - oracle
+  - sql
 ---
 
 이런 프로시저가 있을 때:

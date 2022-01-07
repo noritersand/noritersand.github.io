@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-01 03:00:00 +0900
-title: '[Oracle] DML'
+title: '[DBMS] Oracle: DML'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

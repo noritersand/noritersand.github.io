@@ -1,11 +1,12 @@
 ---
 layout: post
 date: 2016-03-21 00:00:00 +0900
-title: '[MySQL] 오라클용 쿼리에서 변환해야 하는 문장들'
+title: '[DBMS] MySQL: 오라클용 쿼리에서 변환해야 하는 문장들'
 categories:
-  - mysql
+  - dbms
 tags:
   - dbms
+  - mysql
   - oracle
   - mysql
   - sql

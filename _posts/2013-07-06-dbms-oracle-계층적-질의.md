@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2013-07-06 22:29:00 +0900
-title: '[Oracle] 계층적 질의'
+title: '[DBMS] Oracle: 계층적 질의'
 categories:
-  - oracle
-tags:
-  - oracle
   - dbms
+tags:
+  - dbms
+  - oracle
   - hierarchical-join
   - sql
 ---

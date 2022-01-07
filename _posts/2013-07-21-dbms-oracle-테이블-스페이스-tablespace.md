@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-21 02:16:00 +0900
-title: '[Oracle] 테이블 스페이스 tablespace'
+title: '[DBMS] Oracle: 테이블 스페이스 tablespace'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-10-11 17:05:00 +0900
-title: '[Oracle] comment'
+title: '[DBMS] Oracle: comment'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

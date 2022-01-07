@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-06 23:46:00 +0900
-title: '[Oracle] pagination'
+title: '[DBMS] Oracle: pagination'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

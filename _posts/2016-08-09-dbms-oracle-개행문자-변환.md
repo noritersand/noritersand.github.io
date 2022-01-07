@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2016-08-09 11:15:00 +0900
-title: '[Oracle] 개행문자 변환'
+title: '[DBMS] Oracle: 개행문자 변환'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

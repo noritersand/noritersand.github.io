@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-21 01:00:00 +0900
-title: '[Oracle] PL/SQL (Procedure)'
+title: '[DBMS] Oracle: PL/SQL 프로시저'
 categories:
-  - oracle
+  - dbms
 tags:
   - dbms
   - oracle

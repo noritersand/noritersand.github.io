@@ -1,10 +1,11 @@
 ---
 layout: post
 date: 2019-03-07 15:57:00 +0900
-title: '[Oracle] 테이블 컬럼을 자바 필드로 만드는 쿼리'
+title: '[DBMS] Oracle: 테이블 컬럼을 자바 필드로 만드는 쿼리'
 categories:
-  - oracle
+  - dbms
 tags:
+  - dbms
   - oracle
   - java-beans
   - plain-object
