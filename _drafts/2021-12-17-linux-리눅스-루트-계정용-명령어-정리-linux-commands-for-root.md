@@ -107,7 +107,7 @@ Debian/Ubuntu 계열 리눅스의 패키지 설치 명령어.
 `apt`는 [설치 경로를 지정할 수 없다고 한다](https://www.quora.com/How-do-I-choose-the-installation-path-for-apt-get).
 
 ```bash
-sudo apt install PACKAGE_NAME
+apt install PACKAGE_NAME
 
 # 설치된 패키지 목록 표시
 apt list --installed
@@ -223,27 +223,45 @@ env | grep SHELL
 
 ## UFW<sup>Uncomplicated FireWall</sup>
 
-방화벽 설정. 기본 정책은 아웃바운드는 모두 허용, 인바운드는 모두 차단이라고 한다.
+방화벽 설정. 기본 정책은 아웃바운드(나가는거)를 모두 허용, 인바운드(들어오는거)를 모두 차단한다고 한다.
 
-TODO 추가 설명 필요
-
-예시:
+관련 설정 파일은 `/etc/ufw` 아래에 있다.
 
 ```bash
-# 설정 가능한 앱 확인
-sudo ufw app list
+# 방화벽 활성화(켜기)
+ufw enable
 
-# 'Apache'의 방화벽 허용
-sudo ufw allow 'Apache'
+# 방화벽 상태 확인
+ufw status
 
-# 443 포트 TCP 통신 허용
-sudo ufw allow 443/tcp
+# ufw로 방화벽 허용/차단 가능한 앱 목록
+ufw app list
 
-# ufw 활성화
-sudo ufw enable
+# 'Apache'의 방화벽 허용 룰 추가
+ufw allow 'Apache'
 
-# 확인
-sudo ufw status
+# 방화벽 다시 불러오기?(정확히 뭔지는 몲)
+ufw reload
+```
+
+### 특정 포트 허용/차단
+
+```bash
+# TCP 443 포트 통신 허용 룰 추가
+ufw allow 443/tcp
+
+# UDP 67 포트 통신 차단 룰 추가
+ufw deny 67/udp
+```
+
+### 룰 삭제
+
+```bash
+# TCP 443 포트 통신 허용룰 삭제
+ufw delete allow 443/tcp
+
+# ssh 차단 룰 삭제
+ufw delete deny ssh
 ```
 
 ## sysctl
@@ -253,14 +271,14 @@ TODO 뭔가를 하는건데...
 
 ```bash
 # read values from file. 현재 세션에 변경사항 반영인데 뭐가 대상일까...
-sudo sysctl -p
+sysctl -p
 ```
 
 ## systemctl
 
-도움말에는 "쿼리나 컨트롤 명령을 시스템 매니저에 전송"한다고 나온다.
+[systemmd](https://www.google.com/search?client=firefox-b-d&q=systemmd란) 시스템과 서비스 매니저를 관리하는 명령어. 도움말에는 "쿼리나 컨트롤 명령을 시스템 매니저에 전송"한다고 나온다.
 
-대충 패키지로 설치된 앱에 시스템 매니저를 통한 명령 실행인 것 같음.
+**리눅스 데몬을 관리**하는 명령어로 보인다. 이 명령어는 서비스나 데몬이 아닌 '유닛'이라는 단위를 쓴다.
 
 ```bash
 # apache2 상태 확인
@@ -269,17 +287,19 @@ systemctl status apache2
 # apache2 시작
 systemctl start apache2
 
+# UNIT_NAME 유닛 재시작
+systemctl restart UNIT_NAME
+
 # apache2 중지
 systemctl stop apache2
 
-# 유닛 인스턴스를 활성화, symlink 생성.
+# openvpn@server가 서버 재시작 후 자동으로 실행되게 함
+# enable은 유닛 인스턴스를 활성화, symlink 생성한다.
 systemctl enable openvpn@server
 
 # 새로 고침 "파일 시스템에서 변경된 구성을 다시 가져와 종속성 트리를 재생성"
 systemctl daemon-reload
 ```
-
-`enable`하면 서버가 리부트돼도 자동 시작한다고 함.
 
 ## journalctl
 

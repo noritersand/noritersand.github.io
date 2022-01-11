@@ -547,10 +547,13 @@ ip addr show eth0
 
 # nslookup
 
-인터넷 네임 서버에 대화형으로 질의.
+인터넷 네임 서버에 대화형으로 질의. DNS 서버에서 ip 받아오는 명령어임.
 
 ```bash
 nslookup icanhazip.com
+
+# one.one.one.one(클라우드 플레어) 서버에서 daum.net 검색
+nslookup daum.net one.one.one.one
 ```
 
 # dig

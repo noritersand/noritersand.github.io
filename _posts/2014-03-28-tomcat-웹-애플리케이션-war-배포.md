@@ -85,7 +85,7 @@ WAR 파일을 `톰캣경로\webapps` 아래에 둔다. 이때 압축은 풀어�
 
 ```xml
 <Host name="localhost" appBase="webapps"
-            unpackWARs="true" autoDeploy="true">
+            unpackWARs="true" autoDeploy="false">
     <!-- 생략 -->
     <Context docBase="logictest" path="/" reloadable="true"/>
 </Host>
