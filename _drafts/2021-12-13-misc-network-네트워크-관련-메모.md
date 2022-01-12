@@ -21,9 +21,7 @@ tags:
 
 끗.
 
-## VPN
 
-TODO
 
 ## Name Server와 DNS의 차이
 
