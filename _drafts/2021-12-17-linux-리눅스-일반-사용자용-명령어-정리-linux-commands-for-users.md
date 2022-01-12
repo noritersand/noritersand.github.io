@@ -237,9 +237,17 @@ ln -s ~/was/upload ./upload
 # 현재 경로에 upload라는 심볼릭 링크를 생성한다. 이 링크의 실제 물리경로는 home/was/upload
 ```
 
+## top
+
+리눅스 커널이 관리중인 프로세스(혹은 쓰레드) 목록과 CPU/메모리 점유율, PID 등을 실시간으로 출력한다. 아무 옵션도 지정하지 않으면 CPU 점유율 내림차순, PID 오름차순으로 보여줌.
+
+``` bash
+top -o cpu  # cpu 자원을 가장 많이 점유하고 있는 프로세스순 보기
+```
+
 ## ps
 
-실행중인 프로세스 확인
+실행중인 프로세스를 확인하는 명령어. 프로세스들의 정보를 스냅샷으로 출력한다.
 
 ```bash
 ps -ef
@@ -281,7 +289,7 @@ pkill -9 -ef catalina
 nohup java -jar example.jar &
 ```
 
-`&` 만 쳐도 되는모양?
+`&` 만 쳐도 됨.
 
 ## cd
 
@@ -508,16 +516,6 @@ cat /etc/issue
 lsb_release -a
 ```
 
-## system_profiler
-
-시스템 정보 확인
-
-## top
-
-``` bash
-top -o cpu  # cpu 자원을 가장 많이 점유하고 있는 프로세스순 보기
-```
-
 ## netstat
 
 네트워크 정보 표시. APT 패키지 이름은 `net-tools`임.
@@ -558,15 +556,16 @@ nslookup daum.net one.one.one.one
 
 # dig
 
-`nslookup`이랑 비슷한데 뭔지 잘 모름 ㅋ
+DNS 검색 유틸리티. `nslookup`이랑 비슷한데 뭐가 막 더 많이 나옴.
 
 ```bash
 dig icanhazip.com
+
+dig google.com
+
+# -x는 역방향 검색 옵션
+dig -x 172.217.25.78
 ```
-
-## ps
-
-해당 디바이스 프로세스 리스트 보여주기
 
 ## w
 

@@ -274,7 +274,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 워킹 트리와 스테이징 에어리어를 헤드의 내용대로 되돌린다. 이미 추적중인 대상만 되돌릴 수 있다. `status`에 표시되는 기준으로 modified, renamed, deleted는 되돌리지만 new file은 되돌리지 않는다.
 
 ```bash
-# 현재 경로의 모든 파일 되돌리기
+# 현재 경로의 모든 추적중인 파일 되돌리기
 git checkout -- .  
 git checkout HEAD .
 ```
@@ -1292,7 +1292,7 @@ git remote prune 리모트저장소
 
 #### staged 되돌리기(스테이징 취소)
 
-`add`로 스테이징 에어리어에 등록한 파일을 unstaged 상태로 바꾼다.
+`add`로 스테이징 에어리어에 등록한 파일을 unstaged 상태로 바꾼다. 헤드가 이동하지 않으니 제자리 리셋이다.
 
 ```bash
 git reset HEAD 파일 # 특정 파일만 스테이징 취소
@@ -1349,6 +1349,8 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 
 ## [revert](https://git-scm.com/docs/git-revert)
 
+변경사항을 정확히 반전시킨 새 커밋을 생성하는 명령어.
+
 #### 커밋 되돌리기 \#2
 
 1회 전의 커밋으로 되돌리되 단순히 헤드를 이동하는게 아니라, 되돌려지는 내용을 기록한 **새로운 커밋을 생성**한다.
@@ -1357,7 +1359,7 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 git revert HEAD  # 직전 커밋의 revert 커밋 생성
 ```
 
-위의 경우 헤드 기준으로 가장 마지막 커밋의 변경사항을 되돌리는 커밋을 생성한다.
+위의 경우 헤드 기준으로 가장 마지막 커밋의 변경사항을 반전시킨 커밋을 생성한다.
 가령 직전의 커밋이 'fix-a-lot.md'라는 파일을 생성한 커밋이라면 `git revert HEAD`는 'fix-a-lot.md'를 삭제하는 커밋을 만드는 것이다.
 
 ```bash
@@ -1375,7 +1377,7 @@ git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경사항을 �
 - `-n` `--no-commit`: 워킹 트리와 스테이징 에어리어의 상태만 되돌리고 커밋은 생성하지 않는다.
 - `-m parent-number` `--mainline parent-number`: 머지 커밋을 리버트 할 때 사용하는 옵션.
 
-#### 머지 커밋을 되돌리기
+#### 머지 커밋을 리버트하기
 
 ```bash
 commit fc30cfe9255837f6810eb75adacaf93696828afe (HEAD -> revert-test)
@@ -1383,7 +1385,7 @@ Merge: 7be20ca ca433d3
 # 7be20ca에 ca433d3을 머지하여 만들어진 커밋 fc30cf를 조회한 로그
 ```
 
-머지 커밋을 되돌릴 때는 깃이 어느 부모가 메인라인(되돌리지 않을 커밋)인지 알 수 있도록 `-m` 옵션과 함께 부모 번호(1부터 시작하는 부모 커밋을 가리키는 숫자)를 입력해줘야 한다:
+머지 커밋을 리버트 할 때는 어느 부모가 메인라인(되돌리지 않을 커밋)인지 알 수 있도록 `-m` 옵션과 함께 부모 번호(1부터 시작하는 부모 커밋을 가리키는 숫자)를 입력해줘야 한다:
 
 ```bash
 git revert fc30cf -m 1
