@@ -34,7 +34,7 @@ Object someAttr = attrs.getAttribute("someAttrName", RequestAttributes.SCOPE_REQ
 
 그랬다고 한다.
 
-대~충 응용하면:
+대-충 응용하면:
 
 ```java
 ServletRequestAttributes attrs = (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();

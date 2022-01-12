@@ -168,7 +168,7 @@ checkbox가 체크 되기 전에는 required는 작동하지 않는다. `#other`
 </form>
 ```
 
-이 경우 age의 값이 1~12 일 때만 parent를 체크
+이 경우 age의 값이 1-12 일 때만 parent를 체크
 
 ### remote
 

@@ -18,7 +18,7 @@ tags:
 $('#inptHp2, #inptHp3').keydown(function(e) {
   var k = e.keyCode;
   // console.log(k);
-  if ((90 >= k && k >= 65) // a ~ z
+  if ((90 >= k && k >= 65) // a-z
       || (111 >= k && k >= 106) // keypad operator
       || (192 >= k && k >= 186) // -,=./;
       || (222 >= k && k >= 219) // ']\[
