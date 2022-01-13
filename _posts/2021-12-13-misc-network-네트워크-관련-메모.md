@@ -58,8 +58,7 @@ VPN을 구축할 서버(이하 VPN 서버)는 private 서브넷에 있으면서 
 
 DNS 서버는 BIND9로 함. OpenVPN 설정은 DNS 부분 빼고는 크게 어려운 게 없었으나 BIND9 설정은 DNS 시스템을 이해해야 해서 머리 깨짐.
 
-OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614),  
-BIND9 설정은 [여기](https://lindarex.github.io/bind9/ubuntu-bind9-setting/)와 [여기](https://joungkyun.gitbook.io/annyung-3-user-guide/chapter5/chapter5-1-basic)를 참고함.
+OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614), BIND9 설정은 [여기](https://lindarex.github.io/bind9/ubuntu-bind9-setting/)와 [여기](https://joungkyun.gitbook.io/annyung-3-user-guide/chapter5/chapter5-1-basic)를 참고함.
 
 ### 도메인 오리진
 
@@ -70,11 +69,11 @@ BIND9 설정은 [여기](https://lindarex.github.io/bind9/ubuntu-bind9-setting/)
 
 위 내용은 zone 파일의 일부이며 도메인 오리진(위 예시에서는 example.net에 해당하며 `@`가 이를 지칭한다.)의 SOA 레코드와 NS 레코드를 정의하는 내용이다.
 
-도메인 오리진은 `$ORIGIN`으로 별도 지정하지 않는한 SOA 레코드의 루트 도메인인 example.net이다. (아마도?)
+도메인 오리진은 `$ORIGIN`으로 별도 지정하지 않는한 SOA 레코드의 루트 도메인인 example.net이다. (잠깐, 이러면 순환 참조 같은디? 😵‍💫)
 
 ### 존 파일에서 도메인에 점을 찍는 이유
 
-존 파일에서 도메인 뒤에 점`.`을 찍혀 있으면 해당 도메인이 완전한 도메인이란 의미다. 만약 점을 빼면 그 뒤에 도메인 오리진이 자동으로 붙는다.
+존 파일에서 도메인 뒤에 점`.`이 찍혀 있으면 해당 도메인은 완전하다는 의미가 된다. 만약 점을 빼면 그 뒤에 도메인 오리진이 자동으로 붙는다.
 
 예를 들어 오리진이 example.com일 때 `www.example.com`이라고 쓰면 www.example.com.example.com 으로 인식한다는 것.
 
