@@ -52,11 +52,11 @@ Domain Apex는 그냥 루트 도메인이라고도 부르며 이것 말고도 Zo
 
 ## 사설 VPN서버에 DNS를
 
-젠킨스, 깃 사설 서버, 테스트 서버 등(이하 대상 서버) 개발에 필요한 서버들을 외부로부터의 접근을 제한해야 할 일이 있었음. 인가된 내부 인원인 개발자나 테스터한테는 허용해야 하니까 사설 VPN 서버를 구축하기로 함. 그리고 대상 서버들은 외부 접근이 불가능하며 AWS의 private 서브넷을 통해서만 접근이 가능하도록 만들어야 함. 즉, 작업자 PC에서 VPN 서버로, VPN에서 대상 서버들로 통신하는 환경이 필요함. (이거시터널링인가?)
+젠킨스, 깃 사설 서버, 테스트 서버 등(이하 대상 서버) 개발에 필요한 서버들을 외부로부터의 접근을 제한해야 할 일이 있었음. 인가된 내부 인원인 개발자나 테스터한테는 허용해야 하니까 사설 VPN 서버를 구축하기로 함. 그리고 대상 서버들은 외부 접근이 불가능하며 내부 네트워크를 통해서만 접근이 가능하도록 만들어야 함. 즉, 대상 서버들의 공인 IP를 없애고 작업자 PC에서 VPN 서버로, VPN에서 대상 서버들로 통신하는 환경이 필요함. (이거시터널링인가?)
 
-VPN을 구축할 서버(이하 VPN 서버)는 private 서브넷에 있으면서 public 서브넷에도 있어서 공인 IP가 부여된 상태. 우선 VPN 서버가 될 EC2 인스턴스에 OpenVPN으로 VPN 환경 구성함. 이 때 OpenVPN 설정 중 DNS는 VPN 서버 자신의 IP로 잡음(루프백 IP로 해도 될지 몰라). 왜냐면 같은 서버가 DNS 서버 역할도 할 꺼니께.
+VPN을 구축할 서버(이하 VPN 서버)는 내부 네트워크에 있으면서 공인 IP가 부여된 상태. 우선 VPN 서버가 될 인스턴스에 OpenVPN으로 VPN 환경 구성함. 이 때 OpenVPN 설정 중 DNS는 VPN 서버 자신의 IP로 잡음(루프백 IP로 해도 될지 몰라). 왜냐면 같은 서버가 DNS 서버 역할도 할 꺼니께.
 
-DNS 서버는 BIND9로 함. OpenVPN 설정은 DNS 부분 빼고는 크게 어려운 게 없었으나 BIND9 설정은 DNS 시스템을 이해해야 해서 머리 깨짐.
+DNS 서버는 BIND9으로 구축함. OpenVPN은 크게 어려운 게 없었으나 BIND9 설정은 DNS 시스템을 이해해야 해서 머리 깨진다.
 
 OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614), BIND9 설정은 [여기](https://lindarex.github.io/bind9/ubuntu-bind9-setting/)와 [여기](https://joungkyun.gitbook.io/annyung-3-user-guide/chapter5/chapter5-1-basic)를 참고함.
 
@@ -69,7 +69,7 @@ OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614), BI
 
 위 내용은 zone 파일의 일부이며 도메인 오리진(위 예시에서는 example.net에 해당하며 `@`가 이를 지칭한다.)의 SOA 레코드와 NS 레코드를 정의하는 내용이다.
 
-도메인 오리진은 `$ORIGIN`으로 별도 지정하지 않는한 SOA 레코드의 루트 도메인인 example.net이다. (잠깐, 이러면 순환 참조 같은디? 😵‍💫)
+도메인 오리진은 `$ORIGIN`으로 별도 지정하지 않는한 SOA 레코드의 루트 도메인인 example.net이다. (잠깐, 이러면 순환 참조 아닌가? 😵‍💫)
 
 ### 존 파일에서 도메인에 점을 찍는 이유
 
@@ -79,18 +79,9 @@ OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614), BI
 
 ### CNAME 레코드
 
-BIND9 설정에서 문제가 있었던 부분은 CNAME이었다. CNAME 레코드는 도메인에 대한 별칭을 설정할 때 사용하는데, 이 때 Zone Apex를 지정할 수 없다고 한다.
+BIND9 설정에서 문제가 있었던 부분은 CNAME이었다. CNAME 레코드는 도메인에 대한 별칭을 설정할 때 사용하는데, 이 때 루트 도메인을 지정할 수 없다.
 
-그러니까 아래처럼은 가능하지만:
-
-```bash
-www  IN  CNAME  ns
-git  IN  CNAME  gitlab-123456789.ap-northeast-99.elb.amazonaws.com.
-mail.example.com.  IN  CNAME  mail.daum.net.
-tis.not.exist.subdomain.example.com.  IN  CNAME  www.github.com.
-```
-
-아래처럼 서브 도메인이 아닌 표현은 틀린 문법이다:
+예를 들면, 아래는 틀린 문법이고:
 
 ```bash
 @             IN  CNAME  example.com.
@@ -98,13 +89,18 @@ example.com.  IN  CNAME  example.net.
 abc           IN  CNAME  @
 ```
 
-사실 위 예시 중 이런 표현은:
+아래처럼은 된다:
 
 ```bash
+www                IN  CNAME  ns
+git                IN  CNAME  gitlab-123456789.ap-northeast-99.elb.amazonaws.com.
 mail.example.com.  IN  CNAME  mail.daum.net.
+tis.not.exist.subdomain.example.com.  IN  CNAME  www.github.com.
 ```
 
-Zone Apex가 example.com일 때만 가능. Zone Apex는 존 파일 당 하나만 존재할 수 있는 것으로 추정된다. 그러니 더 정확하게 설명하자면, CNAME 레코드의 별칭이나 대상은 루트 도메인으로 지정할 수 없으며 별칭은 Zone Apex를 벗어날 수 없다고 하는게 맞겠다.
+사실 위 코드에서 아래 두 줄은 Zone Apex가 example.com일 때만 가능. Zone Apex는 존 파일 당 하나만 존재하는 루트 도메인으로 추정된다(구글링 결과를 종합해보면 Zone Apex는 원래 루트 도메인과 같은 말이지만 존 파일에서는 약간 다르게 쓰이는 걸로 보인다).
+
+그러니 더 정확하게 설명하자면, CNAME 레코드의 별칭이나 대상은 루트 도메인으로 지정할 수 없으며 별칭은 Zone Apex를 벗어날 수 없다고 하는게 맞겠다.
 
 [그리고 이렇게도 안된다고 한다](https://joungkyun.gitbook.io/annyung-3-user-guide/chapter5/chapter5-2-add-domain):
 
