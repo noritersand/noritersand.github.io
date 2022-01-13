@@ -34,8 +34,10 @@ tags:
 - <kbd>ctrl + a</kbd>: 캐럿을 왼쪽 끝으로
 - <kbd>ctrl + left</kbd>: 왼쪽의 다음 단어로 점프
 - <kbd>ctrl + right</kbd>: 오른쪽의 다음 단어로 점프
-- <kbd>alt + backspace</kbd>: 왼쪽의 단어 삭제. 클립보드 저장도 되는 모양.
-- <kbd>ctrl + delete</kbd>: 오른쪽의 단어 삭제. 얘도 클립보드에 저장 됨.
+- <kbd>alt + backspace</kbd>: 왼쪽의 단어 삭제.
+- <kbd>ctrl + delete</kbd>: 오른쪽의 단어 삭제.
+
+삭제할 땐 클립보드 저장까지 됨. 구버전에선 진짜 삭제만 했지 않았을까?
 
 ### 잘라내기, 붙여넣기
 
@@ -187,8 +189,8 @@ whereis ls
 # plain get request
 curl http://tistory.com
 
-# 도메인 localhost, 포트번호 4000번에 GET 요청
-curl localhost:4000
+# 도메인 localhost 포트번호 4000번에 GET 요청하되 응답 헤더도 출력
+curl -i localhost:4000
 
 # post request with header
 curl -X POST "http://take-my-json-attack.com" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"prdId\": \"123456\"}"
@@ -559,9 +561,11 @@ nslookup daum.net one.one.one.one
 DNS 검색 유틸리티. `nslookup`이랑 비슷한데 뭐가 막 더 많이 나옴.
 
 ```bash
+# 기본 네임서버에 icanhazip.com 레코드 질의
 dig icanhazip.com
 
-dig google.com
+# dns.google.com 서버에 icanhazip.com 레코드 질의
+dig example.com @dns.google.com
 
 # -x는 역방향 검색 옵션
 dig -x 172.217.25.78

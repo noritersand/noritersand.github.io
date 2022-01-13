@@ -107,8 +107,8 @@ DNS 인프라 진단용 명령어.
 # noritersand.github.io 도메인에 대한 DNS 정보 조회
 nslookup noritersand.github.io
 
-# dns.google 서버에서 icanhazip.com 검색
-nslookup icanhazip.com dns.google
+# dns.google.com 서버에서 icanhazip.com 검색
+nslookup icanhazip.com dns.google.com
 ```
 
 ### tasklist
