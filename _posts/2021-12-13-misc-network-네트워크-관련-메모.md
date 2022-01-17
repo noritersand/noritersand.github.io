@@ -5,6 +5,7 @@ title: '[misc] Network 네트워크 관련 메모'
 categories:
   - misc
 tags:
+  - misc
   - network
 ---
 

@@ -9,6 +9,7 @@ tags:
   - linux
   - os
   - wsl
+  - powershell
 ---
 
 * Kramdown table of contents

@@ -231,6 +231,9 @@ env | grep SHELL
 # 방화벽 활성화(켜기)
 ufw enable
 
+# 끄기
+ufw disable
+
 # 방화벽 상태 확인
 ufw status
 
@@ -270,7 +273,7 @@ TODO 뭔가를 하는건데...
 아래 `systemctl`의 약어인 것 같지만 전혀 아니다.
 
 ```bash
-# read values from file. 현재 세션에 변경사항 반영인데 뭐가 대상일까...
+# read values from file. 현재 세션에 변경사항 반영인데... 새로고침 대상이 뭘까?
 sysctl -p
 ```
 
@@ -278,7 +281,7 @@ sysctl -p
 
 [systemmd](https://www.google.com/search?client=firefox-b-d&q=systemmd란) 시스템과 서비스 매니저를 관리하는 명령어. 도움말에는 "쿼리나 컨트롤 명령을 시스템 매니저에 전송"한다고 나온다.
 
-**리눅스 데몬을 관리**하는 명령어로 보인다. 이 명령어는 서비스나 데몬이 아닌 '유닛'이라는 단위를 쓴다.
+**리눅스 데몬을 관리**하는 명령어로 보인다. 도움말에서는 서비스나 데몬이 아닌 '유닛'이라는 단위를 쓴다.
 
 ```bash
 # apache2 상태 확인
@@ -293,9 +296,12 @@ systemctl restart UNIT_NAME
 # apache2 중지
 systemctl stop apache2
 
-# openvpn@server가 서버 재시작 후 자동으로 실행되게 함
+# 유닛이 서버 재시작 후 자동으로 시작되게 함
 # enable은 유닛 인스턴스를 활성화, symlink 생성한다.
-systemctl enable openvpn@server
+systemctl enable UNIT_NAME
+
+# 유닛의 자동 시작 끄기
+systemctl disable UNIT_NAME
 
 # 새로 고침 "파일 시스템에서 변경된 구성을 다시 가져와 종속성 트리를 재생성"
 systemctl daemon-reload

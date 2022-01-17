@@ -85,8 +85,8 @@ chmod 600 ./PRIVATE_KEY_FILE.pem
 ssh와 옵션은 거의 같음.
 
 ```bash
-# PRIVATE_KEY_FILE.pem을 개인키로 사용하며 서버에 접속, ~/repo/a.txt를 로컬의 ~/downloads/a.txt로 다운로드
-sftp -i ./PRIVATE_KEY_FILE.pem ubuntu@1.2.3.4:repo/a.txt ~/downloads/a.txt
+# PRIVATE_KEY_FILE.pem을 개인키로 사용하며 서버에 접속, ~/repo/a.txt를 로컬의 ~/downloads 경로로 다운로드
+sftp -i ./PRIVATE_KEY_FILE.pem ubuntu@1.2.3.4:repo/a.txt ~/downloads
 ```
 
 ## grep

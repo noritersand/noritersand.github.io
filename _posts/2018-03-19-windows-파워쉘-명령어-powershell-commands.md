@@ -5,6 +5,7 @@ title: '[Windows] 파워쉘 명령어 Powershell Commands'
 categories:
   - windows
 tags:
+  - windows
   - terminal
   - cmd
   - shell
@@ -17,9 +18,9 @@ tags:
 
 #### 참고한 문서
 
-- [Microsoft PowerShell 제품 설명서](https://aka.ms/powershell)
-- [Microsoft Docs: PowerShell](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
-- [크로스 플랫폼 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
+- [\[Microsoft\] PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
+- [\[Microsoft\] PowerShell 설명서](https://aka.ms/powershell)
+- [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
 
 ## 개요
 
