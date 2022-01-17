@@ -1,14 +1,14 @@
 ---
 layout: post
 date: 2019-01-24 15:04:00 +0900
-title: '[Java] 타임리프 Thymeleaf 기본'
+title: '[Java] 타임리프 Thymeleaf'
 categories:
   - java
 tags:
   - java
   - thymeleaf
   - template-engine
-  - basic
+  - basics
 ---
 
 * Kramdown table of contents

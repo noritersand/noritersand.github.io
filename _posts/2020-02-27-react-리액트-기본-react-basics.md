@@ -1,13 +1,13 @@
 ---
 layout: post
 date: 2020-02-27 17:14:00 +0900
-title: '[React] 리액트 기본'
+title: '[React] 리액트 기본 React Basics'
 categories:
   - react
 tags:
-  - javascript
   - react
-  - basic
+  - javascript
+  - basics
 ---
 
 * Kramdown table of contents
@@ -26,6 +26,7 @@ tags:
 
 ## 설치
 
+TODO
 
 ## JSX
 

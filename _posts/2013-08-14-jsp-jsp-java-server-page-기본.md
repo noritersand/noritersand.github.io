@@ -7,7 +7,7 @@ categories:
 tags:
   - java
   - jsp
-  - basic
+  - basics
 ---
 
 * Kramdown table of contents

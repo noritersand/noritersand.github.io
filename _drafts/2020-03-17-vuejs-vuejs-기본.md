@@ -7,7 +7,7 @@ categories:
 tags:
   - javascript
   - vuejs
-  - basic
+  - basics
 ---
 
 * Kramdown table of contents
