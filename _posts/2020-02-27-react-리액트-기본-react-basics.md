@@ -15,9 +15,9 @@ tags:
 
 #### 참고한 문서
 
-- [공식 사이트](https://reactjs.org/)
-- [공식 사이트: 한글](https://ko.reactjs.org/)
-- [깃허브](https://github.com/facebook/react)
+- [\[React\] Getting Started](https://reactjs.org/docs/getting-started.html)
+- [\[React\] 시작하기](https://ko.reactjs.org/docs/getting-started.html)
+- [https://github.com/facebook/react](https://github.com/facebook/react)
 - [비공식 튜토리얼#1](https://velopert.com/3613)
 
 ## 개요
