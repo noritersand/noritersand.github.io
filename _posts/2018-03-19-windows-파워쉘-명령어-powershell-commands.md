@@ -333,10 +333,10 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 신규 별칭 추가.
 
 ```bash
-# 탐색기 실행의 별칭으로 ex 추가
+# 탐색기의 별칭으로 ex 추가
 New-Alias ex explorer
 
-# 서브라임 실행의 별칭으로 sb 추가
+# 서브라임의 별칭으로 sb 추가
 New-Alias sb subl
 
 # findstr의 별칭으로 grep 추가
