@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-05 23:45:10 +0900
-title: '[JavaScript] js객체 깊은 복사 Object deep clone'
+title: '[JavaScript] 객체 복제(복사) Object Cloning'
 categories:
   - javascript
 tags:
@@ -23,23 +23,30 @@ tags:
 - [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
 - [jQuery: jQuery.extend()](https://api.jquery.com/jquery.extend/)
 
-## Object.assign()
+## 개요
+
+JavaScript의 객체 복제에 대한 정리글.
+
+복제(cloning)가 더 맞는 표현같지만 이 글에선 구글 검색 결과가 더 많은 복사(copy)로 명시함.
+
+## 얕은 복사<sup>shallow copy</sup>
+
+### Object.assign()
+
+IE에서 사용할 수 없다.
 
 ```js
-let obj = { a: 1 };
+let obj = { a: 1, b: 2 };
 let clone = Object.assign({}, obj);
-clone; // { a: 1 }
+clone; // Object { a: 1, b: 2 }
+
+let clone2 = Object.assign({}, obj, { b: 3 }); // 객체의 사본을 만들면서 일부 프로퍼티는 재할당
+clone2; // Object { a: 1, b: 3 }
 ```
 
-이건 얕은 복사<sup>shallow cloning</sup>만 가능하며 IE에서 사용할 수 없다.
+### JSON 문자열로 바꾼뒤 다시 객체로 변환
 
-## JSON 문자열로 바꾼뒤 다시 객체로 변환
-
-#### 브라우저 호환
-
-- IE7 이하 사용 불가
-
-`JSON.stringify()`와 `JSON.parse()`를 이용한 객체 복사 방법.
+`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복사 방법. IE7 이하에서 사용할 수 없고, JSON으로 표현이 불가능한 함수는 복사할 수 없다. (JSON에는 function 타입이 없기 때문)
 
 ```js
 // 복사 대상
@@ -62,6 +69,19 @@ console.log(newone.child.grandson.txt); // peek-a-boo!
 console.log(typeof newone.child.grandson.fn == 'undefined'); // true, 함수는 복사 불가
 ```
 
-단, 함수는 복사가 안되는 한계가 있다. (JSON에는 function 타입이 없기 때문)
+### 전개 구문
 
-## 꼐속...
+```js
+var obj = { foo: 'bar', x: 42 };
+
+var clone1 = { ...obj };
+clone1; // Object { foo: "bar", x: 42 }
+clone1 === obj; // false
+
+var clone2 = { ...obj, x: '사십이', c: 1 };
+clone2; // Object { foo: "bar", x: "사십이", c: 1 }
+```
+
+## 깊은 복사<sup>deep copy</sup>
+
+### 꼐속...

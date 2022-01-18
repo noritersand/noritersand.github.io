@@ -168,20 +168,23 @@ arr[0]; // [1]
 ```js
 var obj = { foo: 'bar', x: 42 };
 
-var clonedObj = { ...obj };
-clonedObj; // Object { foo: "bar", x: 42 }
-clonedObj === obj; // false
+var clone1 = { ...obj };
+clone1; // Object { foo: "bar", x: 42 }
+clone1 === obj; // false
+
+var clone2 = { ...obj, x: '사십이', c: 1 }; // obj에서 x는 재할당하고 c를 추가한 새 배열 객체 반환
+clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
-배열과 마찬가지로 얕은 복사<sup>shallow cloning</sup>인 것에 주의:
+배열과 마찬가지로 얕은 복사<sup>shallow copy</sup>인 것에 주의:
 
 ```js
 var obj = { foo: { a: 1, b: 2 } };
 
-var clonedObj = { ...obj };
+var clone4 = { ...obj };
 
 obj.foo.a; // 1
-clonedObj.foo.a = 3;
+clone4.foo.a = 3;
 obj.foo.a; // 3
 ```
 

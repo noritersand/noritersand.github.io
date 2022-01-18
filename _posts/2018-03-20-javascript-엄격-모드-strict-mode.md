@@ -179,7 +179,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 
 ### this의 변화
 
-함수가 메서드가 아닌 함수로 호출될 때 `this`는 `undefined`가 된다(표준 모드에선 함수로 호출될 때의 `this`는 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
+함수가 메서드가 아닌 함수로 호출될 때 `this`는 `undefined`가 된다(표준 모드에선 함수로 호출될 때의 `this`는 `Window` 같은 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
 
 ```js
 var supportStrictMode = (function() {

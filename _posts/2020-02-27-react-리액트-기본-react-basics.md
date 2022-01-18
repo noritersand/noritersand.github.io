@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-02-27 17:14:00 +0900
-title: '[React] 리액트 React'
+title: '[React] 리액트 기본 React Basics'
 categories:
   - react
 tags:
@@ -15,9 +15,9 @@ tags:
 
 #### 참고한 문서
 
-- [\[React\] Getting Started](https://reactjs.org/docs/getting-started.html)
-- [\[React\] 시작하기](https://ko.reactjs.org/docs/getting-started.html)
 - [\[React\] 튜토리얼](https://ko.reactjs.org/tutorial/tutorial.html)
+- [\[React\] 시작하기](https://ko.reactjs.org/docs/getting-started.html)
+- [\[React\] 성능 최적화](https://ko.reactjs.org/docs/optimizing-performance.html)
 - [https://github.com/facebook/react](https://github.com/facebook/react)
 - [비공식 튜토리얼#1](https://velopert.com/3613)
 
@@ -28,6 +28,8 @@ tags:
 ## 개요
 
 리액트의 기초, 규칙, 문법 등을 정리한 글.
+
+공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
 
 ## React 엘리먼트
 
@@ -91,7 +93,23 @@ const element3 = React.createElement('h2', {
 // <h2 class="title"><span>대통령 선거</span><span> : </span><span>대통령 앉은거</span></h2>
 ```
 
-`element3`는 `props.children`으로 하위 노드를 할당하는 식인데, `props` 자리에 세 번째 span 태그처럼 `{ key: somevalue }` 대신 null을 넘기면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다.
+#### 노드 리스트의 Key
+
+위 예시에서 `element3`는 `props.children`으로 하위 노드를 할당하는 식인데, `props` 자리에 세 번째 span 태그처럼 `{ key: somevalue }` 대신 null을 넘기면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다.
+
+> 리스트를 렌더링할 때 React는 렌더링하는 리스트 아이템에 대한 정보를 저장합니다. 리스트를 업데이트 할 때 React는 무엇이 변했는 지 결정해야 합니다. 리스트의 아이템들은 추가, 제거, 재배열, 업데이트 될 수 있습니다.
+> ... 현재 리스트가 이전 리스트에 존재했던 키를 가지고 있지 않다면 React는 그 키를 가진 컴포넌트를 제거합니다. 두 키가 일치한다면 해당 구성요소는 이동합니다. 키는 각 컴포넌트를 구별할 수 있도록 하여 React에게 다시 렌더링할 때 state를 유지할 수 있게 합니다. 컴포넌트의 키가 변한다면 컴포넌트는 제거되고 새로운 state와 함께 다시 생성됩니다.
+> - https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key
+
+대충 요약하면 랜더링 최적화에 필요한 프로퍼티다:
+
+```xml
+<li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
+```
+
+전역에 걸쳐 유일한 값일 필요는 없으며 컴포넌트 내에서만 유일하면 된다고 함.
+
+그리고 `key`가 `props`에 속하는 것처럼 보이지만 `this.props.key`로 참조할 수 없다고 한다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
 
 ### [ReactDOM.render()](https://ko.reactjs.org/docs/react-dom.html#render)
 
@@ -279,9 +297,44 @@ npm start
 class Square extends React.Component {
   render() {
     return (
-      <button className="square" onClick={function() { console.log('click'); }}></button>
+      <button
+          className="square"
+          onClick={function() {
+            console.log('click');
+          }}
+      >
+      </button>
     );
     // return React.createElement("button", { className: "square", onClick: function () { console.log('click'); } });
   }
 }
+```
+
+## 함수 컴포넌트<sup>function components</sup>
+
+[리액트에서 컴포넌트](https://reactjs.org/docs/components-and-props.html)란 리액트 앱을 구성하는 최소 단위를 말한다. 정상적인 컴포넌트라면 항상 리액트 엘리먼트를 반환해야 한다. 그래서 항상 `return` 문을 포함한다.
+
+함수 컴포넌트는 컴포넌트를 정의하는 가장 간단한 방법이며, (이 글의 예시 중 `Square`나 `ShoppingList`는 클래스 컴포넌트임) 함수는 딱 하나의 인수 `props`를 전달 받는다.
+
+아래처럼 쓴다:
+
+```js
+function Noop(props) {
+  return (
+    <div>{props.foo}</div>
+  );
+}
+class Newbie extends React.Component {
+  render() {
+    return (
+      <Noop foo="bar"/>
+    );
+  }
+}
+ReactDOM.render(<Newbie/>, document.querySelector('#root'));
+
+// 결과:
+// <div id="root">
+//   <div>bar</div>
+// </div>
 ```
