@@ -77,6 +77,8 @@ tags:
 
 'atom-workspace atom-text-editor:not([mini])':
   'ctrl-shift-k': 'editor:duplicate-lines'
+  'ctrl-j': 'nothing'
+  'ctrl-shift-j': 'editor:join-lines'
 
 'atom-text-editor:not([mini])':
   'ctrl-shift-d': 'editor:delete-line' # 라인 삭제

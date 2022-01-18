@@ -330,15 +330,35 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 
 ### [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
 
-현재 세션에서만 유효한 신규 별칭 추가.
+신규 별칭 추가.
 
 ```bash
+# 탐색기 실행의 별칭으로 ex 추가
+New-Alias ex explorer
+
+# 서브라임 실행의 별칭으로 sb 추가
+New-Alias sb subl
+
+# findstr의 별칭으로 grep 추가
 New-Alias grep findstr
+# 위와 같음
+New-Alias -Name grep -Value findstr
 ```
 
-앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
-난 어떻게 만든건지 `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 여기에 있음. 😒
+난 어떻게 만든건지 `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 여기에 있었음. 🥲
+
+만약 파라미터(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
+
+```bash
+Function GetChildItemForce {
+  Get-ChildItem -Force
+}
+New-Alias -Name ll -Value GetChildItemForce
+```
+
+함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2).
 
 ### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
 

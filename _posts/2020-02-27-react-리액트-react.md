@@ -1,0 +1,287 @@
+---
+layout: post
+date: 2020-02-27 17:14:00 +0900
+title: '[React] 리액트 React'
+categories:
+  - react
+tags:
+  - react
+  - javascript
+  - basics
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+#### 참고한 문서
+
+- [\[React\] Getting Started](https://reactjs.org/docs/getting-started.html)
+- [\[React\] 시작하기](https://ko.reactjs.org/docs/getting-started.html)
+- [\[React\] 튜토리얼](https://ko.reactjs.org/tutorial/tutorial.html)
+- [https://github.com/facebook/react](https://github.com/facebook/react)
+- [비공식 튜토리얼#1](https://velopert.com/3613)
+
+#### 버전 정보
+
+- React 17 기준으로 작성됨
+
+## 개요
+
+리액트의 기초, 규칙, 문법 등을 정리한 글.
+
+## React 엘리먼트
+
+`React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 한다. 리액트는 이 객체를 읽어서 DOM을 구성한다.
+
+객체는 대충 이렇게 생김:
+
+```js
+{
+  "$$typeof": Symbol(react.element),
+  _owner: null,
+  _self: null,
+  _source: null,
+  _store: {…},
+  validated: false,
+  key: null,
+  props: Object {  },
+  ​ref: null,
+  type: function LikeButton(props)​ { ... }
+}
+```
+
+## 주요 API
+
+### [React.createElement](https://ko.reactjs.org/docs/react-api.html#createelement)
+
+```
+React.createElement(
+  type[, props][, children][, children2][, ...]
+)
+```
+
+- `type`: 태그 이름 문자열 혹은 리액트 컴포넌트, 리액트 Fragment 중 하나
+- `props`: 엘리먼트의 속성을 결정하는 object
+- `children`: 원시 타입 값(보통은 문자열 혹은 숫자) 혹은 리액트 엘리먼트. 원시 타입를 할당하면 텍스트 노드가 된다.
+
+주어진 인자에 따라 새로운 React 엘리먼트를 생성하는 메서드. JSX를 사용한다면 직접 호출할 일은 거의 없다고 한다.
+
+사용하는 방법은 여러가지다.
+
+```js
+const element = React.createElement('h2', null, '대통령 선거', ' : ', '대통령 앉은거');
+// <h2>대통령 선거 : 대통령 앉은거</h2>
+
+const element2 = React.createElement('h2', {
+  className: 'title',
+  children: [
+    '대통령 선거', ' : ', '대통령 앉은거'
+  ]
+});
+// <h2 class="title"><span>대통령 선거</span><span> : </span><span>대통령 앉은거</span></h2>
+
+const element3 = React.createElement('h2', {
+  className: 'title',
+  children: [
+    React.createElement('span', { key: 1 }, '대통령 선거'),
+    React.createElement('span', { key: 2 }, ' : '),
+    React.createElement('span', null, '대통령 앉은거')
+  ]
+});
+// <h2 class="title"><span>대통령 선거</span><span> : </span><span>대통령 앉은거</span></h2>
+```
+
+`element3`는 `props.children`으로 하위 노드를 할당하는 식인데, `props` 자리에 세 번째 span 태그처럼 `{ key: somevalue }` 대신 null을 넘기면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다.
+
+### [ReactDOM.render()](https://ko.reactjs.org/docs/react-dom.html#render)
+
+```
+ReactDOM.render(element, container[, callback])
+```
+
+React 엘리먼트를 `container` 아래에 렌더링 하고 컴포넌트를 반환한다. 이미 렌더링 되었으면 업데이트한다. `callback`으로 전달된 함수는 렌더링 혹은 업데이트 후 실행된다.
+
+```js
+const rootElement = document.querySelector('#root');
+const element = React.createElement('h2', null, '뿅뿅');
+const ele = ReactDOM.render(element, rootElement);
+console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
+```
+
+### [ReactDOM.hydrate()](https://ko.reactjs.org/docs/react-dom.html#hydrate)
+
+```
+ReactDOM.hydrate(element, container[, callback])
+```
+
+> render()와 동일하지만 HTML 콘텐츠가 ReactDOMServer로 렌더링 된 컨테이너에 이벤트를 보충하기 위해 사용됩니다. React는 기존 마크업에 이벤트 리스너를 연결합니다.
+
+TODO 뭔 소린지 모르겠음. SSR 페이지는 이거 쓰라고 검색 결과에 나오긴 하는데...
+
+## JSX
+
+JavaScript XML 혹은 JavaScript eXtended로 추정. 페이스북이 react.js와 함께 만든것으로 보임. **컴파일이 필요한 언어**이며 스크립트 내에서 (가독성을 위해)HTML 태그를 사용하려는 목적으로 사용된다.
+
+```js
+const element = (
+  <div>
+    <h1>Hello!</h1>
+    <h2>Good to see you here.</h2>
+  </div>
+);
+
+const image = <img src={user.avatarUrl} />;
+```
+
+여기서 괄호`()`는 세미콜론 자동 삽입을 예방하기 위한 것이며 필수는 아님.
+
+### 태그 속성 정의
+
+```js
+const element = <div tabIndex="0"></div>;
+```
+
+### 자바스크립트 표현식 삽입
+
+```js
+const element = <img src={user.avatarUrl}></img>;
+```
+
+JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때문에 **XSS 같은 명령어 주입 공격에서 안전**하다고 한다.
+
+### 프로퍼티 명명 규칙
+
+React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (e.g. `class` => `className`, `tabindex` => `tabIndex`)
+
+### 이걸 브라우저가 읽을 수 있나?
+
+당연히 그대로는 못 읽는다. JSX는 Babel에 의해 js로 컴파일된다. Babel 설치는 아래의 [설치](#heading-설치) 항목을 보자
+
+예를 들어 아래 코드는:
+
+```js
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+이렇게 컴파일된다:
+
+```js
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+하나 더 예를 들면:
+
+```js
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <ShoppingList />,
+  document.getElementById('root')
+);
+```
+
+아래와 같다:
+
+```js
+class ShoppingList extends React.Component {
+  render() {
+    return React.createElement("div", { className: "shopping-list" },
+        React.createElement("h1", null, "Shopping List for ", this.props.name),
+        React.createElement("ul", null,
+            React.createElement("li", null, "Instagram"),
+            React.createElement("li", null, "WhatsApp"),
+            React.createElement("li", null, "Oculus")
+        )
+    );
+  }
+}
+ReactDOM.render(
+  React.createElement(ShoppingList, null),
+  document.getElementById('root')
+);
+```
+
+컴파일 결과를 미리보고 싶으면 [여기를 눌러](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.6&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUAcjogQUcwEpeAJTjDgUACIB5ALLK6aRklTRBQ0KCohMQk6Bx4gA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.16.9&externalPlugins=&assumptions=%7B%7D)볼 것.
+
+## 설치
+
+HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 갈린다.
+
+### HTML
+
+리액트는 라이브러리라서 js 파일을 불러오기만 하면 된다. 보통은 이렇게:
+
+```js
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+```
+
+두 개를 끌어다 씀. CDN 링크는 [여기를 클릭](https://reactjs.org/docs/cdn-links.html).
+
+JSX 문법을 사용하려면 아래처럼:
+
+```html
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+  const element = (
+    <h1 className="greeting">
+      Hello, world!
+    </h1>
+  );
+  ReactDOM.render(element, document.querySelector('#root'));
+</script>
+```
+
+[@babel/standalone](https://babeljs.io/docs/en/babel-standalone#installation)을 불러오고 내 스크립트에 `type="text/bable"` 속성을 추가하면 된다.
+
+### Node.js
+
+```bash
+npx create-react-app APP_NAME
+```
+
+[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다. 이후 `APP_NAME` 디렉토리에서:
+
+```bash
+npm start
+```
+
+하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 참고할 것.
+
+바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요.
+
+## 이벤트 핸들러 할당
+
+그냥 요따구로 하면 됨:
+
+```js
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square" onClick={function() { console.log('click'); }}></button>
+    );
+    // return React.createElement("button", { className: "square", onClick: function () { console.log('click'); } });
+  }
+}
+```

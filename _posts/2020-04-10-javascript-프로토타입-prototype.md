@@ -176,24 +176,19 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 ## Object.prototype과 Object()의 차이
 
-`Object.prototype`은 `Object()` 함수로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 프로퍼티는 상속된다. 따라서 `Object.prototype.__proto__`는 함수\*나 객체를 통해 접근할 수 있다:
-
-\* 함수도 객체임
+`Object.prototype`은 `Object()` 함수로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 프로퍼티는 상속된다. 따라서 `Object.prototype`의 프로퍼티인 `Object.prototype.constructor`는 Function 객체나 인스턴스를 통해 접근할 수 있다:
 
 ```js
-({}).hasOwnProperty('__proto__'); // false
-({}).__proto__; // Object { … }
-Function.__proto__; // function ()
+({}).hasOwnProperty('constructor'); // false 출력, constructor는 인스턴스가 소유한 프로퍼티가 아님
+({}).constructor; // function Object() 출력, 상속 받은 프로퍼티라서 접근 가능
+Function.constructor; // function Function()
 ```
 
-반면 `Object()`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 함수는 프로토타입이 아니므로 함수의 프로퍼티는 상속되지 않는다. 따라서 `Object.getOwnPropertyDescriptors()`는 함수나 객체를 통해 접근할 수 없다:
+반면 `Object()`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 생성자 함수는 프로토타입이 아니므로 이 함수의 프로퍼티는 상속되지 않는다. 따라서 `Object()`의 메서드인 `Object.assign()`는 Function 객체나 인스턴스를 통해 접근할 수 없다:
 
 ```js
-Function.hasOwnProperty('getOwnPropertyDescriptors'); // false
-Function.getOwnPropertyDescriptors; // undefined
-
-({}).hasOwnProperty('getOwnPropertyDescriptors'); // false
-({}).getOwnPropertyDescriptors; // undefined
+Function.assign; // undefined
+({}).assign; // undefined
 ```
 
 ## 프로퍼티의 가려짐 property shadowing

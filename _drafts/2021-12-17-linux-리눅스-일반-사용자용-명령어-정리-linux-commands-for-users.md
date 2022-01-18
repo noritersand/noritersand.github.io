@@ -63,7 +63,7 @@ tags:
 
 ## ssh
 
-터미널 붙기
+secure shell 터미널 연결
 
 ```
 ssh user@]host[:port]
@@ -121,8 +121,14 @@ grep -l -v 'error' * # 모든 파일 중 'error' 패턴이 검색되지 않는 �
 ### 출력 필터링
 
 ```bash
-cat ./httpd.conf | grep root # httpd.conf 파일 중 root가 포함된 줄만 출력
-tail -f access_log | grep error # access_log 파일의 변화를 추적하되 'error'가 포함된 줄만 출력
+# httpd.conf 파일 중 root가 포함된 줄만 출력
+cat ./httpd.conf | grep root
+
+# access_log 파일의 변화를 추적하되 'error'가 포함된 줄만 출력
+tail -f access_log | grep error
+
+# 'd'로 시작하는 줄만 출력
+ls -l | grep '^d'
 ```
 
 파이프`|` 이후의 grep은 파이프 이전의 명령으로 발생하는 출력을 필터링한다는 의미다. 아래처럼 옵션도 사용 가능하다:
@@ -687,17 +693,11 @@ date
 
 # 2021-12-30 17:40:49
 date +'%Y-%m-%d %k:%M:%S'
-```
 
-## 콘솔에 출력
-
-```bash
+# 콘솔에 출력
 echo `date +%Y-%m-%d` `date +%H:%M:%S`
-```
 
-## 현재 시간을 파일명으로
-
-```bash
+# 현재 시간을 파일명으로
 touch `date +%Y-%m-%dT%H:%M:%S`
 ```
 
@@ -738,6 +738,23 @@ make install
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
+
+## 바라보는 DNS 서버 바꾸기
+
+- [https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten](https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten)
+- [https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp](https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp)
+
+대충 검색해보면 몇 가지 방법이 있는데 환경에 따라 적용 여부가 달라지는 것 같다. `/etc/resolvconf/resolv.conf.d/head` 혹은 `/etc/resolvconf/resolv.conf.d/base`를 수정해서 `/etc/resolvconf/resolv.conf`가 바뀌도록 하라는 말도 있고, `/etc/dhcp/dhclient.conf`를 수정하라는 말도 있다.
+
+`/etc/dhcp/dhclient.conf`를 수정한다고 하면:
+
+```bash
+prepend domain-name-servers 1.2.3.4;
+append domain-name-servers 1.2.3.4;
+supersede domain-name-servers 1.2.3.4;
+```
+
+우선순위에 따라 요 셋 중에 골라서 하면 되는걸로 보임.
 
 ## 기타
 
