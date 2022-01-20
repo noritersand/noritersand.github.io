@@ -30,7 +30,7 @@ tags:
 concat([value1[, value2[, ...[, valueN]]]])
 ```
 
-인자를 생략하면 기존 배열의 얕은 복사본<sup>shallow copy</sup>을 반환한다.
+인자를 생략하면 기존 배열의 얕은 복제본<sup>shallow clone</sup>을 반환한다.
 
 ```js
 const alphabet = ['a', 'b', 'c'];
@@ -150,14 +150,14 @@ slice([begin[, end]])
 
 음수를 지정하면 배열의 끝에서부터의 길이를 의미한다. `end`를 생략하면 `begin`부터 끝까지 잘라낸다.
 
-`begin`과 `end` 둘 다 생략하면 기존 배열의 얕은 복사본을 반환한다.
+`begin`과 `end` 둘 다 생략하면 기존 배열의 얕은 복제본을 반환한다.
 
 ```js
 let arr = ['가', '나', '다', '라', '마'];
 
-// 배열 복사
+// 배열 복제
 let newArr = arr.slice(); // Array(5) [ "가", "나", "다", "라", "마" ]
-console.log(newArr === arr); // false
+console.log(newArr === arr); // false, 내용물은 같지만 서로 다른 인스턴스
 
 // 세 번째 자리부터 끝까지
 arr.slice(2); // Array(3) [ "다", "라", "마" ]

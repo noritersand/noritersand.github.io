@@ -96,9 +96,9 @@ noob.name; // "fresh newbie";
 
 `name`은 일종의 immutable property가 된다.
 
-## 객체 복사에 포함되지 않음
+## 객체 복제에 포함되지 않음
 
-getter/setter는 enumerable한 프로퍼티가 아니므로, `Object.assign()`이나 전개 구문으로 복사할 수 없다:
+getter/setter는 enumerable한 프로퍼티가 아니므로, `Object.assign()`이나 전개 구문으로 복제할 때 제외된다:
 
 ```js
 var noob = new Newbie();

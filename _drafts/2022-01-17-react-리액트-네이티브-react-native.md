@@ -27,13 +27,11 @@ tags:
 
 ## 설치
 
-### Expo CLI
+Expo CLI가 있고 React Native CLI가 있는데, Expo CLI는 편하긴 한디 단점이 너무 많아서 따로 언급하지 않음.
 
-뭐 연습할 때나 쓰는 용도라서 따로 언급하지 않음.
+이 글에선 번거롭지만 빌드 환경을 직접 구성하는 React Native CLI로 한다.
 
-### React Native CLI
-
-#### NVM, Node.js, NPM
+### NVM, Node.js, NPM
 
 NVM은 여러 버전의 Node.js를 설치하고 선택할 수 있게 하는 툴이다.
 

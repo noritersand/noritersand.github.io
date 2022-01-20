@@ -23,9 +23,9 @@ tags:
 ```html
 <script>
 $(document).ready(function() {
-  var domEleArray = [$('#attachFile').clone()]; // 원본 복사
+  var domEleArray = [$('#attachFile').clone()]; // 원본 복제
   $('#btn_delAttach').click(function() {
-    domEleArray[1] = domEleArray[0].clone(true); // 쌔거(0번) -> 복사(1번)
+    domEleArray[1] = domEleArray[0].clone(true); // 쌔거(0번) -> 복제본(1번)
     $('#attachFile').replaceWith(domEleArray[1]);
   });
 });
@@ -39,9 +39,9 @@ $(document).ready(function() {
 </body>
 ```
 
-1. 문서가 처음 로딩 될 때 `<input>`을 `clone()`으로 복사해 배열에 담는다.
-1. 삭제버튼 클릭 시 value가 없는 상태인`<input>`의 복사본과 화면에 보이는 `<input>`을 바꿔치기 한다.
-1. 삭제는 한 번 이상일 수 있다. 따라서 `replaceWith()` 사용 전에 최초에 생성된 클론의 복사본을 하나 더 만들어둬야 한다.
+1. 문서가 처음 로딩 될 때 `<input>`을 `clone()`으로 복제해 배열에 담는다.
+1. 삭제버튼 클릭 시 value가 없는 상태인`<input>`의 복제본과 화면에 보이는 `<input>`을 바꿔치기 한다.
+1. 삭제는 한 번 이상일 수 있다. 따라서 `replaceWith()` 사용 전에 최초에 생성된 복제본의 또 다른 복제본을 하나 더 만들어둬야 한다.
 
 
 위 방법이 번거롭다면 다음처럼도 가능하다:

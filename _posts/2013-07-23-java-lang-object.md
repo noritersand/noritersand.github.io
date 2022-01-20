@@ -25,7 +25,7 @@ Object 클래스는 소유한 변수(=멤버변수)가 없고 11개의 메서드
 
 ### clone()
 
-객체 자신의 복사본을 반환한다. 이 메서드는 변수의 값을 단순 복사하기 때문에 참조값을 소유한 객체를 복사할 때는 주의해서 사용해야 한다. 또한 이 메서드를 사용할 경우 반드시 Cloneable 인터페이스를 implements 해야한다. 그렇지 않으면 CloneNotSupportedException이 발생한다.
+객체 자신의 복제본을 반환한다. 이 메서드는 프로퍼티의 값을 단순 복사하기 때문에 참조값을 다룰 때는 주의해야 한다. 또한 이 메서드를 사용할 경우 반드시 Cloneable 인터페이스를 implements 해야한다. 그렇지 않으면 `CloneNotSupportedException`이 발생한다.
 
 ```java
 public class LogicTest {

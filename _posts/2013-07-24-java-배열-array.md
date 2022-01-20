@@ -168,9 +168,9 @@ public class ArrayEx1 {
 }
 ```
 
-## 배열의 복사
+## 배열의 복제
 
-### for문을 이용한 복사
+### for문을 이용한 복제
 
 ```java
 int[] number = { 1, 2, 3, 4, 5 };
@@ -181,17 +181,17 @@ for (int loop = 0; loop < number.length; loop++) {
 }
 ```
 
-### System.arraycopy()를 이용한 복사
+### System.arraycopy()를 이용한 복제
 
 ```java
 int[] number = { 1, 2, 3, 4, 5 };
 int[] newNumber = new int[number.length];
 
 System.arraycopy(number, 0, newNumber, 0, number.length);
-//number[0]에서 newNumber[0]으로 number.length개의 데이터를 복사
+// number[0]에서 newNumber[0]으로 number.length개의 데이터를 대상으로 복제
 ```
 
-### Arrays.copyOf()를 이용한 복사
+### Arrays.copyOf()를 이용한 복제
 
 ```java
 int[] number = { 1, 2, 3, 4, 5 };

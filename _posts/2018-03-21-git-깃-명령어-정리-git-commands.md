@@ -109,7 +109,7 @@ git blame -L 시작라인,종료라인 파일
 git blame -L 12,22 simplegit.rb
 ```
 
-#### 파일의 줄 단위의 복사, 붙여넣기, 이동 정보 보기
+#### 파일의 줄 단위 복사, 붙여넣기, 이동 정보 보기
 
 ```bash
 git blame -M 파일

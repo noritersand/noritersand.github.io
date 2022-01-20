@@ -27,9 +27,9 @@ tags:
 
 JavaScript의 객체 복제에 대한 정리글.
 
-복제(cloning)가 더 맞는 표현같지만 이 글에선 구글 검색 결과가 더 많은 복사(copy)로 명시함.
+객체 복제(object cloning)보단 객체 복사(object copying)란 말이 더 흔히 쓰이지만 더 맞는 표현인 복제로 명시함.
 
-## 얕은 복사<sup>shallow copy</sup>
+## 얕은 복제<sup>shallow cloning</sup>
 
 ### Object.assign()
 
@@ -46,10 +46,10 @@ clone2; // Object { a: 1, b: 3 }
 
 ### JSON 문자열로 바꾼뒤 다시 객체로 변환
 
-`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복사 방법. IE7 이하에서 사용할 수 없고, JSON으로 표현이 불가능한 함수는 복사할 수 없다. (JSON에는 function 타입이 없기 때문)
+`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. IE7 이하에서 사용할 수 없고, JSON으로 표현이 불가능한 함수는 복제할 수 없다. (JSON에는 function 타입이 없기 때문)
 
 ```js
-// 복사 대상
+// 복제할 대상
 var copyme = {
   child: {
     grandson: {
@@ -62,11 +62,11 @@ var copyme = {
   txt: 'yo'
 };
 
-// 복사
+// 복제본
 var newone = JSON.parse(JSON.stringify(copyme));
 
 console.log(newone.child.grandson.txt); // peek-a-boo!
-console.log(typeof newone.child.grandson.fn == 'undefined'); // true, 함수는 복사 불가
+console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불가
 ```
 
 ### 전개 구문
@@ -82,6 +82,6 @@ var clone2 = { ...obj, x: '사십이', c: 1 };
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
-## 깊은 복사<sup>deep copy</sup>
+## 깊은 복제<sup>deep cloning</sup>
 
 ### 꼐속...
