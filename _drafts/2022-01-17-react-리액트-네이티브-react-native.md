@@ -55,3 +55,30 @@ node --version
 ```
 
 NPM은 Node.js와 함께 설치된다.
+
+### 안드로이드 스튜디오
+
+- [Android Studio](https://developer.android.com/studio)
+- [Android Studio: User guide](https://developer.android.com/studio/intro)
+
+일단 설치
+
+#### SDK
+
+안드로이드 스튜디오에서 Android SDK 설정으로 이동한다.
+
+환경 설정 경로: <kbd>ctrl + alt + s</kbd> Settings > Appearance & Behavior > System Settings > Android SDK
+
+원하는 버전 아무거나 골라서 설치, 이 때 'Show Package Details' 눌러서:
+
+- Intel x86 Atom_64 System Image
+- Google APIs Intel x86 Atom_64 System Image
+- Google Play Intel x86 Atom_64 System Image
+
+선택 후 진행하면 됨.
+
+#### ADV<sup>Android Virtual Device</sup>
+
+ADV는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다.
+
+역시 적당한 걸로 아무거나 고른다.

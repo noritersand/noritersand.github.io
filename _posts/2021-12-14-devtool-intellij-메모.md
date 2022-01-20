@@ -26,16 +26,20 @@ tags:
 
 자바 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
 
+## 초기 설정
+
+TODO
+
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
 - Find Acton...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
-- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
-- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
-- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성
-- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성
-- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
-- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제
+- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움.
+- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움.
+- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제.
+- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성.  다른 키는 지움.
+- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성.  다른 키는 지움.
+- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제.
 
 ## Ultimate와 Community 버전 간 차이
 
@@ -82,7 +86,7 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 ## 새 패키지 만들기
 
-New > Directory가 아니고 Project Settings(<kbd>ctrl + alt + shift + s</kbd>)
+New > Directory가 아니고 Project Settings<kbd>ctrl + alt + shift + s</kbd>
 
 ## File and Code Templates
 

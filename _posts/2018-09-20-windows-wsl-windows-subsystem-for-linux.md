@@ -36,11 +36,13 @@ wsl --install
 wsl -l -v
 ```
 
+버전 확인해서 2가 아니면 뭔가 잘못된 거니까 가이드 보고 다시 설치하자.
+
 그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워쉘이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
 
 ## 이전 설치 방법
 
-설치 방법은 우선 'Linux용 Windows 하위 시스템' 옵션 기능을 사용하도록 설정하고:
+~~설치 방법은 우선 'Linux용 Windows 하위 시스템' 옵션 기능을 사용하도록 설정하고:~~
 
 ```bash
 # PowerShell 관리자 권한으로 실행, 재시작 필요
@@ -50,9 +52,7 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
 
-그 다음, WSL 2를 쓸 생각이 없다면 바로 서브 시스템을 설치하면 된다. [요것](https://aka.ms/wslstore) 혹은 [요놈](ms-windows-store://collection/?CollectionId=LinuxDistros)을 눌러 나오는 앱 중 하나를 골라 설치하거나:
-
-![](/images/wsl-store-resize.png)
+~~그 다음, WSL 2를 쓸 생각이 없다면 바로 서브 시스템을 설치하면 된다. [요것](https://aka.ms/wslstore) 혹은 [요놈](ms-windows-store://collection/?CollectionId=LinuxDistros)을 눌러 나오는 앱 중 하나를 골라 설치하거나,~~
 
 ~~아니면 파워쉘에서 직접:~~
 
@@ -61,7 +61,7 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ```
 
 ~~명령어로 다운로드/설치 하면 됨~~  
-오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 쉘 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒
+~~오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 쉘 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
 
 ## 설치 확인
 

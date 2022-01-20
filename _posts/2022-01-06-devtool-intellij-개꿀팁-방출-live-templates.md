@@ -48,7 +48,7 @@ tags:
 
 필요한 템플릿을 마음대로 추가/수정하는 방법을 알아보자.
 
-환경 설정 경로: Settings(<kbd>ctrl + alt + s</kbd>) > Editor > Live Templates
+환경 설정 경로: Settings<kbd>ctrl + alt + s</kbd> > Editor > Live Templates
 
 ![](/images/intellij-settings-live-templates.png)
 
@@ -88,7 +88,7 @@ for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
 ### 사전 정의 변수
 
 - `$END$`: 코드 자동 완성 후 캐럿이 위치할 자리를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With(<kbd>ctrl + alt + t</kbd>)로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
 
 ## 설정 예시
 
