@@ -19,11 +19,11 @@ tags:
 - [\[React Native\] Introduction](https://reactnative.dev/docs/getting-started)
 - [\[React Native\] APIs](https://reactnative.dev/docs/accessibilityinfo)
 
-## 제목
+## 개요
 
-내용
+리액트 네이티브 환경을 구성하는 방법 요약 정리.
 
-끗.
+글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
 
 ## 설치
 
@@ -38,8 +38,14 @@ Expo CLI가 있고 React Native CLI가 있는데, Expo CLI는 편하긴 한디 �
 NVM은 여러 버전의 Node.js를 설치하고 선택할 수 있게 하는 툴이다.
 
 ```bash
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+# PowerShell에서
+choco install nvm
 
+# WSL에서
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+```
+
+```bash
 # 최신버전으로 node 설치
 nvm install node
 
@@ -57,6 +63,28 @@ node --version
 ```
 
 NPM은 Node.js와 함께 설치된다.
+
+### React Native CLI
+
+```bash
+npm install -g react-native-cli
+npm install -g yarn # yarn 패키지가 있으면 init 할 때 빠름.
+
+# ... 생략
+
+#  Run instructions for Android:
+#    • Have an Android emulator running (quickest way to get started), or a device connected.
+#    • cd "/home/fixalot/repo/testbed-reactnative/tutorial" && npx react-native run-android
+#
+#  Run instructions for Windows:
+#    • See https://aka.ms/ReactNativeGuideWindows for the latest up-to-date instructions.
+```
+
+```bash
+react-native init NEW_REACT_DIR
+```
+
+## 안드로이드 에뮬레이터 구동
 
 ### 안드로이드 스튜디오
 
@@ -79,11 +107,13 @@ NPM은 Node.js와 함께 설치된다.
 
 TODO Package 설명 추가
 
-#### ADV<sup>Android Virtual Device</sup>
+#### ADV<sup>Android Virtual Device</sup> Manager 설정
 
 ADV는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다.
 
-역시 적당한 걸로 아무거나 고른다.
+버튼의 위치는 안드로이드 스튜디오의 버전에 따라 다를 수 있다. 2020.3.1 버전은 우측 상단에 있음.
+
+역시 적당한 걸로 아무거나 골라서 추가한다.
 
 #### 환경 변수, 별칭 추가
 
@@ -108,10 +138,6 @@ alias adb='adb.exe'
 
 추가한 다음 `adb` 명령어 잘 실행되는지 확인.
 
-#### Java
+#### 안드로이드 스튜디오: AVD Manager
 
-WSL에 자바 설치
-
-```bash
-apt install openjdk-17-jdk
-```
+ADB Manager에서 디바이스를 골라 `Launch this AVD in the emulator` 클릭.

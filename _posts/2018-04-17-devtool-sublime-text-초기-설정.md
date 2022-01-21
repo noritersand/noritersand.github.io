@@ -12,7 +12,15 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## 팁
+#### 버전 정보
+
+- Sublime Text 4 (Build 4xxx)
+
+## 개요
+
+서브라임 텍스트 시리즈의 기본 설정, 단축키 등 메모.
+
+## 기본 설정
 
 ### 터미널에서 서브라임 실행하기
 
@@ -48,11 +56,33 @@ sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열�
 sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ```
 
-## 기본 설정
+### 추가 패키지 설치
 
-### package control 설치
+패키지는 서브라임 커뮤니티에서 만드는 사용자 플러그인 같은 거라고 생각하면 된다.
 
-커멘드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터
+일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
+
+설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: InstaLL Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
+
+#### 추천 패키지
+
+- [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
+- [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
+- [File​Diffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
+- [Sublimerge](http://www.sublimerge.com/): diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
+- [WinMerge](https://packagecontrol.io/packages/WinMerge): 서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
+- [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
+- [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side): FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 <kbd>alt + n</kbd>(다음), <kbd>alt + p</kbd>(이전)
+- [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
+- [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
+- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
+- [Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs): URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함.
+- [Case Conversion](https://packagecontrol.io/packages/Case%20Conversion): 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.  
+  두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences` > `Package Settings` > `Case Conversion` > `Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
+  ```
+  { "detect_acronyms": false }
+  ```
 
 ## 작성자 저장용 사용자 설정
 
@@ -97,26 +127,6 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
   {"keys": ["f1"], "command": "show_command_palette"}
 ]
 ```
-
-## 추천 패키지(플러그인)
-
-- [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
-- [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
-- [File​Diffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
-- [Sublimerge](http://www.sublimerge.com/): diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
-- [WinMerge](https://packagecontrol.io/packages/WinMerge): 서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
-- [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
-- [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side): FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 <kbd>alt + n</kbd>(다음), <kbd>alt + p</kbd>(이전)
-- [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
-- [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
-- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
-- [Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs): URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함.
-- [Case Conversion](https://packagecontrol.io/packages/Case%20Conversion): 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.  
-  두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences` > `Package Settings` > `Case Conversion` > `Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
-  ```
-  { "detect_acronyms": false }
-  ```
 
 ## 기본 단축키 메모
 

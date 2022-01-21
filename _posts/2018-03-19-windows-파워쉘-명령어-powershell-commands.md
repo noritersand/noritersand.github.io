@@ -32,8 +32,11 @@ tags:
 ### 환경 변수 조회
 
 ```bash
-Get-ChildItem Env:  # 모든 환경 변수 보기, ls env:와 같음
-Write-Output $env:path  # 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
+# 모든 환경 변수 보기, ls env:와 같음
+Get-ChildItem Env:
+
+# 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
+Write-Output $env:path
 ```
 
 ### 로컬 환경 변수 추가/삭제

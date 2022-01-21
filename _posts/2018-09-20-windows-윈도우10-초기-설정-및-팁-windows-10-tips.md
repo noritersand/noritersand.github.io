@@ -89,15 +89,21 @@ choco install notepadplusplus
 # 파폭과 크롬 설치
 choco install firefox-dev googlechrome googlechrome.dev
 
+# 이미 설치된 openjdk 패키지가 있어도 무시하고 강제 설치하되 프롬프트는 무조건 yes 입력
 choco install openjdk --force -y
 ```
 
 이런식으로 앱 설치 가능.
 
-#### options
+[기타 명령어](https://docs.chocolatey.org/en-us/choco/commands/):
 
-- `-f` `--force`: 이미 설치된 패키지도 무시하고 강제 설치
-- `-y` `--yes` `--confirm`: 허용/승인 같은걸 묻는 프롬프트를 무조건 yes 처리하는 옵션
+```bash
+# Chocolatey로 설치한 패키지 목록 출력
+choco list -l
+
+# Chocolatey로 설치한 것과 그렇지 않은것 모두 출력
+choco list -li
+```
 
 ### [Update-SessionEnvironment](https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment)
 
