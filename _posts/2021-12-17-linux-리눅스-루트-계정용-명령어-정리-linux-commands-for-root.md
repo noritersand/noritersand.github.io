@@ -45,7 +45,7 @@ sudo rm remove-me -r
 아예 루트로 사용자를 전환하려면:
 
 ```bash
-# 루트 사용자로 환경변수 등의 설정까지 모두 전환
+# 루트 사용자로 환경 변수 등의 설정까지 모두 전환
 sudo su -
 
 # 이것로 루트 로그인인데 뭔 차이야...
@@ -68,6 +68,23 @@ su -
 ### 사용자, 그룹
 
 보통 사용자는 `/etc/passwd`, 그룹은 `/etc/group` 파일에 텍스트로 나열돼 있음.
+
+## 바라보는 DNS 서버 바꾸기
+
+- [https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten](https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten)
+- [https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp](https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp)
+
+대충 검색해보면 몇 가지 방법이 있는데 환경에 따라 적용 여부가 달라지는 것 같다. `/etc/resolvconf/resolv.conf.d/head` 혹은 `/etc/resolvconf/resolv.conf.d/base`를 수정해서 `/etc/resolvconf/resolv.conf`가 바뀌도록 하라는 말도 있고, `/etc/dhcp/dhclient.conf`를 수정하라는 말도 있다.
+
+`/etc/dhcp/dhclient.conf`를 수정한다고 하면:
+
+```bash
+prepend domain-name-servers 1.2.3.4;
+append domain-name-servers 1.2.3.4;
+supersede domain-name-servers 1.2.3.4;
+```
+
+우선순위에 따라 요 셋 중에 골라서 하면 되는걸로 보임.
 
 ## chmod
 

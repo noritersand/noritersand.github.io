@@ -99,6 +99,27 @@ drvfs           476G  100G  377G  21% /mnt/c
 drvfs           930G   69G  862G   8% /mnt/d
 ```
 
+## WSL에서 윈도우의 환경변수 사용하지 않기
+
+[https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
+
+WSL에서 윈도우의 환경변수를 사용하지 않는 방법이다.
+
+루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
+
+```bash
+[interop]
+  appendWindowsPath=false
+```
+
+그리고 WSL 재시작:
+
+```bash
+wsl --shutdown
+```
+
+그래도 잘 안되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
+
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
 [노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
@@ -109,7 +130,7 @@ Zsh는 리눅스 기본 쉘인 Bash의 확장 버전이고, Powerlevel10k은 테
 
 ```bash
 # zsh 설치
-sudo apt install zsh
+apt install zsh
 
 # oh-my-zsh 설치
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"

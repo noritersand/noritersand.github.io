@@ -80,17 +80,24 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 설치 후 쉘에서:
 
 ```bash
-choco install winscp
 # winscp 설치
+choco install winscp
 
-choco install notepadplusplus
 # notepad++ 설치
+choco install notepadplusplus
 
-choco install firefox-dev googlechrome googlechrome.dev
 # 파폭과 크롬 설치
+choco install firefox-dev googlechrome googlechrome.dev
+
+choco install openjdk --force -y
 ```
 
 이런식으로 앱 설치 가능.
+
+#### options
+
+- `-f` `--force`: 이미 설치된 패키지도 무시하고 강제 설치
+- `-y` `--yes` `--confirm`: 허용/승인 같은걸 묻는 프롬프트를 무조건 yes 처리하는 옵션
 
 ### [Update-SessionEnvironment](https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment)
 

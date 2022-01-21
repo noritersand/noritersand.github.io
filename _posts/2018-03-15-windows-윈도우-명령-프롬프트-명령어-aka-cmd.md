@@ -30,15 +30,15 @@ tags:
 
 둘 이상의 명령어를 연결
 
-## 환경변수
+## 환경 변수
 
 ### [set](https://docs.microsoft.com/ko-kr/windows-server/administration/windows-commands/set_1)
 
 환경 변수를 조회하거나 설정하는 명령어
 
 ```bash
-set # 환경변수 목록 조회
-set a=1 # 환경변수 a 추가
+set # 환경 변수 목록 조회
+set a=1 # 환경 변수 a 추가
 ```
 
 ## 명령어

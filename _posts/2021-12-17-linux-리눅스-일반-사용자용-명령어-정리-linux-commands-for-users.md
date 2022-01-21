@@ -61,6 +61,14 @@ tags:
 명령어 < 파일  # 파일의 표준입력을 받는다
 ```
 
+## command
+
+명령어가 존재하는지 확인.
+
+```bash
+command -v COMMAND_NAME
+```
+
 ## ssh
 
 secure shell 터미널 연결
@@ -165,7 +173,7 @@ find ~ ! -name 'sample' # 지정된 경로에서 'sample'을 제외한 모든 �
 
 ## which
 
-현재 환경변수 상 지정한 명령어의 실행파일이 어느 경로에 있는지 출력한다.
+현재 환경 변수 상 지정한 명령어의 실행파일이 어느 경로에 있는지 출력한다.
 
 ```bash
 # vim 경로 출력
@@ -484,7 +492,7 @@ man ls  # ls 명령어 옵션 정보 보기
 대상 변수 내용 보기
 
 ```bash
-echo $PATH  # PATH 환경변수 설정상태 확인
+echo $PATH  # PATH 환경 변수 설정상태 확인
 ```
 
 ## file
@@ -509,11 +517,10 @@ $ iconv -c -t ASCII unicode.txt > ascii.txt # unicode.txt 파일을 ASCII 인코
 
 ## export
 
-변수 값 설정
+환경 변수 설정
 
 ```bash
-export lang = ko.KR.UTF-8  # 변수에 값 담고
-export lang  # 영구 저장 설정
+export LANG = "ko.KR.UTF-8"
 ```
 
 ## printenv
@@ -563,7 +570,7 @@ ip addr
 ip addr show eth0
 ```
 
-# nslookup
+## nslookup
 
 인터넷 네임 서버에 대화형으로 질의. DNS 서버에서 ip 받아오는 명령어임.
 
@@ -574,7 +581,7 @@ nslookup icanhazip.com
 nslookup daum.net one.one.one.one
 ```
 
-# dig
+## dig
 
 DNS 검색 유틸리티. `nslookup`이랑 비슷한데 뭐가 막 더 많이 나옴.
 
@@ -650,7 +657,7 @@ unzip archive.zip -d unarchive  # unarchive 디렉터리에 archive.zip 파일�
 
 ## tar
 
-tar 파일 압축/압축해제. tar는 기본적으로 용량 변화 없이 여러 파일과 디렉터리를 하나의 파일로 묶는 기능이다.
+Tarball 혹은 TAR archive라고 하는 여러 파일과 디렉터리를 하나로 묶는 기능. tar 파일을 압축(archiving)하거나 압축해제한다.
 
 ```bash
 # some-archive-1.0.0 디렉터리에 압축 해제
@@ -738,96 +745,3 @@ make install
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
-
-## 바라보는 DNS 서버 바꾸기
-
-- [https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten](https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten)
-- [https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp](https://unix.stackexchange.com/questions/146463/specifying-dns-settings-to-override-those-of-dhcp)
-
-대충 검색해보면 몇 가지 방법이 있는데 환경에 따라 적용 여부가 달라지는 것 같다. `/etc/resolvconf/resolv.conf.d/head` 혹은 `/etc/resolvconf/resolv.conf.d/base`를 수정해서 `/etc/resolvconf/resolv.conf`가 바뀌도록 하라는 말도 있고, `/etc/dhcp/dhclient.conf`를 수정하라는 말도 있다.
-
-`/etc/dhcp/dhclient.conf`를 수정한다고 하면:
-
-```bash
-prepend domain-name-servers 1.2.3.4;
-append domain-name-servers 1.2.3.4;
-supersede domain-name-servers 1.2.3.4;
-```
-
-우선순위에 따라 요 셋 중에 골라서 하면 되는걸로 보임.
-
-## 기타
-
-자주 쓰이는 환경변수 PATH 추가하기
-예를 들어 주로 찾게되는 경로에 `/usr/local/progdir` 를 넣고 싶으면 아래와 같이 하면 된답니다.
-
-```bash
-PATH=$PATH:/usr/local/progdir export PATH
-```
-
-위의 명령은 기존에 있는 PATH 변수의 뒤에다가 좀전의 `/usr/local/progdir` 이 경로를 달아주기만 하는거랍니다.
-
-그리고 export 명령으로 이 변수가 쉘환경에 계속 기본적으로 사용되게끔 해주는거라고 하네요..
-
-기타 명령어 & Tip
-터미널을 열고 ls를 입력하면 디렉터리와 파일이 나오죠. 근데 어느 것이 디렉터리고 어느것이 파일인지는
-
-`ls -l` 로 봐야하는데 손이 잘 안가고 한 화면에 많은 양을 표시할 수가 없죠.
-
-그래서 `ls -F` 명령어를 쓰시면 되는데요, 역시 마찬가지로 매번 `-F`를 붙이는 게 귀찮죠.
-
-따라서, 터미널을 열고 아래와 같이 입력합니다.
-
-```bash
-sudo pico /etc/bashrc
-```
-
-그런 다음 루트 패스워드를 넣고, 에디터가 뜨면 맨 아래줄에 다음과 같이 추가해줍니다.
-
-```bash
-alias ls = 'ls -F'
-```
-
-다음, `Ctrl + X` 한 다음 y를 입력하면 쉘로 빠져나오게 됩니다.
-
-다음 터미널을 종료시키면 이제부터는 ls만 쳐도 `ls -F`가 되어있는 상태가 됩니다.
-
-
-ls를 했는데 파일들이 엄청 많아서, 이 중에서 원하는 것만 추리고 싶을 때 사용할 수 있는 방법입니다.
-
-```bash
-ls | grep 원하는글자
-```
-
-grep 이라는 명령어는 텍스트를 추려내는 기능을 갖고 있습니다.
-
-따라서 grep의 파이프는 ls 말고도 cat이나 man 등의 명령어에도 이용할 수 있답니다. 예) man ls | grep file
-
-원하는 글자가 아닌, 빠르게 스크롤되는 화면을 천천히 보고싶을 때는 파이프 뒤에 more를 붙이시면 됩니다. 예) ls | more
-
-
-
-say  # 다음 입력되는 영어 문장/단어를 읽어줌...
-
-```bash
-say Eclipse Start
-```
-
-스크린샷 이미지 파일의 기본 저장경로 변경하기
-
-```bash
-defaults write com.apple.screencapture location /Users/seokkoh/Desktop
-```
-
-
-현 디렉터리의 파일들중 파일명에 -hd 가 포함된 파일들 전부 삭제하기
-
-```bash
-$ rm -f *-hd.*
-```
-
-현 디렉터리의 파일 개수 확인하기 :
-
-```bash
-$ ls | wc -l
-```

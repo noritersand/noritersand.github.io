@@ -6,11 +6,9 @@ categories:
   - windows
 tags:
   - windows
-  - terminal
-  - cmd
-  - shell
   - powershell
-  - windows
+  - terminal
+  - shell
 ---
 
 * Kramdown table of contents
@@ -21,43 +19,13 @@ tags:
 - [\[Microsoft\] PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
 - [\[Microsoft\] PowerShell 설명서](https://aka.ms/powershell)
 - [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
+- [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)
 
 ## 개요
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
 
-## 문법
-
-### [> , >> (리디렉션)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7)
-
-```bash
-명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
-명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
-```
-
-### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)
-
-리터럴 문자열을 표현할 때 큰 따옴표`""`와 작은 따옴표`''`는 대체로 동일한 의미로 쓰인다.  
-다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 홑따옴표를 사용할 때 무시된다:
-
-```bash
-PS> $i = 5
-PS> "The value of $i is $i."
-The value of 5 is 5.
-
-PS> 'The value of $i is $i.'
-The value of $i is $i.
-
-PS> "The value of $(2+3) is 5."
-The value of 5 is 5.
-
-PS> 'The value of $(2+3) is 5.'
-The value of $(2+3) is 5.
-```
-
-### | (파이프)
-
-둘 이상의 명령어를 연결. 리눅스와 비슷하다.
+파워쉘 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
 ## 환경 변수
 
@@ -347,7 +315,11 @@ New-Alias -Name grep -Value findstr
 
 이 명령을 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
-난 어떻게 만든건지 `Documents\PowerShell\Microsoft.PowerShell_profile.ps1` 여기에 있었음. 🥲
+일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
+
+```bash
+code $PROFILE
+```
 
 만약 파라미터(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
 
@@ -362,12 +334,31 @@ New-Alias -Name ll -Value GetChildItemForce
 
 ### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
 
-기본 별칭 `echo`
+특정 객체를 파이프라인에 쓴다. 다른 Cmdlet로 파이프하거나 변수에 할당할 수 있다. 만약 Write-Output이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다. 기본 별칭은 `echo`.
+
+어떤 명령어를 사용할 때 발생하는 암시적인 출력은 Write-Output을 통한 출력이다.
 
 ```bash
-Write-Output $PSHOME # 파워쉘 설치 경로 출력
-Write-Output $null >> dummy-for-commit.txt # 비어있는 파일 생성. 'touch'와 같음
+# 파워쉘 설치 경로 출력
+Write-Output $PSHOME
+
+# 비어있는 파일 생성. 'touch'와 같음
+Write-Output $null >> dummy-for-commit.txt
 ```
+
+### [Write-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.2)
+
+오직 콘솔 출력만을 위한 명령어. Write-Output과 달리 파이프라인에 보내지 않고 콘솔에 직접 쓴다. 따라서 다른 Cmdlet으로 파이프하거나 변수 할당은 할 수 없다. 기본 별칭은 없음.
+
+```bash
+PS> Write-Host '$abc:'$abc
+$abc: 123
+```
+
+#### Write-Host와 Write-Output의 차이
+
+Write-Output
+
 
 ### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
