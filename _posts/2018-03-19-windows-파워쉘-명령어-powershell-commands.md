@@ -304,9 +304,6 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 # 탐색기의 별칭으로 ex 추가
 New-Alias ex explorer
 
-# 서브라임의 별칭으로 sb 추가
-New-Alias sb subl
-
 # findstr의 별칭으로 grep 추가
 New-Alias grep findstr
 # 위와 같음
@@ -324,10 +321,10 @@ code $PROFILE
 만약 파라미터(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
 
 ```bash
-Function GetChildItemForce {
+Function Get-FilesIncludeHidden {
   Get-ChildItem -Force
 }
-New-Alias -Name ll -Value GetChildItemForce
+New-Alias -Name ll -Value Get-FilesIncludeHidden
 ```
 
 함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2).

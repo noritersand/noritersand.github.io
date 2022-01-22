@@ -175,7 +175,8 @@ Test-Fn3 a
 function Test-Fn4([number]$Param1) {}
 
 Test-Fn3 123
-Test-Fn3 a # InvalidOperation: Unable to find type [number].
+Test-Fn3 a
+# InvalidOperation: Unable to find type [number].
 
 function Test-Fn5([boolean]$Param1) {}
 
@@ -229,7 +230,7 @@ Test-Fn7 -Param1 1
 $Param1: 1
 
 Test-Fn7 -Param1 1, 2, 3
-Test-Fn7: Cannot process argument transformation on parameter 'Param1'. Cannot convert value to type System.String.
+# Test-Fn7: Cannot process argument transformation on parameter 'Param1'. Cannot convert value to type System.String.
 ```
 
 ### 기본값 지정

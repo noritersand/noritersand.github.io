@@ -16,17 +16,36 @@ tags:
 
 ### 터미널에서 서브라임 실행하기
 
-다음 둘 중 하나 수행:
+아래 세 가지 방법이 있는데:
 
 - 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
-- 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.  
+- 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
+- [파워쉘 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-터미널 재시작 후 다음처럼 실행
+세 번째 방법을 추천. 방법은 일단 파워쉘에서 아래처럼 입력해서 프로파일 추가하고 서브라임으로 열기:
+
+```js
+New-Alias sb 'C:\Program Files\Sublime Text 3\subl.exe'
+
+if (!(Test-Path -Path $PROFILE)) {
+  New-Item -ItemType File -Path $PROFILE -Force
+}
+
+sb $PROFILE
+```
+
+그리고 열린 파일 `Microsoft.PowerShell_profile.ps1`에 다음 줄 추가 후 저장:
 
 ```bash
-subl  # 서브라임 실행
-subl .  # 서브라임 실행하고 현재 경로를 열기
-subl .\.gitignore  # .gitignore를 서브라임으로 열기
+New-Alias sb 'C:\Program Files\Sublime Text 3\subl.exe'
+```
+
+터미널 재시작하면 끝:
+
+```bash
+sb  # 서브라임 실행
+sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열기
+sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ```
 
 ## 기본 설정

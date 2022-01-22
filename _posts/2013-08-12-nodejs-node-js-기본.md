@@ -81,64 +81,68 @@ gets(function(name) {
 ### 모듈 설치
 
 ```bash
-npm install
 # package.json 의 "dependencies"를 참조하여 자동설치
-# 예전에는 node install이었는데 바뀐듯
+npm install
 
-npm install 모듈1[, 모듈2, 모듈3, ...]
 # 로컬 모듈로 설치
+npm install 모듈1[, 모듈2, 모듈3, ...]
 
-npm install 모듈명 -g
 # 글로벌 모듈로 설치
+npm install 모듈명 -g
 
-npm install 모듈명 --save
 # package.json 이 있다면 dependencies 항목에 설치한 모듈을 추가한다.
 # 사실 기본값이 true라서 생략해도 결과는 같음
+npm install 모듈명 --save
 
-npm install 모듈명 --save-dev
 # 해당 모듈은 'devDependencies'일 때만 사용된다. 즉, production 모드로 빌드 시 포함하지 않는다.
+npm install 모듈명 --save-dev
 
-npm install 모듈명 --save-optional
 # --save-dev와 비슷한데 이 경우는 'optionalDependencies'
+npm install 모듈명 --save-optional
 
-npm install nodemon -g
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈
+npm install nodemon -g
 
-nodemon server.js
 # server.js를 nodemon으로 실행
+nodemon server.js
 ```
 
 ### 조회
 
 ```bash
-npm -v
 # 설치된 npm의 버전을 확인한다.
+npm -v
 
-npm ls
 # 현재 경로의 로컬 모듈 확인
+npm ls
 
-npm ls -g
 # 글로벌 모듈 확인
+npm ls -g
+
+# 로컬 모듈들의 종속관계 확인. global은 지원하지 않음
+npm fund
 ```
+
+`fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 모듈 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
 
 ### 업데이트
 
 ```bash
-npm update [모듈명]
 # 모듈명을 명시 하지 않으면 로컬 모듈을 모두 업데이트
+npm update [모듈명]
 
-npm updata [모듈명] -g
 # 모듈명을 명시 하지 않으면 글로벌 모듈을 모두 업데이트
+npm updata [모듈명] -g
 ```
 
 ### 모듈 삭제
 
 ```bash
-npm uninstall 모듈명
 # 로컬 모듈 삭제
+npm uninstall 모듈명
 
-npm uninstall 모듈명 -g
 # 글로벌 모듈 삭제
+npm uninstall 모듈명 -g
 ```
 
 ### package.json 자동생성
