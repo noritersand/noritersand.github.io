@@ -68,9 +68,7 @@
 
 만약 WSL-ubuntu에 설치할거면 [여기](https://jekyllrb.com/docs/installation/ubuntu/)를 보자. **절대 Quickstart 페이지만 보고 하면 안됨**.
 
-### 윈도우용 Ruby + Devkit 설치
-
-https://rubyinstaller.org/downloads/
+WSL이 아니면 [윈도우용 Ruby + Devkit 설치](https://rubyinstaller.org/downloads/).
 
 ### RubyGems으로 Bundler와 Jekyll 설치
 

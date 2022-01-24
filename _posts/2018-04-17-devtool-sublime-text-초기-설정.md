@@ -54,7 +54,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
 
-설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: InstaLL Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
+설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
 
 #### 추천 패키지
 
