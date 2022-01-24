@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-06 23:22:31 +0900
-title: '[devtool] IntelliJ 개꿀팁 방출: Live Templates'
+title: '[devtool] IntelliJ: Live Templates'
 categories:
   - eclipse
 tags:

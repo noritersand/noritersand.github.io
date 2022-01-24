@@ -27,11 +27,13 @@ tags:
 
 ## 설치
 
+[\[React Native\] Setting up the development environment](https://reactnative.dev/docs/environment-setup)
+
 Expo CLI가 있고 React Native CLI가 있는데, Expo CLI는 편하긴 한디 단점이 너무 많아서 따로 언급하지 않음.
 
 이 글에선 번거롭지만 빌드 환경을 직접 구성하는 React Native CLI로 한다.
 
-그리고 **WSL에서 진행**함.
+<!-- 그리고 **WSL에서 진행**함. -->
 
 ### NVM, Node.js, NPM
 

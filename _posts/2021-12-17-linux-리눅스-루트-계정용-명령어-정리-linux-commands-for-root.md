@@ -238,11 +238,21 @@ env | grep SHELL
 
 만약에 안되면 `/etc/passwd` 파일을 직접 수정해도 됨.
 
-## UFW<sup>Uncomplicated FireWall</sup>
+## iptables/ip6tables
 
-방화벽 설정. 기본 정책은 아웃바운드(나가는거)를 모두 허용, 인바운드(들어오는거)를 모두 차단한다고 한다.
+리눅스 커널에 있는 IP 패킷 필터링 규칙들의 집합인 IP 테이블을 관리하는 명령어.
 
-관련 설정 파일은 `/etc/ufw` 아래에 있다.
+```bash
+iptables -A FORWARD -m account --aname mynetwork --aaddr 192.168.0.0/24
+
+iptables -A INPUT -p tcp --dport 80 -m account --aname mywwwserver --aaddr 192.168.0.0/24 --ashort
+
+iptables -A OUTPUT -p tcp --sport 80 -m account --aname mywwwserver --aaddr 192.168.0.0/24 --ashort
+```
+
+## ufw
+
+UFW<sup>Uncomplicated FireWall</sup> 방화벽 설정. 기본 정책은 아웃바운드를 모두 허용, 인바운드를 모두 차단한다고 한다. 관련 설정 파일은 `/etc/ufw` 아래에 있다.
 
 ```bash
 # 방화벽 활성화(켜기)
