@@ -90,14 +90,14 @@ npm install 모듈1[, 모듈2, 모듈3, ...]
 # 글로벌 모듈로 설치
 npm install 모듈명 -g
 
-# package.json 이 있다면 dependencies 항목에 설치한 모듈을 추가한다.
+# --save: package.json의 dependencies 항목에 해당 모듈을 추가한다.
 # 사실 기본값이 true라서 생략해도 결과는 같음
 npm install 모듈명 --save
 
 # 해당 모듈은 'devDependencies'일 때만 사용된다. 즉, production 모드로 빌드 시 포함하지 않는다.
 npm install 모듈명 --save-dev
 
-# --save-dev와 비슷한데 이 경우는 'optionalDependencies'
+# --save-dev와 비슷한데 이 경우는 'optionalDependencies'일 때만 사용
 npm install 모듈명 --save-optional
 
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈
@@ -224,7 +224,7 @@ npm exec mocha test/**
 npm exec http-server -p 9090
 ```
 
-`npm exec`와 비슷한 기능으로 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
+`npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
 
 ### 모듈을 폴더단위로 관리하기
 

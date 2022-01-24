@@ -279,7 +279,7 @@ JSX 문법을 사용하려면 아래처럼:
 npx create-react-app APP_NAME
 ```
 
-[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다. 이후 `APP_NAME` 디렉토리에서:
+[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다. 이후 `APP_NAME` 디렉터리에서:
 
 ```bash
 npm start

@@ -29,8 +29,6 @@ tags:
 
 ## 환경 변수
 
-\* Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않는다. 완전히 끄고 재실행해야 함.
-
 ### 환경 변수 조회
 
 ```bash
@@ -49,21 +47,39 @@ $env:path
 
 ### 로컬 환경 변수 추가/삭제
 
+\* Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않는다. 완전히 끄고 재실행해야 함.
+
 ```bash
-$env:test = 1234  # 환경 변수 'test' 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Process")  # 로컬 환경 변수 추가 두 번째 방법
-Remove-Item Env:\test  # 환경 변수 'test' 삭제
+# 환경 변수 test 추가
+$env:test = 1234
+
+# 환경 변수 test2 추가
+[Environment]::SetEnvironmentVariable("test2", "1234", "Process")
+
+# 환경 변수 'test' 삭제
+Remove-Item Env:\test
 ```
 
 ### 글로벌 환경 변수 추가/삭제
 
 ```bash
-[Environment]::SetEnvironmentVariable("test", "1234", "User")  # 로그인한 사용자의 환경 변수로 'test' 추가
-[Environment]::SetEnvironmentVariable("test", $null, "User")  # 사용자 환경 변수 'test' 삭제
-[Environment]::SetEnvironmentVariable("path", $env:path + ";원하는경로", "User")  # path 덧붙이기
+# 로그인한 사용자의 환경 변수로 'test' 추가
+[Environment]::SetEnvironmentVariable("test", "1234", "User")
 
-[Environment]::SetEnvironmentVariable("test2", "1234", "Machine")  # 시스템 환경 변수로 'test2' 추가, 이 명령은 관리자 권한 필요함
-[Environment]::SetEnvironmentVariable("test2", $null, "Machine")  # 시스템 환경 변수 'test2' 삭제
+# 사용자 환경 변수 'test' 삭제
+[Environment]::SetEnvironmentVariable("test", $null, "User")
+
+# PATH 덧붙이기
+[Environment]::SetEnvironmentVariable("PATH", "$env:PATH;원하는경로", "User")
+
+# PATH 덧붙이기 #2
+[Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";원하는경로", "User")
+
+# 시스템 환경 변수로 'test2' 추가. (관리자 권한 필요)
+[Environment]::SetEnvironmentVariable("test2", "1234", "Machine")
+
+# 시스템 환경 변수 'test2' 삭제. (관리자 권한 필요)
+[Environment]::SetEnvironmentVariable("test2", $null, "Machine")
 ```
 
 ## 파워쉘 명령어 기본 별칭
