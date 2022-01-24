@@ -67,6 +67,10 @@ tags:
 
 터미널에서 새 탭을 열 때 선택할 수 있는 뇨솤들의 순서다.
 
+### 변경된 환경 변수를 적용하려면
+
+새 탭이나 새 창을 열어도 갱신 안되니 터미널 앱을 재실행할 것.
+
 ## [Chocolatey](https://chocolatey.org/install)
 
 윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)

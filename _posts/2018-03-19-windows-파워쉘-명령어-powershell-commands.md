@@ -29,14 +29,22 @@ tags:
 
 ## 환경 변수
 
+\* Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않는다. 완전히 끄고 재실행해야 함.
+
 ### 환경 변수 조회
 
 ```bash
-# 모든 환경 변수 보기, ls env:와 같음
+# 모든 환경 변수 보기,
 Get-ChildItem Env:
+# 위와 같음
+ls env:
 
-# 환경 변수 중 'path' 출력, echo $env:path와 같음. 사실 그냥 $env:path만 쳐도 된다
+# 환경 변수 중 'path' 출력,
 Write-Output $env:path
+# 위와 같음
+echo $env:path
+# 이렇게만 쳐도 됨 (암시적인 출력은 Write-Output이 처리함)
+$env:path
 ```
 
 ### 로컬 환경 변수 추가/삭제

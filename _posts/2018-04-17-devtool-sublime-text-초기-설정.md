@@ -30,20 +30,14 @@ tags:
 - 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
 - [파워쉘 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-세 번째 방법을 추천. 방법은 일단 파워쉘에서 아래처럼 입력해서 프로파일 추가하고 서브라임으로 열기:
+세 번째 방법을 추천. 방법은 일단 파워쉘에서 아래처럼 입력:
 
 ```js
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
 }
 
-& 'C:\Program Files\Sublime Text\subl.exe' $PROFILE
-```
-
-그리고 열린 파일 `Microsoft.PowerShell_profile.ps1`에 다음 줄 추가 후 저장:
-
-```bash
-New-Alias sb 'C:\Program Files\Sublime Text\subl.exe'
+"New-Alias sb 'C:\Program Files\Sublime Text\subl.exe'" >> $PROFILE
 ```
 
 터미널 재시작하면 끝:
