@@ -140,7 +140,7 @@ jQuery.ajax( url [, settings ] )
 - `beforeSend`: Function, 요청이 전송되기에 앞서 먼저 호출되는 함수. 이 함수는 XHR 인스턴스를 전달 받으며, 사용자 정의 헤더를 설정하거나 요청 전에 필요한 연산을 수행하는 데 사용할 수 있다.
 - `async`: Boolean, false면 요청이 동기 호출로 전송된다. 기본은 비동기 요청이다.
 - `processData`: Boolean, 기본값인 true일 때 객체로 전달된 데이터를 쿼리 문자열로 변환한다. FormData 등 쿼리 문자열 변환이 불가능한 -비 처리된- 데이터를 전달할 때는 false로 설정한다.
-- `ifModified`: Boolean, true일 때 Last-Modified 헤더를 확인하여 마지막 요청 이후에 응답 콘텐츠가 변경되지 않았다면 요청이 성공한다. 만일 생략하면 헤더를 확인하지 않는다.
+- `ifModified`: Boolean, true일 때 Last-Modified 헤더를 확인하여 마지막 요청 이후에 응답 컨텐츠가 변경되지 않았다면 요청이 성공한다. 만일 생략하면 헤더를 확인하지 않는다.
 - 이 외 항목은 다음 링크 참고: [https://api.jquery.com/jquery.ajax/#jQuery-ajax-settings](https://api.jquery.com/jquery.ajax/#jQuery-ajax-settings)
 
 ```js

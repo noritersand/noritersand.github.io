@@ -74,9 +74,9 @@ gets(function(name) {
 - [nodejs style guide(eng).pdf](/attachments/nodejs-style-guide-eng.pdf)
 - [nodejs style guide(kor).pdf](/attachments/nodejs-style-guide-kor.pdf)
 
-## npm
+## NPM
 
-~~Node Package Manager~~ npm is not an acronym. Node.js의 모듈관리 도구다. https://npmjs.org
+NPM<sup>~~Node Package Manager~~ npm is not an acronym</sup>은 Node.js의 모듈관리 도구다. https://npmjs.org
 
 ### 모듈 설치
 
@@ -267,6 +267,20 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 ```
 
 요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js`와 같다고 볼 수 있다.
+
+## Yarn
+
+NPM의 속도와 보안을 강화한 [Yarn](https://yarnpkg.com/)이 있음.
+
+```bash
+# 글로벌로 Yarn 설치
+npm install yarn -g
+
+# Yarn으로 uri-scheme 패키지 설치
+yarn add uri-scheme
+```
+
+[NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
 ## exports/require
 

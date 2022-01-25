@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-17 18:49:33 +0900
-title: '[React] 리액트 네이티브 React Native'
+title: '[React] 리액트 네이티브 개발 환경 설정 React Native settings'
 categories:
   - react
 tags:
@@ -20,25 +20,23 @@ tags:
 - [\[React Native\] APIs](https://reactnative.dev/docs/accessibilityinfo)
 - [\[React Native\] Setting up the development environment](https://reactnative.dev/docs/environment-setup)
 
-## 개요
-
-리액트 네이티브 환경을 구성하는 방법 요약 정리.
-
-글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
-
-## 설치
-
-Expo CLI가 있고 React Native CLI가 있는데, Expo CLI는 편하긴 한디 단점이 많아서 따로 언급하지 않음. 이 글에선 번거롭지만 빌드 환경을 직접 구성하는 React Native CLI로 한다.
-
 #### 버전 정보
 
-- 작성일: 2022-01-24
-- OS: Windows 11
-- 터미널: PowerShell 7.x
+- 2022-01-24 작성
+- Windows 11 (21H2 build 22000.434)
+- PowerShell 7.x
 - NVM 1.1.9
 - Node.js 17.4.0
 - NPM/NPX 8.3.1
 - React Native CLI 2.0.1
+
+## 개요
+
+리액트 네이티브 개발 환경 구성 방법 요약 정리. 글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
+
+## 설치
+
+개발 환경을 구성하는 방법은 크게 Expo CLI가 있고 React Native CLI가 있는데, Expo CLI는 이 글에서 따로 언급하지 않음.
 
 ### NVM, Node.js, NPM
 
@@ -125,8 +123,8 @@ PATH에 요것도 추가:
 ### React Native CLI
 
 ```bash
-npm install -g react-native-cli
-npm install -g yarn # yarn 패키지가 있으면 init 할 때 빠름.
+npm install react-native-cli -g
+npm install yarn -g # Yarn이 있으면 init 할 때 빠름
 
 # ... 생략
 
@@ -149,7 +147,7 @@ npx react-native init NEW_DIR --version X.XX.X
 npx react-native init NEW_DIR --template react-native-template-typescript
 ```
 
-## CLI로 앱 시작하기
+## 앱 시작하기
 
 ### Metro
 
@@ -170,7 +168,7 @@ Failed to construct transformer:  Error: error:0308010C:digital envelope routine
   ... 생략
 ```
 
-[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런거니 `--openssl-legacy-provider`를 추가해 강제로 구 버전을 보도록 해야 한다.
+[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런건데, 이 경우 Node.js를 16으로 내리거나 node 실행 옵션으로 `--openssl-legacy-provider`를 지정해줘야 함.
 
 `package.json`을 이렇게 수정:
 
@@ -180,18 +178,24 @@ Failed to construct transformer:  Error: error:0308010C:digital envelope routine
 },
 ```
 
-이후 메트로는 항상 NPM 스크립트로 시작하도록 함.
+이후 메트로는 항상 NPM 스크립트로 시작.
+
+### 디바이스 설정
+
+앱을 실행할 디바이스를 결정한다. 실기기인 경우 그냥 케이블로 연결하고 (개발자모드로 변환하고, 연결 허용도 하고...) 다음으로 진행하면 된다.
+
+만약 가상 디바이스가 필요하면 저 아래 [AVD Manager](##heading-AVD-Manager)를 볼 것.
 
 ### 앱 배포와 실행
 
-전화기를 케이블로 연결하고 이렇게:
+매트로를 실행중인 터미널은 그대로 둔다. 새 터미널을 열고 아래 입력:
 
 ```bash
 npm run android
 # node npx react-native run-android
 ```
 
-하면 소스 빌드 후 연결된 전화기에 배포하는 걸로 보임. 만약 메트로가 안떠있으면 스스로 띄운다.
+하면 소스 빌드 후 연결된 디바이스에 배포/실행 한다. 만약 메트로가 안떠있으면 스스로 띄운다.
 
 만약 빌드 중 `build.gradle` 파일에서
 
@@ -201,39 +205,18 @@ import com.android.build.OutputFile
 
 이 부분이 문제가 있다면 해당 라인만 코멘트 처리하고 'Sync Project with Gradle Files' 한 번 (이 때 에러 발생하는데 무시하고), 코멘트 다시 지우고 Sync 다시 하면 잘 될 수도(?) 있음;;
 
-## 안드로이드 스튜디오로 앱 시작하기
-
-### AVD<sup>Android Virtual Device</sup> Manager 설정
-
-AVD는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다. 버튼의 위치는 안드로이드 스튜디오의 버전에 따라 다를 수 있다. 2020.3.1 버전은 우측 상단에 있음.
-
-역시 적당한 걸로 아무거나 골라서 추가한다.
-
-<!--
-#### 환경 변수, 별칭 추가
-
-WSL의 환경 변수를 아래처럼 추가한다:
-
-```bash
-export LOCAL_USERHOME="/mnt/c/Users/fixal"
-export ANDROID_HOME="$LOCAL_USERHOME/AppData/Local/Android/Sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-```
-
-여기서 `ANDROID_HOME`의 경로는 안드로이드 스튜디오의 Android SDK Location의 값과 일치해야 함.
-
-그리고:
-
-```bash
-alias adb='adb.exe'
-```
-
-추가한 다음 `adb` 명령어 잘 실행되는지 확인.
--->
-
 ### AVD Manager
 
-안드로이드 스튜디오의 ADB Manager에서 디바이스를 골라 `Launch this AVD in the emulator` 클릭.
+AVD<sup>Android Virtual Device</sup>는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다. 버튼의 위치는 안드로이드 스튜디오의 버전에 따라 다를 수 있다. 2020.3.1 버전은 우측 상단에 있음.
+
+역시 적당한 걸로 아무거나 골라서 추가한다. 그리고 `Launch this AVD in the emulator` 클릭(재생 버튼).
+
+그 다음 안드로이드 스튜디오 UI 어딘가에 있는 배포 대상 디바이스를 선택하고(이 글 작성 시점엔 1시 방향에 있음)
+
+이제 매트로 실행 후 앱 시작하면 됨.
+
+```bash
+npm start
+# 새 터미널 열어서
+npm run android
+```

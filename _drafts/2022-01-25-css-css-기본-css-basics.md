@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2013-10-28 14:45:00 +0900
-title: '[CSS] CSS 기본'
+date: 2022-01-25 14:45:00 +0900
+title: '[CSS] CSS 기본 CSS Basics'
 categories:
   - css
 tags:
@@ -15,8 +15,24 @@ tags:
 #### 참고한 문서
 
 - [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
+- [\[MDN\] CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
 
-CSS, Cascading Sytle Sheet
+## 개요
+
+CSS<sup>Cascading Sytle Sheet</sup> 기본 사용법 정리.
+
+## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
+
+At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어에 가깝다.
+
+```
+@IDENTIFIER (RULE);
+```
+
+```css
+/* Example: tells browser to use UTF-8 character set */
+@charset "utf-8";
+```
 
 ## 스타일 적용하기
 
@@ -46,7 +62,7 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 
 ```html
 <style type="text/css">
-    p { background: yellow; color: black; }
+  p { background: yellow; color: black; }
 </style>
 ```
 
@@ -77,35 +93,90 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 
 ## CSS selector
 
-TODO
-
-```
+```css
 태그명 { 스타일코드 }
 #아이디 { 스타일코드 }
 .클래스명 { 스타일코드 }
 ```
 
-```css
-div { ... }  // 모든 div 태그
-body div { ... }  // body태그 자손 중 모든 div태그
+### Basic selectors
+
+#### Universal selector
+
+```
+*
 ```
 
-```html
-<style type="text/css">
-#dt_from {
-...
-}
-</style>
+#### Type selector
 
-<input type="text" id="dt_from" />
+```
+TAG_NAME
 ```
 
-```html
-<style type="text/css">
-#dt_from {
-...
-}
-</style>
+#### Class selector
 
-<input type="text" id="dt_from" />
 ```
+.CLASS_NAME
+```
+
+#### ID selector
+
+```
+#ID
+```
+
+#### Attribute selector
+
+```
+[attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
+```
+
+### Grouping selectors
+
+#### Selector list
+
+```
+A, B
+```
+
+### Combinators
+
+#### Descendant combinator
+
+```
+A B
+```
+
+#### Child combinator
+
+```
+A > B
+```
+
+#### General sibling combinator
+
+```
+A ~ B
+```
+
+#### Adjacent sibling combinator
+
+```
+A + B
+```
+
+#### Column combinator
+
+```
+A || B
+```
+
+### Pseudo
+
+#### Pseudo classes
+
+TODO
+
+#### Pseudo elements
+
+TODO
