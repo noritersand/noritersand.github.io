@@ -74,6 +74,120 @@ gets(function(name) {
 - [nodejs style guide(eng).pdf](/attachments/nodejs-style-guide-eng.pdf)
 - [nodejs style guide(kor).pdf](/attachments/nodejs-style-guide-kor.pdf)
 
+## exports/require
+
+노드에서 하나의 자바스크립트 파일은 하나의 모듈이 된다. 기본적으로 노드는 각 자바스크립트 파일을 익명함수로 감싸 외부에서 접근할 수 없게 만드는데 이것을 모듈화라고 하며 모듈간 참조와 호출을 위해 글로벌 객체 module의 exports/require를 사용한다.
+
+### module.exports
+
+모듈로 내보내기.
+
+```js
+//Syntex 1: module.exports.내보낼함수명 = 함수명
+function drawCircle() {
+  ...
+}
+exports.drawCircle = drawCircle;
+
+//Syntex 2: module.exports = 함수리터럴 혹은 익명함수
+exports.fibonacchi = function(num) {
+  return -1;
+};
+
+//Syntex 3: 변수 = module.exports = 함수
+var show = exports.show = function() {
+  console.log('hi');
+}
+```
+
+`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, 아래 예시 2처럼 `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
+
+### require()
+
+모듈 불러오기.
+
+```
+require(경로/파일명);
+```
+
+경로는 문자열`' '`로 표시하며 경로를 생략할 경우 기본모듈이나 확장모듈(node.js가 기본적으로 제공하는 모듈 혹은 npm으로 설치한 모듈을 말하며 이 둘을 *native module*이라 한다.)을 불러온다.
+
+같은 경로내에 불러올 js 파일이 있다면 경로는 `./`가 되고 한 단계 상위의 폴더라면 경로는 `../`가 된다.
+
+```js
+var userModule = require('./user_module');
+```
+
+`require()`로 불려진 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 반환된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나, 함수 자체를 내보내 `new`로 인스턴스를 생성해서 사용한다.
+
+### 작성 예시 \#1
+
+```js
+function printA(){};
+var PI = 3.14;
+
+exports.printA = printA;
+exports.PI = PI;
+
+// 위에서 내보낸 모듈은 다음처럼 불러온다
+var userModule = require('js를_제외한_파일_경로');
+userModule.printA();
+console.log(userModule.PI);
+```
+
+### 작성 예시 \#2
+
+#### exports-test.js
+
+```js
+// 이렇게 사용할 땐 module을 생략할 수 없음
+module.exports = {
+  connectString: '10.20.30.40:1234/QADB',
+  user: 'fixalot',
+  password: '1234abcd!'
+}
+```
+
+#### run-me.js
+
+```js
+const dbinfo = require('./exports-test.js');
+console.log('dbinfo.connectString:', dbinfo.connectString);
+console.log('dbinfo.user:', dbinfo.user);
+console.log('dbinfo.password:', dbinfo.password);
+```
+
+#### 실행
+
+```bash
+PS> node .\run-me.js
+dbinfo.connectString: 10.20.30.40:1234/QADB
+dbinfo.user: fixalot
+dbinfo.password: 1234abcd!
+```
+
+### require로 코드 줄이기
+
+자주 사용하는 메서드가 있다면 `require`로 해당 메서드를 별도의 변수에 담아 코드를 줄이는 방법이 있다:
+
+```js
+const log = require('console').log;
+```
+
+여기에 ES2015의 단축 표기법을 적용하면:
+
+```js
+const { log } = require('console');
+```
+
+이렇게 된다.
+
+그런데 사실 `console`은 어차피 전역 객체이므로 그냥 아래처럼 쓰면 됨:
+
+```js
+const { log } = console;
+```
+
 ## NPM
 
 NPM<sup>~~Node Package Manager~~ npm is not an acronym</sup>은 Node.js의 모듈관리 도구다. https://npmjs.org
@@ -270,139 +384,25 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 
 ## Yarn
 
-NPM의 속도와 보안을 강화한 [Yarn](https://yarnpkg.com/)이 있음.
+NPM의 속도와 보안을 강화한 [Yarn](https://yarnpkg.com/)이 있음. [NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
 ```bash
-# 글로벌로 Yarn 설치
+# NPM으로 Yarn 설치
 npm install yarn -g
+```
 
-# Yarn으로 uri-scheme 패키지 설치
-yarn add uri-scheme
+```bash
+# Yarn으로 PACKAGE_NAME 설치
+yarn add PACKAGE_NAME
 
-# PACKAGE_NAME 패키지 삭제
+# Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
 
 # 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
 yarn global add nodemon --prefix /usr/local
 
-# 글로벌로 설치된 패키지 확인
+# 글로벌 패키지 확인
 yarn global list
 ```
 
-NPM을 완전히 대체하는 것은 아니라서 설치해도 NPM, Yarn 둘 다 사용 가능. 그리고 글로벌 설치 경로 기본값이 NPM과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
-
-[NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
-
-## exports/require
-
-노드에서 하나의 자바스크립트 파일은 하나의 모듈이 된다. 기본적으로 노드는 각 자바스크립트 파일을 익명함수로 감싸 외부에서 접근할 수 없게 만드는데 이것을 모듈화라고 하며 모듈간 참조와 호출을 위해 글로벌 객체 module의 exports/require를 사용한다.
-
-### module.exports
-
-모듈로 내보내기.
-
-```js
-//Syntex 1: module.exports.내보낼함수명 = 함수명
-function drawCircle() {
-  ...
-}
-exports.drawCircle = drawCircle;
-
-//Syntex 2: module.exports = 함수리터럴 혹은 익명함수
-exports.fibonacchi = function(num) {
-  return -1;
-};
-
-//Syntex 3: 변수 = module.exports = 함수
-var show = exports.show = function() {
-  console.log('hi');
-}
-```
-
-`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, 아래 예시 2처럼 `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
-
-### require()
-
-모듈 불러오기.
-
-```
-require(경로/파일명);
-```
-
-경로는 문자열`' '`로 표시하며 경로를 생략할 경우 기본모듈이나 확장모듈(node.js가 기본적으로 제공하는 모듈 혹은 npm으로 설치한 모듈을 말하며 이 둘을 *native module*이라 한다.)을 불러온다.
-
-같은 경로내에 불러올 js 파일이 있다면 경로는 `./`가 되고 한 단계 상위의 폴더라면 경로는 `../`가 된다.
-
-```js
-var userModule = require('./user_module');
-```
-
-`require()`로 불려진 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 반환된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나, 함수 자체를 내보내 `new`로 인스턴스를 생성해서 사용한다.
-
-### 작성 예시 \#1
-
-```js
-function printA(){};
-var PI = 3.14;
-
-exports.printA = printA;
-exports.PI = PI;
-
-// 위에서 내보낸 모듈은 다음처럼 불러온다
-var userModule = require('js를_제외한_파일_경로');
-userModule.printA();
-console.log(userModule.PI);
-```
-
-### 작성 예시 \#2
-
-#### exports-test.js
-
-```js
-// 이렇게 사용할 땐 module을 생략할 수 없음
-module.exports = {
-  connectString: '10.20.30.40:1234/QADB',
-  user: 'fixalot',
-  password: '1234abcd!'
-}
-```
-
-#### run-me.js
-
-```js
-const dbinfo = require('./exports-test.js');
-console.log('dbinfo.connectString:', dbinfo.connectString);
-console.log('dbinfo.user:', dbinfo.user);
-console.log('dbinfo.password:', dbinfo.password);
-```
-
-#### 실행
-
-```bash
-PS> node .\run-me.js
-dbinfo.connectString: 10.20.30.40:1234/QADB
-dbinfo.user: fixalot
-dbinfo.password: 1234abcd!
-```
-
-### require로 코드 줄이기
-
-자주 사용하는 메서드가 있다면 `require`로 해당 메서드를 별도의 변수에 담아 코드를 줄이는 방법이 있다:
-
-```js
-const log = require('console').log;
-```
-
-여기에 ES2015의 단축 표기법을 적용하면:
-
-```js
-const { log } = require('console');
-```
-
-이렇게 된다.
-
-그런데 사실 `console`은 어차피 전역 객체이므로 그냥 아래처럼 쓰면 됨:
-
-```js
-const { log } = console;
-```
+NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능. 글로벌 설치 경로 기본값은 NPM과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
