@@ -168,7 +168,7 @@ Failed to construct transformer:  Error: error:0308010C:digital envelope routine
   ... 생략
 ```
 
-[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런건데, 이 경우 Node.js를 16으로 내리거나 node 실행 옵션으로 `--openssl-legacy-provider`를 지정해줘야 함.
+[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런건데, 이 경우 Node.js 버전을 16 이하로 내리거나 node 실행 옵션으로 `--openssl-legacy-provider`를 지정해줘야 함.
 
 `package.json`을 이렇게 수정:
 

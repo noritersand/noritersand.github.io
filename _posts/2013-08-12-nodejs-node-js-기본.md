@@ -278,7 +278,18 @@ npm install yarn -g
 
 # Yarn으로 uri-scheme 패키지 설치
 yarn add uri-scheme
+
+# PACKAGE_NAME 패키지 삭제
+yarn remove PACKAGE_NAME
+
+# 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
+yarn global add nodemon --prefix /usr/local
+
+# 글로벌로 설치된 패키지 확인
+yarn global list
 ```
+
+NPM을 완전히 대체하는 것은 아니라서 설치해도 NPM, Yarn 둘 다 사용 가능. 그리고 글로벌 설치 경로 기본값이 NPM과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
 
 [NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
