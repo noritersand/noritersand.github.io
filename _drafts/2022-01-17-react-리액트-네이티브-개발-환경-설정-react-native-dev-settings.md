@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-17 18:49:33 +0900
-title: '[React] 리액트 네이티브 개발 환경 설정 React Native settings'
+title: '[React] 리액트 네이티브 개발 환경 설정 React Native dev settings'
 categories:
   - react
 tags:
@@ -23,7 +23,7 @@ tags:
 #### 버전 정보
 
 - 2022-01-24 작성
-- Windows 11 (21H2 build 22000.434)
+- Windows 11 (21H2)
 - PowerShell 7.x
 - NVM 1.1.9
 - Node.js 17.4.0
@@ -168,7 +168,7 @@ Failed to construct transformer:  Error: error:0308010C:digital envelope routine
   ... 생략
 ```
 
-[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런건데, 이 경우 Node.js 버전을 16 이하로 내리거나 node 실행 옵션으로 `--openssl-legacy-provider`를 지정해줘야 함.
+[OpenSSL 관련 버전이 안맞아서](https://stackoverflow.com/questions/69665222/node-js-17-0-1-gatsby-error-digital-envelope-routinesunsupported-err-os) 그런건데, **Node.js 버전을 16 이하로 내리거나** 옵션으로 `--openssl-legacy-provider`를 지정해줘야 함.
 
 `package.json`을 이렇게 수정:
 

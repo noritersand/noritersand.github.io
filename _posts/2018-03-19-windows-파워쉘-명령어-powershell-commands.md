@@ -270,6 +270,38 @@ Remove-Item .\copy\ -r -Force
 
 ## Microsoft.Powershell.Utility
 
+### [Set-Variable](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.2)
+
+현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함. 기본 별칭은 `set`, `sv`
+
+```bash
+Set-Variable test abcd
+$test
+# abcd
+
+Set-Variable -Name qwer -Value 1234
+$qwer
+# 1234
+```
+
+### [Get-Variable](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-7.2)
+
+변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.2).
+
+```bash
+# 로컬 스코프의 모든 변수 출력
+Get-Variable
+
+# m으로 시작하는 모든 로컬 변수의 이름과 값 출력
+Get-Variable m*
+
+# m으로 시작하는 모든 로컬 변수의 값만 출력
+Get-Variable -Name m* -ValueOnly
+
+# m 혹은 p로 시작하는 로컬 변수의 이름과 값 출력
+Get-Variable -Include m*,p*
+```
+
 ### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.1)
 
 명령어를 입력하고 있는 호스트 프로그램(=파워쉘)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.

@@ -256,7 +256,7 @@ HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 �
 
 두 개를 끌어다 씀. CDN 링크는 [여기를 클릭](https://reactjs.org/docs/cdn-links.html).
 
-JSX 문법을 사용하려면 아래처럼:
+JSX 문법을 사용하려면 아래처럼 [@babel/standalone](https://babeljs.io/docs/en/babel-standalone#installation)을 불러오고 내 스크립트에 `type="text/bable"` 속성을 추가한다:
 
 ```html
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -271,15 +271,15 @@ JSX 문법을 사용하려면 아래처럼:
 </script>
 ```
 
-[@babel/standalone](https://babeljs.io/docs/en/babel-standalone#installation)을 불러오고 내 스크립트에 `type="text/bable"` 속성을 추가하면 된다.
-
 ### Node.js
+
+[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다:
 
 ```bash
 npx create-react-app APP_NAME
 ```
 
-[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다. 이후 `APP_NAME` 디렉터리에서:
+그리고 `APP_NAME` 디렉터리에서:
 
 ```bash
 npm start
@@ -287,7 +287,13 @@ npm start
 
 하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 참고할 것.
 
-바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요.
+바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요하며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요할 수 있음:
+
+```bash
+npm install
+# 혹은
+yarn install
+```
 
 ## 이벤트 핸들러 할당
 

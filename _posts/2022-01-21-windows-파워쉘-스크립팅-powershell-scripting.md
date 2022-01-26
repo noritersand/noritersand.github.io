@@ -45,24 +45,48 @@ $i = 5
 # The value of $(2+3) is 5.
 
 "$env:LOCALAPPDATA\abcd"
-# C:\Users\fixal\AppData\Local\abcd
+# C:\Users\fixalot\AppData\Local\abcd
 
 '$env:LOCALAPPDATA\abcd'
 # $env:LOCALAPPDATA\abcd
 ```
 
-## 연산자
+## [연산자](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
 
-### [리디렉션 연산자](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_redirection?view=powershell-7) `>` `>>`
+### 리디렉션 연산자 `>` `>>`
 
 ```bash
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
 
+### Subexpression 연산자 `$( )`
+
+괄호 안 표현식의 실행 결과를 반환한다. 명령의 결과를 문자열 혹은 또다른 명령에 포함시킬 때 사용한다:
+
+```bash
+# yarn global bin: Yarn의 글로벌 경로를 반환하는 명령어
+# 경로를 받아온 다음 해당 경로로 전환
+cd $(yarn global bin)
+```
+
+### Array subexpression 연산자 `@( )`
+
+TODO
+
 ### 파이프라인 연산자 `|`
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다. '앞에 오는 명령의 출력을 뒤에 오는 명령으로 보낸다(파이프한다)'라고 표현한다.
+
+### 백그라운드 연산자 `&`
+
+명령을 백그라운드에서 실행한다. 호출 연산자와 다르게 앰퍼샌드가 명령 마지막에 위치한다.
+
+```bash
+Get-Process -Name pwsh &
+# 위와 같음
+Start-Job -ScriptBlock {Get-Process -Name pwsh}
+```
 
 ### 호출 연산자<sup>Call Operator</sup> `&`
 
@@ -354,7 +378,7 @@ function Connect-RemoteServer {
   )
 }
 
-ParserError: C:\Users\fixal\Documents\PowerShell\Microsoft.PowerShell_profile.ps1:24
+ParserError: C:\Users\fixalot\Documents\PowerShell\Microsoft.PowerShell_profile.ps1:24
 Line |
   24 |      [ValidateSet($hashtable.keys)]
      |                   ~~~~~~~~~~~~~~~

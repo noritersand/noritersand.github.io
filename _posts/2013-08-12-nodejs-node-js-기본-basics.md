@@ -397,7 +397,13 @@ yarn add PACKAGE_NAME
 
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
+```
 
+NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능.
+
+### [Yarn Global](https://classic.yarnpkg.com/en/docs/cli/global)
+
+```bash
 # 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
 yarn global add nodemon --prefix /usr/local
 
@@ -405,4 +411,26 @@ yarn global add nodemon --prefix /usr/local
 yarn global list
 ```
 
-NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능. 글로벌 설치 경로 기본값은 NPM과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
+글로벌 설치 경로 기본값은 [NPM](https://nodejs.dev/learn/where-does-npm-install-the-packages)과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
+
+```bash
+"$env:APPDATA\npm\node_modules"
+# C:\Users\fixalot\AppData\Roaming\npm\node_modules
+npm root -g
+# C:\Program Files\nodejs\node_modules
+
+yarn global dir
+# C:\Users\fixalot\AppData\Local\Yarn\Data\global
+```
+
+만약 `yarn global add`로 설치했는데 해당 패키지의 명령어를 못찾는다고 하면 다음처럼 path에 글로벌 패키지의 bin 파일 모음 경로를 추가한다:
+
+```bash
+[Environment]::SetEnvironmentVariable("PATH", "$env:PATH;$(yarn global bin)", "User")
+```
+
+[NVM을 쓰는 경우 Yarn을 통한 글로벌 설치가 문제가 될 수 있다는 말이 있다](https://stackoverflow.com/questions/56941551/is-there-any-difference-between-installing-global-packages-with-yarn-or-npm).
+
+실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. NPM 글로벌로 설치했더니 해당 메시지 사라짐.
+
+**그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같다**.
