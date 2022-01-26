@@ -299,7 +299,7 @@ Get-Variable m*
 Get-Variable -Name m* -ValueOnly
 
 # m 혹은 p로 시작하는 로컬 변수의 이름과 값 출력
-Get-Variable -Include m*,p*
+Get-Variable -Include m*, p*
 ```
 
 ### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.1)

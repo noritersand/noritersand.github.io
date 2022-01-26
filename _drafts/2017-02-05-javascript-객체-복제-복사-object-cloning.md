@@ -29,7 +29,7 @@ JavaScript의 객체 복제에 대한 정리글.
 
 객체 복제(object cloning)보단 객체 복사(object copying)란 말이 더 흔히 쓰이지만 더 맞는 표현인 복제로 명시함.
 
-## 얕은 복제<sup>shallow cloning</sup>
+## 얕은 복제 Shallow Cloning
 
 ### Object.assign()
 
@@ -82,6 +82,6 @@ var clone2 = { ...obj, x: '사십이', c: 1 };
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
-## 깊은 복제<sup>deep cloning</sup>
+## 깊은 복제 Deep Cloning
 
 ### 꼐속...

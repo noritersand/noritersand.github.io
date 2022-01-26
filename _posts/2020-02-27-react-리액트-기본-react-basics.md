@@ -99,7 +99,8 @@ const element3 = React.createElement('h2', {
 
 > 리스트를 렌더링할 때 React는 렌더링하는 리스트 아이템에 대한 정보를 저장합니다. 리스트를 업데이트 할 때 React는 무엇이 변했는 지 결정해야 합니다. 리스트의 아이템들은 추가, 제거, 재배열, 업데이트 될 수 있습니다.
 > ... 현재 리스트가 이전 리스트에 존재했던 키를 가지고 있지 않다면 React는 그 키를 가진 컴포넌트를 제거합니다. 두 키가 일치한다면 해당 구성요소는 이동합니다. 키는 각 컴포넌트를 구별할 수 있도록 하여 React에게 다시 렌더링할 때 state를 유지할 수 있게 합니다. 컴포넌트의 키가 변한다면 컴포넌트는 제거되고 새로운 state와 함께 다시 생성됩니다.
-> - https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key
+>
+> [https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key](https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key)
 
 대충 요약하면 랜더링 최적화에 필요한 프로퍼티다:
 
@@ -285,7 +286,7 @@ npx create-react-app APP_NAME
 npm start
 ```
 
-하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 참고할 것.
+하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 확인할 것.
 
 바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요하며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요할 수 있음:
 
@@ -316,7 +317,7 @@ class Square extends React.Component {
 }
 ```
 
-## 함수 컴포넌트<sup>function components</sup>
+## 함수 컴포넌트 Function Components
 
 [리액트에서 컴포넌트](https://reactjs.org/docs/components-and-props.html)란 리액트 앱을 구성하는 최소 단위를 말한다. 정상적인 컴포넌트라면 항상 리액트 엘리먼트를 반환해야 한다. 그래서 항상 `return` 문을 포함한다.
 

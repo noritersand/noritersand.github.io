@@ -190,7 +190,7 @@ const { log } = console;
 
 ## NPM
 
-NPM<sup>~~Node Package Manager~~ npm is not an acronym</sup>은 Node.js의 모듈관리 도구다. https://npmjs.org
+NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다. https://npmjs.org
 
 ### 모듈 설치
 
