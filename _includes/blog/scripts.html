@@ -81,12 +81,14 @@ $(document).ready(function () {
       searchOverlay.close();
   });
 
-  $(document).on('keyup', function(e) {
-    if (((e.keyCode || e.which) === 191 && e.ctrlKey) || ((e.keyCode || e.which) === 191 && e.shiftKey)) {
+  $(document).on('keydown', function(e) {
+    // ctrl + /, shift + /, ctrl + p
+    if (((e.keyCode || e.which) === 191 && e.ctrlKey)
+        || ((e.keyCode || e.which) === 191 && e.shiftKey)
+        || ((e.keyCode || e.which) === 80 && e.ctrlKey)) {
+      e.preventDefault();
       searchOverlay.open();
     }
-  });
-  $(document).on('keyup', function (e) {
     if ((e.keyCode || e.which) === 27) {
       searchOverlay.close();
     }

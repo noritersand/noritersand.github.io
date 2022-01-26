@@ -53,10 +53,14 @@
 
 ### 검색 관련 파일
 
-검색창은 웹으로 사이트 열어서 <kbd>ctrl + /</kbd> 혹은 <kbd>shift + /</kbd>
-
 - `assets\javascripts\jekyll-search.jquery.js`
 - `_includes\blog\scripts.html`
+
+#### 검색창 열기 단축키
+
+- <kbd>ctrl + p</kbd>
+- <kbd>ctrl + /</kbd>
+- <kbd>shift + /</kbd>
 
 ### 주요 scss 파일
 
