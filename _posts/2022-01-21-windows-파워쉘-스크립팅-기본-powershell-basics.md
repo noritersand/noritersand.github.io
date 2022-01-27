@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-21 13:43:45 +0900
-title: '[Windows] 파워쉘 스크립팅 Powershell Scripting'
+title: '[Windows] 파워쉘 스크립팅: 기본 Powershell Basics'
 categories:
   - windows
 tags:
@@ -9,6 +9,7 @@ tags:
   - powershell
   - terminal
   - shell
+  - basics
 ---
 
 * Kramdown table of contents
@@ -16,16 +17,18 @@ tags:
 
 #### 참고한 문서
 
-- [\[Microsoft\] PowerShell.Core: About](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about?view=powershell-7.2)
-- [\[Microsoft\] About 한국어 버전](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about?view=powershell-7.2)
+- [\[Microsoft\] PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
+- [\[Microsoft\] PowerShell 설명서](https://aka.ms/powershell)
+- [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
+- [\[Microsoft\] Microsoft.PowerShell.Core](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
 
 ## 개요
 
-파워쉘에서 스크립트를 작성하고 사용하는 방법을 정리한 글.
+파워쉘에서 스크립트를 작성하고 사용하는 방법 중 기본적인 사항만 정리한 글.
 
 ## 문법
 
-### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1) `""` `''`
+### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
 
 리터럴 문자열을 표현할 때 큰 따옴표`""`와 작은 따옴표`''`는 대체로 동일한 의미로 쓰인다.  
 다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 홑따옴표를 사용할 때 무시된다:
@@ -49,80 +52,6 @@ $i = 5
 
 '$env:LOCALAPPDATA\abcd'
 # $env:LOCALAPPDATA\abcd
-```
-
-## [연산자](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
-
-### 리디렉션 연산자 `>` `>>`
-
-```bash
-명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
-명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
-```
-
-### Subexpression 연산자 `$( )`
-
-괄호 안 표현식의 실행 결과를 반환한다. 명령의 결과를 문자열 혹은 또다른 명령에 포함시킬 때 사용한다:
-
-```bash
-# yarn global bin: Yarn의 글로벌 경로를 반환하는 명령어
-# 경로를 받아온 다음 해당 경로로 전환
-cd $(yarn global bin)
-```
-
-### Array subexpression 연산자 `@( )`
-
-TODO
-
-### 파이프라인 연산자 `|`
-
-둘 이상의 명령어를 연결. 리눅스와 비슷하다. '앞에 오는 명령의 출력을 뒤에 오는 명령으로 보낸다(파이프한다)'라고 표현한다.
-
-### 백그라운드 연산자 `&`
-
-명령을 백그라운드에서 실행한다. 호출 연산자와 다르게 앰퍼샌드가 명령 마지막에 위치한다.
-
-```bash
-Get-Process -Name pwsh &
-# 위와 같음
-Start-Job -ScriptBlock {Get-Process -Name pwsh}
-```
-
-### 호출 연산자 Call Operator `&`
-
-호출 연산자는 문자열을 실행할 때 사용한다. 자바스크립트의 `eval()`과 비슷하다.
-
-예를 들어 서브라임의 실행 파일을 전체 경로로 실행하려고 할 때, 공백을 포함한 전체 경로를 지정하려면 다음처럼 해야하는데:
-
-```bash
-'C:\Program Files\Sublime Text\subl.exe'
-# C:\Program Files\Sublime Text\subl.exe 출력됨
-```
-
-이러면 파일을 실행하는게 아니라 문자열을 출력해 버린다. 이럴 땐 호출 연산자를 앞에 붙여서 문자열을 스크립트로 실행하도록 하면 된다:
-
-```bash
-& 'C:\Program Files\Sublime Text\subl.exe' $PROFILE
-# subl.exe을 실행함
-```
-
-그런데 호출 연산자는 문자열을 **구문 분석** 하지 않는다고 한다. 그래서 명령어의 파라미터를 사용할 수 없다:
-
-```bash
-$c = "Get-Service -Name Spooler"
-
-& $c
-# &: The term 'Get-Service -Name Spooler' is not recognized as a name of a cmdlet, function, script file, or executable program.
-# Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-```
-
-이럴 땐 호출 연산자 대신 [Invoke-Expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.2)을 사용하라고 함:
-
-```bash
-Invoke-Expression $c
-# Status   Name               DisplayName
-# ------   ----               -----------
-# Running  Spooler            Print Spooler
 ```
 
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)

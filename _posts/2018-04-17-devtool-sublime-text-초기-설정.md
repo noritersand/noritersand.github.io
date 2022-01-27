@@ -30,17 +30,17 @@ tags:
 - 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
 - [파워쉘 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-세 번째 방법을 추천. 방법은 일단 파워쉘에서 아래처럼 입력:
+세 번째 방법을 추천. 방법은 아래 코드를 복사해서 파워쉘에 입력한다:
 
 ```js
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
 }
-
-"New-Alias sb 'C:\Program Files\Sublime Text\subl.exe'" >> $PROFILE
+"Set-Alias sb 'C:\Program Files\Sublime Text\subl.exe'" >> $PROFILE
+. $PROFILE
 ```
 
-터미널 재시작하면 끝:
+이게 끝이고 이제 `sb`로 서브라임 실행 가능:
 
 ```bash
 sb  # 서브라임 실행

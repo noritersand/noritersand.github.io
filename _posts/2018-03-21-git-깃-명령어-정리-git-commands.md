@@ -6,6 +6,7 @@ categories:
   - git
 tags:
   - git
+  - commands
 ---
 
 * Kramdown table of contents

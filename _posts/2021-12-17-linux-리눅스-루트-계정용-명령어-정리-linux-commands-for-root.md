@@ -9,6 +9,7 @@ tags:
   - os
   - root
   - sudo
+  - commands
 ---
 
 * Kramdown table of contents

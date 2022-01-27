@@ -390,6 +390,6 @@ TODO
 
 [Components와 Props](https://ko.reactjs.org/docs/components-and-props.html)
 
-부모로부터 전달되는 읽기 전용 프로퍼티.
+부모로부터 전달되는 읽기 전용 프로퍼티 집합.
 
 TODO

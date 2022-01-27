@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워쉘 명령어 Powershell Commands'
+title: '[Windows] 파워쉘 스크립팅: 자주 사용하는 명령어 PowerShell Commands'
 categories:
   - windows
 tags:
@@ -9,6 +9,8 @@ tags:
   - powershell
   - terminal
   - shell
+  - commands
+  - cmdlet
 ---
 
 * Kramdown table of contents
@@ -16,9 +18,6 @@ tags:
 
 #### 참고한 문서
 
-- [\[Microsoft\] PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
-- [\[Microsoft\] PowerShell 설명서](https://aka.ms/powershell)
-- [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
 - [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)
 
 ## 개요
@@ -136,7 +135,7 @@ wjb -> Wait-Job                   write -> Write-Output
 
 ## Microsoft.Powershell.Core
 
-### [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.1)
+### [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.2)
 
 명령어 실행 이력 보기. 기본 별칭 `history`
 
@@ -146,7 +145,7 @@ Get-History 10 # 10번 째로 실행한 명령어 보기
 Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
 ```
 
-### [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.1)
+### [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.2)
 
 기본 별칭 `r`, `ihy`
 
@@ -156,7 +155,7 @@ Invoke-History -Id 132 # 132번 명령어 실행
 Invoke-History 132 # 위와 같음
 ```
 
-### [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.1)
+### [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2)
 
 프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
 
@@ -184,7 +183,7 @@ Get-Process 'SoundSwitch'
 - `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러개일 땐 콤마`,`로 구분함
 - `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
 
-### [Start-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.1)
+### [Start-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2)
 
 프로세스 시작. 기본 별칭은 `saps`.
 
@@ -218,7 +217,7 @@ Stop-Process -Name 'SoundSwitch'
 Stop-Service -Name "sysmonlog"
 ```
 
-### [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+### [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2)
 
 기본 별칭 `type`
 
@@ -226,7 +225,7 @@ Stop-Service -Name "sysmonlog"
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 ```
 
-### [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
+### [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.2)
 
 기본 별칭 `ls`
 
@@ -247,7 +246,7 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 - `ErrorAction`
 - `Force`
 
-### [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.1)
+### [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.2)
 
 기본 별칭 `copy`
 
@@ -255,9 +254,9 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 ```
 
-### [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1)
+### [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.2)
 
-기본 별칭 `del`
+기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
 
 ```bash
 Remove-Item .\copy\ -r -Force
@@ -302,11 +301,11 @@ Get-Variable -Name m* -ValueOnly
 Get-Variable -Include m*, p*
 ```
 
-### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.1)
+### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.2)
 
 명령어를 입력하고 있는 호스트 프로그램(=파워쉘)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
-### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.1)
+### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2)
 
 TODO
 
@@ -345,7 +344,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
 
-### [Get-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.1)
+### [Get-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.2)
 
 설정된 별칭 목록을 출력한다. 기본 별칭 `gal`, `alias`
 
@@ -355,21 +354,21 @@ alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 �
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 ```
 
-### [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.1)
+### [Set-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2)
 
-신규 별칭 추가.
+신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.2)도 있는데 요건 재할당이 안되서 이미 있는 별칭이라면 에러가 발생한다.
 
 ```bash
 # 탐색기의 별칭으로 ex 추가
-New-Alias ex explorer
+Set-Alias ex explorer
 
 # findstr의 별칭으로 grep 추가
-New-Alias grep findstr
+Set-Alias grep findstr
 # 위와 같음
-New-Alias -Name grep -Value findstr
+Set-Alias -Name grep -Value findstr
 ```
 
-이 명령을 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.1)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
@@ -383,12 +382,12 @@ code $PROFILE
 Function Get-FilesIncludeHidden {
   Get-ChildItem -Force
 }
-New-Alias -Name ll -Value Get-FilesIncludeHidden
+Set-Alias -Name ll -Value Get-FilesIncludeHidden
 ```
 
 함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2).
 
-### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
+### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.2)
 
 특정 객체를 파이프라인에 쓴다. 다른 Cmdlet로 파이프하거나 변수에 할당할 수 있다. 만약 Write-Output이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다. 기본 별칭은 `echo`.
 
@@ -416,7 +415,7 @@ $abc: 123
 Write-Output
 
 
-### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.2)
 
 웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다. 기본 별칭은 `iwr`.
 

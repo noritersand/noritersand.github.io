@@ -8,6 +8,7 @@ tags:
   - linux
   - os
   - user
+  - commands
 ---
 
 * Kramdown table of contents
