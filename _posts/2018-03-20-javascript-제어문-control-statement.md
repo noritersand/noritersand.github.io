@@ -174,7 +174,7 @@ for (var i = 0, j = 10; i < 10; i++, j--) {
 }
 ```
 
-다음 코드를 보면 `for`에서 초기화되는 변수도 끌어올림<sup>hoisting</sup>이 적용되는것을 확인할 수 있다.
+다음 코드를 보면 `for`에서 초기화되는 변수도 끌어올림(hoisting)이 적용되는것을 확인할 수 있다.
 
 ```js
 var i = 'global';
@@ -194,7 +194,7 @@ var i = 'global';
 
 객체가 소유한 프로퍼티의 길이만큼 구문을 반복하되 각 루프마다 객체가 갖고 있는 프로퍼티의 이름을 변수에 할당한다.
 
-객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티<sup>enumerable properties</sup>의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 프로퍼티에 대한 '프로퍼티 설명자'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 프로퍼티가 `true`인 프로퍼티, 예를 들어 `Object.prototype.toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
+객체의 모든 프로퍼티만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티(enumerable properties)의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 자신의 프로퍼티에 대한 '프로퍼티 설명자'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable` 프로퍼티가 `true`인 프로퍼티, 예를 들어 `Object.prototype.toString()`은 `enumerable`이 `false`라서 `for-in`으로 열거 할 수 없다. (자바스크립트 구현체마다 열거 가능한 프로퍼티가 다를 수 있음)
 
 ```
 for (변수 in 객체) { 구문 }

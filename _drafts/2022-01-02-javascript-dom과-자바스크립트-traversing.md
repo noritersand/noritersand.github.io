@@ -20,7 +20,7 @@ tags:
 
 ## 개요
 
-TODO DOM<sup>Document Object Model</sup> 어쩌구 저쩌구
+TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 내 맴대로 분류한 DOM 탐색 관련 메서드 정리.
 

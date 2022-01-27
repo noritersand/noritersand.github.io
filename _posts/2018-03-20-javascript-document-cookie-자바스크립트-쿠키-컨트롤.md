@@ -37,7 +37,7 @@ document.cookie = "cookiename=value; samesite=lax; secure"  // HTTPS 전송만 �
 - `;domain`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
 - `;path`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
 - `;secure`: SSL 통신에서만 사용가능한 쿠키가 생성된다. 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 공유한다.
-- `;samesite`: CSRF<sup>사이트간 요청 위조</sup>를 방지하기 위한 옵션. `lax` 혹은 `strict`로 설정한다. 명시하지 않거나 `none`으로 설정하면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
+- `;samesite`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `lax` 혹은 `strict`로 설정한다. 명시하지 않거나 `none`으로 설정하면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
   > The `strict` value will prevent the cookie from being sent by the browser to the target site in all cross-site browsing context, even when following a regular link.  
   > The `lax` value will only send cookies for TOP LEVEL navigation GET requests. This is sufficient for user tracking, but it will prevent many CSRF attacks.
 

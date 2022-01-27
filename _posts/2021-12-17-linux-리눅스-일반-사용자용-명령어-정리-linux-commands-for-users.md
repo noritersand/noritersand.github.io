@@ -353,7 +353,7 @@ ls -ld */
 
 ## readlink
 
-심볼릭 링크 혹은 캐노니컬<sup>canonical</sup> 파일 이름을 출력한다.
+심볼릭 링크 혹은 캐노니컬(canonical) 파일 이름을 출력한다.
 
 ```bash
 # FILE_NAME 파일의 전체 경로 + 파일명 출력

@@ -88,7 +88,7 @@ Get-Process -Name pwsh &
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
 
-### 호출 연산자<sup>Call Operator</sup> `&`
+### 호출 연산자 Call Operator `&`
 
 호출 연산자는 문자열을 실행할 때 사용한다. 자바스크립트의 `eval()`과 비슷하다.
 
@@ -125,7 +125,7 @@ Invoke-Expression $c
 # Running  Spooler            Print Spooler
 ```
 
-## [함수<sup>Functions</sup>](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
+## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 
 ### 함수 정의
 
@@ -392,7 +392,7 @@ TODO
 
 TODO
 
-### 파이프라인 입력<sup>Pipeline Input</sup>
+### 파이프라인 입력 Pipeline Input
 
 TODO
 

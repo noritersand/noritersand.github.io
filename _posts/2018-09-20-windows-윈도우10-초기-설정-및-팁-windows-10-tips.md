@@ -148,7 +148,7 @@ dism /online /Enable-Feature /FeatureName:TelnetClient
 telnet localhost 4000
 ```
 
-### 로캘(로케일) 범주<sup>Locale Categories</sup> 변경
+### 로캘(로케일) 범주(Locale Categories) 변경
 
 > 로캘 범주는 지역화 루틴에서 사용할 프로그램 로캘 정보 부분을 지정하는 데 사용하는 매니페스트 상수입니다.
 

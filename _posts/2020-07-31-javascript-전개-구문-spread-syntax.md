@@ -41,9 +41,9 @@ console.log(n); // Array(3) [ 1, 2, 3 ]
 console.log(...n); // 1 2 3
 ```
 
-전개 구문에서 점 세개`...`는 **전개 연산자<sup>spread operator</sup>**라고 부른다.
+전개 구문에서 점 세개`...`는 **전개 연산자(spread operator)**라고 부른다.
 
-## 함수 호출에서: 인수 목록을 위한 전개<sup>spread for argument lists</sup>
+## 함수 호출에서: 인수 목록을 위한 전개 Spread for argument lists
 
 ### 객체는 안되영
 
@@ -176,7 +176,7 @@ var clone2 = { ...obj, x: '사십이', c: 1 }; // obj에서 x는 재할당하고
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
-배열과 마찬가지로 얕은 복제<sup>shallow cloning</sup>인 것에 주의:
+배열과 마찬가지로 얕은 복제(shallow cloning)인 것에 주의:
 
 ```js
 var obj = { foo: { a: 1, b: 2 } };

@@ -207,7 +207,7 @@ import com.android.build.OutputFile
 
 ### AVD Manager
 
-AVD<sup>Android Virtual Device</sup>는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다. 버튼의 위치는 안드로이드 스튜디오의 버전에 따라 다를 수 있다. 2020.3.1 버전은 우측 상단에 있음.
+AVD(Android Virtual Device)는 안드로이드를 에뮬레이팅할 때 사용할 OS 기기의 구성 정도로 이해하면 된다. 버튼의 위치는 안드로이드 스튜디오의 버전에 따라 다를 수 있다. 2020.3.1 버전은 우측 상단에 있음.
 
 역시 적당한 걸로 아무거나 골라서 추가한다. 그리고 `Launch this AVD in the emulator` 클릭(재생 버튼).
 

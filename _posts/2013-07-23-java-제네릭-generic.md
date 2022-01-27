@@ -125,7 +125,7 @@ public class GenericExample {
 }
 ```
 
-## 타입 제한<sup>Bounded Type Parameters</sup>
+## 타입 제한 Bounded Type Parameters
 
 제네릭 변수의 데이터 타입을 특정 서브타입이나 슈퍼타입으로 제한하는 기능이다. `super` 혹은 `extends` 키워드를 사용한다.
 
