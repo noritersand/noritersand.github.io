@@ -7,6 +7,7 @@ categories:
 tags:
   - devtool
   - intellij
+  - note
 ---
 
 * Kramdown table of contents

@@ -6,7 +6,7 @@ categories:
   - english
 tags:
   - english
-  - noteasy
+  - not-easy
 ---
 
 * Kramdown table of contents

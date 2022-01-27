@@ -1,14 +1,14 @@
 ---
 layout: post
 date: 2022-01-27 13:15:42 +0900
-title: '[React] 리액트 네이티브 메모장 React Native dev note'
+title: '[React] 리액트 네이티브 메모 React Native dev note'
 categories:
   - react
 tags:
   - react
   - react-native
   - javascript
-  - basics
+  - note
 ---
 
 * Kramdown table of contents
@@ -59,3 +59,9 @@ useEffect(() => {
   onBackButtonPress={ok}
 >
 ```
+
+## 이벤트
+
+### onPress
+
+TODO

@@ -173,13 +173,14 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 ## 기본 단축키 메모
 
-### 자주 쓰는 기능
+### 파일 에디터
 
 - <kbd>ctrl + .</kbd>: Quick Fix...
 - <kbd>ctrl + k, ctrl + q<kbd>: Go to Last Edit Location
 - <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
 - <kbd>f12</kbd>: Go To Definition. 선언부로 이동
 - <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)
+- <kbd>ctrl + shift + r</kbd>: Refactor... 현재 캐럿이 위치에 따라 가능한 코드 리팩토링 옵션을 보여준다.
 
 ### 멀티 캐럿
 

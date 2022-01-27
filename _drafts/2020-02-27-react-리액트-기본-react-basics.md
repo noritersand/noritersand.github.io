@@ -345,3 +345,51 @@ ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 //   <div>bar</div>
 // </div>
 ```
+
+## State
+
+[컴포넌트 State](https://ko.reactjs.org/docs/faq-state.html)
+
+state는 직접 값을 변경하지 말고 `setState()` 통해야 함. 그래야 리액트가 다시 렌더링 한다.
+
+```js
+state = {
+  someFlag: false
+}
+
+this.state.someFlag = true; // X
+this.setState({ someFlag: true }); // O
+```
+
+`this.state`를 직접 읽어서 처리하는 코드는 문제를 발생시킬 수 있음. 리액트는 컴포넌트가 다시 렌더링을 할 때까지 `this.state`의 값을 갱신하지 않기 때문이다. 따라서 다음처럼 객체 대신 함수를 전달해야 함:
+
+```js
+this.setState((state) => { // this.state가 아니고 state
+  return {
+    count: state.count++
+  }
+});
+```
+
+TODO
+
+### prevState
+
+```js
+this.setState(prevState => {
+  // sampleNum: sampleNum + 1
+  return {
+    sampleNum: prevState.sampleNum + 1
+  }
+});
+```
+
+TODO
+
+## Props
+
+[Components와 Props](https://ko.reactjs.org/docs/components-and-props.html)
+
+부모로부터 전달되는 읽기 전용 프로퍼티.
+
+TODO
