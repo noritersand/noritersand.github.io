@@ -24,7 +24,27 @@ tags:
 
 ## 개요
 
-파워쉘에서 스크립트를 작성하고 사용하는 방법 중 기본적인 사항만 정리한 글.
+파워쉘에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
+
+## 파워쉘 스크립트의 바로가기 만들기
+
+아래는 Sound Switch 프로세스를 강제로 재시작하는 스크립트다:
+
+```bash
+# restart-soundswitch.ps1
+Stop-Process -Name 'SoundSwitch'
+Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
+```
+
+문제는 파워쉘 스크립트 파일이 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워쉘 스크립트를 실행한다:
+
+```bash
+# restart-soundswitch.bat
+pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
+pause
+```
+
+이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
 
 ## 문법
 
@@ -53,6 +73,14 @@ $i = 5
 '$env:LOCALAPPDATA\abcd'
 # $env:LOCALAPPDATA\abcd
 ```
+
+## 연산자
+
+[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-연산자-powershell-operator/)
+
+## 명령어
+
+[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands/)
 
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 
