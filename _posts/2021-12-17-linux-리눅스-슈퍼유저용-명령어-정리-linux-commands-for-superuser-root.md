@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 14:55:05 +0900
-title: '[Linux] 리눅스 루트 계정용 명령어 정리 Linux Commands for root'
+title: '[Linux] 리눅스 슈퍼유저용 명령어 정리 Linux Commands for Superuser(root)'
 categories:
   - linux
 tags:
@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-리눅스 명령어 중 루트 권한이 필요하거나 시스템 관리와 관련된 명령어/기능만 골라 정리한 글.
+리눅스 명령어 중 루트 권한이 필요하거나 시스템 관리와 관련된 명령어/기능만 정리한 글.
 
 ## sudo
 

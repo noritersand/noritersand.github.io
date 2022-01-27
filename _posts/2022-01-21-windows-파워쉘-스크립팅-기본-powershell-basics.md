@@ -26,7 +26,7 @@ tags:
 
 파워쉘에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
 
-## 파워쉘 스크립트의 바로가기 만들기
+## 스크립트 파일의 바로가기 만들기
 
 아래는 Sound Switch 프로세스를 강제로 재시작하는 스크립트다:
 
@@ -41,7 +41,6 @@ Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 ```bash
 # restart-soundswitch.bat
 pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
-pause
 ```
 
 이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
