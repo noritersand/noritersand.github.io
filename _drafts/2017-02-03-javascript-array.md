@@ -30,7 +30,7 @@ tags:
 concat([value1[, value2[, ...[, valueN]]]])
 ```
 
-인자를 생략하면 기존 배열의 얕은 복제본<sup>shallow clone</sup>을 반환한다.
+인자를 생략하면 기존 배열의 얕은 복제본(shallow clone)을 반환한다.
 
 ```js
 const alphabet = ['a', 'b', 'c'];

@@ -114,7 +114,7 @@ chown 소유권자:그룹식별자  바꾸고 싶은 파일 이름
 chown tbs:tbs ./some-folder
 ```
 
-## APT<sup>Advanced Packaging Tool</sup>
+## APT, Advanced Packaging Tool
 
 - [메뉴얼: apt](https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html)
 - [메뉴얼: apt-get](https://manpages.ubuntu.com/manpages/xenial/man8/apt-get.8.html)
@@ -252,7 +252,7 @@ iptables -A OUTPUT -p tcp --sport 80 -m account --aname mywwwserver --aaddr 192.
 
 ## ufw
 
-UFW<sup>Uncomplicated FireWall</sup> 방화벽 설정. 기본 정책은 아웃바운드를 모두 허용, 인바운드를 모두 차단한다고 한다. 관련 설정 파일은 `/etc/ufw` 아래에 있다.
+UFW(Uncomplicated FireWall) 방화벽 설정. 기본 정책은 아웃바운드를 모두 허용, 인바운드를 모두 차단한다고 한다. 관련 설정 파일은 `/etc/ufw` 아래에 있다.
 
 ```bash
 # 방화벽 활성화(켜기)

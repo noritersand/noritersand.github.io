@@ -249,7 +249,7 @@ var b = 2;
 var c = a + b;
 ```
 
-### 변수의 유효범위<sup>scope</sup>
+### 변수의 유효범위 Scope
 
 자바스크립트의 변수는 블록 단위가 아닌 함수 단위로 유효범위를 갖는다.
 
@@ -283,9 +283,9 @@ test2();
 
 위 코드에서 `c`는 함수 내에서 선언된 변수, 즉 지역 변수이기 때문에 아무것도 출력되지 않는다.
 
-변수 b처럼 함수 내에서 선언되었어도 `var` 키워드를 생략하면 선언되지 않은 변수<sup>undeclared variable</sup>가 되며, 해당 변수는 마치 미리 선언된 전역 변수처럼 작동한다. 동시에 해당 변수는 전역 객체의 프로퍼티가 된다. (단, strict mode에선 허용되지 않음)
+변수 b처럼 함수 내에서 선언되었어도 `var` 키워드를 생략하면 선언되지 않은 변수(undeclared variable)가 되며, 해당 변수는 마치 미리 선언된 전역 변수처럼 작동한다. 동시에 해당 변수는 전역 객체의 프로퍼티가 된다. (단, strict mode에선 허용되지 않음)
 
-## 리터럴<sup>Literal</sup>
+## 리터럴 Literal
 
 리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. [http://www.terms.co.kr/literal.htm](http://www.terms.co.kr/literal.htm)
 
@@ -376,7 +376,7 @@ var add = function(a, b) {
 
 #### 객체 리터럴
 
-객체 리터럴은 '리터럴 표기에 의한 객체 생성<sup>creating objects with literal notation</sup>'이라고도 한다.
+객체 리터럴은 '리터럴 표기에 의한 객체 생성(creating objects with literal notation)'이라고도 한다.
 
 ```js
 var ob = {}; // new Object()와 같음

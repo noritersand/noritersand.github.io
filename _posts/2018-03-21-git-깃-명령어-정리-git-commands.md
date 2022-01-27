@@ -24,12 +24,12 @@ Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
 
 ## 용어
 
-- 워킹 트리<sup>working tree</sup>: 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
-- 스테이징 에어리어<sup>staging area</sup>: 인덱스라고도 부른다.
-- 헤드<sup>HEAD</sup>: 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 가령 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
-- 깃 디렉터리<sup>git directory</sup>: git 사용에 필요한 모든 정보가 있는 로컬 저장소.
-- 델타<sup>delta</sup>: 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
-- 리모트 트래킹 브랜치<sup>remote-tracking branches</sup>: 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
+- 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
+- 스테이징 에어리어(staging area): 인덱스라고도 부른다.
+- 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 가령 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
+- 깃 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
+- 델타(delta): 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
+- 리모트 트래킹 브랜치(remote-tracking branches): 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
 
 ![](/images/git-local-operations.png)
 
@@ -149,7 +149,7 @@ git branch -v  # 마지막 커밋 메시지도 함께 출력한다
 git branch -vv  # 추적중인 브랜치 확인(업스트림 브랜치 확인)
 ```
 
-#### 업스트림<sup>upstream</sup> 브랜치 설정 \#1
+#### 업스트림(Upstream) 브랜치 설정 \#1
 
 깃이 리모트 저장소의 특정 브랜치를 추적하도록 설정한다. 추적 중인 브랜치를 업스트림 브랜치라고 하는데, 업스트림 브랜치가 설정되어 있으면 `pull`이나 `push`할 때 리모트의 저장소명과 브랜치명을 생략할 수 있다.
 
@@ -252,7 +252,7 @@ git checkout 태그
 git checkout v0.3.1.5
 ```
 
-브랜치가 아닌 커밋을 체크아웃 하면 이를 '분리된 헤드<sup>detached HEAD</sup>' 상태에 있다고 한다. 깃은 이 상태에서 바로 작업하지 말고 별도의 브랜치를 생성하여 작업할 것을 권장하고 있다.
+브랜치가 아닌 커밋을 체크아웃 하면 이를 '분리된 헤드(detached HEAD)' 상태에 있다고 한다. 깃은 이 상태에서 바로 작업하지 말고 별도의 브랜치를 생성하여 작업할 것을 권장하고 있다.
 
 ```bash
 $ git checkout afa51b4684417b3cfae3768f93b1fe73a206acf3
@@ -353,7 +353,7 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 
 ## [clean](https://git-scm.com/docs/git-clean)
 
-추적중이지 않은<sup>untracked</sup> 파일 삭제하기.
+추적중이지 않은(untracked) 파일 삭제하기.
 
 ```bash
 git clean -f
@@ -430,7 +430,7 @@ Date:   Thu Nov 17 10:07:35 2016 +0900
     Signed-off-by: noritersand <who@where.com>
 ```
 
-#### 자동 스테이징<sup>staging</sup>
+#### 자동 스테이징
 
 `-a` 옵션을 사용하면 `add` 없이 커밋할 수 있다. 단, 추적 중인 파일만 자동으로 스테이징된다.
 
@@ -517,7 +517,7 @@ git config --global --list
 git config --local core.editor
 ```
 
-#### 단축어<sup>alias</sup> 만들기
+#### 단축어(alias) 만들기
 
 ```bash
 git config --global alias.사용할키워드 '명령어'
@@ -870,7 +870,7 @@ git log master origin/master # 로컬의 master와 origin remote의 master 브�
 #### options
 
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
-- `-p`: 각 커밋에 적용된 패치<sup>patch</sup>(=반영된 변경사항)를 보여준다.
+- `-p`: 각 커밋에 적용된 패치(patch, 반영된 변경사항)를 보여준다.
 - `-c`: 머지 커밋과 부모 커밋을 비교해 변경사항을 모두 출력하는 옵션
 - `--merges`: 머지 커밋만 출력.
 - `--no-merges`: 머지 커밋이 아닌 것만 출력한다.
@@ -943,7 +943,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 - `-o` `--others`
 - `-i` `--ignored`
 - `-s` `--stage`
-- `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된<sup>assumed unchanged</sup>' 파일은 소문자로 표시한다.
+- `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된(assumed unchanged)' 파일은 소문자로 표시한다.
 
 ```bash
 git ls-files -v | grep ^h  # assumed unchanged 파일만 표시
@@ -979,7 +979,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 ## [merge](https://git-scm.com/docs/git-merge)
 
-현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌<sup>conflict</sup>이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 표시해준다.
+현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 표시해준다.
 
 깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다. [^1]
 
@@ -995,7 +995,7 @@ git merge iss123 hotfix  # 헤드 브랜치에 iss123과 hotfix를 머지
 git merge A B
 ```
 
-현재 브랜치<sup>current branch</sup>에 A 브랜치와 B 브랜치를 머지한다.
+현재 브랜치(current branch)에 A 브랜치와 B 브랜치를 머지한다.
 
 #### options
 
@@ -1145,7 +1145,7 @@ git push --tags  # 생성한 태그를 모두 업로드
 git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 ```
 
-위의 경우 현재 브랜치(HEAD)의 델타를 패치<sup>patch</sup>로 만들어놓고, 현재 브랜치를 master의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다. (가지를 줄기서부터 잘라 다른 위치에 접붙이는 걸 상상해 보자)
+위의 경우 현재 브랜치(HEAD)의 델타를 패치(patch)로 만들어놓고, 현재 브랜치를 master의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다. (가지를 줄기서부터 잘라 다른 위치에 접붙이는 걸 상상해 보자)
 
 자세한 내용은 아래 링크를 참고:
 
@@ -1687,7 +1687,7 @@ git tag -d v0.9
 - `--assume-unchanged`: 특정 파일을 변경되지 않은 것으로 간주한다. 이후 해당 파일은 스테이지 목록에 나타나지 않는다.
 - `--no-assume-unchanged`: '변경되지 않음' 상태의 파일을 되돌린다.
 
-#### 변경된 파일을 스테이지 대상 목록<sup>Unstaged Changes</sup>에서 제외하기
+#### 변경된 파일을 스테이지 대상 목록(Unstaged Changes)에서 제외하기
 
 ```bash
 git update-index --assume-unchanged IGNORE_ME  # IGNORE_ME 파일을 변경되지 않은 것으로 간주함.

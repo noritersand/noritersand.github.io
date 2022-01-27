@@ -15,7 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [\[MDN\] 상속과 프로토타입<sup>Inheritance and the prototype chain</sup>](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+- [\[MDN\] 상속과 프로토타입 Inheritance and the prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
 - [\[MDN\] Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 - [\[MDN\] Object.prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 - [PoiemaWeb: Prototype](https://poiemaweb.com/js-prototype)
@@ -28,7 +28,7 @@ tags:
 
 ## 프로토타입이란?
 
-> 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 작동 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스<sup>class-less</sup>, 프로토타입 지향<sup>prototype-oriented</sup> 혹은 인스턴스 기반<sup>instance-based</sup> 프로그래밍이라고도 한다.
+> 프로토타입 기반 프로그래밍은 객체지향 프로그래밍의 한 형태의 갈래로 클래스가 없고, 클래스 기반 언어에서 상속을 사용하는 것과는 다르게, 객체를 원형(프로토타입)으로 하여 복제의 과정을 통하여 객체의 작동 방식을 다시 사용할 수 있다. 프로토타입기반 프로그래밍은 클래스리스(class-less), 프로토타입 지향(prototype-oriented) 혹은 인스턴스 기반(instance-based) 프로그래밍이라고도 한다.
 >
 > [위키백과: 프로토타입 기반 프로그래밍](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
@@ -191,9 +191,9 @@ Function.assign; // undefined
 ({}).assign; // undefined
 ```
 
-## 프로퍼티의 가려짐 property shadowing
+## 프로퍼티의 가려짐 Property Shadowing
 
-객체의 프로퍼티는 객체 자신이 소유한 프로퍼티<sup>own properties</sup>\*와 프로토타입의 프로퍼티로 나뉜다. 소유한 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
+객체의 프로퍼티는 객체 자신이 소유한 프로퍼티(own properties)\*와 프로토타입의 프로퍼티로 나뉜다. 소유한 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
 
 만약 소유한 프로퍼티와 프로토타입의 프로퍼티가 동시에 존재한다면, 소유한 프로퍼티가 우선되며 프로토타입의 프로퍼티는 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '프로퍼티의 가려짐'이라고 한다.
 
@@ -217,7 +217,7 @@ o.c; // 4
 o.__proto__.c; // 4
 ```
 
-프로퍼티의 값으로 함수가 지정되었을 땐 메서드 오버라이딩<sup>method overriding</sup>이라는 용어를 사용한다. 이름만 다르고 개념은 같음.
+프로퍼티의 값으로 함수가 지정되었을 땐 메서드 오버라이딩(method overriding)이라는 용어를 사용한다. 이름만 다르고 개념은 같음.
 
 ## 객체의 프로퍼티 vs 프로토타입의 프로퍼티
 
@@ -330,7 +330,7 @@ son.__proto__.age; // 45
 son.age; // 17
 ```
 
-역으로 생각해서 `null`을 프로토타입으로 지정하면 순수 사전식<sup>pure dictionary</sup> 객체를 만들 수 있다:
+한편 `null`을 프로토타입으로 지정하면 순수 사전식(pure dictionary) 객체를 만들 수 있다:
 
 ```js
 let plainObject = Object.create(null);
@@ -346,7 +346,7 @@ plainObject.toString; // undefined
 
 ### [\_\_proto\_\_](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#prototype_mutation)
 
-이 방법은 상속이나 확장이 아니라 변이<sup>mutation</sup>라고 부른다:
+이 방법은 상속이나 확장이 아니라 변이(mutation)라고 부른다:
 
 ```js
 let obj = {};

@@ -148,7 +148,7 @@ logger.error($var$.getMessage(), $var$); // $var$ -> variableOfType("Exception")
 private static final Logger logger = LoggerFactory.getLogger($className$.class); // $className$ -> className(), declaration
 ```
 
-#### 사전 정의 변수<sup>Predefined template variables﻿</sup>
+#### 사전 정의 변수 Predefined template variables﻿
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨

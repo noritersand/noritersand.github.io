@@ -19,7 +19,7 @@ tags:
 
 ## 개요
 
-CSS<sup>Cascading Sytle Sheet</sup> 기본 사용법 정리.
+CSS(Cascading Sytle Sheet) 기본 사용법 정리.
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
 

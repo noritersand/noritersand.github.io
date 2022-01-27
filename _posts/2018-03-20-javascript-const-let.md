@@ -102,9 +102,9 @@ console.log(arr[ele2]); // ReferenceError: ele2 is not defined
 
 `let`으로 선언된 `ele2`는 `for`문 밖에서 참조할 수 없다.
 
-## let과 const는 끌어올림<sup>hoisting</sup> 대상에서 제외
+## let과 const는 끌어올림 대상에서 제외
 
-`let`과 `const`는 공통적으로 끌어올림(혹은 선언 끌어올리기)의 적용을 받지 않는다:
+`let`과 `const`는 공통적으로 끌어올림(hoisting, 호이스팅 혹은 선언 끌어올리기)의 적용을 받지 않는다:
 
 ```js
 console.log(a); // undefined

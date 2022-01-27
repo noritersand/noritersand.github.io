@@ -20,7 +20,7 @@ tags:
 
 ## 래퍼 객체란?
 
-이름처럼 래퍼<sup>wrapper</sup>는 원시<sup>primitive</sup> 타입의 값을 감싸는 형태의 객체다. `number`, `string`, `boolean`, `symbol` 데이터 타입에 각각 대응하는 `Number`, `String`, `Boolean`, `Symbol`이 제공된다. 래퍼 객체와 원시 타입간의 변환은 자바스크립트가 알아서 해주기 때문에 우리는 이를 신경쓰지 않아도 되며 명시적인 처리가 필요한 경우도 거의 없다.
+이름처럼 래퍼(wrapper)는 원시(primitive) 타입의 값을 감싸는 형태의 객체다. `number`, `string`, `boolean`, `symbol` 데이터 타입에 각각 대응하는 `Number`, `String`, `Boolean`, `Symbol`이 제공된다. 래퍼 객체와 원시 타입간의 변환은 자바스크립트가 알아서 해주기 때문에 우리는 이를 신경쓰지 않아도 되며 명시적인 처리가 필요한 경우도 거의 없다.
 
 다만 래퍼 객체를 아예 모르는 상태에선 종종 보이는 '이상한' 현상에 당황할 수도... 아래를 보자:
 
