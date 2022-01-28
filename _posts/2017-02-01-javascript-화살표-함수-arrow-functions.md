@@ -39,7 +39,7 @@ singleParam => { statements }
 () => { statements }
 ```
 
-#### 예시 \#1
+#### 예시\#1
 
 아래 둘은 같다:
 
@@ -55,7 +55,7 @@ var b = (arg) => { console.log(arg); };
 var b = function(arg) { console.log(arg); };
 ```
 
-#### 예시 \#2
+#### 예시\#2
 
 아래처럼 함수의 모든 표현식이 `return` 문 다음에 있는 경우:
 
@@ -78,7 +78,7 @@ var fn = () => (1 + 2);
 var fn = () => 1 + 2;
 ```
 
-#### 예시 \#3
+#### 예시\#3
 
 ```js
 function repeatTwice(fn) {

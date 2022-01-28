@@ -267,7 +267,7 @@ Remove-Item .\copy\ -r -Force
 - `-r`: 재귀삭제
 - `-Force`: 확인 없이 삭제
 
-## [Resolve-Path](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.2)
+### [Resolve-Path](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.2)
 
 지정된 아이템의 전체 경로를 출력한다. 기본 별칭은 `rvpa`.
 
