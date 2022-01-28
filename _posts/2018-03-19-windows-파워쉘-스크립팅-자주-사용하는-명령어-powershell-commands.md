@@ -267,6 +267,27 @@ Remove-Item .\copy\ -r -Force
 - `-r`: 재귀삭제
 - `-Force`: 확인 없이 삭제
 
+## [Resolve-Path](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.2)
+
+지정된 아이템의 전체 경로를 출력한다. 기본 별칭은 `rvpa`.
+
+```bash
+# 홈 디렉터리의 경로 출력
+Resolve-Path ~
+
+# 모든 하위 아이템(파일, 디렉터리)들의 경로 출력
+Resolve-Path *
+
+# package.json 파일의 경로 출력
+Resolve-Path .\package.json
+
+# C:\Program Files 하위 아이템들의 경로 출력
+'C:\Program Files\*' | Resolve-Path
+
+# 현재 경로부터 홈 디렉터리까지의 상대 경로 출력
+Resolve-Path -Relative ~
+```
+
 ## Microsoft.Powershell.Utility
 
 ### [Set-Variable](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.2)

@@ -17,6 +17,7 @@ tags:
 #### 참고한 문서
 
 - [\[React Native\] APIs](https://reactnative.dev/docs/accessibilityinfo)
+- [Core Components and APIs](https://reactnative.dev/docs/components-and-apis)
 
 #### 버전 정보
 
@@ -31,7 +32,21 @@ tags:
 
 리액트 네이티브 개발 환경 구성 방법 요약 정리. 글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
 
-## 기기의 뒤로 가기 버튼에 페이지 변환되지 않도록 방지 처리
+## Core Components
+
+### [View](https://reactnative.dev/docs/view)
+
+TODO
+
+## 이벤트
+
+### onPress
+
+TODO
+
+## 기타 모든 것
+
+### 기기의 뒤로 가기 버튼에 페이지 변환되지 않도록 방지 처리
 
 `<Screen/>`일 때는 `BackHandler`를:
 
@@ -59,9 +74,3 @@ useEffect(() => {
   onBackButtonPress={ok}
 >
 ```
-
-## 이벤트
-
-### onPress
-
-TODO

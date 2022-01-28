@@ -19,10 +19,13 @@ tags:
 
 - IE에서 사용 불가
 
-## 화살표 함수
+## 개요
 
-~~람다 함수가 화살표 함수인가?~~  
-이름이야 어쨋든 익명 함수를 구현하는 간단한 표현식 되겠다.
+화살표 함수 표현(arrow function expression)에 대한 간단 정리.
+
+~~람다 함수가 화살표 함수인가?~~ 이름이야 어쨋든 함수를 정의하는 간단한 표현식 되겠다.
+
+## 문법
 
 ```js
 (param1, param2, …, paramN) => { statements }
@@ -36,7 +39,7 @@ singleParam => { statements }
 () => { statements }
 ```
 
-#### 이해를 위한 예시 \#1
+#### 예시 \#1
 
 아래 둘은 같다:
 
@@ -52,7 +55,30 @@ var b = (arg) => { console.log(arg); };
 var b = function(arg) { console.log(arg); };
 ```
 
-#### 이해를 위한 예시 \#2
+#### 예시 \#2
+
+아래처럼 함수의 모든 표현식이 `return` 문 다음에 있는 경우:
+
+```js
+function fn() {
+  return 1 + 2;
+}
+```
+
+이렇게 줄일 수 있다:
+
+```js
+// 중괄호가 아니라 소괄호
+var fn = () => (1 + 2);
+```
+
+그냥 괄호를 빼버려도 됨:
+
+```js
+var fn = () => 1 + 2;
+```
+
+#### 예시 \#3
 
 ```js
 function repeatTwice(fn) {
@@ -74,6 +100,22 @@ setTimeout(() => console.log('timeout#2'), 2000); // 2초 후 "timeout#2"
 setTimeout(() => {
   console.log('timeout#1');
 }, 1000); // 1초 후 "timeout#1"
+```
+
+## 제한사항
+
+### 생성자 함수로 사용할 수 없음
+
+화살표 함수 표현으로 생성한 함수는 생성자 함수로 호출(`new 키워드`)할 때 에러가 발생한다:
+
+```js
+let newbie = () => {
+  console.log('noop noop!');
+};
+
+newbie(); // noop noop! debugger eval code:2:11
+
+new newbie(); // Uncaught TypeError: newbie is not a constructor
 ```
 
 끗.

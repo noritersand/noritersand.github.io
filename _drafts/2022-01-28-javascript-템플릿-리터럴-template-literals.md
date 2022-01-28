@@ -1,0 +1,49 @@
+---
+layout: post
+date: 2022-01-28 17:50:06 +0900
+title: '[JavaScript] 템플릿 리터럴 Template literals'
+categories:
+  - javascript
+tags:
+  - ecmascript
+  - javascript
+  - language
+  - template-literals
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+#### 참고한 문서
+
+- [\[MDN\] Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+
+#### 버전 정보
+
+- IE에서만 사용 불가
+
+## 개요
+
+ES2105의 새 문법 템플릿 리터럴의 간단 정리 글. 원래 명칭은 'template strings' 였으나 변경됨.
+
+## 템플릿 리터럴
+
+```
+`string text ${expression} string text`
+```
+
+따옴표 대신 그레이브(혹은 backticks ``` ` ```)로 표현하는 문자열 리터럴. 보통 플레이스 홀더(placeholders) `${}`와 같이 쓰이며, 플레이스 홀더의 표현식을 먼저 평가하고 문자열에 삽입한 결과를 반환한다.
+
+이렇게 쓴다:
+
+```js
+let abc = 1234
+`${abc} is dumdum`
+// '1234 is dumdum' 출력
+```
+
+그레이브를 표현하려면 역슬래시 `\`로 이스케이핑 하면 됨:
+
+```js
+`\`` === '`' // true
+```
