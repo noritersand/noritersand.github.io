@@ -113,7 +113,7 @@ let newbie = () => {
   console.log('noop noop!');
 };
 
-newbie(); // noop noop! debugger eval code:2:11
+newbie(); // noop noop!
 
 new newbie(); // Uncaught TypeError: newbie is not a constructor
 ```
