@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-07-20 15:19:00 +0900
+date: 1970-01-03 00:00:00 +0900
 title: '[영어넘모어려워] 문법 기본 basic grammar'
 categories:
   - english

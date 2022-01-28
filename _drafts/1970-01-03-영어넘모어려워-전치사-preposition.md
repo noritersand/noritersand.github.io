@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2019-09-23 18:27:00 +0900
+date: 1970-01-03 00:00:00 +0900
 title: '[영어넘모어려워] 전치사 preposition'
 categories:
   - english
