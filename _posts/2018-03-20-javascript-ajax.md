@@ -125,7 +125,7 @@ XMLHttpRequest.send( [ string ] )
 
 - `string`: 폼 데이터로 전송할 문자열
 
-서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. `string`은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. POST 방식일 땐 아래 예시처럼 `setRequestHeader()`로 컨텐츠 타입을 지정하지 않으면 서버에서 처리할 수 없다. 그리고 `string`은 반드시 쿼리스트링 형태로 작성해야 한다.
+서버로 request 송신. `open()`에서 설정한 값에 따라 서버로 데이터를 요청한다. `string`은 HTTP 메서드 타입이 POST일 경우에만 명시하며 폼 데이터로 간주된다. `string`은 반드시 쿼리스트링 형태로 작성해야 한다.
 
 ```js
 var xhr = new XMLHttpRequest();

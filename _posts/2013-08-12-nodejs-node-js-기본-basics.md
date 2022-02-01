@@ -100,27 +100,27 @@ var show = exports.show = function() {
 }
 ```
 
-`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, 아래 예시 2처럼 `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
+`module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
 
 ### require()
 
-모듈 불러오기.
+모듈 가져오기.
 
 ```
 require(경로/파일명);
 ```
 
-경로는 문자열`' '`로 표시하며 경로를 생략할 경우 기본모듈이나 확장모듈(node.js가 기본적으로 제공하는 모듈 혹은 npm으로 설치한 모듈을 말하며 이 둘을 *native module*이라 한다.)을 불러온다.
+경로는 문자열`' '`로 표시하며 경로를 생략할 경우 기본모듈이나 확장모듈(node.js가 기본적으로 제공하는 모듈 혹은 npm으로 설치한 모듈을 말하며 이 둘을 *native module*이라 한다.)을 가져온다.
 
-같은 경로내에 불러올 js 파일이 있다면 경로는 `./`가 되고 한 단계 상위의 폴더라면 경로는 `../`가 된다.
+같은 경로내에 가져올 js 파일이 있다면 경로는 `./`가 되고 한 단계 상위의 폴더라면 경로는 `../`가 된다.
 
 ```js
 var userModule = require('./user_module');
 ```
 
-`require()`로 불려진 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 반환된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나, 함수 자체를 내보내 `new`로 인스턴스를 생성해서 사용한다.
+`require()`로 호출된 파일은 노드 애플리케이션 내에 캐싱된다. 다시 말해 같은 파일을 여러번 호출해도 최초로 생성되었던 객체가 반복적으로 반환된다. 별도의 인스턴스가 필요하다면 함수를 따로 호출하거나, 함수 자체를 내보내 `new`로 인스턴스를 생성해서 사용해야 함.
 
-### 작성 예시 \#1
+#### 작성 예시 \#1
 
 ```js
 function printA(){};
@@ -129,35 +129,30 @@ var PI = 3.14;
 exports.printA = printA;
 exports.PI = PI;
 
-// 위에서 내보낸 모듈은 다음처럼 불러온다
+// 위에서 내보낸 모듈은 다음처럼 가져온다
 var userModule = require('js를_제외한_파일_경로');
 userModule.printA();
 console.log(userModule.PI);
 ```
 
-### 작성 예시 \#2
-
-#### exports-test.js
+#### 작성 예시 \#2
 
 ```js
-// 이렇게 사용할 땐 module을 생략할 수 없음
-module.exports = {
+// exports-test.js
+module.exports = { // 이렇게 내보낼 땐 module을 생략할 수 없음
   connectString: '10.20.30.40:1234/QADB',
   user: 'fixalot',
   password: '1234abcd!'
 }
 ```
 
-#### run-me.js
-
 ```js
+// run-me.js
 const dbinfo = require('./exports-test.js');
 console.log('dbinfo.connectString:', dbinfo.connectString);
 console.log('dbinfo.user:', dbinfo.user);
 console.log('dbinfo.password:', dbinfo.password);
 ```
-
-#### 실행
 
 ```bash
 PS> node .\run-me.js

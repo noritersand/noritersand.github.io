@@ -445,7 +445,7 @@ Write-Output
 Invoke-WebRequest -Uri "https://google.com"
 
 # 헤더와 바디를 지정하는 방법
-# grave(`)는 파워쉘에서 줄바꿈을 의미함
+# 백틱(`)은 파워쉘에서 줄바꿈을 의미함
 Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }

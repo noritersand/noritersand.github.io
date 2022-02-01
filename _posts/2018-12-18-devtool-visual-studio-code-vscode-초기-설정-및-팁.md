@@ -153,7 +153,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 ]
 ```
 
-`oem_3`는 [사용자의 키보드 레이아웃에 따라 다를 수 있는데](https://github.com/microsoft/vscode/issues/27491) 작성자의 경우 grave``` ` ```에 해당함.
+`oem_3`는 [사용자의 키보드 레이아웃에 따라 다를 수 있는데](https://github.com/microsoft/vscode/issues/27491) 작성자의 경우 백틱``` ` ```에 해당함.
 
 ## 추천 확장 기능(플러그인)
 
