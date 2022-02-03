@@ -345,8 +345,8 @@ async 함수의 본문은 0개 이상의 `await`으로 분할된다고 볼 수 �
 
 ```js
 var fn = async () => {
-  console.log('1');
-  console.log('2');
+  console.log(1);
+  console.log(2);
 };
 fn();
 console.log('알파카파카파까?');
@@ -374,7 +374,7 @@ console.log('고양이실패단');
 
 ### await 사용 시 주의할 점
 
-Promise의 상태 변화를 기다리는 `await`의 동기적 특성은 아주 당연하게도 함수 실행 속도에 영향을 준다는 것을 의미한다:
+Promise의 상태 변화를 기다리는 `await`의 동기적 특성은 아주 당연하게도 처리 속도에 악영향을 줄 수 있다:
 
 ```js
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -392,7 +392,7 @@ var timeTest = async () => {
 timeTest(); // It takes 3028 milliseconds.
 ```
 
-기다리는 것을 세 번이나 반복했더니 3초나 걸린다. 이런 경우엔 Promise를 반환하는 표현식 앞에 `await`을 걸지 말고, 일단 모두 실행하도록 한 다음 변수의 상태 변화를 기다리도록 하는게 좋다:
+기다리는 것을 세 번 반복했더니 3초나 걸린다. 이런 경우엔 Promise를 반환하는 표현식 앞에 `await`을 걸지 말고, 일단 모두 실행하도록 한 다음 변수의 상태 변화를 기다리도록 하는게 좋다:
 
 ```js
 var timeTest2 = async () => {
@@ -451,33 +451,33 @@ pick().then(console.log);
 
 ### 진정한 병렬 처리?
 
-변수에 `await`를 걸든, `Promise.all()`이나 `Promise.race()`를 쓰든 문제가 하나 남아 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
+변수에 `await`를 걸든, `Promise.all()`이나 `Promise.race()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
 
 ```js
 var concurrent3 = async () => {
   let startTime = new Date();
 
-  await Promise.all([wait2(3000), wait2(2000), wait2(1000)]).then(console.log);
+  await Promise.all([wait2(5000), wait2(3000), wait2(1000)]).then(console.log);
 
   let endTime = new Date();
   console.log(`done. It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
 }
 concurrent3();
-// done. It takes 3004 milliseconds.
+// done. It takes 5013 milliseconds.
 ```
 
-가장 느린 Promise인 `wait2(3000)` 때문에 총 실행시간은 약 3초다.
+가장 느린 Promise인 `wait2(5000)` 때문에 총 실행시간은 약 5초다.
 
 사실 이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
 
 ```js
 var parallel = function() {
+  wait2(5000).then(console.log);
   wait2(3000).then(console.log);
-  wait2(2000).then(console.log);
   wait2(1000).then(console.log);
 }
 parallel();
 // 1000
-// 2000
 // 3000
+// 5000
 ```
