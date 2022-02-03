@@ -5,8 +5,8 @@ title: '[JavaScript] console'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - console-standard
   - console
 ---
 

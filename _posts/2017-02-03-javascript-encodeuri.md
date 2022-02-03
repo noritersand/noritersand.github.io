@@ -5,8 +5,8 @@ title: '[JavaScript] encodeURI'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - encodeuri
   - querystring
 ---

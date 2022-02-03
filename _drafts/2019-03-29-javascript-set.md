@@ -5,8 +5,8 @@ title: '[JavaScript] Set'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - set
   - standard-built-in-objects
 ---

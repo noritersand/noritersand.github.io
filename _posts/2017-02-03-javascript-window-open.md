@@ -5,8 +5,9 @@ title: '[JavaScript] Window.open()'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - window.open
 ---
 

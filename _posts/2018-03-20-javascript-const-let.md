@@ -5,8 +5,8 @@ title: '[JavaScript] const, let'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - const
   - let
 ---

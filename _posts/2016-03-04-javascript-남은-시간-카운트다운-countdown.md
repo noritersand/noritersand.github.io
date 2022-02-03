@@ -5,9 +5,9 @@ title: '[JavaScript] 남은 시간 카운트다운 countdown'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
-  - time
+  - ecmascript
+  - date
   - interval
   - code-snippet
 ---

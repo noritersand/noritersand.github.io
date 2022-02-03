@@ -5,8 +5,8 @@ title: '[JavaScript] 단축 표기법 Shorthand notation'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - shorthand-notation
 ---
 

@@ -5,8 +5,8 @@ title: '[JavaScript] Error를 확장한 커스텀 Error 만들기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - error
 ---
 

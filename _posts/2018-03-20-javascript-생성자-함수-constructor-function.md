@@ -5,8 +5,8 @@ title: '[JavaScript] 생성자 함수 constructor function'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - constructor
   - function
 ---

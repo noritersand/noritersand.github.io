@@ -5,9 +5,10 @@ title: '[JavaScript] Document'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
-  - document-object-model
+  - web-api
+  - dom-standard
+  - html-standard
   - html
 ---
 

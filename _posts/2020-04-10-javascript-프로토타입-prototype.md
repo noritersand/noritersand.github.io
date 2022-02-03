@@ -5,8 +5,8 @@ title: '[JavaScript] 프로토타입 Prototype'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - prototype
 ---
 

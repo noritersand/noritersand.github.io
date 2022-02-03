@@ -5,8 +5,9 @@ title: '[JavaScript] 뒤로가기 체크'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - history.back
   - code-snippet
 ---

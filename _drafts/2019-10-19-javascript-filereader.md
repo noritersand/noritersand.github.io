@@ -5,8 +5,8 @@ title: '[JavaScript] FileReader'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - file-api
   - filereader
 ---
 

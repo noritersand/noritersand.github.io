@@ -5,8 +5,8 @@ title: '[JavaScript] IE7, IE8에 없는 함수 추가'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - ie
   - code-snippet
   - polyfill

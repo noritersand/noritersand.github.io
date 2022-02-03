@@ -5,9 +5,8 @@ title: '[JavaScript] Fetch'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
-  - fetch
+  - fetch-standard
 ---
 
 * Kramdown table of contents
@@ -19,6 +18,7 @@ tags:
 - [\[MDN\] Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [\[MDN\] Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
 - [\[MDN\] FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
+- [Fetch Living Standard](https://fetch.spec.whatwg.org/)
 
 #### 브라우저 호환
 

@@ -5,7 +5,6 @@ title: '[JavaScript] WCAG(웹 컨텐츠 접근성 지침) 2.0을 위한 클라�
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
   - wcag
   - 웹접근성

@@ -5,8 +5,8 @@ title: '[JavaScript] Object와 Object.prototype'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - Object
   - standard-built-in-objects
 ---

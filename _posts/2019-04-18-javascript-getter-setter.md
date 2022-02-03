@@ -5,8 +5,8 @@ title: '[JavaScript] getter/setter'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - getter
   - setter
 ---

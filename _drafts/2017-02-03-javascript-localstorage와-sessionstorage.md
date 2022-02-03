@@ -5,8 +5,9 @@ title: '[JavaScript] localStorage와 sessionStorage'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - localstorage
   - sessionstorage
 ---

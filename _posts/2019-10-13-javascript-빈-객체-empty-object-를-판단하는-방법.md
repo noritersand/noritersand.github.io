@@ -5,8 +5,8 @@ title: '[JavaScript] 빈 객체(empty object)를 판단하는 방법'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - empty-object
   - code-snippet
 ---

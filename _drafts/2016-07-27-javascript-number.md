@@ -5,8 +5,8 @@ title: '[JavaScript] Number'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - number
   - standard-built-in-objects
 ---

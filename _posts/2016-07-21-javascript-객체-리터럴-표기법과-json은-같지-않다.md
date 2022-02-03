@@ -5,8 +5,8 @@ title: '[JavaScript] 객체 리터럴 표기법과 JSON은 같지 않다'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - json
   - literal
   - javascript-object-literal-notation

@@ -5,8 +5,9 @@ title: '[JavaScript] 새 창 혹은 팝업 창에서 submit'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - submit
   - open
   - code-snippet

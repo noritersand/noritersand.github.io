@@ -5,8 +5,8 @@ title: '[JavaScript] 클래스 class'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - class
   - classes
 ---
@@ -29,7 +29,7 @@ tags:
 
 ## 개요
 
-Class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 가독성 좋은 새로운 문법이다. 완전히 새로 만들어진 기능이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. (업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다더라)
+class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 가독성 좋은 새로운 문법이다. 완전히 새로 만들어진 기능이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. (업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다더라)
 
 MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.
 

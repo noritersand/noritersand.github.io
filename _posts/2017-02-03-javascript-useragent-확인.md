@@ -5,8 +5,9 @@ title: '[JavaScript] userAgent 확인'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - useragent
 ---
 

@@ -5,8 +5,8 @@ title: '[JavaScript] 비정형 인자 arguments'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - arguments
 ---
 

@@ -5,8 +5,8 @@ title: '[JavaScript] substring과 slice'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - substring
   - slice
 ---

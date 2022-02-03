@@ -5,8 +5,8 @@ title: '[JavaScript] 래퍼 객체 wrapper objects'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - wrapper
 ---
 

@@ -5,8 +5,9 @@ title: '[JavaScript] querySelector()'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - queryselector
 ---
 

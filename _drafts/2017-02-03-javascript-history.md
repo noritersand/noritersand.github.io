@@ -5,8 +5,9 @@ title: '[JavaScript] History'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - history
 ---
 

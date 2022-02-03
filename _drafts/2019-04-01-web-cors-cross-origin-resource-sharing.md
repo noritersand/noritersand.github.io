@@ -7,7 +7,6 @@ categories:
 tags:
   - http
   - cors
-  - ecmascript
   - javascript
   - browser
 ---

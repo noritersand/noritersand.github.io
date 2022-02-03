@@ -5,7 +5,6 @@ title: '[JavaScript] continuation-passing style'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
   - cps
   - continuation-passing-style

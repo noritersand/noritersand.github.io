@@ -5,13 +5,17 @@ title: '[JavaScript] pseudo protocol 앵커(a) 태그로 스크립트 실행 시
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - anchor
 ---
 
 * Kramdown table of contents
 {:toc .toc}
+
+#### 참고한 문서
+
+- [\[MDN\] void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
 
 #### 테스트 환경
 

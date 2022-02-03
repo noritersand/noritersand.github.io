@@ -5,8 +5,9 @@ title: '[JavaScript] 숫자 외(문자) 입력 막기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - only-number
   - code-snippet
 ---

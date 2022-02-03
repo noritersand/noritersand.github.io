@@ -5,8 +5,8 @@ title: '[JavaScript] 날짜 시간 포맷'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - time
   - format
   - timeout

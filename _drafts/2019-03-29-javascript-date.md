@@ -5,8 +5,8 @@ title: '[JavaScript] Date'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - date
   - standard-built-in-objects
 ---

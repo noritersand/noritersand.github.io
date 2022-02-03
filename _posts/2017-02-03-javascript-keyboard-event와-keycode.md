@@ -5,8 +5,9 @@ title: '[JavaScript] keyboard event와 keyCode'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - json
   - literal
   - javascript-object-literal-notation

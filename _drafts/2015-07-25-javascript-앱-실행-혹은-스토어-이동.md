@@ -5,7 +5,7 @@ title: '[JavaScript] 앱 실행 혹은 스토어 이동'
 categories:
   - javascript
 tags:
-  - ecmascript
+  - web-api
   - javascript
   - launch-app
   - app-store

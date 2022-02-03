@@ -5,8 +5,9 @@ title: '[JavaScript] URL에서 파라미터 추출 Search Parameters'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - parameter
   - search
   - query-string

@@ -5,8 +5,8 @@ title: '[JavaScript] 정규 표현식, Regular Expressions(regexp) in JavaScript
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - regex
   - regexp
   - standard-built-in-objects

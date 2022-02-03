@@ -5,8 +5,8 @@ title: '[JavaScript] 두 객체 배열을 비교해 중복되는 프로퍼티 �
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - property
   - object
   - compare

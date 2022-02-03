@@ -5,8 +5,8 @@ title: '[JavaScript] Function.prototype'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - function
   - prototype
 ---

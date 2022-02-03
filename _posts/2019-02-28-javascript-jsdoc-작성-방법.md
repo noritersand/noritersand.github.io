@@ -5,7 +5,6 @@ title: '[JavaScript] JSDoc 작성 방법'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
   - jsdoc
 ---

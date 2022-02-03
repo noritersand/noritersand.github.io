@@ -5,8 +5,10 @@ title: '[JavaScript] iframe contents'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
+  - html-standard
   - iframe
 ---
 

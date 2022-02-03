@@ -5,8 +5,8 @@ title: '[JavaScript] 클로저 closures'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - closures
 ---
 

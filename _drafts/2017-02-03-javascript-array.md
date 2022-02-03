@@ -5,8 +5,8 @@ title: '[JavaScript] Array'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - array
   - standard-built-in-objects
 ---

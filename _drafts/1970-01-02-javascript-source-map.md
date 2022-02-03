@@ -5,8 +5,8 @@ title: '[JavaScript] source map'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
   - sourcemap
 ---
 

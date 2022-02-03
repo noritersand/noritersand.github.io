@@ -5,8 +5,8 @@ title: '[JavaScript] 템플릿 리터럴 Template literals'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - language
   - template-literals
 ---

@@ -5,8 +5,9 @@ title: '[JavaScript] URLSearchParams'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - url-standard
   - urlsearchparams
 ---
 

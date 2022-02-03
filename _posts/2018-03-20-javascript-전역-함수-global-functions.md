@@ -5,8 +5,8 @@ title: '[JavaScript] 전역 함수 global functions'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - function
 ---
 
@@ -38,7 +38,7 @@ uneval( object )
 - 다음 코드는 `form.search_word`의 value를 반환한다: `eval("document.forms[0].search_word.value");`
 - 다음 코드는 name 프로퍼티를 갖는 Javascript Object를 의미한다: `eval('{name="value"}')`
 
-참고로 `eval()`을 대신하여 Function 생성자를 이용하기도 한다:
+MDN에선 보안 문제가 있고 코드 최적화가 불가능한 `eval()` 대신 [Function 생성자를 이용하라고 권장](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval#never_use_eval!)한다:
 
 ```js
 (

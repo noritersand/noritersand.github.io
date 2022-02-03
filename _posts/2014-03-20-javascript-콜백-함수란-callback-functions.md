@@ -5,8 +5,8 @@ title: '[JavaScript] 콜백 함수란 callback functions'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - callback
   - function
   - first-class-function

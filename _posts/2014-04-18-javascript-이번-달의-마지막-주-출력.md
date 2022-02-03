@@ -5,8 +5,8 @@ title: '[JavaScript] 이번 달의 마지막 주 출력'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - date
   - last-week
   - code-snippet

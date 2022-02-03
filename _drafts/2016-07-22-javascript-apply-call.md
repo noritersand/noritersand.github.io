@@ -5,8 +5,8 @@ title: '[JavaScript] apply(), call()'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - apply
   - call
 ---

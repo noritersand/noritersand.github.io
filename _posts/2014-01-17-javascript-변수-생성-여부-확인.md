@@ -5,8 +5,8 @@ title: '[JavaScript] 변수 생성 여부 확인'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - variable
   - code-snippet
 ---

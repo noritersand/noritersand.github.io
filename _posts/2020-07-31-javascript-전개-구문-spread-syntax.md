@@ -5,8 +5,8 @@ title: '[JavaScript] 전개 구문 Spread syntax (...)'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - spread-syntax
   - rest-syntax
 ---

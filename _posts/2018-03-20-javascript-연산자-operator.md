@@ -5,8 +5,8 @@ title: '[JavaScript] 연산자 operator'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - operator
 ---
 

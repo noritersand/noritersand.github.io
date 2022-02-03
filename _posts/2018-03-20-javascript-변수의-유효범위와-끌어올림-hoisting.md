@@ -5,8 +5,8 @@ title: '[JavaScript] 변수의 유효범위와 끌어올림 hoisting'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - hoisting
 ---
 

@@ -5,8 +5,8 @@ title: '[JavaScript] eval()과 new Function()의 차이'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - eval
 ---
 

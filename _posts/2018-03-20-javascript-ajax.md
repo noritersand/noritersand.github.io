@@ -5,8 +5,9 @@ title: '[JavaScript] Ajax'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - xmlhttprequest-standard
   - ajax
   - xmlhttprequest
 ---
@@ -16,11 +17,12 @@ tags:
 
 #### 참고한 문서
 
-- [https://xhr.spec.whatwg.org/](https://xhr.spec.whatwg.org/)
+- [XMLHttpRequest Living Standard](https://xhr.spec.whatwg.org/)
 - [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
 - [\[MDN\] XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 - [\[MDN\] Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
 - [http://huns.me/development/1291](http://huns.me/development/1291)
+
 
 ## Ajax란?
 

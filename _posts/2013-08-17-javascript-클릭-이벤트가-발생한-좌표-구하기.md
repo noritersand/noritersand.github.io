@@ -5,8 +5,9 @@ title: '[JavaScript] 클릭 이벤트가 발생한 좌표 구하기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - click
   - offset
   - code-snippet

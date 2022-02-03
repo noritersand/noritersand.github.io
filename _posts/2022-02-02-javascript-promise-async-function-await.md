@@ -5,8 +5,8 @@ title: '[JavaScript] Promise, async function, await'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - promise
 ---
 
@@ -17,21 +17,24 @@ tags:
 
 - [\[MDN\] Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [\[MDN\] Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [https://web.dev/promises/](https://web.dev/promises/)
+- [\[web.dev\] JavaScript Promises: 소개](https://web.dev/promises/)
 - [\[MDN\] async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
 - [\[MDN\] await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 - [\[MDN\] Making asynchronous programming easier with async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 
 #### 버전 정보
 
-- Promise
-  - ES2015에서 최초 정의
-  - Chrome 32, Edge 12, FireFox 29, Opera 19, safari 8 이상에서 지원
-  - IE에서 사용 불가
-- async function, await
-  - ES2017에서 최초 정의
-  - Chrome 55, Edge 15, FireFox 52, Opera 42, Safari 10.1 이상에서 지원
-  - IE에서 사용 불가
+Promise:
+
+- ES2015에서 최초 정의
+- Chrome 32, Edge 12, FireFox 29, Opera 19, safari 8 이상에서 지원
+- IE에서 사용 불가
+
+async function, await:
+
+- ES2017에서 최초 정의
+- Chrome 55, Edge 15, FireFox 52, Opera 42, Safari 10.1 이상에서 지원
+- IE에서 사용 불가
 
 ## 개요
 
@@ -243,7 +246,7 @@ Promise.resolve(1).then(console.log); // 1
 Promise.reject(2).catch(console.log); // 2
 ```
 
-## async 함수 async function
+## async function
 
 ```
 async function fn() {}

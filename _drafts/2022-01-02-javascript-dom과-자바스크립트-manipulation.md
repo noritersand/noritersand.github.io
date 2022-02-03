@@ -5,9 +5,9 @@ title: '[JavaScript] DOM과 자바스크립트: Manipulation'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
-  - dom
+  - web-api
+  - dom-standard
   - manipulation
 ---
 

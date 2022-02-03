@@ -5,8 +5,8 @@ title: '[JavaScript] this'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - this
 ---
 

@@ -5,8 +5,8 @@ title: '[JavaScript] 함수 선언 응용'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - function
 ---
 

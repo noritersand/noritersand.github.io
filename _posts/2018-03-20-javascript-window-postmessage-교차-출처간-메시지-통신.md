@@ -5,8 +5,9 @@ title: '[JavaScript] Window.postMessage 교차 출처간 메시지 통신'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - window
   - postMessage
 ---

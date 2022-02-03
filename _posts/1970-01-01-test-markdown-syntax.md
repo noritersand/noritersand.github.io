@@ -16,7 +16,7 @@ tags:
 #### 참고한 문서
 
 - [Daring Fireball: Markdown Syntax Documentation](https://daringfireball.net/projects/markdown/syntax)
-- [Markdown Guide: Bsic Syntax](https://www.markdownguide.org/basic-syntax)
+- [Markdown Guide: Basic Syntax](https://www.markdownguide.org/basic-syntax)
 - [kramdown: Quick Reference](https://kramdown.gettalong.org/quickref.html)
 - [kramdown: Syntax](https://kramdown.gettalong.org/syntax.html)
 
@@ -164,7 +164,7 @@ _이탤릭_
 > 1단 인용구
 >> 2단 인용구
 >>> 3단 인용구
->>>> 어디까지 가나 보자
+>>>> 나무가 네 그루면 소포
 >>>>> 독수리오형제
 >>>>>> 씩쓰투스
 >>>>>>> WX-78

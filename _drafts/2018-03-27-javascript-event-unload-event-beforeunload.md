@@ -5,8 +5,9 @@ title: '[JavaScript] DOM Event: unload, beforeunload'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - browser
   - eventhandlers
   - onclose

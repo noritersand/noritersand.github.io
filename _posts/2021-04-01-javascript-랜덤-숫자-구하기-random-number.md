@@ -5,8 +5,8 @@ title: '[JavaScript] 랜덤 숫자 구하기 random number'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - random
   - math
   - code-snippet

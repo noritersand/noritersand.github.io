@@ -5,8 +5,8 @@ title: '[JavaScript] 자바스크립트 기본 JavaScript Basics'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - language
   - basics
 ---

@@ -5,8 +5,8 @@ title: '[JavaScript] 제어문 control statement'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - control-statement
 ---
 

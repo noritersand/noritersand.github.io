@@ -5,8 +5,8 @@ title: '[JavaScript] UUID 생성 함수'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - code-snippet
   - uuid
 ---

@@ -5,8 +5,8 @@ title: '[JavaScript] 구조 분해 할당 Destructuring assignment'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - destructuring-assignment
   - destructuring-expression
 ---

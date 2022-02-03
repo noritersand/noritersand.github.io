@@ -5,8 +5,8 @@ title: '[JavaScript] Factory function'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - factory-function
   - create
 ---
@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [somewhere](somewhere)
+- [\[MDN\] Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 ```js
 const proto = {

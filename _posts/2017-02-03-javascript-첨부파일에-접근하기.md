@@ -5,8 +5,9 @@ title: '[JavaScript] 첨부파일에 접근하기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - attachment
   - file
 ---

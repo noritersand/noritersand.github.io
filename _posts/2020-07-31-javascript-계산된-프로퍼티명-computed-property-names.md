@@ -5,8 +5,8 @@ title: '[JavaScript] 계산된 프로퍼티명 Computed property names'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - computed-property-names
 ---
 

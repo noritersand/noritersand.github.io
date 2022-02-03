@@ -5,8 +5,9 @@ title: '[JavaScript] Window.opener'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - window.opener
 ---
 

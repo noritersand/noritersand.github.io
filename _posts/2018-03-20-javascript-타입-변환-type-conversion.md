@@ -5,8 +5,8 @@ title: '[JavaScript] 타입 변환 type conversion'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - type
   - conversion
 ---

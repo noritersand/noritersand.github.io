@@ -5,8 +5,9 @@ title: '[JavaScript] 특정 문자를 클립보드로 복사하기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
   - clipboard
 ---
 

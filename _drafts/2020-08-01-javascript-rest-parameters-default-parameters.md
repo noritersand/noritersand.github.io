@@ -5,8 +5,8 @@ title: '[JavaScript] Rest parameters, Default parameters'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - rest-parameters
 ---
 

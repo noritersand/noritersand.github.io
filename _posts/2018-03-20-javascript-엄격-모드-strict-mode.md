@@ -5,8 +5,8 @@ title: '[JavaScript] 엄격 모드 strict mode'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - strict-mode
 ---
 

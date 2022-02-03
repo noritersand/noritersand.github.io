@@ -5,8 +5,10 @@ title: '[JavaScript] 스크립트 동적 불러오기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - dom-standard
+  - html-standard
   - code-snippet
 ---
 

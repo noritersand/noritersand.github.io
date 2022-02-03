@@ -5,8 +5,8 @@ title: '[JavaScript] 한글 바이트 계산 스크립트'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - korean
   - byte
   - character

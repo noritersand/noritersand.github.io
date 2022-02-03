@@ -5,8 +5,8 @@ title: '[JavaScript] with, debugger'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - with
   - debugger
 ---

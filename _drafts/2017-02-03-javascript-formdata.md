@@ -5,8 +5,8 @@ title: '[JavaScript] FormData'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
   - formdata
 ---
 

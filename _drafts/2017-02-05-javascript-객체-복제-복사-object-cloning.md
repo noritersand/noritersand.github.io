@@ -5,8 +5,8 @@ title: '[JavaScript] 객체 복제(복사) Object Cloning'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - deep-copy
   - code-snippet
 ---

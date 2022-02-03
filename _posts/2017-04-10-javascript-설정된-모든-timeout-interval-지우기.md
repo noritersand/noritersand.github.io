@@ -5,8 +5,9 @@ title: '[JavaScript] 설정된 모든 timeout, interval 지우기'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - timeout
   - code-snippet
 ---

@@ -5,8 +5,8 @@ title: '[JavaScript] private 프로퍼티와 메서드 선언'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - private
 ---
 

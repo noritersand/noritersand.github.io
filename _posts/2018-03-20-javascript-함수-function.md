@@ -5,8 +5,8 @@ title: '[JavaScript] 함수 Function'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - function
 ---
 

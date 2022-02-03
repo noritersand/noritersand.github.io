@@ -5,8 +5,8 @@ title: '[JavaScript] 제네레이터 function*, generator function'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - function*
   - generator
   - generator-function

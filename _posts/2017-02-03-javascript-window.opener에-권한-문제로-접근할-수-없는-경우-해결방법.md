@@ -5,8 +5,9 @@ title: '[JavaScript] window.opener에 권한 문제로 접근할 수 없는 경�
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - web-api
+  - html-standard
   - window.open
   - opener
 ---

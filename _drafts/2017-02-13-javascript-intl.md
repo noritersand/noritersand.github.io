@@ -5,8 +5,8 @@ title: '[JavaScript] Intl'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - internationalization
   - i18n
   - collator

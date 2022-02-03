@@ -5,8 +5,8 @@ title: '[JavaScript] 심볼 Symbol'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - symbol
 ---
 

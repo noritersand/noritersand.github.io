@@ -5,10 +5,9 @@ title: '[JavaScript] 화살표 함수 Arrow functions'
 categories:
   - javascript
 tags:
-  - ecmascript
   - javascript
+  - ecmascript
   - arrow-function
-  - lambda-function
 ---
 
 #### 참고한 문서
