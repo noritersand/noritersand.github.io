@@ -50,11 +50,15 @@ h1 {
 .h2,
 h2 {
     // font-size: 1.575em;
+    font-size: 1.825em;
     line-height: 42px;
     margin-top: 34px;
     margin-bottom: 16px;
-    font-size: 1.825em;
     border-bottom: 1px solid #e6e6e6;
+}
+
+h2 code.highlighter-rouge {
+    font-size: 1em;
 }
 
 .h3,
@@ -66,6 +70,10 @@ h3 {
     margin-bottom: 20px;
 }
 
+h3 code.highlighter-rouge {
+    font-size: 1em;
+}
+
 .h4,
 h4 {
     font-size: 1em;
@@ -73,6 +81,10 @@ h4 {
 
     margin-top: 26px;
     margin-bottom: 12px;
+}
+
+h4 code.highlighter-rouge {
+    font-size: 1em;
 }
 
 .small,
