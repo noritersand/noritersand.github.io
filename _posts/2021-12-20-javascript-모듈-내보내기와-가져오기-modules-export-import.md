@@ -7,7 +7,6 @@ categories:
 tags:
   - javascript
   - ecmascript
-  - es2015
   - module
   - export
   - import

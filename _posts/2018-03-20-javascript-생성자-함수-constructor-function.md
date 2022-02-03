@@ -65,9 +65,9 @@ Person.prototype.sayHi = function() {
 
 왜냐하면 첫 번째 코드는 생성되는 인스턴스 개수만큼 `sayHi()` 함수 생성되지만 두 번째 코드는 프로토타입의 메서드로 딱 한 번만 생성되고 Person의 인스턴스들은 이 함수를 공유하기 때문이다. 즉, 불필요한 함수 생성으로 메모리가 낭비되는걸 방지 할 수 있다.
 
-## 생성자 메서드
+## 생성자
 
-생성자 메서드([constructor method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 class에서 사용한다. **생성자 함수가 아니다.**
+생성자([constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 class에서 사용한다. **생성자 함수가 아니다.** 굳이 이름을 더 길게 부르면 이 쪽은 생성자 메서드다.
 
 ```js
 class Square extends Polygon {

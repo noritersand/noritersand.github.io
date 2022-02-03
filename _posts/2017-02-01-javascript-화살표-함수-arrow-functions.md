@@ -28,15 +28,34 @@ tags:
 ## 문법
 
 ```js
-(param1, param2, ..., paramN) => { statements }
-(param1, param2, ..., paramN) => expression // 다음과 동일함:  => { return expression; }
+// 파라미터가 하나일 때 괄호는 선택사항
+(param) => expression
+param => expression
 
-// 매개변수가 하나뿐인 경우 괄호는 선택사항:
-(singleParam) => { statements }
-singleParam => { statements }
+// 파라미터가 둘 이상
+(param1, paramN) => expression
 
-// 매개변수가 없는 함수는 괄호 필요:
-() => { statements }
+// 매개변수가 없는 함수는 괄호 필수
+() => expression
+
+// 객체 리터럴처럼 문법이나 연산 우선순위에 걸리는 표현식은 소괄호 필요
+params => ({foo: "a"})
+
+// return 문 한 줄이 아닐 때
+() => {
+  let a = 1;
+  return a * 2;
+}
+
+// 나머지 매개변수
+(a, b, ...r) => expression
+
+// 기본값 매개변수
+(a = 400, b = 20, c) => expression
+
+// 구조 분해식
+([a, b] = [10, 20]) => a + b; // 30 반환
+({ a, b } = { a: 10, b: 20 }) => a + b; // 30 반환
 ```
 
 ### `() =>`는 `function()`과 같다
@@ -74,13 +93,13 @@ var fn = () => (1 + 2);
 
 ### 괄호의 생략
 
-`return` 문 다음의 표현식은 문법이나 연산자 우선순위에 문제가 없을 경우에 한해 괄호를 생략할 수 있다:
+화살표 우변은 (문법이나 연산자 우선순위에 문제가 없을 경우에 한해) 괄호를 생략할 수 있다:
 
 ```js
 var fn = () => 1 + 2;
 ```
 
-그리고 함수의 매개변수가 딱 하나면 좌변의 괄호도 그냥 빼버릴 수 있음:
+그리고 함수의 매개변수가 딱 하나면 좌변도 괄호를 생략할 수 있다:
 
 ```js
 var fn2 = str => console.log(str);
@@ -108,6 +127,14 @@ let newbie = () => {
 newbie(); // noop noop!
 
 new newbie(); // Uncaught TypeError: newbie is not a constructor
+```
+
+### `.prototype`이 없음
+
+화살표 함수는 프로토타입을 가리키는 프로퍼티가 없다:
+
+```js
+newbie.prototype === undefined; // true
 ```
 
 끗.

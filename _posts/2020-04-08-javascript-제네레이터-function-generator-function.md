@@ -7,7 +7,6 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - es2015
   - function*
   - generator
   - generator-function
@@ -39,7 +38,7 @@ function* name([param[, param[, ... param]]]) {
 }
 ```
 
-generator function은 호출 시 코드를 실행하는 대신 `Generator` 객체를 반환한다. 이후 `Generator.prototype.next()`가 호출되면 그때서야 `yield`를 만날 때까지 실행하며 `yield` 우측의 값을 반환한다.
+generator function은 호출 시 코드를 실행하는 대신 `Generator` 객체를 반환한다. 이후 `Generator.prototype.next()`가 호출되면 그때서야 `yield`를 만날 때까지 실행하며 `yield` 우측의 표현식을 평가해 반환한다.
 
 ```js
 function* generate(n) {

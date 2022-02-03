@@ -29,7 +29,7 @@ tags:
 
 ## 개요
 
-[ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 생성자 함수를 대체하는 새로운 문법이다. 구문들의 의미가 분명해서 사용하긴 편하지만 IE 때문에 웹에서 쓸 수 있는 날은 멀었다.
+Class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 새로운 문법이다. 완전히 새로 만들어진 기능이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. (업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다더라) 가독성 좋고 사용하긴 편하지만 IE 때문에 PC 웹에서 쓸 수 있는 날은 멀었다.
 
 MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.
 
@@ -72,6 +72,20 @@ class Sorcerer {}
 ## class 표현식
 
 TODO
+
+## 생성자 constructor
+
+```js
+class Numeric extends Number {
+  constructor(value) {
+    super(value);
+  }
+}
+```
+
+TODO
+
+**생성자 함수(constructor function)가 아님.**
 
 ## static
 
@@ -127,3 +141,11 @@ let t = new Test();
 t.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```
+
+## async method
+
+클래스에 async function을 정의하면 async method가 된다.
+
+TODO
+
+---

@@ -7,7 +7,6 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - es2015
   - computed-property-names
 ---
 

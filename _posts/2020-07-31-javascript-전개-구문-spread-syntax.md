@@ -7,8 +7,6 @@ categories:
 tags:
   - ecmascript
   - javascript
-  - es2015
-  - es2018
   - spread-syntax
   - rest-syntax
 ---
