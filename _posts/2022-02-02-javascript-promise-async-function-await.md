@@ -39,9 +39,9 @@ ECMAScript의 Promise, async function, await 사용법 정리.
 
 ## Promise
 
-`Promise`는 비동기 작업의 완료(혹은 실패)와 결과 값을 나타내는 객체다. jQuery의 [Deferred Object](https://api.jquery.com/category/deferred-object/)와 비슷하다.
+Promise는 비동기 작업의 완료(혹은 실패)와 결과 값을 나타내는 객체다. jQuery의 [Deferred Object](https://api.jquery.com/category/deferred-object/)와 비슷하다.
 
-`Promise` 객체는 요딴 상태 중 하나를 가진다:
+Promise 객체는 요딴 상태 중 하나를 가진다:
 
 - pending: initial state, neither fulfilled nor rejected.
 - fulfilled: meaning that the operation was completed successfully.
@@ -58,10 +58,10 @@ new Promise( executor )
 new Promise( function( resolve, reject ) { ... } )
 ```
 
-- `resolve`: `Promise`의 상태를 fulfilled로 변경하고 resolve 메시지를 전달하는 함수
-- `reject`: `Promise`의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수.
+- `resolve`: Promise의 상태를 fulfilled로 변경하고 resolve 메시지를 전달하는 함수
+- `reject`: Promise의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수.
 
-`Promise()` 생성자 함수는 `executor`를 실행하고 `Promise` 객체를 반환한다.
+`Promise()` 생성자 함수는 `executor`를 실행하고 Promise 객체를 반환한다.
 
 ```
 promise.then( onFulfilled, onRejected )
@@ -72,7 +72,7 @@ promise.then( onFulfilled, onRejected )
 
 `Promise.prototype.then()`은 파라미터로 resolve 혹은 reject를 처리할 핸들러 함수를 받는다.
 
-생성자 함수와 `.then()`은 `Promise`를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 그래서 메서드 체이닝 패턴으로 작성한다:
+생성자 함수와 `.then()`은 Promise를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 그래서 메서드 체이닝 패턴으로 작성한다:
 
 ```js
 let willBeSuccess = new Promise((resolve, reject) => {
@@ -106,7 +106,7 @@ promise.catch( onRejected )
 
 - `onRejected`: reject 때 실행할 함수
 
-`Promise.prototype.catch()`는 reject된 경우에 실행할 함수 하나만 받는다. 내부에서 `obj.then(undefined, onRejected)`를 호출한다고 함.
+`Promise.prototype.catch()`는 reject된 경우에 실행할 함수 하나만 받는다. 내부에서 `promise.then(undefined, onRejected)`를 호출한다고 함.
 
 ```js
 let willBeFail2 = new Promise((resolve, reject) => {
@@ -120,9 +120,9 @@ willBeFail2.catch((reason) => {
 });
 ```
 
-### `.catch()` 후의 상태
+### .catch() 후의 상태
 
-아래 예시를 보면 `Promise`의 상태가 `onRejected` 호출 후 `fulfilled`로 바뀐다:
+아래 예시를 보면 Promise의 상태가 `onRejected` 호출 후 fulfilled로 바뀐다:
 
 ```js
 var pr3 = new Promise((resolve, reject) => {
@@ -185,15 +185,15 @@ try {
 // Uncaught (in promise) Error: I am error
 ```
 
-'I am error'만 출력되는데 아무래도 `Promise` 내부에 try-catch가 있다고 봐야할 것 같음.
+'I am error'만 출력되는데 아무래도 Promise 내부에 try-catch가 있다고 봐야할 것 같음.
 
-### `.finally()`
+### .finally()
 
 ```
 promise.finally( onFinally )
 ```
 
-`Promise.prototype.finally()`는 `Promise`가 이행만 되면 resolve/reject에 상관없이 무조건 실행하는 함수를 받는다. `onFinally`는 인자도 없고 `Promise`의 결과 값에 영향을 주지도 않는다:
+`Promise.prototype.finally()`는 Promise가 이행만 되면 resolve/reject에 상관없이 무조건 실행하는 함수를 받는다. `onFinally`는 인자도 없고 Promise의 결과 값에 영향을 주지도 않는다:
 
 ```js
 var pr7 = new Promise((resolve, reject) => {
@@ -201,7 +201,7 @@ var pr7 = new Promise((resolve, reject) => {
 }).finally(() => {
   console.log('알파카로 만든 파카는 알파카파카');
 });
-// '알파카로 만든 파카는 알파카파카' 출력
+// '알파카로 만든 파카는 알파카파카'
 ```
 
 `.finally()`는 척 노리스처럼 강력해서 에러 따윈 신경쓰지 않는다:
@@ -212,34 +212,35 @@ new Promise((resolve, reject) => {
 }).finally(() => {
   console.log('엄마랑 아들이 택견을 하면 모자이크');
 });
-// '엄마랑 아들이 택견을 하면 모자이크' 출력
+// '엄마랑 아들이 택견을 하면 모자이크'
+// Uncaught (in promise) Error: What?
 ```
 
-### `setTimeout()`을 `Promise`로 감싸기
+### setTimeout()을 Promise로 감싸기
 
-비동기 함수인 주제에 태고부터 존재했단 이유로 `Promise`를 반환하지 않는 건방진 API를 감싸는 방법이다:
+비동기 함수인 주제에 태고부터 존재했단 이유로 Promise를 반환하지 않는 건방진 API를 감싸는 방법이다:
 
 ```js
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 wait(1000)
-    .then(() => { console.log('a second has passed') })
-    .catch(() => { console.log('something went wrong') });
+  .then(() => { console.log('a second has passed') })
+  .catch(() => { console.log('something went wrong') });
 ```
 
 [원 소스 출처](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#creating_a_promise_around_an_old_callback_api)
 
-### `Promise.resolve()`, `Promise.reject()`
+### Promise.resolve(), Promise.reject()
 
 ```
 Promise.resolve(value)
 Promise.reject(value)
 ```
 
-각각 value가 결과 값이며 상태가 fulfilled 혹은 rejected인 `Promise`를 반환한다:
+각각 `value`가 결과 값이며 상태가 fulfilled 혹은 rejected인 Promise를 반환한다:
 
 ```js
-Promise.resolve(1).then(console.log); // 1 출력
-Promise.reject(2).catch(console.log); // 2 출력
+Promise.resolve(1).then(console.log); // 1
+Promise.reject(2).catch(console.log); // 2
 ```
 
 ## async 함수 async function
@@ -248,9 +249,9 @@ Promise.reject(2).catch(console.log); // 2 출력
 async function fn() {}
 ```
 
-`async` 키워드를 사용해 선언하는 함수. `await`에 따라 동기/비동기적으로 실행되며, 함수가 실제로 어떤 값을 반환하는지 여부에 관계없이 항상 `Promise`를 반환한다.
+`async` 키워드를 사용해 선언하는 함수. 함수가 실제로 어떤 값을 반환하는지 여부에 관계없이 항상 Promise를 반환한다.
 
-async 함수가 반환한 값은 `Promise`의 숨겨진 프로퍼티에 저장되기 때문에 꺼내려면 `.then()`이 필요함:
+async 함수가 반환한 값은 Promise의 숨겨진 프로퍼티에 저장되기 때문에 꺼내려면 `.then()`이 필요함:
 
 ```js
 var hello = async () => {
@@ -263,7 +264,7 @@ hello().then(console.log); // Hello!
 
 ### Promise 래핑
 
-async 함수의 반환값이 명시적인 `Promise`가 아니라면 자동으로 `Promise`로 감싸진다:
+async 함수의 반환값이 명시적인 Promise가 아니라면 자동으로 Promise로 감싸진다:
 
 ```js
 async function() {
@@ -279,9 +280,9 @@ function() {
 }
 ```
 
-같은게 아니라 비슷한 이유는 async 함수가 `Promise`로 감싸진 것처럼 작동하지만 완전히 동일하진 않기 때문이다.
+같은게 아니라 비슷한 이유는 async 함수가 Promise로 감싸진 것처럼 작동하지만 완전히 동일하진 않기 때문이다.
 
-만약 반환하려는 참조가 `Promise`일 때 async 함수는 새 참조를 반환하지만 `Promise.resolve()`는 완전히 동일한 참조를 반환한다:
+만약 반환하려는 참조가 Promise라면 async 함수는 새 참조를 반환하지만 `Promise.resolve()`는 일치하는 참조를 반환한다:
 
 ```js
 const p = new Promise(res => { res(1) });
@@ -303,9 +304,7 @@ console.log(p === basicReturn()); // true
 await expression
 ```
 
-`await`는 async 함수 내부에서만 사용할 수 있는 연산자로, `Promise`를 기다릴 때 사용한다.
-
-`await`는 연산자 다음의 `Promise`가 fulfilled 될 때까지 함수의 실행을 일시 정지시킨다:
+`await`은 async 함수 내부에서만 사용할 수 있는 연산자로, Promise를 기다릴 때 사용한다. 더 정확히 말하자면 `await` 연산자 다음의 Promise가 fulfilled 될 때까지 함수의 실행을 일시 정지시킨다:
 
 ```js
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -316,13 +315,13 @@ var fn = async () => {
 };
 fn();
 console.log('아재개그는 아주 재밌는 개그');
-// '아재개그는 아주 재밌는 개그' 출력
+// '아재개그는 아주 재밌는 개그'
 // 2초 후 'done' 출력
 ```
 
-### 얘도 Promise 래핑을 하네
+### 얘도 래핑을 하네
 
-만약 `await` 다음이 `Promise`가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
+만약 `await` 다음이 Promise가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
 
 예를 들면 이 코드는:
 
@@ -340,32 +339,42 @@ async () => {
 };
 ```
 
-### async function을 비동기로 만드는 것은 await
+### async 함수를 비동기로 만드는 것은 await
 
-async 함수의 본문은 0개 이상의 `await`로 분할된다고 볼 수 있다. 첫 번째 `await`를 만날때 까지 async 함수는 동기적으로 실행된다. 따라서 `await`가 없는 async 함수는 전체가 동기적으로 실행된다:
+async 함수의 본문은 0개 이상의 `await`으로 분할된다고 볼 수 있다(라고 MDN에서 설명 🥲). 첫 번째 `await`을 만날때 까지 async 함수는 동기적으로 실행된다. 따라서 `await`이 없는 async 함수는 일반 함수처럼 전체가 동기적으로 실행된다:
 
 ```js
 var fn = async () => {
-  wait(2000);
   console.log('1');
   console.log('2');
-  console.log('3');
 };
 fn();
 console.log('알파카파카파까?');
-// 1 출력
-// 2 출력
-// 3 출력
-// '알파카파카파까?' 출력
+// 1
+// 2
+// '알파카파카파까?'
 ```
 
-하지만 본문에 `await`가 있으면 async 함수는 항상 비동기적으로 완료된다.
+하지만 `await`을 만나면 그 부분부터 (async 함수를 호출한 코드의 관점에서) 비동기적으로 작동한다:
 
-이 부분이 중요한데, 바로 앞 단락에서 `Promise`가 아닌 `await` 다음의 값은
+```js
+var fn2 = async () => {
+  console.log('개성공단의 반대말은?');
+  await 1; // 1은 아무 의미 없음
+  console.log('🤣🤣🤣');
+};
+fn2();
+console.log('고양이실패단');
+// '개성공단의 반대말은?'
+// '고양이실패단'
+// '🤣🤣🤣'
+```
 
-### async와 await 사용 시 주의할 점
+## Promise의 병렬 처리
 
-`await`의 동기적 특성은 아주 당연하게도 함수 실행 속도에 영향을 준다는 것을 의미한다:
+### await 사용 시 주의할 점
+
+Promise의 상태 변화를 기다리는 `await`의 동기적 특성은 아주 당연하게도 함수 실행 속도에 영향을 준다는 것을 의미한다:
 
 ```js
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -383,7 +392,7 @@ var timeTest = async () => {
 timeTest(); // It takes 3028 milliseconds.
 ```
 
-1초 씩 기다리는 것을 세 번이나 반복했더니 약 3초나 걸린다. 이런 경우엔 `Promise`를 반환하는 표현식 앞에 `await`를 걸지 말고, 일단 모두 실행하도록 한 다음 변수의 상태 변화를 기다리도록 하는게 좋다:
+기다리는 것을 세 번이나 반복했더니 3초나 걸린다. 이런 경우엔 Promise를 반환하는 표현식 앞에 `await`을 걸지 말고, 일단 모두 실행하도록 한 다음 변수의 상태 변화를 기다리도록 하는게 좋다:
 
 ```js
 var timeTest2 = async () => {
@@ -404,6 +413,71 @@ timeTest2(); // It takes 1009 milliseconds.
 
 거의 1초 정도에 작업이 완료된다.
 
-## Promise의 병렬 처리
+### Promise.all(), Promise.race()
 
-TODO
+앞선 예시처럼 변수 여러개에 `await`를 거는 방법은 코드가 예쁘지 않다. Promise가 제공하는 메서드를 써보자.
+
+```
+Promise.all(iterable)
+```
+
+`Promise.all()`은 여러 Promise의 결과를 집계할 때 사용한다. `iterable`에 Promise 객체 여럿을 배열로 던지면 됨:
+
+```js
+const wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+
+var concurrent2 = async () => {
+  return await Promise.all([wait2(3000), wait2(2000), wait2(1000)]);
+}
+concurrent2().then(console.log);
+// 'Array(3) [ 3000, 2000, 1000 ]'
+```
+
+가장 빠른놈만 하나 고르는 메서드도 있다.
+
+```
+Promise.race(iterable)
+```
+
+`Promise.race()`는 주어진 Promise들을 동시에 실행하되 가장 먼저 완료되는 것만 반환한다:
+
+```js
+var pick = async () => {
+  return await Promise.race([wait2(3000), wait2(2000), wait2(1000)]);
+}
+pick().then(console.log);
+// 1000
+```
+
+### 진정한 병렬 처리?
+
+변수에 `await`를 걸든, `Promise.all()`이나 `Promise.race()`를 쓰든 문제가 하나 남아 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
+
+```js
+var concurrent3 = async () => {
+  let startTime = new Date();
+
+  await Promise.all([wait2(3000), wait2(2000), wait2(1000)]).then(console.log);
+
+  let endTime = new Date();
+  console.log(`done. It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
+}
+concurrent3();
+// done. It takes 3004 milliseconds.
+```
+
+가장 느린 Promise인 `wait2(3000)` 때문에 총 실행시간은 약 3초다.
+
+사실 이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
+
+```js
+var parallel = function() {
+  wait2(3000).then(console.log);
+  wait2(2000).then(console.log);
+  wait2(1000).then(console.log);
+}
+parallel();
+// 1000
+// 2000
+// 3000
+```
