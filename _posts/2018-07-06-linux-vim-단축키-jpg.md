@@ -12,6 +12,9 @@ tags:
 
 위키: [http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim](http://www.joinc.co.kr/modules/moniwiki/wiki.php/Site/Vim/Documents/UsedVim)
 
+![](/images/vim-hotkey-1.png)
+![](/images/vim-hotkey-2.jpg)
+
 ## 복사 후 붙이기
 
 <kbd>v</kbd> 혹은 <kbd>V</kbd>로 블록 지정 후 <kbd>y</kbd>로 복사. 다음으로 <kbd>p</kbd> 혹은 <kbd>P</kbd>를 눌러 붙여넣기.
@@ -23,5 +26,7 @@ tags:
 
 그리고 원하는 지점에서 <kbd>p</kbd>를 눌러 붙여넣으면 끗.
 
-![](/images/vim-hotkey-1.png)
-![](/images/vim-hotkey-2.jpg)
+## 되돌리기/다시 되돌리기 Undo/Redo
+
+- <kbd>u</kbd>
+- <kbd>ctrl + u</kbd>
