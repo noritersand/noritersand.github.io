@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-01 00:00:00 +0900
-title: '[React] 리액트 기본 React Basics'
+title: '[React] 리액트 훅 React Hooks'
 categories:
   - react
 tags:
@@ -23,17 +23,17 @@ tags:
 
 ## 개요
 
-리액트의 Hook 종류별 정리.
+리액트의 훅 종류별 정리.
 
 ## Hook 목록
 
-기본 Hook:
+기본 훅:
 
 - State Hook
 - Effect Hook
 - Context Hook
 
-추가 Hook:
+추가 훅:
 
 - Reducer
 - Callback
