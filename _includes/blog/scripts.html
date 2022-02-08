@@ -85,8 +85,7 @@ $(document).ready(function () {
     // ctrl + /, shift + /, ctrl + p
     if (((e.keyCode || e.which) === 191 && e.ctrlKey)
         || ((e.keyCode || e.which) === 191 && e.shiftKey)
-        || ((e.keyCode || e.which) === 80 && e.ctrlKey)
-        || ((e.keyCode || e.which) === 75 && e.ctrlKey)) {
+        || ((e.keyCode || e.which) === 80 && e.ctrlKey)) {
       e.preventDefault();
       searchOverlay.open();
     }
