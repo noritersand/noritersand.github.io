@@ -400,7 +400,7 @@ code $PROFILE
 만약 파라미터(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
 
 ```bash
-Function Get-FilesIncludeHidden {
+function Get-FilesIncludeHidden {
   Get-ChildItem -Force
 }
 Set-Alias -Name ll -Value Get-FilesIncludeHidden

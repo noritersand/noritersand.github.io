@@ -14,7 +14,7 @@ tags:
 
 #### 참고한 문서
 
-- [\[JSDoc\] Getting Started with JSDoc 3](https://jsdoc.app/about-getting-started.html)
+- [@use JSDoc](https://jsdoc.app/)
 - [https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
 - [https://stackoverflow.com/questions/8407622/set-type-for-function-parameters](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
@@ -22,17 +22,25 @@ tags:
 
 JSDoc 어쩌구 설명 TODO...
 
-## 함수 파라미터의 타입 설정
-
 ```js
 /**
  * @param {Date} myDate The date
  * @param {string} myString The string
  * @param {string|number} myArg i dunno
- * @return {string} return string
+ * @returns {string|Object} return string or number
  */
 function myFunction(myDate, myString, myArg) {
-    //do stuff
+  // do stuff
+}
+
+/**
+ * Returns the sum of a and b
+ * @param {number} a
+ * @param {number} b
+ * @returns {Promise} Promise object represents the sum of a and b
+ */
+function sumAsync(a, b) {
+  return Promise.resolve(a + b);
 }
 ```
 

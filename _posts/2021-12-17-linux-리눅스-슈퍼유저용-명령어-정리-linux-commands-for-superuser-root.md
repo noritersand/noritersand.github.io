@@ -115,7 +115,9 @@ chown 소유권자:그룹식별자  바꾸고 싶은 파일 이름
 chown tbs:tbs ./some-folder
 ```
 
-## APT, Advanced Packaging Tool
+## apt
+
+APT, Advanced Packaging Tool
 
 - [메뉴얼: apt](https://manpages.ubuntu.com/manpages/xenial/man8/apt.8.html)
 - [메뉴얼: apt-get](https://manpages.ubuntu.com/manpages/xenial/man8/apt-get.8.html)
