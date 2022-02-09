@@ -322,22 +322,26 @@ console.log('아재개그는 아주 재밌는 개그');
 // 2초 후 'done' 출력
 ```
 
-### 반환값
+### await 연산의 결과
 
-`await`은 Promise가 아니라 이행된 값을 반환하도록 만든다. 가령 다음 예시에서:
+`await` 연산자는 표현식을 Promise가 아니라 이행된 값으로 평가되도록 만든다.
+
+가령 다음 예시에서:
 
 ```js
 (async () => {
-  let result = await new Promise(resolve => { resolve('abc'); });
+  let result = await new Promise(resolve => {
+    resolve('abc');
+  });
   console.log('result:', result); // 'result: abc'
 })();
 ```
 
-`result`는 Promise가 아니라 `resolve(123)`에 의해 넘겨진 `abc`다.
+`result`는 Promise가 아니라 `resolve('abc')`에 의해 넘겨진 `abc`다.
 
 ### 얘도 래핑을 하네
 
-만약 `await` 다음이 Promise가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
+만약 `await` 연산자 다음이 Promise가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
 
 예를 들면 이 코드는:
 
