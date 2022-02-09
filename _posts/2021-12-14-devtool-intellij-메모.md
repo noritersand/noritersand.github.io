@@ -27,6 +27,12 @@ tags:
 
 자바 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
 
+## Ultimate와 Community 버전 간 차이
+
+지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
+
+자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
+
 ## 초기 설정
 
 TODO
@@ -34,19 +40,17 @@ TODO
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Find Acton...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
+- Find Action...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
 - Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움.
 - Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움.
 - Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제.
 - Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성.  다른 키는 지움.
 - Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성.  다른 키는 지움.
-- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 키 매핑은 삭제.
-
-## Ultimate와 Community 버전 간 차이
-
-지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
-
-자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
+- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제.
+- Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
+- Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 
 ## TODO 톰캣 퍼블리싱 폴더는 어디일까
 
@@ -84,10 +88,11 @@ Settings > Editor > File Encodings로 이동한 뒤:
 ## 추천 플러그인
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+- CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
 
-## 새 패키지 만들기
+## 인텔리제이에서 사용할 VM options 지정하기
 
-New > Directory가 아니고 Project Settings<kbd>ctrl + alt + shift + s</kbd>
+Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
 
 ## File and Code Templates
 
