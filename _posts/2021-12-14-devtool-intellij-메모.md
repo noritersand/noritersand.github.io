@@ -40,7 +40,7 @@ TODO
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Find Action...: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
+- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
 - Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움.
 - Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움.
 - Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제.
@@ -89,6 +89,7 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
 - CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+- GitHub Copilot
 
 ## 인텔리제이에서 사용할 VM options 지정하기
 
@@ -157,7 +158,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 #### 사전 정의 변수 Predefined template variables﻿
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With...<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
 ## 기본 단축키 메모
 
@@ -167,8 +168,8 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>alt + insert</kbd>: 새로 추가. 상황에 따라 구성요소/파일/rule 등을 추가하는 메뉴를 보여줌.
 - <kbd>shift, shift</kbd>: Search Everywhere 모든 것(?) 열기
 - <kbd>ctrl, ctrl</kbd>: Run Anything 모든 것(?) run하기
-- <kbd>ctrl + alt + s</kbd>: Settings... 인텔리제이 설정
-- <kbd>ctrl + alt + shift + s</kbd>: Project Structure... 현재 프로젝트 전용 설정
+- <kbd>ctrl + alt + s</kbd>: Settings 인텔리제이 설정
+- <kbd>ctrl + alt + shift + s</kbd>: Project Structure 현재 프로젝트 전용 설정
 - <kbd>ctrl + shift + '</kbd>: 포커스가 있는 창 최대화(안되는 것도 있다)
 - <kbd>ctrl + shift + a</kbd>: 실행 가능한 모든 명령 검색창
 - <kbd>ctrl + shift + n</kbd>: Go to File 파일 열기
@@ -177,6 +178,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>ctrl + f4</kbd>: 창 닫기
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
+- <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
 
 ### 북마크
 
@@ -207,7 +209,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리펙토링 관련.
-- <kbd>alt + f1</kbd>: Select in... 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
+- <kbd>alt + f1</kbd>: Select in 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f2</kbd>:
 - <kbd>alt + f3</kbd>:
 - <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
@@ -219,7 +221,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
-- <kbd>ctrl + alt + t</kbd>: Surround With... 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
+- <kbd>ctrl + alt + t</kbd>: Surround With 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
 
 ### 멀티 캐럿
 

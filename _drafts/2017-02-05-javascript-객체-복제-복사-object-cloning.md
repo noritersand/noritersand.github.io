@@ -31,9 +31,37 @@ JavaScript의 객체 복제에 대한 정리글.
 
 ## 얕은 복제 Shallow Cloning
 
-### Object.assign()
+얕은 복제로 분류한 이유는 객체 안에 다른 객체를 가리키는 프로퍼티는 원본 그대로 유지되기 때문이다:
 
-IE에서 사용할 수 없다.
+```js
+var parentObject = {
+  another: childObject
+}
+var childObject = {
+  text: 'Hello World!'
+}
+var newObj = { ...parentObject };
+
+newObj === parentObject // false: 새 인스턴스가 만들어 졌지만
+newObj.another === parentObject.another // true: 프로퍼티가 가리키는 객체까지 복제된 건 아님
+```
+
+### 전개 구문
+
+얕은 복제 중에는 가장 간단한 방법.
+
+```js
+var obj = { foo: 'bar', x: 42 };
+
+var clone1 = { ...obj };
+clone1; // Object { foo: "bar", x: 42 }
+clone1 === obj; // false
+
+var clone2 = { ...obj, x: '사십이', c: 1 };
+clone2; // Object { foo: "bar", x: "사십이", c: 1 }
+```
+
+### Object.assign()
 
 ```js
 let obj = { a: 1, b: 2 };
@@ -69,19 +97,6 @@ console.log(newone.child.grandson.txt); // peek-a-boo!
 console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불가
 ```
 
-### 전개 구문
-
-```js
-var obj = { foo: 'bar', x: 42 };
-
-var clone1 = { ...obj };
-clone1; // Object { foo: "bar", x: 42 }
-clone1 === obj; // false
-
-var clone2 = { ...obj, x: '사십이', c: 1 };
-clone2; // Object { foo: "bar", x: "사십이", c: 1 }
-```
-
 ## 깊은 복제 Deep Cloning
 
-### 꼐속...
+TODO

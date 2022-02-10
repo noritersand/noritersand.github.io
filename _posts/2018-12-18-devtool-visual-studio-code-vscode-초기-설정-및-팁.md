@@ -25,9 +25,9 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
 
   ```json
   "editor.quickSuggestions": {
-      "other": false,
-      "comments": false,
-      "strings": false
+    "other": false,
+    "comments": false,
+    "strings": false
   }
   ```
 
@@ -170,6 +170,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
+- GitHub Copilot `github.copilot`
 
 ## 기본 단축키 메모
 

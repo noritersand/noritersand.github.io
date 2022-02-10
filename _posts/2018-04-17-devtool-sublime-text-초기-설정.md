@@ -110,15 +110,19 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ]
 ```
 
-### Sublime Merge 단축키 변경
+### 번외: Sublime Merge 단축키 변경
 
 #### key bindings - user
 
 ```json
 [
-  {"keys": ["f1"], "command": "show_command_palette"}
+  { "keys": ["f1"], "command": "show_command_palette" },
+  { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
+  { "keys": ["ctrl+shift+alt+a"], "command": "stage_all" }
 ]
 ```
+
+`stage_all`은 untracked 파일도 같이 스테이징하는 명령임.
 
 ## 기본 단축키 메모
 
