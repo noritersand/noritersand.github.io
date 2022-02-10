@@ -159,4 +159,4 @@ https://jekyllrb.com/docs/installation/windows/#encoding
 
 ## 관련 링크
 
-[블로그 작성 가이드](guide-and-rules.md)
+[블로그 작성 가이드](docs/guide-and-rules.md)
