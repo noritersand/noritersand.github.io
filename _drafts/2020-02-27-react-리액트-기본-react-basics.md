@@ -261,7 +261,7 @@ const element3 = React.createElement('h2', {
 >
 > [https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key](https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key)
 
-대충 요약하면 랜더링 최적화에 필요한 프로퍼티다:
+대충 요약하면 렌더링 최적화에 필요한 프로퍼티다:
 
 ```xml
 <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
@@ -350,7 +350,7 @@ class Square extends React.Component {
 
 [컴포넌트 State](https://ko.reactjs.org/docs/faq-state.html)
 
-state는 직접 값을 변경하지 말고 `setState()` 통해야 함. 그래야 리액트가 다시 렌더링 한다.
+state는 (생성자에서 초기화하는 것은 제외하면) 직접 값을 재할당하는게 아니라 `setState()` 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
 ```js
 state = {
@@ -361,32 +361,30 @@ this.state.someFlag = true; // X
 this.setState({ someFlag: true }); // O
 ```
 
-`this.state`를 직접 읽어서 처리하는 코드는 문제를 발생시킬 수 있음. 리액트는 컴포넌트가 다시 렌더링을 할 때까지 `this.state`의 값을 갱신하지 않기 때문이다. 따라서 다음처럼 객체 대신 함수를 전달해야 함:
+리액트는 컴포넌트가 다시 렌더링을 할 때까지 state의 값을 갱신하지 않는다. [링크: this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
+
+그래서 `setState()` 내부 혹은 바로 다음 줄에서 state를 읽는 코드는 문제를 일으킬 수 있다:
 
 ```js
-this.setState((state) => { // this.state가 아니고 state
+// 이런거나
+this.setState({
+  count: ++this.state.clickCount // X
+});
+
+// 이런거
+this.setState({ count: 999 });
+console.log(this.state.count); // X
+```
+
+대신 다음처럼 updater 함수를 전달하는 방법이 권장된다:
+
+```js
+this.setState((state) => {
   return {
     count: state.count++
   }
 });
 ```
-
-TODO
-
-### prevState
-
-옛 버전에선 `prevState`를 썼나보다:
-
-```js
-this.setState(prevState => {
-  // sampleNum: sampleNum + 1
-  return {
-    sampleNum: prevState.sampleNum + 1
-  }
-});
-```
-
-TODO
 
 ## Props
 

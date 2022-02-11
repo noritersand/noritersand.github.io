@@ -85,7 +85,7 @@ events.click[0]; // {type: "click", origType: "click", data: null, guid: 693, ha
 <div id="no-one" data-name="drop-zone"></div>
 ```
 
-태그 랜더링 후 스크립트로 속성값을 수정할 때 `.data()`를 사용하면 attr이 바뀌는게 아니기 때문에 jQuery attribute selector로 찾을 수 없다:
+태그 렌더링 후 스크립트로 속성값을 수정할 때 `.data()`를 사용하면 attr이 바뀌는게 아니기 때문에 jQuery attribute selector로 찾을 수 없다:
 
 ```js
 $('#no-one').data('name', 'forget-me-not');

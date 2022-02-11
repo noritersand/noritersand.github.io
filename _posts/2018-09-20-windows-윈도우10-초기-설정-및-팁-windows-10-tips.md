@@ -447,11 +447,14 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + v</kbd>: 클립보드 이력
 - <kbd>win + w</kbd>: Windows Ink 열기
 - <kbd>win + x</kbd>: 시작 메뉴 열기
-- <kbd>win + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
-- <kbd>win + shift + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
 - <kbd>win + 스페이스바</kbd>: 입력 언어 및 자판 배열 전환
 - <kbd>win + ctrl + 스페이스바</kbd>: 이전 입력으로 전환
 - <kbd>win + /</kbd>: IME 재변환
+
+### 창 크기/위치
+
+- <kbd>win + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
+- <kbd>win + shift + 방향키</kbd>: 창 위치 이동 혹은 크기 변경
 
 ### 작업 표시줄
 
@@ -462,13 +465,13 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + ctrl + shift + 숫자키</kbd>: 작업 표시줄에 고정된 앱을 **관리자 권한으로 새 인스턴스 시작**
 - <kbd>win + t</kbd> or <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택. 실행 중인 창을 선택
 
-### 데스크탑
+### 가상 데스크탑
 
-- <kbd>win + tab</kbd>: 모든 데스크탑과 실행중인 앱
-- <kbd>win + ctrl + d</kbd>: 데스크탑 추가
-- <kbd>win + ctrl + f4</kbd>: 현재 데스크탑 닫기
-- <kbd>win + ctrl + left</kbd>: 왼쪽 데스크탑 선택
-- <kbd>win + ctrl + right</kbd>: 오른쪽 데스크탑 선택
+- <kbd>win + tab</kbd>: 모든 가상 데스크탑과 실행중인 앱
+- <kbd>win + ctrl + d</kbd>: 가상 데스크탑 추가
+- <kbd>win + ctrl + f4</kbd>: 현재 가상 데스크탑 닫기
+- <kbd>win + ctrl + left</kbd>: 왼쪽 가상 데스크탑 선택
+- <kbd>win + ctrl + right</kbd>: 오른쪽 가상 데스크탑 선택
 
 ### 탐색기
 

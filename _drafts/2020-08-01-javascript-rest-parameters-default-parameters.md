@@ -32,7 +32,7 @@ tags:
 
 ## 나머지 매개변수 Rest parameters
 
-Rest parameters는 함수의 파라미터보다 인수의 수가 많을 때, 언급되지 않은 모든 인수를 하나의 변수에 모두 할당하는 구문이다.
+Rest parameters는 함수의 매개변수보다 전달인자의 수가 많을 때, 언급되지 않은 모든 전달인자를 하나의 매개변수에 모두 할당하는 구문이다.
 
 ```
 function f(a, b, ...theArgs) {
@@ -40,6 +40,14 @@ function f(a, b, ...theArgs) {
 }
 ```
 
+TODO
+
 ## 기본값 매개변수 Default parameters
+
+어쩌구
+
+```
+function fnName(param1 = defaultValue1, ..., paramN = defaultValueN) { /* ... */ }
+```
 
 TODO

@@ -225,7 +225,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 ### 멀티 캐럿
 
-Select Next Occurrence 없는 줄 아랏네 😂
+Select Next Occurrence. 멀티 캐럿 없는 줄 아랏네 😏
 
 - <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
 - <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소

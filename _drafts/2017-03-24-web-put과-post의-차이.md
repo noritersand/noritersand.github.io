@@ -20,6 +20,11 @@ tags:
 
 - post는 idempotent하지 않고, put은 idempotent하다.
 
+> idempotent
+> 1. 멱등(冪等)의 2. 멱등원(元)
+>
+> [네이버 영어사전: idempotent](https://en.dict.naver.com/#/entry/enko/df125e744fd141d89c385d7b1b5063c1)
+
 두 줄 요약:
 
 - post는 idempotent하지 않다. 이 말은 연산이 수행될 때마다 새로운 리소스가 생긴다는 뜻이다. (= create)

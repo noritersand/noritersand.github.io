@@ -17,7 +17,7 @@ tags:
 
 - [somewhere](somewhere)
 
-서블릿 3.0부터는 web.xml 없이 서블릿을 설정할 수 있는 방법을 제공한다.
+서블릿 3.0부터는 `web.xml` 없이 서블릿을 설정할 수 있는 방법을 제공한다.
 
 TODO 블라블라
 
@@ -25,7 +25,7 @@ TODO 블라블라
 
 **근데 이건 2.3부터 되는것 같은데?**
 
-웹 앱을 WAR로 개발할 경우엔 다음처럼 ServletContextListener를 구체화한 클래스를 작성하면 된다:
+웹 앱을 WAR로 개발할 경우엔 다음처럼 `ServletContextListener`를 구체화한 클래스를 작성하면 된다:
 
 ```java
 package com.test;
@@ -51,7 +51,7 @@ public class WebAppInitializer implements ServletContextListener {
 }
 ```
 
-위의 자바 코드는 (이전 방식인)아래의 web.xml과 동일하게 작동한다:
+위의 자바 코드는 (이전 방식인)아래의 `web.xml`과 동일하게 작동한다:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -78,11 +78,7 @@ public class WebAppInitializer implements ServletContextListener {
 
 ## ServletContainerInitializer
 
-TODO
-
-클래스패스 내의 javax.servlet.ServletContainerInitializer 인터페이스를 구체화한 모든 클래스들을 찾아보도록  되어 있다. 무슨 말이냐면 이제부터는 web.xml에 서블릿을 명시하지 않아도 된다는 말이다. (이것을 대체할 자바 파일은 있어야겠지만...)
-
-웹 앱을 JAR로 개발할 땐 약간 번거롭다. 우선 다음처럼 ServletContainerInitializer를 구체화한 클래스를 만들고:
+이런 것도 있는데, 클래스패스 내의 `javax.servlet.ServletContainerInitializer` 인터페이스를 구체화한 모든 클래스들을 찾아보도록 되어 있다. 
 
 ```java
 package com.test;
@@ -105,10 +101,6 @@ public class WebAppInitializer implements ServletContainerInitializer {
     }
 }
 ```
-
-`META-INF/services/javax.servlet.ServletContainerInitializer`에 패키지를 포함한 클래스명을 적는다. 그 후 해당 클래스를 `WEB-INF/lib` 밑에 jar로 떨구면 된다.
-
-근데 안된다 ...
 
 참고할 것:
 

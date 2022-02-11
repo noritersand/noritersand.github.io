@@ -31,19 +31,19 @@ JavaScript의 객체 복제에 대한 정리글.
 
 ## 얕은 복제 Shallow Cloning
 
-얕은 복제로 분류한 이유는 객체 안에 다른 객체를 가리키는 프로퍼티는 원본 그대로 유지되기 때문이다:
+얕은 복제로 분류한 이유는 복제하려는 객체의 프로퍼티가 다른 객체를 가리키는 참조일 때, 참조되는 객체는 원본 그대로 유지되기 때문:
 
 ```js
-var parentObject = {
-  another: childObject
-}
-var childObject = {
+var child = {
   text: 'Hello World!'
-}
-var newObj = { ...parentObject };
+};
+var parent = {
+  c: child
+};
+var newObj = { ...parent };
 
-newObj === parentObject // false: 새 인스턴스가 만들어 졌지만
-newObj.another === parentObject.another // true: 프로퍼티가 가리키는 객체까지 복제된 건 아님
+newObj === parent // false: 새 인스턴스가 만들어 졌지만
+newObj.c === parent.c // true: 프로퍼티가 가리키는 객체까지 복제된 건 아님
 ```
 
 ### 전개 구문
@@ -61,6 +61,17 @@ var clone2 = { ...obj, x: '사십이', c: 1 };
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
+```js
+var arr = [ 'a', 'b', [ 'c', 'd' ] ];
+
+var clone3 = [ ...arr ];
+clone3; // Array(3) [ "a", "b", (2) […] ]
+clone3 === arr; // false
+
+var clone4 = [ ...arr[2] ];
+clone4; // Array [ "c", "d" ]
+```
+
 ### Object.assign()
 
 ```js
@@ -74,7 +85,7 @@ clone2; // Object { a: 1, b: 3 }
 
 ### JSON 문자열로 바꾼뒤 다시 객체로 변환
 
-`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. IE7 이하에서 사용할 수 없고, JSON으로 표현이 불가능한 함수는 복제할 수 없다. (JSON에는 function 타입이 없기 때문)
+`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. JSON 표현이 불가능한 함수는 복제할 수 없다. (JSON에는 function 타입이 없기 때문)
 
 ```js
 // 복제할 대상

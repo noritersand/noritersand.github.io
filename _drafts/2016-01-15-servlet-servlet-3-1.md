@@ -23,4 +23,4 @@ tags:
 
 이미지 출처: [http://tomcat.apache.org/whichversion.html](http://tomcat.apache.org/whichversion.html)
 
-다른 얘기지만 스프링 3.2부터 사용 가능한 AbstractAnnotationConfigDispatcherServletInitializer는 Dispatcher-servlet.xml을 대체하는 자바 코드 기반의 스프링 설정파일인데 자바코드로 서블릿을 설정할 때 사용하며 ServletContainerInitializer(정확히는 WebApplicationInitializer)를 구체화하고 있다.
+다른 얘기지만 스프링 3.2부터 사용 가능한 `AbstractAnnotationConfigDispatcherServletInitializer`는 `Dispatcher-servlet.xml`을 대체하는 자바 코드 기반의 스프링 설정파일인데 자바코드로 서블릿을 설정할 때 사용하며 `ServletContainerInitializer`(정확히는 `WebApplicationInitializer`)를 구체화하고 있다.
