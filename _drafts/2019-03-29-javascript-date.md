@@ -27,11 +27,11 @@ TODO
 ```js
 const { log } = console;
 
-let a = new Date('2018-01-01T12:24:48Z');
-let b = new Date('2018-01-01 12:24:48'); // 얘는 IE, 사파리에서 문제 있음.
-let c = new Date('2016-02-05T09:00:00.000+09:00');
-let d = new Date('2011-12-30');
-let e = new Date('2011/12/30');
+var a = new Date('2018-01-01T12:24:48Z');
+var b = new Date('2018-01-01 12:24:48'); // 얘는 IE, 사파리에서 문제 있음.
+var c = new Date('2016-02-05T09:00:00.000+09:00');
+var d = new Date('2011-12-30');
+var e = new Date('2011/12/30');
 
 log(a.getTime()); // 1514809488000
 log(b.getTime()); // 1514777088000
@@ -39,8 +39,8 @@ log(c.getTime()); // 1454630400000
 log(d.getTime()); // 1325203200000
 log(e.getTime()); // 1325170800000
 
-let err1 = new Date('20111230');
-let err2 = new Date('30-12-2011');
+var err1 = new Date('20111230');
+var err2 = new Date('30-12-2011');
 
 log(err1.getTime()); // NaN
 log(err2.getTime()); // NaN

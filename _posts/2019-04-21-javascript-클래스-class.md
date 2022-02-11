@@ -52,7 +52,7 @@ class Newbie {
   }
 }
 
-let noob = new Newbie();
+var noob = new Newbie();
 
 noob.trait; // "Know nothing."
 noob.levelUp(); // I feel stronger.
@@ -64,7 +64,7 @@ noob.trait; // "Can sleep for 12 hours in a row."
 함수 선언과 다르게 끌어올림은 발생하지 않는다:
 
 ```js
-let magicUser = new Sorcerer(); // ReferenceError: can't access lexical declaration `Sorcerer' before initialization
+var magicUser = new Sorcerer(); // ReferenceError: can't access lexical declaration `Sorcerer' before initialization
 
 class Sorcerer {}
 ```
@@ -137,7 +137,7 @@ new Numeric(123456).format(0); // "123,456"
 
 ```js
 class Test {}
-let t = new Test();
+var t = new Test();
 t.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```

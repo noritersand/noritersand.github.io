@@ -24,7 +24,7 @@ tags:
 
 #### [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
 
-주어진 배열이나 값을 이어붙인 새 배열을 반환한다. **원본은 변화하지 않는다**
+주어진 배열이나 값을 이어붙인 새 배열을 반환한다. 원본은 변화하지 않는다.
 
 ```
 concat([value1[, value2[, ...[, valueN]]]])
@@ -96,7 +96,7 @@ arr; // ['b', 'c', 'd', 'a']
 
 ### Array.prototype.map()
 
-주어진 함수가 반환하는 결과로 새로운 배열 생성해 반환. 이건 왜 이름을 이렇게 지었는지 의문이다.
+주어진 함수가 반환하는 결과로 새로운 배열을 생성해 반환. 이건 왜 이름을 이렇게 지었는지 의문이다.
 
 ```js
 [ 1, 2, 3, 4, 5 ].map(n => n * 2); // [ 2, 4, 6, 8, 10 ]
@@ -122,12 +122,15 @@ TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/b
 
 ### Array.prototype.filter()
 
+주어진 조건을 만족하는 새 배열을 반환한다. `true` 혹은 `false`를 반환하는 함수를 인자로 받는다.
+
 ```js
-let arr = [1, 2, 3, 4];
-let even = arr.filter(function(element) {
+var arr = [1, 2, 3, 4];
+var even = arr.filter(function(element) {
   return element % 2 == 0;
 });
 even; // [2, 4]
+arr === even; // false
 ```
 
 ### Array.prototype.some()
@@ -142,7 +145,7 @@ even; // [2, 4]
 
 ### [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 
-특정 인덱스 범위의 요소를 잘라내 반환하는 메서드. **원본은 변화하지 않는다**.
+특정 인덱스 범위의 요소를 잘라내 반환하는 메서드. 원본은 변화하지 않는다.
 
 ```
 slice([begin[, end]])
@@ -153,10 +156,10 @@ slice([begin[, end]])
 `begin`과 `end` 둘 다 생략하면 기존 배열의 얕은 복제본을 반환한다.
 
 ```js
-let arr = ['가', '나', '다', '라', '마'];
+var arr = ['가', '나', '다', '라', '마'];
 
 // 배열 복제
-let newArr = arr.slice(); // Array(5) [ "가", "나", "다", "라", "마" ]
+var newArr = arr.slice(); // Array(5) [ "가", "나", "다", "라", "마" ]
 console.log(newArr === arr); // false, 내용물은 같지만 서로 다른 인스턴스
 
 // 세 번째 자리부터 끝까지
@@ -191,7 +194,7 @@ fill(value[, start[, end]])
 
 ```js
 // 6개짜리 배열을 모두 null로 채움
-let arr = Array(6).fill(null);
+var arr = Array(6).fill(null);
 // Array(6) [ null, null, null, null, null, null ]
 
 // 숫자 0으로 세 번째 자리부터 다섯 번째 자리 전까지 채

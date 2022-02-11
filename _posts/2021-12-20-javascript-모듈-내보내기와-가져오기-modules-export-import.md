@@ -98,8 +98,8 @@ import 구문은 가져올 대상 뒤에 `from` 키워드로 모듈 파일의 �
 <script type="module">
 import { create, createReportList } from './modules/canvas.js';
 
-let myCanvas = create('myCanvas', document.body, 480, 320);
-let reportList = createReportList(myCanvas.id);
+var myCanvas = create('myCanvas', document.body, 480, 320);
+var reportList = createReportList(myCanvas.id);
 </script>
 ```
 
@@ -313,7 +313,7 @@ export const message = 'wassssssssssssup';
 
 ```js
 // main.js
-let btn = document.querySelector('button#btn');
+var btn = document.querySelector('button#btn');
 
 btn.addEventListener('click', () => {
   import('./module1.js').then((module) => {

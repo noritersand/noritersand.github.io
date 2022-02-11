@@ -119,7 +119,7 @@ console.log(square(2)); // 4 출력
 화살표 함수 표현으로 생성한 함수는 생성자 함수로 호출(`new 키워드`)할 때 에러가 발생한다:
 
 ```js
-let newbie = () => {
+var newbie = () => {
   console.log('noop noop!');
 };
 

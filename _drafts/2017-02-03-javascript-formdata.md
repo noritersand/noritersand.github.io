@@ -46,7 +46,7 @@ xhr.onreadystatechange = function() {
 };
 
 // post method#2
-let data = new FormData();
+var data = new FormData();
 data.append('b', 2);
 data.append('c', 3);
 xhr.open('post', '/test/uncategorized/read-body.data?a=1');

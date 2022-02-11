@@ -23,7 +23,7 @@ Standard built-in Objects: Set
 Array와 비슷하지만 완전히 같지는 않은 타입. 내부 배열 내에서 유일한 값만 추가할 수 있다.
 
 ```js
-let b = new Set();
+var b = new Set();
 
 b.add(1);
 b.size; // 1

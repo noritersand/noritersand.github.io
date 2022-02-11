@@ -1,29 +1,30 @@
 ---
 layout: post
 date: 2016-03-21 00:00:00 +0900
-title: '[DBMS] MySQL: 오라클용 쿼리에서 변환해야 하는 문장들'
+title: '[DBMS] MariaDB, MySQL: 오라클용 쿼리에서 변환해야 하는 문장들'
 categories:
   - dbms
 tags:
   - dbms
+  - mariadb
   - mysql
   - oracle
-  - mysql
   - sql
 ---
 
 * Kramdown table of contents
 {:toc .toc}
 
+## 개요
+
+오라클에서 쓰던 쿼리를 그대로 MariDB, MySQL에서 돌리면 당연히 에러가 뻥뻥 터진다. 변환 작업 필요한 것들 함수, 문법 등 정리함.
+
+## 변환 표
+
 |오라클|MySQL|
 |--|--|
-|SYSDATE|`NOW()`|
-|`'hi' || 'there'`|`CONCAT('hi', 'there')`|
-
-## 현재 시각
-
-- 오라클: `SYSDATE`
-- MySQL: `NOW()`
+|`SYSDATE`|`NOW()`|
+|``` 'hi' \|\| 'there' ```|`CONCAT('hi', 'there')`|
 
 ## 테이블 별칭
 

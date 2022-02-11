@@ -78,7 +78,7 @@ promise.then( onFulfilled, onRejected )
 생성자 함수와 `.then()`은 Promise를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 그래서 메서드 체이닝 패턴으로 작성한다:
 
 ```js
-let willBeSuccess = new Promise((resolve, reject) => {
+var willBeSuccess = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve('success message(or fulfillment value)');
   }, 1000);
@@ -88,7 +88,7 @@ willBeSuccess.then((message) => {
   console.log(message); // 1초 후 'success message(or fulfillment value)' 출력
 });
 
-let willBeFail = new Promise((resolve, reject) => {
+var willBeFail = new Promise((resolve, reject) => {
   setTimeout(() => {
     reject('rejection reason');
   }, 1500);
@@ -112,7 +112,7 @@ promise.catch( onRejected )
 `Promise.prototype.catch()`는 reject된 경우에 실행할 함수 하나만 받는다. 내부에서 `promise.then(undefined, onRejected)`를 호출한다고 함.
 
 ```js
-let willBeFail2 = new Promise((resolve, reject) => {
+var willBeFail2 = new Promise((resolve, reject) => {
   setTimeout(() => {
     reject('rejection reason');
   }, 1500);

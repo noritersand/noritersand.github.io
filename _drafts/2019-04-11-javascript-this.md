@@ -38,7 +38,7 @@ owner === owner.fn();
 
 ```js
 // animal엔 다양한 메서드가 있습니다.
-let animal = {
+var animal = {
   walk() {
     if (!this.isSleeping) {
       alert(`동물이 걸어갑니다.`);
@@ -50,7 +50,7 @@ let animal = {
   }
 };
 
-let rabbit = {
+var rabbit = {
   name: "하얀 토끼",
   __proto__: animal
 };

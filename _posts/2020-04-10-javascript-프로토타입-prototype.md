@@ -41,7 +41,7 @@ tags:
 \* `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
 
 ```js
-let o = new Object();
+var o = new Object();
 Object.getPrototypeOf(o) === o.__proto__; // true
 ```
 
@@ -51,7 +51,7 @@ Object.getPrototypeOf(o) === o.__proto__; // true
 
 ```js
 function Mankind() {}
-let human = new Mankind();
+var human = new Mankind();
 ```
 
 자바스크립트는 `Mankind()` 함수에서 만들어질 객체의 부모를 `Mankind.prototype`에 할당한다:
@@ -71,7 +71,7 @@ Mankind.prototype === human.__proto__; // true
 
 ```js
 function Fruit() {}
-let berry = new Fruit();
+var berry = new Fruit();
 ```
 
 `berry`의 프로토타입은 `Fruit` 프로토타입이다. 앞서 말했듯이 `berry.__proto__`에서 찾을 수 있다:
@@ -112,7 +112,7 @@ berry.__proto__.aaa; // 123
 
 ```js
 function Newbie() {}
-let noob = new Newbie();
+var noob = new Newbie();
 ```
 
 `noob`의 생성자는 `Newbie()`를 가리킨다:
@@ -204,7 +204,7 @@ function Fn() {
   this.a = 1;
   this.b = 2;
 }
-let o = new Fn();
+var o = new Fn();
 
 Fn.prototype.b = 3;
 Fn.prototype.c = 4;
@@ -233,7 +233,7 @@ HelloWorld.prototype.sayHello = function() {
   console.log('Hello!');
 };
 
-let helloWorld = new HelloWorld();
+var helloWorld = new HelloWorld();
 helloWorld.sayHi(); // "Hi!"
 helloWorld.sayHello(); // "Hello!"
 ```
@@ -292,7 +292,7 @@ class Arr extends Array {
   }
 }
 
-let arr = new Arr();
+var arr = new Arr();
 arr.push('a');
 arr.push('b');
 arr.push('c');
@@ -309,17 +309,17 @@ arr.length; // 0
 `Object.create(obj[, descriptors])`는 `obj`가 프로토타입인 새로운 객체를 반환한다. 그리고 이 객체에 필요한 프로퍼티를 추가하는 방식:
 
 ```js
-let grandpa = {
+var grandpa = {
   age: 70
 };
 
-let daddy = Object.create(grandpa, {
+var daddy = Object.create(grandpa, {
   age: {
     value: 45
   }
 });
 
-let son = Object.create(daddy, {
+var son = Object.create(daddy, {
   age: {
     value: 17
   }
@@ -333,7 +333,7 @@ son.age; // 17
 한편 `null`을 프로토타입으로 지정하면 순수 사전식(pure dictionary) 객체를 만들 수 있다:
 
 ```js
-let plainObject = Object.create(null);
+var plainObject = Object.create(null);
 plainObject.ga = '가';
 plainObject.na = '나';
 
@@ -349,18 +349,18 @@ plainObject.toString; // undefined
 이 방법은 상속이나 확장이 아니라 변이(mutation)라고 부른다:
 
 ```js
-let obj = {};
+var obj = {};
 Object.getPrototypeOf(obj) === Object.prototype; // true
 
-let obj2 = { __proto__: null };
+var obj2 = { __proto__: null };
 Object.getPrototypeOf(obj2) === null; // true
 ```
 
 ```js
-let bomb = {
+var bomb = {
   explosion: true
 };
-let fatboy = {
+var fatboy = {
   __proto__: bomb,
   assuredDestruction: true
 };
@@ -389,7 +389,7 @@ function Laptop(number) {
 }
 Laptop.prototype = Calculator.prototype;
 
-let notebook = new Laptop(256);
+var notebook = new Laptop(256);
 notebook.number; // 256
 notebook.getDouble() // 512
 ```

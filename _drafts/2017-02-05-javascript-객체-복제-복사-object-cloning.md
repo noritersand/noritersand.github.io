@@ -31,7 +31,7 @@ JavaScript의 객체 복제에 대한 정리글.
 
 ## 얕은 복제 Shallow Cloning
 
-얕은 복제로 분류한 이유는 복제하려는 객체의 프로퍼티가 다른 객체를 가리키는 참조일 때, 참조되는 객체는 원본 그대로 유지되기 때문:
+얕은 복제로 분류한 이유는 객체 안의 다른 객체가 원본 그대로 유지되기 때문:
 
 ```js
 var child = {
@@ -75,11 +75,11 @@ clone4; // Array [ "c", "d" ]
 ### Object.assign()
 
 ```js
-let obj = { a: 1, b: 2 };
-let clone = Object.assign({}, obj);
+var obj = { a: 1, b: 2 };
+var clone = Object.assign({}, obj);
 clone; // Object { a: 1, b: 2 }
 
-let clone2 = Object.assign({}, obj, { b: 3 }); // 객체의 사본을 만들면서 일부 프로퍼티는 재할당
+var clone2 = Object.assign({}, obj, { b: 3 }); // 객체의 사본을 만들면서 일부 프로퍼티는 재할당
 clone2; // Object { a: 1, b: 3 }
 ```
 

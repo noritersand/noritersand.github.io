@@ -49,7 +49,7 @@ class Newbie {
   }
 }
 
-let noob = new Newbie();
+var noob = new Newbie();
 
 noob.trait; // "know nothing"
 noob.trait = 'crawl';
@@ -88,7 +88,7 @@ class Newbie {
   }
 }
 
-let noob = new Newbie();
+var noob = new Newbie();
 noob.name; // "fresh newbie";
 noob.name = 'spoiled'; // strict 모드일 땐 TypeError: setting getter-only property 'name' 발생함.
 noob.name; // "fresh newbie";

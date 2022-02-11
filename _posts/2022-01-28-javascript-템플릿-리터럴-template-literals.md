@@ -37,7 +37,7 @@ ES2105의 새 문법 템플릿 리터럴의 간단 정리 글. 원래 명칭은 
 이렇게 쓴다:
 
 ```js
-let abc = 1234
+var abc = 1234;
 `${abc} is dumdum`
 // '1234 is dumdum' 출력
 ```
