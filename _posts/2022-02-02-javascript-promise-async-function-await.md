@@ -469,7 +469,7 @@ pick().then(console.log);
 // 1000
 ```
 
-### 진정한 병렬 처리?
+### 진짜 병렬 처리?
 
 변수에 `await`를 걸든, `Promise.all()`이나 `Promise.race()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
 

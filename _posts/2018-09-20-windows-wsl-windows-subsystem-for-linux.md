@@ -99,27 +99,6 @@ drvfs           476G  100G  377G  21% /mnt/c
 drvfs           930G   69G  862G   8% /mnt/d
 ```
 
-## WSL에서 윈도우의 환경변수 사용하지 않기
-
-[https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
-
-WSL에서 윈도우의 환경변수를 사용하지 않는 방법이다.
-
-루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
-
-```bash
-[interop]
-  appendWindowsPath=false
-```
-
-그리고 WSL 재시작:
-
-```bash
-wsl --shutdown
-```
-
-그래도 잘 안되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
-
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
 [노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
@@ -169,3 +148,34 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 # 로그인 쉘을 Zsh로 바꾸기
 chsh -s $(which zsh)
 ```
+
+## WSL에서 윈도우의 환경변수 사용하지 않기
+
+[https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
+
+WSL에서 윈도우의 환경변수를 사용하지 않는 방법이다.
+
+루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
+
+```bash
+[interop]
+  appendWindowsPath=false
+```
+
+그리고 WSL 재시작:
+
+```bash
+wsl --shutdown
+```
+
+그래도 잘 안되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
+
+## WSL에서 Git Credential Manager for Windows 사용하기
+
+WSL 터미널에서 다음 입력:
+
+```bash
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"
+```
+
+[출처](https://stackoverflow.com/questions/45925964/how-to-use-git-credential-store-on-wsl-ubuntu-on-windows)

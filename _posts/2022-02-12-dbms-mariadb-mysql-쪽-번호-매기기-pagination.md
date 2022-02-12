@@ -40,6 +40,17 @@ ORDER BY RES_DT DESC -- 등록일시 역순
 LIMIT 3 OFFSET 0 -- 첫 번째(0)부터 3개
 ```
 
+만약 전체 데이터 개수로 뭔가를 해야 하면 `COUNT() OVER()`를 같이 쓰면 됨:
+
+```sql
+SELECT
+  COUNT(1) OVER() AS entireRows,
+  ST.*
+FROM SOME_TABLE ST
+LIMIT 5 OFFSET 10 -- 열한 번째부터 5개
+```
+
+
 `offset` 계산은 요딴식으로 하면 됨:
 
 ```java

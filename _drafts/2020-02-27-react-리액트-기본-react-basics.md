@@ -83,6 +83,20 @@ const element = <img src={user.avatarUrl}></img>;
 
 JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때문에 **XSS 같은 명령어 주입 공격에서 안전**하다고 한다.
 
+#### 중괄호의 생략
+
+다음처럼 프로퍼티의 값이 string 리터럴인 경우:
+
+```js
+<div className={"abc"}><div>
+```
+
+중괄호는 생략해도 된다:
+
+```js
+<div className="abc"><div>
+```
+
 ### 프로퍼티 명명 규칙
 
 React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (e.g. `class` => `className`, `tabindex` => `tabIndex`)
@@ -325,6 +339,8 @@ ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 // </div>
 ```
 
+**주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함**
+
 ## 이벤트 핸들러 할당
 
 그냥 요따구로 하면 됨:
@@ -333,22 +349,51 @@ ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 class Square extends React.Component {
   render() {
     return (
-      <button
-          className="square"
-          onClick={function() {
-            console.log('click');
-          }}
-      >
-      </button>
+      <button onClick={function() { console.log('click'); }}></button>
     );
-    // return React.createElement("button", { className: "square", onClick: function () { console.log('click'); } });
+    // return React.createElement("button", { onClick: function () { console.log('click'); } });
   }
 }
 ```
 
-## State
+## state
 
-[컴포넌트 State](https://ko.reactjs.org/docs/faq-state.html)
+- [\[React\] 컴포넌트 State](https://ko.reactjs.org/docs/faq-state.html)
+- [\[React\] State와 생명주기](https://ko.reactjs.org/docs/state-and-lifecycle.html)
+
+state는 컴포넌트의 현재 상태를 나타내는 객체다.
+
+16.8 버전부터 추가된 `useState()`를 사용하지 않는한 함수 컴포넌트에선 state를 사용할 수 없다:
+
+```js
+function App() {
+  return (
+    <div>{this.state}</div>
+  );
+}
+// Uncaught TypeError: can't access property "state", this is undefined
+```
+
+클래스 컴포넌트에선 아래처럼 생성자에서 초기화하는 방식으로 사용~~한다~~했었다:
+
+```js
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      helloText: 'Hello world!'
+    }
+  }
+
+  render() {
+    return (
+      <div>{this.state.helloText}</div>
+    );
+  }
+}
+```
+
+### state 값 변경하기
 
 state는 (생성자에서 초기화하는 것은 제외하면) 직접 값을 재할당하는게 아니라 `setState()` 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
@@ -386,10 +431,39 @@ this.setState((state) => {
 });
 ```
 
-## Props
+## props
 
-[Components와 Props](https://ko.reactjs.org/docs/components-and-props.html)
+- [\[React\] Components와 Props](https://ko.reactjs.org/docs/components-and-props.html)
+- [\[React\] Render Props](https://ko.reactjs.org/docs/render-props.html)
 
-부모로부터 전달되는 읽기 전용 프로퍼티 집합.
+요약하면 부모로부터 전달되는 읽기 전용 프로퍼티 집합이다.
 
-TODO
+리액트는 사용자 정의 컴포넌트의 태그 속성으로 전달된 값을 해당 컴포넌트에 단일 객체로 전달하는데 이 객체를 props라고 한다:
+
+```js
+function Header(props) {
+  return (
+    <p>{props.helloText}</p>
+  );
+}
+
+function App() {
+  return (
+    <Header helloText='Hello world!'/>
+  );
+}
+// <p>Hello world!</p> 출력
+```
+
+### props의 값은 변경할 수 없다
+
+읽기 전용이므로 재할당은 에러를 유발한다:
+
+```js
+function Header(props) {
+  props.helloText = 123; // Uncaught TypeError: "helloText" is read-only
+  return (
+    // ...
+  );
+}
+```
