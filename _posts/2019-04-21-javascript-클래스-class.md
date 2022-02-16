@@ -89,7 +89,16 @@ TODO
 
 ## static
 
-TODO
+생성자 함수의 메서드를 만드는 키워드.
+
+```js
+class Hitman {
+  static yo() {
+    return 'I kill you!'
+  }
+}
+Hitman.yo();
+```
 
 ## super
 

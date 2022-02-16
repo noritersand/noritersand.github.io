@@ -83,7 +83,34 @@ const element = <img src={user.avatarUrl}></img>;
 
 JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때문에 **XSS 같은 명령어 주입 공격에서 안전**하다고 한다.
 
-#### 중괄호의 생략
+### JSX 요소는 단일 태그로 감싸야 함
+
+그렇지 않은 표현은 문법 에러다:
+
+```js
+const wrongSyntax = (
+  <input type="text" />
+  <button>push me</button>
+);
+// Parsing error: Adjacent JSX elements must be wrapped in an enclosing tag. Did you want a JSX fragment <>...</>?
+```
+
+아무 태그나 맨 바깥에 추가하면 되는데, 만약 어떤 태그도 추가하고 싶지 않을땐 더미 태그를 명시하는 방법이 있다:
+
+```js
+const correctSyntax = (
+  <>
+    <input type="text" />
+    <button>push me</button>
+  </>
+);
+```
+
+### 프로퍼티 명명 규칙
+
+React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (e.g. `class` => `className`, `tabindex` => `tabIndex`)
+
+### 중괄호의 생략
 
 다음처럼 프로퍼티의 값이 string 리터럴인 경우:
 
@@ -97,9 +124,31 @@ JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때�
 <div className="abc"><div>
 ```
 
-### 프로퍼티 명명 규칙
+### 배열 표현
 
-React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (e.g. `class` => `className`, `tabindex` => `tabIndex`)
+아래 둘은 같은 결과가 나온다:
+
+```js
+const UnorderedList = (
+  <ul>
+    {[
+      <li key="1"></li>,
+      <li key="2"></li>,
+      <li key="3"></li>
+    ]}
+  </ul>
+);
+
+const UnorderedList2 = (
+  <ul>
+    <li key="1"></li>
+    <li key="2"></li>
+    <li key="3"></li>
+  </ul>
+);
+```
+
+그래서 [Array.prototype.map()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 활용하는 코드가 자주 보인다.
 
 ### 이걸 브라우저가 읽을 수 있나?
 

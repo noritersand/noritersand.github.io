@@ -74,43 +74,41 @@ TODO
 const refContainer = useRef(initialValue);
 ```
 
-`useRef()`는 주어진 값으로 초기화된 `.current` 프로퍼티를 소유한 객체를 반환한다. 보통 값의 변경은 `.current`를 이용하며 이 행동은 렌더링을 유발하지 않는다.
+`useRef()`는 주어진 값으로 초기화된 `.current` 프로퍼티를 소유한 객체를 반환한다. 보통 값의 변경은 `.current`를 이용하며 **이 행동은 렌더링을 유발하지 않는다**.
 
 ```js
 const rf = useRef("멋에쓰는물건인고");
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
 
-<!-- TODO: 이 부분이 필요한가? -->
-<!-- ```js
-rf.current = '야';
-console.log(rf); // Object { current: "야" }
+`<div ref={myRef} />` 이런식으로 작성하면 리액트는 렌더링 될 때마다 변경된 DOM 노드를 `ref`로 전달한다. 매 렌더링마다 항상 동일한 객체를 제공한다고 한다.
 
-rf = '왜'; // Uncaught TypeError: invalid assignment to const 'rf'
-``` -->
-
-`useRef()`로 만들어지는 객체는 순수 자바스크립트 객체이며 매 렌더링마다 항상 동일한 ref 객체를 제공한다고 한다.
-
-그리고 보통 이렇게 쓰인다 함:
+보통 재렌더링 없이 재할당하거나 DOM 객체가 필요할 때 사용한다. 아래는 `<button>`이 클릭될 때마다 `focused.current`의 객체가 바뀌는 코드다:
 
 ```js
-function TextInputWithFocusButton() {
-  const inputEl = useRef(null);
+function UseRefTest() {
+  const [focusSwitch, setFocusSwitch] = useState(true);
+  const focused = useRef(null);
+
   const onButtonClick = () => {
-    // `current` points to the mounted text input element
-    inputEl.current.focus();
-    console.log(inputEl.current); // <input type="text">
-    console.log(inputEl.current === document.querySelector('input')); // true
+    setFocusSwitch(!focusSwitch);
+    console.log('focused.current:', focused.current);
   };
+
+  const arr = [true, false];
+
   return (
     <>
-      <input ref={inputEl} type="text" />
+      {
+        arr.map(item => {
+          return (
+            <div ref={item === focusSwitch ? focused : null}
+                className={item === focusSwitch ? 'active' : ''}>phew-phew!</div>
+          );
+        })
+      }
       <button onClick={onButtonClick}>Focus the input</button>
     </>
   );
 }
 ```
-
-`<div ref={myRef} />`와 같은 방식으로 ref 객체를 전달하면 리액트는 모드가 변경될 때마다 변경된 DOM 노드를 전달한다는디... 뭔소리람
-
-TODO
