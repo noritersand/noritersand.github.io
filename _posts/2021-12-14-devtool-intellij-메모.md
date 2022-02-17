@@ -222,6 +222,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
 - <kbd>ctrl + alt + t</kbd>: Surround With 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
+- <kbd>ctrl + alt + q</kbd>: Toggle Rendered View 자바독 편집/읽기 모드 토글
 
 ### 멀티 캐럿
 
