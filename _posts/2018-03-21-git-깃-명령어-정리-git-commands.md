@@ -980,12 +980,22 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 ## [ls-tree](https://git-scm.com/docs/git-ls-tree)
 
-지정한 경로 기준 깃이 추적중인 파일목록을 출력한다.
+지정한 경로에 있는 깃이 추적중인 파일목록을 출력한다.
 
+```
+git ls-tree -d origin/main
+git ls-tree c29acb72a600 -r
+git ls-tree HEAD ./docs
+```
 
+경로는 생략하면 명령을 실행하는 현재 경로를 기준으로 출력하지만, 커밋(공식 문서에선 `tree-ish`로 표현)은 생략할 수 없다.
 
+아직 어떻게 쓸 수 있는지는 잘 몲... 있어야 하는 파일이 없을 때 확인하는 용도로 쓰려나?
 
+#### options
 
+- `-d`: 명명된 트리 구성요소만 출력한다. (공식 문서에선 파일을 `children`, 디렉터리를 `named tree entry`라고 표현함)
+- `-r`: 현재 경로 포함, 하위 경로를 재귀한다.
 
 ## [merge](https://git-scm.com/docs/git-merge)
 
