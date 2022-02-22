@@ -340,4 +340,4 @@ import myDefault, * as name from "module-name";
 import "module-name"; // 변수 바인딩 없이 스크립트를 실행만 할 때 사용한다.
 ```
 
-끝! 🥱
+끝. 🥱
