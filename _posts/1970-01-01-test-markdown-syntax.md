@@ -181,7 +181,7 @@ _이탤릭_
 이건 그냥 기본 정렬  
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
-요거는 가운데 정렬  
+요거는 가운데 정렬(kramdown만 되는 모양)
 ![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="margin:0 auto; display:block;"}
 
 ## 첨자

@@ -140,6 +140,8 @@ Build 3126 이후에 기록함.
 - <kbd>alt + 숫자키</kbd>: 열려진 탭 사이의 포커스 이동
 - <kbd>alt + shift + 숫자키</kbd>: 레이아웃 나누기
 - <kbd>ctrl + 숫자키</kbd>: 레이아웃이 나눠진 상태에서 다른 레이아웃으로 포커스 이동
+- <kbd>ctrl + r</kbd>: Goto Symbol
+- <kbd>ctrl + shift + r</kbd>: Goto Project Symbol
 
 ### 멀티 캐럿
 

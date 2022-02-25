@@ -73,13 +73,29 @@ $i = 5
 # $env:LOCALAPPDATA\abcd
 ```
 
+## 변수선언과 사용
+
+```bash
+$abc = 1234
+
+$abc
+# 1234
+
+gv abc
+# Name      Value
+# ----      -----
+# abc       1234
+```
+
+관련 Cmdlet은 [여기](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/#heading-set-variable)서 확인.
+
 ## 연산자
 
 [내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-연산자-powershell-operator/)
 
-## 명령어
+## 명령어 Cmdlet
 
-[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands/)
+[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 

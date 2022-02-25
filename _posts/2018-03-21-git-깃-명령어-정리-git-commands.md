@@ -1456,6 +1456,20 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 - `-p`: 패치 형태로 출력
 - `-c`: `log`와 마찬가지로 머지 커밋은 해당 커밋에 포함된 파일 목록만 출력하는게 기본값인데, 이 옵션을 사용하면 머지 커밋과 부모 커밋을 비교해 변경사항을 모두 출력한다.
 
+## [show-ref](https://git-scm.com/docs/git-show-ref#_description)
+
+로컬 저장소의 모든 레퍼런스(로컬 브랜치 + 리모트 트래킹 브랜치 + 태그) 출력.
+
+```bash
+git show-ref --head
+```
+
+#### options
+
+- `-head`: HEAD도 무조건 포함하여 출력한다.
+- `-heads`: 로컬 브랜치만 출력
+- `-tags`: 태그만 출력
+
 ## [stash](https://git-scm.com/docs/git-stash)
 
 커밋이나 스테이지가 아닌 별도의 공간에 변경사항을 임시 저장하거나 저장한 내용을 다시 불러오는 명령어.
