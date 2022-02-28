@@ -733,15 +733,13 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
 <span th:text="${#request.getParameter('productNumber')}"></span>
 ```
 
-### th:block 태그에서 th:replace 사용 가능
-
-layout.html
+### th:block 태그에서 th:replace
 
 ```html
 <th:block th:replace="/some-where/file-name :: grenade"></th:block>
 ```
 
-file-name.html
+### th:block 태그에서 th:fragment
 
 ```html
 <!DOCTYPE html>

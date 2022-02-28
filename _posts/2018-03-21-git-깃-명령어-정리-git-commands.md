@@ -1466,9 +1466,9 @@ git show-ref --head
 
 #### options
 
-- `-head`: HEAD도 무조건 포함하여 출력한다.
-- `-heads`: 로컬 브랜치만 출력
-- `-tags`: 태그만 출력
+- `--head`: HEAD도 무조건 포함하여 출력한다.
+- `--heads`: 로컬 브랜치만 출력
+- `--tags`: 태그만 출력
 
 ## [stash](https://git-scm.com/docs/git-stash)
 
