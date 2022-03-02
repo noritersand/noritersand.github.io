@@ -201,7 +201,7 @@ git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 
 
 이 명령은 리모트 저장소에서 삭제된 모든 브랜치를 로컬 브랜치와 리모트 트래킹 브랜치에서 삭제한다.
 
-주의: 파워쉘에선 안됨
+주의: 파워셸에선 안됨
 
 ```bash
 # 출처: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
@@ -790,7 +790,7 @@ Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.
 여기선 그냥 'N'을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:
 
 ```bash
-# 파워쉘
+# 파워셸
 $env:GIT_ASK_YESNO = 'false'
 
 # git bash
@@ -1502,7 +1502,7 @@ git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시�
 git stash list  # 스태시 목록 확인
 git stash show  # 첫 번째 스태시 상세 확인
 git stash show stash@{0}  # 리눅스에서만 됨
-git stash show 'stash@{0}'  # 윈도우 파워쉘은 이렇게
+git stash show 'stash@{0}'  # 윈도우 파워셸은 이렇게
 git stash show 0  # git stash show stash@{0}과 같음
 ```
 

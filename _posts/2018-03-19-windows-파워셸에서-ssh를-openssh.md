@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워쉘에서 SSH를: OpenSSH'
+title: '[Windows] 파워셸에서 SSH를: OpenSSH'
 categories:
   - windows
 tags:
@@ -26,7 +26,7 @@ tags:
 
 ## ssh
 
-putty는 안녕. 터미널은 이제 파워쉘로 접속한다. ~~사실 WSL이 더 편하다~~
+putty는 안녕. 터미널은 이제 파워셸로 접속한다. ~~사실 WSL이 더 편하다~~
 
 우선 설치를 하자.
 
@@ -36,7 +36,7 @@ putty는 안녕. 터미널은 이제 파워쉘로 접속한다. ~~사실 WSL이 
 
 #### CLI
 
-파워쉘(관리자 권한)에서 다음 줄 실행:
+파워셸(관리자 권한)에서 다음 줄 실행:
 
 ```bash
 # OpenSSH 설치
@@ -89,7 +89,7 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@3.36.35.105
 
 #### CLI
 
-파워쉘에서 아래 스크립트 실행:
+파워셸에서 아래 스크립트 실행:
 
 ```bash
 # Set Key File Variable:

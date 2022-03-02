@@ -38,7 +38,7 @@ wsl -l -v
 
 버전 확인해서 2가 아니면 뭔가 잘못된 거니까 가이드 보고 다시 설치하자.
 
-그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워쉘이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
+그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워셸이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
 
 ## 이전 설치 방법
 
@@ -54,14 +54,14 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ~~그 다음, WSL 2를 쓸 생각이 없다면 바로 서브 시스템을 설치하면 된다. [요것](https://aka.ms/wslstore) 혹은 [요놈](ms-windows-store://collection/?CollectionId=LinuxDistros)을 눌러 나오는 앱 중 하나를 골라 설치하거나,~~
 
-~~아니면 파워쉘에서 직접:~~
+~~아니면 파워셸에서 직접:~~
 
 ```bash
 Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
 ```
 
 ~~명령어로 다운로드/설치 하면 됨~~  
-~~오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 쉘 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
+~~오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
 
 ## 설치 확인
 
@@ -75,9 +75,9 @@ wsl -l -v
 WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 
-**WSL2**: 버전 2에선 쉘의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
+**WSL2**: 버전 2에선 셸의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
 
-## [CMD 혹은 파워쉘에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
+## [CMD 혹은 파워셸에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
 
 ```bash
 wsl ls -la
@@ -103,7 +103,7 @@ drvfs           930G   69G  862G   8% /mnt/d
 
 [노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
 
-Zsh는 리눅스 기본 쉘인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
+Zsh는 리눅스 기본 셸인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 
 일단 [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)는:
 
@@ -142,10 +142,10 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 
 하면 끗.
 
-기본 쉘 Zsh로 변경하려면 아래 실행:
+기본 셸 Zsh로 변경하려면 아래 실행:
 
 ```bash
-# 로그인 쉘을 Zsh로 바꾸기
+# 로그인 셸을 Zsh로 바꾸기
 chsh -s $(which zsh)
 ```
 

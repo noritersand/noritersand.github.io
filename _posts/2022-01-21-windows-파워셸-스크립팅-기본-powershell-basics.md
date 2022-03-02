@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-21 13:43:45 +0900
-title: '[Windows] 파워쉘 스크립팅: 기본 Powershell Basics'
+title: '[Windows] 파워셸 스크립팅: 기본 Powershell Basics'
 categories:
   - windows
 tags:
@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-파워쉘에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
+파워셸에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
 
 ## 스크립트 파일의 바로가기 만들기
 
@@ -36,7 +36,7 @@ Stop-Process -Name 'SoundSwitch'
 Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 ```
 
-문제는 파워쉘 스크립트 파일이 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워쉘 스크립트를 실행한다:
+문제는 파워셸 스크립트 파일이 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워셸 스크립트를 실행한다:
 
 ```bash
 # restart-soundswitch.bat
@@ -87,15 +87,15 @@ gv abc
 # abc       1234
 ```
 
-관련 Cmdlet은 [여기](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/#heading-set-variable)서 확인.
+관련 Cmdlet은 [여기](https://noritersand.github.io/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/#heading-set-variable)서 확인.
 
 ## 연산자
 
-[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-연산자-powershell-operator/)
+[내부 링크](https://noritersand.github.io/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
 
 ## 명령어 Cmdlet
 
-[내부 링크](https://noritersand.github.io/windows/windows-파워쉘-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+[내부 링크](https://noritersand.github.io/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 
@@ -109,7 +109,7 @@ function Get-PSVersion {
 }
 ```
 
-함수 정의는 단순히 커맨드라인에서 함수 리터럴을 입력하면 된다. 하지만 이렇게 하면 현재 세션에만 유효한 함수가 되므로, [파워쉘 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 작성하거나 [스크립트 모듈](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/10-script-modules?view=powershell-7.2)로 등록한다.
+함수 정의는 단순히 커맨드라인에서 함수 리터럴을 입력하면 된다. 하지만 이렇게 하면 현재 세션에만 유효한 함수가 되므로, [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 작성하거나 [스크립트 모듈](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/10-script-modules?view=powershell-7.2)로 등록한다.
 
 프로파일은 일단 한 번 추가하면 `$PROFILE` 변수에서 파일 경로를 찾을 수 있음:
 

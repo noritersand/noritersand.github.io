@@ -155,7 +155,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 ### Conversion error: Jekyll::Converters::Scss encountered an error while converting 'assets/css/style.scss': Invalid CP949 character "\xE2"
 
 https://jekyllrb.com/docs/installation/windows/#encoding  
-지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 쉘에서 `chcp 65001` 입력 후 다시 실행한다.
+지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 셸에서 `chcp 65001` 입력 후 다시 실행한다.
 
 ## 관련 링크
 

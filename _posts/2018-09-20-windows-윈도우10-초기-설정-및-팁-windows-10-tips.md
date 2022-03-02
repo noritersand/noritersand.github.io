@@ -29,7 +29,7 @@ tags:
 [Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)  
 [Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
 
-2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 쉘(CMD, 파워쉘, 파워쉘 레거시, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
+2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 셸(CMD, 파워셸, 파워셸 레거시, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
 
 [이 링크](https://www.microsoft.com/ko-kr/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)에서 설치하거나, 스토어에서 'Windows Terminal'을 검색하면 나온다.
 
@@ -75,13 +75,13 @@ tags:
 
 윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)
 
-파워쉘(관리자 권한)에서 다음 줄 실행:
+파워셸(관리자 권한)에서 다음 줄 실행:
 
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
-설치 후 쉘에서:
+설치 후 셸에서:
 
 ```bash
 # winscp 설치
@@ -138,7 +138,7 @@ Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를
 
 ### 텔넷 활성화
 
-쉘(관리자 권한)에서 아래 실행:
+셸(관리자 권한)에서 아래 실행:
 
 ```bash
 # PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
@@ -154,7 +154,7 @@ telnet localhost 4000
 
 ~~뭔소리야~~ 잘 모르겠지만 프로그램에서 지역을 알기 위해 참조하는 환경 변수로 보인다.
 
-어쨋든 파워쉘을 관리자 권한으로 열고 아래 명령을 실행한다:
+어쨋든 파워셸을 관리자 권한으로 열고 아래 명령을 실행한다:
 
 ```bash
 [System.Environment]::SetEnvironmentVariable('LC_ALL', 'ko_KR.UTF-8', 'Machine')
@@ -499,6 +499,6 @@ sudo apt-get remove byobu hollywood
 
 ### Windows Terminal
 
-- <kbd>win + \`</kbd>: 윈도우 터미널의 기본 쉘로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
+- <kbd>win + \`</kbd>: 윈도우 터미널의 기본 셸로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
 
 끝.

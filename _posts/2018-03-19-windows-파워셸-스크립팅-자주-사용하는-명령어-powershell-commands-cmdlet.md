@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워쉘 스크립팅: 자주 사용하는 명령어 PowerShell Commands, Cmdlet'
+title: '[Windows] 파워셸 스크립팅: 자주 사용하는 명령어 PowerShell Commands, Cmdlet'
 categories:
   - windows
 tags:
@@ -22,9 +22,9 @@ tags:
 
 ## 개요
 
-악의축에서 갓갓으로 거듭나고 있는 마소의 파워쉘 명령어 정리 글.
+악의축에서 갓갓으로 거듭나고 있는 마소의 파워셸 명령어 정리 글.
 
-파워쉘 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
+파워셸 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
 ## 환경 변수
 
@@ -81,7 +81,7 @@ Remove-Item Env:\test
 [Environment]::SetEnvironmentVariable("test2", $null, "Machine")
 ```
 
-## 파워쉘 명령어 기본 별칭
+## 파워셸 명령어 기본 별칭
 
 ```
 ? -> Where-Object                 % -> ForEach-Object               ac -> Add-Content
@@ -188,7 +188,7 @@ Get-Process 'SoundSwitch'
 프로세스 시작. 기본 별칭은 `saps`.
 
 ```bash
-Start-Process powershell –verb runAs # 관리자 권한으로 파워쉘 실행
+Start-Process powershell –verb runAs # 관리자 권한으로 파워셸 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
@@ -324,7 +324,7 @@ Get-Variable -Include m*, p*
 
 ### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.2)
 
-명령어를 입력하고 있는 호스트 프로그램(=파워쉘)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
+명령어를 입력하고 있는 호스트 프로그램(=파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
 ### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2)
 
@@ -389,7 +389,7 @@ Set-Alias grep findstr
 Set-Alias -Name grep -Value findstr
 ```
 
-이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워쉘 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워셸 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
@@ -415,7 +415,7 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 어떤 명령어를 사용할 때 발생하는 암시적인 출력은 Write-Output을 통한 출력이다.
 
 ```bash
-# 파워쉘 설치 경로 출력
+# 파워셸 설치 경로 출력
 Write-Output $PSHOME
 
 # 비어있는 파일 생성. 'touch'와 같음
@@ -445,7 +445,7 @@ Write-Output
 Invoke-WebRequest -Uri "https://google.com"
 
 # 헤더와 바디를 지정하는 방법
-# 백틱(`)은 파워쉘에서 줄바꿈을 의미함
+# 백틱(`)은 파워셸에서 줄바꿈을 의미함
 Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }

@@ -28,9 +28,9 @@ tags:
 
 - 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
 - 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
-- [파워쉘 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
+- [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-세 번째 방법을 추천. 방법은 아래 코드를 복사해서 파워쉘에 입력한다:
+세 번째 방법을 추천. 방법은 아래 코드를 복사해서 파워셸에 입력한다:
 
 ```js
 if (!(Test-Path -Path $PROFILE)) {

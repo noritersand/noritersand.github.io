@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-28 23:43:45 +0900
-title: '[Windows] 파워쉘 스크립팅: 연산자 Powershell Operator'
+title: '[Windows] 파워셸 스크립팅: 연산자 Powershell Operator'
 categories:
   - windows
 tags:
@@ -22,7 +22,7 @@ tags:
 
 ## 개요
 
-파워쉘 스크립팅의 연산자 부분만 정리한 글.
+파워셸 스크립팅의 연산자 부분만 정리한 글.
 
 ## 리디렉션 연산자 `>` `>>`
 

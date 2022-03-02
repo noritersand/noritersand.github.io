@@ -20,7 +20,7 @@ tags:
 
 ## 개요
 
-명령 프롬프트(윈도우 기본 쉘인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
+명령 프롬프트(윈도우 기본 셸인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
 
 여담으로 윈도우 설치 화면(별도의 설치 디스크로 부팅하면 설치할 디스크와 파티션을 설정하던 그 화면)에서는 `shift + f10`으로 cmd에 진입할 수 있음.
 
