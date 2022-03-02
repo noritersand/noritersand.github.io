@@ -27,13 +27,65 @@ tags:
 
 ## 개요
 
-리액트의 기초, 규칙, 문법 등을 정리한 글.
+리액트의 기초, 규칙, 문법 등을 정리한 글. 공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
 
-공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
+## 설치
 
-## React 엘리먼트
+HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 갈린다.
 
-`React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
+### HTML
+
+리액트는 라이브러리라서 js 파일을 불러오기만 하면 된다. 보통은 이렇게:
+
+```js
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+```
+
+두 개를 끌어다 씀. CDN 링크는 [여기를 클릭](https://reactjs.org/docs/cdn-links.html).
+
+JSX 문법을 사용하려면 아래처럼 [@babel/standalone](https://babeljs.io/docs/en/babel-standalone#installation)을 불러오고 내 스크립트에 `type="text/bable"` 속성을 추가한다:
+
+```html
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<div id="root"></div>
+<script type="text/babel">
+  const element = (
+    <h1 className="greeting">
+      Hello, world!
+    </h1>
+  );
+  ReactDOM.render(element, document.querySelector('#root'));
+</script>
+```
+
+### Node.js
+
+[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다:
+
+```bash
+npx create-react-app APP_NAME
+```
+
+그리고 `APP_NAME` 디렉터리에서:
+
+```bash
+npm start
+```
+
+하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 확인할 것.
+
+바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요하며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요:
+
+```bash
+npm install
+# 혹은
+yarn install
+```
+
+## 리액트 엘리먼트
+
+리액트의 핵심 API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
 
 객체는 대충 이렇게 생김:
 
@@ -54,7 +106,7 @@ tags:
 
 ## JSX
 
-JavaScript XML 혹은 JavaScript eXtended로 추정. 페이스북이 react.js와 함께 만든것으로 보임. **컴파일이 필요한 언어**이며 스크립트 내에서 (가독성을 위해)HTML 태그를 사용하려는 목적으로 사용된다.
+JavaScript XML 혹은 JavaScript eXtended로 추정. 페이스북이 리액트와 함께 만든것으로 보임. **컴파일이 필요한 언어**이며 스크립트 내에서 (가독성을 위해) HTML 태그를 사용하려는 목적으로 만들어졌음.
 
 ```js
 const element = (
@@ -68,6 +120,76 @@ const image = <img src={user.avatarUrl} />;
 ```
 
 여기서 괄호`()`는 세미콜론 자동 삽입을 예방하기 위한 것이며 필수는 아님.
+
+### 이걸 브라우저가 읽을 수 있나?
+
+당연히 그대로는 못 읽는다. JSX는 Babel에 의해 js로 컴파일된다. Babel 설치는 아래의 [설치](#heading-설치) 항목을 보자
+
+예를 들어 아래 코드는:
+
+```js
+const element = (
+  <h1 className="greeting">
+    Hello, world!
+  </h1>
+);
+```
+
+이렇게 컴파일된다:
+
+```js
+const element = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello, world!'
+);
+```
+
+하나 더 예를 들면:
+
+```js
+class ShoppingList extends React.Component {
+  render() {
+    return (
+      <div className="shopping-list">
+        <h1>Shopping List for {this.props.name}</h1>
+        <ul>
+          <li>Instagram</li>
+          <li>WhatsApp</li>
+          <li>Oculus</li>
+        </ul>
+      </div>
+    );
+  }
+}
+ReactDOM.render(
+  <ShoppingList />,
+  document.getElementById('root')
+);
+```
+
+아래와 같다:
+
+```js
+class ShoppingList extends React.Component {
+  render() {
+    return React.createElement("div", { className: "shopping-list" },
+        React.createElement("h1", null, "Shopping List for ", this.props.name),
+        React.createElement("ul", null,
+            React.createElement("li", null, "Instagram"),
+            React.createElement("li", null, "WhatsApp"),
+            React.createElement("li", null, "Oculus")
+        )
+    );
+  }
+}
+ReactDOM.render(
+  React.createElement(ShoppingList, null),
+  document.getElementById('root')
+);
+```
+
+컴파일 결과를 미리보고 싶으면 [여기를 눌러](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.6&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUAcjogQUcwEpeAJTjDgUACIB5ALLK6aRklTRBQ0KCohMQk6Bx4gA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.16.9&externalPlugins=&assumptions=%7B%7D)볼 것.
 
 ### 태그 속성 정의
 
@@ -150,131 +272,18 @@ const UnorderedList2 = (
 
 그래서 [Array.prototype.map()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 활용하는 코드가 자주 보인다.
 
-### 이걸 브라우저가 읽을 수 있나?
-
-당연히 그대로는 못 읽는다. JSX는 Babel에 의해 js로 컴파일된다. Babel 설치는 아래의 [설치](#heading-설치) 항목을 보자
-
-예를 들어 아래 코드는:
+### 삼항 연산자 적용
 
 ```js
-const element = (
-  <h1 className="greeting">
-    Hello, world!
-  </h1>
+let doNotRender = true;
+const conditional = (
+  <div>
+    { doNotRender ? (<></>) : (<div>hi</div>) }
+  </div>
 );
 ```
 
-이렇게 컴파일된다:
-
-```js
-const element = React.createElement(
-  'h1',
-  {className: 'greeting'},
-  'Hello, world!'
-);
-```
-
-하나 더 예를 들면:
-
-```js
-class ShoppingList extends React.Component {
-  render() {
-    return (
-      <div className="shopping-list">
-        <h1>Shopping List for {this.props.name}</h1>
-        <ul>
-          <li>Instagram</li>
-          <li>WhatsApp</li>
-          <li>Oculus</li>
-        </ul>
-      </div>
-    );
-  }
-}
-ReactDOM.render(
-  <ShoppingList />,
-  document.getElementById('root')
-);
-```
-
-아래와 같다:
-
-```js
-class ShoppingList extends React.Component {
-  render() {
-    return React.createElement("div", { className: "shopping-list" },
-        React.createElement("h1", null, "Shopping List for ", this.props.name),
-        React.createElement("ul", null,
-            React.createElement("li", null, "Instagram"),
-            React.createElement("li", null, "WhatsApp"),
-            React.createElement("li", null, "Oculus")
-        )
-    );
-  }
-}
-ReactDOM.render(
-  React.createElement(ShoppingList, null),
-  document.getElementById('root')
-);
-```
-
-컴파일 결과를 미리보고 싶으면 [여기를 눌러](https://babeljs.io/repl/#?browsers=defaults%2C%20not%20ie%2011%2C%20not%20ie_mob%2011&build=&builtIns=false&corejs=3.6&spec=false&loose=false&code_lz=MYewdgzgLgBApgGzgWzmWBeGAeAFgRgD4AJRBEAGhgHcQAnBAEwEJsB6AwgbgChRJY_KAEMAlmDh0YWRiGABXVOgB0AczhQAokiVQAQgE8AkowAUAcjogQUcwEpeAJTjDgUACIB5ALLK6aRklTRBQ0KCohMQk6Bx4gA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=react&prettier=false&targets=&version=7.16.9&externalPlugins=&assumptions=%7B%7D)볼 것.
-
-## 설치
-
-HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 갈린다.
-
-### HTML
-
-리액트는 라이브러리라서 js 파일을 불러오기만 하면 된다. 보통은 이렇게:
-
-```js
-<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-```
-
-두 개를 끌어다 씀. CDN 링크는 [여기를 클릭](https://reactjs.org/docs/cdn-links.html).
-
-JSX 문법을 사용하려면 아래처럼 [@babel/standalone](https://babeljs.io/docs/en/babel-standalone#installation)을 불러오고 내 스크립트에 `type="text/bable"` 속성을 추가한다:
-
-```html
-<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<div id="root"></div>
-<script type="text/babel">
-  const element = (
-    <h1 className="greeting">
-      Hello, world!
-    </h1>
-  );
-  ReactDOM.render(element, document.querySelector('#root'));
-</script>
-```
-
-### Node.js
-
-[Create React App](https://create-react-app.dev/docs/getting-started/) 패키지를 npx로 설치한다:
-
-```bash
-npx create-react-app APP_NAME
-```
-
-그리고 `APP_NAME` 디렉터리에서:
-
-```bash
-npm start
-```
-
-하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 확인할 것.
-
-바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요하며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요할 수 있음:
-
-```bash
-npm install
-# 혹은
-yarn install
-```
-
-## 주요 API
+## 리액트의 주요 API
 
 ### [React.createElement](https://ko.reactjs.org/docs/react-api.html#createelement)
 

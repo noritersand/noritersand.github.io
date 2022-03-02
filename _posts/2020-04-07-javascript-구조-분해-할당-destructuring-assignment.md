@@ -146,30 +146,31 @@ const { log } = console;
 log('hi');
 ```
 
-### 함수 매개변수의 기본값 설정
+### 함수 매개변수의 구조 분해와 기본값 설정
 
-객체 구조 분해는 함수 매개변수의 일종의 기본값처럼 활용할 수 있다. 예를 들어 함수 정의가 아래와 같을 때:
-
-```js
-function fn({ a = 1, b = 2, c = 3 }) {
-  // ...
-}
-```
-
-아래처럼 호출하면:
+객체 구조 분해는 함수 매개변수의 일종의 기본값처럼 활용할 수 있다:
 
 ```js
-fn({ b: 65536 });
-```
-
-매개변수로 넘겨진 객체에 실제로 존재하는 프로퍼티는 `b` 뿐이므로 `a`와 `c`는 기본값이 할당된다:
-
-```js
-function fn({a = 1, b = 2, c = 3}) {
+function fn2({ a = 1, b = 2, c }) {
   console.log(a); // 기본값 1 출력
   console.log(b); // 전달된 65536 출력
-  console.log(c); // 기본값 3 출력
+  console.log(c); // undefined
 }
+fn2({ b: 65536 });
+```
+
+그런데 이렇게 하면 아무런 인자 없이 호출할 때 에러가 발생한다. 방지하고 싶으면 구조 분해식 우변에서 빈 객체를 할당해주면 된다:
+
+```js
+function fn3({ a = 1, b = 2, c = 3 }) {
+  // ...
+}
+fn3(); // Uncaught TypeError: (destructured parameter) is undefined
+
+function fn4({ a = 1, b = 2, c = 3 } = {}) {
+  console.log('no error')
+}
+fn4(); // "no error"
 ```
 
 ### 유효하지 않은 식별자명인 경우
