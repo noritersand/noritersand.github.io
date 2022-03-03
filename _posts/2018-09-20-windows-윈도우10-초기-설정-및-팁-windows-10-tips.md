@@ -270,6 +270,8 @@ sudo apt-get remove byobu hollywood
 
 ## shell: 프로토콜로 접근 가능한 특수 폴더 목록
 
+탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 파워셸에서 굳이 쓴다면 `explorer shell:AppData`와 같은 형태로 써야 함.
+
 - `shell:3D Objects`
 - `shell:AccountPictures`
 - `shell:AddNewProgramsFolder`

@@ -83,7 +83,7 @@ $.ajax({
   url: '/sample/testAjax.do',
   data: $('#testForm').serialize(),  // 폼데이터 직렬화
   contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-  dataType: 'json',   // 데이터타입을 JSON형식으로 지정
+  dataType: 'json',   // 응답 데이터 타입
   success: function(data) { // data: 백엔드에서 requestBody 형식으로 보낸 데이터를 받는다.
     if(data.code == '0') {
       alert('code:'+ data.code + '\n' + 'msg:' + data.msg);

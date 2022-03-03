@@ -159,7 +159,7 @@ OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 
 - `>>`: right shift operator, 부호 비트를 확장(유지)하면서 오른쪽으로 이동하며 새로운 자리는 0으로 채운다.
 - `>>>`: unsigned right shift operator, 부호 비트 확장 없이 오른쪽으로 이동. `>>`와 다르게 부호 비트를 무시하기 때문에 좌변의 피연산자가 음수일 경우 결과에서 양수로 바뀐다.
 
-## 삼항 연산자
+## 삼항 연산자 Conditional (ternary) operator
 
 조건 연산자 또는 선택 연산자. TRUE 혹은 FALSE에 해당하는 값을 반환한다.
 
@@ -324,3 +324,36 @@ void(); // SyntaxError: expected expression, got ')'
 ```html
 <a href="javascript:void(0)">test</a>
 ```
+
+## Optional Chaining `?.`
+
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%ED%98%B8%ED%99%98%EC%84%B1
+- https://tc39.es/proposal-optional-chaining/#top
+- https://javascript.info/optional-chaining
+
+다른 언어에 Elvis Operator`?:`라고 비슷한 뇨솤이 있었는데 JS도 추가됨.
+
+```
+obj?.prop
+obj?.[expr]
+arr?.[index]
+func?.(args)
+```
+
+객체 접근 연산자 `.`를 대체해 사용할 수 있다. 대상 객체가 `undefined`여도 에러 대신 `undefined`를 반환한다.
+
+2022-03-02 아직 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
+
+TODO
+
+## 널 병합 연산자 Nullish coalescing operator `??`
+
+- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
+
+```
+leftExpr ?? rightExpr
+```
+
+`A || B` 대신 사용할 수 있는 연산자. 연산자 좌변이 `null` 혹은 `undefined`로 평가되면 연산자 우변의 결과를 반환한다.
+
+TODO

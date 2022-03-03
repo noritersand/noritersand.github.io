@@ -33,13 +33,16 @@ tags:
 ```bash
 # 모든 환경 변수 보기,
 Get-ChildItem Env:
+
 # 위와 같음
 ls env:
 
 # 환경 변수 중 'path' 출력,
 Write-Output $env:path
+
 # 위와 같음
 echo $env:path
+
 # 이렇게만 쳐도 됨 (암시적인 출력은 Write-Output이 처리함)
 $env:path
 ```

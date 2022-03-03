@@ -40,7 +40,7 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 -- 현재 상태 보기
 status
 
-CREATE DATABASE test;
+CREATE DATABASE maria_db_test;
 ```
 
 ```sql
@@ -52,8 +52,8 @@ SHOW TABLES;
 ```
 
 ```sql
--- 'mysql' 데이터베이스 사용
-use mysql
+-- 'maria_db_test' 데이터베이스 사용
+use maria_db_test
 ```
 
 ### 로컬 접속용 유저 생성과 모든 권한 부여
