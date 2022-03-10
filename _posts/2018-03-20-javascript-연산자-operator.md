@@ -327,9 +327,9 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## Optional Chaining `?.`
 
-- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80_%ED%98%B8%ED%99%98%EC%84%B1
-- https://tc39.es/proposal-optional-chaining/#top
-- https://javascript.info/optional-chaining
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
+- [https://javascript.info/optional-chaining](https://javascript.info/optional-chaining)
 
 다른 언어에 Elvis Operator`?:`라고 비슷한 뇨솤이 있었는데 JS도 추가됨.
 
@@ -348,7 +348,7 @@ TODO
 
 ## 널 병합 연산자 Nullish coalescing operator `??`
 
-- https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
+- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
 
 ```
 leftExpr ?? rightExpr

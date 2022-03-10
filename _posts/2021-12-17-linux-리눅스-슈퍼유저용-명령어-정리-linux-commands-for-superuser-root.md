@@ -43,10 +43,10 @@ sudo rm remove-me -r
 
 라고 치면 루트 비번 입력으로 임시 권한을 획득하여 삭제할 수 있게 된다.
 
-아예 루트로 사용자를 전환하려면:
+아예 루트로 유저를 전환하려면:
 
 ```bash
-# 루트 사용자로 환경 변수 등의 설정까지 모두 전환
+# 루트 유저로 환경 변수 등의 설정까지 모두 전환
 sudo su -
 
 # 이것로 루트 로그인인데 뭔 차이야...
@@ -66,9 +66,9 @@ su -
 
 [지역에 관한 내용 링크](http://originalchoi.tistory.com/19)
 
-### 사용자, 그룹
+### 유저, 그룹
 
-보통 사용자는 `/etc/passwd`, 그룹은 `/etc/group` 파일에 텍스트로 나열돼 있음.
+보통 유저는 `/etc/passwd`, 그룹은 `/etc/group` 파일에 텍스트로 나열돼 있음.
 
 ## 바라보는 DNS 서버 바꾸기
 
@@ -348,3 +348,29 @@ journalctl -xe
 ## service
 
 서비스 관리
+
+## useradd, userdel, passwd
+
+유저 생성과 삭제, 비밀번호 설정.
+
+```bash
+# 홈 디렉터리와 함께 유저 생성
+useradd -m USER_ID
+
+# 유저 삭제
+userdel USER_ID
+
+# 유저의 로그인 비밀번호 설정
+passwd USER_ID
+```
+
+루트 비번을 변경하려면 간단히 루트 권한을 획득한 상태에서 `root` ID의 비밀번호를 변경하면 된다.
+
+## usermod
+
+유저의 로그인 정보를 수정하는 명령어
+
+```bash
+# GROUP_ID 그룹에 USER_ID 추가
+usermod -a -G GROUP_ID USER_ID
+```

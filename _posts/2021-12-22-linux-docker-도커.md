@@ -87,7 +87,7 @@ docker rmi IMAGE_NAME -f
 `commit` 명령으로 컨테이너의 스냅샷을 이미지로 저장할 수 있다.
 
 ```bash
-# 컨테이너 CONTAINER_ID로 my-first-image라는 이미지 생성
+# CONTAINER_ID 컨테이너로 my-first-image 이미지 생성
 docker commit -a 'fixalot' -m 'Hello world!' CONTAINER_ID my-first-image
 
 # my-first-image 이미지에 이름만 fixalot/testbed로 변경한 새 스냅샷 생성
@@ -104,6 +104,7 @@ docker push fixalot/testbed
 
 `push` 명령은 저장소와 이미지 이름이 일치하지 않으면 실패하는 것 같음.
 
+**이미지 이름은 저장소 이름과 동일한 것으로 취급된다**. 
 
 ### 컨테이너 생성과 삭제
 
