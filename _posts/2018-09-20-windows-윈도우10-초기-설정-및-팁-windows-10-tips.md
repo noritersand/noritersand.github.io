@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[Windows] 윈도우10 초기 설정 및 팁 Windows 10 Tips'
+title: '[Windows] 윈도우10 초기 설정 및 팁'
 categories:
   - windows
 tags:
@@ -465,7 +465,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + alt + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 점프 목록 열기(마우스 우클릭으로 열리는 메뉴)
 - <kbd>win + ctrl + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 마지막 활성 창으로 전환(뭔 소리람...)
 - <kbd>win + ctrl + shift + 숫자키</kbd>: 작업 표시줄에 고정된 앱을 **관리자 권한으로 새 인스턴스 시작**
-- <kbd>win + t</kbd> or <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택. 실행 중인 창을 선택
+- <kbd>win + t</kbd> or <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택... 라는데 그냥 작업 표시줄에 탭 포커스 생긴다 보면 됨.
 
 ### 가상 데스크탑
 

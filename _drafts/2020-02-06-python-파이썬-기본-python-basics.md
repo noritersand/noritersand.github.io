@@ -322,3 +322,11 @@ print('1' + str(2)) # 12
 ```py
 print(sorted(values, key=str))
 ```
+
+## 코딩 스타일 컨벤션
+
+[참고](https://peps.python.org/pep-0008/)
+
+### 들여쓰기
+
+스페이스 4개

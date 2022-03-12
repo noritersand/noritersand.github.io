@@ -339,6 +339,7 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 #### options
 
 - `-n` `--no-commit`: 커밋을 만들지 않은 상태로 체리픽 한다.
+- `-x`: 체리픽 할 때 선택한 커밋을 `cherry pick from commit ...`와 함께 메시지에 추가한다.
 
 #### 주의사항
 
@@ -1456,6 +1457,8 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 
 - `-p`: 패치 형태로 출력
 - `-c`: `log`와 마찬가지로 머지 커밋은 해당 커밋에 포함된 파일 목록만 출력하는게 기본값인데, 이 옵션을 사용하면 머지 커밋과 부모 커밋을 비교해 변경사항을 모두 출력한다.
+- `--name-only`: 변경된 파일의 이름만 출력
+- `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 
 ## [show-ref](https://git-scm.com/docs/git-show-ref#_description)
 
