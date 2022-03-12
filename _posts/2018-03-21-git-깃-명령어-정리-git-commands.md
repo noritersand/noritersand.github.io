@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-21 10:16:45 +0900
-title: '[Git] 깃 명령어 정리'
+title: '[Git] 깃 명령어 정리 Git Commands'
 categories:
   - git
 tags:
