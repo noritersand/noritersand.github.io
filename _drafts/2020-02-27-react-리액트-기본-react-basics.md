@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-02-27 17:14:00 +0900
-title: '[React] 리액트 기본 React Basics'
+title: '[React] 리액트 기본'
 categories:
   - react
 tags:

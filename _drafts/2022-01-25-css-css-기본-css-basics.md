@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-25 14:45:00 +0900
-title: '[CSS] CSS 기본 CSS Basics'
+title: '[CSS] CSS 기본'
 categories:
   - css
 tags:

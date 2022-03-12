@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 14:55:05 +0900
-title: '[Linux] 리눅스 슈퍼유저용 명령어 정리 Linux Commands for Superuser(root)'
+title: '[Linux] 리눅스 슈퍼유저용 명령어 정리'
 categories:
   - linux
 tags:

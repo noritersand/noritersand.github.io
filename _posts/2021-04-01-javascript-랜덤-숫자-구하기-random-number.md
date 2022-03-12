@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-04-01 06:22:03 +0900
-title: '[JavaScript] 랜덤 숫자 구하기 random number'
+title: '[JavaScript] 랜덤 숫자 구하기'
 categories:
   - javascript
 tags:

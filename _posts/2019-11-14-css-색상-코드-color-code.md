@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-11-14 19:25:00 +0900
-title: '[CSS] 색상 코드 color code'
+title: '[CSS] 색상 코드'
 categories:
   - css
 tags:

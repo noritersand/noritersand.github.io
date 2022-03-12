@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-29 20:18:00 +0900
-title: '[misc] Dammaz Kron 원한의 대서'
+title: '[misc] 원한의 대서 Dammaz Kron'
 categories:
   - misc
 tags:

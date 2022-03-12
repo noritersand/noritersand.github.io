@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-02-06 14:01:00 +0900
-title: '[Python] 파이썬 기본 Python Basics'
+title: '[Python] 파이썬 기본'
 categories:
   - python
 tags:

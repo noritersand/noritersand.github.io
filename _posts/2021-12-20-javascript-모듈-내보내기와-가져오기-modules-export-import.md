@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-20 23:44:40 +0900
-title: '[JavaScript] 모듈, 내보내기와 가져오기 modules, export, import'
+title: '[JavaScript] 모듈, 내보내기와 가져오기'
 categories:
   - javascript
 tags:

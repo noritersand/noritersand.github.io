@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 15:19:13 +0900
-title: '[Linux] 리눅스 일반 사용자용 명령어 정리 Linux Commands for Users'
+title: '[Linux] 리눅스 일반 사용자용 명령어 정리'
 categories:
   - linux
 tags:

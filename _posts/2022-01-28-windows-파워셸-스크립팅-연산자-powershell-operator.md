@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-28 23:43:45 +0900
-title: '[Windows] 파워셸 스크립팅: 연산자 Powershell Operator'
+title: '[Windows] 파워셸 스크립팅: 연산자'
 categories:
   - windows
 tags:
