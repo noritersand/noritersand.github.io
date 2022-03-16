@@ -19,7 +19,7 @@ tags:
 ## 개요
 
 ```js
-//# sourceMappingURL=qr-scanner.min.js.map
+//# sourceMappingURL=my-awesome-script.min.js.map
 ```
 
 소스맵은 배포용으로 빌드된(combined/minified/uglyfied), 그러니까 보통 'min'이란 이름이 붙는 자바스크립트 파일의 원본을 연결해서 클라이언트 실행 환경에 영향을 끼치지 않으면서 원본 소스를 읽거나 디버깅할 수 있게 하는 기술이다.

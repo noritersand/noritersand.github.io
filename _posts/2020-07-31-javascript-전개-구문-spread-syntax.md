@@ -33,6 +33,7 @@ tags:
 ```js
 var obj = { a: 1, b: 2 };
 var obj2 = { ...obj };
+console.log(obj2); // Object { a: 1, b: 2 }
 
 var n = [1, 2, 3];
 console.log(n); // Array(3) [ 1, 2, 3 ]

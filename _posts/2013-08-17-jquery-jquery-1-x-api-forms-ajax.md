@@ -65,6 +65,20 @@ focus 이벤트에 실행할 함수를 할당한다.
 
 JSON으로 표현 가능한 객체를 HTTP query string 형식으로 문자화한다.
 
+```js
+$.param([
+  { name: "first", value: "Rick" },
+  { name: "last", value: "Astley" },
+  { name: "job", value: "Rock Star" }
+]);
+// "first=Rick&last=Astley&job=Rock+Star"
+
+$.param({
+  cht: "qr", choe: "UTF-8", chs: "300x300", chld: "L|0", chl: 'some-values'
+});
+// "cht=qr&choe=UTF-8&chs=300x300&chld=L%7C0&chl=some-values"
+```
+
 ### .select()
 
 select 이벤트를 발생시킨다. select 이벤트는 텍스트 에리어의 문자열을 선택 상태로 하거나 선택 범위를 변경했을 때에 실행 한다.
@@ -73,33 +87,38 @@ select 이벤트를 발생시킨다. select 이벤트는 텍스트 에리어의 
 
 select 이벤트에 실행할 함수를 할당한다.
 
-### .serialize()
+### .serialize(), .serializeArray()
 
-지정된 폼에 속한 모든 입력필드(input, textarea, select가 해당됨. 단, name 속성과 값이 반드시 존재해야 함)의 값을 HTTP query string 형식으로 문자화한다.
+`serialize()`는 지정된 폼에 속한 모든 입력필드(input, textarea, select가 해당됨. 단, name 속성과 값이 반드시 존재해야 함)의 값을 HTTP query string 형식으로 반환한다:
 
-```js
-$.ajax({
-  method: 'POST',
-  url: '/sample/testAjax.do',
-  data: $('#testForm').serialize(),  // 폼데이터 직렬화
-  contentType: 'application/x-www-form-urlencoded; charset=utf-8',
-  dataType: 'json',   // 응답 데이터 타입
-  success: function(data) { // data: 백엔드에서 requestBody 형식으로 보낸 데이터를 받는다.
-    if(data.code == '0') {
-      alert('code:'+ data.code + '\n' + 'msg:' + data.msg);
-    } else {
-      alert('code:' + data.code);
-    }
-  },
-  error: function(jqXHR, textStatus, errorThrown) {
-    //에러코드
-  }
-});
+```html
+<form>
+  <input type="checkbox" name="checkbox1" checked value="11"><br>
+  <input type="text" name="textInput" value="22"><br>
+  <select name="selected">
+    <option selected value="33">33</option>
+  </select>
+</form>
 ```
 
-### .serializeArray()
+```js
+$('form').serialize();
+// checkbox1=11&textInput=22&selected=33
+```
 
-`serialize()`와 같지만 query string 형식의 문자가 아니라 JSON 객체를 돌려준다. 이 메서드를 쓰느니 [jquery-serialize-object](https://github.com/macek/jquery-serialize-object)를 쓰는게 낫다.
+`.serializeArray()`는 문자열이 아니라 JS 객체 배열로 반환한다:
+
+```js
+$('form').serializeArray();
+// Array(3) [ {…}, {…}, {…} ]
+//   0: Object { name: "checkbox1", value: "11" }
+//   1: Object { name: "textInput", value: "22" }
+//   2: Object { name: "selected", value: "33" }
+```
+
+그런데 영 쓸대가 없다.
+
+대신 [jquery-serialize-object](https://github.com/macek/jquery-serialize-object)를 써보자.
 
 ### .submit()
 
