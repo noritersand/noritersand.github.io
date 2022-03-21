@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-03-15 16:20:40 +0900
-title: '[JavaScript] 소스맵 source map'
+title: '[JavaScript] 소스맵 Source Map'
 categories:
   - javascript
 tags:
