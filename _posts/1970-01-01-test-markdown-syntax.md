@@ -100,12 +100,11 @@ _이탤릭_
   코드 블록
 ```
 
-```java
-  public class Test {
-    public static void main(String... args) {
-      System.out.println("야이야이야"); // dasfasdf
-    }
-  }
+```js
+const obj = {
+  msg: "라이라이 차차차!"
+};
+console.log(obj.msg);
 ```
 
 ### 코드 블록 들여 쓰기
