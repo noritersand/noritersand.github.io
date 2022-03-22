@@ -159,7 +159,7 @@ OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 
 - `>>`: right shift operator, 부호 비트를 확장(유지)하면서 오른쪽으로 이동하며 새로운 자리는 0으로 채운다.
 - `>>>`: unsigned right shift operator, 부호 비트 확장 없이 오른쪽으로 이동. `>>`와 다르게 부호 비트를 무시하기 때문에 좌변의 피연산자가 음수일 경우 결과에서 양수로 바뀐다.
 
-## 삼항 연산자 Conditional (ternary) operator
+## 삼항 연산자 Conditional (ternary) operator `?`
 
 조건 연산자 또는 선택 연산자. TRUE 혹은 FALSE에 해당하는 값을 반환한다.
 
@@ -325,13 +325,28 @@ void(); // SyntaxError: expected expression, got ')'
 <a href="javascript:void(0)">test</a>
 ```
 
+## 지수 연산자 [Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation) `**`
+
+첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다.
+
+```js
+2 ** 8 // 256
+2 ** 32 // 4294967296
+10 ** 1 // 10
+10 ** 0 // 1
+10 ** -1 // 0.1
+10 ** -2 // 0.01
+```
+
+`**` 연산자는 오른쪽으로 결합(오른쪽의 연산자가 우선권을 가짐)된다. 따라서 `a ** b ** c`는 `a ** (b ** c)`와 같다.
+
 ## Optional Chaining `?.`
 
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
 - [https://javascript.info/optional-chaining](https://javascript.info/optional-chaining)
 
-다른 언어에 Elvis Operator`?:`라고 비슷한 뇨솤이 있었는데 JS도 추가됨.
+다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 자바스크립트에선 `?.`라고 쓴다.
 
 ```
 obj?.prop
