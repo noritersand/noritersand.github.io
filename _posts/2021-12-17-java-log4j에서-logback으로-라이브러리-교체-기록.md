@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-새 회사 오자마자 log4j 이슈 터져서 logback으로 교체 작업했고, 설정 파일 기록 남김.
+새 회사 오자마자 [log4j 이슈](https://github.com/advisories/GHSA-jfh8-c2jp-5v3q) 터져서 겸사겸사 logback으로 교체 작업했고, 설정 파일 기록 남김.
 
 #### 버전 정보
 
@@ -127,7 +127,7 @@ log4jdbc.dump.sql.maxlinelength=0
 
 ## WAS
 
-이 프로젝트 요건이 JNDI라서 톰캣 설정에 드라이버 정보 명시:
+이 프로젝트 환경이 JNDI라서 WAS 설정에 드라이버 명시:
 
 ### server.xml
 
@@ -142,3 +142,5 @@ log4jdbc.dump.sql.maxlinelength=0
 ```xml
   <ResourceLink name="jdbc/MY_JNDI_NAME" global="jdbc/MY_JNDI_NAME" type="javax.sql.DataSource" />
 ```
+
+끗.

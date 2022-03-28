@@ -74,7 +74,7 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 키는 어떻게 만들었다 치고, 아래처럼 한다
 
 ```bash
-ssh -i PRIVATE_KEY_FILE.pem ubuntu@3.36.35.105
+ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 ```
 
 이 때 "UNPROTECTED PRIVATE KEY FILE!" 경고가 출력되면서 접속이 안될 수 있는데, 이 때는 해당 파일의 권한을 아래 둘 중 하나의 방법으로 조정해주면 됨.
@@ -122,9 +122,47 @@ Remove-Variable -Name Key
 
 OpenSSH 설치하면 `sftp`도 쓸 수 있음.
 
+#### 다운로드
+
 ```bash
-# secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 1.2.3.4 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드한다.
-sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@1.2.3.4:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
+# secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 101.202.303.404 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드
+sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
+```
+
+#### 업로드: sftp 터미널로 붙어서 put
+
+```bash
+PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+Connected to 101.202.303.404.
+
+sftp> cd temp
+
+sftp> put ./upload.me
+Uploading ./upload.me to /home/ubuntu/temp/upload.me
+./upload.me                                        100%   14     0.2KB/s   00:00
+
+sftp> ls
+upload.me
+
+sftp> quit
+```
+
+파워쉘에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
+
+## scp
+
+**TODO OpenSSH 설치하면 되는지 확인**
+**TODO scp로 다운로드는 안되나**
+
+#### 업로드
+
+```
+scp [options] source target
+```
+
+```bash
+PS C:\dev> scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404
+upload.me                                          100%   14     0.2KB/s   00:00
 ```
 
 ## ssh-keygen

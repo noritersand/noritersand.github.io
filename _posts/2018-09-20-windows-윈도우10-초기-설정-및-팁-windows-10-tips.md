@@ -107,6 +107,15 @@ choco list -l
 
 # Chocolatey로 설치한 것과 그렇지 않은것 모두 출력
 choco list -li
+
+# 설치된 패키지 중 업그레이드 가능한 게 있는지 확인
+choco outdated
+
+# chocolatey를 최신 버전으로 업그레이드
+choco upgrade chocolatey
+
+# 모든 패키지를 최신 버전으로 업그레이드
+choco upgrade all
 ```
 
 ### [Update-SessionEnvironment](https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment)
