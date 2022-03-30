@@ -1246,7 +1246,7 @@ $ git reflog -5
 git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머지
 ```
 
-## remote
+## [remote](https://git-scm.com/docs/git-remote)
 
 #### 리모트 저장소 목록
 

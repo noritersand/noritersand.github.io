@@ -61,7 +61,6 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 - [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
 - [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
 - [File​Diffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
-- [Sublimerge](http://www.sublimerge.com/): diff 기능이 매우 좋은 패키지. 하지만 유료. (35달러)
 - [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
 - [WinMerge](https://packagecontrol.io/packages/WinMerge): 서브라임에서 마지막으로 활성화한 view와 현재 view를 WinMerge를 실행해 비교하는 패키지. 물론 WinMerge가 깔려있어야 한다.
 - [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
@@ -78,6 +77,8 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 - [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
 
 ## 작성자 저장용 사용자 설정
+
+### Sublime Text
 
 #### settings - user
 
@@ -111,7 +112,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ]
 ```
 
-### 번외: Sublime Merge 단축키 변경
+### 번외: Sublime Merge
 
 #### key bindings - user
 

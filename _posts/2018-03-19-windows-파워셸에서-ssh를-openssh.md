@@ -118,53 +118,6 @@ Remove-Variable -Name Key
 
 스크립트 출처: [https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
 
-## sftp
-
-OpenSSH 설치하면 `sftp`도 쓸 수 있음.
-
-#### 다운로드
-
-```bash
-# secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 101.202.303.404 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드
-sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
-```
-
-#### 업로드: sftp 터미널로 붙어서 put
-
-```bash
-PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
-Connected to 101.202.303.404.
-
-sftp> cd temp
-
-sftp> put ./upload.me
-Uploading ./upload.me to /home/ubuntu/temp/upload.me
-./upload.me                                        100%   14     0.2KB/s   00:00
-
-sftp> ls
-upload.me
-
-sftp> quit
-```
-
-파워쉘에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
-
-## scp
-
-**TODO OpenSSH 설치하면 되는지 확인**
-**TODO scp로 다운로드는 안되나**
-
-#### 업로드
-
-```
-scp [options] source target
-```
-
-```bash
-PS C:\dev> scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404
-upload.me                                          100%   14     0.2KB/s   00:00
-```
-
 ## ssh-keygen
 
 ```bash
@@ -223,3 +176,51 @@ ssh-add ~\.ssh\noritersand-ssh-test
 ```
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
+
+## sftp
+
+OpenSSH 설치하면 `sftp`도 쓸 수 있음.
+
+#### 다운로드
+
+```bash
+# secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 101.202.303.404 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드
+sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
+```
+
+#### 업로드: 대화형으로 put
+
+```bash
+PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+Connected to 101.202.303.404.
+
+sftp> cd temp
+
+sftp> put ./upload.me
+Uploading ./upload.me to /home/ubuntu/temp/upload.me
+./upload.me                                        100%   14     0.2KB/s   00:00
+
+sftp> ls
+upload.me
+
+sftp> quit
+```
+
+파워쉘에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
+
+## scp
+
+**TODO OpenSSH 설치하면 되는지 확인**
+
+**TODO scp로 다운로드는 안되나**
+
+#### 업로드
+
+```
+scp [options] source target
+```
+
+```bash
+PS C:\dev> scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404
+upload.me                                          100%   14     0.2KB/s   00:00
+```

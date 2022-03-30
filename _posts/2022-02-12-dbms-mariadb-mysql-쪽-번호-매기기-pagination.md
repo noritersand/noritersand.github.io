@@ -51,7 +51,7 @@ LIMIT 5 OFFSET 10 -- 열한 번째부터 5개
 ```
 
 
-`offset` 계산은 요딴식으로 하면 됨:
+`offset` 계산은 요딴식으로:
 
 ```java
 private int calculateOffset(int pageSize, int pageNum) {
