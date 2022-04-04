@@ -149,7 +149,7 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 chsh -s $(which zsh)
 ```
 
-#### PowerLevel10k 환경설정 메모
+#### 작성자 저장용 PowerLevel10k 환경설정
 
 어디에 붙은건지 헷갈림을 방지하기 위해 Prompt Style은 아래처럼 한다:
 

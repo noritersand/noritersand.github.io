@@ -97,6 +97,108 @@ gv abc
 
 [\[이 블로그 내부 링크\] 파워셸 스크립팅: 자주 사용하는 명령어](https://noritersand.github.io/windows/windows-파워셸-스크립팅-자주-사용하는-명령어/)
 
+## 제어문
+
+### [if](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_if?view=powershell-7.3)
+
+```
+if (<test1>)
+  {<statement list 1>}
+[elseif (<test2>)
+  {<statement list 2>}]
+[else
+  {<statement list 3>}]
+```
+
+`else if`가 아니라 `elseif`인 점과 연산자를 제외하면 다른 언어와 크게 다르지 않음.
+
+```js
+$condition = $true
+if ($condition) {
+  echo "Hello there!"
+} else {
+  echo "I'm Waldo."
+}
+```
+
+#### 비교 연산자
+
+- `-eq`: case-insensitive equality
+- `-ieq`: case-insensitive equality
+- `-ceq`: case-sensitive equality
+- `-ne`: case-insensitive not equal
+- `-ine`: case-insensitive not equal
+- `-cne`: case-sensitive not equal
+- `-gt`: greater than
+- `-igt`: greater than, case-insensitive
+- `-cgt`: greater than, case-sensitive
+- `-ge`: greater than or equal
+- `-ige`: greater than or equal, case-insensitive
+- `-cge`: greater than or equal, case-sensitive
+- `-lt`: less than
+- `-ilt`: less than, case-insensitive
+- `-clt`: less than, case-sensitive
+- `-le`: less than or equal
+- `-ile`: less than or equal, case-insensitive
+- `-cle`: less than or equal, case-sensitive
+
+```js
+$con = 123
+if (123 -eq $con) {
+  echo 'Hi'
+}
+```
+
+이 외에 라이크 검색, 정규식 논리 연산자 등이 있으니 [여기](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.3)를 볼 것.
+
+### [switch](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.3)
+
+```
+switch (<test-expression>)
+{
+    <result1-to-be-matched> {<action>}
+    <result2-to-be-matched> {<action>}
+}
+
+switch [-regex | -wildcard | -exact] [-casesensitive] (<test-expression>)
+{
+    "string" | number | variable | { <value-scriptblock> } { <action-scriptblock> }
+    default { <action-scriptblock> } # optional
+}
+```
+
+```js
+switch ('a') {
+  'a' { echo "It's a." }
+  'b' { echo "It's b." }
+  'c' { echo "It's c." }
+}
+```
+
+`break`도 쓸 수 있는데, 파워셸에선 자바나 자바스크립트와 다르게 다음 실행문으로 이어지는 것을 막는게 아니라 `switch`를 중단하는 것을 의미한다. 웬 뜬금없이 중단이냐 하겠지만 파워셸의 `switch`는 파라미터의 수 만큼 반복한다.
+
+아래를 실행해 보면:
+
+```js
+switch (1, 3) {
+  1 {"It is one."}
+  2 {"It is two."}
+  3 {"It is three."; break}
+  4 {"It is four."}
+  3 {"Three again."}
+}
+
+switch (3, 1) {
+  1 {"It is one."}
+  2 {"It is two."}
+  3 {"It is three."; break}
+  4 {"It is four."}
+  3 {"Three again."}
+}
+```
+
+첫 번째 `switch`는 "It is one. It is three." 둘 다 출력하지만 두 번째 `switch`는 "It is three."만 출력한다. `break`를 만나서 `switch`를 중단했기 때문이다.
+
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 
 ### 함수 정의
@@ -360,7 +462,7 @@ Line |
 
 TODO
 
-### 코멘트
+### 코멘트 처리
 
 TODO
 

@@ -65,5 +65,5 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 6. 터미널
 7. VSCODE
 8. IDE/Steam
-9. 고때고때달라요 (채팅/IDE)
-0. 고때고때달라요 (채팅/DBMS 툴)
+9. variable (채팅/IDE)
+0. variable (채팅/DBMS 툴)

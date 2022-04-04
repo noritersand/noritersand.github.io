@@ -108,11 +108,11 @@ chmod 777 file  # 오너와 오너의 그룹, 그 외 모든 유저에게 모든
 ```
 chown [-Rcfv] [--recursive] [--changes] [--help] [--version] [--silent] [--quiet] [--verbose] [user][:.][group] file...
 
-chown 소유권자:그룹식별자  바꾸고 싶은 파일 이름
+chown 소유권자:그룹식별자 대상
 ```
 
 ```bash
-chown tbs:tbs ./some-folder
+chown USER_NAME:GROUP_NAME ./SOME_DIRECTORY
 ```
 
 ## apt
