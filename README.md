@@ -1,6 +1,6 @@
 # 내 아이큐 80, 너도 80, 둘이 합쳐 160
 
-[![pages-build-deployment](https://github.com/noritersand/noritersand.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/noritersand/noritersand.github.io/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/noritersand/noritersand.github.io/actions/workflows/pages/pages-build-deployment/badge.svg?branch=main)](https://github.com/noritersand/noritersand.github.io/actions/workflows/pages/pages-build-deployment)
 
 #### environments
 
