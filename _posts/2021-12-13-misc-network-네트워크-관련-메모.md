@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-13 22:05:44 +0900
-title: '[misc] Network 네트워크 관련 메모'
+title: '[misc] 네트워크 관련 메모'
 categories:
   - misc
 tags:
@@ -11,10 +11,6 @@ tags:
 
 * Kramdown table of contents
 {:toc .toc}
-
-#### 참고한 문서
-
-- [somewhere](somewhere)
 
 ## Name Server와 DNS의 차이
 
@@ -94,7 +90,7 @@ abc           IN  CNAME  @
 
 ```bash
 www                IN  CNAME  ns
-git                IN  CNAME  gitlab-123456789.ap-northeast-99.elb.amazonaws.com.
+git                IN  CNAME  gitlab-123456789.ap-northeast-999.elb.amazonaws.com.
 mail.example.com.  IN  CNAME  mail.daum.net.
 tis.not.exist.subdomain.example.com.  IN  CNAME  www.github.com.
 ```
