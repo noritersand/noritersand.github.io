@@ -95,7 +95,7 @@ git add -i
 
 ~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며, 주로 디버깅 용도로 사용한다.
 
-다른 유용한 디버깅 도구로 `bisect`가 있다: [Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-도구-Git으로-버그-찾기)
+다른 디버깅 도구로 `bisect`가 있다: [Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-도구-Git으로-버그-찾기)
 
 #### 파일 커밋 정보 줄 단위로 보기
 

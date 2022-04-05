@@ -211,7 +211,7 @@ telnet localhost 4000
 
 ### 구버전 제어판 열기
 
-윈도우 검색<kbd>win + s</kbd>에서 '제어판'으로 검색하면 나온다. 만약 검색이 안되면 실행 대화 상자<kbd>win + r</kbd>에서 `Control Panel` 입력.
+윈도우 검색<kbd>win + s</kbd>에서 '제어판'으로 검색하면 나온다. 만약 검색이 안되면 실행 대화 상자<kbd>win + r</kbd>에서 `control` 혹은 `Control Panel` 입력.
 
 ### ~~탐새끼~~ 탐색기 아이콘 오버레이 우선순위 설정
 

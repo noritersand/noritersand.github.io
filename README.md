@@ -124,6 +124,7 @@ WSL에서 빌드하면 대부분 해결되는 것들임.
 ### bundler 실행 시 'find_spec_for_exe': can't find gem bundler (>= 0.a) with executable bundle (Gem::GemNotFoundException)
 
 https://github.com/rbenv/rbenv/issues/1138  
+
 아래처럼 `Gemfile.lock`에 있는 버전을 강제로 지정해서 해결함.
 
 ```bash
