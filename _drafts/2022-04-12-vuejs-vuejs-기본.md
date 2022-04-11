@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-03-17 15:01:00 +0900
+date: 2022-04-12 15:01:00 +0900
 title: '[Vue.js] Vue.js 기본'
 categories:
   - vuejs
@@ -16,14 +16,45 @@ tags:
 #### 참고한 문서
 
 - [공식 사이트](https://vuejs.org/)
-- [공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)
+- [V2 공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)
 - [깃허브](https://github.com/vuejs/vue)
 
 ## 설치
 
+[Quick Start](https://vuejs.org/guide/quick-start.html)
+
+### 빌드 툴 사용
+
+[NPM](https://www.npmjs.com/package/vue)으로 설치한다:
+
+```bash
+npm install vue@latest
+```
+
+Vue 앱 만들기:
+
+```bash
+npm exec create-vue
+# 혹은
+npm init vue@latest
+```
+
+### 빌드 툴 없이 쓰기
+
+HTML에서 자바스크립트 라이브러리처럼 써도 된다:
+
 ```html
-<!-- 개발버전, 도움되는 콘솔 경고를 포함. -->
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue@3"></script>
+<div id="app">{{ message }}</div>
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        message: 'Hello Vue!'
+      }
+    }
+  }).mount('#app')
+</script>
 ```
 
 ## 선언적 렌더링
@@ -38,7 +69,9 @@ var app = new Vue({
 ```
 
 위 스크립트는 아이디가 'app'인 요소에 데이터 `message`를 할당한다는 뜻이다.
+
 렌더링 후 콘솔에서`app.message = '야';`를 실행하면, '안녕하세요'가 '야'로 변경된다.  
+
 가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다.
 
 ## 표현식
@@ -54,6 +87,14 @@ vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항
 ```
 
 `v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 한다. `v-bind`는 이름처럼 값을 할당하기만 하는 디렉티브임.
+
+최근 버전에선 아예 `v-bind`를 생략하는 방법도 가능한 모양:
+
+```html
+<div :id="dynamicId"></div>
+<!-- 아래와 같음 -->
+<div v-bind:id="dynamicId"></div>
+```
 
 ## 제어문
 
@@ -75,6 +116,10 @@ var app3 = new Vue({
   }
 })
 ```
+
+TODO `v-if-else`
+
+TODO `v-else`
 
 ### 반복문
 
@@ -131,6 +176,14 @@ var app5 = new Vue({
 ```
 
 여기서 `this`는 `reverseMessage`의 소유자 `methods`가 아니라 `app5`다. 요것은 Vue.js의 특성임.
+
+그리고 얘도 채신 버전에서 단축 표현이 생겼다:
+
+```html
+<button @click="increment">{{ count }}</button>
+<!-- 아래와 같음 -->
+<button v-on:click="increment">{{ count }}</button>
+```
 
 ## 양방향 바인딩
 

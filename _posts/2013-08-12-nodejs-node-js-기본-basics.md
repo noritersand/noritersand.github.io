@@ -209,6 +209,9 @@ npm install 모듈명 --save-dev
 # --save-dev와 비슷한데 이 경우는 'optionalDependencies'일 때만 사용
 npm install 모듈명 --save-optional
 
+# node_modules, package.json 생성 경로 지정
+npm install 모듈명 --prefix .
+
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈
 npm install nodemon -g
 

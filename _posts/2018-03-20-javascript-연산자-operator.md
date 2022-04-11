@@ -15,8 +15,9 @@ tags:
 
 #### 참고한 문서
 
-- [\[MDN\] 표현식과 연산자 Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
-- [\[MDN\] 동치 비교 및 동일성 Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- [\[MDN\] Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
+- [\[MDN\] Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
+- [\[MDN\] Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 ## 산술 연산
@@ -32,7 +33,9 @@ tags:
 
 ```
 =    +=    -=    *=    /=    %=
+**=
 &=    ^=    |=    <<=    >>=    >>>=
+&&=    ||=    ??=
 ```
 
 ## 비교 연산
@@ -63,7 +66,7 @@ tags:
 
 ## 논리 연산
 
-```js
+```
 &&    ||    !
 ```
 
@@ -327,7 +330,7 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## 지수 연산자 [Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation) `**`
 
-첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다.
+첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다. [Math.pow()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) 함수를 사용하는 것과 거의 동일하다.
 
 ```js
 2 ** 8 // 256

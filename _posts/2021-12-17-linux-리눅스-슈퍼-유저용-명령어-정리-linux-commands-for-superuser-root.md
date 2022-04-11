@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 14:55:05 +0900
-title: '[Linux] 리눅스 슈퍼유저용 명령어 정리'
+title: '[Linux] 리눅스 슈퍼 유저용 명령어 정리'
 categories:
   - linux
 tags:
@@ -29,7 +29,7 @@ tags:
 
 ## sudo
 
-명령을 루트(슈퍼유저) 권한으로 실행하는 키워드
+명령을 루트(슈퍼 유저) 권한으로 실행하는 키워드
 
 ```bash
 sudo vi httpd.conf  # 루트권한으로 편집기 실행
@@ -343,11 +343,32 @@ systemctl daemon-reload
 
 ```bash
 journalctl -xe
+
+journalctl -u SERVICE_NAME.SERVICE -b
+
+journalctl -xfb -u codedeploy-agent.service
 ```
+
+#### options
+
+- `-x`: 가능한 경우 메시지 설명도 같이 출력
+- `-e`: 로그 마지막으로 바로 이동
+- `-u`: 특정 유닛의 로그만 보기
+- `-b`: 현재 부트 혹은 지정된 부트의 로그만 보기
+- `-f`: Follow the journal. 명령 실행을 끝내지 않고 계속 보여줌
 
 ## service
 
-서비스 관리
+```bash
+# 모든 서비스 목록
+service --status-all
+
+# 서비스 상태 확인
+service SERVICE_NAME status
+
+# 서비스 재시작
+service SERVICE_NAME restart
+```
 
 ## useradd, userdel, passwd
 

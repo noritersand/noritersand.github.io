@@ -135,7 +135,7 @@ BUNDLED WITH
 gem install bundler -v '1.17.3'
 ```
 
-### on 태그는 빌드 불가
+### on, off 태그는 빌드 불가
 
 ```bash
       Remote Theme: Using theme yizeng/jekyll-theme-simple-texture
@@ -144,7 +144,7 @@ gem install bundler -v '1.17.3'
              Error: Run jekyll build --trace for more information.
 ```
 
-방법이 없으니 `on` 태그를 안쓰면 된다.
+방법이 없으니 `on`이랑 `off` 태그를 안쓰면 된다.
 
 ### Error:  No source of timezone data could be found.
 
