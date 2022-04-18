@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-10-25 13:42:00 +0900
-title: '[Tomcat] 톰캣 웹 서비스 경로 설정'
+title: '[Tomcat] 톰캣 설정 파일 server.xml 분석'
 categories:
   - tomcat
 tags:
@@ -13,6 +13,145 @@ tags:
 
 * Kramdown table of contents
 {:toc .toc}
+
+#### 참고한 문서
+
+- [Apache Tomcat 10 Configuration Reference](https://tomcat.apache.org/tomcat-10.0-doc/config/index.html)
+- [Apache Tomcat 9 Configuration Reference](https://tomcat.apache.org/tomcat-9.0-doc/config/index.html)
+- [Apache Tomcat 8 Configuration Reference](https://tomcat.apache.org/tomcat-8.5-doc/config/index.html)
+
+## 개요
+
+오쪼구조쪼구
+
+## 작성 예시
+
+8.5.73의 기본 설정(에서 `context`만 추가):
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Server port="18080" shutdown="SHUTDOWN">
+  <Listener className="org.apache.catalina.startup.VersionLoggerListener" />
+  <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
+  <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
+  <Listener className="org.apache.catalina.mbeans.GlobalResourcesLifecycleListener" />
+  <Listener className="org.apache.catalina.core.ThreadLocalLeakPreventionListener" />
+
+  <GlobalNamingResources>
+    <Resource name="UserDatabase" auth="Container"
+              type="org.apache.catalina.UserDatabase"
+              description="User database that can be updated and saved"
+              factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
+              pathname="conf/tomcat-users.xml" />
+  </GlobalNamingResources>
+
+  <Service name="Catalina">
+
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+    <Engine name="Catalina" defaultHost="localhost">
+
+      <Realm className="org.apache.catalina.realm.LockOutRealm">
+        <Realm className="org.apache.catalina.realm.UserDatabaseRealm"
+               resourceName="UserDatabase"/>
+      </Realm>
+
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="localhost_access_log" suffix=".txt"
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" />
+
+        <Context docBase="tomcat-test" path="/tomcat-test" reloadable="true" />
+      </Host>
+    </Engine>
+  </Service>
+</Server>
+```
+
+## Server
+
+최상위 태그
+
+TODO
+
+## GlobalNamingResources
+
+구조: `Server > GlobalNamingResources`
+
+TODO
+
+## Service
+
+Server > Service
+
+TODO
+
+## Connector
+
+구조: `Server > Service > Connector`
+
+TODO
+
+## Engine
+
+구조: `Server > Service > Engine`
+
+TODO
+
+## Realm
+
+구조: `Server > Service > Engine > Realm`
+
+TODO
+
+## Host
+
+구조: `Server > Service > Engine > Host`
+
+TODO
+
+#### name
+
+앱을 식별할 호스트 이름으로 사용되며 유일한 이름으로 지정해야한다.
+
+도메인이나 아이피로 설정한 경우 어쩌구저쩌구(**TODO 용어를 잘 모르겠음**) 동일한 호스트로 연결된다.
+
+#### appBase
+
+TODO
+
+#### unpackWARs
+
+TODO
+
+#### autoDeploy
+
+TODO
+
+## Valve
+
+구조: `Server > Service > Engine > Host > Valve`
+
+## Context
+
+구조: `Server > Service > Engine > Host > Context`
+
+#### docBase
+
+#### reloadable
+
+#### path
+
+
+TODO
+
+---
+
+아래는 이전 작성 내용
+
 
 설정을 아무것도 변경한게 없으면 톰캣 기동 후 `localhost:8080/` 으로 서버상태를 확인할 수 있다.
 

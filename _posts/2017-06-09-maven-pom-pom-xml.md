@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-06-09 19:12:00 +0900
-title: '[Maven] POM'
+title: '[Maven] POM, pom.xml'
 categories:
   - maven
 tags:

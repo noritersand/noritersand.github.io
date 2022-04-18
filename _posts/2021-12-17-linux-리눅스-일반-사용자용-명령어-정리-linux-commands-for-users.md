@@ -122,9 +122,17 @@ grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
 옵션을 생략할 경우 현재 경로 대상이며 패턴이 검색된 파일명과 해당 줄의 문자열 출력한다.
 
 ```bash
-grep -n 'http' httpd.conf # httpd.conf 파일에서 'httpd' 패턴을 찾아 줄 번호와 문자열 출력
-grep -l -r 'error' /userhome/* # /userhome 아래의 모든 경로에서 'error' 패턴을 검색해 파일명만 출력
-grep -l -v 'error' * # 모든 파일 중 'error' 패턴이 검색되지 않는 파일명만 출력
+# httpd.conf 파일에서 'httpd' 패턴을 찾아 줄 번호와 문자열 출력
+grep -n 'http' httpd.conf
+
+# /web 경로 아래에서 'abcd' 재귀검색
+grep -nr 'abcd' /web/*
+
+# /userhome 아래의 모든 경로에서 'error' 패턴을 검색해 파일명만 출력
+grep -lr 'error' /userhome/*
+
+# 모든 파일 중 'error' 패턴이 검색되지 않는 파일명만 출력
+grep -lv 'error' *
 ```
 
 ### 출력 필터링
@@ -256,7 +264,7 @@ ln -s ~/was/upload ./upload
 
 ## top
 
-리눅스 커널이 관리중인 프로세스(혹은 쓰레드) 목록과 CPU/메모리 점유율, PID 등을 실시간으로 출력한다. 아무 옵션도 지정하지 않으면 CPU 점유율 내림차순, PID 오름차순으로 보여줌.
+리눅스 커널(kernel)이 관리중인 프로세스(혹은 쓰레드) 목록과 CPU/메모리 점유율, PID 등을 실시간으로 출력한다. 아무 옵션도 지정하지 않으면 CPU 점유율 내림차순, PID 오름차순으로 보여줌.
 
 ``` bash
 top -o cpu  # cpu 자원을 가장 많이 점유하고 있는 프로세스순 보기
@@ -461,7 +469,7 @@ cp -a ... ...  # 파일의 소유권과 각종 정보 유지하여 복사 (위�
 mkdir test  
 
 # 경로 /home/noritersand/apache2 에 디렉터리를 생성하면서 필요한 경우 부모 디렉터리도 같이 생성
-mkdir -P /home/noritersand/apache2
+mkdir -p /home/noritersand/apache2
 ```
 
 ## mv

@@ -49,8 +49,8 @@ sudo rm remove-me -r
 # 루트 유저로 환경 변수 등의 설정까지 모두 전환
 sudo su -
 
-# 이것로 루트 로그인인데 뭔 차이야...
-su -  
+# 유저의 환경을 유지하면서 루트 유저로 전환
+sudo su
 ```
 
 ## 설정 파일 위치
@@ -93,26 +93,28 @@ supersede domain-name-servers 1.2.3.4;
 
 [이미지 출처](http://endlessgeek.com/2014/02/chmod-explained-linux-file-permissions)
 
-```
-chmod [-Rcfv] [--recursive] [--changes] [--silent] [--quiet] [--verbose] [--help] [--version] mode file
-```
-
 ```bash
 chmod 700 file  # 오너(owner, 파일을 만든 사람)에게만 모든 권한 부여
 chmod 770 file  # 오너와 오너가 속한 그룹에 모든 권한 부여
 chmod 777 file  # 오너와 오너의 그룹, 그 외 모든 유저에게 모든 권한 부여
 ```
 
+#### options
+
+- `-R` `--recursive`: 재귀 실행
+- `-c` `--changes`: 변경된 내용만 출력
+- `-f` `--silent` `--quiet`: 에러 메시지를 출력하지 않음
+- `-v` `--verbose`: 모든 메시지를 출력함
+
+아래 `chown`도 같은 옵션을 사용함.
+
 ## chown
 
-```
-chown [-Rcfv] [--recursive] [--changes] [--help] [--version] [--silent] [--quiet] [--verbose] [user][:.][group] file...
-
-chown 소유권자:그룹식별자 대상
-```
-
 ```bash
-chown USER_NAME:GROUP_NAME ./SOME_DIRECTORY
+chown 소유권자:그룹식별자 대상
+
+# SOME_DIRECTORY와 그 하위 모든 파일에 USER_NAME 소유와 GROUP_NAME 그룹을 지정
+chown -R USER_NAME:GROUP_NAME ./SOME_DIRECTORY
 ```
 
 ## apt
@@ -131,6 +133,9 @@ apt install PACKAGE_NAME
 
 # 설치된 패키지 목록 표시
 apt list --installed
+
+# 업그레이드 가능한 패키지 표시
+apt list --upgradeable
 
 # PACKAGE_NAME이 사용하는 로컬 저장소를 삭제한다. 쉽게 말해 캐시를 지운다 보면 됨. (잠금 파일은 제외)
 apt clean PACKAGE_NAME
@@ -243,7 +248,7 @@ env | grep SHELL
 
 ## iptables/ip6tables
 
-리눅스 커널에 있는 IP 패킷 필터링 규칙들의 집합인 IP 테이블을 관리하는 명령어.
+리눅스 커널(kernel)에 있는 IP 패킷 필터링 규칙들의 집합인 IP 테이블을 관리하는 명령어.
 
 ```bash
 iptables -A FORWARD -m account --aname mynetwork --aaddr 192.168.0.0/24
@@ -312,6 +317,20 @@ sysctl -p
 [systemmd](https://www.google.com/search?client=firefox-b-d&q=systemmd란) 시스템과 서비스 매니저를 관리하는 명령어. 도움말에는 "쿼리나 컨트롤 명령을 시스템 매니저에 전송"한다고 나온다.
 
 **리눅스 데몬을 관리**하는 명령어로 보인다. 도움말에서는 서비스나 데몬이 아닌 '유닛'이라는 단위를 쓴다.
+
+```bash
+# 시스템 매니저가 관리하는 모든 유닛 보기
+systemctl list-units
+
+# 위와 같음
+systemctl
+
+# 서비스만 보기
+systemctl --type=service
+
+# active 상태인 유닛만 보기
+systemctl --state=active
+```
 
 ```bash
 # apache2 상태 확인
