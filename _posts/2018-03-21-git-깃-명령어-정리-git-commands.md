@@ -23,6 +23,12 @@ tags:
 
 Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
 
+윈도우용 깃 클라이언트 업데이트는:
+
+```bash
+git update-git-for-windows
+```
+
 ## 용어
 
 - 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
