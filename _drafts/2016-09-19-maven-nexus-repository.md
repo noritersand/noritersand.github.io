@@ -26,7 +26,7 @@ admin / admin123
 
 #### simplecaptcha 배포:
 
-`Repositories` > `3rd party` > `Artifact Upload`
+`Repositories > 3rd party > Artifact Upload`
 
 ```xml
 <dependency>

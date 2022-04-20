@@ -16,11 +16,11 @@ tags:
 
 ### 맞춤법 검사 비활성화
 
-`Settings` > `Installed Packages` > `spell-check`에서 `disable` 클릭
+`Settings > Installed Packages > spell-check`에서 'disable' 클릭
 
 ### 자동 완성 설정 변경
 
-`Settings` > `Installed Packages` > `autocomplete-plus`의 설정에서:
+`Settings > Installed Packages > autocomplete-plus`의 설정에서:
 
 - `Show Suggestions On Keystroke`이 체크된 상태면 타이핑 할 때마다 자동 완성 목록이 나타남. 취향대로 설정할 것.
 - `Keymap For Confirming A Suggestions`을 `tab`으로 변경해서 엔터에는 반응하지 않도록 함.
@@ -30,36 +30,36 @@ tags:
 
 ### 검색창 설정
 
-`Settings` > `Installed Packages` > `find-and-replace`의 설정에서:
+`Settings > Installed Packages > find-and-replace`의 설정에서:
 
 - 밑에 내려서 `Scroll To Result On Live-Search` 체크. 요게 incremental 검색 옵션임.
 
 ### 마크다운 미리보기 설정 변경
 
-`Settings` > `Installed Packages` > `markdown-preview`의 설정에서:
+`Settings > Installed Packages > markdown-preview`의 설정에서:
 
 - `Live Update` 체크 해제: 글이 길 때 미리보기가 자동갱신되면 렉이 심함.
 - `Open Preview In Split Pane` 체크 해제: 새 탭으로 열리는게 더 편함.
 
 ### 자동 저장
 
-`Settings` > `Installed Packages` > `autosave`의 설정에서 `Enabled` 체크.
+`Settings > Installed Packages > autosave`의 설정에서 'Enabled' 체크.
 
 ### 자동 저장
 
-`Settings` > `Installed Packages` > `fuzzy-finder`의 설정에서 `Ignored Names`에 file finder<kbd>ctrl + p</kbd>가 무시할 패턴 입력.
+`Settings > Installed Packages > fuzzy-finder`의 설정에서 `Ignored Names` 항목에 file finder<kbd>ctrl + p</kbd>가 무시할 패턴 입력.
 
 ### 붙여넣기 시 자동 들여쓰기 해제
 
-`Settings` > `Editor`에서 `Auto Indent On Paste` 체크 해제.
+`Settings > Editor`에서 `Auto Indent On Paste` 체크 해제.
 
 ### 개행, 탭, 공백 문자 표시
 
-`Settings` > `Editor`에서 `Show Invisibles` 체크.
+`Settings > Editor`에서 `Show Invisibles` 체크.
 
 ### 탭 타입 변경
 
-`Settings` > `Editor`에서 `Tab Type`을 `soft`로 변경. 이 옵션은 탭 문자를 스페이스바로 변경함을 의미한다.
+`Settings > Editor`에서 'Tab Type'을 'soft'로 변경. 이 옵션은 탭 문자를 스페이스바로 변경함을 의미한다.
 
 ## 작성자 저장용 단축키 설정
 
@@ -109,7 +109,7 @@ tags:
 - [url-encode](https://atom.io/packages/url-encode): ?
 - [goto-last-edit](https://atom.io/packages/goto-last-edit): <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동... 인데 서브라임이랑 같도록 바꿔서 씀. 키 바꿔서 쓸꺼면 해당 패키지 settings에서 `Keybindings`는 끌 것
 - [sort-lines](https://atom.io/packages/sort-lines): 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
-- [sync-settings](https://atom.io/packages/sync-settings): 아톰 설정을 동기화 하는 패키지. 설정은 깃허브 gist에 업로드한다. settings에서 `Ignore EOL` 체크할 것.
+- [sync-settings](https://atom.io/packages/sync-settings): 아톰 설정을 동기화 하는 패키지. 설정은 깃허브 gist에 업로드한다. settings에서 'Ignore EOL' 체크할 것.
 
 ## 기본 단축키 메모
 

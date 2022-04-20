@@ -45,7 +45,7 @@ public class ImportTest {
 import static org.junit.Assert.*;
 ```
 
-이클립스의 설정이 기본값일 때 'Organize Imports'를 실행하면 날아간다. 이 현상을 방지하려면 `Windows` > `Preferences` > `Java` > `Code Style` > `Organize Imports`에서 `Number of static imports needed for .*`를 1로 변경한다.
+이클립스의 설정이 기본값일 때 'Organize Imports'를 실행하면 날아간다. 이 현상을 방지하려면 `Windows > Preferences > Java > Code Style > Organize Imports`에서 `Number of static imports needed for .*`를 1로 변경한다.
 
 만약 이 값이 4라면, static import가 4개 미만일 때는 아래처럼 스태틱 멤버를 각각 import하며:
 

@@ -66,15 +66,15 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - Pull: <kbd>ctrl + shift + l</kbd>(In Dialogs and Windows, Git)
 - Fetch from Upstream: <kbd>ctrl + shift + f</kbd>(In Dialogs and Windows, Git)
 
-Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective` > `Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
+Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective > Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
 
 ## 검색 창 설정 변경
 
-- 검색 창<kbd>ctrl + h</kbd>에서 `Customize` 진입, `Task`와 `Plug-in` 체크 해제.
+- 검색 창<kbd>ctrl + h</kbd>에서 'Customize' 진입, 'Task'와 'Plug-in' 체크 해제.
 
 ## 파일 자동 갱신
 
-`Window` > `Preferences` > `workspace` 우측 화면의 `Refresh using native hooks or pollings`.
+`Window > Preferences > workspace` 우측 화면의 'Refresh using native hooks or pollings' 체크
 
 이클립스는 기본적으로 이클립스 내에서 직접 변경하지 않은 파일은 변경을 감지하지 않는다. 이건 파일 변경 감지 기능을 켜는 옵션.
 
@@ -82,18 +82,18 @@ Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 �
 
 얘네들을 'UTF-8'로 변경한다:
 
-- `General` > `Workspace` 의 Text file encoding
-- `Window` > `Preferences` > `Web` > `CSS Files`
-- `Window` > `Preferences` > `Web` > `Jsp Files`
-- `Window` > `Preferences` > `Web` > `HTML Files`
+- `General > Workspace` 의 Text file encoding
+- `Window > Preferences > Web > CSS Files`
+- `Window > Preferences > Web > Jsp Files`
+- `Window > Preferences > Web > HTML Files`
 
 ## 파일 확장자별 한글 인코딩을 UTF-8로 변경
 
-- `Window` > `Preferences` > `General` > `Contents type` 우측 화면에서 원하는 항목을 선택하고, `Default encoding`을 `utf-8`로 변경 후 `update` 버튼 클릭
+- `Window > Preferences > General > Contents type` 우측 화면에서 원하는 항목을 선택하고, 'Default encoding'을 `utf-8`로 변경 후 'update' 버튼 클릭
 
 ## 자바독 자동 완성
 
-`Window` > `Preferences` > `Java` > `Code Style` > `Code Templates` 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
+`Window > Preferences > Java > Code Style > Code Templates` 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
 
 ```java
 /**
@@ -123,20 +123,20 @@ ${id:date('yyyy-MM-dd')}
 
 ## Formatter
 
-`Window` > `Preferences` > `Java` > `Code Style` > `Formatter` 메뉴로 이동, `New...`를 클릭해서 새 프로파일을 생성한다.
-이후 자동으로 프로파일 에딧창으로 이동되는데 여기서 `Comments` 탭으로 이동 -> `New line after @param tags`를 체크 해제한다.
+`Window > Preferences > Java > Code Style > Formatter` 메뉴로 이동, 'New...'를 클릭해서 새 프로파일을 생성한다.
+이후 자동으로 프로파일 에딧창으로 이동되는데 여기서 'Comments' 탭으로 이동, `New line after @param tags`를 체크 해제한다.
 
 ![](/images/eclipse-1.png)
 
-이 작업을 `JavaScript` > `Code Style` > `Formatter` 에서도 반복한다.
+이 작업을 `JavaScript > Code Style > Formatter` 에서도 반복한다.
 
 ## Syntax Coloring
 
-자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window` > `Preferences` > `Java` > `Editor` > `Syntax Coloring`에서 `Element` 목록 중 `Methods`와 `Inherited method invocations` 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
+자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window > Preferences > Java > Editor > Syntax Coloring`에서 'Element' 목록 중 'Methods'와 'Inherited method invocations' 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
 
 ## JSP 템플릿
 
-새로운 JSP 페이지를 작성 할 때 구성하는 템플릿 파일을 다음과 같이 변경 가능 하다. `Window` > `Perferences` > `Web` > `JSP Files` > `Editor` > `Template` 오른쪽 화면의 `New JSP File(html)` 을 선택 하고 `Edit` 버튼. 수정 후 `Ok`.
+새로운 JSP 페이지를 작성 할 때 구성하는 템플릿 파일을 다음과 같이 변경 가능 하다. `Window > Perferences > Web > JSP Files > Editor > Template` 오른쪽 화면의 'New JSP File(html)' 을 선택 하고 'Edit' 버튼. 수정 후 'Ok'.
 
 ```html
 <%@ page language="java" contentType="text/html; charset=${encoding}" pageEncoding="${encoding}"%>
@@ -156,23 +156,23 @@ ${cursor}
 
 ## DEBUG 모드로 구동할 때 uncaught exception에서 브레이크 걸지 않기
 
-- `Window` > `Preferences` > `Java` > `Debug` > `Suspend execution on uncaught exceptions` 체크 해제
+- `Window > Preferences > Java > Debug > Suspend execution on uncaught exceptions` 체크 해제
 
 ## git 관련
 
 ### 로컬 저장소 기본 경로 변경
 
-`Window` > `Preferences` > `Version Control` > `Git`에서 `Default repository folder`를 다른 경로로 변경한다. (ex: `C:\dev\git`)
+`Window > Preferences > Version Control > Git`에서 `Default repository folder`를 다른 경로로 변경한다. (ex: `C:\dev\git`)
 
 ### 커밋 작성자 글로벌 설정
 
-`Window` > `Preferences` > `Version Control` > `Git` > `Configuration`에서 `user.name` 항목과 `user.email` 항목을 추가한다.
+`Window > Preferences > Version Control > Git > Configuration`에서 `user.name` 항목과 `user.email` 항목을 추가한다.
 
 ### auto crlf 저장소별 설정
 
 [Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다. core.autocrlf 설정으로 이 기능을 켤 수 있다.](https://git-scm.com/book/ko/v1/Git%EB%A7%9E%EC%B6%A4-Git-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
 이클립스에서 설정하는 방법은:
-`Window` > `Preferences` > `Version Control` > `Git` > `Configuration`에서 `core.autocrlf=true`를 추가.
+`Window > Preferences > Version Control > Git > Configuration`에서 `core.autocrlf=true`를 추가.
 
 ## eclipse-jee 버전에 포함된 안쓰는 기능(feature 혹은 software) 삭제
 
@@ -200,14 +200,14 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 - ~~Eclipse Quicksearch~~: ~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드 카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
 - AnyEditTools: 잡다한 유틸리가 있는 확장 기능. 주로 표기법 치환(HTML 기호 <-> entities, camelCase <-> SCREAMING_SNAKE_CASE 등)용으로 쓰임. **설치 후 아래 설정할 것:**  
-  - `Window` > `Preferences` > `General` > `Editors` > `AnyEdit Tools` > `Auto Convert`에서 `Remove trailing whitespace` 체크 해제
-  - 키 설정에서 'AnyEdit Tools' 카테고리 중 `Convert Camel <-> Underscores`, `Convert Chars to Html Entities` **빼고 다** 삭제
+  - `Window > Preferences > General > Editors > AnyEdit Tools > Auto Convert`에서 'Remove trailing whitespace' 체크 해제
+  - 키 설정에서 'AnyEdit Tools' 카테고리 중 'Convert Camel <-> Underscores', 'Convert Chars to Html Entities' **빼고 다** 삭제
 - [eclipse-pmd](https://marketplace.eclipse.org/content/eclipse-pmd): 코드 정적분석/품질관리 툴이다. PMD 룰 자체에는 의문이 좀 있긴 하지만...
 - [eclipse-pmd: getting-started](http://acanda.github.io/eclipse-pmd/getting-started.html)
 - [SonarLint](https://www.sonarlint.org/): SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 툴.
 - [CodeMix](https://marketplace.eclipse.org/content/codemix): 파이썬, PHP, 자바스크립트 등을 빠와하게 지원하는 확장 기능이다. 우와웅! 사실 안써봐서 좋은지는 몲.  
 근데 이거 설치해서 쓸 바에 그냥 vscode 씀. 마소 짱짱맨
-- [AutoDeriv](http://nodj.github.io/AutoDeriv/#install): **마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 `Derived`로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
+- [AutoDeriv](http://nodj.github.io/AutoDeriv/#install): **마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 'Derived'로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.  
 이 확장 기능은 설치만 하면 끝나는게 아니라, workspace 아래에 `.derived` 파일을 만들고 아래처럼 내용을 작성해야 한다:
   ```bash
   # set the 'target' and 'ext' folders as derived

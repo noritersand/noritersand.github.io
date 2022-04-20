@@ -10,7 +10,7 @@ tags:
 ---
 
 ![](/images/svn-pswd-reset-1.png)
-`Window` > `Preferences` > `General` > `Security` > `Secure Storage`에 리셋 기능이 있음.
+`Window > Preferences > General > Security > Secure Storage`에 리셋 기능이 있음.
 
 만약 위 방법으로 안된다면 아래 경로에 있는 설정파일을 삭제하면 된다.
 ```

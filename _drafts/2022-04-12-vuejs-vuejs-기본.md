@@ -19,11 +19,15 @@ tags:
 - [V2 공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)
 - [깃허브](https://github.com/vuejs/vue)
 
+## 개요
+
+Vue.js 사용 방법 정리 글.
+
 ## 설치
 
 [Quick Start](https://vuejs.org/guide/quick-start.html)
 
-### 빌드 툴 사용
+### 빌드(번들링)
 
 [NPM](https://www.npmjs.com/package/vue)으로 설치한다:
 
@@ -39,9 +43,9 @@ npm exec create-vue
 npm init vue@latest
 ```
 
-### 빌드 툴 없이 쓰기
+### 빌드 없이 쓰기
 
-HTML에서 자바스크립트 라이브러리처럼 써도 된다:
+그냥 자바스크립트 라이브러리처럼 사용하면 된다:
 
 ```html
 <script src="https://unpkg.com/vue@3"></script>

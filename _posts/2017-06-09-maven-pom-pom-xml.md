@@ -102,7 +102,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 ### 빌드 설정
 
 - build
-  - finalName: 프로젝트를 빌드할 때 사용할 이름이다. m2e\*에서 이 값은 이클립스 설정 중 `Project Properties` > `Web Project Settings` > `Context root`를 덮어쓴다.
+  - finalName: 프로젝트를 빌드할 때 사용할 이름이다. m2e\*에서 이 값은 이클립스 설정 중 `Project Properties > Web Project Settings > Context root`를 덮어쓴다.
     - plugins
       - plugin
         - artifactId

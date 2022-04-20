@@ -85,6 +85,16 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 잘 모르겠는걸?
 
+## 런타임 중 변경된 파일 자동으로 다시 불러오기
+
+다른 대에서는 hot deploy, hot swap, hot code replace 등으로 불리는 기능이다. 로컬 서버로 톰캣을 별도로 추가해서 사용할 때 해당하는 내용이다. TODO 스프링부트같은 내장 WAS는 확인 필요.
+
+Run/Debug Configurations<kbd>alt + u, r</kbd>에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 수정된 파일을 (필요한 경우 빌드 후) 자동으로 리로드한다.
+
+JSP나 HTML 등의 리소스 파일은 즉시 수정된 내용을 브라우저에서 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 서버를 Debug 모드로 실행시키지 않으면 갱신하지 않는 것으로 보인다. (Run 모드여도 빌드는 하는 것 같은디...)
+
+검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있다.
+
 ## 추천 플러그인
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
@@ -128,13 +138,13 @@ TODO
 
 ### File and Code Templates
 
-`Settings` > `Editor` > `File and Code Templates`
+`Settings > Editor > File and Code Templates`
 
 ### Live Templates
 
 이클립스에서 특정 키워드 후의 자동 완성과 같은 기능이다.
 
-`Settings` > `Editor` > `Live Templates`으로 이동해서 그룹 선택 후 우측의 십자 모양 아이콘 클릭한 다음 요딴식으로 작성한다:
+`Settings > Editor > Live Templates`으로 이동해서 그룹 선택 후 우측의 십자 모양 아이콘 클릭한 다음 요딴식으로 작성한다:
 
 ```java
 Logger logger = LoggerFactory.getLogger($className$.class);

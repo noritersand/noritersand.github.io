@@ -17,7 +17,7 @@ javac -target 8 Test.java
 # Test.java 파일을 컴파일하되 Java 8에서 실행 가능하도록 호환처리한다.
 ```
 
-이클립스에서는 이 옵션이 `Window` > `Preferences` 혹은 각 프로젝트의 `Properties` 설정화면에 `Java Compiler` 메뉴로 제공된다.
+이클립스에서는 이 옵션이 `Window > Preferences` 혹은 각 프로젝트의 `Properties` 설정화면에 `Java Compiler` 메뉴로 제공된다.
 ![](/images/compiler-target-1.png)
 
 'Compiler Compliance Level'이 1.8이면 사용중인 Java의 버전이 10이라도 8 버전으로 컴파일한다.

@@ -18,11 +18,11 @@ tags:
 
 #### 용어 참고
 
-- `Source`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Source` 탭
-- `Projects`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Projects` 탭
-- `Libraries`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Libraries` 탭
-- `Order and Export`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Java Build Path` > `Order and Export` 탭
-- `Deployment Assembly`: 파일 탐색 뷰 > 각 프로젝트의 `Properties` > `Deployment Assembly` 메뉴
+- `Source`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Java Build Path > Source`
+- `Projects`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Java Build Path > Projects`
+- `Libraries`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Java Build Path > Libraries`
+- `Order and Export`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Java Build Path > Order and Export`
+- `Deployment Assembly`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Deployment Assembly`
 
 ## Customize Perspective
 
@@ -125,11 +125,11 @@ Deployment Assembly는 JST 확장기능이 웹앱을 배포할 때에 필요한 
 
 예를 들어 `Projects` 탭에서 AAA라는 프로젝트를 추가하면 WAS는 이 프로젝트의 작업 파일을 직접 참조한다. 이렇게만 하면 일단 컴파일 자체는 문제가 없지만, WAR 빌드 시에 AAA 프로젝트를 포함하지 않기 때문에 (JST가 아닌) 이클립스와 분리된 WAS에서 구동 시 `ClassNotFoundException`이 발생한다. 따라서 Deployment Assembly에서 AAA 프로젝트를 추가해 빌드 시 같이 내보내도록 설정해야 한다.
 
-다른 빌드 패스 설정도 마찬가지지만 Deployment Assembly 또한 빌드 툴(메이븐/그래들)에 의해서 자동으로 설정될 수 있다. 메이븐의 경우 dependency로 다른 프로젝트를 참조하도록 설정하면 `Deployment Assembly`와 `Libraries` > `Maven Dependencies`에 같이 추가된다.
+다른 빌드 패스 설정도 마찬가지지만 Deployment Assembly 또한 빌드 툴(메이븐/그래들)에 의해서 자동으로 설정될 수 있다. 메이븐의 경우 dependency로 다른 프로젝트를 참조하도록 설정하면 `Deployment Assembly`와 `Libraries > Maven Dependencies`에 같이 추가된다.
 
 ### WAS의 Source
 
-JST 서버별 `Overview` > `Edit Configuration` > `Source`는 직접 설정하진 않지만 디버깅용으로 확인하는 정도... 이 설정에 있는 경로나 jar가 정확히 어떤 용도인지는 아직 몲.
+JST 서버별 `Overview > Edit Configuration > Source`는 직접 설정하진 않지만 디버깅용으로 확인하는 정도... 이 설정에 있는 경로나 jar가 정확히 어떤 용도인지는 아직 몲.
 
 `Projects`와 `Libraries` 탭에서 추가한 항목은 자동으로 이 설정에도 추가된다.
 
