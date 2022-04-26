@@ -1225,7 +1225,7 @@ pick 7715f75fa (HEAD)
 #### rebase로 커밋 합치기
 
 - [누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
-- [\[이 블로그 내부 링크\] Git 커밋 합치기](https://noritersand.github.io/git/git-커밋-합치기/#heading-rebase를-이용한-방법)
+- [\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기/#heading-rebase를-이용한-방법)
 
 ## [reflog](https://git-scm.com/docs/git-reflog)
 

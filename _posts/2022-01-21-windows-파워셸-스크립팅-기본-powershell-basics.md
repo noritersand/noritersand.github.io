@@ -91,11 +91,11 @@ gv abc
 
 ## 연산자
 
-[\[이 블로그 내부 링크\] 파워셸 스크립팅: 연산자](https://noritersand.github.io/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+[\[이 블로그 내부 링크\] 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
 
 ## 명령어 Cmdlet
 
-[\[이 블로그 내부 링크\] 파워셸 스크립팅: 자주 사용하는 명령어](https://noritersand.github.io/windows/windows-파워셸-스크립팅-자주-사용하는-명령어/)
+[\[이 블로그 내부 링크\] 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 ## 제어문
 
