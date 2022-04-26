@@ -822,7 +822,7 @@ export GIT_ASK_YESNO=false
 gitk [<options>] [<revision range>] [--] [<path>…​]
 ```
 
-커밋 이력을 보여주는 GUI 툴. `git log`와 동일한 [옵션](#heading-log)을 사용할 수 있다.
+커밋 이력을 보여주는 GUI 툴. `git log`와 동일한 [옵션을 사용할 수 있다.](#heading-log)
 
 ```bash
 gitk [git log options]
