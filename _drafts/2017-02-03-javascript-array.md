@@ -139,9 +139,7 @@ arr === even; // false
 
 ### Array.prototype.reduce()
 
-## 조작
-
-~~주작~~
+## ~~주작~~ 조작
 
 ### [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 

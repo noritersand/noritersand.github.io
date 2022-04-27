@@ -232,3 +232,15 @@ var app = new Vue({
 ```
 
 이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
+
+## ??
+
+TODO
+
+### data()
+
+### created()
+
+### methods()
+
+### computed()
