@@ -822,7 +822,7 @@ export GIT_ASK_YESNO=false
 gitk [<options>] [<revision range>] [--] [<path>…​]
 ```
 
-커밋 이력를 보여주는 GUI 툴. `git log`와 동일한 [옵션](https://noritersand.github.io/git/git-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC-git-commands/#heading-options-4)을 사용할 수 있다.
+커밋 이력을 보여주는 GUI 툴. `git log`와 동일한 [옵션을 사용할 수 있다.](#heading-log)
 
 ```bash
 gitk [git log options]
@@ -1060,7 +1060,7 @@ git merge --squash TARGET_BRANCH
 
 머지할 브랜치의 커밋 이력을 하나로 압축한 별도의 커밋을 만들고 헤드 브랜치에 머지한다. 일반 머지와 다르게 하나의 부모커밋(헤드 브랜치 기준)만 갖는다.
 
-[Git: 커밋 합치기](https://noritersand.github.io/git/2018/12/28/git-%EC%BB%A4%EB%B0%8B-%ED%95%A9%EC%B9%98%EA%B8%B0/)
+[\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 ## mv
 
@@ -1225,7 +1225,7 @@ pick 7715f75fa (HEAD)
 #### rebase로 커밋 합치기
 
 - [누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
-- [\[이 블로그 내부 링크\] Git 커밋 합치기](https://noritersand.github.io/git/git-커밋-합치기/#heading-rebase를-이용한-방법)
+- [\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 ## [reflog](https://git-scm.com/docs/git-reflog)
 
