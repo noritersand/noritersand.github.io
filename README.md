@@ -8,6 +8,13 @@
 - [jekyll](https://jekyllrb.com/)
 - [kramdown](https://kramdown.gettalong.org/)
 
+## 📌 Table of Contents
+
+- [윈도우에서 Jekyll 빌드 환경 설정](#윈도우에서-Jekyll-빌드-환경-설정)
+- [사이트 빌드](#사이트-빌드)
+- [지킬 빌드 디버깅 로그](#지킬-빌드-디버깅-로그)
+- [저장소 내부 링크](#저장소-내부-링크)
+
 ## 윈도우에서 Jekyll 빌드 환경 설정
 
 만약 WSL-ubuntu에 설치할거면 [여기](https://jekyllrb.com/docs/installation/ubuntu/)를 보자. **절대 Quickstart 페이지만 보고 하면 안됨**.
@@ -160,6 +167,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 셸에서 `chcp 65001` 입력 후 다시 실행한다.
 
-## 관련 링크
+## 저장소 내부 링크
 
-[블로그 작성 가이드](docs/guide-and-rules.md)
+- [블로그 작성 가이드](docs/guide-and-rules.md)
