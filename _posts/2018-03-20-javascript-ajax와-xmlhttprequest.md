@@ -29,9 +29,9 @@ AJAX 구현 방법 중의 하나인 XMLHttpRequest API를 설명하는 글.
 
 ## AJAX란?
 
-AJAX는 'Asynchronous JavaScript and XML'의 약자로 웹 애플리케이션 개발 기법의 하나다. AJAX는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 AJAX를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.
+AJAX는 'Asynchronous JavaScript and XML'의 약자로, 페이지 새로고침 없이 서버와 통신하는 웹 애플리케이션 개발 기법의 하나다. AJAX는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 AJAX를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.
 
-이 글에선 XMLHttpRequest만 다루지만, 사실 요즘엔 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)나 [Axios](https://axios-http.com/docs/intro)를 더 많이 쓴다.
+이 글에선 XMLHttpRequest만 다루지만, 사실 요즘엔 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)를 더 많이 쓴다.
 
 ## XMLHttpRequest API
 
