@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-AJAX
+AJAX 구현 방법 중의 하나인 XMLHttpRequest API를 설명하는 글.
 
 ## AJAX란?
 
