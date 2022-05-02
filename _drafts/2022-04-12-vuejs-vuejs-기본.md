@@ -92,7 +92,7 @@ vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항
 
 `v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 한다. `v-bind`는 이름처럼 값을 할당하기만 하는 디렉티브임.
 
-최근 버전에선 아예 `v-bind`를 생략하는 방법도 가능한 모양:
+최근 버전에선 아예 `v-bind`를 생략하는 단축 표현도 생겼다:
 
 ```html
 <div :id="dynamicId"></div>
@@ -233,13 +233,44 @@ var app = new Vue({
 
 이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
 
-## ??
+## Options API
+
+[\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
+
+```js
+Vue.createApp({
+  created() { // <--
+    document.title += `: ${pageTitle}`;
+  },
+  data() { // <--
+    return {
+      pageTitle: pageTitle,
+    };
+  },
+}).mount("#app");
+```
+
+얘네들의 분류가 왜 'Options API'인지는 모르겠다.
 
 TODO
 
 ### data()
 
 ### created()
+
+> After init Options API
+
+데이터와 이벤트가 활성화된 시점. `mounted()`보다 이르다.
+
+
+
+### mounted()
+
+> After initial render, create & insert DOM nodes
+
+DOM이 생성된 시점. `created()`보다 나중이다.
+
+
 
 ### methods()
 

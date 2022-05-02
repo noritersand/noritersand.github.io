@@ -275,12 +275,23 @@ top -o cpu  # cpu 자원을 가장 많이 점유하고 있는 프로세스순 �
 실행중인 프로세스를 확인하는 명령어. 프로세스들의 정보를 스냅샷으로 출력한다.
 
 ```bash
+# 모든 프로세스를 full format으로 출력
 ps -ef
-ps -eF
-ps -eLf
-ps -eLF
+
+# 모든 프로세스를 long format + full format 출력
+ps -elf
+
 ps aux | grep -e manage.py | grep -v grep
 ```
+
+옵션은 `-ef` 정도면 충분하다.
+
+#### options
+
+- `-A` `-e`: 모든 프로세스 보기
+- `-l`: long format으로 출력한다. F, S, UID, PPID, C, PRI, NI, ADDR, SZ, WCHAN 항목이 추가된다.
+- `-f`: full format으로 출력한다. UID, PPID, C, STIME, TTY 항목이 추가되며 UID는 숫자 대신 사용자 이름이, CMD는 명령 전체가 보이게 바뀜.
+- `-F`: extra full format으로 출력한다. `-f` 옵션에서 SZ, RSS와 PSR 항목을 추가한다.
 
 ## kill
 

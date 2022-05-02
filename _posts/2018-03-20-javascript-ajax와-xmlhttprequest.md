@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 17:08:18 +0900
-title: '[JavaScript] Ajax'
+title: '[JavaScript] AJAX와 XMLHttpRequest'
 categories:
   - javascript
 tags:
@@ -17,18 +17,25 @@ tags:
 
 #### 참고한 문서
 
-- [XMLHttpRequest Living Standard](https://xhr.spec.whatwg.org/)
-- [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
 - [\[MDN\] XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 - [\[MDN\] Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [XMLHttpRequest Living Standard](https://xhr.spec.whatwg.org/)
+- [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
 - [http://huns.me/development/1291](http://huns.me/development/1291)
 
+## 개요
 
-## Ajax란?
+AJAX
 
-Ajax는 'Asynchronous JavaScript and XML'의 약자로 웹 애플리케이션 개발 기법의 하나다. Ajax는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 Ajax를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.
+## AJAX란?
 
-Ajax를 사용하려면 먼저 브라우저의 내장 함수로 `XMLHttpRequest` 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 `ActiveXObject`라는 소름 돋는 이름의 생성자를 사용했지만, 웹 사용자의 최소 환경이 IE8인 요즘엔 사용하지 않는다.
+AJAX는 'Asynchronous JavaScript and XML'의 약자로 웹 애플리케이션 개발 기법의 하나다. AJAX는 독립된 기술을 의미하기보단 여러 기술의 묶음을 지칭하는 용어에 가깝다. 실제로 AJAX를 구현하는 데는 HTML, CSS, DOM, 자바스크립트, XML, XSLT, XPath, XMLHttpRequest 등이 사용된다.
+
+이 글에선 XMLHttpRequest만 다루지만, 사실 요즘엔 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)나 [Axios](https://axios-http.com/docs/intro)를 더 많이 쓴다.
+
+## XMLHttpRequest API
+
+XMLHttpRequest API는 먼저 `XMLHttpRequest` 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 `ActiveXObject`라는 소름 돋는 이름의 생성자를 사용했었다:
 
 ```js
 var xmlReq = false;
@@ -88,7 +95,7 @@ var xhr = new XMLHttpRequest();
 <h2>i am waldo</h2>
 ```
 
-## XMLHttpRequest의 프로퍼티
+## XMLHttpRequest의 메서드
 
 ### XMLHttpRequest.open()
 
@@ -173,6 +180,8 @@ response 헤더 중 특정한 값만 반환한다.
 xhr.getResponseHeader('Content-Type')
 // "text/html;charset=UTF-8"
 ```
+
+## XMLHttpRequest의 프로퍼티
 
 ### XMLHttpRequest.timeout
 

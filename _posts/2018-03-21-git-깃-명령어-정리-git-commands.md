@@ -403,13 +403,18 @@ git clone --bare 저장소주소 [디렉터리]
 git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제한다.
 ```
 
-## commit
+## [commit](https://git-scm.com/docs/git-commit)
 
 staged 상태인 파일을 깃 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
 
 ```bash
 git commit
 ```
+
+#### options
+
+- `--allow-empty`: 변경사항이 없는 커밋 생성을 허용하는 옵션. 훅이라던지 테스트가 필요할 때 사용한다.
+- `--allow-empty-message`: 메시지 없는 커밋 생성을 허용하는 옵션. 안쓰는게 좋다.
 
 #### 에디터 없이 커밋
 
