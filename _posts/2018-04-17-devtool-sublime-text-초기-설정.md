@@ -116,15 +116,18 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 #### key bindings - user
 
+현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [답답한 누군가가 만들어놓은걸](https://github.com/Sublime-Instincts/CommandsBrowser/tree/master/sm_commands_metadata)로 확인해야 함.
+
 ```json
 [
   { "keys": ["f1"], "command": "show_command_palette" },
   { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
-  { "keys": ["ctrl+shift+alt+a"], "command": "stage_all" }
+  { "keys": ["ctrl+shift+alt+a"], "command": "stage_all" },
+  { "keys": ["ctrl+shift+alt+u"], "command": "unstage_all" }
 ]
 ```
 
-`stage_all`은 untracked 파일도 같이 스테이징하는 명령임.
+`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데 `{ "keys": ["ctrl+shift+alt+d"], "command": "discard_all_modified" }` 위험해서 빼앰.
 
 ## 기본 단축키 메모
 

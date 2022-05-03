@@ -256,6 +256,23 @@ TODO
 
 ### data()
 
+state를 선언할 때 사용한다:
+
+```js
+createApp({
+  data() {
+    return {
+      message: 'Hello World!',
+      counter: {
+        count: 0
+      }
+    }
+  }
+}).mount('#app')
+```
+
+`data()`에서 반환한 프로퍼티는 ... TODO
+
 ### created()
 
 > After init Options API
@@ -273,5 +290,20 @@ DOM이 생성된 시점. `created()`보다 나중이다.
 
 
 ### methods()
+
+```js
+createApp({
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    sayHello() {
+      console.log('Hello!');
+    }
+  }
+}).mount('#app')
+```
 
 ### computed()
