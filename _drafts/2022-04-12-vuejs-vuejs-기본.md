@@ -84,7 +84,7 @@ vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항
 
 ```html
 <!-- 태그 밖에서 -->
-{{value}}
+{{ value }}
 
 <!-- 태그 안에서 -->
 <TAG_NAME v-bind:attribute="value"/>
@@ -263,9 +263,7 @@ createApp({
   data() {
     return {
       message: 'Hello World!',
-      counter: {
-        count: 0
-      }
+      counter: { count: 0 }
     }
   }
 }).mount('#app')
@@ -293,11 +291,7 @@ DOM이 생성된 시점. `created()`보다 나중이다.
 
 ```js
 createApp({
-  data() {
-    return {
-      count: 0
-    }
-  },
+  ...
   methods: {
     sayHello() {
       console.log('Hello!');
@@ -307,3 +301,24 @@ createApp({
 ```
 
 ### computed()
+
+### watch()
+
+```js
+createApp({
+  ...
+  watch: {
+    todoId() {
+      this.fetchData()
+    }
+  }
+}).mount('#app')
+```
+
+## 미분류
+
+### <template>
+
+컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하는 태그. 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
+
+이 태그를 빌드 없는 환경에서 쓰려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
