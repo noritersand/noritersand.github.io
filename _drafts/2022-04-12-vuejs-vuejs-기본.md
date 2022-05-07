@@ -161,7 +161,7 @@ TODO
 
 ```html
 <div id="app-3">
-  <p v-if="seen">이제 내가 보임</p>
+  <p v-if="seen">보일락말락</p>
 </div>
 ```
 

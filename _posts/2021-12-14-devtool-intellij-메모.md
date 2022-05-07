@@ -87,13 +87,17 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 ## 런타임 중 변경된 파일 자동으로 다시 불러오기
 
-다른 대에서는 hot deploy, hot swap, hot code replace 등으로 불리는 기능이다. 로컬 서버로 톰캣을 별도로 추가해서 사용할 때 해당하는 내용이다. TODO 스프링부트같은 내장 WAS는 확인 필요.
+hot deploy, hot swap, hot code replace 등으로 불리는, 런타임 중 변경된 파일을 즉시 교체하는 기능이다.
 
-Run/Debug Configurations<kbd>alt + u, r</kbd>에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 수정된 파일을 (필요한 경우 빌드 후) 자동으로 리로드한다.
+로컬 서버로 톰캣을 별도로 추가해서 사용할 때만 해당. **TODO 스프링 부트같은 내장 WAS는 확인 필요.**
 
-JSP나 HTML 등의 리소스 파일은 즉시 수정된 내용을 브라우저에서 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 서버를 Debug 모드로 실행시키지 않으면 갱신하지 않는 것으로 보인다. (Run 모드여도 빌드는 하는 것 같은디...)
+일단 별도 설정 없이도 디버그 모드라면 Update Running Application<kbd>ctrl + f10</kbd>을 누르면 된다.
 
-검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있다.
+그런데 귀찮으니께, Run/Debug Configurations<kbd>alt + u, r</kbd>에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 (필요한 경우 빌드 후) 자동으로 리로드한다.
+
+JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 서버를 디버그 모드로 실행시키지 않으면 갱신하지 않는다. (Run 모드여도 빌드는 하는 것 같은디...)
+
+검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있긴 함.
 
 ## 추천 플러그인
 
