@@ -27,7 +27,9 @@ Vue.js 사용 방법 정리 글.
 
 [Quick Start](https://vuejs.org/guide/quick-start.html)
 
-### 빌드(번들링)
+### 빌드해서 쓰기
+
+Node.js로 Vue 컴파일이 포함된 패키지를 설치해 번들링하는 방식을 말한다.
 
 [NPM](https://www.npmjs.com/package/vue)으로 설치한다:
 
@@ -43,15 +45,21 @@ npm exec create-vue
 npm init vue@latest
 ```
 
-### 빌드 없이 쓰기
+Vue 패키지는 컴파일과 웹 서버를 포함한다.
 
-그냥 자바스크립트 라이브러리처럼 사용하면 된다:
+### 빌드 툴 없이 쓰기
+
+크게 두 가지 방법이 있는데 그냥 자바스크립트 라이브러리처럼 external로 가져오거나:
 
 ```html
-<script src="https://unpkg.com/vue@3"></script>
+<!-- <script src="https://unpkg.com/vue@3"></script> -->
+<!-- 아래와 같음 -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <div id="app">{{ message }}</div>
 <script>
-  Vue.createApp({
+  const { createApp } = Vue;
+
+  createApp({
     data() {
       return {
         message: 'Hello Vue!'
@@ -61,7 +69,28 @@ npm init vue@latest
 </script>
 ```
 
+ECMAScript 모듈(통칭 ESM) 방식으로 불러오는 방식이 있다:
+
+```html
+<div id="app">{{ message }}</div>
+<script type="module">
+  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+
+  createApp({
+    data() {
+      return {
+        message: "Hello Vue! ✌️"
+      };
+    },
+  }).mount("#app");
+</script>
+```
+
 ## 선언적 렌더링
+
+TODO 선언적 렌더링이 뭐야
+
+TODO 구버전임
 
 ```js
 var app = new Vue({
@@ -78,9 +107,15 @@ var app = new Vue({
 
 가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다.
 
-## 표현식
+## Template Syntax
 
-vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항목들이 여기에 할당된다고 보면 됨.
+데이터를 HTML 태그에 바인딩하는 표현식들이다.
+
+TODO 설명 션찮
+
+### Text Interpolation
+
+텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '수염'(Mustache syntax)이라고 부른다.
 
 ```html
 <!-- 태그 밖에서 -->
@@ -90,9 +125,17 @@ vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항
 <TAG_NAME v-bind:attribute="value"/>
 ```
 
+### Raw HTML
+
+HTML을 escape하지 않고 그대로 출력하도록 한다.
+
+TODO
+
+### 속성 바인딩 Attribute Bindings
+
 `v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 한다. `v-bind`는 이름처럼 값을 할당하기만 하는 디렉티브임.
 
-최근 버전에선 아예 `v-bind`를 생략하는 단축 표현도 생겼다:
+`v-bind`는 매우 자주 쓰이기 때문에 단축 표현(shorthand syntax)이 있다:
 
 ```html
 <div :id="dynamicId"></div>
@@ -100,17 +143,29 @@ vue 앱의 데이터를 바인딩하는 표현식. Vue 객체의 data 하위 항
 <div v-bind:id="dynamicId"></div>
 ```
 
-## 제어문
+TODO
 
-### 조건문
+### 자바스크립트 표현식 JavaScript Expressions
 
-`v-if` 디렉티브를 사용하며 이 값이 `false`이면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM에서 해당 요소가 삭제된다.
+TODO
+
+### Directives
+
+TODO
+
+## 조건부 렌더링 Conditional Rendering
+
+### v-if
+
+할당된 `false`로 평가되면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM을 생성하지 않는다.
 
 ```html
 <div id="app-3">
-  <p v-if="seen">이제 나를 볼 수 있어요</p>
+  <p v-if="seen">이제 내가 보임</p>
 </div>
 ```
+
+TODO 구버전임
 
 ```js
 var app3 = new Vue({
@@ -121,13 +176,29 @@ var app3 = new Vue({
 })
 ```
 
-TODO `v-if-else`
+### `v-else`
 
-TODO `v-else`
+TODO
 
-### 반복문
+### `v-else-if`
 
-반복문은 `v-for` 디렉티브로 구현한다.
+TODO
+
+### v-if on `<template>`
+
+<!-- <template> 태그를 코드 블록 없이 그냥 쓰면 밑으로 다 안보이게 되니 주의할 것. HTML 표준 기술임 -->
+
+TODO
+
+### v-show
+
+TODO
+
+### v-show와 v-if의 차이
+
+## 목록 그리기 List Rendering
+
+### v-for
 
 ```html
 <div id="app-4">
@@ -136,6 +207,8 @@ TODO `v-else`
     </ol>
 </div>
 ```
+
+TODO 구버전임
 
 ```js
 var app4 = new Vue({
@@ -152,7 +225,7 @@ var app4 = new Vue({
 
 렌더링 후 `app4.values.push({index: '넷'})`를 입력하면 반복문의 요소로 추가되며, 화면에 즉시 반영된다.
 
-## 이벤트 핸들링
+## 이벤트 핸들링 Event Handling
 
 `v-on` 디렉티브로 이벤트를 바인딩하고 vue 앱의 `methods` 항목에 핸들러를 추가한다.
 
@@ -164,6 +237,8 @@ var app4 = new Vue({
 ```
 
 버튼 태그를 클릭하면 아래의 `reverseMessage` 함수가 실행된다:
+
+TODO 구버전임
 
 ```js
 var app5 = new Vue({
@@ -181,7 +256,7 @@ var app5 = new Vue({
 
 여기서 `this`는 `reverseMessage`의 소유자 `methods`가 아니라 `app5`다. 요것은 Vue.js의 특성임.
 
-그리고 얘도 채신 버전에서 단축 표현이 생겼다:
+속성 바인딩처럼 매우 자주 쓰이기 때문에 단축 표현이 있다:
 
 ```html
 <button @click="increment">{{ count }}</button>
@@ -189,9 +264,11 @@ var app5 = new Vue({
 <button v-on:click="increment">{{ count }}</button>
 ```
 
-## 양방향 바인딩
+## 폼 바인딩 Form Input Bindings
 
-`v-model` 디렉티브를 사용하면 입력 양식의 입력과 앱 상태가 양방향으로 바인딩된다.
+`v-model` 디렉티브를 사용하면 사용자가 입력한 값과 화면에 보이는 값, 그리고 앱의 데이터가 동기화된다.
+
+TODO 구버전임
 
 ```html
 <div id="app-6">
@@ -213,6 +290,8 @@ var app6 = new Vue({
 
 ## 컴포넌트
 
+TODO 구버전임
+
 ```html
 <div id="app-7">
     <ol>
@@ -233,12 +312,26 @@ var app = new Vue({
 
 이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
 
+## Template Refs
+
+DOM 요소에 직접 접근할 때 `ref`를 사용할 수 있다:
+
+```html
+<input ref="focusMe">
+```
+
+```js
+  mounted() {
+    this.$refs.focusMe.focus()
+  }
+```
+
 ## Options API
 
 [\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
 
 ```js
-Vue.createApp({
+createApp({
   created() { // <--
     document.title += `: ${pageTitle}`;
   },
@@ -277,7 +370,7 @@ createApp({
 
 데이터와 이벤트가 활성화된 시점. `mounted()`보다 이르다.
 
-
+TODO
 
 ### mounted()
 
@@ -285,7 +378,7 @@ createApp({
 
 DOM이 생성된 시점. `created()`보다 나중이다.
 
-
+TODO
 
 ### methods()
 
@@ -300,7 +393,11 @@ createApp({
 }).mount('#app')
 ```
 
+TODO
+
 ### computed()
+
+TODO
 
 ### watch()
 
@@ -315,9 +412,7 @@ createApp({
 }).mount('#app')
 ```
 
-## 미분류
-
-### <template>
+## <template>의 용도
 
 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하는 태그. 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 

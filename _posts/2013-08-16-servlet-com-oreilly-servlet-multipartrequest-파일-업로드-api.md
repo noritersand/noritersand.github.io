@@ -23,7 +23,9 @@ tags:
 - [https://mvnrepository.com/artifact/servlets.com/cos/05Nov2002](https://mvnrepository.com/artifact/servlets.com/cos/05Nov2002)
 - [cos-26Dec2008.zip](/attachments/cos-26Dec2008.zip)
 
-Java Servlet 파일 업로드 API인 `MultipartRequest` 사용법을 간단히 기술한다.
+## 개요
+
+Java Servlet 파일 업로드 API인 `MultipartRequest` 사용법을 간단히 정리.
 
 ## MultipartRequest
 
