@@ -26,30 +26,55 @@ tags:
 
 xhr의 모던한 객체임. 멋-쪄
 
+## 개요
+
+어쩌구
+
+## fetch()
+
+대충 간단한 사용법은:
+
+```js
+let params = {
+  foo: 'bar',
+  numeric: 1234567890,
+  user: 'waldo'
+};
+
+let init = {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json; charset=UTF-8',
+  },
+  body: JSON.stringify(params)
+};
+
+fetch('/get-my-request-body.data', init).then(
+  response => response.text() // .json(), etc.
+  // same as function(response) {return response.text();}
+).then(text => {
+  console.log(text);
+});
+```
+
+요로케 됨.
+
+`await` 방식으로 바꾸려면 두 번 기다려야 함:
+
+```js
+let response = await fetch('/get-my-request-body.data', init);
+let json = await response.json();
+console.log(json);
+```
+
+`fetch()`에서 반환하는 `response`도 promise이기 때문.
+
 ## example
 
 소스 출처: https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest
 
 ```js
-const url = "http://example.com";
-fetch(url, {
-  method : "POST",
-  body: new FormData(document.getElementById("inputform")),
-  // -- or --
-  // body : JSON.stringify({
-    // user : document.getElementById('user').value,
-    // ...
-  // })
-}).then(
-  response => response.text() // .json(), etc.
-  // same as function(response) {return response.text();}
-).then(
-  html => console.log(html)
-);
-```
-
-```js
-await fetch("http://127.0.0.1:8080/test/doughnutList", {
+let resp = await fetch("http://127.0.0.1:8080/test/doughnutList", {
     "credentials": "include",
     "headers": {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0",

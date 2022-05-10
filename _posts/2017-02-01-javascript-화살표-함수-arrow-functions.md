@@ -114,6 +114,22 @@ console.log(square(2)); // 4 출력
 
 ## 제한사항
 
+> - Arrow functions don't have their own bindings to this, arguments or super, and should not be used as methods.
+> - Arrow functions don't have access to the new.target keyword.
+> - Arrow functions aren't suitable for call, apply and bind methods, which generally rely on establishing a scope.
+> - Arrow functions cannot be used as constructors.
+> - Arrow functions cannot use yield, within its body.
+>
+> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+
+TODO 뭔가 안되는게 많음
+
+### this, arguments, super가 없고 메서드로 사용하면 안됨
+
+TODO 메서드로 사용하면 안된다는게 무슨 말일까
+
+[여기 참고](https://developer.mozilla.org/en-US/docs/Glossary/Method)할 것.
+
 ### 생성자 함수로 사용할 수 없음
 
 화살표 함수 표현으로 생성한 함수는 생성자 함수로 호출(`new 키워드`)할 때 에러가 발생한다:
@@ -133,6 +149,7 @@ new newbie(); // Uncaught TypeError: newbie is not a constructor
 화살표 함수는 프로토타입을 가리키는 프로퍼티가 없다:
 
 ```js
+let newbie = () => {};
 newbie.prototype === undefined; // true
 ```
 

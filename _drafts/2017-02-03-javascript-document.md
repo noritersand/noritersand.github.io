@@ -25,19 +25,32 @@ tags:
 
 ## 주요 메서드
 
-### document.createElement()
+### [document.createElement()](https://developer.mozilla.org/ko/docs/Web/API/Document/createElement)
 
-### document.body.appendChild()
+### [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
 
 ```html
 <button onclick="appendIframe()">눌러</button>
 <div id="target"></div>
 
 <script>
-    function appendIframe() {
-        var iframe = document.createElement('iframe');
-        iframe.src = 'http://noritersand.tistory.com';
-        document.querySelector('#target').appendChild(iframe);
-    }
+function appendIframe() {
+  var iframe = document.createElement('iframe');
+  iframe.src = 'http://noritersand.tistory.com';
+  document.querySelector('#target').appendChild(iframe);
+}
 </script>
+```
+
+### [Document.createTextNode()](https://developer.mozilla.org/ko/docs/Web/API/Document/createTextNode)
+
+```js
+// 스크립트로 인터널 CSS 추가하기
+var headTag = document.querySelector('head');
+var styleTag = document.createElement('style');
+headTag.appendChild(styleTag);
+styleTag.setAttribute('type', 'text/css');
+
+var css = 'h1 { background: red; }';
+styleTag.appendChild(document.createTextNode(css));
 ```

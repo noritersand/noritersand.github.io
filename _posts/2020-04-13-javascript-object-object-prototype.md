@@ -50,6 +50,18 @@ Object.getOwnPropertyDescriptors(String.prototype);
 // Object { length: {…}, toString: {…}, valueOf: {…}, toLowerCase: {…}, toUpperCase: {…}, charAt: {…}, charCodeAt: {…}, substring: {…}, padStart: {…}, padEnd: {…}, … }
 ```
 
+### [Object.getOwnPropertyNames()](https://github.com/nhn/tui.grid/tree/master/packages/toast-ui.grid/docs)
+
+특정 개체가 소유한 프로퍼티들의 이름을 배열로 반환한다.
+
+```js
+// String 프로토타입이 소유한 프로퍼티 중 이름에 'sub'가 포함된 것만 필터링
+Object.getOwnPropertyNames(String.prototype).filter((e) => {
+  return e.toLowerCase().indexOf('case') > -1;
+});
+// Array(4) [ "toLowerCase", "toUpperCase", "toLocaleLowerCase", "toLocaleUpperCase" ]
+```
+
 ### [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
 
 객체에 새로운 프로퍼티를 정의하거나 이미 존재하는 프로퍼티를 수정하는 메서드.
