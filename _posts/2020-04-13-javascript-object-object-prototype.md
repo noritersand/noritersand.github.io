@@ -77,7 +77,20 @@ Object.getOwnPropertyDescriptor(Object.prototype, 'name');
 
 ### [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create)
 
+```
+Object.create(proto)
+Object.create(proto, propertiesObject)
+```
+
+주어진 객체로 새 인스턴스를 만들어 반환한다. 이 때 `proto`는 인스턴스의 프로토타입이 된다.
+
 ### [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+
+```
+Object.assign(target, ...sources)
+```
+
+주어진 객체들의 모든 열거 가능하며 소유한 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화하며 반환값은 `target`이다.
 
 ## Object.prototype
 

@@ -157,7 +157,7 @@ TODO
 
 ### v-if
 
-할당된 `false`로 평가되면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM을 생성하지 않는다.
+조건식이 `false`이면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM 자체가 사라진다.
 
 ```html
 <div id="app-3">
@@ -188,13 +188,29 @@ TODO
 
 <!-- <template> 태그를 코드 블록 없이 그냥 쓰면 밑으로 다 안보이게 되니 주의할 것. HTML 표준 기술임 -->
 
-TODO
+다른 태그들을 묶기만 하는 더미 태그가 필요할 땐 `<template>` 태그를 쓰면 된다:
+
+```html
+<template v-if="ok">
+  <h3>Header 3</h1>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+</template>
+```
+
+이렇게 하면 `<template>`은 조건 분기를 위해서만 사용하고 화면 랜더링은 생략함.
 
 ### v-show
+
+`false`일 때 `display: none` 스타일을 추가한다.
 
 TODO
 
 ### v-show와 v-if의 차이
+
+`v-if`는 조건식이 `false`일 때 아예 랜더링을 하지 않는다. 반면 `v-show`는 조건식과 상관 없이 일단 랜더링을 모두 한다는게 다르다.
+
+그리고 `v-show`는 `<template>` 태그 자체가 랜더링해버려서 `v-if` 처럼 더미 태그로 쓸 수 없음.
 
 ## 목록 그리기 List Rendering
 
