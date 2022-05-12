@@ -42,6 +42,12 @@ tags:
 
 `event.which`는 구 버전 파이어폭스의 호환 처리를 위한 프로퍼티다. (과거에는 keypress 이벤트 시 keyCode가 항상 0이던 시절이 있었음)
 
+**`keypress` 이벤트는 DOM Standard에서 deprecated 되었다고 함. 대신 `beforeinput`이나 `keydown`을 쓰라고...**
+
+> Warning: Since this event has been deprecated, you should look to use beforeinput or keydown instead.
+>
+> https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event
+
 ## 입력 테스트
 
 아래 창에서 아무 키나 입력해보자:

@@ -40,7 +40,8 @@ console.log(n); // Array(3) [ 1, 2, 3 ]
 console.log(...n); // 1 2 3
 ```
 
-전개 구문에서 점 세개`...`는 **전개 연산자(spread operator)**라고 부른다.
+<!-- 아닌 것 같다 -->
+<!-- 전개 구문에서 점 세개`...`는 **전개 연산자(spread operator)**라고 부른다. -->
 
 ## 함수 호출에서: 인수 목록을 위한 전개 Spread for argument lists
 
@@ -175,7 +176,7 @@ var clone2 = { ...obj, x: '사십이', c: 1 }; // obj에서 x는 재할당하고
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
-배열과 마찬가지로 얕은 복제(shallow cloning)인 것에 주의:
+배열과 마찬가지로 얕은 복제(shallow cloning)다:
 
 ```js
 var obj = { foo: { a: 1, b: 2 } };
@@ -197,6 +198,23 @@ var obj2 = { foo: 'baz', y: 13 };
 
 var mergedObj = { ...obj1, ...obj2 }; // obj2.foo가 obj1.foo를 덮어쓰게 됨
 mergedObj; // Object { foo: "baz", x: 42, y: 13 }
+```
+
+### 우선권
+
+[전개 구문은 연산자가 아니기 때문에 우선 순위가 없다](https://stackoverflow.com/questions/48656338/operator-precedence-for-js-spread-and-rest-operators)...고 하지\만, 결과만 놓고 보면 최우측의 객체(혹은 프로퍼티)가 우선권을 가지며 좌측에서부터 차례대로 병합된다고 볼 수 있다:
+
+```js
+var m1 = { a: 1, b: 22 };
+var m2 = { ...m1, b: 33, b: 44, b: 55, a: 11 };
+console.log(m2); // Object { a: 11, b: 55 }
+
+var j1 = { a: 1, b: 2 };
+var j2 = { b: 33, d: 4 };
+var j3 = { d: 44, a: 11 };
+var j4 = { f: 5, a: 111 };
+var j5 = { ...j1, ...j2, ...j3, ...j4 };
+console.log(j5); // Object { a: 111, b: 33, d: 44, f: 5 }
 ```
 
 ## 나머지 구문

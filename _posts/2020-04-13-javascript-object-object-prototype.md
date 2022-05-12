@@ -90,7 +90,17 @@ Object.create(proto, propertiesObject)
 Object.assign(target, ...sources)
 ```
 
-주어진 객체들의 모든 열거 가능하며 소유한 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화하며 반환값은 `target`이다.
+주어진 객체들의 모든 열거 가능하며 소유한 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화(mutating)하며, 변화된 `target`을 반환한다.
+
+```js
+var o1 = { a: 1, b: 2 };
+var o2 = { c: 3};
+var o3 = Object.assign(o1, o2);
+
+console.log(o1); // Object { a: 1, b: 2, c: 3 }
+console.log(o3); // Object { a: 1, b: 2, c: 3 }
+console.log(o1 === o3); // true
+```
 
 ## Object.prototype
 

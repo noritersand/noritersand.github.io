@@ -19,6 +19,10 @@ tags:
 - [V2 공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)
 - [깃허브](https://github.com/vuejs/vue)
 
+#### 버전 정보
+
+- Vue 3
+
 ## 개요
 
 Vue.js 사용 방법 정리 글.
@@ -198,7 +202,7 @@ TODO
 </template>
 ```
 
-이렇게 하면 `<template>`은 조건 분기를 위해서만 사용하고 화면 랜더링은 생략함.
+이렇게 하면 `<template>`은 제어 처리만 하고 화면 랜더링 대상에선 빠진다.
 
 ### v-show
 
@@ -210,7 +214,7 @@ TODO
 
 `v-if`는 조건식이 `false`일 때 아예 랜더링을 하지 않는다. 반면 `v-show`는 조건식과 상관 없이 일단 랜더링을 모두 한다는게 다르다.
 
-그리고 `v-show`는 `<template>` 태그 자체가 랜더링해버려서 `v-if` 처럼 더미 태그로 쓸 수 없음.
+그리고 `v-show`는 `<template>` 태그를 랜더링해버려서 `v-if`와 다르게 더미 태그로 쓸 수 없음.
 
 ## 목록 그리기 List Rendering
 
@@ -428,8 +432,8 @@ createApp({
 }).mount('#app')
 ```
 
-## <template>의 용도
+## `<template>`의 용도
 
-컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하는 태그. 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
+조건부 랜더링 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
-이 태그를 빌드 없는 환경에서 쓰려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
+이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.

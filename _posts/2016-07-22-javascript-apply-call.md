@@ -21,7 +21,32 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 
-`apply()`와 `call()`은 Function.prototype의 메서드다. 따라서 모든 Function 객체, 즉 함수는 `apply()`와 `call()`을 호출할 수 있다. 이 메서드들은 함수를 특별하게 호출하기 위해 사용한다.
+## 개요
+
+`apply()`와 `call()`은 `Function.prototype`의 메서드다. 따라서 모든 `Function` 객체, 즉 함수는 `apply()`와 `call()`을 호출할 수 있다. 이 메서드들은 함수를 특별하게 호출하기 위해 사용한다.
+
+예를 들어 `NodeList` 객체는 반복 가능한 객체이긴 하지만 `Array`가 아니다. 따라서 `Array`가 가진 모든 메서드를 쓸 수 없는 문제가 있는데 이 때 `apply()`나 `call()`을 쓴다:
+
+```js
+var nodeList = document.querySelectorAll('div');
+console.log(Object.getPrototypeOf(nodeList)); // NodeListPrototype
+
+// slice(), includes()는 NodeList 타입에 없음
+var nodeList = document.querySelectorAll('div');
+console.log(nodeList.slice); // undefined
+console.log(nodeList.includes); // undefined
+
+// includes()를 쓰고 싶을 때
+var e = nodeList[0];
+Array.prototype.includes.call(nodeList, e); // true
+
+// slice()를 쓰고 싶을 때: nodeList를 복제된 배열로 만들기
+var arr = Array.prototype.slice.call(nodeList);
+console.log(Object.getPrototypeOf(arr)); // Array
+
+// 이제 Array.prototype.map()을 호출 할 수 있음
+console.log(arr.map); // function map()
+```
 
 ## Function.prototype.apply()
 
@@ -74,18 +99,22 @@ function strict() {
 strict.call(true);
 ```
 
-## 배열 전개
+## 활용: 배열 전개
 
-TODO
+원래 `Math.min()`의 인자는 배열을 넘기는 것이 불가능하다.
 
 ```js
 Math.min(3, 2, 4); // 2
 Math.min([3, 2, 4]); // NaN
 ```
 
-원래 `Math.min()`의 인자는 배열이 올 수 없지만, 아래처럼 하면 됨:
+`apply()`의 첫 번째 인자를 `this`로 간주한다는 점을 이용하면 아래처럼 가능함:
 
 ```js
 Math.min.apply(Math, [3, 2, 4]); // 2
-// Math.min.apply(null, [3, 2, 4]); // apply() 첫 번째 인자로 null을 전달해도 결과는 같음
+// Math.min.apply(null, [3, 2, 4]);
 ```
+
+사실 첫 번째 인자로 null을 전달해도 결과는 같은데, 애초에 `Math.min()`이 스태틱 메서드라 가능한 것.
+
+## 꼐속

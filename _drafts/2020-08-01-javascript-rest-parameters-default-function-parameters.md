@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-08-01 21:00:00 +0900
-title: '[JavaScript] Rest parameters, Default parameters'
+title: '[JavaScript] Rest parameters, default function parameters'
 categories:
   - javascript
 tags:
@@ -42,7 +42,7 @@ function f(a, b, ...theArgs) {
 
 TODO
 
-## 기본값 매개변수 Default parameters
+## 기본값 함수 매개변수 Default function parameters
 
 어쩌구
 
