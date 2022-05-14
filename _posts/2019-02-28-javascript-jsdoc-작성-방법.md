@@ -50,14 +50,7 @@ function sumAsync(a, b) {
 
 구성요소의 타입을 특정할 수 없는 배열이면 `array`라고 적는다. 이 경우 `any[]`로 나타난다. 반대의 경우엔 해당 타입과 대괄호`[]`를 적는다. 가령 `string` 타입의 배열이면 `string[]`이다.
 
-인텔리제이에서 만들어주는 걸 보니 요딴식으로:
-
-```js
-// @returns {{dummy: {days: string[]}, payload: {wtypeNm: null, useYn: boolean, wtypeSeq: null, childs: *[]}, context: string, currentTab: string}}
-// @returns {{extendEndType: null, wtypeCode: number, workEndMi: null, workStHo: null, extendStHo: null, workEndType: null, extendEndMi: null, wtypeDetailSeq: null, wtypeType: null, extendYn: null, extendEndHo: null, wtypeSeq: null, workStMi: null, extendStMi: null, workEndHo: null}}
-```
-
-타입만 정의하는게 아니라 객체의 프로퍼티를 나열하는 방식도 되나보다.
+인텔리제이에서 만들어주는 걸 보니 타입만 정의하는게 아니라 객체의 프로퍼티를 나열하는 방식도 되나보다. (예시는 지킬 빌드가 안되서 생략함)
 
 ## 여담: 파일 JSDoc
 
