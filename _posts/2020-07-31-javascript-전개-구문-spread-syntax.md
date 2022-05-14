@@ -202,7 +202,7 @@ mergedObj; // Object { foo: "baz", x: 42, y: 13 }
 
 ### 우선권
 
-[전개 구문은 연산자가 아니기 때문에 우선 순위가 없다](https://stackoverflow.com/questions/48656338/operator-precedence-for-js-spread-and-rest-operators)...고 하지\만, 결과만 놓고 보면 최우측의 객체(혹은 프로퍼티)가 우선권을 가지며 좌측에서부터 차례대로 병합된다고 볼 수 있다:
+[전개 구문은 연산자가 아니기 때문에 우선순위가 없다](https://stackoverflow.com/questions/48656338/operator-precedence-for-js-spread-and-rest-operators)...고 하지만, 굳이 언급하자면 가장 우측의 객체(혹은 프로퍼티)가 우선권을 가지며 두 번째 객체부터 차례대로 좌측으로 병합된다고 볼 수 있다:
 
 ```js
 var m1 = { a: 1, b: 22 };

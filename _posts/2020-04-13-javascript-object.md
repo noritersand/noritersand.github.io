@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-04-13 09:49:00 +0900
-title: '[JavaScript] Object와 Object.prototype'
+title: '[JavaScript] Object'
 categories:
   - javascript
 tags:
@@ -22,6 +22,8 @@ tags:
 ## 개요
 
 `Object`와 `Object.prototype` 차이, 주요 메서드 등을 정리함.
+
+**TODO 생성자 함수는 스태틱, 프로토타입은 인스턴스로 변경할 것**
 
 ## Object
 

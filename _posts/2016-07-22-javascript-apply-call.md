@@ -23,9 +23,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ## 개요
 
-`apply()`와 `call()`은 `Function.prototype`의 메서드다. 따라서 모든 `Function` 객체, 즉 함수는 `apply()`와 `call()`을 호출할 수 있다. 이 메서드들은 함수를 특별하게 호출하기 위해 사용한다.
+`apply()`와 `call()`은 `Function`의 인스턴스 메서드(프로토타입의 메서드)다. 따라서 모든 `Function` 객체, 즉 함수는 `apply()`와 `call()`을 호출할 수 있다. 이 메서드들은 함수를 특별하게 호출하기 위해 사용한다.
 
-예를 들어 `NodeList` 객체는 반복 가능한 객체이긴 하지만 `Array`가 아니다. 따라서 `Array`가 가진 모든 메서드를 쓸 수 없는 문제가 있는데 이 때 `apply()`나 `call()`을 쓴다:
+예를 들어 `NodeList` 타입은 반복이 가능한 array-like 타입이지만 `Array`가 아니다. 그래서 `Array`가 가진 모든 메서드를 쓸 수 없는 문제가 있는데 이 때 `apply()`나 `call()`을 쓴다:
 
 ```js
 var nodeList = document.querySelectorAll('div');
@@ -33,8 +33,8 @@ console.log(Object.getPrototypeOf(nodeList)); // NodeListPrototype
 
 // slice(), includes()는 NodeList 타입에 없음
 var nodeList = document.querySelectorAll('div');
-console.log(nodeList.slice); // undefined
 console.log(nodeList.includes); // undefined
+console.log(nodeList.slice); // undefined
 
 // includes()를 쓰고 싶을 때
 var e = nodeList[0];
@@ -108,13 +108,13 @@ Math.min(3, 2, 4); // 2
 Math.min([3, 2, 4]); // NaN
 ```
 
-`apply()`의 첫 번째 인자를 `this`로 간주한다는 점을 이용하면 아래처럼 가능함:
+`apply()`는 추가 인자를 배열로 받는다는 것을 이용하면 아래처럼 가능함:
 
 ```js
 Math.min.apply(Math, [3, 2, 4]); // 2
 // Math.min.apply(null, [3, 2, 4]);
 ```
 
-사실 첫 번째 인자로 null을 전달해도 결과는 같은데, 애초에 `Math.min()`이 스태틱 메서드라 가능한 것.
+첫 번째 인자로 null을 전달해도 결과는 같은데, 애초에 `Math.min()`이 스태틱 메서드라 가능한 것.
 
 ## 꼐속

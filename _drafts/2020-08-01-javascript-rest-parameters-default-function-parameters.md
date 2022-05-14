@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-08-01 21:00:00 +0900
-title: '[JavaScript] Rest parameters, default function parameters'
+title: '[JavaScript] Rest parameters, Default function parameters'
 categories:
   - javascript
 tags:

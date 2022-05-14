@@ -170,7 +170,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
-- GitHub Copilot `github.copilot`
+- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
+  - 발동: <kbd>alt + \</kbd>
+  - 제안 선택: <kbd>tab</kbd>
+  - 자동 완성 제안 창 보기: <kbd>ctrl + enter</kbd>
 
 ## 기본 단축키 메모
 

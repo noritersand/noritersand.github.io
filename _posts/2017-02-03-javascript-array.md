@@ -22,7 +22,7 @@ tags:
 
 ## 개요
 
-Array 생성자 함수와 Array.prototype의 주요 프로퍼티와 메서드를 정리한 글.
+`Array` 생성자 함수와 `Array.prototype`의 주요 프로퍼티, 메서드를 정리한 글.
 
 ## 스태틱 프로퍼티
 

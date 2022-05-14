@@ -76,7 +76,7 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 
 ### Imported
 
-이 방식은 결과적으로 Linked style sheet와 같고 위치는 Embedded 방식과 마찬 가지로 Style block 속에 들어간다.
+이 방식은 결과적으로 Linked와 같다.
 
 ```
 @import url("파일명");
@@ -84,12 +84,34 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 @import "파일명";
 ```
 
-### 사용 방식에 따른 Style 적용의 우선 순위(Cascading order)
+## 우선순위(specificity, cascading order)
 
-1. Inline style sheet
-1. Embedded style sheet
-1. Linked style sheet
-1. Imported style sheet
+우선순위(혹은 명시도)를 결정하는 요소는 여러가지가 있다. 크게 보면 `!important`가 가장 우선 적용되고 나머지는 선언 방식이나 얼마나 구체적으로 셀렉터를 작성했느냐에 따라 달라진다.
+
+[여기](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)를 볼 것.
+
+#### !important
+
+스타일 적용 최우선순위를 알리는 예외 규칙이다. 심지어 인라인 스타일보다 우선 적용된다. 😲
+
+```css
+table tr td {
+  text-align: left !important;
+}
+
+.foo[style*="color: red"] {
+  color: firebrick !important;
+}
+```
+
+그런데 이걸로 해결하는 것은 좋지 않은 습관이라고 한다.
+
+#### 스타일 선언 방식에 따른 우선순위
+
+1. Inline
+1. Embedded
+1. Linked
+1. Imported
 
 ## CSS selector
 
@@ -130,6 +152,14 @@ TAG_NAME
 ```
 [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
 ```
+
+- `[attr]`: 지정한 속성이 정의되어 있는 요소 선택(값이 없더라도)
+- `=`: 속성과 값이 완전히 일치하는 요소를 선택
+- `~=`: TODO word selector
+- `|=`: TODO prefix selector
+- `^=`: 속성의 값이 지정된 값으로 시작하는 요소를 선택
+- `$=`: 속성의 값이 지정된 값으로 끝나는 요소를 선택
+- `*=`: 속성의 값이 지정된 값을 포함하는 요소를 선택
 
 ### Grouping selectors
 
@@ -208,11 +238,11 @@ A || B
 - `:left`:
 - `:link`: 	a:link 	Selects all unvisited links
 - `:not(selector)`: 	:not(p) 	Selects every element that is not a <p> element
-- `:nth-child(n)`: 	p:nth-child(2) 	Selects every <p> element that is the second child of its parent
-- `:nth-last-child(n)`: 	p:nth-last-child(2) 	Selects every <p> element that is the second child of its parent, counting from the last child
-- `:nth-last-of-type(n)`: 	p:nth-last-of-type(2) 	Selects every <p> element that is the second <p> element of its parent, counting from the last child
-- `:nth-of-type(n)`: 	p:nth-of-type(2) 	Selects every <p> element that is the second <p> element of its parent
-- `:only-child`: 	p:only-child 	Selects every <p> element that is the only child of its parent
+- `:nth-child(n)`: 요소의 부모 기준 n번째 자식 요소를 모두 선택한다. `td:nth-child(1)`는 (일반적으로 `<tr>` 아래에 있으므로) 부모 태그인 `<tr>`의 첫 번째 자식에 해당하는 `<td>`만 모두 선택하라는 의미다.
+- `:nth-last-child(n)`: `:nth-child(n)`와 같으나 순서를 역으로 적용한다.
+- `:nth-of-type(n)`: 요소의 형제들 기준으로 n번째 요소를 모두 선택한다. `p:nth-of-type(2)`는 같은 레벨에 있는 `<p>` 중 두 번째에 해당하는 요소만 선택한다.
+- `:nth-last-of-type(n)`: `:nth-of-type(n)`와 같으나 순서를 역으로 적용한다.
+- `:only-child`: p:only-child 	Selects every <p> element that is the only child of its parent
 - `:only-of-type`: 	p:only-of-type 	Selects every <p> element that is the only <p> element of its parent
 - `:optional`: 	input:optional 	Selects input elements with no "required" attribute
 - `:out-of-range`: 	input:out-of-range 	Selects input elements with a value outside a specified range
