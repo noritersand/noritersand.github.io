@@ -1,0 +1,191 @@
+---
+layout: post
+date: 2022-05-15 16:10:09 +0900
+title: '[CSS] CSS 셀렉터'
+categories:
+  - css
+tags:
+  - css
+  - css-selector
+---
+
+* Kramdown table of contents
+{:toc .toc}
+
+#### 참고한 문서
+
+- [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
+- [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
+
+#### 버전 정보
+
+- x.x.x
+
+## 개요
+
+CSS 셀렉터를 정리한 글.
+
+```css
+태그명 { 스타일코드 }
+#아이디 { 스타일코드 }
+.클래스명 { 스타일코드 }
+```
+
+## Basic selectors
+
+### Universal selector
+
+```
+*
+```
+
+### Type selector
+
+```
+TAG_NAME
+```
+
+### Class selector
+
+```
+.CLASS_NAME
+```
+
+### ID selector
+
+```
+#ID
+```
+
+### Attribute selector
+
+```
+[attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
+```
+
+- `[attr]`: 지정한 속성이 정의되어 있는 요소 선택(값이 없더라도)
+- `=`: 속성과 값이 완전히 일치하는 요소를 선택
+- `~=`: TODO word selector
+- `|=`: TODO prefix selector
+- `^=`: 속성의 값이 지정된 값으로 시작하는 요소를 선택
+- `$=`: 속성의 값이 지정된 값으로 끝나는 요소를 선택
+- `*=`: 속성의 값이 지정된 값을 포함하는 요소를 선택
+
+## Grouping selectors
+
+### Selector list
+
+```
+A, B
+```
+
+## Combinators
+
+### Descendant combinator
+
+```
+A B
+```
+
+### Child combinator
+
+```
+A > B
+```
+
+### General sibling combinator
+
+```
+A ~ B
+```
+
+### Adjacent sibling combinator
+
+```
+A + B
+```
+
+### Column combinator
+
+```
+A || B
+```
+
+## Pseudo
+
+### Pseudo classes
+
+- `:active`: 	a:active 	Selects the active link
+- `:any-link`:
+- `:autofill`:
+- `:checked`: 	input:checked 	Selects every checked <input> element
+- `:default`: 	input:default 	Selects the default <input> element
+- `:defined`:
+- `:dir()`:
+- `:disabled`: 	input:disabled 	Selects every disabled <input> element
+- `:empty`: 	p:empty 	Selects every <p> element that has no children (including text nodes)
+- `:enabled`: 	input:enabled 	Selects every enabled <input> element
+- `:first-child`: 	p:first-child 	Selects every <p> element that is the first child of its parent
+- `:first-of-type`: 	p:first-of-type 	Selects every <p> element that is the first <p> element of its parent
+- `:first`:
+- `:focus-visible`:
+- `:focus-within`:
+- `:focus`: 	input:focus 	Selects the input element which has focus
+- `:fullscreen`: 	:fullscreen 	Selects the element that is in full-screen mode
+- `:has()`:
+- `:host-context()`:
+- `:host()`:
+- `:host`:
+- `:hover`: 	a:hover 	Selects links on mouse over
+- `:in-range`: 	input:in-range 	Selects input elements with a value within a specified range
+- `:indeterminate`: 	input:indeterminate 	Selects input elements that are in an indeterminate state
+- `:invalid`: 	input:invalid 	Selects all input elements with an invalid value
+- `:is() (:matches(), :any())`:
+- `:lang()`:
+- `:lang(language)`: 	p:lang(it) 	Selects every <p> element with a lang attribute equal to "it" (Italian)
+- `:last-child`: 	p:last-child 	Selects every <p> element that is the last child of its parent
+- `:last-of-type`: 	p:last-of-type 	Selects every <p> element that is the last <p> element of its parent
+- `:left`:
+- `:link`: 	a:link 	Selects all unvisited links
+- `:not(selector)`: 	:not(p) 	Selects every element that is not a <p> element
+- `:nth-child(n)`: 요소의 부모 기준 n번째 자식 요소를 모두 선택한다. `td:nth-child(1)`는 (일반적으로 `<tr>` 아래에 있으므로) 부모 태그인 `<tr>`의 첫 번째 자식에 해당하는 `<td>`만 모두 선택하라는 의미다.
+- `:nth-last-child(n)`: `:nth-child(n)`와 같으나 순서를 역으로 적용한다.
+- `:nth-of-type(n)`: 요소의 형제들 기준으로 n번째 요소를 모두 선택한다. `p:nth-of-type(2)`는 같은 레벨에 있는 `<p>` 중 두 번째에 해당하는 요소만 선택한다.
+- `:nth-last-of-type(n)`: `:nth-of-type(n)`와 같으나 순서를 역으로 적용한다.
+- `:only-child`: p:only-child 	Selects every <p> element that is the only child of its parent
+- `:only-of-type`: 	p:only-of-type 	Selects every <p> element that is the only <p> element of its parent
+- `:optional`: 	input:optional 	Selects input elements with no "required" attribute
+- `:out-of-range`: 	input:out-of-range 	Selects input elements with a value outside a specified range
+- `:paused`:
+- `:picture-in-picture`:
+- `:placeholder-shown`:
+- `:playing`:
+- `:read-only`: 	input:read-only 	Selects input elements with the "readonly" attribute specified
+- `:read-write`: 	input:read-write 	Selects input elements with the "readonly" attribute NOT specified
+- `:required`: 	input:required 	Selects input elements with the "required" attribute specified
+- `:right`:
+- `:root`: 	:root 	Selects the document's root element
+- `:scope`:
+- `:target`: 	#news:target 	Selects the current active #news element (clicked on a URL containing that anchor name)
+- `:user-invalid (:-moz-ui-invalid)`:
+- `:user-valid (:-moz-ui-valid)`:
+- `:valid`: 	input:valid 	Selects all input elements with a valid value
+- `:visited`: 	a:visited 	Selects all visited links
+- `:where()`:
+
+### Pseudo elements
+
+- `::after`: 	p::after 	Insert something after the content of each <p> element
+- `::backdrop`:
+- `::before`: 	p::before 	Insert something before the content of each <p> element
+- `::cue`:
+- `::cue-region`:
+- `::file-selector-button`
+- `::first-letter`: 	p::first-letter 	Selects the first letter of every <p> element
+- `::first-line`: 	p::first-line 	Selects the first line of every <p> element
+- `::marker`: 	::marker 	Selects the markers of list items
+- `::part()`:
+- `::placeholder`: 	input::placeholder 	Selects input elements with the "placeholder" attribute specified
+- `::selection`: 	::selection 	Selects the portion of an element that is selected by a user
+- `::slotted()`:
+- `::target-text`:

@@ -331,7 +331,12 @@ Get-Variable -Include m*, p*
 
 ### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2)
 
-TODO
+오브젝트를 문자열로 출력한다. 이렇게 활용 가능:
+
+```bash
+# pwsh 프로세스 출력 결과를 result.txt 파일에 쓰기
+Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
+```
 
 ### [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
 

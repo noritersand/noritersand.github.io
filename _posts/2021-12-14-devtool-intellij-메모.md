@@ -40,13 +40,13 @@ TODO
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함.
-- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움.
-- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움.
-- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제.
-- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성.  다른 키는 지움.
-- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성.  다른 키는 지움.
-- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제.
+- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
+- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
+- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
+- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
+- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
+- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
+- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
 - Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
 - Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
 - Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
@@ -103,7 +103,7 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
 - CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
-- GitHub Copilot: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
+  - GitHub Copilot: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
   - 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
   - 코파일럿 발동: <kbd>alt + \</kbd>
   - 코파일럿 제안 선택: <kbd>tab</kbd>
@@ -250,6 +250,7 @@ Select Next Occurrence. 멀티 캐럿 없는 줄 아랏네 😏
 - <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
 - <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소
 - <kbd>ctrl + alt + shift + j</kbd>: 선택한 단어와 동일한 모든 위치에 캐럿 추가
+- <kbd>alt + shift + g</kbd> 선택한 모든 라인에 캐럿 생성
 
 ### 빌드, 실행
 
