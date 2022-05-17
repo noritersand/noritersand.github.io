@@ -334,6 +334,14 @@ var app = new Vue({
 
 부모한테 받아오는 읽기 전용 값.
 
+아래처럼 넘김:
+
+```xml
+<some-picker :pick-this="'A3456'" :pick-these="['A1234', 'B5678', 'B6789']"><some-picker>
+```
+
+받는 방법은 API 방식에 따라 다름. **TODO**
+
 ## State
 
 `data()` 같은 거

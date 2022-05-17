@@ -134,7 +134,28 @@ arr === even; // false
 
 ### Array.prototype.some()
 
-### Array.prototype.every()
+### [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+
+`forEach()`와 같이 배열의 모든 요소를 콜백함수 첫 번째 파라미터로 제공한다. 차이점은 모든 루프에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 쓴다는 것.
+
+가령 다음의 경우:
+
+```js
+const obj = {
+  a: null,
+  b: null
+};
+const isNullish = Object.values(obj).every(value => {
+  if (value === null) {
+    return true;
+  }
+  return false;
+});
+console.log(isNullish); // true
+// 코드 출처: https://bobbyhadz.com/blog/javascript-check-if-all-object-properties-are-null
+```
+
+`obj`의 프로퍼티 `a`와 `b`의 값이 모두 `null`이므로 모든 요소가 `return true`가 되고 `every()`는 결국 `true`를 반환하게 되는 코드다.
 
 ### Array.prototype.reduce()
 

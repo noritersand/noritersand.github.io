@@ -23,7 +23,7 @@ CSS(Cascading Sytle Sheet) 기본 사용법 정리.
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
 
-At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어에 가깝다.
+At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에 가깝)다.
 
 ```
 @IDENTIFIER (RULE);
@@ -89,6 +89,8 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 우선순위(혹은 명시도)를 결정하는 요소는 여러가지가 있다. 크게 보면 `!important`가 가장 우선 적용되고 나머지는 선언 방식이나 얼마나 구체적으로 셀렉터를 작성했느냐에 따라 달라진다. ⚠️**자바스크립트와 다르게 파일을 불러오는 순서는 우선순위에 영향을 주지 않는다.**
 
 [여기](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)를 볼 것.
+
+**TODO 구체적인 우선순위 추가할 것**
 
 #### 스타일 선언 방식에 따른 우선순위
 

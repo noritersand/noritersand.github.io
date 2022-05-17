@@ -17,10 +17,6 @@ tags:
 - [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 - [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
 
-#### 버전 정보
-
-- x.x.x
-
 ## 개요
 
 CSS 셀렉터를 정리한 글.
@@ -35,11 +31,15 @@ CSS 셀렉터를 정리한 글.
 
 ### Universal selector
 
+지정한 요소 기준 하위의 모든 태그를 의미함. 지정한 요소가 없다면 루트가 기준이 되므로 세상 모든 태그가 선택된다.
+
 ```
 *
 ```
 
 ### Type selector
+
+일치하는 태그를 찾는다.
 
 ```
 TAG_NAME
@@ -47,11 +47,15 @@ TAG_NAME
 
 ### Class selector
 
+일치하는 클래스가 적용된 태그를 찾는다. ~참 쉽죠?~
+
 ```
 .CLASS_NAME
 ```
 
 ### ID selector
+
+일치하는 `id` 속성이 있는 태그를 찾는다.
 
 ```
 #ID

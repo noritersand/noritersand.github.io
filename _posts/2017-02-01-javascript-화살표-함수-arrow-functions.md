@@ -114,6 +114,27 @@ console.log(square(2)); // 4 출력
 
 ## 제한사항
 
+### 화살표 함수의 this는 함수의 소유자가 아니라 전역 객체
+
+```js
+var obj = {
+  do: () => {
+    console.log('do this:', this); // window
+  },
+  do2() {
+    console.log('do2 this:', this); // obj
+  }
+};
+```
+
+MDN을 보면 이런 말이 있는데:
+
+> 'this, arguments, super가 없고 메서드로 사용하면 안됨'
+
+`this` 때문에 화살표 함수는 그냥 함수처럼 호출해야지 메서드로 취급하면 안된다는 말 같음.
+
+### TODO
+
 > - Arrow functions don't have their own bindings to this, arguments or super, and should not be used as methods.
 > - Arrow functions don't have access to the new.target keyword.
 > - Arrow functions aren't suitable for call, apply and bind methods, which generally rely on establishing a scope.
@@ -121,12 +142,6 @@ console.log(square(2)); // 4 출력
 > - Arrow functions cannot use yield, within its body.
 >
 > https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
-
-TODO 뭔가 안되는게 많음
-
-### this, arguments, super가 없고 메서드로 사용하면 안됨
-
-TODO 메서드로 사용하면 안된다는게 무슨 말일까
 
 [여기 참고](https://developer.mozilla.org/en-US/docs/Glossary/Method)할 것.
 

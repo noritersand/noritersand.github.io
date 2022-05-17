@@ -25,9 +25,15 @@ tags:
 
 **TODO 생성자 함수는 스태틱, 프로토타입은 인스턴스로 변경할 것**
 
-## Object
+## Object vs Object.prototype
 
 `Object`는 `Object.prototype`의 생성자 함수이면서 동시에 객체 관련 유틸성 메서드를 제공하는 표준 내장 객체다. 프로토타입이 아니므로 `Object`의 프로퍼티와 메서드는 상속되지 않는다.
+
+`Object.prototype`은 모든 객체의 조상, 최상위 프로토타입인 `Object` 프로토타입이다.
+
+`Object`의 메서드는 `Object.fn()` 같은 형태로 호출하니 스태틱 메서드, `Object.prototype`의 메서드는 인스턴스로 만들어진 객체를 통해 호출하니 인스턴스 메서드로 분류한다.
+
+## 스태틱 메서드
 
 ### [Object.getOwnPropertyDescriptor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor), [Object.getOwnPropertyDescriptors()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
 
@@ -104,9 +110,20 @@ console.log(o3); // Object { a: 1, b: 2, c: 3 }
 console.log(o1 === o3); // true
 ```
 
-## Object.prototype
+### [Object.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
 
-모든 객체의 조상, 최상위 프로토타입인 `Object` 프로토타입.
+주어진 객체 고유(=소유한)의 열거 가능한 속성들의 값을 배열로 반환한다.
+
+```js
+var obj = {
+  str: 'abc',
+  num: 123,
+  boo: true
+};
+Object.values(obj); // Array(3) [ "abc", 123, true ]
+```
+
+## 인스턴스 메서드
 
 ### [Object.prototype.hasOwnProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
 

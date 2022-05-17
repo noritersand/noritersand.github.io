@@ -1165,7 +1165,7 @@ git push origin v1.5  # origin 저장소에 v1.5 태그 업로드
 git push --tags  # 생성한 태그를 모두 업로드
 ```
 
-## rebase
+## [rebase](https://git-scm.com/docs/git-rebase)
 
 `rebase`의 기본 기능은 현재 브랜치를 다른 브랜치에 머지하는 것이지만, 옵션을 사용해 여러 커밋을 하나로 합치거나 커밋 메시지를 수정하기도 한다.
 
@@ -1205,7 +1205,10 @@ pick 7715f75fa (HEAD)
 # r, reword <commit> = use commit, but edit the commit message
 # e, edit <commit> = use commit, but stop for amending
 # s, squash <commit> = use commit, but meld into previous commit
-# f, fixup <commit> = like "squash", but discard this commit's log message
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+#                    commit's log message, unless -C is used, in which case
+#                    keep only this commit's message; -c is same as -C but
+#                    opens the editor
 # x, exec <command> = run command (the rest of the line) using shell
 # b, break = stop here (continue rebase later with 'git rebase --continue')
 # d, drop <commit> = remove commit
@@ -1214,16 +1217,26 @@ pick 7715f75fa (HEAD)
 # m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
 # .       create a merge commit using the original merge commit's
 # .       message (or the oneline, if no original merge commit was
-# .       specified). Use -c <commit> to reword the commit message.
+# .       specified); use -c <commit> to reword the commit message
 #
 # These lines can be re-ordered; they are executed from top to bottom.
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 #
 # However, if you remove everything, the rebase will be aborted.
-#
-# Note that empty commits are commented out
 ```
+
+이 상태에서 코멘트 라인이 아닌 부분을 원하는대로 수정한 뒤 저장`:wq`하면 다음 작업이 진행된다.
+
+몇 가지 예를 들면:
+
+- 모두 `pick` 상태로 두고 위치를 바꾸면 커밋 순서가 바뀐다.
+- `reword`는 커밋 메시지만 수정하겠다는 의미
+- 최상단(지정한 범위 중 가장 오래된 커밋)을 `pick`으로 두고 나머지를 `squash`로 바꾸면 `pick` 커밋으로 나머지를 합치는 squash merge가 된다.
+- `squash` 대신 `fixup`으로 바꾸면 `squash`와 같지만 커밋 메시지는 합치지 않는다.
+- `drop` 상태로 바꾸거나 줄을 지워버리면 해당 커밋은 삭제된다.
+
+\* 기본 에디터인 Vim에선 <kbd>ctrl + a</kbd>와 <kbd>ctrl + x</kbd>로 rebase 옵션을 변경할 수 있음.
 
 [Pro Git book: 커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple)
 

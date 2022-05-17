@@ -50,15 +50,35 @@ FROM SOME_TABLE ST
 LIMIT 5 OFFSET 10 -- 열한 번째부터 5개
 ```
 
+## 계산식
 
-`offset` 계산은 요딴식으로:
+OFFSET 계산은 요딴식으로:
 
 ```java
-private int calculateOffset(int pageSize, int pageNum) {
+/** OFFSET 계산 */
+int calculateOffset(int pageSize, int pageNum) {
     if (pageNum <= 0) {
         return 0;
     }
     return (pageNum - 1) * pageSize;
+}
+
+/** 남은 로우의 수 계산 */
+long getRestRows(long entireDataCount, int pageSize, int pageNum) {
+    if (pageNum <= 0) {
+        throw new IllegalArgumentException("pageNum must be greater than 0");
+    }
+    long rest = entireDataCount - Long.valueOf(pageSize) * Long.valueOf(pageNum);
+    return rest > 0 ? rest : 0;
+}
+
+/** 다음 페이지 번호 계산 */
+int getNextPageNum(long entireDataCount, int pageSize, int currentPageNum) {
+    if (currentPageNum <= 0) {
+        throw new IllegalArgumentException("currentPageNum must be greater than 0");
+    }
+    long rest = getRestRows(entireDataCount, pageSize, currentPageNum);
+    return rest > 0 ? currentPageNum + 1 : 0;
 }
 ```
 
