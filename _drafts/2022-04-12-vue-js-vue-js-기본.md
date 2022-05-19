@@ -15,9 +15,8 @@ tags:
 
 #### 참고한 문서
 
-- [공식 사이트](https://vuejs.org/)
-- [V2 공식 가이드: 한글](https://kr.vuejs.org/v2/guide/index.html)
-- [깃허브](https://github.com/vuejs/vue)
+- [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
+- [\[Vue.js\] API](https://vuejs.org/api/)
 
 #### 버전 정보
 
@@ -258,20 +257,19 @@ var app4 = new Vue({
 
 버튼 태그를 클릭하면 아래의 `reverseMessage` 함수가 실행된다:
 
-TODO 구버전임
-
 ```js
-var app5 = new Vue({
-  el: '#app-5',
-  data: {
-    message: '안녕하세요! Vue.js!'
+createApp({
+  data() {
+    return {
+      message: '안녕하세요! Vue.js!'
+    }
   },
   methods: {
     reverseMessage: function () {
       this.message = this.message.split('').reverse().join('')
     }
   }
-});
+}).mount("#app");
 ```
 
 여기서 `this`는 `reverseMessage`의 소유자 `methods`가 아니라 `app5`다. 요것은 Vue.js의 특성임.
@@ -308,7 +306,7 @@ var app6 = new Vue({
 
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
 
-## 컴포넌트
+## 컴포넌트 Components
 
 TODO 구버전임
 
@@ -332,108 +330,32 @@ var app = new Vue({
 
 이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
 
+## 컴포넌트: Props
+
+부모한테 받아오는 읽기 전용 값.
+
+## State
+
+`data()` 같은 거
+
+TODO
+
 ## Template Refs
 
-DOM 요소에 직접 접근할 때 `ref`를 사용할 수 있다:
+DOM 요소에 직접 접근할 때 사용함:
 
 ```html
 <input ref="focusMe">
 ```
 
 ```js
-  mounted() {
-    this.$refs.focusMe.focus()
-  }
-```
-
-## Options API
-
-[\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
-
-```js
-createApp({
-  created() { // <--
-    document.title += `: ${pageTitle}`;
-  },
-  data() { // <--
-    return {
-      pageTitle: pageTitle,
-    };
-  },
-}).mount("#app");
-```
-
-얘네들의 분류가 왜 'Options API'인지는 모르겠다.
-
-TODO
-
-### data()
-
-state를 선언할 때 사용한다:
-
-```js
-createApp({
-  data() {
-    return {
-      message: 'Hello World!',
-      counter: { count: 0 }
-    }
-  }
-}).mount('#app')
-```
-
-`data()`에서 반환한 프로퍼티는 ... TODO
-
-### created()
-
-> After init Options API
-
-데이터와 이벤트가 활성화된 시점. `mounted()`보다 이르다.
-
-TODO
-
-### mounted()
-
-> After initial render, create & insert DOM nodes
-
-DOM이 생성된 시점. `created()`보다 나중이다.
-
-TODO
-
-### methods()
-
-```js
-createApp({
-  ...
-  methods: {
-    sayHello() {
-      console.log('Hello!');
-    }
-  }
-}).mount('#app')
-```
-
-TODO
-
-### computed()
-
-TODO
-
-### watch()
-
-```js
-createApp({
-  ...
-  watch: {
-    todoId() {
-      this.fetchData()
-    }
-  }
-}).mount('#app')
+mounted() {
+  this.$refs.focusMe.focus()
+}
 ```
 
 ## `<template>`의 용도
 
-조건부 랜더링 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
+랜더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
