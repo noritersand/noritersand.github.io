@@ -364,7 +364,7 @@ console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
 ReactDOM.hydrate(element, container[, callback])
 ```
 
-> render()와 동일하지만 HTML 컨텐츠가 ReactDOMServer로 렌더링 된 컨테이너에 이벤트를 보충하기 위해 사용됩니다. React는 기존 마크업에 이벤트 리스너를 연결합니다.
+> render()와 동일하지만 HTML 콘텐츠가 ReactDOMServer로 렌더링 된 컨테이너에 이벤트를 보충하기 위해 사용됩니다. React는 기존 마크업에 이벤트 리스너를 연결합니다.
 
 TODO 뭔 소린지 모르겠음. SSR 페이지는 이거 쓰라고 검색 결과에 나오긴 하는데...
 

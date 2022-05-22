@@ -46,8 +46,8 @@ public class SpringTest {
 |-------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------|
 |  HttpServletRequest, HttpServletResponse, HttpSession |  Servlet API |
 |  java.util.Locale |  현재 요청에 대한 Locale 정보 |
-|  InputStream, Reader |  요청 컨텐츠에 직접 접근할 때 사용 |
-|  OutputStream, Writer |  응답 컨텐츠를 생성할 때 사용 |
+|  InputStream, Reader |  요청 콘텐츠에 직접 접근할 때 사용 |
+|  OutputStream, Writer |  응답 콘텐츠를 생성할 때 사용 |
 |  @PathVariable 어노테이션 적용 변수 |  URL 템플릿 변수에 접근할 때 사용 |
 |  @RequestParam 어노테이션 적용 변수 |  HTTP 파라미터와 매핑 |
 |  @RequestHeader 어노테이션 적용 변수 |  HTTP 헤더 매핑 |

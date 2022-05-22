@@ -121,7 +121,7 @@ TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/b
 
 ### Array.prototype.filter()
 
-주어진 조건을 만족하는 새 배열을 반환한다. `true` 혹은 `false`를 반환하는 함수를 인자로 받는다.
+특정 조건으로 필터링한 새 배열을 반환한다. 콜백 함수에서 `true` 혹은 `false`를 반환해야 하며, `true`가 아닐 경우 해당 요소를 제외한 배열을 반환한다. 원본은 변하지 않는다.
 
 ```js
 var arr = [1, 2, 3, 4];

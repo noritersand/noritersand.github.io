@@ -296,7 +296,7 @@ line2
 </c:import>
 ```
 
-### Syntax 2: 해당 주소의 컨텐츠를  Reader 객체로
+### Syntax 2: 해당 주소의 콘텐츠를  Reader 객체로
 
 ```html
 <c:import url="url" [context="context"]

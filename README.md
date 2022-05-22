@@ -68,16 +68,16 @@ jekyll serve --help
 ### 빌드 방법
 
 ```bash
-# 현재 폴더의 컨텐츠를 가지고 ./_site 에 사이트를 생성.
+# 현재 폴더의 콘텐츠를 가지고 ./_site 에 사이트를 생성.
 jekyll build
 
 # 초안을 포함하여 빌드
 jekyll build --drafts
 
-# 현재 폴더의 컨텐츠를 가지고 <destination> 에 사이트를 생성
+# 현재 폴더의 콘텐츠를 가지고 <destination> 에 사이트를 생성
 jekyll build --destination <destination>
 
-# 현재 폴더의 컨텐츠를 가지고 ./_site 에 사이트를 생성.
+# 현재 폴더의 콘텐츠를 가지고 ./_site 에 사이트를 생성.
 # 변경사항이 감지되면, 자동으로 다시 생성.
 jekyll build --watch
 ```

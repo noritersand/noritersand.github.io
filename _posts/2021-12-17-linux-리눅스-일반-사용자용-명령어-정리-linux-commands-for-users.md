@@ -221,7 +221,7 @@ curl -X POST "http://take-my-json-attack.com" -H "accept: application/json" -H "
 
 ## wget
 
-컨텐츠 다운로드 명령어. 지정된 URL의 결과를 파일로 다운로드한다.
+콘텐츠 다운로드 명령어. 지정된 URL의 결과를 파일로 다운로드한다.
 
 ```bash
 # example.com의 "index.html" 제목 페이지를 파일로 내려받기

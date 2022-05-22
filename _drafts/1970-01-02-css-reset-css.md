@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-02 00:00:00 +0900
-title: '[css] reset.css'
+title: '[CSS] reset.css'
 categories:
   - css
 tags:

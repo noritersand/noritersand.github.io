@@ -43,9 +43,9 @@ window.frames[0].location.href = 'http://tistory.com';
 var childUrl = window.frames[0].location.href; // SecurityError: Permission denied to access on cross-origin object
 ```
 
-## 혼합된 컨텐츠
+## 혼합된 콘텐츠
 
-child 내에서 http 컨텐츠를 불러올 수 없거나 경고 메시지가 발생한다. 이미지는 경고로 끝나고 css나 js는 차단된다. child내의 또 다른 iframe이 있을 때도 https 컨텐츠가 아니면 차단된다.
+child 내에서 http 콘텐츠를 불러올 수 없거나 경고 메시지가 발생한다. 이미지는 경고로 끝나고 css나 js는 차단된다. child내의 또 다른 iframe이 있을 때도 https 콘텐츠가 아니면 차단된다.
 
 ## 참고
 

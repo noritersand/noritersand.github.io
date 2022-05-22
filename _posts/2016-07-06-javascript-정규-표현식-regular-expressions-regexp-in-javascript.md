@@ -49,6 +49,15 @@ new RegExp( pattern [, flags ] )
 var re = new RegExp("ab+c", "i");
 ```
 
+이 방법은 정규식 패턴을 변수로 다뤄야할 때 유용하다:
+
+```js
+let value = 'abc';
+let from = 'C';
+let to = '씨';
+value = value.replace(new RegExp(from, 'gi'), to); // 'ab씨'
+```
+
 ## flag
 
 - `g`: 전역 검색. 지정된 범위 내에서 모두 검색하라는 의미다. 이 플래그가 없으면 메서드에 따라 첫 번째 검색 결과만 반환함
