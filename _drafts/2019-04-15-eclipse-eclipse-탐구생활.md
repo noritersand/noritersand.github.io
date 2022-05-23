@@ -133,7 +133,7 @@ JST 서버별 `Overview > Edit Configuration > Source`는 직접 설정하진 �
 
 `Projects`와 `Libraries` 탭에서 추가한 항목은 자동으로 이 설정에도 추가된다.
 
-## 리펙터 Refactor
+## 리팩터 Refactor
 
 ### pull up
 
