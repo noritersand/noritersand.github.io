@@ -22,7 +22,7 @@ tags:
 
 TODO DOM(Document Object Model) 어쩌구 저쩌구
 
-내 맴대로 분류한 DOM 선택 관련 메서드 정리.
+내 맴대로 분류한 DOM 선택 관련 API 정리.
 
 이미 Element를 선택한 상태에서 탐색하는 기능은 Traversing으로 분류함.
 

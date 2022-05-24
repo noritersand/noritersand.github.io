@@ -22,7 +22,7 @@ tags:
 
 TODO DOM(Document Object Model) 어쩌구 저쩌구
 
-내 맴대로 분류한 DOM 조작 관련 메서드 정리.
+내 맴대로 분류한 DOM 조작 관련 API 정리.
 
 ## append
 
