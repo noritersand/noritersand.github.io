@@ -138,7 +138,7 @@ wjb -> Wait-Job                   write -> Write-Output
 
 ## Microsoft.Powershell.Core
 
-### [Get-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-history?view=powershell-7.2)
+### Get-History
 
 명령어 실행 이력 보기. 기본 별칭 `history`
 
@@ -148,7 +148,7 @@ Get-History 10 # 10번 째로 실행한 명령어 보기
 Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
 ```
 
-### [Invoke-History](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-history?view=powershell-7.2)
+### Invoke-History
 
 기본 별칭 `r`, `ihy`
 
@@ -158,7 +158,7 @@ Invoke-History -Id 132 # 132번 명령어 실행
 Invoke-History 132 # 위와 같음
 ```
 
-### [Where-Object](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/where-object?view=powershell-7.2)
+### Where-Object
 
 프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
 
@@ -169,7 +169,7 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
 ## Microsoft.PowerShell.Management
 
-### [Get-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-process?view=powershell-7.2)
+### Get-Process
 
 프로세스 가져오기. 기본 별칭은 `ps`.
 
@@ -186,7 +186,7 @@ Get-Process 'SoundSwitch'
 - `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러개일 땐 콤마`,`로 구분함
 - `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
 
-### [Start-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/start-process?view=powershell-7.2)
+### Start-Process
 
 프로세스 시작. 기본 별칭은 `saps`.
 
@@ -195,7 +195,7 @@ Start-Process powershell –verb runAs # 관리자 권한으로 파워셸 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
-### [Stop-Process](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-process?view=powershell-7.2)
+### Stop-Process
 
 하나 이상의 프로세스를 중지하는 명령어. 기본 별칭은 `kill`.
 
@@ -204,7 +204,7 @@ Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 �
 Stop-Process -Name 'SoundSwitch'
 ```
 
-### [Get-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-service?view=powershell-7.2)
+### Get-Service
 
 서비스 가져오기. 기본 별칭은 `gsv`.
 
@@ -212,7 +212,7 @@ Stop-Process -Name 'SoundSwitch'
 
 - `-Name`: 파라미터의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
 
-### [Stop-Service](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/stop-service?view=powershell-7.2)
+### Stop-Service
 
 하나 이상의 서비스를 중지하는 명령어. 기본 별칭은 `spsv`.
 
@@ -220,7 +220,7 @@ Stop-Process -Name 'SoundSwitch'
 Stop-Service -Name "sysmonlog"
 ```
 
-### [Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.2)
+### Get-Content
 
 기본 별칭 `type`
 
@@ -228,7 +228,7 @@ Stop-Service -Name "sysmonlog"
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 ```
 
-### [Get-ChildItem](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.2)
+### Get-ChildItem
 
 기본 별칭 `ls`
 
@@ -249,7 +249,7 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 - `ErrorAction`
 - `Force`
 
-### [Copy-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/copy-item?view=powershell-7.2)
+### Copy-Item
 
 기본 별칭 `copy`
 
@@ -257,7 +257,7 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 ```
 
-### [Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.2)
+### Remove-Item
 
 기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
 
@@ -270,7 +270,7 @@ Remove-Item .\copy\ -r -Force
 - `-r`: 재귀삭제
 - `-Force`: 확인 없이 삭제
 
-### [Resolve-Path](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/resolve-path?view=powershell-7.2)
+### Resolve-Path
 
 지정된 아이템의 전체 경로를 출력한다. 기본 별칭은 `rvpa`.
 
@@ -293,7 +293,7 @@ Resolve-Path -Relative ~
 
 ## Microsoft.Powershell.Utility
 
-### [Set-Variable](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/set-variable?view=powershell-7.2)
+### Set-Variable
 
 현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함. 기본 별칭은 `set`, `sv`
 
@@ -307,7 +307,7 @@ $qwer
 # 1234
 ```
 
-### [Get-Variable](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/get-variable?view=powershell-7.2)
+### Get-Variable
 
 변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.2).
 
@@ -325,11 +325,11 @@ Get-Variable -Name m* -ValueOnly
 Get-Variable -Include m*, p*
 ```
 
-### [Get-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-host?view=powershell-7.2)
+### Get-Host
 
 명령어를 입력하고 있는 호스트 프로그램(=파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
-### [Out-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-string?view=powershell-7.2)
+### Out-String
 
 오브젝트를 문자열로 출력한다. 이렇게 활용 가능:
 
@@ -338,7 +338,7 @@ Get-Variable -Include m*, p*
 Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 ```
 
-### [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
+### Select-String
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
@@ -373,7 +373,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
 
-### [Get-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-alias?view=powershell-7.2)
+### Get-Alias
 
 설정된 별칭 목록을 출력한다. 기본 별칭 `gal`, `alias`
 
@@ -383,7 +383,7 @@ alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 �
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 ```
 
-### [Set-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2)
+### Set-Alias
 
 신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.2)도 있는데 요건 재할당이 안되서 이미 있는 별칭이라면 에러가 발생한다.
 
@@ -416,7 +416,7 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 
 함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2).
 
-### [Write-Output](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.2)
+### Write-Output
 
 특정 객체를 파이프라인에 쓴다. 다른 Cmdlet로 파이프하거나 변수에 할당할 수 있다. 만약 Write-Output이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다. 기본 별칭은 `echo`.
 
@@ -430,7 +430,7 @@ Write-Output $PSHOME
 Write-Output $null >> dummy-for-commit.txt
 ```
 
-### [Write-Host](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7.2)
+### Write-Host
 
 오직 콘솔 출력만을 위한 명령어. Write-Output과 달리 파이프라인에 보내지 않고 콘솔에 직접 쓴다. 따라서 다른 Cmdlet으로 파이프하거나 변수 할당은 할 수 없다. 기본 별칭은 없음.
 
@@ -444,7 +444,7 @@ $abc: 123
 Write-Output
 
 
-### [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.2)
+### Invoke-WebRequest
 
 웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다. 기본 별칭은 `iwr`.
 

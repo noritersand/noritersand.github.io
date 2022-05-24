@@ -210,6 +210,18 @@ arr.slice(1, -1) // Array [ "다", "라" ]
 arr.splice( start [, deleteCount [, item1 [, item2 [, ...] ] ] ] )
 ```
 
+지정한 인덱스인 `start`부터 `deleteCount`만큼 잘라내 반환한다. 잘라내어진 요소는 원본 배열에서 사라진다.
+
+```js
+var arr = ['a', 'b', 'c'];
+arr.splice(0); //Array(3) [ "a", "b", "c" ]
+arr; // Array []
+
+var arr = ['a', 'b', 'c'];
+arr.splice(1, 2); // Array [ "b", "c" ]
+arr; // Array [ "a" ]
+```
+
 ### Array.prototype.fill()
 
 배열의 특정 인덱스를 주어진 값 하나로 채우거나 뒤바꾸는 메서드.

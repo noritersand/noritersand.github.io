@@ -285,7 +285,7 @@ const conditional = (
 
 ## 리액트의 주요 API
 
-### [React.createElement](https://ko.reactjs.org/docs/react-api.html#createelement)
+### React.createElement
 
 ```
 React.createElement(
@@ -343,7 +343,7 @@ const element3 = React.createElement('h2', {
 
 그리고 `key`가 `props`에 속하는 것처럼 보이지만 `this.props.key`로 참조할 수 없다고 한다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
 
-### [ReactDOM.render()](https://ko.reactjs.org/docs/react-dom.html#render)
+### ReactDOM.render()
 
 ```
 ReactDOM.render(element, container[, callback])
@@ -358,7 +358,7 @@ const ele = ReactDOM.render(element, rootElement);
 console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
 ```
 
-### [ReactDOM.hydrate()](https://ko.reactjs.org/docs/react-dom.html#hydrate)
+### ReactDOM.hydrate()
 
 ```
 ReactDOM.hydrate(element, container[, callback])

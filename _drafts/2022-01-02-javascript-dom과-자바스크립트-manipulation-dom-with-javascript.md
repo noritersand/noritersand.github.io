@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [somewhere](somewhere)
+- [\[MDN\] Node](https://developer.mozilla.org/en-US/docs/Web/API/Node)
 
 ## 개요
 
@@ -26,7 +26,7 @@ TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 ## append
 
-### [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+### Node.appendChild()
 
 ```html
 <button onclick="appendIframe()">눌러</button>

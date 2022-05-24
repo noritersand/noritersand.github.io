@@ -16,7 +16,7 @@ tags:
 
 #### 참고한 문서
 
-- [somewhere](somewhere)
+- [\[MDN\] Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 
 ## 개요
 
@@ -24,7 +24,7 @@ TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 내 맴대로 분류한 DOM 생성 관련 메서드 정리.
 
-## [Document.prototype.createElement()](https://developer.mozilla.org/ko/docs/Web/API/Document/createElement)
+## Document.prototype.createElement()
 
 ```js
 var $body = document.querySelector('body');
@@ -33,7 +33,7 @@ $p.innerHTML = 'Hello world!';
 $body.appendChild($p);
 ```
 
-## [Document.prototype.createTextNode()](https://developer.mozilla.org/ko/docs/Web/API/Document/createTextNode)
+## Document.prototype.createTextNode()
 
 ```js
 // 스크립트로 인터널 CSS 추가하기
