@@ -94,14 +94,14 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 
 **TODO 구체적인 우선순위 추가할 것**
 
-#### 스타일 선언 방식에 따른 우선순위
+### 스타일 선언 방식에 따른 우선순위
 
 1. Inline
 1. Embedded
 1. Linked
 1. Imported
 
-#### !important
+### !important
 
 스타일 적용 최우선순위를 알리는 예외 규칙이다. 심지어 인라인 스타일보다 우선 적용된다.
 

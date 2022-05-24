@@ -26,6 +26,21 @@ TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 ## append
 
+### [Node.appendChild()](https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild)
+
+```html
+<button onclick="appendIframe()">눌러</button>
+<div id="target"></div>
+
+<script>
+function appendIframe() {
+  var iframe = document.createElement('iframe');
+  iframe.src = 'http://noritersand.tistory.com';
+  document.querySelector('#target').appendChild(iframe);
+}
+</script>
+```
+
 ## prepend
 
 ## before

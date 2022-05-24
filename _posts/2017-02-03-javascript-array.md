@@ -30,7 +30,7 @@ TODO
 
 ## 스태틱 메서드
 
-### [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
+### Array.from()
 
 ```
 Array.from( arrayLike, function mapFn( element, index ) { /* ... */ } [, thisArg] )
@@ -83,7 +83,7 @@ arr; // ['b', 'c', 'd', 'a']
 
 맨 앞 요소를 뽑음
 
-### [Array.prototype.includes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes)
+### Array.prototype.includes()
 
 있는지 확인(마치 `contains()`처럼).
 
@@ -92,7 +92,7 @@ let arr = ['a', 'b', 'c'];
 arr.includes('b'); // true
 ```
 
-### [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+### Array.prototype.map()
 
 ```
 arr.map( function callback( element, index, array ) [, thisArg] )
@@ -134,7 +134,7 @@ arr === even; // false
 
 ### Array.prototype.some()
 
-### [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
+### Array.prototype.every()
 
 `forEach()`와 같이 배열의 모든 요소를 콜백함수 첫 번째 파라미터로 제공한다. 차이점은 모든 루프에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 쓴다는 것.
 
@@ -159,7 +159,7 @@ console.log(isNullish); // true
 
 ### Array.prototype.reduce()
 
-### [Array.prototype.reverse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse)
+### Array.prototype.reverse()
 
 배열의 순서를 거꾸로 뒤집은 배열을 반환한다. **원본이 변화한다.**
 
@@ -169,7 +169,7 @@ arr.reverse(); // Array(3) [ "c", "b", "a" ]
 arr; // Array(3) [ "c", "b", "a" ]
 ```
 
-### [Array.prototype.slice()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+### Array.prototype.slice()
 
 특정 인덱스 범위의 요소를 잘라내 반환하는 메서드. 원본은 변하지 않는다.
 
@@ -210,7 +210,7 @@ arr.slice(1, -1) // Array [ "다", "라" ]
 arr.splice( start [, deleteCount [, item1 [, item2 [, ...] ] ] ] )
 ```
 
-### [Array.prototype.fill()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/fill)
+### Array.prototype.fill()
 
 배열의 특정 인덱스를 주어진 값 하나로 채우거나 뒤바꾸는 메서드.
 
@@ -234,7 +234,7 @@ arr.fill(5, 1);
 
 ### Array.prototype.join()
 
-### [Array.prototype.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat)
+### Array.prototype.concat()
 
 주어진 배열이나 값을 이어붙인 새 배열을 반환한다. 원본은 변하지 않는다.
 

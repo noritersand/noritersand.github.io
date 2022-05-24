@@ -35,7 +35,7 @@ tags:
 
 ## 스태틱 메서드
 
-### [Object.getOwnPropertyDescriptor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor), [Object.getOwnPropertyDescriptors()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptors)
+### Object.getOwnPropertyDescriptor(), Object.getOwnPropertyDescriptors()
 
 객체의 모든 프로퍼티 설명자 혹은 특정 프로퍼티의 설명자를 반환한다. 설명자란 해당 프로퍼티가 어떻게 설정(쓰기 가능한지, 열거 가능한지 등등)되어 있는지를 알려주는 객체다.
 
@@ -58,7 +58,7 @@ Object.getOwnPropertyDescriptors(String.prototype);
 // Object { length: {…}, toString: {…}, valueOf: {…}, toLowerCase: {…}, toUpperCase: {…}, charAt: {…}, charCodeAt: {…}, substring: {…}, padStart: {…}, padEnd: {…}, … }
 ```
 
-### [Object.getOwnPropertyNames()](https://github.com/nhn/tui.grid/tree/master/packages/toast-ui.grid/docs)
+### Object.getOwnPropertyNames()
 
 특정 개체가 소유한 프로퍼티들의 이름을 배열로 반환한다.
 
@@ -70,7 +70,7 @@ Object.getOwnPropertyNames(String.prototype).filter((e) => {
 // Array(4) [ "toLowerCase", "toUpperCase", "toLocaleLowerCase", "toLocaleUpperCase" ]
 ```
 
-### [Object.defineProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty)
+### Object.defineProperty()
 
 객체에 새로운 프로퍼티를 정의하거나 이미 존재하는 프로퍼티를 수정하는 메서드.
 
@@ -83,7 +83,7 @@ Object.getOwnPropertyDescriptor(Object.prototype, 'name');
 // { value: "waldo", writable: false, enumerable: true, configurable: false }
 ```
 
-### [Object.create()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create)
+### Object.create()
 
 ```
 Object.create(proto)
@@ -92,7 +92,7 @@ Object.create(proto, propertiesObject)
 
 주어진 객체로 새 인스턴스를 만들어 반환한다. 이 때 `proto`는 인스턴스의 프로토타입이 된다.
 
-### [Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
+### Object.assign()
 
 ```
 Object.assign(target, ...sources)
@@ -110,7 +110,7 @@ console.log(o3); // Object { a: 1, b: 2, c: 3 }
 console.log(o1 === o3); // true
 ```
 
-### [Object.values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
+### Object.values
 
 주어진 객체 고유(=소유한)의 열거 가능한 속성들의 값을 배열로 반환한다.
 
@@ -125,6 +125,6 @@ Object.values(obj); // Array(3) [ "abc", 123, true ]
 
 ## 인스턴스 메서드
 
-### [Object.prototype.hasOwnProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)
+### Object.prototype.hasOwnProperty()
 
 ## 꼐속...

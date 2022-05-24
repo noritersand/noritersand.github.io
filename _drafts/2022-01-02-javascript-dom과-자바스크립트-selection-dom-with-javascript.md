@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-02 00:40:56 +0900
-title: '[JavaScript] DOM과 자바스크립트: Selector'
+title: '[JavaScript] DOM과 자바스크립트: Selection'
 categories:
   - javascript
 tags:

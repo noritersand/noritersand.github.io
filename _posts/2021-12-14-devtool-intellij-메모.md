@@ -51,6 +51,8 @@ TODO
 - Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
 - Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- Maximize Editor/Normalize Splits: <kbd>ctrl + shift + alt + '</kbd> 에디터 창 최대화/원래대로 토글
+
 
 ## TODO 톰캣 퍼블리싱 폴더는 어디일까
 
