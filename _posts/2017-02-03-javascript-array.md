@@ -159,6 +159,17 @@ console.log(isNullish); // true
 
 ### Array.prototype.reduce()
 
+사용자가 제공한 콜백함수를 실행하는데 이 함수의 인자로 이전 요소의 연산결과를 넘겨준다. 가령 숫자 배열을 총 합을 계산한다던지 등 모든 요소에 대한 단일 결과값이 필요할 때 사용한다.
+
+```
+arr.reduce(function callback(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
+```
+
+```js
+var arr = [1, 2, 3, 4];
+arr.reduce((prev, cur) => prev + cur);  // 10
+```
+
 ### Array.prototype.reverse()
 
 배열의 순서를 거꾸로 뒤집은 배열을 반환한다. **원본이 변화한다.**

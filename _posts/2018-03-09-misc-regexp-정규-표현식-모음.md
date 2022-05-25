@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## misc
+## RegExp 인스턴스 모음
 
 ### 특정 문자열 중에 하나와 완전히 일치하는지 검사
 
@@ -92,10 +92,11 @@ nameCard NameCard name-card name--card NAME_CARD NAME___CARD
 /\w+_/
 ```
 
-### 날짜 포맷 검사: yyyy-MM-dd
+### 날짜 포맷: yyyy-MM-dd
 
 ```js
 /[12][0-9]{3}-[0-9]{2}-[0-9]{2}/
+/[12][0-9]{3}-[01][0-9]-[0-3][0-9]/
 ```
 
 ### 이미지 태그 찾기
@@ -124,7 +125,7 @@ nameCard NameCard name-card name--card NAME_CARD NAME___CARD
 /^[a-zA-Z0-9]{5,50}$/
 ```
 
-## 자바스크립트에서 정규식 사용 예시
+## 함수 적용 예시 모음
 
 ### 숫자를 통화로
 
@@ -156,6 +157,12 @@ a.replace(/^\s*[\r\n]/gm, "");
 ```js
 'q!1@2#3뀨?asd한글'.replace(/[^A-Za-z0-9]/gi, '뿅');
 // 'q뿅1뿅2뿅3뿅뿅asd뿅뿅'
+```
+
+### 숫자와 하이픈`-`이 아니면 지움
+
+```js
+'a1c2D박3뿅-뿅45_$'.replace(/[^0-9-]/g, ''); // '123-45'
 ```
 
 ### 숫자가 아닌 문자는 빈문자열로 치환
@@ -245,7 +252,7 @@ function isValidNumber(data){
 'a12345'.match(/[^0-9]/) != null // 숫자가 아닌 문자가 있을 경우 true
 ```
 
-### 생년월일
+### yyyy-MM-dd 날짜 입력 제한
 
 ```js
 format = /[12][0-9]{3}-[01][0-9]-[0-3][0-9]/; //YYYY-MM-DD 검사표현식
