@@ -53,7 +53,8 @@ tags:
 
 - [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 퓨어 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 퓨어 자바스크립트 기반
-- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드 UI 라이브러리. 가볍게 쓰기 매우 좋다. NHN에서 만듦 😲
+- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드 UI 라이브러리. 가볍게 쓰기 매우 좋다. NHN에서 만듦
+- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
 
 ## 일정/TODO 관리
 

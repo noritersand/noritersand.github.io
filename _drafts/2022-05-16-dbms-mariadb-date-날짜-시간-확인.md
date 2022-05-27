@@ -30,6 +30,8 @@ tags:
 
 `DATE`, `DATETIME`, `TIME` 타입 관련 테스트 쿼리 걍 붙여넣음.
 
+## 쿼리
+
 ```sql
 SELECT
     DD.dummy,
@@ -37,7 +39,7 @@ SELECT
     DATE_FORMAT(DD.dummy, '%w') AS DAY,
     DATE_FORMAT(DD.dummy, '%W') AS DAY_STRING
 FROM (
-  SELECT STR_TO_DATE(D.dummy, '%Y-%m-%d' '%H:%i:%s') AS dummy
+  SELECT STR_TO_DATE(D.dummy, '%Y-%m-%d' '%H:%i:%s') AS dummy /* 포맷: yyyy-MM-dd HH:mm:dd */
   FROM (
 	  SELECT '2022-05-16 01:30:55' AS dummy
 	  UNION
