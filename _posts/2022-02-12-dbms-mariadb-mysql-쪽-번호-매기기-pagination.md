@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-02-12 00:23:23 +0900
-title: '[DBMS] MariaDB, MySQL: 쪽 번호 매기기 Pagination'
+title: '[DBMS] MariaDB, MySQL: 쪽 번호 매기기'
 categories:
   - dbms
 tags:
@@ -56,7 +56,7 @@ OFFSET 계산은 요딴식으로:
 
 ```java
 /** OFFSET 계산 */
-int calculateOffset(int pageSize, int pageNum) {
+calculateOffset(pageSize, pageNum) {
     if (pageNum <= 0) {
         return 0;
     }
@@ -64,20 +64,20 @@ int calculateOffset(int pageSize, int pageNum) {
 }
 
 /** 남은 로우의 수 계산 */
-long getRestRows(long entireDataCount, int pageSize, int pageNum) {
+getRestRows(entireDataCount, pageSize, pageNum) {
     if (pageNum <= 0) {
         throw new IllegalArgumentException("pageNum must be greater than 0");
     }
-    long rest = entireDataCount - Long.valueOf(pageSize) * Long.valueOf(pageNum);
+    rest = entireDataCount - pageSize * pageNum;
     return rest > 0 ? rest : 0;
 }
 
 /** 다음 페이지 번호 계산 */
-int getNextPageNum(long entireDataCount, int pageSize, int currentPageNum) {
+getNextPageNum(entireDataCount, pageSize, currentPageNum) {
     if (currentPageNum <= 0) {
         throw new IllegalArgumentException("currentPageNum must be greater than 0");
     }
-    long rest = getRestRows(entireDataCount, pageSize, currentPageNum);
+    rest = getRestRows(entireDataCount, pageSize, currentPageNum);
     return rest > 0 ? currentPageNum + 1 : 0;
 }
 ```
