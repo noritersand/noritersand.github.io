@@ -57,7 +57,7 @@ OFFSET 계산은 요딴식으로:
 ```java
 /** OFFSET 계산 */
 calculateOffset(pageSize, pageNum) {
-    if (pageNum <= 0) {
+    if (pageNum <= 1) {
         return 0;
     }
     return (pageNum - 1) * pageSize;
