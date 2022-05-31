@@ -53,6 +53,14 @@ TODO
 
 ## 인스턴스 메서드
 
+### Array.prototype.indexOf()
+
+TODO
+
+### Array.prototype.lastIndexOf()
+
+TODO
+
 ### Array.prototype.push()
 
 배열의 맨 뒤에 요소를 더하고 배열의 길이를 반환한다.
@@ -121,6 +129,14 @@ TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/b
 
 ### Array.prototype.filter()
 
+```
+filter(function(element, index, array) { /* ... */ }, thisArg)
+```
+
+- `element`: 배열의 각 요소
+- `index`: 인덱스
+- `array`: 배열 전체
+
 특정 조건으로 필터링한 새 배열을 반환한다. 콜백 함수에서 `true` 혹은 `false`를 반환해야 하며, `true`가 아닐 경우 해당 요소를 제외한 배열을 반환한다. 원본은 변하지 않는다.
 
 ```js
@@ -130,6 +146,13 @@ var even = arr.filter(function(element) {
 });
 even; // [2, 4]
 arr === even; // false
+```
+
+```js
+// 중복 요소만 필터링해서 반환
+array.filter((ele, idx, arr) => {
+  return arr.indexOf(ele) !== arr.lastIndexOf(ele)
+});
 ```
 
 ### Array.prototype.some()

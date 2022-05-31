@@ -47,9 +47,7 @@ data() {
 
 ### props
 
-```xml
-<some-picker :pick-this="'A3456'" :pick-these="['A1234', 'B5678', 'B6789']"><some-picker>
-```
+우선 이렇게 받을 값의 데이터 타입을 정의하고:
 
 ```js
 props: {
@@ -65,6 +63,14 @@ props: {
   }
 }
 ```
+
+요렇게 넘김:
+
+```xml
+<some-picker :pick-this="'A3456'" :pick-these="['A1234', 'B5678', 'B6789']"><some-picker>
+```
+
+사용할 때는 data와 똑같이 쓰면 된다. 읽기 전용 값이라 재할당은 불가능.
 
 ### created()
 

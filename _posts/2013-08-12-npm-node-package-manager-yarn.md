@@ -29,6 +29,9 @@ NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 �
 # package.json 의 "dependencies"를 참조하여 자동설치
 npm install
 
+# install의 단축어
+npm i
+
 # 로컬 모듈로 설치
 npm install 모듈1[, 모듈2, 모듈3, ...]
 

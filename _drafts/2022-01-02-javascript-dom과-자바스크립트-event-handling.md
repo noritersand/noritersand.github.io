@@ -133,3 +133,11 @@ window.addEventListener('beforeunload', (event) => {
 ```
 
 MDN의 설명에는 모든 브라우저에서 이 방법이 통하는 것은 아니라고 한다.
+
+## HTMLElement.click()
+
+클릭 이벤트를 강제로 발생시키는 메서드.
+
+```js
+document.querySelector('#input').click();
+```
