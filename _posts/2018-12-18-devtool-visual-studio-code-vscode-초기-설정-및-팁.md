@@ -175,7 +175,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   - 제안 선택: <kbd>tab</kbd>
   - 자동 완성 제안 창 보기: <kbd>ctrl + enter</kbd>
 
-## 기본 단축키 메모
+## 기본 단축키
 
 ### 파일 에디터
 

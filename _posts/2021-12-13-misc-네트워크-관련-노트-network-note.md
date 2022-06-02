@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-13 22:05:44 +0900
-title: '[misc] 네트워크 관련 메모'
+title: '[misc] 네트워크 관련 노트'
 categories:
   - misc
 tags:

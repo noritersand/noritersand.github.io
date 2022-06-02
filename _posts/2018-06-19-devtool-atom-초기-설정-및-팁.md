@@ -111,7 +111,7 @@ tags:
 - [sort-lines](https://atom.io/packages/sort-lines): 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.
 - [sync-settings](https://atom.io/packages/sync-settings): 아톰 설정을 동기화 하는 패키지. 설정은 깃허브 gist에 업로드한다. settings에서 'Ignore EOL' 체크할 것.
 
-## 기본 단축키 메모
+## 기본 단축키
 
 ### 커서/포커스 이동
 

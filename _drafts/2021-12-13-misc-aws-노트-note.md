@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-13 22:05:37 +0900
-title: '[misc] AWS 메모'
+title: '[misc] AWS 노트'
 categories:
   - misc
 tags:

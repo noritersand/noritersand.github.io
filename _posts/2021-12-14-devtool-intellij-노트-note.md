@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-14 18:23:22 +0900
-title: '[devtool] IntelliJ 메모'
+title: '[devtool] IntelliJ 노트'
 categories:
   - eclipse
 tags:
@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-인텔리제이 관련 단축키와 설정 등의 간단 메모 글.
+인텔리제이 관련 단축키와 설정 등의 간단 정리 글.
 
 자바 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
 
@@ -181,7 +181,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
-## 기본 단축키 메모
+## 기본 단축키
 
 ### 전역
 

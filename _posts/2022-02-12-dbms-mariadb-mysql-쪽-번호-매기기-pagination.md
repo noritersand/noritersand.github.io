@@ -17,7 +17,7 @@ tags:
 
 ## 개요
 
-MariaDB, MySQL에서 쓰는 페이징 쿼리 메모
+MariaDB, MySQL에서 쓰는 페이징 쿼리 저장
 
 ## [LIMIT](https://mariadb.com/kb/en/limit/)
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-14 18:40:49 +0900
-title: '[misc] ELK Stack 메모'
+title: '[misc] ELK Stack 노트'
 categories:
   - misc
 tags:

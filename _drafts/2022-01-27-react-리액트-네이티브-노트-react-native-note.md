@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-27 13:15:42 +0900
-title: '[React] 리액트 네이티브 메모 React Native dev note'
+title: '[React] 리액트 네이티브 노트'
 categories:
   - react
 tags:

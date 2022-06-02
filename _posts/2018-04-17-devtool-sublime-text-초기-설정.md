@@ -18,7 +18,7 @@ tags:
 
 ## 개요
 
-서브라임 텍스트 시리즈의 기본 설정, 단축키 등 메모.
+서브라임 텍스트 시리즈의 기본 설정, 단축키 등 정리.
 
 ## 기본 설정
 
@@ -129,7 +129,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데 `{ "keys": ["ctrl+shift+alt+d"], "command": "discard_all_modified" }` 위험해서 빼앰.
 
-## 기본 단축키 메모
+## 기본 단축키
 
 Build 3126 이후에 기록함.
 

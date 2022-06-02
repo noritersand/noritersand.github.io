@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-07 18:28:23 +0900
-title: '[DBMS] MariaDB 메모'
+title: '[DBMS] MariaDB 노트'
 categories:
   - dbms
 tags:
@@ -20,7 +20,7 @@ tags:
 
 ## 개요
 
-MariaDB 관련 내용 메모.
+MariaDB 관련 내용 아무거나 적음.
 
 ## 로컬 서버 설정
 
