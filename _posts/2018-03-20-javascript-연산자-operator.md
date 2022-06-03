@@ -360,7 +360,16 @@ func?.(args)
 
 객체 접근 연산자 `.`를 대체해 사용할 수 있다. 대상 객체가 `undefined`여도 에러 대신 `undefined`를 반환한다.
 
-2022-03-02 아직 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
+아직(2022-03-02) 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
+
+메서드 호출에 적용할 땐 주의해야 함:
+
+```java
+var obj = {};
+obj?.fn(); // Uncaught TypeError: obj.fn is not a function
+obj?.child.fn(); // Uncaught TypeError: can't access property "fn", obj.child is undefined
+obj?.child?.fn(); // 에러 안나고 undefined
+```
 
 TODO
 
