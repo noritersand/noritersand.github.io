@@ -34,26 +34,26 @@ tags:
 
 ```sql
 SELECT
-    DD.dummy,
-    DATE_FORMAT(DD.dummy, '%Y-%m-%dT%H:%i:%s.%f') AS ISO_FORMAT_LIKE,
-    DATE_FORMAT(DD.dummy, '%w') AS DAY,
-    DATE_FORMAT(DD.dummy, '%W') AS DAY_STRING
+    DD.DUMMY,
+    DATE_FORMAT(DD.DUMMY, '%Y-%m-%dT%H:%i:%s.%f') AS ISO_FORMAT_LIKE,
+    DATE_FORMAT(DD.DUMMY, '%w') AS DAY,
+    DATE_FORMAT(DD.DUMMY, '%W') AS DAY_STRING
 FROM (
-  SELECT STR_TO_DATE(D.dummy, '%Y-%m-%d' '%H:%i:%s') AS dummy /* 포맷: yyyy-MM-dd HH:mm:dd */
+  SELECT STR_TO_DATE(D.DUMMY, '%Y-%m-%d' '%H:%i:%s') AS DUMMY /* 포맷: yyyy-MM-dd HH:mm:dd */
   FROM (
-	  SELECT '2022-05-16 01:30:55' AS dummy
+	  SELECT '2022-05-16 01:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-17 05:30:55' AS dummy
+	  SELECT '2022-05-17 05:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-18 11:30:55' AS dummy
+	  SELECT '2022-05-18 11:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-19 13:30:55' AS dummy
+	  SELECT '2022-05-19 13:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-20 16:30:55' AS dummy
+	  SELECT '2022-05-20 16:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-21 20:30:55' AS dummy
+	  SELECT '2022-05-21 20:30:55' AS DUMMY
 	  UNION
-	  SELECT '2022-05-22 23:30:55' AS dummy
+	  SELECT '2022-05-22 23:30:55' AS DUMMY
   ) D
 ) DD;
 ```

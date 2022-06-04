@@ -34,3 +34,5 @@ function isIterable(obj) {
   return typeof obj[Symbol.iterator] === 'function';
 }
 ```
+
+[이런것](https://stackoverflow.com/questions/35949554/invoking-a-function-without-parentheses)도 가능함.

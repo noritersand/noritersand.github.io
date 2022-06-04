@@ -74,8 +74,9 @@ MDN의 가이드를 보면 모듈이 아닌 것은 일반 스크립트(standard 
 ### 내보내기
 
 ```js
-// 선언 하며 내보내기
+// 선언하며 내보내기
 export const name = 'Waldo';
+export function doSomething() {}
 
 // 선언 후 내보내기
 const ZERO = 0;

@@ -67,6 +67,8 @@ TAG_NAME
 [attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]
 ```
 
+⚠️ `value`는 따옴표로 감싸야 함.
+
 - `[attr]`: 지정한 속성이 정의되어 있는 요소 선택(값이 없더라도)
 - `=`: 속성과 값이 완전히 일치하는 요소를 선택
 - `~=`: TODO word selector

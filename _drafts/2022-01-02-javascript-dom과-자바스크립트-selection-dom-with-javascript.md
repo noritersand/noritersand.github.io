@@ -51,7 +51,16 @@ document.forms[0].elements['test3']; // 비표준
 
 ## Document.querySelector()
 
-CSS selector 사용 가능.
+CSS selector로 DOM 요소를 단 하나만 선택한다.
+
+jQuery와 달리 속성 셀렉터를 사용할 때 값은 반드시 따옴표로 감싸야 한다:
+
+```js
+document.querySelector('#abcd[data-sub-id=1234]'); // X
+// Uncaught DOMException: Failed to execute 'querySelector' on 'Document': '#abcd[data-sub-id=1234]' is not a valid selector.
+
+document.querySelector('#abcd[data-sub-id="1234"]'); // O
+```
 
 ```js
 document.querySelectorAll('div'); // 모든 div 태그 선택, 배열로 반환.
@@ -61,6 +70,10 @@ editor.textContent; // 바디가 있는 태그일 경우 태그 내의 텍스트
 editor.attributes; // 태그의 모든 속성을 배열로 반환
 editor.attributes['style']; // 태그에서 이름이 'style'인 속성 반환
 ```
+
+## Document.querySelectorAll()
+
+TODO
 
 ## 폼 셀렉터
 
