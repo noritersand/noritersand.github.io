@@ -66,13 +66,13 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 
 ## 작성자 저장용 작업표시줄 고정 설정
 
-1. 아톰
+1. 서브라임 머지
 2. 서브라임 텍스트
 3. 파폭
 4. 크롬
-5. 서브라임 머지
-6. 터미널
+5. 터미널
+6. variable (디코)
 7. VSCODE
 8. IDE/Steam
-9. variable (채팅/IDE)
-0. variable (채팅/DBMS 툴)
+9. variable (슬랙/IDE)
+0. variable (DBMS 툴)

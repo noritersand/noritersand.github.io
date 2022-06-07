@@ -74,6 +74,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
   { "detect_acronyms": false }
   ```
 - [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
+- [MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
 
 ## 작성자 저장용 사용자 설정
 
