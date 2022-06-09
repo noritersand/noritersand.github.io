@@ -134,6 +134,8 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 Build 3126 이후에 기록함.
 
+무슨 명령인지 모르겠으면 여기: [https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
+
 ### 커서/포커스 이동
 
 - <kbd>alt + -</kbd>: Jump Back. 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
