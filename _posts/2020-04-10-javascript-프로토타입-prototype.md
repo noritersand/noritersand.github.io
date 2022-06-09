@@ -122,13 +122,14 @@ noob.constructor === Newbie; // true
 ```
 
 이것은 `noob`을 만들어낸 생성자가 `Newbie()`라는 의미다.  
-다만 주의할 점은, `Newbie` 프로토타입의 `constructor` 프로퍼티도 `Newbie()`를 가리키는데:
+
+여기서 주의할 점, `Newbie` 프로토타입의 `constructor` 프로퍼티도 `Newbie()`를 가리키는데:
 
 ```js
 noob.__proto__.constructor === Newbie; // true
 ```
 
-이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니다**. 이 경우엔 다른 의미 없이 가리키기만 할 뿐이니 오해하지 말 것.
+이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니다.** 오해하지 말 것.
 
 ### 곁다리: 생성자 함수의 생성자
 

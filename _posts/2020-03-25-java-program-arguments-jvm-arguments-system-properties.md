@@ -57,7 +57,7 @@ java MainTest -classpath C:/somewhere -Dspring.profiles.active=real -Duser.name=
 
 사실 이것 외에 `java.vm.name`, `java.home`, `os.version`, `user.home` 같은 JVM 내장 프로퍼티도 포함한다.
 
-System properties는 `System` 객체의 `getProperty()`, `getProperties()` 메서드로 얻을 수 있다.
+프로퍼티의 값은 `System.getProperty()`와 `System.getProperties()` 메서드로 얻을 수 있다.
 
 ```java
 public class TryEverything {

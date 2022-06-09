@@ -158,11 +158,11 @@ chsh -s $(which zsh)
 - 원격 서버의 루트 유저는 `(1) Lean.`
 - Docker에선 이상하게 선택 불가하고 `(4) Pure.`로 고정됨.
 
-## WSL에서 윈도우의 환경변수 사용하지 않기
+## WSL에서 윈도우의 환경 변수 사용하지 않기
 
 [https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
 
-WSL에서 윈도우의 환경변수를 사용하지 않는 방법이다.
+WSL에서 윈도우의 환경 변수를 사용하지 않는 방법이다.
 
 루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
 

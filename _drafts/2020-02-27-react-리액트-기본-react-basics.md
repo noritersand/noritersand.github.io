@@ -99,8 +99,8 @@ yarn install
   validated: false,
   key: null,
   props: Object {  },
-  ​ref: null,
-  type: function LikeButton(props)​ { ... }
+  ref: null,
+  type: function LikeButton(props) { ... }
 }
 ```
 
