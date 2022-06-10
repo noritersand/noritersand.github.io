@@ -75,6 +75,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
   ```
 - [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
 - [MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
+- [Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + shift + alt + n</kbd>
 
 ## 작성자 저장용 사용자 설정
 
@@ -151,7 +152,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + r</kbd>: Goto Symbol
 - <kbd>ctrl + shift + r</kbd>: Goto Project Symbol
 
-### 멀티 캐럿
+### 멀티 캐럿(정식 명칭은 Multiple Selection)
 
 Expand Selection
 

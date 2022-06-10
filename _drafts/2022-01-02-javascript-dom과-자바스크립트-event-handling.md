@@ -51,15 +51,24 @@ TODO
 
 TODO
 
-## EventTarget.addEventListener()
+## 인스턴스 메서드
+
+### EventTarget.addEventListener()
 
 ```
-EventTarget.addEventListener( type, listener [ , useCapture ] )
+addEventListener(type, listener);
+addEventListener(type, listener, options);
+addEventListener(type, listener, useCapture);
 ```
 
 - `type`: 이벤트 종류
 - `listener`: 이벤트가 발생하면 실행할 함수. 유일한 인자로 event 객체가 전달된다.
-- `useCapture`: 캡처링 사용 여부. 생략하면 false
+- `useCapture`: 캡처링 사용 여부. 기본값은 `false`
+- `options`: 
+  - `capture`: TODO `true` 혹은 `false`
+  - `once`: `true` 혹은 `false`
+  - `passive`: TODO `true` 혹은 `false`
+  - `signal`: TODO
 
 ```js
 <button type="button" id="btn">push me</button>
@@ -71,7 +80,7 @@ EventTarget.addEventListener( type, listener [ , useCapture ] )
 </script>
 ```
 
-## EventTarget.removeEventListener()
+### EventTarget.removeEventListener()
 
 ```js
 sdf
@@ -81,7 +90,7 @@ sdf
 
 sdf
 
-## EventTarget.dispatchEvent()
+### EventTarget.dispatchEvent()
 
 DOM 이벤트를 수동으로 발동한다. 이런식으로 발생하는 이벤트를 '인공 이벤트(synthetic events)'라고 한댄다.
 
@@ -102,7 +111,33 @@ element.addEventListener('build', function (e) { /* ... */ }, false);
 element.dispatchEvent(event);
 ```
 
-## unload
+## HTMLElement.click()
+
+클릭 이벤트를 강제로 발생시키는 메서드.
+
+```js
+document.querySelector('#input').click();
+```
+
+## 이벤트
+
+### load
+
+TODO
+
+### DOMContentLoaded
+
+jQuery의 ready로 잘 알려진 그 이벤트임.
+
+```js
+document.addEventListener('DOMContentLoaded', (event) => console.log('DOM fully loaded'));
+```
+
+### pageshow
+
+TODO
+
+### unload
 
 문서가 언로딩(대충 다른 페이지로 이동 중일 때 쯤) 중일 때 발생하는 이벤트.
 
@@ -113,7 +148,7 @@ window.onunload = function() {}
 얼럿은 차단되지만 스크립트가 실행되긴 한다. 페이지를 이동하거나 새로고침하거나 브라우저를 끌 때도 작동한다. 실행 시간을 오래 잡아먹는 스크립트라면 결과가 다를 수 있다. 아직 잘 몲.
 비슷한 `onclose`가 있지만 지원하지 않는 브라우저가 있다.
 
-## beforeunload
+### beforeunload
 
 ```js
 window.beforeunload = function() {}
@@ -133,11 +168,3 @@ window.addEventListener('beforeunload', (event) => {
 ```
 
 MDN의 설명에는 모든 브라우저에서 이 방법이 통하는 것은 아니라고 한다.
-
-## HTMLElement.click()
-
-클릭 이벤트를 강제로 발생시키는 메서드.
-
-```js
-document.querySelector('#input').click();
-```

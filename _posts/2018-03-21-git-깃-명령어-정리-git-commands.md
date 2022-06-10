@@ -1234,7 +1234,7 @@ pick 7715f75fa (HEAD)
 - `reword`는 커밋 메시지만 수정하겠다는 의미
 - 최상단(지정한 범위 중 가장 오래된 커밋)을 `pick`으로 두고 나머지를 `squash`로 바꾸면 `pick` 커밋으로 나머지를 합치는 squash merge가 된다.
 - `squash` 대신 `fixup`으로 바꾸면 `squash`와 같지만 커밋 메시지는 합치지 않는다.
-- `drop` 상태로 바꾸거나 줄을 지워버리면 해당 커밋은 삭제된다.
+- `drop` 상태로 바꾸거나 줄을 지워버리면 해당 커밋은 삭제된다. (`reflog`로 복구할 수 있음)
 
 \* 기본 에디터인 Vim에선 <kbd>ctrl + a</kbd>와 <kbd>ctrl + x</kbd>로 rebase 옵션을 변경할 수 있음.
 

@@ -155,11 +155,18 @@ array.filter((ele, idx, arr) => {
 });
 ```
 
-### Array.prototype.some()
-
 ### Array.prototype.every()
 
+```
+every(function(element, index, array) { /* ... */ }, thisArg)
+```
+
 `forEach()`와 같이 배열의 모든 요소를 콜백함수 첫 번째 파라미터로 제공한다. 차이점은 모든 루프에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 쓴다는 것.
+
+```js
+[1, 2, 3].every(ele => isFinite(ele)); // true
+````
+
 
 가령 다음의 경우:
 
@@ -179,6 +186,46 @@ console.log(isNullish); // true
 ```
 
 `obj`의 프로퍼티 `a`와 `b`의 값이 모두 `null`이므로 모든 요소가 `return true`가 되고 `every()`는 결국 `true`를 반환하게 되는 코드다.
+
+그리고 `return false`가 되는 시점에 반복을 중단하는 특징이 있다:
+
+```js
+[1, 2, 3].every(ele => {
+  console.log(ele);
+  return ele !== 1;
+});
+// 1
+```
+
+### Array.prototype.some()
+
+```
+some(function(element, index, array) { /* ... */ }, thisArg)
+```
+
+`every()`와 비슷하지만 반대로 작동한다. 딱 하나의 루프만이라도 `return true`면 `true`를 반환한다:
+
+```js
+[1, 2, 3].some(ele => ele === 1); // true
+```
+
+그리고 한 번 `return true`면 그대로 반복을 중단한다:
+
+```js
+[1, 2, 3].some(ele => {
+  console.log(ele);
+  return ele === 1;
+}); 
+// 1
+
+[1, 2, 3].some(ele => {
+  console.log(ele);
+  return ele === 3;
+}); 
+// 1
+// 2
+// 3
+```
 
 ### Array.prototype.reduce()
 
