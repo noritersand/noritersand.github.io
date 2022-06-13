@@ -30,6 +30,8 @@ TODO
 
 ## 스태틱 메서드
 
+### Array.of()
+
 ### Array.from()
 
 ```
@@ -52,14 +54,6 @@ Array.from(nodeList) // Array(32) [ div, div, ... ]
 TODO
 
 ## 인스턴스 메서드
-
-### Array.prototype.indexOf()
-
-TODO
-
-### Array.prototype.lastIndexOf()
-
-TODO
 
 ### Array.prototype.push()
 
@@ -91,6 +85,14 @@ arr; // ['b', 'c', 'd', 'a']
 
 맨 앞 요소를 뽑음
 
+### Array.prototype.indexOf()
+
+TODO
+
+### Array.prototype.lastIndexOf()
+
+TODO
+
 ### Array.prototype.includes()
 
 있는지 확인(마치 `contains()`처럼).
@@ -98,6 +100,25 @@ arr; // ['b', 'c', 'd', 'a']
 ```js
 let arr = ['a', 'b', 'c'];
 arr.includes('b'); // true
+```
+
+### Array.prototype.findIndex()
+
+```
+findIndex(function(element, index, array) { /* ... */ }, thisArg)
+```
+
+콜백 함수에 요소를 전달하며 배열의 길이만큼 반복 실행한다. 콜백 함수에서 `true`를 반환하면 반복을 중단하며, 해당 시점의 인덱스를 최종 반환한다.
+
+```js
+let arr = ['a', 'b', 'c'];
+arr.findIndex(ele => {
+  console.log(ele);
+  return ele == 'b'; // 이 조건 때문에 'c'는 생략됨
+})
+// a
+// b
+// 1 
 ```
 
 ### Array.prototype.map()

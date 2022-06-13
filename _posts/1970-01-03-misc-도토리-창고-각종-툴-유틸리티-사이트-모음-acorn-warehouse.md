@@ -28,14 +28,16 @@ tags:
 
 ## 메뉴얼/API DOC/튜토리얼
 
-- [DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. **매우 유용함**. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
+- [MDN](https://developer.mozilla.org/): 그 MDN
+- [⭐DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
+- [⭐Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 
 ## 개발 지원 툴
 
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
 - [JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음. **🐕꿀**
+- [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음.
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 - [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
 - [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
@@ -116,8 +118,9 @@ tags:
 ## Git GUI 툴
 
 - [Fork](https://fork.dev): 요즘 잘 쓰고 있는 중요한 기능만 있어 가볍고 UI가 매우 보기 편한게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤ ~~난 이미 사슴~~
-- [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다. 히스토리 확인이나 blame, diff, 충돌 해소에 매우 적합함.
+- [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 ~~속도는 느리지만~~ 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
+- [Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
+- [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴.
 
 ## 트래픽 캡쳐
 
@@ -224,7 +227,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [와탭](https://www.whatap.io/ko): 앱/서버/DB/URL/컨테이너 모니터링
 - [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 쓰레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈소스
 - [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴#2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈소스.
-- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴#3. 자바 **웹 앱** 전용이다. 상용.
+- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴#3. 자바 웹 앱 전용이다. 상용.
 - [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴#4. 10일 무료. IDE와 연동할 수 있음. 상용.
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 15일 무료. 얘도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않는다. 상용.
 - [Datadog](https://www.datadoghq.com): APM 툴#1. 인프라 모니터링. 상용.

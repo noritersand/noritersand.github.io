@@ -111,16 +111,61 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 
 \* m2e: 이클립스의 메이븐 지원 플러그인
 
-#### [플러그인: maven-compiler-plugin](https://maven.apache.org/plugins/maven-compiler-plugin/)
+## 메이븐 플러그인
+
+메이븐 플러그인 설정. 플러그인은 메이븐 명령 실행 시 먼저 수행하거나 나중에 수행 할 일, 그리고 명령의 세부 조정이 필요할 때 사용한다. (가령 어떤 파일의 위치를 메이븐에 알린다거나 특정 위치의 파일들을 복사해온다던지... 등등)
+
+아래처럼 작성한다.:
+
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-resources-plugin</artifactId>
+      <executions>
+        <execution>
+          <id>copy-resources</id>
+          <phase>process-classes</phase>
+          <goals>
+            <goal>copy-resources</goal>
+          </goals>
+          <configuration>
+            <outputDirectory>${basedir}/target/classes</outputDirectory>
+            <encoding>UTF-8</encoding>
+            <resources>
+              <resource>
+                <directory>${rootPath}/src/main/resources</directory>
+                <includes>
+                  <include>**/*.*</include>
+                </includes>
+              </resource>
+            </resources>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+```
+
+현재(2022-06-13)까지는 빌드 플러그인과 리포팅 플러그인 딱 두 분류만 있음.
+
+### maven-compiler-plugin
+
+configurations: 
 
 - source
 - target
 - encoding
 
-#### [플러그인: maven-war-plugin](https://maven.apache.org/plugins/maven-war-plugin/)
+### maven-war-plugin
+
+configurations:
 
 - warSourceDirectory
 - warSourceExcludes
+- webappDirectory
 - webXml
 - webResources
   - webResource: 하위 규칙에 따라 특정 경로의 파일들을 `target\m2e-wtp\web-resources`(default)* 경로로 내보낸다.

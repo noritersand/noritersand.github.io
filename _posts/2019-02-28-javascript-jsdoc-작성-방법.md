@@ -26,10 +26,11 @@ JSDoc 어쩌구 설명 TODO...
 /**
  * @param {Date} myDate The date
  * @param {string} myString The string
- * @param {string|number} myArg i dunno
+ * @param {boolean} myFlag The flag
+ * @param {string|number} myArg I dunno
  * @returns {string|Object} return string or number
  */
-function myFunction(myDate, myString, myArg) {
+function myFunction(myDate, myString, myFlag, myArg) {
   // do stuff
 }
 

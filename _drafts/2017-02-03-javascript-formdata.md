@@ -27,6 +27,18 @@ var formData = new FormData([ formName ]);
 
 쫑알쫑알
 
+## 메서드
+
+- FormData.append()
+- FormData.delete()
+- FormData.entries()
+- FormData.get()
+- FormData.getAll()
+- FormData.has()
+- FormData.keys()
+- FormData.set()
+- FormData.values()
+
 ## example
 
 asd
