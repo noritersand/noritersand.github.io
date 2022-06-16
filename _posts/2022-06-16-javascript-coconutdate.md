@@ -15,13 +15,21 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+날짜를 좀 편하게 다루려고 만든 프로토타입. 이름은 별 의미 ㅇ벗음
+
+이렇게 씀:
+
 ```js
-/**
- * 날짜를 좀 더 편하게 다루려고 만든 프로토타입
- * 이렇게 씀:
- *   let now = new CoconutDate();
- *   let yesterday = new CoconutDate({ dayPlus: -1 });
- */
+let now = new CoconutDate();
+let yesterday = new CoconutDate({ dayPlus: -1 });
+yesterday.of(); // Date Wed Jun 15 2022 20:13:51 GMT+0900 (대한민국 표준시)
+yesterday.ofHighNoon(); // Date Wed Jun 15 2022 12:00:00 GMT+0900 (대한민국 표준시)
+yesterday.dateString; // "2022-06-15"
+yesterday.dateTimeString; // "2022-06-15 20:13:51"
+yesterday.monthString; // "06" 
+```
+
+```js
 class CoconutDate {
   static DATE_DELIMETER = "-";
   static TIME_DELIMETER = ":";
@@ -71,7 +79,7 @@ class CoconutDate {
   }
 
   /**
-   * #date를 yyyy-MM-dd 형태의 문자열로 반환
+   * #date를 년월일을 문자열로 반환
    * @returns {string}
    */
   get dateString() {
@@ -79,7 +87,7 @@ class CoconutDate {
   }
 
   /**
-   * #date를 yyyy-MM-dd HH:mm:ss 형태의 문자열로 반환
+   * #date를 년월일+시분초를 문자열로 반환
    * @returns {string}
    */
   get dateTimeString() {
