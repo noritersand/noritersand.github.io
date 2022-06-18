@@ -43,7 +43,7 @@ focus 이벤트를 발생시킨다.
 
 ```js
 // 엔터치면 다음으로 이동
-$(function(){
+$(function() {
   $('input').not($(':button')).keypress(function (evt) {
     if (evt.keyCode == 13) {
       var fields = $(this).parents('form:eq(0),body').find('button,input,select');
@@ -176,10 +176,10 @@ $.ajax({
   contentType: 'application/json; charset=utf-8', // 전송 데이터 타입
   dataType: 'json', // 응답 데이터 타입
   beforeSend: showRequest, //ajax로 전송 전 호출할 함수
-  success: function(data){
+  success: function(data) {
     $('#result').html(data);
   },
-  error: function(e){
+  error: function(e) {
     alert(e.responseText);
   }
 });
@@ -230,7 +230,7 @@ $('#success').load('demo.jsp', function(response, status, xhr) {
 
 $('#success').load('demo.jsp', { "choices[]": ["han", "lee"] } );
 
-$('#success').load('demo.jsp', {limit: 25}, function(){
+$('#success').load('demo.jsp', {limit: 25}, function() {
   alert('Test~!');
 });
 ```
@@ -251,7 +251,7 @@ jQuery.get( url [, data ] [, success ] [, dataType ] )
 
 ```js
 //get 방식(responseText)
-$.get(url, { num1: num1, num2: num2, oper: o }, function(data){
+$.get(url, { num1: num1, num2: num2, oper: o }, function(data) {
     $('#result').html(data);
 });
 ```
@@ -320,7 +320,7 @@ jQuery.post( [settings ] )
 - `dataType`: 응답 데이터의 타입을 지정한다. (xml, json, script, html)
 
 ```js
-$.post(url, { num1: num1, num2: num2, oper: o }, function(data){
+$.post(url, { num1: num1, num2: num2, oper: o }, function(data) {
     $('#result').html(data);
 });
 ```
@@ -405,7 +405,7 @@ $.ajax({
 ```js
 $(document).ajaxStart(function() {
   console.log('ajax stated');
-}).ajaxComplete(function(){
+}).ajaxComplete(function() {
   console.log('ajax complete');
 });
 ```

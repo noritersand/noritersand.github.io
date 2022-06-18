@@ -194,7 +194,7 @@ The real processing of these expressions and their conversion to the URLs that w
 
 By default, a single implementation of this interface is registered of the class org.thymeleaf.linkbuilder.StandardLinkBuilder, which is enough for both offline (non-web) and also web scenarios based on the Servlet API. Other scenarios (like integration with non-ServletAPI web frameworks) might need specific implementations of the link builder interface.
 
-Let’s use this new syntax. Meet the th:href attribute:
+Let's use this new syntax. Meet the th:href attribute:
 
 ```html
 <!-- Will produce 'http://localhost:8080/gtvg/order/details?orderId=3' (plus rewriting) -->
@@ -268,7 +268,7 @@ Preprocessing is an execution of the expressions done before the normal one that
 
 Preprocessed expressions are exactly like normal ones, but appear surrounded by a double underscore symbol (like `__${expression}__`).
 
-Let’s imagine we have an i18n Messages_fr.properties entry containing an OGNL expression calling a language-specific static method, like:
+Let's imagine we have an i18n Messages_fr.properties entry containing an OGNL expression calling a language-specific static method, like:
 
 ```java
 article.text=@myapp.translator.Translator@translateToFrench({0})
@@ -419,7 +419,7 @@ Numeric, boolean and null literals are in fact a particular case of literal toke
 
 These tokens allow a little bit of simplification in Standard Expressions. They work exactly the same as text literals `'...'`, but they only allow letters (A-Z and a-z), numbers (0-9), brackets `[` and `]`, dots `.`, hyphens `-` and underscores `_`. So no whitespaces, no commas, etc.
 
-The nice part? Tokens don’t need any quotes surrounding them. So we can do this:
+The nice part? Tokens don't need any quotes surrounding them. So we can do this:
 
 ```html
 <div th:class="content">...</div>
@@ -445,7 +445,7 @@ Thymeleaf allows the definition of special comment blocks marked to be comments 
 <span>goodbye!</span>
 ```
 
-Thymeleaf’s parsing system will simply remove the <!--/*/ and /*/--> markers, but not its contents, which will be left therefore uncommented. So when executing the template, Thymeleaf will actually see this:
+Thymeleaf's parsing system will simply remove the <!--/*/ and /*/--> markers, but not its contents, which will be left therefore uncommented. So when executing the template, Thymeleaf will actually see this:
 
 ```html
 <span>hello!</span>
@@ -463,7 +463,7 @@ As with parser-level comment blocks, this feature is dialect-independent.
 
 표현식 작성만을 위한 태그다. `th:block` 태그는 파싱할 때 코멘트로 처리된다. (열고 닫는 태그만 코멘트 처리되며 내부의 코드엔 영향이 없다.)
 
-Thymeleaf’s only element processor (not an attribute) included in the Standard Dialects is th:block.
+Thymeleaf's only element processor (not an attribute) included in the Standard Dialects is th:block.
 
 th:block is a mere attribute container that allows template developers to specify whichever attributes they want. Thymeleaf will execute these attributes and then simply make the block, but not its contents, disappear.
 
