@@ -52,6 +52,7 @@ TODO
 - Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Maximize Editor/Normalize Splits: <kbd>ctrl + shift + alt + '</kbd> 에디터 창 최대화/원래대로 토글
+- Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
 
 
 ## TODO 톰캣 퍼블리싱 폴더는 어디일까

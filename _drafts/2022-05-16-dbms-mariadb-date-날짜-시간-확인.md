@@ -57,3 +57,15 @@ FROM (
   ) D
 ) DD;
 ```
+
+## 곁다리: 타임존 변환하기
+
+- [https://mariadb.com/kb/en/convert_tz/](https://mariadb.com/kb/en/convert_tz/)
+
+```
+CONVERT_TZ(dt, from_tz, to_tz)
+```
+
+```sql
+SELECT CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul');
+```
