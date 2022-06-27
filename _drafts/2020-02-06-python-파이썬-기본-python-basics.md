@@ -6,8 +6,8 @@ categories:
   - python
 tags:
   - python
-  - basics
   - language
+  - basics
 ---
 
 * Kramdown table of contents

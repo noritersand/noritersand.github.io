@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-03 00:00:00 +0900
-title: '[영어넘모어려워] 문법 기본 basic grammar'
+title: '[영어넘모어려워] 문법 기초'
 categories:
   - english
 tags:
