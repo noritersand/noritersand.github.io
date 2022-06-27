@@ -74,6 +74,8 @@ tags:
 
 - [workflowy](https://workflowy.com): 온라인 TODO 툴
 - [Calendly](https://calendly.com): 이메일로 일정 맞추기
+- [Linear](https://linear.app/)
+- [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
 ## 키 리맵핑
 
