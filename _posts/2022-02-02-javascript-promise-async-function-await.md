@@ -224,7 +224,7 @@ new Promise((resolve, reject) => {
 비동기 함수인 주제에 태고부터 존재했단 이유로 Promise를 반환하지 않는 건방진 API를 감싸는 방법이다:
 
 ```js
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 wait(1000)
   .then(() => { console.log('a second has passed') })
   .catch(() => { console.log('something went wrong') });
@@ -288,7 +288,7 @@ function() {
 만약 반환하려는 참조가 Promise라면 async 함수는 새 참조를 반환하지만 `Promise.resolve()`는 일치하는 참조를 반환한다:
 
 ```js
-const p = new Promise(res => { res(1) });
+var p = new Promise(res => { res(1) });
 
 async function asyncReturn() {
   return p;
@@ -310,8 +310,7 @@ await expression
 `await`은 async 함수 내부에서만 사용할 수 있는 연산자로, Promise를 기다릴 때 사용한다. 더 정확히 말하자면 `await` 연산자 다음의 Promise가 fulfilled 될 때까지 함수의 실행을 일시 정지시킨다:
 
 ```js
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 var fn = async () => {
   await wait(2000);
   console.log('done');
@@ -397,8 +396,7 @@ console.log('답: 고양이실패단');
 Promise의 상태 변화를 기다리는 `await`의 동기적 특성은 아주 당연하게도 처리 속도에 악영향을 줄 수 있다:
 
 ```js
-const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 var timeTest = async () => {
   let startTime = new Date();
 
@@ -415,6 +413,7 @@ timeTest(); // It takes 3028 milliseconds.
 기다리는 것을 세 번 반복했더니 3초나 걸린다. 이런 경우엔 Promise를 반환하는 표현식 앞에 `await`을 걸지 말고, 일단 모두 실행하도록 한 다음 변수의 상태 변화를 기다리도록 하는게 좋다:
 
 ```js
+var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 var timeTest2 = async () => {
   let startTime = new Date();
 
@@ -426,7 +425,7 @@ var timeTest2 = async () => {
   await result3;
 
   let endTime = new Date();
-  console.log(`done. It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
+  console.log(`It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
 };
 timeTest2(); // It takes 1009 milliseconds.
 ```
@@ -444,8 +443,7 @@ Promise.all(iterable)
 `Promise.all()`은 여러 Promise의 결과를 집계할 때 사용한다. `iterable`에 Promise 객체 여럿을 배열로 던지면 됨:
 
 ```js
-const wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
-
+var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
 var concurrent2 = async () => {
   return await Promise.all([wait2(3000), wait2(2000), wait2(1000)]);
 }
@@ -462,35 +460,40 @@ Promise.race(iterable)
 `Promise.race()`는 주어진 Promise들을 동시에 실행하되 가장 먼저 완료되는 것만 반환한다:
 
 ```js
-var pick = async () => {
+var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+var pickOne = async () => {
   return await Promise.race([wait2(3000), wait2(2000), wait2(1000)]);
 }
-pick().then(console.log);
+pickOne().then(console.log);
 // 1000
 ```
 
 ### 진짜 병렬 처리?
 
-변수에 `await`를 걸든, `Promise.all()`이나 `Promise.race()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
+변수에 `await`를 걸든, `Promise.all()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
 
 ```js
+var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
 var concurrent3 = async () => {
   let startTime = new Date();
 
   await Promise.all([wait2(5000), wait2(3000), wait2(1000)]).then(console.log);
 
   let endTime = new Date();
-  console.log(`done. It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
+  console.log(`It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
 }
 concurrent3();
-// done. It takes 5013 milliseconds.
+// It takes 5013 milliseconds.
 ```
 
 가장 느린 Promise인 `wait2(5000)` 때문에 총 실행시간은 약 5초다.
 
-사실 이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
+`Promise.race()`를 쓰면 가장 빠른 Promise만 기다리면 되긴 하지만 실행 결과를 처리할 수 없다는 문제가 있다.
+
+이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
 
 ```js
+var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
 var parallel = function() {
   wait2(5000).then(console.log);
   wait2(3000).then(console.log);
