@@ -70,10 +70,9 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 2. Terminal
 3. Firefox
 4. Chrome
-5. 가변: sublime-merge/steam
-6. 가변: discord
+5. sublime-merge
+6. 가변: 디코, 슬랙
 7. VSCODE
-8. 가변: IDE
-9. 가변: slack/IDE
+8. 가변: IDE#1
+9. 가변: IDE#2, 카톡
 0. 가변: DBMS tool
-

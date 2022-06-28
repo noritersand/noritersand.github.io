@@ -231,21 +231,21 @@ tags:
 
 - [postman](https://www.getpostman.com): HTTP Request/Response 테스트
 
-## 분석/모니터링 툴
+## 분석/프로파일링/모니터링 툴
 
 APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘네들은 웬만하면 상용툴이다.
 
-- [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 이것보다 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다고 함.
+- [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 이것보다 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다.
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
-- [와탭](https://www.whatap.io/ko): 앱/서버/DB/URL/컨테이너 모니터링
 - [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 쓰레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈소스
-- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴#2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈소스.
-- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴#3. 자바 웹 앱 전용이다. 상용.
-- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴#4. 10일 무료. IDE와 연동할 수 있음. 상용.
-- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 15일 무료. 얘도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않는다. 상용.
-- [Datadog](https://www.datadoghq.com): APM 툴#1. 인프라 모니터링. 상용.
-- [제니퍼](https://jennifersoft.com/ko/product/java): APM 툴#2. 자바/PHP/닷넷 앱 모니터링. 상용.
-- [와탭](https://www.whatap.io/ko): APM 툴#3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용.
+- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴#2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈소스
+- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴#3. 자바 웹 앱 전용이다. 상용
+- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴#4. 10일 무료. IDE와 연동할 수 있음. 상용
+- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 15일 무료. 얘도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않는다. 상용
+- [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴#2. 자바/PHP/닷넷 앱 모니터링. 상용
+- [WhaTap](https://www.whatap.io/ko): APM 툴#3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
+- [Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
+- [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 
 ## 그리드
 
