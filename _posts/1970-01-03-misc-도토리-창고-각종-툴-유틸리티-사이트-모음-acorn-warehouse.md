@@ -25,6 +25,7 @@ tags:
 - [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
 - [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 대신 퍼블리싱 결과물은 노션 읽기 전용 페이지보다 훌륭하다. 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
+- [stream](https://getstream.io/): 채팅 관련 오픈소스 같은데 뭔지 잘 몲
 
 ## 메뉴얼/API DOC/튜토리얼
 

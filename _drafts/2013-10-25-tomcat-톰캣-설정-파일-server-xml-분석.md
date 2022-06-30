@@ -75,78 +75,71 @@ tags:
 
 최상위 태그
 
-TODO
-
 ## GlobalNamingResources
 
-구조: `Server > GlobalNamingResources`
-
-TODO
+경로: `Server > GlobalNamingResources`
 
 ## Service
 
 Server > Service
 
-TODO
-
 ## Connector
 
-구조: `Server > Service > Connector`
+경로: `Server > Service > Connector`
 
-TODO
+### 속성
+
+#### redirectPort
+
+#### parseBodyMethods
 
 ## Engine
 
-구조: `Server > Service > Engine`
-
-TODO
+경로: `Server > Service > Engine`
 
 ## Realm
 
-구조: `Server > Service > Engine > Realm`
-
-TODO
+경로: `Server > Service > Engine > Realm`
 
 ## Host
 
-구조: `Server > Service > Engine > Host`
+경로: `Server > Service > Engine > Host`
 
-TODO
+어플리케이션 단위의 설정을 지정하는 항목. 톰캣이 관리하는 앱 만큼 `Host`가 늘어난다.
+
+### 속성
 
 #### name
 
-앱을 식별할 호스트 이름으로 사용되며 유일한 이름으로 지정해야한다.
+Request URL의 호스트와 매칭되는 값. 앱을 식별할 호스트 이름으로 사용되며 유일한 이름으로 지정해야한다. 
 
-도메인이나 아이피로 설정한 경우 어쩌구저쩌구(**TODO 용어를 잘 모르겠음**) 동일한 호스트로 연결된다.
+~~이 값이 `localhost`일 땐 아이피로 직접 접근했을 때 기본으로 연결된다. 예를 들어 name이 각각 `localhost`와 `abc.com`인 Host가 두 개라면, 아이피 접속일 땐 `localhost`로, 로컬 호스트 파일을 변경해서 abc.com으로 접속하면 `abc.com`로 연결된다.~~  
+TODO 맞는듯 아닌 것 같으니 다시 확인해야 함.
 
 #### appBase
 
-TODO
-
 #### unpackWARs
-
-TODO
 
 #### autoDeploy
 
-TODO
-
 ## Valve
 
-구조: `Server > Service > Engine > Host > Valve`
+경로: `Server > Service > Engine > Host > Valve`
 
 ## Context
 
-구조: `Server > Service > Engine > Host > Context`
+경로: `Server > Service > Engine > Host > Context`
 
 #### docBase
+
+## Alias
+
+경로: `Server > Service > Engine > Host > Alias`
 
 #### reloadable
 
 #### path
 
-
-TODO
 
 ---
 

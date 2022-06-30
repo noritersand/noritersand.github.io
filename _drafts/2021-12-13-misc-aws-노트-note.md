@@ -70,6 +70,55 @@ AWS 인스턴스의 기본 변수가 아닌 값을 식별자로 사용하는 환
 
 코드 디플로이의 행동은  [appspec.yml](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html) 파일로 정의한다.
 
+#### 에이전트 설치
+
+이 서비스가 작동하려면 EC2 인스턴스 혹은 온프레미스 장비에 코드 디플로이 에이전트가 설치돼 있어야 한다. 
+
+가이드대로 아래처럼 실행해봤는데:
+
+```bash
+aws ssm send-command
+    --document-name "AWS-ConfigureAWSPackage"
+    --document-version "1"
+    --targets '[{"Key":"InstanceIds","Values":[i-0fbcdc29af664625b]}]'
+    --parameters '{"action":["Install"],"installationType":["Uninstall and reinstall"],"name":["AWSCodeDeployAgent"]}'
+    --timeout-seconds 600
+    --max-concurrency "50"
+    --max-errors "0"
+    --region ap-northeast-2
+```
+
+왜 때문인지 작동을 안해서 다른 방법을 찾은게 아래 내용이다(2022-07-02).
+
+젠킨스로 배포할 EC2 인스턴스 터미널에서:
+
+```bash
+apt update
+apt install ruby-full wget -y
+```
+
+설치 스크립트를 다운받아서 실행:
+
+```bash
+cd /home/ubuntu
+wget 'https://aws-codedeploy-ap-northeast-2.s3.ap-northeast-2.amazonaws.com/latest/install'
+chmod +x ./install
+./install auto
+```
+
+서비스 활성화 확인:
+
+```bash
+systemctl status codedeploy-agent.service
+```
+
+로그 확인:
+
+```bash
+journalctl -xfb -u codedeploy-agent.service
+tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
+```
+
 #### 애플리케이션과 배포 그룹
 
 전반적인 배포 방법과 대상을 설정할 수 있는 단위. 애플리케이션은 배포 그룹의 상위 개념으로 단순히 카테고리 이상의 역할은 없는 걸로 보임.

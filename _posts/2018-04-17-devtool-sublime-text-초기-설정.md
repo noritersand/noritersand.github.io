@@ -104,12 +104,12 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 ```json
 [
+  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
   { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
   { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
   { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
   { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
-  { "keys": ["ctrl+shift+s"], "command": "save_all" },
-  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} }
+  { "keys": ["ctrl+shift+s"], "command": "save_all" }
 ]
 ```
 
@@ -122,6 +122,8 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ```json
 [
   { "keys": ["f1"], "command": "show_command_palette" },
+  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
   { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
   { "keys": ["ctrl+shift+alt+a"], "command": "stage_all" },
   { "keys": ["ctrl+shift+alt+u"], "command": "unstage_all" },

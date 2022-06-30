@@ -356,9 +356,39 @@ systemctl disable UNIT_NAME
 systemctl daemon-reload
 ```
 
+#### 서비스 등록
+
+어떤 프로세스를 서비스로 등록하려면 (우분투의 경우) `/usr/lib/systemd/system` 경로에 `서비스이름.service` 파일을 생성하고 리로드(`systemctl daemon-reload`)하면 된다.
+
+서비스 파일 예시(`tomcat.service`):
+
+```bash
+[Unit]
+Description=Tomcat
+After=network.target syslog.target
+
+[Service]
+Type=forking
+
+User=me
+Group=mygroup
+
+ExecStart=/svc/tomcat/bin/startup.sh
+ExecStop=/svc/tomcat/bin/shutdown.sh
+
+UMask=0007
+RestartSec=10
+Restart=always
+
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
+```
+
 ## journalctl
 
-`systemctl` 관련 로그 보는 명령인 것 같음...
+`systemctl` 관련 로그 보는 명령인 것 같은디?
 
 ```bash
 journalctl -xe
