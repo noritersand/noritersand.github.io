@@ -91,7 +91,7 @@ java -Dproperty1=value1 -Dproperty2=value2 Mainclass
 ${ propertyName:defaultValue }
 ```
 
-기본값 설정은 매우 중요한데, 만약 다음의 경우:
+만약 다음의 경우:
 
 ```java
 @Value("${not-exist-property}")

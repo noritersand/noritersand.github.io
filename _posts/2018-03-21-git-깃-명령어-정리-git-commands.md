@@ -1032,7 +1032,7 @@ git merge A B
 #### options
 
 - `--ff`: 가능할 경우 Fast-forward 머지를, 안되면 머지 커밋을 생성한다.
-- `--no-ff`: 묻지도 따지지도 않고 머지 커밋을 생성한다.
+- `--no-ff`: 묻지도 따지지도 않고 머지 커밋을 생성한다. 기본 옵션으로 설정하려면: `git config --local merge.ff no`
 - `--ff-only`: Fast-forward 머지가 불가능할 경우 머지를 취소한다.
 - `--no-commit`: 커밋하지 않고 머지. 파일이 변경된 상태에서 머지를 멈춘다고 보면 됨.
 - `--abort`: 머지 취소. 충돌 상태일 때 `merge` 명령을 실행하기 전으로 되돌린다.

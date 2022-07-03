@@ -393,18 +393,18 @@ WantedBy=multi-user.target
 ```bash
 journalctl -xe
 
-journalctl -u SERVICE_NAME.SERVICE -b
+journalctl -fb -u SERVICE_NAME.SERVICE
 
 journalctl -xfb -u codedeploy-agent.service
 ```
 
 #### options
 
+- `-u`: 특정 유닛의 로그만 보기
 - `-x`: 가능한 경우 메시지 설명도 같이 출력
 - `-e`: 로그 마지막으로 바로 이동
-- `-u`: 특정 유닛의 로그만 보기
 - `-b`: 현재 부트 혹은 지정된 부트의 로그만 보기
-- `-f`: Follow the journal. 명령 실행을 끝내지 않고 계속 보여줌
+- `-f`: Follow the journal. 명령 실행을 끝내지 않고 새로운 로그를 계속 출력한다.
 
 ## service
 

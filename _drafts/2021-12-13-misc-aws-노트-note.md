@@ -20,7 +20,20 @@ tags:
 - [AWS Support Center](https://console.aws.amazon.com/support)
 - [AWS 지식 센터](https://aws.amazon.com/ko/premiumsupport/knowledge-center/)
 
-## 서비스
+## 참고
+
+### 일반적인 설정 #1
+
+- VPC와 서브넷으로 네트워크 구획 설정
+- IAM으로 권한 제어
+- EC2 인스턴스로 서버 컴퓨팅
+- 타겟그룹(EC2)으로 인스턴스와 로드밸런서(EC2)의 중간단계 설정
+- 로드 밸런서로 네트워크 매핑 & 로드밸런싱
+- Route 53으로 도메인 생성하고 로드 밸런서로 연결
+- EFS로 네트워크 스토리지 연결
+- CodeDeploy와 S3로 배포 설정
+
+## AWS 서비스
 
 ### [IAM, Identity and Access Management](https://aws.amazon.com/ko/iam/)
 

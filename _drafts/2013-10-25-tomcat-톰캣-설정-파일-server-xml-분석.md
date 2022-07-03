@@ -65,6 +65,7 @@ tags:
                pattern="%h %l %u %t &quot;%r&quot; %s %b" />
 
         <Context docBase="tomcat-test" path="/tomcat-test" reloadable="true" />
+        <Context docBase="tomcat-test2" path="/tomcat-test2" reloadable="true" />
       </Host>
     </Engine>
   </Service>
@@ -87,11 +88,10 @@ Server > Service
 
 경로: `Server > Service > Connector`
 
-### 속성
+#### 속성
 
-#### redirectPort
-
-#### parseBodyMethods
+- redirectPort
+- parseBodyMethods
 
 ## Engine
 
@@ -107,20 +107,16 @@ Server > Service
 
 어플리케이션 단위의 설정을 지정하는 항목. 톰캣이 관리하는 앱 만큼 `Host`가 늘어난다.
 
-### 속성
+#### 속성
 
-#### name
+TODO 아래 해석하고 지워:
 
-Request URL의 호스트와 매칭되는 값. 앱을 식별할 호스트 이름으로 사용되며 유일한 이름으로 지정해야한다. 
+> name: Usually the network name of this virtual host, as registered in your Domain Name Service server. Regardless of the case used to specify the host name, Tomcat will convert it to lower case internally. One of the Hosts nested within an Engine MUST have a name that matches the defaultHost setting for that Engine. See Host Name Aliases for information on how to assign more than one network name to the same virtual host. The name can not contain a wildcard, this is only valid in an Alias.
 
-~~이 값이 `localhost`일 땐 아이피로 직접 접근했을 때 기본으로 연결된다. 예를 들어 name이 각각 `localhost`와 `abc.com`인 Host가 두 개라면, 아이피 접속일 땐 `localhost`로, 로컬 호스트 파일을 변경해서 abc.com으로 접속하면 `abc.com`로 연결된다.~~  
-TODO 맞는듯 아닌 것 같으니 다시 확인해야 함.
-
-#### appBase
-
-#### unpackWARs
-
-#### autoDeploy
+- name: Request URL의 호스트와 매칭되는 값. 앱을 식별할 호스트 이름으로 사용되며 유일한 이름으로 지정해야한다. 이 값을 `localhost`로 설정한 호스트가 기본 호스트이며, 기본 호스트는 반드시 하나는 있어야 한다. 이 값을 `localhost`가 아닌 값으로 설정한 경우 Request URL의 호스트와 매칭되는데 매칭되는 호스트가 없으면 기본 호스트로 연결한다. 예를 들어 name이 각각 `localhost`와 `abc.com`인 Host가 두 개라면, 아이피 접속일 땐 `localhost`로, abc.com으로 접속하면 `abc.com`로 연결하는 식이다.
+- appBase
+- unpackWARs
+- autoDeploy
 
 ## Valve
 
@@ -130,16 +126,19 @@ TODO 맞는듯 아닌 것 같으니 다시 확인해야 함.
 
 경로: `Server > Service > Engine > Host > Context`
 
-#### docBase
+`<Context>`는 둘 이상일 수 있다. 
+
+#### 속성
+
+- docBase
+- path: context path로 알려져 있는 그 것.
+- reloadable
 
 ## Alias
 
 경로: `Server > Service > Engine > Host > Alias`
 
-#### reloadable
-
-#### path
-
+`<Host>`의 별칭을 지정한다. `name`을 여러 개 두는 효과가 있(는 걸로 추정된)다.
 
 ---
 

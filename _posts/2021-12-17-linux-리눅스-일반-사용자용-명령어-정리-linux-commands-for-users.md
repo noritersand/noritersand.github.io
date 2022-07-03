@@ -765,3 +765,21 @@ make install
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
+
+## logrotate
+
+로그 파일을 관리해주는 명령어...는 아니고 별도로 설치해야 할 수도 있는 시스템 유틸리티. 일정 규칙에 따라 파일을 압축/삭제/이름변경 등을 자동으로 수행하도록 할 수 있음. 예를 들어 매일 자정마다 특정 파일을 압축하고 지운다던지...
+
+`logrotate.timer`를 서비스로 등록해 자동 실행되도록 하는 식으로 사용한다. 기본 설정 파일 경로는 `/etc/logrotate.conf`, 각 로그파일 별 설정은 `/etc/logrotate.d` 디렉터리 아래에 생성한다. 예를 들면 톰캣 로그 파일의 로테이션은 다음처럼 작성할 수 있다:
+
+```
+/svc/tomcat/logs/catalina.out{
+ copytruncate
+ daily
+ rotate 14
+ compress
+ missingok
+ notifempty
+ dateext
+}
+```
