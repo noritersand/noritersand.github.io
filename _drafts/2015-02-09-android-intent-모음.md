@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-02-09 13:24:00 +0900
-title: '[Android] intent 모음'
+title: '[Android] intent'
 categories:
   - android
 tags:
@@ -16,6 +16,16 @@ tags:
 #### 참고한 문서
 
 - [https://developer.chrome.com/multidevice/android/intents](https://developer.chrome.com/multidevice/android/intents)
+
+## 개요
+
+이게 딥링크라고 불리던가... 오래되서 기억이 안난다.
+
+근데 요즘엔 딥링크 대체제가 나왔다고 함.
+
+> 요즘은 host를 앱에 등록해두면 슉
+> ios에선 universal link
+> 안드에선 app link라고 부르는듯 합니다
 
 ## syntax
 
@@ -35,7 +45,7 @@ intent:
 intent://#Intent;scheme=스킴명;package=패키지명;end
 ```
 
-## intent 모음
+## intent 예시
 
 - MISP: `intent://TID=#Intent;scheme=ispmobile;package=kvp.jjy.MispAndroid320;end`
 - 엘롯데: `intent://m.ellotte.com/main.do?cn=152726&cdn=2945814#Intent;scheme=ellotte002;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;package=com.lotte.ellotte;end`
