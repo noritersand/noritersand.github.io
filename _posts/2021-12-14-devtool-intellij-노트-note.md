@@ -98,7 +98,7 @@ hot deploy, hot swap, hot code replace 등으로 불리는, 런타임 중 변경
 
 그런데 귀찮으니께, Run/Debug Configurations<kbd>alt + u, r</kbd>에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 (필요한 경우 빌드 후) 자동으로 리로드한다.
 
-JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 서버를 디버그 모드로 실행시키지 않으면 갱신하지 않는다. (Run 모드여도 빌드는 하는 것 같은디...)
+JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 앱을 디버그 모드로 실행시키지 않으면 갱신하지 않는다. (Run 모드여도 빌드는 하는 것 같은디...)
 
 검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있긴 함.
 
