@@ -66,12 +66,12 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 
 ## 작성자 저장용 작업표시줄 고정 설정
 
-1. Sublime-text
-2. Terminal
+1. Terminal
+2. Sublime Text
 3. Firefox
 4. Chrome
-5. sublime-merge
-6. 가변: 디코, 슬랙
+5. Sublime Merge
+6. 가변: Discord, Slack
 7. VSCODE
 8. 가변: IDE#1
 9. 가변: IDE#2, 카톡
