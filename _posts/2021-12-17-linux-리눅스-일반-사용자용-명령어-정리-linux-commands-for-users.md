@@ -284,8 +284,6 @@ ps -elf
 ps aux | grep -e manage.py | grep -v grep
 ```
 
-옵션은 `-ef` 정도면 충분하다.
-
 #### options
 
 - `-A` `-e`: 모든 프로세스 보기
@@ -396,7 +394,7 @@ head -n 100 filename
 head -100 filename
 ```
 
-## [tail](https://man7.org/linux/man-pages/man1/tail.1.html)
+## tail
 
 ```bash
 # filename의 끝부터 100줄만 출력
@@ -417,7 +415,7 @@ tail -5 filename | head -3 # 마지막 다섯 줄 중 처음 세 줄만 출력
 
 ## sed
 
-?
+TODO 이건 뭐지
 
 ```bash
 sed -n '2,5p' filename # filename에서 2~5라인만 출력
@@ -431,7 +429,7 @@ sed -n '2,5p' filename # filename에서 2~5라인만 출력
 more READ_ME
 ```
 
-## [less](https://man7.org/linux/man-pages/man1/less.1.html)
+## less
 
 파일 뷰어. vi 읽기전용 모드와 비슷하지만 메모리 점유는 적다.
 
@@ -765,21 +763,3 @@ make install
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
-
-## logrotate
-
-로그 파일을 관리해주는 명령어...는 아니고 별도로 설치해야 할 수도 있는 시스템 유틸리티. 일정 규칙에 따라 파일을 압축/삭제/이름변경 등을 자동으로 수행하도록 할 수 있음. 예를 들어 매일 자정마다 특정 파일을 압축하고 지운다던지...
-
-`logrotate.timer`를 서비스로 등록해 자동 실행되도록 하는 식으로 사용한다. 기본 설정 파일 경로는 `/etc/logrotate.conf`, 각 로그파일 별 설정은 `/etc/logrotate.d` 디렉터리 아래에 생성한다. 예를 들면 톰캣 로그 파일의 로테이션은 다음처럼 작성할 수 있다:
-
-```
-/svc/tomcat/logs/catalina.out{
- copytruncate
- daily
- rotate 14
- compress
- missingok
- notifempty
- dateext
-}
-```

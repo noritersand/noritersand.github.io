@@ -108,3 +108,30 @@ ns         IN  CNAME @
 mail       IN  CNAME @
            IN  MX 10 mail
 ```
+
+### 클라이언트의 DNS 변경 Push DNS Changes to Redirect All Traffic Through the VPN
+
+OpenVPN 설정파일인 server.conf에 이런 것들이 있다:
+
+```bash
+push "redirect-gateway def1 bypass-dhcp"
+
+push "dhcp-option DNS 172.31.0.226"
+```
+
+클라이언트가 접속한 VPN 서버를 DNS로 사용하게끔 하는 설정인데, 이렇게 하면 문제가 특정 사이트에서 (VPN 서버가 국외 IP라면) IP 차단 등의 제약이 걸리는 경우가 있음.
+
+그래서 첫 줄을 이렇게 바꿔줬는데:
+
+```bash
+push "route 172.31.0.0 255.255.0.0 vpn_gateway"
+```
+
+**TODO 그 다음부턴 차단 문제가 없어지긴 했지만 도데체 왜 이렇게 되는건지는 잘 몲**
+
+
+
+
+
+
+

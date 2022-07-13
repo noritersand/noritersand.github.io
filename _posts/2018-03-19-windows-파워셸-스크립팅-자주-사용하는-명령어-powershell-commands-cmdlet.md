@@ -26,64 +26,6 @@ tags:
 
 파워셸 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
-## 환경 변수
-
-### 환경 변수 조회
-
-```bash
-# 모든 환경 변수 보기,
-Get-ChildItem Env:
-
-# 위와 같음
-ls env:
-
-# 환경 변수 중 'path' 출력,
-Write-Output $env:path
-
-# 위와 같음
-echo $env:path
-
-# 이렇게만 쳐도 됨 (암시적인 출력은 Write-Output이 처리함)
-$env:path
-```
-
-### 로컬 환경 변수 추가/삭제
-
-\* Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않는다.
-
-```bash
-# 환경 변수 test 추가
-$env:test = 1234
-
-# 환경 변수 test2 추가
-[Environment]::SetEnvironmentVariable("test2", "1234", "Process")
-
-# 환경 변수 'test' 삭제
-Remove-Item Env:\test
-```
-
-### 글로벌 환경 변수 추가/삭제
-
-```bash
-# 로그인한 사용자의 환경 변수로 'test' 추가
-[Environment]::SetEnvironmentVariable("test", "1234", "User")
-
-# 사용자 환경 변수 'test' 삭제
-[Environment]::SetEnvironmentVariable("test", $null, "User")
-
-# PATH 덧붙이기
-[Environment]::SetEnvironmentVariable("PATH", "$env:PATH;원하는경로", "User")
-
-# PATH 덧붙이기 #2
-[Environment]::SetEnvironmentVariable("PATH", $env:PATH + ";원하는경로", "User")
-
-# 시스템 환경 변수로 'test2' 추가. (관리자 권한 필요)
-[Environment]::SetEnvironmentVariable("test2", "1234", "Machine")
-
-# 시스템 환경 변수 'test2' 삭제. (관리자 권한 필요)
-[Environment]::SetEnvironmentVariable("test2", $null, "Machine")
-```
-
 ## 파워셸 명령어 기본 별칭
 
 ```
