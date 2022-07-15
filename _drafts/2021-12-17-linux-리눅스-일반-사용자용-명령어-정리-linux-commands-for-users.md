@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-리눅스 명령어 간단 정리 글. 항상 루트 권한이 필요한 명령은 다른 글로.
+리눅스 명령어와 유틸리티 간단 정리 글. 항상 루트 권한이 필요한 명령은 다른 글로.
 
 ## Ubuntu의 터미널 단축키
 
@@ -763,3 +763,82 @@ make install
 > `make`: follows the instructions of the Makefile and converts source code into binary for the computer to read.  
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
+
+## logrotate
+
+로그 파일을 관리해주는 명령어...는 아니고 별도로 설치해야 할 수도 있는 시스템 유틸리티. 일정 규칙에 따라 파일을 압축/삭제/이름변경 등을 자동으로 수행하도록 할 수 있음. 예를 들어 매일 자정마다 특정 파일을 압축하고 지운다던지...
+
+`logrotate.timer`를 서비스로 등록해 자동 실행되도록 하는 식으로 사용한다. 기본 설정 파일 경로는 `/etc/logrotate.conf`, 각 로그파일 별 설정은 `/etc/logrotate.d` 디렉터리 아래에 생성한다. 예를 들면 톰캣 로그 파일의 로테이션은 다음처럼 작성할 수 있다:
+
+```
+/svc/tomcat/logs/catalina.out{
+ copytruncate
+ daily
+ rotate 14
+ compress
+ missingok
+ notifempty
+ dateext
+}
+```
+
+TODO
+
+## ntp
+
+Network Time Protocol, 네트워크로 서버 시간을 조정하는 시스템 유틸리티.
+
+설치 후 설정파일 `/etc/ntp.conf` 에서 서버 풀(혹은 그냥 단독으로 하나)을 원하는 타임 서버로 지정하면 된다.
+
+```bash
+# 서울 시간을 제공하는 타임 서버와 동기화
+server xxx iburst
+```
+
+`xxx`에 서버 아이피 혹은 도메인을 넣어주면 된다.
+
+그 다음 서비스를 재시작하면 KST로 조회돼야 하는데:
+
+```bash
+$ date
+Thu Jul 14 05:07:22 UTC 2022
+```
+
+만약 안된다면 심볼릭링크 `/etc/localtime`의 대상을 `/usr/share/zoneinfo/Asia/Seoul`로 변경한다.
+
+```bash
+$ ll /etc/localtime
+$ rm /etc/localtime
+$ ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+```
+
+## cron
+
+시간을 기반으로 하는 잡 스케줄러. crontab은 cron table을 말하며 cron 작업을 정의하는 파일이면서 동시에 스케줄을 등록하는 명령어다.
+
+TODO 리눅스의 경우 crontab이 `/etc/crontab`에 있고, `/var/spool/cron/crontabs` 아래에도 있는데 머선 차이일까...
+
+### 스케줄 등록하기
+
+```bash
+# crontab 편집 모드로 진입
+crontab -e
+
+# USER_NAME으로 등록
+crontab -e -u USER_NAME
+```
+
+`USER_NAME`을 생략하면 현재 로그인한 유저로 등록된다.
+
+#### 문법
+
+### 등록된 스케줄 확인
+
+아래 경로에서 확인할 수 있다.
+
+- `/etc/cron.daily`
+- `/etc/cron.hourly`
+- `/etc/cron.monthly`
+- `/etc/cron.weekly`
+
+
