@@ -7,6 +7,7 @@ categories:
 tags:
   - devtool
   - eclipse
+  - hot-swap
   - hot-deploy
   - hot-code-replace
 ---
@@ -15,7 +16,7 @@ tags:
 
 - [http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/](http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/)
 
-이클립스에선 JVM을 디버그 모드로 구동한 후, 런타임이 종료되지 않은 상태에서(WAS를 띄워놓은 것과 같은 상태) 클래스 파일의 변경이 감지되면 JVM 재시작 없이 변경된 클래스파일을 교체하는 hot code replace 기능을 제공한다. (hot deploy 또는 hot swap 이라고도 한다.) 유료 플러그인인 JRebel과 비교하면 초라하지만... 없는 것보단 낫다.
+이클립스에선 디버그 모드로 로컬 서버 기동 후 클래스 파일의 변경이 감지되면 재시작 없이 변경된 클래스파일을 교체하는 Hot code replace 기능을 제공한다. 관련 기술로 How deploy, Hot swap이 있는데 JPDA에서 지원하는 건 Hot swap, WAS에서 지원하는 건 How deploy라고 구분하는 모양이다.
 
 그리고 디버그 모드라고 해도 직접 만든 '무한루프로 대기하면서 종료되지 않는 코드'는 핫스왑이 안되는 걸 보면 이 기능이 IDE에서 지원하는건지 아니면 톰캣(혹은 특정 스펙을 준수하는 WAS)에서 지원하는 건지는 확실하지 않음.
 
@@ -45,3 +46,5 @@ replace에 실패했으니 무시하던지, JVM을 종료하던지, 아니면 �
 대화창이 나타나는게 귀찮다면 옵션에서 아예 꺼버릴 수도 있다. 이클립스 mars 기준으로 `Preferences > Java > Debug > Hot Code Replace > show error when hot code replace fails.` 체크박스를 해제하면 된다.
 
 그리고 간혹 익명 클래스나 중첩 클래스의 내용을 변경할 때 hot code replace가 이상하게 작동하는 때가 있다. 이 때는 그냥 재시작 하면 된다. 하여간 안되면 재실행이 답.
+
+플러그인 중 JRebel이 있는데, 재시작 없이 교체 가능한 범위의 제한이 없다. 하지만 유료.

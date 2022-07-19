@@ -90,7 +90,7 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 ## 런타임 중 변경된 파일 자동으로 다시 불러오기
 
-hot deploy, hot swap, hot code replace 등으로 불리는, 런타임 중 변경된 파일을 즉시 교체하는 기능이다.
+Hot deploy, Hot swap, Hot code replace 등으로 불리는(엄밀히 따지면 셋 다 다르지만...), 런타임 중 변경된 파일을 즉시 교체하는 기능이다.
 
 로컬 서버로 톰캣을 별도로 추가해서 사용할 때만 해당. **TODO 스프링 부트같은 내장 WAS는 확인 필요.**
 

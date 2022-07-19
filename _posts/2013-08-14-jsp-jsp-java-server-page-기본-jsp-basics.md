@@ -52,17 +52,17 @@ page는 페이지에 대한 기본 정보 입력(생성하는 문서의 타입, 
 - `language`: 스크립트 코드에서 사용되는 프로그래밍 언어 지정. 기본 값은 "java"
 - `contentType`: 생성할 문서 타입. 기본 값: "text/html" 여기서 지정하는 charset은 HTTP 응답 케릭터셋을 의미한다.
 - `import`: 사용할 자바 클래스 지정
-- `session`: 세션 사용 여부 지정("true": 사용, "false": 미사용). 기본 값은 "true"
+- `session`: 세션 사용 여부 지정(`true`: 사용, `false`: 미사용). 기본 값은 `true`
 - `buffer`: 출력 버퍼 크기 지정("none": 미사용, "12kb": 출력 버퍼 12kb 사용). 기본 값은 "8kb"
-- `autoFlush`: 출력 버퍼가 다 찼을 경우 자동으로 버퍼에 있는 데이터를 출력 스트림에 보내고 비울지의 여부. true일 땐 버퍼의 내용을 웹 브라우저에 보 낸 후 버퍼 비우고 false는 에러를 발생시킨다. 기본값은 true
+- `autoFlush`: 출력 버퍼가 다 찼을 경우 자동으로 버퍼에 있는 데이터를 출력 스트림에 보내고 비울지의 여부. true일 땐 버퍼의 내용을 웹 브라우저에 보 낸 후 버퍼 비우고 `false`는 에러를 발생시킨다. 기본값은 `true`
 - `info`: 페이지에 대한 설명
 - `errorPage`: 실행 도중 에러 발생 시 보여줄 페이지 지정 `<%@ page errorPage="e.jsp"%>`
-- `isErrorPage`: 현재 패이지가 에러가 발생할 때 보여 지는 페이지 인지의 여부("true": 에러, "false": 에러아님). 기본 값은 false
+- `isErrorPage`: 현재 패이지가 에러가 발생할 때 보여 지는 페이지 인지의 여부(`true`: 에러, `false`: 에러아님). 기본 값은 false
 - `pageEncoding`: JSP 파일 자체의 캐릭터 인코딩 지정
-- `isELIgnored`: JSP 2.0에 새롭게 추가된 내용 ("true": EL 무시, "false": EL 사용). 기본 값: web.xml 파일이 사용하는 JSP 버전 및 설정에 따라 다름
+- `isELIgnored`: JSP 2.0에 새롭게 추가된 내용 (`true`: EL 무시, `false`: EL 사용). 기본 값: web.xml 파일이 사용하는 JSP 버전 및 설정에 따라 다름
 - `extends`: JSP 페이지가 Servlet 소스로 변환되는 시점에서 자신이 상속 받을 클래스를 지정할때 사용. 거의 사용되지 않는 속성
-- `isThreadSafe`: 하나의 JSP 페이지가 동시에 여러 브라우저의 요청을 처리할 수 있는지 여부를설정. 기본 값은 true
-- `trimDirectiveWhitespaces`: JSP 2.1 버전에서는 page 디렉티브에 새롭게 추가된 속성으로 불필요하게 생성되는 줄 바꿈 공백 문자를 제거 할 수 있다. 기본 값은 false
+- `isThreadSafe`: 하나의 JSP 페이지가 동시에 여러 브라우저의 요청을 처리할 수 있는지 여부를설정. 기본 값은 `true`
+- `trimDirectiveWhitespaces`: JSP 2.1 버전에서는 page 디렉티브에 새롭게 추가된 속성으로 불필요하게 생성되는 줄 바꿈 공백 문자를 제거 할 수 있다. 기본 값은 `false`
 
 ### 주로 쓰이는 설정
 

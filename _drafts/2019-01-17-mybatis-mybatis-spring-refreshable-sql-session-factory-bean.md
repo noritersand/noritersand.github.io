@@ -8,7 +8,6 @@ tags:
   - java
   - mybatis
   - spring
-  - hot-deploy
   - hot-swap
 ---
 
