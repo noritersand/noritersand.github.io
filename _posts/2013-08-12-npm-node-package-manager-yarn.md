@@ -26,11 +26,15 @@ NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 �
 ## 모듈 설치
 
 ```bash
+npm install [<package-spec> ...]
+# 별칭: add, i, in, ins, inst, insta, instal, isnt, isnta, isntal, isntall 
+```
+
+오타까지 별칭으로 해놓은 건... 좀 웃겼다 🤭
+
+```bash
 # package.json 의 "dependencies"를 참조하여 자동설치
 npm install
-
-# install의 단축어
-npm i
 
 # 로컬 모듈로 설치
 npm install 모듈1[, 모듈2, 모듈3, ...]
@@ -58,8 +62,12 @@ npm install nodemon -g
 npm install vue@latest
 ```
 
-
 ## 조회
+
+```bash
+npm ls <package-spec>
+# 별칭: list
+```
 
 ```bash
 # 설치된 npm의 버전을 확인한다.
@@ -80,14 +88,24 @@ npm fund
 ## 업데이트
 
 ```bash
+npm update [<pkg>...]
+# 별칭: up, upgrade, udpate
+```
+
+```bash
 # 모듈명을 명시 하지 않으면 로컬 모듈을 모두 업데이트
 npm update [모듈명]
 
 # 모듈명을 명시 하지 않으면 글로벌 모듈을 모두 업데이트
-npm updata [모듈명] -g
+npm update [모듈명] -g
 ```
 
 ## 모듈 삭제
+
+```bash
+npm uninstall [<@scope>/]<pkg>...
+# 별칭: unlink, remove, rm, r, un
+```
 
 ```bash
 # 로컬 모듈 삭제
@@ -97,15 +115,41 @@ npm uninstall 모듈명
 npm uninstall 모듈명 -g
 ```
 
-## package.json 자동생성
+## 설치한 모듈 실행
+
+[npm Docs: npm-exec](https://docs.npmjs.com/cli/v7/commands/npm-exec)
+
+```bash
+# 로컬에 설치한 mocha 모듈 실행
+npm exec 모듈명
+```
+
+모듈을 전역으로 설치한게 아니라면 이 명령어로 실행해야함.
+
+예시:
+
+```bash
+npm exec mocha test/**
+npm exec http-server -p 9090
+```
+
+`npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
+
+## package.json
+
+`package.json`은 프로젝트(혹은 모듈)의 설명, 의존관계, 빌드/실행 스크립트 등을 정의하는 파일이다. 직접 만들어도 되지만 보통은 `init`을 씀:
 
 ```bash
 npm init
+npm init <package-spec> (same as `npx <package-spec>)
+npm init <@scope> (same as `npx <@scope>/create`)
+
+별칭: create, innit
 ```
 
-## package.json 구성요소
+### package.json 구성요소
 
-npm init 으로 자동생성되는 요소들
+`init` 으로 자동생성되는 요소들
 
 - name: 프로젝트 이름. 배포 시 필수 항목
 - version: 버전. 배포 시 필수 항목
@@ -119,7 +163,7 @@ npm init 으로 자동생성되는 요소들
 - repository:
 - keywords: 키워드
 
-## 그 외 추가 가능한 요소
+### 그 외 추가 가능한 요소
 
 - homepage: 프로젝트의 홈페이지
 - contributors: 공헌자 정보
@@ -127,7 +171,7 @@ npm init 으로 자동생성되는 요소들
 - private: npm 저장소 배포 여부. true로 지정하면 배포하지 않는다.
 - engine: 프로젝트의 기반 엔진을 표시한다.
 
-## example
+### example
 
 ```js
 {
@@ -157,26 +201,6 @@ npm init 으로 자동생성되는 요소들
   ]
 }
 ```
-
-## 설치한 모듈 실행
-
-[npm Docs: npm-exec](https://docs.npmjs.com/cli/v7/commands/npm-exec)
-
-```bash
-# 로컬에 설치한 mocha 모듈 실행
-npm exec 모듈명
-```
-
-모듈을 전역으로 설치한게 아니라면 이 명령어로 실행해야함.
-
-예시:
-
-```bash
-npm exec mocha test/**
-npm exec http-server -p 9090
-```
-
-`npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
 
 ## 모듈을 폴더단위로 관리하기
 
@@ -239,7 +263,9 @@ yarn remove PACKAGE_NAME
 
 NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능.
 
-### [Yarn Global](https://classic.yarnpkg.com/en/docs/cli/global)
+### Yarn Global
+
+참고: https://classic.yarnpkg.com/en/docs/cli/global
 
 ```bash
 # 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
@@ -271,7 +297,7 @@ yarn global dir
 
 실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. NPM 글로벌로 설치했더니 해당 메시지 사라짐. (2022-01-28, Yarn v1.22.17)
 
-**그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같다**.
+**그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같음.**
 
 ## 자주 쓰는 패키지
 
