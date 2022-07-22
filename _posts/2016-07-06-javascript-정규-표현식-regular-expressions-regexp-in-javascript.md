@@ -17,12 +17,13 @@ tags:
 
 #### 참고한 문서
 
-- [http://www.regexr.com/](http://www.regexr.com/)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [\[MDN\] RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [\[MDN\] Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [regular expressions 101](https://regex101.com/)
+- [RegExr](https://regexr.com/)
+- [REGEXPER](https://regexper.com/)
 - [http://blog.outsider.ne.kr/360](http://blog.outsider.ne.kr/360)
 - [http://regexlib.com/DisplayPatterns.aspx](http://regexlib.com/DisplayPatterns.aspx)
-- [http://blog.eairship.kr/197](http://blog.eairship.kr/197)
-- [http://tryhelloworld.co.kr/courses/정규표현식](http://tryhelloworld.co.kr/courses/정규표현식)
 
 
 정규 표현식이란 문자열에서 특정한 캐릭터 조합을 찾아내기 위한 패턴이다. 줄여서 정규식이라고도 한다.
