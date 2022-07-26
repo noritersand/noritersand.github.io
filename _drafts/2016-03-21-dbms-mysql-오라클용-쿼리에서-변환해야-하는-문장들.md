@@ -29,7 +29,7 @@ tags:
 ## 테이블 별칭
 
 - 오라클: 테이블 별칭을 쌍따옴표로 감싸기 가능. `AS` 키워드 사용 불가. ```FROM SOME_TABLE "SOME_ALIAS"```
-- MySQL: 테이블 별칭을 쌍따옴표로 감싸기 불가. `AS` 키워드 사용 가능. ```FROM SOME_TABLE AS SOME_ALIAS```, ```FROM SOME_TABLE AS `SOME_ALIAS````
+- MySQL: 테이블 별칭을 쌍따옴표로 감싸기 불가. `AS` 키워드 사용 가능. ```FROM SOME_TABLE AS SOME_ALIAS```, ```FROM SOME_TABLE AS `SOME_ALIAS` ```
 
 ## null 처리
 
