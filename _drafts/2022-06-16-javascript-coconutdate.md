@@ -21,9 +21,9 @@ tags:
 
 ## 개요
 
-날짜를 좀 편하게 다루려고 만든 프로토타입. 이름은 별 의미 ㅇ벗음.
+날짜를 좀 편하게 다루려고 만든 프로토타입. 이름은 별 의미 ㅇ벗다.
 
-가장 늦게 정해진 표준이 `static`인데 사파리 16에서 아직 구현이 안됐음. 참고할 것
+이 코드에서 사용한 것 중 가장 늦게 정해진 표준이 `static`인데 사파리 16에서 아직 구현이 안됐음.
 
 ## 코드
 
@@ -41,27 +41,35 @@ yesterday.monthString; // "06"
 
 ```js
 class CoconutDate {
-  static DATE_DELIMETER = "-";
-  static TIME_DELIMETER = ":";
+  static DATE_DELIMITER = "-";
+  static TIME_DELIMITER = ":";
+  static MILLISECOND_DELIMITER = ".";
   #date;
 
-  constructor({when = null, dayPlus = 0, monthPlus = 0, yearPlus = 0, format = ''} = {}) {
+  constructor({when = null, dayPlus = 0, monthPlus = 0, yearPlus = 0, hourPlus = 0, minutePlus = 0, secondPlus = 0, millisecondPlus = 0, format = ''} = {}) {
     this.#date = Boolean(when) ? new Date(when) : new Date();
-    this.#date.setDate(this.#date.getDate() + dayPlus);
-    this.#date.setMonth(this.#date.getMonth() + monthPlus);
-    this.#date.setFullYear(this.#date.getFullYear() + yearPlus);
+    debugger;
+    dayPlus && this.#date.setDate(this.#date.getDate() + dayPlus);
+    monthPlus && this.#date.setMonth(this.#date.getMonth() + monthPlus);
+    yearPlus && this.#date.setFullYear(this.#date.getFullYear() + yearPlus);
+    hourPlus && this.#date.setHours(this.#date.getHours() + hourPlus);
+    minutePlus && this.#date.setMinutes(this.#date.getMinutes() + minutePlus);
+    secondPlus && this.#date.setSeconds(this.#date.getSeconds() + secondPlus);
+    millisecondPlus && this.#date.setMilliseconds(this.#date.getMilliseconds() + millisecondPlus);
   }
 
-  #toDateString() {
+  toDateString() {
     // FIXME constructor의 format에 따라 다른 형식으로 변환 필요
-    return this.#date.getFullYear() + CoconutDate.DATE_DELIMETER + (this.#date.getMonth() + 1).toString().padStart(2, '0')
-        + CoconutDate.DATE_DELIMETER + this.#date.getDate().toString().padStart(2, '0');
+    return this.#date.getFullYear() + CoconutDate.DATE_DELIMITER + (this.#date.getMonth() + 1).toString().padStart(2, '0')
+        + CoconutDate.DATE_DELIMITER + this.#date.getDate().toString().padStart(2, '0');
   }
-  #toDateTimeString() {
+
+  toDateTimeString() {
     // FIXME constructor의 format에 따라 다른 형식으로 변환 필요
-    return this.#toDateString() + ' ' + this.#date.getHours().toString().padStart(2, '0')
-      + CoconutDate.TIME_DELIMETER + this.#date.getMinutes().toString().padStart(2, '0')
-      + CoconutDate.TIME_DELIMETER + this.#date.getSeconds().toString().padStart(2, '0');
+    return this.toDateString() + ' ' + this.#date.getHours().toString().padStart(2, '0')
+      + CoconutDate.TIME_DELIMITER + this.#date.getMinutes().toString().padStart(2, '0')
+      + CoconutDate.TIME_DELIMITER + this.#date.getSeconds().toString().padStart(2, '0')
+      + CoconutDate.MILLISECOND_DELIMITER + this.#date.getMilliseconds().toString().padStart(3, '0');
   }
 
   /**
@@ -77,7 +85,7 @@ class CoconutDate {
    * @returns {Date}
    */
   ofMidnight() {
-    return new Date(`${this.#toDateString()}T00:00:00.000+09:00`);
+    return new Date(`${this.toDateString()}T00:00:00.000+09:00`);
   }
 
   /**
@@ -85,30 +93,14 @@ class CoconutDate {
    * @returns {Date}
    */
   ofHighNoon() {
-    return new Date(`${this.#toDateString()}T12:00:00.000+09:00`);
-  }
-
-  /**
-   * #date를 년월일을 문자열로 반환
-   * @returns {string}
-   */
-  get dateString() {
-    return this.#toDateString();
-  }
-
-  /**
-   * #date를 년월일+시분초를 문자열로 반환
-   * @returns {string}
-   */
-  get dateTimeString() {
-    return this.#toDateTimeString();
+    return new Date(`${this.toDateString()}T12:00:00.000+09:00`);
   }
 
   /**
    * 년도를 4자리 문자열로 반환
    * @returns {string}
    */
-  get yearString() {
+  getYearOfEra() {
     return this.#date.getFullYear().toString();
   }
 
@@ -116,7 +108,7 @@ class CoconutDate {
    * 월을 2자리 문자열로 반환
    * @returns {string}
    */
-  get monthString() {
+  getMonthOfYear() {
     return (this.#date.getMonth() + 1).toString().padStart(2, '0');
   }
 
@@ -124,10 +116,12 @@ class CoconutDate {
    * 일자를 2자리 문자열로 반환
    * @returns {string}
    */
-  get dayString() {
+  getDayOfMonth() {
     return this.#date.getDate().toString().padStart(2, '0');
   }
 }
 ```
+
+원래 getter가 잔뜩 있었는데, 아무래도 getter는 필드를 단순 반환만 하는게 맞는 것 같아서 없앰.
 
 끗.
