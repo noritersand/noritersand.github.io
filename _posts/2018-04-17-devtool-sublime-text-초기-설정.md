@@ -75,7 +75,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
   ```
 - [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
 - [MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
-- [Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + shift + alt + n</kbd>
+- [Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
 
 ## 작성자 저장용 사용자 설정
 
@@ -125,13 +125,13 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
   { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
   { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
   { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
-  { "keys": ["ctrl+shift+alt+a"], "command": "stage_all" },
-  { "keys": ["ctrl+shift+alt+u"], "command": "unstage_all" },
+  { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
+  { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
   { "keys": ["ctrl+,"], "command": "open_preferences" }
 ]
 ```
 
-`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데 `{ "keys": ["ctrl+shift+alt+d"], "command": "discard_all_modified" }` 위험해서 빼앰.
+`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데 `{ "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" }` 위험해서 빼앰.
 
 ## 기본 단축키
 
