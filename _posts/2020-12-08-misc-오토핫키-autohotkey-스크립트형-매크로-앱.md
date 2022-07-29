@@ -17,6 +17,10 @@ tags:
 - [https://www.autohotkey.com/](https://www.autohotkey.com/)
 - [https://www.autohotkey.com/docs/AutoHotkey.htm](https://www.autohotkey.com/docs/AutoHotkey.htm)
 
+#### 버전 정보
+
+- AutoHotkey_1.1.3x
+
 ## 개요
 
 AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플리케이션이다. 특정 키를 눌렀을 때 기존과 다른 키가 입력되게 하는 간단한 키매핑부터, 일련의 키 입력을 반복하는 매크로, 시간차를 둔 입력 등 상상할 수 있는 거의 모든 것을 만들 수 있다.
@@ -117,7 +121,7 @@ Loop, 6 {
 return
 ```
 
-<kbd>kbd</kbd> 태그 입력 후 커서를 왼쪽으로 여섯 번 이동하는 스크립트다.
+`kbd` 태그 입력 후 커서를 왼쪽으로 여섯 번 이동하는 스크립트다.
 
 #### \#Hotstring
 
@@ -305,6 +309,22 @@ ESC::return
 
 내가 방금 뭘 눌렀는지 이력으로 보여주는 창을 띄운다. 막 줄은 <kbd>ESC</kbd>로 종료되는 것을 방지한다.
 
+### Office App 단축키 막기
+
+출처: [https://superuser.com/questions/1457073/how-do-i-disable-specific-windows-10-office-keyboard-shortcut-ctrlshiftwinal](https://superuser.com/questions/1457073/how-do-i-disable-specific-windows-10-office-keyboard-shortcut-ctrlshiftwinal)
+
+```c
+#^!Shift::
+#^+Alt::
+#!+Ctrl::
+^!+LWin::
+^!+RWin::
+Send {Blind}{vk07}
+return
+```
+
+<kbd>ctrl + alt + shift + win</kbd> 키로 발동하는 MS Office 관련 단축키 비활성화 코드. 단점은 저 네 개를 한 번에 누르는 modifier 키 조합을 아예 못쓴다는 것.
+
 ### 현재 날짜와 시간
 
 ```c
@@ -350,5 +370,7 @@ return
 
 <kbd>[</kbd>를 누르면 지정한 좌표로 이동하여 좌클릭하는 스크립트. `MouseClick, Left`라고만 쓰면 현재 커서 위치에서 좌클릭한다.  
 좌표는 WindowSpy(AutoHotkey 설치 시 같이 깔림) 앱에서 확인하면 되며, [CoordMode](https://www.autohotkey.com/docs/commands/CoordMode.htm)를 사용하지 않는 이상 절대위치가 아닌 앱 별 상대위치로 작동한다.
+
+
 
 ## 꼐속...

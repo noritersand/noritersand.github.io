@@ -69,24 +69,24 @@ Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정�
 
 일단 발견한 인코딩 관련 설정은 요렇게 있다.
 
-### \#1
+#### \#1
 
 Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
 
-### \#2
+#### \#2
 
 Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
 
-### \#3
+#### \#3
 
 Settings > Editor > File Encodings로 이동한 뒤:
 
 - Project Encoding을 UTF-8로 변경
 - Default encoding for properties files를 UTF-8, 그 옆에 Transparent native-to-ascii conversion 체크
 
-### 그래서 되드나?
+#### \#4
 
-잘 모르겠는걸?
+Settings > Editor > General > Console로 이동해서 Default Encoding을 UTF-8로 변경
 
 ## 런타임 중 변경된 파일 자동으로 다시 불러오기
 
