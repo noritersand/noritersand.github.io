@@ -31,15 +31,15 @@ tags:
 ## 메뉴얼/API DOC/튜토리얼
 
 - [MDN](https://developer.mozilla.org/): 그 MDN
-- [⭐DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
-- [⭐Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
+- [⭐ DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
+- [⭐ Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 
 ## 개발 지원 툴
 
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
 - [JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음.
+- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음.
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 - [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
 - [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
@@ -107,6 +107,7 @@ tags:
 
 - [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 툴. 기본은 무료고, 대-충 비공개 프로젝트를 여러명이 사용할 땐 유료인듯
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
+- [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 
 ## ERD
 
@@ -134,7 +135,7 @@ tags:
 
 - [Fork](https://fork.dev): 요즘 잘 쓰고 있는 중요한 기능만 있어 가볍고 UI가 매우 보기 편한게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤ ~~난 이미 사슴~~
 - [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 ~~속도는 느리지만~~ 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
+- [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
 - [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴.
 
 ## 트래픽 캡쳐
@@ -158,13 +159,12 @@ tags:
 
 ## 텍스트 에디터
 
-- [Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
+- [⭐ Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
 - [Notepad++](https://notepad-plus-plus.org)
 - [UltraEdit](http://www.ultraedit.com/loc/ko/index_ko.html)
-- [Atom](https://atom.io): 깃 허브 페이지용으로 딱 좋음
 - [Nova](https://nova.app)
 - [typora](https://typora.io): 마크다운 전용 에디터
-- [Visual Studio Code](https://code.visualstudio.com): 요즘 대세
+- [⭐ Visual Studio Code](https://code.visualstudio.com): 요즘 대세
 
 ## SSH/텔넷/FTP 클라이언트
 
@@ -246,7 +246,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 15일 무료. 얘도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않는다. 상용
 - [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴#2. 자바/PHP/닷넷 앱 모니터링. 상용
 - [WhaTap](https://www.whatap.io/ko): APM 툴#3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
-- [Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
+- [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 
 ## 그리드
@@ -254,6 +254,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [ag-grid](https://www.ag-grid.com)
 - [jqgrid](http://www.trirand.com/blog)
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
+- [⭐ Toast UI Grid](https://ui.toast.com/tui-grid): 오픈 소스고 가볍게 쓰기 좋다. 아직 불편한 점은 딱히 없음. 
 
 ## 이미지 편집기
 

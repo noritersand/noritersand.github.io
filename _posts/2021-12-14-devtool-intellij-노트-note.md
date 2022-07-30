@@ -102,16 +102,6 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 
 검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있긴 함.
 
-## 추천 플러그인
-
-- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
-- CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
-  - GitHub Copilot: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
-  - 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
-  - 코파일럿 발동: <kbd>alt + \</kbd>
-  - 코파일럿 제안 선택: <kbd>tab</kbd>
-  - 다음 제안 보기: <kbd>alt + [</kbd>
-  - 이전 제안 보기: <kbd>alt + ]</kbd>
 
 ## 인텔리제이에서 사용할 VM options 지정하기
 
@@ -264,3 +254,19 @@ Select Next Occurrence. 멀티 캐럿 없는 줄 아랏네 😏
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
+
+## 추천 플러그인
+
+- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+- CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+
+#### GitHub Copilot
+
+AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
+
+- 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
+- 코파일럿 발동: <kbd>alt + \</kbd>
+- 코파일럿 제안 선택: <kbd>tab</kbd>
+- 다음 제안 보기: <kbd>alt + [</kbd>
+- 이전 제안 보기: <kbd>alt + ]</kbd>
+

@@ -155,26 +155,6 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 `oem_3`는 [사용자의 키보드 레이아웃에 따라 다를 수 있는데](https://github.com/microsoft/vscode/issues/27491) 작성자의 경우 백틱``` ` ```에 해당함.
 
-## 추천 확장 기능(플러그인)
-
-- ESLint `dbaeumer.vscode-eslint`: JS 분석 도구. 문법 오류 검출 같은 기능이 있음.
-- Prettier - Code formatter `esbenp.prettier-vscode`: code formatter임. JS, JSON, CSS, HTML, Markdown 등을 지원
-- change-case `wmaurer.change-case`
-- Java Server Pages (JSP) `pthorsson.vscode-jsp`
-- open in browser `techer.open-in-browser`
-- Open file `fr43nk.seito-openfile`
-- Bookmarks `alefragnani.bookmarks`
-- Auto Close Tag `formulahendry.auto-close-tag`
-- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. 윈도우일 경우 기본 단축키는 <kbd>ctrl + 방향키 위/아래</kbd>임.
-- Highlight Matching Tag `vincaslt.highlight-matching-tag`
-- Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
-- indent-rainbow `oderwat.indent-rainbow`
-- Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
-- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
-  - 발동: <kbd>alt + \</kbd>
-  - 제안 선택: <kbd>tab</kbd>
-  - 자동 완성 제안 창 보기: <kbd>ctrl + enter</kbd>
-
 ## 기본 단축키
 
 ### 파일 에디터
@@ -203,3 +183,30 @@ Add Selection
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
+
+## 추천 확장 기능(플러그인)
+
+- ESLint `dbaeumer.vscode-eslint`: JS 분석 도구. 문법 오류 검출 같은 기능이 있음.
+- Prettier - Code formatter `esbenp.prettier-vscode`: code formatter임. JS, JSON, CSS, HTML, Markdown 등을 지원
+- change-case `wmaurer.change-case`
+- Java Server Pages (JSP) `pthorsson.vscode-jsp`
+- open in browser `techer.open-in-browser`
+- Open file `fr43nk.seito-openfile`
+- Bookmarks `alefragnani.bookmarks`
+- Auto Close Tag `formulahendry.auto-close-tag`
+- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. 윈도우일 경우 기본 단축키는 <kbd>ctrl + 방향키 위/아래</kbd>임.
+- Highlight Matching Tag `vincaslt.highlight-matching-tag`
+- Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
+- indent-rainbow `oderwat.indent-rainbow`
+- Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
+
+#### GitHub Copilot `github.copilot`
+
+AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
+
+- 발동: <kbd>alt + \</kbd>
+- 제안 선택: <kbd>tab</kbd>
+- 자동 완성 제안 창 보기: <kbd>ctrl + enter</kbd>
+
+하지만 유료로 전환되었다는 것 🤦‍♂️
+

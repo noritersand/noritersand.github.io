@@ -48,35 +48,6 @@ sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열�
 sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ```
 
-### 추가 패키지 설치
-
-패키지는 서브라임 커뮤니티에서 만드는 사용자 플러그인 같은 거라고 생각하면 된다.
-
-일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
-
-설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
-
-#### 추천 패키지
-
-- [MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
-- [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
-- [File​Diffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
-- [BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
-- ~~[Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side): FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 <kbd>alt + n</kbd>(다음), <kbd>alt + p</kbd>(이전)~~ 근데 기본 단축키를 바꿔버려서 안쓰기로 함.
-- [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
-- [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
-- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
-- [Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs): URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함. **근데 이거 깔면 기본 단축키인 `replace_all`을 덮어쓰기 때문에 필요할 때만 활성화시키는 게 좋음.**
-- [Case Conversion](https://packagecontrol.io/packages/Case%20Conversion): 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.  
-  두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
-  ```
-  { "detect_acronyms": false }
-  ```
-- [SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
-- [MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
-- [Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
-
 ## 작성자 저장용 사용자 설정
 
 ### Sublime Text
@@ -189,3 +160,47 @@ Expand Selection
 - <kbd>ctrl + k, ctrl + u</kbd>: 대문자 변환
 - <kbd>ctrl + k, ctrl + l</kbd>: 소문자 변환
 - <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글
+
+## 패키지
+
+패키지는 서브라임 커뮤니티에 공유되는 플러그인 같은 거라고 생각하면 된다.
+
+일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
+
+설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
+
+### 추천 패키지
+
+- [⭐ MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
+- [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
+- [FileDiffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): 서브라임에서 기본적으로 지원하지 않는 인코딩, 가령 EUC-KR 등을 지원하게 해주는 패키지.
+- [⭐ BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
+- [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
+- [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
+- [HexViewer](https://packagecontrol.io/packages/HexViewer): 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
+- [⭐ SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
+- [⭐ MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
+- [⭐ Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
+- [⭐ Emmet](https://packagecontrol.io/packages/Emmet): 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. Emmet 문법은 [여기](https://docs.emmet.io/)를 보면 됨.
+
+#### ⛔ ~~[Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)~~
+
+~~FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)~~
+
+이 패키지는 기본 단축키를 바꿔버려서 안쓰기로 함.
+
+#### [⭐ Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs)
+
+URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함.  
+**⚠️ 설치하면 기본 단축키인 `replace_all`을 덮어쓰기 때문에 필요할 때만 활성화시키는 게 좋음.**
+
+#### [⭐ Case Conversion](https://packagecontrol.io/packages/Case%20Conversion)
+
+영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.  
+
+두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
+
+```
+{ "detect_acronyms": false }
+```

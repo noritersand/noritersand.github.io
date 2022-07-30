@@ -17,7 +17,7 @@ tags:
 #### 참고한 문서
 
 - [\[MDN\] data-\*](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
-- [\[MDN\] HTMLElement​.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)                             
+- [\[MDN\] HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)                             
 - [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
 - [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
 
