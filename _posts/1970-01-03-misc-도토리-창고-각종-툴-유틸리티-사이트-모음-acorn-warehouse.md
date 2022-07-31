@@ -38,7 +38,7 @@ tags:
 ## 개발 지원 툴
 
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
-- [JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
+- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
 - [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음.
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 - [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
@@ -56,7 +56,7 @@ tags:
 
 ## 개발용 컴포넌트, 써드파티 라이브러리
 
-- [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 퓨어 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 퓨어 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 퓨어 자바스크립트 기반
 - [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드 UI 라이브러리. 가볍게 쓰기 매우 좋다. NHN에서 만듦
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
@@ -74,7 +74,7 @@ tags:
 
 ## 일정/TODO 관리
 
-- [workflowy](https://workflowy.com): 온라인 TODO 툴
+- [⭐ workflowy](https://workflowy.com): 온라인 TODO 툴
 - [Calendly](https://calendly.com): 이메일로 일정 맞추기
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
@@ -133,7 +133,7 @@ tags:
 
 ## Git GUI 툴
 
-- [Fork](https://fork.dev): 요즘 잘 쓰고 있는 중요한 기능만 있어 가볍고 UI가 매우 보기 편한게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤ ~~난 이미 사슴~~
+- [Fork](https://fork.dev): 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
 - [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 ~~속도는 느리지만~~ 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
 - [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
 - [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴.
