@@ -12,6 +12,14 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+## NAT, Network address translation
+
+네트워크 패킷의 IP 헤더에 있는 주소 정보(목적지 혹은 출발지 등)를 수정해 매핑을 변경하는 방법... 이라고 한다.
+
+TODO
+
+TODO NAT Gateway
+
 ## Name Server와 DNS의 차이
 
 - [http://www.differencebetween.net/technology/difference-between-name-server-and-dns/](http://www.differencebetween.net/technology/difference-between-name-server-and-dns/)
@@ -129,9 +137,4 @@ push "route 172.31.0.0 255.255.0.0 vpn_gateway"
 
 **TODO 그 다음부턴 차단 문제가 없어지긴 했지만 도데체 왜 이렇게 되는건지는 잘 몲**
 
-
-
-
-
-
-
+누군가의 설명에 따르면 이 설정으로 private subnet(AWS)을 접속할 때만 VPN 서버를 경유하게 된다 함.

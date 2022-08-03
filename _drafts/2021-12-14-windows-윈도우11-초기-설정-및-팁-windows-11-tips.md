@@ -74,5 +74,5 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 6. 가변: Discord, Slack
 7. VSCODE
 8. 가변: IDE#1
-9. 가변: IDE#2, 카톡
-0. 가변: DBMS tool
+9. 가변: DBMS tool
+0. 가변: IDE#2, 카톡, WorkFlowy

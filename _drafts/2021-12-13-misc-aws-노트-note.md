@@ -35,9 +35,7 @@ tags:
 
 ## AWS 서비스
 
-### [IAM, Identity and Access Management](https://aws.amazon.com/ko/iam/)
-
-![](/images/Arch_AWS-Identity-and-Access-Management_48.png)
+### IAM, Identity and Access Management
 
 카테고리: 보안, 자격 증명 및 규정 준수
 
@@ -45,13 +43,15 @@ tags:
 
 AWS는 루트 권한으로 직접 작업하지 말고 IAM을 통해 새 사용자를 추가한 뒤 작업할 것을 권장함. 방화벽과 관련 음슴.
 
-### [EC2](https://aws.amazon.com/ko/ec2/)
-
-![](/images/Arch_Amazon-EC2_48.png)
+### EC2
 
 카테고리: 컴퓨팅
 
-TODO
+#### Elastic IP addresses
+
+elastic IP 주소를 관리하는 메뉴. elastic(탄력 있는) IP라곤 하지만 그냥 공인 IP 주소 관리 메뉴다. 
+
+TODO 여기서 NAT 게이트웨이와 연결하는 머신가가 있는 것 같은데...?
 
 #### AMI, Amazon Machine Images
 
@@ -73,15 +73,13 @@ AWS 인스턴스의 기본 변수가 아닌 값을 식별자로 사용하는 환
 
 말 그대로 로드 밸런싱 기능을 수행하는 서비스. EC2 대시보드에서도 연결되는데 '로드 밸런싱' 혹은 '로드밸런서'로 찾을 수 있음.
 
-### [코드 디플로이 CodeDeploy](https://aws.amazon.com/ko/codedeploy/)
-
-![](/images/Arch_AWS-CodeDeploy_48.png)
+### 코드 디플로이 CodeDeploy
 
 카테고리: 개발자 도구
 
 코드 배포 자동화 서비스. 패키징된 코드 적재, 스크립트 실행 등을 자동으로 수행한다. (빌드는 CodeBuild라고 따로 있음) S3나 EC2에 접근하게 하려면 IAM 할당이 필요한 모양이다.
 
-코드 디플로이의 행동은  [appspec.yml](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html) 파일로 정의한다.
+코드 디플로이의 행동은 [appspec.yml](https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file.html) 파일로 정의한다.
 
 #### 에이전트 설치
 
@@ -140,25 +138,23 @@ tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
 
 여기서는 여러 인스턴스를 어떤 순서와 시간 간격을 두고 배포할 것인지를 결정한다.
 
-### [VPC, Virtual Private Cloud](https://aws.amazon.com/ko/vpc/)
-
-![](/images/Arch_Amazon-Virtual-Private-Cloud_48.png)
+### VPC, Virtual Private Cloud
 
 카테고리: 네트워킹 및 콘텐츠 전송
 
 가상 사설 클라우드. 공용 클라우드 환경에서 논리적으로 격리된 가상의 네트웤을 말함. 가령 EC2나 S3 인스턴스를 하나의 VPC로 묶으면 private IP로 서로 통신할 수 있다.
 
-### [Route 53](https://aws.amazon.com/ko/route53/)
+#### NAT 게이트웨이
 
-![](/images/Arch_Amazon-Route-53_48.png)
+TODO 여기서 나가는 공인 IP를 결정한다는데? (탄력적 IP 주소가 그것)
+
+### Route 53
 
 카테고리: 네트워킹 및 콘텐츠 전송
 
 ~~라우터임 `¯\_(ツ)_/¯`~~ 도메인 등록, 트래픽 라우팅, 웹 앱 상태 확인 등의 기능을 제공하는 서비스다.
 
-### [람다 Lambda](https://aws.amazon.com/ko/lambda/)
-
-![](/images/Arch_AWS-Lambda_48.png)
+### 람다 Lambda
 
 카테고리: 컴퓨팅
 
@@ -166,9 +162,7 @@ tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
 
 다들 많이 쓴다던데 아직 잘 몲겠다... 🤔
 
-### [S3](https://aws.amazon.com/ko/s3/)
-
-![](/images/Arch_Amazon-Simple-Storage-Service_48.png)
+### S3
 
 카테고리: 스토리지
 
@@ -176,9 +170,7 @@ tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
 
 끗.
 
-### [RDS](https://aws.amazon.com/ko/rds/)
-
-![](/images/Arch_Amazon-RDS_48.png)
+### RDS
 
 카테고리: 데이터베이스
 
@@ -186,7 +178,7 @@ tail -f /var/log/aws/codedeploy-agent/codedeploy-agent.log
 
 데이터베이스 생성 시 Amazon Aurora 엔진의 serverless 유형을 선택할 수 있는데, 이렇게 하면 "사용자가 필요한 최소 및 최대 리소스를 지정하고, Aurora가 데이터베이스 부하에 따라 용량을 조정"한다.
 
-### [CloudWatch](https://aws.amazon.com/ko/cloudwatch/)
+### CloudWatch
 
 카테고리: 관리 및 거버넌스
 
@@ -221,7 +213,7 @@ fields @timestamp, httpRequest.headers.15.value, @message
 
 VPC로 묶인 서버들의 가상 내부 통신망정도?
 
-### [ARNs, Amazon Resource Names](https://docs.aws.amazon.com/ko_kr/general/latest/gr/aws-arns-and-namespaces.html)
+### ARNs, Amazon Resource Names
 
 ```
 arn:partition:service:region:account-id:resource-id

@@ -426,11 +426,11 @@ sudo apt-get remove byobu hollywood
 
 ### 전역
 
-- <kbd>ctrl + esc</kbd>: 시작 열기
 - <kbd>alt + enter</kbd>: 현재 선택된 요소의 속성 창.
+- <kbd>ctrl + esc</kbd>: 시작 열기
 - <kbd>ctrl + shift + esc</kbd>: 작업 관리자 실행
 - <kbd>shift + f10</kbd>: 컨텍스트 메뉴 팝업(=마우스 우클릭)
-- <kbd>win +  +</kbd>: 돋보기 실행. 실행 후 확대/축소는 <kbd>win + -</kbd>/<kbd> wind + =</kbd>
+- <kbd>win + = </kbd>: 돋보기 실행. 실행 후 확대/축소는 <kbd>win + -</kbd>/<kbd> wind + =</kbd>
 - <kbd>win + ,</kbd>: 일시적 바탕화면 보기
 - <kbd>win + .</kbd>/<kbd>win + ;</kbd>: 이모지
 - <kbd>win + a</kbd>: 알림 센터 열기 (11에서 바뀜)
