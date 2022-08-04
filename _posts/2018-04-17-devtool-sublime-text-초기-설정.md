@@ -174,7 +174,7 @@ Expand Selection
 - [⭐ MoveTab](https://packagecontrol.io/packages/MoveTab): <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다.
 - [StyleToken](https://packagecontrol.io/packages/StyleToken): 파일 내에서 특정 단어별 하이라이팅 기능.
 - [FileDiffs](https://packagecontrol.io/packages/FileDiffs): 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
-- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): EUC-KR로 작성된 파일을 UTF8로 전환해서 열어주는 패키지. 그런데 파일을 열때마다 인코딩을 물어봐서 좀 귀찮아지니 설치 후 필요할 때만 활성화하는게 좋음.
+- [ConvertToUTF8](https://packagecontrol.io/packages/ConvertToUTF8): EUC-KR로 작성된 파일을 UTF8로 전환해서 열어주는 패키지. 그런데 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음
 - [⭐ BracketHighlighter](https://packagecontrol.io/packages/BracketHighlighter): 브라켓 하이라이터. 괄호가 어디서 시작하고 어디서 끝나는지 행번호 표시영역에 아이콘으로 표시해준다.
 - [Sync View Scroll](https://packagecontrol.io/packages/Sync%20View%20Scroll): 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
 - [URLEncode](https://packagecontrol.io/packages/URLEncode): URL 인코드-디코드 기능 제공.
