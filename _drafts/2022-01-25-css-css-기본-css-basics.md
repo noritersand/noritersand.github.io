@@ -15,8 +15,7 @@ tags:
 
 #### 참고한 문서
 
-- [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
-- [\[MDN\] CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [\[MDN\] CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 ## 개요
 

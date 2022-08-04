@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-03 18:47:33 +0900
-title: '[misc] 도토리 창고: 각종 툴, 유틸리티, 사이트 모음'
+title: '[misc] 도토리 창고: 각종 개발 툴, 유틸리티 사이트, 언어, 프레임워크 모음'
 categories:
   - misc
 tags:
@@ -259,3 +259,13 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 ## 이미지 편집기
 
 - [paint.net](https://www.getpaint.net)
+
+## 언어
+
+- [Go](https://golang.org): 한 떄 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
+- TODO
+
+## 프레임워크
+
+- [Spring](https://spring.io/): 그 스프링
+- TODO

@@ -140,3 +140,17 @@ public class Test2 {
 // [{"age":"32","name":"steave","job":"baker"},{"age":"25","name":"matt","job":"soldier"}]
 // [{name=steave, age=32, job=baker}, {name=matt, age=25, job=soldier}]
 ```
+
+## 어노테이션
+
+TODO
+
+### @JsonInclude
+
+보통 아래처럼 `null`이 아닌 필드만 변환하도록 씀:
+
+```java
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class JsonResponse {
+    // ... 생략
+```
