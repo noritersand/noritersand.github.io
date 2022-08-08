@@ -232,6 +232,7 @@ tags:
 ## 테스트 툴
 
 - [postman](https://www.getpostman.com): HTTP Request/Response 테스트
+- [Selenium](https://www.selenium.dev/): 동적 웹 앱(페이지 로딩 후 자바스크립트 등에 의해 동적으로 구성이 변경되는 사이트) 테스트 혹은 크롤링에 사용되는 툴이다.
 
 ## 분석/프로파일링/모니터링 툴
 
@@ -263,9 +264,10 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 ## 언어
 
 - [Go](https://golang.org): 한 떄 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
-- TODO
+- [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
+- [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 
 ## 프레임워크
 
 - [Spring](https://spring.io/): 그 스프링
-- TODO
+- [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
