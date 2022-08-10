@@ -33,28 +33,6 @@ tags:
 
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
-## 초기 설정
-
-TODO
-
-## 작성자 저장용 단축키 설정
-
-- Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
-- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
-- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
-- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
-- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
-- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
-- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
-- Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
-- Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
-- Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
-- Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-
-
 ## TODO 톰캣 퍼블리싱 폴더는 어디일까
 
 이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
@@ -69,22 +47,20 @@ Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정�
 
 일단 발견한 인코딩 관련 설정은 요렇게 있다.
 
-#### \#1
+#### \#1 VM Option: file.encoding
 
-Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
+만약 WAS라면: Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
 
-#### \#2
+아니면: Edit Custom VM Options로 이동(<kbd>ctrl + shift + a</kbd> 후 검색)한 뒤 `-Dfile.encoding=UTF-8` 추가
 
-Run/Debug Configurations 혹은 Services의 WAS 설정으로 이동해서 VM options에 `-Dfile.encoding=UTF-8` 추가
-
-#### \#3
+#### \#2 에디터 인코딩 
 
 Settings > Editor > File Encodings로 이동한 뒤:
 
 - Project Encoding을 UTF-8로 변경
 - Default encoding for properties files를 UTF-8, 그 옆에 Transparent native-to-ascii conversion 체크
 
-#### \#4
+#### \#3 콘솔 출력 인코딩
 
 Settings > Editor > General > Console로 이동해서 Default Encoding을 UTF-8로 변경
 
@@ -171,6 +147,24 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
+
+## 작성자 저장용 단축키 설정
+
+- Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
+- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
+- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
+- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
+- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
+- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
+- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
+- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
+- Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
+- Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
+- Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
+- Attach Session: <kbd>ctrl + alt + \~</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
 
 ## 기본 단축키
 

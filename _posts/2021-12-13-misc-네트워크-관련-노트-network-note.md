@@ -55,7 +55,9 @@ IPv4를 대체하는 새로운 주소 체계. 16진수 숫자 4자리를 사용�
 
 Domain Apex는 그냥 루트 도메인이라고도 부르며 이것 말고도 Zone Apex, Naked Domain이라고도 한다. 다 같은 말이다. 🥲
 
-## 사설 VPN서버에 DNS를
+## DNS, Domain Name System
+
+### VPN + DNS
 
 젠킨스, 깃 사설 서버, 테스트 서버 등(이하 대상 서버) 개발에 필요한 서버들을 외부로부터의 접근을 제한해야 할 일이 있었음. 인가된 내부 인원인 개발자나 테스터한테는 허용해야 하니까 사설 VPN 서버를 구축하기로 함. 그리고 대상 서버들은 외부 접근이 불가능하며 내부 네트워크를 통해서만 접근이 가능하도록 만들어야 함. 즉, 대상 서버들의 공인 IP를 없애고 작업자 PC에서 VPN 서버로, VPN에서 대상 서버들로 통신하는 환경이 필요함. (이거시터널링인가?)
 
@@ -117,6 +119,10 @@ mail       IN  CNAME @
            IN  MX 10 mail
 ```
 
+## VPN, Virtual Private Network
+
+사내 보안을 목적으로 VPN 서버를 구축한 게 있는데 관련 내용 적어둠.
+
 ### 클라이언트의 DNS 변경 Push DNS Changes to Redirect All Traffic Through the VPN
 
 OpenVPN 설정파일인 server.conf에 이런 것들이 있다:
@@ -138,3 +144,31 @@ push "route 172.31.0.0 255.255.0.0 vpn_gateway"
 **TODO 그 다음부턴 차단 문제가 없어지긴 했지만 도데체 왜 이렇게 되는건지는 잘 몲**
 
 누군가의 설명에 따르면 이 설정으로 private subnet(AWS)을 접속할 때만 VPN 서버를 경유하게 된다 함.
+
+**TODO tun/tap 차이도 영향이 있는 것 같으니 확인 필요**
+
+### TUN/TAP
+
+`/etc/openvpn/server.conf` 파일을 보면 이런게 있다:
+
+```bash
+
+# "dev tun" will create a routed IP tunnel,
+# "dev tap" will create an ethernet tunnel.
+# Use "dev tap0" if you are ethernet bridging
+# and have precreated a tap0 virtual interface
+# and bridged it with your ethernet interface.
+# If you want to control access policies
+# over the VPN, you must create firewall
+# rules for the the TUN/TAP interface.
+# On non-Windows systems, you can give
+# an explicit unit number, such as tun0.
+# On Windows, use "dev-node" for this.
+# On most systems, the VPN will not function
+# unless you partially or fully disable
+# the firewall for the TUN/TAP interface.
+;dev tap
+dev tun
+```
+
+**TODO tap은 브릿징(layer 2)고 tun은 라우팅(layer 3)이라고 하는데 머선 말일까...**

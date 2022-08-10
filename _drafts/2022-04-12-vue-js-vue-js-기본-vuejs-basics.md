@@ -110,6 +110,20 @@ var app = new Vue({
 
 가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다.
 
+## JSX
+
+Vue도 JSX 사용 가능함:
+
+```js
+const vnode = <div>hello</div>
+```
+
+[참고](https://vuejs.org/guide/extras/render-function.html#jsx-tsx)
+
+[@vue/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) 있으면 된다고 한다.
+
+**TODO 설명 추가**
+
 ## Template Syntax
 
 데이터를 HTML 태그에 바인딩하는 표현식들이다.
