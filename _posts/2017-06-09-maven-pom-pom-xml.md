@@ -15,6 +15,7 @@ tags:
 
 #### 참고한 문서
 
+- [Maven: Settings Reference](https://maven.apache.org/settings.html)
 - [Maven: POM Reference](https://maven.apache.org/pom.html#What_is_the_POM)
 - [Maven: Available Plugins](https://maven.apache.org/plugins/index.html)
 

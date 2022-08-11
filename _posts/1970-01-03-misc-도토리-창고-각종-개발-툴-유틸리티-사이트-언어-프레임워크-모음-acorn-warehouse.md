@@ -50,9 +50,13 @@ tags:
 - [CodePen](https://codepen.io)
 - [JSFiddle](https://jsfiddle.net)
 - [StackBlitz](https://stackblitz.com)
+
+## 정규식 관련
+
 - [regular expressions 101](https://regex101.com/): 정규식 테스트 겸 코드 공유 사이트. (근데 왜 101일까)
 - [RegExr](https://regexr.com/): 정규식 테스트 사이트
 - [REGEXPER](https://regexper.com/): 정규식을 (나름)이쁘게 설명해줌. 요딴식으로 `https://regexper.com/#^M[^iI]*%3F[iI][^iI]*%3F%24` URL에 정규식을 때려넣는게 특징
+- [^grex$](https://pemistahl.github.io/grex-js/): 테스트 케이스를 작성하면 정규식을 만들어줌
 
 ## 개발용 컴포넌트, 써드파티 라이브러리
 
