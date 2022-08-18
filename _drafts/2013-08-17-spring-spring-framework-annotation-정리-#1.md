@@ -354,7 +354,7 @@ public class BoardServiceImpl implements BoardService {
 
 ## @SessionAttributes
 
-SessionAttribute annotation은 세션상에서 model의 정보를 유지하고 싶을 경우 사용한다.
+SessionAttribute annotation은 같은 세션에서 model의 정보를 유지하고 싶을 경우 사용한다.
 
 ```java
 @Controller

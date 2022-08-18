@@ -19,11 +19,15 @@ tags:
 - [http://java.ihoney.pe.kr/218](http://java.ihoney.pe.kr/218)
 - [https://offbyone.tistory.com/333](https://offbyone.tistory.com/333)
 
-여기 참고혀. 참고만하고 언제쓰냐.
+여기 참고혀. ~~참고만하고 언제쓰냐~~
 
 ## @SessionAttributes
 
+TODO
+
 ## SessionStatus
+
+TODO
 
 ## @ModelAttribute와 조합
 
@@ -55,3 +59,5 @@ public class TestController {
 이걸 어떻게 활용하냐면,
 
 ## 시나리오
+
+TODO

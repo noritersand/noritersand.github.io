@@ -292,7 +292,7 @@ subject + verb
 | find      | find       | find      | find      | finds     | find       |
 | go        | go         | go        | go        | goes      | go         |
 
-- 주어가 3인칭 단수일 땐 단수 동사를, 그 외의 경우엔 모두 복수 동사를 사용한다. 그래서 viel이 "You and I is alawys plural-verb"라고 함.  
+- 주어가 3인칭 단수일 땐 단수 동사를, 그 외의 경우엔 모두 복수 동사를 사용한다. 그래서 Viel이 "You and I is alawys plural-verb"라고 함.  
 - 셀 수 없는 단어는 단수로 취급함: water 등  
 - *subject verb agreement*의 일부인듯?
 - 소유격의 대상(my PC, your book)은 3인칭임.

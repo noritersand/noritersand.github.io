@@ -121,54 +121,84 @@ mail       IN  CNAME @
 
 ## VPN, Virtual Private Network
 
-사내 보안을 목적으로 VPN 서버를 구축한 게 있는데 관련 내용 적어둠.
+TODO VPN 관련 노트
 
-### 클라이언트의 DNS 변경 Push DNS Changes to Redirect All Traffic Through the VPN
+### TUN/TAP
 
-OpenVPN 설정파일인 server.conf에 이런 것들이 있다:
+TODO tap은 브릿징(layer 2)고 tun은 라우팅(layer 3)이라고 하는데 머선 말일까...
+
+## OpenVPN
+
+오픈 소스 OpenVPN으로 사설 VPN 서버를 구축한 게 있는데 관련 내용 적어둠.
+
+설정 파일은 두 개가 있는데: 
+
+- `/etc/openvpn/server.conf`
+- `/etc/sysctl.conf`
+
+`sysctl.conf`에서는 `net.ipv4.ip_forward`만 1로 바꿔줬고 나머진 `server.conf`에 해당함
+
+### 중복 접속 허용
 
 ```bash
-push "redirect-gateway def1 bypass-dhcp"
+# Uncomment this directive if multiple clients
+# might connect with the same certificate/key
+# files or common names.  This is recommended
+# only for testing purposes.  For production use,
+# each client should have its own certificate/key
+# pair.
+#
+# IF YOU HAVE NOT GENERATED INDIVIDUAL
+# CERTIFICATE/KEY PAIRS FOR EACH CLIENT,
+# EACH HAVING ITS OWN UNIQUE "COMMON NAME",
+# UNCOMMENT THIS LINE OUT.
+duplicate-cn
+```
 
+코멘트 처리 풀어주면 같은 키로 중복 접속 가능해짐
+
+### 클라이언트의 DNS 변경 Push DNS Changes
+
+VPN 서버에서 바라볼 DNS 서버 IP를 지정하는 설정
+
+```bash
+# Certain Windows-specific network settings
+# can be pushed to clients, such as DNS
+# or WINS server addresses.  CAVEAT:
+# http://openvpn.net/faq.html#dhcpcaveats
+# The addresses below refer to the public
+# DNS servers provided by opendns.com.
+# push "dhcp-option DNS 1.1.1.1"
+# push "dhcp-option DNS 8.8.8.8"
 push "dhcp-option DNS 172.31.0.226"
 ```
 
-클라이언트가 접속한 VPN 서버를 DNS로 사용하게끔 하는 설정인데, 이렇게 하면 문제가 특정 사이트에서 (VPN 서버가 국외 IP라면) IP 차단 등의 제약이 걸리는 경우가 있음.
+\* `172.31.0.226`는 사설 IP
 
-그래서 첫 줄을 이렇게 바꿔줬는데:
+### Redirect All Traffic Through the VPN
+
+```bash
+# If enabled, this directive will configure
+# all clients to redirect their default
+# network gateway through the VPN, causing
+# all IP traffic such as web browsing and
+# and DNS lookups to go through the VPN
+# (The OpenVPN server machine may need to NAT
+# or bridge the TUN/TAP interface to the internet
+# in order for this to work properly).
+push "redirect-gateway def1 bypass-dhcp"
+````
+
+이렇게 하면 모든 통신이 VPN을 통해 나가게 된다. 그런데 문제가 특정 사이트에서 (VPN 서버가 국외 IP라면) 해외 접속 차단 등의 제약이 걸리는 경우가 있음. 
+
+그래서 이렇게 바꿔줬는데:
 
 ```bash
 push "route 172.31.0.0 255.255.0.0 vpn_gateway"
 ```
 
-**TODO 그 다음부턴 차단 문제가 없어지긴 했지만 도데체 왜 이렇게 되는건지는 잘 몲**
+TODO 그 다음부턴 차단 문제가 없어지긴 했지만 도데체 왜 이렇게 되는건지는 잘 몲
 
-누군가의 설명에 따르면 이 설정으로 private subnet(AWS)을 접속할 때만 VPN 서버를 경유하게 된다 함.
+누군가의 설명에 따르면 이 설정으로 172.31.x.x(내 경우 AWS private subnet)에 접속할 때만 VPN 서버를 경유하게 된다 함.
 
-**TODO tun/tap 차이도 영향이 있는 것 같으니 확인 필요**
-
-### TUN/TAP
-
-`/etc/openvpn/server.conf` 파일을 보면 이런게 있다:
-
-```bash
-
-# "dev tun" will create a routed IP tunnel,
-# "dev tap" will create an ethernet tunnel.
-# Use "dev tap0" if you are ethernet bridging
-# and have precreated a tap0 virtual interface
-# and bridged it with your ethernet interface.
-# If you want to control access policies
-# over the VPN, you must create firewall
-# rules for the the TUN/TAP interface.
-# On non-Windows systems, you can give
-# an explicit unit number, such as tun0.
-# On Windows, use "dev-node" for this.
-# On most systems, the VPN will not function
-# unless you partially or fully disable
-# the firewall for the TUN/TAP interface.
-;dev tap
-dev tun
-```
-
-**TODO tap은 브릿징(layer 2)고 tun은 라우팅(layer 3)이라고 하는데 머선 말일까...**
+TODO tun/tap 차이도 영향이 있는 것 같으니 확인 필요한데, 위 작업을 할 때 tun으로 설정돼 있었음.
