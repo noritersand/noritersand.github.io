@@ -401,7 +401,7 @@ dispatcher-servlet.xml
          <property name="alwaysUseFullPath" value="true" />
          <property name="order" value="1" />
 
-         <property name="mappings"> //property: private String name, 즉 인스턴스변수
+         <property name="mappings"> //property: private String name, 인스턴스변수
              <props> //props: properties
                  <prop key="/bbs/*.action">bbs.boardController</prop>
                  <!-- 여기서 bbs.boardController는 value -->

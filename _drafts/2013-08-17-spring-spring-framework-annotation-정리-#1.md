@@ -314,7 +314,7 @@ public class TestService {
 
 ```java
 @Resource(name="test2.testService")
-//name에 필요한 것은 @Service("test2.testService") <- 여기서 괄호 속 문자열, 즉 식별자
+//name에 필요한 것은 @Service("test2.testService") <- 여기서 괄호 속 문자열(식별자)
 
 private TestService service;
 //TestService service = new TestService(); 라고 하는것과 같은 식

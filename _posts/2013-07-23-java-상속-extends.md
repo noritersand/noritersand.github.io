@@ -20,7 +20,7 @@ class 클래스명 extends 부모 클래스명 {
 }
 ```
 
-`extends` 키워드를 클래스 선언부에 명시하여 상속을 구현한다. `extends` 뒤에 오는 클래스가 부모 클래스다. 자식 클래스는 부모 클래스의 생성자와 클래스 초기화 블록을 제외한 모든 멤버, 즉 변수와 메서드를 상속받는다.
+`extends` 키워드를 클래스 선언부에 명시하여 상속을 구현한다. `extends` 뒤에 오는 클래스가 부모 클래스다. 자식 클래스는 부모 클래스의 생성자와 클래스 초기화 블록을 제외한 모든 멤버(변수와 메서드)를 상속받는다.
 
 ```java
 public class Test2 {
@@ -87,7 +87,7 @@ class Child extends Parent {
         System.out.println(super.str);
         System.out.println(this.str);
 
-        super.show(); // 부모의 메서드, 즉 재정의 하기 전의 메서드를 의미함.
+        super.show(); // 부모의 메서드 즉, 재정의 하기 전의 메서드를 의미함.
         // this.show();  // 무한재귀호출
     }
 }

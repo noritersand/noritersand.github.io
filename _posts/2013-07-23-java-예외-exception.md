@@ -86,7 +86,7 @@ try {
 
 ## throw / throws
 
-`throw`, `throws` 키워드는 예외가 발생한 지역이 아니라 예외를 발생시킨 메서드를 호출한 지역, 즉 caller에게 예외를 떠넘길 때 사용한다. 다음은 `m01()` 메서드에서 발생한 예외를 caller인 `main()`에서 처리하는 예다:
+`throw`, `throws` 키워드는 예외가 발생한 지역이 아니라 예외를 발생시킨 메서드를 호출한 지역(caller)에 예외를 떠넘길 때 사용한다. 다음은 `m01()` 메서드에서 발생한 예외를 caller인 `main()`에서 처리하는 예다:
 
 ```java
 public class Test {
