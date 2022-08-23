@@ -96,7 +96,7 @@ Stop-Process -Name 'SoundSwitch'
 Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 ```
 
-문제는 파워셸 스크립트 파일이 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워셸 스크립트를 실행한다:
+이 스크립트를 실행하면 되는데, 문제는 파워셸 스크립트 파일은 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워셸 스크립트를 실행한다:
 
 ```bash
 # restart-soundswitch.bat

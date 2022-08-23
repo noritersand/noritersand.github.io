@@ -164,7 +164,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
 - Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-- Attach Session: <kbd>ctrl + alt + \~</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
+- Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
 
 ## 기본 단축키
 

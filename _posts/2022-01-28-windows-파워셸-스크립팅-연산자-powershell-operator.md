@@ -59,9 +59,9 @@ TODO
 
 ### 호출 연산자 Call Operator `&`
 
-호출 연산자는 문자열을 실행할 때 사용한다. 자바스크립트의 `eval()`과 비슷하다.
+호출 연산자는 문자열을 실행할 때 사용한다. 
 
-예를 들어 서브라임의 실행 파일을 전체 경로로 실행하려고 할 때, 공백을 포함한 전체 경로를 지정하려면 다음처럼 해야하는데:
+자바스크립트의 `eval()`과 비슷하다. 예를 들어 서브라임의 실행 파일을 전체 경로로 실행하려고 할 때, 공백을 포함한 전체 경로를 지정하려면 다음처럼 해야하는데:
 
 ```bash
 'C:\Program Files\Sublime Text\subl.exe'
@@ -71,8 +71,8 @@ TODO
 이러면 파일을 실행하는게 아니라 문자열을 출력해 버린다. 이럴 땐 호출 연산자를 앞에 붙여서 문자열을 스크립트로 실행하도록 하면 된다:
 
 ```bash
-& 'C:\Program Files\Sublime Text\subl.exe' $PROFILE
-# subl.exe을 실행함
+& 'C:\Program Files\Sublime Text\subl.exe'
+# 서브라임을 실행함
 ```
 
 그런데 호출 연산자는 문자열을 **구문 분석** 하지 않는다고 한다. 그래서 명령어의 파라미터를 사용할 수 없다:
@@ -99,6 +99,8 @@ Invoke-Expression $c
 명령을 백그라운드에서 실행한다. 호출 연산자와 다르게 앰퍼샌드가 명령 마지막에 위치한다.
 
 ```bash
+# https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3#background-operator-
+
 Get-Process -Name pwsh &
 # 위와 같음
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
