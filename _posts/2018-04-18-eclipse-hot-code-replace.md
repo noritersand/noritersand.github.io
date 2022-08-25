@@ -16,7 +16,7 @@ tags:
 
 - [http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/](http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/)
 
-이클립스에선 디버그 모드로 로컬 서버 기동 후 클래스 파일의 변경이 감지되면 재시작 없이 변경된 클래스파일을 교체하는 Hot code replace 기능을 제공한다. 관련 기술로 How deploy, Hot swap이 있는데 JPDA에서 지원하는 건 Hot swap, WAS에서 지원하는 건 How deploy라고 구분하는 모양이다.
+이클립스에선 디버그 모드로 로컬 서버 기동 후 클래스 파일의 변경이 감지되면 재시작 없이 변경된 클래스파일을 교체하는 Hot code replace 기능을 제공한다. 관련 기술로 Hot deploy, Hot swap이 있는데 JPDA에서 지원하는 건 Hot swap, WAS에서 지원하는 건 Hot deploy라고 구분하는 모양이다.
 
 그리고 디버그 모드라고 해도 직접 만든 '무한루프로 대기하면서 종료되지 않는 코드'는 핫스왑이 안되는 걸 보면 이 기능이 IDE에서 지원하는건지 아니면 톰캣(혹은 특정 스펙을 준수하는 WAS)에서 지원하는 건지는 확실하지 않음.
 

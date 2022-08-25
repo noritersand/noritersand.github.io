@@ -130,9 +130,23 @@ TODO 아래 해석하고 지워:
 
 #### 속성
 
-- docBase
+- docBase: 
 - path: context path로 알려져 있는 그 것.
-- reloadable
+- reloadable: 
+- source: 
+- sessionCookieName: JSESSIONID를 별도로 지정하는 속성
+
+`sessionCookieName`은 서버 도메인이 겹치지 않는 한 사용할 일이 없다. 그러니까 localhost로 포트번호만 바꿔서 기동하는 로컬 서버가 여러 개면 설정해야 하는 속성이다. 이 설정이 없으면 도메인이 같은 서버를 번갈아 접속할 때마다 JSESSIONID 값이 변경되면서 세션 유지가 안되는 현상이 발생한다.
+
+`sessionCookieName` 설정은 아래처럼:
+
+```xml
+        <Context path="/" sessionCookieName="BOO-JSESSIONID" />
+```
+
+`path`는 생략하면 제대로 작동하지 않으니 필수, 나머지는 생략해도 된다. 이렇게 하면 `JSESSIONID` 대신 `BOO-JSESSIONID` 쿠키가 생성되며, 해당 서버는 `BOO-JESSIONID`의 값을 세션 키로 사용하게 된다.
+
+그리고 개발자도구로 확인해보면 다른 쿠키가 보일 수도 있는데 도메인이 같아서 보이는 것 뿐이니 무시할 것.
 
 ## Alias
 

@@ -557,3 +557,59 @@ $hash.Number
 ```
 
 TODO
+
+## 작성자 저장용 스크립트
+
+자주 쓰는 거 저장해 둠.
+
+```js
+Set-Alias ex explorer
+Set-Alias sb 'C:\Program Files\Sublime Text\subl.exe'
+Set-Alias dk 'docker'
+Set-Alias -Name grep -Value findstr
+Set-Alias -Name 햣 -Value git
+
+function Get-Child-Item-Force { 
+  Get-ChildItem -Force 
+}
+Set-Alias -Name ll -Value Get-Child-Item-Force
+
+$RemoteIPs = @{ 
+  production = '1.2.3.4';
+  stage = '1.2.3.4';
+  'stage-legacy' = '1.2.3.4';
+  pat = '1.2.3.4';
+  mat = '1.2.3.4';
+  'test-legacy2' = '1.2.3.4';
+  'test-legacy' = '1.2.3.4';
+  vpn = '1.2.3.4';
+  elk = '1.2.3.4';
+  jenkins = '1.2.3.4';
+  gitlab = '1.2.3.4';
+}
+
+function Connect-RemoteServer {
+  param (
+    [Parameter(Mandatory)]
+    [ValidateSet('production', 'stage-legacy', 'stage', 'pat', 'mat', 'test-legacy2', 'test-legacy', 'vpn', 'elk', 'jenkins', 'gitlab')]
+    [string]$Server
+  )
+
+  $target = $RemoteIPs.$Server;
+
+  switch ($Server) {
+    'jenkins' { $keyfile = "C:\dev\ssh-keys\infra_jenkins.pem" }
+    'gitlab' { $keyfile = "C:\dev\ssh-keys\infra_gitlab.pem" }
+    default { $keyfile = "C:\dev\ssh-keys\AnySSign.pem" }
+  }
+
+  # if ('jenkins' -eq $Server) {
+  #   $keyfile = "C:\dev\ssh-keys\infra_jenkins.pem"
+  # } elseif ('gitlab' -eq $Server) {
+  #   $keyfile = "C:\dev\ssh-keys\infra_gitlab.pem"
+  # }
+
+  ssh -i $keyfile "ubuntu@$target"
+}
+Set-Alias -Name sshrs -Value Connect-RemoteServer
+```
