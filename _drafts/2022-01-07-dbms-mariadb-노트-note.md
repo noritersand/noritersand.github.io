@@ -80,3 +80,48 @@ ROWNUM 출력 방법
 SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM
 FROM SAMPLE, (SELECT @ROWNUM := 0) R
 ```
+
+## VO(DTO, Entity) 만들기
+
+```sql
+/* 테이블 + 컬럼 코멘트 */
+SET @TABLE_NAME = 'TABLE_NAME';
+SELECT CONCAT('/**', TABLE_NAME, ' ', TABLE_COMMENT, ' 테이블 VO', '*/\r\r') AS STR
+FROM INFORMATION_SCHEMA.TABLES
+WHERE TABLE_NAME = @TABLE_NAME
+UNION
+SELECT CONCAT('\t/**', COLUMN_COMMENT, '*/\r\tprivate ',
+  CASE
+    WHEN COLUMN_TYPE LIKE 'int%' THEN 'Integer'
+    WHEN COLUMN_TYPE LIKE 'varchar%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'date%' THEN 'Date'
+    WHEN COLUMN_TYPE LIKE 'time%' THEN 'Timestamp'
+    WHEN COLUMN_TYPE LIKE 'datetime%' THEN 'DateTime'
+    WHEN COLUMN_TYPE LIKE 'tinyint%' THEN 'Integer'
+    WHEN COLUMN_TYPE LIKE 'smallint%' THEN 'Integer'
+    WHEN COLUMN_TYPE LIKE 'mediumint%' THEN 'Integer'
+    WHEN COLUMN_TYPE LIKE 'bigint%' THEN 'Long'
+    WHEN COLUMN_TYPE LIKE 'float%' THEN 'Float'
+    WHEN COLUMN_TYPE LIKE 'double%' THEN 'Double'
+    WHEN COLUMN_TYPE LIKE 'decimal%' THEN 'BigDecimal'
+    WHEN COLUMN_TYPE LIKE 'text%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'blob%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'binary%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'char%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'enum%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'set%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'bool%' THEN 'Boolean'
+    WHEN COLUMN_TYPE LIKE 'boolean%' THEN 'Boolean'
+    WHEN COLUMN_TYPE LIKE 'tinyblob%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'tinytext%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'mediumblob%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'mediumtext%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'longblob%' THEN 'String'
+    WHEN COLUMN_TYPE LIKE 'longtext%' THEN 'String'
+  END
+  , ' ', COLUMN_NAME, ';') AS STR
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = @TABLE_NAME
+```
+
+`SET` 까지 한 번에 실행하면 된다. Java 파일에 붙여놓고 카멜케이스 변환만 해주면 끟.
