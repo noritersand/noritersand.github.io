@@ -162,15 +162,15 @@ subject [+ not] + be-verb + verb-ing(gerund)
 
 일반적인 규칙은 다음과 같다:
 
-- `e`가 아닌 모음은 뒤에 `-ing`를 더함: play => playing
-- `e`로 끝나면 `e`를 `-ing`로 대체: come => coming, write => writing
-- 자음으로 끝나면 자음을 하나 더 붙이고 `-ing`를 더함: run => running, sit => sitting
+- `e`가 아닌 모음은 뒤에 `-ing`를 더함: play -> playing
+- `e`로 끝나면 `e`를 `-ing`로 대체: come -> coming, write -> writing
+- 자음으로 끝나면 자음을 하나 더 붙이고 `-ing`를 더함: run -> running, sit -> sitting
 
 하지만 **이것은 '일반적인' 규칙에 불과하며 예외가 많다**:
 
-- lie => lying
-- stand => standing
-- listen => listening
+- lie -> lying
+- stand -> standing
+- listen -> listening
 
 ## UNIT 4: are you doing? (현재진행 의문문 present continuous question statement)
 
@@ -299,11 +299,11 @@ subject + verb
 
 단수 동사(singular verb)의 철자 규칙:
 
-- `-s`, `-sh`, `-ch` 뒤에는 `-es`를 붙임: pass => passes, finish => finishes, watch => watches
-- `-y`는 `-ies`로 대체: study => studies, try => tries
-- do => does, go => goes
-- 이 외의 경우 뒤에 `-s`를 붙임: like => likes, cost => costs, work => works
-- 예외는 있음: enjoy => enjoys
+- `-s`, `-sh`, `-ch` 뒤에는 `-es`를 붙임: pass -> passes, finish -> finishes, watch -> watches
+- `-y`는 `-ies`로 대체: study -> studies, try -> tries
+- do -> does, go -> goes
+- 이 외의 경우 뒤에 `-s`를 붙임: like -> likes, cost -> costs, work -> works
+- 예외는 있음: enjoy -> enjoys
 
 ## UNIT 6: I don't... (단순현재 부정문 simple present negative)
 
@@ -510,16 +510,16 @@ have-got: [wh-question +] have/has + subject + got...?
 
 ### examples
 
-- I *have* blue eyes => I*'ve got* blue eyes.
-- Tim *has* two sisters => Tim *has* got two sisters.
-- She *has* a headache => She*'s got* a headache.
-- I *don't have* a car => I *haven't got* a car.
-- It *doesn't have* a garage => It *hasn't got* a garage.
-- Do you *have* a camera? => *Have* you *got* a camera?
-- Does Helen *have* a car? => *Has* Helen *got* a car?
-- What kind of car does she *have*? => What kind of car *has* she *got*?
-- What do you *have* in your bag? => what *have* you *got* in your bag?
-- How much money do we *have*? => How much money *have* we got?
+- I *have* blue eyes -> I*'ve got* blue eyes.
+- Tim *has* two sisters -> Tim *has* got two sisters.
+- She *has* a headache -> She*'s got* a headache.
+- I *don't have* a car -> I *haven't got* a car.
+- It *doesn't have* a garage -> It *hasn't got* a garage.
+- Do you *have* a camera? -> *Have* you *got* a camera?
+- Does Helen *have* a car? -> *Has* Helen *got* a car?
+- What kind of car does she *have*? -> What kind of car *has* she *got*?
+- What do you *have* in your bag? -> what *have* you *got* in your bag?
+- How much money do we *have*? -> How much money *have* we got?
 
 ### violet
 
@@ -547,19 +547,19 @@ have-got: [wh-question +] have/has + subject + got...?
 
 동사의 과거형은 보통 `-d` 혹은 `-ed`를 붙인다:
 
-- love => loved
-- work => worked
-- dance => danced
-- clean => cleaned
+- love -> loved
+- work -> worked
+- dance -> danced
+- clean -> cleaned
 
 ### 불규칙동사 irregular verb
 
 일부 동사는 단순히 `-ed`를 붙이지 않고, 현재형 그대로 사용하거나 아예 다른 단어가 됨:
 
-- read => read
-- put => put
-- speak => spoke
-- eat => ate
+- read -> read
+- put -> put
+- speak -> spoke
+- eat -> ate
 
 ### examples
 

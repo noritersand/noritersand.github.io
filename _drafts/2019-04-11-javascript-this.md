@@ -32,6 +32,37 @@ owner === owner.fn();
 
 여기서 `this`는 함수를 소유한 객체다.
 
+## 화살표 함수의 this
+
+화살표 함수의 this는 함수의 소유자가 아니라 전역 객체다:
+
+```js
+var obj = {
+  do: () => {
+    console.log('do this:', this); // window
+  },
+  do2() {
+    console.log('do2 this:', this); // obj
+  }
+};
+
+var obj2 = {
+  fn() {
+    console.log(this); // 이 this는 obj2
+    setTimeout(function() {
+      console.log(this); // 이 this는 window
+    }, 500);
+  },
+  fn2() {
+    console.log(this); // 이 this는 obj2
+    setTimeout(() => {
+      console.log(this); // 이 this도 obj2
+    }, 500);
+  }
+}
+```
+
+
 ## 객체와 프로토타입의 this
 
 **TODO: 아래 코드는 퍼왔으니 수정해**

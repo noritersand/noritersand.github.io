@@ -68,5 +68,5 @@ DISP_NO        HIGH_DISP_NO    DISP_DEPTH    DISP_NM
 SELECT  FN_GET_DISP_FULLNM('1010101', ' > ')
 FROM    DUAL
 
-=> 최상위 > 그다음 > 그다음다음
+-> 최상위 > 그다음 > 그다음다음
 ```

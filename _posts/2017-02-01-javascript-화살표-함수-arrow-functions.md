@@ -125,6 +125,21 @@ var obj = {
     console.log('do2 this:', this); // obj
   }
 };
+
+var obj2 = {
+  fn() {
+    console.log(this); // 이 this는 obj2
+    setTimeout(function() {
+      console.log(this); // 이 this는 window
+    }, 500);
+  },
+  fn2() {
+    console.log(this); // 이 this는 obj2
+    setTimeout(() => {
+      console.log(this); // 이 this도 obj2
+    }, 500);
+  }
+}
 ```
 
 MDN을 보면 이런 말이 있는데:
