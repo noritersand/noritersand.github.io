@@ -8,12 +8,14 @@
 - [jekyll](https://jekyllrb.com/)
 - [kramdown](https://kramdown.gettalong.org/)
 
+
 ## 📌 Table of Contents
 
 - [윈도우에서 Jekyll 빌드 환경 설정](#윈도우에서-Jekyll-빌드-환경-설정)
 - [사이트 빌드](#사이트-빌드)
 - [지킬 빌드 디버깅 로그](#지킬-빌드-디버깅-로그)
 - [저장소 내부 링크](#저장소-내부-링크)
+
 
 ## 윈도우에서 Jekyll 빌드 환경 설정
 
@@ -42,6 +44,7 @@ jekyll new . --force
 ```
 
 만약 현재 폴더에 사이트 레이아웃의 기본 파일들이 있으면 `--force` 옵션으로 덮어쓰게 함.
+
 
 ## 사이트 빌드
 
@@ -119,6 +122,7 @@ bundle install # 얘도 했으면 생략
 bundle exec jekyll serve
 ```
 
+
 ## 지킬 빌드 디버깅 로그
 
 WSL에서 빌드하면 대부분 해결되는 것들임.
@@ -166,6 +170,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 
 https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 셸에서 `chcp 65001` 입력 후 다시 실행한다.
+
 
 ## 저장소 내부 링크
 
