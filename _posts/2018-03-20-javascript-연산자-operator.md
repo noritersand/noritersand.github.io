@@ -18,9 +18,10 @@ tags:
 - [\[MDN\] Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators)
 - [\[MDN\] Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 - [\[MDN\] Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
+- [\[MDN\] Comma operator (,)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
-## 산술 연산
+## 산술 연산자
 
 ```
 +   -   *   /   %   ++   --
@@ -29,7 +30,7 @@ tags:
 덧셈 연산자는 피연산자 중 하나가 문자열일 때 나머지 피연산자도 문자열로 변환하려고 시도한다. 그래서 `'nan' + 1`의 결과는 'nan1'이 된다.
 증가/증감`++ --` 연산자는 피연산자를 가능할 경우 숫자 타입으로 변경한다. 가령 `x++`에서 `x`가 문자열 `"1"`이면 `x`는 숫자 1로 바뀌며 이후 1씩 증가된다. `x`가 숫자로 바꿀 수 없는 문자열일 경우 `NaN`을 반환한다.
 
-## 할당 연산
+## 할당 연산자
 
 ```
 =    +=    -=    *=    /=    %=
@@ -38,7 +39,16 @@ tags:
 &&=    ||=    ??=
 ```
 
-## 비교 연산
+표현식의 연산 결과를 좌변의 변수에 할당하는 연산자들. 설명은 생략.
+
+### 논리 할당 연산자
+
+```
+
+```
+
+
+## 비교 연산자
 
 ```
 ==    ===    !=    !==    >    <    >=    <=
@@ -64,7 +74,7 @@ tags:
 - 자바스크립트에서는 유니코드 문자열에 대해서 정규화 과정을 수행하지 않는다. 또한 `===`나 `==` 연산자를 사용해 유니코드 문자열의 동등 비교를 할 수 없다. 이와 같은 문자열을 비교하려면 `String.localeCompare()`를 사용한다.
 - 두 값이 모두 같은 객체나 배열 또는 함수를 참조하고 있으면, 두 값은 일치한다. 두 값이 서로 다른 객체를 참조할 경우에 설사 두 객체의 프로퍼티가 일치하더라도 두 값은 일치하지 않는다.
 
-## 논리 연산
+## 논리 연산자
 
 ```
 &&    ||    !
@@ -152,7 +162,7 @@ console.log(result); // "equal"
 
 OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 제대로 작동하는 한계가 있지만...
 
-## 비트 연산
+## 비트 연산자
 
 - `~`: 비트단위 NOT 연산
 - `&`: 비트단위 AND 연산
@@ -161,6 +171,19 @@ OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 
 - `<<`: left shift operator, 왼쪽으로 이동하며 새로운 자리는 0으로 채운다.
 - `>>`: right shift operator, 부호 비트를 확장(유지)하면서 오른쪽으로 이동하며 새로운 자리는 0으로 채운다.
 - `>>>`: unsigned right shift operator, 부호 비트 확장 없이 오른쪽으로 이동. `>>`와 다르게 부호 비트를 무시하기 때문에 좌변의 피연산자가 음수일 경우 결과에서 양수로 바뀐다.
+
+### double NOT bitwise operator `~~`
+
+- https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript
+- http://rocha.la/JavaScript-bitwise-operators-in-practice
+
+```js
+~~2 === Math.floor(2); //true, 2
+~~2.4 === Math.floor(2); //true, 2
+~~3.9 === Math.floor(3); //true, 3
+```
+
+**양수에 한해** `Math.floor()`와 동일한 연산 결과를 반환한다. 가독성이 나쁘고 브라우저에 따라 다르게 작동할 가능성이 있으며 공식 기능도 아니다. 쓰지 말 것.
 
 ## 삼항 연산자 Conditional (ternary) operator `?`
 
@@ -384,3 +407,4 @@ leftExpr ?? rightExpr
 `A || B` 대신 사용할 수 있는 연산자. 연산자 좌변이 `null` 혹은 `undefined`로 평가되면 연산자 우변의 결과를 반환한다.
 
 TODO
+

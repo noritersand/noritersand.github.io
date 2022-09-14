@@ -91,8 +91,6 @@ supersede domain-name-servers 1.2.3.4;
 
 ![](/images/chmod-chown-umask-image.png)
 
-[이미지 출처](http://endlessgeek.com/2014/02/chmod-explained-linux-file-permissions)
-
 ```bash
 chmod 700 file  # 오너(owner, 파일을 만든 사람)에게만 모든 권한 부여
 chmod 770 file  # 오너와 오너가 속한 그룹에 모든 권한 부여
