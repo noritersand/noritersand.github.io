@@ -55,8 +55,7 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 - <kbd>win + n</kbd>: 알림과 달력 열기
 - <kbd>win + q</kbd>, <kbd>win + s</kbd>: 시작 메뉴 검색
 - <kbd>win + w</kbd>: 위젯 열기(웹 검색 같은데?)
-- <kbd>win + h</kbd>: Microsoft 음성 명령 서비스
-- <kbd>win + h</kbd>: 보이스 타이핑
+- <kbd>win + h</kbd>: 보이스 타이핑(Microsoft 음성 명령 서비스)
 - <kbd>alt + esc</kbd>: 창이 열렸던 순서대로 거꾸로 순환
 
 ### 창 크기/위치

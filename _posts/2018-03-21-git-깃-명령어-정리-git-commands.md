@@ -872,14 +872,6 @@ git log [<options>] [<revision range>] [[--] <path>...]
 
 커밋 이력을 조회하는 명령어.
 
-#### 단순 조회
-
-```bash
-git log # 현재 브랜치의 이력 조회
-git log hotfix123 # hotfix123 브랜치 이력 조회
-git log master origin/master # 로컬의 master와 origin remote의 master 브랜치 이력 조회
-```
-
 #### options
 
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
@@ -930,6 +922,14 @@ git log --pretty=format:"%h %s" --graph
 ```
 
 [Pro Git book: 더 많은 옵션](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0)
+
+#### 단순 조회
+
+```bash
+git log # 현재 브랜치의 이력 조회
+git log hotfix123 # hotfix123 브랜치 이력 조회
+git log master origin/master # 로컬의 master와 origin remote의 master 브랜치 이력 조회
+```
 
 #### 조회 범위 제한 옵션
 
@@ -1337,6 +1337,17 @@ git remote prune 리모트저장소
 
 헤드를 이동한다.
 
+#### options
+
+- `--soft`: 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
+- `--mixed`: 명시하지 않을때의 기본값. 헤드와 스테이징 에어리어를 특정 커밋으로 변경한다. 워킹 트리는 유지
+- `--hard`: 헤드와 스테이징 에어리어, 워킹 트리를 모두 특정 커밋으로 변경한다.
+
+```bash
+git reset --soft HEAD~2  # 헤드만 2회 전 커밋으로 이동
+git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 헤드와 동일하게 변경
+```
+
 #### staged 되돌리기(스테이징 취소)
 
 `add`로 스테이징 에어리어에 등록한 파일을 unstaged 상태로 바꾼다. 헤드가 이동하지 않으니 제자리 리셋이다.
@@ -1350,27 +1361,9 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 
 체크섬이나 `HEAD~숫자`를 사용해서 헤드가 지난 커밋을 가리키게 할 수 있다. 사실 이건 되돌리기보단 지난 커밋으로 이동한다고 보는게 더 정확한 표현이다.
 
-#### options
-
-- `--soft`: 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
-- `--mixed`: 명시하지 않을때의 기본값. 헤드와 스테이징 에어리어를 특정 커밋으로 변경한다. 워킹 트리는 유지
-- `--hard`: 헤드와 스테이징 에어리어, 워킹 트리를 모두 특정 커밋으로 변경한다.
-
-```bash
-git reset --soft HEAD~2  # 헤드만 2회 전 커밋으로 이동
-git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 헤드와 동일하게 변경
-```
-
 ## restore
 
 2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 에어리어를 되돌린다. new file은 되돌리지 않는다.
-
-```bash
-git restore . # 워킹 트리의 모든 파일을 되돌림
-git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
-```
-
-`-W`와 `-S`는 워킹 트리와 스테이징 에어리어 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
 
 #### options
 
@@ -1393,6 +1386,13 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 - `--no-overlay`
 - `--pathspec-from-file=<file>`
 - `--pathspec-file-nul`
+
+```bash
+git restore . # 워킹 트리의 모든 파일을 되돌림
+git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
+```
+
+`-W`와 `-S`는 워킹 트리와 스테이징 에어리어 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
 
 ## revert
 

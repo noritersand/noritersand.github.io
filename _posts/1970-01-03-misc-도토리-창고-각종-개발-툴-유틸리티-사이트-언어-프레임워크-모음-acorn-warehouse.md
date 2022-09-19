@@ -113,6 +113,7 @@ tags:
 - [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 툴. 기본은 무료고, 대-충 비공개 프로젝트를 여러명이 사용할 땐 유료인듯
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
+- [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
 
 ## ERD
 
