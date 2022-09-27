@@ -48,7 +48,6 @@ class CoconutDate {
 
   constructor({when = null, dayPlus = 0, monthPlus = 0, yearPlus = 0, hourPlus = 0, minutePlus = 0, secondPlus = 0, millisecondPlus = 0, format = ''} = {}) {
     this.#date = Boolean(when) ? new Date(when) : new Date();
-    debugger;
     dayPlus && this.#date.setDate(this.#date.getDate() + dayPlus);
     monthPlus && this.#date.setMonth(this.#date.getMonth() + monthPlus);
     yearPlus && this.#date.setFullYear(this.#date.getFullYear() + yearPlus);
@@ -122,6 +121,6 @@ class CoconutDate {
 }
 ```
 
-원래 getter가 잔뜩 있었는데, 아무래도 getter는 필드를 단순 반환만 하는게 맞는 것 같아서 없앰.
+원래 `getter`가 잔뜩 있었는데, 아무래도 `getter`는 필드를 단순 반환만 하는게 맞는 것 같아서 없앰.
 
 끗.
