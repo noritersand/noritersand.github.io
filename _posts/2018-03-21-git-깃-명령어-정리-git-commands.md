@@ -19,6 +19,7 @@ tags:
 - [https://ohshitgit.com/](https://ohshitgit.com/)
 - [https://learngitbranching.js.org/?locale=ko](https://learngitbranching.js.org/?locale=ko)
 
+
 ## 개요
 
 Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
@@ -28,6 +29,7 @@ Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
 ```bash
 git update-git-for-windows
 ```
+
 
 ## 용어
 
@@ -41,6 +43,7 @@ git update-git-for-windows
 ![](/images/git-local-operations.png)
 
 [이미지 출처](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+
 
 ## [공통 옵션](https://git-scm.com/docs/git#_options)
 
@@ -70,6 +73,7 @@ git update-git-for-windows
 - `--no-optional-locks`: 락이 필요한 선택적 작업을 수행하지 않게 한다.
 - `--list-cmds=group[,group…]`
 
+
 ## add
 
 #### staging / do track
@@ -96,6 +100,7 @@ git add --all
 ```bash
 git add -i
 ```
+
 
 ## blame
 
@@ -127,6 +132,7 @@ git blame -M 파일
 ```bash
 git blame -C -C 파일
 ```
+
 
 ## branch
 
@@ -216,6 +222,7 @@ git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -d
 # 출처: https://medium.com/@kcmueller/delete-local-git-branches-that-were-deleted-on-remote-repository-b596b71b530c
 git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1; }' | xargs -r git branch -d
 ```
+
 
 ## checkout
 
@@ -330,6 +337,7 @@ Switched to a new branch 'serverfix'
 git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아웃
 ```
 
+
 ## cherry-pick
 
 특정 커밋 하나만 현재 브랜치에 리베이스한다.
@@ -359,6 +367,7 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 
 실제 결과는 그렇지 않다. 세 번째 커밋보다 앞에 있는 첫 번째와 두 번째 커밋 모두 `CONFLICT_ME.md` 파일에 대한 변경이므로 원래 의도와는 다르게 모든 커밋이 main 브랜치에 반영된다. (그 와중의 충돌은 덤)
 
+
 ## clean
 
 추적중이지 않은(untracked) 파일 삭제하기.
@@ -378,6 +387,7 @@ git clean -f -d -x  # ignore 설정된 파일을 포함하며 추적중이지 �
 - `-d`: 폴더도 삭제한다.
 - `-x`: ignore 룰이 적용된 파일**도** 삭제한다.
 - `-X`: ignore 룰이 적용된 파일**만** 삭제한다.
+
 
 ## clone
 
@@ -402,6 +412,7 @@ git clone --bare 저장소주소 [디렉터리]
 ```bash
 git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제한다.
 ```
+
 
 ## commit
 
@@ -470,6 +481,7 @@ git commit --amend  # forgotten_file이 마지막 커밋에 추가된다.
 ```bash
 git commit -C HEAD --amend
 ```
+
 
 ## config
 
@@ -602,6 +614,7 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 특정 리모트 주소만 검증을 끄도록 하는 방법도 있다.
 
+
 ## diff
 
 지정한 영역끼리의 변경 사항을 출력한다.
@@ -704,6 +717,7 @@ index 6494d80,862c24c..0000000
 ++>>>>>>> main
 ```
 
+
 ## diff-tree
 
 '두 개의 트리 개체를 통해 블롭의 내용과 모드를 비교'한다고 한다. (뭔 소린지...)  
@@ -722,6 +736,7 @@ TODO 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 
 - `-p` `-u` `--patch`: 패치로 사용할 수 있는 내용을 출력한다.
 - `-s` `--no-patch`: 패치 내용을 출력하지 않게 한다.
 - `--pretty[=<format>]` `--format=<format>`
+
 
 ## fetch
 
@@ -752,6 +767,7 @@ git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 �
 
 `:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`을, 리모트 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
 
+
 ## format-patch
 
 메일 전송용으로 규격화된 패치 만들기. **주의: 머지 커밋은 패치 대상에서 제외됨**.  
@@ -776,6 +792,7 @@ git am FILE
 
 패치를 적용하는 명령어 중 `am`은 `format-patch`로 생성된 패치만 적용할 수 있고 커밋이 바로 생성된다.  
 `apply`는 `format-patch` 포함 `diff`로 생성한 패치도 적용할 수 있다고 하며(된다는데난외않되😑), 커밋을 생성하지 않는다.
+
 
 ## gc
 
@@ -821,6 +838,7 @@ export GIT_ASK_YESNO=false
 - `--force`
 - `--keep-largest-pack`
 
+
 ## gitk
 
 ```
@@ -838,6 +856,7 @@ gitk main draft/noritersand legacy # main, draft/noritersand, legacy 브랜치�
 
 ![](/images/gitk.png)
 
+
 ## help
 
 도움말 보기
@@ -847,6 +866,7 @@ git help config
 git config --help
 git help -a # 모든 명령어 보기
 ```
+
 
 ## init
 
@@ -863,6 +883,7 @@ git init
 ```bash
 git init --bare
 ```
+
 
 ## log
 
@@ -944,6 +965,7 @@ git log --since=2.weeks
 git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
 ```
 
+
 ## ls-files
 
 스테이징 에어리어나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀탐색한다.
@@ -972,6 +994,7 @@ git ls-files -v | grep ^h  # assumed unchanged 파일만 표시
 - `K`: to be killed
 - `?`: other
 
+
 ## ls-remote
 
 저장소의 정보를 조회하는 명령어. 옵션을 명시하지 않으면 연결된 저장소의 태그, 머지 리퀘스트, 브랜치 등을 모두 조회한다.
@@ -989,6 +1012,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 - `-h` `--heads`: 헤드만 출력 즉, 브랜치만 보는 옵션.
 - `-t` `--tags `: 태그만 출력한다.
 - `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags는 저도 모르니 묻지 마십씨오~~
+
 
 ## ls-tree
 
@@ -1008,6 +1032,7 @@ git ls-tree HEAD ./docs
 
 - `-d`: 명명된 트리 구성요소만 출력한다. (공식 문서에선 파일을 `children`, 디렉터리를 `named tree entry`라고 표현함)
 - `-r`: 현재 경로 포함, 하위 경로를 재귀한다.
+
 
 ## merge
 
@@ -1068,6 +1093,7 @@ git merge --squash TARGET_BRANCH
 
 [\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
+
 ## mv
 
 파일 이동 혹은 파일명 변경
@@ -1075,6 +1101,7 @@ git merge --squash TARGET_BRANCH
 ```bash
 git mv FILE_FROM FILE_TO
 ```
+
 
 ## pull
 
@@ -1093,6 +1120,7 @@ git pull --rebase  # fetch 후 머지 대신 리베이스
 ```
 
 명시한 리모트 브랜치를 현재 브랜치로 pull 한다는 점에 주의할 것. 브랜치를 명시하지 않으면 업스트림 브랜치를 현재 브랜치에 자동으로 머지한다. 옵션을 따로 지정하지 않았다면, 가능한 경우 FF 머지를 시도한다.
+
 
 ## push
 
@@ -1165,6 +1193,7 @@ push는 태그를 포함하지 않는다. 따라서 명시적인 명령으로 �
 git push origin v1.5  # origin 저장소에 v1.5 태그 업로드
 git push --tags  # 생성한 태그를 모두 업로드
 ```
+
 
 ## rebase
 
@@ -1246,6 +1275,7 @@ pick 7715f75fa (HEAD)
 - [누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
 - [\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
+
 ## reflog
 
 `log`와 비슷하지만 `log`가 커밋 이력을 출력한다면 `reflog`는 헤드 이동 이력을 출력한다.
@@ -1270,6 +1300,7 @@ $ git reflog -5
 ```bash
 git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머지
 ```
+
 
 ## remote
 
@@ -1333,6 +1364,7 @@ git remote prune 리모트저장소
 셋의 차이는 [여기](https://stackoverflow.com/questions/20106712/what-are-the-differences-between-git-remote-prune-git-prune-git-fetch-prune)를 참고.
 어쨋든 이 명령은 로컬을 정리하는 것이지, 리모트의 뭔가를 지우는게 아니니 안심하고 실행해도 된다.
 
+
 ## reset
 
 헤드를 이동한다.
@@ -1360,6 +1392,7 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 #### 커밋 되돌리기 \#1
 
 체크섬이나 `HEAD~숫자`를 사용해서 헤드가 지난 커밋을 가리키게 할 수 있다. 사실 이건 되돌리기보단 지난 커밋으로 이동한다고 보는게 더 정확한 표현이다.
+
 
 ## restore
 
@@ -1393,6 +1426,7 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 ```
 
 `-W`와 `-S`는 워킹 트리와 스테이징 에어리어 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
+
 
 ## revert
 
@@ -1440,6 +1474,7 @@ git revert fc30cf -m 1
 
 여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 위 예시에선 `7be20ca`가 메인라인이 되며 `ca433d3`의 변경사항이 되돌려진다.
 
+
 ## rm
 
 #### 파일/폴더 삭제
@@ -1465,6 +1500,7 @@ git rm log/\*.log  # log/디렉터리의 확장명이 log인 파일 모두 삭�
 git rm \*.~  # ~로 끝나는 파일 모두 삭제
 ```
 
+
 ## show
 
 커밋 정보 조회
@@ -1485,6 +1521,7 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 
+
 ## show-ref
 
 로컬 저장소의 모든 레퍼런스(로컬 브랜치 + 리모트 트래킹 브랜치 + 태그) 출력.
@@ -1498,6 +1535,7 @@ git show-ref --head
 - `--head`: HEAD도 무조건 포함하여 출력한다.
 - `--heads`: 로컬 브랜치만 출력
 - `--tags`: 태그만 출력
+
 
 ## stash
 
@@ -1565,6 +1603,7 @@ git stash branch BRANCH_NAME  # 가장 최근의 스태시를 적용한 새 브�
 git stash branch issue541 stash@{1}  # 두 번째 스태시를 적용한 issue541 브랜치 생성
 ```
 
+
 ## status
 
 저장소 상태 확인
@@ -1572,6 +1611,7 @@ git stash branch issue541 stash@{1}  # 두 번째 스태시를 적용한 issue54
 ```bash
 git status
 ```
+
 
 ## switch
 
@@ -1612,6 +1652,7 @@ git switch -c abc 4d0dc05b1f # 4d0dc05b1f 커밋에서 abc 브랜치 생성하�
 - `--ignore-other-worktrees`
 - `--recurse-submodules`
 - `--no-recurse-submodules`
+
 
 ## svn
 
@@ -1682,6 +1723,7 @@ git svn log
 git svn blame 파일
 ```
 
+
 ## tag
 
 태그 조회와 생성/삭제 명령어
@@ -1736,6 +1778,7 @@ git tag -v v1.0
 ```bash
 git tag -d v0.9
 ```
+
 
 ## update-index
 

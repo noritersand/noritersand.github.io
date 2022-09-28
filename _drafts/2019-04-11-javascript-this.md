@@ -14,9 +14,11 @@ tags:
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this)
 
+
 ## this란 무엇인가
 
 블라블라
+
 
 ## 자바스크립트 객체 메서드 내에서 this
 
@@ -31,6 +33,7 @@ owner === owner.fn();
 ```
 
 여기서 `this`는 함수를 소유한 객체다.
+
 
 ## 화살표 함수의 this
 

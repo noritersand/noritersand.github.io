@@ -16,14 +16,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## RegExp 인스턴스 모음
-
-### 특정 문자열 중에 하나와 완전히 일치하는지 검사
-
-```js
-// 'lax' 혹은 'strict'인지
-/^lax$|^strict$/
-```
 
 ### 빈 줄, 공백 줄(empty line)
 
@@ -35,6 +29,21 @@ tags:
 
 ```js
 /^\s*$/
+```
+
+### 줄의 첫 번째부터 시작하는 특정 문자
+
+```js
+/^##\s/
+```
+
+마크다운 문서에서 h2 태그 찾을 때 씀. 라인의 끝은 어찌돼도 상관 없으므로 `$`는 안붙여도 됨.
+
+### 특정 문자열 중에 하나와 완전히 일치하는지 검사
+
+```js
+// 'lax' 혹은 'strict'인지
+/^lax$|^strict$/
 ```
 
 ### 문자의 시작과 끝으로 범위 검색
@@ -107,7 +116,7 @@ nameCard NameCard name-card name--card NAME_CARD NAME___CARD
 /<img [^>]*src="([^"]+)"[^>]*>/
 ```
 
-#### &lt;img부터 src="~~~" 까지
+#### &lt;img부터 `src="~~~"` 까지
 
 ```js
 /<img [^>]*src="([^"]+)"/
@@ -124,6 +133,7 @@ nameCard NameCard name-card name--card NAME_CARD NAME___CARD
 ```js
 /^[a-zA-Z0-9]{5,50}$/
 ```
+
 
 ## 함수 적용 예시 모음
 

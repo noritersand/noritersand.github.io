@@ -20,9 +20,11 @@ tags:
 - Chrome 45, Edge 12, FireFox 22, Opera 32, Safari 10 이상에서 지원
 - IE에서 사용 불가
 
+
 ## 개요
 
 화살표 함수 표현(arrow function expression)에 대한 간단 정리. 익명 함수를 정의하는 간단한 표현식 되겠다.
+
 
 ## 문법
 
@@ -112,6 +114,7 @@ var square = n => n * 2;
 console.log(square(2)); // 4 출력
 ```
 
+
 ## 제한사항
 
 ### 화살표 함수의 this는 함수의 소유자가 아니라 전역 객체
@@ -142,13 +145,13 @@ var obj2 = {
 }
 ```
 
+### TODO
+
 MDN을 보면 이런 말이 있는데:
 
 > 'this, arguments, super가 없고 메서드로 사용하면 안됨'
 
 `this` 때문에 화살표 함수는 그냥 함수처럼 호출해야지 메서드로 취급하면 안된다는 말 같음.
-
-### TODO
 
 > - Arrow functions don't have their own bindings to this, arguments or super, and should not be used as methods.
 > - Arrow functions don't have access to the new.target keyword.

@@ -185,6 +185,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
 - <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
+- <kbd>ctrl + shift+ \\</kbd>: Go to URL Mapping
 
 ### 북마크
 
