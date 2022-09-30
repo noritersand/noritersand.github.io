@@ -20,11 +20,13 @@ tags:
 
 - [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)
 
+
 ## 개요
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워셸 명령어 정리 글.
 
 파워셸 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
+
 
 ## 파워셸 명령어 기본 별칭
 
@@ -78,6 +80,7 @@ tee -> Tee-Object                 type -> Get-Content               where -> Whe
 wjb -> Wait-Job                   write -> Write-Output
 ```
 
+
 ## Microsoft.Powershell.Core
 
 ### Get-History
@@ -108,6 +111,7 @@ Invoke-History 132 # 위와 같음
 # name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
 Get-ChildItem | Where-Object name -eq 'httpd.exe'
 ```
+
 
 ## Microsoft.PowerShell.Management
 
@@ -232,6 +236,19 @@ Resolve-Path .\package.json
 # 현재 경로부터 홈 디렉터리까지의 상대 경로 출력
 Resolve-Path -Relative ~
 ```
+
+### Test-Connection
+
+cmd의 `ping`과 같은 명령어. 지정한 컴퓨터에 ping(혹은 ICMP 에코 요청)을 보내고 결과를 출력한다.
+
+```bash
+# KT 서버에 중단없이 연결 테스트 + 현재 시각 출력
+Test-Connection -Repeat -ComputerName 168.126.63.1 | Format-Table @{Name='TimeStamp';Expression={Get-Date}},Address,ProtocolAddress,ResponseTime
+
+# 위 명령의 ping 버전
+ping -t 168.126.63.1 | Foreach{"{0} - {1}" -f (Get-Date),$_}
+```
+
 
 ## Microsoft.Powershell.Utility
 

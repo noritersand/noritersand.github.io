@@ -33,11 +33,13 @@ tags:
 - [\[MDN\] Window: beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
 - [\[MDN\] WindowEventHandlers.onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
 
+
 ## 개요
 
 TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 내 맴대로 분류한 DOM 이벤트 핸들링 관련 API 정리.
+
 
 ## 이벤트 버블링 event bubbling
 
@@ -45,11 +47,13 @@ TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 TODO
 
+
 ## 이벤트 캡처링 event capturing
 
 하위 요소에 이벤트 핸들러가 있는지 확인하는 과정
 
 TODO
+
 
 ## 인스턴스 메서드
 
@@ -104,12 +108,13 @@ target.dispatchEvent(event)
 ```js
 var event = new Event('build');
 
-// 이벤트 리슨.
+// 이벤트 리슨
 element.addEventListener('build', function (e) { /* ... */ }, false);
 
-// 이벤트 디스패치.
+// 이벤트 디스패치
 element.dispatchEvent(event);
 ```
+
 
 ## HTMLElement.click()
 
@@ -119,7 +124,8 @@ element.dispatchEvent(event);
 document.querySelector('#input').click();
 ```
 
-## 이벤트
+
+## 이벤트 목록
 
 ### load
 

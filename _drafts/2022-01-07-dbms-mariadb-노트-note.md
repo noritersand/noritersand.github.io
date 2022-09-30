@@ -18,9 +18,11 @@ tags:
 - [https://mariadb.com/kb/en/](https://mariadb.com/kb/en/)
 - [https://dbschema.com/documentation/MariaDb/#introduction](https://dbschema.com/documentation/MariaDb/#introduction)
 
+
 ## 개요
 
 MariaDB 관련 내용 아무거나 적음.
+
 
 ## 로컬 서버 설정
 
@@ -72,6 +74,7 @@ SHOW PRIVILEGES
 SHOW GRANTS FOR fixalot@localhost;
 ```
 
+
 ## 로우 넘버
 
 ROWNUM 출력 방법
@@ -80,6 +83,7 @@ ROWNUM 출력 방법
 SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM
 FROM SAMPLE, (SELECT @ROWNUM := 0) R
 ```
+
 
 ## VO(DTO, Entity) 만들기
 
@@ -125,3 +129,19 @@ WHERE TABLE_NAME = @TABLE_NAME
 ```
 
 `SET` 까지 한 번에 실행하면 된다. Java 파일에 붙여놓고 카멜케이스 변환만 해주면 끟.
+
+
+## data concatenation
+
+[https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/)
+
+한 건 이상의 데이터를 하나의 문자열로 연결해 표현하는 방법을 말함. `GROUP_CONCAT()` 함수를 쓴다.
+
+기본 사용법:
+
+```sql
+SELECT GROUP_CONCAT(MEMBER_NAME)
+FROM SOME_MEMBER_TABLE
+```
+
+응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
