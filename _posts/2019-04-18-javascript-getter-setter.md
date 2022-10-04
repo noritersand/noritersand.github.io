@@ -23,6 +23,7 @@ tags:
 
 - IE8 이하는 사용 불가
 
+
 ## 개요
 
 [ECMAScript 5.1](https://www.ecma-international.org/ecma-262/5.1/#sec-11.1.5)에서 최초로 정의된 구문. 프로퍼티처럼 접근할 수 있는 함수를 정의한다.
@@ -36,6 +37,7 @@ tags:
 ```
 
 getter와 setter는 접근자 프로퍼티(accessor property)에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티(data property)와는 다르게 취급된다. 한 가지 예를 들면 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
+
 
 ## class 선언에서
 
@@ -55,6 +57,7 @@ noob.trait; // "know nothing"
 noob.trait = 'crawl';
 noob.trait; // "crawl"
 ```
+
 
 ## 객체 리터럴에서
 
@@ -77,6 +80,7 @@ obj.findMe = 1234; // Denied
 obj.findMe; // "Nope"
 ```
 
+
 ## 재정의 불가능한 프로퍼티
 
 요딴식으로 setter 없이 getter만 정의하면:
@@ -95,6 +99,7 @@ noob.name; // "fresh newbie";
 ```
 
 `name`은 일종의 immutable property가 된다.
+
 
 ## 객체 복제에 포함되지 않음
 

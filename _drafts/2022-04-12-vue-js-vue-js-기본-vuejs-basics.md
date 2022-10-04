@@ -22,9 +22,11 @@ tags:
 
 - Vue 3
 
+
 ## 개요
 
 Vue.js 사용 방법 정리 글.
+
 
 ## 설치
 
@@ -89,6 +91,7 @@ ECMAScript 모듈(통칭 ESM) 방식으로 불러오는 방식이 있다:
 </script>
 ```
 
+
 ## 선언적 렌더링
 
 TODO 선언적 렌더링이 뭐야
@@ -110,6 +113,7 @@ var app = new Vue({
 
 가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다.
 
+
 ## JSX
 
 Vue도 JSX 사용 가능함:
@@ -123,6 +127,7 @@ const vnode = <div>hello</div>
 [@vue/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) 있으면 된다고 한다.
 
 **TODO 설명 추가**
+
 
 ## Template Syntax
 
@@ -169,6 +174,7 @@ TODO
 ### Directives
 
 TODO
+
 
 ## 조건부 렌더링 Conditional Rendering
 
@@ -229,6 +235,7 @@ TODO
 
 그리고 `v-show`는 `<template>` 태그를 랜더링해버려서 `v-if`와 다르게 더미 태그로 쓸 수 없음.
 
+
 ## 목록 그리기 List Rendering
 
 ### v-for
@@ -257,6 +264,7 @@ var app4 = new Vue({
 ```
 
 렌더링 후 `app4.values.push({index: '넷'})`를 입력하면 반복문의 요소로 추가되며, 화면에 즉시 반영된다.
+
 
 ## 이벤트 핸들링 Event Handling
 
@@ -296,6 +304,7 @@ createApp({
 <button v-on:click="increment">{{ count }}</button>
 ```
 
+
 ## 폼 바인딩 Form Input Bindings
 
 `v-model` 디렉티브를 사용하면 사용자가 입력한 값과 화면에 보이는 값, 그리고 앱의 데이터가 동기화된다.
@@ -319,6 +328,7 @@ var app6 = new Vue({
 ```
 
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
+
 
 ## 컴포넌트 Components
 
@@ -344,6 +354,7 @@ var app = new Vue({
 
 이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
 
+
 ## 컴포넌트: Props
 
 부모한테 받아오는 읽기 전용 값.
@@ -356,11 +367,13 @@ var app = new Vue({
 
 받는 방법은 API 방식에 따라 다름. **TODO**
 
+
 ## State
 
 `data()` 같은 거
 
 TODO
+
 
 ## Template Refs
 
@@ -376,8 +389,11 @@ mounted() {
 }
 ```
 
+
 ## `<template>`의 용도
 
 랜더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
+
+

@@ -16,21 +16,20 @@ tags:
 #### 참고한 문서
 
 - [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
-- [\[Vue.js\] API](https://vuejs.org/api/)
+- [\[Vue.js\] Options API](https://vuejs.org/api/#options-api)
+- [\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
 
 #### 버전 정보
 
 - Vue 3
 
+
 ## 개요
 
 Vue는 Options API 혹은 Composition API 스타일로 작성할 수 있는데, 이 중 Options API에 해당하는 것들만 정리함.
 
-## Options API
 
-[\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
-
-### data()
+## data()
 
 state를 선언할 때 사용한다:
 
@@ -45,7 +44,8 @@ data() {
 
 `data()`에서 반환한 프로퍼티는 ... TODO
 
-### props
+
+## props
 
 우선 이렇게 받을 값의 데이터 타입을 정의하고:
 
@@ -72,7 +72,8 @@ props: {
 
 사용할 때는 data와 똑같이 쓰면 된다. 읽기 전용 값이라 재할당은 불가능.
 
-### created()
+
+## created()
 
 > After init Options API
 
@@ -80,7 +81,8 @@ props: {
 
 TODO
 
-### mounted()
+
+## mounted()
 
 > After initial render, create & insert DOM nodes
 
@@ -88,7 +90,8 @@ DOM이 생성된 시점. `created()`보다 나중이다.
 
 TODO
 
-### methods()
+
+## methods()
 
 ```js
 createApp({
@@ -103,11 +106,51 @@ createApp({
 
 TODO
 
-### computed()
 
-TODO
+## computed()
 
-### watch()
+- [https://vuejs.org/api/options-state.html#computed](https://vuejs.org/api/options-state.html#computed)
+- [https://vuejs.org/guide/essentials/computed.html#basic-example](https://vuejs.org/guide/essentials/computed.html#basic-example)
+
+계산된 프로퍼티가 필요할 때 쓰는 getter/setter라고 보면 됨. 캐시도 적용된다 함.
+
+```js
+export default {
+  data() {
+    return { a: 1 }
+  },
+  computed: {
+    // readonly
+    aDouble() {
+      return this.a * 2
+    },
+    // writable
+    aPlus: {
+      get() {
+        return this.a + 1
+      },
+      set(v) {
+        this.a = v - 1
+      }
+    }
+  },
+  created() {
+    console.log(this.aDouble) // => 2
+    console.log(this.aPlus) // => 2
+
+    this.aPlus = 3
+    console.log(this.a) // => 2
+    console.log(this.aDouble) // => 4
+  }
+}
+```
+
+`computed`는 `data()`나 `methods`보다 실행이 늦기 때문에 초기화 시점에 참조하는 것은 불가능하다.
+
+
+## watch()
+
+컴포넌트 프로퍼티의 변화를 감시할 때 사용함:
 
 ```js
 createApp({

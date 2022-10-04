@@ -25,9 +25,11 @@ tags:
 
 - React 17
 
+
 ## 개요
 
 리액트의 기초, 규칙, 문법 등을 정리한 글. 공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
+
 
 ## 설치
 
@@ -83,6 +85,7 @@ npm install
 yarn install
 ```
 
+
 ## 리액트 엘리먼트
 
 리액트의 핵심 API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
@@ -103,6 +106,7 @@ yarn install
   type: function LikeButton(props) { ... }
 }
 ```
+
 
 ## JSX
 
@@ -283,6 +287,7 @@ const conditional = (
 );
 ```
 
+
 ## 리액트의 주요 API
 
 ### React.createElement
@@ -368,6 +373,7 @@ ReactDOM.hydrate(element, container[, callback])
 
 TODO 뭔 소린지 모르겠음. SSR 페이지는 이거 쓰라고 검색 결과에 나오긴 하는데...
 
+
 ## 함수 컴포넌트 Function Components
 
 [리액트에서 컴포넌트](https://reactjs.org/docs/components-and-props.html)란 리액트 앱을 구성하는 최소 단위를 말한다. 컴포넌트의 최소 요구조건은 리액트 엘리먼트를 반환하는 것이다. 그래서 항상 `return` 문을 포함한다.
@@ -399,6 +405,7 @@ ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 
 **주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함**
 
+
 ## 이벤트 핸들러 할당
 
 그냥 요따구로 하면 됨:
@@ -413,6 +420,7 @@ class Square extends React.Component {
   }
 }
 ```
+
 
 ## state
 
@@ -488,6 +496,7 @@ this.setState((state) => {
   }
 });
 ```
+
 
 ## props
 
