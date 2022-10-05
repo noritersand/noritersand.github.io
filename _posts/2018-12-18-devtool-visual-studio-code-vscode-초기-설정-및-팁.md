@@ -13,6 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## 기본 설정
 
 ### Suggestions 기능 설정 변경
@@ -51,9 +52,10 @@ Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후:
 
 Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
+
 ## 팁
 
-### Code Snippet 추가하기
+### 코드 스니펫 추가하기
 
 [공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)  
 
@@ -75,6 +77,7 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
 `prefix` 'log'에 작동한다. 'Print to console'은 자동 완성 창에 보여질 설명이다.
 
 `body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이건 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 아직 몲. `${1:text}` 이런식으로 작성할 수도 있는데, 일종의 placeholder 역할을 한다.
+
 
 ## 작성자 저장용 단축키 설정
 
@@ -155,6 +158,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 
 `oem_3`는 [사용자의 키보드 레이아웃에 따라 다를 수 있는데](https://github.com/microsoft/vscode/issues/27491) 작성자의 경우 백틱``` ` ```에 해당함.
 
+
 ## 기본 단축키
 
 ### 파일 에디터
@@ -183,6 +187,7 @@ Add Selection
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
+
 
 ## 추천 확장 기능(플러그인)
 

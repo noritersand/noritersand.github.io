@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-04-17 13:32:10 +0900
-title: '[devtool] sublime text 초기 설정'
+title: '[devtool] sublime text 초기 설정과 팁'
 categories:
   - devtool
 tags:
@@ -12,13 +12,20 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 참고한 문서
+
+- [https://www.sublimetext.com/docs/index.html](https://www.sublimetext.com/docs/index.html)
+- [https://docs.sublimetext.io/guide/](https://docs.sublimetext.io/guide/)
+
 #### 버전 정보
 
 - Sublime Text 4 (Build 4xxx)
 
+
 ## 개요
 
 서브라임 텍스트 시리즈의 기본 설정, 단축키 등 정리.
+
 
 ## 기본 설정
 
@@ -47,6 +54,23 @@ sb  # 서브라임 실행
 sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열기
 sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ```
+
+### 코드 스니펫 추가하기
+
+메뉴에서 `Tools > Developer > New Snippet...` 을 누르면 새 파일이 열리는데, 아래처럼 작성한 뒤:
+
+```xml
+<snippet>
+  <content><![CDATA[
+console.log('${1:msg}', ${2});
+]]></content>
+  <tabTrigger>cl</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
+```
+
+확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정돼 있음.
+
 
 ## 작성자 저장용 사용자 설정
 
@@ -88,7 +112,7 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 #### key bindings - user
 
-현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [답답한 누군가가 만들어놓은걸](https://github.com/Sublime-Instincts/CommandsBrowser/tree/master/sm_commands_metadata)로 확인해야 함.
+현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser/tree/master/sm_commands_metadata) 확인해야 함.
 
 ```json
 [
@@ -102,13 +126,20 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 ]
 ```
 
-`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데 `{ "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" }` 위험해서 빼앰.
+`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데:
+
+```json
+{ "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" }
+``` 
+
+위험해서 빼앰.
+
 
 ## 기본 단축키
 
 Build 3126 이후에 기록함.
 
-무슨 명령인지 모르겠으면 여기: [https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
+무슨 명령인지 모르겠으면 [여기](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
 
 ### 커서/포커스 이동
 
@@ -160,6 +191,7 @@ Expand Selection
 - <kbd>ctrl + k, ctrl + u</kbd>: 대문자 변환
 - <kbd>ctrl + k, ctrl + l</kbd>: 소문자 변환
 - <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글
+
 
 ## 패키지
 

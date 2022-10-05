@@ -21,11 +21,13 @@ tags:
 
 - IntelliJ IDEA 2021.3
 
+
 ## 개요
 
 인텔리제이 관련 단축키와 설정 등의 간단 정리 글.
 
 자바 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
+
 
 ## Ultimate와 Community 버전 간 차이
 
@@ -33,15 +35,18 @@ tags:
 
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
+
 ## TODO 톰캣 퍼블리싱 폴더는 어디일까
 
 이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
+
 
 ## 빌드나 런타임 에러가 발생하면
 
 Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
 
 ![](/images/intellij-project-settings-2.png)
+
 
 ## 한글 깨짐 문제
 
@@ -62,7 +67,8 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 #### \#3 콘솔 출력 인코딩
 
-Settings > Editor > General > Console로 이동해서 Default Encoding을 UTF-8로 변경
+`Settings > Editor > General > Console`로 이동해서 Default Encoding을 UTF-8로 변경
+
 
 ## 런타임 중 변경된 파일 자동으로 다시 불러오기
 
@@ -79,9 +85,11 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있긴 함.
 
 
+
 ## 인텔리제이에서 사용할 VM options 지정하기
 
 Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
+
 
 ## File and Code Templates
 
@@ -101,6 +109,7 @@ public class ${NAME} {
 }
 
 ```
+
 
 ## 자동 완성
 
@@ -148,6 +157,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
+
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
@@ -165,6 +175,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
 - Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
 - Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
+
 
 ## 기본 단축키
 
@@ -249,6 +260,7 @@ Select Next Occurrence. 멀티 캐럿 없는 줄 아랏네 😏
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
+
 
 ## 추천 플러그인
 

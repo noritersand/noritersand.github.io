@@ -19,9 +19,11 @@ tags:
 - [npm](https://www.npmjs.com/)
 - [npm Docs](https://docs.npmjs.com/)
 
+
 ## 개요
 
 NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다.
+
 
 ## 모듈 설치
 
@@ -62,6 +64,7 @@ npm install nodemon -g
 npm install vue@latest
 ```
 
+
 ## 조회
 
 ```bash
@@ -85,6 +88,7 @@ npm fund
 
 `fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 모듈 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
 
+
 ## 업데이트
 
 ```bash
@@ -100,6 +104,7 @@ npm update [모듈명]
 npm update [모듈명] -g
 ```
 
+
 ## 모듈 삭제
 
 ```bash
@@ -114,6 +119,7 @@ npm uninstall 모듈명
 # 글로벌 모듈 삭제
 npm uninstall 모듈명 -g
 ```
+
 
 ## 설치한 모듈 실행
 
@@ -134,6 +140,7 @@ npm exec http-server -p 9090
 ```
 
 `npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
+
 
 ## package.json
 
@@ -202,6 +209,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 }
 ```
 
+
 ## 모듈을 폴더단위로 관리하기
 
 package.json을 조작하면 한 폴더에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다.
@@ -221,6 +229,7 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 이 경우 노드는 `./myModule/lib/temp.js` 를 찾는다.  
 [관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
+
 
 ## npm scripts
 
@@ -243,6 +252,7 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 ```
 
 요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js`와 같다고 볼 수 있다.
+
 
 ## Yarn
 
@@ -298,6 +308,9 @@ yarn global dir
 실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. NPM 글로벌로 설치했더니 해당 메시지 사라짐. (2022-01-28, Yarn v1.22.17)
 
 **그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같음.**
+
+뱀발: [Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 NPM보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
+
 
 ## 자주 쓰는 패키지
 

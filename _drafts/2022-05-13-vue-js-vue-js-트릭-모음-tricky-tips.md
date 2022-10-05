@@ -57,7 +57,7 @@ methods: {
 
 ## 강제 리랜더링
 
-리랜더링을 수동으로 하는 것은 좋지 않은 방법이지만 어쩔 수 없이 해야 하는 경우가 있음. 가령 다른 써드 파티에서 input의 DOM value만 수정해버린다던지...
+리랜더링을 수동으로 하는 것은 좋지 않은 방법이지만 어쩔 수 없이 해야 하는 경우가 있음. 가령 다른 써드 파티에서 input의 DOM value만 쏙 수정해버린다던지...
 
 ```js
 import {getCurrentInstance, defineComponent} from 'vue'
