@@ -171,9 +171,30 @@ TODO
 
 TODO
 
+```html
+{{ mustache }}
+```
+
+
 ### Directives
 
 TODO
+
+- `v-text`: 
+- `v-html`: 
+- `v-show`: 
+- `v-if`: 
+- `v-else`: 
+- `v-else-if`: 
+- `v-for`: 
+- `v-on`: 
+- `v-bind`: 
+- `v-model`: 
+- `v-slot`: 
+- `v-pre`: 
+- `v-once`: 
+- `v-memo`: 
+- `v-cloak`: 
 
 
 ## 조건부 렌더링 Conditional Rendering
@@ -368,9 +389,9 @@ var app = new Vue({
 받는 방법은 API 방식에 따라 다름. **TODO**
 
 
-## State
+## Reactive State
 
-`data()` 같은 거
+컴포넌트의 반응형 상태값(혹은 프로퍼티)을 말한다. Options API에선 `data()`로 정의한다.
 
 TODO
 

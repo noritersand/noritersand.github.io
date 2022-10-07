@@ -27,11 +27,6 @@ tags:
 - [\[MDN\] Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 - [\[MDN\] EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget)
 - [이벤트 버블링, 이벤트 캡처 그리고 이벤트 위임까지](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
-- [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
-- [\[MDN\] WindowEventHandlers.onunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onunload)
-- [\[MDN\] Window: unload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
-- [\[MDN\] Window: beforeunload event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
-- [\[MDN\] WindowEventHandlers.onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
 
 
 ## 개요
@@ -127,11 +122,18 @@ document.querySelector('#input').click();
 
 ## 이벤트 목록
 
-### load
+### Window: load event
+
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
 
 TODO
 
 ### DOMContentLoaded
+
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
+- [https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
+
+TODO ? 외 두 개지 🤔
 
 jQuery의 ready로 잘 알려진 그 이벤트임.
 
@@ -139,11 +141,18 @@ jQuery의 ready로 잘 알려진 그 이벤트임.
 document.addEventListener('DOMContentLoaded', (event) => console.log('DOM fully loaded'));
 ```
 
-### pageshow
+### Window: pageshow event
+
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event)
 
 TODO
 
-### unload
+### Window: unload event
+
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
+- [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
+
+**사용금지된 이벤트**
 
 문서가 언로딩(대충 다른 페이지로 이동 중일 때 쯤) 중일 때 발생하는 이벤트.
 
@@ -154,7 +163,10 @@ window.onunload = function() {}
 얼럿은 차단되지만 스크립트가 실행되긴 한다. 페이지를 이동하거나 새로고침하거나 브라우저를 끌 때도 작동한다. 실행 시간을 오래 잡아먹는 스크립트라면 결과가 다를 수 있다. 아직 잘 몲.
 비슷한 `onclose`가 있지만 지원하지 않는 브라우저가 있다.
 
-### beforeunload
+### Window: beforeunload event
+
+- [https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
+- [https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
 
 ```js
 window.beforeunload = function() {}
@@ -174,3 +186,11 @@ window.addEventListener('beforeunload', (event) => {
 ```
 
 MDN의 설명에는 모든 브라우저에서 이 방법이 통하는 것은 아니라고 한다.
+
+### HTMLElement: input event
+
+[https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event)
+
+이런 게 있네 ㅋ
+
+TODO

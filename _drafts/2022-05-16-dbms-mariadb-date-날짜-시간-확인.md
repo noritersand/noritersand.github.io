@@ -26,21 +26,30 @@ tags:
 
 - MariaDB 10.x
 
+
 ## 개요
 
 `DATE`, `DATETIME`, `TIME` 타입 관련 테스트 쿼리 걍 붙여넣음.
+
 
 ## 쿼리
 
 ```sql
 SELECT
-    DD.DUMMY,
-    DATE_FORMAT(DD.DUMMY, '%Y-%m-%dT%H:%i:%s.%f') AS ISO_FORMAT_LIKE,
+    DD.DUMMY AS DATE_DEFAULT,
+    DATE_FORMAT(DD.DUMMY, '%Y-%m-%d %H:%i:%s') AS ISO_STRING,
+    DATE_FORMAT(DD.DUMMY, '%Y-%m-%dT%H:%i:%s.%f') AS ISO_STRING_2,
+    DATE_FORMAT(DD.DUMMY, '%Y') AS YEAR_OF_ERA,
+    DATE_FORMAT(DD.DUMMY, '%m') AS MONTH_OF_YEAR,
+    DATE_FORMAT(DD.DUMMY, '%d') AS DAY_OF_MONTH,
+    DATE_FORMAT(DD.DUMMY, '%H') AS HOURS,
+    DATE_FORMAT(DD.DUMMY, '%i') AS MINUTES,
+    DATE_FORMAT(DD.DUMMY, '%s') AS SECONDS,
     DATE_FORMAT(DD.DUMMY, '%w') AS DAY,
     DATE_FORMAT(DD.DUMMY, '%W') AS DAY_STRING,
-    DD.DUMMY BETWEEN STR_TO_DATE('2022-05-16 01:30:55', '%Y-%m-%d' '%H:%i:%s') AND STR_TO_DATE('2022-05-17 05:30:55', '%Y-%m-%d' '%H:%i:%s')
+    DD.DUMMY BETWEEN STR_TO_DATE('2022-05-16 01:30:55', '%Y-%m-%d %H:%i:%s') AND STR_TO_DATE('2022-05-17 05:30:55', '%Y-%m-%d %H:%i:%s') AS BETWEEEEEEN
 FROM (
-  SELECT STR_TO_DATE(D.DUMMY, '%Y-%m-%d' '%H:%i:%s') AS DUMMY /* 포맷: yyyy-MM-dd HH:mm:dd */
+  SELECT STR_TO_DATE(D.DUMMY, '%Y-%m-%d %H:%i:%s') AS DUMMY /* 포맷: yyyy-MM-dd HH:mm:dd */
   FROM (
     SELECT '2022-05-16 01:30:55' AS DUMMY
     UNION
@@ -58,6 +67,7 @@ FROM (
   ) D
 ) DD
 ```
+
 
 ## 곁다리: 타임존 변환하기
 

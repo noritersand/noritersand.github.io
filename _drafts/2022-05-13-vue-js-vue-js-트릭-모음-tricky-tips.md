@@ -84,3 +84,26 @@ Vue.createApp({
   }
 });
 ```
+
+
+## 페이지 로딩 중 표현식 감추기
+
+[https://vuejs.org/api/built-in-directives.html#v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak)
+
+빌드를 하지 않는 뷰 환경에서만 유효한 방법이다.
+
+랜더링이 완료되기 전에는 콧수염을 포함한 뷰 표현식들이 그대로 보일 수 있는데 이 때 `v-clock`을 활용한다.
+
+`v-clock`은 연관된 컴포넌트의 마운트가 완료되면 사라지는 속성이다. 이를 이용해서 `v-clock`이 있는 요소는 화면에서 감춰버리는 것:
+
+```html
+<style>
+[v-cloak] {
+  display: none;
+}
+</style>
+
+<div v-cloak>
+  {{ message }}
+</div>
+```
