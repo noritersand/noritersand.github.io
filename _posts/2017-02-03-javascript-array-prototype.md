@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-02-03 13:44:00 +0900
-title: '[JavaScript] Array'
+title: '[JavaScript] Array prototype'
 categories:
   - javascript
 tags:
@@ -20,17 +20,24 @@ tags:
 - [http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm](http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm)
 - [Array 객체에서 놓치기 쉬운 6개의 메서드](http://programmingsummaries.tistory.com/357)
 
+
 ## 개요
 
-`Array` 생성자 함수와 `Array.prototype`의 주요 프로퍼티, 메서드를 정리한 글.
+`Array.prototype`의 주요 프로퍼티, 메서드를 정리한 글.
+
 
 ## 스태틱 프로퍼티
 
 TODO
 
+
 ## 스태틱 메서드
 
 ### Array.of()
+
+TODO
+
+`Array` 인스턴스를 반환한다.
 
 ### Array.from()
 
@@ -47,13 +54,35 @@ var nodeList = document.querySelectorAll('div');
 Array.from(nodeList) // Array(32) [ div, div, ... ]
 ```
 
+
 ## 인스턴스 프로퍼티
 
-`length` 하나 있지 뭐.
+`length` 하나 있지 뭐
 
 TODO
 
+
 ## 인스턴스 메서드
+
+### Array.prototype.at()
+
+```
+array.at(index)
+```
+
+지정한 인덱스의 요소를 반환한다. 대괄호 표현식과 유일한 다른 점은 인덱스를 음수로 지정할 수 있다는 것인데, 인덱스가 음수면 순서를 거꾸로 계산한다:
+
+```js
+var arr = ['a', 'b', 'c'];
+arr.at(0); // "a"
+arr.at(1); // "b"
+arr.at(2); // "c"
+arr.at(3); // undefined
+arr.at(-1); // "c"
+arr.at(-2); // "b"
+arr.at(-3); // "a"
+arr.at(-4); // undefined 
+```
 
 ### Array.prototype.push()
 
@@ -79,11 +108,11 @@ arr; // ['b', 'c', 'd', 'a']
 
 ### Array.prototype.pop()
 
-맨 뒤 요소를 뽑음(?)
+맨 뒤 요소를 뽑는다.
 
 ### Array.prototype.shift()
 
-맨 앞 요소를 뽑음
+맨 앞 요소를 뽑는다.
 
 ### Array.prototype.indexOf()
 

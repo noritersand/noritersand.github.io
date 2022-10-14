@@ -22,11 +22,13 @@ tags:
 - [\[MDN\] Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
+
 ## 버전 넘버링
 
-JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 같은 단순 넘버링이었다가 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다. ES2015(ES6), ES2016(ES7), ...
+JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 같은 단순 넘버링이었다가 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다. ES2015(ES6), ES2016(ES7), ... 대충 2009를 더하면 된다. (6 + 2009 = 2015)
 
 이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019인데, 이 경우 ES2019 라고만 적어도 되지만 ES2019(ES10) 이렇게 이전 방식의 버전을 병기하기도 한다.
+
 
 ## 코멘트 처리
 
@@ -45,6 +47,7 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
   문자열
 */
 ```
+
 
 ## 명령줄 구분
 
@@ -101,6 +104,7 @@ var a = (
 )
 ```
 
+
 ## HTML 문서에 자바스크립트 포함시키기
 
 ### inline
@@ -141,6 +145,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 </html>
 ```
 
+
 ## 특수 문자의 출력
 
 특수문자는 이스케이프 시퀀스로 표현한다:
@@ -159,6 +164,7 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 - `\r`: 줄 바꿈 문자 `\u000A`
 - `\\`: 백슬래시 `\u005C`
 
+
 ## 따옴표 처리
 
 ```
@@ -166,6 +172,7 @@ console.log("'테스트'");   // '테스트'
 console.log("\"테스트\"");   // "테스트"
 console.log('"테스트"');   // "테스트"
 ```
+
 
 ## 자바스크립트의 변수
 
@@ -284,6 +291,7 @@ test2();
 위 코드에서 `c`는 함수 내에서 선언된 변수 즉, 지역 변수이기 때문에 아무것도 출력되지 않는다.
 
 변수 b처럼 함수 내에서 선언되었어도 `var` 키워드를 생략하면 선언되지 않은 변수(undeclared variable)가 되며, 해당 변수는 마치 미리 선언된 전역 변수처럼 작동한다. 동시에 해당 변수는 전역 객체의 프로퍼티가 된다. (단, strict mode에선 허용되지 않음)
+
 
 ## 리터럴 Literal
 

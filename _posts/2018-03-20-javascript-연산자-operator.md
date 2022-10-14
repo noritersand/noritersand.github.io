@@ -21,6 +21,7 @@ tags:
 - [\[MDN\] Comma operator (,)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
+
 ## 산술 연산자
 
 ```
@@ -29,6 +30,7 @@ tags:
 
 덧셈 연산자는 피연산자 중 하나가 문자열일 때 나머지 피연산자도 문자열로 변환하려고 시도한다. 그래서 `'nan' + 1`의 결과는 'nan1'이 된다.
 증가/증감`++ --` 연산자는 피연산자를 가능할 경우 숫자 타입으로 변경한다. 가령 `x++`에서 `x`가 문자열 `"1"`이면 `x`는 숫자 1로 바뀌며 이후 1씩 증가된다. `x`가 숫자로 바꿀 수 없는 문자열일 경우 `NaN`을 반환한다.
+
 
 ## 할당 연산자
 
@@ -73,6 +75,7 @@ tags:
 - 두 값이 모두 문자열이고, 같은 위치에 정확히 같은 16비트 문자열 값을 갖고 있다면, 두 값은 일치한다. 만약 문자열의 길이나 내용이 다를 경우, 두 값은 일치하지 않는다. 두 문자열이 같은 의미를 갖고, 육안상 같은 문자열을 갖더라도 16비트 값의 순서가 다르게 인코딩되어 있을 수도 있다.
 - 자바스크립트에서는 유니코드 문자열에 대해서 정규화 과정을 수행하지 않는다. 또한 `===`나 `==` 연산자를 사용해 유니코드 문자열의 동등 비교를 할 수 없다. 이와 같은 문자열을 비교하려면 `String.localeCompare()`를 사용한다.
 - 두 값이 모두 같은 객체나 배열 또는 함수를 참조하고 있으면, 두 값은 일치한다. 두 값이 서로 다른 객체를 참조할 경우에 설사 두 객체의 프로퍼티가 일치하더라도 두 값은 일치하지 않는다.
+
 
 ## 논리 연산자
 
@@ -162,6 +165,7 @@ console.log(result); // "equal"
 
 OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 제대로 작동하는 한계가 있지만...
 
+
 ## 비트 연산자
 
 - `~`: 비트단위 NOT 연산
@@ -185,6 +189,7 @@ OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 
 
 **양수에 한해** `Math.floor()`와 동일한 연산 결과를 반환한다. 가독성이 나쁘고 브라우저에 따라 다르게 작동할 가능성이 있으며 공식 기능도 아니다. 쓰지 말 것.
 
+
 ## 삼항 연산자 Conditional (ternary) operator `?`
 
 조건 연산자 또는 선택 연산자. TRUE 혹은 FALSE에 해당하는 값을 반환한다.
@@ -198,6 +203,7 @@ var a = 1;
 var result = (a == 1) ? "일" : "일 아님";
 console.log(result); // "일"
 ```
+
 
 ## instanceof
 
@@ -220,6 +226,7 @@ new String() instanceof String;  // true, String 래퍼 객체는 String의 인�
 [] instanceof Object; // true, 모든 객체는 Object의 인스턴스
 ```
 
+
 ## typeof
 
 연산자 다음에오는 변수, 함수, 객체 또는 표현식의 타입을 반환한다.
@@ -240,6 +247,7 @@ typeof function() {}         // "function"
 typeof myCar                  // "undefined" (if myCar is not declared)
 typeof null                   // "object"
 ```
+
 
 ## in
 
@@ -294,6 +302,7 @@ for (var ele in foo2) {
 console.log(idxs); // [ "0", "1", "2" ]
 ```
 
+
 ## delete
 
 프로퍼티를 삭제한다. 삭제에 성공했을 때 `true`를, 실패했을 때 `false`를 반환한다.
@@ -326,6 +335,7 @@ function callee(callback) {
 callee(function() {});
 ```
 
+
 ## void
 
 ```
@@ -351,6 +361,7 @@ void(); // SyntaxError: expected expression, got ')'
 <a href="javascript:void(0)">test</a>
 ```
 
+
 ## 지수 연산자 [Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation) `**`
 
 첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다. [Math.pow()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) 함수를 사용하는 것과 거의 동일하다.
@@ -365,6 +376,7 @@ void(); // SyntaxError: expected expression, got ')'
 ```
 
 `**` 연산자는 오른쪽으로 결합(오른쪽의 연산자가 우선권을 가짐)된다. 따라서 `a ** b ** c`는 `a ** (b ** c)`와 같다.
+
 
 ## Optional Chaining `?.`
 
@@ -395,6 +407,7 @@ obj?.child?.fn(); // 에러 안나고 undefined
 ```
 
 TODO
+
 
 ## 널 병합 연산자 Nullish coalescing operator `??`
 
