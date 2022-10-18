@@ -54,6 +54,8 @@ TODO
 
 ### EventTarget.addEventListener()
 
+[https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
 ```
 addEventListener(type, listener);
 addEventListener(type, listener, options);
@@ -64,30 +66,38 @@ addEventListener(type, listener, useCapture);
 - `listener`: 이벤트가 발생하면 실행할 함수. 유일한 인자로 event 객체가 전달된다.
 - `useCapture`: 캡처링 사용 여부. 기본값은 `false`
 - `options`: 
-  - `capture`: TODO `true` 혹은 `false`
-  - `once`: `true` 혹은 `false`
-  - `passive`: TODO `true` 혹은 `false`
+  - `capture`: 기본값은 `false`. `true`로 지정되면 DOM tree 하위의 `EventTarget`으로 이벤트가 전달되기 전에 이 리스너가 먼저 발동한다.(.. 라고 하는데 뭔 소리야)
+  - `once`: 기본값은 `false`. `true`인 경우 리스너가 발동된 직후 제거된다.
+  - `passive`: 기본값은 `false`. 몇몇 브라우저와 특정 이벤트는 기본값이 `true`다.
   - `signal`: TODO
 
 ```js
-<button type="button" id="btn">push me</button>
-<script>
-  var foo = document.querySelector('#btn');
-  foo.addEventListener('click', function(event) {
-    alert('who? me?');
-  });
-</script>
+function clickHandler(event) {
+  alert('who? me?');
+}
+element.addEventListener('click', clickHandler);
 ```
 
 ### EventTarget.removeEventListener()
 
-```js
-sdf
+[https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+
+```
+removeEventListener(type, listener);
+removeEventListener(type, listener, options);
+removeEventListener(type, listener, useCapture);
 ```
 
-- `aa`:
+- `type`
+- `listener`: 제거할 이벤트 핸들러를 지정한다. 생략하면 안지워짐.
+- `useCapture`
+- `options`
+  - `capture`
 
-sdf
+
+```js
+element.removeEventListener('click', clickHandler);
+```
 
 ### EventTarget.dispatchEvent()
 
@@ -106,12 +116,11 @@ var event = new Event('build');
 // 이벤트 리슨
 element.addEventListener('build', function (e) { /* ... */ }, false);
 
-// 이벤트 디스패치
+// 이벤트 발동
 element.dispatchEvent(event);
 ```
 
-
-## HTMLElement.click()
+### HTMLElement.click()
 
 클릭 이벤트를 강제로 발생시키는 메서드.
 
@@ -124,14 +133,14 @@ document.querySelector('#input').click();
 
 ### Window: load event
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/load_event)
 
 TODO
 
 ### DOMContentLoaded
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)  
+[https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
 
 TODO ? 외 두 개지 🤔
 
@@ -143,14 +152,14 @@ document.addEventListener('DOMContentLoaded', (event) => console.log('DOM fully 
 
 ### Window: pageshow event
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event)
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/pageshow_event)
 
 TODO
 
 ### Window: unload event
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)
-- [https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/unload_event)  
+[https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload](https://html.spec.whatwg.org/multipage/webappapis.html#handler-window-onunload)
 
 **사용금지된 이벤트**
 
@@ -165,27 +174,20 @@ window.onunload = function() {}
 
 ### Window: beforeunload event
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
-- [https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)  
+[https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
 
-```js
-window.beforeunload = function() {}
-```
 
-문서가 언로드 되기 직전에 발생하는 이벤트. 이 이벤트를 감지하는 시점에 언로드를 취소할 수 있다.
-
-이 이벤트를 사용하면 사용자가 페이지를 떠날 때 확인 대화 상자를 띄울 수 있다:
+문서가 언로드 되기 직전에 발생하는 이벤트. 이 이벤트를 사용하면 사용자가 페이지를 떠날 때 확인 대화 상자를 띄울 수 있다:
 
 ```js
 window.addEventListener('beforeunload', (event) => {
-  // 기본 기능 작동 방지
   event.preventDefault();
-  // Chrome에서는 returnValue 설정이 필요함
   event.returnValue = '';
 });
 ```
 
-MDN의 설명에는 모든 브라우저에서 이 방법이 통하는 것은 아니라고 한다.
+일부 브라우저에서 지원하지 않는 기능이 있으니 MDN 문서를 확인할 것.
 
 ### HTMLElement: input event
 

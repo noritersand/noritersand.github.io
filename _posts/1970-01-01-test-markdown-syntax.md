@@ -20,6 +20,7 @@ tags:
 - [kramdown: Quick Reference](https://kramdown.gettalong.org/quickref.html)
 - [kramdown: Syntax](https://kramdown.gettalong.org/syntax.html)
 
+
 ## 줄 바꾸기 🤣
 
 엔터 두 번은
@@ -31,6 +32,7 @@ tags:
 
 아니면 그냥 이렇게<br>
 `<br>` 태그를 직접 작성해도 됨.
+
 
 ## 리스트
 
@@ -47,15 +49,18 @@ tags:
 - `code`
 - `code`
 
+
 ## 체크박스
 
 - [x] 첫 번째 할 일
 - [ ] 두 번째 할 일
 
+
 ## 헤더(이건 h2)
 
 ```
 # h1
+
 ## h2
 ### h3
 #### h4
@@ -73,11 +78,13 @@ tags:
 
 나보다 말야
 
+
 ## HTML 그대로 넣기
 
 <ul>
   <li><a href="#항상-제목2부터-시작">항상 제목2부터 시작</a></li>
 </ul>
+
 
 ## 항상 제목2부터 시작
 
@@ -88,11 +95,13 @@ tags:
 _이탤릭_
 ~~취소선~~
 
+
 ## 수평선
 
 ---
 
 [글 내부 링크 걸기](#항상-제목2부터-시작)
+
 
 ## 코드 블록
 
@@ -128,6 +137,7 @@ console.log(obj.msg);
 ```
 </pre>
 
+
 ## 인라인 코드
 
 `inline code`
@@ -139,9 +149,11 @@ console.log(obj.msg);
 이렇게 ``` ` ``` 하면 됨.  
 이렇게 <code>\`</code> 하던가. (사실 이렇게 하면 지킬 블로그에서 이상하게 나옴)
 
+
 ## 키보드 입력
 
 키 입력을 표현할 땐 인라인 코드 `ctrl + alt + shift + a`보다 이걸로 <kbd>ctrl + alt + shift + a</kbd>
+
 
 ## 테이블(표) 🙄
 
@@ -153,6 +165,7 @@ console.log(obj.msg);
 | true             | "true"      | 1      |         | new Boolean(true)      |
 | "1.2"            |             | 1.2    | true    | new String("1.2")      |
 | pipe             | p\|i\|p\|e  |        |         |                        |
+
 
 ## 인용구
 
@@ -170,10 +183,12 @@ console.log(obj.msg);
 >>>>>>>> 팔푼이
 >>>>>>>>> 비둘기야먹자 구구 구구궄
 
+
 ## unescape
 
 백슬래시`\`를 사용해서 마크다운 문자를 이스케이프 하지 않고 그대로 표시  
 \_ \`\`\` \*\* \#\# \-\-\- 뭐 이렇게...
+
 
 ## embed image
 
@@ -183,6 +198,7 @@ console.log(obj.msg);
 요거는 가운데 정렬(kramdown만 되는 모양)
 ![인라인 스타일 적용하는 방법](/images/all-k.jpg){: style="margin:0 auto; display:block;"}
 
+
 ## 첨자
 
 마크업을 직접 사용함.
@@ -190,9 +206,11 @@ console.log(obj.msg);
 - `<sup>`: 위 첨자<sup>우효!</sup>
 - `<sub>`: 아래 첨자<sub>우효옷!</sub>
 
+
 ## 각주 footnotes
 
 요것[^1]은 각주 표기법이다. 마크다운이 아니고 kramdown에서 확장한 문법(일껄?).
+
 
 ## 문서 중간의 각주 표시: 첨자 활용
 
@@ -201,11 +219,13 @@ console.log(obj.msg);
 - 1: (역자주) 뿅뿅이란 말이다.
 - 2: 출처: 뿅뿅 해석 완벽 가이드
 
+
 ## 문서 중간의 각주 표시: 별표 활용
 
 첨자와 마찬가지로 앵커 기능\*은 없으며, 문단 내에 각주로 설명할 단어가 하나일 때 쓴다. 백슬래시와 별표\*로 단어 뒤에 바로 붙여서 표시하면 됨.
 
 \* 클릭했을 때 해당 위치로 포커스를 이동시키는 기능
+
 
 ## 루비 문자
 

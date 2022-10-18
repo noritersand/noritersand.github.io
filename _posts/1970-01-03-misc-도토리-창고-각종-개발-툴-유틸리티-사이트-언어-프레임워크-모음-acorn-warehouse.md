@@ -15,9 +15,11 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## 개요
 
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
+
 
 ## 분류음슴
 
@@ -30,12 +32,14 @@ tags:
 - [i'mport](https://www.iamport.kr): 아임포트. 결제/본인인증 중계 서비스. 예를 들면 쇼핑몰과 PG사(혹은 신용조회회사)의 중간에 위치한다고 보면 됨.
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
 
+
 ## 메뉴얼/API DOC/튜토리얼
 
 - [MDN](https://developer.mozilla.org/): 그 MDN
 - [⭐ DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
 - [⭐ Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
+
 
 ## 개발 지원 툴
 
@@ -47,11 +51,13 @@ tags:
 - [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
 - [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
 
+
 ## 온라인 코드 에디터 겸 테스트 툴
 
 - [CodePen](https://codepen.io)
 - [JSFiddle](https://jsfiddle.net)
 - [StackBlitz](https://stackblitz.com)
+
 
 ## 정규식 관련
 
@@ -59,6 +65,7 @@ tags:
 - [RegExr](https://regexr.com/): 정규식 테스트 사이트
 - [REGEXPER](https://regexper.com/): 정규식을 (나름)이쁘게 설명해줌. 요딴식으로 `https://regexper.com/#^M[^iI]*%3F[iI][^iI]*%3F%24` URL에 정규식을 때려넣는게 특징
 - [^grex$](https://pemistahl.github.io/grex-js/): 테스트 케이스를 작성하면 정규식을 만들어줌
+
 
 ## 개발용 컴포넌트, 써드파티 라이브러리
 
@@ -78,6 +85,7 @@ tags:
 - [Vitebook](https://vitebook.dev/introduction/what-is-vitebook.html#playgrounds)
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 
+
 ## 일정/TODO 관리
 
 - [⭐ workflowy](https://workflowy.com): 온라인 TODO 툴
@@ -85,18 +93,22 @@ tags:
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
+
 ## 키 리맵핑
 
 - [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
 - [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 
+
 ## 스피커, 소리 출력, 사운드
 
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 
+
 ## 보안
 
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
+
 
 ## 통계
 
@@ -104,10 +116,12 @@ tags:
 - [statcounter](https://gs.statcounter.com): 전 세계 대상 브라우저, OS 점유율 등의 통계자료 조회 사이트
 - [A/B Testing Significance Calculator](https://neilpatel.com/ab-testing-calculator): A/B 테스트 통계적 유의성 계산기. 신뢰도를 계산해주는 사이트인가보다. [통계의 신뢰구간과 신뢰도](https://m.blog.naver.com/PostView.nhn?blogId=baboedition&logNo=220916281966&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
 
+
 ## 마인드맵
 
 - [XMind](http://www.xmind.net)
 - [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
+
 
 ## UI 디자인
 
@@ -116,10 +130,12 @@ tags:
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
 
+
 ## ERD
 
 - [dbdiagram.io](https://dbdiagram.io/): 웹 버전만 있긴 하지만 좋음.
 - [eXERD](http://www.exerd.com): 30일 체험판이라 좀 그럼.
+
 
 ## UML/MDA/드로잉 툴
 
@@ -132,11 +148,13 @@ tags:
 - [45+ 온라인 드로잉 툴](http://www.smashingapps.com/2011/08/26/45-free-online-tools-to-create-charts-diagrams-and-flowcharts)
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 
+
 ## 공인 IP 확인
 
 - [https://icanhazip.com](https://icanhazip.com): 딱 내 공인 IP만 텍스트로 응답하는 서버. icanhaz 시리즈가 몇 개 더 있으니 [여기1](https://major.io/icanhazip-com-faq)랑 [여기2](https://github.com/major/icanhaz)를 보자.
 - [https://whatismyipaddress.com](https://whatismyipaddress.com): 내 공인 IP 정보 확인하는 사이트. 예전에 bot이 있었는데 사라짐.
 - [https://ipinfo.io](https://ipinfo.io): 내 공인 IP 정보 확인하는 사이트.#2
+
 
 ## Git GUI 툴
 
@@ -145,15 +163,18 @@ tags:
 - [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
 - [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴.
 
+
 ## 트래픽 캡쳐
 
 - [Fiddler](http://www.telerik.com/fiddler): 네트워크 디버깅 툴. 파폭은 SSL 인증서 때문에 빡칠 수 있다. 유료
 - [Wirehsark](https://www.wireshark.org/download.html): 패킷 추적 툴.
 
+
 ## 코드 하이라이팅/컬러링
 
 - [prismjs](https://prismjs.com): 코드 하이라이팅 JS 라이브러리. HTML로 작성된 페이지는 어디든 적용할 수 있음. [깃허브](https://github.com/PrismJS/prism)
 - [Color Scripter](https://colorscripter.com): 입력한 텍스트에 CSS를 적용해 HTML로 만들어주는 사이트. 코드 블록을 지원하지 않는 메일이나 게시판에서 사용하기 좋다.
+
 
 ## DBMS tool
 
@@ -164,6 +185,7 @@ tags:
 - [Orange](http://www.warevalley.com/xml/download/orange_trial)
 - [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
 
+
 ## 텍스트 에디터
 
 - [⭐ Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
@@ -173,6 +195,7 @@ tags:
 - [typora](https://typora.io): 마크다운 전용 에디터
 - [⭐ Visual Studio Code](https://code.visualstudio.com): 요즘 대세
 
+
 ## SSH/텔넷/FTP 클라이언트
 
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty): SSH = putty
@@ -181,10 +204,12 @@ tags:
 - [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
 - [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 툴 중에서 여러 서버 동시 접속 기능은 그나마...
 
+
 ## Presentation
 
 - [Prezi(web)](http://prezi.com)
 - [Slideshare(web)](http://www.slideshare.net)
+
 
 ## Mobile development
 
@@ -192,10 +217,12 @@ tags:
 - [Adobe Edge Inspect](https://creative.adobe.com/ko/products/inspect)
 - [browser-deeplink](https://github.com/hampusohlsson/browser-deeplink): 브라우저에서 앱 실행
 
+
 ## JSON viewer/editor
 
 - [jsoneditoronline.org](https://www.jsoneditoronline.org)
 - [jsonviewer.codeplex.com](https://jsonviewer.codeplex.com)
+
 
 ## IDE
 
@@ -208,15 +235,18 @@ tags:
 - [Aptana](http://www.aptana.com/products/studio3/download)
 - [ZED](http://zedapp.org)
 
+
 ## Java decompiler
 
 - [JD Project](http://java-decompiler.github.io)
 
 2020-01-06 기준 Java 1.1.8 부터 12까지 지원한다고 한다.
 
+
 ## Web server/WAS
 
 - [Apache HTTP Server](https://www.apachelounge.com/download): 그 아파치. 검색으론 다운로드 링크 찾기 힘듬.
+
 
 ## Project manager / Issue tracker
 
@@ -224,10 +254,12 @@ tags:
 - [Taiga](https://taiga.io)
 - [JIRA](https://ko.atlassian.com/software/jira): 유료, 설치형
 
+
 ## Office
 
 - [WPS Office](https://www.wps.com): 무료 플랜은 기본 기능과 1GB 클라우드 사용 가능.
 - [LibreOffice](http://ko.libreoffice.org/download)
+
 
 ## 메일 서비스/메일 서버
 
@@ -236,10 +268,12 @@ tags:
 - [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버#2. 얘는 꽤 오래감.
 - [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 이메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 이메일을 진짜처럼 쓸 수 있게 해주는 것.
 
+
 ## 테스트 툴
 
 - [postman](https://www.getpostman.com): HTTP Request/Response 테스트
 - [Selenium](https://www.selenium.dev/): 동적 웹 앱(페이지 로딩 후 자바스크립트 등에 의해 동적으로 구성이 변경되는 사이트) 테스트 혹은 크롤링에 사용되는 툴이다.
+
 
 ## 분석/프로파일링/모니터링 툴
 
@@ -258,6 +292,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
 
+
 ## 그리드
 
 - [ag-grid](https://www.ag-grid.com)
@@ -265,9 +300,11 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
 - [⭐ Toast UI Grid](https://ui.toast.com/tui-grid): 오픈 소스고 가볍게 쓰기 좋다. 아직 불편한 점은 딱히 없음. 
 
+
 ## 이미지 편집기
 
 - [paint.net](https://www.getpaint.net)
+
 
 ## 언어
 
@@ -275,6 +312,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
 - [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 거의 같다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다고 한다.
+
 
 ## 프레임워크
 

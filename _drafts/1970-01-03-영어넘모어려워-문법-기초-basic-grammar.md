@@ -12,6 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## be동사 be-verb
 
 |      | 시점        | 단/복수  | 시제 |
@@ -22,6 +23,7 @@ tags:
 | was  | 1인칭/3인칭 | 단수      | 과거 |
 | are  | 2인칭/3인칭 | 단수/복수 | 현재 |
 | were | 2인칭/3인칭 | 단수/복수 | 과거 |
+
 
 ## UNIT 1: am/is/are
 
@@ -62,6 +64,7 @@ tags:
 | Yes, we are   | No, we are not   | No, we're not   | No, we aren't   |
 | Yes, you are  | No, you are not  | No, you're not  | No, you aren't  |
 | Yes, they are | No, they are not | No, they're not | No, they aren't |
+
 
 ## UNIT 10: was/were: present form, past form
 
@@ -119,6 +122,7 @@ tags:
 > --> Yes + subject + was / were.
 > --> No + subject + wasn't / weren't.
 
+
 ## UNIT 3: I am doing (현재진행 present continuous/present progressive)
 
 어떤 일이 지금 벌어지고 있는 중을 표현하는 형태.
@@ -171,6 +175,7 @@ subject [+ not] + be-verb + verb-ing(gerund)
 - lie -> lying
 - stand -> standing
 - listen -> listening
+
 
 ## UNIT 4: are you doing? (현재진행 의문문 present continuous question statement)
 
@@ -225,6 +230,7 @@ subject [+ not] + be-verb + verb-ing(gerund)
 >
 > INFINITIVE
 > --> to + base form of a verb
+
 
 ## UNIT 5: I do/work/like (단순현재 simple present)
 
@@ -305,6 +311,7 @@ subject + verb
 - 이 외의 경우 뒤에 `-s`를 붙임: like -> likes, cost -> costs, work -> works
 - 예외는 있음: enjoy -> enjoys
 
+
 ## UNIT 6: I don't... (단순현재 부정문 simple present negative)
 
 단순현재 부정문은 문장 내에 `do/does + not`이 있어야 한다.
@@ -349,6 +356,7 @@ subject + do/does + not + verb
 
 - She *did work*.
 - He *didn't do* that.
+
 
 ## UNIT 7: Do you ...? (단순현재 의문문 simple present question)
 
@@ -421,6 +429,7 @@ do/does + subject + infinitive + ?
 >  1. YES --> Yes +  I / you / we / they / he / she / it + do / does
 >  2. NO -->  No + I / you / we / they / he / she / it + do not (don't) / does not (doesn't)
 
+
 ## UNIT 8: I am doing, I do (현재진행과 단순현재)
 
 복습용 단원.
@@ -464,6 +473,7 @@ do/does + subject + infinitive + ?
 >
 > D. VERBS THAT CANNOT BE USED IN THE GERUND FORM
 > --> like / love / want / know / understand / remember / depend / prefer / hate / need / mean / believe / forget
+
 
 ## UNIT 9: I have ..., I've got ...
 
@@ -539,6 +549,7 @@ have-got: [wh-question +] have/has + subject + got...?
 > --> have : "Yes, I do." / "No, I don't."
 > --> have got : "Yes, I have." / "No, I haven't."
 
+
 ## UNIT 11: worked/got/went (단순과거 simple past)
 
 과거에 했던 일을 말할 때 사용한다.
@@ -601,6 +612,7 @@ have-got: [wh-question +] have/has + subject + got...?
 > ~ bullied
 > ~ started
 > ~ needed
+
 
 ## UNIT 12: I didn't ... Did you ...? (단순과거 부정문과 의문문 simple past negative and questions)
 
@@ -684,6 +696,7 @@ subject + did not + base form of the verb
 > --> Yes + subject + did
 > --> No + subject + didn't
 
+
 ## UNIT 13: I was doing (과거진행 past continuous)
 
 ```
@@ -730,6 +743,7 @@ subject + was/were + not + verb-ing
 > COMPARISON
 > --> present continuous tense : subject + am / is / are + verb-ing
 > --> past continuous tense : subject + was / were + verb-ing
+
 
 ## UNIT 14: I was doing and I did (과거진행과 단순과거 past continuous and simple past)
 
@@ -800,6 +814,7 @@ subject + was/were + not + verb-ing
 > Doctors treated patients in temporary beds and they tried to do their best in a difficult situation.
 > Past simple : writer chooses to show the events as finished.
 
+
 ## UNIT 15: I used to... (... 하곤 했다)
 
 used to는 '예전에는 ... 하곤 했다'라는 뜻으로 I used to work ..., she used to have ..., they used to be ...와 같이 쓴다.  
@@ -848,6 +863,7 @@ subject + didn't use to + base form of the verb
 > REMINDER
 > --> We can only use used to for the past.
 > --> We cannot use it for the present time
+
 
 ## UNIT 16: Have you ever ...? (현재완료 present perfect)
 
@@ -904,6 +920,7 @@ have/has [+ not] + subject + past participle + ?
 > --> at any time
 > --> at all times
 > --> used to give stress to what follows (emphasis)
+
 
 ## UNIT 17: How long have you ...? (현재완료 진행 present perfect continuous/progressive)
 
@@ -967,6 +984,7 @@ hasn't/haven't + subject + been + verb-ing + ?
 > PRESENT PERFECT CONTINUOUS TENSE
 > --> has / have + been + verb-ing
 
+
 ## UNIT 18: for, since, ago
 
 for와 since는 기간(period, how long)에 대해 말할 때 사용한다.
@@ -1019,6 +1037,7 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 > AGO
 > --> in the past; before the present time; before now
 
+
 ## UNIT 19: I have done, I did (현재완료와 단순과거1 present perfect and simple past PART1)
 
 현재완료는 현재까지 영향을 미치는 과거의 행동에 대해 사용한다.  
@@ -1040,6 +1059,7 @@ ago는 대게 단순과거와 함께 사용하지만 다음처럼:
 - Where *has* he *gone*? / Where *did* he *go*?
 - I*'ve lost* it. / I *lost* it.
 - He*'s gone* home. / He *went* home.
+
 
 ## UNIT 20: just, already, yet (현재완료와 단순과거2 present perfect and simple past PART2)
 
@@ -1087,6 +1107,7 @@ yet:
 > -- usually used in negative sentences and questions
 > -- usually at the end of the sentence
 
+
 ## UNIT 21: I've lost me key. I lost my key last week. (현재완료와 단순과거3 present perfect and simple past PART3)
 
 때로는 현재완료(I have lost, he has gone 등)와 단순과거(I lost, he went 등)를 같은 뜻으로 쓸 수 있다.  
@@ -1130,6 +1151,7 @@ yet:
 > SIMPLE PAST TENSE
 > _____________________________________
 > past               (finished time)                  now
+
 
 ## UNIT 22: is done, was done (수동태1 passive PART1)
 
@@ -1201,6 +1223,7 @@ object + am/is/are/was/were [+ not] + past participle [+ by phrase]
 > BY-PHRASE
 > (...please see section A.)
 
+
 ## UNIT 23: is being done, has been done (수동태2 passive PART2)
 
 현재진행형의 수동태는 `BEING` + 과거분사 조합으로 표현한다.
@@ -1264,6 +1287,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 > SENTENCE FORMAT: subject + has/have + past participle
 > QUESTION FORMAT: has/have + subject + past participle?
 
+
 ## UNIT 24: 현제시제와 과거시제에서 be/have/do
 
 현재진행은 지금도 계속되고 있는 행동이나 어떤 것을 표현할 때 사용한다.  
@@ -1309,6 +1333,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 >>
 >> D.
 >> Please see UNITS 6, 7, 12
+
 
 ## UNIT 25: 규칙동사와 불규칙동사 Regular and Irregular Verbs
 
@@ -1385,6 +1410,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 > -- There are many irregular verbs that don't follow the normal rules.
 > -- Note that sometimes the spelling doesn't change but the pronunciation does (e.g. read).
 
+
 ## UNIT 26: What are you doing tomorrow?
 
 ```
@@ -1436,6 +1462,7 @@ am/is/are + -ing
 > SIMPLE PRESENT TENSE
 > -- please see UNITS 5, 6, 7, 8
 
+
 ## UNIT 27: I'm going to ...
 
 I'm going to do something: ...할 것이다, ...할 계획이다, ...하기로 결정했다, ...할 작정이다.
@@ -1485,6 +1512,7 @@ will은 현재 시점에서 결정된 앞으로의 일(즉흥적인 미래), be 
 >3. be going to + the base form of the verb
 >EXAMPLE: I'm going to take a few exams at the end of the year.
 
+
 ## UNIT 28: will 1 (will PART 1)
 
 I will ...: ...할 것이다, ...일 것이다, ...할 작정이다, ... 하겠다.
@@ -1528,6 +1556,7 @@ I think ... will ...이라는 표현이 많이 쓰인다:
 > C.
 >  We do not use will for things we have already arranged or decided to do.
 > ** Please see units 26-27.
+
 
 ## UNIT 29: will 2 (will PART 2)
 
@@ -1585,6 +1614,7 @@ should도 같은 의미로 쓰인다:
 > -- this is used if you want to ask if something is a good idea
 > -- another alternative is the modal verb SHOULD
 
+
 ## UNIT 30: might
 
 I might: ... 할지도 모른다.
@@ -1638,6 +1668,7 @@ might [+ not] + base form of the verb
 > D.
 > MAY vs MIGHT
 > --> you can use may the same way that you use might
+
 
 ## UNIT 31: can과 could (can and could)
 
@@ -1697,6 +1728,7 @@ can [+ not] + subject + base form of the verb? [question]
 > CAN I...? / COULD I...?
 > --> used when you want to ask if it is ok to do something
 
+
 ## UNIT 32: must
 
 우리가 뭔가 사실이거나 사실이 아니라고 믿을 때, 혹은 뭔가를 할 필요가 있음을 표현하기 위해 사용한다.
@@ -1748,6 +1780,7 @@ You must not do something: ...하지 않아야 한다:
 > MUST NOT DO SOMETHING
 > --> used to express when something is necessary not to be done
 > --> used to express when something is the wrong thing to do
+
 
 ## UNIT 33: should
 
@@ -1836,6 +1869,7 @@ should 대신 **ought to**를 사용할 수 있다:
 > OUGHT TO
 > --> another way of saying should
 
+
 ## UNIT 34: I have to ...
 
 반드시 해야 하는 어떤 일을 표현할 때 사용한다.
@@ -1904,6 +1938,7 @@ have to와 비슷한 must가 있다. UNIT 32 참고.
 > MUST
 > --> we use must to say that it is necessary to do something
 
+
 ## UNIT 35: Would you like ... ? I'd like ...
 
 ```
@@ -1955,6 +1990,7 @@ I'd like ...: 원하는 바를 표현할 때 사용하며 I want 보다 공손�
 >
 > Would you like...? is a politer way of asking "do you want...?" when offering something.
 > --> In English, as in many languages, the verb "want" is considered very direct, and the conditional serves to soften it a bit.
+
 
 ## UNIT 36: I'd rather ...
 
@@ -2037,6 +2073,7 @@ I would rather와 비슷한 말로 would prefer가 있는데, 이 경우 동사�
 
 -------------------------------------------------------------------------------
 
+
 ## UNIT 37: Do this! Don't do that! Let's do this!
 
 come, look, go, wait, do, be: 누군가에게 뭔가를 하라고 할 때 사용한다. 보통 명령문이 되지만, 반드시 그렇지만은 않다.
@@ -2089,6 +2126,7 @@ Let's not ...:
 
 -------------------------------------------------------------------------------
 
+
 ## 타동사 transitive-verb
 
 > face north: 북쪽을 바라봐
@@ -2096,9 +2134,11 @@ Let's not ...:
 여기서 face는 전치사(preposition)가 필요없는 타동사임. 타동사는 목적어가 항상 필요하며 전치사 없이 쓰인다.
 예외로 to 부정사와 함께 쓰이는 경우가 있는데, **to 부정사는 to를 포함하여 명사로 취급**하기 때문에 전치사라 보면 안된다고 한다.
 
+
 ## have 과거분사
 
 TODO
+
 
 ## 명사절 a noun clause
 

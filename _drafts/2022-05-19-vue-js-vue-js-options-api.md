@@ -148,17 +148,33 @@ export default {
 `computed`는 `data()`나 `methods`보다 실행이 늦기 때문에 초기화 시점에 참조하는 것은 불가능하다.
 
 
-## watch()
+## watch
 
 컴포넌트 프로퍼티의 변화를 감시할 때 사용함:
 
 ```js
 createApp({
-  ...
+  // ... 생략
   watch: {
     todoId() {
       this.fetchData()
     }
   }
 }).mount('#app')
+```
+
+```js
+createApp({
+  // ... 생략
+  watch: {
+    someObject: {
+      handler(newValue, oldValue) {
+        // Note: `newValue` will be equal to `oldValue` here
+        // on nested mutations as long as the object itself
+        // hasn't been replaced.
+      },
+      deep: true
+    }
+  }
+});
 ```
