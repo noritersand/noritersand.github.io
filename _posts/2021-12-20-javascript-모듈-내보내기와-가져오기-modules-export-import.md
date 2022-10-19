@@ -27,6 +27,7 @@ tags:
 - IE는 사용 불가
 - 안드로이드 웹뷰, 사파리, 파이어폭스, 오페라에서 일부 지원 안되는 기능 있음
 
+
 ## 개요
 
 ES2015의 새로운 기능인 module(이하 모듈)에 대한 간단한 설명 글. 함수, 객체, 원시 값을 내보내거나 가져올 때 사용한다. RequireJS, React 같은 웹 프레임웤이나 Node.js 사용자라면 이미 익숙할 것이다.
@@ -46,6 +47,7 @@ index.html:11 GET file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.
 ```
 
 이 글에서 import의 우리말 표기는 '불러오기'와 '가져오기' 중 검색결과가 약간 더 많은 '가져오기'로 적는다.
+
 
 ## 기본 규칙
 
@@ -106,6 +108,7 @@ var reportList = createReportList(myCanvas.id);
 
 주의: **import 된 모듈의 유효범위는 전역이 아니다**([module features are imported into the scope of a single script](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules#other_differences_between_modules_and_standard_scripts)). 따라서 콘솔에서 호출할 수 없다.
 
+
 ## 하나씩 내보내고 가져오기
 
 ```js
@@ -127,6 +130,7 @@ console.log(a); // 1
 b = 3; // Uncaught TypeError: Assignment to constant variable.
 ```
 
+
 ## 목록으로 내보내고 가져오기
 
 ```js
@@ -143,6 +147,7 @@ console.log(a); // 1
 console.log(b); // "2"
 console.log(JSON.stringify(obj)); // {"a":1,"b":"2"}
 ```
+
 
 ## 내보내면서 이름 바꾸기
 
@@ -162,6 +167,7 @@ console.log(foot); // cfoot
 console.log(doratman); // dorat?
 ```
 
+
 ## 가져오면서 이름 바꾸기
 
 ```js
@@ -179,6 +185,7 @@ import { c as foot, d as doratman } from './module1.js';
 console.log(foot); // cfoot
 console.log(doratman); // dorat?
 ```
+
 
 ## 클래스 내보내기
 
@@ -199,6 +206,7 @@ var noob = new Newbie();
 noob.levelUp(); // I feel stronger.
 ```
 
+
 ## 구조 분해 할당식으로 내보내기
 
 참고: [Assigning to new variables names and providing default values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assigning_to_new_variables_names_and_providing_default_values)
@@ -215,6 +223,7 @@ import { str1, bar } from './module1.js';
 console.log(str1); // "abc"
 console.log(bar); // "def"
 ```
+
 
 ## 가져온 모듈을 다시 내보내기
 
@@ -244,6 +253,7 @@ import { ZERO } from './module1.js';
 console.log(ZERO); // 0
 ```
 
+
 ## 객체로 가져오기
 
 모듈의 기능(MDN에서 feature라고 표현함)을 모듈 객체 안으로 가져오는 방법.
@@ -263,6 +273,7 @@ console.log(math.ONE); // 1
 console.log(math.GOLDEN_RATIO); // 1.618
 console.log(math.KAPREKA_NNUMBER); // "495, 6174"
 ```
+
 
 ## default export, import 기본값으로 내보내고 가져오기
 
@@ -300,6 +311,7 @@ yourName(); // I'm waldo.
 
 이름을 지정할 땐 중괄호와 `default as`를 생략할 수 있다. 중괄호를 생략하면 무조건 기본값을 참조한다고 간주된다. 요 특성을 잘 모르면 기본값 사용이 아닌 가져오기에서 자꾸 문법 에러가 발생할 것이다.
 
+
 ## Dynamic module loading 동적 모듈 로딩
 
 필요할 때만 모듈을 동적으로 가져오는 기능이다. 스크립트 파일을 원하는 시점에 로딩하기 때문에 성능 이점이 있다. 사용하려면 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)에 대해 대충이라도 아는게 좋음.
@@ -324,6 +336,7 @@ btn.addEventListener('click', () => {
 ```
 
 생략했지만 HTML 페이지에 버튼 태그가 하나 있는 상태고, 이 버튼을 누르면 `module1.js`의 `message`를 가져와서 경고창으로 보여주는 코드다. 트래픽을 확인해보면 버튼을 눌렀을 때 `module1.js` 파일을 로딩한다는 걸 확인할 수 있다.
+
 
 ## 언급하지 않은 조합
 

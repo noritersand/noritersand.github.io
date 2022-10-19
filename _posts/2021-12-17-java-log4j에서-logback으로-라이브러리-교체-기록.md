@@ -26,6 +26,7 @@ tags:
 - slf4j 1.6.6
 - logback 1.2.9
 
+
 ## application
 
 ### pom.xml
@@ -124,6 +125,7 @@ log4jdbc.dump.sql.maxlinelength=0
     <property name="jndiName" value="java:comp/env/jdbc/MY_JNDI_NAME" />
   </bean>
 ```
+
 
 ## WAS
 
