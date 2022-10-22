@@ -73,6 +73,7 @@ tags:
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 퓨어 자바스크립트 기반
 - [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드 UI 라이브러리. 가볍게 쓰기 매우 좋다. NHN에서 만듦
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
+- [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
 
 ### UI 컴포넌트
 

@@ -14,13 +14,14 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## JOIN
 
 JOIN은 테이블간 논리적인 관계를 바탕으로 두개 이상의 테이블 컬럼을 동시에 가져오는 기술로, 하나의 테이블만으로 정보조회가 불가능한 경우 테이블들의 관계를 이용하여 원하는 데이터를 조회할 때 사용된다.
 
 ### 교차 조인, CROSS JOIN
 
-조합 가능한 모든 경우를 조회하는 조인 방식(n*n). 단순 조인이라고도 한다.
+조합 가능한 모든 경우를 조회하는 조인 방식 `n * n`. 단순 조인이라고도 한다.
 
 ```
 SELECT 컬럼 FROM 테이블1 JOIN 테이블2 -- 명시적 표현
@@ -35,7 +36,7 @@ ORDER BY b.deptno, a.empno
 
 ![](/images/oracle-join-1.jpg)
 
-위처럼 테이블간 관계를 WHERE절에 명시하지 않을 경우 emp 14행과 dept 4행의 모든 레코드를 1:1 매핑, 14*4=56행이 출력. [Cartesian Product](https://ko.wikipedia.org/wiki/%EA%B3%B1%EC%A7%91%ED%95%A9) 라고도 한다.
+위처럼 테이블간 관계를 WHERE절에 명시하지 않을 경우 emp 14행과 dept 4행의 모든 레코드를 1:1 매핑, `14 * 4 = 56` 행을 출력. [Cartesian Product](https://ko.wikipedia.org/wiki/%EA%B3%B1%EC%A7%91%ED%95%A9) 라고도 한다.
 
 ### 내부 조인, inner join
 
@@ -155,6 +156,7 @@ FROM emp e1 JOIN emp e2
 ON e1.mgr = e2.empno
 ```
 
+
 ## 집합 연산자
 
 ### UNION
@@ -231,6 +233,7 @@ DEPTNO
 ---------
        40
 ```
+
 
 ## subquery
 
@@ -404,6 +407,7 @@ SET first_name = (SELECT first_name FROM employees_backup WHERE employee_id = M.
 ```
 
 메모리에 최초로 올라간 메인쿼리(M)의 레코드들을 매번 읽을 때마다 서브쿼리의 결과를 가져와 수정을 하게 되는데, 이때 읽는 레코드 하나하나의 값을 비교하는것이 가능하다.
+
 
 ## GROUP BY절의 확장
 

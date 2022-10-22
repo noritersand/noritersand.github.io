@@ -21,9 +21,11 @@ tags:
 - [\[Microsoft\] Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
 - [\[Microsoft\] Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/windows/windows의-바로-가기-키-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
 
+
 ## 개요
 
 CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정리함.
+
 
 ## 초기 설정
 
@@ -47,6 +49,16 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 
 '자판 배열 전환'을 할당 해제하면 됨. 여기까지만 해도 <kbd>ctrl + shift + 0</kbd>은 잘 작동한다. 찝찝하면 '입력 언어 전환'도 꺼버리자.
 
+
+## 기타 팁
+
+### 시스템 정보 보기
+
+OS, 시스템(기기), BIOS, CPU, 메인보드, 메모리 등의 버전/모델명/제조사 등의 정보를 확인할 수 있음.
+
+명령 실행 창<kbd>win + r</kbd>에서 `MSINFO32` 입력하면 됨.
+
+
 ## 단축키
 
 ### 전역
@@ -62,6 +74,7 @@ CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정�
 
 - <kbd>win + z</kbd>: 스냅 레이아웃 열기
 - <kbd>win + alt + 방향키</kbd>: 스냅 레이아웃 전환
+
 
 ## 작성자 저장용 작업표시줄 고정 설정
 

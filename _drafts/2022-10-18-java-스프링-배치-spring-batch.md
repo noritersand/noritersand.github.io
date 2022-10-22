@@ -86,11 +86,42 @@ public class MailJobConfig {
 
 ## Program arguments 전달 방법
 
-TODO
+가령 program arguments가 `requestDate=20220128`일 때, 아래처럼:
 
+```java
+import org.springframework.batch.core.configuration.annotation.JobScope;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+// ...
+
+@Configuration
+public class PointJobConfig {
+    // ...
+    
+    @Bean
+    public Job pointJob() {
+        return jobBuilderFactory
+                .get("pointJob")
+                .preventRestart()
+                .start(pay(null))
+                .incrementer(new RunIdIncrementer())
+                .build();
+    }
+    
+    @JobScope
+    @Bean
+    public Step pay(@Value("#{jobParameters['requestDate']}") String requestDate) {
+        log.debug("requestDate"); // 20220128
+        return null;
+    }
+    
+    // ...
 ```
-requestDate=20220128S --spring.batch.job.names=mailJob
-```
+
+SPEL과 JobParameters를 이용해 받아온다.
+
+이 때 Job step에 반드시 `@JobScope`와 `@Bean` 어노테이션이 있어야 함.
 
 
 ## 트랜잭션 적용 방법

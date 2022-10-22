@@ -20,6 +20,7 @@ tags:
 - [\[MDN\] Function.prototype.apply()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply)
 - [\[MDN\] Function.prototype.call()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call)
 
+
 ## 개요
 
 `apply()`와 `call()`은 `Function`의 인스턴스 메서드(프로토타입의 메서드)다. 따라서 모든 `Function` 객체 즉, 함수는 `apply()`와 `call()`을 호출할 수 있다. 이 메서드들은 함수를 특별하게 호출하기 위해 사용한다.
@@ -47,6 +48,7 @@ console.log(Object.getPrototypeOf(arr)); // Array
 console.log(arr.map); // function map()
 ```
 
+
 ## Function.prototype.apply()
 
 ```
@@ -63,6 +65,7 @@ function fn() {
 }
 fn.apply(123456, ['a', 'b']);
 ```
+
 
 ## Function.prototype.call()
 
@@ -81,6 +84,7 @@ function fn() {
 fn.call(123456, 'a', 'b'); // apply()와는 전달인자의 형태만 다르다.
 ```
 
+
 ## 엄격 모드에서의 차이
 
 엄격 모드(strict mode)에서는 첫 번째 전달인자가 원시 타입일 때 래퍼 객체로 변환하는 표준 모드와 다르게 원시 타입 그대로 전달한다.
@@ -97,6 +101,7 @@ function strict() {
 }
 strict.call(true);
 ```
+
 
 ## 활용: 배열 전개
 
@@ -115,5 +120,6 @@ Math.min.apply(Math, [3, 2, 4]); // 2
 ```
 
 첫 번째 인자로 null을 전달해도 결과는 같은데, 애초에 `Math.min()`이 스태틱 메서드라 가능한 것.
+
 
 ## 꼐속

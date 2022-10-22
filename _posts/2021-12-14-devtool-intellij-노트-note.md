@@ -228,8 +228,6 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
 - <kbd>alt + f1</kbd>: Select in 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
-- <kbd>alt + f2</kbd>:
-- <kbd>alt + f3</kbd>:
 - <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
 - <kbd>ctrl + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색
 - <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
@@ -241,10 +239,14 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
 - <kbd>ctrl + alt + t</kbd>: Surround With 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
 - <kbd>ctrl + alt + q</kbd>: Toggle Rendered View 자바독 편집/읽기 모드 토글
+- <kbd>ctrl + shift + t</kbd>: Go To Test 현재 클래스의 테스트 클래스로 이동하거나 되돌아옴
+- <kbd>ctrl + h</kbd>: Type Hierarchy 타입 계층 보기
+- <kbd>ctrl + shift + h</kbd>: Method Hierarchy 메서드 계층 보기
+- <kbd>ctrl + alt + h</kbd>: Call Hierarchy 호출 계층 보기
 
 ### 멀티 캐럿
 
-Select Next Occurrence. 멀티 캐럿 없는 줄 아랏네 😏
+Select Next Occurrence.
 
 - <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
 - <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소
