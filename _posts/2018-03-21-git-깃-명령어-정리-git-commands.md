@@ -374,7 +374,7 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 
 ```bash
 git clean -f
-git clean -f -d -x  # ignore 설정된 파일을 포함하며 추적중이지 않은 파일과 폴더를 모두 삭제한다.
+git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은 파일과 폴더를 모두 삭제한다.
 ```
 
 `clean.requireForce` 설정이 `true`가 아니면 `clean` 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 기본적으로 현재 폴더를 기준으로 하위를 재귀탐색하기 때문에 recursive 옵션은 따로 없다.
