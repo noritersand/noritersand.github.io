@@ -119,7 +119,7 @@ public class PointJobConfig {
     // ...
 ```
 
-SPEL과 JobParameters를 이용해 받아온다.
+SPEL과 `JobParameters`를 이용해 받아온다.
 
 이 때 Job step에 반드시 `@JobScope`와 `@Bean` 어노테이션이 있어야 함.
 
