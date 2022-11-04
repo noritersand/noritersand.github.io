@@ -18,9 +18,13 @@ tags:
 - [https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
 - [https://stackoverflow.com/questions/8407622/set-type-for-function-parameters](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
+
 ## 개요
 
 JSDoc 어쩌구 설명 TODO...
+
+
+## 작성방법
 
 ```js
 /**
@@ -53,6 +57,20 @@ function sumAsync(a, b) {
 
 인텔리제이에서 만들어주는 걸 보니 타입만 정의하는게 아니라 객체의 프로퍼티를 나열하는 방식도 되나보다. (예시는 지킬 빌드가 안되서 생략함)
 
+### OR
+
+여러 타입을 허용하는 경우 이렇게 쓴다:
+
+```js
+/**
+ * @returns {null|string|*} null 혹은 string 혹은 any를 반환한다는 뜻 (사실상 쓰나마나다 🤭)
+ */
+function getAny() {
+  //... 
+}
+````
+
+
 ## 여담: 파일 JSDoc
 
 메서드나 변수에 대한 코멘트 말고 파일 상단에 작성하는 코멘트는 정해진 규칙이 따로 없긴 하지만, 보통 이렇게 시작한다:
@@ -64,8 +82,10 @@ function sumAsync(a, b) {
  */
 ```
 
+
 ## 여담2: doc을 뭘로 번역해야 하나
 
 JSDoc, Javadoc이라 쓰면 되긴 한데 언어 때고 doc이라고 쓰면 의미가 불분명함... 인텔리제이를 보니 'documentation comments'라고 지칭하고 있음. (혹은 'doc comments') 따라서 우리말로는 '문서 코멘트' 정도로 번역할 수 있겠다.
+
 
 ## 꼐속...

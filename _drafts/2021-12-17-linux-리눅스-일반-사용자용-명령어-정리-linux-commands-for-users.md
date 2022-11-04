@@ -23,9 +23,11 @@ tags:
 
 - 대부분의 명령은 Ubuntu 20.x 기준으로 작성됨
 
+
 ## 개요
 
 리눅스 명령어와 유틸리티 간단 정리 글. 항상 루트 권한이 필요한 명령은 다른 글로.
+
 
 ## Ubuntu의 터미널 단축키
 
@@ -48,6 +50,7 @@ tags:
 - <kbd>ctrl + u</kbd>: 캐럿을 라인의 맨 처음으로 이동하며 모두 잘라내기
 - <kbd>ctrl + l</kbd>: 화면 지우기. 버퍼에는 남아있어서 위로 올리면 보임
 
+
 ## 문법
 
 ### | (파이프)
@@ -62,6 +65,7 @@ tags:
 명령어 < 파일  # 파일의 표준입력을 받는다
 ```
 
+
 ## command
 
 명령어가 존재하는지 확인.
@@ -69,6 +73,7 @@ tags:
 ```bash
 command -v COMMAND_NAME
 ```
+
 
 ## ssh
 
@@ -89,6 +94,7 @@ ssh -i ./PRIVATE_KEY_FILE.pem ubuntu@SERVER_IP -p 22
 chmod 600 ./PRIVATE_KEY_FILE.pem
 ```
 
+
 ## sftp
 
 ssh와 옵션은 거의 같음.
@@ -97,6 +103,7 @@ ssh와 옵션은 거의 같음.
 # PRIVATE_KEY_FILE.pem을 개인키로 사용하며 서버에 접속, ~/repo/a.txt를 로컬의 ~/downloads 경로로 다운로드
 sftp -i ./PRIVATE_KEY_FILE.pem ubuntu@1.2.3.4:repo/a.txt ~/downloads
 ```
+
 
 ## grep
 
@@ -169,6 +176,7 @@ ls -l | grep -E 'abc|def'
 ls -l | grep -v 'xyz'
 ```
 
+
 ## find
 
 파일 찾기. 이 명령어는 `-maxdepth` 옵션을 따로 지정하지 않으면 재귀적으로 작동한다.
@@ -179,6 +187,7 @@ find ./ -name '*.log' -type f # 확장자가 'log'인 모든 파일만 현재 �
 find -name 'a' -o -name 'b' # 'a'와 'b' 같이 찾기
 find ~ ! -name 'sample' # 지정된 경로에서 'sample'을 제외한 모든 파일과 디렉터리 찾기
 ```
+
 
 ## which
 
@@ -195,6 +204,7 @@ which vim
 which vim vi
 ```
 
+
 ## whereis
 
 명령 실행을 위한 이진파일, 소스 혹은 메뉴얼 파일들이 어느 경로에 있는지 출력한다.
@@ -203,6 +213,7 @@ which vim vi
 # ls 명령 관련 파일들의 경로 모두 출력
 whereis ls
 ```
+
 
 ## curl
 
@@ -219,6 +230,7 @@ curl -i localhost:4000
 curl -X POST "http://take-my-json-attack.com" -H "accept: application/json" -H "Content-Type: application/json" -d "{ \"prdId\": \"123456\"}"
 ```
 
+
 ## wget
 
 콘텐츠 다운로드 명령어. 지정된 URL의 결과를 파일로 다운로드한다.
@@ -230,6 +242,7 @@ wget http://www.example.com/
 # GNU FTP 사이트로부터 Wget의 소스 코드 내려받기.
 wget ftp://ftp.gnu.org/pub/gnu/wget/somefile
 ```
+
 
 ## rm/rmdir
 
@@ -244,6 +257,7 @@ rm -rf ./trash # trash 디렉터리 내의 모든 파일과 하위 디렉터리�
 rm -f ./some-link # 심볼릭 링크 삭제
 rmdir ./test-folder # 비어있는 디렉터리 삭제
 ```
+
 
 ## ln
 
@@ -262,6 +276,7 @@ ln -s ~/was/upload ./upload
 # 현재 경로에 upload라는 심볼릭 링크를 생성한다. 이 링크의 실제 물리경로는 home/was/upload
 ```
 
+
 ## top
 
 리눅스 커널(kernel)이 관리중인 프로세스(혹은 쓰레드) 목록과 CPU/메모리 점유율, PID 등을 실시간으로 출력한다. 아무 옵션도 지정하지 않으면 CPU 점유율 내림차순, PID 오름차순으로 보여줌.
@@ -269,6 +284,7 @@ ln -s ~/was/upload ./upload
 ``` bash
 top -o cpu  # cpu 자원을 가장 많이 점유하고 있는 프로세스순 보기
 ```
+
 
 ## ps
 
@@ -291,6 +307,7 @@ ps aux | grep -e manage.py | grep -v grep
 - `-f`: full format으로 출력한다. UID, PPID, C, STIME, TTY 항목이 추가되며 UID는 숫자 대신 사용자 이름이, CMD는 명령 전체가 보이게 바뀜.
 - `-F`: extra full format으로 출력한다. `-f` 옵션에서 SZ, RSS와 PSR 항목을 추가한다.
 
+
 ## kill
 
 실행중인 프로세스를 죽인다(?).
@@ -298,6 +315,7 @@ ps aux | grep -e manage.py | grep -v grep
 ```
 kill 프로세스아이디
 ```
+
 
 ## pkill
 
@@ -313,6 +331,7 @@ pkill -9 -ef catalina
 - `-e`: 로그 출력
 - `-f`: 명령줄 전체 참조 옵션
 
+
 ## nohup
 
 프로세스를 백그라운드로 실행
@@ -325,6 +344,7 @@ nohup java -jar example.jar &
 
 `&` 만 쳐도 됨.
 
+
 ## cd
 
 명령줄의 경로 이동
@@ -335,6 +355,7 @@ cd ~  # 로그인 유저의 홈으로 이동
 cd ..  # 한단계 상위 경로로 이동
 cd /bin/lib  # bin 하위의 lib으로 이동
 ```
+
 
 ## ls
 
@@ -369,6 +390,7 @@ ls -ld */
 - `-i`: inode 번호 표시
 - `-F` `--classify`: 파일의 종류에 따라 파일이나 디렉터리 이름 뒤에 인디케이터(`*/=>@|` 중에 하나)를 붙임. 가령 `abc*`로 보이는건 `abc` 파일이 실행파일이란 의미다.
 
+
 ## readlink
 
 심볼릭 링크 혹은 캐노니컬(canonical) 파일 이름을 출력한다.
@@ -378,6 +400,7 @@ ls -ld */
 readlink -f FILE_NAME
 ```
 
+
 ## cat
 
 파일 내용 출력
@@ -386,6 +409,7 @@ readlink -f FILE_NAME
 cat READ_ME  # READ_ME 파일 내용을 화면에 출력
 ```
 
+
 ## head
 
 ```bash
@@ -393,6 +417,7 @@ cat READ_ME  # READ_ME 파일 내용을 화면에 출력
 head -n 100 filename
 head -100 filename
 ```
+
 
 ## tail
 
@@ -406,12 +431,14 @@ tail -100 filename
 
 - `-n` `--lines=[+]NUM`: 특정 줄 번호부터 출력
 
+
 ## head와 tail의 혼합
 
 ```bash
 head -n 20 filename | tail -n 10 # 처음부터 20줄 중 마지막 10줄만 출력
 tail -5 filename | head -3 # 마지막 다섯 줄 중 처음 세 줄만 출력
 ```
+
 
 ## sed
 
@@ -421,6 +448,7 @@ TODO 이건 뭐지
 sed -n '2,5p' filename # filename에서 2~5라인만 출력
 ```
 
+
 ## more
 
 파일 내용을 화면단위로 분할하여 출력. 엔터로 한 줄, 스페이스바로 한 페이지씩 넘긴다.
@@ -428,6 +456,7 @@ sed -n '2,5p' filename # filename에서 2~5라인만 출력
 ```bash
 more READ_ME
 ```
+
 
 ## less
 
@@ -448,6 +477,7 @@ ls --help | less
 - `-N` `--LINE-NUMBERS`: 줄 번호 표시.
 - `+`: 숫자와 이어붙여 사용하며, 특정 줄 번호를 시작위치로 지정함.
 
+
 ## vi
 
 VIM 파일 편집기.
@@ -457,6 +487,7 @@ vi READ_ME # 해당경로에 READ_ME 파일 편집모드 (파일 없을경우 �
 vi -R READ_ME # 읽기 전용 모드로 열기
 view READ_ME # -R 옵션이 view 명령으로 지정된 vim 버전도 있음.
 ```
+
 
 ## cp
 
@@ -468,6 +499,7 @@ cp -a ... ...  # 파일의 소유권과 각종 정보 유지하여 복사 (위�
 ```
 
 **주의**: 파일 복사나 이동은 대상 경로의 존재여부에 따라 결과가 달라진다. [이에 대해 잘 정리된 문서 링크](https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4%EC%97%90%EC%84%9C_%ED%8F%B4%EB%8D%94_%ED%86%B5%EC%A7%B8%EB%A1%9C_%EB%B3%B5%EC%82%AC%ED%95%98%EA%B8%B0).
+
 
 ## mkdir
 
@@ -481,6 +513,7 @@ mkdir test
 mkdir -p /home/noritersand/apache2
 ```
 
+
 ## mv
 
 디렉터리와 파일명 변경(이동)한다.
@@ -492,9 +525,11 @@ mv READ_ME ./testfolder/  # READ_ME 파일 testfolder 디렉터리내로 이동
 mv READ_ME ./testfolder/READ_ME2  # READ_ME -> READ_ME2로 파일명 변경되며 testfolder 디렉터리 내부로 이동됨
 ```
 
+
 ## pwd
 
 현재 경로 보여주기
+
 
 ## man
 
@@ -505,6 +540,7 @@ man man  # man 명령어 옵션 정보 보기 (보기 중 'q' 누르면 보기 �
 man ls  # ls 명령어 옵션 정보 보기
 ```
 
+
 ## echo
 
 대상 변수 내용 보기
@@ -512,6 +548,7 @@ man ls  # ls 명령어 옵션 정보 보기
 ```bash
 echo $PATH  # PATH 환경 변수 설정상태 확인
 ```
+
 
 ## file
 
@@ -521,6 +558,7 @@ echo $PATH  # PATH 환경 변수 설정상태 확인
 $ file test.properties
 test.properties: UTF-8 Unicode text, with very long lines, with CRLF line terminators
 ```
+
 
 ## iconv
 
@@ -533,6 +571,7 @@ $ iconv -t ASCII test.properties # test.properties를 ASCII 인코딩으로 변�
 $ iconv -c -t ASCII unicode.txt > ascii.txt # unicode.txt 파일을 ASCII 인코딩인 ascii.txt 파일로 내보냄. 인코딩 변환 중 오류가 발생하면 해당 문자는 건너뛴다.
 ```
 
+
 ## export
 
 환경 변수 설정
@@ -541,9 +580,11 @@ $ iconv -c -t ASCII unicode.txt > ascii.txt # unicode.txt 파일을 ASCII 인코
 export LANG = "ko.KR.UTF-8"
 ```
 
+
 ## printenv
 
 현재 정의되어 있는 모든 변수 확인
+
 
 ## uname
 
@@ -561,6 +602,7 @@ cat /etc/issue
 lsb_release -a
 ```
 
+
 ## netstat
 
 네트워크 정보 표시. APT 패키지 이름은 `net-tools`임.
@@ -572,6 +614,7 @@ netstat -in
 # 열려있는 포트 + 프로세스 목록
 netstat -tnlp
 ```
+
 
 ## ip
 
@@ -588,6 +631,7 @@ ip addr
 ip addr show eth0
 ```
 
+
 ## nslookup
 
 인터넷 네임 서버에 대화형으로 질의. DNS 서버에서 ip 받아오는 명령어임.
@@ -598,6 +642,7 @@ nslookup icanhazip.com
 # one.one.one.one(클라우드 플레어) 서버에서 daum.net 검색
 nslookup daum.net one.one.one.one
 ```
+
 
 ## dig
 
@@ -614,9 +659,11 @@ dig example.com @dns.google.com
 dig -x 172.217.25.78
 ```
 
+
 ## w
 
 현재 로그인 중인 사용자 정보 표시
+
 
 ## diff
 
@@ -625,6 +672,7 @@ dig -x 172.217.25.78
 ```bash
 diff -r ./directory1 ./directory2  # 지정된 디렉터리들을 비교해서 한 쪽에만 존재하는 파일이름 출력
 ```
+
 
 ## awk
 
@@ -646,6 +694,7 @@ ls -lt | awk '$5 <= 200 {print $0}'   # 5번 필드가 200 이하일 경우 출�
 ps -elf | awk '{print $2}' # ps -elf의 두 번째 필드인 PID만 출력된다.
 ```
 
+
 ## history
 
 명령 이력 보기
@@ -658,6 +707,7 @@ history [-c] [-d offset] [n] or history -anrw [filename] or history -ps arg [arg
 history  # 명령 이력 보기
 !999  # 명령 이력의 999번 재입력
 ```
+
 
 ## zip/unzip
 
@@ -672,6 +722,7 @@ unzip [-Z] [-opts[modifiers]] file[.zip] [list] [-x xlist] [-d exdir]
 zip -r ../archive.zip ./*  # 현재 디렉터리의 모든 파일을 상위/archive.zip 파일로 압축
 unzip archive.zip -d unarchive  # unarchive 디렉터리에 archive.zip 파일을 압축 해제
 ```
+
 
 ## tar
 
@@ -708,6 +759,7 @@ tar xvfz example.tar.gz -C test
 - `C`: 압축을 풀 디렉터리를 지정할 때 쓰는 옵션
 - `z`: gunzip을 사용.
 
+
 ## date
 
 시스템 시간을 표시한다.
@@ -725,6 +777,7 @@ echo `date +%Y-%m-%d` `date +%H:%M:%S`
 # 현재 시간을 파일명으로
 touch `date +%Y-%m-%dT%H:%M:%S`
 ```
+
 
 ## make, make install
 
@@ -764,6 +817,7 @@ make install
 > `make install`: installs the program by copying the binaries into the correct places as defined by ./configure and the Makefile. Some Makefiles do extra cleaning and compiling in this step.
 > 출처: https://blogs.iu.edu/ncgas/2019/03/11/installing-software-makefiles-and-the-make-command/
 
+
 ## logrotate
 
 로그 파일을 관리해주는 명령어...는 아니고 별도로 설치해야 할 수도 있는 시스템 유틸리티. 일정 규칙에 따라 파일을 압축/삭제/이름변경 등을 자동으로 수행하도록 할 수 있음. 예를 들어 매일 자정마다 특정 파일을 압축하고 지운다던지...
@@ -783,6 +837,7 @@ make install
 ```
 
 TODO
+
 
 ## ntp
 
@@ -811,6 +866,7 @@ $ ll /etc/localtime
 $ rm /etc/localtime
 $ ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 ```
+
 
 ## cron
 

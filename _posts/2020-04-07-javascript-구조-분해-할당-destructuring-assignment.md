@@ -24,9 +24,11 @@ tags:
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
 
+
 ## 개요
 
 구조 분해 할당은 배열이나 객체의 프로퍼티를 해체하여 개별 변수에 할당하는 표현식을 말한다. 'Destructuring expression'이라고도 함.
+
 
 ## 배열 구조 분해
 
@@ -75,6 +77,7 @@ var [a, , b] = [1, 2, 3];
 a; // 1
 b; // 3
 ```
+
 
 ## 객체 구조 분해
 
@@ -198,6 +201,7 @@ z; // 123
 
 이 때도 그냥 쓰면 `SyntaxError`가 발생하므로 대체할 식별자를 지정할 것.
 
+
 ## 나머지 구문의 위치 제한
 
 나머지 구문은 구조 분해 할당식의 좌변 마지막에만 올 수 있다:
@@ -206,6 +210,7 @@ z; // 123
 var [min, ...rest, max] = [1, 2, 3, 4, 5]; // SyntaxError: Rest element must be last element
 var { x, ...y, b } = { a: 1, b: 2, c: 3, d: 4 }; // SyntaxError: Rest element must be last element
 ```
+
 
 ## 중첩된 객체/배열의 구조 분해
 
@@ -257,6 +262,7 @@ firstScript; // "Hello there! Mighty fine morning"
 ```
 
 배열 리터럴을 적절히 섞어주면 됨.
+
 
 ## for-of에서 구조 분해
 

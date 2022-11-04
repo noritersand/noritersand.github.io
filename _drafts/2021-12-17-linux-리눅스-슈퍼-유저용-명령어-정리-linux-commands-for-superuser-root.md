@@ -23,9 +23,11 @@ tags:
 
 - 대부분의 명령은 Ubuntu 20.x 기준으로 작성됨
 
+
 ## 개요
 
 리눅스 명령어 중 루트 권한이 필요하거나 시스템 관리와 관련된 명령어/기능만 정리한 글.
+
 
 ## sudo
 
@@ -53,6 +55,7 @@ sudo su -
 sudo su
 ```
 
+
 ## 설정 파일 위치
 
 ### alias
@@ -70,6 +73,7 @@ sudo su
 
 보통 유저는 `/etc/passwd`, 그룹은 `/etc/group` 파일에 텍스트로 나열돼 있음.
 
+
 ## 바라보는 DNS 서버 바꾸기
 
 - [https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten](https://unix.stackexchange.com/questions/128220/how-do-i-set-my-dns-when-resolv-conf-is-being-overwritten)
@@ -86,6 +90,7 @@ supersede domain-name-servers 1.2.3.4;
 ```
 
 우선순위에 따라 요 셋 중에 골라서 하면 되는걸로 보임.
+
 
 ## chmod
 
@@ -106,6 +111,7 @@ chmod 777 file  # 오너와 오너의 그룹, 그 외 모든 유저에게 모든
 
 아래 `chown`도 같은 옵션을 사용함.
 
+
 ## chown
 
 ```bash
@@ -114,6 +120,7 @@ chown 소유권자:그룹식별자 대상
 # SOME_DIRECTORY와 그 하위 모든 파일에 USER_NAME 소유와 GROUP_NAME 그룹을 지정
 chown -R USER_NAME:GROUP_NAME ./SOME_DIRECTORY
 ```
+
 
 ## apt
 
@@ -185,9 +192,11 @@ apt purge --auto-remove PACKAGE_NAME
 
 하면 됨.
 
+
 ## umask
 
 TODO
+
 
 ## df
 
@@ -200,6 +209,7 @@ df -h # 현재 시스템 파티션별 하드디스크 용량을 %및 Byte로 표
 - `-h`: 크기를 KB, MB, GM 으로 자동 전환하여 표시
 - `-i`: 용량 대신 inode 조회 (inode는 유닉스 파일시스템 내부에서 사용되는 파일의 식별번호다.)
 
+
 ## 메모리
 
 ```bash
@@ -210,11 +220,13 @@ cat /proc/meminfo | grep MemTotal
 top -p 12345 # 12345 프로세스에 대한 CPU/메모리 점유율 확인
 ```
 
+
 ## 디스크
 
 ```bash
 free
 ```
+
 
 ## audit 디스크 액세스 관리
 
@@ -224,6 +236,7 @@ free
 - [https://techintguru.blogspot.kr/2017/04/audit.html](https://techintguru.blogspot.kr/2017/04/audit.html)
 
 여러가지 할 수 있는걸로 보이는데, 일단 아는건 파일 시스템의 변화를 감지하고 로그를 남길 수 있음.
+
 
 ## 기본 셸 변경
 
@@ -244,6 +257,7 @@ env | grep SHELL
 
 만약에 안되면 `/etc/passwd` 파일을 직접 수정해도 됨.
 
+
 ## iptables/ip6tables
 
 리눅스 커널(kernel)에 있는 IP 패킷 필터링 규칙들의 집합인 IP 테이블을 관리하는 명령어.
@@ -255,6 +269,7 @@ iptables -A INPUT -p tcp --dport 80 -m account --aname mywwwserver --aaddr 192.1
 
 iptables -A OUTPUT -p tcp --sport 80 -m account --aname mywwwserver --aaddr 192.168.0.0/24 --ashort
 ```
+
 
 ## ufw
 
@@ -300,6 +315,7 @@ ufw delete allow 443/tcp
 ufw delete deny ssh
 ```
 
+
 ## sysctl
 
 TODO 뭔가를 하는건데...
@@ -309,6 +325,7 @@ TODO 뭔가를 하는건데...
 # read values from file. 현재 세션에 변경사항 반영인데... 새로고침 대상이 뭘까?
 sysctl -p
 ```
+
 
 ## systemctl
 
@@ -384,6 +401,7 @@ SuccessExitStatus=143
 WantedBy=multi-user.target
 ```
 
+
 ## journalctl
 
 `systemctl` 관련 로그 보는 명령인 것 같은디?
@@ -404,6 +422,7 @@ journalctl -xfb -u codedeploy-agent.service
 - `-b`: 현재 부트 혹은 지정된 부트의 로그만 보기
 - `-f`: Follow the journal. 명령 실행을 끝내지 않고 새로운 로그를 계속 출력한다.
 
+
 ## service
 
 ```bash
@@ -416,6 +435,7 @@ service SERVICE_NAME status
 # 서비스 재시작
 service SERVICE_NAME restart
 ```
+
 
 ## useradd, userdel, passwd
 
@@ -433,6 +453,7 @@ passwd USER_ID
 ```
 
 루트 비번을 변경하려면 간단히 루트 권한을 획득한 상태에서 `root` ID의 비밀번호를 변경하면 된다.
+
 
 ## usermod
 

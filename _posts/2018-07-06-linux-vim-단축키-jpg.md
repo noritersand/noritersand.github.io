@@ -15,9 +15,11 @@ tags:
 ![](/images/vim-hotkey-1.png)
 ![](/images/vim-hotkey-2.jpg)
 
+
 ## 복사 후 붙이기
 
 <kbd>v</kbd> 혹은 <kbd>V</kbd>로 블록 지정 후 <kbd>y</kbd>로 복사. 다음으로 <kbd>p</kbd> 혹은 <kbd>P</kbd>를 눌러 붙여넣기.
+
 
 ## 잘라내서 붙이기
 
@@ -25,6 +27,7 @@ tags:
 옛날 OS면 <kbd>x</kbd>로 레지스터를 지정해야 저장되는데 요즘 OS는 그냥 이렇게 지워도 자동으로 클립보드에 저장되는 모양
 
 그리고 원하는 지점에서 <kbd>p</kbd>를 눌러 붙여넣으면 끗.
+
 
 ## 되돌리기/다시 되돌리기 Undo/Redo
 
