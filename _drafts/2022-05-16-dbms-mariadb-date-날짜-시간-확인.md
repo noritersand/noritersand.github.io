@@ -29,7 +29,7 @@ tags:
 
 ## 개요
 
-`DATE`, `DATETIME`, `TIME` 타입 관련 테스트 쿼리 걍 붙여넣음.
+`DATE`, `DATETIME`, `TIME` 관련 정리.
 
 
 ## 쿼리
@@ -69,7 +69,28 @@ FROM (
 ```
 
 
-## 곁다리: 타임존 변환하기
+## 타입 변환
+
+문자열을 날짜로:
+
+```sql
+SELECT STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s')
+```
+
+날짜를 문자열로:
+
+```sql
+SELECT DATE_FORMAT(DD.DUMMY, '%Y-%m-%d %H:%i:%s') AS ISO_STRING
+```
+
+DATETIME을 DATE로:
+
+```sql
+SELECT DATE(NOW())
+```
+
+
+## 타임존 변환
 
 - [https://mariadb.com/kb/en/convert_tz/](https://mariadb.com/kb/en/convert_tz/)
 
@@ -79,4 +100,22 @@ CONVERT_TZ(dt, from_tz, to_tz)
 
 ```sql
 SELECT CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul')
+```
+
+테스트용 쿼리:
+
+```sql
+SELECT
+  NOW() AS NOW,
+  CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul') AS NOW_KST,
+  CONVERT_TZ(NOW(), 'UTC', 'America/Los_Angeles') AS NOW_LA,
+  CURTIME() AS CT,
+  CONVERT_TZ(CURTIME(), 'UTC', 'Asia/Seoul') AS CT_KST,
+  CONVERT_TZ(CURTIME(), 'UTC', 'America/Los_Angeles') AS CT_LA,
+  CURDATE() AS CD,
+  CONVERT_TZ(CURDATE(), 'UTC', 'Asia/Seoul') AS CD_KST,
+  CONVERT_TZ(CURDATE(), 'UTC', 'America/Los_Angeles') AS CD_LA,
+  STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s') AS STR,
+  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'Asia/Seoul') AS STR_KST,
+  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'America/Los_Angeles') AS STR_LA
 ```

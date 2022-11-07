@@ -382,7 +382,6 @@ void(); // SyntaxError: expected expression, got ')'
 
 - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
-- [https://javascript.info/optional-chaining](https://javascript.info/optional-chaining)
 
 다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 자바스크립트에선 `?.`라고 쓴다.
 
@@ -404,9 +403,17 @@ var obj = {};
 obj?.fn(); // Uncaught TypeError: obj.fn is not a function
 obj?.child.fn(); // Uncaught TypeError: can't access property "fn", obj.child is undefined
 obj?.child?.fn(); // 에러 안나고 undefined
-```
 
-TODO
+var obj2 = {
+  str: "foo"
+};
+obj2?.str; // "foo"
+obj2?.str?.toString(); // "foo"
+obj2?.str?.qwer(); // Uncaught TypeError: obj2.str.qwer is not a function
+obj2?.str?.qwer; // undefined
+obj2?.str?.qwer?.asdv; // undefined 
+obj2?.str?.qwer?.toString(); // 에러 안나고 undefined
+```
 
 
 ## 널 병합 연산자 Nullish coalescing operator `??`
@@ -419,4 +426,27 @@ leftExpr ?? rightExpr
 
 `A || B` 대신 사용할 수 있는 연산자. 연산자 좌변이 `null` 혹은 `undefined`로 평가되면 연산자 우변의 결과를 반환한다.
 
-TODO
+OR`||` 연산자를 이용한 방법과 다르게, `Boolean()`에서 falsy한 값으로 평가되는 `0`, `NaN`, `""`를 truthy한 값으로 간주할 때 사용한다:
+
+```js
+0 || 'foo' // "hi"
+NaN || 'foo' // "foo"
+"" || 'foo' // "foo"
+
+0 ?? 'foo' // 0
+NaN ?? 'foo' // NaN
+"" ?? 'foo' // ""
+```
+
+AND`&&`나 OR`||` 연산자와 같이 사용하면 SyntaxError가 발생하나:
+
+```js
+1 && 2 ?? 3 // Uncaught SyntaxError: cannot use `??` unparenthesized within `||` and `&&` expressions
+```
+
+괄호를 덧붙이면 괜찮아짐:
+
+```js
+(1 && 2) ?? 3 // 2
+```
+
