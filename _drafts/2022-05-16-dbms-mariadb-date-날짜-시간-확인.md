@@ -31,9 +31,6 @@ tags:
 
 `DATE`, `DATETIME`, `TIME` 관련 정리.
 
-
-## 쿼리
-
 ```sql
 SELECT
     DD.DUMMY AS DATE_DEFAULT,
@@ -102,20 +99,43 @@ CONVERT_TZ(dt, from_tz, to_tz)
 SELECT CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul')
 ```
 
-테스트용 쿼리:
+이 함수는 `dt`가 시간만 있거나(TIME) 날짜만 있는(DATE) 값이어도 날짜 + 시간 형태로 반환한다:
 
 ```sql
 SELECT
   NOW() AS NOW,
   CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul') AS NOW_KST,
   CONVERT_TZ(NOW(), 'UTC', 'America/Los_Angeles') AS NOW_LA,
-  CURTIME() AS CT,
-  CONVERT_TZ(CURTIME(), 'UTC', 'Asia/Seoul') AS CT_KST,
-  CONVERT_TZ(CURTIME(), 'UTC', 'America/Los_Angeles') AS CT_LA,
-  CURDATE() AS CD,
-  CONVERT_TZ(CURDATE(), 'UTC', 'Asia/Seoul') AS CD_KST,
-  CONVERT_TZ(CURDATE(), 'UTC', 'America/Los_Angeles') AS CD_LA,
-  STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s') AS STR,
-  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'Asia/Seoul') AS STR_KST,
-  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'America/Los_Angeles') AS STR_LA
+  CURTIME() AS CURTIME,
+  CONVERT_TZ(CURTIME(), 'UTC', 'UTC') AS CURTIME_UTC,
+  CONVERT_TZ(CURTIME(), 'UTC', 'Asia/Seoul') AS CURTIME_KST,
+  CONVERT_TZ(CURTIME(), 'UTC', 'America/Los_Angeles') AS CURTIME_LA,
+  CURDATE() AS CURDATE,
+  CONVERT_TZ(CURDATE(), 'UTC', 'UTC') AS CURDATE_UTC,
+  CONVERT_TZ(CURDATE(), 'UTC', 'Asia/Seoul') AS CURDATE_KST,
+  CONVERT_TZ(CURDATE(), 'UTC', 'America/Los_Angeles') AS CURDATE_LA,
+  STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s') AS STD,
+  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'Asia/Seoul') AS STD_KST,
+  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'America/Los_Angeles') AS STD_LA
 ```
+
+타임존이 UTC인 데이터베이스에서 2022-11-09 07:57:31 에 실행하면 이렇게 됨:
+
+| COLUMN      | VALUE               |
+|-------------|---------------------|
+| NOW         | 2022-11-09 01:39:30 |
+| NOW_KST     | 2022-11-09 10:39:30 |
+| NOW_LA      | 2022-11-08 17:39:30 |
+| CURTIME     | 01:39:30            |
+| CURTIME_UTC | 2022-11-09 01:39:30 |
+| CURTIME_KST | 2022-11-09 10:39:30 |
+| CURTIME_LA  | 2022-11-08 17:39:30 |
+| CURDATE     | 2022-11-09          |
+| CURDATE_UTC | 2022-11-09 00:00:00 |
+| CURDATE_KST | 2022-11-09 09:00:00 |
+| CURDATE_LA  | 2022-11-08 16:00:00 |
+| STD         | 2022-05-05 08:00:00 |
+| STD_KST     | 2022-05-05 17:00:00 |
+| STD_LA      | 2022-05-05 01:00:00 |
+
+`CURDATE()`는 타임존을 변환해도 현재 시간을 무시하고 현재 날짜 + 00시 기준으로 변환되기 때문에 의도대로 작동하지 않으니 주의할 것.
