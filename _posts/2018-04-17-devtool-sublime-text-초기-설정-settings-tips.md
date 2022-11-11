@@ -112,7 +112,7 @@ console.log('${1:msg}', ${2});
 
 #### key bindings - user
 
-현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser/tree/master/sm_commands_metadata) 확인해야 함.
+현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser) 패키지로 설치해서 확인해야 함.
 
 ```json
 [

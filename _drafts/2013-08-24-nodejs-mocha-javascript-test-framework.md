@@ -51,7 +51,6 @@ describe('test', function() {
 ```bash
 $ mocha test.js
 
-  ...
 
   1) test
        should be fail:

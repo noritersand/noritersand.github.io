@@ -166,7 +166,7 @@ fn2({ b: 65536 });
 
 ```js
 function fn3({ a = 1, b = 2, c = 3 }) {
-  // ...
+  // do something
 }
 fn3(); // Uncaught TypeError: (destructured parameter) is undefined
 

@@ -24,11 +24,11 @@ tags:
 
 - IE, 사파리 사용 불가
 
-xhr의 모던한 객체임. 멋-쪄
 
 ## 개요
 
-어쩌구
+fetch는 xhr의 모던한 객체임. 멋-쪄
+
 
 ## fetch()
 
@@ -68,6 +68,7 @@ console.log(json);
 ```
 
 `fetch()`에서 반환하는 `response`도 promise이기 때문.
+
 
 ## example
 

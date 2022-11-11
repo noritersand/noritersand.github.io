@@ -36,7 +36,7 @@ Rest parameters는 함수의 매개변수보다 전달인자의 수가 많을 �
 
 ```
 function f(a, b, ...theArgs) {
-  // ...
+  // do something
 }
 ```
 

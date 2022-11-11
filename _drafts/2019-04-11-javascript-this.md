@@ -79,7 +79,7 @@ var animal = {
     }
   },
   sleep() {
-    console.log('Zzz...');
+    console.log('Zzz..');
     this.isSleeping = true;
   }
 };

@@ -372,7 +372,7 @@ function fn() {
   try {
     return 'abc';
   } catch (e) {
-    // ...
+    // do something
   } finally {
     return;
   }

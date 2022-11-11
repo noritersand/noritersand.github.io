@@ -139,13 +139,13 @@ Number(null); // -> 0
 0 + 0; // -> 0
 ```
 
-This also means that while...
+This also means that while:
 
 ```js
 null === false; // -> false
 ```
 
-... this is true:
+this is true:
 
 ```js
 +null === +false; // -> true

@@ -172,7 +172,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 (function() {
   'use strict';
   with (Math) {
-    // ...
+    // do something
   }
 })(); // SyntaxError: strict mode code may not contain 'with' statements
 ```

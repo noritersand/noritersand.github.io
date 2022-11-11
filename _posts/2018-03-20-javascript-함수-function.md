@@ -32,7 +32,7 @@ function 함수이름( [ 매개변수1, 매개변수2..., 매개변수n ] ) { �
 
 ```js
 function meIzDaBest() {
-  // ...
+  // do something
 }
 ```
 
@@ -40,11 +40,11 @@ function meIzDaBest() {
 
 ```js
 var a = function() {
-  // ...
+  // do something
 };
 
 (function() {
-  // ...
+  // do something
 })();
 ```
 
@@ -57,7 +57,7 @@ var a = function() {
 ```js
 var waaagh = 0; // 변수 선언
 function waaagh() { // 같은 이름으로 함수 선언
-  // ...
+  // do something
 }
 waaagh(); // TypeError: waaagh is not a function
 waaagh; // 0

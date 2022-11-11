@@ -14,7 +14,7 @@ tags:
 
 ```js
 function argsTest() {
-    // ... 생략
+    // 생략
     arguments[2]; // 'arg3'
 }
 

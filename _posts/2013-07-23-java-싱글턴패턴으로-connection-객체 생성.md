@@ -14,11 +14,10 @@ tags:
 import java.sql.Connection;
 import java.sql.DriverManager;
 
-public class DBConn {
+public class Connector {
     private static Connection conn = null;
 
-    private DBConn() {
-    }
+    private Connector() {}
 
     public static Connection getConnection() {
         String url = "jdbc:oracle:thin:@220.76.176.66:1521:orcl", user = "noritersand", pwd = "java301$!";
