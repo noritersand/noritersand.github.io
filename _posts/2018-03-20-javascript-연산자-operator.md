@@ -402,6 +402,7 @@ func?.(args)
 var obj = {};
 obj?.fn(); // Uncaught TypeError: obj.fn is not a function
 obj?.child.fn(); // Uncaught TypeError: can't access property "fn", obj.child is undefined
+obj.child?.fn(); // 에러 안나고 undefined
 obj?.child?.fn(); // 에러 안나고 undefined
 
 var obj2 = {

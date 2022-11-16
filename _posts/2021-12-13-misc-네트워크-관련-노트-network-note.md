@@ -12,6 +12,25 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
+## CIDR, Classless Inter-Domain Routing
+
+```bash
+# IPv4
+A.B.C.D/R
+
+# IPv6
+A:B:C:D:E:F:G:H/R
+```
+
+TODO 설명 필요
+
+관련 문서:
+
+- [https://namu.wiki/w/CIDR](https://namu.wiki/w/CIDR)
+- [https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation](https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation)
+
+
 ## NAT, Network address translation
 
 네트워크 패킷의 IP 헤더에 있는 주소 정보(목적지 혹은 출발지 등)를 수정해 매핑을 변경하는 방법... 이라고 한다.
@@ -20,6 +39,7 @@ TODO
 
 TODO NAT Gateway
 
+
 ## Name Server와 DNS의 차이
 
 - [http://www.differencebetween.net/technology/difference-between-name-server-and-dns/](http://www.differencebetween.net/technology/difference-between-name-server-and-dns/)
@@ -27,11 +47,13 @@ TODO NAT Gateway
 
 대충 DNS(Domain Name System)는 도메인을 아이피로 바꿔주는 시스템, 네임 서버는 DNS 정보가 저장되는 서버를 말함.
 
+
 ## hostname
 
 인터넷 상의 서버 이름이다. 리눅스 서버는 `/etc/hostname` 파일에서 관리한다.
 
 구성에 따라 서브 도메인의 '서브'를 의미할 수도 있다. ~~사실잘모른다~~
+
 
 ## IPv6
 
@@ -49,11 +71,13 @@ IPv4를 대체하는 새로운 주소 체계. 16진수 숫자 4자리를 사용�
 
 '16진수 숫자 4자리가 총 8개'라는 규칙과 '생략한 자리는 0으로 채운다'라는 것만 기억하면 된다.
 
+
 ## Domain Apex
 
 도메인의 루트 레벨을 말한다. 가령 example.com이란 도메인에서 'example.com'이 도메인 네임 계층의 루트 레벨에 해당하며 Domain Apex라고 부른다. 그러니께 a.example.com, b.example.com 같은 서브 도메인들은 Domain Apex가 아니다.
 
 Domain Apex는 그냥 루트 도메인이라고도 부르며 이것 말고도 Zone Apex, Naked Domain이라고도 한다. 다 같은 말이다. 🥲
+
 
 ## DNS, Domain Name System
 
@@ -119,6 +143,7 @@ mail       IN  CNAME @
            IN  MX 10 mail
 ```
 
+
 ## VPN, Virtual Private Network
 
 TODO VPN 관련 노트
@@ -126,6 +151,7 @@ TODO VPN 관련 노트
 ### TUN/TAP
 
 TODO tap은 브릿징(layer 2)고 tun은 라우팅(layer 3)이라고 하는데 머선 말일까...
+
 
 ## OpenVPN
 
