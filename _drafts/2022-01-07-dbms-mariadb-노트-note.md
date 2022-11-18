@@ -24,6 +24,29 @@ tags:
 MariaDB 관련 내용 아무거나 적음.
 
 
+## 백틱의 의미
+
+MariaDB에서 ``` ` ```은 [Quote Identifier](https://mariadb.com/kb/en/identifier-names/)라고 하며 테이블이나 컬럼명을 명시할 때 사용한다. 대부분의 경우 생략해도 결과는 같다.
+
+그러나 간혹 테이블 혹은 컬럼, 별칭의 이름이 문법 에러를 발생시키는 경우가 있는데:
+
+```sql
+-- 별칭에 . 이 포함된 경우
+SELECT V.DUMMY.NUMBER FROM (SELECT 1 AS 'DUMMY.NUMBER') V;
+
+-- 컬럼 이름과 테이블 이름이 예약된 키워드인 경우
+SELECT COLUMN FROM TABLE;
+```
+
+이럴 때 백틱으로 단어를 감싸면 해결됨:
+
+```sql
+SELECT V.`DUMMY.NUMBER` FROM (SELECT 1 AS 'DUMMY.NUMBER') V;
+
+SELECT `COLUMN` FROM `TABLE`;
+```
+
+
 ## 로컬 서버 설정
 
 ### root로 접속

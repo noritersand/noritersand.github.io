@@ -87,7 +87,7 @@ Domain Apex는 그냥 루트 도메인이라고도 부르며 이것 말고도 Zo
 
 VPN을 구축할 서버(이하 VPN 서버)는 내부 네트워크에 있으면서 공인 IP가 부여된 상태. 우선 VPN 서버가 될 인스턴스에 OpenVPN으로 VPN 환경 구성함. 이 때 OpenVPN 설정 중 DNS는 VPN 서버 자신의 IP로 잡음(루프백 IP로 해도 될지 몰라). 왜냐면 같은 서버가 DNS 서버 역할도 할 꺼니께.
 
-DNS 서버는 BIND9으로 구축함. OpenVPN은 크게 어려운 게 없었으나 BIND9 설정은 DNS 시스템을 이해해야 해서 머리 깨진다.
+DNS 서버는 BIND9으로 구축함(근데 문제 있어서 나중에 AWS로 옮김) OpenVPN은 크게 어려운 게 없었으나 BIND9 설정은 DNS 시스템을 이해해야 해서 머리 깨진다.
 
 OpenVPN 설정은 [여기](https://dejavuqa.tistory.com/243?category=299614), BIND9 설정은 [여기](https://lindarex.github.io/bind9/ubuntu-bind9-setting/)와 [여기](https://joungkyun.gitbook.io/annyung-3-user-guide/chapter5/chapter5-1-basic)를 참고함.
 

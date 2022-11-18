@@ -160,6 +160,10 @@ TODO 여기서 나가는 공인 IP를 결정한다는데? (탄력적 IP 주소�
 
 ~~라우터임 `¯\_(ツ)_/¯`~~ 도메인 등록, 트래픽 라우팅, 웹 앱 상태 확인 등의 기능을 제공하는 서비스다.
 
+### 사설 DNS 서버
+
+하위 메뉴 `호스팅 영역`에서 레코드를 private으로 생성하면 사설 DNS 서버가 됨. TODO 설명 추가
+
 ### dualstack이 뭐야
 
 Route 53에서 레코드(= 대충 서브 도메인이라 생각하면 됨)를 생성할 때 `dualstack`으로 시작하는 도메인으로 라우팅하도록 지정할 수 있는데, dualstack이란 [EC2 로드 밸런서의 IPv4 혹은 IPv6 주소를 반환](https://stackoverflow.com/questions/41623388/what-does-the-dualstack-prefix-mean-in-aws-elb)하는 DNS 이름을 말한다.
