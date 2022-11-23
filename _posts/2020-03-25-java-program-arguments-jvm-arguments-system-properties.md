@@ -14,6 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## Program Arguments
 
 'Java Command Line Arguments'가 더 정확한 이름이다. 자바 프로그램을 실행할 때 Main Class에 전달하는 인자를 의미한다.  
@@ -37,6 +38,7 @@ public class MainTest {
 }
 ```
 
+
 ## JVM Arguments
 
 'J' 빼고 VM Arguments라고 부르기도 하며, `java` 명령어에 붙이는 모든 파라미터에 해당한다.
@@ -46,6 +48,7 @@ java -classpath C:/somewhere -Dspring.profiles.active=real -XX:+UseG1GC -Xms1024
 ```
 
 여기서 `-`로 시작하는 얘들이 다 JVM Arguments임.
+
 
 ## System Properties
 
@@ -72,6 +75,7 @@ public class MainTest {
     }
 }
 ```
+
 
 ## 주의사항
 

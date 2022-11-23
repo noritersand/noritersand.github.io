@@ -20,9 +20,11 @@ tags:
 - [\[Microsoft\] OpenSSH 설치](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
 - [\[Microsoft\] OpenSSH 키 관리](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_keymanagement)
 
+
 ## 개요
 
 2018년에 윈도우 정식 기능으로 포함된 오픈소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
+
 
 ## ssh
 
@@ -68,6 +70,7 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
 
 나머지 설명은 [도움말](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)을 보자.
+
 
 ## 개인키로 SSH 접속
 
@@ -118,6 +121,7 @@ Remove-Variable -Name Key
 
 스크립트 출처: [https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
 
+
 ## ssh-keygen
 
 ```bash
@@ -160,6 +164,7 @@ Mode                LastWriteTime         Length Name
 -a----     2021-02-02  오후 12:48            403 noritersand-test.pub
 ```
 
+
 ## ssh-agent, ssh-add
 
 비공개키를 관리하는 서비스와 명령어.
@@ -176,6 +181,7 @@ ssh-add ~\.ssh\noritersand-ssh-test
 ```
 
 이렇게 추가한 비공개키는 Window 보안 컨텍스트에 저장된다고 한다. 마소는 이 작업 후 로컬 시스템에서 비공개키를 삭제하길 권장하고 있다.
+
 
 ## sftp
 
@@ -208,6 +214,7 @@ sftp> quit
 
 파워쉘에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
 
+
 ## scp
 
 **TODO OpenSSH 설치하면 되는지 확인**
@@ -221,6 +228,5 @@ scp [options] source target
 ```
 
 ```bash
-PS C:\dev> scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404
-upload.me                                          100%   14     0.2KB/s   00:00
+scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404:/home/ubuntu/temp/upload.me
 ```

@@ -18,17 +18,20 @@ tags:
 
 - [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
 
+
 ## 개요
 
 명령 프롬프트(윈도우 기본 셸인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
 
 여담으로 윈도우 설치 화면(별도의 설치 디스크로 부팅하면 설치할 디스크와 파티션을 설정하던 그 화면)에서는 `shift + f10`으로 cmd에 진입할 수 있음.
 
+
 ## 문법
 
-### | (파이프)
+### 파이프 `|`
 
 둘 이상의 명령어를 연결
+
 
 ## 환경 변수
 
@@ -40,6 +43,7 @@ tags:
 set # 환경 변수 목록 조회
 set a=1 # 환경 변수 a 추가
 ```
+
 
 ## 명령어
 
@@ -190,6 +194,7 @@ slmgr.vbs -xpr
 # 라이선스 등록 정보 확인
 slmgr.vbs -dlv
 ```
+
 
 ## [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 
