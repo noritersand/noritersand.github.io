@@ -261,8 +261,8 @@ var hello = async () => {
   return 'Hello!';
 };
 hello().then(console.log); // Hello!
-// 이 코드는 아래와 같음
-// pr().then((msg) => { console.log(msg); });
+// 위 코드는 아래와 같음
+// hello().then((msg) => { console.log(msg); });
 ```
 
 ### Promise 래핑
