@@ -18,6 +18,7 @@ tags:
 - [http://www.w3schools.com/Js/js_function_definition.asp](http://www.w3schools.com/Js/js_function_definition.asp)
 - [\[MDN\] Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
+
 ## 함수란?
 
 함수란 독립적으로 분리된 로직으로, 미리 정의되어 있거나 사용자 정의에 의해 만들어진 실행가능한 단위를 일컫는 말이다. 자바스크립트에선 함수는 객체로 존재하며 동시에 1급 함수다. 이것은 함수 객체를 변수나 데이터 구조 안에 담거나 전달인자 혹은 반환값으로 사용할 수 있다는 의미다.
@@ -27,6 +28,7 @@ function 함수이름( [ 매개변수1, 매개변수2..., 매개변수n ] ) { �
 ```
 
 함수 선언문은 `function` 키워드와 함수 이름, 구문 블록의 조합이다. 함수 이름 뒤에는 매개변수를 정의하는데, 매개변수는 타입을 지정하지 않으며 개수 제한이 없다. 매개변수의 타입은 호출될 때 결정된다.
+
 
 ## 함수 선언문(함수 구문)과 함수 정의 표현식
 
@@ -49,6 +51,7 @@ var a = function() {
 ```
 
 함수 정의 표현식은 말 그대로 함수를 정의하는 표현식이다. '함수 리터럴'이라 하기도 한다. 함수 선언문과 다르게 이름이 필요하지 않아 익명 함수라 부르기도 한다. 위의 코드 중 첫 번째는 함수 정의 표현식으로 생성한 함수를 변수에 할당하는 형태다. 두 번째는 함수를 생성하고 스스로 호출하는 자기 호출 함수(self invoking function)다.
+
 
 ## 함수의 끌어올림 Hoisting
 

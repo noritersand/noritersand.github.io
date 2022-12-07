@@ -57,6 +57,8 @@ sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
 
 ### 코드 스니펫 추가하기
 
+서브라임에서 자동 완성 항목을 추가하는 방법이다.
+
 메뉴에서 `Tools > Developer > New Snippet...` 을 누르면 새 파일이 열리는데, 아래처럼 작성한 뒤:
 
 ```xml
@@ -69,7 +71,19 @@ console.log('${1:msg}', ${2});
 </snippet>
 ```
 
-확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정돼 있음.
+확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정돼 있으며, 스니펫을 더 늘리고 싶으면 위 파일에 항목을 추가하는 게 아니라 새 파일을 만들어야 한다:
+
+```xml
+<snippet>
+  <content><![CDATA[
+console.debug('${1:msg}', ${2});
+]]></content>
+  <tabTrigger>cd</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
+```
+
+작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행하면 됨.
 
 
 ## 작성자 저장용 사용자 설정

@@ -63,20 +63,26 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
 
 ```js
 {
-  "Print to console": {
-    "prefix": "log",
+  "console.log": {
+    "prefix": "cl",
     "body": [
-      "console.log('$1');",
-      "$2"
+      "console.log('${1:msg}', $2);"
+    ],
+    "description": "Log output to console"
+  },
+  "console.debug": {
+    "prefix": "cd",
+    "body": [
+      "console.debug('${1:msg}', $2);"
     ],
     "description": "Log output to console"
   }
 }
 ```
 
-`prefix` 'log'에 작동한다. 'Print to console'은 자동 완성 창에 보여질 설명이다.
+`prefix` 'cl'에 자동 완성이 반응한다. 'console.log'는 자동 완성 창에 보여질 설명이다.
 
-`body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이건 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 아직 몲. `${1:text}` 이런식으로 작성할 수도 있는데, 일종의 placeholder 역할을 한다.
+`body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이건 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 몲. `${1:msg}`에서 `msg`는 문자 그대로 출력되는 일종의 placeholder다.
 
 
 ## 작성자 저장용 단축키 설정

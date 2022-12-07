@@ -320,3 +320,8 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [Spring](https://spring.io/): 그 스프링
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
 - [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
+
+
+## ETC.
+
+- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
