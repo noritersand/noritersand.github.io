@@ -274,7 +274,7 @@ Select Next Occurrence.
 AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 - 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
-- 코파일럿 발동: <kbd>alt + \</kbd>
+- 코파일럿 발동: <kbd>alt + \\</kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
 - 코파일럿 제안 선택: <kbd>tab</kbd>
 - 다음 제안 보기: <kbd>alt + [</kbd>
 - 이전 제안 보기: <kbd>alt + ]</kbd>

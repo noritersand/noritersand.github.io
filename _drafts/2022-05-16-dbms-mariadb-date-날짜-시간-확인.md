@@ -139,3 +139,61 @@ SELECT
 | STD_LA      | 2022-05-05 01:00:00 |
 
 `CURDATE()`는 타임존을 변환해도 현재 시간을 무시하고 현재 날짜 + 00시 기준으로 변환되기 때문에 의도대로 작동하지 않으니 주의할 것.
+
+
+## TIMESTAMP에서 특정 단위 추출
+
+- [https://mariadb.com/kb/en/extract/](https://mariadb.com/kb/en/extract/)
+- [https://mariadb.com/kb/en/date-and-time-units/](https://mariadb.com/kb/en/date-and-time-units/)
+
+```sql
+SELECT
+  DATE_FORMAT(V.currentTS, '%Y-%m-%dT%H:%i:%s.%f') AS `CURRENT_TIMESTAMP`,
+  EXTRACT(YEAR FROM V.currentTS) AS `YEAR`,
+  EXTRACT(YEAR_MONTH FROM V.currentTS) AS `YEAR_MONTH`,
+  EXTRACT(MONTH FROM V.currentTS) AS `MONTH`,
+  EXTRACT(DAY FROM V.currentTS) AS `DAY`,
+  EXTRACT(DAY_HOUR FROM V.currentTS) AS `DAY_HOUR`,
+  EXTRACT(DAY_MINUTE FROM V.currentTS) AS `DAY_MINUTE`,
+  EXTRACT(DAY_SECOND FROM V.currentTS) AS `DAY_SECOND`,
+  EXTRACT(DAY_MICROSECOND FROM V.currentTS) AS `DAY_MICROSECOND`,
+  EXTRACT(HOUR FROM V.currentTS) AS `HOUR`,
+  EXTRACT(HOUR_MINUTE FROM V.currentTS) AS `HOUR_MINUTE`,
+  EXTRACT(HOUR_SECOND FROM V.currentTS) AS `HOUR_SECOND`,
+  EXTRACT(HOUR_MICROSECOND FROM V.currentTS) AS `HOUR_MICROSECOND`,
+  EXTRACT(MINUTE FROM V.currentTS) AS `MINUTE`,
+  EXTRACT(MINUTE_SECOND FROM V.currentTS) AS `MINUTE_SECOND`,
+  EXTRACT(MINUTE_MICROSECOND FROM V.currentTS) AS `MINUTE_MICROSECOND`,
+  EXTRACT(SECOND FROM V.currentTS) AS `SECOND`,
+  EXTRACT(SECOND_MICROSECOND FROM V.currentTS) AS `SECOND_MICROSECOND`,
+  EXTRACT(MICROSECOND FROM V.currentTS) AS `MICROSECOND`,
+  EXTRACT(WEEK FROM V.currentTS) AS `WEEK`,
+  EXTRACT(QUARTER FROM V.currentTS) AS `QUARTER`
+FROM (
+  SELECT NOW(6) AS currentTS /*마이크로초 여섯 자리까지*/
+) V
+```
+
+| **UNIT**            | **VALUE**                   |
+| ------------------- | --------------------------- |
+| CURRENT\_TIMESTAMP  | 2022-12-14T05:51:06.312446  |
+| YEAR                | 2022                        |
+| YEAR\_MONTH         | 202212                      |
+| MONTH               | 12                          |
+| DAY                 | 14                          |
+| DAY\_HOUR           | 1405                        |
+| DAY\_MINUTE         | 140551                      |
+| DAY\_SECOND         | 14055106                    |
+| DAY\_MICROSECOND    | 14055106312446              |
+| HOUR                | 5                           |
+| HOUR\_MINUTE        | 551                         |
+| HOUR\_SECOND        | 55106                       |
+| HOUR\_MICROSECOND   | 55106312446                 |
+| MINUTE              | 51                          |
+| MINUTE\_SECOND      | 5106                        |
+| MINUTE\_MICROSECOND | 5106312446                  |
+| SECOND              | 6                           |
+| SECOND\_MICROSECOND | 6312446                     |
+| MICROSECOND         | 312446                      |
+| WEEK                | 50                          |
+| QUARTER             | 4                           |
