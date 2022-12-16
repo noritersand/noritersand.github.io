@@ -418,3 +418,8 @@ mounted() {
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
 
 
+## `$event`
+
+TODO
+
+이벤트 핸들러에 전달되는 유일한 객체인 `Event`와 같은 것 같음.

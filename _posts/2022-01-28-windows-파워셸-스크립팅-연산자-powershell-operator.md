@@ -57,6 +57,18 @@ TODO
 
 둘 이상의 명령어를 연결. 리눅스와 비슷하다. '앞에 오는 명령의 출력을 뒤에 오는 명령으로 보낸다(파이프한다)'라고 표현한다.
 
+예를 들어 유틸리티 모듈에는 `Format-List`라는 리스트를 세로 목록으로 출력하는 명령이 있는데, 파이프를 활용하면:
+
+```bash
+PS> Get-FileHash .\upload.me | Format-list
+
+Algorithm : SHA256
+Hash      : 90B56139615DA8FE23201FD4C5FFE6E40EB16A8D544387B8056D2E1CF8D4AFF9
+Path      : C:\dev\upload.me
+```
+
+이렇게 된다.
+
 ### 호출 연산자 Call Operator `&`
 
 호출 연산자는 문자열을 실행할 때 사용한다. 

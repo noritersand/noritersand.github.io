@@ -420,3 +420,14 @@ Invoke-WebRequest -Method Get -Uri https://google.com/search `
 # 파일 다운로드. OutFile 옵션으로 저장할 파일명을 지정함.
 Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" -OutFile "vscode.exe"
 ```
+
+### Get-Filehash
+
+지정한 파일의 해시값을 계산한다. 파라미터로 해시 알고리즘(SHA1, SHA256, SHA384, SHA512, MD5 등)을 선택할 수 있고 생략하면 SHA256을 사용한다.
+
+```bash
+Get-FileHash FILE_NAME
+
+# MD5 알고리즘을 사용하면서 세로 목록 포맷으로 출력
+Get-FileHash FILE_NAME -Algorithm MD5 | Format-list
+```

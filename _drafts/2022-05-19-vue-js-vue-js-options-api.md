@@ -29,6 +29,23 @@ tags:
 Vue는 Options API 혹은 Composition API 스타일로 작성할 수 있는데, 이 중 Options API에 해당하는 것들만 정리함.
 
 
+## Component Instance
+
+- `$data`: 
+- `$props`: 
+- `$el`: 
+- `$options`: 
+- `$parent`: 
+- `$root`: 
+- `$slots`: 
+- `$refs`: 
+- `$attrs`: 
+- `$watch()`: 
+- `$emit()`: 
+- `$forceUpdate()`: 
+- `$nextTick()`: 
+
+
 ## data()
 
 state를 선언할 때 사용한다:
