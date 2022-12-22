@@ -325,6 +325,24 @@ createApp({
 <button v-on:click="increment">{{ count }}</button>
 ```
 
+### Event Modifiers
+
+이벤트 리스닝 표현식에는 modifier가 제공되는데, 이벤트 전파를 막거나 이벤트의 기본 행동을 방지하는 등의 세부 설정을 할 수 있다:
+
+- `.stop`: `Event.stopPropagation()`과 같음
+- `.prevent`: `Event.preventDefault()`와 같음
+- `.self`: 이벤트 발동 대상이 정확히 자기 자신일 때만 핸들러 실행
+- `.capture`: 이 요소의 핸들러는 하위 요소의 핸들러보다 먼저 작동함
+- `.once`: 한 번만 실행
+- `.passive`: `Event.preventDefault()` 호출을 무시하고 이벤트의 기본 행동이 발생함
+
+```html
+<form @submit.prevent="onSubmit"></form>
+<a @click.stop.prevent="doThat"></a>
+```
+
+이 외에 key modifiers와 mouse button modifiers도 있다: [https://vuejs.org/guide/essentials/event-handling.html#key-modifiers](https://vuejs.org/guide/essentials/event-handling.html#key-modifiers)
+
 
 ## 폼 바인딩 Form Input Bindings
 

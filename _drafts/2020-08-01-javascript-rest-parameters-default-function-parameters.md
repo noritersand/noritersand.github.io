@@ -47,7 +47,9 @@ TODO
 어쩌구
 
 ```
-function fnName(param1 = defaultValue1, ..., paramN = defaultValueN) { /* ... */ }
+function fnName(param1 = defaultValue1, .., paramN = defaultValueN) {
+  // do something
+}
 ```
 
 TODO
