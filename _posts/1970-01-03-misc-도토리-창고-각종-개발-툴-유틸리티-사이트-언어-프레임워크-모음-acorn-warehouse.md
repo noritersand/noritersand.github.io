@@ -21,7 +21,7 @@ tags:
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
 
 
-## 분류음슴
+## 분류 필요
 
 - [stripe](https://stripe.com): 결제 대행 웹 앱. 해외판 PG사라고 생각하면 된다. 노션, 험블번들에서 씀.
 - [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
@@ -31,6 +31,15 @@ tags:
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
 - [i'mport](https://www.iamport.kr): 아임포트. 결제/본인인증 중계 서비스. 예를 들면 쇼핑몰과 PG사(혹은 신용조회회사)의 중간에 위치한다고 보면 됨.
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
+- [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
+- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
+- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
+- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
+- [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
+- [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
+- [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
+- [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. 맥은 아직 지원 안함.
+- [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
 
 
 ## 메뉴얼/API DOC/튜토리얼
@@ -41,39 +50,34 @@ tags:
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 
 
-## 개발 지원 툴
+## 언어
 
-- [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
-- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 유틸리티 모음.
-- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
-- [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
-- [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
-- [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
+- [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
+- [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
+- [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
+- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 거의 같다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다고 한다.
 
 
-## 온라인 코드 에디터 겸 테스트 툴
+## 써드파티 라이브러리
 
-- [CodePen](https://codepen.io)
-- [JSFiddle](https://jsfiddle.net)
-- [StackBlitz](https://stackblitz.com)
+### 미분류
 
-
-## 정규식 관련
-
-- [regular expressions 101](https://regex101.com/): 정규식 테스트 겸 코드 공유 사이트. (근데 왜 101일까)
-- [RegExr](https://regexr.com/): 정규식 테스트 사이트
-- [REGEXPER](https://regexper.com/): 정규식을 (나름)이쁘게 설명해줌. 요딴식으로 `https://regexper.com/#^M[^iI]*%3F[iI][^iI]*%3F%24` URL에 정규식을 때려넣는게 특징
-- [^grex$](https://pemistahl.github.io/grex-js/): 테스트 케이스를 작성하면 정규식을 만들어줌
-
-
-## 개발용 컴포넌트, 써드파티 라이브러리
-
-- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 퓨어 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
-- [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 퓨어 자바스크립트 기반
-- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드 UI 라이브러리. 가볍게 쓰기 매우 좋다. NHN에서 만듦
+- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 순수 자바스크립트 기반
+- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. 가볍게 쓰기 매우 좋다. NHN에서 만듦
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
 - [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
+
+### 프레임워크
+
+- [Spring](https://spring.io/)
+- [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
+- [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
+- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
+- [tailwindcss](https://tailwindcss.com/): CSS 프레임워크. 설명이 어려우니 데모를 보자
+- [Vue](https://vuejs.org/)
+- [React](https://reactjs.org/)
+- [Svelte](https://svelte.dev/)
 
 ### UI 컴포넌트
 
@@ -87,6 +91,22 @@ tags:
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Ant Design](https://ant.design/): 잘 모름. 일단 줍줍
 
+
+## 정규식 관련
+
+- [regular expressions 101](https://regex101.com/): 정규식 테스트 겸 코드 공유 사이트. (근데 왜 101일까)
+- [RegExr](https://regexr.com/): 정규식 테스트 사이트
+- [REGEXPER](https://regexper.com/): 정규식을 (나름)이쁘게 설명해줌. 요딴식으로 `https://regexper.com/#^M[^iI]*%3F[iI][^iI]*%3F%24` URL에 정규식을 때려넣는게 특징
+- [^grex$](https://pemistahl.github.io/grex-js/): 테스트 케이스를 작성하면 정규식을 만들어줌
+
+
+## 온라인 코드 에디터 겸 테스트 툴
+
+- [CodePen](https://codepen.io)
+- [JSFiddle](https://jsfiddle.net)
+- [StackBlitz](https://stackblitz.com)
+
+
 ## 일정/TODO 관리
 
 - [⭐ workflowy](https://workflowy.com): 온라인 TODO 툴
@@ -95,19 +115,11 @@ tags:
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
 
-## 키 리맵핑
-
-- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
-- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
-
-
-## 스피커, 소리 출력, 사운드
+## 유틸리티
 
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
-
-
-## 보안
-
+- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
+- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 
 
@@ -305,22 +317,6 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 ## 이미지 편집기
 
 - [paint.net](https://www.getpaint.net)
-
-
-## 언어
-
-- [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
-- [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
-- [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
-- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 거의 같다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다고 한다.
-
-
-## 프레임워크
-
-- [Spring](https://spring.io/): 그 스프링
-- [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
-- [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
-
 
 ## ETC.
 

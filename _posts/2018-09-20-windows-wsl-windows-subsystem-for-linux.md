@@ -20,9 +20,11 @@ tags:
 - [\[Microsoft\] WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
 - [\[Microsoft\] WSL의 기본 명령](https://docs.microsoft.com/ko-kr/windows/wsl/basic-commands)
 
+
 ## 개요
 
 WSL은 가상 머신 등의 설정 없이 윈도우 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
+
 
 ## 설치
 
@@ -39,6 +41,7 @@ wsl -l -v
 버전 확인해서 2가 아니면 뭔가 잘못된 거니까 가이드 보고 다시 설치하자.
 
 그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워셸이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
+
 
 ## 이전 설치 방법
 
@@ -63,6 +66,7 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ~~명령어로 다운로드/설치 하면 됨~~  
 ~~오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
 
+
 ## 설치 확인
 
 ```bash
@@ -70,12 +74,14 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 wsl -l -v
 ```
 
+
 ## 서브 시스템의 실제 경로
 
 WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 
 **WSL2**: 버전 2에선 셸의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
+
 
 ## [CMD 혹은 파워셸에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
 
@@ -86,6 +92,7 @@ dir | wsl grep git
 ```
 
 리눅스 명령어 앞에 `wsl`을 붙이면 된다.
+
 
 ## WSL에서 호스트 디렉터리 접근
 
@@ -98,6 +105,7 @@ Filesystem      Size  Used Avail Use% Mounted on
 drvfs           476G  100G  377G  21% /mnt/c
 drvfs           930G   69G  862G   8% /mnt/d
 ```
+
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
@@ -158,6 +166,7 @@ chsh -s $(which zsh)
 - 원격 서버의 루트 유저는 `(1) Lean.`
 - Docker에선 이상하게 선택 불가하고 `(4) Pure.`로 고정됨.
 
+
 ## WSL에서 윈도우의 환경 변수 사용하지 않기
 
 [https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
@@ -179,6 +188,7 @@ wsl --shutdown
 
 그래도 잘 안되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
 
+
 ## WSL에서 Git Credential Manager for Windows 사용하기
 
 WSL 터미널에서 다음 입력:
@@ -188,3 +198,14 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 ```
 
 [출처](https://stackoverflow.com/questions/45925964/how-to-use-git-credential-store-on-wsl-ubuntu-on-windows)
+
+
+## WSL 기본 로그인 유저 바꾸기
+
+우분투인 경우:
+
+```js
+ubuntu config --default-user 유저_아이디
+````
+
+비밀번호를 잊어버려 재설정 할 때 쓴다.
