@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-04-13 09:49:00 +0900
-title: '[JavaScript] Object'
+title: '[JavaScript] Object prototype'
 categories:
   - javascript
 tags:
@@ -19,11 +19,13 @@ tags:
 - [\[MDN\] Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 - [\[MDN\] Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 
+
 ## 개요
 
 `Object`와 `Object.prototype` 차이, 주요 메서드 등을 정리함.
 
 **TODO 생성자 함수는 스태틱, 프로토타입은 인스턴스로 변경할 것**
+
 
 ## Object vs Object.prototype
 
@@ -32,6 +34,7 @@ tags:
 `Object.prototype`은 모든 객체의 조상, 최상위 프로토타입인 `Object` 프로토타입이다.
 
 `Object`의 메서드는 `Object.fn()` 같은 형태로 호출하니 스태틱 메서드, `Object.prototype`의 메서드는 인스턴스로 만들어진 객체를 통해 호출하니 인스턴스 메서드로 분류한다.
+
 
 ## 스태틱 메서드
 
@@ -75,12 +78,15 @@ Object.getOwnPropertyNames(String.prototype).filter((e) => {
 객체에 새로운 프로퍼티를 정의하거나 이미 존재하는 프로퍼티를 수정하는 메서드.
 
 ```js
-Object.defineProperty(Object.prototype, 'name', {
-  value: 'waldo', writable: false, enumerable: true
+var obj = {};
+Object.defineProperty(obj, 'name', {
+  value: 'waldo', 
+  writable: false, 
+  enumerable: true
 });
 
-Object.getOwnPropertyDescriptor(Object.prototype, 'name');
-// { value: "waldo", writable: false, enumerable: true, configurable: false }
+Object.getOwnPropertyDescriptor(obj, 'name');
+// Object { value: "waldo", writable: false, enumerable: true, configurable: false }
 ```
 
 ### Object.create()
@@ -110,9 +116,24 @@ console.log(o3); // Object { a: 1, b: 2, c: 3 }
 console.log(o1 === o3); // true
 ```
 
+### Object.keys
+
+객체 고유의 열거 가능한 프로퍼티 이름을 배열로 반환한다.
+
+```js
+var loopMe = {
+  a: 7,
+  b: 8,
+  c: 9
+};
+Object.defineProperty(loopMe, 'd', { value: 10, enumerable: false });
+
+Object.keys(loopMe); // Array(3) [ "a", "b", "c" ]
+```
+
 ### Object.values
 
-주어진 객체 고유(=소유한)의 열거 가능한 속성들의 값을 배열로 반환한다.
+객체 고유의 열거 가능한 프로퍼티 값을 배열로 반환한다.
 
 ```js
 var obj = {
@@ -120,11 +141,29 @@ var obj = {
   num: 123,
   boo: true
 };
+Object.defineProperty(obj, 'bar', { value: 10, enumerable: false });
+
 Object.values(obj); // Array(3) [ "abc", 123, true ]
 ```
+
+### Object.entries
+
+객체 고유의 열거 가능한 프로퍼티 이름과 프로퍼티 값 쌍(pair)을 배열로 반환한다.
+
+```js
+var loopMe = {
+  a: 7,
+  b: 8,
+  c: 9
+};
+
+Object.entries(loopMe); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
+```
+
 
 ## 인스턴스 메서드
 
 ### Object.prototype.hasOwnProperty()
+
 
 ## 꼐속...

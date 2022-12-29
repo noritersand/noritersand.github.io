@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-04-21 22:29:00 +0900
-title: '[JavaScript] 클래스 class'
+title: '[JavaScript] 클래스 Classes'
 categories:
   - javascript
 tags:
@@ -27,11 +27,13 @@ tags:
 - IE에서 사용 불가
 - Safari 14에서 public static 제외 사용 가능
 
+
 ## 개요
 
 class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 가독성 좋은 새로운 문법이다. 완전히 새로 만들어진 기능이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. (업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다더라)
 
 MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.
+
 
 ## class 선언
 
@@ -69,9 +71,11 @@ var magicUser = new Sorcerer(); // ReferenceError: can't access lexical declarat
 class Sorcerer {}
 ```
 
+
 ## class 표현식
 
 TODO
+
 
 ## 생성자 constructor
 
@@ -87,6 +91,7 @@ TODO
 
 **생성자 함수(constructor function)가 아님.**
 
+
 ## static
 
 생성자 함수의 메서드를 만드는 키워드.
@@ -100,17 +105,53 @@ class Hitman {
 Hitman.yo();
 ```
 
+
 ## super
 
 TODO
 
-## public
 
-TODO
+## public field
 
-## private
+```js
+class Building {
+  location = 'some-where';
+  number;
 
-TODO
+  constructor(number) {
+    this.number = number;
+  }
+}
+
+var building = new Building(1234);
+building.location; // "some-where"
+building.number; // 1234
+```
+
+단순한 인스턴스의 프로퍼티를 생각하면 된다. 메서드 내에서 정의할 땐 `this`를 거쳐야한다.
+
+
+## private field
+
+```js
+class Company {
+  #classified = 'actually not';
+  #secret;
+
+  constructor(secret) {
+    this.#secret = secret;
+  }
+}
+
+var company = new Company('anyone can see this');
+console.log(company); // Object { #classified: "actually not", #secret: "anyone can see this" }
+
+company.#classified; // Uncaught SyntaxError: reference to undeclared private field or method #classified debugger eval code:1:8
+company.#secret; // Uncaught SyntaxError: reference to undeclared private field or method #secret
+```
+
+private field는 클래스 외부에서 접근하려고 할 때 문법에러가 발생한다. 그렇다고 안보이는 건 아니다.
+
 
 ## 빌트인 프로토타입의 확장
 
@@ -140,6 +181,7 @@ class Numeric extends Number {
 new Numeric(123456).format(0); // "123,456"
 ```
 
+
 ## 생성자 함수와의 차이점
 
 ### 생성자의 프로퍼티인 `caller`, `arguments`에 접근 불가.
@@ -150,6 +192,7 @@ var t = new Test();
 t.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```
+
 
 ## async method
 

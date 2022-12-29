@@ -22,9 +22,11 @@ tags:
 - [JAVASCRIPT.INFO: 프로토타입과 프로토타입 상속](https://ko.javascript.info/prototypes)
 - [JavaScript: 프로토타입(prototype) 이해](http://www.nextree.co.kr/p7323/)
 
+
 ## 개요
 
 자바스크립트의 프로토타입에 대한 분석 글.
+
 
 ## 프로토타입이란?
 
@@ -33,6 +35,7 @@ tags:
 > [위키백과: 프로토타입 기반 프로그래밍](https://ko.wikipedia.org/wiki/%ED%94%84%EB%A1%9C%ED%86%A0%ED%83%80%EC%9E%85_%EA%B8%B0%EB%B0%98_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D)
 
 간단히 말해 객체이면서 동시에 다른 객체의 원형이 되는 것. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, 자바스크립트는 프로토타입을 복제하는 방식으로 객체를 만든다.
+
 
 ## 프로토타입 확인
 
@@ -60,6 +63,7 @@ var human = new Mankind();
 Mankind.prototype === Object.getPrototypeOf(human); // true
 Mankind.prototype === human.__proto__; // true
 ```
+
 
 ## 프로토타입 체인
 
@@ -105,6 +109,7 @@ berry.aaa = 456;
 berry.aaa; // 456
 berry.__proto__.aaa; // 123
 ```
+
 
 ## .constructor
 
@@ -175,6 +180,7 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
 
+
 ## Object.prototype과 Object()의 차이
 
 `Object.prototype`은 `Object()` 함수로 생성된 객체의 프로토타입을 가리킨다. `Object.prototype`은 모든 객체의 원형이며 프로토타입의 프로퍼티는 상속된다. 따라서 `Object.prototype`의 프로퍼티인 `Object.prototype.constructor`는 Function 객체나 인스턴스를 통해 접근할 수 있다:
@@ -191,6 +197,7 @@ Function.constructor; // function Function()
 Function.assign; // undefined
 ({}).assign; // undefined
 ```
+
 
 ## 프로퍼티의 가려짐 Property Shadowing
 
@@ -220,6 +227,7 @@ o.__proto__.c; // 4
 
 프로퍼티의 값으로 함수가 지정되었을 땐 메서드 오버라이딩(method overriding)이라는 용어를 사용한다. 이름만 다르고 개념은 같음.
 
+
 ## 객체의 프로퍼티 vs 프로토타입의 프로퍼티
 
 프로퍼티의 소유자가 누구인지의 차이인데, 예를 들어:
@@ -242,6 +250,7 @@ helloWorld.sayHello(); // "Hello!"
 `sayHi()`는 객체의 프로퍼티, `sayHello()`는 프로토타입의 프로퍼티다.
 
 성능 면에서 보면, 객체의 프로퍼티는 인스턴스마다 각각 만들어지고 프로토타입의 프로퍼티는 인스턴스의 수와 상관없이 딱 한 번만 만들어지므로(프로토타입이란 놈이 원래 하나만 존재함) 프로토타입 쪽이 유리하다고 할 수 있다.
+
 
 ## 프로토타입 재정의
 
@@ -274,6 +283,7 @@ Tomato.prototype = Orange.prototype;
 c = new Tomato();
 c.fruit; // true
 ```
+
 
 ## 프로토타입 상속(확장)
 
