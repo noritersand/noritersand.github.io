@@ -47,6 +47,22 @@ SELECT `COLUMN` FROM `TABLE`;
 ```
 
 
+## 메타 데이터 조회
+
+- Information schema: 오라클에서 Data dictionaries 쯤 되는 것
+
+```sql
+# 테이블 목록
+SELECT * FROM INFORMATION_SCHEMA.TABLES;
+
+# 컬럼 목록
+SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
+
+# 사용 가능한 엔진 목록... 인가?
+SELECT * FROM INFORMATION_SCHEMA.ENGINES;
+```
+
+
 ## 로컬 서버 설정
 
 ### root로 접속
@@ -65,20 +81,27 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 -- 현재 상태 보기
 status
 
-CREATE DATABASE maria_db_test;
+CREATE DATABASE MARIA_DB_TEST DEFAULT CHARACTER SET UTF8;
+
+# CREATE SCHEMA는 CREATE DATABASE의 별칭이라서 결과는 위와 같음.
+CREATE SCHEMA MARIA_DB_TEST DEFAULT CHARACTER SET UTF8;
+
 ```
 
 ```sql
--- 데이터베이스 조회
+-- 스키마(database) 조회
 SHOW DATABASES;
+
+-- 스키마(database) 상세 조회
+SELECT * FROM INFORMATION_SCHEMA.SCHEMATA;
 
 -- 현재 데이터베이스의 모든 테이블 보기
 SHOW TABLES;
 ```
 
 ```sql
--- 'maria_db_test' 데이터베이스 사용
-use maria_db_test
+-- 'MARIA_DB_TEST' 데이터베이스 사용
+USE MARIA_DB_TEST
 ```
 
 ### 로컬 접속용 유저 생성과 모든 권한 부여
@@ -91,7 +114,7 @@ FLUSH PRIVILEGES;
 
 ```sql
 -- 부여 가능한 권한 보기
-SHOW PRIVILEGES
+SHOW PRIVILEGES;
 
 -- fixalot@localhost의 부여된 권한 보기
 SHOW GRANTS FOR fixalot@localhost;
@@ -113,6 +136,7 @@ FROM SAMPLE, (SELECT @ROWNUM := 0) R
 ```sql
 /* 테이블 + 컬럼 코멘트 */
 SET @TABLE_NAME = 'TABLE_NAME';
+
 SELECT CONCAT('/**', TABLE_NAME, ' ', TABLE_COMMENT, ' 테이블 VO', '*/\r\r') AS STR
 FROM INFORMATION_SCHEMA.TABLES
 WHERE TABLE_NAME = @TABLE_NAME
@@ -168,3 +192,64 @@ FROM SOME_MEMBER_TABLE
 ```
 
 응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
+
+
+## 덤프로 데이터베이스 내보내기-가져오기
+
+- [참고한 문서](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
+
+설치된 컴퓨터 터미널에서:
+
+```bash
+# export
+mysqldump --user USERNAME --password --databases DATABASE_NAME --result-file=data-dump.sql
+
+# import
+mysql --user USERNAME --password --database=NEW_DATABASE < data-dump.sql
+```
+
+요런식으로 하면 되는데, 만약 원격지에서 실행한다면 아래처럼 `--host` 옵션으로 서버 주소를 넣어주면 됨:
+
+```bash
+mysqldump --host=DOMAIN_OR_IP_ADRESS --user USERNAME --password --database=DATABASE_NAME --result-file=dump.sql
+```
+
+데이터베이스를 지정하는 옵션과 표현식이 다르니 주의할 것: `mysql`은 `--database=DB_NAME, -D DB_NAME`, `mysqldump`는 `--databases, -B`.
+
+그리고 `mysql`은 `--routines`, `--result-file` 옵션이 없다.
+
+### mysqldump
+
+`mysqldump`는 [MySQL CLI Client](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)에 포함돼 있다.
+
+윈도우인 경우 CLI Client는 따로 없고, MariaDB 서버를 설치해야 함. (귀찮으니 가급적 choco로 하자)
+
+```bash
+# 우분투 + 마리아DB
+apt install mariadb-client
+mysql --version
+```
+
+#### options
+
+- `-h HOST_NAME` `--host=HOST_NAME`: 데이터베이스 서버의 도메인이나 IP
+- `-P PORT_NUM` `--port=PORT_NUM`: 데이터베이스 서버의 포트 번호
+- `-u USER_NAME` ` --user=USER_NAME`: 데이터베이스 로그인에 사용한 사용자명
+- `-p[PASSWORD]` `--password[=PASSWORD]`: 명령을 실행하기 전에 비밀번호 입력을 먼저 받음
+- `-B` `--databases`: 데이터베이스(=스키마)를 지정한다.
+- `-R` `--routines`: 루틴(=함수와 프로시저)을 포함한다.
+- `-r FILE_NAME` `--result-file=FILE_NAME`: 덤프 결과를 내보낼 파일의 이름. 생략하면 콘솔에 출력함.
+
+`--host`를 생략하면 데이터베이스 인스턴스를 로컬 컴퓨터에서 찾는다.
+
+### 권한 문제로 함수나 프로시저 생성에 실패할 때
+
+dump 파일에서 `DEFINER`와 뒤따르는 문자들을 삭제하면 됨:
+
+```bash
+# dump.sql 파일에서 DEFINER를 삭제하면서 백업 파일 dump.sql.bak를 만듬
+sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
+```
+
+[출처](https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat)
+

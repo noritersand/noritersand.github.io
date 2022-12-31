@@ -20,9 +20,11 @@ tags:
 
 - [Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
 
+
 ## 개요
 
 요즘 들어 혜자로워진 마소의 윈도우10 초기 설정을 정리한 글.
+
 
 ## Windows 터미널
 
@@ -71,6 +73,7 @@ tags:
 
 새 탭이나 새 창을 열어도 갱신 안되니 터미널 앱을 재실행할 것.
 
+
 ## [Chocolatey](https://chocolatey.org/install)
 
 윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)
@@ -95,15 +98,18 @@ choco install firefox-dev googlechrome googlechrome.dev
 
 # 이미 설치된 openjdk 패키지가 있어도 무시하고 강제 설치하되 프롬프트는 무조건 yes 입력
 choco install openjdk --force -y
+
+# mysql-cli 제거
+choco uninstall mysql-cli
 ```
 
-이런식으로 앱 설치 가능.
+이런식으로 앱 설치/제거 가능.
 
 [기타 명령어](https://docs.chocolatey.org/en-us/choco/commands/):
 
 ```bash
 # Chocolatey로 설치한 패키지 목록 출력
-choco list -l
+choco list --local
 
 # Chocolatey로 설치한 것과 그렇지 않은것 모두 출력
 choco list -li
@@ -123,6 +129,7 @@ choco upgrade all
 Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를 다시 불러올 수 있다.
 
 명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
+
 
 ## 윈도우10 초기 설정
 
@@ -181,6 +188,7 @@ telnet localhost 4000
 
 레지스트리 편집기 > `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem > LongPathsEnabled`의 값을 1로 변경
 
+
 ## 최적화 설정
 
 말이 최적화 설정이지 하드웨어만 좋으면 이런거 안해도 된다.
@@ -206,6 +214,7 @@ telnet localhost 4000
 ### 백그라운드 앱 끄기
 
 `설정 > 개인 정보 > 백그라운드 앱`에서 앱 찾아서 끄기.
+
 
 ## 기타 팁
 
@@ -260,6 +269,7 @@ hollywood
 sudo apt-get remove byobu hollywood
 ```
 
+
 ## 환경 변수
 
 ### 미리 설정되어 있는 윈도우 환경 변수
@@ -276,6 +286,7 @@ sudo apt-get remove byobu hollywood
 - `desktop`: `C:\Users\fixalot\Desktop`
 - `tomcat-plugin`: `C:\project\workspace\.metadata\.plugins\org.eclipse.wst.server.core`
 - `JAVA_HOME`: `C:\Program Files\Java\jdk1.8.0_112`
+
 
 ## shell: 프로토콜로 접근 가능한 특수 폴더 목록
 
@@ -418,6 +429,7 @@ sudo apt-get remove byobu hollywood
 - `shell:UsersLibrariesFolder`
 - `shell:VideosLibrary`
 - `shell:Windows`
+
 
 ## 단축키
 

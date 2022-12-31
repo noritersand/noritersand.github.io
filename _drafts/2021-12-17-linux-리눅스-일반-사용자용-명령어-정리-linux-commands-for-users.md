@@ -431,8 +431,7 @@ tail -100 filename
 
 - `-n` `--lines=[+]NUM`: 특정 줄 번호부터 출력
 
-
-## head와 tail의 혼합
+### head와 tail의 혼합
 
 ```bash
 head -n 20 filename | tail -n 10 # 처음부터 20줄 중 마지막 10줄만 출력
@@ -442,11 +441,19 @@ tail -5 filename | head -3 # 마지막 다섯 줄 중 처음 세 줄만 출력
 
 ## sed
 
-TODO 이건 뭐지
+스트림 편집기. 입력 스트림에서 특정 조건의 내용만 출력하도록 필터링을 수행한다.
 
 ```bash
-sed -n '2,5p' filename # filename에서 2~5라인만 출력
+# filename에서 2~5라인만 출력
+sed -n '2,5p' filename
+
+# dump.sql 파일에서 DEFINER~를 삭제하면서 백업 파일 dump.sql.bak를 만듬
+sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
 ```
+
+#### options
+
+- `-i[SUFFIX]` `--in-place[=SUFFIX]`: 파일을 수정할 때 사용하는 옵션. `SUFFIX`가 있으면 원래 파일명에 이어 붙인 이름의 백업본을 만든다.
 
 
 ## more

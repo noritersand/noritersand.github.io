@@ -229,6 +229,7 @@ Expand Selection
 - [⭐ MarkdownPreview](https://packagecontrol.io/packages/MarkdownPreview): 마크다운 파일 브라우저로 미리보기
 - [⭐ Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
 - [⭐ Emmet](https://packagecontrol.io/packages/Emmet): 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. Emmet 문법은 [여기](https://docs.emmet.io/)를 보면 됨.
+- [Log Highlight](https://packagecontrol.io/packages/Log%20Highlight): 로그 파일 가독성이 아주 약간 좋아짐.
 
 #### ⛔ ~~[Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)~~
 
