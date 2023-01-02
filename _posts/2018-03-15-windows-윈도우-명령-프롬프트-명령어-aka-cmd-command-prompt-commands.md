@@ -195,6 +195,18 @@ slmgr.vbs -xpr
 slmgr.vbs -dlv
 ```
 
+### route
+
+라우팅 테이블을 출력하거나 수정하는 명령어
+
+```bash
+# 도움말 보기
+route /?
+
+# 기본 출력
+route PRINT
+```
+
 
 ## [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 

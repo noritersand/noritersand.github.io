@@ -40,7 +40,8 @@ tags:
 - [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
 - [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. 맥은 아직 지원 안함.
 - [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
-
+- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
+- [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않았다.
 
 ## 메뉴얼/API DOC/튜토리얼
 
@@ -317,7 +318,3 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 ## 이미지 편집기
 
 - [paint.net](https://www.getpaint.net)
-
-## ETC.
-
-- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.

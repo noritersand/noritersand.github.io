@@ -106,17 +106,27 @@ USE MARIA_DB_TEST
 
 ### 로컬 접속용 유저 생성과 모든 권한 부여
 
+권한 관련 도움말은 [여기](https://mariadb.com/kb/en/grant)를 보자.
+
 ```sql
 CREATE USER 'fixalot'@'localhost' IDENTIFIED BY '1123';
 GRANT ALL PRIVILEGES ON *.* TO 'fixalot'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
+다른 유저의 권한을 참고하고 싶을 땐 `SHOW GRANTS`로 조회되는 내용을 그대로 사용하는게 편하다.
+
 ```sql
--- 부여 가능한 권한 보기
+-- 모든 사용자 조회(권한 필요)
+SELECT * FROM mysql.user;
+
+-- 부여 가능한 PRIVILEGE 목록
 SHOW PRIVILEGES;
 
--- fixalot@localhost의 부여된 권한 보기
+-- 현재 접속한 USER의 부여된 권한 보기
+SHOW GRANTS;
+
+-- fixalot@localhost에게 부여된 권한 보기
 SHOW GRANTS FOR fixalot@localhost;
 ```
 
@@ -236,7 +246,7 @@ mysql --version
 - `-P PORT_NUM` `--port=PORT_NUM`: 데이터베이스 서버의 포트 번호
 - `-u USER_NAME` ` --user=USER_NAME`: 데이터베이스 로그인에 사용한 사용자명
 - `-p[PASSWORD]` `--password[=PASSWORD]`: 명령을 실행하기 전에 비밀번호 입력을 먼저 받음
-- `-B` `--databases`: 데이터베이스(=스키마)를 지정한다.
+- `-B` `--databases`: `mysqldump`는 첫 번째 인수를 데이터베이스(=스키마) 이름으로, 두 번째 인수를 테이블 이름으로 처리하지만, 이 옵션이 있으면 모든 인수를 데이터베이스 이름으로 처리한다.
 - `-R` `--routines`: 루틴(=함수와 프로시저)을 포함한다.
 - `-r FILE_NAME` `--result-file=FILE_NAME`: 덤프 결과를 내보낼 파일의 이름. 생략하면 콘솔에 출력함.
 

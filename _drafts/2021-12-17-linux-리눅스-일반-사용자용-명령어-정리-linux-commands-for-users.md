@@ -441,7 +441,7 @@ tail -5 filename | head -3 # 마지막 다섯 줄 중 처음 세 줄만 출력
 
 ## sed
 
-스트림 편집기. 입력 스트림에서 특정 조건의 내용만 출력하도록 필터링을 수행한다.
+스트림 편집기. 입력 스트림에서 특정 조건의 내용만 출력하도록 필터링을 수행한다. 특정 문자의 삭제나 치환에 활용할 수 있다.
 
 ```bash
 # filename에서 2~5라인만 출력
@@ -449,6 +449,9 @@ sed -n '2,5p' filename
 
 # dump.sql 파일에서 DEFINER~를 삭제하면서 백업 파일 dump.sql.bak를 만듬
 sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
+
+# text.txt 파일에서 'qwer'을 'asdf'로 치환(replace)
+sed -i 's/qwer/asdf/g' ./text.txt
 ```
 
 #### options

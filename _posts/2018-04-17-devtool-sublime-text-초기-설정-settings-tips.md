@@ -31,7 +31,7 @@ tags:
 
 ### 터미널에서 서브라임 실행하기
 
-아래 세 가지 방법이 있는데:
+Windows에선 아래 세 가지 방법이 있는데:
 
 - 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
 - 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
@@ -53,6 +53,12 @@ if (!(Test-Path -Path $PROFILE)) {
 sb  # 서브라임 실행
 sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열기
 sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
+```
+
+WSL에선 셸 설정파일(rc)에 호스트 PC의 경로를 별칭으로 추가하면 끝:
+
+```bash
+alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 ```
 
 ### 코드 스니펫 추가하기
