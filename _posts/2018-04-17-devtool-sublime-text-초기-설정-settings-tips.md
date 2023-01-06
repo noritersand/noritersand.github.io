@@ -246,7 +246,7 @@ Expand Selection
 #### [⭐ Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs)
 
 URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함.  
-**⚠️ 설치하면 기본 단축키인 `replace_all`을 덮어쓰기 때문에 필요할 때만 활성화시키는 게 좋음.**
+**⚠️ 설치하면 기본 단축키인 `replace_all`을 덮어쓰니 주의**
 
 #### [⭐ Case Conversion](https://packagecontrol.io/packages/Case%20Conversion)
 

@@ -191,7 +191,9 @@ wsl --shutdown
 
 ## WSL에서 Git Credential Manager for Windows 사용하기
 
-WSL 터미널에서 다음 입력:
+윈도우 환경에서는 기본값으로 '자격 증명 관리자'를 사용하는데, 이걸 변경하는 것.
+
+WSL 터미널에서 아래를 입력하면 된다:
 
 ```bash
 git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec/git-core/git-credential-manager-core.exe"

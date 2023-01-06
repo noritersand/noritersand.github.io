@@ -21,13 +21,15 @@ tags:
 
 - x.x.x
 
+
 ## 개요
 
 자바스크립트 프록시에 대한 간단 정리 글.
 
+
 ## TODO
 
-Proxy는 내부에 숨겨진 프로퍼티인 target(감싼 객체의 원본)을 갖고 있는데 이걸 받아오는 방법은 없는 것 같고 객체 복제는 가능함.
+Proxy는 내부에 숨겨진 프로퍼티인 target(감싼 객체의 원본)을 갖고 있는데 이걸 꺼내는 방법은 없...는 것 같고 객체 복제는 가능함.
 
 ```js
 var target = {
@@ -48,6 +50,9 @@ var proxy = new Proxy(target, handler);
 
 Object.assign({}, proxy);
 ```
+
+
+## 곁다리: Vue3에서...
 
 아래는 Vue3에서 프록시와 private 멤버를 같이 쓸 수 없는 문제가 발생하길래 테스트해 본 것:
 
