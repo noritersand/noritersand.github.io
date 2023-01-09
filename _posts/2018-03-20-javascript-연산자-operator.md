@@ -19,7 +19,7 @@ tags:
 - [\[MDN\] Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 - [\[MDN\] Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 - [\[MDN\] Comma operator (,)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
-- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
+- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](https://insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드)
 
 
 ## 산술 연산자
@@ -42,12 +42,6 @@ tags:
 ```
 
 표현식의 연산 결과를 좌변의 변수에 할당하는 연산자들. 설명은 생략.
-
-### 논리 할당 연산자
-
-```
-
-```
 
 
 ## 비교 연산자
