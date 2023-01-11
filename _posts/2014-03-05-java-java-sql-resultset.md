@@ -60,7 +60,7 @@ PreparedStatement pstmt = conn.prepareStatement(sql);
 pstmt.setString(1, hak);
 ResultSet rs = pstmt.executeQuery();
 
-if (rs.next()) { // ResultSet의 "커서"를 BOF에서 첫번째 레코드로 이동
+if (rs.next()) { // ResultSet의 "커서"를 BOF에서 첫 번째 레코드로 이동
     dto.setHak(rs.getString("hak"));
     dto.setName(rs.getString("name"));
     dto.setBirth(rs.getString("birth"));

@@ -292,7 +292,7 @@ request.setCharacterEncoding("utf-8");
 </head>
 <body>
 
-스프링을 이용한 첫번째 MVC2 패턴 프로그래밍<br/>
+스프링을 이용한 첫 번째 MVC2 패턴 프로그래밍<br/>
 ${msg}
 
 </body>

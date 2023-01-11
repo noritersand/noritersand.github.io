@@ -44,6 +44,10 @@ tags:
 - [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않았다.
 - [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GTP 기반 AI 채팅. 지금은 베타기간이라 문제가 좀 있다. 이제 곧 기술 문의를 AI한테 하는 시대가 올 지도...
+- [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
+- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
+- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
+- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 
 
 ## 메뉴얼/API DOC/튜토리얼
@@ -104,6 +108,27 @@ tags:
 - [^grex$](https://pemistahl.github.io/grex-js/): 테스트 케이스를 작성하면 정규식을 만들어줌
 
 
+## 데이터베이스
+
+- [SQLite](https://www.sqlite.org/index.html): RDBMS. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. 근데 어떤 사람의 주장으로는 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고. 시퀄라이트라고도 읽는다.
+- [Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
+- [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
+
+### ERD
+
+- [dbdiagram.io](https://dbdiagram.io/): 웹 버전만 있긴 하지만 좋음.
+- [eXERD](http://www.exerd.com): 30일 체험판이라 좀 그럼.
+
+### DBMS tool
+
+- [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 UI 프레임웍으로 추정.
+- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html): SQL Developer는 오라클 전용 DBMS 툴로 런타임 환경이나 instant client 없이 서버에 연결할 수 있다.
+- [Toad](http://www.toadworld.com/m/freeware/default.aspx)
+- [SQLGate](http://www.sqlgate.com/kr/download)
+- [Orange](http://www.warevalley.com/xml/download/orange_trial)
+- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
+
+
 ## 온라인 코드 에디터 겸 테스트 툴
 
 - [CodePen](https://codepen.io)
@@ -117,14 +142,6 @@ tags:
 - [Calendly](https://calendly.com): 이메일로 일정 맞추기
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
-
-
-## 유틸리티
-
-- [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
-- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
-- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
-- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 
 
 ## 통계
@@ -146,12 +163,6 @@ tags:
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
-
-
-## ERD
-
-- [dbdiagram.io](https://dbdiagram.io/): 웹 버전만 있긴 하지만 좋음.
-- [eXERD](http://www.exerd.com): 30일 체험판이라 좀 그럼.
 
 
 ## UML/MDA/드로잉 툴
@@ -191,16 +202,6 @@ tags:
 
 - [prismjs](https://prismjs.com): 코드 하이라이팅 JS 라이브러리. HTML로 작성된 페이지는 어디든 적용할 수 있음. [깃허브](https://github.com/PrismJS/prism)
 - [Color Scripter](https://colorscripter.com): 입력한 텍스트에 CSS를 적용해 HTML로 만들어주는 사이트. 코드 블록을 지원하지 않는 메일이나 게시판에서 사용하기 좋다.
-
-
-## DBMS tool
-
-- [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 UI 프레임웍으로 추정.
-- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html): SQL Developer는 오라클 전용 DBMS 툴로 런타임 환경이나 instant client 없이 서버에 연결할 수 있다.
-- [Toad](http://www.toadworld.com/m/freeware/default.aspx)
-- [SQLGate](http://www.sqlgate.com/kr/download)
-- [Orange](http://www.warevalley.com/xml/download/orange_trial)
-- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
 
 
 ## 텍스트 에디터

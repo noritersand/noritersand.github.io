@@ -31,7 +31,8 @@ tags:
 
 BSD 라이선스라서 저작권자 표기, 보증 부인을 지키는 한 개작/배포 제한이 없다.
 
-빈 값에 대한 표현은 `null`이 아닌 `(nil)`인 모양.
+빈 값에 대한 표현은 `null`이 아닌 `(nil)`이다.
+
 
 ## 설치
 
@@ -98,14 +99,18 @@ TODO 이게 자동으로 되는건지 모르겠네...
 
 ### Keys
 
+[https://redis.io/docs/data-types/tutorial/#keys](https://redis.io/docs/data-types/tutorial/#keys)
+
 데이터의 키가 되는 타입. 레디스는 'binary safe' 하다고 한다. 뭔 소리냐면, 일반적인 문자열(빈 문자열 포함)부터 JPEG 파일까지의 모든 바이너리 시퀀스를 키로 사용할 수 있다. 
 
-너무 긴 데이터는 성능에 악영향을 끼친다. 적당히 짧으면서 가독성 있는 값을 사용하라고 한다. 레디스가 권장하는 좋은 키 값이란 이런 모양이다:
+너무 긴 데이터는 성능에 악영향을 끼치니 적당히 짧으면서 가독성 있는 값을 사용하라고 한다. 권장되는 좋은 키는 아래와 같다:
 
 - `object-type:id`
 - `user:1000`
 - `comment:4321:reply.to`
 - `comment:4321:reply-to`
+
+여기서 콜론`:`으로 구분되는 접두어를 keyspace라고 한다. 여기선 그냥 이름의 일부로 사용했지만, keyspace를 이용한 알림 기능이 있는 모양이다. [https://redis.io/docs/manual/keyspace-notifications/](https://redis.io/docs/manual/keyspace-notifications/)
 
 키 타입의 최대 크기는 512 MB다.
 
@@ -116,7 +121,7 @@ TODO 이게 자동으로 되는건지 모르겠네...
 일반적인 문자열을 생각하면 되는데, `set` 명령은 공백으로 인자를 구분하기 때문에 값이 공백이 있는 경우 따옴표로 감싸야 함:
 
 ```bash
-set mykey "qwer asdf"
+set mykey 'qwer asdf'
 OK
 
 get mykey
@@ -126,7 +131,7 @@ set mykey2 qwer asdf
 (error) ERR syntax error
 ```
 
-TODO https://redis.io/docs/data-types/strings/
+홑따옴표, 쌍따옴표의 차이는 없다. [https://redis.io/docs/manual/cli/#string-quoting-and-escaping](https://redis.io/docs/manual/cli/#string-quoting-and-escaping)
 
 ### Lists
 
@@ -151,6 +156,8 @@ TODO https://redis.io/docs/data-types/strings/
 
 - [https://redis.io/commands/](https://redis.io/commands/)
 
+아직 정확하진 않지만 권한에 따라 특정 명령셋을 제한할 수 있는 것 같다. (`config`나 `keys` 같은 관리자 명령에 가까운 것들)
+
 ### config
 
 설정값을 변경하거나 가져온다.
@@ -159,14 +166,35 @@ TODO https://redis.io/docs/data-types/strings/
 config get dir
 1) "dir"
 2) "/var/lib/redis"
+
+config get databases
 ```
+
+### select
+
+데이터베이스를 선택하는 명령이다.
+
+```bash
+# 첫 번째 데이터베이스 선택
+select 0
+
+# 두 번째 데이터베이스 선택
+select 1
+```
+
+레디스에는 (건드린 게 없다면) 16개의 데이터베이스가 있고, 접속 시 첫 번째(index=0) 데이터베이스가 기본값으로 선택된다. 
+
+어떤 개발자의 말에 따르면 데이터베이스는 테스트하고 놀 때나 쓰고 차라리 인스턴스를 여러 개 만들라고 한다. (트랜잭션 때문이라나 뭐라나...)
 
 ### save, bgsave
 
 데이터를 즉시 디스크에 저장(dump the dataset to disk)하거나 백그라운드에서 처리하도록 하는 명령어. 저장된 파일의 경로는 설정을 건드리지 않았으면 `/var/lib/redis/dump.rdb`이다. 
 
-```
+```bash
+# 즉시 저장(완료될 때까지 기다림)
 save
+
+# 백그라운드 저장(안기다림)
 bgsave
 ```
 
@@ -186,12 +214,30 @@ save 60 1000
 flushall
 ```
 
+### keys
+
+주어진 패턴과 일치하는 모든 키 반환한다.
+
+```bash
+keys *
+1) "qwe"
+2) "asd"
+```
+
+이 명령은 제한적으로 사용하고 대신 `scan`을 사용하라고 한다.
+
+### scan
+
+TODO [https://redis.io/commands/scan/](https://redis.io/commands/scan/)
+
 ### set
 
 문자열 값을 지정한 키로 메모리에 새로 저장한다.
 
 ```bash
-set mykey "qwer"
+set mykey 'qwer'
+
+set q:w:e:r 1234
 ```
 
 ### get
@@ -201,6 +247,9 @@ set mykey "qwer"
 ```bash
 get mykey
 "qwer"
+
+get q:w:e:r
+"1234"
 ```
 
 ### sadd
@@ -228,3 +277,17 @@ smembers foo
 - [https://redis.io/docs/stack/bloom/clients/](https://redis.io/docs/stack/bloom/clients/)
 
 리눅스 터미널의 CLI 클라이언트 외에 제공되는 각 언어별 클라이언트. 가령 자바는 Jedis, JRedisBloom, 자바스크립트는 rebloom이 있음.
+
+
+## 원격 접속
+
+Redis CLI 클라이언트로 원격 서버에 접속해보자.
+
+```bash
+redis-cli -h HOST_NAME -p PORT_NUMBER
+
+# 접속 후 인증
+auth USERNAME PASSWORD
+```
+
+`redis-cli` 명령에 아이디 비번을 붙여서 사용하는 방법이 있긴 한데 보안문제로 권장하지 않는다 함. (그러면 옵션을 왜 만들어놨어 😒)

@@ -153,7 +153,7 @@ jQuery.ajax( url [, settings ] )
 - `contentType`: 서버에 데이터를 보낼 때 사용되는 content-type이며 기본값은 'application/x-www-form-urlencoded; charset=UTF-8'. 케릭터 셋인 UTF-8은 변경할 수 없다고 한다.[^1] false로 설정하면 어떤 content-type을 사용할 지 알리지 않는다.
 - `timeout`: Number, Ajax 요청의 제한 시간을 밀리초 단위로 설정한다. 제한 시간 안에 요청이 완료되지 않으면 요청을 취소하거나, error 콜백이 정의되어 있다면 호출된다.
 - `global`: Boolean, true나 false에 따라 전역 함수를 활성화하거나 비활성화한다. 전역 함수는 엘리먼트에 덧붙일 수 있으며 Ajax 호출 동안 다양한 위치나 조건에서 실행된다. contentType String 요청에 명시되는 콘덴츠 타입. 생략하면 'application/x-www-form-urlencoded'가 기본으로 설정된다.
-- `success`: Function, 응답이 성공 상태 코드를 반환하면 호출되는 함수. 응답 본문은 이 함수의 첫 번째 매개변수로 전달되며, dataType 프로퍼티에 명시한 형태로 구성된다. 두번째 매개변수는 상태 값을 나타내는 문자열이며 이번 경우에는 항상 'success'다
+- `success`: Function, 응답이 성공 상태 코드를 반환하면 호출되는 함수. 응답 본문은 이 함수의 첫 번째 매개변수로 전달되며, dataType 프로퍼티에 명시한 형태로 구성된다. 두 번째 매개변수는 상태 값을 나타내는 문자열이며 이번 경우에는 항상 'success'다
 - `error`: Function 응답이 에러 상태 코드를 반환하면 호출되는 함수. 매개변수가 세 개 전달되는데, 각각 XHR 인스턴스, 상태 값이 항상 'error'인 메시지 문자열, 선택사항으로 XHR 인스턴스가 반환한 예외 객체이다.
 - `complete`: Function 요청이 완료되면 호출되는 함수. 매개변수 두 개가 전달되는데, 각각 XHR 인스턴스와 'success'혹은 'error'를 나타내는 상태 메시지 문자열이다. success나 error 콜백을 명시했다면, 이 함수는 해당 콜백이 호출된 후에 실행된다.
 - `beforeSend`: Function, 요청이 전송되기에 앞서 먼저 호출되는 함수. 이 함수는 XHR 인스턴스를 전달 받으며, 사용자 정의 헤더를 설정하거나 요청 전에 필요한 연산을 수행하는 데 사용할 수 있다.

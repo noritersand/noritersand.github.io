@@ -916,7 +916,7 @@ git log [<options>] [<revision range>] [[--] <path>...]
 ```bash
 git log -p -2  # 패치내용을 출력하되 2개의 이력만 표시
 git log --pretty=oneline  # 각 커밋들의 메시지와 체크섬만 한 줄씩 출력된다.
-git log -1 HEAD~3  # 헤드 기준 세번째 전의 커밋 로그 보기
+git log -1 HEAD~3  # 헤드 기준 세 번째 전의 커밋 로그 보기
 git log v1.0 v2.4  # v1.0 태그에서 v2.4 태그 사이의 로그 보기
 git log --oneline --decorate --graph --all  # 현재 브랜치의 모든 커밋 로그를 그래프로 보기
 ```

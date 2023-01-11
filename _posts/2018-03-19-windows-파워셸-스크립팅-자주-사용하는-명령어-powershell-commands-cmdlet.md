@@ -89,7 +89,7 @@ wjb -> Wait-Job                   write -> Write-Output
 
 ```bash
 Get-History # 모든 명령어 이력 보기
-Get-History 10 # 10번 째로 실행한 명령어 보기
+Get-History 10 # 열 번째로 실행한 명령어 보기
 Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
 ```
 

@@ -213,8 +213,8 @@ HTML 문서 결과 값에 포함시키고자 할 때 사용 한다. 최근에는
 <html>
 <head></head>
 <body>
-출력 첫번째 방법: <% out.print(bigo);%>
-출력 두번째 방법: <%=bigo%>
+출력 첫 번째 방법: <% out.print(bigo);%>
+출력 두 번째 방법: <%=bigo%>
 </body>
 </html>
 ```

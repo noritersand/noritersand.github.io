@@ -99,9 +99,9 @@ String str2 = scan.next();
 String str3 = scan.next();
 
 // 여기서 a b c 를 입력하면
-// 첫번째 next()는 a를,
-// 두번째 next()는 b를,
-// 세번째 next()는 c를 읽어옴
+// 첫 번째 next()는 a를,
+// 두 번째 next()는 b를,
+// 세 번째 next()는 c를 읽어옴
 ```
 
 #### Scanner.next()
