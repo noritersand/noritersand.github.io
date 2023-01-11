@@ -43,6 +43,8 @@ tags:
 - [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
 - [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않았다.
 - [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
+- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GTP 기반 AI 채팅. 지금은 베타기간이라 문제가 좀 있다. 이제 곧 기술 문의를 AI한테 하는 시대가 올 지도...
+
 
 ## 메뉴얼/API DOC/튜토리얼
 

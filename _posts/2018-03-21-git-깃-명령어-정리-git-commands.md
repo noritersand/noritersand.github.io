@@ -24,7 +24,8 @@ tags:
 
 Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
 
-윈도우용 깃 클라이언트 업데이트는:
+
+## 윈도우용 깃 클라이언트 업데이트
 
 ```bash
 git update-git-for-windows

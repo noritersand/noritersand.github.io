@@ -20,6 +20,7 @@ tags:
 
 그리고 디버그 모드라고 해도 직접 만든 '무한루프로 대기하면서 종료되지 않는 코드'는 핫스왑이 안되는 걸 보면 이 기능이 IDE에서 지원하는건지 아니면 톰캣(혹은 특정 스펙을 준수하는 WAS)에서 지원하는 건지는 확실하지 않음.
 
+
 ## 설정
 
 여기선 톰캣 플러그인을 예로 든다. 우선 톰캣 서버 설정(서버 이름을 더블클릭 해서 진입한다. 서버 목록은 이클립스에서 Servers view를 활성화해야 볼 수 있다.)의 Overview 탭에서 'Automatically publish when resources change' 항목에 체크하고 (만약 'Serve modules without publishing'을 활성화했다면 이 과정은 생략해도 된다):
@@ -28,6 +29,7 @@ tags:
 
 Modules 탭에서 보이는 Edit 버튼을 눌러 Auto reloading enabled의 체크를 해제한다.
 이후 WAS를 디버그 모드로 구동한 뒤 소스를 수정하면 된다.
+
 
 ## 주의사항
 
