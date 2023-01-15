@@ -6,6 +6,7 @@ categories:
   - java
 tags:
   - code-snippet
+  - session
 ---
 
 * Kramdown table of contents
@@ -13,7 +14,8 @@ tags:
 
 #### 버전 정보
 
-- x.x.x
+- java 11
+
 
 ## 설명
 
@@ -22,6 +24,7 @@ HttpSession의 `setAttribute()`를 직접 호출하는게 마음에 안들어서
 필요한 이유: session은 리퀘스트와 달리 전 영역에 걸쳐 하나의 주소에 set/get이 가능하기 때문에 관리와 리펙토링이 쉽도록 중간자 역할을 하는 녀섴이 필요함.
 
 반면 HttpServletRequest는 중간 클래스 필요성이 적은데, request scope는 session에 비해 범위가 훨씬 좁기 때문.
+
 
 ## 코드
 

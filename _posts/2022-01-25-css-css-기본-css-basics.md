@@ -17,9 +17,11 @@ tags:
 
 - [\[MDN\] CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
+
 ## 개요
 
 CSS(Cascading Sytle Sheet) 기본 사용법 정리.
+
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
 
@@ -33,6 +35,7 @@ At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에
 /* Example: tells browser to use UTF-8 character set */
 @charset "utf-8";
 ```
+
 
 ## 스타일 적용하기
 
@@ -84,6 +87,7 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 @import "파일명";
 ```
 
+
 ## 우선순위(specificity, cascading order)
 
 우선순위(혹은 명시도)를 결정하는 요소는 여러가지가 있다. 크게 보면 `!important`가 가장 우선 적용되고 나머지는 선언 방식이나 얼마나 구체적으로 셀렉터를 작성했느냐에 따라 달라진다.
@@ -116,6 +120,7 @@ table tr td {
 ```
 
 그런데 이걸로 해결하는 것은 좋지 않은 습관이니 자중하라고... 😏 ~~최후의최후까지남겨놓을금지된비기~~
+
 
 ## 공통 설정
 

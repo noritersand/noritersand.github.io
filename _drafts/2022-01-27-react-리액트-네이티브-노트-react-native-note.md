@@ -28,9 +28,11 @@ tags:
 - NPM/NPX 8.3.1
 - React Native CLI 2.0.1
 
+
 ## 개요
 
 리액트 네이티브 개발 환경 구성 방법 요약 정리. 글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
+
 
 ## Core Components
 
@@ -38,11 +40,13 @@ tags:
 
 TODO
 
+
 ## 이벤트
 
 ### onPress
 
 TODO
+
 
 ## 그 외 모든 것
 

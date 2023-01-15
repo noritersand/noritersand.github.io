@@ -17,6 +17,7 @@ tags:
 - [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 - [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
 
+
 ## 개요
 
 CSS 셀렉터를 정리한 글.
@@ -26,6 +27,7 @@ CSS 셀렉터를 정리한 글.
 #아이디 { 스타일코드 }
 .클래스명 { 스타일코드 }
 ```
+
 
 ## Basic selectors
 
@@ -77,6 +79,7 @@ TAG_NAME
 - `$=`: 속성의 값이 지정된 값으로 끝나는 요소를 선택
 - `*=`: 속성의 값이 지정된 값을 포함하는 요소를 선택
 
+
 ## Grouping selectors
 
 ### Selector list
@@ -84,6 +87,7 @@ TAG_NAME
 ```
 A, B
 ```
+
 
 ## Combinators
 
@@ -116,6 +120,7 @@ A + B
 ```
 A || B
 ```
+
 
 ## Pseudo classes
 
@@ -353,6 +358,7 @@ a:visited 	Selects all visited links
 ### :where()
 
 TODO
+
 
 ## Pseudo elements
 

@@ -16,6 +16,7 @@ tags:
 - [\[MDN\] Use a source map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map)
 - [자바스크립트와 커피스크립트에서 소스맵(source map) 사용하기](https://blog.outsider.ne.kr/916)
 
+
 ## 개요
 
 ```js
@@ -27,6 +28,7 @@ tags:
 제대로 연결했다면 브라우저에서 선언부를 확인하려고 할 때 min 파일 대신 브라우저가 생성한 원본을 보여준다:
 
 ![](/images/sourcemap-example.png)
+
 
 ## 선언
 
@@ -44,6 +46,7 @@ tags:
     mappings: "AAgBC,SAAQ,CAAEA"
 }
 ```
+
 
 ## jQuery의 sourcemap
 

@@ -85,3 +85,5 @@ Object.values(loopMe); // Array(3) [ 7, 8, 9 ]
 ```js
 Object.entries(loopMe); // Array(3) [ Array [ "a", 7 ], Array [ "b", 8 ], Array [ "c", 9 ] ]
 ```
+
+끟.
