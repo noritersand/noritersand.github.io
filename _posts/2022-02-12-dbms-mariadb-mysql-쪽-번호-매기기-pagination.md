@@ -32,24 +32,24 @@ LIMIT row_count OFFSET offset
 - `offset`: 가져오기 시작할 데이터의 인덱스
 - `row_count`: 가져올 데이터의 수
 
-`ROWNUM` 그딴 거 안써도 된다:
+`ROWNUM` 그딴 거 안써도 됨:
 
 ```sql
-SELECT *
-FROM SOME_TABLE
-WHERE CONDITION = TRUE
-ORDER BY RES_DT DESC -- 등록일시 역순
-LIMIT 3 OFFSET 0 -- 첫 번째(0)부터 3개
+select *
+from some_table
+where condition = true
+order by res_dt desc -- 등록일시 역순
+limit 3 offset 0 -- 첫 번째(0)부터 3개
 ```
 
 만약 전체 데이터 개수로 뭔가를 해야 하면 `COUNT() OVER()`를 같이 쓰면 됨:
 
 ```sql
-SELECT
-  COUNT(1) OVER() AS entireRows,
-  ST.*
-FROM SOME_TABLE ST
-LIMIT 5 OFFSET 10 -- 열한 번째부터 5개
+select
+  count(1) over() as entirerows,
+  st.*
+from some_table st
+limit 5 offset 10 -- 열한 번째부터 5개
 ```
 
 

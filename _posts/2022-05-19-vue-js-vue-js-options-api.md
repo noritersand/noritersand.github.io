@@ -126,7 +126,7 @@ TODO
 
 ## computed()
 
-- [https://vuejs.org/api/options-state.html#computed](https://vuejs.org/api/options-state.html#computed)
+- [https://vuejs.org/api/options-state.html#computed](https://vuejs.org/api/options-state.html#computed)  
 - [https://vuejs.org/guide/essentials/computed.html#basic-example](https://vuejs.org/guide/essentials/computed.html#basic-example)
 
 계산된 프로퍼티가 필요할 때 쓰는 getter/setter라고 보면 됨. 캐시도 적용된다 함.

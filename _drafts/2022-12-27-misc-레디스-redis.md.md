@@ -23,11 +23,9 @@ tags:
 
 ## 개요
 
-레디스의 간단 정리 글.
+레디스는 인메모리 데이터베이스다. 그러니까 흔히들 메모리라 부르는 주기억 장치에 데이터를 저장하여 입출력 속도가 빠르지만, 전력이 끊기면 모조리 지워지는 특징이 있는 데이터베이스다.
 
-가장 큰 특징은 인메모리 데이터베이스라는 점. 그러니까 흔히들 메모리라 부르는 주기억 장치에 데이터를 저장하여 입출력 속도가 빠르지만, 전력이 끊기면 모조리 지워지는 특징이 있다.
-
-그러나 레디스는 디스크에 별도로 데이터를 보관하는 명령을 제공하기 때문에 어느 정도의 데이터 보존을 기대할 수 있다. 왜 어느 정도냐면, 보관하는 부분에 뭔가 큰 버그가 있다는 경험담이 있다...
+그러나 레디스는 디스크에 별도로 데이터를 보관하는 명령을 제공하기 때문에 어느 정도의 데이터 보존을 기대할 수 있다. (왜 어느 정도냐면, 디스크 백업 기능에 뭔가 큰 버그가 있다는 제보가...)
 
 BSD 라이선스라서 저작권자 표기, 보증 부인을 지키는 한 개작/배포 제한이 없다.
 
@@ -76,14 +74,14 @@ shutdown
 
 ## 설정 바꾸기
 
-- [https://redis.io/docs/management/config/](https://redis.io/docs/management/config/)
+[https://redis.io/docs/management/config/](https://redis.io/docs/management/config/)
 
 TODO
 
 
 ## 데이터셋을 디스크에 저장하기
 
-- [https://redis.io/docs/management/persistence/](https://redis.io/docs/management/persistence/)
+[https://redis.io/docs/management/persistence/](https://redis.io/docs/management/persistence/)
 
 `save` 명령으로 덤프 파일을 만드는 것을 의미한다. 저장 옵션의 기본값은 RDB.
 
@@ -154,7 +152,7 @@ set mykey2 qwer asdf
 
 ## 주요 명령어
 
-- [https://redis.io/commands/](https://redis.io/commands/)
+[https://redis.io/commands/](https://redis.io/commands/)
 
 아직 정확하진 않지만 권한에 따라 특정 명령셋을 제한할 수 있는 것 같다. (`config`나 `keys` 같은 관리자 명령에 가까운 것들)
 
@@ -274,7 +272,7 @@ smembers foo
 
 ## 클라이언트 라이브러리
 
-- [https://redis.io/docs/stack/bloom/clients/](https://redis.io/docs/stack/bloom/clients/)
+[https://redis.io/docs/stack/bloom/clients/](https://redis.io/docs/stack/bloom/clients/)
 
 리눅스 터미널의 CLI 클라이언트 외에 제공되는 각 언어별 클라이언트. 가령 자바는 Jedis, JRedisBloom, 자바스크립트는 rebloom이 있음.
 

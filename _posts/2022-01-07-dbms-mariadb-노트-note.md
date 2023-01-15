@@ -29,9 +29,9 @@ MariaDB 관련 내용 아무거나 적음.
 무적권 `CONCAT()`을 써야함:
 
 ```sql
-SELECT '2021-01-01' + ' 23:59:59'; -- 2044
-SELECT '2021-01-01' || ' 23:59:59'; -- 1
-SELECT CONCAT('2021-01-01', ' 23:59:59'); -- 2021-01-01 23:59:59
+select '2021-01-01' + ' 23:59:59'; -- 2044
+select '2021-01-01' || ' 23:59:59'; -- 1
+select concat('2021-01-01', ' 23:59:59'); -- 2021-01-01 23:59:59
 ```
 
 연산자로도 되게 해줭... 🥲
@@ -45,18 +45,18 @@ MariaDB에서 ``` ` ```은 [Quote Identifier](https://mariadb.com/kb/en/identifi
 
 ```sql
 -- 별칭에 . 이 포함된 경우
-SELECT V.DUMMY.NUMBER FROM (SELECT 1 AS 'DUMMY.NUMBER') V;
+select v.dummy.number from (select 1 as 'dummy.number') v;
 
 -- 컬럼 이름과 테이블 이름이 예약된 키워드인 경우
-SELECT COLUMN FROM TABLE;
+select column from table;
 ```
 
 이럴 때 백틱으로 단어를 감싸면 해결됨:
 
 ```sql
-SELECT V.`DUMMY.NUMBER` FROM (SELECT 1 AS 'DUMMY.NUMBER') V;
+select v.`dummy.number` from (select 1 as 'dummy.number') v;
 
-SELECT `COLUMN` FROM `TABLE`;
+select `column` from `table`;
 ```
 
 
@@ -66,13 +66,13 @@ SELECT `COLUMN` FROM `TABLE`;
 
 ```sql
 # 테이블 목록
-SELECT * FROM INFORMATION_SCHEMA.TABLES;
+select * from information_schema.tables;
 
 # 컬럼 목록
-SELECT * FROM INFORMATION_SCHEMA.COLUMNS;
+select * from information_schema.columns;
 
 # 사용 가능한 엔진 목록... 인가?
-SELECT * FROM INFORMATION_SCHEMA.ENGINES;
+select * from information_schema.engines;
 ```
 
 
@@ -90,31 +90,31 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 
 ### 데이터베이스 생성/보기/선택
 
+```bash
+> status # 현재 상태 보기
+```
+
 ```sql
--- 현재 상태 보기
-status
+create database maria_db_test default character set utf8;
 
-CREATE DATABASE MARIA_DB_TEST DEFAULT CHARACTER SET UTF8;
-
-# CREATE SCHEMA는 CREATE DATABASE의 별칭이라서 결과는 위와 같음.
-CREATE SCHEMA MARIA_DB_TEST DEFAULT CHARACTER SET UTF8;
-
+# create schema는 create database의 별칭이라서 결과는 위와 같음.
+create schema maria_db_test default character set utf8;
 ```
 
 ```sql
 -- 스키마(database) 조회
-SHOW DATABASES;
+show databases;
 
 -- 스키마(database) 상세 조회
-SELECT * FROM INFORMATION_SCHEMA.SCHEMATA;
+select * from information_schema.schemata;
 
 -- 현재 데이터베이스의 모든 테이블 보기
-SHOW TABLES;
+show tables;
 ```
 
 ```sql
--- 'MARIA_DB_TEST' 데이터베이스 사용
-USE MARIA_DB_TEST
+-- 'maria_db_test' 데이터베이스 사용
+use maria_db_test
 ```
 
 ### 로컬 접속용 유저 생성과 모든 권한 부여
@@ -122,25 +122,25 @@ USE MARIA_DB_TEST
 권한 관련 도움말은 [여기](https://mariadb.com/kb/en/grant)를 보자.
 
 ```sql
-CREATE USER 'fixalot'@'localhost' IDENTIFIED BY '1123';
-GRANT ALL PRIVILEGES ON *.* TO 'fixalot'@'localhost';
-FLUSH PRIVILEGES;
+create user 'fixalot'@'localhost' identified by '1123';
+grant all privileges on *.* to 'fixalot'@'localhost';
+flush privileges;
 ```
 
 다른 유저의 권한을 참고하고 싶을 땐 `SHOW GRANTS`로 조회되는 내용을 그대로 사용하는게 편하다.
 
 ```sql
 -- 모든 사용자 조회(권한 필요)
-SELECT * FROM mysql.user;
+select * from mysql.user;
 
--- 부여 가능한 PRIVILEGE 목록
-SHOW PRIVILEGES;
+-- 부여 가능한 privilege 목록
+show privileges;
 
--- 현재 접속한 USER의 부여된 권한 보기
-SHOW GRANTS;
+-- 현재 접속한 user의 부여된 권한 보기
+show grants;
 
 -- fixalot@localhost에게 부여된 권한 보기
-SHOW GRANTS FOR fixalot@localhost;
+show grants for fixalot@localhost;
 ```
 
 
@@ -149,8 +149,8 @@ SHOW GRANTS FOR fixalot@localhost;
 ROWNUM 출력 방법
 
 ```sql
-SELECT @ROWNUM := @ROWNUM + 1 AS ROWNUM
-FROM SAMPLE, (SELECT @ROWNUM := 0) R
+select @rownum := @rownum + 1 as rownum
+from test_table, (select @rownum := 0) r
 ```
 
 
@@ -158,47 +158,47 @@ FROM SAMPLE, (SELECT @ROWNUM := 0) R
 
 ```sql
 /* 테이블 + 컬럼 코멘트 */
-SET @TABLE_NAME = 'TABLE_NAME';
+set @table_name = 'table_name';
 
-SELECT CONCAT('/**', TABLE_NAME, ' ', TABLE_COMMENT, ' 테이블 VO', '*/\r\r') AS STR
-FROM INFORMATION_SCHEMA.TABLES
-WHERE TABLE_NAME = @TABLE_NAME
-UNION
-SELECT CONCAT('\t/**', COLUMN_COMMENT, '*/\r\tprivate ',
-  CASE
-    WHEN COLUMN_TYPE LIKE 'int%' THEN 'Integer'
-    WHEN COLUMN_TYPE LIKE 'varchar%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'date%' THEN 'Date'
-    WHEN COLUMN_TYPE LIKE 'time%' THEN 'Timestamp'
-    WHEN COLUMN_TYPE LIKE 'datetime%' THEN 'DateTime'
-    WHEN COLUMN_TYPE LIKE 'tinyint%' THEN 'Integer'
-    WHEN COLUMN_TYPE LIKE 'smallint%' THEN 'Integer'
-    WHEN COLUMN_TYPE LIKE 'mediumint%' THEN 'Integer'
-    WHEN COLUMN_TYPE LIKE 'bigint%' THEN 'Long'
-    WHEN COLUMN_TYPE LIKE 'float%' THEN 'Float'
-    WHEN COLUMN_TYPE LIKE 'double%' THEN 'Double'
-    WHEN COLUMN_TYPE LIKE 'decimal%' THEN 'BigDecimal'
-    WHEN COLUMN_TYPE LIKE 'text%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'blob%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'binary%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'char%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'enum%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'set%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'bool%' THEN 'Boolean'
-    WHEN COLUMN_TYPE LIKE 'boolean%' THEN 'Boolean'
-    WHEN COLUMN_TYPE LIKE 'tinyblob%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'tinytext%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'mediumblob%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'mediumtext%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'longblob%' THEN 'String'
-    WHEN COLUMN_TYPE LIKE 'longtext%' THEN 'String'
-  END
-  , ' ', COLUMN_NAME, ';') AS STR
-FROM INFORMATION_SCHEMA.COLUMNS
-WHERE TABLE_NAME = @TABLE_NAME
+select concat('/**', table_name, ' ', table_comment, ' 테이블 VO', '*/\r\r') as str
+from information_schema.tables
+where table_name = @table_name
+union
+select concat('\t/**', column_comment, '*/\r\tprivate ',
+  case
+    when column_type like 'int%' then 'Integer'
+    when column_type like 'varchar%' then 'String'
+    when column_type like 'date%' then 'Date'
+    when column_type like 'time%' then 'Timestamp'
+    when column_type like 'datetime%' then 'DateTime'
+    when column_type like 'tinyint%' then 'Integer'
+    when column_type like 'smallint%' then 'Integer'
+    when column_type like 'mediumint%' then 'Integer'
+    when column_type like 'bigint%' then 'Long'
+    when column_type like 'float%' then 'Float'
+    when column_type like 'double%' then 'Double'
+    when column_type like 'decimal%' then 'BigDecimal'
+    when column_type like 'text%' then 'String'
+    when column_type like 'blob%' then 'String'
+    when column_type like 'binary%' then 'String'
+    when column_type like 'char%' then 'String'
+    when column_type like 'enum%' then 'String'
+    when column_type like 'set%' then 'String'
+    when column_type like 'bool%' then 'Boolean'
+    when column_type like 'boolean%' then 'Boolean'
+    when column_type like 'tinyblob%' then 'String'
+    when column_type like 'tinytext%' then 'String'
+    when column_type like 'mediumblob%' then 'String'
+    when column_type like 'mediumtext%' then 'String'
+    when column_type like 'longblob%' then 'String'
+    when column_type like 'longtext%' then 'String'
+  end
+  , ' ', column_name, ';') as str
+from information_schema.columns
+where table_name = @table_name
 ```
 
-`SET` 까지 한 번에 실행하면 된다. Java 파일에 붙여놓고 카멜케이스 변환만 해주면 끟.
+`set` 까지 한 번에 실행하면 된다. Java 파일에 붙여놓고 카멜케이스 변환만 해주면 끗.
 
 
 ## data concatenation
@@ -210,8 +210,8 @@ WHERE TABLE_NAME = @TABLE_NAME
 기본 사용법:
 
 ```sql
-SELECT GROUP_CONCAT(MEMBER_NAME)
-FROM SOME_MEMBER_TABLE
+select group_concat(member_name)
+from some_member_table
 ```
 
 응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
