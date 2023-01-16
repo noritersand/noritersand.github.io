@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-10-03 21:21:27 +0900
-title: '[JavaScript] 프록시'
+title: '[JavaScript] proxy'
 categories:
   - javascript
 tags:
@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-자바스크립트 프록시에 대한 간단 정리 글.
+자바스크립트 Proxy에 대한 간단 정리 글.
 
 
 ## 원본 꺼내기
