@@ -32,37 +32,37 @@ tags:
 `DATE`, `DATETIME`, `TIME` 관련 정리.
 
 ```sql
-SELECT
-    DD.DUMMY AS DATE_DEFAULT,
-    DATE_FORMAT(DD.DUMMY, '%Y-%m-%d %H:%i:%s') AS ISO_STRING,
-    DATE_FORMAT(DD.DUMMY, '%Y-%m-%dT%H:%i:%s.%f') AS ISO_STRING_2,
-    DATE_FORMAT(DD.DUMMY, '%Y') AS YEAR_OF_ERA,
-    DATE_FORMAT(DD.DUMMY, '%m') AS MONTH_OF_YEAR,
-    DATE_FORMAT(DD.DUMMY, '%d') AS DAY_OF_MONTH,
-    DATE_FORMAT(DD.DUMMY, '%H') AS HOURS,
-    DATE_FORMAT(DD.DUMMY, '%i') AS MINUTES,
-    DATE_FORMAT(DD.DUMMY, '%s') AS SECONDS,
-    DATE_FORMAT(DD.DUMMY, '%w') AS DAY,
-    DATE_FORMAT(DD.DUMMY, '%W') AS DAY_STRING,
-    DD.DUMMY BETWEEN STR_TO_DATE('2022-05-16 01:30:55', '%Y-%m-%d %H:%i:%s') AND STR_TO_DATE('2022-05-17 05:30:55', '%Y-%m-%d %H:%i:%s') AS BETWEEEEEEN
-FROM (
-  SELECT STR_TO_DATE(D.DUMMY, '%Y-%m-%d %H:%i:%s') AS DUMMY /* 포맷: yyyy-MM-dd HH:mm:dd */
-  FROM (
-    SELECT '2022-05-16 01:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-17 05:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-18 11:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-19 13:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-20 16:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-21 20:30:55' AS DUMMY
-    UNION
-    SELECT '2022-05-22 23:30:55' AS DUMMY
-  ) D
-) DD
+select
+    dd.dummy as dateDefault,
+    date_format(dd.dummy, '%Y-%m-%d %H:%i:%s') as isoString,
+    date_format(dd.dummy, '%Y-%m-%dT%H:%i:%s.%f') as isoString2,
+    date_format(dd.dummy, '%Y') as yearOfEra,
+    date_format(dd.dummy, '%m') as monthOfYear,
+    date_format(dd.dummy, '%d') as dayOfMonth,
+    date_format(dd.dummy, '%H') as hours,
+    date_format(dd.dummy, '%i') as minutes,
+    date_format(dd.dummy, '%s') as seconds,
+    date_format(dd.dummy, '%w') as day,
+    date_format(dd.dummy, '%W') as dayString,
+    dd.dummy between str_to_date('2022-05-16 01:30:55', '%Y-%m-%d %H:%i:%s') and str_to_date('2022-05-17 05:30:55', '%Y-%m-%d %H:%i:%s') as betweeeeeen
+from (
+  select str_to_date(d.dummy, '%Y-%m-%d %H:%i:%s') as dummy /* 포맷: yyyy-MM-dd HH:mm:dd */
+  from (
+    select '2022-05-16 01:30:55' as dummy
+    union
+    select '2022-05-17 05:30:55' as dummy
+    union
+    select '2022-05-18 11:30:55' as dummy
+    union
+    select '2022-05-19 13:30:55' as dummy
+    union
+    select '2022-05-20 16:30:55' as dummy
+    union
+    select '2022-05-21 20:30:55' as dummy
+    union
+    select '2022-05-22 23:30:55' as dummy
+  ) d
+) dd
 ```
 
 
@@ -71,19 +71,22 @@ FROM (
 문자열을 날짜로:
 
 ```sql
-SELECT STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s')
+select str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s')
 ```
 
 날짜를 문자열로:
 
 ```sql
-SELECT DATE_FORMAT(DD.DUMMY, '%Y-%m-%d %H:%i:%s') AS ISO_STRING
+select date_format(d.dummy, '%Y-%m-%d %H:%i:%s') as isoString
+from (
+  select '2022-05-16 01:30:55' as dummy
+) d
 ```
 
 DATETIME을 DATE로:
 
 ```sql
-SELECT DATE(NOW())
+select date(now())
 ```
 
 
@@ -96,27 +99,27 @@ CONVERT_TZ(dt, from_tz, to_tz)
 ```
 
 ```sql
-SELECT CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul')
+select convert_tz(now(), 'UTC', 'Asia/Seoul')
 ```
 
 이 함수는 `dt`가 시간만 있거나(TIME) 날짜만 있는(DATE) 값이어도 날짜 + 시간 형태로 반환한다:
 
 ```sql
-SELECT
-  NOW() AS NOW,
-  CONVERT_TZ(NOW(), 'UTC', 'Asia/Seoul') AS NOW_KST,
-  CONVERT_TZ(NOW(), 'UTC', 'America/Los_Angeles') AS NOW_LA,
-  CURTIME() AS CURTIME,
-  CONVERT_TZ(CURTIME(), 'UTC', 'UTC') AS CURTIME_UTC,
-  CONVERT_TZ(CURTIME(), 'UTC', 'Asia/Seoul') AS CURTIME_KST,
-  CONVERT_TZ(CURTIME(), 'UTC', 'America/Los_Angeles') AS CURTIME_LA,
-  CURDATE() AS CURDATE,
-  CONVERT_TZ(CURDATE(), 'UTC', 'UTC') AS CURDATE_UTC,
-  CONVERT_TZ(CURDATE(), 'UTC', 'Asia/Seoul') AS CURDATE_KST,
-  CONVERT_TZ(CURDATE(), 'UTC', 'America/Los_Angeles') AS CURDATE_LA,
-  STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s') AS STD,
-  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'Asia/Seoul') AS STD_KST,
-  CONVERT_TZ(STR_TO_DATE('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'America/Los_Angeles') AS STD_LA
+select
+  now() as now,
+  convert_tz(now(), 'UTC', 'Asia/Seoul') as nowKst,
+  convert_tz(now(), 'UTC', 'America/Los_Angeles') as nowLa,
+  curtime() as curtime,
+  convert_tz(curtime(), 'UTC', 'UTC') as curtimeUtc,
+  convert_tz(curtime(), 'UTC', 'Asia/Seoul') as curtimeKst,
+  convert_tz(curtime(), 'UTC', 'America/Los_Angeles') as curtimeLa,
+  curdate() as curdate,
+  convert_tz(curdate(), 'UTC', 'UTC') as curdateUtc,
+  convert_tz(curdate(), 'UTC', 'Asia/Seoul') as curdateKst,
+  convert_tz(curdate(), 'UTC', 'America/Los_Angeles') as curdateLa,
+  str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s') as std,
+  convert_tz(str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'Asia/Seoul') as stdKst,
+  convert_tz(str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s'), 'UTC', 'America/Los_Angeles') as stdLa
 ```
 
 타임존이 UTC인 데이터베이스에서 2022-11-09 07:57:31 에 실행하면 이렇게 됨:
@@ -147,31 +150,31 @@ SELECT
 - [https://mariadb.com/kb/en/date-and-time-units/](https://mariadb.com/kb/en/date-and-time-units/)
 
 ```sql
-SELECT
-  DATE_FORMAT(V.currentTS, '%Y-%m-%dT%H:%i:%s.%f') AS `CURRENT_TIMESTAMP`,
-  EXTRACT(YEAR FROM V.currentTS) AS `YEAR`,
-  EXTRACT(YEAR_MONTH FROM V.currentTS) AS `YEAR_MONTH`,
-  EXTRACT(MONTH FROM V.currentTS) AS `MONTH`,
-  EXTRACT(DAY FROM V.currentTS) AS `DAY`,
-  EXTRACT(DAY_HOUR FROM V.currentTS) AS `DAY_HOUR`,
-  EXTRACT(DAY_MINUTE FROM V.currentTS) AS `DAY_MINUTE`,
-  EXTRACT(DAY_SECOND FROM V.currentTS) AS `DAY_SECOND`,
-  EXTRACT(DAY_MICROSECOND FROM V.currentTS) AS `DAY_MICROSECOND`,
-  EXTRACT(HOUR FROM V.currentTS) AS `HOUR`,
-  EXTRACT(HOUR_MINUTE FROM V.currentTS) AS `HOUR_MINUTE`,
-  EXTRACT(HOUR_SECOND FROM V.currentTS) AS `HOUR_SECOND`,
-  EXTRACT(HOUR_MICROSECOND FROM V.currentTS) AS `HOUR_MICROSECOND`,
-  EXTRACT(MINUTE FROM V.currentTS) AS `MINUTE`,
-  EXTRACT(MINUTE_SECOND FROM V.currentTS) AS `MINUTE_SECOND`,
-  EXTRACT(MINUTE_MICROSECOND FROM V.currentTS) AS `MINUTE_MICROSECOND`,
-  EXTRACT(SECOND FROM V.currentTS) AS `SECOND`,
-  EXTRACT(SECOND_MICROSECOND FROM V.currentTS) AS `SECOND_MICROSECOND`,
-  EXTRACT(MICROSECOND FROM V.currentTS) AS `MICROSECOND`,
-  EXTRACT(WEEK FROM V.currentTS) AS `WEEK`,
-  EXTRACT(QUARTER FROM V.currentTS) AS `QUARTER`
-FROM (
-  SELECT NOW(6) AS currentTS /*마이크로초 여섯 자리까지*/
-) V
+select
+  date_format(v.currentTs, '%Y-%m-%dT%H:%i:%s.%f') AS currentTimestamp,
+  extract(year from v.currentTs) AS year,
+  extract(year_month from v.currentTs) AS yearMonth,
+  extract(month from v.currentTs) AS month,
+  extract(day from v.currentTs) AS day,
+  extract(day_hour from v.currentTs) AS dayHour,
+  extract(day_minute from v.currentTs) AS dayMinute,
+  extract(day_second from v.currentTs) AS daySecond,
+  extract(day_microsecond from v.currentTs) AS dayMicrosecond,
+  extract(hour from v.currentTs) AS hour,
+  extract(hour_minute from v.currentTs) AS hourMinute,
+  extract(hour_second from v.currentTs) AS hourSecond,
+  extract(hour_microsecond from v.currentTs) AS hourMicrosecond,
+  extract(minute from v.currentTs) AS minute,
+  extract(minute_second from v.currentTs) AS minuteSecond,
+  extract(minute_microsecond from v.currentTs) AS minuteMicrosecond,
+  extract(second from v.currentTs) AS second,
+  extract(second_microsecond from v.currentTs) AS secondMicrosecond,
+  extract(microsecond from v.currentTs) AS microsecond,
+  extract(week from v.currentTs) AS week,
+  extract(quarter from v.currentTs) AS quarter
+from (
+  select now(6) as currentTs /*마이크로초 여섯 자리까지*/
+) v
 ```
 
 | **UNIT**            | **VALUE**                   |
