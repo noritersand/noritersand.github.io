@@ -108,7 +108,7 @@ TODO 이게 자동으로 되는건지 모르겠네...
 - `comment:4321:reply.to`
 - `comment:4321:reply-to`
 
-여기서 콜론`:`으로 구분되는 접두어를 keyspace라고 한다. 여기선 그냥 이름의 일부로 사용했지만, keyspace를 이용한 알림 기능이 있는 모양이다. [https://redis.io/docs/manual/keyspace-notifications/](https://redis.io/docs/manual/keyspace-notifications/)
+여기선 그냥 이름의 일부로 사용했지만, 콜론`:`으로 나눠지는 부분을 keyspace라고 한다. 이걸 이용한 알림 기능이 있는 모양이다. [https://redis.io/docs/manual/keyspace-notifications/](https://redis.io/docs/manual/keyspace-notifications/)
 
 키 타입의 최대 크기는 512 MB다.
 

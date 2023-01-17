@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-03 18:47:33 +0900
-title: '[misc] 도토리 창고: 각종 개발 툴, 유틸리티 사이트, 언어, 프레임워크 모음'
+title: '[misc] 도토리 창고: 각종 개발 툴, 유틸리티 사이트, 언어, 라이브러리 모음'
 categories:
   - misc
 tags:
