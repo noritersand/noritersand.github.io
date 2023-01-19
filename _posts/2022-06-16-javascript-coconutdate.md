@@ -34,11 +34,17 @@ tags:
 ```js
 let now = new CoconutDate();
 let yesterday = new CoconutDate({ dayPlus: -1 });
-yesterday.of(); // Date Wed Jun 15 2022 20:13:51 GMT+0900 (대한민국 표준시)
-yesterday.ofHighNoon(); // Date Wed Jun 15 2022 12:00:00 GMT+0900 (대한민국 표준시)
-yesterday.dateString; // "2022-06-15"
-yesterday.dateTimeString; // "2022-06-15 20:13:51"
-yesterday.monthString; // "06" 
+
+now.toDateString(); // 2023-01-19 
+now.toDateTimeString(); // 2023-01-19 14:28:45.264 
+
+yesterday.of(); // Date Wed Jan 18 2023 14:28:45 GMT+0900 (대한민국 표준시)
+yesterday.ofHighNoon(); // Date Wed Jan 18 2023 12:00:00 GMT+0900 (대한민국 표준시)
+yesterday.ofMidnight(); // Date Wed Jan 18 2023 00:00:00 GMT+0900 (대한민국 표준시)
+
+yesterday.getYearOfEra(); // 2023 
+yesterday.getMonthOfYear(); // 01 
+yesterday.getDayOfMonth(); // 18 
 ```
 
 ```js
