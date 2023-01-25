@@ -82,6 +82,7 @@ tags:
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
 - [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
+- [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [tailwindcss](https://tailwindcss.com/): CSS 프레임워크. 설명이 어려우니 데모를 보자
 - [Vue](https://vuejs.org/)
 - [React](https://reactjs.org/)
