@@ -41,6 +41,15 @@ tags:
 이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
 
 
+## IDE log 파일 위치
+
+[https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files)
+
+요런 `C:\Users\fixal\AppData\Local\JetBrains\IntelliJIdea2022.3\log` 경로에 있는데 정확히 어디에 있는지는 Help 메뉴의 Show Log In Explorer를 누르면 나옴.
+
+검색으로 해결 안되는 문제(프리징 현상이라던지)가 발생하면 [지원 페이지](https://intellij-support.jetbrains.com/)로 가서 이 파일을 첨부해 문의하면 된다.
+
+
 ## 빌드나 런타임 에러가 발생하면
 
 Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:

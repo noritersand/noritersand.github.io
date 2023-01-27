@@ -137,6 +137,13 @@ tags:
 - [StackBlitz](https://stackblitz.com)
 
 
+## CVE 아카이빙 사이트
+
+- [CVE](https://cve.mitre.org)
+- [CVE.report](https://cve.report)
+- [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런식으로 [https://devhub.checkmarx.com/cve-details/CVE-2016-1000027](https://devhub.checkmarx.com/cve-details/CVE-2016-1000027) 맨 뒤 path만 바꿔서 조회하면 편하다.
+
+
 ## 일정/TODO 관리
 
 - [⭐ workflowy](https://workflowy.com): 온라인 TODO 툴
