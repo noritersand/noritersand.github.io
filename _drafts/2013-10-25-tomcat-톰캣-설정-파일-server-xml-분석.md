@@ -20,9 +20,11 @@ tags:
 - [Apache Tomcat 9 Configuration Reference](https://tomcat.apache.org/tomcat-9.0-doc/config/index.html)
 - [Apache Tomcat 8 Configuration Reference](https://tomcat.apache.org/tomcat-8.5-doc/config/index.html)
 
+
 ## 개요
 
 오쪼구조쪼구
+
 
 ## 작성 예시
 
@@ -72,38 +74,45 @@ tags:
 </Server>
 ```
 
+
 ## Server
 
 최상위 태그
 
+
 ## GlobalNamingResources
 
-경로: `Server > GlobalNamingResources`
+`Server > GlobalNamingResources`
+
 
 ## Service
 
 Server > Service
 
+
 ## Connector
 
-경로: `Server > Service > Connector`
+`Server > Service > Connector`
 
 #### 속성
 
 - redirectPort
 - parseBodyMethods
 
+
 ## Engine
 
-경로: `Server > Service > Engine`
+`Server > Service > Engine`
+
 
 ## Realm
 
-경로: `Server > Service > Engine > Realm`
+`Server > Service > Engine > Realm`
+
 
 ## Host
 
-경로: `Server > Service > Engine > Host`
+`Server > Service > Engine > Host`
 
 어플리케이션 단위의 설정을 지정하는 항목. 톰캣이 관리하는 앱 만큼 `Host`가 늘어난다.
 
@@ -118,13 +127,15 @@ TODO 아래 해석하고 지워:
 - unpackWARs
 - autoDeploy
 
+
 ## Valve
 
-경로: `Server > Service > Engine > Host > Valve`
+`Server > Service > Engine > Host > Valve`
+
 
 ## Context
 
-경로: `Server > Service > Engine > Host > Context`
+`Server > Service > Engine > Host > Context`
 
 `<Context>`는 둘 이상일 수 있다. 
 
@@ -148,9 +159,10 @@ TODO 아래 해석하고 지워:
 
 그리고 개발자도구로 확인해보면 다른 쿠키가 보일 수도 있는데 도메인이 같아서 보이는 것 뿐이니 무시할 것.
 
+
 ## Alias
 
-경로: `Server > Service > Engine > Host > Alias`
+`Server > Service > Engine > Host > Alias`
 
 `<Host>`의 별칭을 지정한다. `name`을 여러 개 두는 효과가 있(는 걸로 추정된)다.
 

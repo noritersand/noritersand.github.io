@@ -92,7 +92,7 @@ tags:
 
 부트스트랩같은 걸 생각하면 됨
 
-- [Storybook](https://storybook.js.org/)
+- [⭐ Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다. (그게뭐야) UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): UI 컴포넌트, 디자인 시스템을 모아놓은 사이트
 - [리액트 UI](https://reach.tech/)
 - [Headless UI](https://headlessui.dev/): 리액트 혹은 뷰에 적용할 수 있는 UI 컴포넌트

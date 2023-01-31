@@ -36,3 +36,7 @@ history.replaceState(data, title, url)
 ```
 
 - `data`:
+
+```js
+history.replaceState({}, '', '/a'); // 현재 페이지를 /a로 리플레이하되 히스토리만 바꾸며 페이지 새로고침은 발생하지 않
+```
