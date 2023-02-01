@@ -191,6 +191,23 @@ devtools에 기본으로 내장된, 리소스(아마도 스태틱 웹 리소스�
 spring.devtools.livereload.enabled=false
 ```
 
+### 문제점
+
+devtools를 적용하면 `jdk.internal.loader.AppClassLoader` 대신 `org.springframework.boot.devtools.restart.classloader.RestartClassLoader`를 사용하는데, 이 때문에 다른 써드파티 라이브러리에서 직렬화 등의 문제가 발생할 수 있다.
+
+- [https://brunch.co.kr/@springboot/212](https://brunch.co.kr/@springboot/212)
+- [https://www.google.com/search?client=firefox-b-d&q=RestartClassLoader+problems](https://www.google.com/search?client=firefox-b-d&q=RestartClassLoader+problems)
+
+만약 devtools를 쓰는 이유가 단지 JSP 재배포 문제 때문이라면 차라리:
+
+```bash
+server.servlet.jsp.init-parameters.development=true
+```
+
+이 줄을 `application.properties`에 추가하는 게 낫다. 
+
+`server.servlet.jsp.init-parameters.*`는 JSP 서블릿을 구성하는데 사용되는 초기 매개변수(init parameters)다. 위의 코드는 그러니까 JSP 서블릿이 개발 모드로 작동하도록 하는 설정인 것.
+
 
 ## SecurityContextHolder
 

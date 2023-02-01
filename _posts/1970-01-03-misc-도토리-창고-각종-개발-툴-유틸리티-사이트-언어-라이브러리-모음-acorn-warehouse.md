@@ -20,6 +20,8 @@ tags:
 
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
 
+자주 쓰거나 중요한 것은 ⭐ 표시함.
+
 
 ## 분류 필요
 
@@ -87,6 +89,7 @@ tags:
 - [Vue](https://vuejs.org/)
 - [React](https://reactjs.org/)
 - [Svelte](https://svelte.dev/)
+- [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 
 ### UI 컴포넌트
 

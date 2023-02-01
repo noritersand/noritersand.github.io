@@ -77,9 +77,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 메이븐 디펜던시로 추가한 라이브러리들은 이미 컴파일이 끝난 상태로 사용되기 때문에 해당 라이브러리에서 의존하는 라이브러리를 제외시켰다고 해서 당장 컴파일 에러가 발생하지는 않는다. 대신 RuntimeException이 발생한다. 하지만 제외시킨 라이브러리를 사용하지만 않으면 아무 문제가 없다.
 
 
-## pom.xml의 구성요소
-
-### 프로젝트 정보
+## 프로젝트 정보
 
 - modelVersion:
 - groupId:
@@ -89,7 +87,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 - name:
 - url:
 
-### 프로퍼티
+## 프로퍼티
 
 - properties
   - encoding
@@ -97,14 +95,14 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
   - project.reporting.outputEncoding
   - java-version
 
-### 저장소 설정
+## 저장소 설정
 
 라이브러리나 플러그인을 찾을 저장소를 지정한다. 메이븐 센트럴에 없으면 여기서 추가한 저장소에서 찾는다.
 
 - repositories
 - distributionManagement
 
-### 의존관계 설정
+## 의존관계 설정
 
 `<dependencyManagement>` 혹은 `<dependencies>`로 시작한다.
 
@@ -121,7 +119,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
       - scope
       - systemPath
 
-#### classifier
+### classifier
 
 정식 명칭은 Maven artifact classifier이며 동일한 버전의 빌드에서 내용이 다른 아티팩트를 지정하는 용도로 사용한다. 버전 번호 바로 앞에 붙는다.
 
@@ -189,7 +187,7 @@ M2용 라이브러리를 지정하는 방법으로 해결할 수 있다.
 요롷게 다름.
 
 
-#### scope
+### scope
 
 해당 라이브러리가 어느 시점에 사용되는지 제한하는 설정이다. 다섯 가지가 있다.
 
@@ -199,7 +197,7 @@ M2용 라이브러리를 지정하는 방법으로 해결할 수 있다.
 - system
 - test: 테스트 때만 사용한다.
 
-### 빌드 설정
+## 빌드 설정
 
 - build
   - finalName: 프로젝트를 빌드할 때 사용할 이름이다. m2e\*에서 이 값은 이클립스 설정 중 `Project Properties > Web Project Settings > Context root`를 덮어쓴다.
@@ -295,3 +293,33 @@ WAR 빌드용 플러그인
 - webResources
   - webResource: 하위 규칙에 따라 특정 경로의 파일들을 ROOT 경로로 내보낸다.
     - directory: 내보낼 대상을 디렉터리로 지정 (e.g. `src/main/resources/static`)
+
+
+## 프로파일
+
+로컬 환경에 따라 달라지는 빌드를 구성할 때 사용한다. 가령 특정 프로세서를 사용하는 환경일 땐 필요한 추가 라이브러리를 다운로드한다던지...
+
+예를 들어 아래는 M1 맥OS일 때 `io.netty:netty-resolver-dns-native-macos:osx-aarch_64`를 추가하는 설정이다:
+
+```xml
+<profile>
+    <id>macos-m1</id>
+    <activation>
+        <os>
+            <family>mac</family>
+            <arch>aarch64</arch>
+        </os>
+    </activation>
+    <dependencies>
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-resolver-dns-native-macos</artifactId>
+            <classifier>osx-aarch_64</classifier>
+        </dependency>
+    </dependencies>
+</profile>
+```
+
+- <profiles>
+  - <profile>
+
