@@ -97,23 +97,6 @@ PathRequest.toStaticResources().atCommonLocations()
 `org.springframework.boot.autoconfigure.security.servlet.PathRequest`를 통해 가져오면 된다.
 
 
-## 로컬 환경에서 서버 재시작 없이 JSP 리로드
-
-외부 WAS를 사용할 때 그냥 되는 게 스프링 부트에선 안되는데, Spring Developer tools 라이브러리가 있어야 함:
-
-```xml
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-devtools</artifactId>
-    <version>x.x.x</version>
-</dependency>
-```
-
-debug/run 모드인지는 상관 없다.
-
-구글링 하면 나오는 Live Reload는 별도의 훅과 브라우저의 확장 기능을 이용한 자동 새로고침 기능이다.
-
-
 ## TODO
 
 `/static-lib/**` 요청에 인증 절차를 제외시키기 위한 설정인데 어떻게 되는건지 분석 필요.
@@ -193,10 +176,10 @@ spring.devtools.livereload.enabled=false
 
 ### 문제점
 
-devtools를 적용하면 `jdk.internal.loader.AppClassLoader` 대신 `org.springframework.boot.devtools.restart.classloader.RestartClassLoader`를 사용하는데, 이 때문에 다른 써드파티 라이브러리에서 직렬화 등의 문제가 발생할 수 있다.
+devtools를 적용하면 `org.springframework.boot.devtools.restart.classloader.RestartClassLoader`를 사용하는데, 이 때문에 다른 써드파티 라이브러리에서 직렬화 등의 문제가 발생할 수 있다.
 
 - [https://brunch.co.kr/@springboot/212](https://brunch.co.kr/@springboot/212)
-- [https://www.google.com/search?client=firefox-b-d&q=RestartClassLoader+problems](https://www.google.com/search?client=firefox-b-d&q=RestartClassLoader+problems)
+- [https://www.google.com/search?q=spring+boot+RestartClassLoader+problems](https://www.google.com/search?q=spring+boot+RestartClassLoader+problems)
 
 만약 devtools를 쓰는 이유가 단지 JSP 재배포 문제 때문이라면 차라리:
 
