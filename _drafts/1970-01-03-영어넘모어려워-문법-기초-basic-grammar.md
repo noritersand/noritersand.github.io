@@ -303,7 +303,7 @@ subject + verb
 - *subject verb agreement*의 일부인듯?
 - 소유격의 대상(my PC, your book)은 3인칭임.
 
-단수 동사(singular verb)의 철자 규칙:
+#### 단수 동사(singular verb)의 철자 규칙
 
 - `-s`, `-sh`, `-ch` 뒤에는 `-es`를 붙임: pass -> passes, finish -> finishes, watch -> watches
 - `-y`는 `-ies`로 대체: study -> studies, try -> tries

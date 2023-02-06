@@ -36,7 +36,9 @@ tags:
 { set [expression](val) { . . . } }
 ```
 
-getter와 setter는 접근자 프로퍼티(accessor property)에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티(data property)와는 다르게 취급된다. 한 가지 예를 들면 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
+getter와 setter는 접근자 프로퍼티(accessor property)에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티(data property)와는 다르게 취급된다. 예를 하나만 들면, getter/setter는 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
+
+setter는 프로퍼티의 값을 바꿀 때마다 실행되므로 변수의 변경을 감시하는 watcher로 사용할 수 있다.
 
 
 ## class 선언에서

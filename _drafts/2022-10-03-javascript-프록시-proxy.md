@@ -95,3 +95,54 @@ Cannot read private member #value from an object whose class did not declare it
 
 TODO Vue 3 API인 `isProxy()`, `toRaw()`를 찾아볼 것  
 https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy
+
+
+## 변수 변화의 감시
+
+아래 코드는 setter를 이용한 변수 변화 감지 방법을 구글링한 건데:
+
+```js
+var obj = {
+  get foo() {
+    console.log({ name: 'foo', object: obj, type: 'get' });
+    return obj._foo;
+  },
+  set bar(val) {
+    console.log({ name: 'bar', object: obj, type: 'set', oldValue: obj._bar });
+    return obj._bar = val;
+  }
+};
+
+obj.bar = 2;
+// {name: 'bar', object: <obj>, type: 'set', oldValue: undefined}
+
+obj.foo;
+// {name: 'foo', object: <obj>, type: 'get'}
+```
+
+프록시를 써서 구현하면 이렇게 된다 함:
+
+```js
+// 코드 출처: https://stackoverflow.com/questions/36258502/why-has-object-observe-been-deprecated
+var obj = {
+  foo: 1,
+  bar: 2
+};
+
+var proxied = new Proxy(obj, {
+  get: function(target, prop) {
+    console.log({ type: 'get', target, prop });
+    return Reflect.get(target, prop);
+  },
+  set: function(target, prop, value) {
+    console.log({ type: 'set', target, prop, value });
+    return Reflect.set(target, prop, value);
+  }
+});
+
+proxied.bar = 2;
+// {type: 'set', target: <obj>, prop: 'bar', value: 2}
+
+proxied.foo;
+// {type: 'get', target: <obj>, prop: 'bar'}
+```
