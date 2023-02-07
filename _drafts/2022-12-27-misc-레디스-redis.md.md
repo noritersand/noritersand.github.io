@@ -95,6 +95,8 @@ TODO 이게 자동으로 되는건지 모르겠네...
 
 ## 데이터 타입
 
+[https://redis.io/docs/data-types/](https://redis.io/docs/data-types/)
+
 ### Keys
 
 [https://redis.io/docs/data-types/tutorial/#keys](https://redis.io/docs/data-types/tutorial/#keys)
@@ -133,9 +135,15 @@ set mykey2 qwer asdf
 
 ### Lists
 
+스택과 큐를 구현한 데이터 타입. JS의 배열과 비슷함.
+
 ### Sets
 
+🤔
+
 ### Hashes
+
+맵과 비슷
 
 ### Sorted sets
 
@@ -238,6 +246,16 @@ set mykey 'qwer'
 set q:w:e:r 1234
 ```
 
+만료시간을 지정하려면 `ex` 혹은 `px` 옵션을 사용함:
+
+```bash
+# 만료시간 5초 설정(초 단위)
+set qwe 'asd' ex 5
+
+# 만료시간 5초 설정(밀리초 단위)
+set foo 'bar' px 5000
+```
+
 ### get
 
 지정한 키로 저장된 문자열 값을 반환한다.
@@ -250,9 +268,63 @@ get q:w:e:r
 "1234"
 ```
 
+### expire
+
+특정 키에 저장된 데이터의 만료시간을 설정하고, 시간이 지나면 자동으로 삭제하게 하는 명령어. 초 단위로 지정한다.
+
+```bash
+# mykey의 만료시간을 30초로 설정
+expire mykey 30
+```
+
+없는 키를 지정하면 0이 반환된다.
+
+#### options
+
+`expire`의 옵션은 모두 만료시간을 설정할지 말지를 결정하는 조건으로 쓰인다.
+
+- `nx`: 설정된 만료시간이 없을 때만
+- `xx`: 설정된 만료시간이 있을 때만
+- `gt`: 새 만료시간이 기존보다 클 경우에만
+- `lt`: 새 만료시간이 기존보다 작은 경우에만
+
+### lpush
+
+list의 앞에 element를 추가한다.
+
+### rpush
+
+list의 뒤에 element를 추가한다. lpush의 반대
+
+### lpop
+
+list의 맨 앞 element를 꺼낸다.
+
+### rpop
+
+list의 맨 뒤 element를 꺼냄.
+
+### llen
+
+list의 길이 반환
+
+### lmove
+
+element의 위치를 변경하는 명령어
+
+### lrange
+
+주어진 offset의 모든 요소를 반환한다. offset은 시작과 끝의 인덱스로 지정하는 방식이며, 인덱스는 음수일 수도 있는데 이 경우 끝에서부터 몇 번째인지를 의미함.
+
+가령 offset이 `-3 2`면 끝에서 3번째 요소부터 처음에서 3번째 요소까지를 출력하라는 뜻이다. 그러니까 그냥 `0 2`와 같음.
+
+### ltrim
+
+주어진 offset의 모든 요소를 삭제한다.
+
 ### sadd
 
-지정한 키의 set에 구성원(members, set의 요소를 의미함)을 추가한다. 
+지정한 키의 set에 member(set에서의 element를 의미함) 추가한다. 
 
 ```bash
 sadd foo var
@@ -261,13 +333,25 @@ sadd foo var2
 
 ### smembers
 
-지정한 키로 저장된 set의 모든 구성원을 반환한다.
+지정한 키로 저장된 set의 모든 member를 반환한다.
 
 ```bash
 smembers foo
 1) "var2"
 2) "var"
 ```
+
+### sismember
+
+특정 member가 있는지 확인
+
+### sinter
+
+둘 이상의 set 사이에 공통 member를 반환함
+
+### scard
+
+특정 set의 member 수를 반환
 
 
 ## 클라이언트 라이브러리
