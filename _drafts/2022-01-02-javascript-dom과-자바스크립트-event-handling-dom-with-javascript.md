@@ -189,6 +189,16 @@ window.addEventListener('beforeunload', (event) => {
 
 일부 브라우저에서 지원하지 않는 기능이 있으니 MDN 문서를 확인할 것.
 
+### Window: hashchange event
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event)
+
+URL의 해시가 변경됐을 때 발생하는 이벤트
+
+```js
+window.addEventListner('hashchange', callbackFn);
+````
+
 ### HTMLElement: input event
 
 [https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event)
