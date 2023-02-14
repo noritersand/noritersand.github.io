@@ -117,7 +117,7 @@ console.log(c); // ReferenceError: can't access lexical declaration 'c' before i
 const c = 3;
 ```
 
-`var`와는 다르게, 선언 전에 참조할 경우 `ReferenceError`가 발생한다.
+그래서 `var`와는 다르게, 선언 전에 참조할 경우 `ReferenceError`가 발생한다.
 
 ## 특이사항: for loop와 let
 
@@ -161,7 +161,7 @@ getSomeWithLet()(); // 0
 
 > because you use let each anonymous function refers to a different instance of x. There is a different instance on each iteration of the loop. This happens because let has a block-level scope instead of the global function scope that var has.
 
-발번역하면 각 루프가 서로 다른 인스턴스이며, 익명함수가 그 서로 다른 인스턴스를 참조하기 때문이라고 한다. (혼절)
+(이 글이 사실이라는 전제 하에) 발번역하면 각 루프가 서로 다른 인스턴스이며, 익명함수가 그 서로 다른 인스턴스를 참조하기 때문이라고 한다. (혼절)
 
 이 답변을 바탕으로 상상회로를 돌려보면 대충 이런 결론이 나온다:
 
@@ -175,4 +175,4 @@ getSomeWithLet()(); // 0
 7. 깊이 3의 인스턴스가 종료되면 익명함수가 참조하는 `i`는 클로저 스코프에만 존재한다.
 8. 다음 루프가 시작되면서 깊이 2의 인스턴스의 `i`의 값이 증가하지만 깊이 3의 인스턴스에 있는 `i`는 증감식 수행 전의 값을 유지한다.
 
-🤷‍♂️
+이게맞냐? 🤷‍♂️
