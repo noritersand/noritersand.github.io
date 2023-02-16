@@ -68,7 +68,7 @@ tags:
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 거의 같다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다고 한다.
 
 
-## 써드파티 라이브러리
+## 써드파티 라이브러리/프레임워크
 
 ### 미분류
 
@@ -77,9 +77,6 @@ tags:
 - [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. 가볍게 쓰기 매우 좋다. NHN에서 만듦
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
 - [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
-
-### 프레임워크
-
 - [Spring](https://spring.io/)
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
 - [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
@@ -90,6 +87,11 @@ tags:
 - [React](https://reactjs.org/)
 - [Svelte](https://svelte.dev/)
 - [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+
+### 테스트
+
+- [JUnit](https://junit.org): 자바 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (2023-02-15)
+- [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 
 ### UI 컴포넌트
 

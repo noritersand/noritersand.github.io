@@ -154,23 +154,25 @@ from test_table, (select @rownum := 0) r
 ```
 
 
-## VO(DTO, Entity) 만들기
+## Entity 클래스 만들기
 
 ```sql
 /* 테이블 + 컬럼 코멘트 */
 set @table_name = 'table_name';
+set @table_schema = 'schema_name';
 
-select concat('/**', table_name, ' ', table_comment, ' 테이블 VO', '*/\r\r') as str
+select 0 as ordinal_position, 'it\'s table' as column_name, '' as column_type, concat('/**', table_name, ' ', table_comment, ' 테이블 VO', '*/\r\r') as str
 from information_schema.tables
 where table_name = @table_name
+and table_schema = @table_schema
 union
-select concat('\t/**', column_comment, '*/\r\tprivate ',
+select ordinal_position, column_name, column_type, concat('\t/**', column_comment, '*/\r\tprivate ',
   case
     when column_type like 'int%' then 'Integer'
     when column_type like 'varchar%' then 'String'
-    when column_type like 'date%' then 'Date'
-    when column_type like 'time%' then 'Timestamp'
-    when column_type like 'datetime%' then 'DateTime'
+    when column_type like 'date%' then 'LocalDate'
+    when column_type like 'time%' then 'LocalTime'
+    when column_type like 'datetime%' then 'LocalDateTime'
     when column_type like 'tinyint%' then 'Integer'
     when column_type like 'smallint%' then 'Integer'
     when column_type like 'mediumint%' then 'Integer'
@@ -196,9 +198,13 @@ select concat('\t/**', column_comment, '*/\r\tprivate ',
   , ' ', column_name, ';') as str
 from information_schema.columns
 where table_name = @table_name
+and table_schema = @table_schema
+order by ordinal_position asc
 ```
 
-`set` 까지 한 번에 실행하면 된다. Java 파일에 붙여놓고 카멜케이스 변환만 해주면 끗.
+`set` 까지 한 번에 실행하면 된다. `str` 컬럼을 Java 파일에 붙여놓고 (필요한 경우) 카멜케이스 변환만 해주면 끗.
+
+DBMS 툴에 따라 쌍따옴표가 붙을 수 있는데 그냥 전부 지우면 됨.
 
 
 ## data concatenation
