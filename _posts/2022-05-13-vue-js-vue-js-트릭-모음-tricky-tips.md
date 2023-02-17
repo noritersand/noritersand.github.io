@@ -15,7 +15,9 @@ tags:
 
 #### 참고한 문서
 
-- [somewhere](somewhere)
+- [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
+- [\[Vue.js\] API](https://vuejs.org/api/)
+- [https://v3-docs.vuejs-korea.org/](https://v3-docs.vuejs-korea.org/)
 
 #### 버전 정보
 

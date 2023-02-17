@@ -18,6 +18,7 @@ tags:
 - [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
 - [\[Vue.js\] Options API](https://vuejs.org/api/#options-api)
 - [\[Vue.js\] Options: State](https://vuejs.org/api/options-state.html)
+- [https://v3-docs.vuejs-korea.org/](https://v3-docs.vuejs-korea.org/)
 
 #### 버전 정보
 
