@@ -269,6 +269,12 @@ yarn add PACKAGE_NAME
 
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
+
+# 특정 패키지 버전 업그레이드
+yarn upgrade PACKAGE_NAME
+
+# 대화형으로 버전 업그레이드
+yarn upgrade-interactive
 ```
 
 NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능.

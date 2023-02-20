@@ -206,3 +206,55 @@ window.addEventListner('hashchange', callbackFn);
 이런 게 있네 ㅋ
 
 TODO
+
+
+## input 태그의 submit 이벤트가 엔터키로 발동되는 조건
+
+1. `<form>` 태그가 직계 부모로 존재해야 한다.
+2. `<button type="submit">` 혹은 `<input type="submit">` 태그가 있어야 한다.
+3. 만약 `<input>` 태그가 하나인 경우 2번 조건은 무시된다.
+4. `<textarea>`와 `<select>` 태그는 `<input>` 태그로 간주되지 않는다. 따라서 `<input>` 하나와 `<textarea>` 혹은 `<select>` 가 있는 경우라면 `<input>` 태그 하나만 있는 것과 같다.
+5. `<button type="button">` 태그도 `<input>`으로 세지 않는다.
+
+그래서 조합하면:
+
+```html
+<form>
+  <input>
+<form>
+```
+
+```html
+<form>
+  <input>
+  <textarea>
+  <select>
+<form>
+```
+
+```html
+<form>
+  <input>
+  <button type="button">
+<form>
+```
+
+```html
+<form>
+  <input>
+  <input>
+  ...
+  <button type="submit">
+<form>
+```
+
+```html
+<form>
+  <input>
+  <input>
+  ...
+  <input type="submit">
+<form>
+```
+
+요정도의 가지수가 나옴.
