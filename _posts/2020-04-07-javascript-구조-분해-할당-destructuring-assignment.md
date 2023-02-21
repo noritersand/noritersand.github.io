@@ -176,6 +176,15 @@ function fn4({ a = 1, b = 2, c = 3 } = {}) {
 fn4(); // "no error"
 ```
 
+전통적인 방식인 매개변수 나열과 같이 사용하려면:
+
+```js
+function fn5(foo, { txt, txt2 }) {
+  console.log(foo + txt + txt2);
+}
+fn5('Hello', {txt: 'world', txt2: '!'}); // Helloworld!
+```
+
 ### 유효하지 않은 식별자명인 경우
 
 ```js

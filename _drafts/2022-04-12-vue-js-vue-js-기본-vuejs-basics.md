@@ -63,15 +63,11 @@ Vue 패키지는 컴파일과 웹 서버를 포함한다.
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <div id="app">{{ message }}</div>
 <script>
-  const { createApp } = Vue;
+const { createApp } = Vue;
 
-  createApp({
-    data() {
-      return {
-        message: 'Hello Vue!'
-      }
-    }
-  }).mount('#app')
+createApp({
+  ...
+}).mount('#app')
 </script>
 ```
 
@@ -80,39 +76,30 @@ ECMAScript 모듈(통칭 ESM) 방식으로 불러오는 방식이 있다:
 ```html
 <div id="app">{{ message }}</div>
 <script type="module">
-  import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
-  createApp({
-    data() {
-      return {
-        message: "Hello Vue! ✌️"
-      };
-    },
-  }).mount("#app");
+createApp({
+  ...
+}).mount('#app');
 </script>
 ```
 
 
 ## 선언적 렌더링
 
-TODO 선언적 렌더링이 뭐야
-
-TODO 구버전임
-
 ```js
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: '안녕하세요'
-  }
-});
+window.vm = createApp({
+  data() {
+    return {
+      message: '안녕하세요'
+    };
+  },
+}).mount('#app');
 ```
 
-위 스크립트는 아이디가 'app'인 요소에 데이터 `message`를 할당한다는 뜻이다.
+위 스크립트는 아이디가 'app'인 요소에 데이터 `message`를 할당한다는 뜻이다. 렌더링 후 콘솔에서`app.message = '야';`를 실행하면, '안녕하세요'가 '야'로 변경된다.  
 
-렌더링 후 콘솔에서`app.message = '야';`를 실행하면, '안녕하세요'가 '야'로 변경된다.  
-
-가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다.
+가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다고...
 
 
 ## JSX
@@ -130,6 +117,31 @@ const vnode = <div>hello</div>
 **TODO 설명 추가**
 
 
+## Reactive State
+
+컴포넌트의 반응형 상태값(혹은 프로퍼티)을 말한다. 
+
+Options API에선 `data()` 메서드로 정의한다:
+
+```js
+createApp({
+  data() {
+    return {
+      docs: [
+        { title: "어디어디", url: "어디어디" },
+        { title: "어디어디", url: "어디어디" },
+      ],
+      message: "Hello Vue! ✌️",
+      sequence: 0
+    };
+  },
+  ...
+});
+```
+
+TODO Composition API에선 두 가지로 나뉘는데, `setup()`에서 객체를 반환하는 방식과, `ref`로 할당하는 방식이 있다. 아마도 🤭
+
+
 ## Template Syntax
 
 데이터를 HTML 태그에 바인딩하는 표현식들이다.
@@ -141,18 +153,18 @@ TODO 설명 션찮
 텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '수염'(Mustache syntax)이라고 부른다.
 
 ```html
-<!-- 태그 밖에서 -->
-{{ value }}
-
-<!-- 태그 안에서 -->
-<TAG_NAME v-bind:attribute="value"/>
+<p>{{ mustache }}</p>
 ```
 
 ### Raw HTML
 
-HTML을 escape하지 않고 그대로 출력하도록 한다.
+HTML을 escape하지 않고 그대로 출력한다.
 
-TODO
+```html
+<p v-html="rawHtml"></p>
+```
+
+XSS 취약점이 발생할 수 있으니 주의할 것.
 
 ### 속성 바인딩 Attribute Bindings
 
@@ -171,11 +183,6 @@ TODO
 ### 자바스크립트 표현식 JavaScript Expressions
 
 TODO
-
-```html
-{{ mustache }}
-```
-
 
 ### Directives
 
@@ -344,6 +351,22 @@ createApp({
 
 이 외에 key modifiers와 mouse button modifiers도 있다: [https://vuejs.org/guide/essentials/event-handling.html#key-modifiers](https://vuejs.org/guide/essentials/event-handling.html#key-modifiers)
 
+### $event
+
+이벤트 핸들러에 전달하는 그 Event 인스턴스다. 뷰 표현식에서는 `$event`로 명시한다.
+
+```html
+<button type="button" @click="search($event)">push-me</button>
+```
+
+```js
+methods: {
+  search(event) {
+    console.log(event); // PointerEvent { ... }
+  }
+}
+```
+
 
 ## 폼 바인딩 Form Input Bindings
 
@@ -372,60 +395,144 @@ var app6 = new Vue({
 
 ## 컴포넌트 Components
 
-TODO 구버전임
+TODO 설명 추가
 
-```html
-<div id="app-7">
-    <ol>
-        <todo-item></todo-item>
-    </ol>
-</div>
+```js
+// literal-template.js
+export const literalTemplate = {
+  template: `
+    <p>응애 나 아기 컴포넌트</p>
+    <div><button type="button" @click="probe">probe</button></div>
+    <p>{{message}}</p>
+  `,
+  data() {
+    return {
+      message: 'This is literal template message'
+    }
+  }
+};
 ```
 
 ```js
-Vue.component('todo-item', {
-  template: '<li>할일 항목 하나입니다.</li>'
-})
+// parent.js
+import { literalTemplate } from '/literal-template.js'
 
-var app = new Vue({
-  el: '#app-7'
-});
+createApp({
+  components: {
+    literalTemplate
+  }
+}).mount("#app");
 ```
 
-이렇게 하면 `<todo-item>`은 `<li>`로 렌더링 된다.
+```html
+<literal-template></literal-template>
+```
 
+### Props
 
-## 컴포넌트: Props
-
-부모한테 받아오는 읽기 전용 값.
-
+부모에게서 받아오는 읽기 전용 값. 부모에서 컴포넌트 표현식을 작성할 때 바인딩하는 값이 자식 컴포넌트의 props가 되는 식이다.
 아래처럼 넘김:
 
 ```xml
-<some-picker :pick-this="'A3456'" :pick-these="['A1234', 'B5678', 'B6789']"><some-picker>
+<some-picker :pick-this="'A3456'"><some-picker>
 ```
 
-받는 방법은 API 방식에 따라 다름. **TODO**
+받는 방법은 API 방식에 따라 다르다.
 
+Options API 문자열 배열 방식:
 
-## Reactive State
+```js
+export default {
+  props: ['foo'],
+  created() {
+    console.log(this.foo);
+  }
+}
+```
 
-컴포넌트의 반응형 상태값(혹은 프로퍼티)을 말한다. Options API에선 `data()`로 정의한다.
+Options API 객체 선언 방식:
 
-TODO
+```js
+// 기본 값이나 데이터 타입, 필수 여부를 지정할 수 있음
+export default {
+  props: {
+    foo: {
+      type: String,
+      default: null,
+      required: false
+    }
+  },
+  created() {
+    console.log(this.foo);
+  }
+}
+```
+
+Composition `<script setup>` 스타일:
+
+```html
+<script setup>
+const props = defineProps(['foo'])
+
+console.log(props.foo)
+</script>
+```
+
+Composition non `<script setup>` 스타일:
+
+```js
+export default {
+  props: ['foo'],
+  setup(props) {
+    // setup()은 첫 번째 인자로 props를 받습니다.
+    console.log(props.foo)
+  }
+}
+```
+
+들은 말로는 컴포넌트들의 계층 관계가 복잡할 수록 props를 활용하기 어려워져서 잘 안쓰게 된다 함. 그래서 대신 쓰는게 [Vuex](https://vuex.vuejs.org/)라고...
+
+### $emit()
+
+부모 컴포넌트로 이벤트를 내보낼 때 호출하는 함수. 첫 번째 인자는 이벤트 타입, 두 번째부터는(...args) 전달할 메시지다. 이벤트 타입은 마음대로 정의하면 된다.
+
+```js
+export const emittingTest = {
+  template: `
+    <button type="button" @click="$emit('custom-event:press', '이 메시지는 컴포넌트에서 시작되어...')">누르면 발싸합니다</button>
+  `,
+  emits: ['custom-event:press']
+};
+```
+
+```html
+<emitting-test @custom-event:press="handle"></emitting-test>
+```
+
+`emits` 속성은 생략해도 작동하긴 하지만 있는게 좋다. [fallthrough 속성](https://vuejs.org/guide/components/attrs.html)과 관련 있음.
+
+### 컴포넌트와 v-model
+
+TODO vuejs 프로젝트 참고
 
 
 ## Template Refs
 
-DOM 요소에 직접 접근할 때 사용함:
+DOM 요소 혹은 컴포넌트를 직접 다뤄야 때 사용한다.
+
+선언은 `ref` 혹은 `:ref`로 하며:
 
 ```html
 <input ref="focusMe">
 ```
 
+이후 인스턴스의 `$refs` 객체를 통해 접근할 수 있다.
+
 ```js
-mounted() {
-  this.$refs.focusMe.focus()
+export default {
+  mounted() {
+    this.$refs.focusMe.focus()
+  }
 }
 ```
 
@@ -437,8 +544,7 @@ mounted() {
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
 
 
-## `$event`
+## $attrs
 
 TODO
 
-이벤트 핸들러에 전달되는 유일한 객체인 `Event`와 같은 것 같음.

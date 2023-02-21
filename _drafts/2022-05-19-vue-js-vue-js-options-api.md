@@ -65,24 +65,28 @@ data() {
 
 ## props
 
-우선 이렇게 받을 값의 데이터 타입을 정의하고:
+우선 선언을 해야 하는데, 문자열 배열과 객체 선언 두 가지 방식이 있다.
+
+```js
+props: ['foo'],
+created() {
+  console.log(this.foo);
+}
+````
+
+객체 선언 방식은 기본 값이나 데이터 타입, 필수 여부를 지정할 수 있음:
 
 ```js
 props: {
-  pickThis: {
+  foo: {
     type: String,
     default: null,
-    required: false
-  },
-  pickthese: {
-    type: Array(String),
-    default: [],
     required: false
   }
 }
 ```
 
-요렇게 넘김:
+그리고 요렇게 넘김:
 
 ```xml
 <some-picker :pick-this="'A3456'" :pick-these="['A1234', 'B5678', 'B6789']"><some-picker>
@@ -196,3 +200,28 @@ createApp({
   }
 });
 ```
+
+
+## expose
+
+컴포넌트 인스턴스의 속성 중 부모에게 노출할 속성을 명시적으로 제한하기 위해 사용한다. expose가 없으면 모두 공개 상태가 되고, expose가 있으면 명시한 것만 공개된다. 만약 모두 숨기고 싶을 땐 빈 배열을 할당한다.
+
+```js
+// 부모는 이 컴포넌트의 getCodes만 보임
+expose: ['getCodes'],
+methods: {
+  initialize() {
+    ...
+  },
+  getCodes() {
+    ...
+  }
+}
+```
+
+
+## emits
+
+컴포넌트에서 내보낼 커스텀 이벤트를 선언한다.
+
+TODO
