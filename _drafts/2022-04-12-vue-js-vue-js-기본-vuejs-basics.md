@@ -85,19 +85,23 @@ createApp({
 ```
 
 
-## 선언적 렌더링
+## 선언적 렌더링이란?
 
-```js
-window.vm = createApp({
+```html
+<p>{{message}}</p>
+
+<script>
+createApp({
   data() {
     return {
       message: '안녕하세요'
     };
   },
 }).mount('#app');
+</script>
 ```
 
-위 스크립트는 아이디가 'app'인 요소에 데이터 `message`를 할당한다는 뜻이다. 렌더링 후 콘솔에서`app.message = '야';`를 실행하면, '안녕하세요'가 '야'로 변경된다.  
+위 예시는 반응형 상태값(reactive state)인 `message`를 선언하고 `<p>` 태그 바디에 바인딩하는 코드다. `message`의 값이 변경되면 화면에서도 즉시 바뀐 값이 적용된다.
 
 가이드에 따르면 이것은 데이터와 DOM이 연결되어 모든 것이 반응형이기 때문에 가능한 일이며, 이를 *선언적 렌더링*이라 한다고...
 
@@ -106,7 +110,7 @@ window.vm = createApp({
 
 Vue도 JSX 사용 가능함:
 
-```js
+```html
 const vnode = <div>hello</div>
 ```
 
@@ -140,6 +144,10 @@ createApp({
 ```
 
 TODO Composition API에선 두 가지로 나뉘는데, `setup()`에서 객체를 반환하는 방식과, `ref`로 할당하는 방식이 있다. 아마도 🤭
+
+### Computed Properties
+
+TODO
 
 
 ## Template Syntax
@@ -468,7 +476,7 @@ export default {
 }
 ```
 
-Composition `<script setup>` 스타일:
+Composition API `<script setup>` 스타일:
 
 ```html
 <script setup>
@@ -478,7 +486,7 @@ console.log(props.foo)
 </script>
 ```
 
-Composition non `<script setup>` 스타일:
+Composition API `setup()` 스타일:
 
 ```js
 export default {
@@ -492,9 +500,15 @@ export default {
 
 들은 말로는 컴포넌트들의 계층 관계가 복잡할 수록 props를 활용하기 어려워져서 잘 안쓰게 된다 함. 그래서 대신 쓰는게 [Vuex](https://vuex.vuejs.org/)라고...
 
-### $emit()
+### Event emitting
 
-부모 컴포넌트로 이벤트를 내보낼 때 호출하는 함수. 첫 번째 인자는 이벤트 타입, 두 번째부터는(...args) 전달할 메시지다. 이벤트 타입은 마음대로 정의하면 된다.
+emit은 상위 컴포넌트로 이벤트를 내보내는 것을 말한다.
+
+```
+$emit(eventType, ...args)
+```
+
+`$emit()` 함수를 호출해서 구현한다. 이 함수의 첫 번째 인자는 이벤트 타입, 두 번째부터는(...args) 전달할 메시지다. 이벤트 타입은 마음대로 정의하면 된다. 그리고 해당 이벤트 타입의 리스너를 부모 측에서 등록하는 식:
 
 ```js
 export const emittingTest = {
@@ -509,11 +523,57 @@ export const emittingTest = {
 <emitting-test @custom-event:press="handle"></emitting-test>
 ```
 
-`emits` 속성은 생략해도 작동하긴 하지만 있는게 좋다. [fallthrough 속성](https://vuejs.org/guide/components/attrs.html)과 관련 있음.
+`emits` 속성은 생략해도 작동하긴 하지만 있는게 권장되니 빼먹지 말자. 빼먹으면 경고 뜸. [fallthrough 속성](https://vuejs.org/guide/components/attrs.html)과 관련 있다고 함.
 
 ### 컴포넌트와 v-model
 
-TODO vuejs 프로젝트 참고
+부모 컴포넌트의 반응형 모델과 자식 컴포넌트를 연결하는 방법이다.
+
+[가이드](https://vuejs.org/guide/components/v-model.html)를 보면 여러가지 구현이 있지만, 이게 가장 좋음(하지만 코드 양도 많지):
+
+```js
+export const childComponent = {
+  template: `
+    <select v-model="computedModel">
+      <option :value="null">널 값</option>
+      <option :value="1">숫자 일</option>
+    </select>
+  `,
+  props: ['selected'],
+  emits: ['update:selected'],
+  computed: {
+    computedModel: {
+      get() {
+        return this.selected;
+      },
+      set(value) {
+        this.$emit('update:selected', value);
+      }
+    }
+  }
+};
+```
+
+```html
+<child-component v-model:selected="messageFromChild"></child-component>
+```
+
+이것보다 간단한 게 있긴 한데:
+
+```js
+export const childComponent = {
+  template: `
+    <select :value="selected" @input="$emit('update:selected', $event.target.value)">
+      <option :value="null">널 값</option>
+      <option :value="1">숫자 일</option>
+    </select>
+  `,
+  props: ['selected'],
+  emits: ['update:selected']
+};
+```
+
+이 방식은 모델 값이 `null`일 때 동기화가 제대로 안되는 버그가 있다. 아마 내부에서 작동하는 유효성 검사기의 버그가 아닐까 싶음.
 
 
 ## Template Refs
@@ -548,3 +608,21 @@ export default {
 
 TODO
 
+
+## 전역 변수의 접근 제한 해제
+
+자바스크립트 표현식에서 접근 가능한 전역 참조는 정해진 것 외에는 불가능하다. 예를 들어 사용자 정의 전역 변수와 window는 표현식에서 쓸 수 없다(대신 메서드를 호출한 다음 그 메서드에서 접근하는 것은 가능).
+
+만약 표현식에서 참조해야 하는 전역 변수가 있다면 아래처럼 하면 됨:
+
+```js
+const app = createApp({
+  // 생략
+});
+
+app.config.globalProperties.visitServiceAvailable = visitServiceAvailable;
+
+const vm = app.mount("#app");
+```
+
+`app.config`에 대한 설명은 [여기](https://vuejs.org/api/application.html#app-config)를 참고할 것.

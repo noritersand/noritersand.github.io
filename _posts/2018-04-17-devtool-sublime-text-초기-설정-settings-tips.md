@@ -142,17 +142,12 @@ console.debug('${1:msg}', ${2});
   { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
   { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
   { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
+  { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
   { "keys": ["ctrl+,"], "command": "open_preferences" }
 ]
 ```
 
-`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 모든 변경사항 취소하는 것도 있는데:
-
-```json
-{ "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" }
-``` 
-
-위험해서 빼앰.
+`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. `discard_all_modified`은 모든 변경사항을 취소하니 주의해서 사용할 것.
 
 
 ## 기본 단축키
