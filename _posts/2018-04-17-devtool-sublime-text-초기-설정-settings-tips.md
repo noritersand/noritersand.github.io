@@ -205,7 +205,7 @@ Expand Selection
 - <kbd>ctrl + k</kbd>: 단축키 시퀀스 시작
 - <kbd>ctrl + k, ctrl + u</kbd>: 대문자 변환
 - <kbd>ctrl + k, ctrl + l</kbd>: 소문자 변환
-- <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글
+- <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글. 서브라임 머지도 먹힌다.
 
 
 ## 패키지
