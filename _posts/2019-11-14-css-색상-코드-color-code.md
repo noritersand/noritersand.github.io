@@ -28,7 +28,7 @@ CSS 색상 코드를 정리한 글.
 red, blue 등의 미리 정해진 색상 이름을 사용한다. 사용 가능한 이름은 [여기](https://www.w3schools.com/colors/colors_names.asp)에서 확인.
 
 ```css
-div { color: red; }
+div {color: red}
 ```
 
 #### HEX
@@ -37,14 +37,14 @@ div { color: red; }
 
 ```css
 /* red의 HEX 코드 */
-div { color: #FF0000; }
+div {color: #FF0000}
 ```
 
 CSS Colors Level 3에서 알파 채널이 추가되었고 여덟 자리 표기법을 쓸 수 있다:
 
 ```css
 /* 빨강(FF0000)에 투명도(=알파) 50%(88) */
-div { color: #FF000088}
+div {color: #FF000088}
 ```
 
 #### RGB
@@ -53,7 +53,7 @@ div { color: #FF000088}
 
 ```css
 /* red의 RGB 코드 */
-div { color: rgb(255, 0, 0); }
+div {color: rgb(255, 0, 0)}
 ```
 
 #### HSL
@@ -62,7 +62,7 @@ div { color: rgb(255, 0, 0); }
 
 ```css
 /* red의 HSL 코드 */
-div { color: hsl(0, 100%, 50%); }
+div {color: hsl(0, 100%, 50%)}
 ```
 
 #### RGBA, HSLA
@@ -71,7 +71,7 @@ A는 ALPHA의 줄임말이며 불투명도(opacity)를 의미한다. RGB와 HSL 
 
 ```css
 /* red with opacity */
-div { color: rgba(255, 0, 0, 0.3); }
+div {color: rgba(255, 0, 0, 0.3)}
 /* green with opacity */
-div { color: hsla(120, 100%, 50%, 0.3); }
+div {color: hsla(120, 100%, 50%, 0.3)}
 ```

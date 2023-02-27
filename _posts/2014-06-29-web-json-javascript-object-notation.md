@@ -35,7 +35,7 @@ JSON은 기본적으로 이름과 값을 쌍으로 갖는 형태를 취한다. �
   "prop2": 123456789.1,
   "prop3": false,
   "prop4": null,
-  "prop5": [ 1, 2, 3 ],
+  "prop5": [1, 2, 3],
   "prop6": {
     "alphabet": "abcdefg"
   }
@@ -45,12 +45,12 @@ JSON은 기본적으로 이름과 값을 쌍으로 갖는 형태를 취한다. �
 최상위 객체는 배열로 대체할 수 있다. JSON array의 표기법은 자바스크립트와 같다. 대괄호`[]`로 감싸진 쉼표로 구분된 값의 나열이다.
 
 ```json
-[ 1, 2, 3, 4 ]
+[1, 2, 3, 4]
 ```
 
 ```json
 [
-  { "firstObject": 1 },
+  {"firstObject": 1},
   {
     "secondObject": {
       "prop1": 1234,
@@ -74,10 +74,10 @@ JSON.parse( jsString )
 자바스크립트는 JSON을 다루기 위한 네이티브 메서드를 제공한다. 이 중 `JSON.parse()`는 JSON 문자열을 자바스크립트 객체로 변환하여 반환하는데, 이 때 전달된 인자가 JSON 규격에 맞는지 엄격히 체크한다.
 
 ```js
-JSON.parse( "{ num: 123 }" );  // SyntaxError: JSON.parse: expected property name or '}'
-JSON.parse( "{ 'num': 123 }" );  // SyntaxError: JSON.parse: expected property name or '}'
-JSON.parse( '{ "num": 123 }' );  // Object { num: 123 }
-JSON.parse( '{ "fn": function() {} }' ); // SyntaxError: JSON.parse: unexpected keyword at line 1 column 9 of the JSON data
+JSON.parse( "{num: 123}" );  // SyntaxError: JSON.parse: expected property name or '}'
+JSON.parse( "{'num': 123}" );  // SyntaxError: JSON.parse: expected property name or '}'
+JSON.parse( '{"num": 123}' );  // Object { num: 123 }
+JSON.parse( '{"fn": function() {}}' ); // SyntaxError: JSON.parse: unexpected keyword at line 1 column 9 of the JSON data
 ```
 
 jQuery는 `$.parseJSON()` 메서드를 제공한다. 만약 브라우저가 `JSON.parse()`를 지원하지 않는다면 `$.parseJSON()`은 전달된 문자열을 그대로 반환한다.

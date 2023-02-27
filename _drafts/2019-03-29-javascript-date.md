@@ -25,7 +25,7 @@ TODO
 ## new Date()
 
 ```js
-const { log } = console;
+const {log} = console;
 
 var a = new Date('2018-01-01T12:24:48Z');
 var b = new Date('2018-01-01 12:24:48'); // ⚠️ 얘는 IE, 사파리에서 문제 있음.

@@ -56,7 +56,7 @@ params => ({foo: "a"})
 
 // 구조 분해식
 ([a, b] = [10, 20]) => a + b; // 30 반환
-({ a, b } = { a: 10, b: 20 }) => a + b; // 30 반환
+({a, b} = {a: 10, b: 20}) => a + b; // 30 반환
 ```
 
 ### `() =>`는 `function()`과 같다
@@ -71,8 +71,8 @@ var a = function() {};
 얘네도 같다:
 
 ```js
-var b = (arg) => { console.log(arg); };
-var b = function(arg) { console.log(arg); };
+var b = (arg) => {console.log(arg)};
+var b = function(arg) {console.log(arg)};
 ```
 
 ### `() => ( x )`는 `() => { return x }`와 같다

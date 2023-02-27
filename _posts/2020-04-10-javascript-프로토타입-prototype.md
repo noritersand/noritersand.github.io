@@ -363,7 +363,7 @@ plainObject.toString; // undefined
 var obj = {};
 Object.getPrototypeOf(obj) === Object.prototype; // true
 
-var obj2 = { __proto__: null };
+var obj2 = {__proto__: null};
 Object.getPrototypeOf(obj2) === null; // true
 ```
 

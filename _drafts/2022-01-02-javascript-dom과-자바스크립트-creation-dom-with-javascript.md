@@ -42,6 +42,6 @@ var $style = document.createElement('style');
 $head.appendChild($style);
 $style.setAttribute('type', 'text/css');
 
-var css = 'h1 { background: red; }';
+var css = 'h1 {background: red}';
 $style.appendChild(document.createTextNode(css));
 ```

@@ -70,7 +70,9 @@ Date.prototype.format = function(format) {
 };
 String.prototype.string = function(len) {
   var s = "", i = 0;
-  while (i++ < len) { s += this; }
+  while (i++ < len) { 
+    s += this; 
+  }
   return s;
 };
 String.prototype.subFormat = function(len) {

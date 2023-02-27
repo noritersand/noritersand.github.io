@@ -390,7 +390,7 @@ var add = function(a, b) {
 var ob = {}; // new Object()와 같음
 ob.a = 1;
 ob; // Object { a: 1 }
-var obj = { b: 2, c: { d: 3 } };
+var obj = {b: 2, c: {d: 3}};
 obj.b; // 2
 obj['b']; // 2, 프로퍼티에 접근하는 표현식으로 obj.b와 같다.
 obj.c.d; // 3

@@ -104,11 +104,11 @@ https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascri
 ```js
 var obj = {
   get foo() {
-    console.log({ name: 'foo', object: obj, type: 'get' });
+    console.log({name: 'foo', object: obj, type: 'get'});
     return obj._foo;
   },
   set bar(val) {
-    console.log({ name: 'bar', object: obj, type: 'set', oldValue: obj._bar });
+    console.log({name: 'bar', object: obj, type: 'set', oldValue: obj._bar});
     return obj._bar = val;
   }
 };
@@ -131,11 +131,11 @@ var obj = {
 
 var proxied = new Proxy(obj, {
   get: function(target, prop) {
-    console.log({ type: 'get', target, prop });
+    console.log({type: 'get', target, prop});
     return Reflect.get(target, prop);
   },
   set: function(target, prop, value) {
-    console.log({ type: 'set', target, prop, value });
+    console.log({type: 'set', target, prop, value});
     return Reflect.set(target, prop, value);
   }
 });

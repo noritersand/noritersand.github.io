@@ -82,19 +82,21 @@ Object(123); // new Number(123)과 같다.
 자동으로 수행되는 타입 변환 말고도 명시적인 타입 변환이 필요할 수 있다. 원시 타입으로의 변환을 원할 경우엔 단순히 `Boolean()`, `Number()`, `String()`, `Object()` 함수를 사용하면 된다.
 
 ```js
-Boolean({ a: 1 }); // true, 객체는 모두 true로 변환된다.
+Boolean({a: 1}); // true, 객체는 모두 true로 변환된다.
 ```
 
 객체를 불리언으로 변환할 때는 단 하나의 규칙만 기억하면 된다: 객체는 무조건 true다.
 
 ```js
-var obj = { a: 1, b: 2 };
+var obj = {a: 1, b: 2};
 String(obj); // [object Object]
 
 var arr = [1, 2, 3];
 String(arr); // "1,2,3"
 
-function fn() { console.log('do something'); }
+function fn() { 
+  console.log('do something');
+}
 String(fn); // "function fn() { console.log('do something');}"
 
 String(/D/g); // ""/D/g"

@@ -55,8 +55,8 @@ TODO
 `<Screen/>`일 때는 `BackHandler`를:
 
 ```js
-import React, { useEffect } from "react";
-import { BackHandler } from "react-native";
+import React, {useEffect} from "react";
+import {BackHandler} from "react-native";
 
 // ...
 

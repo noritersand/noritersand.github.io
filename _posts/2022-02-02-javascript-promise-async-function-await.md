@@ -226,8 +226,8 @@ new Promise((resolve, reject) => {
 ```js
 var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 wait(1000)
-  .then(() => { console.log('a second has passed') })
-  .catch(() => { console.log('something went wrong') });
+  .then(() => {console.log('a second has passed')})
+  .catch(() => {console.log('something went wrong')});
 ```
 
 [원 소스 출처](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises#creating_a_promise_around_an_old_callback_api)
@@ -262,7 +262,7 @@ var hello = async () => {
 };
 hello().then(console.log); // Hello!
 // 위 코드는 아래와 같음
-// hello().then((msg) => { console.log(msg); });
+// hello().then((msg) => {console.log(msg)});
 ```
 
 ### Promise 래핑
@@ -288,7 +288,7 @@ function() {
 만약 반환하려는 참조가 Promise라면 async 함수는 새 참조를 반환하지만 `Promise.resolve()`는 일치하는 참조를 반환한다:
 
 ```js
-var p = new Promise(res => { res(1) });
+var p = new Promise(res => {res(1)});
 
 async function asyncReturn() {
   return p;
@@ -443,7 +443,7 @@ Promise.all(iterable)
 `Promise.all()`은 여러 Promise의 결과를 집계할 때 사용한다. `iterable`에 Promise 객체 여럿을 배열로 던지면 됨:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var concurrent2 = async () => {
   return await Promise.all([wait2(3000), wait2(2000), wait2(1000)]);
 }
@@ -460,7 +460,7 @@ Promise.race(iterable)
 `Promise.race()`는 주어진 Promise들을 동시에 실행하되 가장 먼저 완료되는 것만 반환한다:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var pickOne = async () => {
   return await Promise.race([wait2(3000), wait2(2000), wait2(1000)]);
 }
@@ -473,7 +473,7 @@ pickOne().then(console.log);
 변수에 `await`를 걸든, `Promise.all()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var concurrent3 = async () => {
   let startTime = new Date();
 
@@ -493,7 +493,7 @@ concurrent3();
 이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => { resolve(ms) }, ms));
+var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var parallel = function() {
   wait2(5000).then(console.log);
   wait2(3000).then(console.log);

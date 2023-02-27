@@ -25,9 +25,11 @@ tags:
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
 
+
 ## 개요
 
 프로퍼티와 메서드의 단축 표기법을 정리한 글.
+
 
 ## 단축 프로퍼티명
 
@@ -40,10 +42,10 @@ tags:
 ```js
 var a = 1;
 var b = 'two';
-var obj = { a, b };
+var obj = {a, b};
 
 obj; // Object { a: 1, b: "two" }
-obj.a === { a }.a; // true
+obj.a === {a}.a; // true
 ```
 
 그러니까 이 코드는:
@@ -61,8 +63,8 @@ obj.a === { a }.a; // true
 단축 표기에 사용할 변수의 값이 객체타입일 경우엔:
 
 ```js
-var a = { b: 1 };
-var obj = { a };
+var a = {b: 1};
+var obj = {a};
 obj.a; // Object { b: 1 }
 
 a.b = 2;
@@ -76,10 +78,11 @@ obj.a; // Object { b: 2 }
 단축 프로퍼티명의 원리를 이용해서 다음처럼 선언하면:
 
 ```js
-const { log } = console;
+const {log} = console;
 ```
 
 `log` 상수가 생성되면서 `console.log`가 할당됨.
+
 
 ## 단축 메서드명
 
@@ -95,7 +98,9 @@ const { log } = console;
 ```js
 var obj = {
   // hello: function() { return 'hello world!' }
-  hello() { return 'hello world!' }
+  hello() {
+    return 'hello world!';
+  }
 };
 obj.hello(); // "hello world!"
 ```
@@ -105,9 +110,11 @@ generator function을 단축하려면 다음처럼 한다:
 ```js
 var obj = {
   // gen: function* (n) { return 'ssup' }
-  * gen() { return 'ssup' }
+  * gen() {
+    return 'ssup';
+  }
 }
-obj.gen().next(); // "ssup"
+obj.gen().next(); // Object { value: "ssup", done: true }
 ```
 
 ES2016부터는 단축 표기법으로 생성한 메서드를 생성자 함수로 사용하면 에러가 발생한다:

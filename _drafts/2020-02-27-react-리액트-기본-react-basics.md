@@ -282,7 +282,7 @@ const UnorderedList2 = (
 let doNotRender = true;
 const conditional = (
   <div>
-    { doNotRender ? (<></>) : (<div>hi</div>) }
+    {doNotRender ? (<></>) : (<div>hi</div>)}
   </div>
 );
 ```
@@ -321,8 +321,8 @@ const element2 = React.createElement('h2', {
 const element3 = React.createElement('h2', {
   className: 'title',
   children: [
-    React.createElement('span', { key: 1 }, '대통령 선거'),
-    React.createElement('span', { key: 2 }, ' : '),
+    React.createElement('span', {key: 1}, '대통령 선거'),
+    React.createElement('span', {key: 2}, ' : '),
     React.createElement('span', null, '대통령 앉은거')
   ]
 });
@@ -469,7 +469,7 @@ state = {
 }
 
 this.state.someFlag = true; // X
-this.setState({ someFlag: true }); // O
+this.setState({someFlag: true}); // O
 ```
 
 리액트는 컴포넌트가 다시 렌더링을 할 때까지 state의 값을 갱신하지 않는다. [링크: this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
@@ -483,7 +483,7 @@ this.setState({
 });
 
 // 이런거
-this.setState({ count: 999 });
+this.setState({count: 999});
 console.log(this.state.count); // X
 ```
 

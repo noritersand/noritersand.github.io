@@ -59,7 +59,7 @@ console.log(gen.next()); // { value: 30, done: true }
 
 ```js
 var obj = {
-  generate: function* () { }
+  generate: function* () {}
 };
 ```
 
@@ -67,7 +67,7 @@ ES2015의 [메서드 단축 표기법](https://developer.mozilla.org/en-US/docs/
 
 ```js
 var obj = {
-  * generate() { }
+  * generate() {}
 };
 ```
 

@@ -82,7 +82,7 @@ export function doSomething() {}
 
 // 선언 후 내보내기
 const ZERO = 0;
-export { ZERO };
+export {ZERO};
 ```
 
 내보내기가 가능한 대상은 functions, `var`, `let`, `const`, class이며 최상위 유효 범위에 있어야 한다. 그러니께 함수 안에서 내보내기는 불가능.
@@ -90,7 +90,7 @@ export { ZERO };
 ### 가져오기
 
 ```js
-import { name } from './MY_MODULE.js';
+import {name} from './MY_MODULE.js';
 ```
 
 import 구문은 가져올 대상 뒤에 `from` 키워드로 모듈 파일의 경로를 명시한다. 위 예시는 같은 경로에 있는 `MY_MODULE.js` 파일에서 `name`을 가져오라는 의미다.
@@ -99,7 +99,7 @@ import 구문은 가져올 대상 뒤에 `from` 키워드로 모듈 파일의 �
 
 ```html
 <script type="module">
-import { create, createReportList } from './modules/canvas.js';
+import {create, createReportList} from './modules/canvas.js';
 
 var myCanvas = create('myCanvas', document.body, 480, 320);
 var reportList = createReportList(myCanvas.id);
@@ -116,13 +116,13 @@ var reportList = createReportList(myCanvas.id);
 export let a = 1;
 
 const b = 2;
-export { b };
+export {b};
 ```
 
 ```js
 // main.js
-import { a } from './module1.js';
-import { b } from './module1.js';
+import {a} from './module1.js';
+import {b} from './module1.js';
 
 console.log(a); // 1
 
@@ -136,12 +136,12 @@ b = 3; // Uncaught TypeError: Assignment to constant variable.
 ```js
 // module1.js
 export const a = 1, b = '2';
-export let obj = { a, b };
+export let obj = {a, b};
 ```
 
 ```js
 // main.js
-import { a, b, obj } from './module1.js';
+import {a, b, obj} from './module1.js';
 
 console.log(a); // 1
 console.log(b); // "2"
@@ -156,12 +156,12 @@ console.log(JSON.stringify(obj)); // {"a":1,"b":"2"}
 var c = 'cfoot';
 var d = 'dorat?';
 
-export { c as foot, d as doratman };
+export {c as foot, d as doratman};
 ```
 
 ```js
 // main.js
-import { foot, doratman } from './module1.js';
+import {foot, doratman} from './module1.js';
 
 console.log(foot); // cfoot
 console.log(doratman); // dorat?
@@ -175,12 +175,12 @@ console.log(doratman); // dorat?
 var c = 'cfoot';
 var d = 'dorat?';
 
-export { c, d };
+export {c, d};
 ```
 
 ```js
 // main.js
-import { c as foot, d as doratman } from './module1.js';
+import {c as foot, d as doratman} from './module1.js';
 
 console.log(foot); // cfoot
 console.log(doratman); // dorat?
@@ -200,7 +200,7 @@ export class Newbie {
 
 ```js
 // main.js
-import { Newbie } from './module1.js';
+import {Newbie} from './module1.js';
 
 var noob = new Newbie();
 noob.levelUp(); // I feel stronger.
@@ -213,12 +213,12 @@ noob.levelUp(); // I feel stronger.
 
 ```js
 // module1.js
-export const { str1, str2: bar } = { str1: 'abc', str2: 'def'};
+export const {str1, str2: bar} = {str1: 'abc', str2: 'def'};
 ```
 
 ```js
 // main.js
-import { str1, bar } from './module1.js';
+import {str1, bar} from './module1.js';
 
 console.log(str1); // "abc"
 console.log(bar); // "def"
@@ -237,19 +237,19 @@ export const ZERO = 0;
 
 ```js
 // module1.js
-import { PI } from './module2.js';
-export { PI };
+import {PI} from './module2.js';
+export {PI};
 
 // 위 코드를 한 줄로 쓰면 이렇게 됨
-export { ZERO } from './module2.js';
+export {ZERO} from './module2.js';
 ```
 
 ```js
 // main.js
-import { PI } from './module1.js';
+import {PI} from './module1.js';
 console.log(PI); // 3.14
 
-import { ZERO } from './module1.js';
+import {ZERO} from './module1.js';
 console.log(ZERO); // 0
 ```
 
@@ -295,14 +295,14 @@ export default function() {
 function fn() {
   console.log('Oh hello there!');
 }
-export { fn as default }; // 함수 fn()을 default로 내보내기
+export {fn as default}; // 함수 fn()을 default로 내보내기
 ```
 
 반면 가져오는 모듈에서는 반드시 이름을 지정해야 한다:
 
 ```js
 // main.js
-import { default as hello } from './module1.js';
+import {default as hello} from './module1.js';
 hello(); // Oh hello there!
 
 import yourName from './module2.js'; // 중괄호와 default는 생략 가능

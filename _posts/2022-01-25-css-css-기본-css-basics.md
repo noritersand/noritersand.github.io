@@ -65,7 +65,7 @@ HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
 
 ```html
 <style type="text/css">
-  p { background: yellow; color: black; }
+  p {background: yellow; color: black}
 </style>
 ```
 

@@ -35,7 +35,7 @@ Vue 쓰면서 발견한 트릭들 모아봄.
 
 ```js
 function initialState() {
-  return {  
+  return {
     message: '',
     numeric: 0,
     flag: false
@@ -72,7 +72,7 @@ export default defineComponent({
 ```
 
 ```js
-import { getCurrentInstance } from 'vue'
+import {getCurrentInstance} from 'vue'
 const instance = getCurrentInstance();
 instance?.proxy?.$forceUpdate();
 ```
@@ -106,6 +106,6 @@ Vue.createApp({
 </style>
 
 <div v-cloak>
-  {{ message }}
+  {{message}}
 </div>
 ```

@@ -84,7 +84,7 @@ b; // 3
 객체의 구조 분해 할당식은 배열과 조금 다르다. 요소의 순서에 의존하지 않고 이름이 중요한데:
 
 ```js
-var { x = 24, b = 48, ...y } = { a: 1, b: 2, c: 3, d: 4 };
+var {x = 24, b = 48, ...y} = {a: 1, b: 2, c: 3, d: 4};
 x; // 24
 b; // 2
 y; // { a: 1, c: 3, d: 4 }
@@ -100,19 +100,19 @@ y; // { a: 1, c: 3, d: 4 }
 
 ```js
 var a, b;
-({ a, b } = { a: 1, b: 2 });
+({a, b} = {a: 1, b: 2});
 a; // 1
 b; // 2
 ```
 
-단, 그냥 쓰면 `SyntaxError`가 발생하므로, 괄호`()`로 감싸야 한다. [MDN의 설명](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration)에 따르면 좌변의 `{ a, b }`가 객체 리터럴이 아닌 블록으로 간주되기 때문이라 한다.
+단, 그냥 쓰면 `SyntaxError`가 발생하므로, 괄호`()`로 감싸야 한다. [MDN의 설명](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#assignment_without_declaration)에 따르면 좌변의 `{a, b}`가 객체 리터럴이 아닌 블록으로 간주되기 때문이라 한다.
 
 ### 새로운 변수 이름으로 할당
 
 콜론`:`으로 원래의 프로퍼티명이 아닌 다른 이름으로 변수를 정의할 수 있다:
 
 ```js
-var { p: foo, q: bar } = { p: 42, q: true };
+var {p: foo, q: bar} = {p: 42, q: true};
 foo; // 42
 bar; // true
 typeof p; // "undefined"
@@ -134,18 +134,18 @@ bb; // 5
 ### 변수 정의 활용
 
 ```js
-var obj = { a: 4 };
-var { a } = obj;
+var obj = {a: 4};
+var {a} = obj;
 a; // 4
 ```
 
-위 코드는 객체 `{ a: 4 }`에서 `a`의 값을 가져오며 동시에 `a`라는 변수를 정의하는 코드다.
+위 코드는 객체 `{a: 4}`에서 `a`의 값을 가져오며 동시에 `a`라는 변수를 정의하는 코드다.
 
 응용하면 다음과 같은 코드도 성립한다:
 
 ```js
 // const log = console.log; // 아래와 같음
-const { log } = console;
+const {log} = console;
 log('hi');
 ```
 
@@ -154,23 +154,23 @@ log('hi');
 객체 구조 분해는 함수 매개변수의 일종의 기본값처럼 활용할 수 있다:
 
 ```js
-function fn2({ a = 1, b = 2, c }) {
+function fn2({a = 1, b = 2, c}) {
   console.log(a); // 기본값 1 출력
   console.log(b); // 전달된 65536 출력
   console.log(c); // undefined
 }
-fn2({ b: 65536 });
+fn2({b: 65536});
 ```
 
 그런데 이렇게 하면 아무런 인자 없이 호출할 때 에러가 발생한다. 방지하고 싶으면 구조 분해식 우변에서 빈 객체를 할당해주면 된다:
 
 ```js
-function fn3({ a = 1, b = 2, c = 3 }) {
+function fn3({a = 1, b = 2, c = 3}) {
   // do something
 }
 fn3(); // Uncaught TypeError: (destructured parameter) is undefined
 
-function fn4({ a = 1, b = 2, c = 3 } = {}) {
+function fn4({a = 1, b = 2, c = 3} = {}) {
   console.log('no error')
 }
 fn4(); // "no error"
@@ -179,7 +179,7 @@ fn4(); // "no error"
 전통적인 방식인 매개변수 나열과 같이 사용하려면:
 
 ```js
-function fn5(foo, { txt, txt2 }) {
+function fn5(foo, {txt, txt2}) {
   console.log(foo + txt + txt2);
 }
 fn5('Hello', {txt: 'world', txt2: '!'}); // Helloworld!
@@ -188,14 +188,14 @@ fn5('Hello', {txt: 'world', txt2: '!'}); // Helloworld!
 ### 유효하지 않은 식별자명인 경우
 
 ```js
-var obj = { 'r2-d2': 1 };
-var { 'r2-d2' } = obj; // Uncaught SyntaxError: missing : after property id
+var obj = {'r2-d2': 1};
+var {'r2-d2'} = obj; // Uncaught SyntaxError: missing : after property id
 ```
 
 식별자명이 유효하지 않으면 `SyntaxError`가 발생하므로 반드시 대체할 식별자를 지정해줘야 한다:
 
 ```js
-var { 'r2-d2': R2D2 } = obj;
+var {'r2-d2': R2D2} = obj;
 R2D2; // 1
 ```
 
@@ -204,7 +204,7 @@ R2D2; // 1
 좌변이 객체 리터럴이므로 계산된 프로퍼티명을 적용할 수 있음:
 
 ```js
-var { [ 'a' + 'b' + 'c' ]: z } = { abc: 123 }; // 'abc'를 찾아 새 변수 z에 할당
+var {['a' + 'b' + 'c']: z} = {abc: 123}; // 'abc'를 찾아 새 변수 z에 할당
 z; // 123
 ```
 
@@ -217,7 +217,7 @@ z; // 123
 
 ```js
 var [min, ...rest, max] = [1, 2, 3, 4, 5]; // SyntaxError: Rest element must be last element
-var { x, ...y, b } = { a: 1, b: 2, c: 3, d: 4 }; // SyntaxError: Rest element must be last element
+var {x, ...y, b} = {a: 1, b: 2, c: 3, d: 4}; // SyntaxError: Rest element must be last element
 ```
 
 
@@ -266,7 +266,7 @@ const data = {
   }
 };
 
-var { character: { scripts: [ firstScript ] } } = data;
+var {character: {scripts: [firstScript]}} = data;
 firstScript; // "Hello there! Mighty fine morning"
 ```
 
@@ -299,7 +299,7 @@ var people = [
   }
 ];
 
-for (var {name: n, family: { father: f } } of people) {
+for (var {name: n, family: {father: f}} of people) {
   console.log("Name: " + n + ", Father: " + f);
 }
 

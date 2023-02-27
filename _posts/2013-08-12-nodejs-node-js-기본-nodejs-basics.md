@@ -172,7 +172,7 @@ const log = require('console').log;
 여기에 ES2015의 단축 표기법을 적용하면:
 
 ```js
-const { log } = require('console');
+const {log} = require('console');
 ```
 
 이렇게 된다.
@@ -180,5 +180,5 @@ const { log } = require('console');
 그런데 사실 `console`은 어차피 전역 객체이므로 그냥 아래처럼 쓰면 됨:
 
 ```js
-const { log } = console;
+const {log} = console;
 ```

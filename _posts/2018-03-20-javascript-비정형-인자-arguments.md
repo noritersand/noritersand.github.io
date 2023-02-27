@@ -40,7 +40,7 @@ function argsTest() {
 요렇게 활용할 수 있다:
 
 ```js
-const { log } = console;
+const {log} = console;
 
 // doSomething 후에 callback을 호출
 function invokeCallbackAfterDoSomthing(callback) {

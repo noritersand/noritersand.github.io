@@ -183,8 +183,8 @@ $.fireAlert = function(option) {
   alert(option.message);
 }
 
-$.fireAlert({ message: '문서 로딩 직후 나타나는 경고창' }); // 함수 직접 호출
-$('button').alert({ message: '버튼 클릭 시 나타나는 경고창' }); // 이벤트 바인딩
+$.fireAlert({message: '문서 로딩 직후 나타나는 경고창'}); // 함수 직접 호출
+$('button').alert({message: '버튼 클릭 시 나타나는 경고창'}); // 이벤트 바인딩
 </script>
 ```
 

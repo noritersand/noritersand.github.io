@@ -33,7 +33,7 @@ tags:
 
 ```js
 let now = new CoconutDate();
-let yesterday = new CoconutDate({ dayPlus: -1 });
+let yesterday = new CoconutDate({dayPlus: -1});
 
 now.toDateString(); // 2023-01-19 
 now.toDateTimeString(); // 2023-01-19 14:28:45.264 

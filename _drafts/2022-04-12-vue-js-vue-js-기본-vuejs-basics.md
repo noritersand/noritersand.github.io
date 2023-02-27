@@ -61,9 +61,9 @@ Vue 패키지는 컴파일과 웹 서버를 포함한다.
 <!-- <script src="https://unpkg.com/vue@3"></script> -->
 <!-- 아래와 같음 -->
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<div id="app">{{ message }}</div>
+<div id="app">{{message}}</div>
 <script>
-const { createApp } = Vue;
+const {createApp} = Vue;
 
 createApp({
   ...
@@ -74,9 +74,9 @@ createApp({
 ECMAScript 모듈(통칭 ESM) 방식으로 불러오는 방식이 있다:
 
 ```html
-<div id="app">{{ message }}</div>
+<div id="app">{{message}}</div>
 <script type="module">
-import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
+import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js';
 
 createApp({
   ...
@@ -132,8 +132,8 @@ createApp({
   data() {
     return {
       docs: [
-        { title: "어디어디", url: "어디어디" },
-        { title: "어디어디", url: "어디어디" },
+        {title: "어디어디", url: "어디어디"},
+        {title: "어디어디", url: "어디어디"},
       ],
       message: "Hello Vue! ✌️",
       sequence: 0
@@ -161,7 +161,7 @@ TODO 설명 션찮
 텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '수염'(Mustache syntax)이라고 부른다.
 
 ```html
-<p>{{ mustache }}</p>
+<p>{{mustache}}</p>
 ```
 
 ### Raw HTML
@@ -292,9 +292,9 @@ var app4 = new Vue({
   el: '#app-4',
   data: {
     values: [
-      { index: '하나' },
-      { index: '둘' },
-      { index: '셋' }
+      {index: '하나'},
+      {index: '둘'},
+      {index: '셋'}
     ]
   }
 });
@@ -309,7 +309,7 @@ var app4 = new Vue({
 
 ```html
 <div id="app-5">
-    <p>{{ message }}</p>
+    <p>{{message}}</p>
     <button v-on:click="reverseMessage">메시지 뒤집기</button>
 </div>
 ```
@@ -336,9 +336,9 @@ createApp({
 속성 바인딩처럼 매우 자주 쓰이기 때문에 단축 표현이 있다:
 
 ```html
-<button @click="increment">{{ count }}</button>
+<button @click="increment">{{count}}</button>
 <!-- 아래와 같음 -->
-<button v-on:click="increment">{{ count }}</button>
+<button v-on:click="increment">{{count}}</button>
 ```
 
 ### Event Modifiers
@@ -384,7 +384,7 @@ TODO 구버전임
 
 ```html
 <div id="app-6">
-  <p>{{ message }}</p>
+  <p>{{message}}</p>
   <input v-model="message">
 </div>
 ```
@@ -423,7 +423,7 @@ export const literalTemplate = {
 
 ```js
 // parent.js
-import { literalTemplate } from '/literal-template.js'
+import {literalTemplate} from '/literal-template.js'
 
 createApp({
   components: {
@@ -465,7 +465,7 @@ Options API 객체 선언 방식:
 export default {
   props: {
     foo: {
-      type: String,
+      type: [String, Number], // String과 Number 둘 다 허용
       default: null,
       required: false
     }
@@ -476,13 +476,31 @@ export default {
 }
 ```
 
-Composition API `<script setup>` 스타일:
+`required=true`일 때 초기값이 null이면 경고 발생함.
+
+Composition API `<script setup>` 스타일에서 문자열 배열 방식:
 
 ```html
 <script setup>
 const props = defineProps(['foo'])
 
 console.log(props.foo)
+</script>
+```
+
+Composition API `<script setup>` 스타일에서 객체 선언 방식:
+
+```html
+<script setup>
+const props = defineProps({
+  statusText: 'String'
+  required: true, // 필수 프로퍼티로 지정
+  validator(value) {
+    return ['success', 'fail'].includes(value); // 'success' 혹은 'fail'만 허용
+  }
+});
+
+console.log(props.statusText)
 </script>
 ```
 
@@ -555,8 +573,10 @@ export const childComponent = {
 ```
 
 ```html
-<child-component v-model:selected="messageFromChild"></child-component>
+<child-component v-model:selected="message"></child-component>
 ```
+
+**`v-model:selected="message"`에서 `:selected`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.**
 
 이것보다 간단한 게 있긴 한데:
 

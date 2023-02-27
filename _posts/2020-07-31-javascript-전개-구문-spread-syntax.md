@@ -32,8 +32,8 @@ tags:
 전개 구문은 객체나 배열의 요소를 말그대로 전개하거나 분해할 때 사용한다. 단순 전개부터 `apply()`를 대체하거나 인스턴스 생성, 배열 복제/연결, 객체 복제 등에 사용할 수 있다.
 
 ```js
-var obj = { a: 1, b: 2 };
-var obj2 = { ...obj };
+var obj = {a: 1, b: 2};
+var obj2 = {...obj};
 console.log(obj2); // Object { a: 1, b: 2 }
 
 var n = [1, 2, 3];
@@ -52,7 +52,7 @@ console.log(...n); // 1 2 3
 인수 목록에서 plain object는 전개할 수 없다:
 
 ```js
-var obj = { a: 1, b: 2 };
+var obj = {a: 1, b: 2};
 log(...obj); // Uncaught TypeError: obj is not iterable
 ```
 
@@ -170,22 +170,22 @@ arr[0]; // [1]
 객체의 전개는 `Object.assign()`을 대체하여 객체 복제에 사용할 수 있다:
 
 ```js
-var obj = { foo: 'bar', x: 42 };
+var obj = {foo: 'bar', x: 42};
 
-var clone1 = { ...obj };
+var clone1 = {...obj};
 clone1; // Object { foo: "bar", x: 42 }
 clone1 === obj; // false
 
-var clone2 = { ...obj, x: '사십이', c: 1 }; // obj에서 x는 재할당하고 c를 추가한 새 배열 객체 반환
+var clone2 = {...obj, x: '사십이', c: 1}; // obj에서 x는 재할당하고 c를 추가한 새 배열 객체 반환
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
 배열과 마찬가지로 얕은 복제(shallow cloning)다:
 
 ```js
-var obj = { foo: { a: 1, b: 2 } };
+var obj = {foo: {a: 1, b: 2}};
 
-var clone4 = { ...obj };
+var clone4 = {...obj};
 
 obj.foo.a; // 1
 clone4.foo.a = 3;
@@ -197,10 +197,10 @@ obj.foo.a; // 3
 객체의 프로퍼티를 이어 붙여서 새 객체를 만드는 방법. 만약 이름이 같은 프로퍼티가 있다면, 나중에 오는 객체의 프로퍼티가 덮어쓴다:
 
 ```js
-var obj1 = { foo: 'bar', x: 42 };
-var obj2 = { foo: 'baz', y: 13 };
+var obj1 = {foo: 'bar', x: 42};
+var obj2 = {foo: 'baz', y: 13};
 
-var mergedObj = { ...obj1, ...obj2 }; // obj2.foo가 obj1.foo를 덮어쓰게 됨
+var mergedObj = {...obj1, ...obj2}; // obj2.foo가 obj1.foo를 덮어쓰게 됨
 mergedObj; // Object { foo: "baz", x: 42, y: 13 }
 ```
 
@@ -209,16 +209,16 @@ mergedObj; // Object { foo: "baz", x: 42, y: 13 }
 [전개 구문은 연산자가 아니기 때문에 우선순위가 없다](https://stackoverflow.com/questions/48656338/operator-precedence-for-js-spread-and-rest-operators)...고 하지만, 굳이 언급하자면 가장 우측의 객체(혹은 프로퍼티)가 우선권을 가지며 두 번째 객체부터 차례대로 좌측으로 병합된다고 볼 수 있다:
 
 ```js
-var m1 = { a: 1, b: 22 };
-var m2 = { ...m1, b: 33, b: 44, b: 55, a: 11 };
+var m1 = {a: 1, b: 22};
+var m2 = {...m1, b: 33, b: 44, b: 55, a: 11};
 console.log(m1); // Object {a: 1, b: 22} // 원본은 그대로 유지
 console.log(m2); // Object { a: 11, b: 55 }
 
-var j1 = { a: 1, b: 2 };
-var j2 = { b: 33, d: 4 };
-var j3 = { d: 44, a: 11 };
-var j4 = { f: 5, a: 111 };
-var j5 = { ...j1, ...j2, ...j3, ...j4 };
+var j1 = {a: 1, b: 2};
+var j2 = {b: 33, d: 4};
+var j3 = {d: 44, a: 11};
+var j4 = {f: 5, a: 111};
+var j5 = {...j1, ...j2, ...j3, ...j4};
 console.log(j5); // Object { a: 111, b: 33, d: 44, f: 5 }
 ```
 
@@ -233,7 +233,7 @@ min; // 1
 max; // 2
 rest; // [3, 4, 5]
 
-var { x = 24, b = 48, ...y } = { a: 1, b: 2, c: 3, d: 4 };
+var {x = 24, b = 48, ...y} = {a: 1, b: 2, c: 3, d: 4};
 x; // 24
 b; // 2
 y; // { a: 1, c: 3, d: 4 }

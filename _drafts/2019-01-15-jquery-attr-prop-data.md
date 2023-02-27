@@ -35,11 +35,11 @@ TODO
 
 ```js
 $(element).data('a', 123);
-$(element).data({ 'b': 456 });
+$(element).data({'b': 456});
 ```
 
 ```js
-var obj = { label: 'some object' };
+var obj = {label: 'some object'};
 $("#do3").click(function() {
     $("<img>").attr("src","test.gif").data('obj', obj).append("body");
 });
@@ -50,7 +50,7 @@ $("#do3").click(function() {
 태그 속성을 아래처럼 작성하면 이건 각 속성을 `.attr()`로 할당한것과 같다.
 
 ```js
-var obj = { label: 'some object' };
+var obj = {label: 'some object'};
 $("#do2").click(function() {
   $("#result2").append($('<div>', {
     id: 'field',

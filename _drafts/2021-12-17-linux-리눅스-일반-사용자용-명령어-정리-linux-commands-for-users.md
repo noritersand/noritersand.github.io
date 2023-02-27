@@ -690,7 +690,7 @@ diff -r ./directory1 ./directory2  # 지정된 디렉터리들을 비교해서 �
 명령어의 이름은 개발자인 Alfred V. Aho, Peter J. Weinberger, Brian W. Kernighan 3인의 머리글자를 사용해서 만든 것이다.
 
 ```bash
-awk '{ action}' filename
+awk '{action}' filename
 
 ls -l | awk '{print $0}'              # 전체 필드가 모두 나타나도록...
 drwxr-xr-x   2   prof9i4  dba          512  4월   25일  15:44   a_dir

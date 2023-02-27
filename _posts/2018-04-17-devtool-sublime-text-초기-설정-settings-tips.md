@@ -119,12 +119,12 @@ console.debug('${1:msg}', ${2});
 
 ```json
 [
-  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
-  { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
-  { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
-  { "keys": ["ctrl+shift+s"], "command": "save_all" }
+  {"keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"}},
+  {"keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
+  {"keys": ["ctrl+shift+k"], "command": "duplicate_line"},
+  {"keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing"},
+  {"keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing"},
+  {"keys": ["ctrl+shift+s"], "command": "save_all"}
 ]
 ```
 
@@ -136,14 +136,14 @@ console.debug('${1:msg}', ${2});
 
 ```json
 [
-  { "keys": ["f1"], "command": "show_command_palette" },
-  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
-  { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
-  { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
-  { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
-  { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
-  { "keys": ["ctrl+,"], "command": "open_preferences" }
+  {"keys": ["f1"], "command": "show_command_palette"},
+  {"keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
+  {"keys": ["ctrl+shift+k"], "command": "duplicate_line"},
+  {"keys": ["ctrl+p"], "command": "quick_switch_repository"},
+  {"keys": ["ctrl+alt+shift+a"], "command": "stage_all"},
+  {"keys": ["ctrl+alt+shift+u"], "command": "unstage_all"},
+  {"keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified"},
+  {"keys": ["ctrl+,"], "command": "open_preferences"}
 ]
 ```
 
@@ -250,5 +250,5 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
 
 ```
-{ "detect_acronyms": false }
+{"detect_acronyms": false}
 ```

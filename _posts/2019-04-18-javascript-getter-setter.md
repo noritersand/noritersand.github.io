@@ -112,7 +112,7 @@ var noob = new Newbie();
 noob.trait = 'eating';
 noob; // Object { _trait: "eating" }
 
-var clone = { ...noob };
+var clone = {...noob};
 clone.trait = 'sleeping';
 clone; // Object { _trait: "eating", trait: "sleeping" }
 

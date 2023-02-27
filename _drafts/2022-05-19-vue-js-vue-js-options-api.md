@@ -55,7 +55,7 @@ state를 선언할 때 사용한다:
 data() {
   return {
     message: 'Hello World!',
-    counter: { count: 0 }
+    counter: {count: 0}
   }
 }
 ```
@@ -139,7 +139,7 @@ TODO
 ```js
 export default {
   data() {
-    return { a: 1 }
+    return {a: 1}
   },
   computed: {
     // readonly

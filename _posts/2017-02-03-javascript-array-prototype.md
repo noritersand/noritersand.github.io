@@ -161,9 +161,9 @@ arr.map( function callback( element, index, array ) [, thisArg] )
 주어진 함수가 반환하는 결과로 새로운 배열을 생성해 반환. 이건 왜 이름을 이렇게 지었는지 의문이다.
 
 ```js
-[ 1, 2, 3, 4, 5 ].map(n => n * 2); // [ 2, 4, 6, 8, 10 ]
+[1, 2, 3, 4, 5].map(n => n * 2); // [ 2, 4, 6, 8, 10 ]
 
-[ 1, 2, 3, 4, 5 ].map(function(n) {
+[1, 2, 3, 4, 5].map(function(n) {
   return n == 1;
 });
 // [ true, false, false, false, false ]
@@ -404,13 +404,13 @@ alphabet.concat(['d', 'e']) // Array(5) [ "a", "b", "c", "d", "e" ]
 numeric.concat(4, 5, 6); // Array(6) [ 1, 2, 3, 4, 5, 6 ]
 
 const objArr = [
-  { a: 1 },
-  { b: 2 }
+  {a: 1},
+  {b: 2}
 ];
 objArr; // Array [ { a: 1 }, { b: 2 } ]
 
 // 객체 배열에 새 객체 요소 추가
-objArr.concat([{ c: 3 }]); // Array(3) [ { a: 1 }, { b: 2 }, { c: 3 } ]
+objArr.concat([{c: 3}]); // Array(3) [ { a: 1 }, { b: 2 }, { c: 3 } ]
 ```
 
 ### Array.prototype.sort()

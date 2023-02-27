@@ -190,7 +190,7 @@ console.log(require('util').inspect(require('http')));
 // http 모듈의 대략적인 구성을 볼 수 있음.
 
 var util = require('util');
-console.log(util.inspect(util, { showHidden: true, depth: null }));
+console.log(util.inspect(util, {showHidden: true, depth: null}));
 // util 객체의 모든 프로퍼티를 검사
 ```
 

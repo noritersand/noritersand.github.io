@@ -234,8 +234,8 @@ typeof "John"                // "string"
 typeof 3.14                   // "number"
 typeof NaN                    // "number"
 typeof false                  // "boolean"
-typeof [ 1, 2, 3, 4 ]           // "object"
-typeof { name: 'John', age: 34 }  // "object"
+typeof [1, 2, 3, 4]           // "object"
+typeof {name: 'John', age: 34}  // "object"
 typeof new Date()             // "object"
 typeof function() {}         // "function"
 typeof myCar                  // "undefined" (if myCar is not declared)
@@ -253,7 +253,7 @@ expression in Object
 
 ```js
 // Arrays
-var cars = [ "Saab", "Volvo", "BMW" ];
+var cars = ["Saab", "Volvo", "BMW"];
 "Saab" in cars          // false, 'Saab'은 프로퍼티의 이름이 아니라 값이므로 false
 0 in cars               // true
 1 in cars               // true
@@ -261,7 +261,7 @@ var cars = [ "Saab", "Volvo", "BMW" ];
 "length" in cars        // true, Array 래퍼 객체에 length란 프로퍼티가 존재함.
 
 // Objects
-var person = { firstName: "John", lastName: "Doe", age: 50 };
+var person = {firstName: "John", lastName: "Doe", age: 50};
 "firstName" in person   // true
 "age" in person         // true
 
@@ -281,14 +281,14 @@ for (variable in object) { }
 - `variable`: 매번 반복될 때마다 프로퍼티의 key를 할당한다. 만약 반복되는 객체가 배열일 경우 인덱스를 할당한다.
 
 ```js
-var foo = { a: 1, b: 2};
+var foo = {a: 1, b: 2};
 var propNames = [];
 for (var ele in foo) {
    propNames.push(ele);
 }
 console.log(propNames); // [ "a", "b" ]
 
-var foo2 = [ 'aaa', 'bbb', 'ccc' ];
+var foo2 = ['aaa', 'bbb', 'ccc'];
 var idxs = [];
 for (var ele in foo2) {
   idxs.push(ele);
@@ -306,7 +306,7 @@ delete Object.property
 ```
 
 ```js
-var fn = { word: "hi" };
+var fn = {word: "hi"};
 
 console.log(fn.word);   // "hi"
 
@@ -320,7 +320,7 @@ console.log(fn.word); // undefined
 var a = 1;
 delete a; // false
 
-function fn() { }
+function fn() {}
 delete fn; // false
 
 function callee(callback) {

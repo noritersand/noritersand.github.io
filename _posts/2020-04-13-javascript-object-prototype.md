@@ -42,10 +42,10 @@ tags:
 
 객체의 모든 프로퍼티 설명자 혹은 특정 프로퍼티의 설명자를 반환한다. 설명자란 해당 프로퍼티가 어떻게 설정(쓰기 가능한지, 열거 가능한지 등등)되어 있는지를 알려주는 객체다.
 
-객체 자신이 소유한 프로퍼티가 아니면 반환되지 않는다. 가령 새로 정의한 객체`{ a: 1 }`는 소유한 프로퍼티가 `a`만 있으므로 `toString`의 프로퍼티 설명자는 안나온다.
+객체 자신이 소유한 프로퍼티가 아니면 반환되지 않는다. 가령 새로 정의한 객체`{a: 1}`는 소유한 프로퍼티가 `a`만 있으므로 `toString`의 프로퍼티 설명자는 안나온다.
 
 ```js
-var o = { a: 1 };
+var o = {a: 1};
 Object.getOwnPropertyDescriptors(o);
 // Object { a: Object { value: 1, writable: true, enumerable: true, … } }
 
@@ -107,8 +107,8 @@ Object.assign(target, ...sources)
 주어진 객체들이 소유한 모든 열거 가능 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화(mutating)하며, 변화된 `target`을 반환한다.
 
 ```js
-var o1 = { a: 1, b: 2 };
-var o2 = { c: 3};
+var o1 = {a: 1, b: 2};
+var o2 = {c: 3};
 var o3 = Object.assign(o1, o2);
 
 console.log(o1); // Object { a: 1, b: 2, c: 3 }
@@ -126,7 +126,7 @@ var loopMe = {
   b: 8,
   c: 9
 };
-Object.defineProperty(loopMe, 'd', { value: 10, enumerable: false });
+Object.defineProperty(loopMe, 'd', {value: 10, enumerable: false});
 
 Object.keys(loopMe); // Array(3) [ "a", "b", "c" ]
 ```
@@ -141,7 +141,7 @@ var obj = {
   num: 123,
   boo: true
 };
-Object.defineProperty(obj, 'bar', { value: 10, enumerable: false });
+Object.defineProperty(obj, 'bar', {value: 10, enumerable: false});
 
 Object.values(obj); // Array(3) [ "abc", 123, true ]
 ```

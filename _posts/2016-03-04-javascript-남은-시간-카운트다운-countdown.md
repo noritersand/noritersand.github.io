@@ -58,7 +58,7 @@ setInterval(function() {
   const minutes = negative ? '00' : Math.floor( (total/1000/60) % 60 ).toString().padStart(2, '0');
   const hours = negative ? '00' : Math.floor( (total/(1000*60*60)) % 24 ).toString().padStart(2, '0');
   const days = negative ? '0' : Math.floor( total/(1000*60*60*24) ).toString();
-  // console.log({ total, days, hours, minutes, seconds });
+  // console.log({total, days, hours, minutes, seconds});
   console.log(days + ' days, ' + hours + ':' + minutes + ':' + seconds);
 }, 1000);
 

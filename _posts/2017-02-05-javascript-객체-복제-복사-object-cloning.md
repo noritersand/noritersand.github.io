@@ -40,7 +40,7 @@ var child = {
 var parent = {
   c: child
 };
-var newObj = { ...parent };
+var newObj = {...parent};
 
 newObj === parent // false: 새 인스턴스가 만들어 졌지만
 newObj.c === parent.c // true: 프로퍼티가 가리키는 객체까지 복제된 건 아님
@@ -51,35 +51,35 @@ newObj.c === parent.c // true: 프로퍼티가 가리키는 객체까지 복제�
 얕은 복제 중에는 가장 간단한 방법이다. 우측의 객체(혹은 프로퍼티)가 좌측으로 병합되는 것에 주의할 것
 
 ```js
-var obj = { foo: 'bar', x: 42 };
+var obj = {foo: 'bar', x: 42};
 
-var clone1 = { ...obj };
+var clone1 = {...obj};
 clone1; // Object { foo: "bar", x: 42 }
 clone1 === obj; // false
 
-var clone2 = { ...obj, x: '사십이', c: 1 };
+var clone2 = {...obj, x: '사십이', c: 1};
 clone2; // Object { foo: "bar", x: "사십이", c: 1 }
 ```
 
 ```js
-var arr = [ 'a', 'b', [ 'c', 'd' ] ];
+var arr = ['a', 'b', ['c', 'd']];
 
-var clone3 = [ ...arr ];
+var clone3 = [...arr];
 clone3; // Array(3) [ "a", "b", (2) […] ]
 clone3 === arr; // false
 
-var clone4 = [ ...arr[2] ];
+var clone4 = [...arr[2]];
 clone4; // Array [ "c", "d" ]
 ```
 
 ### Object.assign()
 
 ```js
-var obj = { a: 1, b: 2 };
+var obj = {a: 1, b: 2};
 var clone = Object.assign({}, obj);
 clone; // Object { a: 1, b: 2 }
 
-var clone2 = Object.assign({}, obj, { b: 3 }); // 객체의 사본을 만들면서 일부 프로퍼티는 재할당
+var clone2 = Object.assign({}, obj, {b: 3}); // 객체의 사본을 만들면서 일부 프로퍼티는 재할당
 clone2; // Object { a: 1, b: 3 }
 ```
 

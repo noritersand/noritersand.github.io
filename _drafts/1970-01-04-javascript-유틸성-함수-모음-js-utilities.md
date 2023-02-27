@@ -39,7 +39,7 @@ console.log(val); // 1,234,567
 
 ```js
 class Restrictor {
-  static onlyNumeric({ value = 0, max = 10, min = 0 }) {
+  static onlyNumeric({value = 0, max = 10, min = 0}) {
     value = this.#removeNonNumeric(value);
     if (value === 0 || value === '-') {
       return value
@@ -62,17 +62,17 @@ class Restrictor {
   }
 }
 
-Restrictor.onlyNumeric({ value: 0, max: 10, min: -10 }); // 0
-Restrictor.onlyNumeric({ value: 5, max: 10, min: -10 }); // 5
-Restrictor.onlyNumeric({ value: -5, max: 10, min: -10 }); // -5
-Restrictor.onlyNumeric({ value: 25, max: 10, min: -10 }); // 10
-Restrictor.onlyNumeric({ value: -25, max: 10, min: -10 }); // -10
-Restrictor.onlyNumeric({ value: '-', max: 10, min: -10 }); // -
-Restrictor.onlyNumeric({ value: ' - ', max: 10, min: -10 }); // -
-Restrictor.onlyNumeric({ value: '99', max: 10, min: -10 }); // 10
-Restrictor.onlyNumeric({ value: ' 999 ', max: 10, min: -10 }); // 10
-Restrictor.onlyNumeric({ value: ' ', max: 10, min: -10 }); // null
-Restrictor.onlyNumeric({ value: '   ', max: 10, min: -10 }); // null
-Restrictor.onlyNumeric({ value: '-9', max: 10, min: -10 }); // -9
-Restrictor.onlyNumeric({ value: 'qwer', max: 10, min: -10 }); // null
+Restrictor.onlyNumeric({value: 0, max: 10, min: -10}); // 0
+Restrictor.onlyNumeric({value: 5, max: 10, min: -10}); // 5
+Restrictor.onlyNumeric({value: -5, max: 10, min: -10}); // -5
+Restrictor.onlyNumeric({value: 25, max: 10, min: -10}); // 10
+Restrictor.onlyNumeric({value: -25, max: 10, min: -10}); // -10
+Restrictor.onlyNumeric({value: '-', max: 10, min: -10}); // -
+Restrictor.onlyNumeric({value: ' - ', max: 10, min: -10}); // -
+Restrictor.onlyNumeric({value: '99', max: 10, min: -10}); // 10
+Restrictor.onlyNumeric({value: ' 999 ', max: 10, min: -10}); // 10
+Restrictor.onlyNumeric({value: ' ', max: 10, min: -10}); // null
+Restrictor.onlyNumeric({value: '   ', max: 10, min: -10}); // null
+Restrictor.onlyNumeric({value: '-9', max: 10, min: -10}); // -9
+Restrictor.onlyNumeric({value: 'qwer', max: 10, min: -10}); // null
 ```
