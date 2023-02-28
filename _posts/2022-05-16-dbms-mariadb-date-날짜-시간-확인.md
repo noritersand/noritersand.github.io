@@ -200,3 +200,68 @@ from (
 | MICROSECOND         | 312446                      |
 | WEEK                | 50                          |
 | QUARTER             | 4                           |
+
+
+## 테스트
+
+### BETWEEN 비교는 조건항을 포함하는가
+
+```sql
+select
+    if(0 between 0 and 2, 'true', 'false'),
+    if(1 between 0 and 2, 'true', 'false'),
+    if(2 between 0 and 2, 'true', 'false')
+```
+
+다 true니까 포함이다.
+
+### DATETIME을 DATE로 BETWEEN 비교
+
+```sql
+select
+    a.startDate,
+    a.endDate,
+    compareMe1, if(a.compareMe1 between a.startDate and a.endDate, 'true', 'false') as isInRange1,
+    compareMe2, if(a.compareMe2 between a.startDate and a.endDate, 'true', 'false') as isInRange2,
+    compareMe3, if(a.compareMe3 between a.startDate and a.endDate, 'true', 'false') as isInRange3,
+    compareMe4, if(a.compareMe4 between a.startDate and a.endDate, 'true', 'false') as isInRange4,
+    compareMe5, if(a.compareMe5 between a.startDate and a.endDate, 'true', 'false') as isInRange5
+from (
+    select
+        str_to_date('2018-01-01', '%Y-%m-%d') as startDate,
+        str_to_date('2018-01-03', '%Y-%m-%d') as endDate,
+        str_to_date('2018-01-01 00:00:00', '%Y-%m-%d %H:%i:%s') as compareMe1,
+        str_to_date('2018-01-02 23:59:59', '%Y-%m-%d %H:%i:%s') as compareMe2,
+        str_to_date('2018-01-03 00:00:00', '%Y-%m-%d %H:%i:%s') as compareMe3,
+        str_to_date('2018-01-03 00:30:00', '%Y-%m-%d %H:%i:%s') as compareMe4,
+        str_to_date('2018-01-03 23:59:59', '%Y-%m-%d %H:%i:%s') as compareMe5
+) a
+```
+
+실행해 보면 `isInRange4`와 `isInRange5`만 false인데, `2018-01-03`을 DATE 타입으로 만들면 시분초 값이 모두 0으로 설정된다는 것을 추측할 수 있음.
+
+따라서 조건으로 대입된 날짜의 23시 59분 59초 까지를 포함하고 싶다면 문자열로 만들고 다시 DATETIME으로 변환하면서 시분초를 붙이는 방법을 고려할 수 있다.
+
+결국 이런 모양이 나옴:
+
+```sql
+select
+    b.startDate, b.endDateTime,
+    b.compareMe1, if(compareMe1 between b.startDate and b.endDateTime, 'true', 'false') as isInRange1,
+    b.compareMe2, if(compareMe2 between b.startDate and b.endDateTime, 'true', 'false') as isInRange2,
+    b.compareMe3, if(compareMe3 between b.startDate and b.endDateTime, 'true', 'false') as isInRange3
+from (
+    select
+        startDate,
+        convert(concat(date_format(a.endDate, '%Y-%m-%d'), ' 23:59:59'), datetime) as endDateTime,
+        str_to_date('2018-01-01 00:00:00', '%Y-%m-%d %H:%i:%s') as compareMe1,
+        str_to_date('2018-01-03 00:00:00', '%Y-%m-%d %H:%i:%s') as compareMe2,
+        str_to_date('2018-01-03 23:59:59', '%Y-%m-%d %H:%i:%s') as compareMe3
+    from (
+        select
+            str_to_date('2018-01-01', '%Y-%m-%d') as startDate,
+            str_to_date('2018-01-03', '%Y-%m-%d') as endDate
+    ) a
+) b
+```
+
