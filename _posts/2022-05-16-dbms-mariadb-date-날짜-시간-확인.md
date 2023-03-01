@@ -221,11 +221,11 @@ select
 select
     a.startDate,
     a.endDate,
-    compareMe1, if(a.compareMe1 between a.startDate and a.endDate, 'true', 'false') as isInRange1,
-    compareMe2, if(a.compareMe2 between a.startDate and a.endDate, 'true', 'false') as isInRange2,
-    compareMe3, if(a.compareMe3 between a.startDate and a.endDate, 'true', 'false') as isInRange3,
-    compareMe4, if(a.compareMe4 between a.startDate and a.endDate, 'true', 'false') as isInRange4,
-    compareMe5, if(a.compareMe5 between a.startDate and a.endDate, 'true', 'false') as isInRange5
+    a.compareMe1, if(a.compareMe1 between a.startDate and a.endDate, 'true', 'false') as isInRange1,
+    a.compareMe2, if(a.compareMe2 between a.startDate and a.endDate, 'true', 'false') as isInRange2,
+    a.compareMe3, if(a.compareMe3 between a.startDate and a.endDate, 'true', 'false') as isInRange3,
+    a.compareMe4, if(a.compareMe4 between a.startDate and a.endDate, 'true', 'false') as isInRange4,
+    a.compareMe5, if(a.compareMe5 between a.startDate and a.endDate, 'true', 'false') as isInRange5
 from (
     select
         str_to_date('2018-01-01', '%Y-%m-%d') as startDate,
