@@ -174,6 +174,24 @@ HTML을 escape하지 않고 그대로 출력한다.
 
 XSS 취약점이 발생할 수 있으니 주의할 것.
 
+#### mustache와 v-html 비교
+
+이런 데이터가 있을 때:
+
+```js
+data() {
+  return {
+    rawHtml: '<br>',
+    entities: '&lt;br&gt;'
+  }
+}
+```
+
+둘의 차이는 다음과 같다:
+
+- `rawHtml`: mustache는 화면에 `<br>`이 그대로 보인다. v-html은 문서에 `<br>` 태그를 삽입한다.
+- `entities`: mustache는 화면에 `&lt;br&gt;`이 그대로 보인다. v-html은 화면에 `<br>`이 그대로 보인다.
+
 ### 속성 바인딩 Attribute Bindings
 
 `v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 한다. `v-bind`는 이름처럼 값을 할당하기만 하는 디렉티브임.
@@ -185,10 +203,6 @@ XSS 취약점이 발생할 수 있으니 주의할 것.
 <!-- 아래와 같음 -->
 <div v-bind:id="dynamicId"></div>
 ```
-
-TODO
-
-### 자바스크립트 표현식 JavaScript Expressions
 
 TODO
 
@@ -211,6 +225,10 @@ TODO
 - `v-once`: 
 - `v-memo`: 
 - `v-cloak`: 
+
+### 자바스크립트 표현식 JavaScript Expressions
+
+TODO
 
 
 ## 조건부 렌더링 Conditional Rendering
@@ -576,7 +594,7 @@ export const childComponent = {
 <child-component v-model:selected="message"></child-component>
 ```
 
-**`v-model:selected="message"`에서 `:selected`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.**
+emit 이름은 `update:`를 반드시 포함해야 한다. 그리고 `v-model:selected="message"`에서 `:selected`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
 
 이것보다 간단한 게 있긴 한데:
 

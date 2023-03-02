@@ -199,5 +199,3 @@ t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' prop
 클래스에 async function을 정의하면 async method가 된다.
 
 TODO
-
----
