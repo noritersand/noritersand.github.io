@@ -20,9 +20,11 @@ tags:
 - [\[Microsoft\] about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
 - [\[Microsoft\] about_Operators 우리말 버전](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
 
+
 ## 개요
 
 파워셸 스크립팅의 연산자 부분만 정리한 글.
+
 
 ## 리디렉션 연산자 `>` `>>`
 
@@ -30,6 +32,7 @@ tags:
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
+
 
 ## [특수 연산자 Special Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2#special-operators)
 

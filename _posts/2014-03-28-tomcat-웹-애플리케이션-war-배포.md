@@ -27,6 +27,7 @@ tags:
 - tomcat 7.0.52
 - eclipse kepler
 
+
 ## export WAR
 
 먼저 배포할 프로젝트를 WAR로 추출한다. 참고로 WAR는 web application archive의 약자로 웹 애플리케이션을 배포하기 위한 파일들의 압축이다. [이게](https://namu.wiki/w/WAAAGH!!) 아니다.
@@ -38,12 +39,14 @@ tags:
 ![▲ 이클립스의 export WAR](/images/eclipse-webapp-extract-to-war.png)
 ▲ 이클립스의 export WAR
 
+
 ## configuration & deploy
 
 WAR를 톰캣으로 배포하는 방법은 두 가지다:
 
 - 톰캣에서 제공하는 GUI 툴인 `/manager/html` 페이지에서 설정
 - `톰캣경로\conf\server.xml` 파일을 통한 webapp 설정
+
 
 ## 톰캣 매니저를 통한 배포
 
@@ -74,6 +77,7 @@ server.xml을 수정하지 않았다면 서버 리스너의 기본 포트는 808
 페이지 상단의 배포중인 애플리케이션을 관리하는 `Applications`에서 배포한 애플리케이션을 활성화 한다.
 
 배포가 완료되었으며 `localhost:8080/WAR파일명`으로 접근할 수 있다.
+
 
 ## server.xml 설정을 통한 배포
 

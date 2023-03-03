@@ -22,9 +22,11 @@ tags:
 - [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
 - [\[Microsoft\] Microsoft.PowerShell.Core](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
 
+
 ## 개요
 
 파워셸에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
+
 
 ## 환경 변수
 
@@ -86,6 +88,7 @@ Remove-Item Env:\test
 [Environment]::SetEnvironmentVariable("test2", $null, "Machine")
 ```
 
+
 ## 스크립트 파일의 바로가기 만들기
 
 아래는 Sound Switch 프로세스를 강제로 재시작하는 스크립트다:
@@ -104,6 +107,7 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 ```
 
 이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
+
 
 ## 문법
 
@@ -133,6 +137,7 @@ $i = 5
 # $env:LOCALAPPDATA\abcd
 ```
 
+
 ## 변수선언과 사용
 
 ```bash
@@ -149,13 +154,16 @@ gv abc
 
 관련 Cmdlet은 요 밑에 링크에서 확인.
 
+
 ## 명령어 Cmdlet
 
 [\[이 블로그 내부 링크\] 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
+
 ## 연산자
 
 [\[이 블로그 내부 링크\] 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+
 
 ## 제어문
 
@@ -258,6 +266,7 @@ switch (3, 1) {
 ```
 
 첫 번째 `switch`는 "It is one. It is three." 둘 다 출력하지만 두 번째 `switch`는 "It is three."만 출력한다. `break`를 만나서 `switch`를 중단했기 때문이다.
+
 
 ## [함수 Functions](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/09-functions?view=powershell-7.2)
 
@@ -530,6 +539,7 @@ TODO
 
 TODO
 
+
 ## [해시 테이블](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.2)
 
 ```bash
@@ -558,58 +568,58 @@ $hash.Number
 
 TODO
 
+
 ## 작성자 저장용 스크립트
 
 자주 쓰는 거 저장해 둠.
 
-```js
+```bash
 Set-Alias ex explorer
 Set-Alias sb 'C:\Program Files\Sublime Text\subl.exe'
 Set-Alias dk 'docker'
 Set-Alias -Name grep -Value findstr
 Set-Alias -Name 햣 -Value git
 
+########################
+
 function Get-Child-Item-Force { 
   Get-ChildItem -Force 
 }
+
 Set-Alias -Name ll -Value Get-Child-Item-Force
 
-$RemoteIPs = @{ 
+########################
+
+$RemoteIp = @{ 
   production = '1.2.3.4';
   stage = '1.2.3.4';
-  'stage-legacy' = '1.2.3.4';
-  pat = '1.2.3.4';
-  mat = '1.2.3.4';
-  'test-legacy2' = '1.2.3.4';
-  'test-legacy' = '1.2.3.4';
-  vpn = '1.2.3.4';
-  elk = '1.2.3.4';
-  jenkins = '1.2.3.4';
-  gitlab = '1.2.3.4';
+  dev = '1.2.3.4';
+  'dev-old' = '1.2.3.4';
 }
 
 function Connect-RemoteServer {
   param (
     [Parameter(Mandatory)]
-    [ValidateSet('production', 'stage-legacy', 'stage', 'pat', 'mat', 'test-legacy2', 'test-legacy', 'vpn', 'elk', 'jenkins', 'gitlab')]
+    [ValidateSet('production', 'stage', 'dev', 'dev-old')]
     [string]$Server
   )
 
-  $target = $RemoteIPs.$Server;
+  $target = $RemoteIp.$Server;
 
   switch ($Server) {
-    'jenkins' { $keyfile = "C:\dev\ssh-keys\infra_jenkins.pem" }
-    'gitlab' { $keyfile = "C:\dev\ssh-keys\infra_gitlab.pem" }
-    default { $keyfile = "C:\dev\ssh-keys\AnySSign.pem" }
+    'production' { $keyfile = "C:\dev\ssh-keys\infra_production.pem" }
+    'stage' { $keyfile = "C:\dev\ssh-keys\infra_stage.pem" }
+    default { $keyfile = "C:\dev\ssh-keys\default.pem" }
   }
 
-  # if ('jenkins' -eq $Server) {
-  #   $keyfile = "C:\dev\ssh-keys\infra_jenkins.pem"
-  # } elseif ('gitlab' -eq $Server) {
-  #   $keyfile = "C:\dev\ssh-keys\infra_gitlab.pem"
+  # if ('production' -eq $Server) {
+  #   $keyfile = "C:\dev\ssh-keys\infra_production.pem"
+  # } elseif ('stage' -eq $Server) {
+  #   $keyfile = "C:\dev\ssh-keys\infra_stage.pem"
   # }
 
   ssh -i $keyfile "ubuntu@$target"
 }
+
 Set-Alias -Name sshrs -Value Connect-RemoteServer
 ```
