@@ -237,21 +237,18 @@ TODO
 
 조건식이 `false`이면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM 자체가 사라진다.
 
+```js
+export default {
+  data: {
+    seen: true
+  }
+}
+```
+
 ```html
 <div id="app-3">
   <p v-if="seen">보일락말락</p>
 </div>
-```
-
-TODO 구버전임
-
-```js
-var app3 = new Vue({
-  el: '#app-3',
-  data: {
-    seen: true
-  }
-})
 ```
 
 ### `v-else`
@@ -276,7 +273,7 @@ TODO
 </template>
 ```
 
-이렇게 하면 `<template>`은 제어 처리만 하고 화면 랜더링 대상에선 빠진다.
+이렇게 하면 `<template>`은 제어 처리만 하고 화면 렌더링 대상에선 빠진다.
 
 ### v-show
 
@@ -286,28 +283,17 @@ TODO
 
 ### v-show와 v-if의 차이
 
-`v-if`는 조건식이 `false`일 때 아예 랜더링을 하지 않는다. 반면 `v-show`는 조건식과 상관 없이 일단 랜더링을 모두 한다는게 다르다.
+`v-if`는 조건식이 `false`일 때 아예 렌더링을 하지 않는다. 반면 `v-show`는 조건식과 상관 없이 일단 렌더링을 모두 한다는게 다르다.
 
-그리고 `v-show`는 `<template>` 태그를 랜더링해버려서 `v-if`와 다르게 더미 태그로 쓸 수 없음.
+그리고 `v-show`는 `<template>` 태그를 렌더링해버려서 `v-if`와 다르게 더미 태그로 쓸 수 없음.
 
 
 ## 목록 그리기 List Rendering
 
 ### v-for
 
-```html
-<div id="app-4">
-    <ol>
-        <li v-for="i in values">{{i.index}}</li>
-    </ol>
-</div>
-```
-
-TODO 구버전임
-
 ```js
-var app4 = new Vue({
-  el: '#app-4',
+export default {
   data: {
     values: [
       {index: '하나'},
@@ -315,7 +301,15 @@ var app4 = new Vue({
       {index: '셋'}
     ]
   }
-});
+};
+```
+
+```html
+<div id="app-4">
+    <ol>
+        <li v-for="i in values">{{i.index}}</li>
+    </ol>
+</div>
 ```
 
 렌더링 후 `app4.values.push({index: '넷'})`를 입력하면 반복문의 요소로 추가되며, 화면에 즉시 반영된다.
@@ -398,22 +392,20 @@ methods: {
 
 `v-model` 디렉티브를 사용하면 사용자가 입력한 값과 화면에 보이는 값, 그리고 앱의 데이터가 동기화된다.
 
-TODO 구버전임
+
+```js
+export default {
+    data: {
+    message: '안녕하세요 Vue!'
+  }
+};
+```
 
 ```html
 <div id="app-6">
   <p>{{message}}</p>
   <input v-model="message">
 </div>
-```
-
-```js
-var app6 = new Vue({
-  el: '#app-6',
-  data: {
-    message: '안녕하세요 Vue!'
-  }
-});
 ```
 
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
@@ -637,7 +629,7 @@ export default {
 
 ## `<template>`의 용도
 
-랜더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
+렌더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
 
