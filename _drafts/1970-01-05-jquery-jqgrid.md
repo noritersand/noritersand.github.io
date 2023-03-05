@@ -57,11 +57,11 @@ for(var i=0; i<selRows.length; i++) {
 ![](/images/jqgrid-3.png)
 
 셋 다 이벤트 발생 시점은 grid에 mouseclick, 혹은 keydown 이벤트가 발생했을때로 동일하지만 적용범위에서 차이가 있다:
-- onSelectRow는 체크박스(multiselect: true)에 마우스 클릭했을 때 작동한다. 전체선택에 해당되는 머리글의 체크박스는 제외.
-- onCellSelect는 머리글 셀이 아닌 모든 셀을 클릭했을 때 작동한다. 체크박스가 있는 셀에서 체크박스가 아닌 나머지 셀의 부분을 클릭해도 onCellSelect이벤트가 발생한다.
-- onSelectCell는 머리글 셀이 아니고, 체크박스가 아니며, 수정가능한 셀이 아닌 데이터 셀을 클릭했을 때만 작동한다. 클릭 시 에디트 모드로 바뀌는 셀 colModel: {editable: true}
+- onSelectRow는 체크 박스(multiselect: true)에 마우스 클릭했을 때 작동한다. 전체선택에 해당되는 머리글의 체크 박스는 제외.
+- onCellSelect는 머리글 셀이 아닌 모든 셀을 클릭했을 때 작동한다. 체크 박스가 있는 셀에서 체크 박스가 아닌 나머지 셀의 부분을 클릭해도 onCellSelect이벤트가 발생한다.
+- onSelectCell는 머리글 셀이 아니고, 체크 박스가 아니며, 수정가능한 셀이 아닌 데이터 셀을 클릭했을 때만 작동한다. 클릭 시 에디트 모드로 바뀌는 셀 colModel: {editable: true}
 - 만약 데이터 셀이지만 수정가능한 셀이라면 onSelectCell은 작동하지 않고 onCellSelect만 작동한다.
 - 키보드로 셀 이동 중일 때 작동하는 것은 onSelectCell
 - 셀이 선택되었을 때 수정가능한 셀이라도 엔터키 입력만으로는 아무것도 작동하지 않는다.
-- 머리글 셀의 모두선택 체크박스를 클릭했을 때는 onSelectAll이 작동한다.
+- 머리글 셀의 모두선택 체크 박스를 클릭했을 때는 onSelectAll이 작동한다.
 - onCellSelect 콜백 파라미터인 e는 자바스크립트 event객체다.

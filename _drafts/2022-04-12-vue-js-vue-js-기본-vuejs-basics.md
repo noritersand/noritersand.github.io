@@ -158,7 +158,7 @@ TODO 설명 션찮
 
 ### Text Interpolation
 
-텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '수염'(Mustache syntax)이라고 부른다.
+텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '콧수염'(Mustache syntax)이라고 부른다.
 
 ```html
 <p>{{mustache}}</p>
@@ -228,7 +228,39 @@ TODO
 
 ### 자바스크립트 표현식 JavaScript Expressions
 
-TODO
+콧수염(Mustache syntax)이나 Vue 디렉티브 속성의 내부에 작성한 코드는 자바스크립트 표현식으로 작동한다.
+
+```html
+<p v-bind:class="['a', 'b']">{{1 + 2}}<p>
+```
+
+예를 들어 위 코드의 결과는 아래와 같다:
+
+```html
+<p class="a b">3</p>
+```
+
+모든 자바스크립트 코드가 허용되는 것은 아니다. 도움말에 따르면 하나의 단일 표현식(one single expression)만 가능하며, 값으로 평가되는 표현식이어야 한다고 한다. 메서드 호출은 가능하지만, 선언식이나 반환식은 허용되지 않는다. 그리고 블록`{}`도 사용할 수 없으며 구문(statements)도 불가능.
+
+#### 전역 변수의 접근 제한
+
+자바스크립트 표현식에서 접근 가능한 전역 참조는 정해진 것 외에는 불가능하다. 예를 들어 사용자 정의 전역 변수와 window는 표현식에서 쓸 수 없다. 대신 메서드를 통한 간접 참조는 가능함(표현식에선 메서드를 호출하고. 메서드에서 전역 변수에 접근).
+
+만약 표현식에서 직접 참조해야 하는 전역 변수가 있다면 아래처럼 하면 됨:
+
+```js
+let someGlobalVariable = 'foo';
+
+const app = createApp({
+  // 생략
+});
+
+app.config.globalProperties.someGlobalVariable = someGlobalVariable;
+
+const vm = app.mount("#app");
+```
+
+`app.config`에 대한 설명은 [여기](https://vuejs.org/api/application.html#app-config)를 참고할 것.
 
 
 ## 조건부 렌더링 Conditional Rendering
@@ -639,20 +671,3 @@ export default {
 TODO
 
 
-## 전역 변수의 접근 제한 해제
-
-자바스크립트 표현식에서 접근 가능한 전역 참조는 정해진 것 외에는 불가능하다. 예를 들어 사용자 정의 전역 변수와 window는 표현식에서 쓸 수 없다(대신 메서드를 호출한 다음 그 메서드에서 접근하는 것은 가능).
-
-만약 표현식에서 참조해야 하는 전역 변수가 있다면 아래처럼 하면 됨:
-
-```js
-const app = createApp({
-  // 생략
-});
-
-app.config.globalProperties.visitServiceAvailable = visitServiceAvailable;
-
-const vm = app.mount("#app");
-```
-
-`app.config`에 대한 설명은 [여기](https://vuejs.org/api/application.html#app-config)를 참고할 것.
