@@ -95,7 +95,7 @@ This expression might become clearer if written explicitly.
 
 ```js
 Number(Boolean([])); // -> 1
-````
+```
 
 #### true == "true"
 

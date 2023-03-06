@@ -197,7 +197,7 @@ URL의 해시가 변경됐을 때 발생하는 이벤트
 
 ```js
 window.addEventListner('hashchange', callbackFn);
-````
+```
 
 ### HTMLElement: input event
 

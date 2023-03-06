@@ -215,7 +215,7 @@ every(function(element, index, array) { /* ... */ }, thisArg)
 
 ```js
 [1, 2, 3].every(ele => isFinite(ele)); // true
-````
+```
 
 
 가령 다음의 경우:

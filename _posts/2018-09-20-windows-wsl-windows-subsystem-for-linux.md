@@ -208,6 +208,6 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 
 ```js
 ubuntu config --default-user 유저_아이디
-````
+```
 
 비밀번호를 잊어버려 재설정 할 때 쓴다.

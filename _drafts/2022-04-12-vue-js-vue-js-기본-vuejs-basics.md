@@ -194,7 +194,9 @@ data() {
 
 ### 속성 바인딩 Attribute Bindings
 
-`v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 한다. `v-bind`는 이름처럼 값을 할당하기만 하는 디렉티브임.
+[https://vuejs.org/api/built-in-directives.html#v-bind](https://vuejs.org/api/built-in-directives.html#v-bind)
+
+`v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 하는데, 속성 바인딩에는 `v-bind` 디렉티브를 사용한다.
 
 `v-bind`는 매우 자주 쓰이기 때문에 단축 표현(shorthand syntax)이 있다:
 
@@ -206,25 +208,27 @@ data() {
 
 TODO
 
-### Directives
+### Built-in Directives
+
+현재(2023-03-06) 빌트인 디렉티브는 이마안큼 있다.
+
+- v-text: 콧수염, 텍스트 써넣기
+- v-html: HTML 그대로 삽입
+- v-show:
+- v-if:
+- v-else:
+- v-else-if:
+- v-for:
+- v-on: 이벤트 리스너 등록 (shorthand: `@`)
+- v-bind: 속성 바인딩 (shorthand: `:`, `.prop`이나 `.attr` modifier는 `.` 함께 사용)
+- v-model: 
+- v-slot (shorthand: `#`)
+- v-pre: 
+- v-once: 
+- v-memo: 
+- v-cloak: 
 
 TODO
-
-- `v-text`: 
-- `v-html`: 
-- `v-show`: 
-- `v-if`: 
-- `v-else`: 
-- `v-else-if`: 
-- `v-for`: 
-- `v-on`: 
-- `v-bind`: 
-- `v-model`: 
-- `v-slot`: 
-- `v-pre`: 
-- `v-once`: 
-- `v-memo`: 
-- `v-cloak`: 
 
 ### 자바스크립트 표현식 JavaScript Expressions
 
@@ -338,13 +342,44 @@ export default {
 
 ```html
 <div id="app-4">
-    <ol>
+    <ul>
         <li v-for="i in values">{{i.index}}</li>
-    </ol>
+    </ul>
 </div>
 ```
 
 렌더링 후 `app4.values.push({index: '넷'})`를 입력하면 반복문의 요소로 추가되며, 화면에 즉시 반영된다.
+
+TODO:
+
+- 단순 배열 반복
+- 객체 배열 반복
+- 다중 배열
+- for-of
+- 배열 아니고 그냥 객체
+- 범위를 하드코딩으로 지정하기
+- v-for와 v-if
+- 같은 요소에서 index나 element에 접근
+- v-for와 컴포넌트
+- 자바스크립트 템플릿 리터럴 사용 시 주의할 점
+
+#### key
+
+가이드에 따르면 `key` 속성을 항상 명시하는 게 좋다고 한다. 관련 글: [#1](https://vuejs.org/style-guide/rules-essential.html#use-keyed-v-for), [#2](https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key)
+
+방법은 대충 아래와 같다:
+
+```html
+<select v-model="companyNo">
+  <option v-for="(ele, index) in companyList" :key="index" :value="ele.companyNo">{{ele.companyName}}</option>
+</select>
+
+<!-- 혹은 -->
+
+<select v-model="companyNo">
+  <option v-for="ele in companyList" :key="ele.companyNo" :value="ele.companyNo">{{ele.companyName}}</option>
+</select>
+```
 
 
 ## 이벤트 핸들링 Event Handling
@@ -671,3 +706,24 @@ export default {
 TODO
 
 
+## 페이지 로딩 중 표현식 감추기
+
+[https://vuejs.org/api/built-in-directives.html#v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak)
+
+빌드를 하지 않는 뷰 환경에서 쓸만한 방법이다.
+
+렌더링이 완료되기 전에는 콧수염을 포함한 뷰 표현식들이 그대로 보일 수 있는데 이 때 `v-clock`을 활용한다.
+
+`v-clock`은 연관된 컴포넌트의 마운트가 완료되면 사라지는 속성이다. 이를 이용해서 `v-clock`이 있는 요소는 화면에서 감춰버리는 것:
+
+```html
+<style>
+[v-cloak] {
+  display: none;
+}
+</style>
+
+<div v-cloak>
+  {{message}}
+</div>
+```

@@ -90,5 +90,5 @@ OS, 시스템(기기), BIOS, CPU, 메인보드, 메모리 등의 버전/모델�
 6. 가변: Discord, Slack
 7. VSCODE
 8. 가변: IDE#1
-9. 가변: DBMS tool
-0. 가변: IDE#2, 카톡, WorkFlowy
+9. 가변: IDE#2, notion, document, DBMS tool
+0. 가변: IDE#3, 카톡, WorkFlowy

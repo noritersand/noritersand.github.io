@@ -70,7 +70,7 @@ function sumAsync(a, b) {
 function getAny() {
   //... 
 }
-````
+```
 
 
 ## 여담: 파일 JSDoc

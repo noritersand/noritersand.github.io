@@ -72,7 +72,7 @@ props: ['foo'],
 created() {
   console.log(this.foo);
 }
-````
+```
 
 객체 선언 방식은 기본 값이나 데이터 타입, 필수 여부를 지정할 수 있음:
 

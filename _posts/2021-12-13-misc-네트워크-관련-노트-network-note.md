@@ -213,7 +213,7 @@ push "dhcp-option DNS 172.31.0.226"
 # or bridge the TUN/TAP interface to the internet
 # in order for this to work properly).
 push "redirect-gateway def1 bypass-dhcp"
-````
+```
 
 이렇게 하면 모든 통신이 VPN을 통해 나가게 된다. 그런데 문제가 특정 사이트에서 (VPN 서버가 국외 IP라면) 해외 접속 차단 등의 제약이 걸리는 경우가 있음. 
 

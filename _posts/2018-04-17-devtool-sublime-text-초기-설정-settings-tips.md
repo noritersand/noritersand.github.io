@@ -136,18 +136,29 @@ console.debug('${1:msg}', ${2});
 
 ```json
 [
-  {"keys": ["f1"], "command": "show_command_palette"},
-  {"keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
-  {"keys": ["ctrl+shift+k"], "command": "duplicate_line"},
-  {"keys": ["ctrl+p"], "command": "quick_switch_repository"},
-  {"keys": ["ctrl+alt+shift+a"], "command": "stage_all"},
-  {"keys": ["ctrl+alt+shift+u"], "command": "unstage_all"},
-  {"keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified"},
-  {"keys": ["ctrl+,"], "command": "open_preferences"}
+  { "keys": ["f1"], "command": "show_command_palette" },
+  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
+  { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
+  { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
+  { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
+  { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
+  { 
+    "keys": ["ctrl+alt+shift+enter"], 
+    "command": "commit", 
+    "args": { "mode": "commit --amend" }, 
+    "context": [
+      { "key": "setting.commit_message" }, 
+      { "key": "can_commit" }
+    ]
+  },
+  { "keys": ["ctrl+,"], "command": "open_preferences" }
 ]
 ```
 
-`stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. `discard_all_modified`은 모든 변경사항을 취소하니 주의해서 사용할 것.
+- `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
+- `discard_all_modified`은 모든 변경사항을 취소하니 주의해서 사용할 것. 
+- <kbd>ctrl + alt + shift + enter</kbd>는 리베이스인 amend commit이니 마찬가지로 주의.
 
 
 ## 기본 단축키

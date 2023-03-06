@@ -88,24 +88,72 @@ Vue.createApp({
 ```
 
 
-## 페이지 로딩 중 표현식 감추기
+## DOM 업데이트를 기다리는 방법
 
-[https://vuejs.org/api/built-in-directives.html#v-cloak](https://vuejs.org/api/built-in-directives.html#v-cloak)
+예를 들어 어떤 `<input>` 태그에 포커싱을 해야하는데, 아직 숨겨져 있거나 렌더링 전일 때는 코드 실행속도보다 렌더링이 느려서 `.focus()` 메서드가 제대로 작동하지 않는 경우가 있다.
 
-빌드를 하지 않는 뷰 환경에서만 유효한 방법이다.
+이럴 때는 약 150msec 정도의 타임아웃 후에 포커싱하는 **불완전한** 방법이 있긴 하지만, 더 좋은 방법이 있다. 바로 `nextTick()` 혹은 `$nextTick()`을 이용하는 방법이다.
 
-렌더링이 완료되기 전에는 콧수염을 포함한 뷰 표현식들이 그대로 보일 수 있는데 이 때 `v-clock`을 활용한다.
+```js
+import { nextTick } from 'vue'
 
-`v-clock`은 연관된 컴포넌트의 마운트가 완료되면 사라지는 속성이다. 이를 이용해서 `v-clock`이 있는 요소는 화면에서 감춰버리는 것:
-
-```html
-<style>
-[v-cloak] {
-  display: none;
+export default {
+  methods: {
+    doSomething() {
+      nextTick(() => {
+        this.$refs.someInputElement.focus();
+      });
+    }
+  }
 }
-</style>
+```
 
-<div v-cloak>
-  {{message}}
-</div>
+```js
+export default {
+  methods: {
+    doSomething() {
+      this.$nextTick(function() {
+        this.$refs.someInputElement.focus();
+      });
+    }
+  }
+}
+````
+
+`nextTick()`과 `$nextTick()`의 차이는 다음과 같다:
+
+> 전역 nextTick()과의 유일한 차이점은 this.$nextTick()에 전달된 콜백이 현재 컴포넌트 인스턴스에 바인딩된 this 컨텍스트를 갖는다는 것입니다.
+>
+> https://v3-docs.vuejs-korea.org/api/component-instance.html#nexttick
+
+따라서 화살표 함수를 사용하지 않아도 컴포넌트 인스턴스를 콜백 함수 내에서 `this`로 공유한다.
+
+콜백 함수 대신 async/await을 활용하면 아래처럼 된다:
+
+```js
+import { nextTick } from 'vue'
+
+export default {
+  methods: {
+    async doSomething() {
+      // DOM 업데이트 전
+      await nextTick();
+      // DOM 업데이트 후
+      this.$refs.someInputElement.focus();
+    }
+  }
+}
+```
+
+```js
+export default {
+  methods: {
+    async doSomething() {
+      // DOM 업데이트 전
+      await this.$nextTick();
+      // DOM 업데이트 후
+      this.$refs.someInputElement.focus();
+    }
+  }
+}
 ```

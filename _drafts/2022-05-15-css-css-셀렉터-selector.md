@@ -154,7 +154,7 @@ TODO
 
 ### :disabled
 
-input:disabled 	Selects every disabled <input> element
+`disabled` 속성이 있는 모든 입력 태그(input, select, textarea)를 선택한다.
 
 ### :empty
 
@@ -313,11 +313,13 @@ TODO
 
 ### :read-only
 
-input:read-only 	Selects input elements with the "readonly" attribute specified
+`readonly` 속성이 있는 모든 입력 태그(input, select, textarea)를 선택한다. 속성이 존재하면 선택하는 게 조건이라서 속성값은 중요하지 않음. 
+
+특이한 점은 `disabled` 속성이 있는 태그도 선택한다는 것. 그리고 `<select>` 태그는 무조건 선택하는데, 아마 사용자 입력은 불가능하고 선택만 가능해서 그런게 아닐지...
 
 ### :read-write
 
-input:read-write 	Selects input elements with the "readonly" attribute NOT specified
+`readonly` 혹은 `disabled` 속성이 없는 모든 입력 태그를 선택한다. `<select>` 태그는 무조건 선택하지 않는다.
 
 ### :required
 
