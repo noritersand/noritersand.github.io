@@ -124,7 +124,7 @@ TODO
 
 ### Array.prototype.includes()
 
-있는지 확인(마치 `contains()`처럼).
+있는지 확인한다. `contains()`와 비슷함.
 
 ```js
 let arr = ['a', 'b', 'c'];

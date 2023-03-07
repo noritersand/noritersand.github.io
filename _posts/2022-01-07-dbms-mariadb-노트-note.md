@@ -282,3 +282,60 @@ sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
 
 [출처](https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat)
 
+
+## 정렬 order by
+
+오름차순(ascendent) 기준으로 우선순위는 다음과 같다:
+
+- 작은 수
+- 큰 수
+- 알파벳 빠른 순서의 소문자
+- 알파벳 빠른 순서의 대문자
+- 자음
+- 조합된 한글의 가나다 순
+- 모음
+
+예를 들면:
+
+```sql
+select a.txt
+from (
+    select 1 as txt
+    union all
+    select 2 as txt
+    union all
+    select 3 as txt
+    union all
+    select 'a' as txt
+    union all
+    select 'b' as txt
+    union all
+    select 'A' as txt
+    union all
+    select '가' as txt
+    union all
+    select 'ㅔ' as txt
+    union all
+    select 'ㄱ' as txt
+    union all
+    select '히' as txt
+) a
+order by a.txt asc
+```
+
+의 결과는:
+
++---+
+|txt|
++---+
+|1  |
+|2  |
+|3  |
+|a  |
+|A  |
+|b  |
+|ㄱ  |
+|가  |
+|히  |
+|ㅔ  |
++---+

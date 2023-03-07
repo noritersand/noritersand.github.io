@@ -478,6 +478,13 @@ export default {
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
 
 
+## Lifecycle
+
+[Lifecycle Diagram](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)
+
+TODO
+
+
 ## 컴포넌트 Components
 
 TODO 설명 추가
