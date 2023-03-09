@@ -50,6 +50,7 @@ tags:
 - [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
 - [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다.
 
 
 ## 메뉴얼/API DOC/튜토리얼

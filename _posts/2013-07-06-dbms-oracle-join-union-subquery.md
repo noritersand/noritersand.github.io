@@ -356,6 +356,8 @@ MILLER           1300       1248
 
 ### SELECT절 - 스칼라 서브쿼리 scalar subquery
 
+Nested query라고도 하는 것 같음.
+
 ```sql
 SELECT first_name, department_id,
  (SELECT department_name FROM departments WHERE department_id = em.department_id) AS department_name

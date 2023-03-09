@@ -78,14 +78,14 @@ tags:
 ## 메타
 
 - a noun clause: 명사절
-- abbreviation: 약어, 축약 (UNESCO, 단어로 읽음)
-- acronym/initialism: 두문자어, 약성어, (CIA, 알파벳 하나하나 읽음)
+- abbreviation: 약어, 축약어. Etc., Ave., Dec. 처럼 일부 단어로 줄여 쓰는 것. 새 단어를 만드는 게 아니라서 발음은 원래 단어대로 읽어야 함.
+- acronym/initialism: 두문자어, 약성어. 둘 다 우리 말로는 두문자어이지만, 만드는 규칙과 읽는 방법의 차이가 있음. e.g. LASER와 RADAR는 acronym, CIA와 VIP는 initialism.
 - antonym: 반대어, 반의어
 - chinese loanword, loanword from chinese: 한국어의 한자
 - collective noun/collective terms: 집단 명사
 - consonant: 자음, 자음 소리, 자음을 나타내는 글자
 - contraction: 축약형, 수축, 축소
-- diphthong[dif-thawng]: 이중모음 (pipe의 i, doubt의 ou)
+- diphthong[dif-thawng]: 이중모음. pipe의 i, doubt의 ou
 - exemption: 면제, 명사 면제
 - fixed phrase: 고정 문구
 - foreign word, loanword: 외래어

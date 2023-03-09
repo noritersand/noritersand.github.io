@@ -36,7 +36,14 @@ HTTP 요청 메서드 간단 정리 글.
 
 ## OPTIONS
 
-> The OPTIONS method represents a request for information about the communication options available on the request/response chain identified by the Request-URI. This method allows the client to determine the options and/or requirements associated with a resource, or the capabilities of a server, without implying a resource action or initiating a resource retrieval.
+URL이나 서버에 허용된 통신 옵션을 요청한다. 응답 헤더를 통해 어떤 HTTP 메서드를 지원하는지와 CORS이 가능한지를 확인할 때 사용한다.
+
+CORS 스펙에서는 따르면 브라우저는 GET 메서드를 제외한 다른 메서드에서 사전 요청인 preflight를 OPTIONS 메서드로 요쳥해야 한다고 함.
+
+```bash
+# OPTIONS HTTP 요청하며 응답 헤더 출력
+curl -i -X OPTIONS https://example.org
+```
 
 
 ## GET
@@ -67,6 +74,23 @@ HTTP 요청 메서드 간단 정리 글.
 > The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If the Request-URI does not point to an existing resource, and that URI is capable of being defined as a new resource by the requesting user agent, the origin server can create the resource with that URI. If a new resource is created, the origin server MUST inform the user agent via the 201 (Created) response. If an existing resource is modified, either the 200 (OK) or 204 (No Content) response codes SHOULD be sent to indicate successful completion of the request. If the resource could not be created or modified with the Request-URI, an appropriate error response SHOULD be given that reflects the nature of the problem. The recipient of the entity MUST NOT ignore any Content-* (e.g. Content-Range) headers that it does not understand or implement and MUST return a 501 (Not Implemented) response in such cases.
 
 등록된 데이터 변경
+
+### POST와 PUT의 차이
+
+- [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
+- [https://developer.mozilla.org/ko/docs/Glossary/Idempotent](https://developer.mozilla.org/ko/docs/Glossary/Idempotent)
+
+한 줄 요약: POST는 idempotent하지 않고, PUT은 idempotent하다.
+
+> idempotent
+> 1. 멱등(冪等)의 2. 멱등원(元)
+>
+> [네이버 영어사전: idempotent](https://en.dict.naver.com/#/entry/enko/df125e744fd141d89c385d7b1b5063c1)
+
+두 줄 요약:
+
+- POST는 idempotent하지 않다. 이 말은 연산이 수행될 때마다 새로운 리소스가 생긴다는 뜻이다. (= create)
+- PUT은 idempotent하다. 이 말은 연산이 계속 수행되더라도 리소스가 새로 생기지 않으며, 항상 결과가 같다는 뜻이다. (= update)
 
 
 ## DELETE

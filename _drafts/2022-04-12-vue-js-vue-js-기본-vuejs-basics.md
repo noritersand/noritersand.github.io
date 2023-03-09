@@ -282,18 +282,22 @@ export default {
 ```
 
 ```html
-<div id="app-3">
+<div>
   <p v-if="seen">보일락말락</p>
 </div>
 ```
 
-### `v-else`
+### v-else, v-else-if
 
-TODO
+else 블록 혹은 else-if 블록을 표현하는 디렉티브. 반드시 `v-if` 바로 다음에 오는 형제 요소여야 한다.
 
-### `v-else-if`
-
-TODO
+```html
+<div>
+  <p v-if="seen">보일락말락1</p>
+  <p v-else-if="seen">보일락말락2</p>
+  <p v-else="seen">보일락말락2</p>
+</div>
+```
 
 ### v-if on `<template>`
 
@@ -341,7 +345,7 @@ export default {
 ```
 
 ```html
-<div id="app-4">
+<div>
     <ul>
         <li v-for="i in values">{{i.index}}</li>
     </ul>
@@ -387,7 +391,7 @@ TODO:
 `v-on` 디렉티브로 이벤트를 바인딩하고 vue 앱의 `methods` 항목에 핸들러를 추가한다.
 
 ```html
-<div id="app-5">
+<div>
     <p>{{message}}</p>
     <button v-on:click="reverseMessage">메시지 뒤집기</button>
 </div>
@@ -422,7 +426,7 @@ createApp({
 
 ### Event Modifiers
 
-이벤트 리스닝 표현식에는 modifier가 제공되는데, 이벤트 전파를 막거나 이벤트의 기본 행동을 방지하는 등의 세부 설정을 할 수 있다:
+이벤트 리스닝 표현식에는 modifier(수식어)가 제공되는데, 이벤트 전파를 막거나 이벤트의 기본 행동을 방지하는 등의 세부 설정을 할 수 있다:
 
 - `.stop`: `Event.stopPropagation()`과 같음
 - `.prevent`: `Event.preventDefault()`와 같음
@@ -436,7 +440,38 @@ createApp({
 <a @click.stop.prevent="doThat"></a>
 ```
 
-이 외에 key modifiers와 mouse button modifiers도 있다: [https://vuejs.org/guide/essentials/event-handling.html#key-modifiers](https://vuejs.org/guide/essentials/event-handling.html#key-modifiers)
+key modifier와 mouse button modifier, system modifier도 있다. [https://vuejs.org/guide/essentials/event-handling.html#key-modifiers](https://vuejs.org/guide/essentials/event-handling.html#key-modifiers)
+
+Key Modifiers:
+
+- `.enter`
+- `.tab`
+- `.delete`: <kbd>delete</kbd>와 <kbd>backspace</kbd>에도 반응
+- `.esc`
+- `.space`
+- `.up`
+- `.down`
+- `.left`
+- `.right`
+
+Mouse Button Modifiers:
+
+- `.left`
+- `.right`
+- `.middle`
+
+System Modifier keys:
+
+- `.ctrl`
+- `.alt`
+- `.shift`
+- `.meta`
+
+`.exact`도 있는데, 이 수식어는 system modifier 조합을 결정한다. 몇 가지 예를 들면:
+
+- `@click.ctrl.exact`: <kbd>ctrl</kbd>키만 누르고 클릭했을 때 반응한다.
+- `@click.ctrl`: <kbd>ctrl</kbd>외에 <kbd>shift</kbd>나 <kbd>alt</kbd>를 같이 누른 상태로 클릭해도 모두 반응한다.
+- `@click.exact`: system modifier 키를 아무것도 누르지 않고 클릭했을 때 반응한다.
 
 ### $event
 
@@ -459,7 +494,6 @@ methods: {
 
 `v-model` 디렉티브를 사용하면 사용자가 입력한 값과 화면에 보이는 값, 그리고 앱의 데이터가 동기화된다.
 
-
 ```js
 export default {
     data: {
@@ -469,13 +503,23 @@ export default {
 ```
 
 ```html
-<div id="app-6">
+<div>
   <p>{{message}}</p>
   <input v-model="message">
 </div>
 ```
 
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
+
+### Modifiers
+
+[https://vuejs.org/guide/essentials/forms.html#modifiers](https://vuejs.org/guide/essentials/forms.html#modifiers)
+
+v-model에도 Event Modifiers와 같은 modifier가 제공된다.
+
+- `.lazy`: 데이터 동기화 시점을 input 이벤트 후가 아니라 change 이벤트 후로 변경한다.
+- `.number`: 사용자 입력을 자동으로 Number 타입으로 변환한다.
+- `.trim`: 사용자 입력값 중 처음과 끝의 공백을 제거한다.
 
 
 ## Lifecycle

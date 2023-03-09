@@ -29,10 +29,14 @@ tags:
 
 ## CORS란?
 
+https://developer.mozilla.org/ko/docs/Web/HTTP/CORS
+
 TODO
 
 
 ## 자매품 CSRF
+
+https://developer.mozilla.org/en-US/docs/Glossary/CSRF
 
 Cross-Site Request Forgery.
 
