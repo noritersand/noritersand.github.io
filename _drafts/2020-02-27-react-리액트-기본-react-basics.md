@@ -39,7 +39,7 @@ HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 �
 
 리액트는 라이브러리라서 js 파일을 불러오기만 하면 된다. 보통은 이렇게:
 
-```js
+```html
 <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```

@@ -73,14 +73,14 @@ curl -i -X OPTIONS https://example.org
 
 > The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If the Request-URI does not point to an existing resource, and that URI is capable of being defined as a new resource by the requesting user agent, the origin server can create the resource with that URI. If a new resource is created, the origin server MUST inform the user agent via the 201 (Created) response. If an existing resource is modified, either the 200 (OK) or 204 (No Content) response codes SHOULD be sent to indicate successful completion of the request. If the resource could not be created or modified with the Request-URI, an appropriate error response SHOULD be given that reflects the nature of the problem. The recipient of the entity MUST NOT ignore any Content-* (e.g. Content-Range) headers that it does not understand or implement and MUST return a 501 (Not Implemented) response in such cases.
 
-등록된 데이터 변경
+등록된 데이터 변경 시 사용하는 메서드.
 
 ### POST와 PUT의 차이
 
 - [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
 - [https://developer.mozilla.org/ko/docs/Glossary/Idempotent](https://developer.mozilla.org/ko/docs/Glossary/Idempotent)
 
-한 줄 요약: POST는 idempotent하지 않고, PUT은 idempotent하다.
+한 줄 요약: POST는 멱등(idempotent)하지 않고, PUT은 멱등하다.
 
 > idempotent
 > 1. 멱등(冪等)의 2. 멱등원(元)
@@ -89,8 +89,8 @@ curl -i -X OPTIONS https://example.org
 
 두 줄 요약:
 
-- POST는 idempotent하지 않다. 이 말은 연산이 수행될 때마다 새로운 리소스가 생긴다는 뜻이다. (= create)
-- PUT은 idempotent하다. 이 말은 연산이 계속 수행되더라도 리소스가 새로 생기지 않으며, 항상 결과가 같다는 뜻이다. (= update)
+- POST는 멱등하지 않다. 이 말은 연산이 수행될 때마다 새로운 리소스가 생긴다는 뜻이다. (= create)
+- PUT은 멱등하다. 이 말은 연산이 계속 수행되더라도 리소스가 새로 생기지 않으며, 항상 결과가 같다는 뜻이다. (= update)
 
 
 ## DELETE
@@ -114,4 +114,8 @@ curl -i -X OPTIONS https://example.org
 
 ## PATCH
 
-??
+리소스의 부분적 수정 시 사용하는 메서드. (PUT 메서드는 리소스의 전체 수정을 의미한다.)
+
+PUT 메서드와 달리 반드시 멱등할 필요는 없다고 함. PATCH는 PUT처럼 모든 것을 덮어쓰는게 아닐 수도 있기 때문이라고... 그러니까 개발하기에 따라서 멱등하기도, 멱등하지 않기도 한다는 말. 
+
+\* 멱등하지 않다는 것은 요청마다 다른 결과를 만들거나, 새 리소스가 생긴다는 뜻.
