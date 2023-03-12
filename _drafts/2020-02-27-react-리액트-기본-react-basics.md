@@ -77,7 +77,7 @@ npm start
 
 하면 샘플 페이지가 있는 웹 서버가 기동된다. HTML 없이 그냥 되는거 아니다. `public/index.html`을 확인할 것.
 
-바벨은 리액트 패키지에 포함되어 있어서 별도 설치 불필요하며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요:
+바벨은 리액트 패키지에 포함되어 있어서 별도로 설치하지 않아도 되며, 이미 만들어둔 앱이면 `npm start` 전에 모듈 설치 필요:
 
 ```bash
 npm install
@@ -378,7 +378,7 @@ TODO 뭔 소린지 모르겠음. SSR 페이지는 이거 쓰라고 검색 결과
 
 [리액트에서 컴포넌트](https://reactjs.org/docs/components-and-props.html)란 리액트 앱을 구성하는 최소 단위를 말한다. 컴포넌트의 최소 요구조건은 리액트 엘리먼트를 반환하는 것이다. 그래서 항상 `return` 문을 포함한다.
 
-함수 컴포넌트는 컴포넌트를 정의하는 가장 간단한 방법이며, 함수는 딱 하나의 인수 `props`를 전달 받는다. (간단하지 않은 방법으로는 클래스 문법으로 만드는 클래스 컴포넌트가 있는데, 이 글의 예시 중 `Newbie` 혹은 `ShoppingList`에 해당함.)
+함수 컴포넌트는 컴포넌트를 정의하는 가장 간단한 방법이며, 함수는 딱 하나의 인수 `props`를 전달 받는다. (간단하지 않은 방법으로는 클래스 문법으로 만드는 **클래스 컴포넌트**가 있는데, 이 글의 예시 중 `Newbie` 혹은 `ShoppingList`에 해당함.)
 
 아래처럼 쓴다:
 
@@ -388,6 +388,7 @@ function Noop(props) {
     <div>{props.foo}</div>
   );
 }
+
 class Newbie extends React.Component {
   render() {
     return (
@@ -395,6 +396,7 @@ class Newbie extends React.Component {
     );
   }
 }
+
 ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 
 // 결과:

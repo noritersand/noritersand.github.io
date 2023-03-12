@@ -77,20 +77,19 @@ curl -i -X OPTIONS https://example.org
 
 ### POST와 PUT의 차이
 
-- [https://1ambda.github.io/javascripts/rest-api-put-vs-post/](https://1ambda.github.io/javascripts/rest-api-put-vs-post/)
-- [https://developer.mozilla.org/ko/docs/Glossary/Idempotent](https://developer.mozilla.org/ko/docs/Glossary/Idempotent)
+앞서 언급했듯이 POST는 신규 생성, PUT은 업데이트에 사용한다. 그리고 멱등하냐 그렇지 않냐의 차이가 있다:
 
-한 줄 요약: POST는 멱등(idempotent)하지 않고, PUT은 멱등하다.
+> All safe methods are idempotent, as well as PUT and DELETE. The POST method is not idempotent.
+> https://developer.mozilla.org/en-US/docs/Glossary/Idempotent
 
 > idempotent
 > 1. 멱등(冪等)의 2. 멱등원(元)
 >
 > [네이버 영어사전: idempotent](https://en.dict.naver.com/#/entry/enko/df125e744fd141d89c385d7b1b5063c1)
 
-두 줄 요약:
+멱등성이란 어떠한 연산이나 요청을 여러번 수행해도 한 번만 수행한 것과 동일한 결과가 유지되는 것을 말한다.
 
-- POST는 멱등하지 않다. 이 말은 연산이 수행될 때마다 새로운 리소스가 생긴다는 뜻이다. (= create)
-- PUT은 멱등하다. 이 말은 연산이 계속 수행되더라도 리소스가 새로 생기지 않으며, 항상 결과가 같다는 뜻이다. (= update)
+PUT은 멱등하다(혹은 멱등성을 가진다). 특정 리소스의 업데이트는 반복해서 수행해도 결과가 같다. 반면 POST는 요청을 수행할 때마다 새로운 리소스가 생성된다. 따라서 POST는 멱등하지 않다.
 
 
 ## DELETE
