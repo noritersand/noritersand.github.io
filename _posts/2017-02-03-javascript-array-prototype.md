@@ -131,23 +131,50 @@ let arr = ['a', 'b', 'c'];
 arr.includes('b'); // true
 ```
 
-### Array.prototype.findIndex()
+### Array.prototype.find()
 
 ```
-findIndex(function(element, index, array) { /* ... */ }, thisArg)
+find( function( element, index, array ) { /* ... */ }[, thisArg])
 ```
 
-콜백 함수에 요소를 전달하며 배열의 길이만큼 반복 실행한다. 콜백 함수에서 `true`를 반환하면 반복을 중단하며, 해당 시점의 인덱스를 최종 반환한다.
+- `thisArg`: 콜백함수에서 `this`로 사용할 객체를 지정한다. 추가 내용은 [여기](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#iterative_methods)를 볼 것
+
+콜백 함수에 요소를 전달하며 배열의 길이만큼 반복 실행한다. 콜백 함수에서 `true`를 반환하면 반복을 중단하며, 해당 시점의 배열 요소를 최종 반환한다. 만약 모든 루프에서 `true`를 반환하지 않으면 최종 반환값은 `undefined`다.
 
 ```js
 let arr = ['a', 'b', 'c'];
-arr.findIndex(ele => {
-  console.log(ele);
+arr.find(ele => {
   return ele == 'b'; // 이 조건 때문에 'c'는 생략됨
+});
+// 'b'
+
+let arr2 = ['a', 'b', 'c'];
+arr.find(ele => {
+  return ele == 'e';
+});
+// undefined
+```
+
+### Array.prototype.findIndex()
+
+`find()`와 같으나 반환하는 값이 배열 요소의 인덱스라는 점만 다르다. 만약 모든 루프에서 `true`를 반환하지 않으면 최종 반환값은 `-1`이다.
+
+```
+findIndex(function(element, index, array) { /* ... */ }[, thisArg])
+```
+
+```js
+let arr3 = ['a', 'b', 'c'];
+arr.findIndex(ele => {
+  return ele == 'b'; // 'c'는 생략됨
 })
-// a
-// b
 // 1 
+
+let arr4 = ['a', 'b', 'c'];
+arr.findIndex(ele => {
+  return ele == 'e';
+});
+// -1
 ```
 
 ### Array.prototype.map()

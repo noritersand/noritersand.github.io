@@ -258,14 +258,23 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 
 NPM의 속도와 보안을 강화한 [Yarn](https://yarnpkg.com/)이 있음. [NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
+속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나...
+
 ```bash
 # NPM으로 Yarn 설치
 npm install yarn -g
 ```
 
 ```bash
-# Yarn으로 PACKAGE_NAME 설치
+# Yarn으로 PACKAGE_NAME 설치 후 package.json에 추가
 yarn add PACKAGE_NAME
+
+# package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 이 파일을 우선 참조함
+yarn install
+
+# 로컬 경로(yarn.lock이 위치한 디렉터리)에 설치된 패키지 목록 출력
+# yarn.lock 파일이 없으면 작동하지 않음
+yarn list
 
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
@@ -277,7 +286,17 @@ yarn upgrade PACKAGE_NAME
 yarn upgrade-interactive
 ```
 
-NPM을 완전히 대체하는 것은 아니라서 둘 다 각각 사용 가능.
+NPM을 완전히 대체하는 것은 아니다. Yarn을 설치해도 NPM은 여전히 사용할 수 있음.
+
+패키지를 추가`add`하거나 삭제`remove`할 때 `package.json`을 수정하므로 버전 관리에 주의할 것.
+
+### yarn.lock
+
+Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.
+
+기본적인 역할은 NPM의 `package-lock.json` 파일과 같은데, 실제 설치한 패키지의 버전을 기록하며 이 lock 파일이 있다면 `install` 시 정확히 동일한 버전의 패키지를 설치한다. 따라서 개발자들끼리의 소스 공유 시엔 이 파일을 반드시 버전 관리에 추가해야 한다.
+
+`--no-lockfile` 등의 옵션으로 lock 파일을 생성하지 않게 할 수도 있다. 설치만 Yarn으로 할 때 쓰려나...?
 
 ### Yarn Global
 

@@ -153,3 +153,19 @@ parseInt(100, 16); // 256
 ```
 
 이 경우 숫자 16진수 100을 10진수로 변환한 결과인 256을 반환한다.
+
+### Number()와 비교
+
+`Number()`는 일부 falsy한 인수(`null`, `false`, `''`)에 대해 0을 반환한다. 반면 `parseInt()`는 `NaN`을 반환한다. 반드시 숫자 타입이 필요한 경우면 `Number()`를 쓰는 게 낫다.
+
+```js
+Number(null); // 0
+Number(false); // 0
+Number(''); // 0
+Number(undefined); // NaN
+
+parseInt(null); // NaN
+parseInt(false); // NaN
+parseInt(''); // NaN
+parseInt(undefined); // NaN
+```

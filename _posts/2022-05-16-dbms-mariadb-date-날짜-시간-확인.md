@@ -89,6 +89,12 @@ DATETIME을 DATE로:
 select date(now())
 ```
 
+아니면 `convert()`를 써도 됨
+
+```sql
+select convert(now(), date);
+```
+
 
 ## 타임존 변환
 
@@ -202,9 +208,7 @@ from (
 | QUARTER             | 4                           |
 
 
-## 테스트
-
-### BETWEEN 비교는 조건항을 포함하는가
+## BETWEEN 비교는 조건항을 포함하는가
 
 ```sql
 select
@@ -215,7 +219,8 @@ select
 
 다 true니까 포함이다.
 
-### DATETIME을 DATE로 BETWEEN 비교
+
+## DATETIME을 DATE로 BETWEEN 비교
 
 ```sql
 select
@@ -264,4 +269,3 @@ from (
     ) a
 ) b
 ```
-

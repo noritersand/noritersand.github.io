@@ -118,7 +118,7 @@ export default {
     }
   }
 }
-````
+```
 
 `nextTick()`과 `$nextTick()`의 차이는 다음과 같다:
 

@@ -339,3 +339,87 @@ order by a.txt asc
 |히  |
 |ㅔ  |
 +---+
+
+### 맴대로 정렬하기
+
+만약 기본 정렬 이외의 요건이 있으면 `case` 등으로 데이터에 따라 임의의 서수를 부여하고 정렬한다.
+
+아래는 '영문 > 한글 > 숫자 순으로 정렬'이라는 요건을 구현한 쿼리다. 첫 글자만 잘라 ASCII 코드로 숫자인지, 영문인지, 한글인지를 구분한다:
+
+```sql
+# 영문, 한글, 숫자 순으로 정렬하기
+select a.txt,
+    convert(a.txt using utf8) as utf8,
+    substr(a.txt, 1, 1) as substr,
+    ascii(a.txt) as ascii,
+    case
+        when ascii(a.txt) between 48 and 57 then 2 /*number*/
+        when ascii(a.txt) between 65 and 90 then 0 /*alphabet*/
+        when ascii(a.txt) between 97 and 122 then 0 /*alphabet*/
+        else 1 /*unicode*/
+    end as sortOrder
+from (
+    select 111 as txt
+    union all
+    select 222 as txt
+    union all
+    select 333 as txt
+    union all
+    select 0000 as txt
+    union all
+    select 'abcdf' as txt
+    union all
+    select 'ba뀨sdf' as txt
+    union all
+    select 'Aqwe' as txt
+    union all
+    select 'zx뿅zcv' as txt
+    union all
+    select 'Zsadf' as txt
+    union all
+    select 'ㅏ' as txt
+    union all
+    select '가' as txt
+    union all
+    select 'ㅔ' as txt
+    union all
+    select 'ㄱ' as txt
+    union all
+    select '히' as txt
+    union all
+    select 'ㅎ' as txt
+) a
+order by sortOrder
+```
+
+## 타입 변환
+
+### convert()
+
+[https://mariadb.com/kb/en/convert/](https://mariadb.com/kb/en/convert/)
+
+```
+CONVERT(expr, type)
+CONVERT(expr USING transcoding_name)
+```
+
+`expr`을 `type`으로 변환한다. 혹은 `expr`을 기본 케릭터 셋에서 `transcoding_name` 케릭터 셋으로 변환한다.
+
+`type`에 올수 있는 키워드는 다음과 같다:
+
+- binary
+- char
+- date
+- datetime
+- decimal[(M[,D])]
+- double
+- float
+- integer
+- signed [INTEGER]
+- unsigned [INTEGER]
+- time
+- varchar
+
+```sql
+select convert(now(), date);
+```
