@@ -60,6 +60,12 @@ OS, 시스템(기기), BIOS, CPU, 메인보드, 메모리 등의 버전/모델�
 
 명령 실행 창<kbd>win + r</kbd>에서 `MSINFO32` 입력하면 됨.
 
+### 코타나 강제 삭제
+
+```bash
+Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
+```
+
 
 ## 단축키
 
@@ -70,7 +76,7 @@ OS, 시스템(기기), BIOS, CPU, 메인보드, 메모리 등의 버전/모델�
 - <kbd>win + a</kbd>: 빠른 설정 열기. 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
 - <kbd>win + n</kbd>: 알림과 달력 열기
 - <kbd>win + q</kbd> <kbd>win + s</kbd>: 시작 메뉴 검색
-- <kbd>win + w</kbd>: 위젯 열기(웹 검색 같은데?)
+- <kbd>win + w</kbd>: 위젯 열기(원래는 'Windows Ink 열기' 였음)
 - <kbd>win + h</kbd>: 보이스 타이핑(Microsoft 음성 명령 서비스)
 - <kbd>alt + esc</kbd>: 창이 열렸던 순서대로 거꾸로 순환
 

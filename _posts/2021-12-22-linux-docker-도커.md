@@ -21,19 +21,23 @@ tags:
 
 - Docker 20.10.11
 
+
 ## 개요
 
 Docker(이하 도커) 관련 정리글. 윈도우용 도커가 있다길래 써봤는데 WSL용이었다. 😏
+
 
 ## Docker Desktop on Windows
 
 윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [\[Microsoft\] WSL 2에서 Docker 원격 컨테이너 시작](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.  
 참고로 Docker Desktop이란 앱이 설치되는데 이 앱을 꺼버리면 WSL에서 `docker` 명령도 안먹음.
 
+
 ## 용어
 
 - 이미지: 미리 작성된 스크립트와 필요한 파일들의 묶음쯤으로 이해하면 됨. 이미지를 바탕으로 컨테이너를 생성하고 실행한다. 도커 허브를 통해 온라인으로 공유할 수 있음.
 - 컨테이너: 프로세스들이 돌아가는 격리된 공간. 컨테이너는 이미지를 바탕으로 만들어지며, 하나의 이미지로 여러 컨테이너를 생성할 수 있다.
+
 
 ## 명령어
 
@@ -173,6 +177,7 @@ docker run -d -p 80:80 docker/getting-started
 
 `--rm` 옵션은 보통 `-it`와 같이 쓰는 모양.
 
+
 ## 컨테이너의 터미널 접속하기
 
 생성된 모든 컨테이너는 터미널로 접속할 수 있다. `bash`가 안먹힐 경우 최소한의 기능만 설치된 OS라서 그럴 테니 `sh`로 해보자.
@@ -213,6 +218,7 @@ root@6fb8d380f766:/#
 
 `start`는 `COMMAND` 인수 자리가 없다. 아마 `start`가 `create`의 옵션과 실행할 명령어 설정에 의존하는 것 같음.
 
+
 ## docker-compose
 
 대충 여러 명령을 한 번에 실행하는 도구인가 봄. `docker-compose.yml` 파일을 미리 만들어야 실행할 수 있다.
@@ -226,3 +232,10 @@ docker-compose version
 # 실행
 docker-compose up
 ```
+
+
+## 네트워킹
+
+[https://docs.docker.com/network/](https://docs.docker.com/network/)
+
+TODO 컨테이너와 호스트, 컨테이너끼리의 통신에 대한 내용 정리 필요

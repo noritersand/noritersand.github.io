@@ -1,3 +1,4 @@
+
 ---
 layout: post
 date: 2022-04-12 15:01:00 +0900
@@ -567,10 +568,11 @@ createApp({
 ### Props
 
 부모에게서 받아오는 읽기 전용 값. 부모에서 컴포넌트 표현식을 작성할 때 바인딩하는 값이 자식 컴포넌트의 props가 되는 식이다.
-아래처럼 넘김:
+
+\* 이렇게 넘긴 값을 자식 컴포넌트의 `props`에 명시하지 않으면 [fallthrough 속성](https://vuejs.org/guide/components/attrs.html#fallthrough-attributes)이 되며 자동으로 상속된다.
 
 ```xml
-<some-picker :pick-this="'A3456'"><some-picker>
+<some-picker :foo="'A3456'"><some-picker>
 ```
 
 받는 방법은 API 방식에 따라 다르다.
@@ -669,7 +671,7 @@ export const emittingTest = {
 <emitting-test @custom-event:press="handle"></emitting-test>
 ```
 
-`emits` 속성은 생략해도 작동하긴 하지만 있는게 권장되니 빼먹지 말자. 빼먹으면 경고 뜸. [fallthrough 속성](https://vuejs.org/guide/components/attrs.html)과 관련 있다고 함.
+`emits` 속성은 생략해도 작동하긴 하지만 있는게 권장되니 빼먹지 말자. 빼먹으면 [fallthrough 속성](https://vuejs.org/guide/components/attrs.html#fallthrough-attributes)이 된다.
 
 ### 컴포넌트와 v-model
 
@@ -750,11 +752,6 @@ export default {
 렌더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
 이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
-
-
-## $attrs
-
-TODO
 
 
 ## 페이지 로딩 중 표현식 감추기

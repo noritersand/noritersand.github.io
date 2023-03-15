@@ -46,6 +46,26 @@ Vue는 Options API 혹은 Composition API 스타일로 작성할 수 있는데, 
 - `$forceUpdate()`: 
 - `$nextTick()`: 
 
+### $attrs
+
+[https://vuejs.org/api/component-instance.html#attrs](https://vuejs.org/api/component-instance.html#attrs)
+
+fallthrough 속성을 가리키는 컴포넌트 인스턴스. fallthrough 속성이란 부모 컴포넌트에서 전달한 속성 혹은 이벤트 핸들러이면서 `props` 혹은 `emits`에서 선언하지 않은 속성을 말한다. 예를 들어 `<abc>`라는 컴포넌트가 있을 때:
+
+```html
+<abc class="hello"></abc>
+```
+
+이 코드에서 `class`가 fallthrough 속성이 되며, 자식 컴포넌트의 루트 요소의 속성에 `class`가 자동으로 추가된다.
+
+그리고 이 fallthrough 속성에 접근하는 것이 바로 `$attrs`라는 것.
+
+```html
+<span>{{ $attrs }}</span>
+```
+
+가이드를 보면 이런 특성을 '속성의 자동 상속' 정도로 표현하는데, 이를 비활성화하려면 컴포넌트 옵션에 `inheritAttrs: false`를 추가하면 된다고 한다.
+
 
 ## data()
 

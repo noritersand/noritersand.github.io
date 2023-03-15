@@ -74,9 +74,52 @@ tags:
 새 탭이나 새 창을 열어도 갱신 안되니 터미널 앱을 재실행할 것.
 
 
+## Winget, Windows Package Manager Client
+
+[https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli)
+
+윈도우용 CLI 패키지(=앱) 관리 툴이다. 리눅스의 `apt`와 비슷하다. 보통은 기본으로 설치되어 있음.
+
+```bash
+# 기본 도움말 보기
+winget
+
+# list 명의 도움말 보기
+winget list --help
+
+# KEYWORD로 패키지 검색
+winget search KEYWORD
+
+# PACKAGE_NAME 설치
+winget install PACKAGE_NAME
+
+# PACKAGE_NAME 제거
+winget uninstall PACKAGE_NAME
+
+# PACKAGE_NAME 패키지의 상세정보 표시. 로컬에 설치된 패키지가 아니라 패키지 저장소에 있는 최신 정보를 보여줌
+winget show PACKAGE_NAME
+
+# 설치된 패키지 목록을 출력. 버전 업그레이드가 가능한지도 표시됨
+winget list
+
+# PACKAGE_NAME 패키지 버전 업그레이드
+winget upgrade PACKAGE_NAME
+```
+
+이 외에 이런 명령들이 있음:
+
+- `source`: 패키지 원본 관리. 원본이란 패키지 저장소를 의미한다. 즉, 패키지 저장소를 관리하는 명령어
+- `hash`: 해시 설치 관리자 파일 도우미
+- `validate`: 매니페스트 파일의 유효성 검사
+- `settings`: 설정 열기 또는 관리자 설정 설정
+- `features`: 실험적 기능의 상태 표시
+- `export`: 설치된 패키지 목록 내보내기
+- `import`: 파일에 있는 모든 패키지를 설치합니다.
+
+
 ## [Chocolatey](https://chocolatey.org/install)
 
-윈도우판 `apt-get`이다. ([winget](https://docs.microsoft.com/en-us/windows/package-manager/winget/): 네???)
+Winget에서 좀 더 발전된 애플리케이션 관리 툴.
 
 파워셸(관리자 권한)에서 다음 줄 실행:
 
