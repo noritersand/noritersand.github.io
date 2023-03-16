@@ -14,6 +14,7 @@ tags:
 
 #### 참고한 문서
 
+- [\[MDN\] fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 - [\[MDN\] Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [\[MDN\] Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 - [\[MDN\] Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
@@ -68,6 +69,27 @@ console.log(json);
 ```
 
 `fetch()`에서 반환하는 `response`도 promise이기 때문.
+
+
+## Headers
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+
+TODO
+
+
+## Request
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+
+TODO
+
+
+## Response
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+
+TODO
 
 
 ## example

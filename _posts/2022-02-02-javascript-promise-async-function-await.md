@@ -36,9 +36,11 @@ async function, await:
 - Chrome 55, Edge 15, FireFox 52, Opera 42, Safari 10.1 이상에서 지원
 - IE에서 사용 불가
 
+
 ## 개요
 
 ECMAScript의 Promise, async function, await 사용법 정리.
+
 
 ## Promise
 
@@ -61,8 +63,8 @@ new Promise( executor )
 new Promise( function( resolve, reject ) { ... } )
 ```
 
-- `resolve`: Promise의 상태를 fulfilled로 변경하고 resolve 메시지를 전달하는 함수
-- `reject`: Promise의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수.
+- `resolve`: Promise의 상태를 fulfilled로 변경하고 resolve 메시지를 전달하는 함수. 함수라서 호출해야 함.
+- `reject`: Promise의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수. 이것도 함수다.
 
 `Promise()` 생성자 함수는 `executor`를 실행하고 Promise 객체를 반환한다.
 
@@ -246,6 +248,7 @@ Promise.resolve(1).then(console.log); // 1
 Promise.reject(2).catch(console.log); // 2
 ```
 
+
 ## async function
 
 ```
@@ -300,6 +303,7 @@ function basicReturn() {
 }
 console.log(p === basicReturn()); // true
 ```
+
 
 ## await
 
@@ -388,6 +392,7 @@ console.log('답: 고양이실패단');
 // '답: 고양이실패단'
 // '🤣🤣🤣'
 ```
+
 
 ## Promise의 병렬 처리
 

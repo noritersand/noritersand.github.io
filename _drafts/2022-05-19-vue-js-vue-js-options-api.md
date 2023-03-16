@@ -58,13 +58,24 @@ fallthrough 속성을 가리키는 컴포넌트 인스턴스. fallthrough 속성
 
 이 코드에서 `class`가 fallthrough 속성이 되며, 자식 컴포넌트의 루트 요소의 속성에 `class`가 자동으로 추가된다.
 
-그리고 이 fallthrough 속성에 접근하는 것이 바로 `$attrs`라는 것.
+그리고 이 fallthrough 속성에 접근하는 경로가 `$attrs`인 것.
 
 ```html
 <span>{{ $attrs }}</span>
 ```
 
 가이드를 보면 이런 특성을 '속성의 자동 상속' 정도로 표현하는데, 이를 비활성화하려면 컴포넌트 옵션에 `inheritAttrs: false`를 추가하면 된다고 한다.
+
+data나 props와 다르게 참조 시 `$attrs`를 생략할 수 없다:
+
+```js
+export default ({
+  created() {
+    console.log(this.$attrs.class); // hello
+    console.log(this.class); // undefined
+  }
+})
+```
 
 
 ## data()

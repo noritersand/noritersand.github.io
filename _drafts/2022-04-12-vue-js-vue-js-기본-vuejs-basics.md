@@ -386,6 +386,20 @@ TODO:
 </select>
 ```
 
+#### v-if 같이 쓰기
+
+[가이드](https://vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)에 따르면 같은 요소에 둘을 같이 쓰는 것은 좋지 않다고 하니 다음처럼 하위 요소로 분리하는 게 좋다:
+
+```html
+<ul>
+  <template v-for="user in users">
+    <li v-if="user.isActive">
+      {{ user.name }}
+    </li>
+  </template>
+</ul>
+```
+
 
 ## 이벤트 핸들링 Event Handling
 
@@ -775,3 +789,13 @@ export default {
   {{message}}
 </div>
 ```
+
+
+## 비동기 컴포넌트 제어: 특정 컴포넌트의 렌더링 멈추기
+
+- [https://vuejs.org/guide/components/async.html](https://vuejs.org/guide/components/async.html)
+- [https://vuejs.org/guide/built-ins/suspense.html#suspense](https://vuejs.org/guide/built-ins/suspense.html#suspense)
+- [https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/](https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/)
+
+TODO `<Suspense>`와 `async setup`을 이용해서 컴포넌트 렌더링 타이밍을 제어할 수 있다고 한다.
+

@@ -32,25 +32,16 @@ tags:
 - [stream](https://getstream.io/): 채팅 관련 오픈소스 같은데 뭔지 잘 몲
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
 - [i'mport](https://www.iamport.kr): 아임포트. 결제/본인인증 중계 서비스. 예를 들면 쇼핑몰과 PG사(혹은 신용조회회사)의 중간에 위치한다고 보면 됨.
-- [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
-- [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
 - [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
 - [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 - [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
 - [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
-- [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
 - [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. 맥은 아직 지원 안함.
-- [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
 - [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
-- [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않았다.
-- [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GTP 기반 AI 채팅. 지금은 베타기간이라 문제가 좀 있다. 이제 곧 기술 문의를 AI한테 하는 시대가 올 지도...
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
-- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
-- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다.
 
 
 ## 메뉴얼/API DOC/튜토리얼
@@ -59,6 +50,9 @@ tags:
 - [⭐ DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
 - [⭐ Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
+- [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
+- [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
+- [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
 
 
 ## 언어
@@ -105,6 +99,28 @@ tags:
 - [Vitebook](https://vitebook.dev/introduction/what-is-vitebook.html#playgrounds)
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Ant Design](https://ant.design/): 잘 모름. 일단 줍줍
+
+
+## 인프라 관련
+
+### 클라우드
+
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다.
+
+### VPN
+
+- [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않음.
+- [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
+
+### 리눅스
+
+- [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
+
+
+## 인풋 매크로, 키 매핑 등
+
+- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
+- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 
 
 ## 정규식 관련
