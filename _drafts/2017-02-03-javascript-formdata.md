@@ -17,6 +17,7 @@ tags:
 
 - [\[MDN\] FormData](https://developer.mozilla.org/en-US/docs/Web/API/FormData)
 
+
 ## FormData
 
 ```
@@ -27,25 +28,28 @@ var formData = new FormData([ formName ]);
 
 쫑알쫑알
 
-## 메서드
 
-- FormData.append()
-- FormData.delete()
-- FormData.entries()
-- FormData.get()
-- FormData.getAll()
-- FormData.has()
-- FormData.keys()
-- FormData.set()
-- FormData.values()
+## 인스턴스 메서드
+
+- FormData.prototype.append()
+- FormData.prototype.delete()
+- FormData.prototype.entries()
+- FormData.prototype.get()
+- FormData.prototype.getAll()
+- FormData.prototype.has()
+- FormData.prototype.keys()
+- FormData.prototype.set()
+- FormData.prototype.values()
+
 
 ## example
 
 asd
 
+
 ## payload로 던질 때의 값
 
-`FormData`를 xhr 통신에 사용하면 payload 값이 이상하게(chunk로 추정되는?) 넘어간다.
+`FormData`를 xhr 통신에 사용하면 payload 값이 chunk로 추정되는 형태로 전송된다.
 
 가령 소스가:
 

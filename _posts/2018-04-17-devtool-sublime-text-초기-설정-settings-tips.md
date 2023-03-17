@@ -194,6 +194,11 @@ Expand Selection
 - <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: split selection into lines, 선택한 영역에서 각 라인마다 캐럿 분리
 
+### folding
+
+- <kbd>ctrl + shift + [</kbd>: fold 접기(보통은 괄호 단위로 접을 수 있음)
+- <kbd>ctrl + shift + ]</kbd>: unfold 펼치기
+
 ### 편집
 
 - <kbd>ctrl + shift + j</kbd>: 라인 단위 병합
