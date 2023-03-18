@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-02 00:40:56 +0900
-title: '[JavaScript] DOM과 자바스크립트: Event Handling'
+title: '[WEB] DOM 다루기: Event Handling'
 categories:
   - javascript
 tags:
@@ -30,8 +30,6 @@ tags:
 
 
 ## 개요
-
-TODO DOM(Document Object Model) 어쩌구 저쩌구
 
 내 맴대로 분류한 DOM 이벤트 핸들링 관련 API 정리.
 

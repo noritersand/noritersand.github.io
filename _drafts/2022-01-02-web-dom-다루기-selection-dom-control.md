@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-02 00:40:56 +0900
-title: '[JavaScript] DOM과 자바스크립트: Selection'
+title: '[WEB] DOM 다루기: Selection'
 categories:
   - javascript
 tags:
@@ -18,13 +18,13 @@ tags:
 
 - [somewhere](somewhere)
 
-## 개요
 
-TODO DOM(Document Object Model) 어쩌구 저쩌구
+## 개요
 
 내 맴대로 분류한 DOM 선택 관련 API 정리.
 
 이미 Element를 선택한 상태에서 탐색하는 기능은 Traversing으로 분류함.
+
 
 ## 옛날에나 쓰던 요소 선택하기
 
@@ -49,6 +49,7 @@ document.forms[0].elements['test3']; // 비표준
 </script>
 ```
 
+
 ## Document.querySelector()
 
 CSS selector로 DOM 요소를 단 하나만 선택한다.
@@ -71,9 +72,11 @@ editor.attributes; // 태그의 모든 속성을 배열로 반환
 editor.attributes['style']; // 태그에서 이름이 'style'인 속성 반환
 ```
 
+
 ## Document.querySelectorAll()
 
 TODO
+
 
 ## 폼 셀렉터
 
@@ -92,8 +95,10 @@ window.frames === window  // true
 window.frames[0] === window // false
 ```
 
+
 ## TODO
 
 - toggleAttribute
+
 
 ## 꼐속...

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-05-01 21:13:00 +0900
-title: '[web] parent가 http이고 child가 https일 때 발생하는 현상들'
+title: '[WEB] parent가 http이고 child가 https일 때 발생하는 현상들'
 categories:
   - web
 tags:

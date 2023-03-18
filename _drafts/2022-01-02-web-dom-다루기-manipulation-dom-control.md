@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-02 00:40:56 +0900
-title: '[JavaScript] DOM과 자바스크립트: Manipulation'
+title: '[WEB] DOM 다루기: Manipulation'
 categories:
   - javascript
 tags:
@@ -22,9 +22,9 @@ tags:
 
 ## 개요
 
-TODO DOM(Document Object Model) 어쩌구 저쩌구
-
 내 맴대로 분류한 DOM 조작 관련 API 정리.
+
+어딘가에 끼워넣거나 이동하는 등의 기능을 제공하는 API들이다.
 
 
 ## append

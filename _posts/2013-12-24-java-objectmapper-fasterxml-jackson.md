@@ -21,6 +21,7 @@ tags:
 - 1.x: org.codehaus.jackson
 - 2.x: com.fasterxml.jackson
 
+
 ## Map/Collections - JSON간 변환
 
 ### writeValueAsString()
@@ -141,6 +142,7 @@ public class Test2 {
 // [{name=steave, age=32, job=baker}, {name=matt, age=25, job=soldier}]
 ```
 
+
 ## 어노테이션
 
 TODO
@@ -153,4 +155,45 @@ TODO
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class JsonResponse {
     // ... 생략
+```
+
+
+## 문자열에서 java.time 패키지로 타입 변환하기
+
+#### 버전 정보
+
+- Java 17
+
+"2021-03-91" 같은 문자열을 java.time 패키지의 `LocalDate`, `LocalDateTime` 같은 날짜 타입의 값으로 변환하려고 하면 이런 예외가 발생한다:
+
+> com.fasterxml.jackson.databind.exc.InvalidDefinitionException: 
+>   Java 8 date/time type `java.time.LocalDate` not supported by default: add Module "com.fasterxml.jackson.datatype:jackson-datatype-jsr310" to enable handling
+
+에러 메시지가 알려주는 것처럼 [모듈](https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310)을 추가하면 해결된다.
+
+### 해결 방법
+
+```xml
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-jsr310 -->
+<dependency>
+    <groupId>com.fasterxml.jackson.datatype</groupId>
+    <artifactId>jackson-datatype-jsr310</artifactId>
+    <version>2.14.2</version>
+</dependency>
+```
+
+```java
+@Getter
+@Setter
+public class ParseMe {
+    private LocalDate birthDate;
+}
+```
+
+```java
+ObjectMapper mapper = new ObjectMapper();
+mapper.registerModule(new JavaTimeModule());
+
+String str = "{\"birthDate\":\"2018-01-01\"}";
+ParseMe parseMe = mapper.readValue(str, ParseMe.class);
 ```

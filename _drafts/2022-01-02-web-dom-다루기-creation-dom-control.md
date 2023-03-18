@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-02 00:40:56 +0900
-title: '[JavaScript] DOM과 자바스크립트: Creation'
+title: '[WEB] DOM 다루기: Creation'
 categories:
   - javascript
 tags:
@@ -18,11 +18,11 @@ tags:
 
 - [\[MDN\] Document](https://developer.mozilla.org/en-US/docs/Web/API/Document)
 
+
 ## 개요
 
-TODO DOM(Document Object Model) 어쩌구 저쩌구
+내 맴대로 분류한 DOM 생성과 삭제 관련 API 정리.
 
-내 맴대로 분류한 DOM 생성 관련 API 정리.
 
 ## Document.prototype.createElement()
 
@@ -32,6 +32,7 @@ var $p = document.createElement('p');
 $p.innerHTML = 'Hello world!';
 $body.appendChild($p);
 ```
+
 
 ## Document.prototype.createTextNode()
 

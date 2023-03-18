@@ -167,6 +167,22 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
 
+## 추천 플러그인
+
+- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+- CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+
+#### GitHub Copilot
+
+AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
+
+- 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
+- 코파일럿 발동: <kbd>alt + \\</kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
+- 코파일럿 제안 선택: <kbd>tab</kbd>
+- 다음 제안 보기: <kbd>alt + [</kbd>
+- 이전 제안 보기: <kbd>alt + ]</kbd>
+
+
 ## 작성자 저장용 단축키 설정
 
 - Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
@@ -271,20 +287,3 @@ Select Next Occurrence.
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
-
-
-## 추천 플러그인
-
-- MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
-- CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
-
-#### GitHub Copilot
-
-AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
-
-- 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
-- 코파일럿 발동: <kbd>alt + \\</kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
-- 코파일럿 제안 선택: <kbd>tab</kbd>
-- 다음 제안 보기: <kbd>alt + [</kbd>
-- 이전 제안 보기: <kbd>alt + ]</kbd>
-

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-17 15:19:13 +0900
-title: '[Linux] 리눅스 일반 사용자용 명령어 정리'
+title: '[Linux] 리눅스 일반 유저용 명령어 정리'
 categories:
   - linux
 tags:
@@ -80,7 +80,7 @@ command -v COMMAND_NAME
 secure shell 터미널 연결
 
 ```
-ssh user@]host[:port]
+ssh [user@]host[:port]
 ```
 
 ```bash
@@ -304,7 +304,7 @@ ps aux | grep -e manage.py | grep -v grep
 
 - `-A` `-e`: 모든 프로세스 보기
 - `-l`: long format으로 출력한다. F, S, UID, PPID, C, PRI, NI, ADDR, SZ, WCHAN 항목이 추가된다.
-- `-f`: full format으로 출력한다. UID, PPID, C, STIME, TTY 항목이 추가되며 UID는 숫자 대신 사용자 이름이, CMD는 명령 전체가 보이게 바뀜.
+- `-f`: full format으로 출력한다. UID, PPID, C, STIME, TTY 항목이 추가되며 UID는 숫자 대신 유저 이름이, CMD는 명령 전체가 보이게 바뀜.
 - `-F`: extra full format으로 출력한다. `-f` 옵션에서 SZ, RSS와 PSR 항목을 추가한다.
 
 
@@ -672,7 +672,42 @@ dig -x 172.217.25.78
 
 ## w
 
-현재 로그인 중인 사용자 정보 표시
+현재 로그인 중인 유저 정보 표시... 라는데 잘 안되는데?
+
+```bash
+$ w
+ 21:51:17 up 9 min,  0 users,  load average: 0.00, 0.00, 0.00
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+```
+
+### 다른 방법
+
+```bash
+# 로그인한 user를 저장하는 환경변수 읽기
+echo $USER
+```
+
+## id
+
+로그인한 유저 혹은 특정 유저의 유저 정보와 그룹 정보를 출력한다.
+
+```bash
+$ id
+uid=1000(fixalot) gid=1000(fixalot) groups=1000(fixalot),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev),1001(docker)
+```
+
+## su
+
+다른 유저로 전환하기. substitute의 약자라고 함.
+
+```bash
+# fixalot으로 로그인
+su fixalot 
+```
+
+#### options
+
+- `-` `-l` `--login`: 마치 진짜 로그인하는 것 처럼 새로운 로그인 세션을 시작한다. 전환하려는 유저의 로그인 환경(환경 변수, 쉘 설정, 홈 디렉토리 등)을 적용하며 전환된다.
 
 
 ## diff
