@@ -506,7 +506,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + prtsc</kbd>: (PrintScreen) 화면 캡처 후 파일로 저장. 경로는 `%userprofiles%\Pictures\Screenshots`
 - <kbd>win + r</kbd>: 실행 대화 상자 열기
 - <kbd>win + s</kbd>: 윈도우 검색. 앱, 파일 등을 찾을 수 있음
-- <kbd>win + shift + left</kbd> or <kbd>win + shift + right</kbd>: 현재 창 이전/다음 모니터로 이동
+- <kbd>win + shift + left</kbd> <kbd>win + shift + right</kbd>: 현재 창 이전/다음 모니터로 이동
 - <kbd>win + shift + up</kbd>: 현재 창 수직 최대화
 - <kbd>win + shift + s</kbd>: 캡처 표시줄 열기
 - <kbd>win + u</kbd>: 접근성 센터 열기.
@@ -529,7 +529,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + alt + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 점프 목록 열기(마우스 우클릭으로 열리는 메뉴)
 - <kbd>win + ctrl + 숫자키</kbd>: 작업 표시줄에 고정된 앱의 마지막 활성 창으로 전환한다. 같은 앱이 둘 이상 실행되어 작업 표시줄의 한 자리에 겹치면서 같은 번호를 부여받는 상황에서만 의미 있는 단축키.
 - <kbd>win + ctrl + shift + 숫자키</kbd>: 작업 표시줄에 고정된 앱을 **관리자 권한으로 새 인스턴스 시작**
-- <kbd>win + t</kbd> or <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택... 라는데 그냥 작업 표시줄에 탭 포커스 생긴다 보면 됨.
+- <kbd>win + t</kbd> <kbd>win + shift + t</kbd>: 작업 표시줄 단추 선택... 라는데 그냥 작업 표시줄에 탭 포커스 생긴다 보면 됨.
 
 ### 가상 데스크탑
 

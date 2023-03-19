@@ -30,6 +30,13 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019인데, 이 경우 ES2019 라고만 적어도 되지만 ES2019(ES10) 이렇게 이전 방식의 버전을 병기하기도 한다.
 
 
+## Plain JavaScript
+
+라이브러리나 프레임웤을 사용하지 않는 순수 자바스크립트를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임웤이 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절함.
+
+[https://plainjs.com/](https://plainjs.com/)에 jQuery를 대체하는 순수 자바스크립트 API가 정리되어 있음.
+
+
 ## 코멘트 처리
 
 ### SingleLine Comment

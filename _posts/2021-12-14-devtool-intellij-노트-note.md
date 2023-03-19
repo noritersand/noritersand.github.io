@@ -248,26 +248,26 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 ### 파일 에디터
 
-- <kbd>ctrl + q</kbd>: Quick Documentation 툴팁창으로 자바독 보기
+- <kbd>ctrl + q</kbd>: Quick Documentation. 툴팁창으로 자바독 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
-- <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
-- <kbd>alt + f1</kbd>: Select in 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
-- <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
-- <kbd>ctrl + f7</kbd>: Find Usages in File 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데 뭔 차이인지 모르겠다.
-- <kbd>ctrl + f1</kbd>: Error Description 에러 툴팁 보기
-- <kbd>ctrl + f12</kbd>: File Structure  eclipse의 빠른 아웃라인 보기 기능과 같음.
-- <kbd>ctrl + alt + l</kbd>: 오토 포매팅
+- <kbd>alt + enter</kbd>: Show Context Actions/ 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
+- <kbd>alt + f1</kbd>: Select in/ 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
+- <kbd>alt + f7</kbd>: Find Usages/ 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
+- <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데 뭔 차이인지 모르겠다.
+- <kbd>ctrl + f1</kbd>: Error Description. 에러 툴팁 보기
+- <kbd>ctrl + f12</kbd>: File Structure. eclipse의 빠른 아웃라인 보기 기능과 같음.
+- <kbd>ctrl + alt + l</kbd>: 오토 fㅗ매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
-- <kbd>f2</kbd> or <kbd>shift + f2</kbd>: Highlighted Error 다음/이전 에러 지점으로 이동
+- <kbd>f2</kbd> <kbd>shift + f2</kbd>: Highlighted Error. 다음/이전 에러 지점으로 이동
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
-- <kbd>ctrl + alt + t</kbd>: Surround With 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
-- <kbd>ctrl + alt + q</kbd>: Toggle Rendered View 자바독 편집/읽기 모드 토글
-- <kbd>ctrl + shift + t</kbd>: Go To Test 현재 클래스의 테스트 클래스로 이동하거나 되돌아옴
-- <kbd>ctrl + h</kbd>: Type Hierarchy 타입 계층 보기
-- <kbd>ctrl + shift + h</kbd>: Method Hierarchy 메서드 계층 보기
-- <kbd>ctrl + alt + h</kbd>: Call Hierarchy 호출 계층 보기
+- <kbd>ctrl + alt + t</kbd>: Surround With. 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
+- <kbd>ctrl + alt + q</kbd>: Toggle Rendered View. 자바독 편집/읽기 모드 토글
+- <kbd>ctrl + shift + t</kbd>: Go To Test. 현재 클래스의 테스트 클래스로 이동하거나 되돌아옴
+- <kbd>ctrl + h</kbd>: Type Hierarchy. 타입 계층 보기
+- <kbd>ctrl + shift + h</kbd>: Method Hierarchy. 메서드 계층 보기
+- <kbd>ctrl + alt + h</kbd>: Call Hierarchy. 호출 계층 보기
 
 ### 멀티 캐럿
 
@@ -282,8 +282,8 @@ Select Next Occurrence.
 
 - <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
-- <kbd>ctrl + f10</kbd>: Update Running Application 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남
+- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 관련 창이 나타나서 <kbd>ctrl + alt + f10</kbd>도 추가함
 - <kbd>shift + f9</kbd>: Debug 모드로 시작
 - <kbd>shift + f10</kbd>: Run 모드로 시작
-- <kbd>ctrl + shift + f9</kbd>: 누구를 Debug 모드로 시작할지 묻는 대화창이 나타남
-- <kbd>ctrl + shift + f10</kbd>: 누구를 Run 모드로 시작할지 묻는 대화창이 나타남
+- <kbd>ctrl + shift + f9</kbd>: 어떤 것을 Debug 모드로 시작할지 묻는 대화창이 나타남
+- <kbd>ctrl + shift + f10</kbd>: 어떤 것을 Run 모드로 시작할지 묻는 대화창이 나타남
