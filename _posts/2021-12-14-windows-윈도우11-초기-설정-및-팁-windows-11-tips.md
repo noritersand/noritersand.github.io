@@ -94,7 +94,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 4. Chrome
 5. Sublime Merge
 6. 가변: Discord, Slack
-7. VSCODE
+7. VSCODE (잘 안쓰면 Notion)
 8. 가변: IDE#1
-9. 가변: IDE#2, notion, document, DBMS tool
-0. 가변: IDE#3, 카톡, WorkFlowy
+9. 가변: IDE#2, Notion, Office, DBMS tool
+0. 가변: IDE#3, 카톡

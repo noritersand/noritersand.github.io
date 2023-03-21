@@ -17,11 +17,11 @@
 - [저장소 내부 링크](#저장소-내부-링크)
 
 
-## 윈도우에서 Jekyll 빌드 환경 설정
+## 윈도우에서 Jekyll 빌드
 
-만약 WSL-ubuntu에 설치할거면 [여기](https://jekyllrb.com/docs/installation/ubuntu/)를 보자. **절대 Quickstart 페이지만 보고 하면 안됨**.
+만약 WSL-ubuntu에 빌드 환경을 구성할 거라면 [여기](https://jekyllrb.com/docs/installation/ubuntu/)를 보자. **절대 Quickstart 페이지만 보고 하면 안됨**.
 
-WSL이 아니면 [윈도우용 Ruby + Devkit 설치](https://rubyinstaller.org/downloads/).
+WSL이 아니면 [윈도우용 Ruby + Devkit 설치](https://rubyinstaller.org/downloads/)를 보면 되는데, 각종 버그가 튀어나와서 추천하지 않음.
 
 ### RubyGems으로 Bundler와 Jekyll 설치
 
@@ -48,9 +48,10 @@ jekyll new . --force
 
 ## 사이트 빌드
 
-미리 요약하면 빌드와 로컬 서버 기동은 아래 한 줄로 됨:
+한 줄 요약:
 
 ```bash
+# 빌드 후 로컬 서버 기동
 bundle exec jekyll s -DI
 ```
 
@@ -88,33 +89,33 @@ jekyll build --watch
 ### 로컬 서버 띄우기
 
 ```bash
-# 개발서버가 실행됩니다. http://localhost:4000/
-# 자동 재생성: 활성화. 비활성화하려면 `--no-watch` 를 사용하세요.
+# 로컬 서버 기동 http://localhost:4000/
 jekyll serve
 
+# s는 serve의 단축어
 # 로컬서버를 실행하되 draft를 포함.
 jekyll s -D
 
-# 변경사항이 발생했을 때 LiveReload 기능이 브라우저를 새로고침합니다.
+# 변경사항이 발생했을 때 LiveReload 기능이 브라우저를 새로고침
 jekyll serve --livereload
 
-# 재생성 소요시간을 줄이기 위해 증분 재생성 기능으로 부분 빌드를 합니다.
+# 재생성 소요시간을 줄이기 위해 증분 재생성 기능으로 부분 빌드
 jekyll serve --incremental
 
-# `jekyll serve` 와 동일하지만 현재 터미널에 독립적으로 실행됩니다.
-# 서버를 종료하려면, `kill -9 1234` 를 실행하세요. "1234" 는 PID 입니다.
-# PID 를 모르겠다면, `ps aux | grep jekyll` 를 실행하고 해당 인스턴스를 종료하세요
+# jekyll serve 와 동일하지만 현재 터미널에 독립적으로 실행
+# 서버를 종료하려면, kill -9 1234 를 실행하세요. "1234" 는 PID
+# PID 조회는 ps aux | grep jekyll
 jekyll serve --detach
 
-# `jekyll serve` 와 동일하지만 변경사항을 감시하지 않습니다.
+# jekyll serve 와 동일하지만 변경사항을 감시하지 않음.
 jekyll serve --no-watch
 ```
 
 `--livereload`는 켜봤자 빌드하는 동안 404 에러나서 안씀.
 
-`--watch` 옵션을 생략해도 `serve` 실행 중에는 파일 변경사항을 자동으로 감시하는 것 같음.
+`--watch` 옵션은 기본값인 것 같다. (`serve` 실행 중에는 파일 변경사항을 자동으로 감시)
 
-그리고 이유는 잘 모르겠지만 `jekyll`로 시작이 안될때 `bundle exec`로 되기도 함. 아래처럼 해보자:
+그리고 이유는 모르겠지만 `jekyll`로 시작이 안될때 `bundle exec`로 되기도 함. 아래처럼 해보자:
 
 ```bash
 gem install bundler # 이미 설치했으면 이건 생략

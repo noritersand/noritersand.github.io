@@ -141,6 +141,8 @@ npm exec http-server -p 9090
 
 `npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
 
+명령 실행에 필요한 패키지를 임시로 설치해준다는 설명이 있음. 임시니까 알아서 지워지겠지?
+
 
 ## package.json
 

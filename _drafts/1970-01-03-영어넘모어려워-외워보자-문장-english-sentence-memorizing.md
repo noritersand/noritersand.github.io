@@ -20,3 +20,4 @@ tags:
 ## 외워보자
 
 - A used to configure B: A는 B를 구성하는데 사용됨
+- lift A restriction: A 제한을 해제

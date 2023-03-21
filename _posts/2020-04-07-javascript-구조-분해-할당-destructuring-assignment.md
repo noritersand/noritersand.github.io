@@ -119,7 +119,7 @@ typeof p; // "undefined"
 typeof q; // "undefined"
 ```
 
-보면 알겠지만 변수 `p`와 `q`는 만들어지지 않았음.
+보면 알겠지만 변수 `p`와 `q`는 선언되지 않음.
 
 ### 기본값과 새 변수 할당 동시 설정
 
@@ -221,11 +221,11 @@ var {x, ...y, b} = {a: 1, b: 2, c: 3, d: 4}; // SyntaxError: Rest element must b
 ```
 
 
-## 중첩된 객체/배열의 구조 분해
+## 중첩된 객체의 구조 분해
 
 여기까진 깊이가 1인 객체의 예시만 들었는데, 만약 2레벨 이상의 객체를 분해하려면 어떻게 해야 할까?
 
-답은:
+요렇게 하면 됨:
 
 ```js
 const data = {
@@ -253,7 +253,17 @@ realName; // "waldo"
 hi; // "Hello there! Mighty fine morning"
 ```
 
-만약 배열이 섞인다면:
+**주의: 여기서 중간 단계인 `character`와 `script`는 선언되지 않는다.**
+
+```js
+typeof character; // 'undefined'
+typeof script; // 'undefined'
+```
+
+
+## 중첩된 객체+배열의 구조 분해
+
+만약 배열이 섞인 경우:
 
 ```js
 const data = {
@@ -270,7 +280,7 @@ var {character: {scripts: [firstScript]}} = data;
 firstScript; // "Hello there! Mighty fine morning"
 ```
 
-배열 리터럴을 적절히 섞어주면 됨.
+이런 식으로 배열 리터럴을 적절히 섞어주면 됨.
 
 
 ## for-of에서 구조 분해

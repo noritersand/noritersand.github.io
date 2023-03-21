@@ -297,8 +297,11 @@ ps -ef
 # 모든 프로세스를 long format + full format 출력
 ps -elf
 
-ps aux | grep -e manage.py | grep -v grep
+# 모든 사용자의 모든 프로세스를 상세히 출력
+ps aux
 ```
+
+참고로 `a`, `u`, `x`는 BSD 스타일 옵션이다.
 
 #### options
 
@@ -306,6 +309,11 @@ ps aux | grep -e manage.py | grep -v grep
 - `-l`: long format으로 출력한다. F, S, UID, PPID, C, PRI, NI, ADDR, SZ, WCHAN 항목이 추가된다.
 - `-f`: full format으로 출력한다. UID, PPID, C, STIME, TTY 항목이 추가되며 UID는 숫자 대신 유저 이름이, CMD는 명령 전체가 보이게 바뀜.
 - `-F`: extra full format으로 출력한다. `-f` 옵션에서 SZ, RSS와 PSR 항목을 추가한다.
+- `a`: 모든 프로세스
+- `s`: Display signal format.
+- `u`: 사용자 지정 출력 형식을 사용함(뭔 소리야)
+- `v`: 가상 메모리 형식으로 출력
+- `x`: 터미널에 연결되어 있지 않은 프로세스를 포함한다
 
 
 ## kill

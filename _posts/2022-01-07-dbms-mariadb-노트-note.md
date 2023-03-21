@@ -161,7 +161,7 @@ from test_table, (select @rownum := 0) r
 set @table_name = 'table_name';
 set @table_schema = 'schema_name';
 
-select 0 as ordinal_position, 'it\'s table' as column_name, '' as column_type, concat('/**', table_name, ' ', table_comment, ' 테이블 VO', '*/\r\r') as str
+select 0 as ordinal_position, 'it\'s table' as column_name, '' as column_type, concat('/**', table_name, ' ', table_comment, ' 테이블 클래스', '*/\r\r') as str
 from information_schema.tables
 where table_name = @table_name
 and table_schema = @table_schema
@@ -423,3 +423,23 @@ CONVERT(expr USING transcoding_name)
 ```sql
 select convert(now(), date);
 ```
+
+
+## 테이블 조인 join
+
+[https://mariadb.com/kb/en/join-syntax](https://mariadb.com/kb/en/join-syntax)
+
+### outer join 중 inner join을 먼저 수행하고 싶을 때
+
+가령 t1 테이블과 t2 테이블을 outer join 할 때, 먼저 t2와 t3, t4 테이블의 inner join을 먼저 하고 싶다면?
+
+```sql
+# t2, t3, t4를 inner join하고 t1과 outer join
+SELECT * FROM t1 LEFT JOIN (t2, t3, t4)
+                 ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
+
+# 위와 같음
+SELECT * FROM t1 LEFT JOIN (t2 CROSS JOIN t3 CROSS JOIN t4)
+                 ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
+```
+
