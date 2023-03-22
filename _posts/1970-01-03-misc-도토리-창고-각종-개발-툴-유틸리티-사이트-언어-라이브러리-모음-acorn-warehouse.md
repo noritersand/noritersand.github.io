@@ -28,7 +28,7 @@ tags:
 - [stripe](https://stripe.com): 결제 대행 웹 앱. 해외판 PG사라고 생각하면 된다. 노션과 험블번들에서 쓰더라.
 - [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
-- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 대신 퍼블리싱 결과물은 노션 읽기 전용 페이지보다 훌륭하다. 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
+- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 대신 퍼블리싱 결과물은 훌륭한 편. 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
 - [stream](https://getstream.io/): 채팅 관련 오픈소스 같은데 뭔지 잘 몲
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
 - [i'mport](https://www.iamport.kr): 아임포트. 결제/본인인증 중계 서비스. 예를 들면 쇼핑몰과 PG사(혹은 신용조회회사)의 중간에 위치한다고 보면 됨.
@@ -209,7 +209,7 @@ tags:
 
 ## 공인 IP 확인
 
-- [https://icanhazip.com](https://icanhazip.com): 딱 내 공인 IP만 텍스트로 응답하는 서버. icanhaz 시리즈가 몇 개 더 있으니 [여기1](https://major.io/icanhazip-com-faq)랑 [여기2](https://github.com/major/icanhaz)를 보자.
+- [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 서버.
 - [https://whatismyipaddress.com](https://whatismyipaddress.com): 내 공인 IP 정보 확인하는 사이트. 예전에 bot이 있었는데 사라짐.
 - [https://ipinfo.io](https://ipinfo.io): 내 공인 IP 정보 확인하는 사이트.#2
 
