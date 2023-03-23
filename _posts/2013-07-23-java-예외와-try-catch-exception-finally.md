@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:38:00 +0900
-title: '[Java] 예외 exception'
+title: '[Java] 예외와 try-catch'
 categories:
   - java
 tags:
@@ -28,6 +28,7 @@ API에 따라 예외를 내부에서 알아서 처리(`try-catch`)하거나 선�
 
 가 있다.
 
+
 ## RuntimeException
 
 JVM 실행 중에 발생하는 예외를 의미한다. 자바독을 보면 다음처럼 명시되어 있다.
@@ -35,6 +36,7 @@ JVM 실행 중에 발생하는 예외를 의미한다. 자바독을 보면 다�
 >RuntimeException and its subclasses are uncheckedexceptions. Unchecked exceptions do not need to bedeclared in a method or constructor's throws clause if theycan be thrown by the execution of the method or constructor andpropagate outside the method or constructor boundary.
 
 ~~뭐라는거야~~ 대충 해석해보면 Unchecked exception으로 분류되며 이 유형은 메서드나 생성자에 의해 상위 스택으로 전파가 가능하다면 예외 처리를 굳-이 명시하지 않아도 된다고 한다.
+
 
 ## try-catch
 
@@ -84,6 +86,7 @@ try {
 }
 ```
 
+
 ## throw / throws
 
 `throw`, `throws` 키워드는 예외가 발생한 지역이 아니라 예외를 발생시킨 메서드를 호출한 지역(caller)에 예외를 떠넘길 때 사용한다. 다음은 `m01()` 메서드에서 발생한 예외를 caller인 `main()`에서 처리하는 예다:
@@ -126,6 +129,7 @@ class Excep {
 }
 ```
 
+
 ## finally
 
 `finally`는 try절이나 catch절 이후 반드시 실행되는 실행문을 정의한다.
@@ -146,7 +150,7 @@ class Excep {
     }
 ```
 
-`try-catch-finally`에서 catch절 없이 `try-finally` 형태로 작성이 가능하긴 하다. 이 경우 try절에서 예외 발생 시 예외가 미뤄진다:
+`try-catch-finally`에서 catch절 없이 `try-finally` 형태로 작성이 가능하긴 하다. 이 경우 try절에서 예외 발생 시 상위 스택으로 던져진다:
 
 ```java
     public void withOutCatchStatement() {
@@ -155,7 +159,7 @@ class Excep {
                 @SuppressWarnings("unused")
                 int nan = 1 / 0; // 여기서 발생한 예외는 가장 바깥의 catch에서 받음
             } finally {
-                // catch문이 없으면 finally라도 있어야 컴파일 에러 안남
+                // catch문이 없으면 finally라도 있어야 컴파일 에러가 발생하지 않음
                 logger.debug("You know nothing John snow!");
             }            
         } catch (ArithmeticException e) {
@@ -163,6 +167,7 @@ class Excep {
         }
     }
 ```
+
 
 ## example
 

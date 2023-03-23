@@ -87,7 +87,9 @@ p.abc; // Object { #value: "Hello world!" }
 p.ov(); // Hello world!
 ```
 
-근데 재연이 안됨. 뭔가 다른가 봄. 원래는 이 에러가 나야 함:
+근데 뭔가 다른지 재연이 안됨. 
+
+의도대로라면 요 에러가 발생해야 함:
 
 ```
 Cannot read private member #value from an object whose class did not declare it
