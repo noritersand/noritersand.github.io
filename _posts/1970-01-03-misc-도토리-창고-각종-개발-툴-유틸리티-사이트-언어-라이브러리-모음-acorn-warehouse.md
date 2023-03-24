@@ -209,17 +209,17 @@ tags:
 
 ## 공인 IP 확인
 
-- [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 서버.
-- [https://whatismyipaddress.com](https://whatismyipaddress.com): 내 공인 IP 정보 확인하는 사이트. 예전에 bot이 있었는데 사라짐.
-- [https://ipinfo.io](https://ipinfo.io): 내 공인 IP 정보 확인하는 사이트.#2
+- [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 사이트.
+- [https://whatismyipaddress.com](https://whatismyipaddress.com): 접속한 PC의 IP 관련 정보를 보여주는 사이트 #1. 예전에 bot이 있었는데 사라짐.
+- [https://ipinfo.io](https://ipinfo.io): 접속한 PC의 IP 관련 정보를 보여주는 사이트 #2
 
 
 ## Git GUI 툴
 
 - [Fork](https://fork.dev): 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
 - [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 ~~속도는 느리지만~~ 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 지이이이인짜 빠르다.
-- [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴.
+- [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
+- [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
 
 
 ## 트래픽 캡쳐
