@@ -106,6 +106,7 @@ tags:
 ### 클라우드
 
 - [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다.
+- [Koyeb](https://www.koyeb.com/): PaaS 서비스 같은데 확인 안함. Heroku 유료화되서 이거 쓰는 사람이 있다고
 
 ### VPN
 

@@ -701,15 +701,15 @@ export const childComponent = {
       <option :value="1">숫자 일</option>
     </select>
   `,
-  props: ['selected'],
-  emits: ['update:selected'],
+  props: ['selectedValue'],
+  emits: ['update:selected-value'],
   computed: {
     computedModel: {
       get() {
-        return this.selected;
+        return this.selectedValue;
       },
       set(value) {
-        this.$emit('update:selected', value);
+        this.$emit('update:selected-value', value);
       }
     }
   }
@@ -717,23 +717,23 @@ export const childComponent = {
 ```
 
 ```html
-<child-component v-model:selected="message"></child-component>
+<child-component v-model:selected-value="message"></child-component>
 ```
 
-emit 이름은 `update:`를 반드시 포함해야 한다. 그리고 `v-model:selected="message"`에서 `:selected`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
+emit 이름은 `update:`를 반드시 포함해야 한다. 그리고 `v-model:selected-value="message"`에서 `:selected-value`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
 
 이것보다 간단한 게 있긴 한데:
 
 ```js
 export const childComponent = {
   template: `
-    <select :value="selected" @input="$emit('update:selected', $event.target.value)">
+    <select :value="selectedValue" @input="$emit('update:selected-value', $event.target.value)">
       <option :value="null">널 값</option>
       <option :value="1">숫자 일</option>
     </select>
   `,
-  props: ['selected'],
-  emits: ['update:selected']
+  props: ['selectedValue'],
+  emits: ['update:selected-value']
 };
 ```
 

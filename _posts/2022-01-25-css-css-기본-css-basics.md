@@ -23,20 +23,6 @@ tags:
 CSS(Cascading Sytle Sheet) 기본 사용법 정리.
 
 
-## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
-
-At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에 가깝)다.
-
-```
-@IDENTIFIER (RULE);
-```
-
-```css
-/* Example: tells browser to use UTF-8 character set */
-@charset "utf-8";
-```
-
-
 ## 스타일 적용하기
 
 ### inline
@@ -133,3 +119,96 @@ height: auto
 ```
 
 `auto`는 브라우저가 알아서 결정하도록 한다는 것을 의미한다.
+
+
+## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
+
+At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에 가깝)다.
+
+```
+@IDENTIFIER (RULE);
+```
+
+```css
+/* Example: tells browser to use UTF-8 character set */
+@charset "utf-8";
+```
+
+### @supports
+
+[https://developer.mozilla.org/en-US/docs/Web/CSS/@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+
+브라우저가 어떤 속성(혹은 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의한는 방법이다.
+
+```
+@supports (<supports-condition>) {
+  /* supports-condition이 true면 적용할 스타일 */
+}
+
+@supports (<supports-condition>) and (<supports-condition>) {
+  /* supports-condition이 모두 true면 적용할 스타일 */
+}
+
+@supports (<supports-condition>) or (<supports-condition>) {
+  /* supports-condition 중 하나가 true면 적용할 스타일 */
+}
+
+@supports not (<supports-condition>) {
+  /* supports-condition이 false면 적용할 스타일 */
+}
+```
+
+요런식으로 쓴다(코드 출처는 [노마드 코더 유튜브](https://www.youtube.com/watch?v=HZIcTZABMuc)와 MDN):
+
+```css
+/* 브라우저가 text-align:center를 지원하면 */
+@supports (text-align:center) {
+  /* 이 스타일을 적용함 */
+  body {
+    text-align:center;
+  }
+}
+
+/* 브라우저가 display:grid를 지원하면 */
+@supports (display:grid) {
+  /* 이 스타일 적 */
+  header {
+    display: grid;
+  }
+}
+
+/* 브라우저가 border-radius:10px을 지원하지 않으면 */
+@supports not (border-radius:10px) {
+  .old-browser-alert {
+    display:block;
+  }
+}
+
+@supports selector(:first-child) {
+  li:first-child {
+    /* ... */
+  }
+}
+
+@supports (transform-origin: 5% 5%) {
+}
+
+@supports not (transform-origin: 10em 10em 10em) {
+}
+
+@supports not (not (transform-origin: 2px)) {
+}
+
+@supports (display: grid) and (not (display: inline-grid)) {
+}
+```
+
+2022년에 정의된 표준이라 현재(2023-03-26)는 파이어폭스만 모두 지원하고, 나머지 브라우저는 일부 기능만 지원한다. [https://caniuse.com/?search=%40supports](https://caniuse.com/?search=%40supports)
+
+### @property
+
+[https://developer.mozilla.org/en-US/docs/Web/CSS/@property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
+
+TODO
+
+2023년에 정의된 표준이며 현재(2023-03-26) 크로미움 계열만 지원함.

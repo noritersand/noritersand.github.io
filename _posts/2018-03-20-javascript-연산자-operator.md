@@ -392,12 +392,12 @@ func?.(args)
 
 메서드 호출에는 제한적으로만 쓸 수 있다:
 
-```java
+```js
 var obj = {};
 obj?.fn(); // Uncaught TypeError: obj.fn is not a function
 obj?.child.fn(); // Uncaught TypeError: can't access property "fn", obj.child is undefined
-obj.child?.fn(); // 에러 안나고 undefined
-obj?.child?.fn(); // 에러 안나고 undefined
+obj.child?.fn(); // undefined
+obj?.child?.fn(); // undefined
 
 var obj2 = {
   str: "foo"
@@ -407,7 +407,17 @@ obj2?.str?.toString(); // "foo"
 obj2?.str?.qwer(); // Uncaught TypeError: obj2.str.qwer is not a function
 obj2?.str?.qwer; // undefined
 obj2?.str?.qwer?.asdv; // undefined 
-obj2?.str?.qwer?.toString(); // 에러 안나고 undefined
+obj2?.str?.qwer?.toString(); // undefined
+```
+
+메서드 호출 때는 단 하나의 조건만 따지면 된다: 호출할 메서드를 소유한 프로퍼티가 undefined일 것
+
+```js
+var obj = {
+  a: {}
+};
+obj.a?.fn(); // Uncaught TypeError: obj.a?.fn is not a function
+obj.b?.fn(); // undefined
 ```
 
 
