@@ -20,13 +20,16 @@ tags:
 - [\[MDN\] Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 - [\[MDN\] Window.sessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/sessionStorage)
 
+
 ## localStorage
 
 localStorage는 브라우저 전체에서 공유되는 저장공간이다. 여러 창(혹은 탭)끼리도 같은 저장공간을 사용한다.
 
+
 ## sessionStorage
 
 sessionStorage는 localStorage와 다르게 Window마다 분리되는 저장공간이다. 브라우저의 다른 창(혹은 탭)에서는 Window가 다르므로 sessionStorage를 공유하지 않는다. **Java Servlet에서 말하는 세션과는 다른 개념**이므로 혼동하지 말자. 브라우저를 종료하면 자동으로 초기화된다.
+
 
 ## 데이터 저장 기준
 
@@ -37,6 +40,7 @@ sessionStorage는 localStorage와 다르게 Window마다 분리되는 저장공�
 ```js
 console.log(location.host); // "localhost:8888"
 ```
+
 
 ## 메서드
 

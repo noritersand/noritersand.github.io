@@ -24,6 +24,7 @@ tags:
 - 파이어 폭스 47
 - 크롬 51
 
+
 ## 엄격 모드란?
 
 'strict mode(이하 엄격 모드)'는 ECMAScript 5부터 새로 추가된 기능이다. 스크립트의 시작 부분이나 함수 코드 블록의 시작부분에 `use strict`를 작성하는 것으로 엄격 모드임을 지시한다. 엄격 모드가 아닌 지역은 '표준 모드'로 구분된다. (표준 모드는 'non-strict', 'sloppy mode'라고도 함.)
@@ -49,6 +50,7 @@ function test() {
 >엄격 모드: 응 에러
 
 엄격 모드의 가장 큰 특징은 잘못된 구문(bad syntax)을 어물쩡 넘어가지 않는다는 것이다. 표준 모드는 비록 잘못된 구문이 있더라도 정말 심각한 오류가 아니라면 알아서 보완하거나 단지 `false`를 반환하는 것으로 그치는데 비해, 엄격 모드에선 잘못된 구문을 항상 에러로 내뱉는다. 에러가 발생했으니 남은 코드의 실행이 중단되는 것은 덤.
+
 
 ## 엄격 모드에서 에러가 발생하는 잘못된 구문들
 
@@ -150,6 +152,7 @@ false.true = ''; // TypeError: can't assign to properties of (new Boolean(false)
 (14).sailing = 'home'; // TypeError: can't assign to properties of (new Number(14)): not an object
 'BBK'.include = 'MB'; // TypeError: can't assign to properties of (new String("BBK")): not an object
 ```
+
 
 ## 엄격 모드에서 다르게 작동하는 구문들
 

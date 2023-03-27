@@ -15,6 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ```js
 $('#inptHp2, #inptHp3').keydown(function(e) {
   var k = e.keyCode;

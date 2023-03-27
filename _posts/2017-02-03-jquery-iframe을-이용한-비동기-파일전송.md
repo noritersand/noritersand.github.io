@@ -23,6 +23,7 @@ tags:
 
 - 모든 브라우저에서 가능
 
+
 ```html
 <script type="text/javascript">
 function getDoc(frame) {

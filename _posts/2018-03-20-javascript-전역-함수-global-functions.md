@@ -19,6 +19,7 @@ tags:
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [http://www.w3schools.com/jsref/jsref_obj_global.asp](http://www.w3schools.com/jsref/jsref_obj_global.asp)
 
+
 ## eval(), uneval()
 
 ```
@@ -48,6 +49,7 @@ MDN에선 보안 문제가 있고 코드 최적화가 불가능한 `eval()` 대�
 
 \* `uneval()`은 비표준 함수라서 일부 브라우저에선(구글 크롬) 사용할 수 없다.
 
+
 ## encodeURI(), decodeURI()
 
 ```
@@ -63,6 +65,7 @@ decodeURI( string )
 encodeURI('가');  // "%EA%B0%80"
 decodeURI('%EA%B0%80');  // "가"
 ```
+
 
 ## encodeURIComponent(), decodeURIComponent()
 
@@ -80,6 +83,7 @@ decodeURIComponent( string )
 encodeURI('?=&');  // "?=&"
 encodeURIComponent('?=&');  // "%3F%3D%26"
 ```
+
 
 ## isFinite(), isNaN()
 
@@ -109,6 +113,7 @@ isNaN(1);  // false
 isNaN("Hello");  // true
 ```
 
+
 ## parseFloat()
 
 ```
@@ -123,6 +128,7 @@ parseFloat( object )
 parseFloat("10.33"); // 10.33
 parseFloat("5.4321e6") // 5432100
 ```
+
 
 ## parseInt()
 

@@ -78,10 +78,13 @@ tags:
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [tailwindcss](https://tailwindcss.com/): CSS 프레임워크. 설명이 어려우니 데모를 보자
-- [Vue](https://vuejs.org/)
-- [React](https://reactjs.org/)
-- [Svelte](https://svelte.dev/)
 - [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+
+### 웹(프론트) 프레임워크
+
+- [Vue](https://vuejs.org/)
+- [React](https://reactjs.org/): 라이브러리라 주장하지만...
+- [Svelte](https://svelte.dev/)
 
 ### 테스트
 

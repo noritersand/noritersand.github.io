@@ -12,6 +12,10 @@ tags:
   - iframe
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
+
 자바스크립트로 iframe 객체에 접근하는 방법은 두 가지가 있는데, 하나는 document 객체의 메서드를 이용하는 방법이고 두 번째는 window 객체의 frames 프로퍼티로 접근하는 방법이다.
 
 ```js

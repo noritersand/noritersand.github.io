@@ -27,6 +27,7 @@ tags:
 - [위키백과: 유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
 - [위키백과: 유니코드 D000~DFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_D000~DFFF)
 
+
 ## URI 인코딩이란
 
 ```js
@@ -34,6 +35,7 @@ https://www.google.co.kr/search?q=%ED%95%9C%EA%B8%80
 ```
 
 위에서 `%ED%95%9C%EA%B8%80`는 '한글'을 의미한다. 이것은 HTTP 스펙에 따른 변환으로, '한글'을 UTF-8로 인코딩한 뒤 바이트마다 앞에 '%'를 붙여준 값이다. ('한글'은 유니코드 포인트로 `U+D55C U+AE00`이며, UTF-8 인코딩의 16진수 표현으로는 `ed 95 9c ea b8 80`이다.)
+
 
 ## 변환 테스트
 
@@ -58,6 +60,7 @@ function keyupHandler() {
 }
 </script>
 
+
 ## encodeURI()와 encodeURIComponent()의 차이
 
 자바스크립트는 `encodeURI()`와 `encodeURIComponent()` 함수를 제공한다. 둘의 차이점은 다음과 같다:
@@ -68,6 +71,7 @@ encodeURIComponent('?a=b&c=d');  // "%3Fa%3Db%26c%3Dd"
 ```
 
 `encodeURIComponent()`는 인수를 querystring의 일부라고 간주한다. 따라서 `=`, `?`, `&`를 인코딩한다. 반면 `encodeURI()`는 인수를 URI 전체라고 간주하며 파라미터 구분자인 `=`, `?`, `&`를 인코딩하지 않는다.
+
 
 ## 번외: 브라우저 주소창에 보이는 문자 그대로 복사하기
 

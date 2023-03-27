@@ -18,6 +18,7 @@ tags:
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with)
 
+
 ## with
 
 주로 깊이 중첩된 구조를 갖는 객체의 프로퍼티 접근 표현식을 생략하기 위해 사용된다. 다만 사용이 권장되지 않는다. David Flanagan은 최적화가 힘들고 코드 실행 속도가 느리기 때문이라 한다. MDN은 "혼란스러운 버그를 유발하고 호환성에 문제가 있어서 비권장"한다. 게다가 엄격 모드(strict mode)에선 사용조차 불가하니 실제 쓸 일은 없어 보인다.
@@ -31,6 +32,7 @@ with (obj.inner) {
   console.debug(number); // 1234
 }
 ```
+
 
 ## debugger
 

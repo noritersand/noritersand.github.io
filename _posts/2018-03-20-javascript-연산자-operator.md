@@ -390,7 +390,7 @@ func?.(args)
 
 아직(2022-03-02) 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
 
-메서드 호출에는 제한적으로만 쓸 수 있다:
+### 메서드 호출 표현식에서의 Optional Chaining
 
 ```js
 var obj = {};
@@ -410,7 +410,11 @@ obj2?.str?.qwer?.asdv; // undefined
 obj2?.str?.qwer?.toString(); // undefined
 ```
 
-메서드 호출 때는 단 하나의 조건만 따지면 된다: 호출할 메서드를 소유한 프로퍼티가 undefined일 것
+메서드를 호출할 때는 몇 가지 제한이 있다.
+
+1. (당연하게도) 함수 호출 표현식에선 쓸 수 없다.
+
+2. 메서드를 소유한 프로퍼티가 정의된 적 없는 undefined일 때 가능하다:
 
 ```js
 var obj = {
@@ -418,6 +422,14 @@ var obj = {
 };
 obj.a?.fn(); // Uncaught TypeError: obj.a?.fn is not a function
 obj.b?.fn(); // undefined
+```
+
+3. 메서드 소유자가 프로퍼티가 아니라 object일 때, 해당 object를 담은 변수는 최소한 선언된 상태여야 한다:
+
+```js
+var foo;
+foo?.fn(); // undefined
+bar?.fn(); // Uncaught ReferenceError: bar is not defined
 ```
 
 

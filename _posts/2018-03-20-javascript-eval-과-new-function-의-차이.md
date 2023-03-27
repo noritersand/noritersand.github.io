@@ -17,6 +17,7 @@ tags:
 
 - [http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing](http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing)
 
+
 ```js
 function test1() {
   var a = 111;

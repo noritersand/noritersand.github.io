@@ -19,6 +19,7 @@ tags:
 - [http://www.w3schools.com/jsref/prop_win_opener.asp](http://www.w3schools.com/jsref/prop_win_opener.asp)
 - [https://developer.mozilla.org/en-US/docs/Web/API/Window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window.opener)
 
+
 ## opener
 
 ```js
@@ -26,6 +27,7 @@ window.opener.document
 ```
 
 `window.open()`으로 윈도우 객체가 생성될 때 자바스크립트는 window.opener 프로퍼티에 윈도우를 연 객체(부모)를 저장한다. 이를 이용하면 자식 창에서 부모 창을 컨트롤하거나 서로간 데이터를 주고받는게 가능하다.
+
 
 ## example
 

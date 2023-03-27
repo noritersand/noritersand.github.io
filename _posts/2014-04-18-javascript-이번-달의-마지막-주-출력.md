@@ -15,6 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ```js
 Date.prototype.addDate = function(value) {
   this.setDate(this.getDate() + value);

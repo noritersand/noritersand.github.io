@@ -21,6 +21,7 @@ tags:
 - [\[MDN\] KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 - [JavaScript Event KeyCodes](http://keycode.info/)
 
+
 ## keyCode 확인 방법
 
 자바스크립트로 키보드 이벤트의 keycode를 확인하는 방법은:
@@ -47,6 +48,7 @@ tags:
 > Warning: Since this event has been deprecated, you should look to use beforeinput or keydown instead.
 >
 > https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event
+
 
 ## 입력 테스트
 
@@ -136,6 +138,7 @@ tags:
   };
 </script>
 
+
 ## KeyCode Reference Table
 
 [표 출처](https://lael.be/55)
@@ -196,6 +199,7 @@ tags:
 | 207  |              | 217  |              | 227  |           | 227  |               | 227  |              |
 | 208  |              | 218  |              | 228  |           | 238  |               | 248  |              |
 | 209  |              | 219  | `[{`         | 229  |           | 239  |               | 249  |              |
+
 
 ## example
 

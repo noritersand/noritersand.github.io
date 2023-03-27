@@ -19,6 +19,7 @@ tags:
 - [http://www.w3schools.com/jsref/met_win_open.asp](http://www.w3schools.com/jsref/met_win_open.asp)
 - [\[MDN\] Window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
 
+
 ## open()
 
 ```
@@ -66,6 +67,7 @@ specs += ",top=" + top;
 
 window.open("/test.jsp", "팝업", specs);
 ```
+
 
 ## 브라우저별 특성
 

@@ -19,6 +19,7 @@ tags:
 - [https://api.jquery.com/category/forms](https://api.jquery.com/category/forms)
 - [https://api.jquery.com/category/ajax](https://api.jquery.com/category/ajax)
 
+
 ## Forms
 
 ### .blur()
@@ -135,6 +136,7 @@ submission 이벤트에 실행할 함수를 할당한다.
 ### .val( val )
 
 모든 요소의value 속성에 값을 지정한다.
+
 
 ## Ajax
 
@@ -325,6 +327,7 @@ $.post(url, { num1: num1, num2: num2, oper: o }, function(data) {
 });
 ```
 
+
 ## Local ajax event handlers
 
 `jQuery.ajax()`와 그 파생 메서드들은 jQuery-XMLHttpRequest Object를 반환하는데, 이를 통해 수신된 결과를 처리하도록 핸들러를 등록할 수 잇다.
@@ -390,6 +393,7 @@ $.ajax({
     console.log('always');
 });
 ```
+
 
 ## Global ajax event handlers
 

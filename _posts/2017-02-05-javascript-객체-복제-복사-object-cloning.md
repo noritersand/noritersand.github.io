@@ -23,11 +23,13 @@ tags:
 - [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
 - [jQuery: jQuery.extend()](https://api.jquery.com/jquery.extend/)
 
+
 ## 개요
 
 JavaScript의 객체 복제에 대한 정리글.
 
 객체 복제(object cloning)보단 객체 복사(object copying)란 말이 더 흔히 쓰이지만 더 맞는 표현인 복제로 명시함.
+
 
 ## 얕은 복제 Shallow Cloning
 
@@ -107,6 +109,7 @@ var newone = JSON.parse(JSON.stringify(copyme));
 console.log(newone.child.grandson.txt); // peek-a-boo!
 console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불가
 ```
+
 
 ## 깊은 복제 Deep Cloning
 

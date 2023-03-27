@@ -16,6 +16,7 @@ tags:
 - [\[MDN\] Document.execCommand](https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand)
 - [Copying text to clipboard with JavaScript - Hacker Noon](https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f)
 
+
 ## Document.execCommand()
 
 **현재(2022-01-20) 대부분의 브라우저에서 지원하긴 하지만 웹 표준에서 삭제된 기능임**. 다른 방법은 [여기](https://stackoverflow.com/questions/60581285/execcommand-is-now-obsolete-whats-the-alternative) 참고.

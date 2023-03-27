@@ -12,6 +12,10 @@ tags:
   - file
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
+
 ```html
 <form id="submitForm">
     <input type="file" name="attachFile"/>

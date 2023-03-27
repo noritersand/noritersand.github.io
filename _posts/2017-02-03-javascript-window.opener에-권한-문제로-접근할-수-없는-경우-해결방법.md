@@ -15,6 +15,9 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
+## 개요
+
 ```js
 opener.name;
 "액세스가 거부되었습니다." // 익스
@@ -26,6 +29,7 @@ window.open()으로 생성된 새 창(자식 창)에서 부모 창에 접근할 
 
 이를 해결하는 방법은 두 가지가 있다.
 
+
 ## document.domain 변경
 
 부모 창의 도메인은 'abc.tistory.com'이고 자식 창의 도메인은 'def.tistory.com'일 때 두 창의 도메인을 모두 'tistory.com'으로 변경한다. 도메인은 원하는 값으로 마음대로 변경할 수 있는건 아니고 서브도메인을 삭제하는것만 허용된다. 가령 실제 도메인이 'noritersand.tistory.com'일 때 변경 가능한 값은 'noritersand.tistory.com' 혹은 'tistory.com'이다.
@@ -36,6 +40,7 @@ document.domain = 'aa.tistory.com'; // Error: Illegal document.domain value
 document.domain = 'tistory.com'; // 'tistory.com'
 document.domain = 'daum.net'; // Error: Illegal document.domain value
 ```
+
 
 ## 부모 창과 같은 도메인으로 이동
 

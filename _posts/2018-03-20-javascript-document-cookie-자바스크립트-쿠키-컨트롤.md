@@ -22,6 +22,7 @@ tags:
 - [\[MDN\] Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - [모던 JavaScript 튜토리얼: 쿠키와 document.cookie](https://ko.javascript.info/cookie)
 
+
 ## document.cookie
 
 ```js
@@ -45,10 +46,12 @@ document.cookie = "cookiename=value; samesite=lax; secure"  // HTTPS 전송만 �
 
 이 외에 `HttpOnly`라는 HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
 
+
 ## 주의사항
 
 쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다:  
 http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value
+
 
 ## examples \#1
 
@@ -83,6 +86,7 @@ function checkCookie() {
     }
 }
 ```
+
 
 ## examples \#2
 

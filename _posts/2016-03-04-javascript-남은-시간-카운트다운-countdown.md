@@ -15,10 +15,11 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-코드 출처:
+#### 코드 출처
 
 - [https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/](https://www.sitepoint.com/build-javascript-countdown-timer-no-dependencies/)
 - [\[MDN\] String.prototype.padStart()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart)
+
 
 다음날 00시까지 남은 시간을 초 단위로 구하는 스크립트:
 

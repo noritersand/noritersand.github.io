@@ -21,6 +21,7 @@ tags:
 ![](/images/node-js-1.png)
 > node에서는 모든게 병렬로 수행된다. 당신 code만 빼고
 
+
 ## 시작하기
 
 ### 설치
@@ -73,6 +74,7 @@ gets(function(name) {
 - 콜백 함수: 콜백 함수에서 첫 파라미터(혹은 인자)는 노드 코어의 콜백 함수처럼 에러 파라미터로 사용한다.
 - [nodejs style guide(eng).pdf](/attachments/nodejs-style-guide-eng.pdf)
 - [nodejs style guide(kor).pdf](/attachments/nodejs-style-guide-kor.pdf)
+
 
 ## exports/require
 

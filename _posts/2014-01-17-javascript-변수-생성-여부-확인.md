@@ -14,6 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
 ## try-catch
 
 ```js
@@ -28,6 +29,7 @@ try {
 
 console.log(flag);
 ```
+
 
 ## typeof
 
@@ -59,6 +61,7 @@ setTimeout(() => {
   console.debug('defined');
 })();
 ```
+
 
 ## in
 

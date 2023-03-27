@@ -19,6 +19,7 @@ tags:
 - [\[MDN\] Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 - [https://stackoverflow.com/questions/38736902/settimeout-bind-and-this](https://stackoverflow.com/questions/38736902/settimeout-bind-and-this)
 
+
 ## Function.prototype.bind()
 
 `bind()`는 this 등의 인수를 변경한 복제된 함수를 반환하는 메서드다. 아래는 MDN의 한글 설명이다:

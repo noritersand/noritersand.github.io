@@ -15,9 +15,10 @@ tags:
 
 #### 참고한 문서
 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+
 
 ## 조건문
 
@@ -87,6 +88,7 @@ switch (a) {
     console.log('디폴트'); // case 4에서 break로 끝나지 않았으므로 실행됨
 }
 ```
+
 
 ## 반복문
 
@@ -240,6 +242,7 @@ var obj = {
 }
 for (var val of obj) {} // TypeError: obj is not iterable
 ```
+
 
 ## 점프문
 

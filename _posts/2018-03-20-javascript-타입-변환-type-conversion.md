@@ -19,6 +19,7 @@ tags:
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 - [\[MDN\] Type conversion](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion)
 
+
 ## 암시적 타입 변환
 
 자바스크립트는 필요에 따라 타입 변환을 자동으로 수행한다. 가령 문자열이 필요한 위치에 할당된 값이 문자열이 아니면 문자열 타입으로 변환을 시도할 것이다. 이 과정에서 타입이 올바르지 않아 에러가 발생하는 경우는 거의 없다. 다음은 암시적 타입 변환의 사례들이다:
@@ -67,6 +68,7 @@ false == 0; // false는 0으로 변환
 - 둘 중 하나가 불리언이고 나머지 하나가 숫자일 때 불리언을 숫자로 변환한다.
 - 둘 중 하나가 문자열이고 나머지 하나가 불리언일 때 문자열을 불리언으로 변환한다.
 - 둘 중 하나가 객체고 나머지 하나가 숫자 또는 문자열이면 객체를 문자열로 변환한다. 이 때 해당 객체의 `toString()`이나 `valueOf()`가 사용된다.
+
 
 ## 명시적 타입 변환
 
@@ -121,6 +123,7 @@ new Date().valueOf(); // 1467874589125, 1970-01-01 부터 지난 시간을 밀�
 
 `valueOf()` 메서드는 오직 래퍼 객체와 정규식, Date 타입에서만 의미 있다. 기본적으로 `valueOf()`는 원시 타입으로 변환된 값을 돌려주도록 되어 있는데 대부분의 객체가 원시 타입으로 변환될 수 없으므로 단지 자기 자신(객체 자체)을 돌려줄 뿐이다. 빈 배열이 숫자 0으로 변환되는 것은 이런 특성탓이라 설명할 수 있다.
 Array 타입은 `valueOf()` 대신 `toString()`을 호출한다(규칙에 따라 `valueOf()`를 먼저 찾았으나 원시 타입이 아닌 객체를 돌려주므로 `toString()`을 대신 호출하는 것). `toString()`은 빈 배열을 빈 문자열로 돌려주며 빈 문자열을 숫자로 바꾸면 0이 되는 것이다.
+
 
 ## 자바스크립트 타입 변환 표
 
