@@ -133,6 +133,8 @@ arr.includes('b'); // true
 
 ### Array.prototype.find()
 
+\* `find()`, `map()`, `filter()` 같은 메서드를 고차 함수(higher-order functions)라고 부르는 모양이다. 함수를 인자로 받거나 함수를 반환하면 고차함수라고...
+
 ```
 find( function( element, index, array ) { /* ... */ }[, thisArg])
 ```

@@ -126,4 +126,29 @@ var obj = {
 new obj.notSure(); // TypeError: obj.notSure is not a constructor
 ```
 
+### 식별자 규칙을 위반하는 프로퍼티명
+
+객체 리터럴에선 이런게 가능한 것처럼:
+
+```js
+var obj = {
+  'c.c': 123
+};
+obj['c.c']; // 123
+```
+
+단축 메서드명도 이렇게 할 수 있음:
+
+```js
+// name: function() {}은 name() {}과 같으므로
+var obj = {
+  'c.c'() {
+    console.log('hi');
+  }
+};
+
+typeof obj['c.c']; // "function"
+obj['c.c'](); // 'hi' 출력
+```
+
 끗.

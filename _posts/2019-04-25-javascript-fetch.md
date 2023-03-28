@@ -20,6 +20,9 @@ tags:
 - [\[MDN\] Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
 - [\[MDN\] FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 - [Fetch Living Standard](https://fetch.spec.whatwg.org/)
+- [\[MDN\] Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+- [\[MDN\] Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+- [\[MDN\] Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 #### 브라우저 호환
 
@@ -73,28 +76,22 @@ console.log(json);
 
 ## Headers
 
-[https://developer.mozilla.org/en-US/docs/Web/API/Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
-
 TODO
 
 
 ## Request
-
-[https://developer.mozilla.org/en-US/docs/Web/API/Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
 
 TODO
 
 
 ## Response
 
-[https://developer.mozilla.org/en-US/docs/Web/API/Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
-
 TODO
 
 
 ## example
 
-소스 출처: https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest
+소스 출처: [https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest](https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest)
 
 ```js
 let resp = await fetch("http://127.0.0.1:8080/test/doughnutList", {

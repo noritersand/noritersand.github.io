@@ -172,8 +172,8 @@ OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 
 
 ### double NOT bitwise operator `~~`
 
-- https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript
-- http://rocha.la/JavaScript-bitwise-operators-in-practice
+- [https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript](https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript)
+- [http://rocha.la/JavaScript-bitwise-operators-in-practice](http://rocha.la/JavaScript-bitwise-operators-in-practice)
 
 ```js
 ~~2 === Math.floor(2); //true, 2
@@ -356,7 +356,9 @@ void(); // SyntaxError: expected expression, got ')'
 ```
 
 
-## 지수 연산자 [Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation) `**`
+## 지수 연산자 Exponentiation `**`
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation)
 
 첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다. [Math.pow()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) 함수를 사용하는 것과 거의 동일하다.
 
