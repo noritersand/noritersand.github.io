@@ -76,6 +76,7 @@ tags:
 - switchAvailability/switchDisability: 속성값에 따라 활성화/비활성화 토글
 - switchfunctionality: 위 두개 합친거
 - switchVisibility: 속성값에 따라 가시성 토글
+- privacyPolicyConsentPage: 개인정보 정책 동의 페이지
 
 ### IT 관련
 
@@ -115,6 +116,7 @@ tags:
 - concurrent: 동시 발생의, 병발 사정, 공동으로 작용하는
 - conditional: 조건부의 (형용사)
 - conjunction: 접속사, 연대, 관련, 공동, 동시 발생
+- consent: 동의, 동의하다, 합의
 - coupling: 연결, 결합, 성교; 교미, (두 차량이나 기계 등의) 연결 장치
 - coverage: 보도, 커버리지, 방송, 범위, 지역
 - credential: 신임장, 자격, 신용 증명이 되는

@@ -16,6 +16,9 @@ tags:
 
 - [https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html](https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html)
 
+
+## 개요
+
 기본형(primitive, 원시형) 타입의 변수를 객체로 다루기 위해 만들어진 클래스를 래퍼(wrapper) 클래스라고 한다. 가령 int 타입의 래퍼 클래스는 Integer고 실제 코드는 다음처럼 구성되어 있다:
 
 ```java
@@ -25,6 +28,9 @@ public final class Integer extends Number implements Comparable {
     // 생략
 }
 ```
+
+
+## 형 변환 type casting, type conversion
 
 | primitive type | wrapper class | 생성자 | example |
 |----------------|---------------|---------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -50,6 +56,9 @@ int num = Integer.parseInt("65536");
 ```java
 Integer num = Integer.valueOf("65536");
 ```
+
+
+### Autoboxing
 
 JDK 1.5 이상에서 자바는 기본형과 래퍼 클래스간의 오토박싱(autoboxing), 오토언박싱(autounboxing)을 제공한다.
 
@@ -80,3 +89,31 @@ int num = number;
 Integer number = 10;
 int num = number.intValue();
 ```
+
+
+## 주의 사항
+
+String을 제외한 wrapper 타입에 동등연산자`==`를 사용하면 인스턴스의 내부값이 아닌 객체의 참조값을 비교한다.
+
+```java
+Long a = Long.valueOf(12345);
+Long b = Long.valueOf(12345);
+assertFalse(a == b); // 값이 같아도 인스턴스가 달라서 false
+assertTrue(a.equals(b)); // 이렇게 하면 오버라이드 된 .equals()를 호출하므로 동등 비교 가능
+```
+
+단, 예외가 있다. 가령 `Long` wrapper 타입은 -128부터 127까지의 값을 인스턴스로 만들 때 미리 만들어놓은 인스턴스를 내부 캐시에서 꺼내 재사용하기 때문에 동등연산자`==`를 사용해도 문제가 없다:
+
+```java
+assertTrue(Long.valueOf(-129) != Long.valueOf(-129));
+assertTrue(Long.valueOf(-128) == Long.valueOf(-128));
+assertTrue(Long.valueOf(0) == Long.valueOf(0));
+assertTrue(Long.valueOf(1L) == Long.valueOf(1L));
+assertTrue(Long.valueOf(20L) == Long.valueOf(20L));
+assertTrue(Long.valueOf(100L) == Long.valueOf(100L));
+assertTrue(Long.valueOf(126L) == Long.valueOf(126L));
+assertTrue(Long.valueOf(127L) == Long.valueOf(127L));
+assertTrue(Long.valueOf(128L) != Long.valueOf(128L));
+```
+
+참고로 -128부터 127까지는 1 바이트로 표현 가능한 범위다. `2 ^ 7 = 128`

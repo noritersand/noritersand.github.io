@@ -197,13 +197,39 @@ URL의 해시가 변경됐을 때 발생하는 이벤트
 window.addEventListner('hashchange', callbackFn);
 ```
 
+### Element: click event
+
+[https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event)
+
+요소가 클릭됐을 때 발생하는 이벤트. `<input type="checkbox">`에 click 이벤트 핸들러 부착 후 `event.preventDefault()`를 호출하면 체크/체크해제를 막을 수 있다. 비활성(disabled) 상태인 요소의 클릭에는 반응하지 않는다.
+
+### HTMLElement: change event
+
+[https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+
+`<input>`, `<select>`, `<textarea>`에서 값이 변화한 후에 발생하는 이벤트. `<input>`은 사용자가 전과 다른 값을 입력하고 포커스를 잃을 때 발생한다.
+
+TODO
+
 ### HTMLElement: input event
 
 [https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event](https://developer.mozilla.org/ko/docs/Web/API/HTMLElement/input_event)
 
-이런 게 있네 ㅋ
+이벤트 발생 시점은 keyup과 비슷함.
 
 TODO
+
+### HTMLElement: beforeinput event
+
+[https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/beforeinput_event)
+
+`<input>` 혹은 `<textarea>` 태그에서 값이 수정되려 할 때 발생하는 이벤트. 체크박스의 체크/체크헤제에는 반응하지 않는다.
+
+```js
+document.querySelector('#text-beforeinput').addEventListener('beforeinput', event => console.log(event.target.value));
+```
+
+`event.target.value`는 수정 전의 값을 갖고 있어서 아무것도 입력을 하지 않은 최초에는 `<empty string>`이 출력된다.
 
 
 ## input 태그의 submit 이벤트가 엔터키로 발동되는 조건

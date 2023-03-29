@@ -259,7 +259,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + f12</kbd>: File Structure. eclipse의 빠른 아웃라인 보기 기능과 같음.
 - <kbd>ctrl + alt + l</kbd>: 오토 fㅗ매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
-- <kbd>shift + f4</kbd>: 현재 파일 새 창에서 보기
+- <kbd>shift + f4</kbd>: Open source in new window. 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> <kbd>shift + f2</kbd>: Highlighted Error. 다음/이전 에러 지점으로 이동
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
 - <kbd>ctrl + alt + t</kbd>: Surround With. 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능

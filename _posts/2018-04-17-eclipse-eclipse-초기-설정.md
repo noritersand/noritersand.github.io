@@ -18,6 +18,7 @@ tags:
 - [http://tomcat.apache.org](http://tomcat.apache.org)
 - [https://wiki.eclipse.org/Eclipse.ini](https://wiki.eclipse.org/Eclipse.ini)
 
+
 ## VM arguments 설정
 
 ### 파일 기본 인코딩
@@ -39,44 +40,18 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 `-vmargs` 위에 있지 않으면 적용 안될 수도 있다. 왜인지는 여백이 부족하여 적지 않음(?).
 
-## 작성자가 쓰는 단축키 설정
-
-**사실 이런 뻘짓하지 말고 내보내기-불러오기 하는게 좋다.**
-
-- Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
-- Open Type Hierarchy: <kbd>unbined</kbd>
-- Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
-- Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows 혹은 Debugging Java) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
-- Compare with HEAD Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
-- Compare with Previous Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
-- Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
-- ~~Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)~~
-- Add Bookmark: <kbd>ctrl + alt + z</kbd>
-- Build Automatically: <kbd>ctrl + alt + insert</kbd>(In Dialogs and Windows, Project)
-- Show Revision Information: <kbd>ctrl + alt + a</kbd>(In Windows, Git)
-- Print: <kbd>unbined</kbd>
-- ~~Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search)~~
-- Next Editor: <kbd>ctrl + 6</kbd>(In Windows, Window)
-- Previous Editor: <kbd>ctrl + shift + 6</kbd>(In Windows, Window)
-- Next View: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
-- Previous View: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
-- Next Perspective: <kbd>ctrl + 8</kbd>(In Windows, Window)
-- Previous Perspective: <kbd>ctrl + shift + 8</kbd>(In Windows, Window)
-- Push to Upstream: <kbd>ctrl + shift + p</kbd>(In Dialogs and Windows, Git)
-- Pull: <kbd>ctrl + shift + l</kbd>(In Dialogs and Windows, Git)
-- Fetch from Upstream: <kbd>ctrl + shift + f</kbd>(In Dialogs and Windows, Git)
-
-Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective > Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
 
 ## 검색 창 설정 변경
 
 - 검색 창<kbd>ctrl + h</kbd>에서 'Customize' 진입, 'Task'와 'Plug-in' 체크 해제.
+
 
 ## 파일 자동 갱신
 
 `Window > Preferences > workspace` 우측 화면의 'Refresh using native hooks or pollings' 체크
 
 이클립스는 기본적으로 이클립스 내에서 직접 변경하지 않은 파일은 변경을 감지하지 않는다. 이건 파일 변경 감지 기능을 켜는 옵션.
+
 
 ## 인코딩 환경 설정
 
@@ -87,9 +62,11 @@ Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 �
 - `Window > Preferences > Web > Jsp Files`
 - `Window > Preferences > Web > HTML Files`
 
+
 ## 파일 확장자별 한글 인코딩을 UTF-8로 변경
 
 - `Window > Preferences > General > Contents type` 우측 화면에서 원하는 항목을 선택하고, 'Default encoding'을 `utf-8`로 변경 후 'update' 버튼 클릭
+
 
 ## 자바독 자동 완성
 
@@ -121,6 +98,7 @@ ${date}  --> 2015. 7. 1.
 ${id:date('yyyy-MM-dd')}
 ```
 
+
 ## Formatter
 
 `Window > Preferences > Java > Code Style > Formatter` 메뉴로 이동, 'New...'를 클릭해서 새 프로파일을 생성한다.
@@ -130,9 +108,11 @@ ${id:date('yyyy-MM-dd')}
 
 이 작업을 `JavaScript > Code Style > Formatter` 에서도 반복한다.
 
+
 ## Syntax Coloring
 
 자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window > Preferences > Java > Editor > Syntax Coloring`에서 'Element' 목록 중 'Methods'와 'Inherited method invocations' 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
+
 
 ## JSP 템플릿
 
@@ -154,9 +134,11 @@ ${cursor}
 </html>
 ```
 
+
 ## DEBUG 모드로 구동할 때 uncaught exception에서 브레이크 걸지 않기
 
 - `Window > Preferences > Java > Debug > Suspend execution on uncaught exceptions` 체크 해제
+
 
 ## git 관련
 
@@ -173,6 +155,7 @@ ${cursor}
 [Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다. core.autocrlf 설정으로 이 기능을 켤 수 있다.](https://git-scm.com/book/ko/v1/Git%EB%A7%9E%EC%B6%A4-Git-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0)
 이클립스에서 설정하는 방법은:
 `Window > Preferences > Version Control > Git > Configuration`에서 `core.autocrlf=true`를 추가.
+
 
 ## eclipse-jee 버전에 포함된 안쓰는 기능(feature 혹은 software) 삭제
 
@@ -195,6 +178,7 @@ ${cursor}
 요 정도.
 
 remote system explorer operation 관련 프로세스 계속 띄우던 기능이 뭐였는지 까먹었음. RST? RSE?
+
 
 ## 추천 확장 기능
 
@@ -220,3 +204,33 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
   src/include/version.h# this specific file is also generated.
   ```
 - [Snyk Security Scanner](https://snyk.io/): 써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
+
+
+## 작성자가 쓰는 단축키 설정
+
+**사실 이런 뻘짓하지 말고 내보내기-불러오기 하는게 좋다.**
+
+- Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
+- Open Type Hierarchy: <kbd>unbined</kbd>
+- Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
+- Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows 혹은 Debugging Java) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.
+- Compare with HEAD Revision: <kbd>ctrl + alt + home</kbd>(In Windows, Git)
+- Compare with Previous Revision: <kbd>ctrl + alt + pageup</kbd>(In Windows, Git)
+- Show in History: <kbd>ctrl + alt + pagedown</kbd>(In Windows, Git)
+- ~~Show Key Assist: <kbd>ctrl + 0</kbd>(In Dialogs and Windows, Window)~~
+- Add Bookmark: <kbd>ctrl + alt + z</kbd>
+- Build Automatically: <kbd>ctrl + alt + insert</kbd>(In Dialogs and Windows, Project)
+- Show Revision Information: <kbd>ctrl + alt + a</kbd>(In Windows, Git)
+- Print: <kbd>unbined</kbd>
+- ~~Quick Search: <kbd>ctrl + alt + l</kbd>(In Windows, Quick Search)~~
+- Next Editor: <kbd>ctrl + 6</kbd>(In Windows, Window)
+- Previous Editor: <kbd>ctrl + shift + 6</kbd>(In Windows, Window)
+- Next View: <kbd>ctrl + 7</kbd>(In Windows, Window) 이 키 조합의 기존 기능인 Toggle Comment는 지워버릴것. 어차피 다른 단축키 두 개나 설정되어 있음.
+- Previous View: <kbd>ctrl + shift + 7</kbd>(In Windows, Window)
+- Next Perspective: <kbd>ctrl + 8</kbd>(In Windows, Window)
+- Previous Perspective: <kbd>ctrl + shift + 8</kbd>(In Windows, Window)
+- Push to Upstream: <kbd>ctrl + shift + p</kbd>(In Dialogs and Windows, Git)
+- Pull: <kbd>ctrl + shift + l</kbd>(In Dialogs and Windows, Git)
+- Fetch from Upstream: <kbd>ctrl + shift + f</kbd>(In Dialogs and Windows, Git)
+
+Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective > Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)

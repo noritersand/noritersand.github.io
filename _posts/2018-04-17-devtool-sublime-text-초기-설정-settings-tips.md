@@ -174,7 +174,9 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 ]
 ```
 
-### 번외: Sublime Merge
+### Sublime Merge
+
+자매품인 서브라임 머지도 적어둠.
 
 #### key bindings - user
 
@@ -189,22 +191,22 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
   { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
   { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
   { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
-  { 
-    "keys": ["ctrl+alt+shift+enter"], 
-    "command": "commit", 
-    "args": { "mode": "commit --amend" }, 
-    "context": [
-      { "key": "setting.commit_message" }, 
-      { "key": "can_commit" }
-    ]
-  },
   { "keys": ["ctrl+,"], "command": "open_preferences" }
+  // { 
+  //   "keys": ["ctrl+alt+shift+enter"], 
+  //   "command": "commit", 
+  //   "args": { "mode": "commit --amend" }, 
+  //   "context": [
+  //     { "key": "setting.commit_message" }, 
+  //     { "key": "can_commit" }
+  //   ]
+  // }
 ]
 ```
 
 - `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
 - `discard_all_modified`은 모든 변경사항을 취소하니 주의해서 사용할 것. 
-- <kbd>ctrl + alt + shift + enter</kbd>는 리베이스인 amend commit이니 마찬가지로 주의.
+- <kbd>ctrl + alt + shift + enter</kbd>는 리베이스인 amend commit인데, 실수하면 위험한 기능이라 막아놨음.
 
 
 ## 기본 단축키
