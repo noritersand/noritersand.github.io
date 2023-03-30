@@ -142,16 +142,26 @@ tags:
 
 ### ERD
 
-- [dbdiagram.io](https://dbdiagram.io/): 웹 버전만 있긴 하지만 좋음.
+- [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 좋음.
 
 ### DBMS tool
 
 - [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 UI 프레임웍으로 추정.
-- [Oracle SQL Developer](http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html): SQL Developer는 오라클 전용 DBMS 툴로 런타임 환경이나 instant client 없이 서버에 연결할 수 있다.
-- [Toad](http://www.toadworld.com/m/freeware/default.aspx)
-- [SQLGate](http://www.sqlgate.com/kr/download)
-- [Orange](http://www.warevalley.com/xml/download/orange_trial)
 - [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
+
+
+## UML/MDA/다이어그램/드로잉 툴
+
+- [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료. 가볍게 쓰기 좋음.
+- [Balsamiq](https://balsamiq.com/wireframes/): UML, 드로잉 툴. 아마 유료임.
+- [StarUML](http://staruml.sourceforge.net/ko)
+- [Draw.io (web)](http://www.draw.io)
+- [Draw.io Pro (chrome app)](https://chrome.google.com/webstore/detail/drawio-pro/onlkggianjhjenigcpigpjehhpplldkc?utm_source=plus)
+- [Gliffy (web)](http://www.gliffy.com)
+- [45+ 온라인 드로잉 툴](http://www.smashingapps.com/2011/08/26/45-free-online-tools-to-create-charts-diagrams-and-flowcharts)
+- [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
+- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
+- [⭐ eraser](https://www.eraser.io/pricing): (엔지니어링 팀을 위한 화이트보드라 주장하는) 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 플로우 차트 그리기 굉장히 편하다. Diagram as code(이걸로 ERD 그리기 가능)와 코멘트 기능도 제공한다. 현재 무료 플랜 제공(2023-03-30).
 
 
 ## 온라인 코드 에디터 겸 테스트 툴
@@ -197,20 +207,6 @@ tags:
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
 
 
-## UML/MDA/다이어그램/드로잉 툴
-
-- [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료. 가볍게 쓰기 좋음.
-- [Balsamiq](https://balsamiq.com/wireframes/): UML, 드로잉 툴. 아마 유료임.
-- [StarUML](http://staruml.sourceforge.net/ko)
-- [Draw.io (web)](http://www.draw.io)
-- [Draw.io Pro (chrome app)](https://chrome.google.com/webstore/detail/drawio-pro/onlkggianjhjenigcpigpjehhpplldkc?utm_source=plus)
-- [Gliffy (web)](http://www.gliffy.com)
-- [45+ 온라인 드로잉 툴](http://www.smashingapps.com/2011/08/26/45-free-online-tools-to-create-charts-diagrams-and-flowcharts)
-- [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
-- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
-- [⭐ eraser](https://www.eraser.io/pricing): 굉장히 좋아보이는 드로잉 툴. 무료 플랜이 있고 code로 작성할 수도 있다.
-
-
 ## 공인 IP 확인
 
 - [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 사이트.
@@ -218,12 +214,12 @@ tags:
 - [https://ipinfo.io](https://ipinfo.io): 접속한 PC의 IP 관련 정보를 보여주는 사이트 #2
 
 
-## Git GUI 툴
+## 버전 관리
 
-- [Fork](https://fork.dev): 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
-- [GitKraken](https://www.gitkraken.com): GUI 툴 중엔 ~~속도는 느리지만~~ 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [⭐ Sublime Merge](https://www.sublimemerge.com): 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
-- [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
+- [Fork](https://fork.dev): Git GUI #1. 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
+- [GitKraken](https://www.gitkraken.com): Git GUI #2. 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
+- [⭐ Sublime Merge](https://www.sublimemerge.com): Git GUI #3. 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
+- [gitui](https://github.com/extrawurst/gitui): Git GUI #4. Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
 
 
 ## 트래픽 캡쳐
@@ -250,9 +246,11 @@ tags:
 
 ## SSH/텔넷/FTP 클라이언트
 
+사실 윈도우 10부터는 Windows Terminal이 있어서 이런 거 필요 없지만... 🤭
+
+- [WinSCP](https://winscp.net/eng/download.php)
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty): SSH = putty
 - [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 유료 라이선스.
-- [WinSCP](https://winscp.net/eng/download.php)
 - [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
 - [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 툴 중에서 여러 서버 동시 접속 기능은 그나마...
 

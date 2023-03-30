@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-14 14:00:01 +0900
-title: '[Windows] 윈도우11 초기 설정 및 팁'
+title: '[Windows] 윈도우 11 초기 설정 및 팁'
 categories:
   - windows
 tags:
@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-CPU 구리면 설치도 못하는 윈도우11 초기 설정 및 팁 등을 정리함.
+CPU 구리면 설치도 못하는 윈도우 11 초기 설정 및 팁 등을 정리함.
 
 
 ## 초기 설정
@@ -69,7 +69,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ## 단축키
 
-10에서 11로 넘어오며 추가/변경된 것만 정리함. [윈도우10 게시글 링크](/windows/windows-윈도우10-초기-설정-및-팁-windows-10-tips/)
+10에서 11로 넘어오며 추가/변경된 것만 정리함. [윈도우 10 게시글 링크](/windows/windows-윈도우-10-초기-설정-및-팁-windows-10-tips/)
 
 ### 전역
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[Windows] 윈도우10 초기 설정 및 팁'
+title: '[Windows] 윈도우 10 초기 설정 및 팁'
 categories:
   - windows
 tags:
@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-요즘 들어 혜자로워진 마소의 윈도우10 초기 설정을 정리한 글.
+요즘 들어 혜자로워진 마소의 윈도우 10 초기 설정을 정리한 글.
 
 
 ## Windows 터미널
@@ -174,7 +174,7 @@ Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를
 명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
 
 
-## 윈도우10 초기 설정
+## 초기 설정
 
 ### 시간 형식 변경
 

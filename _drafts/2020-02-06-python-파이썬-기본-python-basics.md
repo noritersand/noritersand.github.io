@@ -37,7 +37,7 @@ pip나 easy_install 실행파일이 있는 경로로 이동 후
 > easy_install 모듈명
 ```
 
-pip는 윈도우10 + 기본 설치일 경우 `C:\Users\윈도우유저명\AppData\Local\Programs\Python\Python38-32\Scripts` 요딴 경로에 있다.
+pip는 윈도우 10 + 기본 설치일 경우 `C:\Users\윈도우유저명\AppData\Local\Programs\Python\Python38-32\Scripts` 요딴 경로에 있다.
 
 ```bash
 > pip install beautifulsoup4
