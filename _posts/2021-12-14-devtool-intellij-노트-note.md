@@ -282,8 +282,12 @@ Select Next Occurrence.
 
 - <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
-- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + f10</kbd>도 추가함. (윈도우 11 문제 같음)
+- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \\</kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
 - <kbd>shift + f9</kbd>: Debug 모드로 시작
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 어떤 것을 Debug 모드로 시작할지 묻는 대화창이 나타남
 - <kbd>ctrl + shift + f10</kbd>: 어떤 것을 Run 모드로 시작할지 묻는 대화창이 나타남
+
+### 디버깅
+
+- <kbd>alt + f10</kbd>: Show Execution Point. 디버깅 중, 브레이크 포인트에 의해 실행을 정지하고 있는 지점으로 포커스를 이동하는 기능이다.
