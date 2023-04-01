@@ -172,6 +172,28 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 https://jekyllrb.com/docs/installation/windows/#encoding  
 지킬 빌드나 서버 구동 시 다국어 관련 에러가 발생할 수 있다. 셸에서 `chcp 65001` 입력 후 다시 실행한다.
 
+### Liquid syntax error: Unexpected character ... {{ ... }}
+
+지킬 빌드 시 템플릿 엔진으로 [Liquid](https://shopify.github.io/liquid/basics/introduction/)를 사용하는데, 여기서 이중 중괄호(double curly braces)`{{ expression }}`는 변수의 값을 출력할 때 사용한다.
+
+이 때문에 이중 중괄호 코드를 작성하면 Liquid 표현식으로 인식해버리면서 빌드 오류가 발생하거나 작성한 코드가 안보이거나 하는 현상이 발생한다.
+
+이를 해소하려면 문서 처음 부분과 마지막 부분을 이스케이프하지 않도록 `{% raw %}`와 `{% endraw %}`로 감싸면 된다:
+
+```
+(toc)
+
+{% raw %}
+
+(참고한 문서)
+
+(본문)
+
+{% endraw %}
+
+(문서 끝)
+```
+
 
 ## 저장소 내부 링크
 

@@ -180,6 +180,7 @@ tags:
 - lineal: 직계의, 대대로 전해 내려오는, 직계 존속
 - lift [명사] 승강기, [동사] 들어 올리다; 들리다, 태워 주기, [타동사] 풀다(해제/폐지), 이송하다, 훔치다, 표절(도용)하다
 - longitude: 경도
+- isomorphic: [형용사] 같은 모양의, 동일 구조의, 등정형(等晶形)의
 - malformed: 기형의, 흉하게 생긴, 꼴이 흉한
 - malicious: 악성, 악의 있는, 심술궂은, 악의적인, 적의 있는
 - malware: 악성 코드, 악성 소프트웨어
@@ -276,3 +277,8 @@ tags:
 - precursor: 선도자(격인 사람·사물), 선각자
 - forerunner: 선구자, 전신; 전조, 선조
 - prothean: 프로시언. 매스 이펙트의 고대 외계 종족
+
+
+## 이모지
+
+- facepalm: face with hand over mouth emoji 🤦
