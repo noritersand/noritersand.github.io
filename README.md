@@ -174,9 +174,9 @@ https://jekyllrb.com/docs/installation/windows/#encoding
 
 ### Liquid syntax error: Unexpected character ... {{ ... }}
 
-지킬 빌드 시 템플릿 엔진으로 [Liquid](https://shopify.github.io/liquid/basics/introduction/)를 사용하는데, 여기서 이중 중괄호(double curly braces)`{{ expression }}`는 변수의 값을 출력할 때 사용한다.
+지킬은 템플릿 언어로 [Liquid](https://shopify.github.io/liquid/basics/introduction/)를 사용하며, Liquid에서 이중 중괄호(double curly braces)`{{ expression }}`는 변수의 값을 출력하는 표현식이다.
 
-이 때문에 이중 중괄호 코드를 작성하면 Liquid 표현식으로 인식해버리면서 빌드 오류가 발생하거나 작성한 코드가 안보이거나 하는 현상이 발생한다.
+이 때문에 글 내용에서 이중 중괄호 코드를 작성하면 Liquid 표현식으로 처리되면서 빌드 오류가 발생하거나 작성한 코드가 안보이거나 하는 현상이 발생한다.
 
 이를 해소하려면 문서 처음 부분과 마지막 부분을 이스케이프하지 않도록 `{% raw %}`와 `{% endraw %}`로 감싸면 된다:
 
