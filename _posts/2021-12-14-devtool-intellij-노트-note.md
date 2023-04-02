@@ -245,8 +245,9 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + h</kbd>: Hierarchy 윈도우로 포커싱
 - <kbd>shift + esc</kbd>: 현재 윈도우 최소화
 - <kbd>ctrl + shift + '</kbd>: 현재 윈도우 최대화, 다시 누르면 원래 크기로
+- <kbd>ctrl + alt + shift + left/right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 Move Element Left/Right 기능으로 작동한다.
 
-### 파일 에디터
+### 코드 에디터
 
 - <kbd>ctrl + q</kbd>: Quick Documentation. 툴팁창으로 자바독 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
@@ -268,6 +269,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + h</kbd>: Type Hierarchy. 타입 계층 보기
 - <kbd>ctrl + shift + h</kbd>: Method Hierarchy. 메서드 계층 보기
 - <kbd>ctrl + alt + h</kbd>: Call Hierarchy. 호출 계층 보기
+- <kbd>ctrl + alt + shift + left/right</kbd>: Move Element Left/Right. 메서드 파라미터의 순서를 변경할 때 사용함.
 
 ### 멀티 캐럿
 
@@ -291,3 +293,4 @@ Select Next Occurrence.
 ### 디버깅
 
 - <kbd>alt + f10</kbd>: Show Execution Point. 디버깅 중, 브레이크 포인트에 의해 실행을 정지하고 있는 지점으로 포커스를 이동하는 기능이다.
+
