@@ -245,7 +245,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + h</kbd>: Hierarchy 윈도우로 포커싱
 - <kbd>shift + esc</kbd>: 현재 윈도우 최소화
 - <kbd>ctrl + shift + '</kbd>: 현재 윈도우 최대화, 다시 누르면 원래 크기로
-- <kbd>ctrl + alt + shift + left/right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 Move Element Left/Right 기능으로 작동한다.
+- <kbd>ctrl + alt + shift + left/right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 (가능할 경우에만) Move Element Left/Right 기능으로 작동한다.
 
 ### 코드 에디터
 

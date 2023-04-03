@@ -58,7 +58,7 @@ Integer num = Integer.valueOf("65536");
 ```
 
 
-### Autoboxing
+## Autoboxing
 
 JDK 1.5 이상에서 자바는 기본형과 래퍼 클래스간의 오토박싱(autoboxing), 오토언박싱(autounboxing)을 제공한다.
 
