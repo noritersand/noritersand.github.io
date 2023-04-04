@@ -385,11 +385,20 @@ var add = function(a, b) {
 
 함수 리터럴은 (함수 선언도 마찬가지지만) 내부적으로 `Function()` 생성자 함수를 사용하도록 변환된다.
 
-### 객체와 배열 리터럴
+### 배열 리터럴
+
+```js
+var arr = []; // new Array()와 같음
+arr[0] = 'abc';
+arr; // Array [ "abc" ]
+var arry = [ '1', '2', [ '3-1', '3-2' ] ];
+arry[1]; // "2"
+arry[2][1]; // "3-1"
+```
+
+### 객체 리터럴
 
 엄밀히 따져 배열 또한 객체지만 초기화 리터럴이 다르므로 둘을 구분 짓는다.
-
-#### 객체 리터럴
 
 객체 리터럴은 '리터럴 표기에 의한 객체 생성(creating objects with literal notation)'이라고도 한다.
 
@@ -399,11 +408,26 @@ ob.a = 1;
 ob; // Object { a: 1 }
 var obj = {b: 2, c: {d: 3}};
 obj.b; // 2
-obj['b']; // 2, 프로퍼티에 접근하는 표현식으로 obj.b와 같다.
+obj['b']; // 2
 obj.c.d; // 3
 ```
 
 객체 리터럴은 내부적으로 `Object()` 생성자 함수를 사용하도록 변환된다.
+
+#### 프로퍼티 접근자 Property accessors
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors)
+
+객체의 프로퍼티에 접근하는 방법은 두 가지로 점 표기법(dot notation, `obj.prop`)과 대괄호 표기법(bracket notation, `obj['prop']`)이 있다.
+
+자바스크립트의 객체는 map, dictionary, hash 타입 같은 연관 배열(associative array)로 생각할 수 있으며 객체의 프로퍼티가 배열의 키가 된다고 한다. 이를 이용하는 것이 대괄호 표기법이다.
+
+```js
+var obj = {
+  prop: 'hello'
+};
+obj['prop']; // 프로퍼티 접근자 중 대괄호 표기법으로 obj.prop과 같다
+```
 
 #### 메서드 리터럴
 
@@ -414,23 +438,12 @@ var mankind = {
 mankind.walk();
 ```
 
-전통적인 방법은 위와 같고, 아래는 ES2015의 단축 표기법이다(IE에서 사용 불가):
+전통적인 방법은 위와 같고, 다음은 ES2015의 단축 표기법이다:
 
 ```js
 var mankind = {
   walk() {}
 };
-```
-
-#### 배열 리터럴
-
-```js
-var arr = []; // new Array()와 같음
-arr[0] = 'abc';
-arr; // Array [ "abc" ]
-var arry = [ '1', '2', [ '3-1', '3-2' ] ];
-arry[1]; // "2"
-arry[2][1]; // "3-1"
 ```
 
 #### 객체 내부의 배열
@@ -443,3 +456,4 @@ var complex = {
 };
 complex.hangul[0]; // "가"
 ```
+

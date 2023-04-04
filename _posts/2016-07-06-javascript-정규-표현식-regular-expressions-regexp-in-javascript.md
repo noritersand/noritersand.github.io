@@ -101,7 +101,7 @@ value = value.replace(new RegExp(from, 'gi'), to); // 'ab씨'
 
 ```js
 '123'.replace('2', 'two'); // "1two3" 
-````
+```
 
 ### RegExp.exec( testString )
 

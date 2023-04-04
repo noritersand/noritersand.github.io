@@ -376,7 +376,7 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## Optional Chaining `?.`
 
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
+- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
 
 다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 자바스크립트에선 `?.`라고 쓴다.
@@ -388,50 +388,52 @@ arr?.[index]
 func?.(args)
 ```
 
-객체 접근 연산자 `.`를 대체해 사용할 수 있다. 대상 객체가 `undefined`여도 에러 대신 `undefined`를 반환한다.
+객체 접근 연산자 `.`를 대체해 사용할 수 있다. 대상 객체가 `undefined`여도 에러 대신 `undefined`를 반환한다. 특이하게도 배열의 인덱스나 함수 호출에도 적용할 수 있다.
+
+⚠️ 단, 선언되지 않은 루트 객체에는 사용할 수 없다:
+
+```js
+abc?.def; // Uncaught ReferenceError: abc is not defined
+```
 
 아직(2022-03-02) 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
 
-### 메서드 호출 표현식에서의 Optional Chaining
-
-```js
-var obj = {};
-obj?.fn(); // Uncaught TypeError: obj.fn is not a function
-obj?.child.fn(); // Uncaught TypeError: can't access property "fn", obj.child is undefined
-obj.child?.fn(); // undefined
-obj?.child?.fn(); // undefined
-
-var obj2 = {
-  str: "foo"
-};
-obj2?.str; // "foo"
-obj2?.str?.toString(); // "foo"
-obj2?.str?.qwer(); // Uncaught TypeError: obj2.str.qwer is not a function
-obj2?.str?.qwer; // undefined
-obj2?.str?.qwer?.asdv; // undefined 
-obj2?.str?.qwer?.toString(); // undefined
-```
-
-메서드를 호출할 때는 몇 가지 제한이 있다.
-
-1. (당연하게도) 함수 호출 표현식에선 쓸 수 없다.
-
-2. 메서드를 소유한 프로퍼티가 정의된 적 없는 undefined일 때 가능하다:
+이렇게 씀:
 
 ```js
 var obj = {
-  a: {}
+  a: {
+    b: 'yo'
+  }
 };
-obj.a?.fn(); // Uncaught TypeError: obj.a?.fn is not a function
-obj.b?.fn(); // undefined
+
+obj.c; // undefined
+obj.c.d; // Uncaught TypeError: can't access property "d", obj.c is undefined
+obj?.c; // undefined
+obj.c?.d; // undefined
+obj?.c?.d; // undefined
+
+var obj2 = [{a: 'qwe'}];
+
+obj2?.[0]?.a; // 'qwe'
+obj2?.[1]?.a; // undefined
+
+var obj3 = {
+  foo() {
+    return 'bar';
+  }
+};
+
+obj3.fn?.(); // undefined
+obj3.foo?.(); // 'bar'
 ```
 
-3. 메서드 소유자가 프로퍼티가 아니라 object일 때, 해당 object를 담은 변수는 최소한 선언된 상태여야 한다:
+근데 배열 인덱스에는 `?.` 연산자를 쓰나 안쓰나 결과는 `undefined`로 똑같은 데 어디에 써야 하는지 몰?루겠다:
 
 ```js
-var foo;
-foo?.fn(); // undefined
-bar?.fn(); // Uncaught ReferenceError: bar is not defined
+var obj2 = [{}];
+obj2[64]; // undefined
+obj2?.[64]; // undefined
 ```
 
 
