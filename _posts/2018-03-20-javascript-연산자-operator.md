@@ -376,6 +376,8 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## Optional Chaining `?.`
 
+아직(2022-03-02) 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
+
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
 
@@ -396,8 +398,6 @@ func?.(args)
 abc?.def; // Uncaught ReferenceError: abc is not defined
 ```
 
-아직(2022-03-02) 드래프트 상태인 것 같은데 어째선지 모든 브라우저에서 다 된다.
-
 이렇게 씀:
 
 ```js
@@ -413,27 +413,33 @@ obj?.c; // undefined
 obj.c?.d; // undefined
 obj?.c?.d; // undefined
 
-var obj2 = [{a: 'qwe'}];
-
-obj2?.[0]?.a; // 'qwe'
-obj2?.[1]?.a; // undefined
-
-var obj3 = {
+var obj2 = {
   foo() {
     return 'bar';
   }
 };
 
-obj3.fn?.(); // undefined
-obj3.foo?.(); // 'bar'
+obj2.fn?.(); // undefined
+obj2.foo?.(); // 'bar'
 ```
 
-근데 배열 인덱스에는 `?.` 연산자를 쓰나 안쓰나 결과는 `undefined`로 똑같은 데 어디에 써야 하는지 몰?루겠다:
+`?.`의 접근 연산은 좌측(앞)의 프로퍼티(혹은 루트 객체)가 `undefined`나 `null`이 아닌 경우에만 수행한다:
 
 ```js
-var obj2 = [{}];
-obj2[64]; // undefined
-obj2?.[64]; // undefined
+undefined.foo; // Uncaught TypeError: can't access property "foo" of undefined
+undefined?.foo; // undefined
+```
+
+이 점을 활용하면 함수 반환값의 체크를 생략할 수 있다:
+
+```js
+function fn() {
+  return;
+}
+
+fn()[0]; // Uncaught TypeError: can't access property 0, fn() is undefined
+fn()?.[0]; // undefined
+fn()?.[0].a.b.c; // undefined
 ```
 
 

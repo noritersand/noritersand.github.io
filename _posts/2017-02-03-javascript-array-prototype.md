@@ -45,7 +45,7 @@ TODO
 Array.from( arrayLike, function mapFn( element, index ) { /* ... */ } [, thisArg] )
 ```
 
-array-like이거나 반복 가능한 객체(iterable object)를 인자로 받아 얕게 복제된 배열을 반환한다.
+유사 배열(array-like)이거나 반복 가능한 객체(iterable object)를 인자로 받아 얕게 복제된 배열을 반환한다.
 
 ```js
 Array.from('abc'); // Array(3) [ "a", "b", "c" ]
