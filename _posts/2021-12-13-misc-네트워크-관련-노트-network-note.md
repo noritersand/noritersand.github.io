@@ -157,12 +157,63 @@ TODO tap은 브릿징(layer 2)고 tun은 라우팅(layer 3)이라고 하는데 �
 
 오픈 소스 OpenVPN으로 사설 VPN 서버를 구축한 게 있는데 관련 내용 적어둠.
 
+### 설치
+
+```bash
+sudo apt update
+sudo apt install openvpn
+
+wget -P ~/ <https://github.com/OpenVPN/easy-rsa/releases/download/v3.0.4/EasyRSA-3.0.4.tgz>
+tar xvf EasyRSA-3.0.4.tgz
+
+cd ~/EasyRSA-3.0.4/
+cp vars.example vars
+```
+
+그 다음 환경변수 설정, 서버용 인증서와 crt 파일 생성, DH 파라미터 생성, ta.key 생성, `server.conf` 등의 설정파일 수정, 클라이언트 추가용 스크립트 만들기 등이 필요한데 생략함. 아래 링크를 참고할 것:
+
+- [https://dejavuqa.tistory.com/243?category=299614](https://dejavuqa.tistory.com/243?category=299614)
+- [https://kkastory.tistory.com/13](https://kkastory.tistory.com/13)
+
+### OpenVPN 설정 파일
+
 설정 파일은 두 개가 있는데: 
 
 - `/etc/openvpn/server.conf`
 - `/etc/sysctl.conf`
 
 `sysctl.conf`에서는 `net.ipv4.ip_forward`만 1로 바꿔줬고 나머진 `server.conf`에 해당함
+
+### 클라이언트 추가하기
+
+VPN 서버 터미널로 접속:
+
+```bash
+ssh -i ssh-keys/AnySSign.pem ubuntu@172.31.0.226
+cd EasyRSA-3.0.4
+```
+
+접속에 필요한 standalone keypair와 request 생성:
+
+```bash
+./easyrsa gen-req LOGIN_ID_HERE nopass
+# 프롬프트 뜨면 그냥 엔터
+```
+
+생성한 키로 인증서 만들기:
+
+```bash
+./easyrsa sign-req client LOGIN_ID_HERE
+# 프롬프트 뜨면 yes 입력
+```
+
+ovpn 파일 생성:
+
+```bash
+sudo ./make_config.sh LOGIN_ID_HERE
+```
+
+여기까지 해서 생성된 파일은 `LOGIN_ID_HERE.ovpn` 인데 이걸 클라이언트에서 내려 받아 연결하면 됨. (맥은 ta.key도 필)
 
 ### 중복 접속 허용
 

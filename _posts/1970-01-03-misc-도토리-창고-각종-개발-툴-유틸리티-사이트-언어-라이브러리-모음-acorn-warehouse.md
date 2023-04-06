@@ -43,6 +43,7 @@ tags:
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
+- [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 파이썬으로 실행하는 모양
 
 
 ## 메뉴얼/API DOC/튜토리얼
@@ -104,12 +105,15 @@ tags:
 - [Ant Design](https://ant.design/): 잘 모름. 일단 줍줍
 
 
-## 인프라 관련
+## 인프라
 
 ### 클라우드
 
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다.
-- [Koyeb](https://www.koyeb.com/): PaaS 서비스 같은데 확인 안함. Heroku 유료화되서 이거 쓰는 사람이 있다고
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
+  - [Koyeb](https://www.koyeb.com/)
+  - [Fly.io](https://fly.io/)
+  - [Northflank](https://northflank.com/)
+- []()
 
 ### VPN
 
@@ -119,12 +123,6 @@ tags:
 ### 리눅스
 
 - [Crontab.guru](https://crontab.guru/): Cron(리눅스/유닉스의 스케줄러) 표현식을 테스트하거나 랜덤으로 만들어주는 사이트. Cron Job의 모니터링 소프트웨어를 파는 [Cronitor](https://cronitor.io/cron-job-monitoring?utm_source=crontabguru&utm_campaign=cronitor_button)에서 운영한다.
-
-
-## 인풋 매크로, 키 매핑 등
-
-- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
-- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 키 매핑 앱.
 
 
 ## 정규식 관련
@@ -170,6 +168,7 @@ tags:
 - [CodePen](https://codepen.io)
 - [JSFiddle](https://jsfiddle.net)
 - [StackBlitz](https://stackblitz.com)
+- [CodeSandbox](https://codesandbox.io)
 
 
 ## CVE 아카이빙 사이트
@@ -355,3 +354,10 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 ## 이미지 편집기
 
 - [paint.net](https://www.getpaint.net)
+
+
+## 인풋 매크로, 키 매핑 등
+
+- [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
+- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 매핑 앱
+- [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 매크로와 터보 기능은 유료다.

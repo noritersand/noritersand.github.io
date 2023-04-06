@@ -93,6 +93,7 @@ tags:
 - apex: (보통 the apex) 선단(先端), 향점(solar apex), 정점, 정상, 최고조
 - appendix: 부록, 맹장
 - applicable: 적용할 수 있는, 적절한, 적용 가능한
+- approval: [명사] 인정, 찬성, 승인. permission과 같지만 보다 특정 기관이나 단체에서 요구하는 공식 승인을 의미함.
 - arithmetic: 산술, 산수
 - association: 연관, 협회
 - assume: 가정하다, 생각하다, 추측하다, 추정하다, 맡다
@@ -204,6 +205,7 @@ tags:
 - particular: 특정한, (보통보다 더 많거나 대단하여) 특별한, (특히 공적 문서에 기록하는) 자세한 사실
 - perform: 수행하다, 공연하다, 연주하다, 노래하다, 연기하다
 - permute: ...을 변경하다, 바꾸다, ...의 순서를 바꾸다
+- permission: [명사] 허락, 허가, 승인. approval과 같은 의미인데 좀 더 비공식적인 상황에 사용
 - phrase: 말, 구절, 문구, 어구
 - piece: 조각
 - potentially: 잠재적으로, 아마도, 어쩌면
