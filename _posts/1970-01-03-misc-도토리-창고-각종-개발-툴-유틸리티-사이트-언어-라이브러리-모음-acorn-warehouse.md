@@ -108,13 +108,23 @@ tags:
 
 ## 인프라
 
-### 클라우드
+### PaaS
 
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. PaaS니까 소스만 올리면 앱이 돌아가는 클라우드 서비스라고 생각하면 됨. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
+소스만 올리면 앱이 돌아가는 클라우드 서비스.
+
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
   - [Koyeb](https://www.koyeb.com/)
   - [Fly.io](https://fly.io/)
   - [Northflank](https://northflank.com/)
-- []()
+
+### IaaS
+
+인프라만 제공하는 클라우드 서비스.
+
+- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
+- [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
+- [Azure](https://azure.microsoft.com/)
+- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
 
 ### VPN
 
