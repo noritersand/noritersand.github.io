@@ -382,6 +382,19 @@ arr.splice(1, 2); // Array [ "b", "c" ]
 arr; // Array [ "a" ]
 ```
 
+세번 째 인자 부터는 원본 배열에 이어 붙일 값을 지정할 수 있다:
+
+```js
+var arr = ['a', 'b', 'c'];
+var arr2 = ['d', 'e', 'f'];
+
+// arr의 두 번째 요소부터 두 개를 잘라낸 다음 arr2와 'g'를 이어 붙임
+console.log(arr.splice(1, 2, ...arr2, 'g')); // Array [ "b", "c" ]
+console.log(arr); // Array(5) [ "a", "d", "e", "f", "g" ]
+```
+
+추가 인자가 있어도 `splice()` 반환값이 '잘라내어진 요소들'이란 것은 여전하다.
+
 ### Array.prototype.fill()
 
 배열의 특정 인덱스를 주어진 값 하나로 채우거나 뒤바꾸는 메서드.

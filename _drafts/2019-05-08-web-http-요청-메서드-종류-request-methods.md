@@ -48,14 +48,14 @@ curl -i -X OPTIONS https://example.org
 
 ## GET
 
-> The GET method means retrieve whatever information (in the form of an entity) is identified by the Request-URI. If the Request-URI refers to a data-producing process, it is the produced data which shall be returned as the entity in the response and not the source text of the process, unless that text happens to be the output of the process.
-
-조회.
+일반적으로 어떤 리소스를 요청하거나 조회 혹은 검색등에 사용하는 요청 메서드. HEAD와 함께 반드시 구현/허용되어야 하는 메서드다.
 
 
 ## HEAD
 
-> The HEAD method is identical to GET except that the server MUST NOT return a message-body in the response. The metainformation contained in the HTTP headers in response to a HEAD request SHOULD be identical to the information sent in response to a GET request. This method can be used for obtaining metainformation about the entity implied by the request without transferring the entity-body itself. This method is often used for testing hypertext links for validity, accessibility, and recent modification.
+GET에 이어 반드시 구현/허용되어야 하는 메서드. GET 메서드로 요청했을 때 돌아올 헤더를 확인하는 용도로 사용한다. 이 요청의 응답은 본문이 없거나 있어도 무시해야 한다. 
+
+어떤 자원이 404가 아닌지 확인하는 용도로 사용할 수도 있다.
 
 
 ## POST
@@ -66,18 +66,18 @@ curl -i -X OPTIONS https://example.org
 > - Providing a block of data, such as the result of submitting a form, to a data-handling process;
 > - Extending a database through an append operation.
 
-신규 데이터 등록
+신규 데이터 등록에 사용하는 메서드.
 
 
 ## PUT
 
 > The PUT method requests that the enclosed entity be stored under the supplied Request-URI. If the Request-URI refers to an already existing resource, the enclosed entity SHOULD be considered as a modified version of the one residing on the origin server. If the Request-URI does not point to an existing resource, and that URI is capable of being defined as a new resource by the requesting user agent, the origin server can create the resource with that URI. If a new resource is created, the origin server MUST inform the user agent via the 201 (Created) response. If an existing resource is modified, either the 200 (OK) or 204 (No Content) response codes SHOULD be sent to indicate successful completion of the request. If the resource could not be created or modified with the Request-URI, an appropriate error response SHOULD be given that reflects the nature of the problem. The recipient of the entity MUST NOT ignore any Content-* (e.g. Content-Range) headers that it does not understand or implement and MUST return a 501 (Not Implemented) response in such cases.
 
-등록된 데이터 변경 시 사용하는 메서드.
+이미 등록된 데이터를 수정할 때 사용하는 메서드.
 
 ### POST와 PUT의 차이
 
-앞서 언급했듯이 POST는 신규 생성, PUT은 업데이트에 사용한다. 그리고 멱등하냐 그렇지 않냐의 차이가 있다:
+앞서 언급했듯이 POST는 신규 생성, PUT은 기존 데이터 수정에 사용한다. 그리고 멱등하냐 그렇지 않냐의 차이가 있다:
 
 > All safe methods are idempotent, as well as PUT and DELETE. The POST method is not idempotent.
 > https://developer.mozilla.org/en-US/docs/Glossary/Idempotent
@@ -94,11 +94,9 @@ PUT은 멱등하다(혹은 멱등성을 가진다). 특정 리소스의 업데�
 
 ## DELETE
 
-> The DELETE method requests that the origin server delete the resource identified by the Request-URI. This method MAY be overridden by human intervention (or other means) on the origin server. The client cannot be guaranteed that the operation has been carried out, even if the status code returned from the origin server indicates that the action has been completed successfully. However, the server SHOULD NOT indicate success unless, at the time the response is given, it intends to delete the resource or move it to an inaccessible location.
+특정 자원을 삭제할 때 사용한다.
 
-삭제
-
-스펙은 GET과 비슷해서 리퀘스트 바디를 쓸 수 없다. (아예 안되는 건 아닌 모양) 따라서 삭제하려는 데이터의 식별값은 query-string으로 던져야 한다.
+스펙은 GET과 비슷하며 리퀘스트 바디를 쓸 수 없다. (아예 안되는 건 아닌 모양) 따라서 삭제하려는 데이터의 식별값은 query-string으로 던져야 한다.
 
 
 ## TRACE
