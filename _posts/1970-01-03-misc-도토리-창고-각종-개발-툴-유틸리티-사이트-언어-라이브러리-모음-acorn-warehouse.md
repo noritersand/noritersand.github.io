@@ -43,6 +43,7 @@ tags:
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
+- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 툴 모음 사이트
 - [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 파이썬으로 실행하는 모양
 - [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): 누군가 만들어놓은 README 작성 표준 ㅋㅋ
 

@@ -185,21 +185,23 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 ## 작성자 저장용 단축키 설정
 
-- Open Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
-- Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
-- Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
-- Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
-- Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
-- Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
-- Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
-- Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
-- Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- File Open Actions > Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
+- Help > Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
+- Edit > Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
+- Edit > Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
+- Editor Actions > Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
+- Editor Actions > Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
+- Editor Actions > Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
+- Editor Actions > Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
+- Editor Tabs > Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
+- Editor Tabs > Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- Editor Tabs > Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
 - Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
-- Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-- Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
+- Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
+- Database > Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
+- Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
+- Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
 
 
 ## 기본 단축키
