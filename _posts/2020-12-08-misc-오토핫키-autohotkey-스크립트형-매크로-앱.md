@@ -21,6 +21,7 @@ tags:
 
 - AutoHotkey_1.1.3x
 
+
 ## 개요
 
 AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플리케이션이다. 특정 키를 눌렀을 때 기존과 다른 키가 입력되게 하는 간단한 키매핑부터, 일련의 키 입력을 반복하는 매크로, 시간차를 둔 입력 등 상상할 수 있는 거의 모든 것을 만들 수 있다.
@@ -31,13 +32,14 @@ AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플�
 
 서브라임 텍스트에선 Java syntax를 쓰는게 가장 보기 좋다. 그런데 완전하지 않으므로 [AutoHotkey](https://packagecontrol.io/packages/AutoHotkey) 패키지를 설치하자. VSCODE에서도 누군가 이미 확장 기능을 만들어놨다(이쪽이 더 이쁘다).
 
+
 ## 스크립트 작성 방법
 
 앱이 설치되어 있다면 스크립트에 기본적으로 필요한 것은 아무것도 없다. 바로 원하는 내용을 쓰면 된다.
 
 예시:
 
-```c
+```autohotkey
 /*
 Simple keymapping script
 */
@@ -46,7 +48,7 @@ a::b ; a를 누르면 b가 입력됨
 
 `::`의 좌측에 트리거 키, 바로 다음 줄에 실행할 명령을 작성한다:
 
-```c
+```autohotkey
 #n::
 Run Notepad
 return
@@ -54,17 +56,17 @@ return
 
 만약 `::`의 바로 우측 즉, 같은 라인에 명령을 작성할 경우 `return`이 라인 끝에 있는걸로 간주한다.
 
-```c
+```autohotkey
 #n::Run Notepad
 ```
 
 ### 코멘트
 
-```c
+```autohotkey
 ; 세미콜론 뒤에 오는 문자는 코멘트 처리됨
 ```
 
-```c
+```autohotkey
 /*
 요것은 코멘트 블록
 */
@@ -74,7 +76,7 @@ return
 
 ### 여러 키에 같은 명령 할당
 
-```c
+```autohotkey
 ^Numpad0::
 ^Numpad1::
 MsgBox Pressing either Control+Numpad0 or Control+Numpad1 will display this message.
@@ -85,7 +87,7 @@ return
 
 ### 키 비활성화
 
-```c
+```autohotkey
 RWin::return
 ```
 
@@ -95,13 +97,13 @@ RWin::return
 
 Hotstrings는 일련의 연속적인 키 입력을 트리거로 사용하는 것을 말한다.
 
-```c
+```autohotkey
 ::btw::by the way
 ```
 
 가령 위의 스크립트는 <kbd>b</kbd><kbd>t</kbd><kbd>w</kbd>를 입력하고 스페이스나 엔터, 탭을 입력하면 'btw'가 'by the way'로 치환된다.
 
-```c
+```autohotkey
 :*:btw::by the way
 ```
 
@@ -109,8 +111,9 @@ Hotstrings는 일련의 연속적인 키 입력을 트리거로 사용하는 것
 
 단순히 문자열 치환만 가능한 건 아니다. 아래를 보자:
 
-```c
+```autohotkey
 /*
+
 ## <kbd></kbd>
 */
 :*:,kbd.::
@@ -127,16 +130,16 @@ return
 
 Hotstrings의 옵션을 설정하는 명령어.
 
-```c
+```autohotkey
 #Hotstring r c ; 이 아래에 작성된 Hotstrings의 트리거는 대소문자를 구별한다.
-#Hotstring c0 ; 이 아래에 작성된 Hotstrings의 트리거는 대소문자를 무시한다.
+#Hotstring c0  ; 이 아래에 작성된 Hotstrings의 트리거는 대소문자를 무시한다.
 ```
 
 ### 엔터와 탭
 
 엔터는 ``` `n```, 탭은 ``` `t```로 작성한다.
 
-```c
+```autohotkey
 :*:qwer::hel`nlo`tworld{!}
 ```
 
@@ -154,9 +157,23 @@ lo    world!
 `{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. ~~뭔소리야~~ 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.  
 따라서 <kbd>alt + tab</kbd>을 내보내고 싶을땐 `!{Tab}`라고 작성한다.
 
+TODO 특수 문자를 단축키로 입력받게 하려면 어떻게 해야 하는지. Bing은 이렇게 하라는데 에러 뜸:
+
+```autohotkey
+{+}::Send, You pressed the plus key!
+```
+
+이렇게 하는 방법도 있는데 원리는 모름:
+
+```autohotkey
+; 특이하게도 win + = 조합으로 발동된다
+LWin & +::Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+```
+
+
 ### 단순 매핑
 
-```c
+```autohotkey
 `::Numpad0
 i::SendInput {WheelDown}
 ```
@@ -165,11 +182,12 @@ i::SendInput {WheelDown}
 
 ### 연속적인 키 입력
 
-```c
-F9::SendInput +{a}+{b}+{c} ; 아래랑 결과 같음
-F10::SendInput {LShift down}{a}{b}{c}{LShift Up} ; 위랑 같음
+```autohotkey
+F9::SendInput +{a}+{b}+{c} ; 아래와 결과 같음
+F10::SendInput {LShift down}{a}{b}{c}{LShift Up} ; 위와 같음
 F11::SendInput Fork you
 ```
+
 
 ## 연산자/표현식
 
@@ -182,6 +200,7 @@ Var := expression
 `Var` 변수(없으면 만듦)에 `expression`의 평가값을 할당한다.
 
 참고로 여기서 `=`는 할당이 아니고 동등비교임.
+
 
 ## 제어문
 
@@ -197,7 +216,7 @@ Loop [, Count]
 
 숫자패드의 <kbd>-</kbd>를 누르면 마우스 휠 업 14번 반복 입력하는 스크립트:
 
-```c
+```autohotkey
 NumpadSub::
 Loop, 14 {
   SendInput {WheelUp}
@@ -218,7 +237,7 @@ While (Expression)
 
 마우스 좌버튼이 눌려져 있으면 클릭을 반복하게 하는 스크립트:
 
-```c
+```autohotkey
 SetMouseDelay 30
 LButton::
 while (GetKeyState("LButton", "P")) {
@@ -227,9 +246,10 @@ while (GetKeyState("LButton", "P")) {
 return
 ```
 
+
 ## 함수
 
-### SendInput()
+### Send, SendRaw, SendInput, SendPlay, SendEvent
 
 TODO
 
@@ -246,6 +266,7 @@ KeyIsDown := GetKeyState(KeyName , Mode)
 > If omitted, the mode will default to that which retrieves the logical state of the key. This is the state that the OS and the active window believe the key to be in, but is not necessarily the same as the physical state.
 
 라고 한다.
+
 
 ## 키 이름
 
@@ -282,25 +303,26 @@ prefix는 `{}` 안에서 작동하지 않는다.
 - `Left`: <kbd>←</kbd> (left arrow key)
 - `Right`: <kbd>→</kbd> (right arrow key)
 
+
 ## snippets
 
 ### 스크립트 중단/재개, 종료, 다시 불러오기
 
-```c
+```autohotkey
 /*
 ## script control
 */
-+^!F5::Suspend  ; Suspend script
-+^!F6::Reload   ; Reload script
-+^!F8::ExitApp  ; Exit script
++^!F5::Suspend ; Suspend script
++^!F6::Reload  ; Reload script
++^!F8::ExitApp ; Exit script
 ```
 
 자주 누르는 일반적인 키(1, 2, a, b, 등등)에 매핑을 할당할 경우 이 스크립트를 항상 포함하는게 편하다.
 
 ### 키 히스토리
 
-```c
-#Persistent ; keep running
+```autohotkey
+#Persistent       ; keep running
 #InstallKeybdHook ; Better for keys
 KeyHistory
 
@@ -313,7 +335,7 @@ ESC::return
 
 출처: [https://superuser.com/questions/1457073/how-do-i-disable-specific-windows-10-office-keyboard-shortcut-ctrlshiftwinal](https://superuser.com/questions/1457073/how-do-i-disable-specific-windows-10-office-keyboard-shortcut-ctrlshiftwinal)
 
-```c
+```autohotkey
 #^!Shift::
 #^+Alt::
 #!+Ctrl::
@@ -327,7 +349,7 @@ return
 
 ### 현재 날짜와 시간
 
-```c
+```autohotkey
 :*:][wlrma::
 FormatTime, CurrentDateTime,, yyyy-MM-dd hh:mm:ss
 SendInput %CurrentDateTime%
@@ -340,7 +362,7 @@ return
 
 마우스 좌클릭:
 
-```c
+```autohotkey
 SetMouseDelay 30
 LButton::
 while GetKeyState("LButton", "P") {
@@ -351,7 +373,7 @@ return
 
 <kbd>ctrl + g</kbd> 누르고 있으면 g 반복 입력:
 
-```c
+```autohotkey
 <^g::
 While (GetKeyState("g", "P") && GetKeyState("LCtrl", "P")) {
   SendInput g
@@ -362,7 +384,7 @@ return
 
 ### 특정 위치로 커서 이동 + 클릭
 
-```c
+```autohotkey
 [::
 MouseClick, Left, 232, 202
 return
@@ -371,6 +393,23 @@ return
 <kbd>[</kbd>를 누르면 지정한 좌표로 이동하여 좌클릭하는 스크립트. `MouseClick, Left`라고만 쓰면 현재 커서 위치에서 좌클릭한다.  
 좌표는 WindowSpy(AutoHotkey 설치 시 같이 깔림) 앱에서 확인하면 되며, [CoordMode](https://www.autohotkey.com/docs/commands/CoordMode.htm)를 사용하지 않는 이상 절대위치가 아닌 앱 별 상대위치로 작동한다.
 
+### 앱 실행/전환 단축키 확장
+
+```autohotkey
+#SingleInstance force
+SetTitleMatchMode 2
+
+#IfWinExist ahk_exe Notion.exe
+  <#-::WinActivate
+#IfWinNotExist ahk_exe Notion.exe
+  <#-::Run "C:\Users\USER_NAME\AppData\Local\Programs\Notion\Notion.exe"
+
+#IfWinExist ahk_exe msedge.exe
+  <#=::WinActivate
+#IfWinNotExist ahk_exe msedge.exe
+  <#=::Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+```
 
 
 ## 꼐속...
+

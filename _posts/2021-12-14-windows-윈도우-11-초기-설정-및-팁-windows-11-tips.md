@@ -88,13 +88,16 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ## 작성자 저장용 작업표시줄 고정 설정
 
-1. Terminal
-2. Sublime Text
-3. Firefox
-4. Chrome
-5. Sublime Merge
-6. 가변: Discord, Slack
-7. VSCODE (잘 안쓰면 Notion)
-8. 가변: IDE#1
-9. 가변: IDE#2, Notion, Office, DBMS tool
-0. 가변: IDE#3, 카톡
+- <kbd>win + 1</kbd>: Terminal
+- <kbd>win + 2</kbd>: Sublime Text
+- <kbd>win + 3</kbd>: Firefox
+- <kbd>win + 4</kbd>: Chrome
+- <kbd>win + 5</kbd>: Sublime Merge
+- <kbd>win + 6</kbd>: 가변: Discord, Slack
+- <kbd>win + 7</kbd>: VSCODE
+- <kbd>win + 8</kbd>: 가변: IDE#1
+- <kbd>win + 9</kbd>: 가변: IDE#2, Office
+- <kbd>win + 0</kbd>: 가변: IDE#3, DBMS tool
+- <kbd>win + \-</kbd>: Notion (Autohotkey로 확장)
+- <kbd>win + \=</kbd>: Edge (Autohotkey로 확장)
+

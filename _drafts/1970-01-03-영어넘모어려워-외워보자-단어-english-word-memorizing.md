@@ -267,6 +267,7 @@ tags:
 - term: 임기, 용어, 말하다, 기간, 계약조건
 - theoretical: 이론상의
 - threshold: 문지방, 한계점
+- tolerable: [형용사] (썩 좋지는 않지만) 웬만큼 괜찮은, 웬만한 (=reasonable), 참을 수 있는, 견딜 만한 (=bearable), 반대말은 intolerable
 - topological: 위상의, 위상 기하학의
 - via: 통하여, 이용한, 의한, 거쳐, 경유
 - wealth: 부, 재산, 부유함, 자원
