@@ -272,6 +272,12 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + shift + h</kbd>: Method Hierarchy. 메서드 계층 보기
 - <kbd>ctrl + alt + h</kbd>: Call Hierarchy. 호출 계층 보기
 - <kbd>ctrl + alt + shift + left/right</kbd>: Move Element Left/Right. 메서드 파라미터의 순서를 변경할 때 사용함.
+- <kbd>alt + shift + c</kbd>: Recent changes. 파일 시스템의 최근 변경 목록을 보여주는 것 같은데, 어떤 기준으로 나오는지 잘 모르겠음 🤔
+
+### 복사/붙이기
+
+- <kbd>ctrl + alt + shift + c</kbd>: Copy Reference. 현재 커서/캐럿/포커스의 위치를 기준으로 상대 경로를 복사한다. 예를 들어자바 클래스의 메서드에 캐럿을 두고 누르면 `패키지/클래스명#메서드명`의 형태로 복사한다. 심볼을 특정할 수 없는 경우엔 `디렉토리/파일명:라인번호`의 형태로 복사한다.
+- <kbd>ctrl + shift + c</kbd>: Copy Absolute Path. 현재 파일의 (윈도우에선 드라이브 문자 `C:`, `D:` 부터 시작하는) 절대 경로를 복사한다.
 
 ### 멀티 캐럿
 

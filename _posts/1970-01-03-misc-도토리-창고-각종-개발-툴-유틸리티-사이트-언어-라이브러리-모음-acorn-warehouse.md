@@ -343,9 +343,9 @@ tags:
 - [Selenium](https://www.selenium.dev/): 동적 웹 앱(페이지 로딩 후 자바스크립트 등에 의해 동적으로 구성이 변경되는 사이트) 테스트 혹은 크롤링에 사용되는 툴이다.
 
 
-## 분석/프로파일링/모니터링 툴
+## APM/분석/프로파일링/데이터 시각화
 
-APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘네들은 웬만하면 상용툴이다.
+통칭 모니터링 툴 모음. 얘네들은 웬만하면 상용툴이다.
 
 - [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 이것보다 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다.
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
@@ -359,6 +359,7 @@ APM(Application Performance Monitoring) 툴 혹은 프로파일링 툴들. 얘�
 - [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
+- [Kibana](https://www.elastic.co/kr/kibana/): Elastic Stack의 일부인 데이터 시각화 및 분석 도구. 모니터링과 APM 기능도 제공됨.
 
 
 ## 그리드

@@ -63,7 +63,7 @@ Object.getOwnPropertyDescriptors(String.prototype);
 
 ### Object.getOwnPropertyNames()
 
-특정 개체가 소유한 프로퍼티들의 이름을 배열로 반환한다.
+특정 객체가 소유한 프로퍼티들의 이름을 배열로 반환한다.
 
 ```js
 // String 프로토타입이 소유한 프로퍼티 중 이름에 'sub'가 포함된 것만 필터링
@@ -72,6 +72,32 @@ Object.getOwnPropertyNames(String.prototype).filter((e) => {
 });
 // Array(4) [ "toLowerCase", "toUpperCase", "toLocaleLowerCase", "toLocaleUpperCase" ]
 ```
+
+전달인자가 프로토타입인지 혹은 인스턴스인지에 따라서 같은 타입이라도 결과가 다르다. 메서드의 소유자는 프로토타입이지만, 필드의 소유자는 인스턴스이기 때문:
+
+```js
+class Newbie {
+  msg = 'Me iz da best!';
+  #secret = 'Something special...';
+
+  constructor(trait) {
+    this._trait = trait;
+  }
+
+  levelUp() {
+    console.log('I feel stronger.');
+    this._trait = 'Can barely shoot an arrow.';
+  }
+}
+
+var noob = new Newbie();
+
+Object.getOwnPropertyNames(noob); // Array [ "msg", "_trait" ]
+Object.getOwnPropertyNames(Newbie.prototype); // Array [ "constructor", "levelUp" ]
+```
+
+단, 전달인자가 인스턴스여도 private 필드는 반환되지 않는다.
+
 
 ### Object.defineProperty()
 
