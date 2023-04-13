@@ -299,7 +299,7 @@ WAR 빌드용 플러그인
 
 로컬 환경에 따라 달라지는 빌드를 구성할 때 사용한다. 가령 특정 프로세서를 사용하는 환경일 땐 필요한 추가 라이브러리를 다운로드한다던지...
 
-예를 들어 아래는 M1 맥OS일 때 `io.netty:netty-resolver-dns-native-macos:osx-aarch_64`를 추가하는 설정이다:
+예를 들어 아래는 M1 프로세서를 사용하는 macOS일 때 `io.netty:netty-resolver-dns-native-macos:osx-aarch_64`를 추가하는 설정이다:
 
 ```xml
 <profile>

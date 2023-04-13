@@ -37,7 +37,7 @@ tags:
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 - [OneLang.io](https://ide.onelang.io/): 개발 언어 병렬 번역기
 - [Figstack](https://www.figstack.com/): 코드를 다른 언어로 번역, 영어로 해설, documentation comments 만들기, 시간 복잡도 계산, 작성한 코드 기반 자연어로 질문까지! 아직은 쪼끔 느린게 흠.
-- [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. 맥은 아직 지원 안함.
+- [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
 - [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GTP 기반 AI 채팅. 지금은 베타기간이라 문제가 좀 있다. 이제 곧 기술 문의를 AI한테 하는 시대가 올 지도...
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
@@ -61,10 +61,11 @@ tags:
 
 ## 언어
 
+- [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. Java 기반이라고 한다. (뭔가 Kotlin이랑 비슷한데?)
 - [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
 - [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
 - [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
-- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 거의 같다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다고 한다.
+- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷하다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 
 
 ## 써드파티 라이브러리/프레임워크
@@ -77,17 +78,21 @@ tags:
 - [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
 - [Spring](https://spring.io/)
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
-- [Flutter](https://flutter-ko.dev/): 코드 하나로 안드로이드, 리눅스, 윈도우, 맥OS, iOS, 웹에서 모두 작동하는 앱 개발이 가능한 SDK 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart.
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [tailwindcss](https://tailwindcss.com/): CSS 프레임워크. 설명이 어려우니 데모를 보자
 - [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 
-### 웹(프론트) 프레임워크
+### 웹 프레임워크
 
 - [Vue](https://vuejs.org/)
 - [React](https://reactjs.org/): 라이브러리라 주장하지만...
 - [Svelte](https://svelte.dev/)
+
+### 앱 프레임워크
+
+- [React Native](https://reactnative.dev/)
+- [Flutter](https://flutter.dev/): 코드 하나로 리눅스, Windows, macOS, 웹에서 모두 작동하는 앱 개발이 가능한 UI 툴킷(SDK) 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart. 
 
 ### 테스트
 

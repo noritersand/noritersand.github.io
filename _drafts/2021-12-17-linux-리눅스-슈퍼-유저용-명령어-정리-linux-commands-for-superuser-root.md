@@ -456,7 +456,6 @@ passwd USER_ID
 
 비슷한 명령어로 `adduser`가 있는데 이 명령은 유저를 생성할 때 유저에 대한 정보를 묻는 프롬프트가 나타난다는 차이점이 잇슴.
 
-
 ## usermod
 
 유저의 로그인 정보를 수정하는 명령어
@@ -464,4 +463,23 @@ passwd USER_ID
 ```bash
 # GROUP_ID 그룹에 USER_ID 추가
 usermod -a -G GROUP_ID USER_ID
+```
+
+#### options
+
+- `-a`: `-G`와 함께 보조 그룹에 추가할 때 사용한다. 이 옵션이 없으면 `-G` 다음에 나열한 그룹을 제외한 나머지 그룹에서 제거된다.
+- `-G`: `-a` 없이 사용할 경우 기존의 보조 그룹에서 유저를 제거하고 새로 지정한 그룹으로 이동한다.
+- `-s`: 기본 셸을 변경하는 옵션
+
+### nologin 계정 만들기
+
+nologin 계정이란 유저가 로그인하지 못하는 계정을 말한다. `usermod -s`로 셸 위치를 `/sbin/nologin`으로 만들면 해당 계정을 더 이상 로그인할 수 없게 된다:
+
+```bash
+$ useradd -m nologin-test
+$ passwd nologin-test
+$ usermod nologin-test -s /sbin/nologin
+
+$ su - nologin-test
+This account is currently not available.
 ```
