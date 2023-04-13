@@ -28,7 +28,7 @@ AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플�
 
 스크립트의 기본 확장자는 `ahk`이며 앱 설치 후 스크립트를 실행하면 해당 프로그램이 백그라운드에서 키 입력을 감지한다. (트레이에 아이콘 있을 유)
 
-누군가에 말에 의하면 AutoHotkey는 C++으로 개발된 앱이다. 하지만 여기서 사용하는 스크립트는 완전히 독자적인 언어이며 C++의 문법과 다르다.
+누군가에 말에 의하면 AutoHotkey는 C++으로 개발된 앱이지만, 여기서 사용하는 스크립트는 완전히 독자적인 언어이며 C++의 문법과 다르다고 한다.
 
 서브라임 텍스트에선 Java syntax를 쓰는게 가장 보기 좋다. 그런데 완전하지 않으므로 [AutoHotkey](https://packagecontrol.io/packages/AutoHotkey) 패키지를 설치하자. VSCODE에서도 누군가 이미 확장 기능을 만들어놨다(이쪽이 더 이쁘다).
 
@@ -157,10 +157,12 @@ lo    world!
 `{}` 문자는 키 이름과 기타 옵션을 묶고 특수 문자를 문자 그대로 보내는데 사용한다. ~~뭔소리야~~ 가령, `{Tab}`은 <kbd>Tab</kbd>키이고, `{!}`는 문자 그대로 느낌표다.  
 따라서 <kbd>alt + tab</kbd>을 내보내고 싶을땐 `!{Tab}`라고 작성한다.
 
-TODO 특수 문자를 단축키로 입력받게 하려면 어떻게 해야 하는지. Bing은 이렇게 하라는데 에러 뜸:
+TODO 특수 문자를 단축키로 입력받게 하려면 어떻게 해야 하는지:
 
 ```autohotkey
-{+}::Send, You pressed the plus key!
+; + 입력받기
+{+}::Send You pressed the plus key!  ; Bing은 이렇게 하라는데 에러 뜸
++::Send You pressed the plus key!    ; 그냥 이렇게 하면 됨
 ```
 
 이렇게 하는 방법도 있는데 원리는 모름:
@@ -244,6 +246,44 @@ while (GetKeyState("LButton", "P")) {
   Click
 }
 return
+```
+
+### If-Else
+
+```autohotkey
+If expression {
+  do something
+} Else {
+  do something else
+}
+```
+
+일반적인 프로그래밍 언어들과 큰 차이는 없다. 
+
+### \#If
+
+문맥에 따른(context-sensitive) 단축키와 핫스트링을 만들 때 사용한다. 자매품으로 `\#IfTimeout`, `\#IfWinActive`, `\#IfWinNotExist`, `\#IfWinExist`, `\#IfWinNotActive`가 있다. 이런 걸 '지시어'라고 부르는 모양.
+
+```autohotkey
+#If True
+  q::Send You pressed 'q' key.
+
+#If False
+  z::Send You pressed 'z' key. ; 이 단축키는 영원히 작동하지 않음
+```
+
+한 번 `#If` 문맥이 시작되면 그 아래에 작성한 스크립트는 모두 영향을 받는다. 문맥을 끊으려면(To turn off context sensitivity) 파라미터를 생략한 `#If`를 작성하면 된다(`#End`는 없음):
+
+```autohotkey
+s::d
+
+#If False
+  z::Send You pressed 'z' key. ; 작동하지 않음
+
+  q::a ; 얘도 작동하지 않음
+
+#If
+  c::v ; 여기부턴 잘 됨
 ```
 
 
@@ -408,7 +448,36 @@ SetTitleMatchMode 2
   <#=::WinActivate
 #IfWinNotExist ahk_exe msedge.exe
   <#=::Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+#If ; #End가 없어서 대신 쓰는 종료 키워드
 ```
+
+`If-Else` 버전으로 작성하면 이렇게 된다:
+
+```autohotkey
+#SingleInstance force
+SetTitleMatchMode 2
+
+<#-::
+If WinExist("ahk_exe Notion.exe") {
+  WinActivate
+} Else {
+  Run "C:\Users\fixal\AppData\Local\Programs\Notion\Notion.exe"
+}
+return
+
+<#=::
+If WinExist("ahk_exe msedge.exe") {
+  WinActivate
+} Else {
+  Run "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+}
+return
+```
+
+여기서 `#SingleInstance force`는 스크립트가 이미 실행 중일 때 이전 인스턴스를 종료하고 새 인스턴스를 시작하게 해서 중복 실행을 방지하는 설정이다.
+
+`SetTitleMatchMode 2`는 윈도우 제목을 검색할 때 `WinTitle` 파라미터에 지정된 문자열을 일부만 포함해도 일치하다고 간주하게 하는 설정이다.
+
 
 
 ## 꼐속...
