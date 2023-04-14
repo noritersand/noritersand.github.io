@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-02 00:00:00 +0900
-title: '[misc] IT 용어 Terms'
+title: '[misc] IT 용어'
 categories:
   - misc
 tags:
@@ -517,16 +517,6 @@ web application deployment descriptor
 
 - 매개변수 = parameter
 - 인수 = 인자 = 전달인자 = argument
-
-
-## 명제와 대우명제
-
-명제(P이면 Q)의 진리값(참/거짓)은 대우명제(not Q이면 not P)의 진리값과 같다.
-
-
-## 로그 표현식
-
-log<sub>10</sub> 1000 = 3 이란 표현은 "10에다 몇 제곱을 하면 1000이 될까요?" "3이요" 라는 의미다.
 
 
 ## [OGNL](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwjX04St1I3hAhWGS7wKHVGLDCkQFjAAegQICRAB&url=https%3A%2F%2Fcommons.apache.org%2Fognl%2F&usg=AOvVaw0gek1QNwFATrO5BF6_LjL2)
