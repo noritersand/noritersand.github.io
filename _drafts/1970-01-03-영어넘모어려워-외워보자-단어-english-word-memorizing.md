@@ -286,7 +286,7 @@ tags:
 - steadfast: [형용사] 문예체 호감 (태도·목표가) 변함없는 (=firm)
 - shearwater: [명사] 슴새
 - harvestman: [명사] 장님거미, 통거미
-
+- Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
 
 ## 이모지
 

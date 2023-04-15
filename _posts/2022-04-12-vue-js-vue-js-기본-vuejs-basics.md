@@ -277,8 +277,10 @@ const vm = app.mount("#app");
 
 ```js
 export default {
-  data: {
-    seen: true
+  data() {
+    return {
+      seen: true
+    };
   }
 }
 ```
@@ -336,14 +338,16 @@ TODO
 
 ```js
 export default {
-  data: {
-    values: [
-      {index: '하나'},
-      {index: '둘'},
-      {index: '셋'}
-    ]
+  data() {
+    return {
+      values: [
+        {index: '하나'},
+        {index: '둘'},
+        {index: '셋'}
+      ]
+    };
   }
-};
+}
 ```
 
 ```html
@@ -512,10 +516,12 @@ methods: {
 
 ```js
 export default {
-    data: {
-    message: '안녕하세요 Vue!'
+  data() {
+    return {
+      message: '안녕하세요 Vue!'
+    };
   }
-};
+}
 ```
 
 ```html
@@ -526,6 +532,38 @@ export default {
 ```
 
 이 예시의 경우, `input` 태그의 `value` 값이 변경되면 vue 앱의 `message` 데이터도 같이 변경된다.
+
+### 하나의 모델로 묶기
+
+체크박스나 셀렉트박스(multiple 속성이 있을 때)는 하나의 `name` 속성으로 여러 값이 할당될 수 있는데, Vue에서는 `v-model`을 배열로 선언하여 적용할 수 있다:
+
+```html
+<select v-model="multipleSelected" multiple>
+  <option value="A">A</option>
+  <option value="B">B</option>
+  <option value="C">C</option>
+</select>
+```
+
+```js
+export default {
+  data() {
+    return {
+      multipleSelected: [] // ['A', 'B'] 이런식으로 할당됨
+    };
+  }
+}
+```
+
+### true-value, false-value
+
+체크박스에 한해서, 그리고 **여러 개를 하나의 모델로 묶지 않을 때 한정**으로 체크/체크해제 각각의 값을 지정할 수 있다. 
+
+```html
+<input type="checkbox" v-model="yn" true-value="Y" :false-value="'N'" />
+```
+
+값이 문자열이면 콜론과 홑따옴표는 생략해도 된다.
 
 ### Modifiers
 
