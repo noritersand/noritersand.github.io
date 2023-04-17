@@ -5,7 +5,7 @@ title: '[Maven] POM, pom.xml'
 categories:
   - maven
 tags:
-  - buildtool
+  - build-tool
   - maven
   - pom
 ---

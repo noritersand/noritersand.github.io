@@ -5,7 +5,7 @@ title: '[Maven] 아파치 메이븐 note'
 categories:
   - maven
 tags:
-  - buildtool
+  - build-tool
   - maven
   - nexus
   - link-post

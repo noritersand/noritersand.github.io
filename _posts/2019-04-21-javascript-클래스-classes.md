@@ -94,7 +94,7 @@ TODO
 
 ## static
 
-생성자 함수의 메서드를 만드는 키워드.
+생성자 함수의 메서드 혹은 프로퍼티를 만드는 키워드. 이 키워드가 붙은 프로퍼티를 스태틱 필드 혹은 스태틱 메서드라고 한다.
 
 ```js
 class Hitman {
@@ -111,10 +111,14 @@ Hitman.yo();
 TODO
 
 
-## public field
+## public class feature
+
+아무 제약이 없는 단순한 프로퍼티를 생각하면 된다. 선언 없이 메서드 내에서 추가하려 할 땐 `this`를 거쳐야한다:
 
 ```js
 class Building {
+  static shape = 'square';
+
   location = 'some-where';
   number;
 
@@ -123,34 +127,45 @@ class Building {
   }
 }
 
+Building.shape; // 'square' 
+
 var building = new Building(1234);
 building.location; // "some-where"
 building.number; // 1234
 ```
 
-단순한 인스턴스의 프로퍼티를 생각하면 된다. 메서드 내에서 정의할 땐 `this`를 거쳐야한다.
 
+## private class feature
 
-## private field
+식별자 앞에 `#`를 붙이면 클래스 외부에선 참조할 수 없는 프로퍼티가 된다:
 
 ```js
 class Company {
+  static #ps = 'is postscript.'
+
   #classified = 'actually not';
   #secret;
 
   constructor(secret) {
     this.#secret = secret;
   }
+
+  #privateMethod() {
+    // …
+  }
 }
+
+Company.#ps; // Uncaught SyntaxError: reference to undeclared private field or method #ps
 
 var company = new Company('anyone can see this');
 console.log(company); // Object { #classified: "actually not", #secret: "anyone can see this" }
 
-company.#classified; // Uncaught SyntaxError: reference to undeclared private field or method #classified debugger eval code:1:8
+company.#classified; // Uncaught SyntaxError: reference to undeclared private field or method #classified
 company.#secret; // Uncaught SyntaxError: reference to undeclared private field or method #secret
+company.#privateMethod(); // Uncaught SyntaxError: reference to undeclared private field or method #privateMethod;
 ```
 
-private field는 클래스 외부에서 접근하려고 할 때 문법에러가 발생한다. 그렇다고 안보이는 건 아니다.
+디버깅을 해보면 private field는 보이긴 하지만 외부에서 접근할 수 없으며, 접근 시도 시 문법에러가 발생한다. 단, 예외가 있는데, 크롬 개발자도구 콘솔에선 접근 제약이 없다. 하지만 파이어폭스 개발자도구에선 안됨. (도데체 왜??)
 
 
 ## 빌트인 프로토타입의 확장

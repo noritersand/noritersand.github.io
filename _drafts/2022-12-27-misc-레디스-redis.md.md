@@ -5,6 +5,7 @@ title: '[misc] 레디스 Redis'
 categories:
   - misc
 tags:
+  - misc
   - redis
 ---
 

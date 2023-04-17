@@ -83,6 +83,7 @@ tags:
 - 쪽: page
 - 장: sheet, leaf
 - abnormal: 비정상적인, 이상한
+- achieve: [동사] 달성하다, 성취하다 (=attain), (…을) 해내다[이루다] (=accomplish), 잘 해내다, 성공하다
 - acquire: 얻다, 인수하다, 갖다, 배우다, 구입하다
 - adjacent: 인접한, 이웃의, 근방의
 - adjust: 조정되다, 적응하다, 조절하다, 감안하다, 맞추다
@@ -94,6 +95,7 @@ tags:
 - appendix: 부록, 맹장
 - applicable: 적용할 수 있는, 적절한, 적용 가능한
 - approval: [명사] 인정, 찬성, 승인. permission과 같지만 보다 특정 기관이나 단체에서 요구하는 공식 승인을 의미함.
+- archive: [명사] 기록 보관소 [동사] 기록 보관소에 보관하다, 컴퓨터 파일을 보관하다
 - arithmetic: 산술, 산수
 - association: 연관, 협회
 - assume: 가정하다, 생각하다, 추측하다, 추정하다, 맡다

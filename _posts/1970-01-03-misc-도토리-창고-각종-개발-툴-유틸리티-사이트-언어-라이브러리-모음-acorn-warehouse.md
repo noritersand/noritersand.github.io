@@ -62,6 +62,7 @@ tags:
 ## 언어
 
 - [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. Java 기반이라고 한다. (뭔가 Kotlin이랑 비슷한데?)
+- [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). Java, Python, Ruby 등의 언어에서 영향을 받았다 한다. 
 - [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
 - [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
 - [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
