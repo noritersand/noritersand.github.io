@@ -44,6 +44,9 @@ tags:
 - irreducible fraction: 기약분수, 분모와 분자 사이의 공약수가 1뿐이어서 더 이상 약분되지 않는 분수
 - linear regression analysis: 선형 회귀 분석
 - mathematics: 수학
+- modulus: 
+  - [명사] 물리 율, 계수, [수학] 대수(對數) 계수, (합동식에서의) 법, (복소수의) 절대값(absolute value), 표준, 기준(norm)
+  - 프로그래밍에선 나머지 연산자`%`를 의미함
 - multiplier: 승수, 곱하는 수
 - multiply: 곱하기
 - natural number: 자연수, 0부터 무한히 증가하는 소수(decimal)가 아닌 수, (0, 1, 2, 3, ...)

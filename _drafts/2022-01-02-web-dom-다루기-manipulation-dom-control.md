@@ -44,6 +44,17 @@ function appendIframe() {
 </script>
 ```
 
+#### 스크립트 동적으로 불러오기
+
+```js
+var headTag = document.getElementsByTagName("head")[0];
+var newScript = document.createElement('script');
+newScript.type = 'text/javascript';
+// newScript.onload = function() { console.log('자바스크립트 로드 완료') };
+newScript.src = '/어딘가/대단한-스크립트.js';
+headTag.appendChild(newScript);
+```
+
 
 ## prepend
 

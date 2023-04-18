@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-10-29 13:32:00 +0900
-title: '[JavaScript] 스크립트 동적 불러오기'
+title: '[JavaScript] 스크립트 동적으로 불러오기'
 categories:
   - javascript
 tags:
