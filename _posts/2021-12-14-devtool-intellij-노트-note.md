@@ -36,9 +36,9 @@ tags:
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
 
-## TODO 톰캣 퍼블리싱 폴더는 어디일까
+## 톰캣 퍼블리싱 폴더는 어디일까
 
-이클립스의 고것과 같은 경로를 못찾겠다. 설마 target을 직접 보는건지.
+`shell:local appdata\JetBrains\IntelliJIdeaXXXX.X\tomcat\36자리-의-랜덤-한-번호`
 
 
 ## IDE log 파일 위치

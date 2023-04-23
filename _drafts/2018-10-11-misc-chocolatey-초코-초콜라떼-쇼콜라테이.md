@@ -84,6 +84,23 @@ choco upgrade chocolatey
 choco upgrade all
 ```
 
+### source(패키지 저장소) 보기/설정
+
+```bash
+# default source 보기
+choco source
+
+# source 추가
+choco source add -n=bob -s="https://somewhere/out/there/api/v2/"
+```
+
+### 패키지 검색
+
+```bash
+choco find jdk # 'jdk'가 포함된 패키지 검색
+choco search jdk # find의 alias
+```
+
 
 ## [Update-SessionEnvironment](https://docs.chocolatey.org/en-us/create/functions/update-sessionenvironment)
 
