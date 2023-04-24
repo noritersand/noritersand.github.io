@@ -36,9 +36,7 @@ tags:
 { set [expression](val) { . . . } }
 ```
 
-getter와 setter는 접근자 프로퍼티(accessor property)에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티(data property)와는 다르게 취급된다. 예를 하나만 들면, getter/setter는 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
-
-setter는 프로퍼티의 값을 바꿀 때마다 실행되므로 변수의 변경을 감시하는 watcher로 사용할 수 있다.
+getter와 setter는 접근자 프로퍼티(accessor property)에 속하는데, 우리가 일반적으로 사용하는 데이터 프로퍼티(data property)와는 다르게 취급된다. 예를 들면, getter/setter는 `Object.getOwnPropertyDescriptor()`에서 보이지 않는다.
 
 
 ## class 선언에서
@@ -119,4 +117,28 @@ clone; // Object { _trait: "eating", trait: "sleeping" }
 var clone2 = Object.assign({}, noob);
 clone2.trait = 'do nothing';
 clone2 // Object { _trait: "eating", trait: "do nothing" }
+```
+
+
+## 프로퍼티 감시에 사용하기
+
+setter는 프로퍼티의 값을 바꿀 때마다 실행되므로 프로퍼티의 변경을 감시하는 watcher로 사용할 수 있다:
+
+```js
+var obj = {
+  get foo() {
+    console.log({name: 'foo', object: obj, type: 'get'});
+    return obj._foo;
+  },
+  set bar(val) {
+    console.log({name: 'bar', object: obj, type: 'set', oldValue: obj._bar});
+    return obj._bar = val;
+  }
+};
+
+obj.bar = 2;
+// {name: 'bar', object: <obj>, type: 'set', oldValue: undefined}
+
+obj.foo;
+// {name: 'foo', object: <obj>, type: 'get'}
 ```

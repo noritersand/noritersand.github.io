@@ -112,7 +112,7 @@ tags:
   (+ object) "Do you think scientists should clone humans?"
   (no object) a plant produced by cloning
 - coalition: 연합, 연대, 단체, 동맹, 통합
-- coercion: [명사] 격식 (무력/협박에 의한) 강제[강압], "may cause unexpected type coercion"
+- coercion: [명사] (무력/협박에 의한) 강제[강압], "may cause unexpected type coercion"
 - cohesion: 화합, 응집력
 - comfortable: 편안한, 편한, 쾌적한, 안락한, 안정된
 - compatible: 호환되는, 조화하는, 양립, 맞다, 공존
@@ -224,7 +224,7 @@ tags:
 - prerequisite: 전제 조건
 - prevent: 막다, 방지하다, 예방하다, 못하게 하다, 금지하다
 - principle: 원칙, 원리, 법칙, 신념, 교리
-- primal:[형용사] 격식 원시의, 태고의 (=primeval)
+- primal:[형용사] 원시의, 태고의 (=primeval)
 - primordial: [형용사] 태고의, 원시 시대부터의 (=primeval), [형용사] 원시[원초]적인 (=primeval)
 - production server: 운영(실) 서버. A production server is a server used to host website content and applications for deployment to a live environment. 자매품: staging server/testing server
 - production: 생산, 제작, 제품, 프로덕션. *(문맥에따라) 테스트 제품이 아닌 실제 판매용 제품/운영중인 제품*
@@ -288,10 +288,11 @@ tags:
 - precursor: 선도자(격인 사람·사물), 선각자
 - forerunner: 선구자, 전신; 전조, 선조
 - prothean: 프로시언. 매스 이펙트의 고대 외계 종족
-- steadfast: [형용사] 문예체 호감 (태도·목표가) 변함없는 (=firm)
+- steadfast: [형용사] 호감 (태도·목표가) 변함없는 (=firm)
 - shearwater: [명사] 슴새
 - harvestman: [명사] 장님거미, 통거미
 - Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
+- perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
 
 ## 이모지
 

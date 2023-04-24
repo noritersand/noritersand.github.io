@@ -27,9 +27,14 @@ tags:
 자바스크립트 Proxy에 대한 간단 정리 글.
 
 
-## 원본 꺼내기
+## Proxy 만들기
 
-Proxy는 내부에 숨겨진 프로퍼티 target이 있는데, 원본 객체를 가리킨다. 이걸 바로 꺼내는 방법은 없고 복제만 가능한 것 같다:
+```
+new Proxy(target, handler)
+```
+
+- `target`: TODO 설명
+- `handler`: TODO 설명
 
 ```js
 var target = {
@@ -49,8 +54,27 @@ var handler = {
 // 프록시 생성
 var proxy = new Proxy(target, handler);
 
-// 프록시에서 원본 복제
+Object.getOwnPropertyNames(proxy); // Array [ "message1", "message2" ]
+proxy.message1; // "hello"
+proxy.message2; // "world" 
+```
+
+
+## 원본 꺼내기
+
+Proxy에 원본 객체를 가리키는 내부의 숨겨진 프로퍼티인 `target`이 존재하긴 하지만, `target`은 직접 접근이 안되며 Proxy의 원본을 꺼낼 방법은 존재하지 않는다.
+
+대신 얕은 복제본을 얻는 것은 가능하다:
+
+```js
+// 프록시가 가리키는 원본 복제 #1
 var clone = Object.assign({}, proxy); // Object { message1: "hello", message2: "world" }
+
+// 프록시가 가리키는 원본 복제 #1
+var clone2 = { ...proxy }; ; // Object { message1: "hello", message2: "world" }
+
+// 프록시가 가리키는 원본 복제 #3
+var clone3 = JSON.parse(JSON.stringify(proxy)); // Object { message1: "hello", message2: "world" }
 ```
 
 그런데 엄밀히 따지면 복제라고 할 수도 없다. 원본과 동일한 값이 아니라 프록시 핸들러를 거친 결과가 나오기 때문. 위 코드를 보면 message2의 값이 'everyone'이 아닌 'world'다.
@@ -99,9 +123,9 @@ TODO Vue 3 API인 `isProxy()`, `toRaw()`를 찾아볼 것
 https://stackoverflow.com/questions/51096547/how-to-get-the-target-of-a-javascript-proxy
 
 
-## 변수 변화의 감시
+## 프로퍼티의 변경 감시
 
-아래 코드는 setter를 이용한 변수 변화 감지 방법을 구글링한 건데:
+아래 코드는 setter를 이용한 프로퍼티 변경 감시 방법을 구글링한 건데:
 
 ```js
 var obj = {
