@@ -39,10 +39,10 @@ total number of rows, 모든 데이터의 개수. `SELECT COUNT(*)`의 값을 �
 pageLength = totalRows / rowsPerPage + ((totalRows % rowsPerPage == 0) ? 0 : 1)
 ```
 
-이 때 `pageLength`의 소숫점 이하는 버리거나, 아니면 처음부터 소수점 올림 함수를 이용한다:
+계산 결과의 소숫점 이하는 버리거나, 아니면 처음부터 소수점 올림 함수를 이용한다:
 
 ```js
-// 자바스크립트일 때, Math.ceil()은 매개변수를 소수점 올림하여 반환하는 함수.
+// 자바스크립트일 때, 소수점 올림
 pageLength = Math.ceil(totalRows / rowsPerPage)
 ```
 

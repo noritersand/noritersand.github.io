@@ -16,13 +16,6 @@ tags:
 {:toc .toc}
 
 ```js
-function fn(){
-  console.log(getRandomInt(2, 1)); // 1-2 사이 랜덤
-  console.log(getRandomInt(10, 5)); // 5-15 사이 랜덤
-  console.log(getRandomInt(4, 0)); // 0-3 사이 랜덤
-  console.log(getRandomInt(4, 1)); // 1-4 사이 랜덤
-}
-
 /**
  * 무작위로 양의 정수 구하기
  *
@@ -33,6 +26,11 @@ function fn(){
 function getRandomInt(range, minimum) {
   return Math.floor(Math.random() * range + minimum);
 }
+
+  console.log(getRandomInt(2, 1)); // 1-2 사이 랜덤
+  console.log(getRandomInt(10, 5)); // 5-15 사이 랜덤
+  console.log(getRandomInt(4, 0)); // 0-3 사이 랜덤
+  console.log(getRandomInt(4, 1)); // 1-4 사이 랜덤
 ```
 
 읽어 볼 만한 글:

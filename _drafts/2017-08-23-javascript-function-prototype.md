@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2017-08-23 17:02:00 +0900
-title: '[JavaScript] Function.prototype'
+title: '[JavaScript] Function prototype'
 categories:
   - javascript
 tags:

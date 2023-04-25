@@ -191,10 +191,10 @@ tags:
 
 ## 온라인 코드 에디터 겸 테스트 툴
 
-- [CodePen](https://codepen.io)
+- [CodePen](https://codepen.io): 웹으로 코드를 작성하고 실행해 보거나 남들과 공유할 수 있는 서비스.
 - [JSFiddle](https://jsfiddle.net)
 - [StackBlitz](https://stackblitz.com)
-- [CodeSandbox](https://codesandbox.io)
+- [CodeSandbox](https://codesandbox.io): 특이한 게 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
 
 
 ## CVE 아카이빙 사이트
@@ -266,7 +266,6 @@ tags:
 - [Notepad++](https://notepad-plus-plus.org)
 - [UltraEdit](http://www.ultraedit.com/loc/ko/index_ko.html)
 - [Nova](https://nova.app)
-- [typora](https://typora.io): 마크다운 전용 에디터
 - [⭐ Visual Studio Code](https://code.visualstudio.com): 요즘 대세
 
 
