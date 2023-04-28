@@ -16,7 +16,7 @@ tags:
 
 ## OGNL, Object-Graph Navigation Language
 
-자바 객체를 탐색하는데 사용하는 오픈소스 표현식 언어. 자바로 만들어졌으며 자바 전용이다. 비슷한 표현식 언어는 다른 언어에도 존재하는데, 가령 .NET Framework에서는 LINQ(Language Integrated Query)가 있다.
+자바 객체를 탐색하는데 사용하는 오픈소스 표현식 언어. 자바로 만들어졌으며 자바 전용이다. 비슷한 표현식 언어는 다른 언어에도 존재하는데, 가령 .NET Framework에는 LINQ(Language Integrated Query)가 있다.
 
 MyBatis에서 OGNL 표현식은 `<if>`, `<when>`, `<bind>` 등에서 사용한다:
 
