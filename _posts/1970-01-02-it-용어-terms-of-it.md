@@ -14,6 +14,24 @@ tags:
 {:toc .toc}
 
 
+## OGNL, Object-Graph Navigation Language
+
+자바 객체를 탐색하는데 사용하는 오픈소스 표현식 언어. 자바로 만들어졌으며 자바 전용이다. 비슷한 표현식 언어는 다른 언어에도 존재하는데, 가령 .NET Framework에서는 LINQ(Language Integrated Query)가 있다.
+
+MyBatis에서 OGNL 표현식은 `<if>`, `<when>`, `<bind>` 등에서 사용한다:
+
+```xml
+<select id="selectBlog" resultType="Blog">
+  SELECT * FROM BLOG
+  <if test="title != null and title != ''">
+    WHERE title = #{title}
+  </if>
+</select>
+```
+
+여기에서 `test="title != null and title != ''"` 부분이 OGNL이다.
+
+
 ## 파일 경로를 구성하는 특수문자의 이름
 
 `/`는 경로의 구성 요소를 구분하는 데 사용하는 문자로 *디렉터리 구분자*라고 한다.
