@@ -63,10 +63,10 @@ value = value.replace(new RegExp(from, 'gi'), to); // 'ab씨'
 
 ## flag
 
-- `g`: 전역 검색. 지정된 범위 내에서 모두 검색한다. 이 플래그가 없으면 메서드에 따라 첫 번째 검색 결과만 반환함.
+- `g`: 전역 검색 플래그. 문자열 전체에서 검색한다. 이 플래그가 없으면 메서드에 따라 첫 번째 검색 결과만 반환함.
 - `i`: 대/소문자 무시.
 - `gi`: 대/소문자 무시하고 전역 검색.
-- `m`: 멀티 라인 검색.
+- `m`: 멀티 라인 검색. `g` 플래그가 문자열 전체에서 검색이라 이 플래그와 기능이 겹치는 것 같지만 다르다. 설명에 따르면 시작 위치와 관련된 검색일 때 `m` 플래그가 있으면 각 줄의 시작 위치에서 새로 검색을 시작한다.
 - `y`: Perform a "sticky" search that matches starting at the current position in the target string.
 
 

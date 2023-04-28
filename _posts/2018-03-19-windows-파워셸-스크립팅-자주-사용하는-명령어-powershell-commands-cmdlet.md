@@ -288,6 +288,11 @@ Get-Variable -Include m*, p*
 
 명령어를 입력하고 있는 호스트 프로그램(=파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
+```bash
+# 파워셸 버전 확인하기
+Get-Host | Select-Object Version
+```
+
 ### Out-String
 
 오브젝트를 문자열로 출력한다. 이렇게 활용 가능:

@@ -207,9 +207,9 @@ select ordinal_position, column_name, column_type, concat('\t/**', column_commen
   case
     when column_type like 'int%' then 'Integer'
     when column_type like 'varchar%' then 'String'
+    when column_type like 'datetime%' then 'java.time.LocalDateTime'
     when column_type like 'date%' then 'java.time.LocalDate'
     when column_type like 'time%' then 'java.time.LocalTime'
-    when column_type like 'datetime%' then 'java.time.LocalDateTime'
     when column_type like 'tinyint%' then 'Integer'
     when column_type like 'smallint%' then 'Integer'
     when column_type like 'mediumint%' then 'Integer'
@@ -391,8 +391,8 @@ select a.txt,
     ascii(a.txt) as ascii,
     case
         when ascii(a.txt) between 48 and 57 then 2 /*number*/
-        when ascii(a.txt) between 65 and 90 then 0 /*alphabet*/
-        when ascii(a.txt) between 97 and 122 then 0 /*alphabet*/
+        when ascii(a.txt) between 65 and 90 then 0 /*alphabet capital*/
+        when ascii(a.txt) between 97 and 122 then 0 /*alphabet small letter*/
         else 1 /*unicode*/
     end as sortOrder
 from (

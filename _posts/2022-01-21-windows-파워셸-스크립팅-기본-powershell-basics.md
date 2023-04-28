@@ -28,6 +28,13 @@ tags:
 파워셸에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
 
 
+## 파워셸 최신 버전 설치하기
+
+```bash
+iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
+```
+
+
 ## 환경 변수
 
 ### 환경 변수 조회

@@ -106,11 +106,6 @@ Hitman.yo();
 ```
 
 
-## super
-
-TODO
-
-
 ## public class feature
 
 아무 제약이 없는 단순한 프로퍼티를 생각하면 된다. 선언 없이 메서드 내에서 추가하려 할 땐 `this`를 거쳐야한다:
@@ -168,7 +163,13 @@ company.#privateMethod(); // Uncaught SyntaxError: reference to undeclared priva
 디버깅을 해보면 private field는 보이긴 하지만 외부에서 접근할 수 없으며, 접근 시도 시 문법에러가 발생한다. 단, 예외가 있는데, 크롬 개발자도구 콘솔에선 접근 제약이 없다. 하지만 파이어폭스 개발자도구에선 안됨. (도데체 왜??)
 
 
-## 빌트인 프로토타입의 확장
+## extends
+
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
+
+TODO 상속(확장)
+
+### 빌트인 프로토타입의 확장
 
 ```js
 Number.prototype.format = function(n, x) {
@@ -177,13 +178,13 @@ Number.prototype.format = function(n, x) {
 }
 
 (123456).format(0); // "123,456"
+
+// 소스 출처: http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
 ```
 
-[소스 출처](http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript)
+위는 Number 프로토타입에 `format` 함수를 추가하는 코드인데, 빌트인 프로토타입을 확장하는 것은 추천되지 않는다.
 
-위는 Number 프로토타입에 `format` 함수를 추가하는 코드다. 사실 이런식으로 빌트인 프로토타입을 확장하는 것은 추천하지 않는다.
-
-대신 아래처럼 class 문법으로 새로운 프로토타입을 정의한다:
+대신 아래처럼 class 문법으로 새로운 프로토타입을 정의하는 방법을 쓸 수 있다:
 
 ```js
 class Numeric extends Number {
@@ -197,15 +198,26 @@ new Numeric(123456).format(0); // "123,456"
 ```
 
 
-## 생성자 함수와의 차이점
+## super
 
-### 생성자의 프로퍼티인 `caller`, `arguments`에 접근 불가.
+TODO
+
+
+## 클래스 vs 생성자 함수
+
+### 생성자의 프로퍼티인 `caller`, `arguments`에 접근할 때 TypeError 발생함
 
 ```js
-class Test {}
-var t = new Test();
-t.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
-t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
+function Human() {}
+var me = new Human();
+me.constructor.caller; // null
+me.constructor.arguments; // null
+
+
+class Newbie {}
+var noob = new Newbie();
+noob.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
+noob.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```
 
 
@@ -214,3 +226,5 @@ t.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' prop
 클래스에 async function을 정의하면 async method가 된다.
 
 TODO
+
+

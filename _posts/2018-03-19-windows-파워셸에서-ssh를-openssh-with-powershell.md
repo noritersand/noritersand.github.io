@@ -212,7 +212,7 @@ upload.me
 sftp> quit
 ```
 
-파워쉘에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
+파워셸에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
 
 
 ## scp
