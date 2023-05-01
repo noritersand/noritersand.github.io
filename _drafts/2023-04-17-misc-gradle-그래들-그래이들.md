@@ -49,12 +49,12 @@ gradlew.bat
 ```
 
 
-## 환경 변수 추가
+<!-- ## 환경 변수 추가
 
 TODO 이게 필요하던가? choco로 설치하면 필요 없을지도...
 
 - GRADLE_HOME: `C:\dev\gradle` (gradle 설치경로)
-- PATH: `%GRADLE_HOME%\bin`
+- PATH: `%GRADLE_HOME%\bin` -->
 
 
 ## build.gradle
@@ -132,8 +132,9 @@ BUILD SUCCESSFUL in 58s
 - `gradlew`
 - `gradlew.bat`
 
-이 생성된다.
+이렇게 생성된다.
 
 
 ## 빌드하기
 
+TODO

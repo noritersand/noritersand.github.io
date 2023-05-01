@@ -308,11 +308,11 @@ some(function(element, index, array) { /* ... */ }, thisArg)
 
 ### Array.prototype.reduce()
 
-사용자가 제공한 콜백함수를 실행하는데 이 함수의 인자로 이전 요소의 연산결과를 넘겨준다. 숫자 배열의 합계 같은 모든 요소에 대한 처리 결과값이 필요할 때 사용한다.
+```
+arr.reduce(function(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
+```
 
-```
-arr.reduce(function callback(previousValue, currentValue, currentIndex, array) { /* ... */ }, initialValue)
-```
+전달한 콜백함수에 인자로 이전 요소의 연산결과를 넘겨준다. 숫자 배열의 합계 같은 모든 요소에 대한 처리 결과값이 필요할 때 사용한다. 왠지 뭔가 감소할 것 같은 메서드 이름과 다르게, 원본 배열은 변하지 않는다.
 
 ```js
 var arr = [1, 2, 3, 4];
@@ -321,7 +321,7 @@ arr.reduce((prev, cur) => prev + cur);  // 10
 
 ### Array.prototype.reverse()
 
-배열의 순서를 거꾸로 뒤집은 배열을 반환한다. **원본이 변화한다.**
+배열의 순서를 거꾸로 뒤집은 배열을 반환한다. **원본이 변한다.**
 
 ```js
 var arr = ['a', 'b', 'c'];
@@ -370,7 +370,7 @@ arr.slice(1, -1) // Array [ "다", "라" ]
 arr.splice( start [, deleteCount [, item1 [, item2 [, ...] ] ] ] )
 ```
 
-지정한 인덱스인 `start`부터 `deleteCount`만큼 잘라내 반환한다. 잘라내어진 요소는 원본 배열에서 사라진다.
+지정한 인덱스인 `start`부터 `deleteCount`만큼 잘라내 반환한다. 잘라내어진 요소는 **원본 배열에서 사라진다**.
 
 ```js
 var arr = ['a', 'b', 'c'];

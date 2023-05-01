@@ -31,7 +31,7 @@ tags:
 - axiom: 공리, 경구, 격언, 이치, 원칙
 - binary/octal/decimal/hexadecimal: 2진법/8진법/10진법/16진법
 - common multiple: 공배수
-- decimal places: 소수점 이하 자릿수
+- decimal places: 소수점 이하 자릿수를 의미함.
 - decimal point: 소수점
 - decimal: **소수(정수가 아닌 것)**, 소수의, 십진법의, (0.1, 0.2, ...)
 - divide: 나누기
