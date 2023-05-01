@@ -25,6 +25,25 @@ tags:
 NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다.
 
 
+## ⚠️ 해킹 방지 부적(?)
+
+NPM의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고 설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데 Supply Chanin Attack 이라 한다고... 
+
+이를 방지하기 위해 아래 방법들이 권장된다:
+
+- 꼭 필요한 써드파티 라이브러리만 사용할 것
+- 패키지 설치 시 오타에 주의하고 패키지 게시자를 확인할 것
+- `npm install` 실행 시 항상 `--ignore-scripts` 옵션을 붙일 것
+
+```bash
+npm insatll --ignore-scripts
+```
+
+`--ignore-scripts`는 NPM이 package.json에 작성된 pre-scripts, post-scripts를 자동으로 실행하지 않도록 하는 옵션이다.
+
+\* Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
+
+
 ## 모듈 설치
 
 ```bash
