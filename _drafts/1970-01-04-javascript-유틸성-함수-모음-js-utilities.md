@@ -5,6 +5,7 @@ title: '[JavaScript] 유틸성 함수 모음'
 categories:
   - javascript
 tags:
+  - draft-permanantly
   - ecmascript
   - javascript
   - code-snippet

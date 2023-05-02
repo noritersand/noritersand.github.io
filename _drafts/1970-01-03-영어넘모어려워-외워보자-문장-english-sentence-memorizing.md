@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 외워보자: 문장'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

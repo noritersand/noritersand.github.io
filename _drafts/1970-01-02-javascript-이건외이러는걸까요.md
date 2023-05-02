@@ -5,6 +5,7 @@ title: '[JavaScript] 이건외이러는걸까요'
 categories:
   - javascript
 tags:
+  - draft-permanantly
   - javascript
   - ecmascript
 ---

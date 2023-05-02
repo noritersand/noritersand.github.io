@@ -87,6 +87,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 - name:
 - url:
 
+
 ## 프로퍼티
 
 - properties
@@ -95,12 +96,14 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
   - project.reporting.outputEncoding
   - java-version
 
+
 ## 저장소 설정
 
 라이브러리나 플러그인을 찾을 저장소를 지정한다. 메이븐 센트럴에 없으면 여기서 추가한 저장소에서 찾는다.
 
 - repositories
 - distributionManagement
+
 
 ## 의존관계 설정
 
@@ -186,7 +189,6 @@ M2용 라이브러리를 지정하는 방법으로 해결할 수 있다.
 
 요롷게 다름.
 
-
 ### scope
 
 해당 라이브러리가 어느 시점에 사용되는지 제한하는 설정이다. 다섯 가지가 있다.
@@ -196,6 +198,7 @@ M2용 라이브러리를 지정하는 방법으로 해결할 수 있다.
 - runtime
 - system
 - test: 테스트 때만 사용한다.
+
 
 ## 빌드 설정
 
@@ -319,7 +322,3 @@ WAR 빌드용 플러그인
     </dependencies>
 </profile>
 ```
-
-- <profiles>
-  - <profile>
-

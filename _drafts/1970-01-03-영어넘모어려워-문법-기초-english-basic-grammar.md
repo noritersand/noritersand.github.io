@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 문법 기초'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

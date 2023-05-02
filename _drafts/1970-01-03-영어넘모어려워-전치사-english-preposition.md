@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 전치사 preposition'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

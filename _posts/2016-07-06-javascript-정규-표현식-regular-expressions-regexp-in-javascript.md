@@ -168,24 +168,34 @@ value = value.replace(new RegExp(from, 'gi'), to); // 'ab씨'
 
 정규식에서 소괄호`()`는 여러 역할을 하는데 대략 이 정도가 있다:
 
-- 그룹화(Grouping)
-- 캡처(Capturing)
-- 비캡처(Non-capturing)
-- 전방탐색(Lookahead)
-- 후방탐색(Lookbehind)
-- 그룹 참조(Group reference)
+- 그룹화(grouping)
+- 캡처(capturing)
+- 비캡처(non-capturing)
+- 전방탐색(lookahead)
+- 후방탐색(lookbehind)
+- 그룹 참조(group reference)
 
-### 그룹 참조 Group reference
+### 그룹화 gropuing
 
-`()`로 묶인 그룹은 그룹 참조를 사용하여 재사용할 수 있다. 
+정규식의 하위 식, 그룹화 구문이라고도 한다. 부분 탐색 결과를 그룹으로 묶어서 재사용이 가능하도록 만드는 것이다.
 
-정규식 내에서의 참조는 `\1`와 같은 식으로 작성한다:
+재사용 방법은 여러가지인데, 예를 들어 `RegExp.exec()`는 `()`로 묶인 그룹을 배열로 반환한다:
+
+```js
+/(\d{3})-(\d{4})-(\d{4})/.exec('010-1234-5678'); // Array(4) [ "010-1234-5678", "010", "1234", "5678" ]
+```
+
+### 그룹 참조 group reference
+
+그룹을 재사용하는 방법 중 하나. 
+
+정규식 내에서의 그룹 참조는 `\1`과 같은 식으로 작성한다:
 
 ```js
 'aabbcc'.replace(/(.+)\1/, 'a'); // abbcc
 ```
 
-`String.replace(regexp, replaceText)`에서 `replaceText`에선 그룹 참조를 `$숫자` 형태로 작성할 수 있다:
+`String.replace(regexp, replaceText)`의 `replaceText`에선 그룹 참조를 `$숫자` 형태로 작성할 수 있다:
 
 ```js
 // 소괄호 세 개를 '$숫자'로 기억해서 숫자네개-숫자두개-숫자두개 형식으로 replace
@@ -193,12 +203,6 @@ value = value.replace(new RegExp(from, 'gi'), to); // 'ab씨'
 
 // 천 단위마다 쉼표 추가
 '1000000'.replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-```
-
-`RegExp.exec()`는 `()`로 묶인 그룹을 배열로 반환한다:
-
-```js
-/(\d{3})-(\d{4})-(\d{4})/.exec('010-1234-5678'); // Array(4) [ "010-1234-5678", "010", "1234", "5678" ]
 ```
 
 나머지는 TODO

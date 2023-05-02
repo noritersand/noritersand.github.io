@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 숙어 모음 #1'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

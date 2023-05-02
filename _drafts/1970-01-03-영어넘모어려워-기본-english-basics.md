@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 기본'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
   - basics

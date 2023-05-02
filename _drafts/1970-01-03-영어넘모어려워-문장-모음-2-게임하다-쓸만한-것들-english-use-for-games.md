@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 문장 모음 #2: 게임하다 쓸만한 것들'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

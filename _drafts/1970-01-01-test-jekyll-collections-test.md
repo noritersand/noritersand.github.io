@@ -5,6 +5,7 @@ title: '[test] jekyll collections test'
 categories:
   - test
 tags:
+  - draft-permanantly
   - test
   - jekyll
   - blog

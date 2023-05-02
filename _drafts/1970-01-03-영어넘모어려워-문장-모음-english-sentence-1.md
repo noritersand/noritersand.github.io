@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 문장 모음 #1'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

@@ -5,6 +5,7 @@ title: '[CSS] reset.css'
 categories:
   - css
 tags:
+  - draft-permanantly
   - css
   - code-snippet
 ---

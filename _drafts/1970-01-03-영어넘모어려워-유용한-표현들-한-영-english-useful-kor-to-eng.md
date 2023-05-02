@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 유용한 표현들 한-영'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

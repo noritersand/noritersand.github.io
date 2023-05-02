@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 잉글리시 폰콜 리포트 #1'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
   - perfect25

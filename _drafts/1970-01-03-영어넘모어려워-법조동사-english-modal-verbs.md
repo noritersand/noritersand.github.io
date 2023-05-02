@@ -5,6 +5,7 @@ title: '[영어넘모어려워] 법조동사 modal verbs'
 categories:
   - english
 tags:
+  - draft-permanantly
   - english
   - not-easy
 ---

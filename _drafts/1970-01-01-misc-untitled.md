@@ -5,6 +5,7 @@ title: '[misc] untitled'
 categories:
   - categorize-me
 tags:
+  - draft-permanantly
   - tag-me
 ---
 
