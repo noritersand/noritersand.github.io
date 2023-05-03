@@ -108,11 +108,23 @@ arr; // ['b', 'c', 'd', 'a']
 
 ### Array.prototype.pop()
 
-맨 뒤 요소를 뽑는다.
+맨 뒤 요소를 반환하고 **원본 배열에서 제거**한다.
+
+```js
+var arr = ['a', 'b', 'c'];
+arr.pop(); // "c"
+arr; // Array [ "a", "b" ]
+````
 
 ### Array.prototype.shift()
 
-맨 앞 요소를 뽑는다.
+맨 앞 요소를 반환하고 **원본 배열에서 제거**한다.
+
+```js
+var arr = ['a', 'b', 'c'];
+arr.shift(); // "a"
+arr; // Array [ "b", "c" ]
+````
 
 ### Array.prototype.indexOf()
 
@@ -204,7 +216,7 @@ arr.map( function callback( element, index, array ) [, thisArg] )
 arr.forEach( function callback( element, index, object ) [, thisArg ] )
 ```
 
-TODO: 자바에서 `forEach()`류(정확히는 stream이지만)에선 continue/break 사용이 불가능했는데, js도 그러는지 확인 필요함.
+`forEach()`는 `continue`와 `break` 사용이 불가능한데, `continue`는 `return`으로 구현할 수 있다. 하지만 `break`는 방법이 없으니(`return false`를 반환해 멈추는 건 jQuery에서나 가능했던 방법), 필요한 경우엔 for statement를 쓰도록 하자.
 
 ### Array.prototype.filter()
 

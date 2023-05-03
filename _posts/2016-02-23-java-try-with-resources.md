@@ -57,6 +57,7 @@ public interface Connection extends Wrapper, AutoCloseable {
 
 try-with-resources에 사용할 수 있다.
 
+
 ## example
 
 ```java
@@ -85,5 +86,18 @@ public class HttpUtil {
         }
         return null;
     }
+}
+```
+
+
+## final의 생략
+
+try-with-resources에 선언된 변수는 final 변수가 되며 재할당할 수 없다.
+
+```java
+try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
+    br = null; // Cannot assign a value to final variable 'br'
+} catch (IOException e) {
+    // ...
 }
 ```

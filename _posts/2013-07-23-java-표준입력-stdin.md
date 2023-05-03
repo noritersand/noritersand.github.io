@@ -17,6 +17,7 @@ tags:
 
 - [아스키 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD%EC%A0%95%EB%B3%B4%EA%B5%90%ED%99%98%ED%91%9C%EC%A4%80%EB%B6%80%ED%98%B8)
 
+
 ## System.in.read()
 
 시스템으로부터 1바이트를 입력받아 정수형으로 반환한다. 한글은 1바이트로 표현할 수 없기 때문에 숫자와 영문, 특수문자만 입력할 수 있다.
@@ -52,6 +53,7 @@ System.in.read();
 System.in.skip(2);
 System.in.read();
 ```
+
 
 ## BufferedReader
 
@@ -89,6 +91,7 @@ System.out.println(br.read());
 System.out.println(br.readLine());  // 입력대기
 System.out.println(br.readLine());  // 입력대기
 ```
+
 
 ## Scanner
 

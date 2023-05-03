@@ -463,7 +463,7 @@ select convert(now(), date);
 ```
 
 
-## 테이블 조인 join
+## 테이블 조인 JOIN
 
 [https://mariadb.com/kb/en/join-syntax](https://mariadb.com/kb/en/join-syntax)
 
@@ -481,3 +481,32 @@ SELECT * FROM t1 LEFT JOIN (t2 CROSS JOIN t3 CROSS JOIN t4)
                  ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
 ```
 
+
+## WITH
+
+[https://mariadb.com/kb/en/with/](https://mariadb.com/kb/en/with/)
+
+`WITH`는 *Common Table Expression (CTE)*를 나타내는 키워드다. MariaDB 10.2.1에 소개되었다. 
+
+서브쿼리의 일종인데, 쿼리 실행 시간 동안만 존재하는 임시 테이블을 만들어 여러번 참조할 수 있게 하는 기능이라 대충 이해하면 된다.
+
+CTE는 `Non-Recursive`와 `Recursive` 두 종류가 있다. (Recursive는 `WITH RECURSIVE` 키워드로 표현하고 MariaDB 10.2.2부터 지원함)
+
+이렇게 쓴다:
+
+```sql
+with v1 as (
+    select a, b
+    from t1 
+    where b >= 'c'
+),
+v2 as (
+    select a, c
+    from t2
+    where somecondition
+)
+select * 
+from t3
+join v1 on v1.a = t3.a
+join v2 on v2.a = t3.a
+```
