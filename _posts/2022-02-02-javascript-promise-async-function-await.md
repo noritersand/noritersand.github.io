@@ -509,3 +509,10 @@ parallel();
 // 3000
 // 5000
 ```
+
+
+## 여담: 메서드 이름 짓기
+
+Promise를 반환하는 걸 메서드 이름으로 표현하느냐 마느냐는 다툼의 여지가 있지만, 만약 표현하기로 했다면 Node.js에서 동기 방식의 메서드에 `Sync`를 붙이는 것과 반대로 `Async` 혹은 `Promise`를 뒤에 덧붙이는 방법이 있다. 
+
+e.g. `removeSomethingAsync()`, `drawGridPromise()`

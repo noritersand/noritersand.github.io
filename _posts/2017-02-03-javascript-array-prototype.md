@@ -252,7 +252,7 @@ array.filter((ele, idx, arr) => {
 every(function(element, index, array) { /* ... */ }, thisArg)
 ```
 
-`forEach()`와 같이 배열의 모든 요소를 콜백함수 첫 번째 파라미터로 제공한다. 차이점은 모든 루프에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 쓴다는 것.
+`forEach()`와 같이 배열의 모든 요소를 콜백함수 첫 번째 파라미터로 제공한다. 다만 모든 루프에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 사용한다.
 
 ```js
 [1, 2, 3].every(ele => isFinite(ele)); // true
