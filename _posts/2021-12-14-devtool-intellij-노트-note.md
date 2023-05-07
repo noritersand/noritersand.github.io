@@ -252,6 +252,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 ### 코드 에디터
 
 - <kbd>ctrl + q</kbd>: Quick Documentation. 툴팁창으로 자바독 보기
+- <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions/ 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.

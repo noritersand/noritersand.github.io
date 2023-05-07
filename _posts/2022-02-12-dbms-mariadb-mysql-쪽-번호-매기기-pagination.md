@@ -32,7 +32,7 @@ LIMIT row_count OFFSET offset
 - `offset`: 가져오기 시작할 데이터의 인덱스
 - `row_count`: 가져올 데이터의 수
 
-`ROWNUM` 그딴 거 안써도 됨:
+`ROWNUM` 안써도 됨:
 
 ```sql
 select *

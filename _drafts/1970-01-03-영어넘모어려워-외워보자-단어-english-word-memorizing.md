@@ -21,6 +21,8 @@ tags:
 ## 실생활
 
 - lettuce[ˈletɪs]: 상추
+- radish: 무
+- cabbage: 양배추
 
 
 ## 수학 관련 영단어(영-한)
@@ -107,6 +109,7 @@ tags:
 - capability: 능력, 가능성, 재능
 - certain: 특정한, 어떤, 어느, 확실한, 일부
 - characteristic: 특유한, 독특한, 특징적인, (보통 characteristics) 특질, (로그의) 지표
+- character: 문자, 숫자, 구두점, 공백, 심볼을 표현함
 - clause: 조항, 절, 약관, 규정, 문구
 - clone: 클론, 복제 (생물), 복사품(같은 물건이나 사람), 복제하다  
   명사이면서 동사이기도 한데 목적어가 있는 경우엔 clone, 목적어가 없으면 cloning이 맞는 표현임.  
@@ -184,6 +187,7 @@ tags:
 - inverse: 반대의, 역의, 역
 - invocation: 호출, 기도, 기원, 발동
 - latitude: 위도, 허용 범위, 자유
+- letter: 알파벳이나 한글 같은 자연어의 기본 단위. 'a letter'는 '한 글자'라고 번역한다. character에 비교하면 자연어만을 의미하기 때문에 character는 letter를 포함한다고 할 수 있다.
 - lexical: 어휘적인, 사전의, 사전적인
 - lineal: 직계의, 대대로 전해 내려오는, 직계 존속
 - lift [명사] 승강기, [동사] 들어 올리다; 들리다, 태워 주기, [타동사] 풀다(해제/폐지), 이송하다, 훔치다, 표절(도용)하다
@@ -294,6 +298,7 @@ tags:
 - harvestman: [명사] 장님거미, 통거미
 - Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
 - perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
+
 
 ## 이모지
 

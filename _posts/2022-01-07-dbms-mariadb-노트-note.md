@@ -357,25 +357,23 @@ from (
     union all
     select '히' as txt
 ) a
-order by a.txt asc
+order by a.txt
 ```
 
 의 결과는:
 
-+---+
-|txt|
-+---+
-|1  |
-|2  |
-|3  |
-|a  |
-|A  |
-|b  |
-|ㄱ  |
-|가  |
-|히  |
-|ㅔ  |
-+---+
+| txt |
+| :--- |
+| 1 |
+| 2 |
+| 3 |
+| a |
+| A |
+| b |
+| ㄱ |
+| 가 |
+| 히 |
+| ㅔ |
 
 ### 맴대로 정렬하기
 
@@ -387,8 +385,12 @@ order by a.txt asc
 # 영문, 한글, 숫자 순으로 정렬하기
 select a.txt,
     convert(a.txt using utf8) as utf8,
-    substr(a.txt, 1, 1) as substr,
     ascii(a.txt) as ascii,
+    substr(a.txt, 1, 1) as "first-letter",
+    substr(a.txt, 2, 1) as "second-letter",
+    ascii(substr(a.txt, 1, 1)) as "ascii-of-first-letter",
+    ascii(substr(a.txt, 2, 1)) as "ascii-of-second-letter",
+    convert(a.txt, unsigned) as "converted-number",
     case
         when ascii(a.txt) between 48 and 57 then 2 /*number*/
         when ascii(a.txt) between 65 and 90 then 0 /*alphabet capital*/
@@ -396,13 +398,17 @@ select a.txt,
         else 1 /*unicode*/
     end as sortOrder
 from (
-    select 111 as txt
+    select '111반' as txt
     union all
-    select 222 as txt
+    select '23' as txt
     union all
-    select 333 as txt
+    select '222' as txt
     union all
-    select 0000 as txt
+    select '24' as txt
+    union all
+    select '333' as txt
+    union all
+    select '0000' as txt
     union all
     select 'abcdf' as txt
     union all
@@ -426,8 +432,32 @@ from (
     union all
     select 'ㅎ' as txt
 ) a
-order by sortOrder
+order by sortOrder, convert(a.txt, unsigned), a.txt
 ```
+
+실행 결과:
+
+| txt | utf8 | ascii | first-letter | second-letter | ascii-of-first-letter | ascii-of-second-letter | converted-number | sortOrder |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| abcdf | abcdf | 97 | a | b | 97 | 98 | 0 | 0 |
+| Aqwe | Aqwe | 65 | A | q | 65 | 113 | 0 | 0 |
+| ba뀨sdf | ba뀨sdf | 98 | b | a | 98 | 97 | 0 | 0 |
+| Zsadf | Zsadf | 90 | Z | s | 90 | 115 | 0 | 0 |
+| zx뿅zcv | zx뿅zcv | 122 | z | x | 122 | 120 | 0 | 0 |
+| ㄱ | ㄱ | 227 | ㄱ |  | 227 | 0 | 0 | 1 |
+| 가 | 가 | 234 | 가 |  | 234 | 0 | 0 | 1 |
+| ㅎ | ㅎ | 227 | ㅎ |  | 227 | 0 | 0 | 1 |
+| 히 | 히 | 237 | 히 |  | 237 | 0 | 0 | 1 |
+| ㅏ | ㅏ | 227 | ㅏ |  | 227 | 0 | 0 | 1 |
+| ㅔ | ㅔ | 227 | ㅔ |  | 227 | 0 | 0 | 1 |
+| 0000 | 0000 | 48 | 0 | 0 | 48 | 48 | 0 | 2 |
+| 23 | 23 | 50 | 2 | 3 | 50 | 51 | 23 | 2 |
+| 24 | 24 | 50 | 2 | 4 | 50 | 52 | 24 | 2 |
+| 111반 | 111반 | 49 | 1 | 1 | 49 | 49 | 111 | 2 |
+| 222 | 222 | 50 | 2 | 2 | 50 | 50 | 222 | 2 |
+| 333 | 333 | 51 | 3 | 3 | 51 | 51 | 333 | 2 |
+
+`convert(a.txt, unsigned)`는 숫자로 이뤄진 문자를 제대로 정렬하지 못하는 문제를 해소하기 위한 정렬 조건이다.
 
 
 ## 타입 변환
