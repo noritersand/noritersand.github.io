@@ -759,7 +759,7 @@ export const childComponent = {
 <child-component v-model:selected-value="message"></child-component>
 ```
 
-emit 이름은 `update:`를 반드시 포함해야 한다. 그리고 `v-model:selected-value="message"`에서 `:selected-value`는 사용자 지정값으로 자식 컴포넌트의 prop 이름으로 사용된다. 만약 생략하면 기본값으로 `modelValue`가 이름이 된다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
+emit으로 내보낼 이벤트 이름은 반드시 `update:`를 접두어로 사용해야 한다. 그리고 바인딩 표현식 `v-model:selected-value="message"`에서 `selected-value`는 사용자 지정값인데, 이 경우 `selectedValue`가 자식 컴포넌트의 props로 내려간다. 이 값을 생략해 `v-model="message"` 라고 작성하면 기본값인 `modelValue`라는 props로 내려간다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
 
 이것보다 간단한 게 있긴 한데:
 
