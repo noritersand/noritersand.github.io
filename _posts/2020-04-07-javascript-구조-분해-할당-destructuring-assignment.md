@@ -285,7 +285,7 @@ firstScript; // "Hello there! Mighty fine morning"
 
 ## for-of에서 구조 분해
 
-놀랍게도 `for-of`에서 구조 분해를 사용할 수 있다. 예시는 MDN의 고것을 그대로 가져왔다:
+`for-of`에서 구조 분해를 사용할 수 있다. 아래는 [MDN에서 가져온 예시](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#for_of_iteration_and_destructuring)다:
 
 ```js
 var people = [
@@ -317,4 +317,4 @@ for (var {name: n, family: {father: f}} of people) {
 // "Name: Tom Jones, Father: Richard Jones"
 ```
 
-끟.
+끚.

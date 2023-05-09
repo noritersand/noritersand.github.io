@@ -557,7 +557,7 @@ export default {
 
 ### true-value, false-value
 
-체크박스에 한해서, 그리고 **여러 개를 하나의 모델로 묶지 않을 때 한정**으로 체크/체크해제 각각의 값을 지정할 수 있다. 
+체크박스에 한해서, 그리고 **여러 개를 하나의 모델로 묶지 않을 때에 한해** 체크/체크해제 각각의 값을 지정할 수 있다. 
 
 ```html
 <input type="checkbox" v-model="yn" true-value="Y" :false-value="'N'" />

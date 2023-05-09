@@ -503,12 +503,12 @@ select convert(now(), date);
 
 ```sql
 # t2, t3, t4를 inner join하고 t1과 outer join
-SELECT * FROM t1 LEFT JOIN (t2, t3, t4)
-                 ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
+select * from t1 left join (t2, t3, t4)
+                 on (t2.a=t1.a and t3.b=t1.b and t4.c=t1.c)
 
 # 위와 같음
-SELECT * FROM t1 LEFT JOIN (t2 CROSS JOIN t3 CROSS JOIN t4)
-                 ON (t2.a=t1.a AND t3.b=t1.b AND t4.c=t1.c)
+select * from t1 left join (t2 cross join t3 cross join t4)
+                 on (t2.a=t1.a and t3.b=t1.b and t4.c=t1.c)
 ```
 
 

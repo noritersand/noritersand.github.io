@@ -26,9 +26,11 @@ tags:
 - Chrome 49/Edge 79/Firefox 52/Opera 36/Safari 10 이상에서 사용 가능
 - IE에서 사용 불가
 
+
 ## 개요
 
 나머지 매개변수와 기본값 매개변수 간단 정리.
+
 
 ## 나머지 매개변수 Rest parameters
 
@@ -41,6 +43,7 @@ function f(a, b, ...theArgs) {
 ```
 
 TODO
+
 
 ## 기본값 함수 매개변수 Default function parameters
 
