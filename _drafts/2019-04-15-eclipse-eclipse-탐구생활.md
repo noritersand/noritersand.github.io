@@ -24,6 +24,73 @@ tags:
 - `Order and Export`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Java Build Path > Order and Export`
 - `Deployment Assembly`: 파일 탐색기의 각 프로젝트를 우클릭 후 `Properties > Deployment Assembly`
 
+
+## hot code replace
+
+- [http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/](http://www.mkyong.com/eclipse/how-to-configure-hot-deploy-in-eclipse/)
+
+이클립스에선 디버그 모드로 로컬 서버 기동 후 클래스 파일의 변경이 감지되면 재시작 없이 변경된 클래스파일을 교체하는 Hot code replace 기능을 제공한다. 관련 기술로 Hot deploy, Hot swap이 있는데 JPDA에서 지원하는 건 Hot swap, WAS에서 지원하는 건 Hot deploy라고 구분하는 모양이다.
+
+그리고 디버그 모드라고 해도 직접 만든 '무한루프로 대기하면서 종료되지 않는 코드'는 핫스왑이 안되는 걸 보면 이 기능이 IDE에서 지원하는건지 아니면 톰캣(혹은 특정 스펙을 준수하는 WAS)에서 지원하는 건지는 확실하지 않음.
+
+### 설정
+
+여기선 톰캣 플러그인을 예로 든다. 우선 톰캣 서버 설정(서버 이름을 더블클릭 해서 진입한다. 서버 목록은 이클립스에서 Servers view를 활성화해야 볼 수 있다.)의 Overview 탭에서 'Automatically publish when resources change' 항목에 체크하고 (만약 'Serve modules without publishing'을 활성화했다면 이 과정은 생략해도 된다):
+
+![](/images/hot-code-replace-1.png)
+
+Modules 탭에서 보이는 Edit 버튼을 눌러 Auto reloading enabled의 체크를 해제한다.
+이후 WAS를 디버그 모드로 구동한 뒤 소스를 수정하면 된다.
+
+### 주의사항
+
+hot code replace의 적용 범위는 메서드 본문 한정이다. 다음에 해당하는 코드를 추가하거나 변경할 땐 replace가 불가능하며 반드시 JVM을 재시작해야 한다:
+
+- 클래스와 메서드의 선언부
+- 클래스 변수 혹은 인스턴스 변수
+- 스태틱 블록
+
+replace가 불가능한 변경이 감지되면 아래와 같은 대화창이 나타나고 변경한 소스는 다음 재시작 때까지 반영되지 않는다.
+
+![](/images/hot-code-replace-2.png)
+
+replace에 실패했으니 무시하던지, JVM을 종료하던지, 아니면 재시작을 하라는 대화창이다. 무시할 경우 마지막으로 replace에 성공한 시점을 유지하지만 경우에 따라서 ClassNotFoundException 같은 예외가 발생할 수 있다.
+
+대화창이 나타나는게 귀찮다면 옵션에서 아예 꺼버릴 수도 있다. 이클립스 mars 기준으로 `Preferences > Java > Debug > Hot Code Replace > show error when hot code replace fails.` 체크 박스를 해제하면 된다.
+
+그리고 간혹 익명 클래스나 중첩 클래스의 내용을 변경할 때 hot code replace가 이상하게 작동하는 때가 있다. 이 때는 그냥 재시작 하면 된다. 하여간 안되면 재실행이 답.
+
+플러그인 중 JRebel이 있는데, 재시작 없이 교체 가능한 범위의 제한이 없다. 하지만 유료.
+
+
+## 원격 서버 디버깅
+
+- [https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-remotejava_launch_config.htm](https://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-remotejava_launch_config.htm)
+- [https://dzone.com/articles/how-debug-remote-java-applicat](https://dzone.com/articles/how-debug-remote-java-applicat)
+- [http://wiki.javajigi.net/pages/viewpage.action?pageId=743](http://wiki.javajigi.net/pages/viewpage.action?pageId=743)
+- [https://stackoverflow.com/questions/3835612/remote-debugging-tomcat-with-eclipse](https://stackoverflow.com/questions/3835612/remote-debugging-tomcat-with-eclipse)
+- [https://codebeamer.com/cb/wiki/794800](https://codebeamer.com/cb/wiki/794800)
+
+그냥은 안되고 원격지에 설정을 따로 해줘야 한다.
+
+일단 아래처럼 원격 서버의 VM 옵션을 추가하고:
+
+```bash
+-Xdebug -Xnoagent -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8000
+```
+
+이클립스 메뉴에서 `Run > Debug configurations > Remote Java Application`이 있는데:
+
+![](/images/remote-java-app-config-1.png)
+
+프로젝트는 원격지와 소스가 동일한 프로젝트로 선택해주고, 아이피는 원격지의 아이피, 포트는 VM 옵션의 포트로(이 예시의 경우 8000번) 설정한다.
+
+요로코롬 하면 원격지에서 돌아가는 자바 애플리케이션을 디버깅할 수 있다.
+끄는 방법은 Debug view에서 VM을 선택하고 끄면 됨.
+
+JPDA(Java Platform Debugger Architecture) 관련 기술인것 같다. [오라클 문서 링크](https://docs.oracle.com/javase/8/docs/technotes/guides/jpda/index.html)
+
+
 ## Customize Perspective
 
 ### Menu Visibility
@@ -40,11 +107,13 @@ tags:
 - ShortCuts
 - 단축키는 뭐랑 관계 있어?
 
+
 ## Preferences
 
 ### General
 
 - `Keep next/previous editor, view and perspectives dialog open`: 체크를 헤재하면 에디터, 뷰, perspective 전환 단축키를 때자마자 바로 전환한다.
+
 
 ## Project Properties
 
@@ -55,6 +124,7 @@ tags:
 ### Web Project Settings
 
 - Context root: 웹 프로젝트의 컨텍스트 루트 경로를 의미함. WST로 서버를 추가할 때 Context Path가 이 값으로 설정된다. 만약 메이븐 프로젝트라면 **pom.xml의 build > finalName 속성이 우선**권을 가지므로 프로젝트 속성에서 직접 수정하지 않도록 한다.
+
 
 ## 빌드
 
@@ -91,6 +161,7 @@ pom.xml의 dependency 설정에 추가한 프로젝트가 들어오는걸로 추
 우선 includeMe 프로젝트의 `Libraries`에서 `Add Jar` 후 `Order and Export`에서 추가된 라이브러리를 export 하도록 체크해야 한다. (이 작업을 하지 않으면 export 대상에서 제외되어 다른 프로젝트에서 라이브러리를 참조할 수 없다.) primary 프로젝트의 `Projects` 탭에서 참조할 프로젝트인 includeMe를 `Add` 하면 끗.
 
 이후 primary 프로젝트에서 includeMe 프로젝트의 jar를 import 할 수 있게된다. 단, 이것은 이클립스 내에서만 잘 돌아가는 설정이다. 만약 WAR로 빌드 후 별도의 WAS에서 구동하면 `Deployment Assembly`에서 includeMe를 추가해도 정상작동 하지 않는다.
+
 
 ## 빌드 - JST Server Adapter
 
@@ -133,6 +204,7 @@ JST 서버별 `Overview > Edit Configuration > Source`는 직접 설정하진 �
 
 `Projects`와 `Libraries` 탭에서 추가한 항목은 자동으로 이 설정에도 추가된다.
 
+
 ## 리팩터 Refactor
 
 ### pull up
@@ -143,17 +215,20 @@ JST 서버별 `Overview > Edit Configuration > Source`는 직접 설정하진 �
 
 확장 클래스(=자식)로 멤버 이동
 
+
 ## 파일 속성
 
 ### derived resource
 
 파일이나 폴더 속성에서 `Derived` 속성에 체크하면 해당 파일은 '소스에서 파생된 파일'로 취급한다. 파생된 파일은 탐색이나 검색 등에서 자동으로 제외하는 옵션이 있다. 보통은 빌드 아웃풋 폴더(target, bin, build, ...)를 derived resource로 지정해서 컴파일된 클래스 파일이 검색 결과에 나타나지 않도록 설정한다.
 
+
 ## 이클립스의 환경 변수
 
 ### ${project_loc:some-project-name}
 
 TODO
+
 
 ## 빌드툴 관련
 

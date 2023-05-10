@@ -94,7 +94,6 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 검색해보니 ['File Watcher' 플러그인을 쓰는 방법](https://stackoverflow.com/questions/22713104/intellij-automatically-update-resources)도 있긴 함.
 
 
-
 ## 인텔리제이에서 사용할 VM options 지정하기
 
 Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
