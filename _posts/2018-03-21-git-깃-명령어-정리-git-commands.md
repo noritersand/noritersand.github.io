@@ -528,7 +528,7 @@ git config --global merge.tool kdiff3
 
 # VSCODE를 머지 도구로 설정
 # VSCODE 실행 경로가 path에 추가된 상태여야 함
-# 얘도 안될 수 있음... 😒
+# 안될 수도 있음... 😒
 git config --global merge.tool vscode
 git config --global mergetool.vscode.cmd 'extMerge "$BASE" "$LOCAL" "$REMOTE" "$MERGED"'
 git config --global mergetool.vscode.cmd 'code --wait $MERGED'

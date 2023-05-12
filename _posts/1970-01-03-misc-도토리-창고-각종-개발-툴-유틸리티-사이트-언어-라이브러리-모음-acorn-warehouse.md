@@ -340,7 +340,7 @@ tags:
 
 - [stibee](https://www.stibee.com/?utm_source=stibee&utm_campaign=sponsorbanner&utm_medium=email&uid=b2ZmaWNpYWxAbmV3bmVlay5jbw): 이메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원. 메일링.
 - [https://www.guerrillamail.com/ko](https://www.guerrillamail.com/ko): 일회용 이메일 서버. 60분 동안만 유효한 메일 주소를 제공.
-- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버#2. 얘는 꽤 오래감.
+- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버#2. 이건 꽤 오래감.
 - [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 이메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 이메일을 진짜처럼 쓸 수 있게 해주는 것.
 
 
@@ -360,7 +360,7 @@ tags:
 - [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴#2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈소스
 - [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴#3. 자바 웹 앱 전용이다. 상용
 - [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴#4. 10일 무료. IDE와 연동할 수 있음. 상용
-- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 15일 무료. 얘도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않는다. 상용
+- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
 - [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴#2. 자바/PHP/닷넷 앱 모니터링. 상용
 - [WhaTap](https://www.whatap.io/ko): APM 툴#3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
 - [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함

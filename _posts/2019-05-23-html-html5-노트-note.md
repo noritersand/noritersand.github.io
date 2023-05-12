@@ -207,7 +207,6 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 TODO
 
-
 ### input 태그에서 엔터키로 submit 이벤트를 발동시키는 조건
 
 1. `<form>` 태그가 직계 조상으로 존재해야 한다.
@@ -217,7 +216,7 @@ TODO
 5. `<button type="button">` 태그도 `<input>`으로 세지 않는다.
 6. `display:none` 상태는 관계 없음
 
-그래서 조합하면:
+그래서 조합하면 가능한 경우로:
 
 ```html
 <form>

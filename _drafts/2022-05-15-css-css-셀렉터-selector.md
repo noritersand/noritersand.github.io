@@ -261,7 +261,7 @@ a:link 	Selects all unvisited links
 
 ### :nth-child(n)
 
-요소의 부모 기준 n번째 자식 요소를 모두 선택한다. **⚠️ zero-based numbering 아님. 1부터 시작**
+요소의 부모 기준 n 번째 자식 요소를 모두 선택한다. **⚠️ zero-based numbering 아님. 1부터 시작**
 
 - `td:nth-child(1)`: (일반적으로 `<tr>` 아래에 있으므로) 부모 태그인 `<tr>`의 첫 번째 자식에 해당하는 `<td>`만 모두 선택
 
@@ -271,7 +271,7 @@ a:link 	Selects all unvisited links
 
 ### :nth-of-type(n)
 
-요소의 형제들 기준으로 n번째 요소를 모두 선택한다.
+요소의 형제들 기준으로 n 번째 요소를 모두 선택한다.
 
 - `p:nth-of-type(2)`: 같은 레벨에 있는 `<p>` 중 두 번째에 해당하는 요소만 선택
 

@@ -483,7 +483,7 @@ more READ_ME
 ```bash
 less READ_ME
 less -N READ_ME # 행 번호 표시
-less +7 READ_ME # READ_ME 파일의 7번째 줄 번호부터 출력()
+less +7 READ_ME # READ_ME 파일의 일곱 번째 줄 번호부터 출력()
 
 # ls의 도움말을 less로 보기
 ls --help | less

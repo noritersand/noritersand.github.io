@@ -55,7 +55,7 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 ## 인코딩 환경 설정
 
-얘네들을 'UTF-8'로 변경한다:
+아래 설정들을 'UTF-8'로 변경한다:
 
 - `General > Workspace` 의 Text file encoding
 - `Window > Preferences > Web > CSS Files`

@@ -20,9 +20,11 @@ tags:
 - [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
 - [https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
 
+
 ## 개요
 
 자바기반 템플릿 엔진인 타임리프 사용법 정리.
+
 
 ## HTML 템플릿
 
@@ -40,6 +42,7 @@ tags:
 </html>
 ```
 
+
 ## 코멘트
 
 ### 라인 코멘트
@@ -48,7 +51,7 @@ tags:
 <!--/* This code will be removed at Thymeleaf parsing time! */-->
 ```
 
-주의: `<!--`, `-->` 얘네들하고 `/*`, `*/` 얘네들 사이에 공백이 있으면 안됨.
+주의: `<!--`, `-->` 이것들과 `/*`, `*/` 이것들 사이에 공백이 있으면 안됨.
 
 ### 블록 코멘트
 
@@ -59,6 +62,7 @@ tags:
   </div>
 <!--*/-->
 ```
+
 
 ## 기본 객체
 
@@ -106,6 +110,7 @@ Besides these basic objects, Thymeleaf will offer us a set of utility objects th
 ```html
 <div class="inner" th:if="*{#lists.size(unitList)} == 1">
 ```
+
 
 ## 표현식
 
@@ -293,6 +298,7 @@ Note that the preprocessing step for a French locale will be creating the follow
 
 The preprocessing String `__` can be escaped in attributes using `\_\_`.
 
+
 ## 연산자
 
 ### Arithmetic operations:
@@ -369,6 +375,7 @@ SPEL의 고것임.
 ```
 
 `?.` 연산자 대신 접근 연산자 `.`를 사용하면 `imageList`가 null일 때 에러가 발생한다.
+
 
 ## 리터럴
 
@@ -501,6 +508,7 @@ And especially useful when used in combination with prototype-only comment block
 
 Note how this solution allows templates to be valid HTML (no need to add forbidden <div> blocks inside <table>), and still works OK when open statically in browsers as prototypes!
 
+
 ## 제어문
 
 ### 분기
@@ -583,11 +591,13 @@ Note that the th:if attribute will not only evaluate boolean conditions. Its cap
 </li>
 ```
 
+
 ## 변수 설정
 
 `th:with`
 
 TODO: 이거 어떻게 쓰는겨?
+
 
 ## HTML5 data-* 표기법
 
@@ -607,6 +617,7 @@ TODO: 이거 어떻게 쓰는겨?
 </body>
 </html>
 ```
+
 
 ## How to access data
 
@@ -692,6 +703,7 @@ public interface UrlService {
 ```
 
 This is fairly easy and useful in some scenarios.
+
 
 ## 그 밖에
 

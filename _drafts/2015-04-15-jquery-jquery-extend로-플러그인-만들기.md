@@ -17,7 +17,6 @@ tags:
 
 - [https://api.jquery.com/jQuery.fn.extend/](https://api.jquery.com/jQuery.fn.extend/)
 
-쫑알쫑알쫑알.
 
 ## jQuery.fn.extend()
 
@@ -78,6 +77,7 @@ span {
 ```
 
 `jQuery.fn.extend()`는 사실 jQuery.fn과 `jQuery.extend()`의 합성한 메서드다.
+
 
 ## jQuery.fn
 
@@ -188,9 +188,10 @@ $('button').alert({message: '버튼 클릭 시 나타나는 경고창'}); // 이
 </script>
 ```
 
+
 ## jQuery.extend()
 
-`extend()`는 말 그대로 객체를 확장하는 메서드다. 첫 번째 인자로 지정된 객체에 두 번째, 혹은 그 이상의 인자로 지정된 객체를 덮어 쓴다. 동일한 이름의 프로퍼티가 존재할 땐 가장 나중에 오는 객체가 우선권이 높다.
+`extend()`는 말 그대로 객체를 확장하는 메서드다. 첫 번째 매개변수로 넘겨진 객체에 두 번째, 혹은 그 이상의 매개변수로 넘겨진 객체를 덮어 쓴다. 동일한 이름의 프로퍼티가 존재할 땐 가장 나중에 오는 객체가 우선권이 높다.
 
 ```
 jQuery.extend( target [, object1 ] [, objectN ] )

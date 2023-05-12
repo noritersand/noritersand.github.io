@@ -280,7 +280,7 @@ s::d
 #If False
   z::Send You pressed 'z' key. ; 작동하지 않음
 
-  q::a ; 얘도 작동하지 않음
+  q::a ; 이것도 작동하지 않음
 
 #If
   c::v ; 여기부턴 잘 됨

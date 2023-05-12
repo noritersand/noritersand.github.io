@@ -54,9 +54,7 @@ Promise 객체는 요딴 상태 중 하나를 가진다:
 
 상태에 대한 정의는 [여기](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)에서 확인 가능.
 
-웹 워커에서 사용할 수 있다고 함.
-
-### 기본 설명
+웹 워커에서도 사용할 수 있다고 함.
 
 ```
 new Promise( executor )
@@ -67,6 +65,8 @@ new Promise( function( resolve, reject ) { ... } )
 - `reject`: Promise의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수. 이것도 함수다.
 
 `Promise()` 생성자 함수는 `executor`를 실행하고 Promise 객체를 반환한다.
+
+### Promise.prototype.then()
 
 ```
 promise.then( onFulfilled, onRejected )
@@ -105,6 +105,8 @@ willBeFail.then(() => {
 
 `.then()`의 두 번째 파라미터까지 작성하는 일은 꽤 번거롭고 가독성이 별로다. `onRejected`만 전담하는 `.catch()`를 써보자:
 
+### Promise.prototype.catch()
+
 ```
 promise.catch( onRejected )
 ```
@@ -125,7 +127,7 @@ willBeFail2.catch((reason) => {
 });
 ```
 
-### .catch() 후의 상태
+#### .catch() 후의 상태
 
 아래 예시를 보면 Promise의 상태가 `onRejected` 호출 후 fulfilled로 바뀐다:
 
@@ -151,7 +153,7 @@ console.log(pr6); // Promise { <state>: "fulfilled", <value>: undefined }
 
 **주의: 각 메서드가 반환하는 객체는 다 다른 인스턴스**
 
-### 에러 처리
+#### 에러 처리
 
 메서드 체인 상의 에러는 `.catch()`가 받아준다:
 
@@ -160,7 +162,7 @@ try {
   new Promise((resolve, reject) => {
     resolve();
   }).then((msg) => {
-    throw new Error('I am error'); // 얘를 두 줄 위로 올려도 결과는 같음
+    throw new Error('I am error'); // 이 코드를 두 줄 위로 올려도 결과는 같음
     console.log('moo');
   }).catch((reason) => {
     console.log('ya');
@@ -192,7 +194,7 @@ try {
 
 'I am error'만 출력되는데 아무래도 Promise 내부에 try-catch가 있다고 봐야할 것 같음.
 
-### .finally()
+### Promise.prototype.finally()
 
 ```
 promise.finally( onFinally )
@@ -223,7 +225,7 @@ new Promise((resolve, reject) => {
 
 ### setTimeout()을 Promise로 감싸기
 
-비동기 함수인 주제에 태고부터 존재했단 이유로 Promise를 반환하지 않는 건방진 API를 감싸는 방법이다:
+비동기 함수인 주제에 태고부터 존재했단 이유로 Promise를 반환하지 않는 건방진 API를 감싸는 방법이다😏:
 
 ```js
 var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -342,7 +344,7 @@ console.log('아재개그는 아주 재밌는 개그');
 
 `result`는 Promise가 아니라 `resolve('abc')`에 의해 넘겨진 `abc`다.
 
-### 얘도 래핑을 하네
+### 래핑을 하네
 
 만약 `await` 연산자 다음이 Promise가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
 

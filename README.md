@@ -119,7 +119,7 @@ jekyll serve --no-watch
 
 ```bash
 gem install bundler # 이미 설치했으면 이건 생략
-bundle install # 얘도 했으면 생략
+bundle install # 이것도 했으면 생략
 bundle exec jekyll serve
 ```
 

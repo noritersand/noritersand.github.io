@@ -520,8 +520,6 @@ select * from t1 left join (t2 cross join t3 cross join t4)
 
 서브쿼리의 일종인데, 쿼리 실행 시간 동안만 존재하는 임시 테이블을 만들어 여러번 참조할 수 있게 하는 기능이라 대충 이해하면 된다.
 
-CTE는 `Non-Recursive`와 `Recursive` 두 종류가 있다. (Recursive는 `WITH RECURSIVE` 키워드로 표현하고 MariaDB 10.2.2부터 지원함)
-
 이렇게 쓴다:
 
 ```sql
@@ -539,6 +537,24 @@ select *
 from t3
 join v1 on v1.a = t3.a
 join v2 on v2.a = t3.a
+```
+
+CTE는 Non-Recursive와 Recursive 두 종류가 있다. 
+
+Recursive CTE는 `WITH RECURSIVE` 키워드로 표현하고(MariaDB 10.2.2부터 지원) 재귀적 결과 집합을 생성할 때 사용한다.
+
+아래는 특정 날짜부터 오늘까지의 날짜 데이터를 임시 테이블로 생성하는 쿼리다:
+
+```sql
+with recursive dates(date) as (
+    select '2023-03-11'
+    union all
+    select date_add(date, interval 1 day)
+    from dates
+    where date < curdate()
+    # where date < last_day('2023-05-01') # 2023년 5월의 마지막 날까지
+)
+select * from dates
 ```
 
 

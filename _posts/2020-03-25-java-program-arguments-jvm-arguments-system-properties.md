@@ -47,7 +47,7 @@ public class MainTest {
 java -classpath C:/somewhere -Dspring.profiles.active=real -XX:+UseG1GC -Xms1024m -Xmx2048m -Duser.name=noritersand MainTest
 ```
 
-여기서 `-`로 시작하는 얘들이 다 JVM Arguments임.
+여기서 `-`로 시작하는 인수들이 다 JVM Arguments임.
 
 
 ## System Properties

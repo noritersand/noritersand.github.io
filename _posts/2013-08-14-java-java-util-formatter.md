@@ -17,6 +17,7 @@ tags:
 
 - [http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html](http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
 
+
 ## format()
 
 ```java
@@ -30,7 +31,7 @@ format( [Locale l,] String format, Object... args )
 - `l`: 서식 설정 시에 적용하는 locale(국가별 설정). l 이 null 의 경우 무시
 - `format`: 출력할 자료의 서식
 - `%:` 제어 문자 시작
-- `argument_index`: 인수 리스트 내에서의 인수의 위치를 나타내는 10진수로 최초의 인수는 `1$`, 2 번째의 인수는 `2$`로 표시한다.
+- `argument_index`: 인수 리스트 내에서의 인수의 위치를 나타내는 10진수로 첫 번째 인수는 `1$`, 두 번째의 인수는 `2$`로 표시한다.
 - `flags`: 출력 서식을 변경하는 문자세트
 - `-:` 왼쪽 끝에 출력 (default: 오른쪽 정렬)
 - `width`: 필드 폭
@@ -40,6 +41,7 @@ format( [Locale l,] String format, Object... args )
 ```java
 String result = str.Stringformat("입력하신 값은: %d입니다.", 30);
 ```
+
 
 ## 출력 형식 지정 제어문자 표
 
@@ -77,6 +79,7 @@ String result = str.Stringformat("입력하신 값은: %d입니다.", 30);
 - `%A %B %C`: 요일,월,일 표시
 
 이 외에는 API 문서를 확인할 것
+
 
 ## example
 

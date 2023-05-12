@@ -28,12 +28,12 @@ int add(int a, int b) {
 }
 ```
 
-a와 b를 매개변수, formal parameter 라고 하며,
+a와 b를 매개변수(formal parameter)라고 하며,
 
 ```java
 add(1, 2);
 ```
 
-1과 2는 전달인자, actual argument 라고 한다.
+1과 2는 전달인자(actual argument)라고 한다.
 
 전달인자는 줄여서 인자, 인수라고 부르기도 하는 모양.
