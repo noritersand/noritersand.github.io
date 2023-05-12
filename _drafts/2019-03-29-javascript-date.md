@@ -28,7 +28,7 @@ TODO
 const {log} = console;
 
 var a = new Date('2018-01-01T12:24:48Z');
-var b = new Date('2018-01-01 12:24:48'); // ⚠️ 이건 IE, 사파리에서 문제 있음.
+var b = new Date('2018-01-01 12:24:48'); // ⚠️ IE, 사파리에서 문제 있음
 var c = new Date('2016-02-05T09:00:00.000+09:00');
 var d = new Date('2011-12-30');
 var e = new Date('2011/12/30');

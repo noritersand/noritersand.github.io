@@ -51,7 +51,7 @@ SELECT SUBSTR('abcdefg', 2) FROM dual; -- 'bcdefg'
 ```sql
 SELECT INSTR('abcdefg', 'ab') FROM dual; -- 1
 
-SELECT INSTR('KH정보교육원 국가정보원 정보문화사', '정보', 1, 2) FROM dual; -- 11
+SELECT INSTR('ABC정보통신 국가정보원 정보문화사', '정보', 1, 2) FROM dual; -- 11
 --검색글자('정보'), 검색출발점(첫 번째 글짜부터) 두 번째 나오는 글자의 위치
 --이 경우엔 '정보'가 셋 존재하는데 그 중 두 번째 정보의 인덱스값을 찾는 쿼리
 ```
