@@ -23,6 +23,7 @@ tags:
 - lettuce[ˈletɪs]: 상추
 - radish: 무
 - cabbage: 양배추
+- aye/nay: 찬성/반대
 
 
 ## 수학 관련 영단어(영-한)

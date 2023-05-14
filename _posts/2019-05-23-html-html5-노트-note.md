@@ -77,7 +77,7 @@ HTML5에서 정의된 global attribute 중 하나. '사용자 정의 속성' 혹
 
 ```js
 document.querySelector('#soldier').getAttribute('data-recent-status'); // 'idle'
-document.querySelector('#soldier').dataset; // DOMStringMap {recentStatus: "idle"}
+document.querySelector('#soldier').dataset; // DOMStringMap {recentStatus: "idle"}
 ```
 
 이 외 HTML5에서 추가된 [global attribute](http://webdir.tistory.com/89)들이 있으니 확인해볼 것.

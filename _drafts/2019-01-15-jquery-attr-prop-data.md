@@ -66,7 +66,7 @@ $("#do2").click(function() {
 
 ```js
 var events = $('#element').data('events');
-events.click[0]; // {type: "click", origType: "click", data: null, guid: 693, handler: ƒ, …}
+events.click[0]; // {type: "click", origType: "click", data: null, guid: 693, handler: ƒ, ...}
 ```
 
 ## 셋의 차이점

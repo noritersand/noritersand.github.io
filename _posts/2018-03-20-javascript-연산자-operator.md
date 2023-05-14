@@ -437,7 +437,7 @@ obj2.fn?.(); // undefined
 obj2.foo?.(); // 'bar'
 ```
 
-`?.`의 접근 연산은 좌측(앞)의 프로퍼티(혹은 루트 객체)가 `undefined`나 `null`이 아닌 경우에만 수행한다:
+`?.`는 앞(좌측)의 프로퍼티(혹은 루트 객체)가 `undefined`나 `null`이 아닌 경우에만 연산을 수행한다:
 
 ```js
 undefined.foo; // Uncaught TypeError: can't access property "foo" of undefined

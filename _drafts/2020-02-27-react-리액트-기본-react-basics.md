@@ -360,7 +360,7 @@ React 엘리먼트를 `container` 아래에 렌더링 하고 컴포넌트를 반
 const rootElement = document.querySelector('#root');
 const element = React.createElement('h2', null, '뿅뿅');
 const ele = ReactDOM.render(element, rootElement);
-console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
+console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
 ```
 
 ### ReactDOM.hydrate()
