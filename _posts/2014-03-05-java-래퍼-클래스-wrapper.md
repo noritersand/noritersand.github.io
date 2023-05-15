@@ -30,7 +30,7 @@ public final class Integer extends Number implements Comparable {
 ```
 
 
-## 형 변환 type casting, type conversion
+## 타입 변환 type casting, type conversion
 
 | primitive type | wrapper class | 생성자 | example |
 |----------------|---------------|---------------------------------------------------------|------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ public final class Integer extends Number implements Comparable {
 | float | Float |  Float(double value) Float(float value) Float(String s) |  `Float f = new Float(1.0);`<br>`Float f = new Float(1.0F);`<br>`Float f = new Float("1.0F");` |
 | double | Double |  Double(double value) Double(String s) |  `Double d = new Double(1.0);`<br>`Double d = new Double("1.0");` |
 
-래퍼 클래스는 형변환 메서드로 `parse()`와 `valueOf()`를 제공한다. `parse()`는 전달받은 문자열을 기본형으로 변환해 돌려주지만 `valueOf()`는 기본형이 아닌 래퍼 클래스로 변환한다는 차이점이 있다.
+래퍼 클래스는 타입 변환 메서드로 `parse()`와 `valueOf()`를 제공한다. `parse()`는 전달받은 문자열을 기본형으로 변환해 돌려주지만 `valueOf()`는 기본형이 아닌 래퍼 클래스로 변환한다는 차이점이 있다.
 
 문자열 -> 기본형:
 
@@ -69,7 +69,7 @@ int num = 10;
 Integer number = num;
 ```
 
-int 타입 변수인 num을 형변환 없이 Integer 타입변수에 할당해도 컴파일 에러가 발생하지 않는다. 원칙적으로는 틀린 코드지만 자바 컴파일러가 다음처럼 코드를 자동으로 변경하며, 이를 오토박싱이라 한다:
+int 타입 변수인 num을 타입 변환 없이 Integer 타입변수에 할당해도 컴파일 에러가 발생하지 않는다. 원칙적으로는 틀린 코드지만 자바 컴파일러가 다음처럼 코드를 자동으로 변경하며, 이를 오토박싱이라 한다:
 
 ```java
 int num = 10;

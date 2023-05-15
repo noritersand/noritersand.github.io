@@ -39,7 +39,7 @@ static Class<?> forName( String name, boolean initialize, ClassLoader loader ): 
 T newInstance(): Creates a new instance of the class represented by this Class object.
 ```
 
-`forName("[클래스]").newInstance()`는 new 연산자가 수행하는 인스턴스 생성과 결과가 같다. 다만 `newInstance()`는 결과 타입이 제네릭이기 때문에 형변환을 명시해야 한다:
+`forName("[클래스]").newInstance()`는 new 연산자가 수행하는 인스턴스 생성과 결과가 같다. 다만 `newInstance()`는 결과 타입이 제네릭이기 때문에 타입 변환을 명시해야 한다:
 
 ```java
 public class LogicTest {

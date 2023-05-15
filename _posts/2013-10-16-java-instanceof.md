@@ -56,7 +56,7 @@ public class MainTest {
 }
 ```
 
-여기서 instanceof 연산의 결과값이 true 일 경우는 곧 형변환이 가능하다는 것을 알 수 있다.
+여기서 instanceof 연산의 결과값이 true 일 경우는 곧 타입 변환이 가능하다는 것을 알 수 있다.
 
 ```java
 public class MainTest {

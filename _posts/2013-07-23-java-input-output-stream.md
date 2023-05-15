@@ -87,7 +87,7 @@ FileOutputStream fos = new FileOutputStream("c:\\iotest\\stream.txt", false);
 String txt = "안녕! Fine and strong day! im waldo!";
 
 for (int i = 0; i < txt.length(); i++) { //문자열의 길이만큼
-    char c = txt.charAt(i); // 문자로 형변환 후
+    char c = txt.charAt(i); // 문자로 타입 변환 후
     fos.write((int) c); // 출력
 }
 fos.close();

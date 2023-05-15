@@ -43,7 +43,7 @@ Reflection(sun.java.reflection)을 사용하지 않고 클래스의 메타정보
 
 [http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html](http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)
 
-StringUtils는 문자를 축약하거나 두 문자열을 비교하여 다른 부분을 추출하는 등 String과 관련된 메서드로 구성되어 있고 null safe하다. 몇몇 메서드들은 파라미터의 타입이 String이 아닌 CharSequence라서 StringBuffer나 StringBuilder를 형변환 없이 사용할 수 있다.
+StringUtils는 문자를 축약하거나 두 문자열을 비교하여 다른 부분을 추출하는 등 String과 관련된 메서드로 구성되어 있고 null safe하다. 몇몇 메서드들은 파라미터의 타입이 String이 아닌 CharSequence라서 StringBuffer나 StringBuilder를 타입 변환 없이 사용할 수 있다.
 
 - `Empty`: StringUtils의 API에서 empty란 empty string과 null을 의미한다.
 - `Blank`: `""`, null, whitespace(공백만으로 이뤄진 문자열)를 의미한다.

@@ -17,7 +17,7 @@ tags:
 - [http://docs.oracle.com/javase/9/docs/api/java/lang/Byte.html](http://docs.oracle.com/javase/9/docs/api/java/lang/Byte.html)
 
 Byte 타입 자료형을 지원하는 클래스. byte 타입은 일반적으로 입출력, 전송 시에 사용한다. 변수에 Byte 혹은 byte 타입을 선언할 경우 할당할 수 있는 범위는 -128 ~ 127이다.
-다음은 Byte 클래스의 메서드는 아니지만 바이트 배열과 문자열 사이의 형변환 예다:
+다음은 Byte 클래스의 메서드는 아니지만 바이트 배열과 문자열 사이의 타입 변환 예시다:
 ```java
 public static void main(String[] args) {
     String s = "대한민국";
