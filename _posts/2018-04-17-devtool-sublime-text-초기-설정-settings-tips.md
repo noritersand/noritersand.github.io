@@ -215,6 +215,18 @@ Build 3126 이후에 기록함.
 
 무슨 명령인지 모르겠으면 [여기](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
 
+### 멀티 캐럿(Multiple Selection)
+
+서브라임에선 Expand Selection 기능으로 분류한다.
+
+캐럿을 추가해 여러 지역에서 작업을 동시에 할 때 사용하는 기능. 에디터마다 부르는 이름이 제각각이다. 서브라임은 Expand Selection, 아톰과 VSCODE는 Add Selection, 인텔리제이는 Select Next Occurrence 😒
+
+- <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
+- <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: select_lines. 위나 아래로 멀티 캐럿
+- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
+- <kbd>ctrl + shift + l</kbd>: split_selection_into_lines. 선택한 영역에서 각 라인마다 캐럿 분리
+
 ### 커서/포커스 이동
 
 - <kbd>alt + -</kbd>: Jump Back. 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
@@ -229,18 +241,6 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + 숫자키</kbd>: 레이아웃이 나눠진 상태에서 다른 레이아웃으로 포커스 이동
 - <kbd>ctrl + r</kbd>: Goto Symbol
 - <kbd>ctrl + shift + r</kbd>: Goto Project Symbol
-
-### 멀티 캐럿(정식 명칭은 Multiple Selection)
-
-Expand Selection
-
-캐럿을 추가해 여러 지역에서 작업을 동시에 할 때 사용하는 기능. 에디터마다 부르는 이름이 제각각이다. 서브라임은 Expand Selection, 아톰과 VSCODE는 Add Selection, 인텔리제이는 Select Next Occurrence 😒
-
-- <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
-- <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
-- <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
-- <kbd>ctrl + shift + l</kbd>: split selection into lines, 선택한 영역에서 각 라인마다 캐럿 분리
 
 ### folding
 

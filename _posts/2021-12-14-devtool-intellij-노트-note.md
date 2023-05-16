@@ -170,6 +170,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
 - CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+- ~~Extra Actions~~: 몇 가지 기능을 추가하는 플러그인인데 **단축키를 기본값으로 되돌리는 버그가 있다**.
 
 #### GitHub Copilot
 
@@ -197,13 +198,22 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - Editor Tabs > Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
 - Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
 - Database > Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
 - Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
 - Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
+- Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
 
 
 ## 기본 단축키
+
+### 멀티 캐럿
+
+인텔리제이에선 Add Caret 혹은 Select Next Occurrence 쯤으로 부른다.
+
+- <kbd>alt + j</kbd>: Add Selection for Next Occurrence. 드래그한 단어 기준 다음 단어에 캐럿 추가
+- <kbd>alt + shift + j</kbd>: Unselect Occurrence. 캐럿 추가한 거 하나씩 취소
+- <kbd>ctrl + alt + shift + j</kbd>: Select All Occurrences. 선택한 단어와 동일한 모든 위치에 캐럿 추가
+- <kbd>alt + shift + g</kbd>: Add Carets to Ends of Selected Lines. 선택한 모든 라인에 캐럿 생성
 
 ### 전역
 
@@ -278,15 +288,6 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 - <kbd>ctrl + alt + shift + c</kbd>: Copy Reference. 현재 커서/캐럿/포커스의 위치를 기준으로 상대 경로를 복사한다. 예를 들어자바 클래스의 메서드에 캐럿을 두고 누르면 `패키지/클래스명#메서드명`의 형태로 복사한다. 심볼을 특정할 수 없는 경우엔 `디렉터리/파일명:라인번호`의 형태로 복사한다.
 - <kbd>ctrl + shift + c</kbd>: Copy Absolute Path. 현재 파일의 (윈도우에선 드라이브 문자 `C:`, `D:` 부터 시작하는) 절대 경로를 복사한다.
-
-### 멀티 캐럿
-
-Select Next Occurrence.
-
-- <kbd>alt + j</kbd>: 드래그한 단어 기준 다음 단어에 캐럿 추가
-- <kbd>alt + shift + j</kbd>: 캐럿 추가한 거 하나씩 취소
-- <kbd>ctrl + alt + shift + j</kbd>: 선택한 단어와 동일한 모든 위치에 캐럿 추가
-- <kbd>alt + shift + g</kbd> 선택한 모든 라인에 캐럿 생성
 
 ### 빌드, 실행
 

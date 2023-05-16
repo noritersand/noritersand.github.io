@@ -145,8 +145,6 @@ arr.includes('b'); // true
 
 ### Array.prototype.find()
 
-\* `find()`, `map()`, `filter()` 같은 메서드를 고차 함수(higher-order functions)라고 부르는 모양이다. 함수를 인자로 받거나 함수를 반환하면 고차함수라고...
-
 ```
 find( function( element, index, array ) { /* ... */ }[, thisArg])
 ```
@@ -169,13 +167,15 @@ arr.find(ele => {
 // undefined
 ```
 
-### Array.prototype.findIndex()
+\* `find()`, `map()`, `filter()` 처럼 함수를 인자로 받거나 반환하면 고차 함수(higher-order functions)라고 한다.
 
-`find()`와 같으나 반환하는 값이 배열 요소의 인덱스라는 점만 다르다. 만약 모든 루프에서 `true`를 반환하지 않으면 최종 반환값은 `-1`이다.
+### Array.prototype.findIndex()
 
 ```
 findIndex(function(element, index, array) { /* ... */ }[, thisArg])
 ```
+
+`find()`와 같으나 반환하는 값이 배열 요소의 인덱스라는 점만 다르다. 만약 모든 루프에서 `true`를 반환하지 않으면 최종 반환값은 `-1`이다.
 
 ```js
 let arr3 = ['a', 'b', 'c'];
@@ -409,11 +409,11 @@ console.log(arr); // Array(5) [ "a", "d", "e", "f", "g" ]
 
 ### Array.prototype.fill()
 
-배열의 특정 인덱스를 주어진 값 하나로 채우거나 뒤바꾸는 메서드.
-
 ```
 arr.fill( value [, start [, end] ] )
 ```
+
+배열의 특정 인덱스를 주어진 값 하나로 채우거나 뒤바꾸는 메서드.
 
 ```js
 // 6개짜리 배열을 모두 null로 채움
@@ -431,13 +431,15 @@ arr.fill(5, 1);
 
 ### Array.prototype.join()
 
-### Array.prototype.concat()
+TODO
 
-주어진 배열이나 값을 이어붙인 새 배열을 반환한다. 원본은 변하지 않는다.
+### Array.prototype.concat()
 
 ```
 array.concat( [value1 [, value2 [, ... [, valueN] ] ] ] )
 ```
+
+주어진 배열이나 값을 이어붙인 새 배열을 반환한다. 원본은 변하지 않는다.
 
 인자를 생략하면 기존 배열의 얕은 복제본(shallow clone)을 반환한다.
 
