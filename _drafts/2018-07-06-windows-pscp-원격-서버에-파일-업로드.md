@@ -10,6 +10,7 @@ tags:
   - pscp
 ---
 
+
 ## PSCP, PuTTY Secure Copy client
 
 윈도우에서는 putty 인스톨 버전(pscp가 포함되어 있음)을 설치하거나 pscp.exe를 직접 다운로드 받아서 명령 프롬프트나 파워셸에서 사용할 수 있다.
