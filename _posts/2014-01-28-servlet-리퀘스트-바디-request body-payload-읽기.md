@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-28 14:05:00 +0900
-title: '[Servlet] Request에서 payload body(request body) 읽기'
+title: '[Servlet] 리퀘스트 바디(request body, payload) 읽기'
 categories:
   - servlet
 tags:
@@ -20,15 +20,37 @@ tags:
 - [http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome](http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome)
 - [http://kukuta.tistory.com/95](http://kukuta.tistory.com/95)
 
+
 ## 개요
 
-HTTP에는 어떠한 유형의 내용이 전송되는지를 의미하는 Content-Type 헤더가 있다. (Content-Type은 미디어타입 혹은 MIME이라고도 한다.)
+request body, request body post data, payload, payload body 등으로 불리는 리퀘스트 바디는 바디를 통해 전송한 어떤 값이 쿼리스트링이나 x-www-form-urlencoded와 다르게 이름이 없어서 특수한 방식으로 해석해야 하는 형태인 것을 말한다.
 
-서블릿에선 이 헤더의 값이 application/json 혹은 multipart/form-data일 때, 일반적인 경우와 다르게 HTTP 메시지 바디 라인을 직접 읽는 방식을 사용해야만 전송 데이터에 접근할 수 있다.
+일반적으로 POST, PUT, PATCH 등의 메서드에서 사용한다. GET, DELETE 메서드에서도 쓸 수 있지만 권장되지 않는다. 조회(혹은 조회해서 삭제)를 처리하는 메서드에서는 굳이 써야할 필요가 없고, 서버에서 리퀘스트 바디를 처리할 때 더 많은 리소스를 사용하기 때문이다.
 
-이 때 사용되는 API는 `ServletRequest.getInputStream()`, `ServletRequest.getReader()`가 있으며, 이런 형태의 전송 데이터를 'payload body' 혹은 'request body post data'라고 한다.
+전송되는 값은 JSON이나 XML과 같은 다양한 형식일 수 있는데 이를 Content-Type 헤더로 서버측에 알려줘야 한다.
 
-## send
+아래는 리퀘스트 바디를 사용하는 HTTP 요청의 원문이다:
+
+```bash
+POST /take/my/awesome/draft HTTP/1.1
+Content-Type: application/json
+Accept: */*
+Host: localhost:8080
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Content-Length: 37
+Cookie: SESSIONID=MTctZOTjA5NZVLMMkxTkUMxMi0Gg2MDhAtwTyD0DkzmTOODZ
+ 
+{
+"num": 1,
+"bool": true
+}
+```
+
+
+## 리퀘스트 바디 구현 예시
+
+### 클라이언트
 
 ```html
 <script>
@@ -50,7 +72,7 @@ HTTP에는 어떠한 유형의 내용이 전송되는지를 의미하는 Content
 </script>
 ```
 
-## receive
+### 서버
 
 ```java
 package com.test;
@@ -100,7 +122,7 @@ public class Dispatcher extends HttpServlet {
 }
 ```
 
-## console 출력
+### 출력 값
 
 ```
 [{"name1":"value1", "name2":"value2"}, {"name1":"value3", "name2":"value4"}]

@@ -470,7 +470,7 @@ leftExpr ?? rightExpr
 OR`||` 연산자를 이용한 방법과 다르게, `Boolean()`에서 falsy한 값으로 평가되는 `0`, `NaN`, `""`를 truthy한 값으로 간주할 때 사용한다:
 
 ```js
-0 || 'foo' // "hi"
+0 || 'foo' // "foo"
 NaN || 'foo' // "foo"
 "" || 'foo' // "foo"
 
