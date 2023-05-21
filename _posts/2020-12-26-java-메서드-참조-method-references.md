@@ -62,14 +62,20 @@ Foo.call(txt, new Bar() {
 });
 ```
 
-Java 8 이후에는 아래처럼 람다 표현식으로 대체할 수 있는데:
+Java 8 이후에는 아래처럼 람다 구문(statement lambda)으로 대체할 수 있는데:
 
 ```java
-// #3 1, 2를 줄여서 쓸 수 있게 나온게 람다 표현식
+// #3 1, 2를 줄여서 쓸 수 있게 나온게 람다
 // Foo.call(txt, s -> logger.debug(s)); // 아래와 같음
 Foo.call(txt, (s) -> {
     logger.debug(s);
 });
+```
+
+이걸 람다 표현식(expression lambda)으로 바꾸면 이렇게 되고:
+
+```java
+Foo.call(txt, s -> logger.debug(s));
 ```
 
 여기서 한 술 더 뜬게 바로 **메서드 참조**다:

@@ -23,6 +23,7 @@ tags:
 - mybatis 3.3.1
 - mybatis-spring 1.2.4
 
+
 ## 분기 조건으로 사용할 때
 
 enum 타입의 파라미터를 if문의 변수로 사용한다고 하자. 가령 검색 조건으로 사용될 클래스가 다음처럼 enum 타입을 포함하고 있을 때:
@@ -72,6 +73,7 @@ public abstract class Enum<E extends Enum<E>>
     // 생략
 }
 ```
+
 
 ## 파라미터 표현식에서 사용할 때
 

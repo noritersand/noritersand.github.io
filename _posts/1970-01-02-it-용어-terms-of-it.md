@@ -14,11 +14,21 @@ tags:
 {:toc .toc}
 
 
+## DKIM, DomainKeys Identified Mail
+
+이메일 발신자 진위 확인용 보안 프로토콜 #2. SPF처럼 스팸이나 피싱 메일 및 스푸핑 등을 방지하기 위해 설계되었다. 공개 키 암호화 방식이며 이를 위해 디지털 서명을 사용한다. 
+
+비슷한 프로토콜로 DMARC(Domain-based Message Authentication, Reporting and Conformance)도 있다.
+
+
+## SPF, Sender Policy Framework
+
+이메일 발신자 진위 확인용 보안 프로토콜 #1. 발신 주소 위조를 탐지하기 위해 설계되었다. 수신 서버는 SPF 레코드로 허용할 서버를 등록하는 방식으로 작동한다. 주로 스팸이나 피싱 메일을 거르기 위해 사용한다.
+
+
 ## zero-based numbering
 
 0부터 시작하는 서수를 부여하는 방식을 말함.
-
-TODO
 
 
 ## OGNL, Object-Graph Navigation Language
@@ -639,6 +649,14 @@ Unified Modeling Language, 통합모델링 언어. 소프트웨어의 산출(명
 **![reference type](/images/note-1-3.png)**
 
 
+## 큐/스택
+
+- 큐: 한쪽 끝에서 데이터를 추가하고 반대쪽 끝에서 꺼내는 선형 목록. 선입선출(FIFO)이 특징. 큐 대기열 추가를 enqueue, 꺼내는 것을 dequeue라고 한다.
+- 스택: 한쪽 끝에서만 데이터를 넣거나 꺼내는 선형 목록. 스택은 후입선출(LIFO)이 특징이다. 항목 추가를 push, 꺼내는 것을 pop이라 한다.
+
+둘 다 선형 데이터 구조(linear data structures)로 구현한다.
+
+
 ## 내 맴대로 정하는 용어
 
 ### 쪽 번호 매기기 pagination
@@ -646,6 +664,7 @@ Unified Modeling Language, 통합모델링 언어. 소프트웨어의 산출(명
 - currentPage: 현재 페이지
 - rowsPerPage: 한 페이지 당 출력할 게시물. 고정값으로 처리하거나 사용자가 선택한 값을 받는다.
 - totalRows: total number of rows, 모든 데이터의 개수. `SELECT COUNT(*)`의 값을 의미한다.
-- pageLength: totalPage, maxPage, 총 페이지 수를 의미하며 아래처럼 계산한다.
-- indexPerPage: numberPerPage, Number of indexes per page, 한 페이지에서 표시 가능한 최대 인덱스 수.
+- totalNumberOfPages: totalPage, maxPage, 총 페이지 수를 의미하며 아래처럼 계산한다.
+- pageNumbersLength: indexesPerPage, Number of indexes per page, 한 페이지에서 표시 가능한 최대 인덱스 수.
 - startNumber, endNumber: DB검색 시 사용될 한 페이지의 시작 값과 끝 값
+

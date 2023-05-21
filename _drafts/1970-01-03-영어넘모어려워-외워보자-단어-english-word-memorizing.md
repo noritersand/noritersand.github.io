@@ -288,6 +288,19 @@ tags:
 - worthy: 가치 있는, 해볼만한, 훌륭한, 자격 있는
 - wrap-up: 최종적인, 요약, 잘 끝맺기, 마무리 짓다
 
+### 덩어리
+
+- bulk: 큰 규모, 육중한 것. 매우 크고 넓으며 단단한 것. 물리적 개체의 큰 덩어리. bulk of chair/cathedral.
+- chunk: 덩어리, 상당히 많은 양. 크고 두꺼운 어떤 조각. chunk of meat/vegetables information/data.
+- hunk: 큰 덩이 혹은 조각. 고체의 큰 조각. hunk of meat/bread/plastic/concrete.
+- mound: 흙이나 돌더미, 무더기, 많은.  mound of earth/dirt/stones.
+- pile: [명사] 쌓아 놓은 것, 무더기 [동사] 차곡차곡 쌓다. 여러개를 서로 겹쳐 올린 무언가. pile of clothes/books/papers.
+- heap: [명사] 더미, 무더기, 많음, [동사] 쌓다. 어떤것의 (어수선한) 큰 더미. heap of rubble/garbage/wood.
+- stack: [명사] 무더기, 더미, 많음, 다량, [동사] 쌓이다. 어떤 것을 겹겹이 쌓아 올린 것. stack of books/plates.
+- mass: 형체가 없는 덩어리, 양이 많은, 대량의, 대규모의. mass of water/air.
+
+뭐 이렇게 많은지 😮‍💨
+
 
 ## 꼐임
 

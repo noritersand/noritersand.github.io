@@ -48,6 +48,7 @@ tags:
 - [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): 누군가 만들어놓은 README 작성 표준
 - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
+- [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
 
 
 ## 메뉴얼/API DOC/튜토리얼
@@ -75,9 +76,6 @@ tags:
 
 ### 미분류
 
-- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
-- [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 순수 자바스크립트 기반
-- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. 가볍게 쓰기 매우 좋다. NHN에서 만듦
 - [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
 - [Spring](https://spring.io/)
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
@@ -115,14 +113,22 @@ tags:
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Ant Design](https://ant.design/): 잘 모름. 일단 줍줍
 
+### UI 라이브러리
+
+그리드나 달력 등 UI 관련 라이브러리 중 단독으로 사용할 수 있는 것들 모음.
+
+- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. NHN에서 만듦. 가볍게 쓰기 좋지만 페이징 기능에 버그가 꽤 많고, 깃허브 대응이 좀 많이 느리다.
+- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 순수 자바스크립트 기반이다.
+
 
 ## 인프라
 
 ### PaaS
 
-소스만 올리면 앱이 돌아가는 클라우드 서비스.
+PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가는 클라우드 서비스들이다.
 
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 언어는 현재(2023-03-09) Node.js, Ruby, Java, PHP, Go, Scala, Clujure까지 지원함. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
   - [Koyeb](https://www.koyeb.com/)
   - [Fly.io](https://fly.io/)
   - [Northflank](https://northflank.com/)
