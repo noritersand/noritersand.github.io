@@ -96,7 +96,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 6</kbd>: 가변: Discord, Slack
 - <kbd>win + 7</kbd>: VSCODE
 - <kbd>win + 8</kbd>: 가변: IDE#1, Steam
-- <kbd>win + 9</kbd>: 가변: IDE#2, Office, Epic Games
-- <kbd>win + 0</kbd>: 가변: IDE#3, DBMS tool
+- <kbd>win + 9</kbd>: 가변: IDE#2, IntelliJ, MSOffice
+- <kbd>win + 0</kbd>: 가변: IDE#3, Epic Games, DBMS tool
 - <kbd>win + \-</kbd>: Notion (Autohotkey로 확장)
 - <kbd>win + \=</kbd>: Edge (Autohotkey로 확장)
