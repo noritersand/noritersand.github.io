@@ -33,7 +33,7 @@ public class User {
 }
 ```
 
-resultType으로 자바 클래스를 명시했을 때 만약 두 모델 즉, 자바 클래스와 데이터 모델간 프로퍼티명이 다르면 마이바티스의 자동 매핑이 무력화될 것이다. 따라서 이 경우엔 다음처럼 둘의 이름이 일치하도록 alias를 사용하거나:
+resultType으로 자바 클래스를 명시했을 때 만약 두 모델, 즉 자바 클래스와 데이터 모델간 프로퍼티명이 다르면 마이바티스의 자동 매핑이 무력화될 것이다. 따라서 이 경우엔 다음처럼 둘의 이름이 일치하도록 alias를 사용하거나:
 
 ```xml
 <select id="selectUsers" parameterType="int" resultType="com.someapp.model.User">

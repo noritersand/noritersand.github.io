@@ -115,9 +115,11 @@ tags:
 
 그리드나 달력 등 UI 관련 라이브러리 중 단독으로 사용할 수 있는 것들 모음.
 
-- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. NHN에서 만듦. 가볍게 쓰기 좋지만 페이징 기능에 버그가 꽤 많고, 깃허브 대응이 좀 많이 느리다.
 - [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 UI 라이브러리(일명 데이트피커). 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 순수 자바스크립트 기반이다.
+- [ag-grid](https://www.ag-grid.com)
+- [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
+- [Toast UI Grid](https://ui.toast.com/tui-grid): MIT 라이선스의 그리드. NHN에서 만듦. 가볍게 쓰기 좋지만 페이징 기능에 버그(대체로 페이징 쪽)가 꽤 많고, 깃허브 대응이 좀 많이 느리다.
 
 
 ## 인프라
@@ -372,14 +374,6 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
 - [Kibana](https://www.elastic.co/kr/kibana/): Elastic Stack의 일부인 데이터 시각화 및 분석 도구. 모니터링과 APM 기능도 제공됨.
-
-
-## 그리드
-
-- [ag-grid](https://www.ag-grid.com)
-- [jqgrid](http://www.trirand.com/blog)
-- [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
-- [⭐ Toast UI Grid](https://ui.toast.com/tui-grid): 오픈 소스고 가볍게 쓰기 좋다. 아직 불편한 점은 딱히 없음. 
 
 
 ## 개발과 관련 없는 유틸리티 앱

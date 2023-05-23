@@ -122,6 +122,7 @@ tags:
 - `()`: parentheses/round brackets
 - `{}`: braces/curly brackets, mustaches
 - `[]`: square parentheses/square brackets
+- `<>`: angle brackets, 우리말로는 홑화살괄호
 - `,`: comma
 - `.`: periods
 - `''`: apostrophe
@@ -143,18 +144,20 @@ tags:
 - whether: ...인지 (아닌지/(아니면) ~인지), ...이든 (아니든/(아니면) ~이든)
 
 
-## 발음
-
-IPA 기준
+## 발음 기호(IPA)
 
 - |: 
 - ˈ: 
-- e: 에
-- i: 이
+
+### 모음
+
+- ɒ: 아
 - æ: 애
 - ə: 어
-- ɪ: 이
-- ɒ: 아
+- ʌ: 어?
+- e: 에
+- i: 이
+- ɪ: 이?
 
 
 ## 기타

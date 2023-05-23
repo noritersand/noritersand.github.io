@@ -1030,7 +1030,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 #### options
 
-- `-h` `--heads`: 헤드만 출력 즉, 브랜치만 보는 옵션.
+- `-h` `--heads`: 헤드만 출력, 즉 브랜치만 보는 옵션.
 - `-t` `--tags `: 태그만 출력한다.
 - `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags는 저도 모르니 묻지 마십씨오~~
 

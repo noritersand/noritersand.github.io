@@ -58,7 +58,7 @@ function a() {
 a();
 ```
 
-변수는 그 변수가 정의된 함수의 시작부분에서 생성되지만 var 구문이 실행되기 전까지는 초기화되지 않는다.. 즉, 변수는 존재하지만 초기화 되기 전에 참조했으므로 undefined가 반환되는 것이다.
+변수는 그 변수가 정의된 함수의 시작부분에서 생성되지만 var 구문이 실행되기 전까지는 초기화되지 않는다. 즉, 변수는 존재하지만 초기화 되기 전에 참조했으므로 undefined가 반환되는 것이다.
 
 ```js
 console.log(grrr); // can't access lexical declaration `grrr' before initialization

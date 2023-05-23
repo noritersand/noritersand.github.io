@@ -87,7 +87,7 @@ class Child extends Parent {
         System.out.println(super.str);
         System.out.println(this.str);
 
-        super.show(); // 부모의 메서드 즉, 재정의 하기 전의 메서드를 의미함.
+        super.show(); // 부모의 메서드, 즉 재정의 하기 전의 메서드를 의미함.
         // this.show();  // 무한재귀호출
     }
 }
