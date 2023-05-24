@@ -341,7 +341,7 @@ son.__proto__.age; // 45
 son.age; // 17
 ```
 
-한편 `null`을 프로토타입으로 지정하면 순수 사전식(pure dictionary) 객체를 만들 수 있다:
+ℹ️ 한편 `null`을 프로토타입으로 지정하면 순수 사전식(pure dictionary) 객체를 만들 수 있다:
 
 ```js
 var plainObject = Object.create(null);

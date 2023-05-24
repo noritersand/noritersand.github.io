@@ -87,7 +87,7 @@ clone2; // Object { a: 1, b: 3 }
 
 ### JSON 문자열로 바꾼뒤 다시 객체로 변환
 
-`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. JSON 표현이 불가능한 함수는 복제할 수 없다. (JSON에는 function 타입이 없기 때문)
+`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. JSON 표현이 불가능한 타입(e.g. Function)은 복제할 수 없다. 일부 타입들을 제외하면 어쨋든 객체간 연결은 끊어지므로 깊은 복제로 분류하는 경우도 있다.
 
 ```js
 // 복제할 대상
@@ -113,4 +113,48 @@ console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불
 
 ## 깊은 복제 Deep Cloning
 
-TODO
+간단한 방법은 없고 따로 정의해야 함.
+
+### #1
+
+⚠️ 이 함수는 getter/setter 메서드가 필드로 바뀌는 하자가 있다:
+
+```js
+function deepClone(obj) {
+  if (obj === null || typeof obj !== 'object') {
+    return obj;
+  }
+  let clone = Array.isArray(obj) ? [] : {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clone[key] = deepClone(obj[key]);
+    }
+  }
+  return clone;
+}
+```
+
+테스트 코드:
+
+```js
+var child = {
+  _x: 3,
+  set x(value) {
+    this._x = value;
+  },
+  get x() {
+    return 65536;
+  }
+}
+
+var clone = deepClone(child);
+console.log(clone); // Object { _x: 123, x: 65536 }
+console.log(child); // Object { _x: 123, x: Getter & Setter }
+
+Object.keys(child); // Array [ "_x", "x" ]
+child['x']; // 65536
+```
+
+### #2
+
+TODO `Object.getOwnPropertyDescriptors()`를 활용해야 할 것 같은데?
