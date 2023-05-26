@@ -184,7 +184,7 @@ tags:
 - interaction: 상호 작용, 관계, 교류, 소통, 반응
 - interpolate: 삽입하다, 보충하다, ...이라고 말참견하다
 - intrinsic: 본질적인, 고유한, 본래 갖추어진
-- introspection: 내성, 내관, 내성적 성질, 경향
+- introspection: 내성, 내관, 내성적 성질, 경향. (데이터그립에서) 데이터베이스 스키마와 관련된 정보(테이블, 함수, 인덱스 등)를 검사하는 기능
 - inverse: 반대의, 역의, 역
 - invocation: 호출, 기도, 기원, 발동
 - latitude: 위도, 허용 범위, 자유

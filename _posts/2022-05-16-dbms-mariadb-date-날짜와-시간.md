@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-05-16 18:06:38 +0900
-title: '[DBMS] MariaDB 날짜/시간 확인'
+title: '[DBMS] MariaDB 날짜와 시간'
 categories:
   - dbms
 tags:
@@ -29,35 +29,37 @@ tags:
 
 ## 개요
 
-`DATE`, `DATETIME`, `TIME` 관련 정리.
+시간을 다루는 데이터 타입 `DATE`, `DATETIME`, `TIME`과 관련 함수 사용법 정리 글.
 
 
-## 날짜 형식
+## 타입 변환
 
-지원하는 모든 날짜 형식은 [요 페이지](https://mariadb.com/kb/en/date_format/)를 보자.
-
-자주 쓰이는 건 요 정도:
-
-- `%Y`: yearOfEra
-- `%m`: monthOfYear
-- `%d`: dayOfMonth
-- `%H`: hours
-- `%i`: minutes
-- `%s`: seconds
-- `%w`: day
-- `%W`: dayString
-
-ISO 같은 잘 알려진 형식은 `GET_FORMAT()` 함수로 얻을 수 있다:
+문자열을 날짜로:
 
 ```sql
-select get_format(date,'iso'), get_format(datetime,'iso')
+select str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s')
 ```
 
-+----------------------+--------------------------+
-|get_format(date,'iso')|get_format(datetime,'iso')|
-+----------------------+--------------------------+
-|%Y-%m-%d              |%Y-%m-%d %H:%i:%s         |
-+----------------------+--------------------------+
+날짜를 문자열로:
+
+```sql
+select date_format(d.dummy, '%Y-%m-%d %H:%i:%s') as isoString
+from (
+  select '2022-05-16 01:30:55' as dummy
+) d
+```
+
+DATETIME을 DATE로:
+
+```sql
+select date(now())
+```
+
+아니면 `convert()`를 써도 됨
+
+```sql
+select convert(now(), date);
+```
 
 ### DATE_FORMAT(), STR_TO_DATE()
 
@@ -110,34 +112,89 @@ from (
 |2022-05-22 23:30:55|2022-05-22 23:30:55|2022-05-22T23:30:55.000000|2022-05-22|2022     |05         |22        |23   |30     |55     |0  |Sunday   |0          |
 +-------------------+-------------------+--------------------------+----------+---------+-----------+----------+-----+-------+-------+---+---------+-----------+
 
+### 날짜 형식
 
-## 타입 변환
+지원하는 모든 날짜 형식은 [요 페이지](https://mariadb.com/kb/en/date_format/)를 보자.
 
-문자열을 날짜로:
+자주 쓰이는 건 요 정도:
+
+- `%Y`: yearOfEra
+- `%m`: monthOfYear
+- `%d`: dayOfMonth
+- `%H`: hours
+- `%i`: minutes
+- `%s`: seconds
+- `%w`: day
+- `%W`: dayString
+
+ISO 같은 잘 알려진 형식은 `GET_FORMAT()` 함수로 얻을 수 있다:
 
 ```sql
-select str_to_date('2022-05-05 08:00:00', '%Y-%m-%d %H:%i:%s')
+select get_format(date,'iso'), get_format(datetime,'iso')
 ```
 
-날짜를 문자열로:
++----------------------+--------------------------+
+|get_format(date,'iso')|get_format(datetime,'iso')|
++----------------------+--------------------------+
+|%Y-%m-%d              |%Y-%m-%d %H:%i:%s         |
++----------------------+--------------------------+
+
+
+## 현재 날짜/시간 구하기
+
+- `curdate()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
+- `curtime()`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다.
+- `now()`: 'YYYY-MM-DD HH:MM:SS' 혹은 YYYYMMDDHHMMSS.uuuuuu 포맷의 시간과 날짜값을 반환한다. 동의어는 `localtime`, `localtimestamp`, `current_timestamp`
 
 ```sql
-select date_format(d.dummy, '%Y-%m-%d %H:%i:%s') as isoString
-from (
-  select '2022-05-16 01:30:55' as dummy
-) d
+select now()
 ```
 
-DATETIME을 DATE로:
 
-```sql
-select date(now())
+## 날짜/시간 더하고 빼기
+
+```
+date_add(date, interval expr unit)
+date_sub(date,interval expr unit)
 ```
 
-아니면 `convert()`를 써도 됨
+`adddate()`, `subdate()`, `addtime()`, `subtime()`, `add_months()` 등 비슷한 함수가 많이 있는데 그냥 위 두개로 웬만하면 됨.
 
 ```sql
-select convert(now(), date);
+select 
+  date_add(now(), interval 1 day), 
+  date_sub(now(), interval 2 month)
+```
+
+`unit` 자리에 올 수 있는 키워드는 [이 문서에 있고](https://mariadb.com/kb/en/date-and-time-units/), 요약하면 아래와 같다:
+
+- MICROSECOND: Microseconds
+- SECOND: Seconds
+- MINUTE: Minutes
+- HOUR: Hours
+- DAY: Days
+- WEEK: Weeks
+- MONTH: Months
+- QUARTER: Quarters
+- YEAR: Years
+- SECOND_MICROSECOND: Seconds.Microseconds
+- MINUTE_MICROSECOND: Minutes.Seconds.Microseconds
+- MINUTE_SECOND: Minutes.Seconds
+- HOUR_MICROSECOND: Hours.Minutes.Seconds.Microseconds
+- HOUR_SECOND: Hours.Minutes.Seconds
+- HOUR_MINUTE: Hours.Minutes
+- DAY_MICROSECOND: Days Hours.Minutes.Seconds.Microseconds
+- DAY_SECOND: Days Hours.Minutes.Seconds
+- DAY_MINUTE: Days Hours.Minutes
+- DAY_HOUR: Days Hours
+- YEAR_MONTH: Years-Months
+
+사실 함수를 쓰지 않고 그냥 연산자로 해결하는 방법도 있다.
+
+```sql
+select 
+    current_date() + interval 3 month,
+    current_date() - interval 3 year
 ```
 
 

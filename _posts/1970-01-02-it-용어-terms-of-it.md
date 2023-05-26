@@ -131,6 +131,14 @@ major.minor[.patch]
 
 등이 있다.
 
+버전 번호를 매기는 방법론 중 [Semantic Versioning](https://semver.org/)이라는 것이 있다. 줄여서 SemVer라고도 하는데, 여기서는 다음처럼 정의한다:
+
+버전 번호는 `major.minor.patch`로 하고 다음처럼 증가시킨다.
+
+- 기존 버전과 호환되지 않게 API가 바뀌면 major 버전을 올리고,
+- 기존 버전과 호환되면서 새로운 기능을 추가할 때는 minor 버전을 올리고,
+- 기존 버전과 호환되면서 버그를 수정한 것이라면 patch 버전을 올린다.
+
 
 ## Isomorphic Application
 

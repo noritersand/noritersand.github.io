@@ -76,7 +76,7 @@ npm install 모듈명 --save-optional
 # node_modules, package.json 생성 경로 지정
 npm install 모듈명 --prefix .
 
-# nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 확장 모듈
+# nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 패키지
 npm install nodemon -g
 
 # vue 패키지 최신버전으로 설치
@@ -142,7 +142,7 @@ npm uninstall 모듈명 -g
 
 ## 설치한 모듈 실행
 
-[npm Docs: npm-exec](https://docs.npmjs.com/cli/v7/commands/npm-exec)
+[\[npm Docs\] npm-exec](https://docs.npmjs.com/cli/v8/commands/npm-exec)
 
 ```bash
 # 로컬에 설치한 mocha 모듈 실행
@@ -158,9 +158,42 @@ npm exec mocha test/**
 npm exec http-server -p 9090
 ```
 
-`npm exec`와 비슷한 [npx](https://docs.npmjs.com/cli/v7/commands/npx)가 있다. [npm Docs: npx vs npm](https://docs.npmjs.com/cli/v7/commands/npx#npx-vs-npm-exec)
+아니면 [npx](https://docs.npmjs.com/cli/v8/commands/npx)로 실행해도 된다: 
 
-명령 실행에 필요한 패키지를 임시로 설치해준다는 설명이 있음. 임시니까 알아서 지워지겠지?
+```bash
+npx mocha test/**
+npx http-server -p 9090
+```
+
+### npm exec와 npx의 차이
+
+[\[npm Docs\] npx vs npm exec](https://docs.npmjs.com/cli/v8/commands/npm-exec#npx-vs-npm-exec)
+
+우선 `npx`는 명령 실행에 필요한 패키지가 없으면 자동으로 (OS마다 다른 temp 디렉토리 어딘가에) 다운로드한다.
+
+그리고 `npx`는 실행할 명령어 뒤에 오는 옵션을 명령어의 인수로 전달하지만, `npm exec`는 `npm`의 옵션으로 먼저 처리한다. 
+
+다음처럼 작성했을 때:
+
+```bash
+npm exec foo --package=@npmcli/foo
+```
+
+`--package` 옵션은 `foo` 명령의 인수가 아니라 `npm`의 옵션으로 처리된다. 이를 억제하려면 이중 하이픈`--`을 덧붙이면 된다.
+
+예를 들면 아래 두 명령은 같다:
+
+```bash
+npm exec -- tap --bail test/foo.js
+npx tap --bail test/foo.js
+```
+
+(왜 이중 하이픈이 두 번이나 필요한건지는 잘 모르겠지만) 아래 두 명령도 같다:
+
+```bash
+npx nodemon --exec tsc
+npm exec -- nodemon -- --exec tsc
+```
 
 
 ## package.json
@@ -177,7 +210,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 
 ### package.json 구성요소
 
-`init` 으로 자동생성되는 요소들
+`init` 으로 자동생성되는 항목은 다음과 같다:
 
 - name: 프로젝트 이름. 배포 시 필수 항목
 - version: 버전. 배포 시 필수 항목
@@ -186,18 +219,42 @@ npm init <@scope> (same as `npx <@scope>/create`)
 - scripts: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. (npm help scripts로 확인할 것)
 - author: 작성자
 - license:
-- dependencies: 필요한 native 모듈 정보를 적는다. npm install 명령으로 자동 설치된다.
+- dependencies: 필요한 모듈 정보를 적는다. npm install 명령으로 자동 설치된다.
 - devDependencies: 개발 시에만 필요한 모듈을 명시한다. config(package.json의 config와는 다르다. npm config list -l 명령으로 설정목록을 확인 할 수 있고 production 값을 바꾸려면 npm config set production true를 사용한다.)에 production이 true일 때는 배포버전이라 간주하고 설치하지 않는다.
 - repository:
 - keywords: 키워드
 
-### 그 외 추가 가능한 요소
+### 필요하면 추가할 수 있는 항목들
 
 - homepage: 프로젝트의 홈페이지
 - contributors: 공헌자 정보
 - config: scripts가 사용할 수 있는 환경 변수
 - private: npm 저장소 배포 여부. true로 지정하면 배포하지 않는다.
 - engine: 프로젝트의 기반 엔진을 표시한다.
+- TODO
+
+### 패키지 버전 지정하기
+
+```
+"dependencies": {
+  "express": "^3.3.5"
+}
+```
+
+[이 문서](https://docs.npmjs.com/cli/v9/configuring-npm/package-json#dependencies)에 설명된 것 중 중요한 패턴만 추려보면:
+
+- `*`: 아무 버전이나 찾는다.
+- `""`: 빈 문자열이며 `*`와 동일함.
+- `1.2.x`: x로 지정한 단위는 아무 버전이나 허용한다. `1.x`는 메이저 버전이 1이면 다 괜찮다는 뜻이다.
+- `version`: 지정된 버전과 정확히 일치하는 버전을 허용한다.
+- `>version`: 지정된 버전보다 높은 버전을 허용한다.
+- `>=version`: 지정된 버전보다 높거나 같은 버전을 허용한다.
+- `<version`: 지정된 버전보다 낮은 버전을 허용한다.
+- `<=version`: 지정된 버전보다 낮거나 같은 버전을 허용한다.
+- `~version`: '대략적으로 동일한 버전'을 허용한다. `version`을 명시한 단위보다 낮은 단위는 아무 버전이나 괜찮다는 뜻이다. 예를 들어 `~0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다는 낮은 버전을 허용한다. `~1.2`는  `1.2.x`와 같다. `~0`은 `0.x`와 같다.
+- `^version`: '호환되는 버전'만 허용한다. 지정한 버전의 0이 아닌 가장 왼쪽에 있는 숫자가 변하지 않는 선에서 같거나 높은 버전을 허용한다. `^1.2.3`은 1.2.3보다 높거나 같고 2.0.0보다 낮아야 한다. `^0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다 낮아야 한다. `^0.0.3`은 `>=0.0.3 <0.0.4-0`라고 하는 것과 같다. 더 자세한 내용은 [여기](https://github.com/npm/node-semver#caret-ranges-123-025-004)를 보자.
+
+참고로 NPM은 [Semantic Versioning](https://semver.org/)(줄여서 SemVer)을 따른다.
 
 ### example
 
@@ -290,7 +347,7 @@ npm install yarn -g
 # Yarn으로 PACKAGE_NAME 설치 후 package.json에 추가
 yarn add PACKAGE_NAME
 
-# package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 이 파일을 우선 참조함
+# package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 해당 파일을 우선 참조함
 yarn install
 
 # 로컬 경로(yarn.lock이 위치한 디렉터리)에 설치된 패키지 목록 출력
@@ -307,9 +364,7 @@ yarn upgrade PACKAGE_NAME
 yarn upgrade-interactive
 ```
 
-NPM을 완전히 대체하는 것은 아니다. Yarn을 설치해도 NPM은 여전히 사용할 수 있음.
-
-패키지를 추가`add`하거나 삭제`remove`할 때 `package.json`을 수정하므로 버전 관리에 주의할 것.
+Yarn으로 패키지를 추가하거나 삭제해도 `package.json` 내용이 수정되니 주의할 것.
 
 ### yarn.lock
 
@@ -358,16 +413,41 @@ yarn global dir
 뱀발: [Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 NPM보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
 
 
-## 자주 쓰는 패키지
+## 자주 쓰이는 패키지
 
 ### nodemon
 
+- [https://nodemon.io/](https://nodemon.io/)
+- [https://github.com/remy/nodemon](https://github.com/remy/nodemon)
+
 ```bash
-# server.js를 nodemon으로 실행
 nodemon server.js
 ```
 
-TODO
+nodemon은 파일의 변경을 감지하면 자동으로 특정 명령을 재실행해주는 기능을 제공한다. 위 명령은 명령을 실행한 경로를 기준으로 현재 경로와 하위 경로의 파일들이 변경되었을 때 자동으로 `server.js` 파일을 다시 실행하라는 의미다.
+
+`--watch` 옵션은 파일 변경을 감시할 경로를 별도로 지정하는 옵션이다. 예를 들어 nodemon은 기본값으로 상위 경로는 감시하지 않는데, `--watch` 옵션으로 지정하는게 가능하다:
+
+```bash
+# 상위 경로를 감시 대상으로 포함하며 server.js 실행
+nodemon --watch ../ server.js
+```
+
+기본적으로 `.js`, `.mjs`, `.coffee`, `.litcoffee`, `.json` 확장자인 파일만 감시한다. (여기엔 실행 파일의 확장자도 포함된다. `watch.me` 파일을 실행중이면 `.me` 확장자도 감시하는 식) 
+
+만약 감시할 확장자를 추가하려면 `--ext` 옵션을 사용하면 된다:
+
+```bash
+# .me 확장자와 .pug 확장자도 감시
+nodemon --ext me,pug
+```
+
+`--exec` 옵션은 변경을 감지했을 때 실행할 명령어를 지정할 때 사용한다. 지정된 명령어는 스크립트 실행을 대체한다:
+
+```bash
+# 파일이 변경되면 tsc 실행
+nodemon --exec 'tsc'
+```
 
 ### mocha
 

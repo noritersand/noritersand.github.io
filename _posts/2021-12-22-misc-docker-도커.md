@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2021-12-22 13:30:31 +0900
-title: '[Linux] Docker 도커'
+title: '[misc] Docker 도커'
 categories:
-  - linux
+  - misc
 tags:
   - linux
   - docker
@@ -24,7 +24,9 @@ tags:
 
 ## 개요
 
-Docker(이하 도커) 관련 정리글. 윈도우용 도커가 있다길래 써봤는데 WSL용이었다. 😏
+Docker(이하 도커) 관련 정리글. 
+
+실행하려면 리눅스 기반 OS여야 하지만, macOS 혹은 Windows에서도 사용할 수 있도록 Docker Desktop을 제공한다. Windows의 경우 WSL 설치는 필수다.
 
 
 ## Docker Desktop on Windows
