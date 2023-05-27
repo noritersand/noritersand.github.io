@@ -131,7 +131,7 @@ major.minor[.patch]
 
 등이 있다.
 
-버전 번호를 매기는 방법론 중 [Semantic Versioning](https://semver.org/)이라는 것이 있다. 줄여서 SemVer라고도 하는데, 여기서는 다음처럼 정의한다:
+버전 번호를 매기는 방법론 중 [Semantic Versioning](https://semver.org/)이라는 것이 있다. 줄여서 SemVer라고도 하는데, 여기서는 이렇게 정의한다:
 
 버전 번호는 `major.minor.patch`로 하고 다음처럼 증가시킨다.
 
