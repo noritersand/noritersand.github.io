@@ -30,7 +30,7 @@ tags:
 
 ## 개요
 
-class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 가독성 좋은 새로운 문법이다. 완전히 새로 만들어진 기능이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. (업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다더라)
+class는 [ES2015](https://www.ecma-international.org/ecma-262/6.0/#sec-class-definitions)에서 소개된 가독성을 위해 만들어진 문법이다. 사실 완전히 새로운 문법이라기 보단 기존 프로토타입 방식을 살짝 개량한 것에 가깝다. 업계에선 이런걸 [Syntactic sugar](https://en.wikipedia.org/wiki/Syntactic_sugar)라고 부른다고 함.
 
 MDN의 설명에 따르면 class도 사실은 함수라서 사용 방법이 함수처럼 선언문과 표현식으로 나뉜다.
 
@@ -79,6 +79,8 @@ TODO
 
 ## 생성자 constructor
 
+[constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
+
 ```js
 class Numeric extends Number {
   constructor(value) {
@@ -87,9 +89,7 @@ class Numeric extends Number {
 }
 ```
 
-TODO
-
-**생성자 함수(constructor function)가 아님.**
+인스턴스를 생성하고 초기화하기 위한 class의 특수 메서드. **생성자 함수(constructor function)가 아니다.**
 
 
 ## static

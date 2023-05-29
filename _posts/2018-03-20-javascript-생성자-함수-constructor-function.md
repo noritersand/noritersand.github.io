@@ -85,7 +85,7 @@ Person.prototype.sayHi = function() {
 
 ## 생성자
 
-생성자([constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 class에서 사용한다. **생성자 함수가 아니다.** 굳이 이름을 더 길게 부르면 이 쪽은 생성자 메서드다.
+생성자([constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor))는 인스턴스를 생성하고 초기화하기 위한 class의 특수 메서드다.
 
 ```js
 class Square extends Polygon {
@@ -105,3 +105,5 @@ class Square extends Polygon {
   }
 }
 ```
+
+생성자 함수와는 다른 이름으로 구분한다. 이 쪽은 `Object` 프로토타입의 메서드이므로 굳이 이름을 더 길게 부르면 생성자 메서드(constructor method)다.

@@ -185,6 +185,22 @@ function fn5(foo, {txt, txt2}) {
 fn5('Hello', {txt: 'world', txt2: '!'}); // Helloworld!
 ```
 
+그리고 이건 구조 분해 할당이 아니라 단축 표기법(Shorthand notation) 해당하는 내용이지만, 아래 둘은 같다:
+
+```js
+function fn6({a = 1, b = 2}) {
+  console.log('a', a); // 1
+  console.log('b', b); // 234
+}
+fn6({b: 234});
+
+function fn7({a: a = 1, b: b = 2}) {
+  console.log('a', a); // 1
+  console.log('b', b); // 234
+}
+fn7({b: 234});
+````
+
 ### 유효하지 않은 식별자명인 경우
 
 ```js

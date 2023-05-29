@@ -18,10 +18,10 @@ tags:
 
 - [\[MDN\] String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
 
-Standard built-in Objects: String
-
 
 ## 개요
+
+Standard built-in Objects: String
 
 `String.prototype`의 자주 쓰이는 메서드와 프로퍼티 정리.
 
