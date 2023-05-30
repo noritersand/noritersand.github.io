@@ -109,6 +109,7 @@ TODO
 
 TODO
 
+
 ## 데이터셋을 디스크에 저장하기
 
 [https://redis.io/docs/management/persistence/](https://redis.io/docs/management/persistence/)
@@ -191,7 +192,7 @@ set mykey2 qwer asdf
 
 
 
-## 주요 명령어
+## 자주 쓰는 명령어
 
 [https://redis.io/commands/](https://redis.io/commands/)
 
