@@ -206,6 +206,13 @@ Add Selection
 - <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>alt + shift + i</kbd>: add cursors to line ends 선택한 영역에서 각 라인마다 캐럿 분리
 
+### Code Folding
+
+- <kbd>ctrl + shift + [</kbd>: Fold. 코드 접기
+- <kbd>ctrl + shift + ]</kbd>: Unfold. 펼치기
+- <kbd>ctrl + k, ctrl + 0</kbd>: Fold All. 모두 접기
+- <kbd>ctrl + k, ctrl + j</kbd>: Unfold All. 모두 펼치기
+
 ### 그 외
 
 - <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경

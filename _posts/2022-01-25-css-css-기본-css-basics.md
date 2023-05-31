@@ -116,6 +116,10 @@ height: auto
 
 `auto`는 브라우저가 알아서 결정하도록 한다는 것을 의미한다.
 
+### inherit
+
+TODO
+
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
 

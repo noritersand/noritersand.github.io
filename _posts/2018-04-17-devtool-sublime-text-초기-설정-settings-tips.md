@@ -254,10 +254,15 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + r</kbd>: Goto Symbol
 - <kbd>ctrl + shift + r</kbd>: Goto Project Symbol
 
-### folding
+### Code Folding
 
-- <kbd>ctrl + shift + [</kbd>: fold. (보통은 괄호 등으로 작성된 코드 블록을) 접기
-- <kbd>ctrl + shift + ]</kbd>: unfold. 펼치기
+특정 코드 영역을 접고 펴는 기능
+
+- <kbd>ctrl + shift + [</kbd>: Fold. (보통은 괄호 등으로 작성된 코드 블록을) 접기
+- <kbd>ctrl + shift + ]</kbd>: Unfold. 펼치기
+- <kbd>ctrl + k, ctrl + 1</kbd>: Fold All. 모두 접기
+- <kbd>ctrl + k, ctrl + j</kbd>: Unfold All. 접혀있는 코드 전부 펼치기
+- <kbd>ctrl + k, ctrl + 숫자키</kbd>: Fold Level 2~9. 코드 깊이에 따라 해당하는 모든 코드를 접는 기능이다. 숫자키는 2부터 9까지 가능
 
 ### 편집
 
@@ -267,7 +272,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + m</kbd>: 가까운 닫는 괄호(bracket) 혹은 여는 괄호로 이동.
 - <kbd>ctrl + shift + m</kbd>: 가까운 닫는 괄호까지 텍스트 선택.
 
-### overlay
+### Overlay
 
 - <kbd>ctrl + \`</kbd>: 콘솔창
 - <kbd>ctrl + shift + p</kbd>: Command Palatte 빠른 명령어 탐색창 열기
@@ -276,7 +281,12 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + g</kbd>: 라인 이동
 - <kbd>ctrl + ;</kbd>: 키워드 탐색창 열기
 
-### 조합형 단축키
+### 매크로
+
+- <kbd>ctrl + q</kbd>: 매크로 기록 시작/종료
+- <kbd>ctrl + shift + q</kbd>: 매크로 실행 (하나밖에 안되나 보다)
+
+### 기타 조합형 단축키
 
 - <kbd>ctrl + k</kbd>: 단축키 시퀀스 시작
 - <kbd>ctrl + k, ctrl + u</kbd>: 대문자 변환
