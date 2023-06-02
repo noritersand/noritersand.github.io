@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-01-17 17:10:43 +0900
-title: '[Spring] 스프링 부트 note'
+title: '[Spring] 스프링 note'
 categories:
   - spring
 tags:
@@ -27,7 +27,7 @@ tags:
 
 ## 개요
 
-요즘 필수로 쓰이는 스프링 부트, 스프링 시큐리티에 대한 짤막한 정리 모음. 
+스프링 사용하면서 수집한 모든 것을 정리함.
 
 
 ## 스태틱 리소스
@@ -212,3 +212,10 @@ return Optional.ofNullable(authentication)
     <p>${principal.name}님</p>
 </sec:authorize>
 ```
+
+
+## package org.springframework.http.ResponseEntity
+
+스프링에서 컨트롤러의 반환 타입으로 자주 사용되는 클래스. Spring Framework로 분류한다.
+
+TODO 어떻게 응답하는지

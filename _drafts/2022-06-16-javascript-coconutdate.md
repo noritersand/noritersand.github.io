@@ -129,6 +129,4 @@ class CoconutDate {
 }
 ```
 
-원래 `getter`가 잔뜩 있었는데, 아무래도 `getter`는 필드를 단순 반환만 하는게 맞는 것 같아서 없앰.
-
 끗.
