@@ -16,10 +16,12 @@ tags:
 
 - [https://www.autohotkey.com/](https://www.autohotkey.com/)
 - [https://www.autohotkey.com/docs/AutoHotkey.htm](https://www.autohotkey.com/docs/AutoHotkey.htm)
+- [https://www.autohotkey.com/docs/v2/](https://www.autohotkey.com/docs/v2/)
 
 #### 버전 정보
 
-- AutoHotkey_1.1.3x
+- AutoHotkey v1.1.x
+- AutoHotkey v2.x
 
 
 ## 개요
@@ -32,6 +34,17 @@ AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플�
 
 서브라임 텍스트에선 Java syntax를 쓰는게 가장 보기 좋다. 그런데 완전하지 않으므로 [AutoHotkey](https://packagecontrol.io/packages/AutoHotkey) 패키지를 설치하자. VSCODE에서도 누군가 이미 확장 기능을 만들어놨다(이쪽이 더 이쁘다).
 
+
+## 2.x에서 달라진 점
+
+[https://www.autohotkey.com/docs/v2/v2-changes.htm](https://www.autohotkey.com/docs/v2/v2-changes.htm)
+
+TODO
+
+
+**이 아래부터는 AutoHotkey 1.1.x 버전에서만 유효하며 2.x에선 사용 불가능**
+
+---
 
 ## 스크립트 작성 방법
 

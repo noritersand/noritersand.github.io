@@ -160,7 +160,7 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 {
   "fallback_encoding": "UTF-8",
   "font_face": "Consolas",
-  "font_size": 11,
+  "font_size": 10,
   "tab_completion": false,
   "auto_complete": true,
   "auto_complete_commit_on_tab": true,
