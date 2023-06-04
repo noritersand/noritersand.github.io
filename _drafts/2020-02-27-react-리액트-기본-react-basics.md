@@ -112,7 +112,7 @@ yarn install
 
 JavaScript XML 혹은 JavaScript eXtended로 추정. 페이스북이 리액트와 함께 만든것으로 보임. **컴파일이 필요한 언어**이며 스크립트 내에서 (가독성을 위해) HTML 태그를 사용하려는 목적으로 만들어졌음.
 
-```js
+```jsx
 const element = (
   <div>
     <h1>Hello!</h1>
@@ -127,11 +127,11 @@ const image = <img src={user.avatarUrl} />;
 
 ### 이걸 브라우저가 읽을 수 있나?
 
-당연히 그대로는 못 읽는다. JSX는 Babel에 의해 js로 컴파일된다. Babel 설치는 아래의 [설치](#heading-설치) 항목을 보자
+당연히 그대로는 못 읽는다. JSX는 Babel에 의해 js로 컴파일된다. Babel 설치는 위의 [설치](#heading-설치) 항목을 보자
 
 예를 들어 아래 코드는:
 
-```js
+```jsx
 const element = (
   <h1 className="greeting">
     Hello, world!
@@ -151,7 +151,7 @@ const element = React.createElement(
 
 하나 더 예를 들면:
 
-```js
+```jsx
 class ShoppingList extends React.Component {
   render() {
     return (
@@ -197,13 +197,13 @@ ReactDOM.render(
 
 ### 태그 속성 정의
 
-```js
+```jsx
 const element = <div tabIndex="0"></div>;
 ```
 
 ### 자바스크립트 표현식 삽입
 
-```js
+```jsx
 const element = <img src={user.avatarUrl}></img>;
 ```
 
@@ -213,7 +213,7 @@ JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때�
 
 그렇지 않은 표현은 문법 에러다:
 
-```js
+```jsx
 const wrongSyntax = (
   <input type="text" />
   <button>push me</button>
@@ -223,7 +223,7 @@ const wrongSyntax = (
 
 아무 태그나 맨 바깥에 추가하면 되는데, 만약 어떤 태그도 추가하고 싶지 않을땐 더미 태그를 명시하는 방법이 있다:
 
-```js
+```jsx
 const correctSyntax = (
   <>
     <input type="text" />
@@ -240,13 +240,13 @@ React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 �
 
 다음처럼 프로퍼티의 값이 string 리터럴인 경우:
 
-```js
+```jsx
 <div className={"abc"}><div>
 ```
 
 중괄호는 생략해도 된다:
 
-```js
+```jsx
 <div className="abc"><div>
 ```
 
@@ -254,7 +254,7 @@ React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 �
 
 아래 둘은 같은 결과가 나온다:
 
-```js
+```jsx
 const UnorderedList = (
   <ul>
     {[
@@ -278,7 +278,7 @@ const UnorderedList2 = (
 
 ### 삼항 연산자 적용
 
-```js
+```jsx
 let doNotRender = true;
 const conditional = (
   <div>
@@ -382,7 +382,7 @@ TODO 뭔 소린지 모르겠음. SSR 페이지는 이거 쓰라고 검색 결과
 
 아래처럼 쓴다:
 
-```js
+```jsx
 function Noop(props) {
   return (
     <div>{props.foo}</div>
@@ -412,7 +412,7 @@ ReactDOM.render(<Newbie/>, document.querySelector('#root'));
 
 그냥 요따구로 하면 됨:
 
-```js
+```jsx
 class Square extends React.Component {
   render() {
     return (
@@ -433,7 +433,7 @@ state는 컴포넌트의 현재 상태를 나타내는 객체다.
 
 16.8 버전부터 추가된 `useState()`를 사용하지 않는한 함수 컴포넌트에선 state를 사용할 수 없다:
 
-```js
+```jsx
 function App() {
   return (
     <div>{this.state}</div>
@@ -444,7 +444,7 @@ function App() {
 
 클래스 컴포넌트에선 아래처럼 생성자에서 초기화하는 방식으로 사용~~한다~~했었다:
 
-```js
+```jsx
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -509,7 +509,7 @@ this.setState((state) => {
 
 리액트는 사용자 정의 컴포넌트의 태그 속성으로 전달된 값을 해당 컴포넌트에 단일 객체로 전달하는데 이 객체를 props라고 한다:
 
-```js
+```jsx
 function Header(props) {
   return (
     <p>{props.helloText}</p>

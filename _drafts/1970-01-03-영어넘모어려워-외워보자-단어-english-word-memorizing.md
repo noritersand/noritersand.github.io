@@ -25,6 +25,23 @@ tags:
 - cabbage: 양배추
 - aye/nay: 찬성/반대
 - timeframe: 기간, 시간 범위, 어떤 프로젝트, 이벤트, 작업 등을 완료하는 데 걸리는 시간.
+- recapitulation: [명사] 요점의 되풀이, 요약, 개요, 생물 발생 반복, 음악 재현부. 보통 Recap 
+
+
+## 꼐임 혹은 그냥 머시썸
+
+- precursor: 선도자(격인 사람·사물), 선각자
+- forerunner: 선구자, 전신; 전조, 선조
+- prothean: 프로시언. 매스 이펙트의 고대 외계 종족
+- steadfast: [형용사] 호감 (태도·목표가) 변함없는 (=firm)
+- shearwater: [명사] 슴새
+- harvestman: [명사] 장님거미, 통거미
+- Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
+- perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
+- cynicism: 냉소, 비웃음
+- sarcasm: 빈정댐, 비꼼
+- jester: [명사] (과거 왕이 부리던) 어릿광대
+- pitfall: [명사] (눈에 잘 안 띄는) 위험[곤란], 함정
 
 
 ## 수학 관련 영단어(영-한)
@@ -67,26 +84,7 @@ tags:
 - trivial: 자명한
 
 
-## 복합어, 합성어
-
-- attach event handler: 이벤트 핸들러 할당
-- cognitive complexity: 인지 복잡성
-- fiducial point: 기준점, 기준이 되는 지점
-- Form factor: 컴퓨터 시스템의 각 부품의 물리적 치수의 형태
-- frequently asked questions: 자주 묻는 질문
-- interlocking(혹은 linking) service with product: 상품을 연동하는 서비스
-- privacy policy: 개인정보 처리방침
-- terms of service: 이용약관
-
-
-## 내가 만든 합성어
-
-- switchAvailability/switchDisability: 속성값에 따라 활성화/비활성화 토글
-- switchfunctionality: 위 두개 합친거
-- switchVisibility: 속성값에 따라 가시성 토글
-- privacyPolicyConsentPage: 개인정보 정책 동의 페이지
-
-### IT 관련
+## IT 관련
 
 - 쪽: page
 - 장: sheet, leaf
@@ -289,7 +287,8 @@ tags:
 - worthy: 가치 있는, 해볼만한, 훌륭한, 자격 있는
 - wrap-up: 최종적인, 요약, 잘 끝맺기, 마무리 짓다
 
-### 덩어리
+
+## 덩어리
 
 - bulk: 큰 규모, 육중한 것. 매우 크고 넓으며 단단한 것. 물리적 개체의 큰 덩어리. bulk of chair/cathedral.
 - chunk: 덩어리, 상당히 많은 양. 크고 두꺼운 어떤 조각. chunk of meat/vegetables information/data.
@@ -303,16 +302,24 @@ tags:
 뭐 이렇게 많은지 😮‍💨
 
 
-## 꼐임
+## 복합어, 합성어
 
-- precursor: 선도자(격인 사람·사물), 선각자
-- forerunner: 선구자, 전신; 전조, 선조
-- prothean: 프로시언. 매스 이펙트의 고대 외계 종족
-- steadfast: [형용사] 호감 (태도·목표가) 변함없는 (=firm)
-- shearwater: [명사] 슴새
-- harvestman: [명사] 장님거미, 통거미
-- Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
-- perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
+- attach event handler: 이벤트 핸들러 할당
+- cognitive complexity: 인지 복잡성
+- fiducial point: 기준점, 기준이 되는 지점
+- Form factor: 컴퓨터 시스템의 각 부품의 물리적 치수의 형태
+- frequently asked questions: 자주 묻는 질문
+- interlocking(혹은 linking) service with product: 상품을 연동하는 서비스
+- privacy policy: 개인정보 처리방침
+- terms of service: 이용약관
+- terminate popup sequence: 모든 팝업 닫기
+
+### 내가 만든 합성어
+
+- switchAvailability/switchDisability: 속성값에 따라 활성화/비활성화 토글
+- switchfunctionality: 위 두개 합친거
+- switchVisibility: 속성값에 따라 가시성 토글
+- privacyPolicyConsentPage: 개인정보 정책 동의 페이지
 
 
 ## 이모지

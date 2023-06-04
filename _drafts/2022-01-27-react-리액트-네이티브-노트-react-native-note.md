@@ -73,7 +73,7 @@ useEffect(() => {
 
 `<Modal/>`일 땐 `onBackButtonPress` 쓰면 됨:
 
-```js
+```jsx
 <Modal
   onBackButtonPress={ok}
 >

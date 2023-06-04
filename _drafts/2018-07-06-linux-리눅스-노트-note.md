@@ -83,7 +83,11 @@ find aaa_dir -name "*.png" -printf "%f\n" -exec mv {} zzz_dir/ \;
 
 ## 네트워크 인터페이스
 
-TODO
+컴퓨터와 네트워크를 연결하는 장치를 의미하지만 물리적 형태가 없을 수도 있음.
+
+`eth0`은 네트워크 인터페이스의 식별자로 자주 사용되는데 `eth`는 Ethernet을 의미하며 0은 첫 번째 Ethernet 인터페이스라는 의미다.
+
+리눅스에서만 쓰는 개념은 아니고 윈도우 등의 다른 운영 체제에도 존재한다.
 
 ### Network bonding
 

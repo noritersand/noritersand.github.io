@@ -92,7 +92,7 @@ console.log(rf); // Object { current: "멋에쓰는물건인고" }
 
 보통 재렌더링 없이 재할당하거나 DOM 객체가 필요할 때 사용한다. 아래는 `<button>`이 클릭될 때마다 `focused.current`의 객체가 바뀌는 코드다:
 
-```js
+```jsx
 function UseRefTest() {
   const [focusSwitch, setFocusSwitch] = useState(true);
   const focused = useRef(null);
