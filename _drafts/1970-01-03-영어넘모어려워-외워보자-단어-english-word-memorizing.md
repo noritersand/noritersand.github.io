@@ -42,6 +42,8 @@ tags:
 - sarcasm: 빈정댐, 비꼼
 - jester: [명사] (과거 왕이 부리던) 어릿광대
 - pitfall: [명사] (눈에 잘 안 띄는) 위험[곤란], 함정
+- perish: [동사] (특히 끔찍하게) 죽다, 비명횡사하다, 소멸되다, (고무 같은 물질이) 닳다
+  - DST의 소스 파일을 보면 시간이 지나 닳거나 상해서 못쓰게 변하는 아이템 혹은 음식에 대한 설정으로 perishable, perishing, perish time이란 단어를 사용함
 
 
 ## 수학 관련 영단어(영-한)
@@ -100,7 +102,8 @@ tags:
 - apex: (보통 the apex) 선단(先端), 향점(solar apex), 정점, 정상, 최고조
 - appendix: 부록, 맹장
 - applicable: 적용할 수 있는, 적절한, 적용 가능한
-- approval: [명사] 인정, 찬성, 승인. permission과 같지만 보다 특정 기관이나 단체에서 요구하는 공식 승인을 의미함.
+- approval: [명사] 인정, 찬성, 승인. 
+  - permission과 같지만 보다 특정 기관이나 단체에서 요구하는 공식 승인을 의미함.
 - archive: [명사] 기록 보관소 [동사] 기록 보관소에 보관하다, 컴퓨터 파일을 보관하다
 - arithmetic: 산술, 산수
 - association: 연관, 협회
@@ -112,11 +115,12 @@ tags:
 - character: 문자, 숫자, 구두점, 공백, 심볼을 표현함
 - clause: 조항, 절, 약관, 규정, 문구
 - clone: 클론, 복제 (생물), 복사품(같은 물건이나 사람), 복제하다  
-  명사이면서 동사이기도 한데 목적어가 있는 경우엔 clone, 목적어가 없으면 cloning이 맞는 표현임.  
-  (+ object) "Do you think scientists should clone humans?"
-  (no object) a plant produced by cloning
+  - 명사이면서 동사이기도 한데 목적어가 있는 경우엔 clone, 목적어가 없으면 cloning이 맞는 표현임.  
+  - (+ object) "Do you think scientists should clone humans?"
+  - (no object) a plant produced by cloning
 - coalition: 연합, 연대, 단체, 동맹, 통합
-- coercion: [명사] (무력/협박에 의한) 강제[강압], "may cause unexpected type coercion"
+- coercion: [명사] (무력/협박에 의한) 강제[강압]
+  - "may cause unexpected type coercion"
 - cohesion: 화합, 응집력
 - comfortable: 편안한, 편한, 쾌적한, 안락한, 안정된
 - compatible: 호환되는, 조화하는, 양립, 맞다, 공존
@@ -144,7 +148,8 @@ tags:
 - dialect: 방언, 지방 사투리, 지방어
 - diffing: 비교하기
 - discard: 버리다, 폐기, 포기, 가치없는, 처리
-- discouraged: 낙담한, 의욕을 잃어버린, 낙심한. *this code is discouraged: 이 코드는 사용하지 않는 것이 좋다*
+- discouraged: 낙담한, 의욕을 잃어버린, 낙심한
+  - *this code is discouraged: 이 코드는 사용하지 않는 것이 좋다*
 - discriminator: 판별 장치, 식별하는 사람
 - distinctive: 독특한, 특유의, 뛰어난
 - distinguish: 구별하다, 구분하다, 분간하다, 특징짓다
@@ -162,7 +167,9 @@ tags:
 - failure: 실패, 고장, 실수, 실패작, 하지 않기
 - fallback: 대체 시스템, 의존할 사물, 후퇴
 - fall-through: 완료[실현]되지 못하다
-- false positive/negative: 직역하면 가짜 양성/음성. 과학적(scientific) 테스트에 대한 부정확하거나 틀린 결과를 의미함. 컴퓨터 백신이 바이러스를 오탐하는 경우를 false positive라고 표현한다.
+- false positive/negative: 직역하면 가짜 양성/음성
+  - 과학적(scientific) 테스트에 대한 부정확하거나 틀린 결과를 의미함.
+  - 컴퓨터 백신이 바이러스를 오탐하는 경우를 false positive라고 표현한다.
 - forgery: 문서 위조, 서명 위조, 도용
 - fragment: 파편(부서진거)
 - framing: 구성, 틀짜기, 구조
@@ -183,11 +190,14 @@ tags:
 - interaction: 상호 작용, 관계, 교류, 소통, 반응
 - interpolate: 삽입하다, 보충하다, ...이라고 말참견하다
 - intrinsic: 본질적인, 고유한, 본래 갖추어진
-- introspection: 내성, 내관, 내성적 성질, 경향. (데이터그립에서) 데이터베이스 스키마와 관련된 정보(테이블, 함수, 인덱스 등)를 검사하는 기능
+- introspection: 내성, 내관, 내성적 성질, 경향
+  - (데이터그립에서) 데이터베이스 스키마와 관련된 정보(테이블, 함수, 인덱스 등)를 검사하는 기능
 - inverse: 반대의, 역의, 역
 - invocation: 호출, 기도, 기원, 발동
 - latitude: 위도, 허용 범위, 자유
-- letter: 알파벳이나 한글 같은 자연어의 기본 단위. 'a letter'는 '한 글자'라고 번역한다. character에 비교하면 자연어만을 의미하기 때문에 character는 letter를 포함한다고 할 수 있다.
+- letter: 알파벳이나 한글 같은 자연어의 기본 단위
+  - 'a letter'는 '한 글자'라고 번역한다. 
+  - character에 비교하면 자연어만을 의미하기 때문에 character는 letter를 포함한다고 할 수 있다.
 - lexical: 어휘적인, 사전의, 사전적인
 - lineal: 직계의, 대대로 전해 내려오는, 직계 존속
 - lift [명사] 승강기, [동사] 들어 올리다; 들리다, 태워 주기, [타동사] 풀다(해제/폐지), 이송하다, 훔치다, 표절(도용)하다
@@ -217,7 +227,8 @@ tags:
 - particular: 특정한, (보통보다 더 많거나 대단하여) 특별한, (특히 공적 문서에 기록하는) 자세한 사실
 - perform: 수행하다, 공연하다, 연주하다, 노래하다, 연기하다
 - permute: ...을 변경하다, 바꾸다, ...의 순서를 바꾸다
-- permission: [명사] 허락, 허가, 승인. approval과 같은 의미인데 좀 더 비공식적인 상황에 사용
+- permission: [명사] 허락, 허가, 승인
+  - approval과 같은 의미인데 좀 더 비공식적인 상황에 사용
 - phrase: 말, 구절, 문구, 어구
 - piece: 조각
 - potentially: 잠재적으로, 아마도, 어쩌면
@@ -232,7 +243,8 @@ tags:
 - primal:[형용사] 원시의, 태고의 (=primeval)
 - primordial: [형용사] 태고의, 원시 시대부터의 (=primeval), [형용사] 원시[원초]적인 (=primeval)
 - production server: 운영(실) 서버. A production server is a server used to host website content and applications for deployment to a live environment. 자매품: staging server/testing server
-- production: 생산, 제작, 제품, 프로덕션. *(문맥에따라) 테스트 제품이 아닌 실제 판매용 제품/운영중인 제품*
+- production: 생산, 제작, 제품, 프로덕션
+  - *(문맥에따라) 테스트 제품이 아닌 실제 판매용 제품/운영중인 제품*
 - proper: 적절한, 제대로 된, (수준 등이) 제대로 된, 참된, (사회적/도덕적으로) 올바른
 - punctuation: 구두점, 구두법, 글의 뜻을 정확하게 전달하기 위하여 문장의 각 부분에 찍는 여러 가지 부호
 - quotient: 상, 몫, 할당
