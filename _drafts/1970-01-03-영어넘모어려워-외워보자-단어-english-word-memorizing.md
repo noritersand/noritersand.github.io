@@ -25,7 +25,16 @@ tags:
 - cabbage: 양배추
 - aye/nay: 찬성/반대
 - timeframe: 기간, 시간 범위, 어떤 프로젝트, 이벤트, 작업 등을 완료하는 데 걸리는 시간.
-- recapitulation: [명사] 요점의 되풀이, 요약, 개요, 생물 발생 반복, 음악 재현부. 보통 Recap 
+- recapitulation: [명사] 요점의 되풀이, 요약, 개요, 생물 발생 반복, 음악 재현부
+  - recap이라고 줄여서 쓰기도 함
+- treat: 
+  - [동사] (특정한 태도로) 대하다[다루다/취급하다/대우하다], 여기다, 치부하다
+  - [명사] (특히 남을 대접하여 하는[주는]) 특별한 것[선물], 대접, 한턱
+- cynicism: 냉소, 비웃음
+- sarcasm: 빈정댐, 비꼼
+- pitfall: [명사] (눈에 잘 안 띄는) 위험[곤란], 함정
+- caveat: [명사] 라틴어에서 (특정 절차를 따르라는) 통고[경고]
+  - caveats: 주의사항
 
 
 ## 꼐임 혹은 그냥 머시썸
@@ -38,10 +47,7 @@ tags:
 - harvestman: [명사] 장님거미, 통거미
 - Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
 - perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
-- cynicism: 냉소, 비웃음
-- sarcasm: 빈정댐, 비꼼
 - jester: [명사] (과거 왕이 부리던) 어릿광대
-- pitfall: [명사] (눈에 잘 안 띄는) 위험[곤란], 함정
 - perish: [동사] (특히 끔찍하게) 죽다, 비명횡사하다, 소멸되다, (고무 같은 물질이) 닳다
   - DST의 소스 파일을 보면 시간이 지나 닳거나 상해서 못쓰게 변하는 아이템 혹은 음식에 대한 설정으로 perishable, perishing, perish time이란 단어를 사용함
 
@@ -200,7 +206,7 @@ tags:
   - character에 비교하면 자연어만을 의미하기 때문에 character는 letter를 포함한다고 할 수 있다.
 - lexical: 어휘적인, 사전의, 사전적인
 - lineal: 직계의, 대대로 전해 내려오는, 직계 존속
-- lift [명사] 승강기, [동사] 들어 올리다; 들리다, 태워 주기, [타동사] 풀다(해제/폐지), 이송하다, 훔치다, 표절(도용)하다
+- lift: [명사] 승강기, [동사] 들어 올리다; 들리다, 태워 주기, [타동사] 풀다(해제/폐지), 이송하다, 훔치다, 표절(도용)하다
 - longitude: 경도
 - isomorphic: [형용사] 같은 모양의, 동일 구조의, 등정형(等晶形)의
 - malformed: 기형의, 흉하게 생긴, 꼴이 흉한
@@ -306,9 +312,15 @@ tags:
 - chunk: 덩어리, 상당히 많은 양. 크고 두꺼운 어떤 조각. chunk of meat/vegetables information/data.
 - hunk: 큰 덩이 혹은 조각. 고체의 큰 조각. hunk of meat/bread/plastic/concrete.
 - mound: 흙이나 돌더미, 무더기, 많은.  mound of earth/dirt/stones.
-- pile: [명사] 쌓아 놓은 것, 무더기 [동사] 차곡차곡 쌓다. 여러개를 서로 겹쳐 올린 무언가. pile of clothes/books/papers.
-- heap: [명사] 더미, 무더기, 많음, [동사] 쌓다. 어떤것의 (어수선한) 큰 더미. heap of rubble/garbage/wood.
-- stack: [명사] 무더기, 더미, 많음, 다량, [동사] 쌓이다. 어떤 것을 겹겹이 쌓아 올린 것. stack of books/plates.
+- pile: 
+  - [명사] 쌓아 놓은 것, 무더기 
+  - [동사] 차곡차곡 쌓다. 여러개를 서로 겹쳐 올린 무언가. pile of clothes/books/papers.
+- heap: 
+  - [명사] 더미, 무더기, 많음, 
+  - [동사] 쌓다. 어떤것의 (어수선한) 큰 더미. heap of rubble/garbage/wood.
+- stack: 
+  - [명사] 무더기, 더미, 많음, 다량, 
+  - [동사] 쌓이다. 어떤 것을 겹겹이 쌓아 올린 것. stack of books/plates.
 - mass: 형체가 없는 덩어리, 양이 많은, 대량의, 대규모의. mass of water/air.
 
 뭐 이렇게 많은지 😮‍💨
@@ -325,6 +337,7 @@ tags:
 - privacy policy: 개인정보 처리방침
 - terms of service: 이용약관
 - terminate popup sequence: 모든 팝업 닫기
+- best practice: 모범 사례, 가장 좋은 방법
 
 ### 내가 만든 합성어
 

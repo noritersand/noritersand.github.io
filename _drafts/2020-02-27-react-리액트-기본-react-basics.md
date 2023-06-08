@@ -445,6 +445,7 @@ function App() {
 클래스 컴포넌트에선 아래처럼 생성자에서 초기화하는 방식으로 사용~~한다~~했었다:
 
 ```jsx
+// 옛날 방식
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -463,7 +464,7 @@ class App extends React.Component {
 
 ### state 값 변경하기
 
-state는 (생성자에서 초기화하는 것은 제외하면) 직접 값을 재할당하는게 아니라 `setState()` 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
+state는 (생성자에서 초기화하는 것은 제외하면) 직접 값을 재할당하는 게 아니라 `setState()` 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
 ```js
 state = {
@@ -473,6 +474,8 @@ state = {
 this.state.someFlag = true; // X
 this.setState({someFlag: true}); // O
 ```
+
+\* `setState()`는 state의 값을 변경하는 함수로 'state setter function' 혹은 'state update function'이라고 부르기도 하는데, 공식 가이드에선 'the state setting function'이라고 함.
 
 리액트는 컴포넌트가 다시 렌더링을 할 때까지 state의 값을 갱신하지 않는다. [링크: this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
 
@@ -492,7 +495,7 @@ console.log(this.state.count); // X
 대신 다음처럼 updater 함수를 전달하는 방법이 권장된다:
 
 ```js
-this.setState((state) => {
+this.setState(state => {
   return {
     count: state.count++
   }
