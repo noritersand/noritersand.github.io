@@ -7,6 +7,7 @@
 - [ruby](https://www.ruby-lang.org/ko/)
 - [jekyll](https://jekyllrb.com/)
 - [kramdown](https://kramdown.gettalong.org/)
+- [Simple Texture theme (developed by Yi Zeng, powered by Jekyll)](https://yizeng.me/blog/)
 
 
 ## 📌 Table of Contents

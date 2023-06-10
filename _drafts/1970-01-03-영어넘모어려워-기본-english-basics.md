@@ -92,10 +92,9 @@ tags:
 - foreign word, loanword: 외래어
 - form: 형태
 - idiom: 관용구, 숙어
-- informal polite, formal: 해요체, 존댓말
-- informal, impolite, casual: 해체, 반말
+- formal style, polite: 격식체
+- informal style, impolite, casual: 비격식체
 - IPA, International Phonetic Alphabet: 국제 음성 기호 diamon[daɪəmənd]
-- more formal, polite: 합쇼체, 높임말
 - negative statement: 부정문
 - object: 목적어
   - direct object: 직접 목적어
