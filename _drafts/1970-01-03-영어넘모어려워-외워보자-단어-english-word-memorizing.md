@@ -50,6 +50,8 @@ tags:
 - jester: [명사] (과거 왕이 부리던) 어릿광대
 - perish: [동사] (특히 끔찍하게) 죽다, 비명횡사하다, 소멸되다, (고무 같은 물질이) 닳다
   - DST의 소스 파일을 보면 시간이 지나 닳거나 상해서 못쓰게 변하는 아이템 혹은 음식에 대한 설정으로 perishable, perishing, perish time이란 단어를 사용함
+- ontology: 존재론
+- tenet: 주의, 교리
 
 
 ## 수학 관련 영단어(영-한)
@@ -58,6 +60,7 @@ tags:
 - algebra: 대수학
 - ambiguous: 애매한, 모호한, 중의적인, 불분명한, 아리송한
 - arithmetic: 산술
+- attach-event-handler: 이벤트 핸들러 할당 혹은 부착
 - axiom: 공리, 경구, 격언, 이치, 원칙
 - binary/octal/decimal/hexadecimal: 2진법/8진법/10진법/16진법
 - common multiple: 공배수
@@ -115,6 +118,7 @@ tags:
 - association: 연관, 협회
 - assume: 가정하다, 생각하다, 추측하다, 추정하다, 맡다
 - augmented: 증강, 강화, 증가, 복합, 늘어난
+- best-practice: 모범 사례, 가장 좋은 방법
 - capability: 능력, 가능성, 재능
 - certain: 특정한, 어떤, 어느, 확실한, 일부
 - characteristic: 특유한, 독특한, 특징적인, (보통 characteristics) 특질, (로그의) 지표
@@ -132,11 +136,18 @@ tags:
 - compatible: 호환되는, 조화하는, 양립, 맞다, 공존
 - compliant: 유연, 순응하는, 이완, 연성
 - composition: 구성, 합성
+- coalesce: [동사] [격식] (더 큰 덩어리로) 합치다 (=amalgamate)
+  - 정치와 군대 등에선, 부분을 결합하여 전체를 만드는 것. 더 자세하게는, 유사한 부분을 병합하여 결합된 구성 단위를 만드는 것(similar parts to form a cohesive unit)을 말함.
+  - 컴퓨턱 과학에서 coalescing은 기억장치의 공백을 인접하며 사용 가능한 블록과 병합하는 것을 말한다.
+  - 몇몇 프로그래밍 언어에선 연산자(JavaScript)나 함수(Python, MariaDB)로 존재하는데, 좌변이 `null`일 때 우변을 선택한다거나 함수 혹은 리스트에서 `null`이 아닌 첫 번째 요소를 반환하는 등의 역할을 한다.
+  - 정유 산업에선 기름과 기름이 아닌 것을 분리하는 coalescing filter가 있다.
 - concern: 우려, 관한, 걱정, 문제, 관심사
 - concurrent: 동시 발생의, 병발 사정, 공동으로 작용하는
 - conditional: 조건부의 (형용사)
 - conjunction: 접속사, 연대, 관련, 공동, 동시 발생
+- cognitive-complexity: 인지 복잡성
 - consent: 동의, 동의하다, 합의
+- convolutional-neural-network: 합성곱 신경망, 컨볼루션 신경망((딥 러닝에서 선형 연산을 활용하여 시각 이미지를 분석하는 인공 신경망))
 - coupling: 연결, 결합, 성교; 교미, (두 차량이나 기계 등의) 연결 장치
 - coverage: 보도, 커버리지, 방송, 범위, 지역
 - credential: 신임장, 자격, 신용 증명이 되는
@@ -176,10 +187,14 @@ tags:
 - false positive/negative: 직역하면 가짜 양성/음성
   - 과학적(scientific) 테스트에 대한 부정확하거나 틀린 결과를 의미함.
   - 컴퓨터 백신이 바이러스를 오탐하는 경우를 false positive라고 표현한다.
+- fiducial-point: 기준점, 기준이 되는 지점
+- form-factor: 컴퓨터 시스템의 각 부품의 물리적 치수의 형태
 - forgery: 문서 위조, 서명 위조, 도용
 - fragment: 파편(부서진거)
 - framing: 구성, 틀짜기, 구조
+- frequently-asked-questions: 자주 묻는 질문
 - fundamental: [형용사] 근본[본질]적인 (=basic), 핵심적인, 필수적인 (=essential), [명사] 기본 원칙[법칙], 핵심
+- genetic-algorithm: 유전연산법 혹은 그냥 유전 알고리즘. 실제 생물의 진화를 모방한 탐색 알고리즘
 - gist: [명사] (말·글·대화의) 요지[골자], 요점
 - gutter: 여백, 도랑, 도랑을 내다, 팬 자국
 - hallucination: [명사] 환각, 환영, 환청
@@ -194,6 +209,7 @@ tags:
 - instrumental: 주된 역할을 하는, 기악, 악기로 연주되는, 기구/기계에 의한
 - integrity: 진실성, 도덕성, 위상, 고결함, 온전함
 - interaction: 상호 작용, 관계, 교류, 소통, 반응
+- interlocking(혹은 linking)-service-with-product: 상품을 연동하는 서비스
 - interpolate: 삽입하다, 보충하다, ...이라고 말참견하다
 - intrinsic: 본질적인, 고유한, 본래 갖추어진
 - introspection: 내성, 내관, 내성적 성질, 경향
@@ -238,9 +254,12 @@ tags:
 - phrase: 말, 구절, 문구, 어구
 - piece: 조각
 - potentially: 잠재적으로, 아마도, 어쩌면
+- portray: 그리다, 묘사하다, 나타내다. 보여주다, 연기하다
 - predecessor: [명사] 전임자, 이전 것[모델] (-> successor)
 - predicate: 술부(John went home에서 went home처럼, 문장 속에서 주어에 대해 진술하는 동사 이하 부분). (특정 신조생각원칙에 …의) 근거를 두다, 입각하다. (사실이라고) 단정하다
 - predict: 예측하다, 전망하다, 예상하다, 예견하다, 예보하다
+- prefab: [명사] [비격식] 조립식 건물
+  - 프로그래밍에서 prefab은 'pre-fabricated'의 줄임말로, 미리 만들어져 구성이 완성된 재사용 가능한 객체나 템플릿, 구성 요소 등을 의미한다. 게임 개발에서 자주 사용된다.
 - prefer: 선호하다, 좋아하다
 - preflight: 비행 전에 일어나는, 비행에 대비한, 비행 전의
 - prerequisite: 전제 조건
@@ -248,6 +267,7 @@ tags:
 - principle: 원칙, 원리, 법칙, 신념, 교리
 - primal:[형용사] 원시의, 태고의 (=primeval)
 - primordial: [형용사] 태고의, 원시 시대부터의 (=primeval), [형용사] 원시[원초]적인 (=primeval)
+- privacy-policy: 개인정보 처리방침
 - production server: 운영(실) 서버. A production server is a server used to host website content and applications for deployment to a live environment. 자매품: staging server/testing server
 - production: 생산, 제작, 제품, 프로덕션
   - *(문맥에따라) 테스트 제품이 아닌 실제 판매용 제품/운영중인 제품*
@@ -263,6 +283,7 @@ tags:
 - relevant: 관련있는, 적절한, 연관된, 관계가 있는
 - remark: 발언, 말, 언급, 견해, 이야기
 - replicate: 반복되는, 많은, 뒤로 접힌, 복사를 뜨다, 대답하다
+- representation: (특정한 방식으로의) 묘사, 표현, 대표자[대리인]를 내세움, 대의권
 - resolution: 결의, 해상도, 해결, 결심, 결정
 - respective 각각의, 각자의, ...에 따라, 저마다의, 존경스러운
 - retrieve: 회수, 되찾다, 검색하다, 집어오다, 가져오다
@@ -294,6 +315,8 @@ tags:
 - synthetic: 합성의, 종합의, 인조의, 합성품, 모조품
 - tenant: 1. 세입자 2. 임차해서 살다; 소작하다
 - term: 임기, 용어, 말하다, 기간, 계약조건
+- terms-of-service: 이용약관
+- terminate-popup-sequence: 모든 팝업 닫기
 - theoretical: 이론상의
 - threshold: 문지방, 한계점
 - tolerable: [형용사] (썩 좋지는 않지만) 웬만큼 괜찮은, 웬만한 (=reasonable), 참을 수 있는, 견딜 만한 (=bearable), 반대말은 intolerable
@@ -326,20 +349,7 @@ tags:
 뭐 이렇게 많은지 😮‍💨
 
 
-## 복합어, 합성어
-
-- attach event handler: 이벤트 핸들러 할당
-- cognitive complexity: 인지 복잡성
-- fiducial point: 기준점, 기준이 되는 지점
-- Form factor: 컴퓨터 시스템의 각 부품의 물리적 치수의 형태
-- frequently asked questions: 자주 묻는 질문
-- interlocking(혹은 linking) service with product: 상품을 연동하는 서비스
-- privacy policy: 개인정보 처리방침
-- terms of service: 이용약관
-- terminate popup sequence: 모든 팝업 닫기
-- best practice: 모범 사례, 가장 좋은 방법
-
-### 내가 만든 합성어
+## 내가 만든 합성어
 
 - switchAvailability/switchDisability: 속성값에 따라 활성화/비활성화 토글
 - switchfunctionality: 위 두개 합친거

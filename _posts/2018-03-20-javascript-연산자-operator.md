@@ -215,7 +215,7 @@ console.log(result); // "일"
 
 ## instanceof
 
-객체의 프로토타입 체인에 생성자의 프로토타입이 존재하는지 테스트한다. 좌변의 피연산자로 객체를 받고 우변의 피연산자로 생성자를 받는다. 이 연산자로 객체가 특정 타입의 인스턴스인지 판단할 수 있다. 우변은 반드시 함수 이름이어야 하는데, 만약 함수가 아니면 TypeError가 발생할 것이다.
+객체의 프로토타입 체인에 생성자의 프로토타입이 존재하는지 테스트한다. 좌변의 피연산자로 객체를 받고 우변의 피연산자로 생성자를 받는다. 이 연산자로 객체가 특정 타입의 인스턴스인지 판단할 수 있다. 우변은 반드시 함수 이름이어야 하는데, 만약 함수가 아니면 TypeError가 발생한다.
 
 ```
 object instanceof constructor
@@ -228,10 +228,20 @@ function fn() {
 
 fn instanceof Function;  // true
 alert instanceof Function;  // true
-"" instanceof String; // false, 문자열 자체는 원시 타입이기 때문
-new String() instanceof String;  // true, String 래퍼 객체는 String의 인스턴스
 [] instanceof Array; // true, [].__proto__ === Array.prototype
 [] instanceof Object; // true, 모든 객체는 Object의 인스턴스
+```
+
+주의할 점은, 원시 타입의 테스트 결과는 항상 `false`라는 것:
+
+```js
+'' instanceof String; // false, 문자열 자체는 원시 타입이기 때문
+new String('') instanceof String;  // true, String 래퍼 객체는 String의 인스턴스
+
+1 instanceof Number; // false
+new Number(1) instanceof Number; // true
+
+Symbol('qwe') instanceof Symbol; // false, Symbol()은 항상 원시 타입 값을 반환한다.
 ```
 
 
@@ -244,16 +254,17 @@ typeof expression
 ```
 
 ```js
-typeof "John"                // "string"
-typeof 3.14                   // "number"
-typeof NaN                    // "number"
-typeof false                  // "boolean"
-typeof [1, 2, 3, 4]           // "object"
-typeof {name: 'John', age: 34}  // "object"
-typeof new Date()             // "object"
-typeof function() {}         // "function"
-typeof myCar                  // "undefined" (if myCar is not declared)
-typeof null                   // "object"
+typeof 'John';                   // 'string'
+typeof 3.14;                     // 'number'
+typeof NaN;                      // 'number'
+typeof false;                    // 'boolean'
+typeof [1, 2, 3, 4];             // 'object'
+typeof {name: 'John', age: 34};  // 'object'
+typeof new Date();               // 'object'
+typeof function() {};            // 'function'
+typeof myCar;                    // 'undefined' (if myCar is not declared)
+typeof null;                     // 'object'
+typeof Symbol();                 // 'symbol'
 ```
 
 
@@ -465,7 +476,12 @@ fn()?.[0].a.b.c; // undefined
 leftExpr ?? rightExpr
 ```
 
-`A || B` 대신 사용할 수 있는 연산자. 연산자 좌변이 `null` 혹은 `undefined`로 평가되면 연산자 우변의 결과를 반환한다.
+`A || B` 대신 사용할 수 있는 연산자. 연산자 좌변이 `null` 혹은 `undefined`로 평가되면 연산자 우변의 결과를 반환한다:
+
+```js
+null || 'STRIIIIIIING!!!'; // "STRIIIIIIING!!!" 
+undefined || 1234; // 1234
+```
 
 OR`||` 연산자를 이용한 방법과 다르게, `Boolean()`에서 falsy한 값으로 평가되는 `0`, `NaN`, `""`를 truthy한 값으로 간주할 때 사용한다:
 

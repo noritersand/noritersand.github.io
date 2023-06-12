@@ -137,7 +137,7 @@ strict.call(true);
 function.bind( thisArg [, arg1 [, arg2 [, ... ] ] ] )
 ```
 
-함수의 `this`를 교체하고 고정 인수를 지정하는 메서드. 이 메서드는 호출될 때 제공된 첫 번째 전달인자를 `this` 키워드로 지정하고, 두 번째 전달인자부터는 함수의 고정 인수로 지정한 새 함수를 생성하여 반환한다.
+함수의 `this`를 교체하고 고정 인수를 지정하는 메서드. 이 메서드는 호출될 때 제공된 첫 번째 전달인자를 `this` 키워드로 지정하고, 두 번째 전달인자부터는 함수의 고정 인수로 지정한 새 함수를 생성하여 반환한다. 이 작업을 바인딩이라고 표현하는 모양이다.
 
 ES2015에서 정의된 Exotic function object에 속한다고 한다. 다른 Exotic function object로 `Array`, `String`, `Arguments`, `Proxy` 등이 있는데, 특수한 기능을 수행하는 객체라고 하지만 정확하게 뭘 하는지를 아직 몲. 
 
@@ -208,7 +208,7 @@ function unboundFn3(...args) {
   console.log('args:', args);
   console.log('arguments:', arguments);
 }
-unboundFn3()
+unboundFn3();
 // args: Array []
 // arguments: Arguments { … }
 
@@ -221,4 +221,22 @@ boundFn3();
 boundFn3(3, 4);
 // args: Array(4) [ 1, 2, 3, 4 ]
 // arguments: Arguments { 0: 1, 1: 2, 2: 3, 3: 4, … }
+
+function unboundFn4(a, b) {
+  console.log('a:', a);
+  console.log('b:', b);
+}
+unboundFn4();
+// a: undefined
+// b: undefined
+
+var boundFn4 = unboundFn4.bind(null, 1);
+
+boundFn4();
+// a: 1
+// b: undefined
+
+boundFn4(2);
+// a: 1
+// b: 2
 ```
