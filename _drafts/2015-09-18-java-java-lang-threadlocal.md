@@ -12,18 +12,16 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-```java
-public static final ThreadLocal<String> LOCAL_VARIABLE = new ThreadLocal<String>() {
-    @Override
-    protected String initialValue() {
-        return "hello"; // LOCAL_VARIABLE은 매 쓰레드가 종료되면(시작할 때?) 'hello'로 초기화된다.
-    }
-}
-```
+
+## 개요
+
+**TODO 쓰다 말았음.**
+
+요약: ThreadLocal은 쓰레드마다 독립적이다. 쓰레드가 종료되면 해당 쓰레드와 관련된 리소스들이 정리되고 메모리에서 해제되는데, 이때 ThreadLocal에 저장된 값도 함께 정리된다.
 
 ```java
     public static void main(String[] args) {
-        LOCAL_VARIABLE.set("my new string");
+        LOCAL_VARIABLE.set("My new string.");
     }
 ```
 
@@ -39,11 +37,37 @@ public static final ThreadLocal<String> LOCAL_VARIABLE = new ThreadLocal<String>
     // 이하 생략
 ```
 
-ThreadLocal 변수: 쓰레드가 종료되면 초기화되는 변수
+`ThreadLocal` 변수: 쓰레드가 종료되면 초기화되는 변수
 
-ThreadLocal 타입에 static이나 final이 없어도 작동에 문제 없는듯? 확인할 것.
+`ThreadLocal` 타입에 `static`이나 `final`이 없어도 작동에 문제 없는듯? 확인할 것.
 
-## ecbase sample
+
+## 초기화
+
+아래처럼 `ThreadLocal`의 초기값을 설정할 수 있음:
+
+```java
+    public static final ThreadLocal<String> threadLocalCache = ThreadLocal.withInitial(() -> {
+        return "Hello?"; // LOCAL_VARIABLE은 매 쓰레드가 종료되면(시작할 때?) 'Hello?'로 초기화된다.
+    });
+```
+
+람다가 없던 시절엔 이렇게 작성함:
+
+```java
+    public static final ThreadLocal<String> LOCAL_VARIABLE = new ThreadLocal<String>() {
+        
+        @Override
+        protected String initialValue() {
+            return "Hello?";
+        }
+    }
+```
+
+
+## example#1
+
+아래는 옛날 어느적에 적어놓은 코드인데, 이제보니 정작 `ThreadLocal` 쓰는 코드는 거의 없고, 그냥 현재 쓰레드 객체(`Thread.currentThread()`)를 키로 사용하는 방법이다:
 
 ```java
 public class ThreadVariableRegistry {
@@ -112,8 +136,6 @@ public class ThreadVariableRegistry {
 }
 ```
 
-이런 놈을...
-
 ```java
 public class AuthInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest req, HttpServletResponse res, Object handle) throws Exception {
@@ -127,8 +149,6 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
     }
 }
 ```
-
-이렇게 설정해 두고
 
 ```java
 public class BaseModel {
@@ -168,5 +188,3 @@ public class BaseModel {
     }
 }
 ```
-
-요딴식으로 씀

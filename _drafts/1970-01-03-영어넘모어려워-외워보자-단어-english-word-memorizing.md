@@ -39,19 +39,21 @@ tags:
 
 ## 꼐임 혹은 그냥 머시썸
 
-- precursor: 선도자(격인 사람·사물), 선각자
-- forerunner: 선구자, 전신; 전조, 선조
-- prothean: 프로시언. 매스 이펙트의 고대 외계 종족
-- steadfast: [형용사] 호감 (태도·목표가) 변함없는 (=firm)
-- shearwater: [명사] 슴새
-- harvestman: [명사] 장님거미, 통거미
 - Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
-- perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
+- Forerunner: 선구자, 전신; 전조, 선조
+- harvestman: [명사] 장님거미, 통거미
 - jester: [명사] (과거 왕이 부리던) 어릿광대
+- ontology: 존재론
+- perception: [명사] 지각, 자각 (→extrasensory perception), 통찰력 (=insight), 인식(하여 갖게 된 생각)
 - perish: [동사] (특히 끔찍하게) 죽다, 비명횡사하다, 소멸되다, (고무 같은 물질이) 닳다
   - DST의 소스 파일을 보면 시간이 지나 닳거나 상해서 못쓰게 변하는 아이템 혹은 음식에 대한 설정으로 perishable, perishing, perish time이란 단어를 사용함
-- ontology: 존재론
+- Precursor: 선도자(격인 사람·사물), 선각자
+- Prothean: 프로시언. 매스 이펙트의 고대 외계 종족
+- shearwater: [명사] 슴새
+- steadfast: [형용사] 호감 (태도·목표가) 변함없는 (=firm)
 - tenet: 주의, 교리
+- willing: [형용사] ...에 반대하지[꺼리지] 않는; ...하지 못할 이유가 없는, 기꺼이 하는, 자발적인, 열렬한, 적극적인
+  - By the blood of the willing: 바라는 자의 피로
 
 
 ## 수학 관련 영단어(영-한)
@@ -100,7 +102,7 @@ tags:
 - 쪽: page
 - 장: sheet, leaf
 - abnormal: 비정상적인, 이상한
-- achieve: [동사] 달성하다, 성취하다 (=attain), (…을) 해내다[이루다] (=accomplish), 잘 해내다, 성공하다
+- achieve: [동사] 달성하다, 성취하다 (=attain), (...을) 해내다[이루다] (=accomplish), 잘 해내다, 성공하다
 - acquire: 얻다, 인수하다, 갖다, 배우다, 구입하다
 - adjacent: 인접한, 이웃의, 근방의
 - adjust: 조정되다, 적응하다, 조절하다, 감안하다, 맞추다
@@ -179,6 +181,8 @@ tags:
 - estimated: 추정된다, 약, 추산된다, 예상되는, 전망
 - exhausted: 다 써버린, 소모된, 기진맥진한
 - experimental features: 실험적 기능
+- fabric: [명사] 직물, 천, 격식 (사회·조직 등의) 구조, (건물의) 기본 구조[뼈대]
+  - the fabric of the cosmos: 우주의 구조
 - facade: (건물의) 정면, (실제와는 다른) 표면, 허울
 - factor: 요인, 원인, 요소, 유전자, 인수
 - failure: 실패, 고장, 실수, 실패작, 하지 않기
@@ -256,7 +260,7 @@ tags:
 - potentially: 잠재적으로, 아마도, 어쩌면
 - portray: 그리다, 묘사하다, 나타내다. 보여주다, 연기하다
 - predecessor: [명사] 전임자, 이전 것[모델] (-> successor)
-- predicate: 술부(John went home에서 went home처럼, 문장 속에서 주어에 대해 진술하는 동사 이하 부분). (특정 신조생각원칙에 …의) 근거를 두다, 입각하다. (사실이라고) 단정하다
+- predicate: 술부(John went home에서 went home처럼, 문장 속에서 주어에 대해 진술하는 동사 이하 부분). (특정 신조생각원칙에 ...의) 근거를 두다, 입각하다. (사실이라고) 단정하다
 - predict: 예측하다, 전망하다, 예상하다, 예견하다, 예보하다
 - prefab: [명사] [비격식] 조립식 건물
   - 프로그래밍에서 prefab은 'pre-fabricated'의 줄임말로, 미리 만들어져 구성이 완성된 재사용 가능한 객체나 템플릿, 구성 요소 등을 의미한다. 게임 개발에서 자주 사용된다.

@@ -92,10 +92,10 @@ Math.min(...[3, 2, 4]); // 2
 
 ```js
 Math.min.apply(Math, [3, 2, 4]); // 2
-// Math.min.apply(null, [3, 2, 4]);
+Math.min.apply(null, [3, 2, 4]); // 2
 ```
 
-첫 번째 인자로 null을 전달해도 결과는 같은데, 어차피 `Math.min()`은 스태틱 메서드고 `this`를 참조하지 않기 때문.
+첫 번째 인자로 `null`을 전달해도 결과는 같은데, 어차피 `Math.min()`은 스태틱 메서드고 `this`를 참조하지 않기 때문에 뭐가 됐든 상관 없어서 그렇다.
 
 ### Function.prototype.call()
 
