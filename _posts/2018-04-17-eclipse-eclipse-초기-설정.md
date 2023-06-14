@@ -233,4 +233,4 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 - Pull: <kbd>ctrl + shift + l</kbd>(In Dialogs and Windows, Git)
 - Fetch from Upstream: <kbd>ctrl + shift + f</kbd>(In Dialogs and Windows, Git)
 
-Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective > Action Set Availability`에서 해당 범주를 추가해야 한다. (e.g. SVN의 show history 명령은 SVN을 추가)
+Show History 같은 명령은 단축키가 작동하지 않을때가 있는데 이 때는 `Customize Perspective > Action Set Availability`에서 해당 범주를 추가해야 한다. (예: SVN의 show history 명령은 SVN을 추가)

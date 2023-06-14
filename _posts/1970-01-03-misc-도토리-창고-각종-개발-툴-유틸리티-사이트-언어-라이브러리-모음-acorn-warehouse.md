@@ -119,7 +119,7 @@ tags:
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스 UI 라이브러리. 순수 자바스크립트 기반이다.
 - [ag-grid](https://www.ag-grid.com)
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
-- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI 그리드. NHN에서 만들었고 MIT 라이선스의 오픈 소스다. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다.
+- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드 라이브러리다. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다. 4.21.9 버전 기준, 스크롤 기능에 버그가 있고, 제공되는 소팅 옵션이 너무 적어 서버 사이드 소팅 구현이 이상하다.
 
 
 ## 인프라

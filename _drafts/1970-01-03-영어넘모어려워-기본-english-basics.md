@@ -28,8 +28,8 @@ tags:
 
 ## 자주 헷갈리는 단어
 
-- etcetera: etc. 기타 등등, 그 밖의 여러 가지, 여분의 것. 어떤 것을 나열하다가 생략할 때 쓰임. 'A, B, C, etc.'
-- miscellaneous: misc. 잡동사니, 여러가지, 기타, 갖가지의, '언급된 분류 외의 모든 것'
+- etcetera: 줄여서 `etc.`로 표기함. and so on이란 뜻 혹은 기타 등등, 그 밖의 여러 가지, 여분의 것. 어떤 목록을 나열하다 나머지를 생략할 때 쓰임. 'A, B, C, etc.'
+- miscellaneous: 줄여서 `misc.`로 표기함. 잡동사니, 여러가지, 기타, 갖가지의, '언급된 분류 외의 모든 것'
 
 
 ## 품사 word forms
@@ -80,7 +80,7 @@ tags:
 
 - a noun clause: 명사절
 - abbreviation: 약어, 축약어. Etc., Ave., Dec. 처럼 일부 단어로 줄여 쓰는 것. 새 단어를 만드는 게 아니라서 발음은 원래 단어대로 읽어야 함.
-- acronym/initialism: 두문자어, 약성어. 둘 다 우리 말로는 두문자어이지만, 만드는 규칙과 읽는 방법의 차이가 있음. e.g. LASER와 RADAR는 acronym, CIA와 VIP는 initialism.
+- acronym/initialism: 두문자어, 약성어. 둘 다 우리 말로는 두문자어이지만, 만드는 규칙과 읽는 방법의 차이가 있음. e.g., LASER와 RADAR는 acronym, CIA와 VIP는 initialism.
 - antonym: 반대어, 반의어
 - chinese loanword, loanword from chinese: 한국어의 한자
 - collective noun/collective terms: 집단 명사
@@ -181,3 +181,16 @@ coalesce의 IPA:
 ## 기타
 
 외국어를 발음만 빌려 우리말로 표기하는 것을 '음차'라고 한다. 예를 들면 '컴퓨터'와 '애플'이 그렇다.
+
+## e.g.
+
+라틴어 'exempli gratia'의 약어. 'for example'이란 뜻이다. 사용할 때는 바로 뒤에 쉼표를 붙인 뒤 한 칸 띄운다.
+
+- domain of your site (e.g., https://example.com).
+
+학술적 글쓰기에서 `e.g.`는 괄호 안에서만 사용하고, 괄호 밖의 문장에서는 'for example'라고 다 쓰는 것을 권장한다.
+
+## i.e.
+
+라틴어 'id est'의 약어. 'that is'라는 뜻이다. e.g.처럼 뒤에 쉼표를 붙인 뒤 한 칸 띄운다.
+

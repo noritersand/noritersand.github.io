@@ -295,7 +295,7 @@ WAR 빌드용 플러그인
 - webXml
 - webResources
   - webResource: 하위 규칙에 따라 특정 경로의 파일들을 ROOT 경로로 내보낸다.
-    - directory: 내보낼 대상을 디렉터리로 지정 (e.g. `src/main/resources/static`)
+    - directory: 내보낼 대상을 디렉터리로 지정 (예: `src/main/resources/static`)
 
 
 ## 프로파일

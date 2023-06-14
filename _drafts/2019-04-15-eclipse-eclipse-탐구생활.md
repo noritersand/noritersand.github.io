@@ -130,7 +130,7 @@ JPDA(Java Platform Debugger Architecture) 관련 기술인것 같다. [오라클
 
 ### Source
 
-이클립스 빌더에게 소스 파일이 어느 경로에 있는지`Source folers on build path`와 컴파일한 파일을 어디로 내보낼지`Default output folder`를 알려주는 설정이다. 만약 소스 경로에 컴파일 할 수 없는(e.g. xml) 파일이 있으면 별도 작업 없이 그대로 내보내는걸로 추정된다.
+이클립스 빌더에게 소스 파일이 어느 경로에 있는지`Source folers on build path`와 컴파일한 파일을 어디로 내보낼지`Default output folder`를 알려주는 설정이다. 만약 소스 경로에 컴파일 할 수 없는(예: xml) 파일이 있으면 별도 작업 없이 그대로 내보내는걸로 추정된다.
 
 ### Projects
 

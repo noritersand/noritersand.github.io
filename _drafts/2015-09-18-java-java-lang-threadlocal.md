@@ -17,7 +17,7 @@ tags:
 
 **TODO 쓰다 말았음.**
 
-요약: ThreadLocal은 쓰레드마다 독립적이다. 쓰레드가 종료되면 해당 쓰레드와 관련된 리소스들이 정리되고 메모리에서 해제되는데, 이때 ThreadLocal에 저장된 값도 함께 정리된다.
+ThreadLocal은 쓰레드마다 독립적이다. 쓰레드가 종료되면 해당 쓰레드와 관련된 리소스들이 정리되고 메모리에서 해제되는데, 이때 ThreadLocal에 저장된 값도 함께 정리된다.
 
 ```java
     public static void main(String[] args) {
@@ -188,3 +188,8 @@ public class BaseModel {
     }
 }
 ```
+
+
+## 여담
+
+Spring Security의 `SecurityContextHolder`는 내부에서 ThreadLocal로 데이터를 관리한다. 같은 클라이언트로부터의 여러 요청들이 하나의 쓰레드에서 처리된다는 보장이 없으므로 이전 요청의 ThreadLocal 데이터를 유지하기 위해서는 결국 세션이 필요하다. 그런데도 굳이 ThreadLocal를 이용하는 이유는 성능 때문이라고 한다.

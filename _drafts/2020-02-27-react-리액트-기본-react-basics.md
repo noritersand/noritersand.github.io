@@ -234,7 +234,7 @@ const correctSyntax = (
 
 ### 프로퍼티 명명 규칙
 
-React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (e.g. `class` -> `className`, `tabindex` -> `tabIndex`)
+React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 규칙을 사용한다. (예: `class` -> `className`, `tabindex` -> `tabIndex`)
 
 ### 중괄호의 생략
 

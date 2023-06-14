@@ -1409,7 +1409,7 @@ has/have + subject + BEEN + past participle [+ by phrase] + ?
 > B.
 > IRREGULAR VERBS
 > -- There are many irregular verbs that don't follow the normal rules.
-> -- Note that sometimes the spelling doesn't change but the pronunciation does (e.g. read).
+> -- Note that sometimes the spelling doesn't change but the pronunciation does (e.g., read).
 
 
 ## UNIT 26: What are you doing tomorrow?
