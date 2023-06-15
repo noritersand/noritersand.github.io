@@ -158,13 +158,15 @@ TODO
 
 TODO 설명 션찮
 
-### Text Interpolation
+### Text Interpolation\*
 
 텍스트를 단순 렌더링한다. 프로퍼티를 중괄호 두 개로 감싸면 되는데(double curly braces), 공식 도움말에선 이 표현식을 '콧수염'(Mustache syntax)이라고 부른다.
 
 ```html
 <p>{{mustache}}</p>
 ```
+
+\* 수학의 보간법과는 관련이 없고, interpolate의 뜻 중 하나인 '덧붙이다' 혹은 '삽입하다'(=insert)로 쓰인 것 같음.
 
 ### Raw HTML
 
