@@ -55,6 +55,8 @@ tags:
 - willing: [형용사] ...에 반대하지[꺼리지] 않는; ...하지 못할 이유가 없는, 기꺼이 하는, 자발적인, 열렬한, 적극적인
   - By the blood of the willing: 바라는 자의 피로
 - tremendous: [형용사] 엄청난 (=huge), 굉장한, 대단한 (=remarkable)
+- penitent: [형용사] 뉘우치는, 참회하는 (=remorseful) [명사] (특히 종교인으로서) 회개하는 사람
+
 
 ## 수학 관련 영단어(영-한)
 
