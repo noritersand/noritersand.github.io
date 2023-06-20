@@ -76,6 +76,14 @@ function clickHandler(event) {
 element.addEventListener('click', clickHandler);
 ```
 
+### Passive event listener
+
+TODO passive event listener에 대한 설명 추가
+
+- https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#syntax
+- https://medium.com/@Esakkimuthu/passive-event-listeners-5dbb1b011fb1
+- https://developer.chrome.com/docs/lighthouse/best-practices/uses-passive-event-listeners/
+
 ### EventTarget.removeEventListener()
 
 [https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
