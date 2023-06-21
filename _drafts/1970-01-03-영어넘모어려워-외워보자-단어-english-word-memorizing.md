@@ -176,6 +176,8 @@ tags:
 - distinguish: 구별하다, 구분하다, 분간하다, 특징짓다
 - doctrine: 원칙, 독트린
 - emphasis: 강조, 중점, 중요, 중시, 주안점
+- ellipsis: [명사] 생략, 생략 부호(...)
+  - CSS에는 ellipsis라는 프로퍼티가 있음.
 - end result: 최종적인 결과, 성과, 결말
 - ensure: ...하기 위해, 보장하다, 확보하다, 확실하게 하다
 - equivalent: 해당하는, 맞먹는, 동등한, 상당하는, 등가의

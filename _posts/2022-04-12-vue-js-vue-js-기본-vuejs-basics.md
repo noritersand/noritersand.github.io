@@ -730,9 +730,9 @@ export const emittingTest = {
 
 ### 컴포넌트와 v-model
 
-부모 컴포넌트의 반응형 모델과 자식 컴포넌트를 연결하는 방법이다.
+props로 내려보내진 부모 컴포넌트의 반응형 상태값을 자식 컴포넌트에서 변경할 수 있게 하는 방법이다. 요약하면 emit을 이용한 props의 우회 변경인데, props는 읽기 전용이라서 직접 변경하는 것은 불가능하다. 따라서 여기서는 부모 컴포넌트에게 어떤 값으로 변경하라는 이벤트를 emit하여 부모 컴포넌트가 스스로 변경하게 한다.
 
-[가이드](https://vuejs.org/guide/components/v-model.html)를 보면 여러가지 구현이 있지만, 이게 가장 좋음(하지만 코드 양도 많지):
+[가이드](https://vuejs.org/guide/components/v-model.html)를 보면 여러 구현 방법이 있지만, 이게 가장 좋음(하지만 코드 양도 많지):
 
 ```js
 export const childComponent = {
@@ -761,7 +761,9 @@ export const childComponent = {
 <child-component v-model:selected-value="message"></child-component>
 ```
 
-emit으로 내보낼 이벤트 이름은 반드시 `update:`를 접두어로 사용해야 한다. 그리고 바인딩 표현식 `v-model:selected-value="message"`에서 `selected-value`는 사용자 지정값인데, 이 경우 `selectedValue`가 자식 컴포넌트의 props로 내려간다. 이 값을 생략해 `v-model="message"` 라고 작성하면 기본값인 `modelValue`라는 props로 내려간다. 그렇다고 또 `modelValue`를 명시하면 고장나니까 주의.
+emit으로 내보낼 이벤트 이름은 반드시 `update:`를 접두어로 사용해야 한다. 그리고 바인딩 표현식 `v-model:selected-value="message"`에서 `selected-value`는 props의 이름을 의미한다. 이 코드에선 부모 컴포넌트의 `message`가 `selectedValue`라는 이름의 props로 내려보내진다는 의미다. 
+
+만약 이 이름을 생략한 `v-model="message"`로 작성하면 `modelValue`라는 이름의 props로 내려간다. (`v-model:model-value="message"`라고 작성하면 고장나니까 주의) 그리고 이 때에는 이벤트 이름을 `update:selected-value`가 아니라 `update:model-value`라고 작성해야 한다. 
 
 이것보다 간단한 게 있긴 한데:
 

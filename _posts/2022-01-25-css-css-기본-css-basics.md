@@ -23,6 +23,20 @@ tags:
 CSS(Cascading Sytle Sheet) 기본 사용법 정리.
 
 
+## 용어
+
+```css
+@charset "utf-8";
+
+h1 { 
+  font-size: 37.2px;
+  border-bottom: 3px solid black;
+}
+```
+
+위 코드에서 `@charset`은 'at-rule' 이라 부른다. `h1`은 셀렉터, `font-size`와 `border-bottom`은 프로퍼티라고 부른다.
+
+
 ## 스타일 적용하기
 
 ### inline
