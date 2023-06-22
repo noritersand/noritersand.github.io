@@ -88,9 +88,9 @@ createApp({
 
 ### API 스타일
 
-Vue 3부터는 Composition API 스타일과 Options API 스타일 중에 하나를 선택 할 수 있다. 
+Vue 3부터는 Composition API 스타일과 Options API 스타일 중에 하나를 선택해야 한다.
 
-두 스타일 모두 빌드 툴 없이 라이브러리 방식으로 사용할 수 있다. 이 경우 스타일의 차이는 아래와 같다:
+두 스타일 모두 빌드 툴 없이 라이브러리 방식으로 사용할 수 있다. 라이브러리 방식인 경우 두 스타일의 코드 차이는 아래와 같다:
 
 Options API 스타일:
 
@@ -106,14 +106,14 @@ import { createApp } from '/lib/vue/vue.esm-browser.js';
 createApp({
   data() {
     return {
-      pageTitle: "Vue 시작하기",
-      message: "Hello Vue! ✌️"
+      pageTitle: 'Vue 시작하기',
+      message: 'Hello Vue! ✌️'
     };
   },
   created() {
     document.title += `: ${this.pageTitle}`;
   }
-}).mount("#app");
+}).mount('#app');
 </script>
 ```
 
@@ -130,8 +130,8 @@ import { createApp, ref } from '/lib/vue/vue.esm-browser.js';
 
 createApp({
   setup() {
-    const pageTitle = ref("Vue 3의 Composition API로 시작하기");
-    const message = ref("Hello Vue! ✌️");
+    const pageTitle = ref('Vue 시작하기');
+    const message = ref('Hello Vue! ✌️');
 
     document.title += `: ${pageTitle.value}`; // onCreated()는 없음
 
@@ -140,7 +140,7 @@ createApp({
       message
     };
   }
-}).mount("#app");
+}).mount('#app');
 </script>
 ```
 
