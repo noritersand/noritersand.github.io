@@ -86,6 +86,90 @@ createApp({
 </script>
 ```
 
+### API 스타일
+
+Vue 3부터는 Composition API 스타일과 Options API 스타일 중에 하나를 선택 할 수 있다. 
+
+두 스타일 모두 빌드 툴 없이 라이브러리 방식으로 사용할 수 있다. 이 경우 스타일의 차이는 아래와 같다:
+
+Options API 스타일:
+
+```html
+<div id="app">
+  <h1>{{pageTitle}}</h1>
+  <p>{{message}}</p>
+</div>
+
+<script type="module">
+import { createApp } from '/lib/vue/vue.esm-browser.js';
+
+createApp({
+  data() {
+    return {
+      pageTitle: "Vue 시작하기",
+      message: "Hello Vue! ✌️"
+    };
+  },
+  created() {
+    document.title += `: ${this.pageTitle}`;
+  }
+}).mount("#app");
+</script>
+```
+
+Composition API 스타일:
+
+```html
+<div id="app">
+  <h1>{{pageTitle}}</h1>
+  <p>{{message}}</p>
+</div>
+
+<script type="module">
+import { createApp, ref } from '/lib/vue/vue.esm-browser.js';
+
+createApp({
+  setup() {
+    const pageTitle = ref("Vue 3의 Composition API로 시작하기");
+    const message = ref("Hello Vue! ✌️");
+
+    document.title += `: ${pageTitle.value}`; // onCreated()는 없음
+
+    return {
+      pageTitle,
+      message
+    };
+  }
+}).mount("#app");
+</script>
+```
+
+사용 가능한 메서드 등의 차이가 있긴 하지만, 어느 한 가지 스타일을 선택한다고 해서 다른 스타일을 못쓰는 것은 아니다. 나중에 얼마든지 변경할 수 있으니, 대충 입맛에 맞는 모양을 고르면 된다.
+
+공식 가이드에 따르면, Options API는 Composition API 위에 구현되어 있으며, Options API 스타일이 좀 더 OOP 개발자들에게 익숙한 구조라고 한다. Composition API는 초보자에게 다소 어려울 수 있지만, 좀 더 유연하며 높은 복잡성을 처리하기 위해 설계되어 규모 있는 앱 구축에 적합하다고 한다.
+
+더 자세한 내용은 [여기](https://vuejs.org/guide/introduction.html#api-styles)를 볼 것.
+
+#### `<script setup>`
+
+Composition API 스타일은 `setup()`과 `<script setup>`로 나뉜다. 이 중 `<script setup>`은 빌드 + SFC 방식의 환경에서만 사용할 수 있는 것으로 보인다. 이렇게 생겼다:
+
+```html
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const el = ref()
+
+onMounted(() => {
+  el.value // <div>
+})
+</script>
+
+<template>
+  <div ref="el"></div>
+</template>
+```
+
 
 ## 선언적 렌더링이란?
 
@@ -145,7 +229,7 @@ createApp({
 });
 ```
 
-TODO Composition API에선 두 가지로 나뉘는데, `setup()`에서 객체를 반환하는 방식과, `ref`로 할당하는 방식이 있다. 아마도 🤭
+TODO Composition API에선 두 가지로 나뉜다. 정리할 것
 
 ### Computed Properties
 

@@ -196,12 +196,12 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [⭐ eraser](https://www.eraser.io/pricing): (엔지니어링 팀을 위한 화이트보드라 주장하는) 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 플로우 차트 그리기 굉장히 편하다. Diagram as code(이걸로 ERD 그리기 가능)와 코멘트 기능도 제공한다. 현재 무료 플랜 제공(2023-03-30).
 
 
-## 온라인 코드 에디터 겸 테스트 툴
+## 온라인 코드 편집기(에디터) 겸 테스트 툴
 
-- [CodePen](https://codepen.io): 웹으로 코드를 작성하고 실행해 보거나 남들과 공유할 수 있는 서비스.
-- [JSFiddle](https://jsfiddle.net)
-- [StackBlitz](https://stackblitz.com)
-- [CodeSandbox](https://codesandbox.io): 특이한 게 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
+- [CodePen](https://codepen.io): 온라인 코드 편집기#1. 웹으로 코드를 작성하고 테스트하거나 남들과 공유할 수 있는 서비스.
+- [JSFiddle](https://jsfiddle.net): 온라인 코드 편집기#2
+- [CodeSandbox](https://codesandbox.io): 온라인 코드 편집기#3. 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
+- [StackBlitz](https://stackblitz.com): 프론트엔드 개발용 온라인 코드 편집기#4. 깃허브 저장소와 연동할 수 있고, Node.js 등 빌드 툴 실행이 가능한 환경을 제공한다. public 프로젝트에 한해 무료로 사용 가능.
 
 
 ## CVE 아카이빙 사이트
