@@ -19,6 +19,7 @@ tags:
 - [https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git/5201642](https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git/5201642)
 - [커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple)
 
+
 ## merge를 이용한 방법
 
 아직 푸시하지 않은 커밋이 두 개가 있다고 했을 때:
@@ -97,6 +98,7 @@ Date:   Fri Dec 28 16:05:37 2018 +0900
 #
 
 ```
+
 
 ## rebase를 이용한 방법
 

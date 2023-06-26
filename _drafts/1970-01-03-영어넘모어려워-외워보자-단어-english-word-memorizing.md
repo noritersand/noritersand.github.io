@@ -37,9 +37,11 @@ tags:
   - caveats: 주의사항
 
 
-## 꼐임 혹은 그냥 머시썸
+## 미분류
 
 - Cathay: Warhammer fantasy 세계관의 동방 국가. 고대 민족 거란이 Kitai(또는 Khitai, Khitan, Kidan)로 불렸는데, 여기에서 차용한 듯?
+- consequence: [명사] (발생한 일의) 결과, 중요함
+  - 주로 어떤 행동이 초래하는 부정적인 결과를 말할 때 주로 사용한다고 한다.
 - Forerunner: 선구자, 전신; 전조, 선조
 - harvestman: [명사] 장님거미, 통거미
 - jester: [명사] (과거 왕이 부리던) 어릿광대
