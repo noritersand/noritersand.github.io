@@ -249,6 +249,8 @@ Test-Connection -Repeat -ComputerName 168.126.63.1 | Format-Table @{Name='TimeSt
 ping -t 168.126.63.1 | Foreach{"{0} - {1}" -f (Get-Date),$_}
 ```
 
+TODO 사실 위 코드에서 `Test-Connection`은 주고 받은 바이트, 시간, TTL은 표시되지 않음. 찾아서 추가할 것
+
 
 ## Microsoft.Powershell.Utility
 

@@ -60,12 +60,17 @@ tags:
 - [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
 
 
+## 개발 환경
+
+- [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 툴인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
+- [Scoop](https://scoop.sh/): Chocolatey에 비해 규모와 사용자는 적지만, 개발자 커뮤니티가 매우 활성화되어 있다고 함.
+
 ## 언어
 
+- [⭐ Rust](https://www.rust-lang.org/): [Mozilla Research](https://research.mozilla.org/)에서 개발한 범용 프로그래밍 언어.
 - [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. Java 기반이라고 한다. (뭔가 Kotlin이랑 비슷한데?)
 - [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). Java, Python, Ruby 등의 언어에서 영향을 받았다 한다. 
-- [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 고루(쓰던것만 쓰게 됨) 하지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
-- [Deno](https://deno.land/): Node.js 최초 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. (언어가 아니고 런타임이라고? 사실 Node.js도 언어라고 보기는 좀...)
+- [⭐ Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
 - [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷하다고 함. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 
@@ -75,7 +80,6 @@ tags:
 ### 미분류
 
 - [Apache Tika](https://tika.apache.org/): 파일 컨텐츠를 분석해주는 Java 라이브러리
-- [Spring](https://spring.io/)
 - [Electron](https://electronjs.org/)/[Chromium](https://www.chromium.org/): 소프트웨어 개발 프레임워크. 오픈 소스 node.js 기반이다. vscode, atom, notion desktop 등이 이 프레임워크로 만들어짐. 개발자도구가 크롬과 아주 똑 닮은걸로 봐선 구글 크롬하고 관련 있는걸로 추정된다. (이름만 봐도...)
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
@@ -83,25 +87,34 @@ tags:
 - [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 - [KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음.
 
+### 런타임
+
+원래 컴퓨터 과학에서 런타임(runtime)은 프로그램의 생명 주기로, 코드가 CPU에 의해 실행 중인 단계 혹은 그 순간을 의미하지만, 여기서 런타임은 어떤 언어를 특정한 방법으로 실행시키고 필요한 기능을 제공하는 환경(runtime environment)을 말한다.
+
+- [Node.js](https://nodejs.org/): 잘 알려진 서버 사이드 JavaScript 런타임.
+- [Deno](https://deno.land/): Node.js 개발자가 만든 JavaScript와 Rust기반의 JavaScript/TypeScript 용 런타임. Node.js 개선 버전이라고 보면 됨.
+
 ### 웹 프레임워크
 
+- [Spring](https://spring.io/)
+- [Next.js](https://nextjs.org/): React 기반의 JavaScript 프레임워크. 서버 사이드 렌더링, 정적 웹 페이지 생성이 대표적인 기능이다.
 - [Vue](https://vuejs.org/)
 - [React](https://reactjs.org/): 라이브러리라 주장하지만...
 - [Svelte](https://svelte.dev/)
 
-### 앱 프레임워크
+### 앱 개발 프레임워크
 
 - [React Native](https://reactnative.dev/)
 - [Flutter](https://flutter.dev/): 코드 하나로 리눅스, Windows, macOS, 웹에서 모두 작동하는 앱 개발이 가능한 UI 툴킷(SDK) 겸 프레임웤. 구글에서 만들었고 사용언어는 Dart. 
 
-### 테스트
+### 유닛 테스트
 
 - [JUnit](https://junit.org): 자바 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (2023-02-15)
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 
 ### UI 컴포넌트
 
-부트스트랩같은 걸 생각하면 됨
+부트스트랩 같은 것들
 
 - [⭐ Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다. (그게뭐야) UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): UI 컴포넌트, 디자인 시스템을 모아놓은 사이트

@@ -16,6 +16,9 @@ tags:
 
 - [CSS selectors](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors)
 - [https://www.w3schools.com/cssref/css_selectors.asp](https://www.w3schools.com/cssref/css_selectors.asp)
+- [\[MDN\] CSS selectors](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [\[MDN\] CSS selectors: Pseudo-classes](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+- [\[MDN\] CSS selectors: Pseudo-elements](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements)
 
 
 ## 개요
@@ -194,7 +197,9 @@ input:focus 	Selects the input element which has focus
 
 ### :has()
 
-TODO
+괄호 안에 작성한 추가 셀렉터에 의해 선택된 요소가 있고, 그 요소가 직계 하위 요소인 태그를 선택한다.
+
+`div:input[type=checkbox]`는 체크박스 input 태그의 모든 직계 상위 요소 중 `div` 태그를 선택한다.
 
 ### :host-context()
 

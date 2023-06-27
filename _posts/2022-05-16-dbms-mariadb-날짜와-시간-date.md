@@ -112,7 +112,7 @@ from (
 |2022-05-22 23:30:55|2022-05-22 23:30:55|2022-05-22T23:30:55.000000|2022-05-22|2022     |05         |22        |23   |30     |55     |0  |Sunday   |0          |
 +-------------------+-------------------+--------------------------+----------+---------+-----------+----------+-----+-------+-------+---+---------+-----------+
 
-### 날짜 포맷
+## 날짜 포맷
 
 지원하는 모든 날짜 포맷은 [요 페이지](https://mariadb.com/kb/en/date_format/)를 보자.
 
@@ -140,7 +140,9 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 +----------------------+--------------------------+
 
 
-## 현재 날짜/시간 구하기
+## 그 밖의 날짜 관련 함수들
+
+### 현재 날짜/시간 구하기
 
 - `curdate()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
 - `curtime([precision])`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
@@ -150,8 +152,11 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 select now()
 ```
 
+### 특정 조건의 날짜를 반환하는 함수들
 
-## 날짜/시간 더하고 빼기
+- `last_day(date)`: `date`가 속한 달의 마지막 날을 반환
+
+### 날짜/시간의 연산(더하고 빼기)
 
 ```
 date_add(date, interval expr unit)
@@ -168,26 +173,26 @@ select
 
 `unit` 자리에 올 수 있는 키워드는 [이 문서에 있고](https://mariadb.com/kb/en/date-and-time-units/), 요약하면 아래와 같다:
 
-- MICROSECOND: Microseconds
-- SECOND: Seconds
-- MINUTE: Minutes
-- HOUR: Hours
-- DAY: Days
-- WEEK: Weeks
-- MONTH: Months
-- QUARTER: Quarters
-- YEAR: Years
-- SECOND_MICROSECOND: Seconds.Microseconds
-- MINUTE_MICROSECOND: Minutes.Seconds.Microseconds
-- MINUTE_SECOND: Minutes.Seconds
-- HOUR_MICROSECOND: Hours.Minutes.Seconds.Microseconds
-- HOUR_SECOND: Hours.Minutes.Seconds
-- HOUR_MINUTE: Hours.Minutes
-- DAY_MICROSECOND: Days Hours.Minutes.Seconds.Microseconds
-- DAY_SECOND: Days Hours.Minutes.Seconds
-- DAY_MINUTE: Days Hours.Minutes
-- DAY_HOUR: Days Hours
-- YEAR_MONTH: Years-Months
+- `MICROSECOND`: Microseconds
+- `SECOND`: Seconds
+- `MINUTE`: Minutes
+- `HOUR`: Hours
+- `DAY`: Days
+- `WEEK`: Weeks
+- `MONTH`: Months
+- `QUARTER`: Quarters
+- `YEAR`: Years
+- `SECOND_MICROSECOND`: Seconds.Microseconds
+- `MINUTE_MICROSECOND`: Minutes.Seconds.Microseconds
+- `MINUTE_SECOND`: Minutes.Seconds
+- `HOUR_MICROSECOND`: Hours.Minutes.Seconds.Microseconds
+- `HOUR_SECOND`: Hours.Minutes.Seconds
+- `HOUR_MINUTE`: Hours.Minutes
+- `DAY_MICROSECOND`: Days Hours.Minutes.Seconds.Microseconds
+- `DAY_SECOND`: Days Hours.Minutes.Seconds
+- `DAY_MINUTE`: Days Hours.Minutes
+- `DAY_HOUR`: Days Hours
+- `YEAR_MONTH`: Years-Months
 
 사실 함수를 쓰지 않고 그냥 연산자로 해결하는 방법도 있다.
 
@@ -310,19 +315,18 @@ from (
 | QUARTER             | 4                           |
 
 
-## BETWEEN 비교는 조건항을 포함하는가
+## DATETIME을 DATE로 BETWEEN 비교
+
+먼저 BETWEEN 비교가 조건항을 포함하는지를 보자:
 
 ```sql
 select
-    if(0 between 0 and 2, 'true', 'false'),
-    if(1 between 0 and 2, 'true', 'false'),
-    if(2 between 0 and 2, 'true', 'false')
+    if(0 between 0 and 2, 'true', 'false'), -- true
+    if(1 between 0 and 2, 'true', 'false'), -- true
+    if(2 between 0 and 2, 'true', 'false')  -- true
 ```
 
-다 true니까 포함이다.
-
-
-## DATETIME을 DATE로 BETWEEN 비교
+포함한다.
 
 ```sql
 select

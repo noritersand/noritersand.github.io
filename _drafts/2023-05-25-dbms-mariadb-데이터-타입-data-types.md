@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-MariaDB의 데이터 타입 관련 모음. [날짜와 시간을 다루는 타입은 따로 작성함](/dbms/dbms-mariadb-date-날짜와-시간/).
+MariaDB의 데이터 타입 관련 모음. [날짜와 시간을 다루는 타입은 따로 작성함](/dbms/dbms-mariadb-날짜와-시간-date/).
 
 
 ## 불리언 타입 Boolean

@@ -80,7 +80,7 @@ tags:
 
 [https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli)
 
-윈도우용 CLI 패키지(=앱) 관리 툴이다. 리눅스의 `apt`와 비슷하다. 보통은 기본으로 설치되어 있음.
+Windows OS의 패키지 관리용 공식 CLI 툴. 리눅스의 `apt`와 비슷하다. 보통은 기본으로 설치되어 있음.
 
 ```bash
 # 기본 도움말 보기

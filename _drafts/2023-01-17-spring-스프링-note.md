@@ -219,3 +219,22 @@ return Optional.ofNullable(authentication)
 스프링에서 컨트롤러의 반환 타입으로 자주 사용되는 클래스. Spring Framework로 분류한다.
 
 TODO 어떻게 응답하는지
+
+
+## @DateTimeFormat
+
+메서드, 필드, 파라미터, 어노테이션 선언문에서 사용할 수 있는 어노테이션. 
+
+필드에 적용하면 다음처럼 ???? Binder에 의해 `String`이 `LocalDate` 타입으로 자동 변환된다.
+
+```java
+public class AwesomeClass {
+    /**
+     * 날짜 검색 시작값
+     */
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private java.time.LocalDate searchStartDate;
+}   
+```
+
+단, 이 경우 `String` 값이 ISO_DATE인 `yyyy-MM-dd` 형태여야 한다.

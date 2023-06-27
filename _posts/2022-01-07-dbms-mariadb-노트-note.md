@@ -490,6 +490,6 @@ select * from dates
 
 ## DELETE와 TRUNCATE의 차이
 
-- DELETE는 WHERE 절을 사용할 수 있다.
-- TRUNCATE는 DELETE보다 빠르게 작동한다. TRUNCATE는 테이블 전체를 잠그고 데이터를 삭제하는 반면, DELETE는 각 행을 스캔하여 삭제하기 때문
-- TRUNCATE는 삭제된 행의 수를 반환하지 않는다. 또한 테이블의 auto-increment 값도 초기값으로 재설정된다.
+- `TRUNCATE`는 `WHERE` 절을 사용할 수 없다.
+- `TRUNCATE`는 `DELETE`보다 빠르게 작동한다. `TRUNCATE`는 테이블 전체를 잠그고 데이터를 삭제하는 반면, `DELETE`는 각 행을 스캔하여 삭제하기 때문
+- `TRUNCATE`는 삭제된 행의 수를 반환하지 않는다. 또한 테이블의 auto-increment 값도 초기값으로 재설정된다.
