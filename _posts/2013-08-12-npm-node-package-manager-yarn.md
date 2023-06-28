@@ -79,8 +79,14 @@ npm install 모듈명 --prefix .
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 패키지
 npm install nodemon -g
 
-# vue 패키지 최신버전으로 설치
-npm install vue@latest
+# PACKAGE_NAME 패키지를 최신버전으로 설치
+npm install PACKAGE_NAME@latest
+
+# 지정한 버전 번호와 일치하는 버전으로 설치
+npm install PACKAGE_NAME@1.2.3
+
+# 지정한 태그와 일치하는 버전으로 설치
+npm install PACKAGE_NAME@tag
 ```
 
 
@@ -233,7 +239,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 - engine: 프로젝트의 기반 엔진을 표시한다.
 - TODO
 
-### 패키지 버전 지정하기
+### 패키지 버전 지정하기 version numbering
 
 ```
 "dependencies": {
@@ -346,6 +352,12 @@ npm install yarn -g
 ```bash
 # Yarn으로 PACKAGE_NAME 설치 후 package.json에 추가
 yarn add PACKAGE_NAME
+
+# 지정한 버전 번호와 일치하는 버전으로 설치
+yarn add PACKAGE_NAME@1.2.3
+
+# 지정한 태그와 일치하는 버전으로 설치
+yarn add PACKAGE_NAME@TAG_NAME
 
 # package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 해당 파일을 우선 참조함
 yarn install
