@@ -142,7 +142,7 @@ ctx.getVariable("today");
 
 ### Selection Variable Expressions: `*{...}`
 
-선택 변수 표현식. 이건 객체의 프로퍼티 표현식이다.
+선택 변수 표현식. 이것은 객체의 프로퍼티 표현식이다.
 
 ```html
 <div th:object="${session.user}">

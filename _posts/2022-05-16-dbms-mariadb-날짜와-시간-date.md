@@ -49,16 +49,18 @@ from (
 ) d
 ```
 
-DATETIME을 DATE로:
+`DATETIME`을 `DATE` 혹은 `TIME`으로:
 
 ```sql
-select date(now())
+select date(now());
+select time(now());
 ```
 
-아니면 `convert()`를 써도 됨
+`convert()` 함수로 변환:
 
 ```sql
 select convert(now(), date);
+select convert(now(), time);
 ```
 
 ### DATE_FORMAT(), STR_TO_DATE()
@@ -257,7 +259,7 @@ select
 `CURDATE()`는 타임존을 변환해도 현재 시간을 무시하고 현재 날짜 + 00시 기준으로 변환되기 때문에 의도대로 작동하지 않으니 주의할 것.
 
 
-## TIMESTAMP에서 특정 단위 추출
+## Date에서 특정 단위 추출
 
 - [https://mariadb.com/kb/en/extract/](https://mariadb.com/kb/en/extract/)
 - [https://mariadb.com/kb/en/date-and-time-units/](https://mariadb.com/kb/en/date-and-time-units/)
@@ -385,9 +387,9 @@ convert(concat(date_format(a.endDate, '%Y-%m-%d'), ' 23:59:59')
 하루를 더하고 1초를 빼는 방법으로 바꿔도 된다:
 
 ```sql
-date_sub(date_add(a.endDate, interval 1 day), interval 1 second)
+date_sub(date_add('2022-12-24', interval 1 day), interval 1 second)
 # 혹은
-(a.endDate + interval 1 day) - interval 1 second
+'2022-12-24' + interval 1 day - interval 1 second
 ```
 
 문자열 리터럴은 안쓰는 게 좋으니 가급적 이걸 사용하도록 하자. 😏

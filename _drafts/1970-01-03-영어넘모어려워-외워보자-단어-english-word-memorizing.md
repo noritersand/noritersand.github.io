@@ -160,6 +160,10 @@ tags:
 - criterion: [명사] (판단이나 결정을 위한) 기준
   - criteria: [명사] 규준, 표준, 기준 (→standard), 혹은 criterion의 복수
   - column of exemption criteria(혹은 column of exception criteria): 제외 작업의 기준이 되는 열
+  - 비교 혹은 계산에 사용할 '기준'의 변수명을 짓기 위해 사전에서 찾은 단어. 하지만 너무 생소한 단어라 base가 더 나을 수도...
+  - 챗봇 답변: 
+    - base는 기본적인, 근본적인, 기반이 되는 것을 의미하는 반면, criterion은 판단이나 결정을 내리기 위한 기준이나 척도를 의미함.
+    - 둘 다 모두 특정 조건이나 기준을 의미하는 단어로 어감 차이는 크지 않지만, base가 좀 더 일반적으로 사용된다고 함.
 - datum: 정보, 자료, 기준점
 - de-facto: 사실상, 실제로, 사실상 존재하는. *de-facto standard: 사실상 표준*
 - declare: 선언하다, 말하다, 주장, 선고하다, 신고하다

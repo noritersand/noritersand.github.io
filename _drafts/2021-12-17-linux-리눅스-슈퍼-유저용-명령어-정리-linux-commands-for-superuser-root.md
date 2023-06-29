@@ -322,7 +322,7 @@ TODO 뭔가를 하는건데...
 아래 `systemctl`의 약어인 것 같지만 전혀 아니다.
 
 ```bash
-# read values from file. 현재 세션에 변경사항 반영인데... 새로고침 대상이 뭘까?
+# read values from file. 현재 세션에 변경 사항 반영인데... 새로고침 대상이 뭘까?
 sysctl -p
 ```
 

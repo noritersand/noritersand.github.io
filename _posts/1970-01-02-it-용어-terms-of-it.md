@@ -184,7 +184,7 @@ UNIX 운영체제의 일종. UNIX 코드 기반으로 UC Berkeley에서 개발�
 
 이미지 같은 파일을 URL로 링크하는 것이 아니라, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
 
-가령 이런 코드는:
+가령 아래 코드는:
 
 ```html
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA

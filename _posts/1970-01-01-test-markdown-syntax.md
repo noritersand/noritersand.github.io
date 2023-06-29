@@ -56,7 +56,7 @@ tags:
 - [ ] 두 번째 할 일
 
 
-## 헤더(이건 h2)
+## 헤더(이 헤더는 h2)
 
 ```
 # h1
@@ -192,7 +192,7 @@ console.log(obj.msg);
 
 ## embed image
 
-이건 그냥 기본 정렬  
+이것은 그냥 기본 정렬  
 ~~![바쁜 라상무](/images/kakao-ryon-busy.png)~~
 
 요거는 가운데 정렬(kramdown만 되는 모양)

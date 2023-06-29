@@ -50,7 +50,7 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 `Window > Preferences > workspace` 우측 화면의 'Refresh using native hooks or pollings' 체크
 
-이클립스는 기본적으로 이클립스 내에서 직접 변경하지 않은 파일은 변경을 감지하지 않는다. 이건 파일 변경 감지 기능을 켜는 옵션.
+파일 변경 감지 기능을 켜는 옵션인데, 이클립스는 기본적으로 이클립스 내에서 직접 변경하지 않은 파일은 변경을 감지하지 않는다. 
 
 
 ## 인코딩 환경 설정

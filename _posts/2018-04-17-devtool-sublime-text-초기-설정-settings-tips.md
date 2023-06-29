@@ -219,7 +219,7 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 ```
 
 - `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
-- `discard_all_modified`은 모든 변경사항을 취소하니 주의해서 사용할 것. 
+- `discard_all_modified`은 모든 변경 사항을 취소하니 주의해서 사용할 것. 
 - <kbd>ctrl + alt + shift + enter</kbd>는 리베이스인 amend commit인데, 실수하면 위험한 기능이라 막아놨음.
 
 

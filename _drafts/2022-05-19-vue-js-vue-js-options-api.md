@@ -66,7 +66,7 @@ fallthrough 속성을 가리키는 컴포넌트 인스턴스. fallthrough 속성
 <span>{{ $attrs }}</span>
 ```
 
-가이드를 보면 이런 특성을 '속성의 자동 상속' 정도로 표현하는데, 이를 비활성화하려면 컴포넌트 옵션에 `inheritAttrs: false`를 추가하면 된다고 한다.
+가이드를 보면 이러한 특성을 '속성의 자동 상속' 정도로 표현하는데, 비활성화하려면 컴포넌트 옵션에 `inheritAttrs: false`를 추가하면 된다고 한다.
 
 data나 props와 다르게 참조 시 `$attrs`를 생략할 수 없다:
 

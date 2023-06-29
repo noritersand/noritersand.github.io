@@ -545,9 +545,9 @@ HAVING COUNT(*) >= 5;
      30        6            1566.7
 ```
 
-## 분석 함수
+## 집계(혹은 분석) 함수
 
-### ROW_NUMBER() OVER(조건)
+### ROW_NUMBER() OVER()
 
 조건을 통하여 고유한 서수를 반환.
 
@@ -611,7 +611,7 @@ WHERE rnum >= #{start} AND rnum <= #{end}
 
 - `#{뿅뿅}`: Java 마이바티스 매개변수
 
-### FIRST_VALUE(값) OVER(조건)
+### FIRST_VALUE() OVER()
 
 조건을 통하여 조회된 값 중 첫 번째 값을 반환
 
@@ -637,7 +637,7 @@ ORDER BY deptno, empno;
 ...
 ```
 
-### COUNT(값) OVER(조건)
+### COUNT() OVER()
 
 조건을 통하여 누적 COUNT 수 반환.
 
@@ -690,7 +690,7 @@ SALESMAN  MARTIN                                4
  12개의 행이 선택됨
 ```
 
-### SUM(값) OVER(조건)
+### SUM() OVER()
 
 조건을 통하여 누적된 값의 합을 반환
 

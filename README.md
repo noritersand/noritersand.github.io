@@ -83,7 +83,7 @@ jekyll build --drafts
 jekyll build --destination <destination>
 
 # 현재 폴더의 콘텐츠를 가지고 ./_site 에 사이트를 생성.
-# 변경사항이 감지되면, 자동으로 다시 생성.
+# 변경 사항이 감지되면, 자동으로 다시 생성.
 jekyll build --watch
 ```
 
@@ -97,7 +97,7 @@ jekyll serve
 # 로컬서버를 실행하되 draft를 포함.
 jekyll s -D
 
-# 변경사항이 발생했을 때 LiveReload 기능이 브라우저를 새로고침
+# 변경 사항이 발생했을 때 LiveReload 기능이 브라우저를 새로고침
 jekyll serve --livereload
 
 # 재생성 소요시간을 줄이기 위해 증분 재생성 기능으로 부분 빌드
@@ -108,13 +108,13 @@ jekyll serve --incremental
 # PID 조회는 ps aux | grep jekyll
 jekyll serve --detach
 
-# jekyll serve 와 동일하지만 변경사항을 감시하지 않음.
+# jekyll serve 와 동일하지만 변경 사항을 감시하지 않음.
 jekyll serve --no-watch
 ```
 
 `--livereload`는 켜봤자 빌드하는 동안 404 에러나서 안씀.
 
-`--watch` 옵션은 기본값인 것 같다. (`serve` 실행 중에는 파일 변경사항을 자동으로 감시)
+`--watch` 옵션은 기본값인 것 같다. (`serve` 실행 중에는 파일 변경 사항을 자동으로 감시)
 
 그리고 이유는 모르겠지만 `jekyll`로 시작이 안될때 `bundle exec`로 되기도 함. 아래처럼 해보자:
 

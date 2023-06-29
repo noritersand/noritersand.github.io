@@ -47,7 +47,7 @@ git reset --hard HEAD~2
 git merge --squash HEAD@{1}
 ```
 
-헤드로부터 지정한 커밋까지의 변경사항이 인덱스에 반영되었을 것이다:
+헤드로부터 지정한 커밋까지의 변경 사항이 인덱스에 반영되었을 것이다:
 
 ```bash
 $ git status

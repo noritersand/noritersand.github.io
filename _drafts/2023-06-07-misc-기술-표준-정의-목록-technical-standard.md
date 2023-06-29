@@ -26,7 +26,7 @@ tags:
 
 ## 역주: 한 주의 시작은 월요일
 
-우리나라에는 달력, 날짜 표기 등에 관한 일반적인 표준은 없지만, 정보를 교환할 때는 국제표준화기구 ISO에서 제정한 ISO 8601의 2004년 판을 그대로 채택(부합화 표준)하여 사용 중이라고 한다. [국립전파연구원 FAQ](https://www.rra.go.kr/ko/license/C_e_faq.do?fa_type=gl&fa_category=global)
+한국에는 달력, 날짜 표기 등에 관한 일반적인 표준은 없지만, 정보를 교환할 때는 국제표준화기구 ISO에서 제정한 ISO 8601의 2004년 판을 그대로 채택(부합화 표준)하여 사용 중이라고 한다. [국립전파연구원 FAQ](https://www.rra.go.kr/ko/license/C_e_faq.do?fa_type=gl&fa_category=global)
 
 - https://www.standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?menuId=503&topMenuId=502&ksNo=KSXISO8601&tmprKsNo=KSXISO8601&reformNo=03
 - 표준명: 데이터 요소 및 교환 포맷 ― 정보교환 ― 날짜 및 시각의 표기 (DATA ELEMENTS AND INTERCHANGE FORMATS -- INFORMATION INTERCHANGE -- REPRESENTATION OF DATES AND TIMES)
