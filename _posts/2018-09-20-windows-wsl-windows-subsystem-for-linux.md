@@ -64,7 +64,7 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ```
 
 ~~명령어로 다운로드/설치 하면 됨~~  
-~~오늘(2021-01-20) 확인해보니 설치가 제대로 안되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
+~~오늘(2021-01-20) 확인해보니 설치가 제대로 안 되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
 
 
 ## 설치 확인
@@ -186,7 +186,7 @@ WSL에서 윈도우의 환경 변수를 사용하지 않는 방법이다.
 wsl --shutdown
 ```
 
-그래도 잘 안되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
+그래도 안 되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
 
 
 ## WSL에서 Git Credential Manager for Windows 사용하기

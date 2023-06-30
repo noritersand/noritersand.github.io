@@ -33,7 +33,7 @@ System.out.println(ch); // '1'
 `System.in.read()`를 사용하면서 주의할 점은 버퍼다. 콘솔에서 1을 입력했다고 해서 실제로 1만 입력되는 것이 아니라는 것:
 
 ```
-1입력 → 1 + <LINE BREAK>
+1 + <LINE BREAK>
 ```
 
 위처럼 `<LINE BREAK>`가 버퍼에 남아버려서 다음과 같은 현상이 발생한다:

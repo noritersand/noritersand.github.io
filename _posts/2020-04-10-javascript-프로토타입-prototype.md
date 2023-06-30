@@ -382,7 +382,7 @@ fatboy.assuredDestruction; // true
 Object.getPrototypeOf(fatboy) === bomb; // true
 ```
 
-앞서 말했듯이 `__proto__`는 지원이 중단된 기능인데다 속도 이슈까지 있다고 하니 사용하면 안되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
+앞서 말했듯이 `__proto__`는 지원이 중단된 기능인데다 속도 이슈까지 있다고 하니 사용하면 안 되지만, `Object.setPrototypeOf()`는 IE11부터 쓸 수 있어서...
 
 ### .apply + .prototype (추천#2)
 

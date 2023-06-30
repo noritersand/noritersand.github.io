@@ -607,7 +607,7 @@ http.sslbackend=openssl
 http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
 ```
 
-만약 저장소가 여러개이면서 SSL 문제가 해결이 안되면 다음처럼:
+만약 저장소가 여러개이면서 SSL 문제가 해결이 안 되면 다음처럼:
 
 ```bash
 git config --global http.https://noritersand.github.io.sslverify false
@@ -778,7 +778,7 @@ git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 �
 ```bash
 git format-patch -3  # 현재 브랜치에서 3개의 커밋을 패치로 생성(HEAD 포함 3개)
 git format-patch 브랜치_커밋아이디_혹은_태그  # 현재 브랜치부터 지정한 커밋까지의 커밋을 패치로 생성(지정한 커밋은 포함하지 않음)
-git diff > FILE  # diff 출력 내용을 파일로 생성. 검색에서 나오긴 했는데 apply가 안되는건 함정...
+git diff > FILE  # diff 출력 내용을 파일로 생성. 검색에서 나오긴 했는데 apply가 안 되는건 함정...
 ```
 
 커밋이 여러 개인 경우 파일명 앞에 커밋 순서대로 번호가 붙는다. 과거일 수록 낮은 번호이므로 패치 적용은 오름차순으로 하면 됨.
@@ -1077,7 +1077,7 @@ git merge A B
 
 #### options
 
-- `--ff`: 가능할 경우 Fast-forward 머지를, 안되면 머지 커밋을 생성한다.
+- `--ff`: 가능할 경우 Fast-forward 머지를, 안 되면 머지 커밋을 생성한다.
 - `--no-ff`: 묻지도 따지지도 않고 머지 커밋을 생성한다. 기본 옵션으로 설정하려면: `git config --local merge.ff no`
 - `--ff-only`: Fast-forward 머지가 불가능할 경우 머지를 취소한다.
 - `--no-commit`: 커밋하지 않고 머지. 파일이 변경된 상태에서 머지를 멈춘다고 보면 됨.

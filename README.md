@@ -112,7 +112,7 @@ jekyll serve --detach
 jekyll serve --no-watch
 ```
 
-`--livereload`는 켜봤자 빌드하는 동안 404 에러나서 안씀.
+`--livereload`는 켜봤자 빌드하는 동안 404 에러나서 안 씀.
 
 `--watch` 옵션은 기본값인 것 같다. (`serve` 실행 중에는 파일 변경 사항을 자동으로 감시)
 

@@ -47,7 +47,7 @@ tags:
 
 요런 `C:\Users\fixal\AppData\Local\JetBrains\IntelliJIdea2022.3\log` 경로에 있는데 정확히 어디에 있는지는 Help 메뉴의 Show Log In Explorer를 누르면 나옴.
 
-검색으로 해결 안되는 문제(프리징 현상이라던지)가 발생하면 [지원 페이지](https://intellij-support.jetbrains.com/)로 가서 이 파일을 첨부해 문의하면 된다.
+검색으로 해결 안 되는 문제(프리징 현상이라던지)가 발생하면 [지원 페이지](https://intellij-support.jetbrains.com/)로 가서 이 파일을 첨부해 문의하면 된다.
 
 
 ## 빌드나 런타임 에러가 발생하면
@@ -223,7 +223,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl, ctrl</kbd>: Run Anything 모든 것(?) run하기
 - <kbd>ctrl + alt + s</kbd>: Settings 인텔리제이 설정
 - <kbd>ctrl + alt + shift + s</kbd>: Project Structure 현재 프로젝트 전용 설정
-- <kbd>ctrl + shift + '</kbd>: 포커스가 있는 창 최대화(안되는 것도 있다)
+- <kbd>ctrl + shift + '</kbd>: 포커스가 있는 창 최대화(안 되는 것도 있다)
 - <kbd>ctrl + shift + a</kbd>: 실행 가능한 모든 명령 검색창
 - <kbd>ctrl + shift + n</kbd>: Go to File 파일 열기
 - <kbd>ctrl + e</kbd>: Recent Files 최근 파일 목록 보기

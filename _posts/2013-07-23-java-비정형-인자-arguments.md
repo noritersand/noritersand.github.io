@@ -67,8 +67,7 @@ class Args {
 
 
 Args a = new Args();
-System.out.println(a.multiply(2, 2, 2, 2));
-→ 16
+System.out.println(a.multiply(2, 2, 2, 2)); // 16
 ```
 
 ## example 2

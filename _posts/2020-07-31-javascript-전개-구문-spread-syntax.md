@@ -47,7 +47,7 @@ console.log(...n); // 1 2 3
 
 ## 함수 호출에서: 인수 목록을 위한 전개 Spread for argument lists
 
-### 객체는 안되영
+### 객체는 안 되영
 
 인수 목록에서 plain object는 전개할 수 없다:
 

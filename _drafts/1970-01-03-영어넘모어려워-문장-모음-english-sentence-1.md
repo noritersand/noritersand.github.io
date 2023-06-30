@@ -80,7 +80,7 @@ tags:
 50. Let's wrap it up: 오늘은 여기까지 하죠.
 51. It was fab!: 대박이었어!
 52. Good for you!: 잘됐네!/아이고 좋~겠네
-53. You've got to be kidding me!: 말도 안돼
+53. You've got to be kidding me!: 말도 안 돼
 54. Cheer up!: 힘내!
 55. Keep up the good work!: 앞으로도 지금처럼 계속 잘하길!/수고하세요!
 56. That looks lit!: 쩐다!

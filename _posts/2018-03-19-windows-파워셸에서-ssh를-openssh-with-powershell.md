@@ -221,7 +221,7 @@ sftp> quit
 
 **TODO OpenSSH만 설치하면 되는지 확인**
 
-**TODO scp로 다운로드는 안되나**
+**TODO scp로 다운로드는 안 되나**
 
 #### 업로드
 

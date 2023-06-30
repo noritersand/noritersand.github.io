@@ -147,7 +147,7 @@ TODO 아래 해석하고 지워:
 - source: 
 - sessionCookieName: JSESSIONID를 별도로 지정하는 속성
 
-`sessionCookieName`은 서버 도메인이 겹치지 않는 한 사용할 일이 없다. 그러니까 localhost로 포트번호만 바꿔서 기동하는 로컬 서버가 여러 개면 설정해야 하는 속성이다. 이 설정이 없으면 도메인이 같은 서버를 번갈아 접속할 때마다 JSESSIONID 값이 변경되면서 세션 유지가 안되는 현상이 발생한다.
+`sessionCookieName`은 서버 도메인이 겹치지 않는 한 사용할 일이 없다. 그러니까 localhost로 포트번호만 바꿔서 기동하는 로컬 서버가 여러 개면 설정해야 하는 속성이다. 이 설정이 없으면 도메인이 같은 서버를 번갈아 접속할 때마다 JSESSIONID 값이 변경되면서 세션 유지가 안 되는 현상이 발생한다.
 
 `sessionCookieName` 설정은 아래처럼:
 

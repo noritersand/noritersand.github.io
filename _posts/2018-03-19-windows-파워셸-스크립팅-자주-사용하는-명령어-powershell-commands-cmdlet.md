@@ -351,7 +351,7 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 
 ### Set-Alias
 
-신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.2)도 있는데 요건 재할당이 안되서 이미 있는 별칭이라면 에러가 발생한다.
+신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.2)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
 
 ```bash
 # 탐색기의 별칭으로 ex 추가

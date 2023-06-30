@@ -255,7 +255,7 @@ echo $SHELL
 env | grep SHELL
 ```
 
-만약에 안되면 `/etc/passwd` 파일을 직접 수정해도 됨.
+만약에 안 되면 `/etc/passwd` 파일을 직접 수정해도 됨.
 
 
 ## iptables/ip6tables

@@ -1162,7 +1162,7 @@ yet:
 
 수동태의 마지막에는 행위자를 표현하는 by-phrase가 오는데, 반드시 와야 하는 문장이 있는가 하면 생략해도 말이 되는 문장이 있다.
 
-- The *savannah is roamed* by beautiful giraffes: by giraffes가 없으면 말이 안되는 문장
+- The *savannah is roamed* by beautiful giraffes: by giraffes가 없으면 말이 안 되는 문장
 - At dinner, *six shrimp were eaten* by Harry: by Harray가 없어도 말이 되는 문장
 
 ```

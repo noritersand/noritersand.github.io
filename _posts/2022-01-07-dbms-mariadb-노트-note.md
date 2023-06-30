@@ -243,7 +243,7 @@ mysql --user USERNAME --password --database=NEW_DATABASE < data-dump.sql
 mysqldump --host=DOMAIN_OR_IP_ADRESS --user USERNAME --password --database=DATABASE_NAME --result-file=dump.sql
 ```
 
-데이터베이스를 지정하는 옵션과 표현식이 다르니 주의할 것: `mysql`은 `--database=DB_NAME, -D DB_NAME`, `mysqldump`는 `--databases, -B`.
+데이터베이스를 지정하는 옵션과 표현식이 다르니 주의할 것; `mysql`은 `--database=DB_NAME, -D DB_NAME`, `mysqldump`는 `--databases, -B`.
 
 그리고 `mysql`은 `--routines`, `--result-file` 옵션이 없다.
 

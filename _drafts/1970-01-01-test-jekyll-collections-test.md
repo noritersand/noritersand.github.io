@@ -21,4 +21,4 @@ collections:
 ```
 
 추가하면 `_myawesomedirectory`라는 폴더의 모든 글을 `/myawesomedirectory/파일명` 경로로 퍼블리싱함.
-벗뜨 이런식으로 작성한 글은 index 페이지에 표시가 안되서 일단 보류
+벗뜨 이런식으로 작성한 글은 index 페이지에 표시가 안 되서 일단 보류

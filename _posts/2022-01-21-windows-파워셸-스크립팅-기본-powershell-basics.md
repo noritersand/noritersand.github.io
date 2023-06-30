@@ -113,7 +113,7 @@ Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 ```
 
-이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
+이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안 되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
 
 
 ## 문법

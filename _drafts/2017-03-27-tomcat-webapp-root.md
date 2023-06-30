@@ -32,7 +32,7 @@ ${webapp.root}
 이게 그냥 설정되진 않고 뭔가를 해야 되는거 같은데...
 로깅 프레임웤에서 설정한다는 말도 있고.
 
-web.xml을 쓰지 않고 @WebListener(혹은 ServletContextListener의 구현체)를 사용할땐 안되는것 같다.
+web.xml을 쓰지 않고 @WebListener(혹은 ServletContextListener의 구현체)를 사용할땐 안 되는것 같다.
 
 톰캣 플러그인에서 띄운건 저 로그가 뜨는데, 톰캣으로 직접 띄우면 없다.
 
