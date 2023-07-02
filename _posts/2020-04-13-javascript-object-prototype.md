@@ -130,7 +130,7 @@ Object.create(proto, propertiesObject)
 Object.assign(target, ...sources)
 ```
 
-주어진 객체들이 소유한 모든 열거 가능 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화(mutating)하며, 변화된 `target`을 반환한다.
+주어진 객체 고유의 모든 열거 가능 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화(mutating)하며, 변화된 `target`을 반환한다.
 
 ```js
 var o1 = {a: 1, b: 2};
@@ -144,7 +144,7 @@ console.log(o1 === o3); // true
 
 ### Object.keys
 
-객체 고유의 열거 가능한 프로퍼티 이름을 배열로 반환한다.
+주어진 객체 고유의 모든 열거 가능 프로퍼티들의 이름을 배열로 반환한다.
 
 ```js
 var loopMe = {
@@ -159,7 +159,7 @@ Object.keys(loopMe); // Array(3) [ "a", "b", "c" ]
 
 ### Object.values
 
-객체 고유의 열거 가능한 프로퍼티 값을 배열로 반환한다.
+주어진 객체 고유의 모든 열거 가능 프로퍼티들의 값을 배열로 반환한다.
 
 ```js
 var obj = {
@@ -174,7 +174,7 @@ Object.values(obj); // Array(3) [ "abc", 123, true ]
 
 ### Object.entries
 
-객체 고유의 열거 가능한 프로퍼티 이름과 프로퍼티 값 쌍(pair)을 배열로 반환한다.
+주어진 객체 고유의 모든 열거 가능 프로퍼티들의 이름과 값의 쌍(pair)을 배열로 반환한다.
 
 ```js
 var loopMe = {
