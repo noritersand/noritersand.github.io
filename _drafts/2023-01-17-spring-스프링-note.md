@@ -41,7 +41,7 @@ tags:
 
 가령 `src/main/resources/static/robots.txt` 파일이 있다면, 이 파일은 빌드 시 `WEB-INF/classes/static/robots.txt` 경로에 위치하게 되며, `/robots.txt` 웹 주소로 접근할 수 있다.
 
-2013년 블로그에선 `WebMvcAutoConfiguration` 소스를 까보면 아래처럼 돼있다고 하는데, 지금(2023년)은 많이 다름:
+2013년 블로그에선 `WebMvcAutoConfiguration` 소스가 아래처럼 작성돼있다고 하는데, **지금(2023년)은 많이 다름**:
 
 ```java
 private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {

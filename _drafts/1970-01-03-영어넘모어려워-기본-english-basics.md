@@ -84,13 +84,14 @@ tags:
 - antonym: 반대어, 반의어
 - chinese loanword, loanword from chinese: 한국어의 한자
 - collective noun/collective terms: 집단 명사
+- ⭐ collocation: 연어(물고기 아님)
 - colloquialism: 구어적 표현
   - 구어체를 의미한다. 부사로 colloquially가 있음
 - literary style: 문어체
   - 관련 단어: literature: 문학, 문헌
 - consonant: 자음, 자음 소리, 자음을 나타내는 글자
 - contraction: 축약형, 수축, 축소
-- diphthong[dif-thawng]: 이중모음. pipe의 i, doubt의 ou
+- diphthong[dif-thawng]: 이중모음. pipe의 i, doubt의 ou.
 - exemption: 면제, 명사 면제
 - fixed phrase: 고정 문구
 - foreign word, loanword: 외래어

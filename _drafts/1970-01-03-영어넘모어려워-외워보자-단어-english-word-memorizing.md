@@ -261,14 +261,12 @@ tags:
 - omit: ...을 빠뜨리다, 안하고 넘어가다, ...을 삼가다, 생략하다, 못하다
 - overlap: 중복되다, 일치하다
 - paraphrase: 바꾸어 말하기, 바꿔 쓰다, 의역
-- partial: 부분적인, 국소, 일부의, 편파적인, 불완전한
 - particular: 특정한, (보통보다 더 많거나 대단하여) 특별한, (특히 공적 문서에 기록하는) 자세한 사실
 - perform: 수행하다, 공연하다, 연주하다, 노래하다, 연기하다
 - permute: ...을 변경하다, 바꾸다, ...의 순서를 바꾸다
 - permission: [명사] 허락, 허가, 승인
   - approval과 같은 의미인데 좀 더 비공식적인 상황에 사용
 - phrase: 말, 구절, 문구, 어구
-- piece: 조각
 - potentially: 잠재적으로, 아마도, 어쩌면
 - portray: 그리다, 묘사하다, 나타내다. 보여주다, 연기하다
 - predecessor: [명사] 전임자, 이전 것[모델] (-> successor)
@@ -345,7 +343,7 @@ tags:
 - wrap-up: 최종적인, 요약, 잘 끝맺기, 마무리 짓다
 
 
-## 조정, 수정, 변경, 개선, 정제, 갱신
+## 조정, 수정, 변경, 개선, 정제, 갱신, ...
 
 - adapt: [동사] 맞추다, 조정하다, 적응하다, 개작하다, 각색하다
   - 유연성과 적응력을 나타내기 위해 사용됨.
@@ -387,8 +385,10 @@ tags:
 - update: [동사] (최신 정보나 상태, 부품 등으로) 갱신하다
   - 최신 상태로 유지하기 위해 수정하는 것
 
+뭐 이렇게 많은지 😮‍💨
 
-## 덩어리, 큰 덩이, 더미, 무더기, 많음, 다량, 대량
+
+## 덩어리, 큰 덩이, 더미, 무더기, 많음, 다량, 대량, ...
 
 - bulk: 큰 규모, 육중한 것. 매우 크고 넓으며 단단한 것. 물리적 개체의 큰 덩어리. bulk of chair/cathedral.
 - chunk: 덩어리, 상당히 많은 양. 크고 두꺼운 어떤 조각. chunk of meat/vegetables information/data.
@@ -405,7 +405,35 @@ tags:
   - [동사] 쌓이다. 어떤 것을 겹겹이 쌓아 올린 것. stack of books/plates.
 - mass: 형체가 없는 덩어리, 양이 많은, 대량의, 대규모의. mass of water/air.
 
-뭐 이렇게 많은지 😮‍💨
+
+## 부분, 조각, 한 모금, 파편, ...
+
+- part
+- partial: 부분적인, 국소, 일부의, 편파적인, 불완전한
+- unit
+- section
+- piece
+- segment
+- portion
+- bit:
+  - a little bit의 bit
+- detail
+- subdivision
+- substructure
+- area
+- the bulk of something: [phrase] 
+- cell
+- companion
+- continuation
+- fitting
+- fragment
+- mate
+- neck
+- remnant
+- singleton
+- subsection
+
+🤦‍♂️ 미쵸따리...
 
 
 ## 내가 만든 합성어
