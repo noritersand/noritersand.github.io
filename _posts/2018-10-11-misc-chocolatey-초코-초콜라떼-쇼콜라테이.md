@@ -108,3 +108,6 @@ Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를
 
 명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안 되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
 
+
+## Debug
+

@@ -11,10 +11,33 @@ tags:
   - link-post
 ---
 
+* Kramdown table of contents
+{:toc .toc}
+
+
+## 개요
+
+ㅁㄴㅇㅎㅂㅈㄱ
+
+
+## Help 플러그인
+
+### 설정 확인
+
+```
+mvn help:effective-pom
+```
+
+현재 빌드의 유효한 POM을 XML로 표시한다. 프로젝트에 모든 POM 정보를 고려한 최종 POM 구성을 확인할 수 있다. 쉽게 `pom.xml` 파일에서 유효한(적용중인) 설정을 표시하는 기능이다.
+
+```
+mvn help:effective-settings
+```
+
+프로젝트의 계산된 설정(?)을 XML로 표시한다. 로컬/원격 저장소, 미러, 프록시, 인증 정보 등을 포함한다. 이 쪽은 `settings.xml` 파일의 내용을 표시한다.
+
 
 ## dependency 플러그인 
-
-
 
 ### 의존관계 트리 보기
 

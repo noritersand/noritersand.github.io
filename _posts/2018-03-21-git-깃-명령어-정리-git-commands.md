@@ -236,7 +236,7 @@ git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1
 git checkout master
 ```
 
-`checkout` 명령은 때에 따라 실패하기도 하는데, 대표적인 예로 현재 브랜치의 변경점을 커밋하지 않았으면서 전환하려는 브랜치와 충돌이 발생하는 경우다.
+`checkout` 명령은 때에 따라 실패하기도 하는데, 대표적인 예로 현재 브랜치의 변경점을 커밋하지 않았으면서 전환하려는 브랜치와 충돌(conflict)이 발생하는 경우다.
 
 #### 브랜치를 새로 만들면서 체크아웃
 
@@ -622,7 +622,7 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 #### options
 
-- `--check`: 충돌 문자 혹은 공백 오류가 있는지 확인
+- `--check`: 충돌(conflict) 문자 혹은 공백 오류가 있는지 확인
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 
@@ -686,7 +686,7 @@ git diff hugo..master ./README.md
 git diff --check  # 충돌 문자가 있거나 공백 에러가 있는지 확인
 ```
 
-`--check` 옵션의 주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 해당 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
+`--check` 옵션의 주 사용처는 머지 실패 시 충돌 확인이다. 충돌이 발생하면 파일에 충돌 문자가 삽입되며 modified 상태가 되기 때문.
 
 ```bash
 user@noritersand-desktop MINGW64 /c/dev/repo/git-test (test4)
