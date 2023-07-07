@@ -267,7 +267,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>alt + enter</kbd>: Show Context Actions/ 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
 - <kbd>alt + f1</kbd>: Select in/ 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f7</kbd>: Find Usages/ 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
-- <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데 뭔 차이인지 모르겠다.
+- <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데, 인텔리제이 2020.1 버전부터 두 기능 간 차이가 없다고 한다. [JetBrains Support 답변](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008113359--Find-usages-in-file-vs-Highlight-usages-in-file-)
 - <kbd>ctrl + f1</kbd>: Error Description. 에러 툴팁 보기
 - <kbd>ctrl + f12</kbd>: File Structure. eclipse의 빠른 아웃라인 보기 기능과 같음.
 - <kbd>ctrl + alt + l</kbd>: 오토 fㅗ매팅
