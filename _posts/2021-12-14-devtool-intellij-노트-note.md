@@ -99,6 +99,13 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
 
 
+## 프로젝트별 배경 화면 다르게
+
+원래는 테마를 프로젝트별로 설정하려고 했으나 현재(2023-07-09) 지원하지 않는다. 
+
+우선 식별용 이미지 몇 장을 적당히 마련한 뒤, Find Action<kbd>ctrl + shift + a</kbd>에서 `Set Background Image`를 실행한다. `This project only` 항목에 체크하고 이미지를 설정하면 끝.
+
+
 ## File and Code Templates
 
 TODO
@@ -202,6 +209,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
 - Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
 - Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
+- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \\</kbd> 추가. 기존 단축키는 `Root directory` 기능인데, 어차피 잘 안쓰니 지우거나 무시할 것.
 
 
 ## 기본 단축키

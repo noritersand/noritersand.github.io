@@ -430,6 +430,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>ctrl + esc</kbd>: 시작 열기
 - <kbd>ctrl + shift + esc</kbd>: 작업 관리자 실행
 - <kbd>shift + f10</kbd>: 컨텍스트 메뉴 팝업(=마우스 우클릭)
+- <kbd>alt + space</kbd>: 활성화된 창의 '창 제어' 혹은 '창 시스템 메뉴' 열기. 창 제목을 우클릭한 것과 같음.
 - <kbd>win + = </kbd>: 돋보기 실행. 실행 후 확대/축소는 <kbd>win + -</kbd>/<kbd> wind + =</kbd>
 - <kbd>win + ,</kbd>: 일시적 바탕화면 보기
 - <kbd>win + .</kbd>/<kbd>win + ;</kbd>: 이모지
