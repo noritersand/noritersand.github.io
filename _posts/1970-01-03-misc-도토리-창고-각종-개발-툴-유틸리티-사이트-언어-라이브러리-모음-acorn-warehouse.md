@@ -58,6 +58,7 @@ tags:
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
 - [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
+- [The Concise TypeScript Book](https://github.com/gibbok/typescript-book): TypeScript의 모든 것을 정리한 문서.
 
 
 ## 리눅스
@@ -107,6 +108,7 @@ tags:
 - [Vue](https://vuejs.org/)
 - [React](https://reactjs.org/): 라이브러리라 주장하지만...
 - [Svelte](https://svelte.dev/)
+- [Million](https://million.dev/): React를 빠르게 해준다는 라이브러리. (무려 70%)
 
 ### 앱 개발 프레임워크
 

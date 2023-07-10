@@ -84,4 +84,4 @@ java [options] <mainclass> [args...]
 java [options] -jar <jarfile> [args...]
 ```
 
-`java` 명령을 실행할 때 JVM Arguments 혹은 System Properties는 실행할 클래스보다 앞에 와야함. (`-classpath` 도 마찬가지)
+위 예시들을 보면 알겠지만, `java` 명령을 실행할 때 `-classpath` 같은 실행 옵션과 JVM Arguments, System Properties같은 설정 값은 반드시 클래스 이름보다 앞에 와야한다.

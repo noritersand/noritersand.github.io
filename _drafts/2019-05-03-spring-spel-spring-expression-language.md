@@ -15,7 +15,8 @@ tags:
 - [http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/expressions.html)
 - [https://blog.outsider.ne.kr/835](https://blog.outsider.ne.kr/835)
 
-## 스프링 빈 접근자(#)
+
+## 스프링 빈 접근자 `#{ }`
 
 ```bash
 #{ beanId }
@@ -73,19 +74,20 @@ String someProp = testProperties.getProperty("some.test.prop");
 private Map<String, Resource> fileResourceMap;
 ```
 
-## VM arguments 접근자($)
+
+## 프로퍼티 접근자 `${ }`
 
 ```bash
 ${ propertyName }
 ```
 
-VM arguments(=시스템 프로퍼티)란 jvm을 시작할 때 옵션`-D`으로 추가 가능한 값들을 말한다.
+여기서 프로퍼티란 java 명령을 실행할 때 `-D` 접두어 옵션으로 추가하는 System properties를 말한다.
 
 ```bash
 java -Dproperty1=value1 -Dproperty2=value2 Mainclass
 ```
 
-#### VM arguments 기본값 설정
+#### 프로퍼티 기본값 설정
 
 ```bash
 ${ propertyName:defaultValue }
@@ -108,6 +110,7 @@ private String prop;
 ```
 
 끝에 `:`을 붙여줘서 프로퍼티가 없을 때 empty string으로 초기화되도록 하는게 좋다.
+
 
 ## Types
 
