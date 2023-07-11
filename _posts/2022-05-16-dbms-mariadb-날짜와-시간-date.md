@@ -214,6 +214,7 @@ CONVERT_TZ(dt, from_tz, to_tz)
 ```
 
 ```sql
+# UTC에서 KST로 변환(단순히 9시간을 더한 것과 같음)
 select convert_tz(now(), 'UTC', 'Asia/Seoul')
 ```
 

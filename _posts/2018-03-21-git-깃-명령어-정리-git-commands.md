@@ -804,7 +804,7 @@ git am FILE
 
 File System ChecK의 약자. 무결성 검사 수행 도구다.
 
-### 누락된 커밋 객체 복원하기
+#### 누락된 커밋 객체 복원하기
 
 ```bash
 git fsck --lost-found
