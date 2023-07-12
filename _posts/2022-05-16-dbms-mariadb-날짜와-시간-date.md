@@ -142,9 +142,9 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 +----------------------+--------------------------+
 
 
-## 그 밖의 날짜 관련 함수들
+## 현재 날짜/시간 구하기
 
-### 현재 날짜/시간 구하기
+함수를 활용한다:
 
 - `curdate()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
 - `curtime([precision])`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
@@ -154,11 +154,13 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 select now()
 ```
 
-### 특정 조건의 날짜를 반환하는 함수들
+
+## 특정 조건의 날짜를 반환하는 함수들
 
 - `last_day(date)`: `date`가 속한 달의 마지막 날을 반환
 
-### 날짜/시간의 연산(더하고 빼기)
+
+## 날짜/시간의 연산(더하고 빼기)
 
 ```
 date_add(date, interval expr unit)

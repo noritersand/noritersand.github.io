@@ -76,3 +76,10 @@ replaceAll(pattern, replacement)
 
 `replace()`와 거의 같지만, 검색된 모든 문자열을 치환한다는 점이 다르다.
 
+### String.prototype.padStart()
+
+TODO
+
+### String.prototype.padEnd()
+
+TODO
