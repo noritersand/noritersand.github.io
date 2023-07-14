@@ -355,3 +355,25 @@ import "module-name"; // 변수 바인딩 없이 스크립트를 실행만 할 �
 ```
 
 끝. 🥱
+
+
+## import.meta
+
+`import.meta`는 모듈에서만 접근할 수 있는 메타 프로퍼티(meta-property)다. 만약 모듈이 아닌 스크립트 영역, 가령 브라우저 콘솔에서 호출하면 `SyntaxError`가 발생한다:
+
+```js
+// 브라우저 콘솔에서 실행하면...
+import.meta; // Uncaught SyntaxError: import.meta may only appear in a module
+```
+
+`import.meta`의 프로퍼티가 어떤 것이 있어야하는지 정해진 적은 없지만 일반적으로 구현되어지는 속성들이 있다. 그 중 `import.meta.url`은 모듈에 대한 전체 URL(프로토콜부터 쿼리스트링까지)을 반환한다.
+
+모듈이면 내보내기(export)를, 모듈이 아니면 내보내지 않도록 하는 코드를 검색하다가 찾은 프로퍼티다. try-catch로 `import.meta`를 감싼다 해도, `export`는 try-catch 내에서 사용할 수 없는 키워드라서 해당 용도로는 사용할 수 없다:
+
+```js
+// 이렇게는 못 씀
+try {
+  console.log(typeof import.meta);
+  export {SingleOrgPicker}; // Uncaught SyntaxError: Unexpected token 'export'
+} catch (e) {}
+```

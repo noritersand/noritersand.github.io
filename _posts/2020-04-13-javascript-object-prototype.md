@@ -124,6 +124,19 @@ Object.create(proto, propertiesObject)
 
 주어진 객체로 새 인스턴스를 만들어 반환한다. 이 때 `proto`는 인스턴스의 프로토타입이 된다.
 
+`proto`가 `null`이면 자바스크립트의 순수 사전식(pure dictionary) 객체인 null 프로토타입 객체(null-prototype objects)가 만들어진다.
+
+```js
+var plainObject = Object.create(null);
+Object.getPrototypeOf(plainObject); // null
+```
+
+null 프로토타입은 프로토타입이 `null`이란 뜻이며, 상속받을 프로퍼티나 메서드가 아무것도 없어서 일반적인 객체처럼 다루면 예상치 못한 오류가 발생할 수 있다:
+
+```js
+console.log(`${plainObject}`); // Uncaught TypeError: can't convert plainObject to string
+```
+
 ### Object.assign()
 
 ```

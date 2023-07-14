@@ -117,7 +117,7 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
 ### Get-Process
 
-프로세스 가져오기. 기본 별칭은 `ps`.
+프로세스 가져오기. 기본 별칭은 `ps`와 `gps`.
 
 ```bash
 # PID가 2832 혹은 836인 프로세스 출력

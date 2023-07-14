@@ -10,6 +10,7 @@ tags:
   - del
   - ins
   - strike
+  - note
 ---
 
 * Kramdown table of contents

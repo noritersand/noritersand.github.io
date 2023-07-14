@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-01-17 17:10:43 +0900
-title: '[Spring] 스프링 note'
+title: '[Spring] 스프링 노트'
 categories:
   - spring
 tags:

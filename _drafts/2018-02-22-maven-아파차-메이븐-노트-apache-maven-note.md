@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-02-22 13:58:28 +0900
-title: '[Maven] 아파치 메이븐 note'
+title: '[Maven] 아파치 메이븐 노트'
 categories:
   - maven
 tags:
