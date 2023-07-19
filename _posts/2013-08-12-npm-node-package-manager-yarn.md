@@ -175,7 +175,7 @@ npx http-server -p 9090
 
 [\[npm Docs\] npx vs npm exec](https://docs.npmjs.com/cli/v8/commands/npm-exec#npx-vs-npm-exec)
 
-우선 `npx`는 명령 실행에 필요한 패키지가 없으면 자동으로 (OS마다 다른 temp 디렉토리 어딘가에) 다운로드한다.
+우선 `npx`는 명령 실행에 필요한 패키지가 없으면 자동으로 (OS마다 다른 temp 디렉터리 어딘가에) 다운로드한다.
 
 그리고 `npx`는 실행할 명령어 뒤에 오는 옵션을 명령어의 인수로 전달하지만, `npm exec`는 `npm`의 옵션으로 먼저 처리한다. 
 

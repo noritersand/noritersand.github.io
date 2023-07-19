@@ -439,12 +439,13 @@ tags:
 🤦‍♂️ 미쵸따리...
 
 
-## 내가 만든 합성어
+## 그냥 적어두는 합성어
 
 - switchAvailability/switchDisability: 속성값에 따라 활성화/비활성화 토글
 - switchfunctionality: 위 두개 합친거
 - switchVisibility: 속성값에 따라 가시성 토글
 - privacyPolicyConsentPage: 개인정보 정책 동의 페이지
+- getDefaultImageEachType: 유형별 기본 이미지 모두 가져오기 (하나만 가져오면 each 대신 by)
 
 
 ## 이모지

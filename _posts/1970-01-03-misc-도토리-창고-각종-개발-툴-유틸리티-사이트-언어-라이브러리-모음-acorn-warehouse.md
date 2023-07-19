@@ -25,6 +25,7 @@ tags:
 
 ## 분류 필요
 
+- [⭐ Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
 - [stripe](https://stripe.com): 결제 대행 웹 앱. 해외판 PG사라고 생각하면 된다. 노션과 험블번들에서 쓰더라.
 - [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
@@ -120,7 +121,7 @@ tags:
 - [JUnit](https://junit.org): 자바 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (2023-02-15)
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 
-### UI 컴포넌트
+### UI 컴포넌트와 CSS 프레임워크
 
 부트스트랩 같은 것들
 
@@ -131,6 +132,7 @@ tags:
 - [Vitebook](https://vitebook.dev/introduction/what-is-vitebook.html#playgrounds)
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Ant Design](https://ant.design/): 잘 모름. 일단 줍줍
+- [너튜브링크](https://www.youtube.com/watch?v=FRSUP2sbgTY): 니콜라스의 2023 베스트 CSS 프레임워크 소개 영상
 
 ### UI 라이브러리
 
@@ -255,6 +257,7 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
+- [https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k](https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k): CSS 코드 생성기 모음
 
 
 ## 공인 IP 확인
@@ -347,11 +350,13 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [Apache HTTP Server](https://www.apachelounge.com/download): 그 아파치. 검색으론 다운로드 링크 찾기 힘듬.
 
 
-## Project manager / Issue tracker
+## 프로젝트 관리 도구 
+
+Project manager 혹은 Issue tracker
 
 - [Trello](https://trello.com)
 - [Taiga](https://taiga.io)
-- [JIRA](https://ko.atlassian.com/software/jira): 유료, 설치형
+- [JIRA](https://ko.atlassian.com/software/jira): 10개의 계정과 1GB까지 무료. 설치형은 없어
 
 
 ## Office

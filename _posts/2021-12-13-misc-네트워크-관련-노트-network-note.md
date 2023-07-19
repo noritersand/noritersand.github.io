@@ -189,7 +189,7 @@ cp vars.example vars
 VPN 서버 터미널로 접속:
 
 ```bash
-ssh -i ssh-keys/AnySSign.pem ubuntu@172.31.0.226
+ssh -i ssh-keys/KEY_FILE.pem ubuntu@172.31.0.226
 cd EasyRSA-3.0.4
 ```
 

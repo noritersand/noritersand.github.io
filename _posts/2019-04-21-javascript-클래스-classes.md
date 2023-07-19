@@ -108,7 +108,7 @@ Hitman.yo();
 
 ## public class feature
 
-아무 제약이 없는 단순한 프로퍼티를 생각하면 된다. 선언 없이 메서드 내에서 추가하려 할 땐 `this`를 거쳐야한다:
+아무 제약이 없는 단순한 프로퍼티.
 
 ```js
 class Building {

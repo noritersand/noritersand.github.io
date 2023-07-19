@@ -32,11 +32,11 @@ putty는 안녕. 터미널은 이제 파워셸로 접속한다. ~~사실 WSL이 
 
 우선 설치를 하자.
 
-#### GUI
+### GUI
 
 윈도우 설정 > 앱 > 선택적 기능 > 선택적 기능 추가 > 'OpenSSH 클라이언트' 검색해서 설치
 
-#### CLI
+### CLI
 
 파워셸(관리자 권한)에서 다음 줄 실행:
 
@@ -82,7 +82,7 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 
 이 때 "UNPROTECTED PRIVATE KEY FILE!" 경고가 출력되면서 접속이 안될 수 있는데, 이 때는 해당 파일의 권한을 아래 둘 중 하나의 방법으로 조정해주면 됨.
 
-#### GUI
+### GUI
 
 1. 탐색기에서 파일 속성 > 보안 > 고급
 2. 상속 사용 안 함 > "이 개체에서 상속된 사용 권한을 모두 제거합니다."
@@ -90,7 +90,7 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 4. 기본 권한 중 '읽기 및 실행', '읽기'만 체크
 5. 끟
 
-#### CLI
+### CLI
 
 파워셸에서 아래 스크립트 실행:
 
@@ -187,14 +187,14 @@ ssh-add ~\.ssh\noritersand-ssh-test
 
 OpenSSH 설치하면 `sftp`도 쓸 수 있음.
 
-#### 다운로드
+### 다운로드
 
 ```bash
 # secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 101.202.303.404 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드
 sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
 ```
 
-#### 업로드: 대화형으로 put
+### 업로드: 대화형으로 put
 
 ```bash
 PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
@@ -214,6 +214,50 @@ sftp> quit
 
 파워셸에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
 
+### 자주 쓰는 명령어
+
+```bash
+# 도움말
+help
+
+# sftp 나가기
+bye
+exit
+
+# 원격 서버의 작업 디렉터리 전체 경로를 출력한다.
+pwd
+
+# 원격 서버의 작업 디렉터리를 PATH로 변경한다.
+cd PATH
+
+# 원격 서버 작업 디렉터리 아래의 파일, 디렉터리 목록을 출력한다.
+ls
+
+# 로컬 컴퓨터의 작업 디렉터리 전체 경로를 출력한다.
+lpwd
+
+# 로컬 컴퓨터의 작업 디렉터리를 PATH로 변경한다.
+lcd PATH
+
+# 로컬 컴퓨터 작업 디렉터리 아래의 파일, 디렉터리 목록을 출력한다.
+lls
+
+# 로컬 컴퓨터에서 DIRECTORY_NAME 디렉터리 생성
+lmkdir DIRECTORY_NAME
+
+# FILE을 원격 서버로 업로드한다. FILE의 경로는 로컬 컴퓨터 작업 디렉터리 경로를 기준으로 작성한다.
+put FILE
+
+# 
+put LOCAL_FILE REMOTE_FILE
+
+# FILE을 원격 서버에서 다운로드한다.
+get FILE
+
+# REMOTE_FILE을 LOCAL_FILE로 다운로드한다.
+get REMOTE_FILE LOCAL_FILE
+```
+
 
 ## scp
 
@@ -223,7 +267,7 @@ sftp> quit
 
 **TODO scp로 다운로드는 안 되나**
 
-#### 업로드
+### 업로드
 
 ```
 scp [options] source target
