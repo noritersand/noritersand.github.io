@@ -189,6 +189,20 @@ export default {
 아직 못찾음 ㅋ
 
 
+## file input 초기화 하기
+
+reactive state를 배열로 선언하고 렌더링 하는 방법을 쓴다:
+
+TODO
+
+```html
+
+```
+
+```js
+
+```
+
 
 {% endraw %}
 

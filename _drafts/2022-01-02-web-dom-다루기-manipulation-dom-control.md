@@ -22,14 +22,18 @@ tags:
 
 ## 개요
 
-내 맴대로 분류한 DOM 조작 관련 API 정리.
+내 맴대로 분류한 DOM ~~주작~~조작 관련 API 정리.
 
 어딘가에 끼워넣거나 이동하는 등의 기능을 제공하는 API들이다.
 
 
-## append
+## 끼워넣기
 
-### Node.appendChild()
+### Element.prototype.append()
+
+TODO `appendChild()`와 비교할 것
+
+### Node.prototype.appendChild()
 
 ```html
 <button onclick="appendIframe()">눌러</button>
@@ -44,6 +48,8 @@ function appendIframe() {
 </script>
 ```
 
+`prependChild()`는 없다.
+
 #### 스크립트 동적으로 불러오기
 
 ```js
@@ -55,14 +61,48 @@ newScript.src = '/어딘가/대단한-스크립트.js';
 headTag.appendChild(newScript);
 ```
 
+### Element.prototype.prepend()
 
-## prepend
+TODO
+
+### before
+
+TODO
+
+### after
+
+TODO
 
 
-## before
+## 삭제
+
+### Element.prototype.remove()
+
+요소를 문서 객체 모델(DOM)에서 제거한다.
+
+TODO
 
 
-## after
+## 복제
+
+### Node.prototype.cloneNode()
+
+```js
+cloneNode()
+cloneNode(deep)
+```
+
+- `deep`: `true`일 때 하위 노드를 모두 복제한다. `false`면 지정한 노드만 복제한다. 기본값은 `false`
+
+
+## 교체
+
+### Element.prototype.replaceWith()
+
+요소를 주어진 객체로 교체한다.
+
+TODO
+
 
 
 ## class
@@ -105,5 +145,3 @@ $here.classList.remove('foo');
 $here.classList; // DOMTokenList ['testme', value: 'testme']
 </script>
 ```
-
-
