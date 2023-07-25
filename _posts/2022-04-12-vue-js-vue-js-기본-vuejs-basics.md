@@ -461,9 +461,11 @@ TODO:
 
 #### key
 
-가이드에 따르면 `key` 속성을 항상 명시하는 게 좋다고 한다. 관련 글: [#1](https://vuejs.org/style-guide/rules-essential.html#use-keyed-v-for), [#2](https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key)
+`key`는 special attribute 중 하나로 Vue의 가상 DOM 알고리즘에서 vnodes(Vue's Virtual DOM)를 식별하기 위한 힌트로 사용된다. Vue는 키가 없을 때 가능한 한 원래의 자리에서 이동하지 않고 패치/재사용하려고 시도한다. 반면 키가 제공되면 키의 변경에 따라 요소를 재정렬하거나 제거/삭제한다.
 
-방법은 대충 아래와 같다:
+`v-for`에서도 마찬가지인데, 키가 없을 때의 알고리즘 때문에 의도대로 작동하지 않을 수 있다. 따라서 요소를 재정렬 하거나 삭제를 해야 한다면 키를 제공할 것. (사실 귀찮기만 하고 손해 보는 것은 없으므로 항상 쓰는 걸로...)
+
+관련 글: [#1](https://vuejs.org/style-guide/rules-essential.html#use-keyed-v-for), [#2](https://vuejs.org/guide/essentials/list.html#maintaining-state-with-key)
 
 ```html
 <select v-model="companyNo">
@@ -877,7 +879,7 @@ DOM 요소 혹은 컴포넌트를 직접 다뤄야 때 사용한다.
 <input ref="focusMe">
 ```
 
-이후 인스턴스의 `$refs` 객체(가이드에선 `$refs`를 컴포넌트 인스턴스로 분류함)를 통해 접근할 수 있다.
+이후 `$refs` 컴포넌트 인스턴스를 통해 접근할 수 있다.
 
 ```js
 export default {
@@ -886,6 +888,31 @@ export default {
   }
 }
 ```
+
+### v-for에서 사용하기
+
+`ref`를 `v-for` 내부 요소에 사용하면, ref 값은 해당 요소를 포함하는 배열이 되는데, 배열의 길이는 반복된 만큼이다:
+
+```html
+<template v-for="(ele, index) in elements" :key="index">
+  <div ref="whoisdis" :style="{ backgroundColor: ele }" style="width: 100px; height: 100px"></div>
+</template>
+```
+
+```js
+export default {
+  data() {
+    return {
+      elements: ['darkred', 'darkblue', 'darkgreen']
+    };
+  },
+  mounted() {
+    console.log(this.$refs.whoisdis); // Array(3) [ div, div, div ];
+  }
+};
+```
+
+**주의: 원본 배열의 순서가 ref 배열의 순서와 다를 수 있기 때문에 배열 순서에 의존하는 코드는 작성하지 말 것**
 
 
 ## `<template>`의 용도
