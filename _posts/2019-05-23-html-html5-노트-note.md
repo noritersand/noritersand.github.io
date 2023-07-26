@@ -299,5 +299,34 @@ p {
 ![](/images/all-k.jpg)
 
 
+## Chrome에서 file input이 초기화됨
+
+마지막 확인 날짜: 2023-07-26
+
+초로미에서는 이미 첨부된 파일이 있는 상태에서 파일 선택을 취소할 때 사용자 첨부 파일이 지워지는 현상이 있다. 확인하는 방법은 다음과 같다:
+
+1. 우선 아무 파일이나 첨부한다.
+2. 다시 '파일 선택' 혹은 '찾아보기...' 등의 버튼을 눌러 파일 탐색 창을 띄운다.
+3. 파일 탐색 창에서 취소 버튼을 누른다.
+
+이렇게 하면 앞서 첨부했던 파일이 사라진다. 마치 초기화한 것처럼. 
+
+초로미 계열인 네이버 웨일, 마이크로소프트 엣지에서도 같은 현상이 발생한다. 파이어폭스는 파일 첨부를 취소해도 사용자 첨부 파일이 삭제되지 않는다.
+
+검색해보니 이 현상은 [2008년부터 제기된 이슈](https://bugs.chromium.org/p/chromium/issues/detail?id=2508)이고 WonFix(Closed) 상태(2015년 7월에 변경됨)인 것을 보아 영영 고쳐질 일은 없을것 같다. 재미있게도 [파이어폭스 측의 어떤 개발자는 초로미의 방식이 마음에 들었는지 이를 구현한 패치를 제출했다](https://bugzilla.mozilla.org/show_bug.cgi?id=431098).
+
+[스택오버플로우의 친구들은 초로미가 사용자 첨부 파일을 삭제하지 못하도록 복제본을 다시 끼워넣는 방법을 제안](https://stackoverflow.com/questions/17798993/input-type-file-clearing-file-after-clicking-cancel-in-chrome)한다. 초로미에서 파일 첨부를 취소하면 file input이 change 이벤트를 발생시키고, 이 시점의 `FileList`를 확인해 보면 길이가 0인데, 이걸 이용하면 된다:
+
+```js
+function handleFileChange(e) {
+  console.log('files:' , e.target.files); // files: FileList {length: 0}
+  // 파일 첨부 후 다시 띄운 파일 탐색창에서 취소했을 때 files.length는 0
+  // 파이어폭스애선 취소했을 때 change 이벤트가 발생하지 않기 때문에 이 함수로 진입할 일이 없다.
+}
+```
+
+TODO
+
+
 ## 꼐속...
 

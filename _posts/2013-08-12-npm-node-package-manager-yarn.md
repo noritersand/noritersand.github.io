@@ -175,7 +175,7 @@ npx http-server -p 9090
 
 [\[npm Docs\] npx vs npm exec](https://docs.npmjs.com/cli/v8/commands/npm-exec#npx-vs-npm-exec)
 
-우선 `npx`는 명령 실행에 필요한 패키지가 없으면 자동으로 (OS마다 다른 temp 디렉터리 어딘가에) 다운로드한다.
+우선 `npx`는 명령 실행에 필요한 패키지가 로컬에 없으면 자동으로 어딘가(OS마다 다른 temp 디렉터리)에 다운로드한다.
 
 그리고 `npx`는 실행할 명령어 뒤에 오는 옵션을 명령어의 인수로 전달하지만, `npm exec`는 `npm`의 옵션으로 먼저 처리한다. 
 
@@ -190,11 +190,11 @@ npm exec foo --package=@npmcli/foo
 예를 들면 아래 두 명령은 같다:
 
 ```bash
-npm exec -- tap --bail test/foo.js
 npx tap --bail test/foo.js
+npm exec -- tap --bail test/foo.js
 ```
 
-(왜 이중 하이픈이 두 번이나 필요한건지는 잘 모르겠지만) 아래 두 명령도 같다:
+(왜 이중 하이픈이 두 번이나 필요한 건지는 잘 모르겠지만) 아래 두 명령도 같다:
 
 ```bash
 npx nodemon --exec tsc

@@ -26,3 +26,5 @@ tags:
 ```js
 Boolean(window.File && window.FileReader && window.FileList && window.Blob)
 ```
+
+TODO

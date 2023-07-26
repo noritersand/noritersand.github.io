@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-04-05 17:03:28 +0900
-title: '[WEB] 웹소켓: 브라우저에서 폴링 없이 푸시 알림'
+title: '[WEB] 웹소켓'
 categories:
   - web
 tags:

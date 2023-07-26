@@ -212,7 +212,7 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [45+ 온라인 드로잉 툴](http://www.smashingapps.com/2011/08/26/45-free-online-tools-to-create-charts-diagrams-and-flowcharts)
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
-- [⭐ eraser](https://www.eraser.io/pricing): (엔지니어링 팀을 위한 화이트보드라 주장하는) 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 플로우 차트 그리기 굉장히 편하다. Diagram as code(이걸로 ERD 그리기 가능)와 코멘트 기능도 제공한다. 현재 무료 플랜 제공(2023-03-30).
+- [⭐ eraser](https://www.eraser.io/pricing): (엔지니어링 팀을 위한 화이트보드라 주장하는) 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 플로우 차트 그리기 굉장히 편하다. Diagram as Code(이걸로 ERD 그리기 가능)와 코멘트 기능도 제공한다. 현재 무료 플랜 제공(2023-03-30).
 
 
 ## 온라인 코드 편집기(에디터) 겸 테스트 툴

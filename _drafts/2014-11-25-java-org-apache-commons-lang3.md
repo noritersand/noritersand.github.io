@@ -20,24 +20,27 @@ tags:
 
 [http://commons.apache.org/proper/commons-lang/article3_0.html](http://commons.apache.org/proper/commons-lang/article3_0.html)
 
+
 ## ClassUtils
 
 [http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/ClassUtils.html](http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/ClassUtils.html)
 
-Reflection(sun.java.reflection)을 사용하지 않고 클래스의 메타정보를 생성, 조회한다. 라는 java doc 코멘트가 있지만 소스를 까보면 내부에서 쓰고 있는데 뭘. 아마도 사용자가 직접 Reflect 관련 클래스를 이용할 필요가 없다는 얘기가 아닐까? Class 클래스와 마찬가지로 프레임워크 개발이 아니라면 업무에 사용할 일은 거의 없을 것이다.
+Reflection(sun.java.reflection)을 사용하지 않고 클래스의 메타정보를 생성, 조회한다. 라는 Java doc 코멘트가 있지만 소스를 까보면 내부에서 쓰고 있다. 🤔 (아마도 사용자가 직접 Reflect 관련 클래스를 이용할 필요가 없다는 뜻이 아닐까?) Class 클래스와 마찬가지로 프레임워크 개발이 아니라면 업무에 사용할 일은 거의 없을 것이다.
 
 #### 주요 메서드
 
 - `convertClassNamesToClasses()`: 클래스명으로 인스턴스 생성
 - `getPackageName()`: 특정 클래스가 속한 패키지명 조회
-- `isAssignable()`: 서로 다른 타입간 변수값 할당이 가능한지 여부 체크
+- `isAssignable()`: 서로 다른 타입간 변수값의 할당이 가능한지
 - `primitiveToWrapper()`: 원시 타입 변수를 wrapper 타입으로 변경
+
 
 ## ObjectUtils
 
 [http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/ObjectUtils.html](http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/ObjectUtils.html)
 
 전달인자들의 최댓값, 최솟값, 자주 발생하는 값을 산출하는 등의 객체 비교에 사용되는 메서드가 주를 이룬다. 그 외에 toString, equal, hashCode같은 꽤나 사용빈도가 높은 메서드가 있었지만 JDK의 버전이 1.7로 업데이트 되면서 대부분 폐기되었다.
+
 
 ## StringUtils
 
@@ -48,11 +51,13 @@ StringUtils는 문자를 축약하거나 두 문자열을 비교하여 다른 �
 - `Empty`: StringUtils의 API에서 empty란 empty string과 null을 의미한다.
 - `Blank`: `""`, null, whitespace(공백만으로 이뤄진 문자열)를 의미한다.
 
+
 ## RandomUtils
 
 [http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/RandomUtils.html](http://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/RandomUtils.html)
 
 java.util.Random과 비슷하지만 좀 더 사용하기 편하다. 랜덤으로 발생시킬 값들의 최소와 최대를 파라미터로 지정할 수 있기 때문(기존의 Random은 최댓값만, 그것도 integer만 가능하다). 그 외엔 nextBytes 정도(파라미터로 byte[] 객체를 전달하고 되돌려 받는게 아니라 발생시킬 byte 배열의 크기를 지정한다). 정리하자면 기존 API가 범위 지정을 할 수 없는 부분을 개선한 클래스
+
 
 ## ArrayUtils
 

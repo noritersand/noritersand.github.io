@@ -191,17 +191,27 @@ export default {
 
 ## file input 초기화 하기
 
-reactive state를 배열로 선언하고 렌더링 하는 방법을 쓴다:
-
-TODO
+방법은 두 가지가 있는데, 첫 번째로 키 값만 바꿔주면 Vue가 렌더링을 다시 한다는 점을 이용하는 방법이 있다:
 
 ```html
-
+<input type="file" :key="fileInputKey">
 ```
 
 ```js
-
+export default {
+  data() {
+    return {
+      fileInputKey: 0
+    }
+  },
+  methods: {
+    brandNewFileInput() {
+      this.fileInputKey++;
+    }
+  }
+}
 ```
+
 
 
 {% endraw %}
