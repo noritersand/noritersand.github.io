@@ -63,14 +63,14 @@ AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플�
 ```autohotkey
 Persistent True
 
-SetTimer SendNumber1, 1100 ; 1.1초마다 SendNumber1() 함수 실행
-SetTimer SendNumber2, 2200 ; 2.2초마다 SendNumber2() 함수 실행
+SetTimer SendKey1, 1100 ; 1.1초마다 SendKey1() 함수 실행
+SetTimer SendKeyQ, 2200 ; 2.2초마다 SendKey2() 함수 실행
 
-SendNumber1() {
+SendKey1() {
     Send 1 ; 숫자 1 입력
 }
 
-SendNumber2() {
-    Send 2 ; 숫자 2 입력
+SendKeyQ() {
+    Send 'q' ; 알파벳 q 입력
 }
 ```
