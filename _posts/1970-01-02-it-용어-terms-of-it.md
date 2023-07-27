@@ -183,12 +183,13 @@ UNIX 운영체제의 일종. UNIX 코드 기반으로 UC Berkeley에서 개발�
 
 ## data URI scheme
 
-가끔 보면 브라우저 네트워크 트래픽으로 `data:image/png;base64,iV....` 이런 게 잡힌다. 정체는 "마치 외부 자원인 것처럼 웹 페이지의 데이터 인라인을 포함하는 방법을 제공하는 통합 자원 식별자(URI) 스킴"이다.
+가끔 보면 브라우저 네트워크 트래픽으로 `data:image/png;base64,iV....` 이런 게 잡힌다. 정체는 "마치 외부 자원인 것처럼 웹 페이지의 데이터 인라인을 포함하는 방법을 제공하는 통합 자원 식별자(URI) 스킴"이며, 텍스트나 이미지 등의 데이터를 URL 형태로 나타낸 것이다.
 
 관련 문서:
 
 - [https://en.wikipedia.org/wiki/Data_URI_scheme](https://en.wikipedia.org/wiki/Data_URI_scheme)
 - [https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image](https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image)
+- [https://datatracker.ietf.org/doc/html/rfc2397](https://datatracker.ietf.org/doc/html/rfc2397)
 
 이미지 같은 파일을 URL로 링크하는 것이 아니라, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
 

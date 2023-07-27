@@ -120,3 +120,12 @@ find aaa_dir -name "*.png" -printf "%f\n" -exec mv {} zzz_dir/ \;
 
 - <kbd>u</kbd>
 - <kbd>ctrl + u</kbd>
+
+
+## 뭔가 이상할 때
+
+### 서버 접속이 안되거나 서비스가 죽었거나 암튼 뭐가 이상할 때
+
+syslog 혹은 `kernel.log` 파일에 무슨 일이 일어났는지 기록되어있을 가능성이 있다.
+
+`kernel.log`는 보통 `/var/log` 디렉터리 아래에 있다.
