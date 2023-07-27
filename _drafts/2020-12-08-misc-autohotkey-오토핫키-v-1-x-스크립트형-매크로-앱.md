@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-12-08 14:55:00 +0900
-title: '[misc] 오토핫키 AutoHotkey 스크립트형 매크로 앱'
+title: '[misc] AutoHotkey v1.x - 스크립트형 매크로 앱'
 categories:
   - misc
 tags:
@@ -20,8 +20,7 @@ tags:
 
 #### 버전 정보
 
-- AutoHotkey v1.1.x
-- AutoHotkey v2.x
+- AutoHotkey v1.x
 
 
 ## 개요
@@ -34,17 +33,6 @@ AutoHotkey는 스크립트로 작성하는 키보드&마우스 매크로 애플�
 
 서브라임 텍스트에선 Java syntax를 쓰는게 가장 보기 좋다. 그런데 완전하지 않으므로 [AutoHotkey](https://packagecontrol.io/packages/AutoHotkey) 패키지를 설치하자. VSCODE에서도 누군가 이미 확장 기능을 만들어놨다(이쪽이 더 이쁘다).
 
-
-## 2.x에서 달라진 점
-
-[https://www.autohotkey.com/docs/v2/v2-changes.htm](https://www.autohotkey.com/docs/v2/v2-changes.htm)
-
-TODO
-
-
-**이 아래부터는 AutoHotkey 1.1.x 버전에서만 유효하며 2.x에선 사용 불가능**
-
----
 
 ## 스크립트 작성 방법
 
@@ -131,7 +119,7 @@ Hotstrings는 일련의 연속적인 키 입력을 트리거로 사용하는 것
 */
 :*:,kbd.::
 SendInput <kbd></kbd>
-Loop, 6 {
+Loop 6 {
   SendInput {Left}
 }
 return
@@ -222,7 +210,7 @@ Var := expression
 ### Loop
 
 ```
-Loop [, Count]
+Loop [Count]
 ```
 
 `Count`만큼 바디(블록안의 스크립트 혹은 바로 뒤따르는 한 줄의 스크립트)를 반복한다.
@@ -233,7 +221,7 @@ Loop [, Count]
 
 ```autohotkey
 NumpadSub::
-Loop, 14 {
+Loop 14 {
   SendInput {WheelUp}
 }
 return
@@ -492,6 +480,4 @@ return
 `SetTitleMatchMode 2`는 윈도우 제목을 검색할 때 `WinTitle` 파라미터에 지정된 문자열을 일부만 포함해도 일치하다고 간주하게 하는 설정이다.
 
 
-
 ## 꼐속...
-
