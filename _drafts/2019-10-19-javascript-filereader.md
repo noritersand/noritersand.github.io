@@ -37,7 +37,7 @@ function handleFileChange(e) {
   console.log('files:' , e.target.files);
 
   let file = e.target.files[0];
-  if (!file) {z
+  if (!file) {
     return;
   }
 
@@ -51,8 +51,7 @@ function handleFileChange(e) {
 </script>
 ```
 
-파일을 첨부해보면 `actualResponse`에 `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABiIAAAQ8CAYAAAAfYY...` 이런 형식의 값이 할당된다. 이 값은 data URI scheme이라고 하는데, 텍스트나 이미지 등의 데이터를 URL 형태로 나타낸 것이다.
-
+여기서 파일을 첨부하면 `actualResponse`에 `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABiIAAAQ8CAYAAAAfYY...` 이런 모양의 값이 할당된다. 이 값은 data URI scheme이라고 하는데, 텍스트나 이미지 등의 데이터를 URL 형태로 나타낸 것이다.
 
 ### FileReader로 읽은 값을 이미지로 활용하기
 

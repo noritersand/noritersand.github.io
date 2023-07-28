@@ -191,7 +191,7 @@ export default {
 
 ## file input 초기화 하기
 
-방법은 두 가지가 있는데, 첫 번째로 키 값만 바꿔주면 Vue가 렌더링을 다시 한다는 점을 이용하는 방법이 있다:
+키 값만 바꿔주면 Vue가 렌더링을 다시 한다는 점을 이용하는 방법이 있다:
 
 ```html
 <input type="file" :key="fileInputKey">
@@ -212,6 +212,6 @@ export default {
 }
 ```
 
-
+이 외에 reactive state를 배열로 선언해서 초기화 대신 배열 pop-push 하는 방법이 있는데, 쪼오끔 귀찮.
 
 {% endraw %}

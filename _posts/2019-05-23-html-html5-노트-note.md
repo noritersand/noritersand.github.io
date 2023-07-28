@@ -325,7 +325,26 @@ function handleFileChange(e) {
 }
 ```
 
-TODO
+하지만 이 방법은 복제본을 다루는 코드 작성이 번거롭기 때문에 더 쉬운 방법인:
+
+```html
+<input type="file" onchange="handleFileChange(event)">
+<script>
+function handleFileChange(e) {
+  let file = e.target.files[0];
+  if (!file) {
+    return;
+  }
+  var reader = new FileReader();
+  reader.addEventListener('loadend', e => {
+    let actualResponse = e.target.result;
+  });
+  reader.readAsDataURL(file);
+}
+</script>
+```
+
+`FileReader`로 읽어들여 갖고 있다가 `FormData`로 전송하는 편이 좋다.
 
 
 ## 꼐속...
