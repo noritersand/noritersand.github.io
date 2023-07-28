@@ -30,6 +30,51 @@ tags:
 스프링 사용하면서 수집한 모든 것을 정리함. 특정 항목의 내용이 길어지면 별도의 문서로 분리됨.
 
 
+## @RequestPart
+
+`org.springframework.web.bind.annotation.RequestPart`는 TODO 설명
+
+TODO @RequestBody, @RequestParam과의 차이
+
+`Content-Type`이 `multipart/form-data`일 때 사용. 
+
+[잘 정리된 블로그](https://somuchthings.tistory.com/160)
+
+줍줍한 코드:
+
+```js
+let formData = new FormData();
+formData.append('userAttachImage', document.querySelector('input[type=file]').files[0]);
+formData.append('params', new Blob([JSON.stringify(params)], { type: 'application/json' }));
+formData.append('imageChanged', true);
+
+fetch("/some-where", {
+  method: "POST",
+  body: formData,
+});
+```
+
+```java
+    @PostMapping("/article")
+    public JsonResponse postArticle(
+            @RequestParam("userAttachImage") MultipartFile userAttachImage,
+            @RequestPart("params") String params,
+            @RequestParam("imageChanged") Boolean imageChanged
+            ) throws IOException {
+
+        // ... 생략
+    }
+```
+
+이 코드에서 `params` 항목은 `Blob` 데이터로 첨부했는데, 이 경우 `@RequestParam`으로 처리할 수 없다. 
+
+TODO 이유 설명
+
+그래서 `@RequestPart`로 받아야 하는데, 사실 `Blob` 말고 그냥 문자로 보내면 `@RequestParam`으로 받을 수 있음.
+
+빠른 결론: 대에충 `Blob` 같은 특수한 형식의 데이터를 받을 때 쓰나보다
+
+
 ## 스태틱 리소스
 
 스프링 부트는 클래스패스에서 아래의 경로들에 있는 [스태틱 웹 리소스(CSS나 자바스크립트 등의 파일)를 자동으로 추가](https://spring.io/blog/2013/12/19/serving-static-web-content-with-spring-boot)한다고 한다:

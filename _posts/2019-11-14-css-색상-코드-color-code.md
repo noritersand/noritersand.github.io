@@ -21,9 +21,13 @@ tags:
 - [https://www.w3schools.com/colors/colors_hexadecimal.asp](https://www.w3schools.com/colors/colors_hexadecimal.asp)
 - [https://www.w3schools.com/colors/colors_hsl.asp](https://www.w3schools.com/colors/colors_hsl.asp)
 
+
+## 개요
+
 CSS 색상 코드를 정리한 글.
 
-#### 색상 이름
+
+## 색상 이름
 
 red, blue 등의 미리 정해진 색상 이름을 사용한다. 사용 가능한 이름은 [여기](https://www.w3schools.com/colors/colors_names.asp)에서 확인.
 
@@ -31,7 +35,8 @@ red, blue 등의 미리 정해진 색상 이름을 사용한다. 사용 가능�
 div {color: red}
 ```
 
-#### HEX
+
+## HEX
 
 빨간색, 녹색, 파란색의 수치를 0-FF 사이의 16진수로 표현한 코드다. 코드 앞에 `#`을 붙여 구분한다:
 
@@ -47,7 +52,8 @@ CSS Colors Level 3에서 알파 채널이 추가되었고 여덟 자리 표기�
 div {color: #FF000088}
 ```
 
-#### RGB
+
+## RGB
 
 빨간색, 녹색, 파란색의 수치를 0-255 사이의 10진수로 표현한 코드. 표기 방법은 다음과 같다:
 
@@ -56,7 +62,8 @@ div {color: #FF000088}
 div {color: rgb(255, 0, 0)}
 ```
 
-#### HSL
+
+## HSL
 
 색상(hue), 채도(saturation), 명도(lightness)를 표현한 코드. 색상의 표현 범위는 0-359이며 360은 0과 같다. 채도의 범위는 0-100%인데 100%에 가까울 수록 색이 진하다. 명도의 범위는 채도와 같으며, 0%에 가까울 수록 어둡고 100%에 가까울 수록 밝다.
 
@@ -65,7 +72,8 @@ div {color: rgb(255, 0, 0)}
 div {color: hsl(0, 100%, 50%)}
 ```
 
-#### RGBA, HSLA
+
+## RGBA, HSLA
 
 A는 ALPHA의 줄임말이며 불투명도(opacity)를 의미한다. RGB와 HSL 코드 끝에 불투명도를 지정하는 식이다. 불투명도의 표현 범위는 0.0부터 1.0까지다.
 

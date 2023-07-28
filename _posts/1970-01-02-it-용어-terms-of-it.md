@@ -14,6 +14,35 @@ tags:
 {:toc .toc}
 
 
+## 초깃값, 지정값, 기본값
+
+- 초깃값(Initial value): 처음부터 미리 정해진 값. 종종 기본값(Default value)과 같은 의미로 쓰이기도 한다.
+- 지정값(Specified value): 따로 명시하여 지정한 값
+- 기본값(Default value): 값을 지정하지 않았을 때 설정될 값
+
+
+## data URI scheme
+
+텍스트나 이미지 등의 데이터를 URL 형태로 나타낸 것. `data:image/png;base64,iVBORw0KGgoAAAANSU....` 이런 형태의 값이다. '마치 외부 자원인 것처럼 웹 페이지의 데이터 인라인을 포함하는 방법을 제공하는 통합 자원 식별자(URI) 스킴'이라고 표현하기도 한다.
+
+관련 문서:
+
+- [https://en.wikipedia.org/wiki/Data_URI_scheme](https://en.wikipedia.org/wiki/Data_URI_scheme)
+- [https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image](https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image)
+- [https://datatracker.ietf.org/doc/html/rfc2397](https://datatracker.ietf.org/doc/html/rfc2397)
+
+이미지의 소스를 URL로 링크하는 대신, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
+
+가령 아래 코드는:
+
+```html
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" 
+    alt="Red dot" />
+```
+
+이미지 파일을 base64로 인코딩하여 `src` 속성에 데이터로 끼워넣은(?) 것이다. 이렇게 하면 외부 자원인 이미지를 웹으로 요청하거나 다운로드하는 과정을 생략하고 바로 볼 수 있게 된다. 물론 이걸 그리는 브라우저의 일이고.
+
+
 ## 백로그 backlog
 
 주로 해야 하는 일 목록(후보) 정도로 해석하면 되는데 쓰임에 따라 의미가 달라질 수 있다. 예를 들어 애자일 방법론 중 스크럼(scrum)에선 제품 백로그(product backlog)와 스프린트 백로그(sprint backlog)로 나누어 구분한다.
@@ -179,29 +208,6 @@ React나 Vue.js, Next.js, Flight 등의 프레임워크로 만든 웹 애플리�
 UNIX 운영체제의 일종. UNIX 코드 기반으로 UC Berkeley에서 개발함. 리눅스와는 일단 커널부터 다르고 시스템 구조, 명령어도 다르다. 
 
 리눅스의 몇몇 명령어는 BSD 스타일의 옵션을 쓸 수 있다 가령 `ps aux`에서 `a`, `u`, `x`가 BSD 스타일의 옵션이다.
-
-
-## data URI scheme
-
-가끔 보면 브라우저 네트워크 트래픽으로 `data:image/png;base64,iV....` 이런 게 잡힌다. 정체는 "마치 외부 자원인 것처럼 웹 페이지의 데이터 인라인을 포함하는 방법을 제공하는 통합 자원 식별자(URI) 스킴"이며, 텍스트나 이미지 등의 데이터를 URL 형태로 나타낸 것이다.
-
-관련 문서:
-
-- [https://en.wikipedia.org/wiki/Data_URI_scheme](https://en.wikipedia.org/wiki/Data_URI_scheme)
-- [https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image](https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image)
-- [https://datatracker.ietf.org/doc/html/rfc2397](https://datatracker.ietf.org/doc/html/rfc2397)
-
-이미지 같은 파일을 URL로 링크하는 것이 아니라, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
-
-가령 아래 코드는:
-
-```html
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
-AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxglj
-NBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
-```
-
-이미지 파일을 base64로 인코딩하여 src 속성에 데이터로 끼워넣은(?) 것이다. 이렇게 하면 외부 자원인 이미지를 웹으로 요청하거나 다운로드하는 과정을 생략하고 바로 볼 수 있게 된다. 물론 이걸 그리는 브라우저의 일이고.
 
 
 ## IaaS, PaaS, SaaS

@@ -215,8 +215,6 @@ x 또는 y를 검색. `c|cginjs`는 'c' 또는 'cginjs'를 검색
 
 단어 경계(word boundary) 위치가 일치하는지 검색한다. 단어 경계란 단어 문자(word-character) 뒤에 공백이나 쉼표같은 비단어 문자가 이어지는 것을 말한다.
 
-e.g.:
-
 - 정규식 `\babc\b`는 `(공백)abc,`를 찾지만 `qabce,`는 찾지 않는다.
 - 정규식 `er\b`는 `never`에서 `er`은 찾지만 `verb`의 `er`은 찾지 않는다.
 

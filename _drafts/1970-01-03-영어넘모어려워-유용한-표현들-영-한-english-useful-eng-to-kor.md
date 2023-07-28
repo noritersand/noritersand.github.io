@@ -198,12 +198,12 @@ get to (동사원형) = (동사원형) 하게 되다.
 ### another vs other vs others
 
 - another: (adjective/pronoun) one more, an extra, an additional, an alternative, a different
-  - e.g.: we have another book for you (another + singular noun)
+  - e.g., "we have another book for you" (another + singular noun)
 - other: (adjective/pronoun) more in addition to the one(s) already mentioned, alternative, different
-  - e.g.: we have other books for you (other + plural noun)
-  - e.g.: these shoes are too small. do you have any other shoes?
+  - e.g., "we have other books for you" (other + plural noun)
+  - e.g., "these shoes are too small. do you have any other shoes?"
 - others: (pronoun/noun) replaces other + plural noun, others is not followed by a noun, others = other people
-  - e.g.: these shoes are too small. do you have any others?
+  - e.g., "these shoes are too small. do you have any others?"
 
 ### redundant, redundancy
 

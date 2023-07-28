@@ -18,6 +18,12 @@ tags:
 - [어디](어디)
 
 
+## 맨날 틀리는 단어
+
+- piece, peace
+- of course, because, curse(저주)
+
+
 ## 실생활
 
 - lettuce[ˈletɪs]: 상추

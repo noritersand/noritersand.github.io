@@ -41,7 +41,7 @@ h1 {
 
 ### inline
 
-HTML Tag 속에 style 속성을 사용하여 직접 지정한다.
+HTML 태그의 `style` 속성을 사용하여 직접 지정한다.
 
 ```html
 <div style="color:red;">여기는 적색으로 나타난다.</div>
@@ -118,21 +118,32 @@ table tr td {
 그런데 이걸로 해결하는 것은 좋지 않은 습관이니 자중하라고...
 
 
-## 공통 설정
+## 상속
+
+- [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+- [https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade)
 
 TODO
 
-### auto
+자식 요소가 부모 요소의 CSS 프로퍼티 값을 그대로 사용하는 것을 말함.
 
-```
-height: auto
-```
+모든 프로퍼티가 상속되는 것은 아님. (e.g., `width: 50%`)
 
-`auto`는 브라우저가 알아서 결정하도록 한다는 것을 의미한다.
 
-### inherit
+[https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 
-TODO
+### 상속 제어
+
+[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance)
+
+CSS는 상속을 제어하기 위한 특수 범용 프로퍼티 값(special universal property values)을 제공한다. 모든 CSS 프로퍼티에서 유효하다.
+
+- ~~auto: 브라우저가 알아서 결정~~
+- `inherit`: 부모 요소의 프로퍼티 값과 동일하게 설정
+- `initial`: 브라우저의 기본 스타일 시트 값으로 설정한다. TODO test
+- `unset`: 상속되거나 그렇지 않으면 브라우저 기본값으로 설정한다. (이런 걸 natural 값이라고 하는듯?)
+- `revert`: TODO
+- `revert-layer`: TODO
 
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
@@ -152,7 +163,7 @@ At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
 
-브라우저가 어떤 속성(혹은 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의한는 방법이다.
+브라우저가 어떤 프로퍼티(+ 프로퍼티 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의한는 방법이다.
 
 ```
 @supports (<supports-condition>) {

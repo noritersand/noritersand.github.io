@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 1970-01-04 00:00:00 +0900
-title: '[CSS] reset.css'
+title: '[CSS] reset, normalize'
 categories:
   - css
 tags:
@@ -43,5 +43,10 @@ select {line-height:40px; border:1px solid #ccc; height:26px; padding:0 5px; mar
 input[readonly='readonly'] {background-color:#eee;}
 div, a, li, ol, ul, dl, dt, dd, span, strong, p, h1, h2, h3, h4, h5, img, input, button, iframe, textarea {box-sizing:border-box; } /* transition:0.3s all linear; transition:all 0.3s linear 0.9s; */
 ```
+
+여기도 볼 것:
+
+- [https://github.com/necolas/normalize.css](https://necolas.github.io/normalize.css/latest/normalize.css)
+- [https://necolas.github.io/normalize.css/latest/normalize.css](https://necolas.github.io/normalize.css/latest/normalize.css)
 
 끗.
