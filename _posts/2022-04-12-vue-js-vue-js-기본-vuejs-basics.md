@@ -37,7 +37,7 @@ Vue.js 사용 방법 정리 글.
 
 ### 빌드해서 쓰기
 
-Node.js로 Vue 컴파일이 포함된 패키지를 설치해 번들링하는 방식을 말한다.
+Node.js로 Vue 컴파일러가 포함된 패키지를 설치해 번들링하는 방식을 말한다. (Vue 패키지는 컴파일러와 웹 서버를 포함한다)
 
 [NPM](https://www.npmjs.com/package/vue)으로 설치한다:
 
@@ -53,11 +53,18 @@ npm exec create-vue
 npm init vue@latest
 ```
 
-Vue 패키지는 컴파일과 웹 서버를 포함한다.
+생성된 디렉토리로 이동해서:
 
-### 빌드 툴 없이 쓰기
+```bash
+npm install
+npm run dev
+```
 
-크게 두 가지 방법이 있는데 그냥 자바스크립트 라이브러리처럼 external로 가져오거나:
+### 빌드 단계 생략하기
+
+Vue를 그저 자바스크립트 라이브러리로 사용하는 방법이다. 
+
+external link:
 
 ```html
 <!-- <script src="https://unpkg.com/vue@3"></script> -->
@@ -73,7 +80,7 @@ createApp({
 </script>
 ```
 
-ECMAScript 모듈(통칭 ESM) 방식으로 불러오는 방식이 있다:
+ESM(ECMAScript Modules):
 
 ```html
 <div id="app">{{message}}</div>
@@ -90,7 +97,7 @@ createApp({
 
 Vue 3부터는 Composition API 스타일과 Options API 스타일 중에 하나를 선택해야 한다.
 
-두 스타일 모두 빌드 툴 없이 라이브러리 방식으로 사용할 수 있다. 라이브러리 방식인 경우 두 스타일의 코드 차이는 아래와 같다:
+두 스타일 모두 빌드 단계 없이 라이브러리 방식으로 사용할 수 있다. 라이브러리 방식인 경우 두 스타일의 코드 차이는 아래와 같다:
 
 Options API 스타일:
 

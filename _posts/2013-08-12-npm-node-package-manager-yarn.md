@@ -206,6 +206,8 @@ npm exec -- nodemon -- --exec tsc
 
 `package.json`은 프로젝트(혹은 모듈)의 설명, 의존관계, 빌드/실행 스크립트 등을 정의하는 파일이다. 직접 만들어도 되지만 보통은 `init`을 씀:
 
+### npm init
+
 ```bash
 npm init
 npm init <package-spec> (same as `npx <package-spec>)
@@ -213,6 +215,12 @@ npm init <@scope> (same as `npx <@scope>/create`)
 
 별칭: create, innit
 ```
+
+`npm init`은 프로젝트를 새로 만들어나, 기존 패키지를 재설정할 때 사용하는 명령어다.
+
+이 명령을 추가 인자 없이 실행하면 패키지 이름, 버전, 설명 등을 물어보는 프롬프트가 나타난다. 끝까지 입력을 마치면 입력한 내용대로 `package.json` 파일이 만들어진다. 이미 `package.json` 파일이 있으면 내용을 수정한다.
+
+패키지나 스코프를 지정한 경우엔 `npm exec` 명령으로 바뀐다. [자세한 내용은 이 링크를 보자](https://docs.npmjs.com/cli/v9/commands/npm-init#description).
 
 ### package.json 구성요소
 

@@ -21,9 +21,11 @@ tags:
 
 - Python 3.8.1
 
+
 ## 파이썬 설치
 
 [다운로드 링크](https://www.python.org/downloads/)
+
 
 ## 모듈 설치
 
@@ -42,6 +44,7 @@ pip는 윈도우 10 + 기본 설치일 경우 `C:\Users\윈도우유저명\AppDa
 ```bash
 > pip install beautifulsoup4
 ```
+
 
 ## 모듈 불러오기
 
@@ -88,6 +91,7 @@ from os import getenv as getE
 print(getE('HOMEPATH'))
 ```
 
+
 ## 파이썬 프로그램 파일의 작성과 실행
 
 파이썬 설치 시 딸려오는 IDLE 편집기를 사용하거나 별도의 에디터로 직접 작성한다. 확장명은 `py`.
@@ -99,6 +103,7 @@ print(getE('HOMEPATH'))
 ```
 
 IDLE 편집기로 편집 중이라면 <kbd>f5</kbd>키로 즉시 실행. 사실 vscode에 파이썬 확장 설치하고 쓰는게 편하다.
+
 
 ## 변수
 
@@ -129,6 +134,7 @@ def fn():
 fn()
 ```
 
+
 ## 자료형
 
 ### set
@@ -149,6 +155,7 @@ fn()
 { 'a': 1 }
 ```
 
+
 ## 연산자
 
 ### 논리 연산자
@@ -156,6 +163,7 @@ fn()
 `and`, `or`, `not`
 
 ### 꼐속...
+
 
 ## 제어문
 
@@ -235,6 +243,7 @@ print(rst) # 10
 
 TODO
 
+
 ## 표현식
 
 ### list 요소 표현식
@@ -256,7 +265,7 @@ print(arr[3:]) # [4, 5, 6]
 print(arr[:3]) # [1, 2, 3]
 ```
 
-파이썬에선 문자열 타입 `str`도 일종의 리스트(? 정확하지 않음)로 취급되서 다음처럼 사용할 수 있다:
+파이썬에선 문자열 타입 `str`도 일종의 리스트(?)로 취급되서 다음처럼 사용할 수 있다:
 
 ```py
 txt = '펀쿨섹좌: "경기가 좋아지면 불황도 끝날 것"'
@@ -270,6 +279,7 @@ print(txt[6:]) # "경기가 좋아지면 불황도 끝날 것"
 
 TODO
 
+
 ## built in functions
 
 ### print()
@@ -282,7 +292,7 @@ print(object)
 
 - `object`: 문자열 혹은 객체.
 
-### typeof()
+### type()
 
 주어진 객체의 타입을 확인하는 함수.
 
@@ -316,12 +326,35 @@ print('1' + str(2)) # 12
 
 ### set()
 
+TODO
 
-## TODO
+
+### dir()
+
+```
+dir()
+dir(object)
+```
+
+`object`가 주어지면 해당 객체의 유효한 속성을 목록으로 반환한다.
+
+특정 객체가 어떤 메서드와 필드를 갖고 있는지 확인하는 코드:
+
+```py
+obj = {}
+for method_name in dir(obj):
+    if callable(getattr(obj, method_name)):
+        print(method_name)
+```
+
+
+
+## ? 이게 뭐지
 
 ```py
 print(sorted(values, key=str))
 ```
+
 
 ## 코딩 스타일 컨벤션
 
