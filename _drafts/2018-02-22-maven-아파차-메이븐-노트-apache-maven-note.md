@@ -20,6 +20,21 @@ tags:
 ㅁㄴㅇㅎㅂㅈㄱ
 
 
+## 의존성(dependency) 표기법
+
+```
+groupId:artifactId:classifier:version
+
+org.maven:example-lib:this-is-classifier:1.0.0
+```
+
+groupId, artifactId, version 순으로 적되, 만약 classifier가 있다면 version 앞에 적는다.
+
+예를 들어 `org.json:json:20220924`는 메이븐을 사용하여 프로젝트에서 `org.json` 그룹의 `json` 아티팩트의 특정 버전인 `20220924`를 사용하겠다는 것을 의미한다.
+
+TODO 이거 맞는지 확인
+
+
 ## Help 플러그인
 
 ### 설정 확인
@@ -87,7 +102,7 @@ mvn dependency:sources
 
 ## 넥서스 설치
 
-프로 버전이 나오면서 다운로드 링크 찾기가 힘들어졌는데, 'nexus oss download'로 검색하면 바로 나오니 참고할 것.
+프로 버전이 나오면서 다운로드 링크 찾기가 힘들어졌는데, 'nexus oss download'로 검색하면 바로 나옴.
 
 - [https://help.sonatype.com/repomanager3/product-information/download](https://help.sonatype.com/repomanager3/product-information/download)
 - [https://help.sonatype.com/repomanager3/product-information/download/download-archives---repository-manager-3](https://help.sonatype.com/repomanager3/product-information/download/download-archives---repository-manager-3)

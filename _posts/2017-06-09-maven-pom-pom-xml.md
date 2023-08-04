@@ -124,7 +124,7 @@ POM은 'Project Object Model'의 약자로 메이븐 프로젝트의 설정과 �
 
 ### classifier
 
-정식 명칭은 Maven artifact classifier이며 동일한 버전의 빌드에서 내용이 다른 아티팩트를 지정하는 용도로 사용한다. 버전 번호 바로 앞에 붙는다.
+정식 명칭은 Maven artifact classifier이며 동일한 버전의 빌드에서 내용이 다른 아티팩트를 지정하는 용도로 사용한다. 버전 번호 앞에 붙는다.
 
 ```
 org.maven:example-lib:this-is-classifier:1.0.0

@@ -23,7 +23,7 @@ tags:
 자주 쓰거나 중요한 것은 ⭐ 표시함.
 
 
-## 분류 필요
+## 분류 없음
 
 - [⭐ Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
 - [stripe](https://stripe.com): 결제 대행 웹 앱. 해외판 PG사라고 생각하면 된다. 노션과 험블번들에서 쓰더라.
@@ -416,3 +416,8 @@ Project manager 혹은 Issue tracker
 - [autohotkey](https://www.autohotkey.com): 스크립트를 작성하고 실행하는 방식의 키보드 매크로
 - [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 매핑 앱
 - [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 매크로와 터보 기능은 유료다.
+
+### 분류 없음
+
+- [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
+- [RunCat](https://github.com/Kyome22/RunCat_for_windows/releases): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
