@@ -16,6 +16,7 @@
 - [사이트 빌드](#사이트-빌드)
 - [지킬 빌드 디버깅 로그](#지킬-빌드-디버깅-로그)
 - [저장소 내부 링크](#저장소-내부-링크)
+- [블로그 엔진 환경설정/레이아웃](#블로그-엔진-환경설정-레이아웃)
 
 
 ## 윈도우에서 Jekyll 빌드
@@ -30,7 +31,7 @@ WSL이 아니면 [윈도우용 Ruby + Devkit 설치](https://rubyinstaller.org/d
 gem install bundler jekyll
 ```
 
-### 의존하는 패키지 설치
+### 의존 패키지 설치
 
 ```bash
 bundler install
@@ -196,6 +197,30 @@ https://jekyllrb.com/docs/installation/windows/#encoding
 ```
 
 
-## 저장소 내부 링크
+## 블로그 엔진 환경설정/레이아웃
 
-- [블로그 작성 가이드](docs/guide-and-rules.md)
+- `_config.yml`: 설정 파일
+- `_posts`: 소스 폴더
+- `_site`: 빌드된 결과물
+- `.sass-cache`: 몲
+- `.jekyll-metadata`: 몲
+
+### \_config.yml 도움말
+
+- [https://jekyllrb-ko.github.io/docs/configuration/](https://jekyllrb-ko.github.io/docs/configuration/)
+
+### post 템플릿
+
+- `_layouts/post.html`
+
+### 검색 관련 파일
+
+- `assets\javascripts\jekyll-search.jquery.js`
+- `_includes\blog\scripts.html`
+
+#### 검색창 열기 단축키
+
+- <kbd>ctrl + p</kbd>
+- <kbd>ctrl + /</kbd>
+- <kbd>shift + /</kbd>
+- ~~ctrl + k~~ 이건 추가했다가 문제가 많아서 롤백 (파폭 단축키와 겹침)
