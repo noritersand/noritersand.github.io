@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 2022-12-28 00:00:00 +0900
 title: '[JavaScript] 배열이 아닌 객체의 프로퍼티 반복'
 categories:
   - javascript

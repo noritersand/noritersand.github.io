@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 2022-05-13 00:00:00 +0900
 title: '[Vue.js] Vue.js 트릭 모음'
 categories:
   - vuejs
