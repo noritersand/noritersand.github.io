@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:38:00 +0900
-title: '[Java] 예외와 try-catch'
+title: '[Java] try-catch와 예외'
 categories:
   - java
 tags:
