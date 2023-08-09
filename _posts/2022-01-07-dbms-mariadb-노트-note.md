@@ -278,9 +278,9 @@ dump 파일에서 `DEFINER`와 뒤따르는 문자들을 삭제하면 됨:
 ```bash
 # dump.sql 파일에서 DEFINER를 삭제하면서 백업 파일 dump.sql.bak를 만듬
 sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
-```
 
-[출처](https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat)
+# 코드 출처: https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat
+```
 
 
 ## 정렬 order by
