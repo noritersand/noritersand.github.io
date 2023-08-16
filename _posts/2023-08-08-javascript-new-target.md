@@ -66,7 +66,7 @@ noob2 instanceof Newbie; // true
 
 ## 추가 정보
 
-문법에 따라 미묘한 차이가 있다. 클래스(classes)에선 클래스 혹은 (`super()`가 호출된 경우) 서브클래스를 반환한다:
+문법에 따라 미묘한 차이가 있다. 클래스(classes)는 클래스를 반환하거나, `super()`가 호출된 경우 서브클래스를 반환한다:
 
 ```js
 class A {
@@ -87,7 +87,7 @@ var b = new B(); // logs "B"
 // 코드 출처: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/new.target
 ```
 
-화살표 함수에서는 `new.target`을 둘러싸는 함수의 `new.target`을 반환한다:
+화살표 함수는 `new.target`을 둘러싸는 함수의 `new.target`을 반환한다:
 
 ```js
 function Bar() {
