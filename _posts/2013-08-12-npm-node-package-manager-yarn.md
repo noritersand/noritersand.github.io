@@ -343,7 +343,7 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js` 명령을 실행하는 것과 같다.
 
-다만 프로퍼티 이름이 `start`, `test`, `build`, `dev`, `lint`, `precommit`일 경우에만 `npm 스크립트_이름` 형태로 실행할 수 있다. 이 외의 이름은 **사용자 정의 스크립트로 취급되며 `run` 키워드를 붙여 `npm run 스크립트_이름`으로 실행해야 한다**.
+단, **프로퍼티 이름이 `start`, `test`, `build`, `dev`, `lint`, `precommit`일 경우에만 `npm 스크립트_이름` 형태로 실행할 수 있다**. 이 외의 이름은 사용자 정의 스크립트로 취급되며 `run` 키워드를 붙여 `npm run 스크립트_이름`으로 실행해야 한다.
 
 ```js
 {

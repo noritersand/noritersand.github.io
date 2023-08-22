@@ -65,13 +65,22 @@ function sumAsync(a, b) {
 
 요딴식으로 작성하면 됨.
 
+
+## 데이터 타입
+
 부수효과로 편집기에 따라 툴팁으로 파라미터의 타입이 보인다거나, 자동 완성 기능이 타입에 맞춰서 알아서 된다거나 하는게 있다.
 
-구성요소의 타입을 특정할 수 없는 배열이면 `array`라고 적는다. 이 경우 `any[]`로 나타난다. 반대의 경우엔 해당 타입과 대괄호`[]`를 적는다. 가령 `string` 타입의 배열이면 `string[]`이다.
+구성요소의 타입을 특정할 수 없는 배열이면 `Array` 혹은 `any[]`라고 적는다. 반대의 경우엔 해당 타입과 대괄호`[]`를 적는다. 가령 `string` 타입의 배열이면 `string[]`이다.
 
-인텔리제이에서 만들어주는 걸 보니 타입만 정의하는게 아니라 객체의 프로퍼티를 나열하는 방식도 되나보다. (예시는 생략)
+자동완성되는 걸 보면 이런 것도 가능:
 
-자동완성되는 걸 보면 `@returns {Promise<avoid>}` 이런 것도 가능.
+```
+@returns {Promise<void>}
+```
+
+원시 타입(`number`, `string`, `boolean`, `symbol`)을 제외한 나머지는 프로토타입을 써주면 된다. e.g., `Object`, `Function`, `Document`, `Node`, `Window`, ...
+
+`*`는 모든 타입이 올 수 있음을 나타낸다.
 
 ### OR
 
@@ -89,7 +98,7 @@ function getAny() {
 
 ## 파일 JSDoc
 
-메서드나 변수에 대한 코멘트 말고 파일 상단에 작성하는 코멘트는 정해진 규칙이 따로 없긴 하지만, 보통 이렇게 시작한다:
+메서드나 변수에 대한 코멘트 말고 파일 상단에 작성하는 코멘트는 정해진 규칙이 따로 없지만, 대게 이렇게 시작한다:
 
 ```js
 /*!
@@ -99,4 +108,20 @@ function getAny() {
 ```
 
 
-## 꼐속...
+## 구조 분해 할당을 사용하는 함수 파라미터는?
+
+```js
+// 소스 출처: https://stackoverflow.com/questions/36916790/document-destructured-function-parameter-in-jsdoc
+/**
+ * My cool function.
+ *
+ * @param {Object} obj - An object.
+ * @param {string} obj.prop1 - Property 1.
+ * @param {string} obj.prop2 - Property 2.
+ */
+const fn = function ({prop1, prop2}) {
+  // Do something with prop1 and prop2
+}
+```
+
+[여기](https://jsdoc.app/tags-param.html#parameters-with-properties)에 정의되어 있다고 함.
