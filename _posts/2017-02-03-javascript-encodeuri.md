@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [URI Generic Syntax RFC 2396](https://www.ietf.org/rfc/rfc2396.txt)
 - [UTF-8 encoding table and Unicode characters](https://www.utf8-chartable.de/unicode-utf8-table.pl?start=54528&unicodeinhtml=dec)

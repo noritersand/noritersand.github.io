@@ -10,7 +10,7 @@ tags:
   - sourcemap
 ---
 
-#### 참고한 문서
+#### 관련 문서
 
 - [Introduction to JavaScript Source Maps](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
 - [\[MDN\] Use a source map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map)

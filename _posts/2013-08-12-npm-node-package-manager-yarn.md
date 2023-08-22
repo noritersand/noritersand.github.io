@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [npm](https://www.npmjs.com/)
 - [npm Docs](https://docs.npmjs.com/)
@@ -325,9 +325,7 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 ## npm scripts
 
-package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어로 미리 정해진 스크립트를 실행할 수 있다.
-
-예를 들어 React.js는 튜토리얼용 패키지 설치 후 바로 `npm start`, `npm run build`, `npm test` 등의 명령어를 사용할 수 있는데, 이게 다 package.json에 `scripts` 항목으로 미리 등록되어 있기 때문에 가능한 것이다:
+`package.json`의 `scripts`를 이용해서 `npm start`와 같은 간략한 명령어로 미리 작성한 스크립트를 실행하게 하는 기능이다.
 
 ```js
 {
@@ -343,7 +341,31 @@ package.json에 스크립트를 등록해서 `npm x`같은 간략한 명령어�
 }
 ```
 
-요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js`와 같다고 볼 수 있다.
+요런 설정일 때 `npm start`는 `node node_modules/react-scripts/scripts/start.js` 명령을 실행하는 것과 같다.
+
+다만 프로퍼티 이름이 `start`, `test`, `build`, `dev`, `lint`, `precommit`일 경우에만 `npm 스크립트_이름` 형태로 실행할 수 있다. 이 외의 이름은 **사용자 정의 스크립트로 취급되며 `run` 키워드를 붙여 `npm run 스크립트_이름`으로 실행해야 한다**.
+
+```js
+{
+  "name": "my-app",
+  // 생략
+  "scripts": {
+    "hello": "echo 'Hello world!'"
+  }
+  // 생략
+}
+```
+
+```bash
+> npm run hello
+
+> lab-js@1.0.0 hello
+> echo 'Hello world!'
+
+'Hello world!'
+```
+
+`npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 떄문에 스크립트로 등록하는 편이 좋다.
 
 
 ## Yarn
@@ -366,6 +388,9 @@ yarn add PACKAGE_NAME@1.2.3
 
 # 지정한 태그와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@TAG_NAME
+
+# PACKAGE_NAME을 devDependencies로 설치
+yarn add PACKAGE_NAME --dev
 
 # package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 해당 파일을 우선 참조함
 yarn install
@@ -430,7 +455,11 @@ yarn global dir
 
 **그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같음.**
 
-뱀발: [Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 NPM보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
+### 기타
+
+[Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 NPM보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
+
+tap 패키지를 `npm`으로 설치하면 `^1.0.0`으로, `yarn`으로 설치하면 `^16.3.8`이 설치되는 이상한 현상이 있다. (2023-08-21)
 
 
 ## 자주 쓰이는 패키지
@@ -480,3 +509,10 @@ TODO
 ### express
 
 TODO
+
+### Node-Tap
+
+[https://www.npmjs.com/package/tap](https://www.npmjs.com/package/tap)
+
+웹 애플리케이션 백엔드 코드용 테스트 프레임웍
+

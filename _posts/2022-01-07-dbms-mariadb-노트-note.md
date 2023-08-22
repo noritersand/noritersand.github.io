@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://mariadb.com/kb/en/](https://mariadb.com/kb/en/)
 - [https://dbschema.com/documentation/MariaDb/#introduction](https://dbschema.com/documentation/MariaDb/#introduction)
@@ -225,7 +225,7 @@ from some_member_table
 
 ## 덤프로 데이터베이스 내보내기-가져오기
 
-- [참고한 문서](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
+- [관련 문서](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
 
 설치된 컴퓨터 터미널에서:
 

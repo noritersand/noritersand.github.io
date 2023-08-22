@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html
 - https://www.w3schools.com/java/java_modifiers.asp
@@ -49,3 +49,18 @@ Annotation public protected private static final transient volatile
 ```
 Annotation public protected private abstract static final synchronized native strictfp
 ```
+
+
+## default
+
+인터페이스에서만 사용할 수 있는 키워드로 메서드는 추상 메서드만 선언할 수 있는 인터페이스에 바디가 있는 메서드를 만들 때 사용한다.
+
+```java
+public interface Test {
+
+    default String init() {
+        return null;
+    } 
+}
+```
+

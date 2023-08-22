@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [http://jqueryvalidation.org/documentation/](http://jqueryvalidation.org/documentation/)
 - [http://jqueryvalidation.org/documentation/#link-demos](http://jqueryvalidation.org/documentation/#link-demos)

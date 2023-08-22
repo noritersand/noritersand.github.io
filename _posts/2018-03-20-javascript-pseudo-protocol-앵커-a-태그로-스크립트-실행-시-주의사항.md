@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [\[MDN\] void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
 

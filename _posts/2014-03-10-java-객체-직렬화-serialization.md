@@ -12,13 +12,15 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](/attachments/j-5things.pdf)
+
 
 ## 직렬화란?
 
 객체에 저장된 데이터를 스트림에 쓰기 위해 연속적인 데이터로 변환하는 것을 말한다. 반대로 스트림에서 데이터를 읽어 객체로 변환하는 것을 역직렬화(deserialization)라 한다.
+
 
 ## 직렬화, serialize
 
@@ -109,6 +111,7 @@ class Child extends Parent implements Serializable {
 }
 ```
 
+
 ## 역직렬화, deserialize
 
 역직렬화는 ObjectInputStream의 `readObject()`를 이용한다. 다만 한 가지 주의 사항이 있는데 하나 이상의 객체를 직렬화 했을 경우 반드시 같은 순서로 역직렬화 해야 한다는 것이다.
@@ -152,9 +155,10 @@ System.out.println(list.get(1));
 ois.close();
 ```
 
+
 ## transient
 
-선언부에 transient 제어자를 사용하면 직렬화에서 제외된다.
+선언부에 `transient` 제어자를 사용하면 직렬화에서 제외된다.
 
 ```java
 public class VO implements Serializable{
@@ -164,11 +168,12 @@ public class VO implements Serializable{
 }
 ```
 
+
 ## serialVersionUID
 
-serialVersionUID란 역직렬화 시 클래스간 버전 비교에 사용되는 해시값이다.
+`serialVersionUID`란 역직렬화 시 클래스간 버전 비교에 사용되는 해시값이다.
 
-명시하지 않을 경우 객체가 직렬화될 때 클래스에 정의된 멤버들의 정보를 이용해서 serialVersionUID에 클래스의 버전을 JVM이 자동으로 생성하여 직렬화 내용에 포함한다.
+명시하지 않을 경우 객체가 직렬화될 때 클래스에 정의된 멤버들의 정보를 이용해서 `serialVersionUID`에 클래스의 버전을 JVM이 자동으로 생성하여 직렬화 내용에 포함한다.
 
 ```java
 public class VO implements Serializable {
@@ -177,15 +182,16 @@ public class VO implements Serializable {
 // 생략
 ```
 
-만약 직렬화 시점의 serialVersion과 역직렬화 시점의 serialVersion이 일치하지 않는다면 아래처럼 java.io.InvalidClassException이 발생하면서 역직렬화는 실패한다.
+만약 직렬화 시점의 serial version과 역직렬화 시점의 serial version이 일치하지 않는다면 아래처럼 `java.io.InvalidClassException`이 발생하면서 역직렬화는 실패한다.
 
-```
+```java
 Exception in thread "main" java.io.InvalidClassException: com.test.VO;
 local class incompatible: stream classdesc serialVersionUID = 1001, local class serialVersionUID = 1002
 ```
 
+
 ## 직렬화된 데이터의 암호화
 
-javax.crypto.SealedObject wrapper 클래스나 java.security.SignedObject wrapper 클래스를 이용하면 데이터를 봉인하거나 암호화할 수 있다. 자세한 내용은 아래 링크를 참고할 것.
+`javax.crypto.SealedObject` wrapper 클래스나 `java.security.SignedObject` wrapper 클래스를 이용하면 데이터를 봉인하거나 암호화할 수 있다. 자세한 내용은 아래 링크를 참고할 것.
 
 [Java 객체 직렬화에 대해 당신이 모르고 있던 5가지](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=2ahUKEwj02-n5ppffAhUBWbwKHUq9CgEQFjAAegQIBxAC&url=http%3A%2F%2Fcfile30.uf.tistory.com%2Fattach%2F26613D375537C8D71B6149&usg=AOvVaw0d13LGC4OGxmQj2UCEE2jC)

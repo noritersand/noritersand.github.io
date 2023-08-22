@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://tools.ietf.org/html/draft-ietf-httpbis-p3-payload-14#section-3.2](https://tools.ietf.org/html/draft-ietf-httpbis-p3-payload-14#section-3.2)
 - [http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome](http://stackoverflow.com/questions/23118249/whats-the-difference-between-request-payload-vs-form-data-as-seen-in-chrome)

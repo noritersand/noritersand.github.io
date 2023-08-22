@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
 

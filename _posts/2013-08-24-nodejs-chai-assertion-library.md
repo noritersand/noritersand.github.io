@@ -12,7 +12,7 @@ tags:
   - assertion
 ---
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://www.chaijs.com](https://www.chaijs.com)
 - [https://www.chaijs.com/api/assert/](https://www.chaijs.com/api/assert/)

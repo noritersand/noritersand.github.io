@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor)
@@ -24,17 +24,7 @@ tags:
 
 ## 개요
 
-자바스크립트의 생성자 함수를 정리함.
-
-생성자 함수는 프로토타입을 정의하기 위해 사용한다. 최근에는 class 문법이 도입되면서 그 쪽을 더 많이 쓰긴 하지만, 간단한 정의라고 한다면 이쪽도 뭐 쓸대가 있겠지. (실제로 리액트의 컴포넌트 생성 방법 중 생성자 함수로 만드는 방법이 존재한다)
-
-
-## 이렇게 생김
-
-TODO
-
-
-## 프로토타입과의 관계
+자바스크립트의 생성자 함수를 정리한 문서. 생성자 함수는 프로토타입을 정의하고 인스턴스를 생성할 때 사용한다. 프로토타입을 정의하는 또 다른 방법으로 Classes가 있다.
 
 ![](/images/javascript-prototype.png)
 
@@ -56,6 +46,24 @@ bob2 instanceof Person; // true
 ```
 
 `new Object()`와 `Object()`의 결과가 같은 이유는 Object 함수가 위처럼 되어 있기 때문이다. 생성자 함수가 new 키워드 없이 일반 함수로써 호출되면 `this`는 생성자 함수의 프로토타입이 아니라 함수를 소유하고있는 객체가 된다. (실행기가 브라우저라면 `this`는 `Window`다.)
+
+### 🆕 new.target
+
+아니면 ES2015에 추가된 `new.target`을 이용하는 방법이 있다:
+
+```js
+function Newbie(name) {
+  if (!new.target) {
+    return new Newbie();
+  }
+  this.name = name;
+}
+
+var noob = new Newbie('noob-noob');
+var noob2 = Newbie('noob-noob');
+noob instanceof Newbie; // true
+noob2 instanceof Newbie; // true 
+```
 
 
 ## 생성자 함수의 메서드

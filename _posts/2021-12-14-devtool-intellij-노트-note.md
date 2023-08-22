@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://www.jetbrains.com/help/idea/getting-started.html](https://www.jetbrains.com/help/idea/getting-started.html)
 
@@ -272,6 +272,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
+- <kbd>ctrl + u</kbd>: 오버라이딩 메서드의 super 메서드로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions/ 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
 - <kbd>alt + f1</kbd>: Select in/ 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f7</kbd>: Find Usages/ 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색

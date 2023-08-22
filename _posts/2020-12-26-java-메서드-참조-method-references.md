@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
 
@@ -42,7 +42,6 @@ Java 8 전에는 내부 클래스나 익명 클래스로 구현체(=인스턴스
 
 ```java
 final String txt = "Hello";
-// 아래 넷은 모두 결과가 같다.
 
 // #1 내부 클래스를 이용하는 방식
 Bar callback = new Bar() {

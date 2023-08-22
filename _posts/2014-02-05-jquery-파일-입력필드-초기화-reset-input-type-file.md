@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [https://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/1043969#1043969](https://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/1043969#1043969)
 

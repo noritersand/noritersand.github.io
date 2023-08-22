@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [공식 가이드: Configure live templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_configure)
 - [공식 가이드: Live template variables](https://www.jetbrains.com/help/idea/template-variables.html)

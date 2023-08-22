@@ -15,7 +15,7 @@ tags:
 
 {% raw %}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
 - [\[Vue.js\] API](https://vuejs.org/api/)
@@ -257,7 +257,7 @@ TODO 설명 션찮
 <p>{{mustache}}</p>
 ```
 
-\* 수학의 보간법과는 관련이 없고, interpolate의 뜻 중 하나인 '덧붙이다' 혹은 '삽입하다'(=insert)로 쓰인 것 같음.
+\* 수학의 보간법과는 관련이 없고, interpolate의 뜻 중 하나인 '덧붙이다' 혹은 '삽입하다'(=insert)라는 뜻임 (출처: 뇌피셜)
 
 ### Raw HTML
 

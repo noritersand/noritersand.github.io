@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [http://servlets.com/cos/](http://servlets.com/cos/)
 - [http://www.servlets.com/cos/javadoc/com/oreilly/servlet/MultipartRequest.html](http://www.servlets.com/cos/javadoc/com/oreilly/servlet/MultipartRequest.html)

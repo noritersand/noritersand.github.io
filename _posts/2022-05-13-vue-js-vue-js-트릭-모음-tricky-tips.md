@@ -15,7 +15,7 @@ tags:
 
 {% raw %}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [\[Vue.js\] Introduction](https://vuejs.org/guide/introduction.html)
 - [\[Vue.js\] API](https://vuejs.org/api/)

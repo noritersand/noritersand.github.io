@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [\[MDN\] fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
 - [\[MDN\] Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

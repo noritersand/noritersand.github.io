@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 참고한 문서
+#### 관련 문서
 
 - [\[MDN\] Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 - [http://www.w3schools.com/js/js_strict.asp](http://www.w3schools.com/js/js_strict.asp)
