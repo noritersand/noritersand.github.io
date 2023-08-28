@@ -361,6 +361,57 @@ const vm = app.mount("#app");
 
 `app.config`에 대한 설명은 [여기](https://vuejs.org/api/application.html#app-config)를 참고할 것.
 
+### 클래스와 스타일 바인딩
+
+#### 클래스
+
+아래처럼 Object로:
+
+```html
+<div :class="{ active: isActive }"></div>
+```
+
+혹은 아래처럼 배열로:
+
+```js
+data() {
+  return {
+    activeClass: 'active',
+    errorClass: 'text-danger'
+  }
+}
+```
+
+```html
+<div :class="[activeClass, errorClass]"></div>
+```
+
+#### 스타일
+
+Object 방식:
+
+```html
+<div :style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+```
+
+배열로 스타일 바인딩:
+
+```js
+data() {
+  return {
+    baseStyles: 'color: black;',
+    overridingStyles: 'color: blue; font-weight: bold'
+  }
+}
+```
+
+```html
+<div :style="[baseStyles, overridingStyles]"></div>
+```
+
+
+TODO
+
 
 ## 조건부 렌더링 Conditional Rendering
 
@@ -468,7 +519,7 @@ TODO:
 
 #### key
 
-`key`는 special attribute 중 하나로 Vue의 가상 DOM 알고리즘에서 vnodes(Vue's Virtual DOM)를 식별하기 위한 힌트로 사용된다. Vue는 키가 없을 때 가능한 한 원래의 자리에서 이동하지 않고 패치/재사용하려고 시도한다. 반면 키가 제공되면 키의 변경에 따라 요소를 재정렬하거나 제거/삭제한다.
+`key`는 special attribute 중 하나로 Vue의 가상 DOM 알고리즘에서 vnodes(Vue's Virtual DOM)를 식별하기 위한 힌트로 사용된다. Vue는 키가 없을 때 가능한 한 원래의 자리에서 이동하지 않고 패치/재사용하려고 시도한다. 반면 키가 제공되면 키의 변경에 따라 요소를 재정렬하거나 제거/삭제한다. 이런 특성을 이용해 파일 첨부용 `<input type="file">` 엘리먼트를 키값을 바꿔 초기화하는 방법이 있다. [페이지 링크](/vuejs/vue-js-vue-js-트릭-모음-tricky-tips/#heading-file-input-초기화-하기)
 
 `v-for`에서도 마찬가지인데, 키가 없을 때의 알고리즘 때문에 의도대로 작동하지 않을 수 있다. 따라서 요소를 재정렬 하거나 삭제를 해야 한다면 키를 제공할 것. (사실 귀찮기만 하고 손해 보는 것은 없으므로 항상 쓰는 걸로...)
 
@@ -597,9 +648,11 @@ System Modifier keys:
 ```
 
 ```js
-methods: {
-  search(event) {
-    console.log(event); // PointerEvent { ... }
+export default {
+  methods: {
+    search(event) {
+      console.log(event); // PointerEvent { ... }
+    }
   }
 }
 ```

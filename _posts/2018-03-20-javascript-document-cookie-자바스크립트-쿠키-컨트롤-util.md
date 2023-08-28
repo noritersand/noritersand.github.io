@@ -9,7 +9,7 @@ tags:
   - web-api
   - dom-standard
   - cookie
-  - cookie-util
+  - utility
 ---
 
 * Kramdown table of contents

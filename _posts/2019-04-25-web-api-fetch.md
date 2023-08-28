@@ -1,10 +1,11 @@
 ---
 layout: post
 date: 2019-04-25 10:46:00 +0900
-title: '[JavaScript] Fetch'
+title: '[Web API] Fetch'
 categories:
-  - javascript
+  - web-api
 tags:
+  - web-api
   - javascript
   - fetch-standard
 ---
@@ -35,6 +36,11 @@ fetch는 xhr의 모던한 객체임. 멋-쪄
 
 
 ## fetch()
+
+```
+fetch(resource)
+fetch(resource, options)
+```
 
 대충 간단한 사용법은:
 
@@ -78,6 +84,8 @@ console.log(json);
 
 TODO
 
+곁다리: `FormData`로 파일을 전송할 땐 `Content-Type` 헤더를 설정하지 않아도 `multipart/form-data`로 설정된다. 오히려 명시하면 파일이 전송되지 않을 수 있음.
+
 
 ## Request
 
@@ -85,6 +93,10 @@ TODO
 
 
 ## Response
+
+TODO
+
+### Response.prototype.blob()
 
 TODO
 

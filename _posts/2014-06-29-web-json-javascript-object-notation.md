@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-06-29 16:32:00 +0900
-title: '[WEB] JSON, JavaScript Object Notation'
+title: '[Web] JSON, JavaScript Object Notation'
 categories:
   - web
 tags:
