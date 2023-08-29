@@ -3,7 +3,7 @@ layout: post
 date: 2021-12-14 18:23:22 +0900
 title: '[devtool] IntelliJ 노트'
 categories:
-  - eclipse
+  - devtool
 tags:
   - devtool
   - intellij

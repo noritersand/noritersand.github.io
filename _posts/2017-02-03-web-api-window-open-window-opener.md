@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2017-02-03 13:38:10 +0900
-title: '[JavaScript] Window.open(), Window.opener'
+title: '[Web API] Window.open(), Window.opener'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - html-standard
   - window
   - open

@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2018-03-20 17:08:18 +0900
-title: '[JavaScript] AJAX와 XMLHttpRequest'
+title: '[Web API] AJAX와 XMLHttpRequest'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - xmlhttprequest-standard
   - ajax
   - xmlhttprequest

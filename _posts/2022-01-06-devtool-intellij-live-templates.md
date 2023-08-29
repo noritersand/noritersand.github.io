@@ -3,7 +3,7 @@ layout: post
 date: 2022-01-06 23:22:31 +0900
 title: '[devtool] IntelliJ: Live Templates'
 categories:
-  - eclipse
+  - devtool
 tags:
   - devtool
   - intellij

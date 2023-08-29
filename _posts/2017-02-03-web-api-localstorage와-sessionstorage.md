@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2017-02-03 13:42:00 +0900
-title: '[JavaScript] localStorage와 sessionStorage'
+title: '[Web API] localStorage와 sessionStorage'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - html-standard
   - localstorage
   - sessionstorage

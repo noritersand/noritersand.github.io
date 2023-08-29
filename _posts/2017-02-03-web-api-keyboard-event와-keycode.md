@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2017-02-03 13:38:10 +0900
-title: '[JavaScript] keyboard event와 keyCode'
+title: '[Web API] keyboard event와 keyCode'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - dom-standard
   - json
   - literal

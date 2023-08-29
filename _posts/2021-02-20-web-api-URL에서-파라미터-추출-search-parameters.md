@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2021-02-20 11:24:05 +0900
-title: '[JavaScript] URL에서 파라미터 추출'
+title: '[Web API] URL에서 파라미터 추출'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - html-standard
   - parameter
   - search
