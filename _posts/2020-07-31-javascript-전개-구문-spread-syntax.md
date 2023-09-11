@@ -19,7 +19,7 @@ tags:
 - [\[MDN\] Spread syntax (...)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 - [\[MDN\] Spread properties](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#spread_properties)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - ES2015에서 최초 정의
 - ES2018에서 객체 초기화 관련 정의

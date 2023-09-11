@@ -21,7 +21,7 @@ tags:
 - [\[Vue.js\] API](https://vuejs.org/api/)
 - [https://v3-docs.vuejs-korea.org/](https://v3-docs.vuejs-korea.org/)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Vue 3
 

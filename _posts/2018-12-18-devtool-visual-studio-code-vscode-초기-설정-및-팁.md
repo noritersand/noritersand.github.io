@@ -70,12 +70,32 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
     ],
     "description": "Log output to console"
   },
+  "console.log v2": {
+    "prefix": "cl2",
+    "body": [
+      "console.log('${1:selectme}', ${2:selectme});"
+    ],
+    "description": "Log output to console"
+  },
   "console.debug": {
     "prefix": "cd",
     "body": [
       "console.debug('${1:msg}', $2);"
     ],
-    "description": "Log output to console"
+    "description": "Debugging log output to console"
+  },
+  "JS Doc: author and since": {
+    "prefix": "@auto",
+    "body": [
+      "@author fixalot",
+      "* @since $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE$1"
+    ]
+  },
+  "current time": {
+    "prefix": "!now",
+    "body": [
+      "$CURRENT_HOUR:$CURRENT_MINUTE:$CURRENT_SECOND$1"
+    ]
   }
 }
 ```

@@ -207,6 +207,15 @@ route /?
 route PRINT
 ```
 
+### ping
+
+특정 IP 혹은 도메인으로 다른 네트워크 장비와의 연결 상태를 확인한다. ICMP(Internet Control Message Protocol)를 사용하기 때문에 상대 컴퓨터에서 ICMP를 차단하면 네트워크 연결이 정상이어도 `ping`은 작동하지 않는다.
+
+```bash
+# KT 서버에 중단없이 연결 테스트 + 현재 시각 출력
+ping -t 168.126.63.1
+```
+
 
 ## [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 

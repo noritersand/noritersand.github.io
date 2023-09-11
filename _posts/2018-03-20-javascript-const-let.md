@@ -19,15 +19,19 @@ tags:
 - [\[MDN\] const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
 - [\[MDN\] let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
-- ES2015에서 최초 정의
 - const
   - Chrome 21/Edge 12/Firefox 36/Opera 9/Safari 5.1 이상에서 사용 가능
   - IE는 10 이하에서 사용 불가
 - let
   - Chrome 49/Edge 14/Firefox 44/Opera 17/Safari 10 이상에서 사용 가능
   - IE는 10 이하에서 사용 불가. [11에서 부분적 지원](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#browser_compatibility)
+
+
+## 개요
+
+신규 키워드 `const`와 `let`에 대해 정리한 글.
 
 
 ## const

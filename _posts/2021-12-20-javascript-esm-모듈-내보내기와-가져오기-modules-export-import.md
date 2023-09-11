@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2021-12-20 23:44:40 +0900
-title: '[JavaScript] 모듈, 내보내기와 가져오기'
+title: '[JavaScript] ESM: 모듈, 내보내기와 가져오기'
 categories:
   - javascript
 tags:
@@ -30,9 +30,11 @@ tags:
 
 ## 개요
 
-ES2015의 새로운 기능인 module(이하 모듈)에 대한 간단한 설명 글. 함수, 객체, 원시 값을 내보내거나 가져올 때 사용한다. RequireJS, React 같은 웹 프레임웤이나 Node.js 사용자라면 이미 익숙할 것이다.
+'ESM(ECMAScript modules)'은 ESMAScript에서 제안하는 표준 모듈 시스템이다. 'JavaScript modules'라고도 한다. 모듈을 내보내거나 가져올 때 사용하는데, 모듈은 함수, 객체, 원시 값 등을 포함한다.
 
-모듈은 export와 import 구문으로 구현하며, 내보내거나 가져오는 모듈은 무조건 엄격 모드로 작동한다는 특징이 있다. 그리고 라이브러리(기존 방식을 말함)를 사용하는 것보다 더 효율적이라고 한다.
+참고로 ESM이 구현되기 전의 자바스크립트에는 모듈 기능이 없었다. 그래서 사용하던 것이 CJS(CommonJS), AMD(Asynchronous Module Definition의 줄임말, RequireJS에서 사용), UMD(Universal Module Definition의 줄임말, Backbone.js에서 사용).
+
+ESM의 모듈은 `export`와 `import` 구문으로 구현하며, 내보내거나 가져오는 모듈은 무조건 엄격 모드로 작동한다는 특징이 있다. 그리고 라이브러리(기존 방식을 말함)를 사용하는 것보다 더 효율적이라고 한다.
 
 모듈 기능을 테스트하려면 웹 서버가 필요하다. 브라우저로 HTML 파일을 직접 열면 교차 출처 차단으로 정상 작동하지 않는다.
 

@@ -96,6 +96,10 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + z</kbd>: ⭐ 스냅 레이아웃 열기. 활성화된 창의 위치를 조정할 때 사용한다. 최근 업데이트로 쓰기 편해졌음.
 - <kbd>win + alt + 방향키</kbd>: 스냅 레이아웃 전환
 
+### 파일 탐색기
+
+- <kbd>shift + 우클릭</kbd>: 파일 탐색기의 구 컨텍스트 메뉴를 활성화한다. Windows 10부터 추가된 새 컨텍스트 메뉴에서 '추가 옵션 표시'를 누르는 것과 같다.
+
 
 ## 작성자 저장용 작업표시줄 고정 설정
 
@@ -108,6 +112,6 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 7</kbd>: VSCODE
 - <kbd>win + 8</kbd>: 가변: IDE#1, Chrome dev, MSOffice
 - <kbd>win + 9</kbd>: 가변: IDE#2, Steam, IntelliJ
-- <kbd>win + 0</kbd>: 가변: IDE#3, Epic Games, DBMS tool
+- <kbd>win + 0</kbd>: 가변: IDE#3, Epic Games, DBMS tool, ...
 - <kbd>win + \-</kbd>: Notion (Autohotkey로 확장)
 - <kbd>win + \=</kbd>: Edge (Autohotkey로 확장)

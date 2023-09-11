@@ -16,7 +16,7 @@ tags:
 
 - [https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Java 8 이상에서 사용 가능
 

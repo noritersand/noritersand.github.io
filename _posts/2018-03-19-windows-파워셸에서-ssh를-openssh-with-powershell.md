@@ -26,6 +26,29 @@ tags:
 2018년에 윈도우 정식 기능으로 포함된 오픈소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
 
 
+## SSH란?
+
+먼저 SSH에 대해서 알아보자. SSH는 네트워크로 연결된 다른 컴퓨터를 제어하기 위해 사용되는 프로토콜이나 소프트웨어를 가리키는 말이다. OSI 7계층에서 응용(=애플리케이션) 계층에 해당하며 프로토콜이며, TCP/IP가 제공하는 네트워크 연결 위에서 작동한다.
+
+### SSH 접속은 아무곳이나 되나?
+
+원격 접속을 당하려면(?) 컴퓨터에서 SSH 포트와 프로토콜을 허용하고 관련 앱이나 서비스가 작동하고 있어야 가능하다. 예를 들어 AWS에서 제공하는 기본 OS인 우분투는 OpenSSH(OpenBSD Secure Shell) 서비스가 설치되어 있다:
+
+```bash
+$ service ssh status
+● ssh.service - OpenBSD Secure Shell server
+     Loaded: loaded (/lib/systemd/system/ssh.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2023-01-13 09:29:35 KST; 7 months 22 days ago
+       Docs: man:sshd(8)
+             man:sshd_config(5)
+   Main PID: 741 (sshd)
+      Tasks: 1 (limit: 19083)
+     Memory: 6.7M
+     CGroup: /system.slice/ssh.service
+             └─741 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+```
+
+
 ## ssh
 
 putty는 안녕. 터미널은 이제 파워셸로 접속한다. ~~사실 WSL이 더 편하다~~

@@ -20,7 +20,7 @@ tags:
 - [\[PoiemaWeb\] 클래스](https://poiemaweb.com/es6-class)
 - [\[JAVASCRIPT.INFO\] 클래스와 기본 문법](https://ko.javascript.info/class)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - ES2015에서 최초 정의
 - Chrome 72/Edge 79/Firefox 81/Opera 62 이상에서 모든 기능 사용 가능

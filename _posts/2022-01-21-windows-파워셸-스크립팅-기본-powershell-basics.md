@@ -37,6 +37,8 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 
 ## 환경 변수
 
+ℹ️ Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않으니 필요하면 앱을 재시작할 것
+
 ### 환경 변수 조회
 
 ```bash
@@ -59,8 +61,6 @@ $env:path
 명령어 설명은 [여기](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)에서.
 
 ### 로컬 환경 변수 추가/삭제
-
-\* Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않는다.
 
 ```bash
 # 환경 변수 test 추가

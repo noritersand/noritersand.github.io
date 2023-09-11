@@ -18,7 +18,7 @@ tags:
 
 - [\[MDN\] Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - IE에서만 사용 불가
 

@@ -19,7 +19,7 @@ tags:
 - [\[MDN\] Method definitions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Method_definitions)
 - [https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer](https://www.ecma-international.org/ecma-262/6.0/#sec-object-initializer)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - ES2015에서 최초 정의
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능

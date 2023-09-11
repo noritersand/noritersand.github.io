@@ -21,7 +21,7 @@ tags:
 - [\[Vue.js\] API](https://vuejs.org/api/)
 - [https://v3-docs.vuejs-korea.org/](https://v3-docs.vuejs-korea.org/)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Vue 3
 
@@ -35,36 +35,11 @@ Vue.js 사용 방법 정리 글.
 
 [Quick Start](https://vuejs.org/guide/quick-start.html)
 
-### 빌드해서 쓰기
-
-Node.js로 Vue 컴파일러가 포함된 패키지를 설치해 번들링하는 방식을 말한다. (Vue 패키지는 컴파일러와 웹 서버를 포함한다)
-
-[NPM](https://www.npmjs.com/package/vue)으로 설치한다:
-
-```bash
-npm install vue@latest
-```
-
-Vue 앱 만들기:
-
-```bash
-npm exec create-vue
-# 혹은
-npm init vue@latest
-```
-
-생성된 디렉토리로 이동해서:
-
-```bash
-npm install
-npm run dev
-```
-
 ### 빌드 단계 생략하기
 
-Vue를 그저 자바스크립트 라이브러리로 사용하는 방법이다. 
+Vue를 그저 자바스크립트 라이브러리처럼 사용하는 방법이다. 이쪽은 스크립트 태그 혹은 CDN 방식이라 한다. (ESM 쓰면 ESM 방식이라 해도 될 것 같은데?)
 
-external link:
+External link:
 
 ```html
 <!-- <script src="https://unpkg.com/vue@3"></script> -->
@@ -91,6 +66,31 @@ createApp({
   ...
 }).mount('#app');
 </script>
+```
+
+### 빌드해서 쓰기
+
+Node.js CLI 환경에서 Vue 컴파일러로 빌하는 방식을 말한다(Vue 패키지는 컴파일러와 웹 서버를 포함한다). Vue CLI 혹은 SFC(Single-File Components) 방식이라고 한다.
+
+[NPM](https://www.npmjs.com/package/vue)으로 설치한다:
+
+```bash
+npm install vue@latest
+```
+
+Vue 앱 만들기:
+
+```bash
+npm exec create-vue
+# 혹은
+npm init vue@latest
+```
+
+생성된 디렉토리로 이동해서:
+
+```bash
+npm install
+npm run dev
 ```
 
 ### API 스타일
@@ -159,7 +159,7 @@ createApp({
 
 #### `<script setup>`
 
-Composition API 스타일은 `setup()`과 `<script setup>`로 나뉜다. 이 중 `<script setup>`은 빌드 + SFC 방식의 환경에서만 사용할 수 있는 것으로 보인다. 이렇게 생겼다:
+Composition API 스타일은 `setup()`과 `<script setup>`로 나뉜다. 이 중 `<script setup>`은 SFC로 빌드할 때만 사용할 수 있다. 이렇게 생겼다:
 
 ```html
 <script setup>
@@ -979,7 +979,7 @@ export default {
 
 렌더링 관련 디렉티브(`v-if`, `v-for` 등)와 같이 사용한다. 그리고 컴포넌트의 템플릿을 옵션과 함께 컴파일할 때 사용하기도 하는데, 이건 템플릿 컴파일러가 포함된 Vue 빌드에서만 지원된다.
 
-이 태그를 빌드 없는 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
+이 태그를 CDN 환경에서 컴포넌트 정의에 사용하려면 [vue3-sfc-loader](https://github.com/FranckFreiburger/vue3-sfc-loader)를 같이 써야함.
 
 
 ## 비동기 컴포넌트 제어: 특정 컴포넌트의 렌더링 멈추기

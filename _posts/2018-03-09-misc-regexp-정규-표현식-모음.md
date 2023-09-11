@@ -19,7 +19,7 @@ tags:
 
 ## RegExp 인스턴스 모음
 
-### 빈 줄, 공백 줄(empty line)
+### 빈 줄(empty/blank line)
 
 ```js
 /^\n/

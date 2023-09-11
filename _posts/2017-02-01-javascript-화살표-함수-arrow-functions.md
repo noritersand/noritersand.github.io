@@ -17,7 +17,7 @@ tags:
 
 - [\[MDN\] Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - [ES2015에서 최초 정의](https://262.ecma-international.org/6.0/)
 - Chrome 45, Edge 12, FireFox 22, Opera 32, Safari 10 이상에서 지원

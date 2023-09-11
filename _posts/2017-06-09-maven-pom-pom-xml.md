@@ -19,7 +19,7 @@ tags:
 - [Maven: POM Reference](https://maven.apache.org/pom.html#What_is_the_POM)
 - [Maven: Available Plugins](https://maven.apache.org/plugins/index.html)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - maven 4.0.0
 

@@ -17,7 +17,7 @@ tags:
 - [Chocolatey](https://chocolatey.org/)
 - [Chocolatey: Packages](https://community.chocolatey.org/packages)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - 1.2.1 시절에 작성한 글
 

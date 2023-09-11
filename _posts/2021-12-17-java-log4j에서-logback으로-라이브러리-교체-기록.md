@@ -18,7 +18,7 @@ tags:
 
 새 회사 오자마자 [log4j 이슈](https://github.com/advisories/GHSA-jfh8-c2jp-5v3q) 터져서 겸사겸사 logback으로 교체 작업했고, 설정 파일 기록 남김.
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Java 14
 - Spring 4.3.4

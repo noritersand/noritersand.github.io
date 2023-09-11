@@ -17,7 +17,7 @@ tags:
 - [\[docker docs\] Getting started](https://docs.docker.com/get-started/)
 - [\[서비큐라 기술 블로그\] 초보를 위한 도커 안내서](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Docker 20.10.11
 

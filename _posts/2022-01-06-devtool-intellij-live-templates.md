@@ -19,7 +19,7 @@ tags:
 - [공식 가이드: Configure live templates](https://www.jetbrains.com/help/idea/using-live-templates.html#live_templates_configure)
 - [공식 가이드: Live template variables](https://www.jetbrains.com/help/idea/template-variables.html)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - IntelliJ IDEA 2021.3
 

@@ -17,7 +17,7 @@ tags:
 
 - [https://www.jetbrains.com/help/idea/getting-started.html](https://www.jetbrains.com/help/idea/getting-started.html)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - IntelliJ IDEA 2021.3
 

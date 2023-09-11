@@ -22,7 +22,7 @@ tags:
 - [\[MariaDB\] DATE_FORMAT](https://mariadb.com/kb/en/date_format/)
 - [\[MariaDB\] DATETIME](https://mariadb.com/kb/en/datetime/)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - MariaDB 10.x
 

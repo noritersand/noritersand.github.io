@@ -239,12 +239,15 @@ even; // [2, 4]
 arr === even; // false
 ```
 
+아래는 배열에서 중복 요소를 제거하는 코드다:
+
 ```js
-// 중복 요소만 필터링해서 반환
-array.filter((ele, idx, arr) => {
-  return arr.indexOf(ele) !== arr.lastIndexOf(ele)
+array.filter((element, idx, sourceArray) => {
+  return sourceArray.indexOf(element) !== sourceArray.lastIndexOf(element); 
 });
 ```
+
+앞부터 찾은 `element`와 뒤부터 찾은 `element`가 다르면 `sourceArray`에 중복된 `element`가 있다는 뜻이다. 따라서 false를 반환하여 sourceArray에서 제거한다.
 
 ### Array.prototype.every()
 

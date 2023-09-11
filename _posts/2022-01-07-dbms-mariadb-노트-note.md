@@ -223,66 +223,6 @@ from some_member_table
 응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
 
 
-## 덤프로 데이터베이스 내보내기-가져오기
-
-- [관련 문서](https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb)
-
-설치된 컴퓨터 터미널에서:
-
-```bash
-# export
-mysqldump --user USERNAME --password --databases DATABASE_NAME --result-file=data-dump.sql
-
-# import
-mysql --user USERNAME --password --database=NEW_DATABASE < data-dump.sql
-```
-
-요런식으로 하면 되는데, 만약 원격지에서 실행한다면 아래처럼 `--host` 옵션으로 서버 주소를 넣어주면 됨:
-
-```bash
-mysqldump --host=DOMAIN_OR_IP_ADRESS --user USERNAME --password --database=DATABASE_NAME --result-file=dump.sql
-```
-
-데이터베이스를 지정하는 옵션과 표현식이 다르니 주의할 것; `mysql`은 `--database=DB_NAME, -D DB_NAME`, `mysqldump`는 `--databases, -B`.
-
-그리고 `mysql`은 `--routines`, `--result-file` 옵션이 없다.
-
-### mysqldump
-
-`mysqldump`는 [MySQL CLI Client](https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html)에 포함돼 있다.
-
-윈도우인 경우 CLI Client는 따로 없고, MariaDB 서버를 설치해야 함. (귀찮으니 가급적 choco로 하자)
-
-```bash
-# 우분투 + 마리아DB
-apt install mariadb-client
-mysql --version
-```
-
-#### options
-
-- `-h HOST_NAME` `--host=HOST_NAME`: 데이터베이스 서버의 도메인이나 IP
-- `-P PORT_NUM` `--port=PORT_NUM`: 데이터베이스 서버의 포트 번호
-- `-u USER_NAME` ` --user=USER_NAME`: 데이터베이스 로그인에 사용한 사용자명
-- `-p[PASSWORD]` `--password[=PASSWORD]`: 명령을 실행하기 전에 비밀번호 입력을 먼저 받음
-- `-B` `--databases`: `mysqldump`는 첫 번째 인수를 데이터베이스(=스키마) 이름으로, 두 번째 인수를 테이블 이름으로 처리하지만, 이 옵션이 있으면 모든 인수를 데이터베이스 이름으로 처리한다.
-- `-R` `--routines`: 루틴(=함수와 프로시저)을 포함한다.
-- `-r FILE_NAME` `--result-file=FILE_NAME`: 덤프 결과를 내보낼 파일의 이름. 생략하면 콘솔에 출력함.
-
-`--host`를 생략하면 데이터베이스 인스턴스를 로컬 컴퓨터에서 찾는다.
-
-### 권한 문제로 함수나 프로시저 생성에 실패할 때
-
-dump 파일에서 `DEFINER`와 뒤따르는 문자들을 삭제하면 됨:
-
-```bash
-# dump.sql 파일에서 DEFINER를 삭제하면서 백업 파일 dump.sql.bak를 만듬
-sed 's/\sDEFINER=`[^`]*`@`[^`]*`//g' --in-place=.bak dump.sql
-
-# 코드 출처: https://stackoverflow.com/questions/44015692/access-denied-you-need-at-least-one-of-the-super-privileges-for-this-operat
-```
-
-
 ## 정렬 order by
 
 오름차순(ascendent) 기준으로 우선순위는 다음과 같다:
@@ -493,3 +433,12 @@ select * from dates
 - `TRUNCATE`는 `WHERE` 절을 사용할 수 없다.
 - `TRUNCATE`는 `DELETE`보다 빠르게 작동한다. `TRUNCATE`는 테이블 전체를 잠그고 데이터를 삭제하는 반면, `DELETE`는 각 행을 스캔하여 삭제하기 때문
 - `TRUNCATE`는 삭제된 행의 수를 반환하지 않는다. 또한 테이블의 auto-increment 값도 초기값으로 재설정된다.
+
+
+## LAST_INSERT_ID()
+
+가장 최근에 실행된 `INSERT` 문의 결과에서 `AUTO_INCREMENT` 속성 컬럼으로 할당된 자동 생성 값을 반환한다. 동시성 문제가 있어보이는데, 테스트 해보니 세션 혹은 트랜잭션 기준으로 반환하는 걸로 추정된다.
+
+```sql
+select last_insert_id()
+```

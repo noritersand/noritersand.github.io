@@ -17,7 +17,7 @@ tags:
 - [https://www.sublimetext.com/docs/index.html](https://www.sublimetext.com/docs/index.html)
 - [https://docs.sublimetext.io/guide/](https://docs.sublimetext.io/guide/)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Sublime Text 4 (Build 4xxx)
 
@@ -237,18 +237,18 @@ Build 3126 이후에 기록함.
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: select_lines. 위나 아래로 멀티 캐럿
+- <kbd>ctrl + alt + 방향키 위/아래</kbd>: select_lines 위나 아래로 멀티 캐럿
 - <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
-- <kbd>ctrl + shift + l</kbd>: split_selection_into_lines. 선택한 영역에서 각 라인마다 캐럿 분리
+- <kbd>ctrl + shift + l</kbd>: split_selection_into_lines 선택한 영역에서 각 라인마다 캐럿 분리
 
 ### 커서/포커스 이동
 
-- <kbd>alt + -</kbd>: Jump Back. 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
-- <kbd>alt + shift +  '+'</kbd>: Jump Forward. 다음 포커스로 이동. 이클립스의 <kbd>alt + →</kbd>와 비슷
+- <kbd>alt + \-</kbd>: Jump Back 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
+- <kbd>alt + shift +  '+'</kbd>: Jump Forward 다음 포커스로 이동. 이클립스의 <kbd>alt + →</kbd>와 비슷
 - <kbd>ctrl + r</kbd>: 현재 파일의 모든 심볼(함수, 변수, 프로퍼티, 제목 등) 보기. 선택하면 포커스 이동.
 - <kbd>ctrl + shift + r</kbd>: 현재 프로젝트(혹은 열려있는 폴더)의 모든 심볼 보기. 선택하면 포커스 이동.
-- <kbd>f12</kbd>: Goto Definition. 현재 커서가 있는 함수나 메서드의 선언부로 이동. 제한적으로 작동하는 기능(Syntax 보기 형태와 문서의 내용이 알맞아야 함)이다.
-- <kbd>shift + f12</kbd>: Goto Reference. 함수나 메서드를 사용(참조)하고 있는 라인으로 이동.
+- <kbd>f12</kbd>: Goto Definition 현재 커서가 있는 함수나 메서드의 선언부로 이동. 제한적으로 작동하는 기능(Syntax 보기 형태와 문서의 내용이 알맞아야 함)이다.
+- <kbd>shift + f12</kbd>: Goto Reference 함수나 메서드를 사용(참조)하고 있는 라인으로 이동.
 - <kbd>ctrl + 0</kbd>: 사이드바로 포커스 이동
 - <kbd>alt + 숫자키</kbd>: 열려진 탭 사이의 포커스 이동
 - <kbd>alt + shift + 숫자키</kbd>: 레이아웃 나누기
@@ -260,11 +260,11 @@ Build 3126 이후에 기록함.
 
 특정 코드 영역을 접고 펴는 기능
 
-- <kbd>ctrl + shift + [</kbd>: Fold. (보통은 괄호 등으로 작성된 코드 블록을) 접기
-- <kbd>ctrl + shift + ]</kbd>: Unfold. 펼치기
-- <kbd>ctrl + k, ctrl + 1</kbd>: Fold All. 모두 접기
-- <kbd>ctrl + k, ctrl + j</kbd>: Unfold All. 접혀있는 코드 전부 펼치기
-- <kbd>ctrl + k, ctrl + 숫자키</kbd>: Fold Level 2~9. 코드 깊이에 따라 해당하는 모든 코드를 접는 기능이다. 숫자키는 2부터 9까지 가능
+- <kbd>ctrl + shift + [</kbd>: Fold (보통은 괄호 등으로 작성된 코드 블록을) 접기
+- <kbd>ctrl + shift + ]</kbd>: Unfold 펼치기
+- <kbd>ctrl + k, ctrl + 1</kbd>: Fold All 모두 접기
+- <kbd>ctrl + k, ctrl + j</kbd>: Unfold All 접혀있는 코드 전부 펼치기
+- <kbd>ctrl + k, ctrl + 숫자키</kbd>: Fold Level 2~9 코드 깊이에 따라 해당하는 모든 코드를 접는 기능이다. 숫자키는 2부터 9까지 가능
 
 ### 편집
 
@@ -274,7 +274,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + m</kbd>: 가까운 닫는 괄호(bracket) 혹은 여는 괄호로 이동.
 - <kbd>ctrl + shift + m</kbd>: 가까운 닫는 괄호까지 텍스트 선택.
 
-### Overlay
+### 오버레이 Overlay
 
 - <kbd>ctrl + \`</kbd>: 콘솔창
 - <kbd>ctrl + shift + p</kbd>: Command Palatte 빠른 명령어 탐색창 열기
@@ -295,7 +295,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + k, ctrl + l</kbd>: 소문자 변환
 - <kbd>ctrl + k, ctrl + b</kbd>: 사이드 바 토글. 서브라임 머지에도 같은 단축키로 작동함.
 
-### Mark
+### 마크 Mark
 
 특정 라인에 마킹하는 기능. **열 번호도 기억**한다.
 
@@ -305,3 +305,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + k, ctrl + x</kbd>: 현재 커서의 위치에 새로 마크를 만들고, 이미 마킹되어 있던 지점으로 커서 이동
 - <kbd>ctrl + k, ctrl + g</kbd>: 마크 삭제
 - <kbd>ctrl + k, ctrl + y</kbd>: Yank 기능이라는데 어떻게 작동하는 건지 몲.
+
+### 프로젝트, 워크스페이스
+
+- <kbd>alt + shift + p</kbd>: Quick Switch Project 빠른 프로젝트 변경 창 열기

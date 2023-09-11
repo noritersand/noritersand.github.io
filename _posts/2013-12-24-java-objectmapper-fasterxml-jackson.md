@@ -160,7 +160,7 @@ public class JsonResponse {
 
 ## 문자열에서 java.time 패키지로 타입 변환하기
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 - Java 17
 

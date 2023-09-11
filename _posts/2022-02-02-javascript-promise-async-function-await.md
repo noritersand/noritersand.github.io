@@ -22,7 +22,7 @@ tags:
 - [\[MDN\] await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
 - [\[MDN\] Making asynchronous programming easier with async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 
-#### 버전 정보
+#### 테스트 환경 정보
 
 Promise:
 
@@ -366,7 +366,7 @@ async () => {
 
 ### async 함수를 비동기로 만드는 것은 await
 
-async 함수의 본문은 0개 이상의 `await`으로 분할된다고 볼 수 있다(라는 MDN의 설명😇). 첫 번째 `await`을 만날때 까지 async 함수는 동기적으로 실행된다. 따라서 `await`이 없는 async 함수는 일반 함수처럼 전체가 동기적으로 실행된다:
+async 함수의 본문은 0개 이상의 `await`로 분할된다고 볼 수 있다(라는 MDN의 설명😇). 첫 번째 `await`을 만날때 까지 async 함수는 동기적으로 실행된다. 이 말은 `await`이 없는 async 함수는 일반 함수와 같다는 말이다:
 
 ```js
 var fn = async () => {
