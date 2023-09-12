@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-request body, request body post data, payload, payload body 등으로 불리는 리퀘스트 바디는 바디를 통해 전송한 어떤 값이 쿼리스트링이나 x-www-form-urlencoded와 다르게 이름이 없어서 특수한 방식으로 해석해야 하는 형태인 것을 말한다.
+request body, request body post data, payload, payload body 등으로 불리는 리퀘스트 바디는 바디를 통해 전송한 어떤 값이 쿼리스트링이나 `x-www-form-urlencoded` 컨텐츠 타입과 다르게 이름이 없어서 특수한 방식으로 해석해야 하는 형태인 것을 말한다.
 
 일반적으로 POST, PUT, PATCH 등의 메서드에서 사용한다. GET, DELETE 메서드에서도 쓸 수 있지만 권장되지 않는다. 조회(혹은 조회해서 삭제)를 처리하는 메서드에서는 굳이 써야할 필요가 없고, 서버에서 리퀘스트 바디를 처리할 때 더 많은 리소스를 사용하기 때문이다.
 

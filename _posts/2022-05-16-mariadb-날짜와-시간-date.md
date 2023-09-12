@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2022-05-16 18:06:38 +0900
-title: '[DBMS] MariaDB 날짜와 시간'
+title: '[MariaDB] 날짜와 시간'
 categories:
-  - dbms
-tags:
-  - dbms
   - mariadb
+tags:
+  - mariadb
+  - dbms
   - sql
   - code-snippet
   - date
@@ -24,7 +24,8 @@ tags:
 
 #### 테스트 환경 정보
 
-- MariaDB 10.x
+- MariaDB 10.5.17
+- MySQL 8.0.25
 
 
 ## 개요

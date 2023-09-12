@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2022-02-12 00:23:23 +0900
-title: '[DBMS] MariaDB, MySQL: 쪽 번호 매기기'
+title: '[MariaDB] MariaDB: 쪽 번호 매기기'
 categories:
-  - dbms
-tags:
-  - dbms
   - mariadb
+tags:
+  - mariadb
+  - dbms
   - mysql
   - sql
   - pagination
@@ -14,6 +14,11 @@ tags:
 
 * Kramdown table of contents
 {:toc .toc}
+
+#### 테스트 환경 정보
+
+- MariaDB 10.5.17
+- MySQL 8.0.25
 
 
 ## 개요
