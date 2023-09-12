@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2020-07-31 20:48:00 +0900
-title: '[JavaScript] 계산된 프로퍼티명 Computed property names'
+title: '[JavaScript] 계산된 프로퍼티명 Computed Property Names'
 categories:
   - javascript
 tags:
@@ -23,6 +23,7 @@ tags:
 - ES2015에서 최초 정의
 - Chrome 60/Edge 79/Firefox 55/Opera 47/Safari 11.1 이상에서 사용 가능
 - IE에서 사용 불가
+
 
 ## 개요
 
