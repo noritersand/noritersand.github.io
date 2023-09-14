@@ -127,8 +127,6 @@ Array 타입은 `valueOf()` 대신 `toString()`을 호출한다(규칙에 따라
 
 ## 자바스크립트 타입 변환 표
 
-출처: JavasScript: The Definitive Guide. David Flanagan 저. 6판. 58쪽
-
 |                   | String      | Number | Boolean | Object                 |
 |-------------------|-------------|--------|---------|------------------------|
 | undefined         | "undefined" | NaN    | false   | TypeError              |
@@ -152,3 +150,5 @@ Array 타입은 `valueOf()` 대신 `toString()`을 호출한다(규칙에 따라
 | ["a"]             |             | NaN    | true    |                        |
 | [1, 2]            |             | NaN    | true    |                        |
 | function() { }    |             | NaN    | true    |                        |
+
+출처: JavasScript: The Definitive Guide. David Flanagan 저. 6판. 58쪽

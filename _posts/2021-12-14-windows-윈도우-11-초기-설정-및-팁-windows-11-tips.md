@@ -113,5 +113,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 8</kbd>: 가변: IDE#1, Chrome dev, MSOffice
 - <kbd>win + 9</kbd>: 가변: IDE#2, Steam, IntelliJ
 - <kbd>win + 0</kbd>: 가변: IDE#3, Epic Games, DBMS tool, ...
-- <kbd>win + \-</kbd>: Notion (Autohotkey로 확장)
-- <kbd>win + \=</kbd>: Edge (Autohotkey로 확장)
+- (여기부터는 Autohotkey로 확장한 키 조합)
+- <kbd>win + \-</kbd>: WorkFlowy
+- <kbd>win + ctrl + \-</kbd>: Notion
+- <kbd>win + \=</kbd>: Edge
+- <kbd>win + backspace</kbd>: Obsidian
