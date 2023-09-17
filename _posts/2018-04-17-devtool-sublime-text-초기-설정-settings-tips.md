@@ -65,9 +65,10 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 
 서브라임에서 자동 완성 항목을 추가하는 방법이다.
 
-메뉴에서 `Tools > Developer > New Snippet...` 을 누르면 새 파일이 열리는데, 아래처럼 작성한 뒤:
+메뉴에서 `Tools > Developer > New Snippet...` 을 누르면 새 스니펫 파일이 열린다. 거기에 아래처럼 작성한 뒤:
 
 ```xml
+<!-- javascript-cl.sublime-snippet -->
 <snippet>
   <content><![CDATA[
 console.log('${1:msg}', ${2});
@@ -77,13 +78,19 @@ console.log('${1:msg}', ${2});
 </snippet>
 ```
 
-확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정돼 있으며, 스니펫을 더 늘리고 싶으면 위 파일에 항목을 추가하는 게 아니라 새 파일을 만들어야 한다:
-
-작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행하면 됨.
-
-이것도 추가할 것:
+```xml
+<!-- javascript-cl2.sublime-snippet -->
+<snippet>
+  <content><![CDATA[
+console.log('${1:msg}', ${2:msg});
+]]></content>
+  <tabTrigger>cl2</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
+```
 
 ```xml
+<!-- javascript-cd.sublime-snippet -->
 <snippet>
   <content><![CDATA[
 console.debug('${1:msg}', ${2});
@@ -93,15 +100,11 @@ console.debug('${1:msg}', ${2});
 </snippet>
 ```
 
-```xml
-<snippet>
-  <content><![CDATA[
-console.log('${1:msg}', ${2:msg});
-]]></content>
-  <tabTrigger>cl2</tabTrigger>
-  <scope>source.js</scope>
-</snippet>
-```
+확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정된다.
+
+⚠️ **`<snippet>` 태그는 스니펫 파일의 루트 태그여야 한다. 그러니까 `<snippet>` 하나당 스니펫 파일 하나씩이다.**
+
+작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행할 것.
 
 
 ## 패키지

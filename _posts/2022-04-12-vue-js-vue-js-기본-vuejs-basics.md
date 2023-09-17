@@ -711,7 +711,8 @@ export default {
 <input type="checkbox" v-model="yn" true-value="Y" :false-value="'N'" />
 ```
 
-값이 문자열이면 콜론과 홑따옴표는 생략해도 된다.
+값이 문자열이면 콜론과 작은따옴표
+는 생략해도 된다.
 
 ### Modifiers
 
