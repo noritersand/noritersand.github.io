@@ -129,7 +129,7 @@ String.format("%h, %h, %H, %H, %H", null, 10, 16, 17, 28); // "null, a, 10, 11, 
 
 #### `s` `S`
 
-인수가 `null`이면 "null"로 치환한다. 만약  의 구현체면 `arg.formatTo()`를 호출한다. 둘 다 아니면 `arg`의 결과값이다.
+인수가 `null`이면 "null"로 치환한다. 만약 `java.util.Formattable`의 구현체면 `arg.formatTo()`를 호출한다. 아니면 `arg.toString()`의 결과값이다.
 
 ```java
 String.format("%s, %S, %s", null, "abcd", 1234); // "null, ABCD, 1234"

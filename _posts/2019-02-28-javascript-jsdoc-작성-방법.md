@@ -119,9 +119,9 @@ function getAny() {
  * @param {string} obj.prop1 - Property 1.
  * @param {string} obj.prop2 - Property 2.
  */
-const fn = function ({prop1, prop2}) {
+function willDestroyU({prop1, prop2}) {
   // Do something with prop1 and prop2
 }
 ```
 
-[여기](https://jsdoc.app/tags-param.html#parameters-with-properties)에 정의되어 있다고 함.
+스펙 정의는 [여기](https://jsdoc.app/tags-param.html#parameters-with-properties)를 참고.

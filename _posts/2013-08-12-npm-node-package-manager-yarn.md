@@ -411,6 +411,8 @@ yarn upgrade-interactive
 
 Yarn으로 패키지를 추가하거나 삭제해도 `package.json` 내용이 수정되니 주의할 것.
 
+`yarn install`의 단축어는 `yarn`이다.
+
 ### yarn.lock
 
 Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.

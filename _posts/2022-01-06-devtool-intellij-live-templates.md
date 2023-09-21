@@ -59,7 +59,7 @@ tags:
 
 1. 템플릿이 활성화될 언어
 2. 새 템플릿 추가 버튼
-3. 접두어. 이 템플릿이 어떤 키워드에 반응해야 하는지를 의미
+3. 축약어(Abbreviation): 축약어나 자동 완성 키워드를 입력하는 곳. 축약어를 지정하고 싶을 땐 자동 완성 키워드 앞에 점`.`과 대문자 몇 개를 입력한다. 예를 들어 `EHF. enhanced for-loop`라고 입력해 저장하고 _Surround With_<kbd>ctrl + alt + t</kbd> 기능을 활성화 하면 `E`, `H`, `F` 중 기존의 라이브 템플릿과 겹치지 않는 하나가 단축키로 지정된다.
 4. 라이브 템플릿 선택 창에서 설명으로 표시되는 텍스트(비워도 됨)
 5. **변수**를 사용할 때 해당 **변수**가 어떻게 작동해야 하는지 정의하는 메뉴. 위 스샷에선 작성한 **변수**가 없어서 비활성화돼 있음.
 6. 이 템플릿이 문맥상 어느 위치에서 활성화 되는지 선택
@@ -69,7 +69,7 @@ tags:
 
 변수에는 인텔리제이가 알아서 적절한 값으로 채워줄 내용을 정의한다.
 
-예를 들어 접두어 `fori`는 Template text가 요렇게 생겼다:
+예를 들어 축약어 `fori`는 *Template text*가 요렇게 생겼다:
 
 ```java
 for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
@@ -92,16 +92,16 @@ for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
 ### 사전 정의 변수
 
 - `$END$`: 코드 자동 완성 후 캐럿이 위치할 자리를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 _Surround With_<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
 
 
 ## 설정 예시
 
 ### logger
 
-우선 클래스 변수 logger를 자동으로 완성해 주는 템플릿이다.
+클래스 변수 `logger`를 자동으로 완성해 주는 템플릿이다.
 
-Abbreviation은 `logger`로, Template Text는 아래처럼 작성한다:
+*Abbreviation*은 `logger`로, *Template Text*는 아래처럼 작성한다:
 
 ```java
 private static final Logger logger = LoggerFactory.getLogger($className$.class);
@@ -118,7 +118,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 자주 사용하게 될 로그 출력용 템플릿.
 
-Abbreviation은 `li`로, Template Text는 아래처럼 작성한다:
+*Abbreviation*은 `li`로, *Template Text*는 아래처럼 작성한다:
 
 ```java
 logger.info("{}", $aaa$);
@@ -127,15 +127,15 @@ logger.info("{}", $aaa$);
 `$aaa$`변수의 값은 `completeSmart()`, 적용 범위는 `expression`을 선택한다.
 
 - `completeSmart()`: 자동 완성 후 문맥에 맞는 변수 선택 툴팁을 띄우게 함.
-- `expression`: 이 템플릿이 메서드 구현부 중 표현식을 작성할 수 있는 지역일 때만 활성화 됨.
+- `expression`: 이 템플릿이 메서드 바디에서 표현식을 작성할 수 있는 지역일 때만 활성화 됨.
 
 ![](/images/intellij-live-templates-li.gif)
 
 ### logger.error
 
-catch 구문 내에서의 Exception 메시지 출력 템플릿.
+`try-catch`의 `catch`에서 에러 메시지 출력 템플릿.
 
-Abbreviation은 `le`로, Template Text는 아래처럼 작성한다:
+*Abbreviation*은 `le`로, *Template Text*는 아래처럼 작성한다:
 
 ```java
 logger.error($var$.getMessage(), $var$);
@@ -143,7 +143,7 @@ logger.error($var$.getMessage(), $var$);
 
 `$var$` 변수의 값은 `variableOfType("Exception")`, 적용 범위는 `expression`을 선택한다.
 
-- `variableOfType("Exception")`: 문맥에 맞는 Exception의 서브 타입 변수를 채워 넣는다.
+- `variableOfType("Exception")`: 문맥에 맞는 `Exception`의 서브 타입 변수를 채워 넣는다.
 
 ![](/images/intellij-live-templates-le.gif)
 

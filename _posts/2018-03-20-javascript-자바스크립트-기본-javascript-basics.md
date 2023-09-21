@@ -17,6 +17,8 @@ tags:
 #### 관련 문서
 
 - [TC39 – Specifying JavaScript.](https://tc39.es/)
+- [ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
+- [ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
 - [\[MDN\] Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
 - [\[MDN\] Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
 - [\[MDN\] Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
@@ -282,7 +284,14 @@ const  float  long  short  volatile
 - `object`: 일반적인 값이 아닌 다른 객체의 참조값을 갖는 데이터 타입. `Array`, `Date`, `RegExp`, `Error` 등이 object 타입이다.
 - `function`: 함수 타입. 자바스크립트에서 함수는 `Function` 프로토타입의 인스턴스를 의미한다.
 
-이 중 `object`와 `function`은 원시 타입이 아니다.
+#### string vs String
+
+`string`은 문자열의 원시 타입을 의미한다. `String`은 `String()` 생성자 함수를 의미할 수도 있고, `String` 프로토타입을 의미할 수도 있다. 
+
+하지만 모든 소문자로 작성한 타입이 원시 타입을 의미하는 것은 아니다. `object`와 `function` 타입은 원시 타입이 아니다. 이 소문자로 나타내는 타입의 범위는 `typeof` 연산자의 결과로 보이는 것까지인 것으로 보인다. 그러니까 자바스크립트에서 '`array` 타입'이란 말은 틀린 표현인 것이다(`typeof`는 배열을 `object` 타입이라 하니까...).
+
+혼란을 피하고 싶다면 원시 타입을 제외한 나머지는 프로토타입을 쓴다. e.g., `number`, `string`, `boolean`, `symbol`, `Object`, `Function`, `Array`, `Node`, `Window`, ...
+
 
 ### 변수 선언과 초기화
 
