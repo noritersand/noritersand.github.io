@@ -441,7 +441,7 @@ timeTest2(); // It takes 1009 milliseconds.
 
 ### Promise.all(), Promise.race()
 
-앞선 예시처럼 변수 여러개에 `await`를 거는 방법은 코드가 예쁘지 않다. Promise가 제공하는 메서드를 써보자.
+앞선 예시처럼 변수 여러 개에 `await`를 거는 방법은 코드가 예쁘지 않다. Promise가 제공하는 메서드를 써보자.
 
 ```
 Promise.all(iterable)

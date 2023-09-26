@@ -73,7 +73,4 @@ and table_schema = @table_schema
 order by ordinal_position asc
 ```
 
-`set` 까지 한 번에 실행하면 된다. `str` 컬럼을 Java 파일에 붙여놓고 (필요한 경우) 카멜케이스 변환만 해주면 끗.
-
-DBMS 툴에 따라 큰따옴표
-가 붙을 수 있는데 그냥 전부 지우면 됨.
+`set` 까지 한 번에 실행하면 된다. 결과에서 `str` 컬럼 전체를 Java 클래스에 붙여넣으면 끗. DBMS 툴에 따라 큰따옴표가 붙을 수 있는데 그냥 전부 지우면 됨.

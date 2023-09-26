@@ -294,6 +294,24 @@ git checkout -- .
 git checkout HEAD .
 ```
 
+#### 특정 파일만 원하는 커밋으로 되돌리기
+
+```bash
+git checkout COMMIT_HASH -- FILE_NAME
+```
+
+이렇게 하면 파일의 내용은 지정한 커밋과 동일하게 변경되며, 커밋은 생성하지 않고 스테이징 상태가 된다.
+
+#### `--`라고 쓰는 이유
+
+`--` 기호는 명령어 인터프리터에게 그 뒤에 나오는 것들은 옵션이 아니라 파일이나 디렉터리라는 것을 명시적으로 알려주는 역할을 한다. 이렇게 하면 파일 이름이나 디렉터리 이름이 특수문자나 옵션과 유사할 때 혼동을 방지할 수 있다.
+
+예를 들어, 만약 `-file`이라는 이름의 파일이 실제로 존재하고, `git checkout`으로 가져오려고 한다면, Git은 `-file`을 옵션으로 해석할 수도 있다. 이럴 때 `--`을 사용하여 `-file`이 실제로 가져와야 할 파일임을 알려주는 것.
+
+```bash
+git checkout commit_hash -- -file
+```
+
 #### fetch 시점으로 헤드 이동
 
 `fetch`로 리모트 저장소의 데이터를 받아왔을때 'FETCH_HEAD'라는 포인터가 생성된다. 해당 포인터의 스냅샷을 확인 후 원하는 브랜치로 전환해 머지한다.
@@ -607,7 +625,7 @@ http.sslbackend=openssl
 http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
 ```
 
-만약 저장소가 여러개이면서 SSL 문제가 해결이 안 되면 다음처럼:
+만약 저장소가 여러 개이면서 SSL 문제가 해결이 안 되면 다음처럼:
 
 ```bash
 git config --global http.https://noritersand.github.io.sslverify false
@@ -904,6 +922,32 @@ git init
 ```bash
 git init --bare
 ```
+
+
+## lfs
+
+LFS(Large File Storage)는 대용량 파일을 더 효율적으로 관리할 수 있게 도와주는 Git의 확장이다. [여기](https://git-lfs.com/)서 별도로 다운로드 할 수 있지만, Git 클라이언트에 포함되어 있으니 설치할 때 (Select Components 단계) 제외한 게 아니라면 그냥 쓸 수 있다.
+
+어쨋든, LFS를 적용하려면 아래처럼 LFS를 초기화하고 `git lfs track` 명령으로 특정 파일이나 패턴을 추적하게 한다. 그러면 추적 대상을 기록하는 `.gitattributes` 파일이 생성되는데 이 파일을 버전관리 대상으로 추가하고, 그 다음은 평소처럼 쓰면 된다:
+
+```bash
+# LFS를 초기화
+git lfs install
+
+# psd 확장자 파일을 LFS로 추적
+git lfs track "*.psd"
+
+# LFS로 추적한 파일을 Git에 추가
+git add .gitattributes
+
+git add file.psd
+git commit -m "Add design file"
+git push origin main
+```
+
+LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한다. 그래서 용량이 매우 큰 파일 때문에 기존 저장소의 업/다운로드 속도가 느려지는 것을 막는 용도로 사용된다. LFS 저장소는 원격 저장소에 따로 마련되어 있어야 하는데, GitHub, GitLab, Bitbucket 같은 Git 호스팅 서비스는 이미 LFS 저장소를 제공하고 있다.
+
+[official man pages](https://github.com/git-lfs/git-lfs/tree/main/docs/man)를 보면 `git-lfs-push.adoc`, `git-lfs-track.adoc`처럼 메뉴얼이 여러 개로 나뉘어 있는데 `lfs` 다음에 오는 키워드는 옵션이 아니라 **하위 명령**으로 다루는 모양이다.
 
 
 ## log
@@ -1748,10 +1792,14 @@ git svn blame 파일
 
 ## tag
 
-태그 조회와 생성/삭제 명령어
+태그 조회와 생성
 
 ```bash
+# 조회
 git tag
+
+# 태그 생성
+git tag TAG_NAME
 ```
 
 #### lightweight 태그 만들기
@@ -1769,6 +1817,8 @@ git tag v2.2  # 현재 브랜치의 마지막 커밋에 v2.2 태그 생성
 ```bash
 git tag -a v1.1 -m "my version 1.1"
 ```
+
+저장한 메시지는 `git tag` 명령으론 볼 수 없고, `git show TAG_NAME`으로 확인해야 한다.
 
 #### 특정 커밋에 태그 만들기
 

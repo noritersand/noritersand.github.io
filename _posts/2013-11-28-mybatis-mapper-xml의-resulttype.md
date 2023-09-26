@@ -24,7 +24,7 @@ tags:
 </select>
 ```
 
-#### 결과값이 여러개일 경우 - HashMap
+#### 결과값이 여러 개일 경우 - HashMap
 
 ```xml
 <select id="selectUsers" parameterType="int" resultType="java.util.HashMap">
@@ -34,7 +34,7 @@ tags:
 </select>
 ```
 
-#### 결과값이 여러개일 경우 - Plain Object
+#### 결과값이 여러 개일 경우 - Plain Object
 
 ```xml
 <select id="selectUsers" parameterType="int" resultType="com.someapp.model.User">

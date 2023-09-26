@@ -40,7 +40,7 @@ VALUES (memo_seq.nextval, '메모메모', default, default, default, null, null)
 ```
 
 ## INSERT INTO SELECT
-INSERT INTO SELECT문은 데이터를 다른 테이블에서 참조한다. INSERT문과 달리 한 번에 여러개의 데이터가 생성될 수 있다. (생성되는 데이터의 수는 SELECT문에 따라 달라짐)
+INSERT INTO SELECT문은 데이터를 다른 테이블에서 참조한다. INSERT문과 달리 한 번에 여러 개의 데이터가 생성될 수 있다. (생성되는 데이터의 수는 SELECT문에 따라 달라짐)
 
 ```
 INSERT INTO table2 SELECT * FROM table1

@@ -168,7 +168,7 @@ date_add(date, interval expr unit)
 date_sub(date,interval expr unit)
 ```
 
-`adddate()`, `subdate()`, `addtime()`, `subtime()`, `add_months()` 등 비슷한 함수가 많이 있는데 그냥 위 두개로 웬만하면 됨.
+`adddate()`, `subdate()`, `addtime()`, `subtime()`, `add_months()` 등 비슷한 함수가 많이 있는데 그냥 위 두 개로 웬만하면 됨.
 
 ```sql
 select 
@@ -382,13 +382,16 @@ from (
 ) b
 ```
 
-위에서 시분초를 더하는 부분은:
+
+## 23시 59분 59초
+
+위에 작성한 쿼리 중 `DATE`에 시분초를 더해 `DATETIME`을 만드는 부분이 있는데:
 
 ```sql
-convert(concat(date_format(a.endDate, '%Y-%m-%d'), ' 23:59:59')
+convert(concat(date_format(a.endDate, '%Y-%m-%d'), ' 23:59:59'), datetime)
 ```
 
-하루를 더하고 1초를 빼는 방법으로 바꿔도 된다:
+가독성이 별로다 싶으면 하루를 더하고 1초를 빼는 방법도 있다:
 
 ```sql
 date_sub(date_add('2022-12-24', interval 1 day), interval 1 second)

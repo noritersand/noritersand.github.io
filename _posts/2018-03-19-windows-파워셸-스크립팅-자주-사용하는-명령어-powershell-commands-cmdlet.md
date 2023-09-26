@@ -18,14 +18,14 @@ tags:
 
 #### 관련 문서
 
-- [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)
+- [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.4)
 
 
 ## 개요
 
 악의축에서 갓갓으로 거듭나고 있는 마소의 파워셸 명령어 정리 글.
 
-파워셸 명령어는 [Cmdlet](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.2)이라고 한다. command-let으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
+파워셸 명령어는 *Cmdlet*이라 부른다. 'command-let'으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
 
 ## 파워셸 명령어 기본 별칭
@@ -83,6 +83,8 @@ wjb -> Wait-Job                   write -> Write-Output
 
 ## Microsoft.Powershell.Core
 
+[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4)
+
 ### Get-History
 
 명령어 실행 이력 보기. 기본 별칭 `history`
@@ -115,6 +117,23 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
 ## Microsoft.PowerShell.Management
 
+[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/?view=powershell-7.4)
+
+### New-Item
+
+파일이나 디렉토리, 심볼릭 링크 등을 생성한다.
+
+```bash
+# TARGET_PATH를 가리키는 심볼릭 링크 LINK 생성
+New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
+```
+
+#### parameters
+
+- `-ItemType`: `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink` 중에 하나
+- `-Path`: 생성할 심볼릭 링크의 이름
+- `-Target`: 심볼릭 링크가 가리킬 대상 디렉토리
+
 ### Get-Process
 
 프로세스 가져오기. 기본 별칭은 `ps`와 `gps`.
@@ -129,8 +148,8 @@ Get-Process 'SoundSwitch'
 
 #### parameters
 
-- `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러개일 땐 콤마`,`로 구분함
-- `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
+- `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러 개일 땐 콤마`,`로 구분함
+- `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러 개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
 
 ### Start-Process
 
@@ -254,6 +273,8 @@ TODO 사실 위 코드에서 `Test-Connection`은 주고 받은 바이트, 시�
 
 ## Microsoft.Powershell.Utility
 
+[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/?view=powershell-7.4)
+
 ### Set-Variable
 
 현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함. 기본 별칭은 `set`, `sv`
@@ -270,7 +291,7 @@ $qwer
 
 ### Get-Variable
 
-변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.2).
+변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.4).
 
 ```bash
 # 로컬 스코프의 모든 변수 출력
@@ -351,7 +372,7 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 
 ### Set-Alias
 
-신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.2)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
+신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.4)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
 
 ```bash
 # 탐색기의 별칭으로 ex 추가
@@ -363,7 +384,7 @@ Set-Alias grep findstr
 Set-Alias -Name grep -Value findstr
 ```
 
-이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워셸 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워셸 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.4)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
@@ -380,7 +401,7 @@ function Get-FilesIncludeHidden {
 Set-Alias -Name ll -Value Get-FilesIncludeHidden
 ```
 
-함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.2#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.2).
+함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.4#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.4).
 
 ### Write-Output
 

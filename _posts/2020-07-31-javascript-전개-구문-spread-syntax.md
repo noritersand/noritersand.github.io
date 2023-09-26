@@ -42,7 +42,7 @@ console.log(...n); // 1 2 3
 ```
 
 <!-- 아닌 것 같다 -->
-<!-- 전개 구문에서 점 세개`...`는 **전개 연산자(spread operator)**라고 부른다. -->
+<!-- 전개 구문에서 점 세 개`...`는 **전개 연산자(spread operator)**라고 부른다. -->
 
 
 ## 함수 호출에서: 인수 목록을 위한 전개 Spread for argument lists

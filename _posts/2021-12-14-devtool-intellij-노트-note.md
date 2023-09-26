@@ -280,14 +280,15 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 ### 코드 에디터
 
-- <kbd>ctrl + q</kbd>: Quick Documentation. 툴팁창으로 자바독 보기
+- <kbd>ctrl + q</kbd>: Quick Documentation 퀵 뷰 창에서 서식이 적용된 자바독 보기
 - <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>ctrl + u</kbd>: 오버라이딩 메서드의 super 메서드로 이동
-- <kbd>alt + enter</kbd>: Show Context Actions/ 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
+- <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
 - <kbd>alt + f1</kbd>: Select in/ 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
-- <kbd>alt + f7</kbd>: Find Usages/ 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
+- <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
+- <kbd>ctrl + alt + f7</kbd>: Show Usages 대상을 참조하고 있는 코드를 퀵 뷰 창에서 보여줌
 - <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데, 인텔리제이 2020.1 버전부터 두 기능 간 차이가 없다고 한다. [JetBrains Support 답변](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008113359--Find-usages-in-file-vs-Highlight-usages-in-file-)
 - <kbd>ctrl + f1</kbd>: Error Description. 에러 툴팁 보기
 - <kbd>ctrl + f12</kbd>: File Structure. eclipse의 빠른 아웃라인 보기 기능과 같음.
