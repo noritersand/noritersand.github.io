@@ -62,7 +62,7 @@ tags:
 /ja\w*pt/
 ```
 
-TODO 위에서 공백을 제외하는 방법을 찾아야됨.
+**TODO** 위에서 공백을 제외하는 방법을 찾아야됨.
 
 ### 특정 문자와 문자 사이의 넓은(?) 검색
 
@@ -145,6 +145,21 @@ OR 연산자`|`까지 섞어주면 이렇게 됨
 ```js
 // 시작 위치의 -를 제외한 모든 -를 제거하고 숫자와 -를 제외한 모든 문자 제거
 '-12 a s d 3-- a s d-'.replace(/(?!^)-|[^0-9\-]/g, ''); // -123
+```
+
+### 특정 문자로 시작하는 것은 제외
+
+```js
+// 앞에 단어 구성 문자가 있는 'Params'를 찾되, 앞의 문자가 'Search'인 것은 제외
+var regex = /(?<!Search)\BParams\b/;
+var testStrings = ['MemberParams', 'MemberSearchParams', 'Params', 'SearchParams'];
+for (let str of testStrings) {
+  console.log(`'${str}' matches: ${regex.test(str)}`);
+}
+// 'MemberParams' matches: true
+// 'MemberSearchParams' matches: false
+// 'Params' matches: false
+// 'SearchParams' matches: false
 ```
 
 

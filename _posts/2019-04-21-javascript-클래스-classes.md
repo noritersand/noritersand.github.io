@@ -74,7 +74,7 @@ class Sorcerer {}
 
 ## class 표현식
 
-TODO
+**TODO**
 
 
 ## 생성자 constructor
@@ -167,7 +167,7 @@ company.#privateMethod(); // Uncaught SyntaxError: reference to undeclared priva
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
 
-TODO 상속(확장)
+**TODO** 상속(확장)
 
 ### 빌트인 프로토타입의 확장
 
@@ -200,7 +200,7 @@ new Numeric(123456).format(0); // "123,456"
 
 ## super
 
-TODO
+**TODO**
 
 
 ## 클래스 vs 생성자 함수
@@ -225,6 +225,6 @@ noob.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' p
 
 클래스에 async function을 정의하면 async method가 된다.
 
-TODO
+**TODO**
 
 

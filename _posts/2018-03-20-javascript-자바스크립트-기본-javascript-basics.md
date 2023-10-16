@@ -292,7 +292,6 @@ const  float  long  short  volatile
 
 혼란을 피하고 싶다면 원시 타입을 제외한 나머지는 프로토타입을 쓴다. e.g., `number`, `string`, `boolean`, `symbol`, `Object`, `Function`, `Array`, `Node`, `Window`, ...
 
-
 ### 변수 선언과 초기화
 
 ```

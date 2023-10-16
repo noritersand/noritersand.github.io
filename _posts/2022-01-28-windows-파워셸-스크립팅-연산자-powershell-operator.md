@@ -50,11 +50,11 @@ cd $(yarn global bin)
 
 ### Array subexpression operator `@( )`
 
-TODO
+**TODO**
 
 ### 해시 테이블 리터럴 구문 Hash table literal syntax `@{}`
 
-TODO
+**TODO**
 
 ### 파이프라인 연산자 `|`
 
@@ -123,11 +123,11 @@ Start-Job -ScriptBlock {Get-Process -Name pwsh}
 
 ### 캐스트 연산자 Cast operator `[ ]`
 
-TODO
+**TODO**
 
 ### 쉼표 연산자 Comma operator `,`
 
-TODO
+**TODO**
 
 ### 점 소싱 연산자 Dot sourcing operator `.`
 

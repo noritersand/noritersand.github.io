@@ -44,4 +44,4 @@ console.log(location.host); // "localhost:8888"
 
 ## 메서드
 
-TODO
+**TODO**

@@ -19,6 +19,11 @@ tags:
 - [https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html)
 
 
+## 개요
+
+`java.util.Formatter` 사용방법을 정리한 문서. 해당 클래스는 이름대로 문자열 형식화(String formatting)에 사용된다.
+
+
 ## format()
 
 ```java
@@ -77,7 +82,7 @@ String.format("%-10s", "helloooo"); // "helloooo  "
 String.format("%1$e, %1$#e, %2$x, %2$#x", 1234.0f, 4567); // "1.234000e+03, 1.234000e+03, 11d7, 0x11d"
 String.format("%+d, %d", 123, -123); // "+123, -123"
 String.format("%d, %+d, [% d], [% d]", -99, 123, 456, -456); // "-99, +123, [ 456], [-456]"
-String.format("%05d", 123); // "00123"
+String.format("%05d", 123); // "00123" (주어진 값이 5자리보다 모자라면, 좌측부터 나머지를 0으로 채움)
 String.format("%,d", 7654321); // "7,654,321"
 String.format("%d, %(d, %(d", -123, 123, -123); // "-123, 123, (123)"
 ```
@@ -111,28 +116,20 @@ String.format("%.10f", 6.5536f); // "6.5535998344"
 
 ### 문자
 
-#### `b` `B`
-
-인수가 `null`이면 "false", `null`이 아니면 "true", 인수가 불리언 타입인 경우 `String.valueOf(arg)`의 결과로 치환한다. `%B`는 대문자로 치환한다.
-
-```java
-String.format("%b, %b, %B, %B", null, 123, false, Boolean.TRUE); // "false, true, FALSE, TRUE"
-```
-
-#### `h` `H`
-
-인수가 `null`이면 "null"을, 아니면 `Integer.toHexString(arg)`의 반환값(16진수 문자로 변환된 10진수)이다. `%H`는 대문자로 치환한다.
-
-```java
-String.format("%h, %h, %H, %H, %H", null, 10, 16, 17, 28); // "null, a, 10, 11, 1C"
-```
-
 #### `s` `S`
 
 인수가 `null`이면 "null"로 치환한다. 만약 `java.util.Formattable`의 구현체면 `arg.formatTo()`를 호출한다. 아니면 `arg.toString()`의 결과값이다.
 
 ```java
 String.format("%s, %S, %s", null, "abcd", 1234); // "null, ABCD, 1234"
+```
+
+#### `b` `B`
+
+인수가 `null`이면 "false", `null`이 아니면 "true", 인수가 불리언 타입인 경우 `String.valueOf(arg)`의 결과로 치환한다. `%B`는 대문자로 치환한다.
+
+```java
+String.format("%b, %b, %B, %B", null, 123, false, Boolean.TRUE); // "false, true, FALSE, TRUE"
 ```
 
 #### `c` `C`
@@ -143,7 +140,15 @@ String.format("%s, %S, %s", null, "abcd", 1234); // "null, ABCD, 1234"
 String.format("%c, %c, %C", 0x0067, 0x0047, 0x0069); // "g, G, I"
 ```
 
-`0x0047`은 대문자인 `G`라서 `%c`로 작성해도 "G"가 됨.
+`0x0047`은 대문자인 `G`라서 `%c`로 작성해도(소문자로 지정해도) "G"가 됨.
+
+#### `h` `H`
+
+인수가 `null`이면 "null"을, 아니면 `Integer.toHexString(arg)`의 반환값(16진수 문자로 변환된 10진수)이다. `%H`는 대문자로 치환한다.
+
+```java
+String.format("%h, %h, %H, %H, %H", null, 10, 16, 17, 28); // "null, a, 10, 11, 1C"
+```
 
 ### 숫자
 

@@ -83,7 +83,7 @@ Settings > Editor > File Encodings로 이동한 뒤:
 
 Hot deploy, Hot swap, Hot code replace 등으로 불리는(엄밀히 따지면 셋 다 다르지만...), 런타임 중 변경된 파일을 즉시 교체하는 기능이다.
 
-로컬 서버로 톰캣을 별도로 추가해서 사용할 때만 해당. **TODO 스프링 부트같은 내장 WAS는 확인 필요.**
+로컬 서버로 톰캣을 별도로 추가해서 사용할 때만 해당. **TODO** 스프링 부트같은 내장 WAS는 확인 필요
 
 일단 별도 설정 없이도 디버그 모드라면 Update Running Application<kbd>ctrl + f10</kbd>을 누르면 된다.
 
@@ -108,7 +108,7 @@ Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행�
 
 ## File and Code Templates
 
-TODO
+**TODO**
 
 작성 예시:
 
@@ -130,13 +130,13 @@ public class ${NAME} {
 
 ### Code Completion
 
-TODO
+**TODO**
 
 ### Postfix Completion
 
 규칙대로 입력한 뒤 'Code Completion'을 발동하면 미리 작성한 코드가 자동으로 입력된다.
 
-TODO
+**TODO**
 
 ### File and Code Templates
 

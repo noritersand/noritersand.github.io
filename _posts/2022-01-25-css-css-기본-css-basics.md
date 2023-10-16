@@ -123,8 +123,6 @@ table tr td {
 - [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
 - [https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade)
 
-TODO
-
 자식 요소가 부모 요소의 CSS 프로퍼티 값을 그대로 사용하는 것을 말함.
 
 모든 프로퍼티가 상속되는 것은 아님. (e.g., `width: 50%`)
@@ -140,10 +138,10 @@ CSS는 상속을 제어하기 위한 특수 범용 프로퍼티 값(special univ
 
 - ~~auto: 브라우저가 알아서 결정~~
 - `inherit`: 부모 요소의 프로퍼티 값과 동일하게 설정
-- `initial`: 브라우저의 기본 스타일 시트 값으로 설정한다. TODO test
+- `initial`: 브라우저의 기본 스타일 시트 값으로 설정한다. **TODO** test
 - `unset`: 상속되거나 그렇지 않으면 브라우저 기본값으로 설정한다. (이런 걸 natural 값이라고 하는듯?)
-- `revert`: TODO
-- `revert-layer`: TODO
+- `revert`: **TODO**
+- `revert-layer`: **TODO**
 
 
 ## [At-rules](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule)
@@ -234,6 +232,6 @@ At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/@property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
 
-TODO
+**TODO**
 
 2023년에 정의된 표준이며 현재(2023-03-26) 크로미움 계열만 지원함.

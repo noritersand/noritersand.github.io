@@ -747,7 +747,7 @@ git diff-tree -p feature  # 현재 브랜치 기준으로 feature 브랜치의 �
 git diff-tree -p feature master  # 현재 feature 브랜치 기준으로 master 브랜치의 차이점 출력
 ```
 
-TODO 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 결과가 다른데 왜 그런지 몲. 😒
+**TODO** 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 결과가 다른데 왜 그런지 몲. 😒
 
 #### options
 

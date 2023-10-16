@@ -157,4 +157,4 @@ child['x']; // 65536
 
 ### #2
 
-TODO `Object.getOwnPropertyDescriptors()`를 활용해야 할 것 같은데?
+**TODO** `Object.getOwnPropertyDescriptors()`를 활용해야 할 것 같은데?

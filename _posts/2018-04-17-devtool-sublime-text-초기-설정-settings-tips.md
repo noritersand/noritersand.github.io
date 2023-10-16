@@ -71,7 +71,7 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 <!-- javascript-cl.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.log('${1:msg}', ${2});
+console.log('${1:msg}:', ${2});
 ]]></content>
   <tabTrigger>cl</tabTrigger>
   <scope>source.js</scope>
@@ -82,7 +82,7 @@ console.log('${1:msg}', ${2});
 <!-- javascript-cl2.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.log('${1:msg}', ${2:msg});
+console.log('${1:msg}:', ${2:msg});
 ]]></content>
   <tabTrigger>cl2</tabTrigger>
   <scope>source.js</scope>
@@ -93,7 +93,7 @@ console.log('${1:msg}', ${2:msg});
 <!-- javascript-cd.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.debug('${1:msg}', ${2});
+console.debug('${1:msg}:', ${2});
 ]]></content>
   <tabTrigger>cd</tabTrigger>
   <scope>source.js</scope>

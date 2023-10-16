@@ -9,6 +9,7 @@ tags:
   - nodejs
   - npm
   - yarn
+  - package-manager
 ---
 
 * Kramdown table of contents
@@ -44,7 +45,7 @@ npm insatll --ignore-scripts
 \* Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
 
 
-## 모듈 설치
+## 패키지(Package) 설치
 
 ```bash
 npm install [<package-spec> ...]
@@ -57,24 +58,24 @@ npm install [<package-spec> ...]
 # package.json 의 "dependencies"를 참조하여 자동설치
 npm install
 
-# 로컬 모듈로 설치
-npm install 모듈1[, 모듈2, 모듈3, ...]
+# 로컬 패키지로 설치
+npm install 패키지1[, 패키지2, 패키지3, ...]
 
-# 글로벌 모듈로 설치
-npm install 모듈명 -g
+# 글로벌 패키지로 설치
+npm install 패키지 -g
 
-# --save: package.json의 dependencies 항목에 해당 모듈을 추가한다.
+# --save: package.json의 dependencies 항목에 해당 패키지를 추가한다.
 # 사실 기본값이 true라서 생략해도 결과는 같음
-npm install 모듈명 --save
+npm install 패키지 --save
 
-# 해당 모듈은 'devDependencies'일 때만 사용된다. 즉, production 모드로 빌드 시 포함하지 않는다.
-npm install 모듈명 --save-dev
+# 해당 패키지는 'devDependencies'일 때만 사용된다. 즉, production 모드로 빌드 시 포함하지 않는다.
+npm install 패키지 --save-dev
 
 # --save-dev와 비슷한데 이 경우는 'optionalDependencies'일 때만 사용
-npm install 모듈명 --save-optional
+npm install 패키지 --save-optional
 
 # node_modules, package.json 생성 경로 지정
-npm install 모듈명 --prefix .
+npm install 패키지 --prefix .
 
 # nodemon: js 파일의 내용이 변경되면 자동으로 재실행시키는 패키지
 npm install nodemon -g
@@ -101,7 +102,7 @@ npm ls <package-spec>
 # 설치된 npm의 버전을 확인한다.
 npm -v
 
-# 현재 경로의 로컬 모듈 확인
+# 현재 경로의 로컬 패키지 확인
 npm ls
 
 # 글로벌 모듈 확인
@@ -114,7 +115,7 @@ npm fund
 `fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 모듈 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
 
 
-## 업데이트
+## 패키지 버전 업데이트
 
 ```bash
 npm update [<pkg>...]
@@ -122,12 +123,17 @@ npm update [<pkg>...]
 ```
 
 ```bash
+# 업데이트 가능한 패키지의 버전 정보 표시: : 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 로컬 설치 경로, 종속성
+npm outdated
+
 # 모듈명을 명시 하지 않으면 로컬 모듈을 모두 업데이트
 npm update [모듈명]
 
 # 모듈명을 명시 하지 않으면 글로벌 모듈을 모두 업데이트
 npm update [모듈명] -g
 ```
+
+패키지가 아니라 Node.js 클라이언트의 버전을 올리고 싶으면 [NVM](https://github.com/nvm-sh/nvm)을 설치할 것.
 
 
 ## 모듈 삭제
@@ -266,7 +272,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 - `<version`: 지정된 버전보다 낮은 버전을 허용한다.
 - `<=version`: 지정된 버전보다 낮거나 같은 버전을 허용한다.
 - `~version`: '대략적으로 동일한 버전'을 허용한다. `version`을 명시한 단위보다 낮은 단위는 아무 버전이나 괜찮다는 뜻이다. 예를 들어 `~0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다는 낮은 버전을 허용한다. `~1.2`는  `1.2.x`와 같다. `~0`은 `0.x`와 같다.
-- `^version`: '호환되는 버전'만 허용한다. 지정한 버전의 0이 아닌 가장 왼쪽에 있는 숫자가 변하지 않는 선에서 같거나 높은 버전을 허용한다. `^1.2.3`은 1.2.3보다 높거나 같고 2.0.0보다 낮아야 한다. `^0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다 낮아야 한다. `^0.0.3`은 `>=0.0.3 <0.0.4-0`라고 하는 것과 같다. 더 자세한 내용은 [여기](https://github.com/npm/node-semver#caret-ranges-123-025-004)를 보자.
+- `^version`: '호환되는 버전'만 허용한다. 지정한 버전의 **0이 아닌 가장 왼쪽에 있는 숫자**가 변하지 않는 선에서 같거나 높은 버전을 허용한다. `^1.2.3`은 1.2.3보다 높거나 같고 2.0.0보다 낮아야 한다. `^0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다 낮아야 한다. `^0.0.3`은 `>=0.0.3 <0.0.4-0`라고 하는 것과 같다. 더 자세한 내용은 [여기](https://github.com/npm/node-semver#caret-ranges-123-025-004)를 보자.
 
 참고로 NPM은 [Semantic Versioning](https://semver.org/)(줄여서 SemVer)을 따른다.
 
@@ -301,29 +307,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 }
 ```
 
-
-## 모듈을 폴더단위로 관리하기
-
-package.json을 조작하면 한 폴더에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다.
-
-```js
-var myModule = require('./myModule');
-```
-
-모듈 로드 시 위와 같은 방식으로 폴더를 지정할 수 있는데, 이 경우 노드는 해당 폴더 내에서 모듈을 찾는다. 노드는 이 폴더가 패키지라고 가정하고 패키지 정의를 찾는다. `package.json` 파일이 없다면 `index.js` 파일을 기준으로 루트라 가정한다. `/myModule/index.js` 가 있다면 노드는 myModule을 루트라 가정하고 그 경로 아래에서 파일을 찾는다.
-
-package.json 에서 시작점의 상대경로를 지정하는 방법은:  
-```js
-{  
-  "main": "./lib/temp.js"
-}
-```
-
-이 경우 노드는 `./myModule/lib/temp.js` 를 찾는다.  
-[관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
-
-
-## npm scripts
+### npm scripts
 
 `package.json`의 `scripts`를 이용해서 `npm start`와 같은 간략한 명령어로 미리 작성한 스크립트를 실행하게 하는 기능이다.
 
@@ -365,7 +349,27 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 'Hello world!'
 ```
 
-`npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 떄문에 스크립트로 등록하는 편이 좋다.
+`npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 때문에 스크립트로 등록하는 편이 좋다.
+
+## 모듈을 폴더단위로 관리하기
+
+package.json을 조작하면 한 폴더에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다.
+
+```js
+var myModule = require('./myModule');
+```
+
+모듈 로드 시 위와 같은 방식으로 폴더를 지정할 수 있는데, 이 경우 노드는 해당 폴더 내에서 모듈을 찾는다. 노드는 이 폴더가 패키지라고 가정하고 패키지 정의를 찾는다. `package.json` 파일이 없다면 `index.js` 파일을 기준으로 루트라 가정한다. `/myModule/index.js` 가 있다면 노드는 myModule을 루트라 가정하고 그 경로 아래에서 파일을 찾는다.
+
+package.json 에서 시작점의 상대경로를 지정하는 방법은:  
+```js
+{  
+  "main": "./lib/temp.js"
+}
+```
+
+이 경우 노드는 `./myModule/lib/temp.js` 를 찾는다.  
+[관련 내용을 설명한 블로그](http://nodejs.sideeffect.kr/docs/v0.10.7/api/modules.html#modules_folders_as_modules)
 
 
 ## Yarn
@@ -401,6 +405,9 @@ yarn list
 
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
+
+# 업그레이드 가능한 패키지의 버전 정보를 표시: 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 종속성 타입, URL
+yarn outdated
 
 # 특정 패키지 버전 업그레이드
 yarn upgrade PACKAGE_NAME
@@ -502,15 +509,15 @@ nodemon --exec 'tsc'
 
 ### mocha
 
-TODO
+**TODO**
 
 ### chai
 
-TODO
+**TODO**
 
 ### express
 
-TODO
+**TODO**
 
 ### Node-Tap
 

@@ -211,7 +211,7 @@ const vnode = <div>hello</div>
 
 [@vue/babel-plugin-jsx](https://github.com/vuejs/babel-plugin-jsx) 있으면 된다고 한다.
 
-**TODO 설명 추가**
+**TODO** 설명 추가
 
 
 ## Reactive State
@@ -236,18 +236,18 @@ createApp({
 });
 ```
 
-TODO Composition API에선 두 가지로 나뉜다. 정리할 것
+**TODO** Composition API에선 두 가지로 나뉜다. 정리할 것
 
 ### Computed Properties
 
-TODO
+**TODO**
 
 
 ## Template Syntax
 
 데이터를 HTML 태그에 바인딩하는 표현식들이다.
 
-TODO 설명 션찮
+**TODO** 설명 션찮
 
 ### Text Interpolation\*
 
@@ -301,7 +301,7 @@ data() {
 <div v-bind:id="dynamicId"></div>
 ```
 
-TODO
+**TODO**
 
 ### Built-in Directives
 
@@ -323,7 +323,7 @@ TODO
 - v-memo: 
 - v-cloak: 
 
-TODO
+**TODO**
 
 ### 자바스크립트 표현식 JavaScript Expressions
 
@@ -410,7 +410,7 @@ data() {
 ```
 
 
-TODO
+**TODO**
 
 
 ## 조건부 렌더링 Conditional Rendering
@@ -467,7 +467,7 @@ else 블록 혹은 else-if 블록을 표현하는 디렉티브. 반드시 `v-if`
 
 `false`일 때 `display: none` 스타일을 추가한다.
 
-TODO
+**TODO**
 
 ### v-show와 v-if의 차이
 
@@ -504,7 +504,7 @@ export default {
 
 렌더링 후 `app4.values.push({index: '넷'})`를 입력하면 반복문의 요소로 추가되며, 화면에 즉시 반영된다.
 
-TODO:
+**TODO**
 
 - 단순 배열 반복
 - 객체 배열 반복
@@ -729,12 +729,12 @@ v-model에도 Event Modifiers와 같은 modifier가 제공된다.
 
 [Lifecycle Diagram](https://vuejs.org/guide/essentials/lifecycle.html#lifecycle-diagram)
 
-TODO
+**TODO**
 
 
 ## 컴포넌트 Components
 
-TODO 설명 추가
+**TODO** 설명 추가
 
 ```js
 // literal-template.js
@@ -989,7 +989,7 @@ export default {
 - [https://vuejs.org/guide/built-ins/suspense.html#suspense](https://vuejs.org/guide/built-ins/suspense.html#suspense)
 - [https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/](https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/)
 
-TODO `<Suspense>`와 `async setup`을 이용해서 컴포넌트 렌더링 타이밍을 제어할 수 있다고 한다.
+**TODO** `<Suspense>`와 `async setup`을 이용해서 컴포넌트 렌더링 타이밍을 제어할 수 있다고 한다.
 
 
 {% endraw %}

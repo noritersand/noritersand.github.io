@@ -83,11 +83,11 @@ window.open("/test.jsp", "팝업", specs);
 
 #### 파이어폭스
 
-TODO
+**TODO**
 
 #### 엣지
 
-TODO
+**TODO**
 
 
 ## opener

@@ -61,7 +61,7 @@ switch (조건식) {
 }
 ```
 
-조건식의 값과 `case` 레이블의 값이 일치하면 `case` 다음에 오는 코드 블록을 실행한다. 만약 일치하는 `case` 레이블이 없으면 `default` 레이블의 코드 블록을 실행한다. `default`는 생략할 수 있으며, `break`를 생략하지 않는 한 어디에 있어도 상관 없다.
+조건식의 값과 `case` 절의 값이 일치하면 `case` 다음에 오는 코드 블록을 실행한다. 만약 일치하는 `case` 절이 없으면 `default` 레이블의 코드 블록을 실행한다. `default`는 생략할 수 있으며, `break`를 생략하지 않는 한 어디에 있어도 상관 없다.
 
 ```js
 var a = 1;
@@ -79,7 +79,7 @@ switch (a) {
 }
 ```
 
-`break`나 `return`으로 끝나지 않은 `case` 레이블의 코드 블록은 바로 다음에 이어지는 `case` 레이블의 실행을 유발한다:
+`break`나 `return`으로 끝나지 않은 `case` 절의 코드 블록은 바로 다음에 이어지는 `case` 절의 실행을 유발한다:
 
 ```js
 var a = 3;
@@ -97,10 +97,47 @@ switch (a) {
     console.log('디폴트'); // case 4에서 break로 끝나지 않았으므로 실행됨
 };
 
-// case 3 레이블과 case 4 레이블에 break가 없어 다음처럼 출력된다
+// case 3과 case 4에 break가 없어 다음처럼 출력된다
 // '삼'
 // '사'
 // '디폴트'
+```
+
+`case`와 `default` 절은 어휘 범위(Lexical scope)를 생성하지 않는다. 모두 같은 유효 범위 내에 있다는 뜻이다. 그래서 다음 코드는:
+
+```js
+var flag = true;
+var result;
+switch (flag) {
+  case true:
+    let foo = 'true'; // Uncaught SyntaxError: redeclaration of let foo
+    console.log(foo);
+    break;
+  case false: 
+    let foo = 'false'; // Uncaught SyntaxError: redeclaration of let foo
+    console.log(foo);
+    break;
+}
+````
+
+같은 스코프에서 `foo`를 두 번 선언하는 꼴이 되어 `SyntaxError`를 발생시킨다. 만약 `case` 절마다 각각의 스코프를 생성하고 싶을 땐 중괄호`{}`를 사용한다:
+
+```js
+var flag = true;
+var result;
+switch (flag) {
+  case true: {
+    let foo = 'true';
+    console.log(foo);
+    break;
+  }
+  case false: {
+    let foo = 'false';
+    console.log(foo);
+    break;
+  }
+} 
+// "true"
 ```
 
 
@@ -229,7 +266,7 @@ for (변수 in 객체) {
 
 객체가 소유한 프로퍼티의 길이만큼 루프를 반복하며, 각 루프마다 객체의 프로퍼티를 하나씩 꺼내 지정한 변수에 할당한다.
 
-모든 프로퍼티의 수 만큼 반복하는 것은 아니고 열거 할 수 있는 프로퍼티(enumerable properties)의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 고유의 프로퍼티 설명자](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable`이 `true`인 프로퍼티를 말한다. 가령 `Object.prototype.toString()`은 `for-in`에서 무시되는데 `enumerable`이 `false`라서 그렇다. (단, 자바스크립트 구현체마다 열거 가능한 프로퍼티가 동일하지 않을 수 있음)
+모든 프로퍼티의 수 만큼 반복하는 것은 아니고 열거 가능한 자체 프로퍼티(enumerable own properties)의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 고유의 프로퍼티 설명자](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable`이 `true`인 프로퍼티를 말한다. 가령 `Object.prototype.toString()`은 `for-in`에서 무시되는데 `enumerable`이 `false`라서 그렇다. (단, 자바스크립트 구현체마다 열거 가능한 프로퍼티가 동일하지 않을 수 있음)
 
 ```js
 for (let prop in window) {

@@ -180,7 +180,7 @@ Function.__proto__.__proto__ === Object.prototype; // true
 
 이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
 
-<!-- TODO 이 밑에는 왜 써놓은 걸까? -->
+<!-- **TODO** 이 밑에는 왜 써놓은 걸까? -->
 <!--
  ## Object.prototype과 Object()의 차이
 

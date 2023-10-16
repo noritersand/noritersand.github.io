@@ -130,7 +130,7 @@ from (
 - `%w`: day
 - `%W`: dayString
 
-ISO 같은 잘 알려진 포맷은 `GET_FORMAT()` 함수로 얻을 수 있다:
+ISO 같은 잘 알려진 포맷은 [`GET_FORMAT()`](https://mariadb.com/kb/en/get_format/) 함수로 얻을 수 있다:
 
 ```sql
 select get_format(date,'iso'), get_format(datetime,'iso')
@@ -147,9 +147,9 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 
 함수를 활용한다:
 
-- `curdate()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
-- `curtime([precision])`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
-- `now([precision])`: 'YYYY-MM-DD HH:MM:SS' 혹은 YYYYMMDDHHMMSS.uuuuuu 포맷의 시간과 날짜값을 반환한다. 동의어는 `localtime`, `localtimestamp`, `current_timestamp`. `precision`은 마찬가지로 선택사항이며, 0-6 사이의 마이크로초 정밀도다.
+- `CURDATE()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
+- `CURTIME([precision])`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
+- `NOW([precision])`: 'YYYY-MM-DD HH:MM:SS' 혹은 YYYYMMDDHHMMSS.uuuuuu 포맷의 시간과 날짜값을 반환한다. 동의어는 `localtime`, `localtimestamp`, `current_timestamp`. `precision`은 마찬가지로 선택사항이며, 0-6 사이의 마이크로초 정밀도다.
 
 ```sql
 select now()
@@ -158,14 +158,14 @@ select now()
 
 ## 특정 조건의 날짜를 반환하는 함수들
 
-- `last_day(date)`: `date`가 속한 달의 마지막 날을 반환
+- `LAST_DAY(date)`: `date`가 속한 달의 마지막 날을 반환
 
 
 ## 날짜/시간의 연산(더하고 빼기)
 
 ```
-date_add(date, interval expr unit)
-date_sub(date,interval expr unit)
+DATE_ADD(date, INTERVAL expr unit)
+DATE_SUB(date, INTERVAL expr unit)
 ```
 
 `adddate()`, `subdate()`, `addtime()`, `subtime()`, `add_months()` 등 비슷한 함수가 많이 있는데 그냥 위 두 개로 웬만하면 됨.
@@ -260,13 +260,19 @@ select
 | STD_KST     | 2022-05-05 17:00:00 |
 | STD_LA      | 2022-05-05 01:00:00 |
 
-`CURDATE()`는 타임존을 변환해도 현재 시간을 무시하고 현재 날짜 + 00시 기준으로 변환되기 때문에 의도대로 작동하지 않으니 주의할 것.
+`curdate()`는 타임존을 변환해도 현재 시간을 무시하고 현재 날짜 + 00시 기준으로 변환되기 때문에 의도대로 작동하지 않으니 주의할 것.
 
 
 ## Date에서 특정 단위 추출
 
+### EXTRACT()
+
 - [https://mariadb.com/kb/en/extract/](https://mariadb.com/kb/en/extract/)
 - [https://mariadb.com/kb/en/date-and-time-units/](https://mariadb.com/kb/en/date-and-time-units/)
+
+```
+EXTRACT(unit FROM date)
+```
 
 ```sql
 select
@@ -319,6 +325,24 @@ from (
 | MICROSECOND         | 312446                      |
 | WEEK                | 50                          |
 | QUARTER             | 4                           |
+
+### 그 외 함수들
+
+날짜:
+
+- `YEAR()`: 주어진 날짜의 연도를 네 자릿수로 반환
+- `MONTH()`: 주어진 날짜의 월을 1-12 사이의 값으로 반환
+- `DAYOFMONTH()` `DAY()`: 주어진 날짜의 날짜를 1-31 사이의 값으로 반환
+- `DAYOFWEEK()`: 주어진 날짜가 해당 주의 몇 번째 날인지 반환한다. (1=일요일, 2=월요일, ..., 7=토요일)
+- `WEEKDAY()`: 주어진 날짜가 해당 주의 몇 번째 날인지 반환한다. (0=월요일, 1=화요일, ..., 6=일요일)
+
+시간:
+
+- `HOUR(time)`: 0-23 반환
+- `MINUTE(time)`: 0-59 반환
+- `SECOND(time)`: 0-59 반환
+- `MICROSECOND(expr)`: 0-999999 반환
+
 
 
 ## DATETIME을 DATE로 BETWEEN 비교

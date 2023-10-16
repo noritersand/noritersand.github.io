@@ -98,12 +98,13 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ### 전역
 
-- <kbd>win + a</kbd>: 빠른 설정 열기. 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
-- <kbd>win + n</kbd>: 알림과 달력 열기
-- <kbd>win + q</kbd> <kbd>win + s</kbd>: 시작 메뉴 검색
-- <kbd>win + w</kbd>: 위젯 열기(원래는 'Windows Ink 열기' 였음)
-- <kbd>win + h</kbd>: 보이스 타이핑(Microsoft 음성 명령 서비스)
+- <kbd>win + a</kbd>: *빠른 설정 열기* 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
+- <kbd>win + n</kbd>: *알림과 달력 열기*
+- <kbd>win + q</kbd> <kbd>win + s</kbd>: *시작 메뉴 검색*
+- <kbd>win + w</kbd>: *위젯 열기* 원래는 'Windows Ink 열기' 였음
+- <kbd>win + h</kbd>: *보이스 타이핑* Microsoft 음성 명령 서비스다.
 - <kbd>alt + esc</kbd>: 창이 열렸던 순서대로 거꾸로 순환
+- <kbd>win + ctrl + v</kbd> *사운드 출력* 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
 
 ### 창 크기/위치
 

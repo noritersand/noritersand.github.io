@@ -286,9 +286,9 @@ get REMOTE_FILE LOCAL_FILE
 
 하는 김에 `scp`도 적음.
 
-**TODO OpenSSH만 설치하면 되는지 확인**
+**TODO** OpenSSH만 설치하면 되는지 확인
 
-**TODO scp로 다운로드는 안 되나**
+**TODO** scp로 다운로드는 안 되나
 
 ### 업로드
 

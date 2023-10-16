@@ -82,23 +82,23 @@ console.log(json);
 
 ## Headers
 
-TODO
+**TODO**
 
 곁다리: `FormData`로 파일을 전송할 땐 `Content-Type` 헤더를 설정하지 않아도 `multipart/form-data`로 설정된다. 오히려 명시하면 파일이 전송되지 않을 수 있음.
 
 
 ## Request
 
-TODO
+**TODO**
 
 
 ## Response
 
-TODO
+**TODO**
 
 ### Response.prototype.blob()
 
-TODO
+**TODO**
 
 
 ## example

@@ -159,7 +159,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 - [\[MDN\] \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - [https://www.w3schools.com/tags/tag_form.asp](https://www.w3schools.com/tags/tag_form.asp)
 
-todo
+**TODO**
 
 
 ## fieldset
@@ -206,7 +206,7 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 ## input
 
-TODO
+**TODO**
 
 ### input 태그에서 엔터키로 submit 이벤트를 발동시키는 조건
 

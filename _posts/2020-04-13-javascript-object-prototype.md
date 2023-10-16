@@ -24,7 +24,7 @@ tags:
 
 `Object`와 `Object.prototype` 차이, 주요 메서드 등을 정리함.
 
-**TODO 생성자 함수는 스태틱, 프로토타입은 인스턴스로 변경할 것**
+**TODO** 생성자 함수는 스태틱, 프로토타입은 인스턴스로 변경할 것
 
 
 ## Object vs Object.prototype
@@ -203,6 +203,29 @@ Object.entries(loopMe); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
 ## 인스턴스 메서드
 
 ### Object.prototype.hasOwnProperty()
+
+**TODO**
+
+어떤 프로퍼티가 `obj`의 자체 프로퍼티(own property, 상속받은 게 아니라 객체가 소유한 프로퍼티)인지를 불리언 값으로 반환한다.
+
+
+### Object.prototype.propertyIsEnumerable()
+
+```
+obj.propertyIsEnumerable(propertyName)
+```
+
+`propertyName`와 같은 이름의 프로퍼티가 `obj`의 열거 가능한 자체 프로퍼티(enumerable own property)로 존재하는지를 불리언 값으로 반환한다.
+
+```js
+var str = 'foo';
+str.propertyIsEnumerable('toString'); // false
+
+var obj = {
+  a: 'bar'
+};
+obj.propertyIsEnumerable('a'); // true
+```
 
 
 ## 꼐속...
