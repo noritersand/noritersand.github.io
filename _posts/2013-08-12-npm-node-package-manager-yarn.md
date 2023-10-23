@@ -200,12 +200,16 @@ npx tap --bail test/foo.js
 npm exec -- tap --bail test/foo.js
 ```
 
-(왜 이중 하이픈이 두 번이나 필요한 건지는 잘 모르겠지만) 아래 두 명령도 같다:
+아래 두 명령도 같다:
 
 ```bash
 npx nodemon --exec tsc
 npm exec -- nodemon -- --exec tsc
 ```
+
+#### 하이픈 두 번의 뜻 `--`
+
+`--`는 옵션의 끝을 알리고 추가 옵션 처리를 비활성화하는 구분자다. `--` 뒤의 `공백+문자`가 앞에(왼쪽에) 명시한 명령어의 옵션이 아니라 다른 명령어 혹은 파일이나 디렉터리라는 것을 인터프리터에게 알리기 위해 사용한다.
 
 
 ## package.json
@@ -393,8 +397,8 @@ yarn add PACKAGE_NAME@1.2.3
 # 지정한 태그와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@TAG_NAME
 
-# PACKAGE_NAME을 devDependencies로 설치
-yarn add PACKAGE_NAME --dev
+# PACKAGE_NAME을 개발환경(devDependencies)에서만 유효하도록 설치
+yarn add PACKAGE_NAME --include=dev
 
 # package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 해당 파일을 우선 참조함
 yarn install

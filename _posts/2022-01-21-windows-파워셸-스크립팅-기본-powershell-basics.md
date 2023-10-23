@@ -120,7 +120,7 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 
 ### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
 
-리터럴 문자열을 표현할 때 큰 따옴표`""`와 작은 따옴표`''`는 대체로 동일한 의미로 쓰인다.  
+리터럴 문자열을 표현할 때 큰따옴표`""`와 작은따옴표`''`는 대체로 동일한 의미로 쓰인다.  
 다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 작은따옴표
 를 사용할 때 무시된다:
 

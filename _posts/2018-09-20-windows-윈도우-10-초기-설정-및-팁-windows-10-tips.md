@@ -210,7 +210,7 @@ telnet localhost 4000
 
 윈도우 검색<kbd>win + s</kbd>에서 '제어판'으로 검색하면 나온다. 만약 검색이 안 되면 실행 대화 상자<kbd>win + r</kbd>에서 `control` 혹은 `Control Panel` 입력.
 
-### ~~탐새끼~~ 탐색기 아이콘 오버레이 우선순위 설정
+### 파일 탐색기(File Explorer) 아이콘 오버레이 우선순위 설정
 
 ![](/images/icon-overlay-order.png)
 
@@ -278,7 +278,7 @@ sudo apt-get remove byobu hollywood
 
 ## shell: 프로토콜로 접근 가능한 특수 폴더 목록
 
-탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 파워셸에서 굳이 쓴다면 `explorer shell:AppData`와 같은 형태로 써야 함.
+파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 파워셸에서 굳이 쓴다면 `explorer shell:AppData`와 같은 형태로 써야 함.
 
 - `shell:3D Objects`
 - `shell:AccountPictures`
@@ -439,7 +439,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + alt + d</kbd>: 날짜 및 시간 표시 (11에서 안됨)
 - <kbd>win + ctrl + c</kbd>: 흑백/컬러 전환
 - <kbd>win + d</kbd>: 바탕화면 보기. 다시 WIN + D를 누르면 이전 상태로 돌아온다
-- <kbd>win + e</kbd>: 윈도우 탐색기(내 PC) 실행
+- <kbd>win + e</kbd>: 파일 탐색기(내 PC) 실행
 - <kbd>win + enter</kbd>: 내레이터 설정
 - <kbd>win + g</kbd>: 게임 표시줄 열기. 화면 캡처 혹은 녹화 등의 기능을 제공
 - <kbd>win + home</kbd>: 현재 사용중인 창을 제외한 모든 창 최소화.
@@ -485,9 +485,9 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + ctrl + left</kbd>: 왼쪽 가상 데스크탑 선택
 - <kbd>win + ctrl + right</kbd>: 오른쪽 가상 데스크탑 선택
 
-### 탐색기
+### 파일 탐색기
 
-- <kbd>space</kbd>: 단축키라기보단 팁인데, 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
+- <kbd>space</kbd>: 단축키라기보단 팁인데, 파일 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
 - <kbd>ctrl + tab</kbd>: 포커스가 주소 표시줄이나 검색 상자같은 곳에 있을 때 누르면 파일 목록으로 포커싱한다. 정식 명칭은 Property Tab Navigation인 모양. 진짜 탐색기에서만 유효하고 다른 앱의 파일 열기 탐색기에선 작동 안함.
 - <kbd>ctrl + shift + tab</kbd>: 위와 비슷한데, 파일 목록 대신 열 머리 항목으로 포커싱.
 - <kbd>alt + left arrow</kbd>: 뒤로

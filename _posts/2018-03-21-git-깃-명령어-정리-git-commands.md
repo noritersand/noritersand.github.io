@@ -302,9 +302,9 @@ git checkout COMMIT_HASH -- FILE_NAME
 
 이렇게 하면 파일의 내용은 지정한 커밋과 동일하게 변경되며, 커밋은 생성하지 않고 스테이징 상태가 된다.
 
-#### `--`라고 쓰는 이유
+#### 하이픈 두 번`--`을 쓰는 이유
 
-`--` 기호는 명령어 인터프리터에게 그 뒤에 나오는 것들은 옵션이 아니라 파일이나 디렉터리라는 것을 명시적으로 알려주는 역할을 한다. 이렇게 하면 파일 이름이나 디렉터리 이름이 특수문자나 옵션과 유사할 때 혼동을 방지할 수 있다.
+`--` 기호는 명령어 인터프리터에게 그 뒤에 나오는 것들은 옵션이 아니라 파일이나 디렉터리(혹은 다른 명령어)라는 것을 명시적으로 알려주는 역할을 한다. 이렇게 하면 파일 이름이나 디렉터리 이름이 특수문자나 옵션과 유사할 때 혼동을 방지할 수 있다.
 
 예를 들어, 만약 `-file`이라는 이름의 파일이 실제로 존재하고, `git checkout`으로 가져오려고 한다면, Git은 `-file`을 옵션으로 해석할 수도 있다. 이럴 때 `--`을 사용하여 `-file`이 실제로 가져와야 할 파일임을 알려주는 것.
 
@@ -1194,7 +1194,6 @@ git pull --rebase  # fetch 후 머지 대신 리베이스
 ```bash
 git push [리모트저장소] [브랜치]
 git push  # origin 리모트 저장소에 현재 브랜치를 업로드
-git push origin other  # origin에 other 브랜치 업로드. 리모트에 other 브랜치가 없으면 새로 생성한다.
 ```
 
 #### options
@@ -1220,9 +1219,9 @@ git push 리모트저장소 로컬브랜치:서버브랜치
 `push` 하려는 브랜치로 전환하기 귀찮거나, 로컬 브랜치의 이름과 리모트 브랜치의 이름이 다를 때 사용한다:
 
 ```bash
-git push origin hotfix # 로컬 브랜치인 hotfix를 리모트 hotfix로 push. 만약 리모트에 hotfix 브랜치가 없으면 생성.
-git push origin feature:feature # 로컬 feature를 리모트 feature로 push
-git push origin serverfix:awesome  # 현재 로컬 브랜치가 serverfix 일때 리모트 브랜치 awesome을 생성하고 push
+git push origin other  # 로컬의 other 브랜치를 origin의 other 브랜치에 업로드. 리모트에 other 브랜치가 없으면 새로 생성
+git push origin hotfix # 로컬 브랜치인 hotfix를 리모트 hotfix로
+git push origin feature1:feature2 # 로컬 feature1을 리모트 feature2로 push
 ```
 
 #### 신규 로컬 저장소를 생성하고 리모트에 업로드
@@ -1619,12 +1618,12 @@ git show-ref --head
 
 #### 스태시 생성(임시 저장본 만들기)
 
-추적 중인 파일의 모든 변경 사항을 스태시에 저장되며 워킹 트리와 스테이징 에어리어는 헤드와 같아진다.
+추적 중인 파일의 모든 변경 사항을 스태시에 저장되며 워킹 트리와 스테이징 에어리어는 헤드와 같아진다. `stash` 다음의 명령어를 생략하면 `stash push`와 같다.
 
 ```bash
-git stash  # 스태시 생성. stash save와 같음
-git stash save
-git stash save '스태시 이름'
+git stash push # 스태시 생성
+git stash  # =stash push
+git stash push '스태시 이름'
 git stash -k  # staged 상태의 파일은 무시하고 스테시에 저장
 git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시로 저장
 ```
@@ -1667,6 +1666,12 @@ git stash clear  # 모든 스태시 삭제
 ```bash
 git stash branch BRANCH_NAME  # 가장 최근의 스태시를 적용한 새 브랜치 생성
 git stash branch issue541 stash@{1}  # 두 번째 스태시를 적용한 issue541 브랜치 생성
+```
+
+#### 특정 파일만 스태싱 하기
+
+```bash
+git stash push -- FILE_NAME_1.md FILE_NAME_2.md
 ```
 
 

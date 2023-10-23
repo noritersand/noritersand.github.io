@@ -59,7 +59,7 @@ decodeURI( string )
 
 - `string`: 변환할 문자열
 
-문자열을 HTTP 전송에 적합한 코드로 암호화하거나 복호화한다.
+문자열을 HTTP 전송에 적합한 코드로 부호화하거나 복호화한다.
 
 ```js
 encodeURI('가');  // "%EA%B0%80"
