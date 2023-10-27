@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MDN\] JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - [\[MDN\] Object.assign()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)

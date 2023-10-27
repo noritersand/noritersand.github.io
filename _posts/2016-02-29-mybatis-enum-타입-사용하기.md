@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o](https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o)
 

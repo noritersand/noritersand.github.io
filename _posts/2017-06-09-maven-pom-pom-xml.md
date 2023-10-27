@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [Maven: Settings Reference](https://maven.apache.org/settings.html)
 - [Maven: POM Reference](https://maven.apache.org/pom.html#What_is_the_POM)

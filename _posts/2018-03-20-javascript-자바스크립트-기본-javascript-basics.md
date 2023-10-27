@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [TC39 – Specifying JavaScript.](https://tc39.es/)
 - [ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://www.jetbrains.com/help/idea/getting-started.html](https://www.jetbrains.com/help/idea/getting-started.html)
 
@@ -305,6 +305,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + alt + h</kbd>: Call Hierarchy. 호출 계층 보기
 - <kbd>ctrl + alt + shift + left/right</kbd>: Move Element Left/Right. 메서드 파라미터의 순서를 변경할 때 사용함.
 - <kbd>alt + shift + c</kbd>: Recent changes. 파일 시스템의 최근 변경 목록을 보여주는 것 같은데, 어떤 기준으로 나오는지 잘 모르겠음 🤔
+- <kbd>ctrl + shift + l</kbd>(서브라임 스타일): Split Selection into Lines. Extra Actions 플러그인을 설치해야 사용 가능. 기존 바인딩은 삭제
 
 ### 복사/붙이기
 

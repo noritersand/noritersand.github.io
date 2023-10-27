@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[Microsoft\] WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
 - [\[Microsoft\] WSL의 기본 명령](https://docs.microsoft.com/ko-kr/windows/wsl/basic-commands)

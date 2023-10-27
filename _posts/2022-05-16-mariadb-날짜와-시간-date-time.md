@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MariaDB\] STR_TO_DATE](https://mariadb.com/kb/en/str_to_date/)
 - [\[MariaDB\] DATE_FORMAT](https://mariadb.com/kb/en/date_format/)

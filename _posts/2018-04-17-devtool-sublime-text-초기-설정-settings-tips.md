@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://www.sublimetext.com/docs/index.html](https://www.sublimetext.com/docs/index.html)
 - [https://docs.sublimetext.io/guide/](https://docs.sublimetext.io/guide/)

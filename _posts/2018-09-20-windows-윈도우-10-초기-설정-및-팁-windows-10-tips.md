@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/help/12445/windows-keyboard-shortcuts)
 
@@ -205,6 +205,10 @@ telnet localhost 4000
 
 
 ## 기타 팁
+
+### 파일 탐색기에서 파일 목록에 포커싱하기
+
+파일 탐색기 열자 마자 <kbd>space</kbd> 누르면 파일 선택모드로 바로 진입할 수 있음.
 
 ### 구버전 제어판 열기
 
@@ -487,7 +491,6 @@ sudo apt-get remove byobu hollywood
 
 ### 파일 탐색기
 
-- <kbd>space</kbd>: 단축키라기보단 팁인데, 파일 탐색기 열자 마자 누르면 파일 선택모드로 바로 진입할 수 있음.
 - <kbd>ctrl + tab</kbd>: 포커스가 주소 표시줄이나 검색 상자같은 곳에 있을 때 누르면 파일 목록으로 포커싱한다. 정식 명칭은 Property Tab Navigation인 모양. 진짜 탐색기에서만 유효하고 다른 앱의 파일 열기 탐색기에선 작동 안함.
 - <kbd>ctrl + shift + tab</kbd>: 위와 비슷한데, 파일 목록 대신 열 머리 항목으로 포커싱.
 - <kbd>alt + left arrow</kbd>: 뒤로

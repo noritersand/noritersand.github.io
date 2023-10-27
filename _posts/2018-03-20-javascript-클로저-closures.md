@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MDN\] Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 - [\[MDN\] JavaScript 재입문하기: Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/A_re-introduction_to_JavaScript#%ED%81%B4%EB%A1%9C%EC%A0%B8_closures)

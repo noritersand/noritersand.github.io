@@ -16,7 +16,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[Microsoft\] Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
 - [\[Microsoft\] Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/windows/windows의-바로-가기-키-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
@@ -53,6 +53,10 @@ CPU 구리면 설치도 못하는 윈도우 11 초기 설정 및 팁 등을 정�
 
 
 ## 기타 팁
+
+### 파일 탐색기에서 파일 목록에 포커싱하기
+
+Windows 10에선 그냥 <kbd>space</kbd> 누르면 됐는데 이제는 <kbd>alt</kbd>, <kbd>esc</kbd>, <kbd>아래 방향키</kbd>를 순서대로 하나씩 눌러야 한다.
 
 ### 여러 파일을 한 번에 관리자 권한으로 실행하기
 

@@ -12,7 +12,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [Chocolatey](https://chocolatey.org/)
 - [Chocolatey: Packages](https://community.chocolatey.org/packages)

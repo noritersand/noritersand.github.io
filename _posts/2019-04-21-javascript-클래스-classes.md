@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MDN\] Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 - [\[PoiemaWeb\] 클래스](https://poiemaweb.com/es6-class)
@@ -94,7 +94,7 @@ class Numeric extends Number {
 
 ## static
 
-생성자 함수의 메서드 혹은 프로퍼티를 만드는 키워드. 이 키워드가 붙은 프로퍼티를 스태틱 필드 혹은 스태틱 메서드라고 한다.
+생성자 함수의 메서드 혹은 프로퍼티(필드 혹은 메서드)를 만드는 키워드. 이 키워드가 붙은 프로퍼티를 스태틱 필드 혹은 스태틱 메서드라고 한다.
 
 ```js
 class Hitman {
@@ -129,6 +129,8 @@ building.location; // "some-where"
 building.number; // 1234
 ```
 
+그냥 특별한 표시 없이 식별자로 선언만 하면 퍼블릭 프로퍼티다. 스태틱 프로퍼티도 public class feature로 포함한다.
+
 
 ## private class feature
 
@@ -160,7 +162,9 @@ company.#secret; // Uncaught SyntaxError: reference to undeclared private field 
 company.#privateMethod(); // Uncaught SyntaxError: reference to undeclared private field or method #privateMethod;
 ```
 
-디버깅을 해보면 private field는 보이긴 하지만 외부에서 접근할 수 없으며, 접근 시도 시 문법에러가 발생한다. 단, 예외가 있는데, 크롬 개발자도구 콘솔에선 접근 제약이 없다. 하지만 파이어폭스 개발자도구에선 안됨. (도데체 왜??)
+프라이빗 프로퍼티는 보이긴 하지만 SyntaxError가 발생하며 접근할 수 없다. 
+
+자바스크립트 구현체(=브라우저마)마다 예외가 있을 수 있다. 가령 파이어폭스 개발자도구 콘솔에선 프라이빗 프로퍼티에 접근할 수 없지만, 크롬 개발자도구 콘솔에선 잘 된다. 🤔
 
 
 ## extends

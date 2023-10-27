@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Object_literal_notation_vs_JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Object_literal_notation_vs_JSON)
 - [http://stackoverflow.com/questions/2904131/what-is-the-difference-between-json-and-object-literal-notation](http://stackoverflow.com/questions/2904131/what-is-the-difference-between-json-and-object-literal-notation)

@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[Microsoft\] Windows의 OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_overview)
 - [\[Microsoft\] OpenSSH 설치](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)

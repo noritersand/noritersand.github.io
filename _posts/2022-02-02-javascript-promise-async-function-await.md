@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MDN\] Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 - [\[MDN\] Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
@@ -266,8 +266,10 @@ var hello = async () => {
   return 'Hello!';
 };
 hello().then(console.log); // Hello!
-// 위 코드는 아래와 같음
-// hello().then((msg) => {console.log(msg)});
+// 아래와 같음
+// hello().then((msg) => { 
+//   console.log(msg) 
+// });
 ```
 
 ### Promise 래핑

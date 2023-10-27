@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [npm](https://www.npmjs.com/)
 - [npm Docs](https://docs.npmjs.com/)
@@ -206,6 +206,8 @@ npm exec -- tap --bail test/foo.js
 npx nodemon --exec tsc
 npm exec -- nodemon -- --exec tsc
 ```
+
+🤔 가이드 문서 대로면 `npm exec -- nodemon --exec tsc`라고 해야 맞는데 어째서인지 `npm exec -- nodemon -- --exec tsc`라고 이중 하이픈을 한 번 더 해줘야 한다.
 
 #### 하이픈 두 번의 뜻 `--`
 

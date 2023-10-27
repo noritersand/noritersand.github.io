@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [Document Object Model (DOM) Level 2 HTML Specification](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-8747038)
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)

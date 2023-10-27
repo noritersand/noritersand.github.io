@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [\[MDN\] JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [\[MDN\] import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
@@ -356,8 +356,6 @@ import myDefault, * as name from "module-name";
 import "module-name"; // 변수 바인딩 없이 스크립트를 실행만 할 때 사용한다.
 ```
 
-끝. 🥱
-
 
 ## import.meta
 
@@ -379,3 +377,16 @@ try {
   export {SingleOrgPicker}; // Uncaught SyntaxError: Unexpected token 'export'
 } catch (e) {}
 ```
+
+
+## 모듈에서 this는?
+
+```js
+// myModule.mjs
+console.log(this); // undefined
+```
+
+모듈에서 `this`는 `undefined`를 반환한다. (엄격 모드와는 상관 없다)
+
+
+끝. 🥱

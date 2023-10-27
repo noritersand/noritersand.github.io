@@ -15,7 +15,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-#### 관련 문서
+#### 참고 문서
 
 - [https://docs.microsoft.com/en-us/sysinternals/](https://docs.microsoft.com/en-us/sysinternals/)
 - [https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault](https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault)

@@ -14,7 +14,7 @@ tags:
   - code-snippet
 ---
 
-#### 관련 문서
+#### 참고 문서
 
 - [http://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html](http://tomcat.apache.org/tomcat-8.0-doc/jndi-resources-howto.html)
 - [http://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html](http://tomcat.apache.org/tomcat-9.0-doc/jndi-resources-howto.html)
