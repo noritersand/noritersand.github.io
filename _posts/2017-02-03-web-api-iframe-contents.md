@@ -1,12 +1,12 @@
 ---
 layout: post
 date: 2017-02-03 13:42:10 +0900
-title: '[JavaScript] iframe contents'
+title: '[Web API] iframe contents'
 categories:
-  - javascript
-tags:
-  - javascript
   - web-api
+tags:
+  - web-api
+  - javascript
   - dom-standard
   - html-standard
   - iframe

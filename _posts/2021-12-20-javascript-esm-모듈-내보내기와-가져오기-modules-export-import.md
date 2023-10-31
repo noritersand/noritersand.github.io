@@ -30,7 +30,7 @@ tags:
 
 ## 개요
 
-'ESM(ECMAScript modules)'은 ESMAScript에서 제안하는 표준 모듈 시스템이다. 'JavaScript modules'라고도 한다. 모듈을 내보내거나 가져올 때 사용하는데, 모듈은 함수, 객체, 원시 값 등을 포함한다.
+'ESM(ECMAScript modules)'은 ESMAScript에서 제안하는 표준 모듈 시스템이다(Web API 아님). 'JavaScript modules'라고도 한다. 모듈을 내보내거나 가져올 때 사용하는데, 모듈은 함수, 객체, 원시 값 등을 포함한다.
 
 참고로 ESM이 구현되기 전의 자바스크립트에는 모듈 기능이 없었다. 그래서 사용하던 것이 CJS(CommonJS), AMD(Asynchronous Module Definition의 줄임말, RequireJS에서 사용), UMD(Universal Module Definition의 줄임말, Backbone.js에서 사용).
 
