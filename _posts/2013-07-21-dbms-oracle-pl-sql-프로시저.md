@@ -201,7 +201,7 @@ end if;
 -- 반복문1 기본 loop문
 loop
 문장;
-exit when 조건; -- 조건이 true면 루프탈출
+exit when 조건; -- 조건이 true면 루프 탈출
 end loop;
 
 -- 반복문2 for loop문

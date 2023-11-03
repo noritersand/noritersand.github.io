@@ -93,7 +93,7 @@ function sumAsync(a, b) {
 @returns {Promise<void>}
 ```
 
-원시 타입(`number`, `string`, `boolean`, `symbol`)을 제외한 나머지는 프로토타입을 써주면 된다. e.g., `Object`, `Function`, `Document`, `Node`, `Window`, ...
+원시 타입(`number`, `string`, `boolean`, `symbol`)을 제외한 나머지는 프로토타입 이름 그대로 써주면 된다. e.g., `Object`, `Function`, `Document`, `Node`, `Window`, ...
 
 `*`는 모든 타입이 올 수 있음을 나타낸다.
 

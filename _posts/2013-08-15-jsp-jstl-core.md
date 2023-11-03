@@ -196,12 +196,12 @@ line2
 </c:forEach>
 ```
 
-`varStatus`는 루프 자체의 메타정보다:  
+`varStatus`는 반복 회차 각각의 메타정보를 담고 있다:  
 - current: 현재 아이템
 - index: 0부터의 순서
 - count: 1부터의 순서
-- first: 현재 루프가 처음인지 반환
-- last: 현재 루프가 마지막인지 반환
+- first: 첫 회차인지
+- last: 마지막 회차인지
 - begin: 시작값
 - end: 끝값
 - step: 증가값
