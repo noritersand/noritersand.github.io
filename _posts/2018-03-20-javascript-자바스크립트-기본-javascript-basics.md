@@ -34,9 +34,9 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 
 ## Plain JavaScript
 
-라이브러리나 프레임웤을 사용하지 않는 순수 자바스크립트를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임웤이 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절함.
+라이브러리나 프레임웤을 사용하지 않는 순수 자바스크립트를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임웤이 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절...하지 않을까?
 
-[https://plainjs.com/](https://plainjs.com/)에 jQuery를 대체하는 순수 자바스크립트 API가 정리되어 있음.
+참고: [https://plainjs.com/](https://plainjs.com/) jQuery를 대체하는 순수 자바스크립트 API 소개 사이트
 
 
 ## 개념 정리

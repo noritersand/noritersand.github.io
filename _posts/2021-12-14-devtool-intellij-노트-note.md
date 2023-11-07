@@ -221,7 +221,8 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
 - Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
 - Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \\</kbd> 추가. 기존 단축키는 `Root directory` 기능인데, 어차피 잘 안쓰니 지우거나 무시할 것.
+- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \\</kbd> 추가. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
+- Main Menu > Window > Editor Tabs > Split Right/Down: 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지우고 <kbd>alt + shift + \=</kbd> <kbd>alt + shift + \-</kbd> 로 지정
 
 
 ## 기본 단축키
@@ -306,6 +307,8 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>ctrl + alt + shift + left/right</kbd>: Move Element Left/Right. 메서드 파라미터의 순서를 변경할 때 사용함.
 - <kbd>alt + shift + c</kbd>: Recent changes. 파일 시스템의 최근 변경 목록을 보여주는 것 같은데, 어떤 기준으로 나오는지 잘 모르겠음 🤔
 - <kbd>ctrl + shift + l</kbd>(서브라임 스타일): Split Selection into Lines. Extra Actions 플러그인을 설치해야 사용 가능. 기존 바인딩은 삭제
+- <kbd>alt + shift + l</kbd>: Save Context. 컨텍스트를 저장한다. 컨텍스트는 열려있는 파일들을 의미하는 모양
+- <kbd>alt + shift + s</kbd>: Load Context. 저장한 컨텍스트를 불러온다.
 
 ### 복사/붙이기
 

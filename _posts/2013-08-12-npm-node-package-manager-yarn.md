@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-12 17:00:00 +0900
-title: '[Node.js] NPM, Yarn'
+title: '[Node.js] npm, Yarn'
 categories:
   - nodejs
 tags:
@@ -23,12 +23,12 @@ tags:
 
 ## 개요
 
-NPM(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다.
+npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다.
 
 
 ## ⚠️ 해킹 방지 부적(?)
 
-NPM의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고 설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데 Supply Chanin Attack 이라 한다고... 
+npm의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고 설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데 Supply Chanin Attack 이라 한다고... 
 
 이를 방지하기 위해 아래 방법들이 권장된다:
 
@@ -40,7 +40,7 @@ NPM의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 
 npm insatll --ignore-scripts
 ```
 
-`--ignore-scripts`는 NPM이 package.json에 작성된 pre-scripts, post-scripts를 자동으로 실행하지 않도록 하는 옵션이다.
+`--ignore-scripts`는 npm이 package.json에 작성된 pre-scripts, post-scripts를 자동으로 실행하지 않도록 하는 옵션이다.
 
 \* Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
 
@@ -280,7 +280,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 - `~version`: '대략적으로 동일한 버전'을 허용한다. `version`을 명시한 단위보다 낮은 단위는 아무 버전이나 괜찮다는 뜻이다. 예를 들어 `~0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다는 낮은 버전을 허용한다. `~1.2`는  `1.2.x`와 같다. `~0`은 `0.x`와 같다.
 - `^version`: '호환되는 버전'만 허용한다. 지정한 버전의 **0이 아닌 가장 왼쪽에 있는 숫자**가 변하지 않는 선에서 같거나 높은 버전을 허용한다. `^1.2.3`은 1.2.3보다 높거나 같고 2.0.0보다 낮아야 한다. `^0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다 낮아야 한다. `^0.0.3`은 `>=0.0.3 <0.0.4-0`라고 하는 것과 같다. 더 자세한 내용은 [여기](https://github.com/npm/node-semver#caret-ranges-123-025-004)를 보자.
 
-참고로 NPM은 [Semantic Versioning](https://semver.org/)(줄여서 SemVer)을 따른다.
+참고로 npm은 [Semantic Versioning](https://semver.org/)(줄여서 SemVer)을 따른다.
 
 ### example
 
@@ -380,12 +380,14 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 ## Yarn
 
-NPM의 속도와 보안을 강화한 [Yarn](https://yarnpkg.com/)이 있음. [NPM vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
+[Yarn](https://yarnpkg.com/)
+
+npm의 속도와 보안을 강화한 새 패키지 매니저. [npm vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
 속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나...
 
 ```bash
-# NPM으로 Yarn 설치
+# npm으로 Yarn 설치
 npm install yarn -g
 ```
 
@@ -430,7 +432,7 @@ Yarn으로 패키지를 추가하거나 삭제해도 `package.json` 내용이 �
 
 Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.
 
-기본적인 역할은 NPM의 `package-lock.json` 파일과 같은데, 실제 설치한 패키지의 버전을 기록하며 이 lock 파일이 있다면 `install` 시 정확히 동일한 버전의 패키지를 설치한다. 따라서 개발자들끼리의 소스 공유 시엔 이 파일을 반드시 버전 관리에 추가해야 한다.
+기본적인 역할은 npm의 `package-lock.json` 파일과 같은데, 실제 설치한 패키지의 버전을 기록하며 이 lock 파일이 있다면 `install` 시 정확히 동일한 버전의 패키지를 설치한다. 따라서 개발자들끼리의 소스 공유 시엔 이 파일을 반드시 버전 관리에 추가해야 한다.
 
 `--no-lockfile` 등의 옵션으로 lock 파일을 생성하지 않게 할 수도 있다. 설치만 Yarn으로 할 때 쓰려나...?
 
@@ -446,7 +448,7 @@ yarn global add nodemon --prefix /usr/local
 yarn global list
 ```
 
-글로벌 설치 경로 기본값은 [NPM](https://nodejs.dev/learn/where-does-npm-install-the-packages)과 달라서 Yarn으로 설치한 글로벌 패키지가 NPM으로는 안보일 수 있다.
+글로벌 설치 경로 기본값은 [npm](https://nodejs.dev/learn/where-does-npm-install-the-packages)과 달라서 Yarn으로 설치한 글로벌 패키지가 npm으로는 안보일 수 있다.
 
 ```bash
 "$env:APPDATA\npm\node_modules"
@@ -466,18 +468,18 @@ yarn global dir
 
 [NVM을 쓰는 경우 Yarn을 통한 글로벌 설치가 문제가 될 수 있다는 말이 있다](https://stackoverflow.com/questions/56941551/is-there-any-difference-between-installing-global-packages-with-yarn-or-npm).
 
-실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. NPM 글로벌로 설치했더니 해당 메시지 사라짐. (2022-01-28, Yarn v1.22.17)
+실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. npm 글로벌로 설치했더니 해당 메시지 사라짐. (2022-01-28, Yarn v1.22.17)
 
-**그냥 글로벌 패키지는 NPM으로 하는게 좋을 것 같음.**
+**그냥 글로벌 패키지는 npm으로 하는게 좋을 것 같음.**
 
 ### 기타
 
-[Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 NPM보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
+[Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 npm보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
 
 tap 패키지를 `npm`으로 설치하면 `^1.0.0`으로, `yarn`으로 설치하면 `^16.3.8`이 설치되는 이상한 현상이 있다. (2023-08-21)
 
 
-## 자주 쓰이는 패키지
+## 자주 쓰는 패키지 모음
 
 ### nodemon
 
@@ -531,3 +533,17 @@ nodemon --exec 'tsc'
 
 웹 애플리케이션 백엔드 코드용 테스트 프레임웍
 
+### figlet
+
+[https://www.npmjs.com/package/figlet](https://www.npmjs.com/package/figlet)
+
+요 아래처럼 생긴 FIGFont를 만들어주는 패키지
+
+```
+  _____ _____  __     _      _     ___ _____ 
+ |  ___|_ _\ \/ /    / \    | |   / _ \_   _|
+ | |_   | | \  /    / _ \   | |  | | | || |  
+ |  _|  | | /  \   / ___ \  | |__| |_| || |  
+ |_|   |___/_/\_\ /_/   \_\ |_____\___/ |_|  
+                                                 
+```

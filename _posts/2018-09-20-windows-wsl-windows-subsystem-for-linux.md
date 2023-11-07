@@ -67,31 +67,12 @@ Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseB
 ~~오늘(2021-01-20) 확인해보니 설치가 제대로 안 되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
 
 
-## 설치 확인
-
-```bash
-# 설치된 모든 WSL 배포버전의 자세한 정보 표시
-wsl -l -v
-```
-
-
 ## 서브 시스템의 실제 경로
 
 WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 
-**WSL2**: 버전 2에선 셸의 홈에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
-
-
-## [CMD 혹은 파워셸에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
-
-```bash
-wsl ls -la
-
-dir | wsl grep git
-```
-
-리눅스 명령어 앞에 `wsl`을 붙이면 된다.
+**WSL2**: 버전 2에선 셸에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl.localhost` 혹은 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
 
 
 ## WSL에서 호스트 디렉터리 접근
@@ -105,6 +86,17 @@ Filesystem      Size  Used Avail Use% Mounted on
 drvfs           476G  100G  377G  21% /mnt/c
 drvfs           930G   69G  862G   8% /mnt/d
 ```
+
+
+## [CMD 혹은 파워셸에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
+
+```bash
+wsl ls -la
+
+dir | wsl grep git
+```
+
+리눅스 명령어 앞에 `wsl`을 붙이면 된다.
 
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color

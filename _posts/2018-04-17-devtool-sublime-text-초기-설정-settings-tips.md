@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-04-17 13:32:10 +0900
-title: '[devtool] sublime text 초기 설정과 팁'
+title: '[devtool] Sublime Text 초기 설정과 팁'
 categories:
   - devtool
 tags:
@@ -17,9 +17,9 @@ tags:
 - [https://www.sublimetext.com/docs/index.html](https://www.sublimetext.com/docs/index.html)
 - [https://docs.sublimetext.io/guide/](https://docs.sublimetext.io/guide/)
 
-#### 테스트 환경 정보
+#### 버전 정보
 
-- Sublime Text 4 (Build 4xxx)
+- Build 4xxx
 
 
 ## 개요
@@ -193,9 +193,7 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 
 ## 작성자 저장용 사용자 설정
 
-### Sublime Text
-
-#### settings - user
+### settings - user
 
 ```json
 {
@@ -216,7 +214,7 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 }
 ```
 
-#### key bindings - user
+### key bindings - user
 
 ```json
 [
@@ -228,40 +226,6 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
   {"keys": ["ctrl+shift+s"], "command": "save_all"}
 ]
 ```
-
-### Sublime Merge
-
-자매품인 서브라임 머지도 적어둠.
-
-#### key bindings - user
-
-현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser) 패키지로 설치해서 확인해야 함.
-
-```json
-[
-  { "keys": ["f1"], "command": "show_command_palette" },
-  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
-  { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
-  { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
-  { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
-  { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
-  { "keys": ["ctrl+,"], "command": "open_preferences" }
-  // { 
-  //   "keys": ["ctrl+alt+shift+enter"], 
-  //   "command": "commit", 
-  //   "args": { "mode": "commit --amend" }, 
-  //   "context": [
-  //     { "key": "setting.commit_message" }, 
-  //     { "key": "can_commit" }
-  //   ]
-  // }
-]
-```
-
-- `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
-- `discard_all_modified`은 모든 변경 사항을 취소하니 주의해서 사용할 것. 
-- <kbd>ctrl + alt + shift + enter</kbd>는 리베이스인 amend commit인데, 실수하면 위험한 기능이라 막아놨음.
 
 
 ## 기본 단축키
@@ -323,6 +287,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + r</kbd>: 함수 단위 탐색창 열기
 - <kbd>ctrl + g</kbd>: 라인 이동
 - <kbd>ctrl + ;</kbd>: 키워드 탐색창 열기
+- <kbd>ctrl + alt + shift + p</kbd>: Show Scope Name 스코프 이름 보기. 현재 캐럿이 위치한 곳 기준으로 스코프 정보를 툴팁으로 표시하는 기능이다. 그런데 소스 코드의 스코프가 아니라, 서브라임 텍스트의 환경 기준의 스코프를 의미한다. 그러니께 서브라임 패키지 개발자용 기능
 
 ### 매크로
 
