@@ -142,14 +142,16 @@ select get_format(date,'iso'), get_format(datetime,'iso')
 |%Y-%m-%d              |%Y-%m-%d %H:%i:%s         |
 +----------------------+--------------------------+
 
+\* 여기서 `date`, `datetime`은 날짜값이 아니라 [유닛](https://mariadb.com/kb/en/date-and-time-units/)이다.
+
 
 ## 현재 날짜/시간 구하기
 
 함수를 활용한다:
 
-- `CURDATE()`: 공식 문서 설명에 따르면 단순히 'YYYY-MM-DD' 혹은 YYYYMMDD 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
-- `CURTIME([precision])`: 'HH:MM:SS' 혹은 HHMMSS.uuuuuu 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
-- `NOW([precision])`: 'YYYY-MM-DD HH:MM:SS' 혹은 YYYYMMDDHHMMSS.uuuuuu 포맷의 시간과 날짜값을 반환한다. 동의어는 `localtime`, `localtimestamp`, `current_timestamp`. `precision`은 마찬가지로 선택사항이며, 0-6 사이의 마이크로초 정밀도다.
+- `CURDATE()`: 공식 문서 설명에 따르면 단순히 `YYYY-MM-DD` 혹은 `YYYYMMDD` 포맷의 현재 날짜값을 반환한다. 동의어로 `current_date`가 있다.
+- `CURTIME([precision])`: `HH:MM:SS` 혹은 `HHMMSS.uuuuuu` 포맷의 현재 시간값을 반환한다. 동의어로 `current_time`이 있다. `precision`은 선택사항이다. 마이크로초 정밀도를 의미하며 0에서 6까지의 값을 입력할 수 있다.
+- `NOW([precision])`: `YYYY-MM-DD HH:MM:SS` 혹은 `YYYYMMDDHHMMSS.uuuuuu` 포맷의 시간과 날짜값을 반환한다. 동의어는 `localtime`, `localtimestamp`, `current_timestamp`. `precision`은 마찬가지로 선택사항이며, 0-6 사이의 마이크로초 정밀도다.
 
 ```sql
 select now()

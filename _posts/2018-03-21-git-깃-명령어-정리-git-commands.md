@@ -1621,9 +1621,9 @@ git show-ref --head
 추적 중인 파일의 모든 변경 사항을 스태시에 저장되며 워킹 트리와 스테이징 에어리어는 헤드와 같아진다. `stash` 다음의 명령어를 생략하면 `stash push`와 같다.
 
 ```bash
-git stash push # 스태시 생성
-git stash  # =stash push
-git stash push '스태시 이름'
+git stash push # 스태시 생성. push 키워드는 생략할 수 있음
+git stash  # 스태시 생성 (2)
+git stash push -m '스태싱 메시지'
 git stash -k  # staged 상태의 파일은 무시하고 스테시에 저장
 git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시로 저장
 ```

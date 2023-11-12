@@ -478,7 +478,7 @@ value의 합계
 
 ### MIN(value)
 
-최소값
+최솟값
 
 ### AVG(value)
 

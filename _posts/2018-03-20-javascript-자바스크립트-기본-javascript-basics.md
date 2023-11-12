@@ -147,17 +147,25 @@ var a = (
 
 ## HTML 문서에 자바스크립트 포함시키기
 
-### inline
+### linked(external)
 
-HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
+별도의 스크립트 파일의 경로를 지정하여 불러오는 방식. `<body>`에 사용해도 가능하지만 보통은 `<head>`에 위치한다.
 
 ```html
-<a href="javascript:location.href='http://daum.net'">다음</a>
+<html>
+  <head>
+    <script src='test.js'></script>
+  </head>
+  <body>
+  </body>
+</html>
 ```
+
+HTML5 표준에 있는 내용은 아니지만, `<script>`는 `<head>`, `<body>` 내부에 위치하는 것이 좋다.
 
 ### embedded(internal)
 
-스크립트 블록`<script></script>` 안에 일괄 지정. `<head>`와 `<body>` 어느곳에든 사용할 수 있다.
+별도의 파일이 아니라 스크립트 블록`<script></script>` 안에 직접 작성한 스크립트를 말한다.
 
 ```html
 <html>
@@ -171,18 +179,12 @@ HTML 태그 속성에 지정하여 사용. `<body>` 내에서 사용한다.
 </html>
 ```
 
-### linked(external)
+### inline
 
-외부 파일을 링크하여 여러 개의 파일에 일괄 지정. `<body>`에 사용해도 가능하지만 보통은 `<head>`에 위치한다.
+HTML 태그 속성에서 제한적인 방법으로 작성하는 스크립트:
 
 ```html
-<html>
-  <head>
-    <script src='test.js'></script>
-  </head>
-  <body>
-  </body>
-</html>
+<a href="javascript:location.href='http://daum.net'">다음</a>
 ```
 
 

@@ -205,7 +205,7 @@ exit when 조건; -- 조건이 true면 루프 탈출
 end loop;
 
 -- 반복문2 for loop문
-for 변수 in 1(최소값)..10(최대값) loop -- 변수 = 1, 2, 3, 4, 5, 6...
+for 변수 in 1(최솟값)..10(최댓값) loop -- 변수 = 1, 2, 3, 4, 5, 6...
 문장;
 end loop;
 

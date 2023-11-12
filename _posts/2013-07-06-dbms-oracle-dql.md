@@ -244,11 +244,11 @@ SELECT first_name || ' ' || last_name AS 이름 FROM employees WHERE hire_date='
 
 #### BETWEEN, 범위조건
 
-최소값과 최대값을 지정해 그 사이의 값을 조건으로 사용
+최솟값과 최댓값을 지정해 그 사이의 값을 조건으로 사용
 
 ```
-... WHERE 컬럼명 BETWEEN 최소값 AND 최대값
-... WHERE 컬럼명 NOT BETWEEN 최소값 AND 최대값
+... WHERE 컬럼명 BETWEEN 최솟값 AND 최댓값
+... WHERE 컬럼명 NOT BETWEEN 최솟값 AND 최댓값
 ```
 
 ```sql

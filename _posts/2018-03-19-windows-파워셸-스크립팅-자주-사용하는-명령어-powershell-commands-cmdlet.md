@@ -207,12 +207,14 @@ Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction Sil
 
 #### parameters
 
+- `Filter`: 특정 파일이나 폴더로 결과를 제한한다. 패턴은 와일드카드 패턴(Wildcard Patterns)이다.
+- `Path`: ?
 - `Recurse`: 재귀 검색
 - `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
-- `Include`
-- `Exclude`
-- `ErrorAction`
-- `Force`
+- `Include`: ?
+- `Exclude`: ?
+- `ErrorAction`: ?
+- `Force`: ?
 
 ### Copy-Item
 
