@@ -35,6 +35,40 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
 
 
+## 문법
+
+### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
+
+파워셸에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
+
+```bash
+$i = 5
+"The value of $i is $i."
+# The value of 5 is 5.
+
+'The value of $i is $i.'
+# The value of $i is $i.
+
+"The value of $(2+3) is 5."
+# The value of 5 is 5.
+
+'The value of $(2+3) is 5.'
+# The value of $(2+3) is 5.
+
+"$env:LOCALAPPDATA\abcd"
+# C:\Users\fixalot\AppData\Local\abcd
+
+'$env:LOCALAPPDATA\abcd'
+# $env:LOCALAPPDATA\abcd
+```
+
+따옴표간 차이는 이 정도고, 나머지는 대체로 동일한 의미로 쓰인다.
+
+### 중괄호 `{}`
+
+**TODO**
+
+
 ## 환경 변수
 
 ℹ️ Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않으니 필요하면 앱을 재시작할 것
@@ -114,36 +148,6 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 ```
 
 이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안 되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
-
-
-## 문법
-
-### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
-
-리터럴 문자열을 표현할 때 큰따옴표`""`와 작은따옴표`''`는 대체로 동일한 의미로 쓰인다.  
-다만 몇몇의 경우 차이가 있는데, 가령 다음 명령어 예시에서 변수 처리와 계산식은 작은따옴표
-를 사용할 때 무시된다:
-
-```bash
-$i = 5
-"The value of $i is $i."
-# The value of 5 is 5.
-
-'The value of $i is $i.'
-# The value of $i is $i.
-
-"The value of $(2+3) is 5."
-# The value of 5 is 5.
-
-'The value of $(2+3) is 5.'
-# The value of $(2+3) is 5.
-
-"$env:LOCALAPPDATA\abcd"
-# C:\Users\fixalot\AppData\Local\abcd
-
-'$env:LOCALAPPDATA\abcd'
-# $env:LOCALAPPDATA\abcd
-```
 
 
 ## 변수선언과 사용
@@ -593,8 +597,12 @@ Set-Alias -Name 햣 -Value git
 function Get-Child-Item-Force { 
   Get-ChildItem -Force 
 }
-
 Set-Alias -Name ll -Value Get-Child-Item-Force
+
+function Remove-Item-Recurse-Force { 
+  Remove-Item -Recurse -Force @args
+}
+Set-Alias -Name rmrf -Value Remove-Item-Recurse-Force
 
 ########################
 

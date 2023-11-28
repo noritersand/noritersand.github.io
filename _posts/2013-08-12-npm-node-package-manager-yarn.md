@@ -55,8 +55,12 @@ npm install [<package-spec> ...]
 오타까지 별칭으로 해놓은 건... 좀 웃겼다 🤭
 
 ```bash
-# package.json 의 "dependencies"를 참조하여 자동설치
+# package.json에 작성된 의존 패키지를 모두 설치
+# package-lock.json이 있으면 해당 의존성을 우선함
 npm install
+
+# 의존 패키지를 모두 설치하되 devDependencies의 패키지는 제외
+npm install --production
 
 # 로컬 패키지로 설치
 npm install 패키지1[, 패키지2, 패키지3, ...]
@@ -404,12 +408,19 @@ yarn add PACKAGE_NAME@TAG_NAME
 # PACKAGE_NAME을 개발환경(devDependencies)에서만 유효하도록 설치
 yarn add PACKAGE_NAME --include=dev
 
-# package.json의 dependencies 항목에 있는 모든 패키지 설치. yarn.lock이 있으면 해당 파일을 우선 참조함
+# package.json에 작성된 의존 패키지를 모두 설치
+# yarn.lock이 있으면 해당 의존성을 우선함
 yarn install
+
+# 의존 패키지를 모두 설치하되 devDependencies의 패키지는 제외
+yarn install --production
 
 # 로컬 경로(yarn.lock이 위치한 디렉터리)에 설치된 패키지 목록 출력
 # yarn.lock 파일이 없으면 작동하지 않음
 yarn list
+
+# 의존관계 깊이가 1인 패키지만 출력(=직접 설치한 패키지만 출력)
+yarn list --depth 1
 
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-07-16 16:23:00 +0900
-title: '[Mybatis] IN절의 조건 순서 그대로 정렬하는 방법'
+title: '[MyBatis] IN절의 조건 순서 그대로 정렬하는 방법'
 categories:
   - mybatis
 tags:

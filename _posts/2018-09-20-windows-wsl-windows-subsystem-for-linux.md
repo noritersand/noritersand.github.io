@@ -101,7 +101,7 @@ dir | wsl grep git
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
-[노마드코더: 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
+[니콜라스 유튜브 - 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
 
 Zsh는 리눅스 기본 셸인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 
@@ -159,6 +159,18 @@ chsh -s $(which zsh)
 - Docker에선 이상하게 선택 불가하고 `(4) Pure.`로 고정됨.
 
 
+## WSL용 쉘 사용자 정의 설정 모음
+
+```bash
+# .bashrc 또는 .zshrc 파일에 추가
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
+alias adb='adb.exe'
+```
+
+
 ## WSL에서 윈도우의 환경 변수 사용하지 않기
 
 [https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
@@ -203,3 +215,5 @@ ubuntu config --default-user 유저_아이디
 ```
 
 비밀번호를 잊어버려 재설정 할 때 쓴다.
+
+

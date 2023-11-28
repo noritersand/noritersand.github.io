@@ -190,6 +190,10 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 {"detect_acronyms": false}
 ```
 
+#### [🌟 InsertDate](https://github.com/FichteFoll/InsertDate)
+
+2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기. 기본 단축키는 <kbd>f5</kbd>이며 [strftime](https://www.strfti.me) 포맷 커스텀 입력은 <kbd>alt + f5</kbd>.
+
 
 ## 작성자 저장용 사용자 설정
 

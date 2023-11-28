@@ -148,3 +148,15 @@ function willDestroyU({prop1, prop2}) {
 ```
 
 스펙 정의는 [여기](https://jsdoc.app/tags-param.html#parameters-with-properties)를 참고.
+
+
+## 그 밖에 여러 태그들
+
+```js
+/**
+ * 
+ * 
+ * 
+ * @deprecated since version 2.0
+ */ 
+```

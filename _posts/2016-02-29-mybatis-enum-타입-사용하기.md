@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-02-29 13:54:00 +0900
-title: '[Mybatis] Enum 타입 사용하기'
+title: '[MyBatis] Enum 타입 사용하기'
 categories:
   - mybatis
 tags:

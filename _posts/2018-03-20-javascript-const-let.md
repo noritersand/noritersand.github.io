@@ -68,6 +68,13 @@ console.log(MY_OBJECT); // Object { key: "otherValue" }
 
 객체를 완전히 보호하고 싶다면 [`Object.freeze()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze)를 사용할 것.
 
+```js
+var icecream = Object.freeze({a: 1, b: 2})
+console.log(icecream); // {a: 1, b: 2}
+icecream.c = 3
+console.log(icecream); // {a: 1, b: 2}
+```
+
 
 ## let
 

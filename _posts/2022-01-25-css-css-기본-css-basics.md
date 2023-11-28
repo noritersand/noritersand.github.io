@@ -181,7 +181,7 @@ At-rules은 CSS가 어떻게 작동해야하는지를 정의하는 지시어(에
 }
 ```
 
-요런식으로 쓴다(코드 출처는 [노마드 코더 유튜브](https://www.youtube.com/watch?v=HZIcTZABMuc)와 MDN):
+요런식으로 쓴다(코드 출처는 [니콜라스 유튜브 채널](https://www.youtube.com/watch?v=HZIcTZABMuc)과 MDN):
 
 ```css
 /* 브라우저가 text-align:center를 지원하면 */

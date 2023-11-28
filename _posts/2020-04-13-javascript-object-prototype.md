@@ -199,6 +199,59 @@ var loopMe = {
 Object.entries(loopMe); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
 ```
 
+### Object.freeze()
+
+주어진 객체의 변형과 확장을 막는 스태틱 메서드. 
+
+```
+Object.freeze(obj)
+```
+
+- `obj`: `obj`의 프로퍼티들은 쓰기 불가(non-writable), 설정 불가(non-configurable) 상태가 된다.
+
+이 메서드는 얼려(?)진 `obj`를 반환하는데, 파라미터로 주어진 객체와 일치한다.
+
+```js
+var beer = { temperature: -1 };
+var o = Object.freeze(beer);
+console.log(beer === o); // true
+```
+
+한 번 얼려진 객체는 프로퍼티를 추가하거나 재할당 할 수 없다:
+
+```js
+var icecream = Object.freeze({a: 1, b: 2});
+console.log(icecream); // {a: 1, b: 2}
+icecream.c = 3
+console.log(icecream); // {a: 1, b: 2}
+```
+
+그리고 내부의 중첩된 객체까지 얼리진 못하기 때문에, 객체 리터럴마다 적용해야 함:
+
+```js
+// 중첩된 객체의 변화는 막을 수 없음
+var freezeMe1 = Object.freeze({
+    a: 1, 
+    b: 2, 
+    c: { d: 4 }
+});
+console.log(freezeMe1); // Object { a: 1, b: 2, c: { d: 4 } }
+freezeMe1.c.d = 567;
+console.log(freezeMe1); // Object { a: 1, b: 2, c: { d: 567 } }
+
+// 중첩 객체에 별도로 적용하면 막을 수 있다
+var freezeMe2 = Object.freeze({
+    a: 1, 
+    b: 2, 
+    c: Object.freeze({ d: 4 })
+});
+console.log(freezeMe2); // Object { a: 1, b: 2, c: { d: 4 } }
+freezeMe2.c.d = 567
+console.log(freezeMe2); // Object { a: 1, b: 2, c: { d: 4 } }
+```
+
+한 번 얼린 객체를 되돌리는 방법은 없다. 멀쩡한 게 필요하면 복제를 하면 되는데, 중첩 객체가 있을 때는 깊게 복제해야 함.
+
 
 ## 인스턴스 메서드
 

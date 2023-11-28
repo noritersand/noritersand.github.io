@@ -85,6 +85,15 @@ wjb -> Wait-Job                   write -> Write-Output
 
 [https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4)
 
+### Get-Command
+
+명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다.
+
+```bash
+# 명령어 explorer의 명령어타입, 이름, 버전, 소스(경로) 출력
+Get-Command explorer
+```
+
 ### Get-History
 
 명령어 실행 이력 보기. 기본 별칭 `history`
@@ -112,6 +121,9 @@ Invoke-History 132 # 위와 같음
 ```bash
 # name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
 Get-ChildItem | Where-Object name -eq 'httpd.exe'
+
+# 확장자가 .jsp 이거나 .js 인 파일 출력
+Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js' }
 ```
 
 
@@ -121,7 +133,7 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
 ### New-Item
 
-파일이나 디렉토리, 심볼릭 링크 등을 생성한다.
+파일이나 디렉터리, 심볼릭 링크 등을 생성한다.
 
 ```bash
 # TARGET_PATH를 가리키는 심볼릭 링크 LINK 생성
@@ -132,7 +144,7 @@ New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 
 - `-ItemType`: `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink` 중에 하나
 - `-Path`: 생성할 심볼릭 링크의 이름
-- `-Target`: 심볼릭 링크가 가리킬 대상 디렉토리
+- `-Target`: 심볼릭 링크가 가리킬 대상 디렉터리
 
 ### Get-Process
 
@@ -201,15 +213,27 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 # 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
 Get-ChildItem -Recurse -Name | findstr main.js
 
-# c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
-Get-ChildItem -Path C:\dev\git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
+# c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀 검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
+Get-ChildItem -Path C:/dev/git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
+
+# 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
+Get-ChildItem -Recurse -Filter *.js
+
+# 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + FullName 프로퍼티를 콘솔 대신 temp2.md 파일에 쓰기
+Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
+
+# 확장자가 js인 파일 찾기 + 파일의 전체 경로(=파일 객체의 FullName 프로퍼티)에서 "\target\"가 포함된 것은 제외
+Get-ChildItem -Filter *.js | Where-Object { $_.FullName -notmatch '\\target\\' }
+
+# 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + 파일 내용 중 "axios"가 있는 라인 찾기 + 찾은 MatchInfo 객체에서 Path만 추출한 뒤 유일한 값만 출력
+Get-ChildItem -Path . -Filter *.js -Recurse | Select-String -Pattern "axios" | Select-Object -Unique Path
 ```
 
 #### parameters
 
 - `Filter`: 특정 파일이나 폴더로 결과를 제한한다. 패턴은 와일드카드 패턴(Wildcard Patterns)이다.
-- `Path`: ?
-- `Recurse`: 재귀 검색
+- `Path`: 명령을 수행할 경로(명령의 시작 위치)
+- `Recurse`: 재귀 검색 
 - `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
 - `Include`: ?
 - `Exclude`: ?
@@ -234,8 +258,34 @@ Remove-Item .\copy\ -r -Force
 
 #### parameters
 
-- `-r`: 재귀삭제
-- `-Force`: 확인 없이 삭제
+- `-Force`: 확인 프롬프트 없이 삭제
+- `-Recurse`: 재귀 삭제
+
+### Get-Member
+
+객체의 속성이나 메서드를 가져오는 명령어. 
+
+파이프라인을 통해 전달된 객체가 어떤 타입 혹은 어떤 클래스의 인스턴스인지 확인하려면 단순히 아래처럼 입력하면 된다:
+
+```bash
+[명령어] | Get-Member
+```
+
+이러면 `TypeName` 섹션에서 객체의 타입을 확인할 수 있다. 
+
+```bash
+# System.IO.FileInfo, System.IO.DirectoryInfo 둘 중 하나
+Get-ChildItem | Get-Member
+
+# Microsoft.PowerShell.Commands.MatchInfo 타입
+Get-ChildItem | Select-String foobar 
+```
+
+**TODO** 작동 방식 좀 더 분석
+
+#### parameters
+
+- `-MemberType`: 가져올 멤버의 타입을 지정한다.
 
 ### Resolve-Path
 
@@ -327,6 +377,24 @@ Get-Host | Select-Object Version
 Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 ```
 
+### Select-Object
+
+객체나 객체의 프로퍼티를 선택하는 명령어. 보통은 다른 명령어와 파이프라인 입력으로 연결하여 사용한다.
+
+```bash
+# Get-Process에서 입력한 객체의 프로퍼티 중 ProcessName, Id, WS만 출력
+Get-Process | Select-Object -Property ProcessName, Id, WS
+
+# Get-ChildItem의 결과의 처음부터 다섯 건만 출력
+Get-ChildItem | Select-Object -First 5
+```
+
+#### parameters
+
+- `-First`: 선택할 입력 객체의 수를 지정한다.
+- `-Property`: 선택할 프로퍼티를 지정함
+- `-Unique`: (보통은 파이프에 의해) 입력된 객체의 특정 프로퍼티를 기준으로 유일한 멤버만 선택
+
 ### Select-String
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
@@ -336,10 +404,13 @@ Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
 
 # rogue.log 파일을 출력하되 대소문자 구분 없이 'exception'이 포함된 라인만 출력
-Get-Content .\rogue.log | Select-String 'exception'
+Get-Content ./rogue.log | Select-String 'exception'
 
 # 현재 경로의 모든 파일과 디렉터리를 Stream으로 내보내서 'httpd'가 포함된 라인 출력
 Get-ChildItem | Out-String -Stream | Select-String 'httpd'
+
+# detail.js에서 'qwer'가 몇 번 반복되는지 출력 
+(Select-String -Path ./detail.js -Pattern qwer).Matches.Count
 ```
 
 #### parameters

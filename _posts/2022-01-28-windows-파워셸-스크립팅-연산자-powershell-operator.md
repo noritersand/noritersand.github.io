@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [\[Microsoft\] about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
-- [\[Microsoft\] about_Operators 우리말 버전](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
-
+- [\[MSDN\] about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
+- [\[MSDN\] about_Operators 우리말 버전](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
+- [\[MSDN\] Operators and Expressions in Visual Basic](https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/)
 
 ## 개요
 
@@ -32,6 +32,31 @@ tags:
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
+
+
+## 산술 연산자
+
+**TODO** 
+https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators
+
+
+## 비교 연산자
+
+**TODO**
+https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators
+
+
+## 연결 연산자
+
+**TODO**
+https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators
+
+
+## 논리 연산자, 비트 연산자
+
+**TODO**
+- https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators
+- https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/boolean-logical-operators
 
 
 ## [특수 연산자 Special Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2#special-operators)
@@ -51,6 +76,10 @@ cd $(yarn global bin)
 ### Array subexpression operator `@( )`
 
 **TODO**
+
+```bash
+@('*.txt', '*.md') | ForEach-Object { Get-ChildItem -Filter $_ -Recurse }
+```
 
 ### 해시 테이블 리터럴 구문 Hash table literal syntax `@{}`
 
