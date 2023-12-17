@@ -66,23 +66,48 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
   "console.log": {
     "prefix": "cl",
     "body": [
-      "console.log('${1:msg}', $2);"
+      "console.log('${1:msg}:', $2);"
+    ],
+    "description": "Log output to console"
+  }
+}
+```
+
+`prefix` 'cl'에 자동 완성이 반응한다. 'console.log'는 자동 완성 창에 보여질 설명이다.
+
+`body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이것은 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 몲. `${1:msg}`에서 `msg`는 문자 그대로 출력되는 일종의 placeholder다.
+
+### 작성자 저장용 JavaScript User Snippet
+
+```json
+{
+  "console.log": {
+    "prefix": "cl",
+    "body": [
+      "console.log(${1});"
     ],
     "description": "Log output to console"
   },
-  "console.log v2": {
+  "console.log 2": {
     "prefix": "cl2",
     "body": [
-      "console.log('${1:selectme}', ${2:selectme});"
+      "console.log('${1:selectme}:', ${2:selectme});"
     ],
     "description": "Log output to console"
   },
   "console.debug": {
     "prefix": "cd",
     "body": [
-      "console.debug('${1:msg}', $2);"
+      "console.debug(${1});"
     ],
-    "description": "Debugging log output to console"
+    "description": "Log output to console"
+  },
+  "console.debug 2": {
+    "prefix": "cd2",
+    "body": [
+      "console.debug('${1:selectme}:', ${2:selectme});"
+    ],
+    "description": "Log output to console"
   },
   "JS Doc: author and since": {
     "prefix": "@auto",
@@ -99,10 +124,6 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
   }
 }
 ```
-
-`prefix` 'cl'에 자동 완성이 반응한다. 'console.log'는 자동 완성 창에 보여질 설명이다.
-
-`body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이것은 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 몲. `${1:msg}`에서 `msg`는 문자 그대로 출력되는 일종의 placeholder다.
 
 
 ## 추천 확장 기능(플러그인)
@@ -121,7 +142,7 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
 - indent-rainbow `oderwat.indent-rainbow`
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
 - Naming-Shiba `fredkeemhaus.Naming-Shiba`: 한국어 문장을 영문변수명으로 바꿔주는 플러그인. 노매드코더 슬랙 참가자 중 한 명이 말듦. 단축키는 <kbd>ctrl + shift + a</kbd>와 <kbd>ctrl + shift + s</kbd>인데 다른 거랑 겹치니까 딴 걸로 바꿔야 함.
-- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는 발동 <kbd>alt + \\</kbd>, 제안 선택 <kbd>tab</kbd>, 자동 완성 제안 창 보기 <kbd>ctrl + enter</kbd> 가 있음.
+- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는 발동 <kbd>alt + \\</kbd>, 제안 선택 <kbd>tab</kbd>, 자동 완성 제안 창 보기 <kbd>ctrl + enter</kbd>, 코파일럿 빠른 채팅 열기 <kbd>ctrl + shift + i</kbd>, GitHub Copilot View 포커싱 <kbd>alt + shift + p</kbd>가 있다(마지막은 없어서 추가한 거).
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
 
 
@@ -198,6 +219,10 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "alt+oem_3",
     "command": "workbench.action.compareEditor.focusOtherSide"
+  },
+  {
+    "key": "shift+alt+p",
+    "command": "workbench.panel.chat.view.copilot.focus"
   }
 ]
 ```

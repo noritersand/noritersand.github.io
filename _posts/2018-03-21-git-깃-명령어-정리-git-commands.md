@@ -225,6 +225,42 @@ git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1
 ```
 
 
+## cat-file
+
+커밋이나 트리, Blob 등의 Git 객체의 내용을 출력하는 명령어. 일반 사용자보다는 저장소 디버깅이나 저레벨의 저장소 컨트롤에 쓰인다. 
+
+```
+git cat-file <type> <object>
+```
+
+- `<type>`: 출력한 객체의 타입을 지정한다. `blob`, `tree`, `commit`, `tag` 중에 하나여야 한다. 특정 옵션(`-t`, `-s`, `-e`, `-p`)이 사용될 경우 생략한다.
+- `<object>`: 출력할 객체의 이름을 지정한다. 해시값, 브랜치 이름, 태그 이름 등이 올 수 있다.
+
+```bash
+> git cat-file commit HEAD
+tree ea7c8ddae40680c568200315a95a2396b40a3987
+parent 7afef7cd4dd84f9ffe3ccb5c87edbd72b419d3b0
+author noritersand <noritersand@example.com> 1701656020 +0900
+committer noritersand <noritersand@example.com> 1701656020 +0900
+
+> git cat-file -p ea7c8d
+100644 blob a1c2a238a965f004ff76978ac1086aa6fe95caea    .gitignore
+100644 blob 69cbd2c12c118753a225c378ed269e3215ec96bd    README.md
+
+> git cat-file -t 69cbd2
+blob
+```
+
+#### options
+
+- `-p`: 객체 정보를 보기 좋게 출력한다.
+- `-t`: 지정된 객체의 타입을 출력한다. `blob`, `tree`, `commit`, `tag` 중에 하나다.
+- `-s`: 객체의 사이즈를 바이트 단위로 출력한다.
+- `-e`: 지정된 객체가 존재하는지 확인한다. 이 옵션은 존재하지 않는 객체를 지정하지 않는 이상 아무것도 출력하지 않게 한다.
+
+`cat`은 concatenate를 의미한다. 선조들이 사용하던 `cat`은 원래 여러 파일을 '연결'해서 출력하는 명령어였다고...
+
+
 ## checkout
 
 #### 브랜치 전환
@@ -818,6 +854,13 @@ git am FILE
 - `apply`는 `format-patch` 포함 `diff`로 생성한 패치도 적용할 수 있다고 하며(된다는데난외않되😑), 커밋을 생성하지 않는다.
 
 
+## filter-branch
+
+커밋 히스토리를 다시 작성하는 고급 기능.
+
+**TODO** 사용에 주의 필요. [https://git-scm.com/docs/git-filter-branch](https://git-scm.com/docs/git-filter-branch)
+
+
 ## fsck
 
 File System ChecK의 약자. 무결성 검사 수행 도구다.
@@ -974,18 +1017,16 @@ git log [<options>] [<revision range>] [[--] <path>...]
 - `--abbrev-commit`: 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
 - `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
 - `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
-- `--pretty[=<format>]` `--format=<format>`: 지정한 형식으로 보여준다. 이 옵션에는 `oneline`, `short`, `full`, `fuller`, `format`이 있다. `format`은 원하는 형식으로 출력하고자 할 때 사용한다.
+- `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
+- `--pretty=short`: **TODO**
+- `--pretty=full`: 커밋의 최초 생성자(author)와 마지막으로 리베이스 한 사람(commiter)을 표시한다.
+- `--pretty=fuller`: `--pretty=full` 옵션에 더해 커밋 최초 생성 시각(authorDate)과 마지막 리베이스 시각(commitDate)도 출력한다.
+- `--pretty[=<format>]` `--format=<format>`: 지정한 포맷으로 보여준다.
 - `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
 
-```bash
-git log -p -2  # 패치내용을 출력하되 2개의 이력만 표시
-git log --pretty=oneline  # 각 커밋들의 메시지와 체크섬만 한 줄씩 출력된다.
-git log -1 HEAD~3  # 헤드 기준 세 번째 전의 커밋 로그 보기
-git log v1.0 v2.4  # v1.0 태그에서 v2.4 태그 사이의 로그 보기
-git log --oneline --decorate --graph --all  # 현재 브랜치의 모든 커밋 로그를 그래프로 보기
-```
-
 #### pretty=format의 placeholder
+
+placeholder = 포맷 문자를 의미함
 
 - `%H`: Commit hash
 - `%h`: Abbreviated commit hash
@@ -1538,6 +1579,28 @@ git revert fc30cf -m 1
 ```
 
 여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 위 예시에선 `7be20ca`가 메인라인이 되며 `ca433d3`의 변경 사항이 되돌려진다.
+
+
+## rev-parse
+
+커밋이나 브랜치, 태그, 파일같은 Git 저장소 객체(혹은 레퍼런스)의 해시값(=revision)을 계산하고 출력하는 명령어. 일반적으로 쓸 일이 거의 없다.
+
+```
+git rev-parse [<options>] <args>…
+```
+
+가령 특정 파일이나 파일 구조(트리)에 대한 해시를 계산하려면 아래처럼 입력한다:
+
+```bash
+# HEAD의 README.md 파일 해시 출력
+git rev-parse HEAD:README.md
+
+# HEAD의 ./ 디렉터리에 대한 해시 출력. 이 값은 tree 해시와 같다
+git rev-parse HEAD:./
+
+# 대상을 여러 개 지정하기
+git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
+```
 
 
 ## rm

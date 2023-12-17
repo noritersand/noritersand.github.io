@@ -133,7 +133,7 @@ from (
 ISO 같은 잘 알려진 포맷은 [`GET_FORMAT()`](https://mariadb.com/kb/en/get_format/) 함수로 얻을 수 있다:
 
 ```sql
-select get_format(date,'iso'), get_format(datetime,'iso')
+select get_format(date, 'iso'), get_format(datetime, 'iso')
 ```
 
 +----------------------+--------------------------+

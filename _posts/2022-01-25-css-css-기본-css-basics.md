@@ -34,7 +34,7 @@ h1 {
 }
 ```
 
-위 코드에서 `@charset`은 'at-rule' 이라 부른다. `h1`은 셀렉터, `font-size`와 `border-bottom`은 프로퍼티라고 부른다.
+`@charset`과 같은 설정이나 선언은 *at-rule* 이라 부른다. `h1`은 셀렉터, `font-size`, `border-bottom`은 프로퍼티다.
 
 
 ## 스타일 적용하기

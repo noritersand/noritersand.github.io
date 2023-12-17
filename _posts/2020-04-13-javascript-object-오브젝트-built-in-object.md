@@ -1,14 +1,14 @@
 ---
 layout: post
 date: 2020-04-13 09:49:00 +0900
-title: '[JavaScript] Object prototype'
+title: '[JavaScript] Object'
 categories:
   - javascript
 tags:
   - javascript
   - ecmascript
   - Object
-  - standard-built-in-objects
+  - standard-built-in-object
 ---
 
 * Kramdown table of contents

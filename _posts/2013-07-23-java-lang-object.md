@@ -64,9 +64,8 @@ class Doppelganger implements Cloneable {
 
 String의 `equals()` 는 String 클래스에서 오버라이드 된 메서드로 객체가 갖는 문자열 값을 비교하는 반면 이 메서드는 객체 자신의 참조값과 전달인자로 받는 객체의 참조값을 비교하는 차이가 있다.
 
-#### equals의 실제 코드
-
 ```java
+// equals의 실제 코드
 public boolean equals(Object obj) {
     return (this == obj);
 }
@@ -96,7 +95,7 @@ Class 인스턴스를 반환한다. 이 인스턴스는 객체 자신의 클래�
 
 ### hashCode()
 
-객체 자신의 해시코드 반환
+객체 자신의 해시코드(=해시값)를 반환한다. `Object` 클래스의 기본 `hashCode()` 구현은 객체의 메모리 주소나 이와 유사한 방법을 사용하여 해시코드를 생성한다고 한다.
 
 ### wait( [long timeout] [, int nanos] )
 

@@ -107,31 +107,31 @@ Date:   Fri Dec 28 16:05:37 2018 +0900
 ```bash
 PS C:\dev\git\git-test> git log -5
 commit 810000fe555478c43583b12d7142f9ba08d7c016 (HEAD -> main, origin/main, origin/HEAD)
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:29:59 2021 +0900
 
     I added file too.
 
 commit 4def5aa0f82dcaa0be6a17b46372070d939caa3c
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:28:17 2021 +0900
 
     Update 3, 4, 5 lines.
 
 commit d5ecc08e9cf6ed76fd136ab5669af6546162aa8a
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:34:21 2021 +0900
 
     Hello!
 
 commit f29b0b3a7a0b53b5ffe5380e0ed295fa375f99e0
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:26:39 2021 +0900
 
     Create HELLO.md
 
 commit 4991dad214779ae01ee498d1909d95adf0d7c00a
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Wed Feb 10 00:04:22 2021 +0900
 
     update
@@ -175,7 +175,7 @@ squash 810000f I added file too.
 ```bash
 PS C:\dev\git\git-test> git log -3
 commit 87f06d9f47b55abd5220a53170a884e3248759c1 (HEAD -> main)
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:34:21 2021 +0900
 
     Hello!
@@ -185,13 +185,13 @@ Date:   Thu Feb 18 22:34:21 2021 +0900
     I added file too.
 
 commit f29b0b3a7a0b53b5ffe5380e0ed295fa375f99e0
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Thu Feb 18 22:26:39 2021 +0900
 
     Create HELLO.md
 
 commit 4991dad214779ae01ee498d1909d95adf0d7c00a
-Author: noritersand <noritersand@gmail.com>
+Author: noritersand <noritersand@example.com>
 Date:   Wed Feb 10 00:04:22 2021 +0900
 
     update

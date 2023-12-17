@@ -52,7 +52,7 @@ tags:
 
 ### == vs ===
 
-`===`는 일치 연산자 혹은 엄격한 동등 연산자라고 한다. `==`는 동등(equal)을 판단하며 `===`는 일치(identical)하는지 판단한다. 둘은 같음을 정의하는 기준이 다르다. 가령 `===`는 값이 같아도(타입 변환을 통해 같다고 판단되는 값. 가령 1과 '1'은 동등하다.) 타입이 다를 경우 둘이 서로 다른것으로 판단한다. 
+`==`는 *동등 연산자*, `===`는 *일치 연산자* 혹은 *엄격한 동등 연산자*라고 한다. `==`는 equality를 판단하며 `===`는 identical을 판단한다. 두 연산자는 같음을 정의하는 기준이 다르다. 가령 `===`는 값이 같아도(타입 변환을 통해 같다고 판단되는 값. 가령 1과 '1'은 동등하다.) 타입이 다를 경우 둘이 서로 다른것으로 판단한다. 
 
 `==`(동등 연산, equality operator)의 판단 기준:
 - 두 값의 타입이 같은 경우, 두 값이 일치하면 둘은 동등하다.
@@ -159,20 +159,20 @@ var result = (a == 1) && 'equal' || 'not equal';
 console.log(result); // "equal"
 ```
 
-OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 제대로 작동하는 한계가 있지만...
+하지만 OR 연산자의 좌변과 우변이 모두 `true`로 평가되는 값일 때만 제대로 작동하는 한계가 있다.
 
 
-## 비트 연산자
+## 비트 연산자 Bitwise Operator
 
 - `~`: 비트단위 NOT 연산
 - `&`: 비트단위 AND 연산
 - `|`: 비트단위 OR 연산
 - `^`: 비트단위 XOR 연산.
-- `<<`: left shift operator, 왼쪽으로 이동하며 새로운 자리는 0으로 채운다.
-- `>>`: right shift operator, 부호 비트를 확장(유지)하면서 오른쪽으로 이동하며 새로운 자리는 0으로 채운다.
-- `>>>`: unsigned right shift operator, 부호 비트 확장 없이 오른쪽으로 이동. `>>`와 다르게 부호 비트를 무시하기 때문에 좌변의 피연산자가 음수일 경우 결과에서 양수로 바뀐다.
+- `<<`: 왼쪽 시프트
+- `>>`: 오른쪽 시프트
+- `>>>`: 부호 비트 확장 없이 오른쪽 시프트
 
-### XOR 연산 ^
+### Bitwise XOR `^`
 
 XOR은 피연산자들이 같으면 0, 다르면 1을 반환한다. 
 
@@ -186,18 +186,73 @@ Boolean(true ^ 1); // false
 Boolean(false ^ 1); // true 
 ````
 
-### double NOT bitwise operator `~~`
+### Bitwise NOT `~`
+
+1은 0으로, 0은 1로 비트를 반전시키는 연산자
+
+```js
+~0 // -1
+~1 // -2
+~2 // -3
+~3 // -4
+````
+
+#### Double NOT `~~`
 
 - [https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript](https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript)
 - [http://rocha.la/JavaScript-bitwise-operators-in-practice](http://rocha.la/JavaScript-bitwise-operators-in-practice)
 
 ```js
-~~2 === Math.floor(2); //true, 2
-~~2.4 === Math.floor(2); //true, 2
-~~3.9 === Math.floor(3); //true, 3
+~~2 === Math.floor(2); // true
+~~2.4 === Math.floor(2); // true
+~~3.9 === Math.floor(3); // true
 ```
 
-**양수에 한해** `Math.floor()`와 동일한 연산 결과를 반환한다. 가독성이 나쁘고 브라우저에 따라 다르게 작동할 가능성이 있으며 표준도 아니다. 쓰지 말 것.
+양수에 한해 `Math.floor()`와 동일한 연산 결과를 반환한다. 가독성이 나쁘고 브라우저에 따라 다르게 작동할 가능성이 있으며 ECMAScript 표준에도 없다. 쓰지 말자.
+
+### Bitwise left shift `<<`
+
+첫 번째 피연산자를 명시된 비트 수 만큼 왼쪽으로 이동한다. 이동하며 발생하는 오른쪽의 새로운 비트는 0으로 채운다. 2ⁿ으로 곱한 결과와 같다.
+
+```js
+var a = 9;
+a << 2;
+// 9 * (2 ** 2) = 36
+// 1001 << 2 = 100100
+
+a << 3; // 9 * (2 ** 3) = 9 * 8 = 72
+a << 4; // 9 * (2 ** 4) = 9 * 16 = 144
+```
+
+### Bitwise right shift `>>`
+
+부호 비트를 확장(유지)하면서 피연산자를 명시된 비트 수 만큼 오른쪽으로 이동한다. 이동하며 비워지는 왼쪽의 기존 자리는 피연산자가 양수일 때 0으로, 음수일 때 1로 채운다. 2ⁿ으로 나눈 결과와 같다.
+
+```js
+var a = 9;
+a >> 2;
+// 9 / (2 ** 2) = 9 / 4 = 2
+// 1001 >> 2 = 0010
+
+a >> 3; // 9 / (2 ** 3) = 9 / 8 = 1
+
+var b = -9; // 11111111111111111111111111110111
+a >> 2;     // 11111111111111111111111111111101 (10진수로 -3)
+````
+
+### Bitwise unsigned right shift `>>>`
+
+부호 비트 확장 없이 오른쪽으로 이동한다. `>>`와 다르게 부호 비트를 무시한다. 따라서 피연산자가 양수일 땐 `>>`와 같지만, 피연산자가 음수일 땐 양수로 바뀐다.
+
+```js
+var a = 9;
+a >>> 2;
+// 9 / (2 ** 2) = 9 / 4 = 2
+// 1001 >>> 2 = 0010
+
+var b = -9; // 11111111111111111111111110011100
+b >>> 2;    // 00111111111111111111111111111101 (10진수로 1073741821)
+```
 
 
 ## 삼항 연산자 Conditional (ternary) operator `?`
@@ -213,6 +268,21 @@ var a = 1;
 var result = (a == 1) ? "일" : "일 아님";
 console.log(result); // "일"
 ```
+
+
+## 쉼표 연산자 Comma operator
+
+```js
+var x = 1;
+x = x++;
+console.log('x:', x);
+
+var y = 1;
+y = (y++, y);
+console.log('y:', y);
+```
+
+**TODO** [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
 
 
 ## instanceof

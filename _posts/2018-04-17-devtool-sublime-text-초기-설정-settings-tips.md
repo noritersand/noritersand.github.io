@@ -71,7 +71,7 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 <!-- javascript-cl.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.log('${1:msg}:', ${2});
+console.log(${1});
 ]]></content>
   <tabTrigger>cl</tabTrigger>
   <scope>source.js</scope>
@@ -93,9 +93,20 @@ console.log('${1:msg}:', ${2:msg});
 <!-- javascript-cd.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.debug('${1:msg}:', ${2});
+console.log(${1});
 ]]></content>
   <tabTrigger>cd</tabTrigger>
+  <scope>source.js</scope>
+</snippet>
+```
+
+```xml
+<!-- javascript-cd2.sublime-snippet -->
+<snippet>
+  <content><![CDATA[
+console.debug('${1:msg}:', ${2:msg});
+]]></content>
+  <tabTrigger>cd2</tabTrigger>
   <scope>source.js</scope>
 </snippet>
 ```
@@ -222,14 +233,17 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 
 ```json
 [
-  {"keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"}},
-  {"keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"}},
-  {"keys": ["ctrl+shift+k"], "command": "duplicate_line"},
-  {"keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing"},
-  {"keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing"},
-  {"keys": ["ctrl+shift+s"], "command": "save_all"}
+  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
+  { "keys": ["ctrl+shift+s"], "command": "save_all" },
+  { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
+  { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
+  { "keys": ["ctrl+b"], "command": "do_nothing" }
 ]
 ```
+
+걸리적거려서 기본 단축키 몇 개는 끔.
 
 
 ## 기본 단축키

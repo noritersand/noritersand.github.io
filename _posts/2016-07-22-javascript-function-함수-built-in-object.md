@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2016-07-22 19:00:10 +0900
-title: '[JavaScript] Function prototype'
+title: '[JavaScript] Function'
 categories:
   - javascript
 tags:
@@ -26,7 +26,7 @@ tags:
 
 ## 개요
 
-`Function` 프로토타입의 프로퍼티와 메서드를 정리한 글.
+표준 내장 객체 `Function`의 프로퍼티와 메서드를 정리한 글.
 
 
 ## 인스턴스 메서드
