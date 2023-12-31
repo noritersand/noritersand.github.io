@@ -1407,6 +1407,14 @@ $ git reflog -5
 git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머지
 ```
 
+`reflog` 명령의 옵션, 특히 출력 모양 관련 옵션은 `log`의 옵션과 동일하다. `log` 쪽을 살펴볼 것.
+
+예를 들어 지난 10개의 헤드 이동 이력을 리플로그 메시지, 커밋 메시지, 커밋 생성자(author), 커밋 생성 시간과 함께 표시하려면 `--pretty` 옵션을 덧붙인다.
+
+```bash
+git reflog -10 --pretty
+```
+
 
 ## remote
 

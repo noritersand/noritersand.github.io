@@ -207,7 +207,9 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 ### Get-ChildItem
 
-기본 별칭 `ls`
+지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 아이템은 파일이나 디렉터리 중 하나다. 기본 별칭은 `ls`. 
+
+파라미터 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
 
 ```bash
 # 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
@@ -382,11 +384,14 @@ Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 객체나 객체의 프로퍼티를 선택하는 명령어. 보통은 다른 명령어와 파이프라인 입력으로 연결하여 사용한다.
 
 ```bash
+# Get-ChildItem 결과의 처음부터 다섯 건만 출력
+Get-ChildItem | Select-Object -First 5
+
+# Get-ChildItem(=ls)으로 가져온 SOME_FILE의 객체 정보 중 디렉터리와 파일이름만 출력 
+ls SOME_FILE | Select-Object -Property Directory, Name
+
 # Get-Process에서 입력한 객체의 프로퍼티 중 ProcessName, Id, WS만 출력
 Get-Process | Select-Object -Property ProcessName, Id, WS
-
-# Get-ChildItem의 결과의 처음부터 다섯 건만 출력
-Get-ChildItem | Select-Object -First 5
 ```
 
 #### parameters

@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2017-05-03 19:31:00 +0900
-title: '[DBMS] Oracle: 년, 월을 입력받아 달력 출력'
+title: '[Oracle Database] 년, 월을 입력받아 달력 출력'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

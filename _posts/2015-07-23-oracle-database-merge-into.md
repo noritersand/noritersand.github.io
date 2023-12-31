@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-07-23 23:37:00 +0900
-title: '[DBMS] Oracle: merge into'
+title: '[Oracle Database] merge into'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-04-28 21:21:00 +0900
-title: '[DBMS] Oracle: 컬럼 병합'
+title: '[Oracle Database] 컬럼 병합'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

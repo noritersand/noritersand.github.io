@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-04-09 20:07:00 +0900
-title: '[DBMS] Oracle: connect by로 날짜 데이터 만들기'
+title: '[Oracle Database] connect by로 날짜 데이터 만들기'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

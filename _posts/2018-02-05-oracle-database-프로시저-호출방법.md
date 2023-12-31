@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2018-02-05 15:25:02 +0900
-title: '[DBMS] Oracle: 프로시저 호출방법'
+title: '[Oracle Database] 프로시저 호출방법'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

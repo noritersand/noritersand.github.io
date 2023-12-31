@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2014-07-21 18:44:00 +0900
-title: '[DBMS] Oracle: 재귀 구조를 갖는 데이터의 경로 출력'
+title: '[Oracle Database] 재귀 구조를 갖는 데이터의 경로 출력'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

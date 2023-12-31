@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2018-10-26 15:40:00 +0900
-title: '[DBMS] Oracle: 유니코드 구분하기'
+title: '[Oracle Database] 유니코드 구분하기'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-04-28 03:29:00 +0900
-title: '[DBMS] Oracle: 날짜별 통계 + 컬럼 병합'
+title: '[Oracle Database] 날짜별 통계 + 컬럼 병합'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle

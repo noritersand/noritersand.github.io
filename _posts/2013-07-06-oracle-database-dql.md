@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2013-07-06 18:53:00 +0900
-title: '[DBMS] Oracle: DQL'
+title: '[Oracle Database] DQL'
 categories:
-  - dbms
+  - oracle
 tags:
   - dbms
   - oracle
