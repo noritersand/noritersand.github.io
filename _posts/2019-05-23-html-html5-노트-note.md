@@ -208,7 +208,7 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 **TODO**
 
-### input 태그에서 엔터키로 submit 이벤트를 발동시키는 조건
+### input 태그가 엔터로 submit 이벤트를 발동시키는 조건
 
 1. `<form>` 태그가 직계 조상으로 존재해야 한다.
 2. `<button type="submit">` 혹은 `<input type="submit">` 태그가 있어야 한다.

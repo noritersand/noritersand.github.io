@@ -140,7 +140,8 @@ console.log(`${plainObject}`); // Uncaught TypeError: can't convert plainObject 
 ### Object.assign()
 
 ```
-Object.assign(target, ...sources)
+Object.assign(target, source1)
+Object.assign(target, source1, source2, ...)
 ```
 
 주어진 객체 고유의 열거 가능한 모든 프로퍼티를 `target`에 복사한다. `target`의 원본이 변화(mutating)하며, 변화된 `target`을 반환한다.
@@ -265,7 +266,7 @@ console.log(freezeMe2); // Object { a: 1, b: 2, c: { d: 4 } }
 ### Object.prototype.propertyIsEnumerable()
 
 ```
-obj.propertyIsEnumerable(propertyName)
+object.propertyIsEnumerable(propertyName)
 ```
 
 `propertyName`와 같은 이름의 프로퍼티가 `obj`의 열거 가능한 자체 프로퍼티(enumerable own property)로 존재하는지를 불리언 값으로 반환한다.

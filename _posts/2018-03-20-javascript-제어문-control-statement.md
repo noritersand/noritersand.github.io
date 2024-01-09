@@ -118,7 +118,7 @@ switch (flag) {
     console.log(foo);
     break;
 }
-````
+```
 
 같은 스코프에서 `foo`를 두 번 선언하는 꼴이 되어 `SyntaxError`를 발생시킨다. 만약 `case` 절마다 각각의 스코프를 생성하고 싶을 땐 중괄호`{}`를 사용한다:
 

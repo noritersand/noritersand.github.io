@@ -148,12 +148,10 @@ console.log(mySet.values()); // Set Iterator { 1, 2, 3 }
 ### Set.prototype.forEach()
 
 ```
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
-```
+set.forEach(callbackFn)
+set.forEach(callbackFn, thisArg)
 
-```
-function callback(value, key, set)
+function callbackFn(value, key, set) {}
 ```
 
 인스턴스의 요소가 추가된 순서대로 반복하며 제공된 함수를 호출한다. 다른 메서드들이 그런것 처럼, 키가 없기 때문에 `key`에는 값이 할당된다.

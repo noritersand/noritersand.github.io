@@ -44,6 +44,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 ### 패키지 설치와 제거
 
+설치 시 관리자 권한 필요함.
+
 ```bash
 # winscp 설치
 choco install winscp

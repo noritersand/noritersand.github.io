@@ -188,7 +188,7 @@ unboundFn2(); // Window
 var boundFn2 = unboundFn2.bind(null);
 boundFn2(); // Window
 
-// 반면 엄격모드에선
+// 반면 엄격 모드에선
 function strictFn2() {
   'use strict';
   return this;

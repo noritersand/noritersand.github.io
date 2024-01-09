@@ -184,7 +184,7 @@ XOR은 피연산자들이 같으면 0, 다르면 1을 반환한다.
 
 Boolean(true ^ 1); // false
 Boolean(false ^ 1); // true 
-````
+```
 
 ### Bitwise NOT `~`
 
@@ -195,7 +195,7 @@ Boolean(false ^ 1); // true
 ~1 // -2
 ~2 // -3
 ~3 // -4
-````
+```
 
 #### Double NOT `~~`
 
@@ -238,7 +238,7 @@ a >> 3; // 9 / (2 ** 3) = 9 / 8 = 1
 
 var b = -9; // 11111111111111111111111111110111
 a >> 2;     // 11111111111111111111111111111101 (10진수로 -3)
-````
+```
 
 ### Bitwise unsigned right shift `>>>`
 
@@ -520,14 +520,27 @@ obj2.fn?.(); // undefined
 obj2.foo?.(); // 'bar'
 ```
 
-`?.`는 앞(좌측)의 프로퍼티(혹은 루트 객체)가 `undefined`나 `null`이 아닌 경우에만 연산을 수행한다:
+`?.`는 앞(좌측)의 피연산자(프로퍼티 혹은 객체)가 `undefined`나 `null`이 아닌 경우에만 연산을 수행한다:
 
 ```js
 undefined.foo; // Uncaught TypeError: can't access property "foo" of undefined
 undefined?.foo; // undefined
 ```
 
-이 점을 활용하면 함수 반환값의 체크를 생략할 수 있다:
+이 점을 활용하면 함수 호출식에서 함수의 존재를 판단하거나: 
+
+```js
+var obj = {
+  foo() {
+    return 'hello?'
+  }
+}
+obj.foo?.(); // hello?
+obj.bar?.(); // undefined
+obj?.bar(); // 잘못된 사용법. TypeError 발생함
+```
+
+함수 반환값의 safe 체크를 생략할 수 있다:
 
 ```js
 function fn() {

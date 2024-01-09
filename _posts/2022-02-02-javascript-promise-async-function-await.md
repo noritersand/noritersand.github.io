@@ -449,7 +449,7 @@ let data = await undefined
 ```js
 // wrong
 let data = await Promise.resolve(undefined);
-````
+```
 
 이제 우변은 `await`에 의해 Promise의 이행값 `undefined`가 된다.
 

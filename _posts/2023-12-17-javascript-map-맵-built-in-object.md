@@ -42,7 +42,7 @@ m2.set('c', 1);
 m2.set('a', 1);
 
 log(m2.keys()); // MapIterator { "b", "c", "a", }
-````
+```
 
 ## 인스턴스 프로퍼티
 
@@ -53,8 +53,10 @@ Map에 저장된 데이터의 수를 반환하는 `size` 하나가 끝.
 
 ### Map.groupBy()
 
-```js
+```
 Map.groupBy(items, callbackFn)
+
+function callbackFn(element, index) {}
 ```
 
 `Map`을 이용한 그룹화 함수. 배열과 사용자 정의 함수를 인자로 받으며, 배열의 구성요소를 사용자 정의 함수에서 반환한 값으로 묶어 `Map` 타입으로 반환한다:
@@ -161,11 +163,9 @@ console.log(m.values()); // Map Iterator { 1, 2 }
 ### Map.prototype.forEach()
 
 ```
-forEach(callbackFn)
-forEach(callbackFn, thisArg)
-```
+map.forEach(callbackFn)
+map.forEach(callbackFn, thisArg)
 
-```
 function callbackFn(value, key, map)
 ```
 
@@ -189,7 +189,7 @@ m.forEach((value, key, map) => {
 // value: 2
 // key: b
 // map: Map(2) { "a": 1, "b": 2, }
-````
+```
 
 같은 이름인 `Array.prototype.forEach()`와 비교하면 콜백 함수 파라미터에서 차이가 있다(`Array`는 `(element, index, object)`).
 
