@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-- [\[MDN\] Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+- [MDN | Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- [MDN | Object prototypes](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 
 
 ## 개요
@@ -210,7 +210,7 @@ Object.freeze(obj)
 
 - `obj`: `obj`의 프로퍼티들은 쓰기 불가(non-writable), 설정 불가(non-configurable) 상태가 된다.
 
-이 메서드는 얼려(?)진 `obj`를 반환하는데, 파라미터로 주어진 객체와 일치한다.
+이 메서드는 파라미터로 주어진 객체를 얼려서🥶 반환한다.
 
 ```js
 var beer = { temperature: -1 };
@@ -218,7 +218,7 @@ var o = Object.freeze(beer);
 console.log(beer === o); // true
 ```
 
-한 번 얼려진 객체는 프로퍼티를 추가하거나 재할당 할 수 없다:
+한 번 얼은 객체는 프로퍼티를 추가하거나 재할당 할 수 없다:
 
 ```js
 var icecream = Object.freeze({a: 1, b: 2});

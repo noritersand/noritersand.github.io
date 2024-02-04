@@ -18,7 +18,7 @@ tags:
 
 #### 참고 문서
 
-- [\[Microsoft\] Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.4)
+- [Microsoft | Cmdlet 개요](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.4)
 
 
 ## 개요

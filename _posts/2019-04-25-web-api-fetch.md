@@ -15,15 +15,15 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
-- [\[MDN\] Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [\[MDN\] Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [\[MDN\] Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
-- [\[MDN\] FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
+- [MDN | fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+- [MDN | Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [MDN | Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [MDN | Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
+- [MDN | FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 - [Fetch Living Standard](https://fetch.spec.whatwg.org/)
-- [\[MDN\] Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
-- [\[MDN\] Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-- [\[MDN\] Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+- [MDN | Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+- [MDN | Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+- [MDN | Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 #### 브라우저 호환
 
@@ -42,42 +42,38 @@ fetch(resource)
 fetch(resource, options)
 ```
 
-대충 간단한 사용법은:
+대충 간단한 사용법은 아래와 같다:
 
 ```js
-let params = {
-  foo: 'bar',
-  numeric: 1234567890,
-  user: 'waldo'
-};
-
-let init = {
+let options = {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json; charset=UTF-8',
   },
-  body: JSON.stringify(params)
+  body: JSON.stringify({
+    foo: 'bar',
+    numeric: 1234567890
+  })
 };
 
-fetch('/get-my-request-body.data', init).then(
-  response => response.text() // .json(), etc.
-  // same as function(response) {return response.text();}
-).then(text => {
-  console.log(text);
+fetch('/return-my-request-body.data', options).then(resp => {
+  console.log('first then:', resp); // Response { type: "basic", status: 200, ok: true, statusText: "OK", ... }
+
+  resp.text().then((text) => {
+    console.log('second then', text); // {"foo":"bar","numeric":1234567890}
+  });
 });
 ```
 
-요로케 됨.
+`fetch()`의 반환값이 Promise인 건 그럴 수 있는데, `text()` 까지 Promise인 건 특이하다.
 
-`await` 방식으로 바꾸려면 두 번 기다려야 함:
+`await` 방식으로 바꾸면 아래와 같은 모양이 된다:
 
 ```js
 let response = await fetch('/get-my-request-body.data', init);
 let json = await response.json();
 console.log(json);
 ```
-
-`fetch()`에서 반환하는 `response`도 promise이기 때문.
 
 
 ## Headers
@@ -95,6 +91,18 @@ console.log(json);
 ## Response
 
 **TODO**
+
+### Response.prototype.text()
+
+https://developer.mozilla.org/en-US/docs/Web/API/Response/text
+
+응답값을 문자열로 반환하는 메서드. 이 메서드의 실제 반환값은 Promise 객체이며, 이 객체의 이행 값이 응답값이다.
+
+### Response.prototype.json()
+
+https://developer.mozilla.org/en-US/docs/Web/API/Response/json
+
+`Response.prototype.text()` 메서드와 비슷한데, 이 쪽은 응답값이 문자열 대신 자바스크립트 객체로 반환된다는 점이 다르다. 실제 반환값이 Promise 객체라는 것은 동일하다.
 
 ### Response.prototype.blob()
 

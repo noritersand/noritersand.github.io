@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
+- [MDN | Strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
 - [http://www.w3schools.com/js/js_strict.asp](http://www.w3schools.com/js/js_strict.asp)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
@@ -36,11 +36,9 @@ function test() {
 }
 
 (function() {
-  'use strict';
-  x = 1;
-})(); // ReferenceError: assignment to undeclared variable x
-
-// 스크립트 시작 부분에 지시어가 없으면 엄격 모드가 적용되지 않음.
+  'use strict'; // 여기도 엄격 모드
+  x = 1; // 그래서 ReferenceError 발생함: assignment to undeclared variable x
+})();
 ```
 
 `use strict`를 함수 머리에 작성하면 엄격 모드의 적용 범위는 해당 함수로 제한된다. 위 예시의 경우 최상위 스코프는 엄격 모드가 적용되지 않는다.

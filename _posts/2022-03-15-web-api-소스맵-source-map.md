@@ -13,7 +13,7 @@ tags:
 #### 참고 문서
 
 - [Introduction to JavaScript Source Maps](https://www.html5rocks.com/en/tutorials/developertools/sourcemaps/)
-- [\[MDN\] Use a source map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map)
+- [MDN | Use a source map](https://developer.mozilla.org/en-US/docs/Tools/Debugger/How_to/Use_a_source_map)
 - [자바스크립트와 커피스크립트에서 소스맵(source map) 사용하기](https://blog.outsider.ne.kr/916)
 
 

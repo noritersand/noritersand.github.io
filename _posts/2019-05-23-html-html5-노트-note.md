@@ -65,8 +65,8 @@ HTML5 관련 다 모음.
 
 ## data-* custom data attributes
 
-- [\[MDN\] data-\*](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
-- [\[MDN\] HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)                             
+- [MDN | data-\*](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
+- [MDN | HTMLElement.dataset](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)                             
 - [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
 - [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
 
@@ -140,7 +140,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ## button
 
-- [\[MDN\] \<button\>: The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+- [MDN | \<button\>: The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
 - [https://www.w3schools.com/tags/tag_button.asp](https://www.w3schools.com/tags/tag_button.asp)
 
 `<button>`태그에 type 속성을 명시하지 않을 경우 type의 기본값은 submit으로 설정된다. 이 때문에 `<form>`안에 위치하게 되면 버튼 클릭 시 `HTMLFormElement.submit()` 메서드가 작동하게 된다.
@@ -156,7 +156,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ## form
 
-- [\[MDN\] \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [MDN | \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - [https://www.w3schools.com/tags/tag_form.asp](https://www.w3schools.com/tags/tag_form.asp)
 
 **TODO**
@@ -271,7 +271,7 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 ## 취소선(strike through line) 표현하기
 
-- [\[MDN\] HTML reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
+- [MDN | HTML reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
 - [w3schools: HTML Element Reference](https://www.w3schools.com/tags/default.asp)
 
 HTML5 전에는 취소선을 표현하는 태그로 `<strike>`가 있었으나 HTML5부터 `<s>`, `<del>` 태그로 대체되었다.

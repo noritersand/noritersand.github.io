@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
+- [MDN | void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
 
 #### 테스트 환경
 

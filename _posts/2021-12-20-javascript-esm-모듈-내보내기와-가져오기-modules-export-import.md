@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-- [\[MDN\] import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-- [\[MDN\] export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+- [MDN | JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [MDN | import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [MDN | export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 
 #### 브라우저 호환
 
@@ -386,7 +386,4 @@ try {
 console.log(this); // undefined
 ```
 
-모듈에서 `this`는 `undefined`를 반환한다. (엄격 모드와는 상관 없다)
-
-
-끝. 🥱
+모듈의 최상위 스코프에서 `this`는 `undefined`를 반환한다. (엄격 모드와는 상관 없다)

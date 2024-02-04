@@ -223,6 +223,16 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "shift+alt+p",
     "command": "workbench.panel.chat.view.copilot.focus"
+  },
+  {
+    "key": "ctrl+shift+oem_2",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "-editor.action.blockComment",
+    "when": "editorTextFocus && !editorReadonly"
   }
 ]
 ```
@@ -248,7 +258,7 @@ Add Selection
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
 - <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
-- <kbd>ctrl + shift + l</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
+- <kbd>ctrl + shift + l</kbd>: Select All Occurrences of Find Match. 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>alt + shift + i</kbd>: add cursors to line ends 선택한 영역에서 각 라인마다 캐럿 분리
 
 ### Code Folding

@@ -9,6 +9,8 @@ tags:
   - ssh
   - terminal
   - powershell
+  - sftp
+  - scp
 ---
 
 * Kramdown table of contents
@@ -16,9 +18,9 @@ tags:
 
 #### 참고 문서
 
-- [\[Microsoft\] Windows의 OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_overview)
-- [\[Microsoft\] OpenSSH 설치](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
-- [\[Microsoft\] OpenSSH 키 관리](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_keymanagement)
+- [Microsoft | Windows의 OpenSSH](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_overview)
+- [Microsoft | OpenSSH 설치](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_install_firstuse)
+- [Microsoft | OpenSSH 키 관리](https://docs.microsoft.com/ko-kr/windows-server/administration/openssh/openssh_keymanagement)
 
 
 ## 개요

@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2022-01-17 18:49:33 +0900
-title: '[React] 리액트 네이티브 개발 환경 구성'
+title: '[React Native] 리액트 네이티브 개발 환경 구성'
 categories:
-  - react
+  - react-native
 tags:
   - react
   - react-native
@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [\[React Native\] Introduction](https://reactnative.dev/docs/getting-started)
-- [\[React Native\] APIs](https://reactnative.dev/docs/accessibilityinfo)
-- [\[React Native\] Setting up the development environment](https://reactnative.dev/docs/environment-setup)
+- [React Native | Introduction](https://reactnative.dev/docs/getting-started)
+- [React Native | APIs](https://reactnative.dev/docs/accessibilityinfo)
+- [React Native | Setting up the development environment](https://reactnative.dev/docs/environment-setup)
 
 #### 테스트 환경 정보
 

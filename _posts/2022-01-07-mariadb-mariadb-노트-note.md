@@ -377,6 +377,8 @@ CTE는 Non-Recursive와 Recursive 두 종류가 있다.
 
 Recursive CTE는 `WITH RECURSIVE` 키워드로 표현하고(MariaDB 10.2.2부터 지원) 재귀적 결과 집합을 생성할 때 사용한다.
 
+### WITH RECURSIVE 사용 예시 #1
+
 아래는 특정 날짜부터 오늘까지의 날짜 데이터를 임시 테이블로 생성하는 쿼리다:
 
 ```sql
@@ -392,6 +394,51 @@ select * from dates
 ```
 
 간단히 설명하면, `dates`라는 이름의 CTE를 정의하고, `select '2023-03-11'`를 `date` 컬럼의 초기값으로 설정한다. 그리고 `union all` 다음에 오는 쿼리에서 `dates`와 `date`를 활용해 점점 증가하는 데이터를 만들고 `where date < curdate()`에서 종료 지점을 정의한다.
+
+### WITH RECURSIVE 사용 예시 #2
+
+```sql
+create table employees (
+    employeeNo int primary key,
+    name varchar(100),
+    managerNo int,
+    foreign key (managerNo) references employees(employeeNo) on delete cascade
+);
+
+insert into employees values (1001, 'A', null); -- 0
+insert into employees values (1002, 'B', 1001); -- 1
+insert into employees values (1003, 'C', 1001); -- 1
+insert into employees values (1004, 'D', 1002); -- 2
+insert into employees values (1005, 'E', 1002); -- 2
+insert into employees values (1006, 'F', 1004); -- 3
+insert into employees values (1007, 'G', 1004); -- 3
+```
+
+이런 테이블과 데이터가 있을 때, 계층적으로 조회하려면 다음처럼 작성한다:
+
+```sql
+with recursive subordinates as (
+    select
+        employeeNo, name, managerNo,
+        0 as level
+    from employees
+    where managerNo is null
+#     where employeeNo = 재귀탐색을_시작할_번호
+    union all
+    select
+        child.employeeNo, child.name, child.managerNo,
+        subordinates.level + 1
+    from employees child
+    inner join subordinates on child.managerNo = subordinates.employeeNo
+)
+select *
+from subordinates
+order by employeeNo
+```
+
+`managerNo`가 `null`인 데이터를 초기값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
+
+특정 `employeeNo`부터 탐색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where managerNo is null` 부분을 코멘트 처리하면 된다.
 
 
 ## DELETE와 TRUNCATE의 차이

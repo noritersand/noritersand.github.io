@@ -67,10 +67,10 @@ choco uninstall mysql-cli
 
 ```bash
 # Chocolatey로 설치한 패키지 목록 출력
-choco list --local
+choco list
 
-# Chocolatey로 설치한 것과 그렇지 않은것 모두 출력
-choco list -li
+# Chocolatey로 설치한 것과 그렇지 않은 것 모두 출력
+choco list -i
 ```
 
 ### 패키지 버전 업그레이드

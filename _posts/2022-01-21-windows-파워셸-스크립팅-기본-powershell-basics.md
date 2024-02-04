@@ -17,10 +17,10 @@ tags:
 
 #### 참고 문서
 
-- [\[Microsoft\] PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
-- [\[Microsoft\] PowerShell 설명서](https://aka.ms/powershell)
-- [\[Microsoft\] Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
-- [\[Microsoft\] Microsoft.PowerShell.Core](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
+- [Microsoft | PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
+- [Microsoft | PowerShell 설명서](https://aka.ms/powershell)
+- [Microsoft | Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
+- [Microsoft | Microsoft.PowerShell.Core](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
 
 
 ## 개요
@@ -169,12 +169,12 @@ gv abc
 
 ## 명령어 Cmdlet
 
-[\[이 블로그 내부 링크\] 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+[이 블로그 내부 링크 | 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 
 ## 연산자
 
-[\[이 블로그 내부 링크\] 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+[이 블로그 내부 링크 | 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
 
 
 ## 제어문

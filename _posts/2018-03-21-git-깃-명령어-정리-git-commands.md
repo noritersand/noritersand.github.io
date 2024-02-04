@@ -775,8 +775,9 @@ index 6494d80,862c24c..0000000
 
 ## diff-tree
 
-'두 개의 트리 개체를 통해 블롭의 내용과 모드를 비교'한다고 한다. (뭔 소린지...)  
-대충 커밋끼리 파일 단위로 어떻게 다른지 표시해주는 명령어라고 보면 됨.
+'두 개의 트리 개체를 통해 blob의 내용과 모드를 비교'한다고 한다. (뭔 소린지...)
+
+대충 파일 단위로 커밋끼리 어떻게 다른지 표시해주는 명령어라고 보면 됨.
 
 ```bash
 git diff-tree -p feature  # 현재 브랜치 기준으로 feature 브랜치의 차이점 출력
@@ -1197,7 +1198,7 @@ git merge --squash TARGET_BRANCH
 
 머지할 브랜치의 커밋 이력을 하나로 압축한 별도의 커밋을 만들고 헤드 브랜치에 머지한다. 일반 머지와 다르게 하나의 부모커밋(헤드 브랜치 기준)만 갖는다.
 
-[\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
+[이 블로그 내부 링크 | Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 
 ## mv
@@ -1379,7 +1380,7 @@ pick 7715f75fa (HEAD)
 #### rebase로 커밋 합치기
 
 - [누구나 쉽게 이해할 수 있는 Git 입문: rebase -i 로 커밋 모두 통합하기](https://backlog.com/git-tutorial/kr/stepup/stepup7_5.html)
-- [\[이 블로그 내부 링크\] Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
+- [이 블로그 내부 링크 | Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 
 ## reflog
@@ -1632,8 +1633,8 @@ git rm --cached readme.txt
 #### file-glob 패턴으로 범위삭제
 
 ```bash
-git rm log/\*.log  # log/디렉터리의 확장명이 log인 파일 모두 삭제
-git rm \*.~  # ~로 끝나는 파일 모두 삭제
+git rm log/*.log  # log/디렉터리의 확장명이 'log'인 파일 모두 삭제
+git rm *md  # 이름이 'md'로 끝나는 파일 모두 삭제
 ```
 
 

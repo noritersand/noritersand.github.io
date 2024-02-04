@@ -15,12 +15,12 @@ tags:
 
 #### 참고 문서
 
-- [\[MDN\] Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [\[MDN\] Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
-- [\[web.dev\] JavaScript Promises: 소개](https://web.dev/promises/)
-- [\[MDN\] async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-- [\[MDN\] await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-- [\[MDN\] Making asynchronous programming easier with async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
+- [MDN | Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [MDN | Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [web.dev | JavaScript Promises: 소개](https://web.dev/promises/)
+- [MDN | async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [MDN | await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [MDN | Making asynchronous programming easier with async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 
 #### 테스트 환경 정보
 
@@ -135,14 +135,14 @@ willBeFail2.catch((reason) => {
 var pr3 = new Promise((resolve, reject) => {
   reject('rejection reason');
 })
-var pr4 = pr3.then(() => {
-  console.log('moo');
+var pr4 = pr3.then(msg => {
+  console.log('pr3-msg:', msg); // 실행 안됨
 })
-var pr5 = pr4.catch((message) => {
-  console.log('ya');
+var pr5 = pr4.catch(msg => {
+  console.log('pr4-msg:', msg); // pr4-msg: rejection reason
 });
-var pr6 = pr5.then(() => {
-  console.log('ho');
+var pr6 = pr5.then(msg => {
+  console.log('pr5-msg:', msg); // pr5-msg: undefined
 });
 
 console.log(pr3); // Promise { <state>: "rejected", <reason>: "rejection reason" }
@@ -151,7 +151,7 @@ console.log(pr5); // Promise { <state>: "fulfilled", <value>: undefined }
 console.log(pr6); // Promise { <state>: "fulfilled", <value>: undefined }
 ```
 
-**주의: 각 메서드가 반환하는 객체는 다 다른 인스턴스**
+주의: `pr3`, `pr4`, `pr5`, `pr6`은 다 다른 인스턴스다.
 
 #### 에러 처리
 
@@ -225,7 +225,7 @@ new Promise((resolve, reject) => {
 
 ### setTimeout()을 Promise로 감싸기
 
-비동기 함수인 주제에 태고부터 존재했단 이유로 Promise를 반환하지 않는 건방진 API를 감싸는 방법이다😏:
+비동기 함수이지만 Promise를 반환하지 않는 API를 감싸는 방법이다:
 
 ```js
 var wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -259,7 +259,7 @@ async function fn() {}
 
 `async` 키워드를 사용해 선언하는 함수. 함수가 실제로 어떤 값을 반환하는지 여부에 관계없이 항상 Promise를 반환한다.
 
-async 함수가 반환한 값은 Promise의 숨겨진 프로퍼티에 저장되기 때문에 꺼내려면 `.then()`이 필요함:
+`return` 키워드로 반환한 값은 Promise의 숨겨진 프로퍼티에 저장되기 때문에 꺼내려면 `.then()`이나 `await`이 필요하다.
 
 ```js
 var hello = async () => {

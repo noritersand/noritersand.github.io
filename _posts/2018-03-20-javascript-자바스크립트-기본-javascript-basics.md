@@ -19,9 +19,9 @@ tags:
 - [TC39 – Specifying JavaScript.](https://tc39.es/)
 - [ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
 - [ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-- [\[MDN\] Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
-- [\[MDN\] Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-- [\[MDN\] Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [MDN | Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
+- [MDN | Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [MDN | Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 - [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 
@@ -283,6 +283,7 @@ const  float  long  short  volatile
 - `string`: 문자열을 표현하는데 사용되는 데이터 타입이다. 자바스크립트의 문자열은 16비트 유니코드 문자들의 연결 구조이기도 하다. 즉 문자열이라 함은 문자 하나하나가 연결되어 하나의 표현을 이루는 데이터를 말하는 것이다.
 - `null`, `undefined`: `null`은 아무 값도 갖지 않거나(no value) 객체가 아닌 것을 의미하는 특수한 객체 값이다. 반면 undefined는 값 자체가 없음을 나타낸다. 초기화되어 있지 않거나 존재하지 않는 객체 프로퍼티 혹은 배열의 원소값에 접근하려고 할 때 얻는 값이다. `null`과 `undifined`는 둘 다 값이 없음을 가리키고 `false`로 판정된다. 동등 비교`==`에서 둘은 같다고 간주하지만 엄격한 동등 비교`===`에선 다른것으로 나온다.
 - `symbol`: ES2015에서 처음 정의된 데이터 타입. 고유함(unique)이 보장되며 객체에 고유한 키를 속성으로 추가할 때 많이 쓰인다.
+- `bigint`: ES2020 이후 추가된 정수형 원시 데이터 타입. 아주 큰 정수를 다룰 때 사용하며, 정수 리터럴의 뒤에 `n`을 붙이거나 `BigInt()`를 호출해 생성한다.
 - `object`: 일반적인 값이 아닌 다른 객체의 참조값을 갖는 데이터 타입. `Array`, `Date`, `RegExp`, `Error` 등이 object 타입이다.
 - `function`: 함수 타입. 자바스크립트에서 함수는 `Function` 프로토타입의 인스턴스를 의미한다.
 
