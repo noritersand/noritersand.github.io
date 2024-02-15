@@ -251,7 +251,7 @@ committer noritersand <noritersand@example.com> 1701656020 +0900
 blob
 ```
 
-#### options
+#### Options
 
 - `-p`: 객체 정보를 보기 좋게 출력한다.
 - `-t`: 지정된 객체의 타입을 출력한다. `blob`, `tree`, `commit`, `tag` 중에 하나다.
@@ -405,7 +405,7 @@ git cherry-pick 376361 # 현재 브랜치에 376361 커밋의 변경 사항을 �
 git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가장 마지막 커밋의 변경 사항을 반영한 신규 커밋 생성
 ```
 
-#### options
+#### Options
 
 - `-n` `--no-commit`: 커밋을 만들지 않은 상태로 체리픽 한다.
 - `-x`: 체리픽 할 때 선택한 커밋을 `cherry pick from commit ...`와 함께 메시지에 추가한다.
@@ -434,7 +434,7 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 `clean.requireForce` 설정이 `true`가 아니면 `clean` 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 기본적으로 현재 폴더를 기준으로 하위를 재귀탐색하기 때문에 recursive 옵션은 따로 없다.
 
-#### options
+#### Options
 
 - `-f` `--force`: 삭제 기본 옵션. 설정에 따라 생략할 수도 있다.
 - `-i` `--interactive`: 대화 모드로 삭제
@@ -477,7 +477,7 @@ staged 상태인 파일을 깃 디렉터리에 저장한다. 커밋 메시지를
 git commit
 ```
 
-#### options
+#### Options
 
 - `--allow-empty`: 변경 사항이 없는 커밋 생성을 허용하는 옵션. 훅이라던지 테스트가 필요할 때 사용한다.
 - `--allow-empty-message`: 메시지 없는 커밋 생성을 허용하는 옵션. 안쓰는게 좋다.
@@ -542,7 +542,7 @@ git commit -C HEAD --amend
 
 깃 저장소의 설정을 조회/관리하는 명령어.
 
-#### options
+#### Options
 
 - `--local`: 저장소별 설정을 의미한다. 옵션을 생략했을 때의 기본값이지만, 다른 옵션 조합에 따라 기본값이 아닐 때도 있다.
 - `--global`: 현재 로그인한 유저의 설정.
@@ -617,7 +617,7 @@ git config --global alias.unhide 'update-index --no-assume-unchanged'
 git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
 git config --global alias.f 'fetch'
 git config --global alias.fp 'fetch --prune'
-git config --global alias.log2 'log --all --graph --pretty=oneline'
+git config --global alias.log-all 'log --all --graph --pretty=oneline'
 git config --global alias.log-graph 'log --graph --pretty=oneline'
 git config --global alias.log-oneline 'log --pretty=oneline'
 ```
@@ -674,7 +674,7 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 지정한 영역끼리의 변경 사항을 출력한다.
 
-#### options
+#### Options
 
 - `--check`: 충돌(conflict) 문자 혹은 공백 오류가 있는지 확인
 - `--name-only`: 변경된 파일의 이름만 출력
@@ -786,7 +786,7 @@ git diff-tree -p feature master  # 현재 feature 브랜치 기준으로 master 
 
 **TODO** 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 결과가 다른데 왜 그런지 몲. 😒
 
-#### options
+#### Options
 
 - `-m`: `diff-tree`는 기본적으로 머지 커밋과의 차이점은 생략하는데, 이 옵션을 지정하면 생략하지 않음
 - `-p` `-u` `--patch`: 패치로 사용할 수 있는 내용을 출력한다.
@@ -911,7 +911,7 @@ export GIT_ASK_YESNO=false
 
 이렇게 환경 변수를 설정해놓고 돌리면 된다. [관련 글](https://stackoverflow.com/questions/4389833/unlink-of-file-failed-should-i-try-again)
 
-#### options
+#### Options
 
 - `--aggressive`: 더 많은 시간을 들여서 '공격적'으로 최적화하는 옵션이라고 함.
 - `--auto`
@@ -1002,7 +1002,21 @@ git log [<options>] [<revision range>] [[--] <path>...]
 
 커밋 이력을 조회하는 명령어.
 
-#### options
+```bash
+# 현재 브랜치의 이력 조회
+git log
+
+# hotfix123 브랜치 이력 조회
+git log hotfix123
+
+# 로컬의 master와 origin remote의 master 브랜치 이력 조회
+git log master origin/master
+
+# 삭제(Deleted)된 파일만 출력하면서 상태 항목도 같이 표시
+git log --diff-filter=D --name-status
+```
+
+#### Options
 
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
 - `-p`: 각 커밋에 적용된 패치(patch, 반영된 변경 사항)를 보여준다.
@@ -1011,18 +1025,19 @@ git log [<options>] [<revision range>] [[--] <path>...]
 - `--no-merges`: 머지 커밋이 아닌 것만 출력한다.
 - `--min-parents=<number>` `--max-parents=<number>`: 부모 커밋이 최소(혹은 최대) 몇 개가 있는 커밋인지를 특정할 때 사용하는 옵션이다. 가령 `--max-parents=1`은 부모 커밋이 하나인 커밋만 출력하라는 의미라 `--no-merges`와 같고, `--min-parents=2`는 부모 커밋이 최소 2개여야 한다는 의미니까 `--merges`와 같다.
 - `--no-min-parents` `--no-max-parents`: 기본값을 무시할 때 사용한다. `--no-min-parents`는 `--min-parents=0`과 같은데 모든 커밋을 출력하라는 옵션이다. `--no-max-parents`는 `--max-parents=-1`과 같고(음수 1 임) 최대 부모 커밋의 제한을 해제한다는 의미다.
-- `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
-- `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
+- `--abbrev-commit`: 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
+- `--diff-filter=[(A|C|D|M|R|T|U|X|B)...[*]]`: 커밋 정보에 포함된 파일의 상태(추가, 수정 등)로 필터링하는 옵션. 특정 상태만 보고 싶으면 대문자로, 제외하려면 소문자로 작성한다. 가령 `--diff-filter=A`는 추가(Added)된 파일만 출력하고, `--diff-filter=a`는 추가된 파일을 제외한 나머지 전부를 출력한다.
+- `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
 - `--name-only`: 커밋 정보중에서 수정된 파일의 목록만 보여준다.
 - `--name-status`: 수정된 파일의 목록을 보여줄 뿐만 아니라 파일을 추가한 것인지, 수정한 것인지, 삭제한 것인지도 보여준다.
-- `--abbrev-commit`: 40자 짜리 SHA-1 체크섬을 전부 보여주는 것이 아니라 처음 몇 자만 보여준다.
-- `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
-- `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
-- `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
-- `--pretty=short`: **TODO**
 - `--pretty=full`: 커밋의 최초 생성자(author)와 마지막으로 리베이스 한 사람(commiter)을 표시한다.
 - `--pretty=fuller`: `--pretty=full` 옵션에 더해 커밋 최초 생성 시각(authorDate)과 마지막 리베이스 시각(commitDate)도 출력한다.
+- `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
+- `--pretty=short`: **TODO**
 - `--pretty[=<format>]` `--format=<format>`: 지정한 포맷으로 보여준다.
+- `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
+- `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
+- `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
 - `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
 
 #### pretty=format의 placeholder
@@ -1051,14 +1066,6 @@ git log --pretty=format:"%h %s" --graph
 
 [Pro Git book: 더 많은 옵션](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0)
 
-#### 단순 조회
-
-```bash
-git log # 현재 브랜치의 이력 조회
-git log hotfix123 # hotfix123 브랜치 이력 조회
-git log master origin/master # 로컬의 master와 origin remote의 master 브랜치 이력 조회
-```
-
 #### 조회 범위 제한 옵션
 
 - `-(n)`: 최근 n 개의 커밋만 조회한다.
@@ -1077,7 +1084,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 
 스테이징 에어리어나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀탐색한다.
 
-#### options
+#### Options
 
 - `-c` `--cached`
 - `-d` `--deleted`
@@ -1114,7 +1121,7 @@ git ls-remote --heads
 git ls-remote -h https://github.com/noritersand/noritersand.github.io
 ```
 
-#### options
+#### Options
 
 - `-h` `--heads`: 헤드만 출력, 즉 브랜치만 보는 옵션.
 - `-t` `--tags `: 태그만 출력한다.
@@ -1135,7 +1142,7 @@ git ls-tree HEAD ./docs
 
 아직 어떻게 쓸 수 있는지는 잘 몲... 있어야 하는 파일이 없을 때 확인하는 용도로 쓰려나?
 
-#### options
+#### Options
 
 - `-d`: 명명된 트리 구성요소만 출력한다. (공식 문서에선 파일을 `children`, 디렉터리를 `named tree entry`라고 표현함)
 - `-r`: 현재 경로 포함, 하위 경로를 재귀한다.
@@ -1161,7 +1168,7 @@ git merge A B
 
 현재 브랜치(current branch)에 A 브랜치와 B 브랜치를 머지한다.
 
-#### options
+#### Options
 
 - `--ff`: 가능할 경우 Fast-forward 머지를, 안 되면 머지 커밋을 생성한다.
 - `--no-ff`: 묻지도 따지지도 않고 머지 커밋을 생성한다. 기본 옵션으로 설정하려면: `git config --local merge.ff no`
@@ -1238,7 +1245,7 @@ git push [리모트저장소] [브랜치]
 git push  # origin 리모트 저장소에 현재 브랜치를 업로드
 ```
 
-#### options
+#### Options
 
 - `--force-with-lease`: `--force` 옵션과 비슷하지만 다른 사람이 올린 커밋이 있을 땐 강제 푸시를 취소한다.
 
@@ -1484,7 +1491,7 @@ git remote prune 리모트저장소
 
 헤드를 이동한다.
 
-#### options
+#### Options
 
 - `--soft`: 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
 - `--mixed`: 명시하지 않을때의 기본값. 헤드와 스테이징 에어리어를 특정 커밋으로 변경한다. 워킹 트리는 유지
@@ -1513,7 +1520,7 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 
 2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 에어리어를 되돌린다. new file은 되돌리지 않는다.
 
-#### options
+#### Options
 
 - `-s <tree>` `--source=<tree>`
 - `-p` `--patch`
@@ -1567,7 +1574,7 @@ git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경 사항을 
 
 `HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD~4`까지만 쓰면 4회 전 커밋이다. 🤔
 
-#### options
+#### Options
 
 - `e` `--edit`
 - `-n` `--no-commit`: 워킹 트리와 스테이징 에어리어의 상태만 되돌리고 커밋은 생성하지 않는다.
@@ -1649,7 +1656,7 @@ git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b  # 체크섬으로 조회
 git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명시해도 인식한다.
 ```
 
-#### options
+#### Options
 
 옵션은 [diff-tree](https://git-scm.com/docs/git-diff-tree)와 동일하게 사용할 수 있다고 한다. 따라서 여기에는 자주 쓰는 옵션만 적는다(뭐 다 그렇게 했지만):
 
@@ -1667,7 +1674,7 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 git show-ref --head
 ```
 
-#### options
+#### Options
 
 - `--head`: HEAD도 무조건 포함하여 출력한다.
 - `--heads`: 로컬 브랜치만 출력
@@ -1678,7 +1685,7 @@ git show-ref --head
 
 커밋이나 스테이지가 아닌 별도의 공간에 변경 사항을 임시 저장하거나 저장한 내용을 다시 불러오는 명령어.
 
-#### options
+#### Options
 
 - `-a` `--all`: 무시 대상이거나 추적중이지 않은 파일도 대상으로 포함하고 `git clean` 실행.
 - `-u` `--include-untracked`
@@ -1776,7 +1783,7 @@ git switch -c release origin/release # origin/release에서 release 브랜치를
 git switch -c abc 4d0dc05b1f # 4d0dc05b1f 커밋에서 abc 브랜치 생성하며 전환
 ```
 
-#### options
+#### Options
 
 - `-c` `--create <new-branch>`
 - `-C` `--force-create <new-branch>`
@@ -1933,7 +1940,7 @@ git tag -d v0.9
 
 파일을 인덱스(=스테이징 에어리어)에 등록하거나 수정한다.
 
-#### options
+#### Options
 
 - `--add`
 - `--remove`

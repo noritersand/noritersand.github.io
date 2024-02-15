@@ -39,7 +39,7 @@ tags:
 
 ## 설치
 
-React Native CLI로 진행함. 잘 알려진 지원 툴(프레임웤인가?)로 Expo CLI가 있는데, 이 글에서 따로 언급하지 않음.
+React Native CLI로 진행함. 잘 알려진 지원 툴(프레임워크인가?)로 Expo CLI가 있는데, 이 글에서 따로 언급하지 않음.
 
 ### NVM, Node.js, npm
 

@@ -94,7 +94,7 @@ tags:
 
 파일이 선택될 경우 즉시 업로드하며  서버가 업로드 완료 후 서버에서 전달한 데이터를 표시한다.
 
-#### options
+#### Options
 
 - `dataType`: 서버에서 응답받을 데이터의 타입. (xml, json, script, or html)
 - `replaceFileInput`: 기본값은 true, 파일이 첨부되면 이벤트 핸들링 시점에서 파일입력폼을 클론으로 대체한다. 이 값이 false면 fileUpload 이벤트 후에도 파일입력폼의 첨부파일이 사라지지 않는다. 만약 fileUpload 플러그인을 업로드 용도가 아닌 파일의 유효성 검사를 체크하기 위해서 사용한다면 이 옵션을 false로 하여 사용한다.

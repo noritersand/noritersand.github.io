@@ -140,7 +140,7 @@ Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js
 New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 ```
 
-#### parameters
+#### Parameters
 
 - `-ItemType`: `File`, `Directory`, `SymbolicLink`, `Junction`, `HardLink` 중에 하나
 - `-Path`: 생성할 심볼릭 링크의 이름
@@ -158,7 +158,7 @@ Get-Process -Id 2832, 836
 Get-Process 'SoundSwitch'
 ```
 
-#### parameters
+#### Parameters
 
 - `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러 개일 땐 콤마`,`로 구분함
 - `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러 개일 땐 콤마`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
@@ -185,7 +185,7 @@ Stop-Process -Name 'SoundSwitch'
 
 서비스 가져오기. 기본 별칭은 `gsv`.
 
-#### parameters
+#### Parameters
 
 - `-Name`: 파라미터의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
 
@@ -231,7 +231,7 @@ Get-ChildItem -Filter *.js | Where-Object { $_.FullName -notmatch '\\target\\' }
 Get-ChildItem -Path . -Filter *.js -Recurse | Select-String -Pattern "axios" | Select-Object -Unique Path
 ```
 
-#### parameters
+#### Parameters
 
 - `Filter`: 특정 파일이나 폴더로 결과를 제한한다. 패턴은 와일드카드 패턴(Wildcard Patterns)이다.
 - `Path`: 명령을 수행할 경로(명령의 시작 위치)
@@ -258,7 +258,7 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 Remove-Item .\copy\ -r -Force
 ```
 
-#### parameters
+#### Parameters
 
 - `-Force`: 확인 프롬프트 없이 삭제
 - `-Recurse`: 재귀 삭제
@@ -285,7 +285,7 @@ Get-ChildItem | Select-String foobar
 
 **TODO** 작동 방식 좀 더 분석
 
-#### parameters
+#### Parameters
 
 - `-MemberType`: 가져올 멤버의 타입을 지정한다.
 
@@ -394,7 +394,7 @@ ls SOME_FILE | Select-Object -Property Directory, Name
 Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
-#### parameters
+#### Parameters
 
 - `-First`: 선택할 입력 객체의 수를 지정한다.
 - `-Property`: 선택할 프로퍼티를 지정함
@@ -418,7 +418,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 (Select-String -Path ./detail.js -Pattern qwer).Matches.Count
 ```
 
-#### parameters
+#### Parameters
 
 - `-CaseSensitive`: 대소문자를 구분하여 찾음. 생략하면 대소문자 무시.
 - `-Pattern`: 이어지는 문자로 각 줄에서 찾을 텍스트를 지정함. 패턴 값은 정규식으로 취급됨.

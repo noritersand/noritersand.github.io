@@ -539,7 +539,7 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `reque
 
 `target` 속성은 jsp에서 객체 생성 후 사용하거나 기존 객체의 getter/setter를 이용하는 방식이다.
 
-### 컬렉션(리스트) 만들기
+### 리스트 만들기
 
 ```xml
 <!-- attr에서 선언 -->

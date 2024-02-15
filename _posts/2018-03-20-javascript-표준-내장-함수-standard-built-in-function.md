@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-20 15:40:02 +0900
-title: '[JavaScript] 전역 함수 global functions'
+title: '[JavaScript] 표준 내장 함수 Standard built-in function'
 categories:
   - javascript
 tags:
@@ -15,6 +15,7 @@ tags:
 
 #### 참고 문서
 
+- [MDN | Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 - [MDN | JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [http://www.w3schools.com/jsref/jsref_obj_global.asp](http://www.w3schools.com/jsref/jsref_obj_global.asp)

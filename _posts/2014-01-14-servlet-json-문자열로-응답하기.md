@@ -83,7 +83,7 @@ JSON 배열을 의미하는 String 리터럴은 다음과 같은 형식으로 �
 "[{\"code\":\"200\", \"msg\":\"success\"}, {\"code\":\"404\", \"msg\":\"page not found\"}]"
 ```
 
-만약 맵이나 컬렉션 타입을 JSON으로 파싱하고 싶다면 [jackson.ObjectMapper](http://noritersand.tistory.com/240)를 사용한다.
+만약 컬렉션 프레임워크 타입을 JSON으로 파싱하고 싶다면 [jackson.ObjectMapper](http://noritersand.tistory.com/240)를 사용한다.
 
 EL이 있어 아무도 쓰지 않는 스크립릿으로는 다음처럼 쓴다:
 

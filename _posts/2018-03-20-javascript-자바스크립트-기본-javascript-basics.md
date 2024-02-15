@@ -16,13 +16,13 @@ tags:
 
 #### 참고 문서
 
-- [TC39 – Specifying JavaScript.](https://tc39.es/)
-- [ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
-- [ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+- [TC39 | Specifying JavaScript.](https://tc39.es/)
+- [TC39 | ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
+- [Ecma International | ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
 - [MDN | Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
 - [MDN | Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [MDN | Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 - [MDN | Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
-- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](http://www.insightbook.co.kr/book/programming-insight/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C)
 
 
 ## 버전 넘버링
@@ -34,7 +34,7 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 
 ## Plain JavaScript
 
-라이브러리나 프레임웤을 사용하지 않는 순수 자바스크립트를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임웤이 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절...하지 않을까?
+라이브러리나 프레임워크를 사용하지 않는 순수 자바스크립트를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임워크가 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절...하지 않을까?
 
 참고: [https://plainjs.com/](https://plainjs.com/) jQuery를 대체하는 순수 자바스크립트 API 소개 사이트
 

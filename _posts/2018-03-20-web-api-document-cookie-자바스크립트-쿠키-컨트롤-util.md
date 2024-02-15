@@ -26,25 +26,26 @@ tags:
 ## document.cookie
 
 ```js
-document.cookie = "cookiename=value; samesite=strict"
-document.cookie = "cookiename=value; samesite=strict; path=/;"
-document.cookie = "cookiename=value; samesite=strict; path=/; expires=" + new Date()  // 생성과 동시에 만료된다. 즉 삭제
-document.cookie = "cookiename=value; samesite=strict; path=/; expires=0; domain=.tistory.com"
-document.cookie = "cookiename=value; samesite=strict; secure"  // HTTPS 전송만 가능
+document.cookie = "cookieName=value; samesite=strict"
+document.cookie = "cookieName=value; samesite=strict; path=/;"
+document.cookie = "cookieName=value; samesite=strict; path=/; expires=" + new Date()  // 생성과 동시에 만료된다. 즉 삭제
+document.cookie = "cookieName=value; samesite=strict; path=/; expires=0; domain=.tistory.com"
+document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송만 가능
 ```
 
-#### options
+#### Attributes
 
-- `;expires`: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
-- `;max-age`: `;expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
-- `;domain`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
-- `;path`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
-- `;secure`: 값은 없고 이름만 있는 옵션. 이름만 써도 secure 쿠키가 된다. SSL 통신에서만 사용가능한 쿠키가 생성되며, 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 서로 공유한다.
-- `;samesite`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `lax` 혹은 `strict`, `none`으로 설정한다. `none`일 경우엔 `secure` 옵션이 `true`(라고 써놨지만 사실 `secure`는 언급만 하면 `true`로 설정됨)여야 한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
-  > The `strict` value will prevent the cookie from being sent by the browser to the target site in all cross-site browsing context, even when following a regular link.  
-  > The `lax` value will only send cookies for TOP LEVEL navigation GET requests. This is sufficient for user tracking, but it will prevent many CSRF attacks.
+- `Domain=<domain-value>`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
+- `Expires=<date> `: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
+- `Max-Age=<number>`: `Expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
+- `Path=<path-value>`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
+- `SameSite=<samesite-value>`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `lax` 혹은 `strict`, `none`으로 설정한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
+  - `Strict`: 이 쿠키는 동일한 사이트 간 요청에만 포함된다. 외부에서 현재 사이트로 이동하는 경우 전송되지 않는다. 가장 엄격한 옵션이다.
+  - `Lax`: `Strict`처럼 동일한 사이트 간 요청에만 쿠키를 전송하지만, 외부에서 현재 사이트로 이동하는 경우에도 쿠키를 전송한다.
+  - `None`: 이 쿠키는 제한 없이 모든 요청과 함께 전송될 수 있다. `None`으로 설정하는 경우 반드시 `Secure` 옵션도 같이 설정되어 HTTPS 요청에만 전송하도록 해야 한다. 보통 크로스 사이트 요청에 사용할 쿠키를 `None`으로 설정한다.
+- `Secure`: 값은 없고 이름만 있는 옵션. 이름만 써도 secure 쿠키가 된다. SSL 통신에서만 사용가능한 쿠키가 생성되며, 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 서로 공유한다. 위 예시처럼 `Secure`는 알아서 `true` 값으로 설정되므로 이름만 언급해도 된다.
 
-이 외에 `HttpOnly`라는 HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
+이 외에 `HttpOnly`라는 속성이 있는데, HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
 
 
 ## 주의사항
@@ -98,7 +99,7 @@ class Cook {
    * @param {string} obj.value 추가할 쿠키의 값
    * @param {string} obj.sameSite SameSite 설정. 허용 범위는 lax|strict|none
    * @param {number|string|Date} obj.expires 쿠키 만료 시간
-   * @param {string} obj.path path(도메인 이후의 경로 중 queryString과 hash가 아닌 것)
+   * @param {string} obj.path path(도메인 이후의 경로 중 querystring과 hash가 아닌 것)
    * @param {string} obj.domain 도메인
    * @param {boolean} obj.secure secure 쿠키인지
    */

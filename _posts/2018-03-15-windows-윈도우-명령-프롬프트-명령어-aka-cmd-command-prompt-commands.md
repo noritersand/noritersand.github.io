@@ -88,7 +88,7 @@ c:\dev\code-workspace>copy main.code-workspace main2.code-workspace
 xcopy SOURCE DESTINATION /s /e /y
 ```
 
-#### options
+#### Options
 
 - `/S`: 비어 있지 않은 폴더와 하위 폴더를 복사.
 - `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사. /S /E 스위치와 같다.
