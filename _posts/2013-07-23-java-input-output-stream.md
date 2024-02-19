@@ -16,9 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [아스키 코드표](https://ko.wikipedia.org/wiki/%EB%AF%B8%EA%B5%AD%EC%A0%95%EB%B3%B4%EA%B5%90%ED%99%98%ED%91%9C%EC%A4%80%EB%B6%80%ED%98%B8)
-
-이 글은 남궁성 저 'Java의 정석'을 참고하여 작성함.  http://cafe.naver.com/javachobostudy.cafe
+- [위키백과 | ASCII](https://ko.wikipedia.org/wiki/ASCII)
+- [Java의 정석 - 남궁성](http://cafe.naver.com/javachobostudy.cafe)
 
 #### 인코딩, encoding이란?
 
@@ -27,6 +26,7 @@ tags:
 #### 스트림, stream이란?
 
 일련의 연속된 데이터의 흐름으로 자바프로그램과 외부장치 사이의 데이터 교환을 위한 처리 방식이다. 추상화, 실제 장치와 상관없이 공통된 접근 방식을 제공한다.
+
 
 ## 바이트 기반 스트림: InputStream, OutputStream
 
@@ -101,6 +101,7 @@ String txt = "안녕! Fine and strong day! im waldo!";
 fos.write(txt.getBytes());
 fos.close();
 ```
+
 
 ## 바이트 기반 보조 스트림
 
@@ -207,6 +208,7 @@ dis.close();
 
 특정한 변환작업이나 자릿수를 셀 필요없이 읽기만 하면 되는데 주의할 점이 있다. 데이터를 쓰는 과정에서 자료형을 달리해서 저장할 경우 읽어올 때도 반드시 그 순서에 맞게 읽어와야 한다는 것이다. 만약 이 순서가 바뀌면 read 메서드들이 올바른 자료형으로 변환하지 못해 엉뚱한 값을 출력하게 된다.
 
+
 ## 문자 기반 스트림: Reader, Writer
 
 바이트 기반 스트림은 1byte단위로 읽고 쓰기 때문에 크기가 2byte 이상인 문자를 다루는데 문제가 있다. 문자 기반 스트림은 이 점을 보완하기 위한 클래스다. 또한 문자 인코딩간 변환을 자동으로 처리해준다는 장점이 있다.
@@ -254,6 +256,7 @@ String txt = "안녕? abcdefg\r\nhihi~";
 out2.write(txt);
 out2.close();
 ```
+
 
 ## 문자 기반 보조 스트림
 
@@ -346,6 +349,7 @@ in.close();
 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 //BufferedReader in = new BufferedReader(new InputStreamReader(System.in, "utf-8"));
 ```
+
 
 ## PrintWriter
 

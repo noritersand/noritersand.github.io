@@ -21,11 +21,11 @@ tags:
 - [HTTP/1.1 RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
 - [하이퍼텍스트 전송규약 1.1 표준안](http://coffeenix.net/doc/network/http11.txt)
 - [w3schools: HTML URL Encoding Reference](http://www.w3schools.com/tags/ref_urlencode.asp)
-- [위키백과: ASCII](https://ko.wikipedia.org/wiki/ASCII)
-- [위키백과: 유니코드 A000~AFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF)
-- [위키백과: 유니코드 B000~BFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_B000~BFFF)
-- [위키백과: 유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
-- [위키백과: 유니코드 D000~DFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_D000~DFFF)
+- [위키백과 | ASCII](https://ko.wikipedia.org/wiki/ASCII)
+- [위키백과 | 유니코드 A000~AFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_A000~AFFF)
+- [위키백과 | 유니코드 B000~BFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_B000~BFFF)
+- [위키백과 | 유니코드 C000~CFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_C000~CFFF)
+- [위키백과 | 유니코드 D000~DFFF](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_D000~DFFF)
 
 
 ## URI 인코딩이란

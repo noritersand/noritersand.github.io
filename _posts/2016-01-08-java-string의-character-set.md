@@ -17,8 +17,7 @@ tags:
 - [http://d2.naver.com/helloworld/19187](http://d2.naver.com/helloworld/19187)
 - [http://d2.naver.com/helloworld/76650](http://d2.naver.com/helloworld/76650)
 - [http://blog.javarouka.me/2011/09/new-string.html](http://blog.javarouka.me/2011/09/new-string.html)
-- [http://dev.epiloum.net/?s=%EC%9D%B8%EC%BD%94%EB%94%A9&submit=%EC%B0%BE%EA%B8%B0](http://dev.epiloum.net/?s=%EC%9D%B8%EC%BD%94%EB%94%A9&submit=%EC%B0%BE%EA%B8%B0)
-- [https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%B8%94%EB%A1%9D](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C_%EB%B8%94%EB%A1%9D)
+- [위키백과 | 유니코드 영역](https://ko.wikipedia.org/wiki/유니코드_영역)
 
 ## 시스템 기본 케릭터셋 확인 platform's default characterset
 
