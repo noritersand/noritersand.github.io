@@ -52,9 +52,7 @@ Promise 객체는 요딴 상태 중 하나를 가진다:
 - fulfilled: meaning that the operation was completed successfully.
 - rejected: meaning that the operation failed.
 
-상태에 대한 정의는 [여기](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)에서 확인 가능.
-
-웹 워커에서도 사용할 수 있다고 함.
+상태에 대한 정의는 [여기](https://github.com/domenic/promises-unwrapping/blob/master/docs/states-and-fates.md)에서 확인.
 
 ```
 new Promise( executor )
@@ -65,6 +63,8 @@ new Promise( function( resolve, reject ) { ... } )
 - `reject`: Promise의 상태를 rejected로 변경하고 reject 메시지를 전달하는 함수. 이것도 함수다.
 
 `Promise()` 생성자 함수는 `executor`를 실행하고 Promise 객체를 반환한다.
+
+\* Promise는 웹 워커에서도 사용할 수 있다고 한다.
 
 ### Promise.prototype.then()
 
@@ -77,7 +77,7 @@ promise.then( onFulfilled, onRejected )
 
 `Promise.prototype.then()`은 파라미터로 resolve 혹은 reject를 처리할 핸들러 함수를 받는다.
 
-생성자 함수와 `.then()`은 Promise를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 그래서 메서드 체이닝 패턴으로 작성한다:
+생성자 함수와 `.then()`은 Promise를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 따라서 메서드 체이닝 패턴으로 작성해야 함:
 
 ```js
 var willBeSuccess = new Promise((resolve, reject) => {
@@ -103,7 +103,7 @@ willBeFail.then(() => {
 });
 ```
 
-`.then()`의 두 번째 파라미터까지 작성하는 일은 꽤 번거롭고 가독성이 별로다. `onRejected`만 전담하는 `.catch()`를 써보자:
+`.then()` 하나로 예외 처리 코드까지 구현하면 가독성이 별로다. `onRejected`만 전담하는 `.catch()`를 써보자:
 
 ### Promise.prototype.catch()
 

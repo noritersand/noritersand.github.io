@@ -14,9 +14,9 @@ tags:
 
 #### 참고 문서
 
-- [@use JSDoc](https://jsdoc.app/)
-- [https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
-- [https://stackoverflow.com/questions/8407622/set-type-for-function-parameters](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
+- [Use JSDoc | Index](https://jsdoc.app/)
+- [GitHub | google/closure-compiler | Annotating JavaScript for the Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
+- [Stack Overflow | javascript - Set type for function parameters?](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
 
 ## 개요
@@ -81,9 +81,25 @@ function sumAsync(a, b) {
 요딴식으로 하면 됨.
 
 
+## 블록 태그와 인라인 태그
+
+```js
+/**
+ * Set the shoe's color. Use {@link Shoe#setSize} to set the shoe size.
+ *
+ * @param {string} color - The shoe's color.
+ */
+Shoe.prototype.setColor = function(color) {
+    // ...
+};
+```
+
+`@param`이 블록 태그고 `{@link}`가 인라인 태그다. 현재(2024-02-19) 인라인 태그는 `@link`(별칭: `@linkcode`, `@linkplain`)와 `@tutorial`만 지원한다.
+
+
 ## 파일 doc
 
-예전에는 대체로 이렇게 했는데:
+예전에는 대체로 이렇게 하는 경우도 많았는데:
 
 ```js
 /*!
@@ -163,13 +179,65 @@ function willDestroyU({prop1, prop2}) {
 스펙 정의는 [여기](https://jsdoc.app/tags-param.html#parameters-with-properties)를 참고.
 
 
-## 그 밖에 여러 태그들
+## 마크다운 플러그인 사용하기
+
+JSDoc는 기본적으로 줄 바꿈을 지원하지 않아서, 줄 바꿈이나 목록을 표현하고 싶다면 HTML 태그를 강제로 사용하거나 마크다운 플러그인을 적용해야 한다.
+
+```json
+{
+  "plugins": ["plugins/markdown"]
+}
+```
+
+위처럼 작성된 설정 파일을 하나 만들고, 빌드할 때 옵션으로 해당 설정 파일의 경로를 지정해주면 끗:
+
+```bash
+# ./src에 있는 소스 파일을 대상으로 빌드. 빌드 경과는 ./doc 아래에 생성한다. 이 때 설정파일로 ./confi/jsdoc-config.json 파일을 사용함
+npm jsdoc ./src --destination ./doc --configure ./conf/jsdoc-config.json
+```
+
+이렇게하면 코멘트를 마크다운 서식으로 인식한다.
 
 ```js
 /**
+ * @file 코파일럿 테스트용 파일
  * 
+ * #### 단축키
  * 
+ * - `alt + \`: 코파일럿 발동
+ * - `tab`: 코파일럿 제안 선택
  * 
+ * ...
+ * function fn() {
+ *  console.log('Hello, world!');
+ * }
+ * ```
+ *
+ * (생략)
+ */
+```
+
+
+## 기타 블록 태그들
+
+### @description, @desc
+
+함수나 변수의 설명을 작성할 때 사용한다. 이 태그를 명시하면 태그가 적용되지 않은 코멘트는 무시된다(`@file`도 같이 무시하는 걸로 보임). 만약 태그가 없는 설명 코멘트가 다른 태그들보다 위에 있을 경우 `@desc`를 생략할 수 있다.
+
+파일 코멘트 영역에선 이 태그 대신 `@file`을 사용할 것.
+
+### @param
+
+**TODO**
+
+### @returns
+
+**TODO**
+
+### @deprecated
+
+```js
+/**
  * @deprecated since version 2.0
  */ 
 ```
