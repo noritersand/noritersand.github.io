@@ -58,7 +58,9 @@ file:"database/ddl-2/edupass-ddl.sql" line:719-801 from:73333a498cc22070f090993b
   { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
   { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
   { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
-  { "keys": ["ctrl+,"], "command": "open_preferences" }
+  { "keys": ["ctrl+,"], "command": "open_preferences" },
+  { "keys": ["ctrl+shift+t"], "command": "show_command_palette", "args": {"command": "create_tag"} },
+  { "keys": ["ctrl+shift+c"], "command": "show_command_palette", "args": {"command": "commit"} }
   // { 
   //   "keys": ["ctrl+alt+shift+enter"], 
   //   "command": "commit", 

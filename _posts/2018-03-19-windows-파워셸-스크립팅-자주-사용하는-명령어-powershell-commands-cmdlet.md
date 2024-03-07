@@ -212,14 +212,11 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 파라미터 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
 
 ```bash
-# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
-Get-ChildItem -Recurse -Name | findstr main.js
+# 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
+Get-ChildItem -Recurse -Filter *.js
 
 # c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀 검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
 Get-ChildItem -Path C:/dev/git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
-
-# 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
-Get-ChildItem -Recurse -Filter *.js
 
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + FullName 프로퍼티를 콘솔 대신 temp2.md 파일에 쓰기
 Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
@@ -229,6 +226,9 @@ Get-ChildItem -Filter *.js | Where-Object { $_.FullName -notmatch '\\target\\' }
 
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + 파일 내용 중 "axios"가 있는 라인 찾기 + 찾은 MatchInfo 객체에서 Path만 추출한 뒤 유일한 값만 출력
 Get-ChildItem -Path . -Filter *.js -Recurse | Select-String -Pattern "axios" | Select-Object -Unique Path
+
+# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
+Get-ChildItem -Recurse -Name | findstr main.js
 ```
 
 #### Parameters

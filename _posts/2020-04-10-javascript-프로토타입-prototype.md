@@ -81,19 +81,19 @@ var berry = new Fruit();
 `berry`의 프로토타입은 `Fruit` 프로토타입이다:
 
 ```js
-berry.__proto__ === Fruit.prototype; // true
+Object.getPrototypeOf(berry) === Fruit.prototype; // true
 ```
 
 그리고 `Fruit` 프로토타입의 프로토타입은 `Object` 프로토타입이다:
 
 ```js
-berry.__proto__.__proto__ === Object.prototype; // true
+Object.getPrototypeOf(Object.getPrototypeOf(berry)) === Object.prototype; // true
 ```
 
 마지막으로 `Object` 프로토타입의 프로토타입은 `null`이다:
 
 ```js
-berry.__proto__.__proto__.__proto__ === null; // true
+Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(berry))) === null; // true
 ```
 
 ### 프로토타입 체인의 작동 조건
@@ -101,50 +101,65 @@ berry.__proto__.__proto__.__proto__ === null; // true
 프로토타입 체인은 프로퍼티의 값을 가져올 때만 작동한다. 프로퍼티에 값을 할당할 때는 객체에 프로퍼티가 있는지 확인하고, 없으면 프로토타입 체인을 탐색하는게 아니라 객체에 해당 프로퍼티를 새로 추가한다:
 
 ```js
-berry.__proto__.aaa = 123;
+Object.getPrototypeOf(berry).aaa = 123;
 berry.aaa; // 123
 
 berry.aaa = 456;
 
 berry.aaa; // 456
-berry.__proto__.aaa; // 123
+Object.getPrototypeOf(berry).aaa; // 123
 ```
 
 
 ## .constructor
 
-객체에는 생성자를 가리키는 프로퍼티 `constructor`가 있다. 가령 다음의 경우:
+객체에는 생성자 함수를 가리키는 프로퍼티 `constructor`가 있다. 가령 다음의 경우:
 
 ```js
 function Newbie() {}
 var noob = new Newbie();
 ```
 
-`noob`의 생성자는 `Newbie()`를 가리킨다:
+`noob.constructor`는 `Newbie()`를 가리킨다:
 
 ```js
 noob.constructor === Newbie; // true
 ```
 
-이것은 `noob`을 만들어낸 생성자가 `Newbie()`라는 의미다.  
+이것은 `noob`을 만들어낸 생성자 함수가 `Newbie()`라는 뜻이다.
 
-여기서 주의할 점, `Newbie` 프로토타입의 `constructor` 프로퍼티도 `Newbie()`를 가리키는데:
+### 프로토타입의 `.constructor`
+
+`Newbie` 프로토타입의 `.constructor`도 `Newbie()`를 가리키는데:
 
 ```js
-noob.__proto__.constructor === Newbie; // true
+Newbie.prototype.constructor === Newbie; // true
 ```
 
-이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니다.** 오해하지 말 것.
+⚠️ 이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니라** 단순히 프로퍼티를 통해 연결된 것 뿐이니 오해하지 말자.
 
-### 곁다리: 생성자 함수의 생성자
+### 프로토타입 이름 알아내기
 
-`Newbie()`의 생성자는 `Function()`이다:
+파이어폭스의 콘솔에선 프로토타입 이름이 생략되어 표시되는 인스턴스들이 있다. 이벤트 객체를 이벤트 핸들러 함수에서 출력할 때가 대표적인데, 이럴 때 `.constructor`를 활용할 수 있다:
+
+```html
+<button type="button" onclick="handleEvent(event)">보턴</button>
+<script>
+function handleEvent(event) {
+  console.log(event.constructor.name); // MouseEvent
+}
+</script>
+```
+
+### 쓰잘머리 없는 정보: 생성자 함수의 생성자 함수
+
+`Newbie()`의 생성자 함수는 `Function()`이다:
 
 ```js
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function()`의 생성자는 `Function()`이며, `Function()`의 생성자의 생성자도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자의 생성자도 `Function()`이다. ~~고만해미친놈아~~:
+그리고 `Function()`의 생성자 함수는 `Function()`이며, `Function()`의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자의 생성자도 `Function()`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true
@@ -153,7 +168,7 @@ Function.constructor.constructor.constructor === Function; // true
 Function.constructor.constructor.constructor.constructor === Function; // true
 ```
 
-### 곁다리: 그럼 생성자 함수의 프로토타입은?
+### 쓰잘머리 없는 정보: 그럼 생성자 함수의 프로토타입은?
 
 `Function` 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것\*과 비교해 차이가 있다:
 
@@ -178,7 +193,7 @@ Newbie.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
-이 정도쯤 쓰고 보니 그냥 뻘글 수준... 😏
+사실 이딴 건 몰라도 됨 😏
 
 <!-- **TODO** 이 밑에는 왜 써놓은 걸까? -->
 <!--
@@ -192,7 +207,7 @@ Function.__proto__.__proto__ === Object.prototype; // true
 Function.constructor; // function Function()
 ```
 
-반면 `Object()`는 생성자 혹은 생성자 함수 그 자체를 의미한다. 생성자 함수는 프로토타입이 아니므로 이 함수의 프로퍼티는 상속되지 않는다. 따라서 `Object()`의 메서드인 `Object.assign()`은 Function 객체나 인스턴스를 통해 접근할 수 없다:
+반면 `Object()`는 생성자 함수 그 자체를 의미한다. 생성자 함수는 프로토타입이 아니므로 이 함수의 프로퍼티는 상속되지 않는다. 따라서 `Object()`의 메서드인 `Object.assign()`은 Function 객체나 인스턴스를 통해 접근할 수 없다:
 
 ```js
 Function.assign; // undefined

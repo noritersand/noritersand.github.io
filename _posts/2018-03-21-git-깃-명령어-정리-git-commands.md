@@ -206,8 +206,15 @@ git branch -m NAME_FROM NAME_TO
 #### 브랜치 삭제
 
 ```bash
+# 로컬 브랜치 삭제
 git branch -d mybranch
-git branch -D mybranch  # 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)
+
+# 로컬 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)
+git branch -D mybranch  
+
+# 리모트 트래킹 브랜치 삭제(리모트 저장소의 브랜치가 삭제되는 건 아님)
+# git branch --remotes --delete origin/abc
+git branch -rd origin/abc
 ```
 
 #### 리모트에서 삭제된 브랜치를 로컬에서도 삭제
@@ -996,6 +1003,8 @@ LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한
 
 ## log
 
+[Git | git-log Documentation](https://git-scm.com/docs/git-log)
+
 ```
 git log [<options>] [<revision range>] [[--] <path>...]
 ```
@@ -1018,6 +1027,8 @@ git log --diff-filter=D --name-status
 
 #### Options
 
+`log`의 옵션들은 `log-options`라고 불리며, `reflog` 등의 이력을 조회하는 다른 명령어에서도 사용할 수 있다.
+
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
 - `-p`: 각 커밋에 적용된 패치(patch, 반영된 변경 사항)를 보여준다.
 - `-c`: 머지 커밋과 부모 커밋을 비교해 변경 사항을 모두 출력하는 옵션
@@ -1030,19 +1041,33 @@ git log --diff-filter=D --name-status
 - `--graph`: 브랜치와 머지 히스토리 정보까지 아스키 그래프로 보여준다.
 - `--name-only`: 커밋 정보중에서 수정된 파일의 목록만 보여준다.
 - `--name-status`: 수정된 파일의 목록을 보여줄 뿐만 아니라 파일을 추가한 것인지, 수정한 것인지, 삭제한 것인지도 보여준다.
-- `--pretty=full`: 커밋의 최초 생성자(author)와 마지막으로 리베이스 한 사람(commiter)을 표시한다.
-- `--pretty=fuller`: `--pretty=full` 옵션에 더해 커밋 최초 생성 시각(authorDate)과 마지막 리베이스 시각(commitDate)도 출력한다.
-- `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
-- `--pretty=short`: **TODO**
 - `--pretty[=<format>]` `--format=<format>`: 지정한 포맷으로 보여준다.
+  - `--pretty=full`: 커밋의 최초 생성자(author)와 마지막으로 리베이스 한 사람(commiter)을 표시한다.
+  - `--pretty=fuller`: `--pretty=full` 옵션에 더해 커밋 최초 생성 시각(authorDate)과 마지막 리베이스 시각(commitDate)도 출력한다.
+  - `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
+  - `--pretty=short`: **TODO**
 - `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
 - `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
 - `--stat`: 각 커밋에서 수정된 파일의 통계정보를 보여준다.
 - `--walk-reflogs`: 헤드가 이동한 순서대로 로그 출력
+- `--date=<format>`: 커밋이 생성된 시간을 `format`으로 지정한 포맷으로 출력한다. `reflog` 명령은 기본적으로 시간을 표시하지 않아서 커밋이 변화한 시간이 보고 싶다면 이 옵션을 붙이면 된다.
+  - `--date=default`: 생략했을 때의 기본값 `Mon Feb 26 16:48:55 2024 +0900`
+  - `--date=iso`: UTC를 기준으로 표현한다. `2024-02-26 16:48:55 +0900`
+  - `--date=local`: 현지 시간 기준으로 표현 `Mon Feb 26 16:48:55 2024`
+  - `--date=relative`: 현재 시각 기준 상대적으로 표현 `25 hours ago`
+  - `--date=iso-strict` `--date=iso8601-strict`: ISO8601 포맷 `2024-02-26T16:48:55+09:00`
+  - `--date=rfc` `--date=rfc2822`: RFC2822 포맷 `Mon, 26 Feb 2024 16:48:55 +0900`
+  - `--date=short`: 년월일만 `2024-02-26`
+  - `--date=raw`: `1708933735 +0900`
+  - `--date=human`: `Mon 16:48`
+  - `--date=unix`: 유닉스 시간 포맷 `1708933735`
+  - `--date=<format>`: **TODO**
 
-#### pretty=format의 placeholder
+더 많은 옵션은 [요 링크](https://git-scm.com/docs/git-log#_options)를 볼 것
 
-placeholder = 포맷 문자를 의미함
+#### pretty=format의 `%placeholder`\*
+
+\*`%placeholder` = 포맷 문자를 의미함
 
 - `%H`: Commit hash
 - `%h`: Abbreviated commit hash
@@ -1324,8 +1349,8 @@ git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 
 자세한 내용은 아래 링크를 참고:
 
-- [Pro Git book: Git브랜치 Rebase하기](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0)
-- [Pro Git book: Rebase의 위험성](https://git-scm.com/book/ko/v2/Git-%EB%B8%8C%EB%9E%9C%EC%B9%98-Rebase-%ED%95%98%EA%B8%B0#_rebase_peril)
+- [Pro Git book: Git브랜치 Rebase하기](https://git-scm.com/book/ko/v2/Git-브랜치-Rebase-하기)
+- [Pro Git book: Rebase의 위험성](https://git-scm.com/book/ko/v2/Git-브랜치-Rebase-하기#_rebase_peril)
 
 #### 대화형 리베이스 도구로 여러 커밋 수정
 

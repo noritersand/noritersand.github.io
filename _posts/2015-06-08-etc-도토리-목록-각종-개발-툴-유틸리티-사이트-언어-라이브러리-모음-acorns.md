@@ -99,6 +99,7 @@ tags:
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리. 포매터가 필요하면 이걸 쓰자
 - [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
+- [Redux](https://redux.js.org/): (이하 리덕스) 리액트용 상태(reactive state) 관리 라이브러리. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 'props drilling'이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
 
 ### 런타임
 
@@ -121,10 +122,10 @@ tags:
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 리액트, 뷰를 잇는 프론트엔드 프레임워크. 비교적 가볍고 단순한 게 특징이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
-- [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
+- [Next.js](https://nextjs.org/): 리액트 기반의 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
+- [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - [Remix](https://remix.run/): 리액트 기반의 SSR/CSR 프레임워크. CSR보단 SSR로 주로 쓰이는 듯 하며, 백엔드에서 리액트를 실행하고 결과를 클라이언트에 전송하는 방식이다.
-- [Next.js](https://nextjs.org/): 리액트 기반의 풀스택(SSR + CSR) 프레임워크. 서버 사이드 렌더링, 정적 웹 페이지 생성이 대표적인 기능이다. 클라이언트 사이드 렌더링은 최근에 지원되기 시작한 모양(2023-09-11)
 
 ### CSS 프레임워크
 
@@ -161,6 +162,7 @@ tags:
 - [@mdi/svg](https://www.npmjs.com/package/@mdi/svg): React나 Vue에서 갖다 쓰는 패키지로, 필요한 아이콘을 svg로 만들어줌. (아마도?)
 - [Vitebook](https://vitebook.dev/): **TODO**
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
+- [Vuetify](https://vuetifyjs.com/en/): 뷰용 컴포넌트 프레임워크
 
 ### UI 컴포넌트 라이브러리
 
@@ -272,7 +274,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## CVE 아카이빙 사이트
 
-- [CVE](https://cve.mitre.org)
+- [MITRE | CVE](https://cve.mitre.org)
 - [CVE.report](https://cve.report)
 - [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런식으로 [https://devhub.checkmarx.com/cve-details/CVE-2016-1000027](https://devhub.checkmarx.com/cve-details/CVE-2016-1000027) 맨 뒤 path만 바꿔서 조회하면 편하다.
 
@@ -482,7 +484,22 @@ Project manager 혹은 Issue tracker
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 툴이다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 
 
-## 유틸리티
+## 기타 웹 서비스
+
+- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
+- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
+- [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
+- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
+- [⭐ Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
+- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 문서 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
+- [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
+- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
+- [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴
+- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 (2)
+- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
+
+
+## non-dev 유틸리티
 
 - [Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): 윈도우 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(윈도우판 Spotlight) 같은 기능을 추가해준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹)
 - [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
@@ -518,18 +535,3 @@ Project manager 혹은 Issue tracker
 - [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
 - [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 파이썬으로 실행하는 모양
-
-
-## 기타 웹 서비스
-
-- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
-- [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
-- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
-- [⭐ Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
-- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 대신 퍼블리싱 결과물은 훌륭한 편. 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
-- [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
-- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
-- [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴
-- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 (2)
-- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.

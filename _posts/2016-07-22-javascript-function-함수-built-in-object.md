@@ -7,7 +7,7 @@ categories:
 tags:
   - javascript
   - ecmascript
-  - Function.prototype
+  - function
   - apply
   - call
 ---

@@ -205,6 +205,10 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 
 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기. 기본 단축키는 <kbd>f5</kbd>이며 [strftime](https://www.strfti.me) 포맷 커스텀 입력은 <kbd>alt + f5</kbd>.
 
+#### [⭐ Pretty JSON](https://packagecontrol.io/packages/Pretty%20JSON)
+
+JSON 문자열을 한 줄로 압축하거나 반대로 예쁘게 포맷해주는 플러그인
+
 
 ## 작성자 저장용 사용자 설정
 
@@ -251,6 +255,11 @@ URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축�
 Build 3126 이후에 기록함.
 
 무슨 명령인지 모르겠으면 [여기](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
+
+### 단어 선택
+
+- <kbd>ctrl + shift + right/left</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
+- <kbd>alt + shift + right/left</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
 
 ### 멀티 캐럿(Multiple Selection)
 
