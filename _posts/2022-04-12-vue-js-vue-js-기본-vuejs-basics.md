@@ -793,7 +793,7 @@ createApp({
 
 ### Props
 
-부모에게서 받아오는 읽기 전용 값. 부모에서 컴포넌트 표현식을 작성할 때 바인딩하는 값이 자식 컴포넌트의 props가 되는 식이다.
+부모에게서 받아오는 읽기 전용 값. 부모에서 컴포넌트 표현식을 작성할 때 바인딩하는 값이 자식 컴포넌트의 `props`가 되는 식이다. **해당 값이 부모로부터 변경되면 자식 컴포넌트의 `props`도 변경된 값으로 갱신된다**.
 
 참고: 부모가 넘긴 속성값은 자식 컴포넌트에서 `props`에서 선언하지 않아도 자동으로 상속된다. 이것은 `props`와 별개로 [fallthrough 속성](https://vuejs.org/guide/components/attrs.html#fallthrough-attributes)이라 부른다.
 

@@ -36,7 +36,7 @@ tags:
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
-- [JS Is Weird](https://jsisweird.com/): 자바스크립트의 -잘 모르면- 무규칙처럼 보이는 싱기방기한 특징들을 퀴즈 형식으로 설명하는 사이트
+- [JS Is Weird](https://jsisweird.com/): 자바스크립트의 혼돈의 카오스 같은 여러 현상들을 퀴즈 형식으로 설명하는 사이트
 - [The Concise TypeScript Book](https://github.com/gibbok/typescript-book): TypeScript의 모든 것을 정리한 문서.
 - [ECMA International: ecma-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/): 비영리 국제 표준화 기구인 ECMA Internation의 사이트. 이 문서에서는 ECMAScript의 버전별 명세와 현재 유효한 표준을 볼 수 있다.
 - [You might not need jQuery](https://youmightnotneedjquery.com/): jQuery API 대신 쓸 수 있는 자바스크립트 + CSS 코드를 알려주는 사이트. 예를 들어 `$(el).show()`를 찾으면, `el.style.display = ''`를 알려주는 식이다.
