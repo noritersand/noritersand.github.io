@@ -872,7 +872,7 @@ export default {
 }
 ```
 
-들은 말로는 컴포넌트들의 계층 관계가 복잡할 수록 props를 활용하기 어려워져서 잘 안쓰게 된다 함. 그래서 대신 쓰는게 [Vuex](https://vuex.vuejs.org/)라고...
+들은 말로는 컴포넌트들의 계층 관계가 복잡할 수록 props를 활용하기 어려워지는데, 이 때 대신 쓰는게 [Vuex](https://vuex.vuejs.org/)라고...
 
 ### Event emitting
 

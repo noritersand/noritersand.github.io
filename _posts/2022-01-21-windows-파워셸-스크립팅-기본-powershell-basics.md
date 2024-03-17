@@ -35,40 +35,6 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
 
 
-## 문법
-
-### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
-
-파워셸에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
-
-```bash
-$i = 5
-"The value of $i is $i."
-# The value of 5 is 5.
-
-'The value of $i is $i.'
-# The value of $i is $i.
-
-"The value of $(2+3) is 5."
-# The value of 5 is 5.
-
-'The value of $(2+3) is 5.'
-# The value of $(2+3) is 5.
-
-"$env:LOCALAPPDATA\abcd"
-# C:\Users\fixalot\AppData\Local\abcd
-
-'$env:LOCALAPPDATA\abcd'
-# $env:LOCALAPPDATA\abcd
-```
-
-따옴표간 차이는 이 정도고, 나머지는 대체로 동일한 의미로 쓰인다.
-
-### 중괄호 `{}`
-
-**TODO**
-
-
 ## 환경 변수
 
 ℹ️ Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않으니 필요하면 앱을 재시작할 것
@@ -150,7 +116,9 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안 되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
 
 
-## 변수선언과 사용
+## 기본 문법
+
+### 변수선언과 사용
 
 ```bash
 $abc = 1234
@@ -164,17 +132,75 @@ gv abc
 # abc       1234
 ```
 
-관련 Cmdlet은 요 밑에 링크에서 확인.
+관련 Cmdlet은 저 밑에 링크에서 확인.
+
+### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
+
+파워셸에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
+
+```bash
+$i = 5
+"The value of $i is $i."
+# The value of 5 is 5.
+
+'The value of $i is $i.'
+# The value of $i is $i.
+
+"The value of $(2+3) is 5."
+# The value of 5 is 5.
+
+'The value of $(2+3) is 5.'
+# The value of $(2+3) is 5.
+
+"$env:LOCALAPPDATA\abcd"
+# C:\Users\fixalot\AppData\Local\abcd
+
+'$env:LOCALAPPDATA\abcd'
+# $env:LOCALAPPDATA\abcd
+```
+
+따옴표간 차이는 이 정도고, 나머지는 대체로 동일한 의미로 쓰인다.
+
+### 중괄호 `{}`
+
+**TODO**
+
+### 파이프라인 입력 Pipeline Input
+
+**TODO**
+
+### 줄 바꿈
+
+**TODO**
 
 
-## 명령어 Cmdlet
+## 코멘트 처리
 
-[이 블로그 내부 링크 | 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+```
+# 한 줄 코멘트
+Get-ChildItem # 이것도 한 줄 코멘트
+```
+
+```
+<#
+   이것은 여러줄 코멘트
+#>
+```
 
 
 ## 연산자
 
-[이 블로그 내부 링크 | 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+[블로그 내부 링크 | 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+
+
+## 명령어 Cmdlet
+
+[블로그 내부 링크 | 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+
+
+## CmdletBinding()
+
+**TODO**
 
 
 ## 제어문
@@ -201,7 +227,7 @@ if ($condition) {
 }
 ```
 
-#### 비교 연산자
+if 조건식에서 사용하는 비교 연산자:
 
 - `-eq`: case-insensitive equality
 - `-ieq`: case-insensitive equality
@@ -539,20 +565,11 @@ Line |
      |                   ~~~~~~~~~~~~~~~
      | Attribute argument must be a constant or a script block.
 ```
-### CmdletBinding()
-
-**TODO**
-
-### 코멘트 처리
-
-**TODO**
-
-### 파이프라인 입력 Pipeline Input
-
-**TODO**
 
 
-## [해시 테이블](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.2)
+## 데이터 타입
+
+### [해시 테이블](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.2)
 
 ```bash
 $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}

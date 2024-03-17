@@ -390,12 +390,13 @@ package.json 에서 시작점의 상대경로를 지정하는 방법은:
 
 npm의 속도와 보안을 강화한 새 패키지 매니저. [npm vs. Yarn: Which Package Manager Should You Choose?](https://www.whitesourcesoftware.com/free-developer-tools/blog/npm-vs-yarn-which-should-you-choose/)
 
-속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나...
+속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나
 
 ```bash
-# npm으로 Yarn 설치
-npm install yarn -g
+corepack enable
 ```
+
+ℹ️ 예전에는 `npm install yarn -g`라고 적어놨지만, 다시 찾아보니 Corepack(이하 코어팩) 프로젝트에 Yarn이 포함되었으니 코어팩 활성화만 하면 된다고 한다. 만약 코어팩이 없다면 npm으로 설치하자. `npm install -g corepack` [관련글 링크](https://yarnpkg.com/corepack)
 
 ```bash
 # Yarn으로 PACKAGE_NAME 설치 후 package.json에 추가
@@ -435,6 +436,9 @@ yarn upgrade PACKAGE_NAME
 
 # 대화형으로 버전 업그레이드
 yarn upgrade-interactive
+
+# Yarn의 캐시 지우기
+yarn cache clean
 ```
 
 Yarn으로 패키지를 추가하거나 삭제해도 `package.json` 내용이 수정되니 주의할 것.
@@ -485,11 +489,29 @@ yarn global dir
 
 **그냥 글로벌 패키지는 npm으로 하는게 좋을 것 같음.**
 
+### yarn dlx = Yarn의 npx
+
+⚠️ Yarn을 `npm install yarn -g`으로 설치했다면 `yarn dlx`를 실행했을 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것.
+
+`dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다.
+
+```
+yarn dlx <command> ...
+```
+
+```bash
+# my-app 디렉터리에 CRA로 리액트 앱 스캐폴딩
+yarn dlx create-react-app ./my-app
+```
+
+도움말을 보면 `add` 대신 사용하지 말라고 권장한다:
+
+> Using yarn dlx as a replacement of yarn add isn't recommended, as it makes your project non-deterministic (Yarn doesn't keep track of the packages installed through dlx - neither their name, nor their version).
+
 ### 기타
 
-[Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 npm보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
-
-tap 패키지를 `npm`으로 설치하면 `^1.0.0`으로, `yarn`으로 설치하면 `^16.3.8`이 설치되는 이상한 현상이 있다. (2023-08-21)
+- [Yarn berry](https://www.npmjs.com/package/yarn-berry)를 쓰면 실행환경에 따라 발생하는 문제에서 npm보다 낫고 제로인스톨이라는게 좋다는 말이 있다.
+- tap 패키지를 `npm`으로 설치하면 `^1.0.0`으로, `yarn`으로 설치하면 `^16.3.8`이 설치되는 이상한 현상이 있다. (2023-08-21)
 
 
 ## 자주 쓰는 패키지 모음

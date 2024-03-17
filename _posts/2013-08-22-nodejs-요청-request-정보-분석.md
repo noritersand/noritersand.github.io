@@ -19,7 +19,7 @@ var util = require('util');
 /*
  *    server.on('request', callback);
  *     : request 이벤트 리스너를 등록한다. 해당 이벤트가 발생하면 callback 실행
- *   : 여기서 callback은 콜백함수 혹은, 이벤트 핸들러 함수라고 한다.
+ *   : 여기서 callback은 콜백 함수 혹은, 이벤트 핸들러 함수라고 한다.
  *   : 이벤트발생 -> 해당하는 리스너가 있다면 캐치 -> 리스너의 핸들러 실행
  *
  */

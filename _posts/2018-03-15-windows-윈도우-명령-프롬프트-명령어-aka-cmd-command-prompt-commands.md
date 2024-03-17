@@ -217,6 +217,19 @@ route PRINT
 ping -t 168.126.63.1
 ```
 
+### tree
+
+현재 경로의 드라이브와 디렉터리 구조를 그래픽으로 출력한다.
+
+```bash
+tree /f /a
+```
+
+#### Options
+
+- `/F`: 각 디렉터리의 파일 이름도 같이 출력한다.
+- `/A`: 그래픽 문자(특수문자)를 텍스트 문자(아스키)로 대체한다.
+
 
 ## [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 

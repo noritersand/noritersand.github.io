@@ -64,7 +64,9 @@ tags:
 
 ## 개발환경 Development Environment
 
-- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 (심자어 https로!) 서비스
+### 호스팅
+
+- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 (심자어 https로!) 서비스. 윈도우에선 chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다.
 
 ### 의존성 관리(라이브러리 설치/조회/삭제)
 
@@ -74,11 +76,15 @@ tags:
 
 ## 프로그래밍 언어 Programming Language
 
-- [Rust](https://www.rust-lang.org/): [Mozilla Research](https://research.mozilla.org/)에서 개발한 범용 언어
-- [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. 자바(Java) 기반이라고 한다. (뭔가 Kotlin이랑 비슷한데?)
+- [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 자바라면 Elixir는 코틀린에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 쓰레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
+- [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. 자바와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
+- [Rust](https://www.rust-lang.org/): 가비지 컬렉션(이하 GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. 시스템 프로그래밍, 웹 어셈블리, 임베디드 시스템 등 다양한 분야에서 사용되는 범용 언어다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다.
+- [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #2. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
+- [Zig](https://ziglang.org/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #3. 셋 중 가장 최신 언어다(Ada의 표준화는 1983년, Rust의 최초 릴리즈가 2010년, Zig는 2015년에 개발 시작).
+- [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. 자바(Java) 기반이며 JVM에서 실행된다.
+- [Kotlin](https://kotlinlang.org/): JVM에서 실행되는 자바와 상호 운용 가능한 언어. 안드로이드 개발에 주로 쓰인다. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). 자바, 파이썬(Python), 루비(Ruby) 등의 언어에서 영향을 받았다 한다. 
 - [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
-- [Kotlin](https://kotlinlang.org/): JVM, 안드로이드에서 작동하는 언어. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷하다고 함. 자바처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 - [TypeScript](https://www.typescriptlang.org/): 타입스크립트. 자바스크립트의 슈퍼셋(superset)으로, 이름처럼 정적 데이터 타입이 추가되어 컴파일 에러 검출이 가능한 게 대표적인 특징이다. 컴파일 타임이 존재하며 자바스크립트 코드로 변환된다.
 - [Mojo](https://www.modular.com/mojo): 파이썬의 슈퍼셋. 파이썬의 느린 속도를 개선했으며 저수준의 제어가 가능한 것이 특징. Python 3.x를 완벽하게 호환한다. 처음 소개 영상을 봤을 시점엔 waitlist 등록 후 기다려야 한다고 했는데 지금(2023-11-28)은 어떨지 몰?루

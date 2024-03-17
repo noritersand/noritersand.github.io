@@ -440,7 +440,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 
 ### Get-Alias
 
-설정된 별칭 목록을 출력한다. 기본 별칭 `gal`, `alias`
+기본 별칭은 `gal`, `alias`. 설정된 별칭 목록을 출력한다.
 
 ```bash
 Get-Alias # 설정된 모든 별칭 출력
@@ -483,9 +483,9 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 
 ### Write-Output
 
-특정 객체를 파이프라인에 쓴다. 다른 Cmdlet로 파이프하거나 변수에 할당할 수 있다. 만약 Write-Output이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다. 기본 별칭은 `echo`.
+기본 별칭은 `echo`. 특정 객체를 파이프라인에 쓴다. 다른 cmdlet으로 파이프하거나 변수에 할당할 수 있다. 만약 `Write-Output`이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다.
 
-어떤 명령어를 사용할 때 발생하는 암시적인 출력은 Write-Output을 통한 출력이다.
+다른 명령어나 스크립트에서 발생하는 암시적인 출력은 `Write-Output`을 통한 출력이다.
 
 ```bash
 # 파워셸 설치 경로 출력
@@ -497,17 +497,46 @@ Write-Output $null >> dummy-for-commit.txt
 
 ### Write-Host
 
-오직 콘솔 출력만을 위한 명령어. Write-Output과 달리 파이프라인에 보내지 않고 콘솔에 직접 쓴다. 따라서 다른 Cmdlet으로 파이프하거나 변수 할당은 할 수 없다. 기본 별칭은 없음.
+기본 별칭은 없음. 오직 호스트 출력만을 위한 명령어. `Write-Output`과 달리 파이프라인에 보내지 않고 호스트에 직접 쓴다. 따라서 다른 cmdlet으로 파이프하거나 변수 할당은 불가능. 대신 색이나 구분자 등을 지정할 수 있다.
+
+ℹ️ 파워셸에서 호스트란 파워셸 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
 
 ```bash
 PS> Write-Host '$abc:'$abc
 $abc: 123
 ```
 
-#### Write-Host와 Write-Output의 차이
+### Out-Host
 
-Write-Output
+기본 별칭은 `oh`. 호스트에 출력한다. 이 명령은 보통 출력 내용이 너무 길어서 페이징 처리가 필요할 때 사용한다.
 
+```bash
+# 하위 디렉터리를 한 페이지씩 출력
+Get-ChildItem | Out-Host -Paging
+```
+
+### Out-File
+
+출력 내용을 파일로 내보낸다. 
+
+```bash
+# 트리 명령의 출력 내용을 test.md 파일에 UTF-8 인코딩으로 내보내기
+tree | Out-File -Encoding utf8 -FilePath tree.md
+```
+
+#### Parameters
+
+- `-FilePath`: 출력할 파일의 경로를 지정한다. 파라미터 이름이 생략된 전달인수는 이 파라미터로 간주된다.
+- `-Encoding`: 대상 파일의 인코딩을 지정한다 기본값은 `utf8NoBOM`이다. 유효한 값은 다음 중 하나다: `ascii`, `ansi`, `bigendianunicode`, `bigendianutf32`, `oem`, `unicode`, `utf7`, `utf8`, `utf8BOM`, `utf8NoBOM`, `utf32`
+- `-Append`: 기존 파일의 내용을 덮어쓰지 않고 이어 쓴다.
+- `-Confirm`: 명령을 실행하기 전에 프롬프트를 표시한다.
+- `-Force`: 읽기 전용 파일을 덮어 쓸 때 필요한 파라미터
+- `-InputObject`: **TODO**
+- `-LiteralPath`: **TODO**
+- `-NoClobber`: 기존 파일에 덮어쓰기를 시도하는 경우 메시지를 표시하고 명령을 중단시킨다.
+- `-NoNewline`: 파일 내용이 줄 바꿈 문자로 끝나지 않도록 한다.
+- `-WhatIf`: 명령을 실제로 수행하지는 않고 어떻게 될지만 표시한다.
+- `-Width`: 각 출력 줄의 최대 문자 수를 지정하는 파라미터. 이 값보다 길면 다음 줄에 출력한다.
 
 ### Invoke-WebRequest
 
@@ -529,7 +558,7 @@ Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&
 
 ### Get-Filehash
 
-지정한 파일의 해시값을 계산한다. 파라미터로 해시 알고리즘(SHA1, SHA256, SHA384, SHA512, MD5 등)을 선택할 수 있고 생략하면 SHA256을 사용한다.
+지정한 파일의 해시값을 계산한다. 파라미터로 해시 알고리즘을 선택할 수 있고 생략하면 SHA256을 사용한다.
 
 ```bash
 Get-FileHash FILE_NAME
@@ -537,3 +566,7 @@ Get-FileHash FILE_NAME
 # MD5 알고리즘을 사용하면서 세로 목록 포맷으로 출력
 Get-FileHash FILE_NAME -Algorithm MD5 | Format-list
 ```
+
+#### Parameters
+
+- `-Algorithm`: 해시값 계산에 사용할 해시 알고리즘(cryptographic hash function)을 지정한다. 이 파라미터를 생략하면 SHA256 알고리즘으로 계산한다. 유효한 값은 다음 중 하나다: `SHA1`, `SHA256`, `SHA384`, `SHA512`, `MD5`.
