@@ -15,15 +15,15 @@ tags:
 
 #### 참고 문서
 
-- [MDN | fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
-- [MDN | Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [MDN | Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [MDN | Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
-- [MDN | FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
+- [MDN \| fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+- [MDN \| Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [MDN \| Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [MDN \| Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
+- [MDN \| FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 - [Fetch Living Standard](https://fetch.spec.whatwg.org/)
-- [MDN | Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
-- [MDN | Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-- [MDN | Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+- [MDN \| Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+- [MDN \| Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+- [MDN \| Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 #### 브라우저 호환
 

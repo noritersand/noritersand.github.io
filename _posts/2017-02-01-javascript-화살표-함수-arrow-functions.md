@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN | Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+- [MDN \| Arrow function expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
 
 #### 테스트 환경 정보
 

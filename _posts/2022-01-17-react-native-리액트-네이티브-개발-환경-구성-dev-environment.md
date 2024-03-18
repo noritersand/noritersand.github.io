@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [React Native | Introduction](https://reactnative.dev/docs/getting-started)
-- [React Native | APIs](https://reactnative.dev/docs/accessibilityinfo)
-- [React Native | Setting up the development environment](https://reactnative.dev/docs/environment-setup)
+- [React Native \| Introduction](https://reactnative.dev/docs/getting-started)
+- [React Native \| APIs](https://reactnative.dev/docs/accessibilityinfo)
+- [React Native \| Setting up the development environment](https://reactnative.dev/docs/environment-setup)
 
 #### 테스트 환경 정보
 

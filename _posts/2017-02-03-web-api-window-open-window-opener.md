@@ -18,7 +18,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN | Window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
+- [MDN \| Window.open()](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
 - [https://developer.mozilla.org/en-US/docs/Web/API/Window.opener](https://developer.mozilla.org/en-US/docs/Web/API/Window.opener)
 
 

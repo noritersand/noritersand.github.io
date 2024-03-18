@@ -18,9 +18,9 @@ tags:
 
 #### 참고 문서
 
-- [MariaDB | STR_TO_DATE](https://mariadb.com/kb/en/str_to_date/)
-- [MariaDB | DATE_FORMAT](https://mariadb.com/kb/en/date_format/)
-- [MariaDB | DATETIME](https://mariadb.com/kb/en/datetime/)
+- [MariaDB \| STR_TO_DATE](https://mariadb.com/kb/en/str_to_date/)
+- [MariaDB \| DATE_FORMAT](https://mariadb.com/kb/en/date_format/)
+- [MariaDB \| DATETIME](https://mariadb.com/kb/en/datetime/)
 
 #### 테스트 환경 정보
 

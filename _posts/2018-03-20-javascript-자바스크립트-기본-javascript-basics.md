@@ -16,13 +16,13 @@ tags:
 
 #### 참고 문서
 
-- [TC39 | Specifying JavaScript.](https://tc39.es/)
-- [TC39 | ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
-- [Ecma International | ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-- [MDN | Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
-- [MDN | Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
-- [MDN | Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
-- [MDN | Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
+- [TC39 \| Specifying JavaScript.](https://tc39.es/)
+- [TC39 \| ECMAScript 20xx Language Specification](https://tc39.es/ecma262/)
+- [Ecma International \| ECMAScript Living Standard](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
+- [MDN \| Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_Types)
+- [MDN \| Data structures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures)
+- [MDN \| Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+- [MDN \| Object initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 
 ## 버전 넘버링

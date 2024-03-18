@@ -19,7 +19,7 @@ tags:
 
 - [Document Object Model (DOM) Level 2 HTML Specification](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-8747038)
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)
-- [MDN | Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+- [MDN \| Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - [모던 JavaScript 튜토리얼: 쿠키와 document.cookie](https://ko.javascript.info/cookie)
 
 

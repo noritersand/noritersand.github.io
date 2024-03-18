@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN | Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [MDN \| Template literals (Template strings)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
 #### 테스트 환경 정보
 

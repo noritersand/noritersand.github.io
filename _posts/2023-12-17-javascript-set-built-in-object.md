@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN | Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
+- [MDN \| Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set)
 
 
 ## 개요

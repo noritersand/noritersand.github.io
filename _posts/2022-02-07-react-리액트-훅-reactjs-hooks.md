@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [React | Built-in React Hooks](https://react.dev/reference/react/hooks)
+- [React \| Built-in React Hooks](https://react.dev/reference/react/hooks)
 
 #### 테스트 환경 정보
 

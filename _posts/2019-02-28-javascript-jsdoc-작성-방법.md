@@ -14,9 +14,9 @@ tags:
 
 #### 참고 문서
 
-- [Use JSDoc | Index](https://jsdoc.app/)
-- [GitHub | google/closure-compiler | Annotating JavaScript for the Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
-- [Stack Overflow | javascript - Set type for function parameters?](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
+- [Use JSDoc \| Index](https://jsdoc.app/)
+- [GitHub | google/closure-compiler \| Annotating JavaScript for the Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
+- [Stack Overflow \| javascript - Set type for function parameters?](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
 
 ## 개요

@@ -17,8 +17,8 @@ tags:
 
 #### 참고 문서
 
-- [Microsoft | WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
-- [Microsoft | WSL의 기본 명령](https://docs.microsoft.com/ko-kr/windows/wsl/basic-commands)
+- [Microsoft \| WSL 설치](https://docs.microsoft.com/ko-kr/windows/wsl/install)
+- [Microsoft \| WSL의 기본 명령](https://docs.microsoft.com/ko-kr/windows/wsl/basic-commands)
 
 
 ## 개요

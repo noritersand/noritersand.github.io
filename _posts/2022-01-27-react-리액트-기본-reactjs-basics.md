@@ -15,11 +15,11 @@ tags:
 
 #### 참고 문서
 
-- [React | Learn](https://react.dev/learn)
-- [React | Reference](https://react.dev/reference/react)
-- [React | Built-in React Hooks](https://react.dev/reference/react/hooks)
-- [React | Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
-- [React | JavaScript in JSX with Curly Braces](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
+- [React \| Learn](https://react.dev/learn)
+- [React \| Reference](https://react.dev/reference/react)
+- [React \| Built-in React Hooks](https://react.dev/reference/react/hooks)
+- [React \| Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
+- [React \| JavaScript in JSX with Curly Braces](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
 - [비공식 튜토리얼#1](https://velopert.com/3613)
 
 #### 테스트 환경 정보
@@ -676,7 +676,7 @@ function App() {
 
 ### prop-types
 
-- [npm | prop-types](https://www.npmjs.com/package/prop-types)
+- [npm \| prop-types](https://www.npmjs.com/package/prop-types)
 
 props의 타입을 제한할 때 사용하는 패키지. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
 

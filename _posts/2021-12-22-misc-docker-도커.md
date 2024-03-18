@@ -14,8 +14,8 @@ tags:
 
 #### 참고 문서
 
-- [docker docs | Getting started](https://docs.docker.com/get-started/)
-- [서비큐라 기술 블로그 | 초보를 위한 도커 안내서](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html)
+- [docker docs \| Getting started](https://docs.docker.com/get-started/)
+- [서비큐라 기술 블로그 \| 초보를 위한 도커 안내서](https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html)
 
 #### 테스트 환경 정보
 
@@ -144,8 +144,8 @@ docker kill CONTAINER_ID
 
 `stop`과 `kill`의 차이는 도움말을 보자:
 
-- [docker docs | docker stop]https://docs.docker.com/engine/reference/commandline/stop
-- [docker docs | docker kill]https://docs.docker.com/engine/reference/commandline/kill
+- [docker docs \| docker stop]https://docs.docker.com/engine/reference/commandline/stop
+- [docker docs \| docker kill]https://docs.docker.com/engine/reference/commandline/kill
 
 대충 검색해보면 안전한 종료(`stop`)인지 안전하지 않은 종료(`kill`)인지의 차이임.
 

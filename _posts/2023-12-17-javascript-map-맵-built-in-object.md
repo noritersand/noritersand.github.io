@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN | Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
+- [MDN \| Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map)
 
 
 ## 개요
