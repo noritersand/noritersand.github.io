@@ -135,10 +135,10 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 4</kbd>: Chrome
 - <kbd>win + 5</kbd>: Sublime Merge
 - <kbd>win + 6</kbd>: 가변: Discord, Slack
-- <kbd>win + 7</kbd>: 가변: 다른 브라우저 #1, Steam
+- <kbd>win + 7</kbd>: 가변: Steam, 다른 브라우저 #1, IDE #1
 - <kbd>win + 8</kbd>: 가변: VSCODE, 다른 브라우저 #2, MSOffice
-- <kbd>win + 9</kbd>: 가변: IDE#1, IntelliJ, Bluestack
-- <kbd>win + 0</kbd>: 가변: IDE#2, DBMS tool, Epic Games
+- <kbd>win + 9</kbd>: 가변: IDE #2(IntelliJ), Bluestack
+- <kbd>win + 0</kbd>: 가변: IDE #3(DBMS tool), Epic Games
 - (여기부터는 Autohotkey로 확장한 키 조합)
 - <kbd>win + \-</kbd>: Obsidian
 - <kbd>win + ctrl + \-</kbd>: Notion

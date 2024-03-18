@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-02-27 17:14:00 +0900
+date: 2022-01-27 17:14:00 +0900
 title: '[React] 리액트 기본'
 categories:
   - react
@@ -83,9 +83,9 @@ npx create-react-app APP_NAME
 
 ```
 root
-├─node_modules
-├─public
-└─src
+ ├─node_modules
+ ├─public
+ └─src
 ```
 
 - `node_modules`: node 패키지 로컬 경로. 리액트 앱 개발에 필수적인 패키지들이 기본으로 설치되어 있다. react, react-dom, react-scripts, webpack, babel, eslin, postcss 등이 포함된다.

@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 1970-01-01 00:00:00 +0900
+date: 2022-02-07 00:16:51 +0900
 title: '[React] 리액트 훅 React Hooks'
 categories:
   - react
@@ -166,7 +166,7 @@ const handleEvent2 = event => {
 
 modifier는 비동기적으로 작동하기 때문에 modifier 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
 
-\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React Github | this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
+\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub | this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
 
 ```jsx
 const [obj, setObj] = React.useState({someFlag: false});
@@ -331,9 +331,9 @@ useEffect(() => {
 
 이런 특징을 이용해서 원래의 목적(외부 시스템과 연결)을 벗어나 코드 실행 주기를 제어하기 위해 사용하기도 한다.
 
-🚧 이펙트 훅을 너무 자주 사용하면 코드가 복잡해지고 실행 속도가 느려질 수 있다. 이 [문서](https://react.dev/learn/you-might-not-need-an-effect)를 참고할 것
-
 🚨 리액트는 개발모드에서 설정 코드를 실행하기 전에 [버그 탐지와 검증을 위해 설정 코드와 정리 코드를 미리 한 번 더 실행](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)시킨다. 따라서 개발 모드에서 `useEffect()`에 작성한 콘솔 출력은 두 번 작동할 것이다.
+
+🚧 불필요한 이펙트 훅은 코드를 복잡하게 하고 실행 속도를 느려지게 만든다. 이 [문서](https://react.dev/learn/you-might-not-need-an-effect)를 참고할 것.
 
 
 ## 퍼포먼스 훅 Performance Hooks 

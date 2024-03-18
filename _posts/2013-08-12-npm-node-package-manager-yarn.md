@@ -437,7 +437,7 @@ yarn upgrade PACKAGE_NAME
 # 대화형으로 버전 업그레이드
 yarn upgrade-interactive
 
-# Yarn의 캐시 지우기
+# 캐시 지우기
 yarn cache clean
 ```
 
@@ -491,7 +491,7 @@ yarn global dir
 
 ### yarn dlx = Yarn의 npx
 
-⚠️ Yarn을 `npm install yarn -g`으로 설치했다면 `yarn dlx`를 실행했을 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것.
+⚠️ Yarn을 `npm install yarn -g` 명령으로 설치했다면 `yarn dlx`를 실행했을 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것.
 
 `dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다.
 
