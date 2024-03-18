@@ -64,7 +64,7 @@ tsc --init
 
 ### tsconfig.json
 
-[TypeScript Documentation | tsconfig](https://www.typescriptlang.org/tsconfig)
+[TypeScript Documentation \| tsconfig](https://www.typescriptlang.org/tsconfig)
 
 타입스크립트 컴파일러가 프로젝트를 어떻게 컴파일 할지에 대한 설정을 정의한다. 저 아래 '빌드하기' 항목에서처럼 빌드할 항목 등을 직접 지정하는 방법도 있지만 그건 귀찮으니께...
 
@@ -136,7 +136,7 @@ tsc --build --watch
   - `number[]`
   - `string[]`
   - ...
-- any: 어떠한 것도 할당 가능한 타입이다. 이 타입은 타입 검사를 비활성한다.
+- `any`: 어떠한 것도 할당 가능한 타입이다. 이 타입은 타입 검사를 비활성한다.
 - Enums
 - 커스텀 타입:
   - 유니언
@@ -208,7 +208,7 @@ console.log(obj[b]);
 //   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
 ```
 
-다음처럼 [TypeScript Documentation | Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
+다음처럼 [TypeScript Documentation \| Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
 
 ```ts
 let obj: {[key: string]: number} = {
@@ -360,75 +360,27 @@ class Newbie {
 }
 ```
 
+### 리터럴 타입
 
-## 추상 클래스 Abstract Classes
-
-추상 클래스는 인스턴스 생성이 불가능하며 상속(extends)을 위해서면 존재하는 클래스다. 다른 클래스로 파생되는 기반 클래스 역할을 하며, 구현 클래스의 형태를 제한한다.
-
-아래는 추상 메서드 `getName()`를 갖는 추상 클래스를 선언하는 방법이다:
+타입스크립트에선 특이하게도 값의 범위(공식 가이드에선 이를 리터럴 집합이라 함)도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입*이라 한다:
 
 ```ts
-// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
-abstract class Base {
-  abstract getName(): string;
- 
-  printName() {
-    console.log("Hello, " + this.getName());
-  }
-}
-
-class Derived extends Base {
-  getName() {
-    return "world";
-  }
-}
- 
-const d = new Derived();
-d.printName();
+let one: 1;
+one = 1;
+one = 2; // error TS2322: Type '2' is not assignable to type '1'.
 ```
 
-구현 클래스는 반드시 `getName()`을 구체화 해야 한다. 그렇지 않으면 에러가 발생한다:
+변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
+
+### 타입 단언 Type Assertions
+
+객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
 
 ```ts
-class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
+let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
+
+let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
 ```
-
-### 추상 생성자 시그니처 Abstract Construct Signatures
-
-타입스크립트에선 파라미터에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별 게 다 있다...)
-
-```ts
-abstract class Base {
-  abstract printName(): void;
-}
-
-class Derived extends Base {
-  printName() {
-    console.log('Derived instance');
-  }
-}
-
-function greet(ctor: new () => Base) {
-  const instance = new ctor();
-  instance.printName();
-}
-
-greet(Derived);
-```
-
-추상 클래스 `Base`와 `Base` 상속하는 `Derived`가 있을 때, `greet()` 함수에서 `Base`와 `Base`의 서브 클래스 생성자를 파라미터로 받도록 타입을 제한했다. 그리고 `Derived` 생성자 함수를 인수로 넘기는 코드다.
-
-만약 `Base` 생성자 함수를 인수로 하면:
-
-```ts
-greet(Base);
-// error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
-// Cannot assign an abstract constructor type to a non-abstract constructor type.
-```
-
-추상 클래스는 인스턴스를 만들 수 없기 때문에 에러가 발생한다.
-
-🚨 `typeof` 타입 연산자로도 비슷한 구현이 가능하지만 권장되지 않는다.
 
 
 ## 타입 별칭 Type Aliases
@@ -515,33 +467,80 @@ class Ball implements Pingable {
 }
 ```
 
-### 리터럴 타입
 
-타입스크립트에선 특이하게도 값의 범위(공식 가이드에선 이를 리터럴 집합이라 함)도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입*이라 한다:
+## 추상 클래스 Abstract Classes
 
-```ts
-let one: 1;
-one = 1;
-one = 2; // error TS2322: Type '2' is not assignable to type '1'.
-```
+추상 클래스는 인스턴스 생성이 불가능하며 상속(extends)을 위해서면 존재하는 클래스다. 다른 클래스로 파생되는 기반 클래스 역할을 하며, 구현 클래스의 형태를 제한한다.
 
-변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
-
-
-## 타입 단언 Type Assertions
-
-객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
+아래는 추상 메서드 `getName()`를 갖는 추상 클래스를 선언하는 방법이다:
 
 ```ts
-let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
+// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
+abstract class Base {
+  abstract getName(): string;
+ 
+  printName() {
+    console.log("Hello, " + this.getName());
+  }
+}
 
-let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
+class Derived extends Base {
+  getName() {
+    return "world";
+  }
+}
+ 
+const d = new Derived();
+d.printName();
 ```
+
+구현 클래스는 반드시 `getName()`을 구체화 해야 한다. 그렇지 않으면 에러가 발생한다:
+
+```ts
+class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
+```
+
+### 추상 생성자 시그니처 Abstract Construct Signatures
+
+타입스크립트에선 파라미터에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별 게 다 있다...)
+
+```ts
+abstract class Base {
+  abstract printName(): void;
+}
+
+class Derived extends Base {
+  printName() {
+    console.log('Derived instance');
+  }
+}
+
+function greet(ctor: new () => Base) {
+  const instance = new ctor();
+  instance.printName();
+}
+
+greet(Derived);
+```
+
+추상 클래스 `Base`와 `Base` 상속하는 `Derived`가 있을 때, `greet()` 함수에서 `Base`와 `Base`의 서브 클래스 생성자를 파라미터로 받도록 타입을 제한했다. 그리고 `Derived` 생성자 함수를 인수로 넘기는 코드다.
+
+만약 `Base` 생성자 함수를 인수로 하면:
+
+```ts
+greet(Base);
+// error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
+// Cannot assign an abstract constructor type to a non-abstract constructor type.
+```
+
+추상 클래스는 인스턴스를 만들 수 없기 때문에 에러가 발생한다.
+
+🚨 `typeof` 타입 연산자로도 비슷한 구현이 가능하지만 권장되지 않는다.
 
 
 ## 열거형 Enums
 
-[TypeScript Documentation | Enums](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
+[TypeScript Documentation \| Enums](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
 
 **TODO**
 
@@ -718,7 +717,7 @@ declare class MyClass { }
 
 **TODO** 설명 추가
 
-[TypeScript Documentation | Creating .d.ts Files from .js files](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
+[TypeScript Documentation \| Creating .d.ts Files from .js files](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
 
 
 ## 다운레벨링 Downleveling
@@ -753,19 +752,19 @@ let s: symbol = Symbol('s');
 
 ### Keyof 타입 연산자
 
-[TypeScript Documentation | Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
+[TypeScript Documentation \| Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
 
 **TODO** 
 
 ### Typeof 타입 연산자
 
-[TypeScript Documentation | Typeof Type Operator](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
+[TypeScript Documentation \| Typeof Type Operator](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
 
 **TODO**
 
 
 ## 타입스크립트의 JSDoc
 
-[TypeScript Documentation | JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+[TypeScript Documentation \| JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 
 **TODO**

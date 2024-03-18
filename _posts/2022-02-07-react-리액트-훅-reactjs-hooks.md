@@ -29,7 +29,7 @@ tags:
 
 ## 훅 호출 규칙
 
-[React | Meet your first Hook ](https://react.dev/learn/state-a-components-memory#meet-your-first-hook)
+[React \| Meet your first Hook ](https://react.dev/learn/state-a-components-memory#meet-your-first-hook)
 
 - 훅은 컴포넌트의 최상위 수준 또는 커스텀 훅에서만 호출할 수 있다.
 - 조건문이나 반복문 혹은 기타 중첩 함수 내부에서는 호출할 수 없다.
@@ -166,7 +166,7 @@ const handleEvent2 = event => {
 
 modifier는 비동기적으로 작동하기 때문에 modifier 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
 
-\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub | this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
+\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
 
 ```jsx
 const [obj, setObj] = React.useState({someFlag: false});
@@ -210,7 +210,7 @@ useEffect(() => {
 
 ### useReducer
 
-[React | Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
+[React \| Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
 
 **TODO** reducer로 복잡한 state 관리를 덜어낼 수 있다고 한다. 반드시 알아볼 것
 

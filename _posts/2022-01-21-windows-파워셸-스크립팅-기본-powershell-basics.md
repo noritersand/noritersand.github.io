@@ -190,12 +190,12 @@ Get-ChildItem # 이것도 한 줄 코멘트
 
 ## 연산자
 
-[블로그 내부 링크 | 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
+[블로그 내부 링크 \| 파워셸 스크립팅: 연산자](/windows/windows-파워셸-스크립팅-연산자-powershell-operator/)
 
 
 ## 명령어 Cmdlet
 
-[블로그 내부 링크 | 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+[블로그 내부 링크 \| 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 
 ## CmdletBinding()
@@ -266,7 +266,7 @@ switch (<test-expression>)
     <result2-to-be-matched> {<action>}
 }
 
-switch [-regex | -wildcard | -exact] [-casesensitive] (<test-expression>)
+switch [-regex | -wildcard \| -exact] [-casesensitive] (<test-expression>)
 {
     "string" | number | variable | { <value-scriptblock> } { <action-scriptblock> }
     default { <action-scriptblock> } # optional

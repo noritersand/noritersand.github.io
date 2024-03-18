@@ -19,7 +19,7 @@ tags:
 - [MDN \| Expressions and operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators)
 - [MDN \| Equality comparisons and sameness](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness)
 - [MDN \| Comma operator (,)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
-- [http://www.insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드](https://insightbook.co.kr/book/programming-insight/자바스크립트-완벽-가이드)
+- 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
 
 
 ## 산술 연산자 Arithmetic Operator

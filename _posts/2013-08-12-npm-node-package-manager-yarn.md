@@ -158,7 +158,7 @@ npm uninstall 모듈명 -g
 
 ## 설치한 모듈 실행
 
-[npm Docs | npm-exec](https://docs.npmjs.com/cli/v8/commands/npm-exec)
+[npm Docs \| npm-exec](https://docs.npmjs.com/cli/v8/commands/npm-exec)
 
 ```bash
 # 로컬에 설치한 mocha 모듈 실행
@@ -183,7 +183,7 @@ npx http-server -p 9090
 
 ### npm exec와 npx의 차이
 
-[npm Docs | npx vs npm exec](https://docs.npmjs.com/cli/v8/commands/npm-exec#npx-vs-npm-exec)
+[npm Docs \| npx vs npm exec](https://docs.npmjs.com/cli/v8/commands/npm-exec#npx-vs-npm-exec)
 
 우선 `npx`는 명령 실행에 필요한 패키지가 로컬에 없으면 자동으로 어딘가(OS마다 다른 temp 디렉터리)에 다운로드한다.
 

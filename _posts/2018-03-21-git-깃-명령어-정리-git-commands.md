@@ -1003,7 +1003,7 @@ LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한
 
 ## log
 
-[Git | git-log Documentation](https://git-scm.com/docs/git-log)
+[Git \| git-log Documentation](https://git-scm.com/docs/git-log)
 
 ```
 git log [<options>] [<revision range>] [[--] <path>...]
@@ -1230,7 +1230,7 @@ git merge --squash TARGET_BRANCH
 
 머지할 브랜치의 커밋 이력을 하나로 압축한 별도의 커밋을 만들고 헤드 브랜치에 머지한다. 일반 머지와 다르게 하나의 부모커밋(헤드 브랜치 기준)만 갖는다.
 
-[이 블로그 내부 링크 | Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
+[이 블로그 내부 링크 \| Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 
 ## mv
@@ -1373,7 +1373,7 @@ pick 7715f75fa (HEAD)
 # r, reword <commit> = use commit, but edit the commit message
 # e, edit <commit> = use commit, but stop for amending
 # s, squash <commit> = use commit, but meld into previous commit
-# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
+# f, fixup [-C \| -c] <commit> = like "squash" but keep only the previous
 #                    commit's log message, unless -C is used, in which case
 #                    keep only this commit's message; -c is same as -C but
 #                    opens the editor
@@ -1382,7 +1382,7 @@ pick 7715f75fa (HEAD)
 # d, drop <commit> = remove commit
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
-# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# m, merge [-C <commit> \| -c <commit>] <label> [# <oneline>]
 # .       create a merge commit using the original merge commit's
 # .       message (or the oneline, if no original merge commit was
 # .       specified); use -c <commit> to reword the commit message

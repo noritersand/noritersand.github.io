@@ -459,7 +459,7 @@ ReactDOM.createRoot(domNode, options)
 
 루트 DOM 노드에 리액트 컴포넌트 트리를 렌더링하는 새 함수. 리액트 버전 18부터 신규 추가되어 `ReactDOM.render()`를 대체한다.
 
-[React | createRoot()](https://react.dev/reference/react-dom/client/createRoot#createroot)
+[React \| createRoot()](https://react.dev/reference/react-dom/client/createRoot#createroot)
 
 ```jsx
 import { createRoot } from 'react-dom/client';
@@ -644,7 +644,7 @@ function Header(props) {
 
 ### props.children
 
-[React | Passing JSX as children ](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
+[React \| Passing JSX as children ](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
 
 HTML에선 여는 태그와 닫는 태그가 존재하며 그 사이에 어떤 내용(content)을 작성할 수 있는 태그를 *바디 있는 태그* 혹은 *컨테이너 태그(container tag)*라고 부른다. 리액트에선 컨테이너 태그의 내용을 컴포넌트에 전달할 때 `props.children`을 사용한다(Vue의 `v-slot` 디렉티브와 비슷).
 
@@ -773,7 +773,7 @@ const MyComponent = React.memo(props => {
 
 ## CRA: CSS 적용하기
 
-[Create React App | Adding a Stylesheet](https://create-react-app.dev/docs/adding-a-stylesheet)
+[Create React App \| Adding a Stylesheet](https://create-react-app.dev/docs/adding-a-stylesheet)
 
 CRA에선 ESM의 `import`로 CSS를 가져올 수 있다:
 
@@ -799,11 +799,11 @@ class Button extends Component {
 
 원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 import 하라 알리면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
 
-ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져올 수 있다. [Create React App | Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
+ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져올 수 있다. [Create React App \| Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
 
 ### CSS Modules
 
-[Create React App | Adding a CSS Modules Stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+[Create React App \| Adding a CSS Modules Stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
 
 CSS 모듈은 CSS 선택자의 유효범위를 모듈 단위로 제한하는 신박한 기능이다.
 

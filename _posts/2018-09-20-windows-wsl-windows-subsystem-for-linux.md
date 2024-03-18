@@ -101,7 +101,7 @@ dir | wsl grep git
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
-[니콜라스 유튜브 | 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
+[니콜라스 유튜브 \| 개발자를 위한 윈도우 셋업](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
 
 Zsh는 리눅스 기본 셸인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 

@@ -135,7 +135,7 @@ tags:
 
 ### CSS 프레임워크
 
-[니콜라스 유튜브 | 2023 베스트 CSS 프레임워크 소개](https://www.youtube.com/watch?v=FRSUP2sbgTY)
+[니콜라스 유튜브 \| 2023 베스트 CSS 프레임워크 소개](https://www.youtube.com/watch?v=FRSUP2sbgTY)
 
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): CSS 프레임웤과 디자인 시스템 같은 것을 모아놓은 사이트
