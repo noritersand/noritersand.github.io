@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워셸 스크립팅: 자주 사용하는 명령어'
+title: '[Windows] 파워셸 스크립팅: 자주 사용하는 명령어(cmdlet)'
 categories:
   - windows
 tags:

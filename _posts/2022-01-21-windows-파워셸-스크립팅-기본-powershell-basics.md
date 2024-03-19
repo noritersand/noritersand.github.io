@@ -266,7 +266,7 @@ switch (<test-expression>)
     <result2-to-be-matched> {<action>}
 }
 
-switch [-regex | -wildcard \| -exact] [-casesensitive] (<test-expression>)
+switch [-regex | -wildcard | -exact] [-casesensitive] (<test-expression>)
 {
     "string" | number | variable | { <value-scriptblock> } { <action-scriptblock> }
     default { <action-scriptblock> } # optional

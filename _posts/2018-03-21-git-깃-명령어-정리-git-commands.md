@@ -551,9 +551,17 @@ git commit -C HEAD --amend
 
 #### Options
 
-- `--local`: 저장소별 설정을 의미한다. 옵션을 생략했을 때의 기본값이지만, 다른 옵션 조합에 따라 기본값이 아닐 때도 있다.
-- `--global`: 현재 로그인한 유저의 설정.
-- `--system`: 모든 유저의 설정.
+- `--local`: 로컬 스코프 옵션. 저장소별 설정을 의미한다. 대체로 기본값으로 적용되지만 옵션에 따라 기본값이 아닐 때도 있다.
+- `--global`: 글로벌 스코프 옵션. 현재 로그인한 유저의 모든 저장소에 적용되는 전역 설정이다. 스코프의 우선 순위는 로컬 > 글로벌 > 시스템 순이며, 로컬 설정이 없으면 글로벌이나 시스템의 설정을 따른다.
+- `--system`: 시스템 스코프 옵션. 모든 유저와 저장소의 전역 설정이다. 이 설정을 수정하려면 관리자 권한이 필요하다.
+- `--get`: 주어진 설정 키의 값을 가져온다.
+- `--get-all`: 키 하나에 여러 값을 할당할 수 있는데, 해당 키의 모든 값을 가져온다.
+- `--unset`: 설정 파일에서 지정한 키와 일치하는 줄을 삭제한다.
+- `--unset-all`: 설정 파일에서 지정한 키와 일치하는 모든 줄을 삭제한다.
+- `-l` `--list`: 모든 설정값을 나열한다.
+- `--show-origin`: 설정값을 조회할 때 해당 설정이 정의된 파일의 경로를 함께 출력한다.
+- `--show-scope`: 설정값의 스코프(local, global, system)를 함께 출력한다.
+- `-e` `--edit`: 에디터를 열어 특정 스코프의 설정 파일을 수정한다. 스코프 옵션(`--global`, `--system`)과 함께 쓰이며, 생략하면 `--local`이다.
 
 #### 작업자의 이름/이메일 설정
 
@@ -1373,7 +1381,7 @@ pick 7715f75fa (HEAD)
 # r, reword <commit> = use commit, but edit the commit message
 # e, edit <commit> = use commit, but stop for amending
 # s, squash <commit> = use commit, but meld into previous commit
-# f, fixup [-C \| -c] <commit> = like "squash" but keep only the previous
+# f, fixup [-C | -c] <commit> = like "squash" but keep only the previous
 #                    commit's log message, unless -C is used, in which case
 #                    keep only this commit's message; -c is same as -C but
 #                    opens the editor
@@ -1382,7 +1390,7 @@ pick 7715f75fa (HEAD)
 # d, drop <commit> = remove commit
 # l, label <label> = label current HEAD with a name
 # t, reset <label> = reset HEAD to a label
-# m, merge [-C <commit> \| -c <commit>] <label> [# <oneline>]
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
 # .       create a merge commit using the original merge commit's
 # .       message (or the oneline, if no original merge commit was
 # .       specified); use -c <commit> to reword the commit message

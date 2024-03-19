@@ -140,7 +140,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ## button
 
-- [MDN \| \<button\>: The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
+- [MDN \| The Button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
 - [https://www.w3schools.com/tags/tag_button.asp](https://www.w3schools.com/tags/tag_button.asp)
 
 `<button>`태그에 type 속성을 명시하지 않을 경우 type의 기본값은 submit으로 설정된다. 이 때문에 `<form>`안에 위치하게 되면 버튼 클릭 시 `HTMLFormElement.submit()` 메서드가 작동하게 된다.
@@ -156,7 +156,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ## form
 
-- [MDN \| \<form\>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
+- [MDN \| The Form element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
 - [https://www.w3schools.com/tags/tag_form.asp](https://www.w3schools.com/tags/tag_form.asp)
 
 **TODO**
