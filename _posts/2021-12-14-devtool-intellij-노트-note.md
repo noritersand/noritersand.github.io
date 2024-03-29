@@ -177,10 +177,9 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 - MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
 - CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
-- ~~Extra Actions~~: 몇 가지 기능을 추가하는 플러그인인데 **단축키를 기본값으로 되돌리는 버그가 있다**.
+- Extra Actions: 몇 가지 기능을 추가하는 플러그인. 단축키를 기본값으로 되돌리는 버그가 있지만, 멀티 캐럿 기능 때문에 써야함.
 - Grep Console: 콘솔 로그에 색을 입히거나 필터링하는 플러그인. 인터페이스가 좀 복잡하긴 한데 쓸만함
-- Java Visualizer: ??
-- VisualVM Launcher: ??
+
 
 ### Extra Actions
 
@@ -202,8 +201,8 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - 이전 제안 보기: <kbd>alt + ]</kbd>
 - 제안을 단어 단위로 적용하기: <kbd>ctrl + right</kbd>
 - 제안을 줄 단위로 적용하기: <kbd>ctrl + alt + right</kbd>
-- 코파일럿 창 열기: <kbd>alt + p</kbd>로 설정해
-- 코파일럿 채팅 창 열기: <kbd>alt + shift + p</kbd>로 설정해
+- 코파일럿 창 열기: <kbd>alt + p</kbd>로 변경
+- 코파일럿 채팅 창 열기: <kbd>alt + shift + p</kbd>로 변경
 
 
 ## 작성자 저장용 단축키 설정

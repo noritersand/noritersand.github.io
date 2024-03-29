@@ -84,7 +84,7 @@ class VO implements Serializable {
 
 인스턴스를 직렬화하여 파일로 내보내는 코드다. 이처럼 자바 직렬화는 ObjectOutputStream의 `writeObject()`를 이용해 아주 간단하게 구현할 수 있다.(BufferedOutputStream은 반드시 거치지 않아도 되는 보조스트림)
 
-단, 직렬화 대상이 되는 클래스는 반드시 Serializable 인터페이스를 구체화(implements)해야 하는데, 그렇지 않으면 NotSerializableException이 발생한다.
+단, 직렬화 대상이 되는 클래스는 반드시 Serializable 인터페이스를 구상화(implements)해야 하는데, 그렇지 않으면 NotSerializableException이 발생한다.
 
 ```java
 import java.io.Serializable;
@@ -99,7 +99,7 @@ public class VO implements Serializable{
 // 생략
 ```
 
-또한 Object 클래스의 인스턴스는 직렬화 할 수 없다. 모든 클래스의 조상인 Object 클래스는 Serializable을 구체화하기 않았기 때문인데, 실제 인스턴스가 Serializable을 구체화한 클래스의 인스턴스이며 Object 타입으로 업캐스팅된 경우라면 직렬화가 가능하다. (가령 String을 Object로 업캐스팅한 경우)
+또한 Object 클래스의 인스턴스는 직렬화 할 수 없다. 모든 클래스의 조상인 Object 클래스는 Serializable을 구상화하기 않았기 때문인데, 실제 인스턴스가 Serializable을 구상화한 클래스의 인스턴스이며 Object 타입으로 업캐스팅된 경우라면 직렬화가 가능하다. (가령 String을 Object로 업캐스팅한 경우)
 
 ```java
 class Parent {

@@ -210,7 +210,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 **사실 이런 뻘짓하지 말고 내보내기-불러오기 하는게 좋다.**
 
-- Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구체화된 클래스로 이동시킨다.
+- Open Implementation: <kbd>f4</kbd>(In Windows, Navigate) Open Implementation은 Open Declaration(F3)과 다르게 인터페이스가 아니라 구상화된 클래스로 이동시킨다.
 - Open Type Hierarchy: <kbd>unbined</kbd>
 - Find Text In File: <kbd>ctrl + alt + f</kbd>(In Windows, Search)
 - Watch: <kbd>ctrl + alt + w</kbd>(In Dialogs and Windows 혹은 Debugging Java) 디버깅 기능으로 특정 변수, 혹은 표현식을 감시한다.

@@ -27,20 +27,48 @@ tags:
 
 #### 브라우저 호환
 
-- IE, 사파리 사용 불가
+- IE
 
 
 ## 개요
 
-fetch는 xhr의 모던한 객체임. 멋-쪄
+xhr의 모던 버전인 fetch API에 대한 설명 글.
 
 
 ## fetch()
+
+`fetch()`는 네트워크로 특정 리소스를 받아오는(fetching) 전역 함수다.
 
 ```
 fetch(resource)
 fetch(resource, options)
 ```
+
+- `resource`: 리소스의 URL을 의미하는 문자열이나 `Request` 객체, 또는 `URL` 처럼 문자열로 변환 가능한 객체(object with a stringifier).
+- `options`: 요청에 대한 사용자 정의 설정을 담고 있는 객체. 가능한 설정은 아래와 같음:
+  - `body`
+  - `browsingTopics`
+  - `cache`
+  - `credentials`
+    - `omit`
+    - `same-origin`
+    - `include`
+  - `headers`
+  - `integrity`
+  - `keepalive`
+  - `method`
+  - `mode`
+  - `priority`
+    - `high`
+    - `low`
+    - `auto`
+  - `redirect`
+    - `follow`
+    - `error`
+    - `manual`
+  - `referrer`
+  - `referrerPolicy`
+  - `signal`
 
 대충 간단한 사용법은 아래와 같다:
 
@@ -109,7 +137,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Response/json
 **TODO**
 
 
-## example
+## example #1
 
 소스 출처: [https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest](https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest)
 
@@ -129,4 +157,31 @@ let resp = await fetch("http://127.0.0.1:8080/test/doughnutList", {
     "method": "POST",
     "mode": "cors"
 });
+```
+
+
+## example #2: form 파라미터 전송하기
+
+```html
+<form id="myForm">
+  <input type="text" name="username" value="exampleUser" />
+  <input type="text" name="password" value="examplePass" />
+</form>
+
+<script>
+const form = document.getElementById('myForm');
+const formData = new FormData(form);
+
+fetch('https://example.com/submit', {
+  method: 'POST',
+  body: formData,
+})
+  .then(response => response.json())
+  .then(result => {
+    console.log('success:', result);
+  })
+  .catch(error => {
+    console.error('error:', error);
+  });
+</script>
 ```

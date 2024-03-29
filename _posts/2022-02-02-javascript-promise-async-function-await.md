@@ -509,7 +509,7 @@ timeTest2(); // It takes 1009 milliseconds.
 
 거의 1초 정도에 작업이 완료된다.
 
-### Promise.all(), Promise.race()
+### Promise.all(), Promise.race(), Promise.any()
 
 앞선 예시처럼 변수 여러 개에 `await`를 거는 방법은 코드가 예쁘지 않다. Promise가 제공하는 메서드를 써보자.
 
@@ -520,12 +520,11 @@ Promise.all(iterable)
 `Promise.all()`은 여러 Promise의 결과를 집계할 때 사용한다. `iterable`에 Promise 객체 여럿을 배열로 던지면 됨:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
-var concurrent2 = async () => {
-  return await Promise.all([wait2(3000), wait2(2000), wait2(1000)]);
+var wait = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
+var concurrent = async () => {
+  return await Promise.all([wait(3000), wait(2000), wait(1000)]);
 }
-concurrent2().then(console.log);
-// 'Array(3) [ 3000, 2000, 1000 ]'
+concurrent().then(console.log); // 'Array(3) [ 3000, 2000, 1000 ]'
 ```
 
 가장 빠른놈만 하나 고르는 메서드도 있다.
@@ -537,12 +536,34 @@ Promise.race(iterable)
 `Promise.race()`는 주어진 Promise들을 동시에 실행하되 가장 먼저 완료되는 것만 반환한다:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
+var wait = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var pickOne = async () => {
-  return await Promise.race([wait2(3000), wait2(2000), wait2(1000)]);
+  return await Promise.race([wait(3000), wait(2000), wait(1000)]);
 }
-pickOne().then(console.log);
-// 1000
+pickOne().then(console.log); // 1000
+```
+
+```
+Promise.any(iterable)
+```
+
+`Promise.any()`는 `race()`와 비슷하지만, 가장 먼저 '성공'한 Promise의 결과를 반환한다. 만약 모두 실패(거부)하면 `AggregateError`를 발생시킨다:
+
+```js
+var doRresolve = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
+var doReject = ms => new Promise((resolve, reject) => setTimeout(() => {reject(ms)}, ms));
+
+(async () => {
+  return await Promise.any([doRresolve(3000), doRresolve(2000), doRresolve(1000)]);
+})().then(console.log); // 1000
+
+(async () => {
+  return await Promise.any([doRresolve(3000), doReject(2000), doReject(1000)]);
+})().then(console.log); // 3000
+
+(async () => {
+  return await Promise.any([doReject(3000), doReject(2000), doReject(1000)]);
+})().then(console.log); // AggregateError: No Promise in Promise.any was resolved
 ```
 
 ### 진짜 병렬 처리?
@@ -550,31 +571,31 @@ pickOne().then(console.log);
 변수에 `await`를 걸든, `Promise.all()`를 쓰든 문제가 하나 있다. async 함수가 완료되려면 가장 느린 Promise의 작업이 끝날때까지 기다려야 한다는 것:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
-var concurrent3 = async () => {
+var wait = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
+var concurrent = async () => {
   let startTime = new Date();
 
-  await Promise.all([wait2(5000), wait2(3000), wait2(1000)]).then(console.log);
+  await Promise.all([wait(5000), wait(3000), wait(1000)]).then(console.log);
 
   let endTime = new Date();
   console.log(`It takes ${endTime.getTime() - startTime.getTime()} milliseconds.`);
 }
-concurrent3();
+concurrent();
 // It takes 5013 milliseconds.
 ```
 
-가장 느린 Promise인 `wait2(5000)` 때문에 총 실행시간은 약 5초다.
+가장 느린 Promise인 `wait(5000)` 때문에 총 실행시간은 약 5초다.
 
 `Promise.race()`를 쓰면 가장 빠른 Promise만 기다리면 되긴 하지만, 느린 Promise의 실행 결과를 처리할 수 없다는 문제가 있다.
 
 이 문제는 앞선 예시들의 구조 그대로 재사용하긴 힘들고 아래 방법처럼 `.then()`을 각각 호출하는게 대안이 될 수 있다:
 
 ```js
-var wait2 = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
+var wait = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
 var parallel = function() {
-  wait2(5000).then(console.log);
-  wait2(3000).then(console.log);
-  wait2(1000).then(console.log);
+  wait(5000).then(console.log);
+  wait(3000).then(console.log);
+  wait(1000).then(console.log);
 }
 parallel();
 // 1000

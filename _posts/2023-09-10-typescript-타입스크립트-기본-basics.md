@@ -146,7 +146,7 @@ tsc --build --watch
 
 ## 타입 정의(definition)와 선언(declaration)
 
-### 변수
+### 변수 타입 선언하기
 
 ```ts
 let foo: number = 123;
@@ -159,6 +159,18 @@ let foo: number = 123;
 ```ts
 let arr: string[] = [1, 2, 3]; // error TS2322: Type 'number' is not assignable to type 'string'.
 ```
+
+### 리터럴 타입 사용하기
+
+타입스크립트에선 특이하게도 값의 범위도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입* 또는 *리터럴 집합*이라 한다:
+
+```ts
+let one: 1;
+one = 1;
+one = 2; // error TS2322: Type '2' is not assignable to type '1'.
+```
+
+변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
 
 ### 객체 리터럴의 프로퍼티
 
@@ -192,7 +204,7 @@ let obj: {name: string, sirname?: string} = {
 console.log(obj.sirname); // undefined
 ```
 
-#### 프로퍼티 이름의 타입 정의 Index Signatures
+### 프로퍼티 이름의 타입 정의 Index Signatures
 
 아래처럼 대괄호 표기법을 이용한 동적 프로퍼티 접근 코드는 에러를 유발하는데:
 
@@ -220,6 +232,21 @@ let b = 'b';
 console.log(obj[b]); // 2
 ```
 
+### 타입 단언 Type Assertions
+
+객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
+
+```ts
+let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
+
+let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
+```
+
+
+## 호출 시그니처 Call Signatures
+
+호출 시그니처는 함수나 메서드의 타입을 설명하는 방법이다. 매개변수의 타입과 반환값의 타입을 정의할 때 사용한다.
+
 ### 함수 매개변수
 
 ```ts
@@ -230,9 +257,9 @@ function add(a: number, b: number) {
 
 파라미터 `a`와 `b` 모두 `number` 타입이라는 뜻이다.
 
-### 객체 타입의 매개변수
+### 객체 매개변수
 
-자바스크립트에서는 불가능한 문법인데, 언뜻 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미 콜론`;`을 사용한다.
+얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미 콜론`;`을 사용한다.
 
 ```ts
 function printFooBar(foobar: { foo: string; bar: number }) {
@@ -277,7 +304,7 @@ function getSymbol(): symbol {
 
 ### 함수 타입 표현식 Function Type Expressions
 
-함수 타입 파라미터에 대한 타입 표기 방법이다:
+함수 타입 파라미터(파라미터가 함수)에 대한 타입 표기 방법이다:
 
 ```ts
 function caller(callee: (a: string) => void) {
@@ -344,48 +371,16 @@ let getWaldo = (name: string): {name: string, age?: number} => {
 getWaldo('Waldo').age = 128;
 ```
 
-### 클래스 Classes 
+### 생성자 시그니처 Construct Signatures
 
-클래스에서의 타입 표기는 앞서 언급했던 것들의 조합이다:
+[https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
 
-```ts
-class Newbie {
-  name: string; // 프로퍼티 타입 표기
-  id: number;
-
-  constructor(name: string, id: number) { // 함수 매개변수 타입 표기
-    this.name = name;
-    this.id = id;
-  }
-}
-```
-
-### 리터럴 타입
-
-타입스크립트에선 특이하게도 값의 범위(공식 가이드에선 이를 리터럴 집합이라 함)도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입*이라 한다:
-
-```ts
-let one: 1;
-one = 1;
-one = 2; // error TS2322: Type '2' is not assignable to type '1'.
-```
-
-변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
-
-### 타입 단언 Type Assertions
-
-객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
-
-```ts
-let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
-
-let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
-```
+**TODO** 
 
 
 ## 타입 별칭 Type Aliases
 
-`type` 키워드로 정의한다. 객체 타입이나 유니언(아래에 따로 설명함)에서 주로 사용한다:
+`type` 키워드로 커스텀 타입을 정의한다. 객체나 유니언(아래에 따로 설명함)의 타입을 제한할 때 주로 사용한다:
 
 ```ts
 function printCoordinate(obj: Coordinate) {
@@ -441,9 +436,9 @@ const person2: Developer = {
 };
 ```
 
-### Class Heritage
+### 구현/구상화 implements
 
-**TODO** 설명 추가
+인터페이스는 타입 정의 외에도 클래스의 구상화 기능도 제공한다:
 
 ```ts
 // 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage
@@ -458,17 +453,50 @@ class Sonar implements Pingable {
 }
 ```
 
+`ping()`은 인터페이스 내에 선언된 메서드 시그니처(method signatures)라고 한다. 이것은 구현 클래스에 `ping()`이 반드시 있도록 제한한다:
+
 ```ts
 class Ball implements Pingable {
-// Class 'Ball' incorrectly implements interface 'Pingable'.
+// error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
 //   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
   
   // ping() 메서드를 구현하지 않은 경우
 }
 ```
 
+⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(*It doesn’t change the type of the class or its methods at all*: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
 
-## 추상 클래스 Abstract Classes
+```ts
+interface Checkable {
+  check(name: string): boolean;
+}
+ 
+class NameChecker implements Checkable {
+  check(s): boolean {
+    // error TS7006: Parameter 's' implicitly has an 'any' type.
+    return false;
+  }
+}
+```
+
+
+## 클래스 Classes 
+
+클래스에서의 타입 사용은 앞서 언급했던 것들의 조합이다:
+
+```ts
+class Newbie {
+  name: string; // 프로퍼티 타입 표기
+  id: number;
+
+  constructor(name: string, id: number) { // 함수 매개변수 타입 표기
+    this.name = name;
+    this.id = id;
+  }
+}
+```
+
+### 추상 클래스 Abstract Classes
 
 추상 클래스는 인스턴스 생성이 불가능하며 상속(extends)을 위해서면 존재하는 클래스다. 다른 클래스로 파생되는 기반 클래스 역할을 하며, 구현 클래스의 형태를 제한한다.
 
@@ -494,7 +522,7 @@ const d = new Derived();
 d.printName();
 ```
 
-구현 클래스는 반드시 `getName()`을 구체화 해야 한다. 그렇지 않으면 에러가 발생한다:
+만약 구현 클래스에 `getName()`이 없으면 에러가 발생한다:
 
 ```ts
 class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'

@@ -144,7 +144,7 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User 
 - Naming-Shiba `fredkeemhaus.Naming-Shiba`: 한국어 문장을 영문변수명으로 바꿔주는 플러그인. 노매드코더 슬랙 참가자 중 한 명이 말듦. 단축키는 <kbd>ctrl + shift + a</kbd>와 <kbd>ctrl + shift + s</kbd>인데 다른 거랑 겹치니까 딴 걸로 바꿔야 함.
 - GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는 발동 <kbd>alt + \\</kbd>, 제안 선택 <kbd>tab</kbd>, 자동 완성 제안 창 보기 <kbd>ctrl + enter</kbd>, 코파일럿 빠른 채팅 열기 <kbd>ctrl + shift + i</kbd>, GitHub Copilot View 포커싱 <kbd>alt + shift + p</kbd>가 있다(마지막은 없어서 추가한 거).
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
-- ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 관계선, 코멘트 등 기본적인 건 다 지원한다.
+- ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
 
 
 ## 작성자 저장용 단축키 설정
