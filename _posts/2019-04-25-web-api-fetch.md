@@ -101,6 +101,13 @@ fetch('/return-my-request-body.data', options).then(resp => {
 let response = await fetch('/get-my-request-body.data', init);
 let json = await response.json();
 console.log(json);
+
+// 혹은
+
+const json = await (
+  await fetch('/get-my-request-body.data', init);
+).json();
+console.log(json);
 ```
 
 

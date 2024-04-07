@@ -253,6 +253,56 @@ console.log(freezeMe2); // Object { a: 1, b: 2, c: { d: 4 } }
 
 한 번 얼린 객체를 되돌리는 방법은 없다. 멀쩡한 게 필요하면 복제를 하면 되는데, 중첩 객체가 있을 때는 깊게 복제해야 함.
 
+### Object.is()
+
+주어진 값 두 개가 [같은 값(same value)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Equality_comparisons_and_sameness#same-value_equality_using_object.is)한지 판단한다.
+
+```
+Object.is(value1, value2)
+```
+
+`Object.is()`는 동등 연산자`==`나, 일치 연산자`===`와 다르게 작동한다. 둘 중 일치 연산자`===`와 비슷하게 작동하긴 한다.
+
+같은 값으로 판단하는 경우는 다음과 같다:
+
+- 둘 다 `undefined`
+- 둘 다 `null`
+- 둘 다 `true` 혹은 둘 다 `false`
+- 둘 다 같은 문자열(정확히는 같은 순서와 같은 케릭터에 같은 길이)
+- 둘 다 같은 객체(메모리 상 같은 객체를 가리키는지)
+- 둘 다 숫자이며 `+0`
+- 둘 다 숫자이며 `-0`
+- 둘 다 숫자이며 `NaN`
+- 둘 다 숫자이며 `0`이나 `NaN`이 아닌 같은 값
+
+```js
+Object.is(undefined, undefined); // true
+Object.is(null, null); // true
+Object.is(undefined, null); // false
+
+Object.is(true, true); // true
+Object.is(false, false); // true
+Object.is(true, false); // false
+
+Object.is('abc', 'abc'); // true
+Object.is('bca', 'abc'); // false
+Object.is('abcd', 'abc'); // false
+
+Object.is(0, 0); // true
+Object.is(-0, -0); // true
+Object.is(0, -0); // false
+
+Object.is(NaN, NaN); // true
+Object.is(NaN, 256); // false
+
+Object.is(256, 256); // true
+Object.is(256, 128); // false
+
+var obj = {};
+Object.is(obj, obj); // true
+Object.is(obj, {}); // false
+```
+
 
 ## 인스턴스 메서드
 

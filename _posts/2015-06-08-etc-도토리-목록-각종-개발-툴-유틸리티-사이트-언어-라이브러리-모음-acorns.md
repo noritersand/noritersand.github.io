@@ -123,12 +123,13 @@ tags:
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
-- [Vue](https://vuejs.org/): (이하 뷰) 설명이 필요없는 프론트엔드 프레임워크(1).
-- [React](https://react.dev/): (이하 리액트) 설명이 필요없는 프론트엔드 프레임워크(2). 왜때문인지 스스로 프레임워크가 아니라 라이브러리라 주장한다.
+- [Vue](https://vuejs.org/): (이하 뷰) 설명이 필요없는 프론트엔드 라이브러리(1).
+- [React](https://react.dev/): (이하 리액트) 설명이 필요없는 프론트엔드 라이브러리(2).
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 리액트, 뷰를 잇는 프론트엔드 프레임워크. 비교적 가볍고 단순한 게 특징이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
 - [Next.js](https://nextjs.org/): 리액트 기반의 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
+- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 툴. 리액트, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - [Remix](https://remix.run/): 리액트 기반의 SSR/CSR 프레임워크. CSR보단 SSR로 주로 쓰이는 듯 하며, 백엔드에서 리액트를 실행하고 결과를 클라이언트에 전송하는 방식이다.
@@ -196,6 +197,7 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [Kubernetes](https://kubernetes.io/): 통칭 K8s이라 쓰는 쿠버네티스. 컨테이너화된 애플리케이션을 관리하고 배포하기 위한 오픈소스 플랫폼이다. 기존 PaaS 범주와 비슷하지만 다르다고 한다. [공식 문서 링크](https://kubernetes.io/docs/concepts/overviw/). "컨테이너화된 애플리케이션을 배포, 관리, 확장할 때 수반되는 다수의 수동 프로세스를 자동화하는 오픈소스 컨테이너 오케스트레이션 플랫폼"이라 소개된다.
 - [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
+- [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
 
 ### IaaS
 

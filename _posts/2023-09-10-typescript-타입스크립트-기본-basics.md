@@ -70,7 +70,7 @@ tsc --init
 
 #### tsconfig.json의 주요 설정:
 
-- `target`: 컴파일될 자바스크립트 코드의 ECMAScript 버전을 지정한다. `es3`, `es5`, `es6/es2015`, `es2016`, `es2017`, `es2018`, `es2019`, `es2020`, `es2021`, `es2022`, `esnext` 중에 하나이며 대소문자는 상관 없는 모양이다.
+- `target`: 컴파일될 자바스크립트 코드의 ECMAScript 버전을 지정한다. `es3`, `es5`, `es6`/`es2015`, `es2016`, `es2017`, `es2018`, `es2019`, `es2020`, ..., `esnext` 중에 하나이며 대소문자는 상관 없는 모양이다.
 - `module`: 모듈 시스템을 지정한다. `none`, `commonjs`, `amd`, `umd`, `system`, `es6/es2015`, `es2020`, `es2022`, `esnext`, `node16`, `nodenext` 이것도 대소문자는 가리지 않는 걸로 보인다.
 - `outDir`: 컴파일된 파일들이 저장된 디렉터리 경로
 - `rootDir`: **TODO**
@@ -124,261 +124,39 @@ tsc --build --watch
 ```
 
 
-## 타입 목록
+## 사용 가능한 타입 목록
 
 - 원시 타입:
-  - `string`
-  - `number`
-  - `boolean`
-  - `symbol`
-  - `bigint`
-- 배열: 배열의 원소가 될 타입에 대괄호`[]`를 붙이는 방식으로 표기한다.
-  - `number[]`
-  - `string[]`
+  - `string`: 문자열 타입
+  - `number`: 숫자 타입 (정수, 실수 모두 포함)
+  - `boolean`: 논리 타입 (true/false)
+  - `symbol`: ES6에서 추가된 심볼 타입
+  - `bigint`: ES2020에서 추가된 큰 정수 타입
+- 배열:
+  - `number[]`: 숫자 타입의 배열
+  - `string[]`: 문자열 타입의 배열
   - ...
-- `any`: 어떠한 것도 할당 가능한 타입이다. 이 타입은 타입 검사를 비활성한다.
-- Enums
-- 커스텀 타입:
-  - 유니언
-  - 인터섹션
-  - 제네릭
-
-
-## 타입 정의(definition)와 선언(declaration)
-
-### 변수 타입 선언하기
-
-```ts
-let foo: number = 123;
-```
-
-위 코드는 `foo`가 `number` 타입임을 선언한다. 사실 타입스크립트는 변수에 할당된 값을 통해 *타입을 자동으로 추론*하기 때문에 변수에 대한 타입 표기는 선택 사항이다. (가독성을 위해 표기한다는 프로젝트 규칙이 있는 게 아니라면)
-
-당연하지만, 선언한 타입과 다른 타입의 값을 할당하려 하면 타입 에러가 발생한다.
-
-```ts
-let arr: string[] = [1, 2, 3]; // error TS2322: Type 'number' is not assignable to type 'string'.
-```
-
-### 리터럴 타입 사용하기
-
-타입스크립트에선 특이하게도 값의 범위도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입* 또는 *리터럴 집합*이라 한다:
-
-```ts
-let one: 1;
-one = 1;
-one = 2; // error TS2322: Type '2' is not assignable to type '1'.
-```
-
-변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
-
-### 객체 리터럴의 프로퍼티
-
-식별자명 바로 뒤에 콜론`:`과 함께 어떤 타입인지를 선언한다:
-
-```ts
-let obj: {name: string} = {
-  name: 'John'
-};
-
-console.log(obj.name); // John
-```
-
-하지만 명시하지 않은 객체의 프로퍼티에 접근하려 하면 컴파일 에러가 발생하는데:
-
-```ts
-let obj: {name: string} = {
-  name: 'John'
-};
-
-console.log(obj.sirname); // error TS2339: Property 'sirname' does not exist on type '{ name: string; }'.
-```
-
-특정 프로퍼티가 있을 수도 없을 수도 있다면(이것은 객체 프로퍼티로 `undefined` 할당을 허용하는 것과 같다) 물음표`?`를 붙여서 *옵셔널 프로퍼티(Optional properties)*로 지정한다:
-
-```ts
-let obj: {name: string, sirname?: string} = {
-  name: 'John'
-};
-
-console.log(obj.sirname); // undefined
-```
-
-### 프로퍼티 이름의 타입 정의 Index Signatures
-
-아래처럼 대괄호 표기법을 이용한 동적 프로퍼티 접근 코드는 에러를 유발하는데:
-
-```js
-let obj = {
-  a: 1,
-  b: 2
-};
-
-let b = 'b';
-console.log(obj[b]);
-// error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ a: number; b: number; c: number; }'.
-//   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
-```
-
-다음처럼 [TypeScript Documentation \| Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
-
-```ts
-let obj: {[key: string]: number} = {
-  a: 1,
-  b: 2
-};
-
-let b = 'b';
-console.log(obj[b]); // 2
-```
-
-### 타입 단언 Type Assertions
-
-객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
-
-```ts
-let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
-
-let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
-```
-
-
-## 호출 시그니처 Call Signatures
-
-호출 시그니처는 함수나 메서드의 타입을 설명하는 방법이다. 매개변수의 타입과 반환값의 타입을 정의할 때 사용한다.
-
-### 함수 매개변수
-
-```ts
-function add(a: number, b: number) {
-  // ...
-}
-```
-
-파라미터 `a`와 `b` 모두 `number` 타입이라는 뜻이다.
-
-### 객체 매개변수
-
-얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미 콜론`;`을 사용한다.
-
-```ts
-function printFooBar(foobar: { foo: string; bar: number }) {
-  // ...
-}
-
-function printFooBar2(foobar: { foo: string, bar: number }) {
-  console.log(foobar.foo, foobar.bar);
-}
-printFooBar2({ foo: 'foo', bar: 1 }); // foo 1
-```
-
-하지만 이렇게 객체 프로퍼티에 대한 타입을 지정하면 해당 프로퍼티를 생략했을 때 타입 에러가 발생한다:
-
-```ts
-function printFooBar2(foobar: { foo: string, bar: number }) {
-  // ...
-}
-printFooBar2({ foo: 'foo' });
-// error TS2345: Argument of type '{ foo: string; }' is not assignable to parameter of type '{ foo: string; bar: number; }'. Property 'bar' is missing in type '{ foo: string; }' but required in type '{ foo: string; bar: number; }'.
-```
-
-객체 리터럴에서처럼 `undefined` 할당을 허용하는 *옵셔널 프로퍼티*로 만들려면 물음표`?`를 붙인다:
-
-```ts
-function printFooBar3(foobar: { foo: string, bar?: number }) {
-  // ...
-}
-printFooBar3({ foo: 'foo' });
-```
-
-### 함수 반환 타입
-
-```ts
-function getSymbol(): symbol {
-  return Symbol('me');
-}
-```
-
-만약 문맥 상 반환 타입을 예측할 수 있다면 생략할 수 있다.
-
-
-### 함수 타입 표현식 Function Type Expressions
-
-함수 타입 파라미터(파라미터가 함수)에 대한 타입 표기 방법이다:
-
-```ts
-function caller(callee: (a: string) => void) {
-  callee('hello');
-}
-```
-
-콜백 함수의 매개변수가 없고 반환 타입이 `string`이면 아래처럼 표기한다:
-
-```ts
-function caller2(callee: () => string) {
-  return callee();
-}
-console.log(caller2(() => 'hello')); // hello
-```
-
-### 익명 함수
-
-익명 함수(화살표 함수 포함)의 타입 표기 생략은 문맥에 따라 결정된다:
-
-```ts
-let names = ['a', 'b', 'c'];
-names.forEach(s => console.log(s.toUpperCase()));
-```
-
-```ts
-let arr2 = [];
-arr2.forEach(n => console.log(n.toFixed(2)));
-// error TS7034: Variable 'arr2' implicitly has type 'any[]' in some locations where its type cannot be determined.
-```
-
-위 코드는 이렇게 바꿔야 한다:
-
-```ts
-let arr2: number[] = [];
-arr2.forEach(n => console.log(n.toFixed(2)));
-```
-
-여기서 자동으로 타입을 알아내는 것은 *타입 추론*이 아니라 *문맥적 타입 부여(contextual typing)*라고 한다.
-
-익명 함수의 반환 타입은 이렇게 작성한다:
-
-```ts
-let getWaldo = (): string => 'Waldo';
-getWaldo().toUpperCase();
-```
-
-이 또한 문맥 상 자동으로 알 수 있는 상황이라면 생략할 수 있긴 하다. 하지만 아래의 경우라면:
-
-```ts
-let getWaldo = (name: string) => {
-  return {name}
-};
-getWaldo('Waldo').age = 128;
-// error TS2339: Property 'age' does not exist on type '{ name: string; }'.
-```
-
-`getWaldo()`가 반환하는 객체의 프로퍼티로 `age`가 명시되지 않았기 때문에 에러가 발생한다. 이를 해결하려면:
-
-```ts
-let getWaldo = (name: string): {name: string, age?: number} => {
-  return {name}
-};
-getWaldo('Waldo').age = 128;
-```
-
-### 생성자 시그니처 Construct Signatures
-
-[https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
-
-**TODO** 
-
-
-## 타입 별칭 Type Aliases
+  - `Array<number>`: 제네릭 배열 타입 (number 타입의 배열)
+- 튜플: 고정된 개수의 요소와 각 요소의 타입을 정확히 지정한 배열
+- 열거형: 명명된 상수들의 집합을 정의하는 타입
+- 사용자 정의 타입:
+  - 타입 별칭: 복잡한 타입에 별칭을 붙여 사용하는 타입
+  - 인터페이스: 객체 구조를 정의하는 타입
+- 유니언: 여러 타입 중 하나일 수 있는 타입
+- 인터섹션: 여러 타입을 모두 만족하는 타입
+- 제네릭: 타입을 파라미터화하여 재사용 가능한 컴포넌트를 만드는 기능
+- `any`: 어떠한 값도 할당 가능한 타입. 타입 검사를 비활성화한다.
+- `null`과 `undefined`: 각각 null 값과 undefined 값을 나타내는 타입
+- `void`: 함수에서 반환 값이 없을 때 사용하는 타입
+- `never`: 절대 발생하지 않는 값의 타입 (예: 항상 예외를 throw하는 함수)
+
+### 열거형 Enums
+
+[TypeScript Documentation \| Enums](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
+
+**TODO**
+
+### 타입 별칭 Type Aliases
 
 `type` 키워드로 커스텀 타입을 정의한다. 객체나 유니언(아래에 따로 설명함)의 타입을 제한할 때 주로 사용한다:
 
@@ -409,8 +187,9 @@ let obj: person = {
 }
 ```
 
+ℹ️ 객체 구조 정의에는 타입 별칭보단 인터페이스를 사용하며, 타입 별칭은 함수, 유니온 등에 주로 사용한다.
 
-## 인터페이스 Interfaces
+### 인터페이스 Interfaces
 
 타입 별칭과 매우 유사한데, 인터페이스는 확장(extends)이 가능하다는 차이가 있다:
 
@@ -436,144 +215,7 @@ const person2: Developer = {
 };
 ```
 
-### 구현/구상화 implements
-
-인터페이스는 타입 정의 외에도 클래스의 구상화 기능도 제공한다:
-
-```ts
-// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage
-interface Pingable {
-  ping(): void;
-}
- 
-class Sonar implements Pingable {
-  ping() {
-    console.log("ping!");
-  }
-}
-```
-
-`ping()`은 인터페이스 내에 선언된 메서드 시그니처(method signatures)라고 한다. 이것은 구현 클래스에 `ping()`이 반드시 있도록 제한한다:
-
-```ts
-class Ball implements Pingable {
-// error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
-//   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
-  
-  // ping() 메서드를 구현하지 않은 경우
-}
-```
-
-⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(*It doesn’t change the type of the class or its methods at all*: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
-
-```ts
-interface Checkable {
-  check(name: string): boolean;
-}
- 
-class NameChecker implements Checkable {
-  check(s): boolean {
-    // error TS7006: Parameter 's' implicitly has an 'any' type.
-    return false;
-  }
-}
-```
-
-
-## 클래스 Classes 
-
-클래스에서의 타입 사용은 앞서 언급했던 것들의 조합이다:
-
-```ts
-class Newbie {
-  name: string; // 프로퍼티 타입 표기
-  id: number;
-
-  constructor(name: string, id: number) { // 함수 매개변수 타입 표기
-    this.name = name;
-    this.id = id;
-  }
-}
-```
-
-### 추상 클래스 Abstract Classes
-
-추상 클래스는 인스턴스 생성이 불가능하며 상속(extends)을 위해서면 존재하는 클래스다. 다른 클래스로 파생되는 기반 클래스 역할을 하며, 구현 클래스의 형태를 제한한다.
-
-아래는 추상 메서드 `getName()`를 갖는 추상 클래스를 선언하는 방법이다:
-
-```ts
-// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
-abstract class Base {
-  abstract getName(): string;
- 
-  printName() {
-    console.log("Hello, " + this.getName());
-  }
-}
-
-class Derived extends Base {
-  getName() {
-    return "world";
-  }
-}
- 
-const d = new Derived();
-d.printName();
-```
-
-만약 구현 클래스에 `getName()`이 없으면 에러가 발생한다:
-
-```ts
-class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
-```
-
-### 추상 생성자 시그니처 Abstract Construct Signatures
-
-타입스크립트에선 파라미터에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별 게 다 있다 🥲)
-
-```ts
-abstract class Base {
-  abstract printName(): void;
-}
-
-class Derived extends Base {
-  printName() {
-    console.log('Derived instance');
-  }
-}
-
-function greet(ctor: new () => Base) {
-  const instance = new ctor();
-  instance.printName();
-}
-
-greet(Derived);
-```
-
-추상 클래스 `Base`와 `Base`를 상속하는 `Derived`가 있을 때, `greet()` 함수에서 `Base`와 `Base`의 서브 클래스 생성자를 파라미터로 받도록 타입을 제한했다. 그리고 `Derived` 생성자 함수를 인수로 넘기는 코드다.
-
-만약 `Base` 생성자 함수를 인수로 하면:
-
-```ts
-greet(Base);
-// error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
-// Cannot assign an abstract constructor type to a non-abstract constructor type.
-```
-
-추상 클래스는 인스턴스를 만들 수 없기 때문에 에러가 발생한다.
-
-🚨 `typeof` 타입 연산자로도 비슷한 구현이 가능하지만 권장되지 않는다.
-
-
-## 열거형 Enums
-
-[TypeScript Documentation \| Enums](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
-
-**TODO**
-
-
-## 커스텀 타입 구성하기
+ℹ️ 객체 타입을 정의할 땐 프로퍼티 구분자로 쉼표`,` 대신 세미콜론`;`이 권장된다. (둘 다 가능하긴 함)
 
 ### 유니언 Unions
 
@@ -595,7 +237,7 @@ let arr2: myNumber2[] = [1, '2', 3]; // OK
 ```
 
 ```ts
-type Person = { name: string, age: number };
+type Person = { name: string; age: number };
 type Human = { breathing: boolean };
 
 let waldo: Person | Human;
@@ -691,6 +333,421 @@ console.log(object); // ['23']
 
 backpack.add(23); // error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
 ```
+
+다른 예시:
+
+```ts
+function identity<T>(arg: T): T { 
+  return arg; 
+}
+```
+
+
+## 변수의 타입 제한
+
+### 변수 타입 선언하기
+
+```ts
+let foo: number = 123;
+```
+
+위 코드는 `foo`가 `number` 타입임을 선언한다. 사실 타입스크립트는 변수에 할당된 값을 통해 *타입을 자동으로 추론*하기 때문에 변수에 대한 타입 표기는 선택 사항이다. (가독성을 위해 표기한다는 프로젝트 규칙이 있는 게 아니라면)
+
+만약 선언한 타입과 다른 타입의 값을 할당하려 하면 타입 에러가 발생한다:
+
+```ts
+let foo2: string = 123; // error TS2322: Type 'number' is not assignable to type 'string'.
+```
+
+### 배열 Array
+
+배열을 구성하는 요소의 타입을 제어하는 방식이다. 타입 뒤에 대괄호`[]`를 표기하여 선언한다:
+
+```ts
+let arr: number[];
+arr = [1, 2, 3];
+arr.push(4);
+```
+
+일반 원시 타입 값과 마찬가지로 선언한 타입과 할당값의 타입이 다르면 에러가 발생한다:
+
+```ts
+let arr: string[] = [1, 2, 3]; // error TS2322: Type 'number' is not assignable to type 'string'.
+```
+
+### 튜플 Tuple
+
+튜플은 타입스크립트에 배열을 정의하는 방법 중 하나로, 배열의 고정된 개수의 요소와 각 요소의 타입을 정확히 지정할 때 사용한다.
+
+```ts
+let tuple: [string, number];
+tuple = ["hello", 10];
+```
+
+함수 파라미터를 튜플로 선언하고 구조 분해 할당을 적용한 예시:
+
+```ts
+function calculateArea(dimensions: [number, number]): number {
+  const [width, height] = dimensions;
+  return width * height;
+}
+
+const area = calculateArea([3, 4]);
+console.log(area); // 출력: 12
+````
+
+### 리터럴 타입 사용하기
+
+타입스크립트에선 특이하게도 값의 범위도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입* 또는 *리터럴 집합*이라 한다:
+
+```ts
+let one: 1;
+one = 1;
+one = 2; // error TS2322: Type '2' is not assignable to type '1'.
+```
+
+변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
+
+### 객체 리터럴의 프로퍼티
+
+식별자명 바로 뒤에 콜론`:`과 함께 어떤 타입인지를 선언한다:
+
+```ts
+let obj: {name: string} = {
+  name: 'John'
+};
+
+console.log(obj.name); // John
+```
+
+하지만 명시하지 않은 객체의 프로퍼티에 접근하려 하면 컴파일 에러가 발생하는데:
+
+```ts
+let obj: {name: string} = {
+  name: 'John'
+};
+
+console.log(obj.sirname); // error TS2339: Property 'sirname' does not exist on type '{ name: string; }'.
+```
+
+특정 프로퍼티가 있을 수도 없을 수도 있다면(이것은 객체 프로퍼티로 `undefined` 할당을 허용하는 것과 같다) 물음표`?`를 붙여서 *옵셔널 프로퍼티(Optional properties)*로 지정한다:
+
+```ts
+let obj: {name: string, sirname?: string} = {
+  name: 'John'
+};
+
+console.log(obj.sirname); // undefined
+```
+
+### 프로퍼티 이름의 타입 정의 Index Signatures
+
+아래처럼 대괄호 표기법을 이용한 동적 프로퍼티 접근 코드는 에러를 유발하는데:
+
+```js
+let obj = {
+  a: 1,
+  b: 2
+};
+
+let b = 'b';
+console.log(obj[b]);
+// error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ a: number; b: number; c: number; }'.
+//   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
+```
+
+다음처럼 [TypeScript Documentation \| Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
+
+```ts
+let obj: {[key: string]: number} = {
+  a: 1,
+  b: 2
+};
+
+let b = 'b';
+console.log(obj[b]); // 2
+```
+
+### 타입 단언 Type Assertions
+
+객체 타입을 좀 더 구체적으로 명시할 때 사용한다. `as` 혹은 홑화살괄호`<>`로 표기한다:
+
+```ts
+let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
+
+let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
+```
+
+
+## 함수의 타입 제한
+
+이 쪽은 호출 시그니처(call signatures)라고 한다. 호출 시그니처는 함수나 메서드의 타입을 설명하는 방법으로, 매개변수의 타입과 반환값의 타입을 정의할 때 사용한다.
+
+### 매개변수의 타입 선언
+
+```ts
+function add(a: number, b: number) {
+  // ...
+}
+```
+
+파라미터 `a`와 `b` 모두 `number` 타입이라는 뜻이다.
+
+### 객체 타입의 매개변수
+
+얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미 콜론`;`을 사용한다.
+
+```ts
+function printFooBar(foobar: { foo: string; bar: number }) {
+  // ...
+}
+
+function printFooBar2(foobar: { foo: string; bar: number }) {
+  console.log(foobar.foo, foobar.bar);
+}
+printFooBar2({ foo: 'foo', bar: 1 }); // foo 1
+```
+
+하지만 이렇게 객체 프로퍼티에 대한 타입을 지정하면 해당 프로퍼티를 생략했을 때 타입 에러가 발생한다:
+
+```ts
+function printFooBar2(foobar: { foo: string; bar: number }) {
+  // ...
+}
+printFooBar2({ foo: 'foo' });
+// error TS2345: Argument of type '{ foo: string; }' is not assignable to parameter of type '{ foo: string; bar: number; }'. Property 'bar' is missing in type '{ foo: string; }' but required in type '{ foo: string; bar: number; }'.
+```
+
+객체 리터럴에서처럼 `undefined` 할당을 허용하는 *옵셔널 프로퍼티*로 만들려면 물음표`?`를 붙인다:
+
+```ts
+function printFooBar3(foobar: { foo: string; bar?: number }) {
+  // ...
+}
+printFooBar3({ foo: 'foo' });
+```
+
+### 반환값의 타입 선언
+
+다른 것과 비슷하게 콜론`:`을 사용한다:
+
+```ts
+// 함수 정의식
+function getSymbol1(): symbol {
+  return Symbol('me');
+}
+
+// 화살표 함수
+const getSymbol2 = (): symbol => {
+  return Symbol('me too');
+}
+```
+
+만약 문맥 상 반환 타입을 예측할 수 있다면 생략 가능하다.
+
+### 함수 타입 표현식 Function Type Expressions
+
+함수 타입 파라미터(콜백 함수)에 대한 타입 표기 방법이다. 화살표 함수 키워드`=>`를 사용한다:
+
+```ts
+function caller(callee: (a: string) => void) {
+  callee('hello');
+}
+```
+
+예를 들어 콜백 함수의 매개변수가 없고 반환 타입이 `string`이면 아래처럼 표기한다:
+
+```ts
+function caller2(callee: () => string) {
+  return callee();
+}
+console.log(caller2(() => 'hello')); // hello
+```
+
+### 익명 함수
+
+익명 함수(화살표 함수 포함)의 타입 표기 생략은 문맥에 따라 결정된다:
+
+```ts
+let names = ['a', 'b', 'c'];
+names.forEach(s => console.log(s.toUpperCase()));
+```
+
+```ts
+let arr2 = [];
+arr2.forEach(n => console.log(n.toFixed(2)));
+// error TS7034: Variable 'arr2' implicitly has type 'any[]' in some locations where its type cannot be determined.
+```
+
+위 코드는 이렇게 바꿔야 한다:
+
+```ts
+let arr2: number[] = [];
+arr2.forEach(n => console.log(n.toFixed(2)));
+```
+
+이렇게 자동으로 타입을 알아내는 것은 *문맥적 타입 부여(contextual typing)*라고 한다(*타입 추론*과는 별개의 개념이다).
+
+익명 함수의 반환 타입은 이렇게 작성한다:
+
+```ts
+let getWaldo = (): string => 'Waldo';
+getWaldo().toUpperCase();
+```
+
+이 또한 문맥 상 자동으로 알 수 있는 상황이라면 생략할 수 있긴 하다. 하지만 아래의 경우라면:
+
+```ts
+let getWaldo = (name: string) => {
+  return {name}
+};
+getWaldo('Waldo').age = 128;
+// error TS2339: Property 'age' does not exist on type '{ name: string; }'.
+```
+
+`getWaldo()`가 반환하는 객체의 프로퍼티로 `age`가 명시되지 않았기 때문에 에러가 발생한다. 이를 해결하려면:
+
+```ts
+let getWaldo = (name: string): {name: string; age?: number} => {
+  return {name}
+};
+getWaldo('Waldo').age = 128;
+```
+
+### 생성자 시그니처 Construct Signatures
+
+[https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
+
+**TODO** 
+
+
+## 클래스(Classes)의 형태 제한
+
+클래스에서의 타입 사용은 앞서 언급했던 것들의 조합이다:
+
+```ts
+class Newbie {
+  name: string; // 프로퍼티 타입 표기
+  id: number;
+
+  constructor(name: string, id: number) { // 함수 매개변수 타입 표기
+    this.name = name;
+    this.id = id;
+  }
+}
+```
+
+### 구현/구상화 implements
+
+타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 클래스의 구상화 기능을 제공한다:
+
+```ts
+// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage
+interface Pingable {
+  ping(): void;
+}
+ 
+class Sonar implements Pingable {
+  ping() {
+    console.log("ping!");
+  }
+}
+```
+
+`ping()`은 인터페이스 내에 선언된 메서드 시그니처(method signatures)라고 한다. 이것은 구현 클래스에 `ping()`이 반드시 있도록 제한한다:
+
+```ts
+class Ball implements Pingable {
+// error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
+//   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
+  
+  // ping() 메서드를 구현하지 않은 경우
+}
+```
+
+⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(*It doesn’t change the type of the class or its methods at all*: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
+
+```ts
+interface Checkable {
+  check(name: string): boolean;
+}
+ 
+class NameChecker implements Checkable {
+  check(s): boolean {
+    // error TS7006: Parameter 's' implicitly has an 'any' type.
+    return false;
+  }
+}
+```
+
+### 추상 클래스 Abstract Classes
+
+추상 클래스는 인스턴스 생성이 불가능하며 상속(extends)을 위해서면 존재하는 클래스다. 다른 클래스로 파생되는 기반 클래스 역할을 하며, 구현 클래스의 형태를 제한한다.
+
+아래는 추상 메서드 `getName()`를 갖는 추상 클래스를 선언하는 방법이다:
+
+```ts
+// 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
+abstract class Base {
+  abstract getName(): string;
+ 
+  printName() {
+    console.log("Hello, " + this.getName());
+  }
+}
+
+class Derived extends Base {
+  getName() {
+    return "world";
+  }
+}
+ 
+const d = new Derived();
+d.printName();
+```
+
+만약 구현 클래스에 `getName()`이 없으면 에러가 발생한다:
+
+```ts
+class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
+```
+
+### 추상 생성자 시그니처 Abstract Construct Signatures
+
+타입스크립트에선 파라미터에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별 게 다 있다 🥲)
+
+```ts
+abstract class Base {
+  abstract printName(): void;
+}
+
+class Derived extends Base {
+  printName() {
+    console.log('Derived instance');
+  }
+}
+
+function greet(ctor: new () => Base) {
+  const instance = new ctor();
+  instance.printName();
+}
+
+greet(Derived);
+```
+
+추상 클래스 `Base`와 `Base`를 상속하는 `Derived`가 있을 때, `greet()` 함수에서 `Base`와 `Base`의 서브 클래스 생성자를 파라미터로 받도록 타입을 제한했다. 그리고 `Derived` 생성자 함수를 인수로 넘기는 코드다.
+
+만약 `Base` 생성자 함수를 인수로 하면:
+
+```ts
+greet(Base);
+// error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
+// Cannot assign an abstract constructor type to a non-abstract constructor type.
+```
+
+추상 클래스는 인스턴스를 만들 수 없기 때문에 에러가 발생한다.
+
+🚨 `typeof` 타입 연산자로도 비슷한 구현이 가능하지만 권장되지 않는다.
 
 
 ## 구조적 타입 시스템 Structural Type System

@@ -73,6 +73,7 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
   - useDebugValue
   - useId
   - useSyncExternalStore
+- 커스텀 훅
 
 그리고 개발자가 정의하는 커스텀 훅이 있다.
 
@@ -217,16 +218,82 @@ useEffect(() => {
 
 ## 컨텍스트 훅 Context Hooks
 
+context(이하 컨텍스트)를 다루기 위한 훅이다. 현재(2024-03-29)는 `useContext` 하나만 제공하며, 컨텍스트란 일반적인 컴포넌트 유효 범위를 넘어서는 state 정도로 해석된다.
+
 ### useContext
 
-**TODO**
+- [React \| useContext}(https://react.dev/reference/react/useContext)
+- [React \| createContext}(https://react.dev/reference/react/createContext)
+
+```
+useContext(SomeContext)
+```
+
+- `SomeContext`: `createContext()`로 생성한 컨텍스트 객체다. 컨텍스트 객체 자체는 아무 정보도 갖고 있지 않지만, 컴포넌트 트리 안에서 데이터를 전역적으로 공유하기 위한 메커니즘을 제공한다.
+
+`useContext`는 컴포넌트의 깊이와 상관없이 컴포넌트 간 정보를 주고 받기 위한 훅이다. 사용 방법을 요약하면, `createContext()`로 컨텍스트 객체를 생성하고, `Provider`로 컨텍스트에 값을 전달하며 `useContext()`로 가져오는 방식이다.
+
+```jsx
+import { createContext, useContext, useState } from 'react';
+
+const Foo = createContext({});
+
+function Division({ children }) {
+  return <div>{children}</div>;
+}
+
+function Paragraph({ count }) {
+  return <p>click count: {count}</p>;
+}
+
+function Button({ children }) {
+  const { increment } = useContext(Foo);
+  return <button type="button" onClick={increment}>{children}</button>;
+}
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const increment = () => setCount((prev) => prev + 1);
+  return (
+    <main>
+      <h1>App</h1>
+      <Foo.Provider value={{ increment }}>
+        <Division>
+          <Button>click me</Button> {/*이 버튼이나*/}
+        </Division>
+        <Division>
+          <Button>click me too</Button> {/*이 버튼을 누르면*/}
+        </Division>
+        <Division>
+          <Paragraph count={count} /> {/*이 값이 증가함*/}
+        </Division>
+      </Foo.Provider>
+    </main>
+  );
+};
+```
+
+도움말에서는 `useContext()`를 호출하는 컴포넌트를 consumer라 표현하는데, 실제로 이전 버전에선 `.Consumer` 프로퍼티를 통해 읽어왔다고 한다:
+
+```jsx
+function Button() {
+  // 🟡 이전 방식 (권장하지 않음)
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <button className={theme} />
+      )}
+    </ThemeContext.Consumer>
+  );
+}
+```
 
 
 ## 레퍼런스 훅 Ref Hooks
 
 ### useRef
 
-`useRef()`는 주어진 값으로 초기화된 `.current` 프로퍼티를 소유한 객체를 반환한다. 보통 값의 변경은 `.current`를 이용하며 **이 행동은 렌더링을 유발하지 않는다**.
+`useRef()`는 주어진 값으로 초기화된 `.current` 프로퍼티를 소유한 객체를 반환한다.
 
 ```
 const ref = React.useRef(initialValue)
@@ -239,37 +306,57 @@ const rf = useRef("멋에쓰는물건인고");
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
 
-`<div ref={myRef} />` 이런식으로 작성하면 리액트는 렌더링 될 때마다 변경된 DOM 노드를 `ref`로 전달한다. 매 렌더링마다 항상 동일한 객체를 제공한다고 한다.
+#### 렌더링을 유발하지 않는 별도의 상태값
 
-보통 리렌더링 없이 재할당하거나 DOM 객체가 필요할 때 사용한다. 아래는 `<button>`이 클릭될 때마다 `focused.current`의 객체가 바뀌는 코드다:
+`useRef` 값의 변경은 `.current` 프로퍼티를 통해 재할당한다. 이 행동은 렌더링을 유발하지 않으며, 한 번 할당된 값은 (일부러 재할당 하지 않는 이상) 컴포넌트의 리렌더링이 발생해도 초기화되지 않는다. 이 특성을 이용해 별도의 저장공간으로 활용되곤 한다.
+
+아래의 코드는 상태값이 변경되어도 `useEffect`에서 할당한 값이 변화하지 않는 것을 보여준다:
 
 ```jsx
-function UseRefTest() {
-  const [focusSwitch, setFocusSwitch] = React.useState(true);
-  const focused = React.useRef(null);
+import React from 'react';
 
-  const onButtonClick = () => {
-    setFocusSwitch(!focusSwitch);
-    console.log('focused.current:', focused.current);
-  };
+export default function App() {
+  console.log('App render');
+  const refTest = React.useRef(null);
+  const [value, setValue] = React.useState('');
+  
+  React.useEffect(() => {
+    refTest.current = 123; // 첫 렌더링에 123 할당
+  }, []);
 
-  const arr = [true, false];
+  const onChange = event => setValue(event.target.value);
+
+  console.log(refTest.current); // 첫 렌더링엔 null, 이후 사용자 입력이 발생하면 123 출력됨
 
   return (
-    <>
-      {
-        arr.map(item => {
-          return (
-            <div ref={item === focusSwitch ? focused : null}
-                className={item === focusSwitch ? 'active' : ''}>phew-phew!</div>
-          );
-        })
-      }
-      <button onClick={onButtonClick}>Focus the input</button>
-    </>
+    <input type="text" value={value} onChange={onChange} />
   );
 }
 ```
+
+#### DOM 객체에 연결
+
+DOM 객체에 직접 접근이 필요할 때에도 `useRef`를 사용한다. 
+
+아래는 버튼을 눌렀을 때 `<input>`에 포커싱하는 코드다:
+
+```jsx
+import React from 'react';
+
+export default function App() {
+  const myRef = React.useRef(null);
+  const focusInput = () => myRef.current.focus();
+
+  return (
+    <div>
+      <input type="text" ref={myRef} />
+      <button onClick={focusInput}>focus input</button>
+    </div>
+  );
+}
+```
+
+ℹ️ 리액트는 렌더링 때마다 변경된 DOM 노드를 `ref`로 전달한다고 한다.
 
 
 ## 이펙트 훅 Effect Hooks
@@ -341,3 +428,28 @@ useEffect(() => {
 ### useMemo
 
 **TODO**
+
+
+## 커스텀 훅
+
+커스텀 훅이란 개발자가 정의한 훅으로, 리액트가 제공하는 기본 훅들을 내부에서 호출하는 로직이 포함된 함수를 의미한다.
+
+예를 들어 이런식으로 작성할 수 있다:
+
+```js
+import { useState } from 'react';
+
+function useCounter(initialValue = 0) {
+  const [count, setCount] = useState(initialValue);
+
+  const increment = () => setCount(count + 1);
+  const decrement = () => setCount(count - 1);
+  const reset = () => setCount(initialValue);
+
+  return { count, increment, decrement, reset };
+}
+
+export default useCounter;
+```
+
+커스텀 훅을 특정 컴포넌트에서 사용하면, 해당 컴포넌트의 내부 상태로 관리된다.

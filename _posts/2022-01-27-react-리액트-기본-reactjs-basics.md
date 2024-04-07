@@ -69,7 +69,14 @@ root.render(element);
 
 이 쪽은 SFC(Single-File Components) 방식이라고 한다. SFC는 템플릿(HTML), 로직(JS), 스타일링(CSS)을 하나의 파일에 작성(Vue 메뉴얼에선 캡슐화라고 한다)할 수 있는 특수한 파일 포맷이라 하는데... (HTML도 마찬가지 아닌가?)
 
-SFC 방식으로 웹 앱을 구축하려면 [Create React App](https://create-react-app.dev/docs/getting-started/) 패키지(이하 CRA)를 이용하는 것이 가장 편리하다:
+SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 파일 구조를 스캐폴딩 해주는 Create React App 패키지를 이용하는 것이 가장 편리하다. 해당 방법은 저 아래에 [CRA 항목](#heading-CRA-Create-React-App) 참고.
+
+그게 아니면... React와 React DOM 패키지 정도만 설치해서 바로 개발이 가능하긴 한데, 이러면 JSX를 사용할 수 없고 웹팩이나 번들러를 별도로 설치해야 하는 등 번거로운 작업이 많으니 그냥 CRA, 그것도 아니면 Next.js, Vite를 쓰자.
+
+
+## CRA, Create React App
+
+[Create React App | Getting Started](https://create-react-app.dev/docs/getting-started/)
 
 ```bash
 npx create-react-app APP_NAME
@@ -77,9 +84,9 @@ npx create-react-app APP_NAME
 # yarn dlx create-react-app APP_NAME
 ```
 
-그러면 `APP_NAME`을 루트 경로로 하는 리액트 앱이 생성(scaffolding)되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
+`APP_NAME`을 루트 경로로 하는 리액트 앱이 생성(scaffolding)되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
 
-#### 초기 파일 구조
+### 초기 파일 구조
 
 ```
 root
@@ -92,14 +99,16 @@ root
 - `src`: 소스 코드가 위치하는 경로. 리액트 컴포넌트, 테스트 파일, CSS 파일과 기타 자바스크립트 모듈 등이 포함된다.
 - `public`: 정적 파일들이 저장되는 경로다. 유일한 HTML이자 앱의 진입점 역할인 `index.html` 파일이 이 경로에 반드시 있어야 한다. 이 외에 파비콘 이미지, `robots.txt`, `manifest.json` 파일 등이 포함된다. 이 파일들은 빌드 시 `build` 디렉터리로 복사된다(특정 파일은 약간의 내용 수정이 있을 수 있음).
 
-#### react-scripts: CLI 명령어 패키지
+### CRA: react-scripts
+
+react-scripts는 CRA에 포함된 스크립트 패키지다(CLI 명령어 패키지라고도 함). 로컬 서버 기동, 테스트, 배포 기능을 제공한다.
 
 ```bash
 # 별칭: `npm start`. 
 npm exec react-scripts start
 ```
 
-`start`는 리액트 앱을 개발 모드로 로컬 서버를 실행할 때 사용한다. 개발 모드에서는 빌드 과정이 생략되며 소스 코드를 실시간으로 반영한다.
+`start`는 리액트 앱을 로컬에서 개발 모드로 기동한다. 개발 모드에서는 빌드 과정이 생략되며 소스 코드를 실시간으로 반영한다는 차이가 있다.
 
 ```bash
 # 별칭: `npm run build`.
@@ -126,30 +135,85 @@ npm exec react-scripts eject
 
 `eject`를 한 번 실행된 후에 다시 `CRA`로 되돌릴 방법은 버전관리 시스템에서 롤백하는 것 외엔 없다.
 
+### CRA: CSS 적용하기
 
-## 리액트 엘리먼트
+[Create React App \| Adding a Stylesheet](https://create-react-app.dev/docs/adding-a-stylesheet)
 
-리액트의 핵심(이지만 직접 호출할 일은 절대 없는) API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
+CRA에선 ESM의 `import`로 CSS를 가져올 수 있다:
 
-리액트 엘리먼트 객체를 뜯어보면 대충 이렇게 생겼다:
-
-```js
-{
-  "$$typeof": Symbol(react.element),
-  _owner: null,
-  _self: null,
-  _source: null,
-  _store: {…},
-  validated: false,
-  key: null,
-  props: Object {  },
-  ref: null,
-  type: function LikeButton(props) { ... }
+```css
+/*Button.css*/
+.Button {
+  padding: 20px;
 }
 ```
 
+```jsx
+// Button.js
+import React, { Component } from 'react';
+import './Button.css'; // Tell webpack that Button.js uses these styles
 
-## JSX 문법
+class Button extends Component {
+  render() {
+    // You can use them as regular CSS styles
+    return <div className="Button" />;
+  }
+}
+```
+
+원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 import 하라 알리면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
+
+ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져온다: [Create React App \| Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
+
+### CRA: CSS Modules
+
+[Create React App \| Adding a CSS Modules Stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+
+CSS 모듈은 CSS 선택자의 유효범위를 모듈 단위로 제한하는 신박한 기능이다.
+
+우선 `.module.css`로 끝나는 스타일 파일을 만들고:
+
+```css
+/*Button.module.css*/
+.btn {
+  color: white;
+  background-color: tomato;
+}
+```
+
+원하는 컴포넌트에서 모듈로 가져온 뒤, `className` 속성에 지정하면 된다. 이 때 객체 형태로 표기한다:
+
+```jsx
+// Button.js
+import styles from './Button.module.css';
+
+function Button({text}) {
+  return (
+    <button className={styles.btn}>{text}</button>
+  );
+}
+```
+
+결과는 아래와 같다:
+
+```html
+<button class="Button_btn__9-J4X">Continue</button>
+```
+
+이처럼 CSS 모듈은 `[filename]\_[classname]\_\_[hash]` 형식의 고유한 이름으로 클래스 이름을 자동 지정한다. 따라서 실제 `btn` 클래스 이름을 갖는 다른 요소와 충돌하지 않는 것이 특징이다.
+
+### CRA: CSS Reset
+
+[PostCSS Normalize](https://github.com/csstools/postcss-normalize)를 이용한 CSS 리셋 기능이다. CSS 파일에 다음 한 줄만 추가하면 된다:
+
+```css
+@import-normalize; /* bring in normalize.css styles */
+
+/* rest of app styles */
+```
+
+
+## JSX
 
 JavaScript XML 혹은 JavaScript eXtended. 페이스북이 리액트와 함께 만들었고 **컴파일이 필요한 언어**다. 스크립트 내에서 HTML 태그를 가독성 있게 작성하기 위해 사용한다.
 
@@ -365,7 +429,30 @@ const conditional = (
 
 ## 리액트의 주요 API
 
+### 리액트 엘리먼트
+
+리액트의 핵심(이지만 직접 호출할 일은 절대 없는) API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
+
+리액트 엘리먼트 객체를 뜯어보면 대충 이렇게 생겼다:
+
+```js
+{
+  "$$typeof": Symbol(react.element),
+  _owner: null,
+  _self: null,
+  _source: null,
+  _store: {…},
+  validated: false,
+  key: null,
+  props: Object {  },
+  ref: null,
+  type: function LikeButton(props) { ... }
+}
+```
+
 ### React.createElement
+
+주어진 인자에 따라 새로운 React 엘리먼트를 생성하는 함수. JSX를 사용한다면 직접 호출할 일은 없다.
 
 ```
 React.createElement(type)
@@ -378,9 +465,7 @@ React.createElement(type, props, children, children2, ...)
 - `props`: 엘리먼트의 속성을 결정하는 object
 - `children`: 원시 타입 값(보통은 문자열 혹은 숫자) 혹은 리액트 엘리먼트. 원시 타입를 할당하면 텍스트 노드가 된다.
 
-주어진 인자에 따라 새로운 React 엘리먼트를 생성하는 함수. JSX를 사용한다면 직접 호출할 일은 없다.
-
-사용하는 방법은 여러가지다.
+만약 직접 호출한다면 아래처럼 사용한다:
 
 ```js
 const element = React.createElement('h2', null, '대통령 선거', ' : ', '대통령 앉은거');
@@ -480,7 +565,9 @@ ReactDOM.hydrateRoot(domNode, reactNode)
 ReactDOM.hydrateRoot(domNode, reactNode, options)
 ```
 
-`createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 서버에서 렌더링된 마크업에 이벤트 핸들러 같은 자바스크립트 기능을 '부착' 시켜준다. 참고로 *Hydration*은 서버에서 렌더링된 초기 HTML과 클라이언트에서 작동하는 자바스크립트가 동기화되는 과정을 의미한다고 한다.
+서버에서 렌더링된 마크업에 이벤트 핸들러 같은 자바스크립트 기능을 '부착' 시켜준다. `createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 
+
+ℹ️ *Hydration*은 클라이언트 측에서 자바스크립트를 실행하여 이미 존재하는 HTML 요소에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
 
 ```js
 import { hydrateRoot } from 'react-dom/client';
@@ -771,79 +858,138 @@ const MyComponent = React.memo(props => {
 ```
 
 
-## CRA: CSS 적용하기
+## 라우터 React Router
 
-[Create React App \| Adding a Stylesheet](https://create-react-app.dev/docs/adding-a-stylesheet)
+[React Router](https://reactrouter.com/)
 
-CRA에선 ESM의 `import`로 CSS를 가져올 수 있다:
+모던 프론트엔드 개발에서 라우팅이란 보통 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다.
 
-```css
-/*Button.css*/
-.Button {
-  padding: 20px;
-}
+리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
+
+```bash
+npm install react-router-dom
+```
+
+react-router-dom 패키지는 react-router의 확장이며 react-router를 내부에 포함하고 있으니 이것만 설치하면 된다.
+
+사용방법은 버전에 따라 다른데, 5.x 버전의 경우 아래와 같고:
+
+```jsx
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 ```
 
 ```jsx
-// Button.js
-import React, { Component } from 'react';
-import './Button.css'; // Tell webpack that Button.js uses these styles
+// App.js
+import {
+  useState,
+  useEffect
+} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-class Button extends Component {
-  render() {
-    // You can use them as regular CSS styles
-    return <div className="Button" />;
-  }
-}
-```
+import Button from './component/Button';
+import Home from './route/Home';
+import Detail from './route/Detail';
 
-원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 import 하라 알리면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
-
-ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져올 수 있다. [Create React App \| Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
-
-### CSS Modules
-
-[Create React App \| Adding a CSS Modules Stylesheet](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
-
-CSS 모듈은 CSS 선택자의 유효범위를 모듈 단위로 제한하는 신박한 기능이다.
-
-우선 `.module.css`로 끝나는 스타일 파일을 만들고:
-
-```css
-/*Button.module.css*/
-.btn {
-  color: white;
-  background-color: tomato;
-}
-```
-
-원하는 컴포넌트에서 모듈로 가져온 뒤, `className` 속성에 지정하면 된다. 이 때 객체 형태로 표기한다:
-
-```jsx
-// Button.js
-import styles from './Button.module.css';
-
-function Button({text}) {
+function App() {
   return (
-    <button className={styles.btn}>{text}</button>
+    <Router>
+      <Switch>
+        <Route path="/movie">
+          <Detail />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+최신(2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
+
+```jsx
+/// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import Root from './routes/root';
+import Hello2 from './routes/hello2';
+import Hello1 from './routes/hello1';
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    children: [
+      {
+        path: 'hello1',
+        element: <Hello1 />
+      },
+      {
+        path: 'hello2',
+        element: <Hello2 />
+      }
+    ]
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
+
+```jsx
+// routes/root.jsx
+import { Link, Outlet } from "react-router-dom";
+
+export default function Root() {
+  return (
+    <>
+      <div id="sidebar">
+        <h1>React Router Example</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to={`/`}>home</Link>
+            </li>
+            <li>
+              <Link to={`/hello1`}>hello 1</Link>
+            </li>
+            <li>
+              <Link to={`/hello2`}>hello 2</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="detail">
+        <Outlet />
+      </div>
+    </>
   );
 }
 ```
 
-결과는 아래와 같다:
-
-```html
-<button class="Button_btn__9-J4X">Continue</button>
-```
-
-이처럼 CSS 모듈은 `[filename]\_[classname]\_\_[hash]` 형식의 고유한 이름으로 클래스 이름을 자동 지정한다. 따라서 실제 `btn` 클래스 이름을 갖는 다른 요소와 충돌하지 않는 것이 특징이다.
-
-### CSS Reset
-
-[PostCSS Normalize](https://github.com/csstools/postcss-normalize)를 이용한 CSS 리셋 기능이다. CSS 파일에 다음 한 줄만 추가하면 된다:
-
-```css
-@import-normalize; /* bring in normalize.css styles */
-
-/* rest of app styles */
-```
+자세한 내용은 [도움말 참고](https://reactrouter.com/en/main/start/tutorial).

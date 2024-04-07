@@ -121,10 +121,11 @@ npm fund
 
 ## 패키지 버전 업데이트
 
-```bash
-npm update [<pkg>...]
-# 별칭: up, upgrade, udpate
 ```
+npm update [<pkg>...]
+```
+
+별칭: `up`, `upgrade`, `udpate`
 
 ```bash
 # 업데이트 가능한 패키지의 버전 정보 표시: : 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 로컬 설치 경로, 종속성
