@@ -16,9 +16,9 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
-- [PoiemaWeb \| 클래스](https://poiemaweb.com/es6-class)
-- [JAVASCRIPT.INFO \| 클래스와 기본 문법](https://ko.javascript.info/class)
+- [Classes \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+- [클래스 \| PoiemaWeb](https://poiemaweb.com/es6-class)
+- [클래스와 기본 문법 \| JAVASCRIPT.INFO](https://ko.javascript.info/class)
 
 #### 테스트 환경 정보
 

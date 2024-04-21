@@ -17,7 +17,7 @@ tags:
 #### 참고 문서
 
 - 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
-- [MDN \| Type conversion](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion)
+- [Type conversion \| MDN](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion)
 
 
 ## 암시적 타입 변환

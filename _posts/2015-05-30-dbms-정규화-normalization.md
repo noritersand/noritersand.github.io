@@ -14,11 +14,11 @@ tags:
 
 #### 참고 문서
 
-- [위키백과 \| 데이터베이스 정규화](https://ko.wikipedia.org/wiki/데이터베이스_정규화)
+- [데이터베이스 정규화 \| 위키백과](https://ko.wikipedia.org/wiki/데이터베이스_정규화)
 - [https://yayoi109.iptime.org/Yuchiwiki/index.php?title=정규화](https://yayoi109.iptime.org/Yuchiwiki/index.php?title=정규화)
 - [http://www.studytonight.com/dbms/database-normalization.php](http://www.studytonight.com/dbms/database-normalization.php)
 - [http://databaser.net/moniwiki/wiki.php/보이스-코드정규화와XML](http://databaser.net/moniwiki/wiki.php/보이스-코드정규화와XML)
-- [위키백과 \| 다치_종속](http://ko.wikipedia.org/wiki/다치_종속)
+- [다치_종속 \| 위키백과](http://ko.wikipedia.org/wiki/다치_종속)
 
 
 ## 정규화란?

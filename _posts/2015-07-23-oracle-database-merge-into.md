@@ -16,7 +16,7 @@ tags:
 #### 참고 문서
 
 - [Oracle \| Database SQL Language Reference: Merge](https://docs.oracle.com/cd/B28359_01/server.111/b28286/statements_9016.htm#SQLRF01606)
-- [위키백과 \| Merge (SQL)](https://ko.wikipedia.org/wiki/Merge_%28SQL%29)
+- [Merge (SQL) \| 위키백과](https://ko.wikipedia.org/wiki/Merge_%28SQL%29)
 
 ### syntax
 

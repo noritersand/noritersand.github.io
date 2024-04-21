@@ -31,7 +31,7 @@ tags:
 
 [React \| Meet your first Hook ](https://react.dev/learn/state-a-components-memory#meet-your-first-hook)
 
-- 훅은 컴포넌트의 최상위 수준 또는 커스텀 훅에서만 호출할 수 있다.
+- 훅은 컴포넌트의 최상위 수준(=스코프, 유효범위) 또는 커스텀 훅에서만 호출할 수 있다.
 - 조건문이나 반복문 혹은 기타 중첩 함수 내부에서는 호출할 수 없다.
 - 리액트 함수가 아닌 일반적인 자바스크립트 함수에서는 호출할 수 없다.
 
@@ -95,12 +95,16 @@ const [state, modifier] = React.useState(initialState);
 - `modifier`: `state`의 값을 변경하기 위해 호출하는 함수. 이 함수의 이름은 state 변수의 이름 앞에 `set`을 붙이는 게 관행적이다. (따라서 위 예시에선 `setState()`가 되어야 한다)
 
 ```jsx
-const [counter, setCounter] = React.useState(0);
+import {useState} from 'react';
+
+const [counter, setCounter] = useState(0);
 const onClick = () => setCounter(prev => prev + 1);
 return (
   <div>
     <h3>Total clicks: {counter}</h3>
-    <button type="button" onClick={onClick}>Click Me</button>
+    <button type="button" onClick={onClick}>
+      Click Me
+    </button>
   </div>
 );
 ```
@@ -110,6 +114,8 @@ return (
 state의 값은 직접 재할당하는 게 아니라 modifier를 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
 ```jsx
+import {useState} from 'react';
+
 // 원시 타입
 const [value, setValue] = useState('');
 const handleEvent1 = event => {
@@ -125,7 +131,7 @@ const handleEvent2 = event => {
 };
 
 // 객체
-const [obj, setObj] = React.useState({someFlag: false});
+const [obj, setObj] = useState({someFlag: false});
 const handleEvent3 = event => {
   // obj.someFlag = true; // X
   setObj({someFlag: true}); // O
@@ -137,7 +143,9 @@ const handleEvent3 = event => {
 리액트는 state 값의 변경을 비동기로 처리한다. 따라서 다음처럼 현재 state를 기반으로 값을 업데이트 하는 코드는 타이밍 문제가 발생한다:
 
 ```jsx
-const [counter, setCounter] = React.useState(0);
+import {useState} from 'react';
+
+const [counter, setCounter] = useState(0);
 const onClick = () => setCounter(counter + 1); // X
 ```
 
@@ -153,6 +161,8 @@ setCounter(current => current + 1); // O
 만약 state가 배열이고 새 요소를 덧붙이려면 다음처럼 작성한다:
 
 ```jsx
+import {useState} from 'react';
+
 const [values, setValues] = useState([]);
 
 const handleEvent2 = event => {
@@ -170,7 +180,9 @@ modifier는 비동기적으로 작동하기 때문에 modifier 호출 직후 sta
 \* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
 
 ```jsx
-const [obj, setObj] = React.useState({someFlag: false});
+import {useState} from 'react';
+
+const [obj, setObj] = useState({someFlag: false});
 
 setObj({someFlag: true});
 console.log(obj); // Object { someFlag: false }
@@ -179,9 +191,11 @@ console.log(obj); // Object { someFlag: false }
 대신 `useEffect` 훅을 사용하여 특정 state가 업데이트 됐을 때를 감지하도록 해야 한다:
 
 ```jsx
-const [obj, setObj] = React.useState({someFlag: false});
+import {useState} from 'react';
 
-const handleEvent = (event) => {
+const [obj, setObj] = useState({someFlag: false});
+
+const handleEvent = event => {
   setObj({someFlag: true});
 };
 
@@ -193,15 +207,18 @@ useEffect(() => {
 그런데 이렇게 하면 최초 렌더링 때 발생하는 컴퓨터 이벤트에도 `useEffect` 훅이 작동한다. 최초 렌더링에 반응하지 않으려면 `useRef` 훅을 이용하는 방법이 있다(점점 산으로 간다 😟):
 
 ```jsx
-const [obj, setObj] = React.useState({someFlag: false});
-const isMounted = React.useRef(false);
+import {useRef, useState} from 'react';
 
-const handleEvent = (event) => {
+const [obj, setObj] = useState({someFlag: false});
+const isMounted = useRef(false);
+
+const handleEvent = event => {
   setObj({someFlag: true});
 };
 
 useEffect(() => {
-  if (isMounted.current) { // 최초 렌더링 때는 초기값인 false로 설정되어 있음
+  if (isMounted.current) {
+    // 최초 렌더링 때는 초기값인 false로 설정되어 있음
     console.log('obj:', obj);
   } else {
     isMounted.current = true;
@@ -234,30 +251,21 @@ useContext(SomeContext)
 `useContext`는 컴포넌트의 깊이와 상관없이 컴포넌트 간 정보를 주고 받기 위한 훅이다. 사용 방법을 요약하면, `createContext()`로 컨텍스트 객체를 생성하고, `Provider`로 컨텍스트에 값을 전달하며 `useContext()`로 가져오는 방식이다.
 
 ```jsx
-import { createContext, useContext, useState } from 'react';
+// use-context.jsx
+import {createContext, useContext, useState} from 'react';
+import Division from '../component/division';
+import Button from '../component/button';
+import Paragraph from '../component/paragraph';
 
-const Foo = createContext({});
+export const Foo = createContext({});
 
-function Division({ children }) {
-  return <div>{children}</div>;
-}
-
-function Paragraph({ count }) {
-  return <p>click count: {count}</p>;
-}
-
-function Button({ children }) {
-  const { increment } = useContext(Foo);
-  return <button type="button" onClick={increment}>{children}</button>;
-}
-
-const App = () => {
+export default function UseContext() {
   const [count, setCount] = useState(0);
-  const increment = () => setCount((prev) => prev + 1);
+  const increment = () => setCount(prev => prev + 1);
   return (
-    <main>
-      <h1>App</h1>
-      <Foo.Provider value={{ increment }}>
+    <article>
+      <h2>useContext</h2>
+      <Foo.Provider value={{count, increment}}>
         <Division>
           <Button>click me</Button> {/*이 버튼이나*/}
         </Division>
@@ -265,12 +273,47 @@ const App = () => {
           <Button>click me too</Button> {/*이 버튼을 누르면*/}
         </Division>
         <Division>
-          <Paragraph count={count} /> {/*이 값이 증가함*/}
+          <Paragraph /> {/*이 값이 증가함*/}
         </Division>
       </Foo.Provider>
-    </main>
+    </article>
   );
-};
+}
+```
+
+```jsx
+// division.jsx
+export default function Division({children}) {
+  return <div>{children}</div>;
+}
+```
+
+```jsx
+// button.jsx
+import {useContext} from 'react';
+import {Foo} from '../pages/use-context';
+
+export default function Button({children}) {
+  const {increment} = useContext(Foo);
+  return (
+    <button type="button" onClick={increment}>
+      {' '}
+      {/*context로 전달 받은 함수*/}
+      {children}
+    </button>
+  );
+}
+```
+
+```jsx
+// paragraph.jsx
+import {useContext} from 'react';
+import {Foo} from '../pages/use-context';
+
+export default function Paragraph() {
+  const {count} = useContext(Foo);
+  return <p>click count: {count}</p>;
+}
 ```
 
 도움말에서는 `useContext()`를 호출하는 컴포넌트를 consumer라 표현하는데, 실제로 이전 버전에선 `.Consumer` 프로퍼티를 통해 읽어왔다고 한다:
@@ -299,10 +342,12 @@ function Button() {
 const ref = React.useRef(initialValue)
 ```
 
-- `initialValue`: `ref.current`의 초기값
+- `initialValue`: 초기값
+
+반환값은 `.current` 프로퍼티 하나만 있는 객체다. `initialValue`가 `.current` 프로퍼티의 초기값으로 할당된다.
 
 ```js
-const rf = useRef("멋에쓰는물건인고");
+const rf = useRef('멋에쓰는물건인고');
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
 
@@ -313,14 +358,14 @@ console.log(rf); // Object { current: "멋에쓰는물건인고" }
 아래의 코드는 상태값이 변경되어도 `useEffect`에서 할당한 값이 변화하지 않는 것을 보여준다:
 
 ```jsx
-import React from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 export default function App() {
   console.log('App render');
-  const refTest = React.useRef(null);
-  const [value, setValue] = React.useState('');
-  
-  React.useEffect(() => {
+  const refTest = useRef(null);
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
     refTest.current = 123; // 첫 렌더링에 123 할당
   }, []);
 
@@ -328,9 +373,7 @@ export default function App() {
 
   console.log(refTest.current); // 첫 렌더링엔 null, 이후 사용자 입력이 발생하면 123 출력됨
 
-  return (
-    <input type="text" value={value} onChange={onChange} />
-  );
+  return <input type="text" value={value} onChange={onChange} />;
 }
 ```
 
@@ -341,10 +384,10 @@ DOM 객체에 직접 접근이 필요할 때에도 `useRef`를 사용한다.
 아래는 버튼을 눌렀을 때 `<input>`에 포커싱하는 코드다:
 
 ```jsx
-import React from 'react';
+import {useRef} from 'react';
 
 export default function App() {
-  const myRef = React.useRef(null);
+  const myRef = useRef(null);
   const focusInput = () => myRef.current.focus();
 
   return (
@@ -357,6 +400,57 @@ export default function App() {
 ```
 
 ℹ️ 리액트는 렌더링 때마다 변경된 DOM 노드를 `ref`로 전달한다고 한다.
+
+#### forwardRef
+
+`React.forwardRef()` 함수는 `ref` 객체를 자식 컴포넌트의 DOM 객체와 연결할 때 사용한다.
+
+```
+const SomeComponent = forwardRef(renderFn)
+
+function renderFn(props, ref) {}
+```
+
+- `renderFn`: 
+  - `props`: 부모 컴포넌트로부터 전달 받은 props
+  - `ref`: 부모 컴포넌트로부터 전달 받은 `ref`
+
+반환값은 React 컴포넌트고, 이 컴포넌트가 `renderFn()`을 실행한다.
+
+```jsx
+import {forwardRef, useRef} from 'react';
+import styles from '../style/forward-ref.module.css';
+
+// 자식 컴포넌트
+const ChildComponent = forwardRef((props, ref) => {
+  return (
+    <div>
+      <h3>Child Component</h3>
+      <input type="text" ref={ref} />
+    </div>
+  );
+});
+ChildComponent.displayName = 'ChildComponent'; // ESLint 에러 방지용 display name 설정
+
+// 부모 컴포넌트
+export default function ParentComponent() {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+
+  return (
+    <div>
+      <h1>Parent Component</h1>
+      <div className={styles.childContainer}>
+        <ChildComponent ref={inputRef} />
+      </div>
+      <button onClick={handleClick}>Focus Input</button>
+    </div>
+  );
+}
+```
 
 
 ## 이펙트 훅 Effect Hooks
@@ -382,10 +476,10 @@ React.useEffect(setup, dependencies)
 
 ```jsx
 // 코드 출처: https://react.dev/reference/react/useEffect#connecting-to-an-external-system
-import { useEffect } from 'react';
-import { createConnection } from './chat.js';
+import {useEffect} from 'react';
+import {createConnection} from './chat.js';
 
-function ChatRoom({ roomId }) {
+function ChatRoom({roomId}) {
   const [serverUrl, setServerUrl] = useState('https://localhost:1234');
 
   useEffect(() => {
@@ -437,7 +531,7 @@ useEffect(() => {
 예를 들어 이런식으로 작성할 수 있다:
 
 ```js
-import { useState } from 'react';
+import {useState} from 'react';
 
 function useCounter(initialValue = 0) {
   const [count, setCount] = useState(initialValue);
@@ -446,7 +540,7 @@ function useCounter(initialValue = 0) {
   const decrement = () => setCount(count - 1);
   const reset = () => setCount(initialValue);
 
-  return { count, increment, decrement, reset };
+  return {count, increment, decrement, reset};
 }
 
 export default useCounter;

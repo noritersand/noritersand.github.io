@@ -76,7 +76,7 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 ## CRA, Create React App
 
-[Create React App | Getting Started](https://create-react-app.dev/docs/getting-started/)
+[Create React App \| Getting Started](https://create-react-app.dev/docs/getting-started/)
 
 ```bash
 npx create-react-app APP_NAME
@@ -150,7 +150,7 @@ CRA에선 ESM의 `import`로 CSS를 가져올 수 있다:
 
 ```jsx
 // Button.js
-import React, { Component } from 'react';
+import {Component} from 'react';
 import './Button.css'; // Tell webpack that Button.js uses these styles
 
 class Button extends Component {
@@ -271,7 +271,7 @@ class ShoppingList extends React.Component {
     );
   }
 }
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<ShoppingList name="Mark" />);
 ```
 
@@ -280,17 +280,21 @@ root.render(<ShoppingList name="Mark" />);
 ```js
 class ShoppingList extends React.Component {
   render() {
-    return React.createElement("div", { className: "shopping-list" },
-        React.createElement("h1", null, "Shopping List for ", this.props.name),
-        React.createElement("ul", null,
-            React.createElement("li", null, "Instagram"),
-            React.createElement("li", null, "WhatsApp"),
-            React.createElement("li", null, "Oculus")
-        )
+    return React.createElement(
+      'div',
+      {className: 'shopping-list'},
+      React.createElement('h1', null, 'Shopping List for ', this.props.name),
+      React.createElement(
+        'ul',
+        null,
+        React.createElement('li', null, 'Instagram'),
+        React.createElement('li', null, 'WhatsApp'),
+        React.createElement('li', null, 'Oculus')
+      )
     );
   }
 }
-const root = ReactDOM.createRoot(document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(React.createElement(ShoppingList, null));
 ```
 
@@ -473,9 +477,7 @@ const element = React.createElement('h2', null, '대통령 선거', ' : ', '대�
 
 const element2 = React.createElement('h2', {
   className: 'title',
-  children: [
-    '대통령 선거', ' : ', '대통령 앉은거'
-  ]
+  children: ['대통령 선거', ' : ', '대통령 앉은거']
 });
 // <h2 class="title"><span>대통령 선거</span><span> : </span><span>대통령 앉은거</span></h2>
 
@@ -547,7 +549,7 @@ ReactDOM.createRoot(domNode, options)
 [React \| createRoot()](https://react.dev/reference/react-dom/client/createRoot#createroot)
 
 ```jsx
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
@@ -570,7 +572,7 @@ ReactDOM.hydrateRoot(domNode, reactNode, options)
 ℹ️ *Hydration*은 클라이언트 측에서 자바스크립트를 실행하여 이미 존재하는 HTML 요소에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
 
 ```js
-import { hydrateRoot } from 'react-dom/client';
+import {hydrateRoot} from 'react-dom/client';
 
 const domNode = document.getElementById('root');
 const root = hydrateRoot(domNode, reactNode);
@@ -616,7 +618,11 @@ root.render(<Newbie/>);
 class Square extends React.Component {
   render() {
     return (
-      <button onClick={() => { console.log('click'); }}></button>
+      <button
+        onClick={() => {
+          console.log('click');
+        }}
+      ></button>
     );
     // return React.createElement("button", {onClick: () => {console.log('click')}});
   }
@@ -714,7 +720,7 @@ function App() {
 // <h2>Hello world!</h2> 출력
 ```
 
-ℹ️ state와 마찬가지로 props의 변화도 리렌더링을 유발한다.
+ℹ️ props의 변화는 자식 컴포넌트의 리렌더링을 유발한다. 단, 부모 컴포넌트에 state로 등록되어 있는 경우에만 그렇다. 만약 지역 변수나 `useRef`로 등록되었다면 값이 변해도 자식 컴포넌트의 리렌더링을 유발하지 않는다.
 
 ### props의 값은 변경할 수 없다
 
@@ -820,7 +826,7 @@ Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but i
 
 ## React.memo()
 
-`memo()`는 리액트의 고차함수로 컴포넌트의 props가 변경되지 않은 경우 리렌더링을 건너뛰라 지시할 때 사용한다.
+`memo()`는 리액트의 고차 컴포넌트(Higher-Order Component)로 컴포넌트의 props가 변경되지 않은 경우 리렌더링을 건너뛰라 지시할 때 사용한다.
 
 ℹ️ `memo()`는 props의 변환를 얕은 비교(shallow comparison)를 통해 감지한다. 객체의 가장 상위 레벨에 있는 프로퍼티만 비교한다는 뜻이다.
 
@@ -925,13 +931,10 @@ export default App;
 최신(2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
 
 ```jsx
-/// index.js
+// index.js
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 
 import Root from './routes/root';
 import Hello2 from './routes/hello2';
@@ -939,7 +942,7 @@ import Hello1 from './routes/hello1';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <Root />,
     children: [
       {
@@ -951,10 +954,10 @@ const router = createBrowserRouter([
         element: <Hello2 />
       }
     ]
-  },
+  }
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>
@@ -963,7 +966,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ```jsx
 // routes/root.jsx
-import { Link, Outlet } from "react-router-dom";
+import {Link, Outlet} from 'react-router-dom';
 
 export default function Root() {
   return (

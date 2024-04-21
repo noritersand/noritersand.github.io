@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
+- [Object \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
 - 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
 
 

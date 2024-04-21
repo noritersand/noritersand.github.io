@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| CSS: Cascading Style Sheets](https://developer.mozilla.org/en-US/docs/Web/CSS)
+- [CSS: Cascading Style Sheets \| MDN](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
 
 ## 개요

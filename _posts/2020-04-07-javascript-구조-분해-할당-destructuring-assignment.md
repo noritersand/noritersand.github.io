@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
+- [Destructuring assignment \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
 
 #### 테스트 환경 정보
 
@@ -256,11 +256,11 @@ const data = {
 
 var {
   character: {
-    name: realName // rename: 'name' => 'realName'
+    name: realName // 이름 변경: 'name' -> 'realName' 
   },
   character: {
     script: {
-      hello: hi // rename: 'hello' => 'hi'
+      hello: hi // 이름 변경: 'hello' -> 'hi'
     }
   }
 } = data;

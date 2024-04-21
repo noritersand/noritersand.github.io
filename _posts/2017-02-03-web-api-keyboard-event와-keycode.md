@@ -18,7 +18,7 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| KeyboardEvent](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
+- [KeyboardEvent \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent)
 - [JavaScript Event KeyCodes](http://keycode.info/)
 
 

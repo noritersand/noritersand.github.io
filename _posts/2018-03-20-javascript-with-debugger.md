@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| with](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with)
-- [MDN \| debugger](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
+- [with \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/with)
+- [debugger \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)
 
 
 ## with

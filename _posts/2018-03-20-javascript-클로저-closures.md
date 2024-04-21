@@ -15,8 +15,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
-- [MDN \| JavaScript 재입문하기: Closures](https://developer.mozilla.org/ko/docs/Web/JavaScript/A_re-introduction_to_JavaScript#%ED%81%B4%EB%A1%9C%EC%A0%B8_closures)
+- [Closures \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
+- [JavaScript 재입문하기: Closures \| MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/A_re-introduction_to_JavaScript#%ED%81%B4%EB%A1%9C%EC%A0%B8_closures)
 - [https://opentutorials.org/course/743/6544](https://opentutorials.org/course/743/6544)
 - 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
 

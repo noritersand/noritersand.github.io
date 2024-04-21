@@ -15,8 +15,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Standard built-in objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
-- [MDN \| JavaScript reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
+- [Standard built-in objects \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
+- [JavaScript reference \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
 - [http://www.w3schools.com/jsref/jsref_obj_global.asp](http://www.w3schools.com/jsref/jsref_obj_global.asp)
 

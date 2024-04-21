@@ -27,7 +27,7 @@ tags:
 
 현재 페이지
 
-### rowsPerPage(혹은 pageLength)
+### rowsPerPage(혹은 pageLength, pageSize)
 
 한 페이지 당 출력할 게시물. 고정값으로 처리하거나 사용자가 선택한 값을 받는다.
 

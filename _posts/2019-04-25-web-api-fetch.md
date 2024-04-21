@@ -15,15 +15,15 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| fetch()](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
-- [MDN \| Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [MDN \| Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-- [MDN \| Fetch basic concepts](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
-- [MDN \| FetchEvent](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
+- [fetch() \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/fetch)
+- [Fetch API \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- [Using Fetch \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Fetch basic concepts \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
+- [FetchEvent \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 - [Fetch Living Standard](https://fetch.spec.whatwg.org/)
-- [MDN \| Headers](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
-- [MDN \| Request](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-- [MDN \| Response](https://developer.mozilla.org/en-US/docs/Web/API/Response)
+- [Headers \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+- [Request \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Request)
+- [Response \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 #### 브라우저 호환
 
@@ -49,10 +49,10 @@ fetch(resource, options)
   - `body`
   - `browsingTopics`
   - `cache`
-  - `credentials`
-    - `omit`
-    - `same-origin`
-    - `include`
+  - `credentials`: 요청에 쿠키나 `Authorization` 헤더 같은 자격 증명을 위한 인증 정보를 포함할지 결정하는 옵션
+    - `omit`: 요청에 어떠한 인증 정보도 포함하지 않음
+    - `same-origin`: 생략했을 때의 기본값. 동일 출처(same-origin) 요청에 한하여 인증 정보를 포함함
+    - `include`: 교차 출처(cross-origin)를 비롯한 모든 요청에 인증 정보를 포함함
   - `headers`
   - `integrity`
   - `keepalive`

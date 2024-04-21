@@ -15,12 +15,12 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-- [MDN \| Using Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
+- [Promise \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [Using Promises \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises)
 - [web.dev \| JavaScript Promises: 소개](https://web.dev/promises/)
-- [MDN \| async function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
-- [MDN \| await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
-- [MDN \| Making asynchronous programming easier with async and await](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
+- [async function \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+- [await \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await)
+- [Making asynchronous programming easier with async and await \| MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await)
 
 #### 테스트 환경 정보
 
@@ -158,20 +158,16 @@ console.log(pr6); // Promise { <state>: "fulfilled", <value>: undefined }
 메서드 체인 상의 에러는 `.catch()`가 받아준다:
 
 ```js
-try {
-  new Promise((resolve, reject) => {
-    resolve();
-  }).then((msg) => {
-    throw new Error('I am error'); // 이 코드를 두 줄 위로 올려도 결과는 같음
-    console.log('moo');
-  }).catch((reason) => {
-    console.log('ya');
-  }).then((msg) => {
-    console.log('ho');
-  });
-} catch (e) {
-  console.error('Are you error?')
-}
+new Promise((resolve, reject) => {
+  resolve();
+}).then((msg) => {
+  throw new Error('I am error'); // 이 코드를 두 줄 위로 올려도 결과는 같음
+  console.log('moo');
+}).catch((reason) => {
+  console.log('ya');
+}).then((msg) => {
+  console.log('ho');
+});
 // catch에서 'ya' 출력
 // 두 번째 then에서 'ho' 출력
 ```
@@ -187,7 +183,7 @@ try {
     console.log('moo ya ho');
   });
 } catch (e) {
-  console.error('Are you error?')
+  console.error('Are you error?'); // 실행 안됨
 }
 // Uncaught (in promise) Error: I am error
 ```

@@ -1,4 +1,4 @@
----
+c---
 layout: post
 date: 2024-02-16 14:50:30 +0900
 title: '[Web] CSP, Content Security Policy'
@@ -14,8 +14,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
-- [MDN \| HTTP Headers: Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
+- [Content Security Policy (CSP) \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP)
+- [HTTP Headers: Content-Security-Policy \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy)
 
 
 ## 개요

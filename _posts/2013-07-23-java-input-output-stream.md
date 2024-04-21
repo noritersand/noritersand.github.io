@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [위키백과 \| ASCII](https://ko.wikipedia.org/wiki/ASCII)
+- [ASCII \| 위키백과](https://ko.wikipedia.org/wiki/ASCII)
 - [Java의 정석 - 남궁성](http://cafe.naver.com/javachobostudy.cafe)
 
 #### 인코딩, encoding이란?

@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [위키백과 \| ASCII](https://ko.wikipedia.org/wiki/ASCII)
+- [ASCII \| 위키백과](https://ko.wikipedia.org/wiki/ASCII)
 
 
 ## System.in.read()

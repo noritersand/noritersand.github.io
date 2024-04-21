@@ -67,8 +67,8 @@ App Router(이하 앱 라우터)는 넥스트 13.4 버전에서 도입된 새로
 
 ### 앱 라우터 vs 페이지 라우터
 
-- [App router | Next.js](https://nextjs.org/docs/app/building-your-application/routing)
-- [Pages router | Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
+- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
+- [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
 
 개발자는 앱 라우터와 페이지 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
 
@@ -197,8 +197,8 @@ export default function Page() {
 
 ### next.config.js
 
-- [Next.js | API Reference: next.config.js Options](https://nextjs.org/docs/pages/api-reference/next-config-js)
-- [GitHub | next.js/packages/next/src/server/config-shared.ts at canary · vercel/next.js](https://github.com/vercel/next.js/blob/canary/packages/next/src/server/config-shared.ts)
+- [Next.js \| API Reference: next.config.js Options](https://nextjs.org/docs/pages/api-reference/next-config-js)
+- [GitHub \| next.js/packages/next/src/server/config-shared.ts at canary · vercel/next.js](https://github.com/vercel/next.js/blob/canary/packages/next/src/server/config-shared.ts)
 
 next.config.js 혹은 next.config.mjs로 관리하는 Next.js의 빌드 설정 파일.
 
@@ -222,7 +222,7 @@ export default nextConfig;
 
 ## 환경 변수
 
-[Next.js | Configuring: Environment Variables](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables)
+[Next.js \| Configuring: Environment Variables](https://nextjs.org/docs/pages/building-your-application/configuring/environment-variables)
 
 넥스트는 `.env`로 시작하는 환경 변수 파일을 지원한다.
 
@@ -362,3 +362,31 @@ export default function ExampleClientComponent() {
   return <></>
 }
 ```
+
+### dynamic()
+
+컴포넌트를 동적으로 가져올 때 사용하는 함수. [React.lazy()](https://react.dev/reference/react/lazy)와 [Suspense](https://react.dev/reference/react/Suspense)의 합성이며 비슷한 방식으로 작동한다.
+
+SSR 제어를 위해 쓰기도 한다:
+
+```jsx
+import dynamic from 'next/dynamic';
+
+const DynamicComponent = dynamic(() => import('../components/DynamicComponent'), {
+  loading: () => <p>Loading...</p>,
+  ssr: false,
+});
+
+function MyPage() {
+  return (
+    <div>
+      <h1>My Page</h1>
+      <DynamicComponent />
+    </div>
+  );
+}
+
+export default MyPage;
+```
+
+`loading`으로 불러 오기 전의 내용을 지정했으며, `ssr: false`로 CSR 대상임을 강제로 지정했다.

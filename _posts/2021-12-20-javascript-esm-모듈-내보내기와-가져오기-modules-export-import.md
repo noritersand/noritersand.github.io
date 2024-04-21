@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| JavaScript modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-- [MDN \| import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
-- [MDN \| export](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+- [JavaScript modules \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+- [import \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
+- [export \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
 
 #### 브라우저 호환
 

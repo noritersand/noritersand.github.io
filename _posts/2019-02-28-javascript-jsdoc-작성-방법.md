@@ -15,7 +15,7 @@ tags:
 #### 참고 문서
 
 - [Use JSDoc \| Index](https://jsdoc.app/)
-- [GitHub | google/closure-compiler \| Annotating JavaScript for the Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
+- [GitHub \| google/closure-compiler \| Annotating JavaScript for the Closure Compiler](https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler#param-type-varname-description)
 - [Stack Overflow \| javascript - Set type for function parameters?](https://stackoverflow.com/questions/8407622/set-type-for-function-parameters)
 
 
@@ -32,10 +32,10 @@ JSDoc란 함수나 메서드, 프로토타입, (자바의) 클래스 등의 선�
 
 영문으로는:
 
-- documentation comments (IntelliJ)
-- doc comments
+- Documentation comments (IntelliJ)
+- Doc comments
 
-이 정도로 늘려쓰면 될 것 같음.
+정도로 쓰면 될 것 같음.
 
 
 ## JSDoc를 문서로 내보내기

@@ -106,7 +106,7 @@ var show = exports.show = function() {
 
 `module.exports`에서 `module`은 전역 객체이기 때문에 생략할 수 있다. **단, `exports`의 프로퍼티가 아닌 `exports`에 직접 할당할 때는 제외**.
 
-### require()
+### require
 
 모듈 가져오기.
 

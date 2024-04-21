@@ -17,8 +17,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [MDN \| Using XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
+- [XMLHttpRequest \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [Using XMLHttpRequest \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest)
 - [XMLHttpRequest Living Standard](https://xhr.spec.whatwg.org/)
 - [http://www.w3schools.com/ajax/](http://www.w3schools.com/ajax/)
 - [http://huns.me/development/1291](http://huns.me/development/1291)

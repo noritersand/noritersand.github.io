@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [MDN \| const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
-- [MDN \| let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
+- [const \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [let \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let)
 
 #### 테스트 환경 정보
 

@@ -19,7 +19,7 @@ tags:
 
 - [Document Object Model (DOM) Level 2 HTML Specification](https://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-8747038)
 - [http://www.w3schools.com/js/js_cookies.asp](http://www.w3schools.com/js/js_cookies.asp)
-- [MDN \| Document.cookie](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
+- [Document.cookie \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 - [모던 JavaScript 튜토리얼 \| 쿠키와 document.cookie](https://ko.javascript.info/cookie)
 
 
@@ -39,13 +39,17 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 - `Expires=<date> `: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
 - `Max-Age=<number>`: `Expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
 - `Path=<path-value>`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
-- `SameSite=<samesite-value>`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `lax` 혹은 `strict`, `none`으로 설정한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
+- `SameSite=<samesite-value>`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `lax`, `strict`, `none` 중에 하나로 설정한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
   - `Strict`: 이 쿠키는 동일한 사이트 간 요청에만 포함된다. 외부에서 현재 사이트로 이동하는 경우 전송되지 않는다. 가장 엄격한 옵션이다.
   - `Lax`: `Strict`처럼 동일한 사이트 간 요청에만 쿠키를 전송하지만, 외부에서 현재 사이트로 이동하는 경우에도 쿠키를 전송한다.
   - `None`: 이 쿠키는 제한 없이 모든 요청과 함께 전송될 수 있다. `None`으로 설정하는 경우 반드시 `Secure` 옵션도 같이 설정되어 HTTPS 요청에만 전송하도록 해야 한다. 보통 크로스 사이트 요청에 사용할 쿠키를 `None`으로 설정한다.
 - `Secure`: 값은 없고 이름만 있는 옵션. 이름만 써도 secure 쿠키가 된다. SSL 통신에서만 사용가능한 쿠키가 생성되며, 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 서로 공유한다. 위 예시처럼 `Secure`는 알아서 `true` 값으로 설정되므로 이름만 언급해도 된다.
 
 이 외에 `HttpOnly`라는 속성이 있는데, HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
+
+ℹ️ 쿠키의 `Domain` 속성은 프로토콜과 도메인, 서브 도메인만 일치하면 동일한 사이트로 판단하지만, `SameSite` 속성은 프로토콜, 도메인, 서브 도메인에 포트 번호까지 모두 일치해야 동일한 사이트로 판단한다.
+
+ℹ️ `Secure` 옵션이 `true`면 HTTPS 프로토콜을 통해서만 쿠키를 전송하게 강제한다. 하지만 브라우저에 따라 호스트가 `localhost`나 `127.0.0.1`일 때 이 옵션을 무시한다.
 
 
 ## 주의사항

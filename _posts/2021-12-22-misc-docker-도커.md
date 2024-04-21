@@ -31,7 +31,7 @@ Docker(이하 도커) 관련 정리글.
 
 ## Docker Desktop on Windows
 
-윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [Microsoft \| WSL 2에서 Docker 원격 컨테이너 시작](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.  
+윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [WSL 2에서 Docker 원격 컨테이너 시작 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.  
 참고로 Docker Desktop이란 앱이 설치되는데 이 앱을 꺼버리면 WSL에서 `docker` 명령도 안먹음.
 
 

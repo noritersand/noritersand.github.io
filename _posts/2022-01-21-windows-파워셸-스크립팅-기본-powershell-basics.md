@@ -17,10 +17,10 @@ tags:
 
 #### 참고 문서
 
-- [Microsoft \| PowerShell이란?](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
-- [Microsoft \| PowerShell 설명서](https://aka.ms/powershell)
-- [Microsoft \| Windows, Linux 및 macOS에 PowerShell 설치](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
-- [Microsoft \| Microsoft.PowerShell.Core](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
+- [PowerShell이란? \| Microsoft Learn](https://docs.microsoft.com/ko-kr/powershell/scripting/overview?view=powershell-7)
+- [PowerShell 설명서 \| Microsoft Learn](https://aka.ms/powershell)
+- [Windows, Linux 및 macOS에 PowerShell 설치 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/powershell/scripting/install/installing-powershell?view=powershell-6#powershell-core)
+- [Microsoft.PowerShell.Core \| Microsoft Learn](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/?view=powershell-7.2)
 
 
 ## 개요

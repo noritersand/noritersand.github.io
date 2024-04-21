@@ -104,8 +104,6 @@ tags:
 - [🌟 KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리. 포매터가 필요하면 이걸 쓰자
-- [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
-- [Redux](https://redux.js.org/): (이하 리덕스) 리액트용 상태(reactive state) 관리 라이브러리. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 'props drilling'이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
 
 ### 런타임
 
@@ -117,14 +115,17 @@ tags:
 
 - [JUnit](https://junit.org): 자바 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (2023-02-15)
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
+- [Mocha](https://mochajs.org/): 오래된 자바스크립트 테스팅 프레임워크 #1. 이하 모카
+- [Chai](https://www.chaijs.com/): 자바스크립트용 Assertion 라이브러리. 가독성 좋고 유연한 문법을 제공한다. 보통 모카와 같이 쓴다.
+- [Jest](https://jestjs.io/): 자바스크립트 테스팅 프레임워크 #2. Facebook에서 개발했다고 한다.(지금은 OpenJS 재단에서 관리하는 모양인데). 리액트 프로젝트에서 많이 쓰인다고 한다.
 
 ### 프레임워크
 
-- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 'retired' 상태라서 업데이트는 없다.
+- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
-- [Vue](https://vuejs.org/): (이하 뷰) 설명이 필요없는 프론트엔드 라이브러리(1).
-- [React](https://react.dev/): (이하 리액트) 설명이 필요없는 프론트엔드 라이브러리(2).
+- [Vue](https://vuejs.org/): (이하 뷰) 설명이 필요없는 프론트엔드 라이브러리 #1.
+- [React](https://react.dev/): (이하 리액트) 설명이 필요없는 프론트엔드 라이브러리 #2.
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 리액트, 뷰를 잇는 프론트엔드 프레임워크. 비교적 가볍고 단순한 게 특징이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
@@ -134,9 +135,15 @@ tags:
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - [Remix](https://remix.run/): 리액트 기반의 SSR/CSR 프레임워크. CSR보단 SSR로 주로 쓰이는 듯 하며, 백엔드에서 리액트를 실행하고 결과를 클라이언트에 전송하는 방식이다.
 
+#### 리액트용 라이브러리
+
+- [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
+- [Redux](https://redux.js.org/): (이하 리덕스) 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
+- [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다는 평. 
+
 ### CSS 프레임워크
 
-[니콜라스 유튜브 \| 2023 베스트 CSS 프레임워크 소개](https://www.youtube.com/watch?v=FRSUP2sbgTY)
+[2023 베스트 CSS 프레임워크 소개 \| 니콜라스 유튜브](https://www.youtube.com/watch?v=FRSUP2sbgTY)
 
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): CSS 프레임웤과 디자인 시스템 같은 것을 모아놓은 사이트
@@ -162,7 +169,7 @@ tags:
 - [⭐ ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Mantine](https://mantine.dev/): **TODO**
 - [Ant Design](https://ant.design/): **TODO**
-- [Material UI](https://mui.com/material-ui/): **TODO**
+- [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
 - [NextUI](https://nextui.org/): **TODO**
 - [리액트 UI](https://reach.tech/): **TODO**
 - [Headless UI](https://headlessui.dev/): 리액트 혹은 뷰에 적용할 수 있음
@@ -265,7 +272,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
 - [XMind](http://www.xmind.net): 마인드 맵
-- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page): 마인드 맵 (2)
+- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page): 마인드 맵 #2
 
 ### ERD
 
@@ -275,7 +282,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ## 온라인 코드 편집기(에디터) 겸 테스트 툴
 
 - [CodePen](https://codepen.io): 온라인 코드 편집기. 웹으로 코드를 작성하고 테스트하거나 남들과 공유할 수 있는 서비스.
-- [JSFiddle](https://jsfiddle.net): 온라인 코드 편집기 (2)
+- [JSFiddle](https://jsfiddle.net): 온라인 코드 편집기 #2
 - [CodeSandbox](https://codesandbox.io): 온라인 코드 편집기 (3). 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
 - [StackBlitz](https://stackblitz.com): 프론트엔드 개발용 온라인 코드 편집기 (4). 깃허브 저장소와 연동할 수 있고, Node.js 등 빌드 툴 실행이 가능한 환경을 제공한다. public 프로젝트에 한해 무료로 사용 가능.
 
@@ -316,13 +323,13 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 사이트.
 - [https://whatismyipaddress.com](https://whatismyipaddress.com): 접속한 PC의 IP 관련 정보를 보여주는 사이트 #1. 예전에 bot이 있었는데 사라짐.
-- [https://ipinfo.io](https://ipinfo.io): 접속한 PC의 IP 관련 정보를 보여주는 사이트 (2)
+- [https://ipinfo.io](https://ipinfo.io): 접속한 PC의 IP 관련 정보를 보여주는 사이트 #2
 
 
 ## 버전 관리
 
 - [Fork](https://fork.dev): Git GUI #1. 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
-- [GitKraken](https://www.gitkraken.com): Git GUI (2). 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
+- [GitKraken](https://www.gitkraken.com): Git GUI #2. 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
 - [⭐ Sublime Merge](https://www.sublimemerge.com): Git GUI (3). 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
 - [gitui](https://github.com/extrawurst/gitui): Git GUI (4). Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
 
@@ -414,7 +421,7 @@ Project manager 혹은 Issue tracker
 
 - [stibee](https://www.stibee.com/?utm_source=stibee&utm_campaign=sponsorbanner&utm_medium=email&uid=b2ZmaWNpYWxAbmV3bmVlay5jbw): 이메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원. 메일링.
 - [https://www.guerrillamail.com/ko](https://www.guerrillamail.com/ko): 일회용 이메일 서버. 60분 동안만 유효한 메일 주소를 제공.
-- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버 (2). 이건 꽤 오래감.
+- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버 #2. 이건 꽤 오래감.
 - [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 이메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 이메일을 진짜처럼 쓸 수 있게 해주는 것.
 
 
@@ -431,11 +438,11 @@ Project manager 혹은 Issue tracker
 - [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다.
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
 - [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 쓰레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
-- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴 (2). 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
+- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴 #2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
 - [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴 (3). 자바 웹 앱 전용이다. 상용
 - [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴 (4). 10일 무료. IDE와 연동할 수 있음. 상용
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
-- [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 (2). 자바/PHP/닷넷 앱 모니터링. 상용
+- [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 #2. 자바/PHP/닷넷 앱 모니터링. 상용
 - [WhaTap](https://www.whatap.io/ko): APM 툴 (3). 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
 - [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
@@ -486,10 +493,11 @@ Project manager 혹은 Issue tracker
 
 ## AI
 
-- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GTP 기반 AI 채팅
+- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 대형 언어 모델 #1
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 툴 모음 사이트
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 툴이다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
+- [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
 
 
 ## 기타 웹 서비스
@@ -503,7 +511,7 @@ Project manager 혹은 Issue tracker
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
 - [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴
-- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 (2)
+- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 #2
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
 
 

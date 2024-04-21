@@ -17,9 +17,9 @@ tags:
 
 #### 참고 문서
 
-- [Microsoft \| about_Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
-- [Microsoft \| about_Operators 우리말 버전](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
-- [Microsoft \| Operators and Expressions in Visual Basic](https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/)
+- [about_Operators \| Microsoft Learn](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
+- [about_Operators 우리말 버전 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2)
+- [Operators and Expressions in Visual Basic \| Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language-features/operators-and-expressions/)
 
 ## 개요
 

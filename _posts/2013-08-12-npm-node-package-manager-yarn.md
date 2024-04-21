@@ -406,11 +406,12 @@ yarn add PACKAGE_NAME
 # 지정한 버전 번호와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@1.2.3
 
-# 지정한 태그와 일치하는 버전으로 설치
+# 지정한 태그(e.g. beta, next, latest)와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@TAG_NAME
 
-# PACKAGE_NAME을 개발환경(devDependencies)에서만 유효하도록 설치
-yarn add PACKAGE_NAME --include=dev
+# 개발환경(devDependencies)에서만 유효한 패키지 설치
+yarn add --dev PACKAGE_NAME
+# yarn add -D PACKAGE_NAME
 
 # package.json에 작성된 의존 패키지를 모두 설치
 # yarn.lock이 있으면 해당 의존성을 우선함

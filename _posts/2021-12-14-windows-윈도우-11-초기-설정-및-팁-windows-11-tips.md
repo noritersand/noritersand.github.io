@@ -18,8 +18,8 @@ tags:
 
 #### 참고 문서
 
-- [Microsoft \| Keyboard shortcuts in Windows](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
-- [Microsoft \| Windows의 바로 가기 키](https://support.microsoft.com/ko-kr/windows/windows의-바로-가기-키-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
+- [Keyboard shortcuts in Windows \| Microsoft Learn](https://support.microsoft.com/en-us/windows/keyboard-shortcuts-in-windows-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
+- [Windows의 바로 가기 키 \| Microsoft Learn](https://support.microsoft.com/ko-kr/windows/windows의-바로-가기-키-dcc61a57-8ff0-cffe-9796-cb9706c75eec)
 
 
 ## 개요
@@ -135,8 +135,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 4</kbd>: Chrome
 - <kbd>win + 5</kbd>: Sublime Merge
 - <kbd>win + 6</kbd>: Discord, Slack
-- <kbd>win + 7</kbd>: Steam, 가변 #1
-- <kbd>win + 8</kbd>: VSCODE, 가변 #2
+- <kbd>win + 7</kbd>: Steam, WebStorm
+- <kbd>win + 8</kbd>: VSCODE
 - <kbd>win + 9</kbd>: 가변 #3
 - <kbd>win + 0</kbd>: 가변 #4
 
@@ -150,7 +150,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 Autohotkey로 확장한 키 조합:
 
-- <kbd>win + \-</kbd>: Obsidian
+- <kbd>win + \-</kbd>: DBMS Tool(DataGrip)
 - <kbd>win + ctrl + \-</kbd>: Notion
+- <kbd>win + alt + \-</kbd>: Obsidian
 - <kbd>win + \=</kbd>: Edge
 - <kbd>win + backspace</kbd>: WorkFlowy
