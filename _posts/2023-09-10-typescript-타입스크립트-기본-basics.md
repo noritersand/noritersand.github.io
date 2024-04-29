@@ -876,7 +876,61 @@ let s: symbol = Symbol('s');
 
 [TypeScript Documentation \| Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
 
-**TODO** 
+`keyof`는 타입 별칭이나 인터페이스에 정의된 모든 프로퍼티들의 이름을 문자열 리터럴 유니언으로 반환하는 연산자다. 보통 객체의 프로퍼티 이름을 추출하여 타입으로 사용할 때 사용한다:
+
+```ts
+type AType = {
+  a: string;
+  b: number;
+}
+
+interface BType {
+  c: boolean;
+  d: string[];
+}
+
+let foo3: keyof AType;
+foo3 = 'a';
+foo3 = 'b';
+// foo3 = 'c'; // error TS2322: Type '"c"' is not assignable to type 'keyof AType'.
+
+let foo4: keyof BType;
+foo4 = 'c';
+foo4 = 'd';
+// foo4 = 'g'; // Type '"g"' is not assignable to type 'keyof BType'.
+```
+
+그러니까 `keyof AType`은 `'a' | 'b'`, `keyof BType`은 `'c' | 'd'`가 되는 식이다. 자바스크립트의 `Object.keys()`와 유사하지만, 런타임에는 존재하지 않는 문법이므로 출력에 직접 사용할 수는 없다:
+
+```ts
+console.log(keyof Atype); // error TS1005: ',' expected.
+```
+
+아래는 제네릭 타입에 활용한 예시다:
+
+```ts
+type Person3 = {
+  name: string;
+  age: number;
+  city: string;
+};
+
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+const person3: Person3 = {
+  name: 'John',
+  age: 30,
+  city: 'New York',
+};
+
+getProperty(person3, 'name'); // John
+getProperty(person3, 'age'); // 30
+getProperty(person3, 'city'); // New York
+```
+
+제네릭 타입 `T`와 `K`를 사용하며, `K`의 타입을 `keyof T`로 제한했다. 이는 `K`가 `T` 타입의 프로퍼티 이름 중 하나여야 함을 의미한다.
 
 ### Typeof 타입 연산자
 

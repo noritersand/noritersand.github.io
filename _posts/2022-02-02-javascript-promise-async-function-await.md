@@ -342,7 +342,7 @@ console.log('아재개그는 아주 재밌는 개그');
 
 `result`는 Promise가 아니라 `resolve('abc')`에 의해 넘겨진 `abc`다.
 
-### 래핑을 하네
+### await도 한다! 래핑
 
 만약 `await` 연산자 다음이 Promise가 아니면 해당 값은 [resolved Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/resolve)로 변환된다.
 

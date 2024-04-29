@@ -680,7 +680,7 @@ class App extends React.Component {
 
 더 자세한 내용은 [훅만 따로 정리한 문서](/react/리액트-훅-reactjs-hooks/)를 볼 것.
 
-### 폼 바인딩? 양방향 데이터 바인딩?
+### 폼 바인딩 or 양방향 데이터 바인딩
 
 그런 거 없다. 리액트는 Vue의 `v-model`과 같은 사용자 입력값과 state를 자동으로 동기화하는 장치를 제공하지 않는다. 대신 우리가 직접 이벤트 핸들러를 작성해야 한다:
 
@@ -720,9 +720,44 @@ function App() {
 // <h2>Hello world!</h2> 출력
 ```
 
-ℹ️ props의 변화는 자식 컴포넌트의 리렌더링을 유발한다. 단, 부모 컴포넌트에 state로 등록되어 있는 경우에만 그렇다. 만약 지역 변수나 `useRef`로 등록되었다면 값이 변해도 자식 컴포넌트의 리렌더링을 유발하지 않는다.
+ℹ️ props의 변화는 자식 컴포넌트의 리렌더링을 유발한다. 단, 부모 컴포넌트에 state로 등록되어 있는 경우에만 그렇다. 만약 지역 변수나 `useRef`로 등록되었다면 값이 바뀌어도 자식 컴포넌트의 리렌더링을 유발하지 않는다.
 
-### props의 값은 변경할 수 없다
+#### props와 전개 연산자
+
+props를 그대로 다른 컴포넌트에 전달할 땐 전개 연산자를 쓸 수 있다:
+
+```jsx
+function GrandChild({value1, value2, children}) {
+  return (
+    <div>
+      <p>value1: {value1}</p>
+      <p>value2: {value2}</p>
+      {children}
+    </div>
+  );
+}
+
+function SecondChild(props) {
+  return <GrandChild {...props} />;
+}
+
+export default function Props() {
+  return (
+    <SecondChild value1={'foo'} value2={'bar'}>
+      <p>Hello world too!</p>
+    </SecondChild>
+  );
+}
+
+// 출력:
+// <div>
+//   <p>value1: foo</p>
+//   <p>value2: bar</p>
+//   <p>Hello world too!</p>
+// </div>
+```
+
+### 자식 컴포넌트는 props의 값을 변경할 수 없다
 
 읽기 전용이므로 재할당은 에러를 유발한다:
 

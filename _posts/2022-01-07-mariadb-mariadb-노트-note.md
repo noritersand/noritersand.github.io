@@ -166,8 +166,6 @@ from test_table, (select @rownum := 0) r
 
 한 건 이상의 데이터를 하나의 문자열로 연결해 표현하는 방법을 말함. `GROUP_CONCAT()` 함수를 쓴다.
 
-기본 사용법:
-
 ```sql
 select group_concat(member_name)
 from some_member_table
