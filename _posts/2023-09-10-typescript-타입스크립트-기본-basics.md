@@ -28,7 +28,7 @@ Microsoft에서 만든 TypeScript(이하 타입스크립트)의 기본적인 내
 
 타입스크립트는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. 자바스크립트의 슈퍼셋(superset)이라 하기도 한다.
 
-타입스크립트로 작성된 소스는 브라우저나 자바스크립트 엔진이 읽을 수 없기 때문에 컴파일을 통해 자바스크립트 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다. 
+타입스크립트로 작성된 소스는 브라우저나 자바스크립트 엔진이 읽을 수 없기 때문에 컴파일을 통해 자바스크립트 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다.
 
 타입스크립트의 주요 장점은 스크립트를 실행하기 전에 미리 문제를 발견할 수 있다는 점이다. 그러나 이 장점은 자바스크립트의 유연성을 제물로 바친 대가이며, 엄격한 타입 체크가 때로는 생산성을 떨어트리는 단점이 되기도 한다.
 
@@ -64,7 +64,7 @@ tsc --init
 
 ### tsconfig.json
 
-[TypeScript Documentation \| tsconfig](https://www.typescriptlang.org/tsconfig)
+[tsconfig \| TypeScript Documentation ](https://www.typescriptlang.org/tsconfig)
 
 타입스크립트 컴파일러가 프로젝트를 어떻게 컴파일 할지에 대한 설정을 정의한다. 저 아래 '빌드하기' 항목에서처럼 빌드할 항목 등을 직접 지정하는 방법도 있지만 그건 귀찮으니께...
 
@@ -136,7 +136,7 @@ tsc --build --watch
   - `number[]`: 숫자 타입의 배열
   - `string[]`: 문자열 타입의 배열
   - ...
-  - `Array<number>`: 제네릭 배열 타입 (number 타입의 배열)
+  - `Array<number>`: 제네릭 배열 타입 (이 경우 number 타입의 배열을 의미함)
 - 튜플: 고정된 개수의 요소와 각 요소의 타입을 정확히 지정한 배열
 - 열거형: 명명된 상수들의 집합을 정의하는 타입
 - 사용자 정의 타입:
@@ -149,10 +149,11 @@ tsc --build --watch
 - `null`과 `undefined`: 각각 `null` 값과 `undefined` 값을 나타내는 타입
 - `void`: 함수에서 반환 값이 없을 때 사용하는 타입
 - `never`: 절대 발생하지 않는 값의 타입 (예: 항상 예외를 throw하는 함수)
+- 유틸리티 타입: 타입 변환용 편의성 타입
 
 ### 열거형 Enums
 
-[TypeScript Documentation \| Enums](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
+[Enums \| TypeScript Documentation](https://www.typescriptlang.org/ko/docs/handbook/enums.html)
 
 **TODO**
 
@@ -162,9 +163,9 @@ tsc --build --watch
 
 ```ts
 function printCoordinate(obj: Coordinate) {
-  return `${obj.latitude} ${obj.longitude}`
+  return `${obj.latitude} ${obj.longitude}`;
 }
-printCoordinate({ latitude: 0, longitude: 0 }) // '0 0'
+printCoordinate({latitude: 0, longitude: 0}); // '0 0'
 ```
 
 ```ts
@@ -178,13 +179,13 @@ type person = {
   name: string;
   age: number;
   email: string;
-}
+};
 
 let obj: person = {
-  name: "Waldo",
+  name: 'Waldo',
   age: 123,
-  email: "a@b.co"
-}
+  email: 'a@b.co'
+};
 ```
 
 ℹ️ 객체 구조 정의에는 타입 별칭보단 인터페이스를 사용하며, 타입 별칭은 함수, 유니온 등에 주로 사용한다.
@@ -237,8 +238,8 @@ let arr2: myNumber2[] = [1, '2', 3]; // OK
 ```
 
 ```ts
-type Person = { name: string; age: number };
-type Human = { breathing: boolean };
+type Person = {name: string; age: number};
+type Human = {breathing: boolean};
 
 let waldo: Person | Human;
 
@@ -259,19 +260,19 @@ waldo = {
 공식 도움말에선 *교집합*으로 번역한다. 여러 타입 중 하나(OR)라도 만족하면 되는 유니언과 다르게 인터섹션은 여러 타입을 모두 만족(AND)해야 한다:
 
 ```ts
-type Person = { name: string, age: number };
-type Human = { breathing: boolean };
+type Person = {name: string; age: number};
+type Human = {breathing: boolean};
 
 let waldo: Person & Human;
 
 waldo = {
-  name: 'waldo', 
+  name: 'waldo',
   age: 47,
-  breathing: true,
+  breathing: true
 }; // O
 
 waldo = {
-  name: 'waldo', 
+  name: 'waldo',
   age: 47
   // error TS2322: Type '{ name: string; age: number; }' is not assignable to type 'Person & Human'.
   // Property 'breathing' is missing in type '{ name: string; age: number; }' but required in type 'Human'.
@@ -300,8 +301,8 @@ type NumberArray = Array<number>;
 let numArr: NumberArray = [1, 2, 3];
 numArr.push('4'); // error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
 
-type ObjectWithNameArray = Array<{ name: string }>;
-let objArr: ObjectWithNameArray = [{ name: '1' }, { name: '2' }];
+type ObjectWithNameArray = Array<{name: string}>;
+let objArr: ObjectWithNameArray = [{name: '1'}, {name: '2'}];
 ```
 
 아래는 공식 가이드의 예시를 약간 수정한 것:
@@ -322,8 +323,8 @@ const backpack: Backpack<string> = {
   },
   get: function () {
     return this.contents;
-  },
-}
+  }
+};
 
 const object = backpack.get();
 console.log(object); // []
@@ -337,10 +338,38 @@ backpack.add(23); // error TS2345: Argument of type 'number' is not assignable t
 다른 예시:
 
 ```ts
-function identity<T>(arg: T): T { 
-  return arg; 
+function identity<T>(arg: T): T {
+  return arg;
 }
 ```
+
+### 유틸리티 타입 Utility Types
+
+[Utility Types \| TypeScript: Documentation](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html#recordkeystype)
+
+타입스크립트에서 제공하는 타입 변환을 쉽게 하기 위한 유틸리티 타입이다. ~~넘모많다~~
+
+- `Partial<Type>`
+- `Required<Type>`
+- `Readonly<Type>`
+- `Record<Keys,Type>`: 
+- `Pick<Type, Keys>`
+- `Omit<Type, Keys>`
+- `Exclude<Type, ExcludedUnion>`
+- `Extract<Type, Union>`
+- `NonNullable<Type>`
+- `Parameters<Type>`
+- `ConstructorParameters<Type>`
+- `ReturnType<Type>`
+- `InstanceType<Type>`
+- `ThisParameterType<Type>`
+- `OmitThisParameter<Type>`
+- `ThisType<Type>`
+- 내장 문자열 조작 타입
+-   `Uppercase<StringType>`
+-   `Lowercase<StringType>`
+-   `Capitalize<StringType>`
+-   `Uncapitalize<StringType>`
 
 
 ## 변수의 타입 제한
@@ -381,7 +410,7 @@ let arr: string[] = [1, 2, 3]; // error TS2322: Type 'number' is not assignable 
 
 ```ts
 let tuple: [string, number];
-tuple = ["hello", 10];
+tuple = ['hello', 10];
 ```
 
 함수 파라미터를 튜플로 선언하고 구조 분해 할당을 적용한 예시:
@@ -433,7 +462,7 @@ console.log(obj.sirname); // error TS2339: Property 'sirname' does not exist on 
 특정 프로퍼티가 있을 수도 없을 수도 있다면(이것은 객체 프로퍼티로 `undefined` 할당을 허용하는 것과 같다) 콜론에 물음표를 붙여서 `?:` *옵셔널 프로퍼티(Optional properties)*로 지정한다:
 
 ```ts
-let obj: {name: string, sirname?: string} = {
+let obj: {name: string; sirname?: string} = {
   name: 'John'
 };
 
@@ -456,7 +485,7 @@ console.log(obj[b]);
 //   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
 ```
 
-다음처럼 [TypeScript Documentation \| Index Signatures](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
+다음처럼 인덱스 시그니처([Index Signatures \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures))로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
 
 ```ts
 let obj: {[key: string]: number} = {
@@ -478,7 +507,7 @@ let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
 let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
 ```
 
-**어떤 값이 올 수 있는 자리에 대한 타입 선언이 아니라 실제 값의 타입이 어떤 것인지를 설명한다는 차이**가 있다. 
+**어떤 값이 올 수 있는 자리에 대한 타입 선언이 아니라 실제 값의 타입이 어떤 것인지를 설명한다는 차이**가 있다.
 
 🚨 타입 단언은 타입 체커를 무시하며 코드 안정성을 보장하지 않는다. 가급적이면 타입 단언 대신 타입 가드나 타입 체크를 사용하는 것이 권장된다.
 
@@ -514,33 +543,33 @@ function add(a: number, b: number) {
 얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미 콜론`;`을 사용한다.
 
 ```ts
-function printFooBar(foobar: { foo: string; bar: number }) {
+function printFooBar(foobar: {foo: string; bar: number}) {
   // ...
 }
 
-function printFooBar2(foobar: { foo: string; bar: number }) {
+function printFooBar2(foobar: {foo: string; bar: number}) {
   console.log(foobar.foo, foobar.bar);
 }
-printFooBar2({ foo: 'foo', bar: 1 }); // foo 1
+printFooBar2({foo: 'foo', bar: 1}); // foo 1
 ```
 
 하지만 이렇게 객체 프로퍼티에 대한 타입을 지정하면 해당 프로퍼티를 생략했을 때 타입 에러가 발생한다:
 
 ```ts
-function printFooBar2(foobar: { foo: string; bar: number }) {
+function printFooBar2(foobar: {foo: string; bar: number}) {
   // ...
 }
-printFooBar2({ foo: 'foo' });
+printFooBar2({foo: 'foo'});
 // error TS2345: Argument of type '{ foo: string; }' is not assignable to parameter of type '{ foo: string; bar: number; }'. Property 'bar' is missing in type '{ foo: string; }' but required in type '{ foo: string; bar: number; }'.
 ```
 
 객체 리터럴에서처럼 `undefined` 할당을 허용하는 *옵셔널 프로퍼티*로 만들려면 물음표`?`를 붙인다:
 
 ```ts
-function printFooBar3(foobar: { foo: string; bar?: number }) {
+function printFooBar3(foobar: {foo: string; bar?: number}) {
   // ...
 }
-printFooBar3({ foo: 'foo' });
+printFooBar3({foo: 'foo'});
 ```
 
 ### 반환값의 타입 선언
@@ -556,7 +585,7 @@ function getSymbol1(): symbol {
 // 화살표 함수
 const getSymbol2 = (): symbol => {
   return Symbol('me too');
-}
+};
 ```
 
 만약 문맥 상 반환 타입을 예측할 수 있다면 생략 가능하다.
@@ -615,7 +644,7 @@ getWaldo().toUpperCase();
 
 ```ts
 let getWaldo = (name: string) => {
-  return {name}
+  return {name};
 };
 getWaldo('Waldo').age = 128;
 // error TS2339: Property 'age' does not exist on type '{ name: string; }'.
@@ -625,7 +654,7 @@ getWaldo('Waldo').age = 128;
 
 ```ts
 let getWaldo = (name: string): {name: string; age?: number} => {
-  return {name}
+  return {name};
 };
 getWaldo('Waldo').age = 128;
 ```
@@ -634,7 +663,7 @@ getWaldo('Waldo').age = 128;
 
 [https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
 
-**TODO** 
+**TODO**
 
 
 ## 클래스(Classes)의 형태 제한
@@ -646,7 +675,8 @@ class Newbie {
   name: string; // 프로퍼티 타입 표기
   id: number;
 
-  constructor(name: string, id: number) { // 함수 매개변수 타입 표기
+  constructor(name: string, id: number) {
+    // 함수 매개변수 타입 표기
     this.name = name;
     this.id = id;
   }
@@ -669,7 +699,6 @@ class Newbie {
 
 **TODO**
 
-
 ### 구현/구상화 implements
 
 타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 클래스의 구상화 기능을 제공한다:
@@ -679,10 +708,10 @@ class Newbie {
 interface Pingable {
   ping(): void;
 }
- 
+
 class Sonar implements Pingable {
   ping() {
-    console.log("ping!");
+    console.log('ping!');
   }
 }
 ```
@@ -691,20 +720,19 @@ class Sonar implements Pingable {
 
 ```ts
 class Ball implements Pingable {
-// error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
-//   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
-  
+  // error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
+  //   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
   // ping() 메서드를 구현하지 않은 경우
 }
 ```
 
-⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(*It doesn’t change the type of the class or its methods at all*: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
+⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(_It doesn’t change the type of the class or its methods at all_: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
 
 ```ts
 interface Checkable {
   check(name: string): boolean;
 }
- 
+
 class NameChecker implements Checkable {
   check(s): boolean {
     // error TS7006: Parameter 's' implicitly has an 'any' type.
@@ -723,15 +751,15 @@ class NameChecker implements Checkable {
 // 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#abstract-classes-and-members
 abstract class Base {
   abstract getName(): string;
- 
+
   printName() {
-    console.log("Hello, " + this.getName());
+    console.log('Hello, ' + this.getName());
   }
 }
 
 class Derived extends Base {
   getName() {
-    return "world";
+    return 'world';
   }
 }
 ```
@@ -801,23 +829,23 @@ function printPoint(p: Point) {
   console.log(`${p.x}, ${p.y}`);
 }
 
-const point = { x: 12, y: 26 };
+const point = {x: 12, y: 26};
 printPoint(point);
 ```
 
 `point`는 `Point` 타입으로 선언된 적이 없지만, 타입 검사기가 알아서 형태를 비교하고 통과시킨다. 따라서 이 코드는 정상이다.
 
-형태를 비교할 때는 부분 집합인지만 통과하면 된다. 
+형태를 비교할 때는 부분 집합인지만 통과하면 된다.
 
 ```ts
-const point2 = { x: 12, y: 26, z: 89 }; // OK
-const rect = { x: 33, y: 3, width: 30, height: 80 }; // OK
+const point2 = {x: 12, y: 26, z: 89}; // OK
+const rect = {x: 33, y: 3, width: 30, height: 80}; // OK
 ```
 
 하지만 전혀 엉뚱한 구조라면:
 
 ```ts
-const color = { hex: "#187ABF" };
+const color = {hex: '#187ABF'};
 // error TS2345: Argument of type '{ hex: string; }' is not assignable to parameter of type 'Point'.
 // Type '{ hex: string; }' is missing the following properties from type 'Point': x, y
 ```
@@ -832,19 +860,19 @@ const color = { hex: "#187ABF" };
 ```ts
 declare var myVariable: string;
 declare function myFunction(a: number): void;
-declare class MyClass { }
+declare class MyClass {}
 ```
 
 앰비언트 선언은 보통 `.d.ts` 파일(타입스크립트 선언 파일)에 작성한다. 이 파일들은 컴파일 중 코드로 변환되지 않으며, 오직 타입 체크와 자동 완성, 문서화를 위해 사용된다.
 
 **TODO** 설명 추가
 
-[TypeScript Documentation \| Creating .d.ts Files from .js files](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
+[Creating .d.ts Files from .js files \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
 
 
 ## 다운레벨링 Downleveling
 
-다운레벨링은 상위 버전의 스크립트를 하위 버전으로 바꿔주는 기능을 의미하는 용어다. 
+다운레벨링은 상위 버전의 스크립트를 하위 버전으로 바꿔주는 기능을 의미하는 용어다.
 
 아래처럼 ES2015에 도입된 기술은 템플릿 리터럴을 사용한 코드는:
 
@@ -856,16 +884,16 @@ let person = 'John Doe';
 `tsconfig.json`의 `target` 설정이 ES2015보다 낮은 ES5라면 아래처럼 컴파일된다:
 
 ```js
-"use strict";
+'use strict';
 var person = 'John Doe';
-"Hello ".concat(person, ".");
+'Hello '.concat(person, '.');
 ```
 
 하지만 다운레벨링이 모든 것을 가능하게 해주는 요술봉은 아니다. 예를 들어 ES5에서 `symbol` 타입은 사용할 수 없기 때문에 컴파일 에러가 발생한다:
 
 ```ts
 // "target": "es5"
-let s: symbol = Symbol('s'); 
+let s: symbol = Symbol('s');
 // error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
 ```
 
@@ -874,7 +902,7 @@ let s: symbol = Symbol('s');
 
 ### Keyof 타입 연산자
 
-[TypeScript Documentation \| Keyof Type Operator](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
+[Keyof Type Operator \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
 
 `keyof`는 타입 별칭이나 인터페이스에 정의된 모든 프로퍼티들의 이름을 문자열 리터럴 유니언으로 반환하는 연산자다. 보통 객체의 프로퍼티 이름을 추출하여 타입으로 사용할 때 사용한다:
 
@@ -882,7 +910,7 @@ let s: symbol = Symbol('s');
 type AType = {
   a: string;
   b: number;
-}
+};
 
 interface BType {
   c: boolean;
@@ -922,7 +950,7 @@ function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
 const person3: Person3 = {
   name: 'John',
   age: 30,
-  city: 'New York',
+  city: 'New York'
 };
 
 getProperty(person3, 'name'); // John
@@ -934,13 +962,13 @@ getProperty(person3, 'city'); // New York
 
 ### Typeof 타입 연산자
 
-[TypeScript Documentation \| Typeof Type Operator](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
+[Typeof Type Operator \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/typeof-types.html)
 
 **TODO**
 
 
 ## 타입스크립트의 JSDoc
 
-[TypeScript Documentation \| JSDoc Reference](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
+[JSDoc Reference \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 
 **TODO**

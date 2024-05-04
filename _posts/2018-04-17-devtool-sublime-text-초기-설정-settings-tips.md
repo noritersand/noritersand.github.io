@@ -229,7 +229,8 @@ JSON 문자열을 한 줄로 압축하거나 반대로 예쁘게 포맷해주는
   "translate_tabs_to_spaces": true,
   "save_on_focus_lost": true,
   "show_full_path": false,
-  "show_rel_path": true
+  "show_rel_path": true,
+  "open_tabs_after_current": false
 }
 ```
 

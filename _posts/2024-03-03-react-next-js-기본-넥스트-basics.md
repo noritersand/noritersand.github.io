@@ -61,14 +61,12 @@ root
 - `src`: 소스 코드 루트 경로. 이 아래에 App router에선 `app` 디렉터리가, Pages router에선 `page` 디렉터리가 있어야 한다. (`src` 디렉터리를 생략하도록 설정할 수 있음)
 
 
-## 앱 라우터 App Router
-
-App Router(이하 앱 라우터)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 Pages Router(이하 페이지 라우터)라고 부른다.
-
-### 앱 라우터 vs 페이지 라우터
+## 앱 라우터 App Router vs 페이지 라우터 Pages Router
 
 - [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
 - [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
+
+App Router(이하 앱 라우터)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 Pages Router(이하 페이지 라우터)라고 부른다.
 
 개발자는 앱 라우터와 페이지 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
 
@@ -129,7 +127,7 @@ export default function Counter() {
 
 이렇게 하면 클라이언트 컴포넌트가 된다. 하지만 넥스트는 하이브리드 방식으로 렌더링하며, **이 코드 또한 초기 렌더링은 서버에서 처리된다**. 이 과정에서 서버에서 실행할 수 없는 코드는 넥스트가 알아서 분할(*Code Splitting*)한다. 그 다음 사용자 상호작용과 업데이트를 클라이언트 측에서 처리한다고 이해하면 된다.
 
-#### 브라우저 전용 API에 대한 접근
+### 브라우저 전용 API에 대한 접근
 
 `'use client'`로 클라이언트 컴포넌트로 선언했다 하더라도 앱 라우터 방식에선 여전히 제약이 존재하는데, 대표적으로 `window` 같은 브라우저 전용 API를 쓸 수 없다는 점이다
 
@@ -159,13 +157,13 @@ export default function Page() {
 }
 ```
 
-#### Hydration
+### Hydration
 
 리액트에서 *Hydration*이란 서버에서 렌더링된 초기 HTML과 클라이언트에서 실행되는 자바스크립트가 연결되는 과정을 말한다. 이는 브라우저에서 실행될 자바스크립트 코드가 없다면 hydration이 필요하지 않다는 것을 의미한다.
 
-앞서 언급한 서버 컴포넌트의 제약 사항을 살펴보면, 모두 브라우저에서의 사용자 상호작용과 관련된 내용들이다. 이를 통해 서버 컴포넌트에는 브라우저에서 실행될 자바스크립트가 포함되지 않는다는 것을 알 수 있다. 따라서 Hydration이 필요한 컴포넌트는 오직 `'use client'` 디렉티브를 선언한 클라이언트 컴포넌트라는 결론이 나온다.
+앞서 언급한 서버 컴포넌트의 제약 사항을 살펴보면, 모두 브라우저에서의 사용자 상호작용과 관련된 내용들이다. 이를 통해 서버 컴포넌트에는 브라우저에서 실행될 자바스크립트가 포함되지 않는다는 것을 알 수 있다. 따라서 hydration이 필요한 컴포넌트는 오직 `'use client'` 디렉티브를 선언한 클라이언트 컴포넌트라는 말이 된다.
 
-ℹ️ 클라이언트 사이드 렌더링(CSR)에서 Hydration은 필요하지 않지만, 서버 사이드 렌더링(SSR)의 **클라이언트 컴포넌트**에는 Hydration이 필요하다.
+ℹ️ 클라이언트 사이드 렌더링(CSR)에서 hydration은 필요하지 않지만, 서버 사이드 렌더링(SSR)의 **클라이언트 컴포넌트**에는 hydration이 필요하다.
 
 
 ## 프레임워크 설정
@@ -215,9 +213,63 @@ export default nextConfig;
 
 빌드 결과의 모양을 결정하는 옵션.
 
+```js
+module.exports = {
+  output: 'standalone',
+}
+```
+
 - `undefined`: 생략했을 때의 기본 값으로, Vercel 같은 플랫폼에 배포하는 용도이며 SSR, SSG를 사용하는 형태로 빌드된다. 이 방식은 빌드와 배포가 대충 자동으로 이뤄진다고 한다. Vercel 같은 경우 소스 파일만 배포하면 나머지는 자동화되어 있어서 `.next` 디렉터리를 따로 업로드할 필요 없다.
 - `standalone`: 모든 필요한 종속성이 함께 번들링되는 방식. Docker 컨테이너에 배포할 때 사용한다. `.next/standalone`에 빌드 결과가 저장된다.
 - `export`: 정적 사이트로 내보내기 위한 옵션으로 Node.js 환경이 아닐 때 사용한다. 따라서 서버 사이드 렌더링/로직을 사용할 수 없다. `out` 디렉터리에 빌드 결과가 저장된다.
+
+#### redirects
+
+특정 요청을 다른 경로로 리디렉션하는 옵션이다.
+
+```js
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+    ]
+  },
+}
+```
+
+- `source`: 리디렉션 대상이 될 요청 경로 패턴
+- `destination`: 보낼 주소
+- `permanent`: 브라우저에 이 리디렉션이 영구적인지 아닌지를 결정한다. `true`면 308 Permanent Redirect로 응답하고 `false`면 307 Temporary Redirect로 응답한다.
+
+`source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
+
+#### rewrites
+
+요청 경로를 다른 경로에 매핑한다. 포워딩과 유사하지만 약간 다르며, 웹 서버에서 제공하는 rewrite와도 다르다. Next.js에선 들어오는 요청을 내부에서 다른 주소로 매핑하는데, 이 과정에서 클라이언트, 그러니까 브라우저는 URL 변경을 감지하지 못한다. 이를 *URL masking*이나 *URL hiding*이라 부른다. 클라이언트의 특정 요청을 Next.js 서버에서 감지하고 매핑된 다른 주소로 대신 요청을 보내 데이터를 받아오는 방식이라서 가능한 것. 이를 이용해서 외부에 노출되면 안되는 (API 키 같은) 중요한 값을 숨길 수 있다.
+
+```js
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+      },
+    ]
+  },
+}
+```
+
+- `source`: rewrites할 요청 경로 패턴
+- `destination`: 매핑할 주소
+
+`redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
+
+⚠️ `redirects`와 `rewrites`는 HTML 내보내기 방식(`next.config.js`의 `output` 옵션이 `export`일 때)에서 사용할 수 없음
 
 
 ## 환경 변수
@@ -305,6 +357,68 @@ NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 ```
 
 
+## 데이터 받아오기 Data Fetching
+
+이 글에서 데이터 받아오기는 단순히 어딘가에 데이터를 요청하고 그걸 받아오는 것을 말하는 게 아니라, SSR 시점에 fetching을 완료하고 그걸 컴포넌트에 그려넣는 방법을 말한다.
+
+앱 라우터 방식에선 async 함수 컴포넌트가 JSX를 반환하기 전에 원하는 데이터를 받아오면 된다. 이 작업은 비동기가 아니기 때문에 `useState()`가 필요하지 않으며, SSR 시점에 완료되는 작업이기 때문에 `useEffect()` 또한 필요하지 않다:
+
+```tsx
+// 코드 출처: https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating
+
+async function getData() {
+  const res = await fetch('https://api.example.com/...')
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+ 
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return res.json()
+}
+ 
+export default async function Page() {
+  const data = await getData()
+ 
+  return <main></main>
+}
+```
+
+반면 페이지 라우터 방식에선 `getServerSideProps()` 함수를 이용한다. 아래는 SSR 시점에 데이터를 받아와 렌더링하는 코드다:
+
+```tsx
+// 코드 출처: https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props
+
+import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
+ 
+type Data = {
+  message: string
+}
+ 
+export const getServerSideProps = (async () => {
+  // Fetch data from external API
+  const res = await fetch('https://example.com/api/data')
+  const data: Data = await res.json()
+  // Pass data to the page via props
+  return { props: { data } }
+}) satisfies GetServerSideProps<{ data: Data }>
+ 
+export default function Page({
+  data,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  return (
+    <main>
+      <p>{data.message}</p>
+    </main>
+  )
+}
+```
+
+⚠️ HTML 내보내기로 빌드하면 SSR 렌더링은 사용할 수 없음
+
+
 ## 자주 쓰는 API
 
 ### useRouter
@@ -369,7 +483,7 @@ export default function ExampleClientComponent() {
 
 SSR 제어를 위해 쓰기도 한다:
 
-```jsx
+```tsx
 import dynamic from 'next/dynamic';
 
 const DynamicComponent = dynamic(() => import('../components/DynamicComponent'), {
@@ -389,4 +503,5 @@ function MyPage() {
 export default MyPage;
 ```
 
-`loading`으로 불러 오기 전의 내용을 지정했으며, `ssr: false`로 CSR 대상임을 강제로 지정했다.
+`loading`으로 불러 오기 전의 내용을 지정했으며, `ssr: false`로 사전 렌더링(pre-rendering)을 비활성화하는 코드다.
+

@@ -103,7 +103,6 @@ tags:
 - [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 - [🌟 KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
-- [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리. 포매터가 필요하면 이걸 쓰자
 
 ### 런타임
 
@@ -121,7 +120,7 @@ tags:
 
 ### 프레임워크
 
-- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웤. 지금은 retired 상태라서 업데이트는 없다.
+- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웍. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
 - [Vue](https://vuejs.org/): (이하 뷰) 설명이 필요없는 프론트엔드 라이브러리 #1.
@@ -146,7 +145,7 @@ tags:
 [2023 베스트 CSS 프레임워크 소개 \| 니콜라스 유튜브](https://www.youtube.com/watch?v=FRSUP2sbgTY)
 
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
-- [component.gallery](https://component.gallery/): CSS 프레임웤과 디자인 시스템 같은 것을 모아놓은 사이트
+- [component.gallery](https://component.gallery/): CSS 프레임웍과 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
 - [⭐ Bulma](https://bulma.io/): Flexbox 기반
 - [Foundation Framework](https://get.foundation/): **TODO**
@@ -189,6 +188,12 @@ tags:
 - [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다. 4.21.9 버전 기준, 스크롤 기능에 버그가 있고, 제공되는 소팅 옵션이 너무 적어 서버 사이드 소팅 구현이 이상하다.
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
 - [Reveal.js](https://revealjs.com/): HTML로 만드는 PPT
+
+### 자바스크립트 라이브러리
+
+- [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
+- [Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
+- [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
 
 
 ## 인프라

@@ -73,9 +73,7 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
   - useDebugValue
   - useId
   - useSyncExternalStore
-- 커스텀 훅
-
-그리고 개발자가 정의하는 커스텀 훅이 있다.
+- Custom Hooks
 
 
 ## 스테이트 훅 State Hooks
@@ -251,54 +249,45 @@ useContext(SomeContext)
 `useContext`는 컴포넌트의 깊이와 상관없이 컴포넌트 간 정보를 주고 받기 위한 훅이다. 사용 방법을 요약하면, `createContext()`로 컨텍스트 객체를 생성하고, `Provider`로 컨텍스트에 값을 전달하며 `useContext()`로 가져오는 방식이다.
 
 ```jsx
-// use-context.jsx
-import {createContext, useContext, useState} from 'react';
-import Division from '../component/division';
-import Button from '../component/button';
-import Paragraph from '../component/paragraph';
+// test-use-context.jsx
+import {createContext, useState} from 'react';
+import Button from 'components/button';
+import Paragraph from 'components/paragraph';
 
 export const Foo = createContext({});
 
-export default function UseContext() {
+export default function TestUseContext() {
   const [count, setCount] = useState(0);
   const increment = () => setCount(prev => prev + 1);
   return (
     <article>
       <h2>useContext</h2>
       <Foo.Provider value={{count, increment}}>
-        <Division>
-          <Button>click me</Button> {/*이 버튼이나*/}
-        </Division>
-        <Division>
-          <Button>click me too</Button> {/*이 버튼을 누르면*/}
-        </Division>
-        <Division>
-          <Paragraph /> {/*이 값이 증가함*/}
-        </Division>
+        <div>
+          <Button>이 버튼이나</Button>
+        </div>
+        <div>
+          <Button>이 버튼을 누르면 값이 증가함</Button>
+        </div>
+        <div>
+          <Paragraph />
+        </div>
       </Foo.Provider>
+      <Button>여긴 안됨</Button>
     </article>
   );
 }
 ```
 
 ```jsx
-// division.jsx
-export default function Division({children}) {
-  return <div>{children}</div>;
-}
-```
-
-```jsx
 // button.jsx
 import {useContext} from 'react';
-import {Foo} from '../pages/use-context';
+import {Foo} from 'pages/test-use-context';
 
 export default function Button({children}) {
   const {increment} = useContext(Foo);
   return (
     <button type="button" onClick={increment}>
-      {' '}
-      {/*context로 전달 받은 함수*/}
       {children}
     </button>
   );
@@ -308,7 +297,7 @@ export default function Button({children}) {
 ```jsx
 // paragraph.jsx
 import {useContext} from 'react';
-import {Foo} from '../pages/use-context';
+import {Foo} from 'pages/test-use-context';
 
 export default function Paragraph() {
   const {count} = useContext(Foo);
@@ -329,6 +318,32 @@ function Button() {
     </ThemeContext.Consumer>
   );
 }
+```
+
+⚠️ provider가 공유한 값은 오직 하위 컴포넌트에서만 접근할 수 있다. 만약 아래처럼 컴포넌트를 provider 바깥에서 선언하면 `useContext()`는 빈 객체`{}`를 반환한다:
+
+```jsx
+export default function TestUseContext() {
+  // 생략
+  return (
+    <article>
+      <h2>useContext</h2>
+      <Foo.Provider value={{count, increment}}>
+        <>...</>
+      </Foo.Provider>
+      <Button>여긴 안됨</Button>
+    </article>
+  );
+}
+```
+
+```jsx
+export default function Button({children}) {
+  const context = useContext(Foo);
+  console.log(Object.keys(context).length === 0); // true
+  // 생략
+}
+
 ```
 
 
@@ -468,8 +483,7 @@ React.useEffect(setup)
 React.useEffect(setup, dependencies)
 ```
 
-- `setup`: 이펙트 로직을 포함하는 콜백 함수. 함수의 바디는 컴포넌트 마운트 시점에 실행될 설정 코드(setup code)라고 부른다. 이 함수는 또 다른 함수를 반환할 수 있는데 이것을 정리 코드(cleanup code)라고 부르며, 의존하는 반응형 값들이 변경되었거나 컴포넌트가 화면에서 제거된 이후 실행된다.
-
+- `setup`: 이펙트 로직을 포함하는 콜백 함수. 함수의 바디는 컴포넌트 마운트 시점에 실행되며 설정 코드(setup code)라 부른다. 이 함수는 또 다른 함수를 반환할 수 있는데 이것은 정리 코드(cleanup code)라 부르며, 의존하는 반응형 값들이 변경되었거나 컴포넌트가 화면에서 제거된 이후 실행된다.
 - `dependencies`: `setup`의 내부에서 참조되는 모든 반응형 값들(reactive values)의 배열. 줄여서 의존성 배열(list of dependencies)이라 함.
 
 반환값은 `undefined`다.
@@ -523,14 +537,48 @@ useEffect(() => {
 
 **TODO**
 
+### useCallback
 
-## 커스텀 훅
+함수 정의를 캐싱하여 리렌더링간에 재사용이 가능하도록 해주는 훅이다. 함수형 컴포넌트는 렌더링될 때마다 내부의 모든 함수를 새로 생성하는데, `useCallback`을 사용하면 함수를 메모이제이션(Memoization)하여 입력이 동일하면 이전에 생성한 함수를 재사용하는 식으로 작동한다.
+
+```
+React.useCallback(fn, dependencies)
+```
+
+- `fn`: 캐싱할 함수 정의값. 다음 렌더링에서 `dependencies`의 값이 이전과 같다면 리액트는 같은 함수를 반환한다.
+- `dependencies`: `fn` 내에서 참조되는 모든 반응형 값의 목록.
+
+최초 렌더링에서는 전달한 `fn`을 그대로 반환하지만, 다음 렌더링부터는 의존하는 값의 변화에 따라 이전 렌더링에 저장한 `fn` 함수를 반환하거나, 현재 렌더링 중 전달한 `fn` 함수를 반환한다.
+
+```js
+const memoizedCallback = useCallback(
+  () => {
+    // 콜백 함수의 내용
+  },
+  [/* 의존성 배열 */]
+);
+```
+
+```js
+import React, { useCallback } from 'react';
+
+const MyComponent = () => {
+  const handleClick = useCallback(() => {
+    console.log('Button clicked');
+  }, []);
+
+  return <MyChildComponent onClick={handleClick} />;
+};
+```
+
+
+## 커스텀 훅 Custom Hooks
 
 커스텀 훅이란 개발자가 정의한 훅으로, 리액트가 제공하는 기본 훅들을 내부에서 호출하는 로직이 포함된 함수를 의미한다.
 
-예를 들어 이런식으로 작성할 수 있다:
+간단한 예로 아래처럼 작성할 수 있다:
 
-```js
+```jsx
 import {useState} from 'react';
 
 function useCounter(initialValue = 0) {
@@ -546,4 +594,44 @@ function useCounter(initialValue = 0) {
 export default useCounter;
 ```
 
-커스텀 훅을 특정 컴포넌트에서 사용하면, 해당 컴포넌트의 내부 상태로 관리된다.
+ℹ️ 커스텀 훅에서 생성한 상태값은 커스텀 훅을 사용한 컴포넌트 내부 상태로 관리된다.
+
+### 예시: 로그인, 로그아웃 함수와 로그인 상태를 컨텍스트로 제공하는 커스텀 훅
+
+```jsx
+import React, {createContext, useContext, useEffect, useState} from 'react';
+
+const AuthContext = createContext(undefined);
+
+export const AuthProvider = ({children}) => {
+  const [loggedIn, setLoggedIn] = useState(() => {
+    return typeof window === 'undefined' ? false : localStorage.getItem('loggedIn') === 'true';
+  });
+
+  useEffect(() => {
+    const isUserLoggedIn = localStorage.getItem('loggedIn') === 'true';
+    setLoggedIn(isUserLoggedIn);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('loggedIn', loggedIn.toString());
+  }, [loggedIn]);
+
+  const login = () => {
+    setLoggedIn(true);
+  };
+  const logout = () => {
+    setLoggedIn(false);
+  };
+
+  return <AuthContext.Provider value={{loggedIn, login, logout}}>{children}</AuthContext.Provider>;
+};
+
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error('useAuth must be used within an AuthProvider');
+  }
+  return context;
+};
+```
