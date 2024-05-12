@@ -533,19 +533,65 @@ useEffect(() => {
 
 ## 퍼포먼스 훅 Performance Hooks 
 
+불필요한 렌더링을 방지하고 성능을 취적화하는 데 사용되는 훅이다. `useMemo`는 계산된 값을, `useCallback`은 함수 객체를 메모이제이션(memoization, 동일한 입력이면 저장해 둔 결과를 재사용하는 것) 한다.
+
 ### useMemo
 
-**TODO**
+계산된 값을 메모이제이션하여 리렌더링간에 재사용한다.
+
+```
+const cachedValue = React.useMemo(fn, dependencies)
+```
+
+- `fn`: 캐싱하려는 값을 계산하는 함수 객체. 순수 함수여야 하며 인자를 받지 않아야 한다. 지난 렌더링에서 `dependencies`가 변경되지 않으면 동일한 값을 다시 반환한다. `dependencies`가 변경되면 이 함수를 다시 호출하여 반환하고, 다음에 재사용할 수 있도록 저장한다.
+- `dependencies`: `fn` 내에서 참조되는 모든 반응형 값의 목록.
+
+반환값은 `fn` 함수가 반환한 값이다.
+
+아래 예시를 실행해 보면 의존성 배열에 없는 `value3`이 변경될 때만 `useMemo`가 실행되지 않는 것을 확인할 수 있다:
+
+```jsx
+import {useMemo, useState} from 'react';
+
+export default function TestUseMemo() {
+  console.log('TestUseMemo 렌더링됨');
+  const [value1, setValue1] = useState(0);
+  const [value2, setValue2] = useState(0);
+  const [value3, setValue3] = useState(0);
+
+  const cachedValue = useMemo(() => {
+    console.log('useMemo 실행됨');
+    let complexValue = Number(value1) + Number(value2);
+    return complexValue;
+  }, [value1, value2]);
+
+  const rerender = () => {
+    setValue3(prev => ++prev);
+  };
+
+  return (
+    <article>
+      <h2>useMemo</h2>
+      <div>
+        <input value={value1} onChange={e => setValue1(e.target.value)} />
+        <input value={value2} onChange={e => setValue2(e.target.value)} />
+        <p>{cachedValue}</p>
+      </div>
+      <button onClick={rerender}>리렌더링</button>
+    </article>
+  );
+}
+```
 
 ### useCallback
 
-함수 정의를 캐싱하여 리렌더링간에 재사용이 가능하도록 해주는 훅이다. 함수형 컴포넌트는 렌더링될 때마다 내부의 모든 함수를 새로 생성하는데, `useCallback`을 사용하면 함수를 메모이제이션(Memoization)하여 입력이 동일하면 이전에 생성한 함수를 재사용하는 식으로 작동한다.
+함수 정의를 캐싱하여 리렌더링간에 재사용이 가능하도록 해주는 훅이다. 함수형 컴포넌트는 렌더링될 때마다 내부의 모든 함수를 새로 생성하는데, `useCallback`을 사용하면 함수를 메모이제이션하여 입력이 동일하면 이전에 생성한 함수를 재사용하는 식으로 작동한다.
 
 ```
 React.useCallback(fn, dependencies)
 ```
 
-- `fn`: 캐싱할 함수 정의값. 다음 렌더링에서 `dependencies`의 값이 이전과 같다면 리액트는 같은 함수를 반환한다.
+- `fn`: 캐싱할 함수 겍체. 다음 렌더링에서 `dependencies`의 값이 이전과 같다면 리액트는 같은 함수를 반환한다.
 - `dependencies`: `fn` 내에서 참조되는 모든 반응형 값의 목록.
 
 최초 렌더링에서는 전달한 `fn`을 그대로 반환하지만, 다음 렌더링부터는 의존하는 값의 변화에 따라 이전 렌더링에 저장한 `fn` 함수를 반환하거나, 현재 렌더링 중 전달한 `fn` 함수를 반환한다.

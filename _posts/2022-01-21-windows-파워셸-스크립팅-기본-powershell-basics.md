@@ -165,7 +165,7 @@ $i = 5
 
 **TODO**
 
-### 파이프라인 입력 Pipeline Input
+### 파이프라인 입력 Pipeline Input `|`
 
 **TODO**
 

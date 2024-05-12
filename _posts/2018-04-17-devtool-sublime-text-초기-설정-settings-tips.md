@@ -118,7 +118,7 @@ console.debug('${1:msg}:', ${2:msg});
 작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행할 것.
 
 
-## 패키지
+## 패키지 Sublime Text Packages
 
 패키지는 서브라임 커뮤니티에 공유되는 플러그인 같은 거라고 생각하면 된다.
 

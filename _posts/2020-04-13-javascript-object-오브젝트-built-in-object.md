@@ -156,7 +156,7 @@ console.log(o3); // Object { a: 1, b: 2, c: 3 }
 console.log(o1 === o3); // true
 ```
 
-### Object.keys
+### Object.keys()
 
 주어진 객체 고유의 열거 가능한 모든 프로퍼티의 이름을 배열로 반환한다.
 
@@ -171,7 +171,7 @@ Object.defineProperty(loopMe, 'd', {value: 10, enumerable: false});
 Object.keys(loopMe); // Array(3) [ "a", "b", "c" ]
 ```
 
-### Object.values
+### Object.values()
 
 주어진 객체 고유의 열거 가능한 모든 프로퍼티의 값을 배열로 반환한다.
 
@@ -186,9 +186,9 @@ Object.defineProperty(obj, 'bar', {value: 10, enumerable: false});
 Object.values(obj); // Array(3) [ "abc", 123, true ]
 ```
 
-### Object.entries
+### Object.entries()
 
-주어진 객체 고유의 열거 가능한 모든 프로퍼티의 값과 이름 쌍(pair)을 배열로 반환한다.
+주어진 객체 고유의 열거 가능한 모든 프로퍼티의 이름과 값의 쌍(key-value pair)을 배열로 반환한다.
 
 ```js
 var loopMe = {

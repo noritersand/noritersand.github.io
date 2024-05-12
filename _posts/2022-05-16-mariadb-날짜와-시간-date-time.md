@@ -426,3 +426,15 @@ date_sub(date_add('2022-12-24', interval 1 day), interval 1 second)
 ```
 
 문자열 리터럴은 안쓰는 게 좋으니 가급적 이걸 사용하도록 하자. 😏
+
+
+## 세션의 시간대 변경하기
+
+MariaDB 서버 인스턴스의 시간대를 변경할 수 없을 때, 세션의 시간대만 변경하는 방법이다. 데이터소스의 URL에 아래를 덧붙이면 된다:
+
+```
+?serverTimezone=UTC&useLegacyDatetimeCode=false&sessionVariables=time_zone='+09:00'
+```
+
+관련 글 링크: [https://jira.mariadb.org/browse/CONJ-433](https://jira.mariadb.org/browse/CONJ-433)
+

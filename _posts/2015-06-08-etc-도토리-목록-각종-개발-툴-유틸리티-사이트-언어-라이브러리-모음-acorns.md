@@ -259,7 +259,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
 - [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
 
-### Tool
+### DBMS Tool
 
 - [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 프레임웍으로 추정.
 - [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.

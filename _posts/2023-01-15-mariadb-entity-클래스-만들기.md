@@ -32,7 +32,18 @@ tags:
 set @table_name = 'table_name';
 set @table_schema = 'schema_name';
 
-select 0 as ordinal_position, 'it\'s table' as column_name, '' as column_type, concat('/**', table_name, ' ', table_comment, ' 테이블 클래스', '*/\r\r') as str
+select -1 as ordinal_position, 'JavaDoc' as column_name, '' as column_type, concat(
+    'import lombok.Getter;\r',
+    'import lombok.Setter;\r\r',
+    '/**', table_name, ' ', table_comment, ' 테이블 클래스', '*/') as str
+from information_schema.tables
+where table_name = @table_name
+and table_schema = @table_schema
+union
+select 0 as ordinal_position, 'Class declaration' as column_name, '' as column_type, concat(
+    '@Getter\r',
+    '@Setter\r',
+    'public class ', table_name,' extends AuditColumns {') as str2
 from information_schema.tables
 where table_name = @table_name
 and table_schema = @table_schema
@@ -70,6 +81,8 @@ select ordinal_position, column_name, column_type, concat('\t/**', column_commen
 from information_schema.columns
 where table_name = @table_name
 and table_schema = @table_schema
+union
+select 999 as ordinal_position, '' as column_name, '' as column_type, concat('}') as str
 order by ordinal_position asc
 ```
 
