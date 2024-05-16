@@ -15,6 +15,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+{% raw %}
+
 #### 참고 문서
 
 - [React Native \| Introduction](https://reactnative.dev/docs/getting-started)
@@ -268,3 +270,6 @@ AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되�
 
 > As the library uses JSI for synchronous native methods access, remote debugging is no longer possible. You can use Flipper for debugging your JS code, however connecting debugger to JS context which runs on the UI > thread is not currently supported.  
 > [https://docs.swmansion.com/react-native-reanimated/docs/#library-overview](https://docs.swmansion.com/react-native-reanimated/docs/#library-overview)
+
+
+{% endraw %}

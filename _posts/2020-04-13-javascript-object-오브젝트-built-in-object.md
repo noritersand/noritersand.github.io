@@ -200,6 +200,20 @@ var loopMe = {
 Object.entries(loopMe); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
 ```
 
+```js
+var arr = [{true: 123}, {false: 345}]
+arr.forEach(item => {
+  var [key, value] = Object.entries(item)[0];
+  console.log('key:', key);
+  console.log('value:', value);
+});
+
+// key: true
+// value: 123
+// key: false
+// value: 345
+```
+
 ### Object.freeze()
 
 주어진 객체의 변형과 확장을 막는 스태틱 메서드. 

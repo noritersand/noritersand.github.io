@@ -13,6 +13,8 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+{% raw %}
+
 #### 참고 문서
 
 - [React \| Built-in React Hooks](https://react.dev/reference/react/hooks)
@@ -202,7 +204,7 @@ useEffect(() => {
 }, [obj]);
 ```
 
-그런데 이렇게 하면 최초 렌더링 때 발생하는 컴퓨터 이벤트에도 `useEffect` 훅이 작동한다. 최초 렌더링에 반응하지 않으려면 `useRef` 훅을 이용하는 방법이 있다(점점 산으로 간다 😟):
+그런데 이렇게 하면 최초 렌더링 때 발생하는 컴퓨터 이벤트에도 `useEffect` 훅이 작동한다. 최초 렌더링에 반응하지 않으려면 `useRef` 훅을 이용하는 방법이 있다:
 
 ```jsx
 import {useRef, useState} from 'react';
@@ -681,3 +683,6 @@ export const useAuth = () => {
   return context;
 };
 ```
+
+
+{% endraw %}
