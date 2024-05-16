@@ -230,7 +230,7 @@ useEffect(() => {
 
 [React \| Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
 
-**TODO** reducer로 복잡한 state 관리를 덜어낼 수 있다고 한다. 반드시 알아볼 것
+**TODO** reducer로 복잡한 state 관리를 덜어낼 수 있다고 함.
 
 
 ## 컨텍스트 훅 Context Hooks
