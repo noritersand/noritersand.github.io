@@ -32,7 +32,7 @@ Content-Security-Policy: script-src 'self' https://trusted.com;
 Content-Security-Policy: script-src 'self' 'unsafe-inline';
 ```
 
-CSP는 HTTP 헤더 `Content-Security-Policy`를 통해 구현되며, 보통 웹 서버에서 설정한다. 구 버전에선 `X-Content-Security-Policy`라는 이름으로 쓰였다.
+CSP는 보통 웹 서버에서 HTTP 헤더 `Content-Security-Policy`를 통해 설정한다. 구 버전에선 `X-Content-Security-Policy`라는 이름으로 쓰였다.
 
 ```html
 <meta http-equiv="Content-Security-Policy"
