@@ -550,6 +550,14 @@ function add(a: number, b: number) {
 
 매개변수 `a`와 `b` 모두 `number` 타입이라는 뜻이다.
 
+#### 함수 매개변수 기본값(default function parameters)과 같이 설정하기
+
+```ts
+function getNotice(noticeNo: number = null) {
+  // ...
+}
+```
+
 ### 객체 타입의 매개변수
 
 얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미콜론`;`을 사용한다.
@@ -582,6 +590,14 @@ function printFooBar3(foobar: {foo: string; bar?: number}) {
   // ...
 }
 printFooBar3({foo: 'foo'});
+```
+
+#### 함수 매개변수 기본값과 같이 설정하기
+
+```ts
+function addAtoB({a = 0, b = 1}: {a: number; b: number}) {
+  // ...
+}
 ```
 
 ### 반환값의 타입 선언

@@ -90,8 +90,8 @@ Reactive state를 정의하는 훅.
 const [state, modifier] = React.useState(initialState);
 ```
 
-- `state`: Reactive state, 줄여서 상태 혹은 state. 리액트는 이 값이 변화할 때 자동으로 다시 렌더링한다(다른 말로, *state의 변화는 리렌더링을 유발한다*).
 - `initialState`: `state`의 초기값.
+- `state`: `useState`가 반환한 Reactive state(줄여서 상태 혹은 state). 리액트는 이 값이 변화할 때 자동으로 다시 렌더링한다. 그러니까 state의 변화는 리렌더링을 유발한다.
 - `modifier`: `state`의 값을 변경하기 위해 호출하는 함수. 이 함수의 이름은 state 변수의 이름 앞에 `set`을 붙이는 게 관행적이다. (따라서 위 예시에선 `setState()`가 되어야 한다)
 
 ```jsx
@@ -230,7 +230,108 @@ useEffect(() => {
 
 [React \| Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)
 
-**TODO** reducer로 복잡한 state 관리를 덜어낼 수 있다고 함.
+```
+const [state, dispatch] = React.useReducer(reducer, initialArg, init?)
+```
+
+- `reducer`: 상태를 업데이트할 함수 객체. 이 함수는 첫 번째 매개변수로 `state`, 두 번째 매개변수로 `action`을 갖는 순수 함수여야 하며 `state`를 반환해야 한다.
+- `initialArg`: `state` 초기값. 모든 데이터 타입을 할당할 수 있따.
+- `init`: 초기화 함수. 이 함수의 반환값이 `state`의 초기값으로 설정된다. 생략하면 `state`의 초기값은 `initialArg`와 같다.
+- `state`: 상태값을 저장하는 변수. `useState`의 `state`와 개념은 같다
+- `dispatch`: 상태값을 업데이트할 때 호출하는 함수로, 이 함수의 호출은 리렌더링을 유발한다.
+
+`useReducer`는 `useState`를 대체할 수 있는 훅으로 복잡한 상태를 관리하거나 구조화된 상태 전환 로직이 필요할 때 사용한다. 상태와 로직을 분리하여 가독성을 높인다거나 액션 기반(미리 정해진 키워드로 상태를 업데이트)으로 상태를 업데이트할 때 사용하기도 한다.
+
+```jsx
+import {useReducer} from 'react';
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error('Unknown action type');
+  }
+}
+
+export default function TestUseReducer1() {
+  const [state, dispatch] = useReducer(reducer, {count: 0});
+
+  return (
+    <article>
+      <p>state.count: {state.count}</p>
+      <button onClick={() => dispatch({type: 'increment'})}>Increment</button>
+      <br />
+      <button onClick={() => dispatch({type: 'decrement'})}>Decrement</button>
+    </article>
+  );
+}
+```
+
+`dispatch`는 내부에서 `reducer`를 호출하는데 이 때 첫 번째 인수로 이전 상태값을, 두 번째 인수로 `dispatch()`의 매개변수를 그대로 전달한다. 
+
+아래는 객체 타입의 상태를 관리하는 코드다:
+
+```jsx
+import {useReducer} from 'react';
+
+const initialState = {
+  name: '',
+  age: 0
+};
+
+// 리듀서 함수
+function reducer(state, action) {
+  switch (action.keyName) {
+    case 'name':
+      return {...state, name: action.payload};
+    case 'age':
+      return {...state, age: action.payload};
+    case 'reset':
+      return initialState;
+    default:
+      throw new Error('Unknown action keyName');
+  }
+}
+
+export default function TestUseReducer2() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <article>
+      <div>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={state.name}
+            onChange={e => dispatch({keyName: 'name', payload: e.target.value})}
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Age:
+          <input
+            type="number"
+            value={state.age}
+            onChange={e => dispatch({keyName: 'age', payload: Number(e.target.value)})}
+          />
+        </label>
+      </div>
+      <div>
+        <button onClick={() => dispatch({keyName: 'reset'})}>Reset</button>
+      </div>
+      <div>
+        <p>Name: {state.name}</p>
+        <p>Age: {state.age}</p>
+      </div>
+    </article>
+  );
+}
+```
 
 
 ## 컨텍스트 훅 Context Hooks

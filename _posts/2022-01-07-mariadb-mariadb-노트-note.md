@@ -160,7 +160,7 @@ from test_table, (select @rownum := 0) r
 ```
 
 
-## data concatenation
+## group_concat: data concatenation
 
 [https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/)
 
