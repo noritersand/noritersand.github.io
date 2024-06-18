@@ -27,7 +27,7 @@ tags:
 
 ## 엄격 모드란?
 
-'strict mode(이하 엄격 모드)'는 ECMAScript 5부터 새로 추가된 기능이다. 스크립트의 시작 부분이나 함수 코드 블록의 시작부분에 `use strict`를 작성하는 것으로 엄격 모드임을 지시한다. 엄격 모드가 아닌 지역은 '표준 모드'로 구분된다. (표준 모드는 'non-strict', 'sloppy mode'라고도 함.)
+'엄격 모드(strict mode)'는 ECMAScript 5부터 새로 추가된 기능이다. 스크립트의 시작 부분이나 함수 코드 블록의 시작부분에 `use strict`를 작성하는 것으로 엄격 모드임을 지시한다. 엄격 모드가 아닌 지역은 '표준 모드'로 구분된다. (표준 모드는 'non-strict', 'sloppy mode'라고도 함.)
 
 ```js
 function test() {

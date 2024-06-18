@@ -397,7 +397,7 @@ npm의 속도와 보안을 강화한 새 패키지 매니저. [npm vs. Yarn: Whi
 corepack enable
 ```
 
-ℹ️ 예전에는 `npm install yarn -g`라고 적어놨지만, 다시 찾아보니 Corepack(이하 코어팩) 프로젝트에 Yarn이 포함되었으니 코어팩 활성화만 하면 된다고 한다. 만약 코어팩이 없다면 npm으로 설치하자. `npm install -g corepack` [관련글 링크](https://yarnpkg.com/corepack)
+ℹ️ 예전에는 `npm install yarn -g`라고 적어놨지만, 다시 찾아보니 코어팩(Corepack) 프로젝트에 Yarn이 포함되었으니 코어팩 활성화만 하면 된다고 한다. 만약 코어팩이 없다면 npm으로 설치하자. `npm install -g corepack` [관련글 링크](https://yarnpkg.com/corepack)
 
 ```bash
 # Yarn으로 PACKAGE_NAME 설치 후 package.json에 추가

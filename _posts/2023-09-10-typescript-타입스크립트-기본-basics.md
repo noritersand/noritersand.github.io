@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-Microsoft에서 만든 TypeScript(이하 타입스크립트)의 기본적인 내용을 정리한 글.
+Microsoft에서 만든 타입스크립트(TypeScript)의 기본적인 내용을 정리한 글.
 
 타입스크립트는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. 자바스크립트의 슈퍼셋(superset)이라 하기도 한다.
 

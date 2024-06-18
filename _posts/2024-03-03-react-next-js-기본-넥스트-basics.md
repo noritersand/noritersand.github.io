@@ -28,7 +28,7 @@ tags:
 
 ## 개요
 
-Next.js(이하 넥스트) 사용방법 간단 정리.
+넥스트(Next.js) 사용방법 간단 정리.
 
 
 ## 스캐폴딩
@@ -68,7 +68,7 @@ root
 - [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
 - [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
 
-App Router(이하 앱 라우터)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 Pages Router(이하 페이지 라우터)라고 부른다.
+앱 라우터(App Router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages Router)라고 부른다.
 
 개발자는 앱 라우터와 페이지 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
 

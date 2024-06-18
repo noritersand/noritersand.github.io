@@ -879,7 +879,7 @@ git am FILE
 
 ## fsck
 
-File System ChecK의 약자. 무결성 검사 수행 도구다.
+File System ChecK의 약자. 무결성 검사 수행 도구다. 저장소의 손상 여부를 검사하거나 복구할 때 사용한다고 한다. (아직 잘 몲)
 
 #### 누락된 커밋 객체 복원하기
 

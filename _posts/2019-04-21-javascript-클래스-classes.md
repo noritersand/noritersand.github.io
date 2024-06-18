@@ -196,7 +196,7 @@ class Numeric extends Number {
     var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
     return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
   }
-}
+};
 
 new Numeric(123456).format(0); // "123,456"
 ```

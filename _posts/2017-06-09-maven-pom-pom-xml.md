@@ -300,7 +300,63 @@ WAR 빌드용 플러그인
 
 로컬 환경에 따라 달라지는 빌드를 구성할 때 사용한다. 가령 특정 프로세서를 사용하는 환경일 땐 필요한 추가 라이브러리를 다운로드한다던지...
 
-예를 들어 아래는 M1 프로세서를 사용하는 macOS일 때 `io.netty:netty-resolver-dns-native-macos:osx-aarch_64`를 추가하는 설정이다:
+작성한 프로필의 ID는 메이븐 빌드 시 `-P` 옵션으로 지정한다:
+
+```
+mvn build -P<profileId>
+```
+
+- `profileId`: 메이븐 필드에 사용할 프로필 값. `<profile>`의 `<id>`를 가리킴
+
+```bash
+# 디버깅 로그를 출력하며 prod 프로필로 clean 후 install하되 테스트는 생략하기
+mvn clean install -Pprod -DskipTests --debug
+```
+
+프로필을 사용하려면 
+
+예를 들어 아래는 `spring.profiles.active`에 따라 불러올 jar를 다르게 하는 방법이다:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- 생략 -->
+
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.example</groupId>
+                    <artifactId>Artifact</artifactId>
+                    <version>1.0-dev</version>
+                </dependency>
+            </dependencies>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>com.example</groupId>
+                    <artifactId>Artifact</artifactId>
+                    <version>1.0</version>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
+</project>
+```
+
+ℹ️ `<activation> - <activeByDefault>`가 `true`인 프로필은 로컬 IDE 환경에서 빌드할 때 사용된다.
+
+아래 예시는 M1 프로세서를 사용하는 macOS일 때 `io.netty:netty-resolver-dns-native-macos:osx-aarch_64`를 추가하는 설정이다:
 
 ```xml
 <profile>

@@ -438,3 +438,6 @@ MariaDB 서버 인스턴스의 시간대를 변경할 수 없을 때, 세션의 
 
 관련 글 링크: [https://jira.mariadb.org/browse/CONJ-433](https://jira.mariadb.org/browse/CONJ-433)
 
+만약 애플리케이션 데이터소스에 이 설정을 더해줬을 때 9시간이 아니라 18시간을 더한 값이 반환된다면 `serverTimezone=UTC` 혹은 `sessionVariables=time_zone='+09:00'` 둘 중 하나를 빼야 한다. 기준 시간이 무엇인지를 정하는 매개변수들 같은데 정확한 건 아직 모름.
+
+`time_zone`은 [공식 도움말](https://mariadb.com/kb/en/server-system-variables/#time_zone)이 존재하니 `serverTimezone`을 빼자.

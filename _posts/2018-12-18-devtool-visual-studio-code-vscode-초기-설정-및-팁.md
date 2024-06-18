@@ -22,15 +22,15 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
 
 - Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
 - Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
-- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
+- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open User Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
 
-  ```json
-  "editor.quickSuggestions": {
-    "other": false,
-    "comments": false,
-    "strings": false
-  }
-  ```
+```json
+"editor.quickSuggestions": {
+  "other": false,
+  "comments": false,
+  "strings": false
+}
+```
 
 ### 타이틀에 파일 전체 경로 표시
 
@@ -59,7 +59,7 @@ Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 [공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)  
 
-Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Preferences: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
+Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
 
 ```js
 {

@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-Docker(이하 도커) 관련 정리글. 
+도커(Docker) 관련 정리글. 
 
 실행하려면 리눅스 기반 OS여야 하지만, macOS 혹은 Windows에서도 사용할 수 있도록 Docker Desktop을 제공한다. Windows의 경우 WSL 설치는 필수다.
 
