@@ -20,7 +20,7 @@ tags:
 ```js
 function serializeObject(targetElement) {
   var obj = [];
-  $(targetElement).find('input, textarea, select').each(function(idx, ele) {
+  $(targetElement).find('input, textarea, select').each(function (idx, ele) {
     var $ele = $(ele);
     var name = $ele.attr('name'),
       type = $ele.attr('type'),

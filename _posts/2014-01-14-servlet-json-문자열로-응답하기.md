@@ -61,13 +61,13 @@ JSON 기본구조 - `{ "이름" : "값" }` 에 맞는 문자열을 전달한다.
 
 ```html
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     ob1 = $.parseJSON('${data}');
     ob2 = ${data};
   });
 
   // non-jquery
-  window.onload = function() {
+  window.onload = function () {
     ob3 = JSON.parse('${data}');
   }
 </script>
@@ -89,7 +89,7 @@ EL이 있어 아무도 쓰지 않는 스크립릿으로는 다음처럼 쓴다:
 
 ```html
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     ob = <%=request.getAttribute("data")%>;
   });
 </script>
@@ -115,7 +115,7 @@ JSONObject는 HashMap을 상속받은 클래스다. 따라서 `put()` 메서드�
 
 ```html
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     ob1 = '${data}';
     ob2 = ${data};
   });
@@ -152,7 +152,7 @@ protected void process(HttpServletRequest req, HttpServletResponse resp)
 
 ```html
 <script>
-  $(document).ready(function() {
+  $(document).ready(function () {
     list = ${data};
 
     for (var loop = 0; loop < list.length; loop++) {
@@ -176,7 +176,7 @@ protected void process(HttpServletRequest req, HttpServletResponse resp)
       type: "GET",
       url: "/test.do",
       dataType: "json",
-      success: function(data) {
+      success: function (data) {
         ob = data;
       }
     });

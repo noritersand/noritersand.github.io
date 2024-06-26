@@ -113,11 +113,11 @@ window.opener.document
 <script type="text/javascript">
   var newWindow;
 
-  function openNewWindow(){
+  function openNewWindow() {
     newWindow = window.open("test2.html", "newWindow");
   }
 
-  function recieve(){
+  function recieve() {
     var txt = "<font color='red'>자식창에서 받아온 값</font>";
     document.getElementById("process").innerHTML = txt;
     document.myform.receiver.value = newWindow.document.myform.sender.value;
@@ -144,7 +144,7 @@ window.opener.document
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-  function recieve(){
+  function recieve() {
     var txt = "<font color='red'>부모창에서 받아온 값</font>";
     document.getElementById("process").innerHTML = txt;
     document.myform.receiver.value = window.opener.document.myform.sender.value;
@@ -187,7 +187,7 @@ var winObj = window.open();
 <title>Insert title here</title>
 <script type="text/javascript">
   var newWindow;
-  function openNewWindow(){
+  function openNewWindow() {
     newWindow = window.open("test4.html", "newWindow");
   }
   function sendMeData(data) {

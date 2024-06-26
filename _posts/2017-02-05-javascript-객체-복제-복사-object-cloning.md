@@ -95,7 +95,7 @@ var copyme = {
   child: {
     grandson: {
       txt: 'peek-a-boo!',
-      fn: function() {
+      fn: function () {
         console.log('don\'t leave me!')
       }
     }

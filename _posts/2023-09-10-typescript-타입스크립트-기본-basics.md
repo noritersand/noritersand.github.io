@@ -887,7 +887,7 @@ const color = {hex: '#187ABF'};
 
 ```ts
 declare var myVariable: string;
-declare function myFunction(a: number): void;
+declare function myFn(a: number): void;
 declare class MyClass {}
 ```
 

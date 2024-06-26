@@ -22,9 +22,9 @@ tags:
 
 ```html
 <script>
-$(document).ready(function() {
+$(document).ready(function () {
   var domEleArray = [$('#attachFile').clone()]; // 원본 복제
-  $('#btn_delAttach').click(function() {
+  $('#btn_delAttach').click(function () {
     domEleArray[1] = domEleArray[0].clone(true); // 쌔거(0번) -> 복제본(1번)
     $('#attachFile').replaceWith(domEleArray[1]);
   });

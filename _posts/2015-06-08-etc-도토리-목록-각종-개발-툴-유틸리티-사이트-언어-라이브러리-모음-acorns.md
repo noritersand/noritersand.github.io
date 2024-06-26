@@ -268,9 +268,9 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## UML/MDA/다이어그램/마인드 맵/드로잉 툴
 
-- [⭐ eraser](https://www.eraser.io/pricing): (엔지니어링 팀을 위한 화이트보드라 주장하는) 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 플로우 차트 그리기 굉장히 편하다. Diagram as Code(이걸로 ERD 그리기 가능)와 코멘트 기능도 있다. 무료 플랜 제공
+- [⭐ eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드만으로 플로우 차트를 쉽게 그릴 수 있다. Diagram as Code와 코멘트 기능도 지원함. 무료 플랜 제공
 - [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
-- [Balsamiq](https://balsamiq.com/wireframes/): UML, 드로잉 툴. 이제는 아마 유료임.
+- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 툴. 좋지만 무료 플랜이 없는 게 단점
 - [StarUML](http://staruml.sourceforge.net/ko)
 - [Draw.io (web)](http://www.draw.io)
 - [Gliffy (web)](http://www.gliffy.com)
@@ -278,18 +278,27 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
 - [XMind](http://www.xmind.net): 마인드 맵
 - [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page): 마인드 맵 #2
+- [MockFlow](https://www.mockflow.com/): 챗피티 추천 UI 설계 툴 #1
+- [Moqups](https://moqups.com/): 챗피티 추천 UI 설계 툴 #2
+- [Cacoo](https://nulab.com/cacoo/): 챗피티 추천 UI 설계 툴 #3
+- [Wireframe.cc](https://wireframe.cc/): 챗피티 추천 UI 설계 툴 #4
 
 ### ERD
 
 - [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 좋음.
 
 
-## 온라인 코드 편집기(에디터) 겸 테스트 툴
+## 온라인 코드 편집기(에디터) & 코드 스니펫
 
-- [CodePen](https://codepen.io): 온라인 코드 편집기. 웹으로 코드를 작성하고 테스트하거나 남들과 공유할 수 있는 서비스.
+- [CodePen](https://codepen.io): 온라인 코드 편집기 #1. 웹으로 코드를 작성하고 테스트하거나 남들과 공유할 수 있는 서비스.
 - [JSFiddle](https://jsfiddle.net): 온라인 코드 편집기 #2
-- [CodeSandbox](https://codesandbox.io): 온라인 코드 편집기 (3). 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
-- [StackBlitz](https://stackblitz.com): 프론트엔드 개발용 온라인 코드 편집기 (4). 깃허브 저장소와 연동할 수 있고, Node.js 등 빌드 툴 실행이 가능한 환경을 제공한다. public 프로젝트에 한해 무료로 사용 가능.
+- [CodeSandbox](https://codesandbox.io): 온라인 코드 편집기 #3. 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
+- [StackBlitz](https://stackblitz.com): 온라인 코드 편집기 #4. 프로트엔드에 특화되어 있다. 깃허브 저장소와 연동할 수 있고, Node.js 같은 런타임 환경을 제공한다. public 프로젝트에 한해 무료로 사용 가능.
+- [GitHub Gist](https://gist.github.com/): 코드 스니펫 공유용 툴 #1. 사용하려면 깃허브 아이디 필요
+- [Pastebin](https://pastebin.com/): 코드 스니펫 공유용 툴 #2. 로그인 필요함
+- [Hastebin | Toptal](https://www.toptal.com/developers/hastebin): 코드 스니펫 공유용 툴 #3. 로그인 필요 없음
+- [Snippet.host](https://snippet.host/): 코드 스니펫 공유용 툴 #4. 로그인 필요 없음
+- [Carbon](https://carbon.now.sh/): 코드 스니펫 공유용 툴 #5. 이쪽은 코드를 이미지로 만들어주는 사이트다.
 
 
 ## CVE 아카이빙 사이트
@@ -335,8 +344,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [Fork](https://fork.dev): Git GUI #1. 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
 - [GitKraken](https://www.gitkraken.com): Git GUI #2. 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [⭐ Sublime Merge](https://www.sublimemerge.com): Git GUI (3). 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
-- [gitui](https://github.com/extrawurst/gitui): Git GUI (4). Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
+- [⭐ Sublime Merge](https://www.sublimemerge.com): Git GUI #3. 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
+- [gitui](https://github.com/extrawurst/gitui): Git GUI #4. Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
 
 
 ## 트래픽 캡쳐
@@ -444,11 +453,11 @@ Project manager 혹은 Issue tracker
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
 - [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 쓰레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
 - [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴 #2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
-- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴 (3). 자바 웹 앱 전용이다. 상용
-- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴 (4). 10일 무료. IDE와 연동할 수 있음. 상용
+- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴 #3. 자바 웹 앱 전용이다. 상용
+- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴 #4. 10일 무료. IDE와 연동할 수 있음. 상용
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
 - [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 #2. 자바/PHP/닷넷 앱 모니터링. 상용
-- [WhaTap](https://www.whatap.io/ko): APM 툴 (3). 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
+- [WhaTap](https://www.whatap.io/ko): APM 툴 #3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
 - [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.

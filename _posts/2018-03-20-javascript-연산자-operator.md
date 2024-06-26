@@ -333,7 +333,7 @@ typeof false;                    // 'boolean'
 typeof [1, 2, 3, 4];             // 'object'
 typeof {name: 'John', age: 34};  // 'object'
 typeof new Date();               // 'object'
-typeof function() {};            // 'function'
+typeof function () {};            // 'function'
 typeof myCar;                    // 'undefined' (if myCar is not declared)
 typeof null;                     // 'object'
 typeof Symbol();                 // 'symbol'
@@ -423,7 +423,7 @@ delete fn; // false
 function callee(callback) {
   console.debug(delete callback); // false
 }
-callee(function() {});
+callee(function () {});
 ```
 
 

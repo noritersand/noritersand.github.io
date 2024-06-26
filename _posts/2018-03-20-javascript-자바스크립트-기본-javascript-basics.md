@@ -425,7 +425,7 @@ s[s.length-1];   // "d"
 함수 리터럴은 다른 말로 '함수 정의 표현식'이라고 한다.
 
 ```js
-var add = function(a, b) {
+var add = function (a, b) {
   return a + b;
 };
 ```
@@ -500,7 +500,7 @@ number 원시 타입에 한하여 아래처럼 작성하는 게 가능하다:
 
 ```js
 var mankind = {
-  walk: function() {}
+  walk: function () {}
 };
 mankind.walk();
 ```

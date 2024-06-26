@@ -76,7 +76,7 @@ var xhr = new XMLHttpRequest();
 <script>
   function loadDoc() {
     var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
+    xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         document.getElementById('demo').innerHTML = xhr.responseText;
       }
@@ -227,7 +227,7 @@ xhr.getResponseHeader('Content-Type')
 
 ```js
 var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
+xhr.onreadystatechange = function () {
   if (xhr.readyState == 4 && xhr.status == 200) {
     console.log('complete');
   }
@@ -265,25 +265,25 @@ xhr.send();
 ```js
 var xhr = new XMLHttpRequest();
 console.debug(xhr);
-xhr.onabort = function() {
+xhr.onabort = function () {
   console.log('onabort - xhr.readyState: ' + xhr.readyState);
 };
-xhr.onerror = function() {
+xhr.onerror = function () {
   console.log('onerror - xhr.readyState: ' + xhr.readyState);
   console.log('xhr.status: ' + xhr.status);
 };
-xhr.onloadstart = function() {
+xhr.onloadstart = function () {
   console.log('onloadstart - xhr.readyState: ' + xhr.readyState);
 };
-xhr.onloadend = function() {
+xhr.onloadend = function () {
   console.log('onloadend - xhr.readyState: ' + xhr.readyState);
 };
-xhr.onprogress = function(event) {
+xhr.onprogress = function (event) {
   console.log('progress - xhr.readyState: ' + xhr.readyState);
   console.log('loaded: ' + event.loaded);
   console.log('size: ' + event.size);
 };
-xhr.onload = function() {
+xhr.onload = function () {
   console.log('complete');
 };
 xhr.open('GET', 'test2.html');

@@ -62,20 +62,20 @@ params => ({foo: "a"})
 ({a, b} = {a: 10, b: 20}) => a + b; // 30 반환
 ```
 
-### `() =>`는 `function()`과 같다
+### `() =>`는 `function ()`과 같다
 
 아래 둘은 같다:
 
 ```js
 var a = () => {};
-var a = function() {};
+var a = function () {};
 ```
 
 얘네도 같다:
 
 ```js
 var b = (arg) => {console.log(arg)};
-var b = function(arg) {console.log(arg)};
+var b = function (arg) {console.log(arg)};
 ```
 
 ### `() => ( x )`는 `() => { return x }`와 같다
@@ -135,7 +135,7 @@ var obj = {
 var obj2 = {
   fn() {
     console.log(this); // 이 this는 obj2
-    setTimeout(function() {
+    setTimeout(function () {
       console.log(this); // 이 this는 window
     }, 500);
   },

@@ -77,7 +77,7 @@ obj; // Object { Waldo: "Hello there! Mighty fine morning" }
 
 ```js
 var obj = {
-  ['john' + 'snow']: function() {
+  ['john' + 'snow']: function () {
     console.log('I know nothing.');
   }
 };

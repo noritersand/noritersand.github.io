@@ -284,20 +284,21 @@ console.log(math.KAPREKA_NNUMBER); // "495, 6174"
 **모듈 하나 당 딱 하나만 배정된 기본값**을 이용해 내보내는 방법. 경우에 따라 내보내는 기능의 이름을 생략할 수 있다.
 
 ```js
-// module2.js
-// 익명으로 선언하고 기본값으로 내보내기
-export default function() {
-  console.log('I\'m waldo.');
-}
-```
-
-```js
-// module1.js
 // 선언 후 기본값으로 내보내기
 function fn() {
   console.log('Oh hello there!');
 }
 export {fn as default}; // 함수 fn()을 default로 내보내기
+
+// 선언과 동시에 기본값으로 내보내기
+export default function abc() {
+  // ...
+}
+
+// 익명으로 선언하고 기본값으로 내보내기
+export default function () {
+  // ...
+}
 ```
 
 반면 가져오는 모듈에서는 반드시 이름을 지정해야 한다:

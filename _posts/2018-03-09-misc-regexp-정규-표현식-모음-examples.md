@@ -218,7 +218,7 @@ string.replace(/[\0-\x7f]|([0-\u07ff]|(.))/g,"$&$1$2").length
 ### 내용의 값의 빈공백을 trim(앞/뒤)
 
 ```js
-String.prototype.trim = function() {
+String.prototype.trim = function () {
   var TRIM_PATTERN = /(^\s*)|(\s*$)/g;
   return this.replace(TRIM_PATTERN, "");
 };
@@ -233,7 +233,7 @@ console.assert(reg.test(value), '이메일 형식이 아님');
 ```
 
 ```js
-function isValidEmail(data){
+function isValidEmail(data) {
   var format = /^((\w|[\-\.])+)@((\w|[\-\.])+)\.([A-Za-z]+)$/;
   if (data.search(format) != -1)
     return true; //올바른 포맷 형식
@@ -246,7 +246,7 @@ function isValidEmail(data){
 ### 한글 필터링
 
 ```js
-function isValidKorean(data){
+function isValidKorean(data) {
    // 유니코드 중 AC00부터 D7A3 값인지 검사
   var format = /^[\uac00-\ud7a3]*$/g;
   if (data.search(format) == -1)
@@ -267,7 +267,7 @@ function checkKoreanWord(str) {
 ### 이미지 파일인지 검사
 
 ```js
-function isValidNumber(data){
+function isValidNumber(data) {
   var format=/^[0-9]*$/g;
   if(data.search(format) == -1)
     return false;
@@ -278,7 +278,7 @@ function isValidNumber(data){
 ### 숫자인지 검사
 
 ```js
-function isValidNumber(data){
+function isValidNumber(data) {
   var format=/^[0-9]*$/g;
   if(data.search(format) == -1)
     return false;
@@ -319,7 +319,7 @@ var text = $('#inptMemId').val();
 var regexp = /[0-9a-zA-Z.;\-]/; // 숫자,영문,특수문자
 // var regexp = /[0-9]/; // 숫자만
 // var regexp = /[a-zA-Z]/; // 영문만
-for (var loop = 0; loop < text.length; loop++){
+for (var loop = 0; loop < text.length; loop++) {
   if (text.charAt(loop) != " "
       && regexp.test(text.charAt(loop)) == false) {
     alert(text.charAt(loop) + "는 입력불가능한 문자입니다");

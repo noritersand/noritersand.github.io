@@ -34,14 +34,14 @@ tags:
   function upload() {
     var $oldFileInput = $('#fileInput');
     var $newFileInput = $('#fileInput').clone();
-    $oldFileInput.one('change', function() {
+    $oldFileInput.one('change', function () {
       $('#fileForm').ajaxSubmit({
         method: 'post',
         url: '/uploadFile.do',
-        success: function(data) {
+        success: function (data) {
           // data: 서버가 반환해야할 파일의 웹 경로를 의미한다.
           $('#filePath').val(data);
-        }, complete: function(data) {
+        }, complete: function (data) {
           $oldFileInput.replaceWith($newFileInput);
           $oldFileInput.remove();
         }

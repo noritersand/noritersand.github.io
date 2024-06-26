@@ -50,7 +50,7 @@ tags:
 
 ## jQuery의 sourcemap
 
-jQuery 1.9.1을 보면 소스맵 선언을 이렇게:
+jQuery 1.9.1을 보면 소스맵 선언을 이렇게 해놨고:
 
 ```js
 /*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundation, Inc. | jquery.org/license
@@ -59,7 +59,7 @@ jQuery 1.9.1을 보면 소스맵 선언을 이렇게:
 (function(e,t){var n,r,i=typeof t,o=e.document,a=e... }) // 생략
 ```
 
-그리고 `jquery.min.map`은 이렇게 생겼다:
+`jquery.min.map`은 이렇게 생겼다:
 
 ```js
 {

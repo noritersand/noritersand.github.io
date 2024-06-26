@@ -50,8 +50,8 @@ function getDoc(frame) {
   return doc;
 }
 
-$(document).ready(function() {
-  $("#btnSubmit").click(function() {
+$(document).ready(function () {
+  $("#btnSubmit").click(function () {
     var frameName = 'unique' + (new Date().getTime());  //generate a random name
 
     var $frame = $('<iframe>', {
@@ -64,7 +64,7 @@ $(document).ready(function() {
     form.action = "/board/notice/adminNoticeDetailPopAjax.do";
     form.submit();
 
-    $frame.load(function(e) {
+    $frame.load(function (e) {
       var doc = getDoc($frame[0]);
       var docRoot = doc.body ? doc.body : doc.documentElement;
       var data = docRoot.innerHTML;

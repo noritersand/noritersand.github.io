@@ -79,7 +79,7 @@ JSON.parse( jsString )
 JSON.parse( "{num: 123}" );  // SyntaxError: JSON.parse: expected property name or '}'
 JSON.parse( "{'num': 123}" );  // SyntaxError: JSON.parse: expected property name or '}'
 JSON.parse( '{"num": 123}' );  // Object { num: 123 }
-JSON.parse( '{"fn": function() {}}' ); // SyntaxError: JSON.parse: unexpected keyword at line 1 column 9 of the JSON data
+JSON.parse( '{"fn": function () {}}' ); // SyntaxError: JSON.parse: unexpected keyword at line 1 column 9 of the JSON data
 ```
 
 jQuery는 `$.parseJSON()` 메서드를 제공한다. 만약 브라우저가 `JSON.parse()`를 지원하지 않는다면 `$.parseJSON()`은 전달된 문자열을 그대로 반환한다.

@@ -198,7 +198,7 @@ for (let i = 0, j = 10; i < 10; i++, j--) {
 
 ```js
 var i = 'global';
-(function() {
+(function () {
   console.log(i); // 끌어올림이 적용되어 'global'이 아니라 undefined 출력됨
   for (var i = 0 ; i < 10; i++) {
     console.log(i); // 0부터 9까지 출력

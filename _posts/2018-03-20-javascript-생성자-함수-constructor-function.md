@@ -32,7 +32,7 @@ tags:
 ## 생성자 함수가 일반 함수로 호출되는것을 방지하는 방법
 
 ```js
-function Person(name){
+function Person(name) {
   if (!(this instanceof Person)) {
     return new Person(name);
   }
@@ -69,9 +69,9 @@ noob2 instanceof Newbie; // true
 ## 생성자 함수의 메서드
 
 ```js
-function Person(name){
+function Person(name) {
   this.name = name;
-  this.sayHi = function() {
+  this.sayHi = function () {
     return 'Hi, I am ' + this.name;
   }
 }
@@ -83,7 +83,7 @@ function Person(name){
 function Person(name) {
   this.name = name;
 }
-Person.prototype.sayHi = function() {
+Person.prototype.sayHi = function () {
   return 'Hi, I am ' + this.name;
 };
 ```

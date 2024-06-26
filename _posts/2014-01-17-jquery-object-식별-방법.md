@@ -123,13 +123,13 @@ $('#target2').siblings('li').length  // 3
 
 ```html
 <script>
-  $(document).ready(function() {
-    $('body').click(function(event) {
+  $(document).ready(function () {
+    $('body').click(function (event) {
       var flag = $(event.target).is('#yooo');
       $('#result1').val(flag);
     });
 
-    $('body').click(function(event) {
+    $('body').click(function (event) {
       var flag = $(event.target).is($('body *').not('#yooo'));
       $('#result2').val(flag);
     });

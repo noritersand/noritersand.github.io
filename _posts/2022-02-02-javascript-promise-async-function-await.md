@@ -56,7 +56,7 @@ Promise 객체는 요딴 상태 중 하나를 가진다:
 
 ```
 new Promise( executor )
-new Promise( function( resolve, reject ) { ... } )
+new Promise( function ( resolve, reject ) { ... } )
 ```
 
 - `resolve`: Promise의 상태를 fulfilled로 변경하고 resolve 메시지를 전달하는 함수. 함수라서 명시적으로 호출해야 함. 이렇게 전달되는 값은 resolved value 혹은 fullfilled value라고도 한다.
@@ -273,7 +273,7 @@ hello().then(console.log); // Hello!
 async 함수의 반환값이 명시적인 Promise가 아니라면 자동으로 Promise로 감싸진다:
 
 ```js
-async function() {
+async function () {
   return 1;
 }
 ```
@@ -281,7 +281,7 @@ async function() {
 이 코드는 아래와 **비슷**하다:
 
 ```js
-function() {
+function () {
   return Promise.resolve(1);
 }
 ```
@@ -588,7 +588,7 @@ concurrent();
 
 ```js
 var wait = ms => new Promise(resolve => setTimeout(() => {resolve(ms)}, ms));
-var parallel = function() {
+var parallel = function () {
   wait(5000).then(console.log);
   wait(3000).then(console.log);
   wait(1000).then(console.log);

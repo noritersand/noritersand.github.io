@@ -35,7 +35,7 @@ function test() {
   // 이 함수는 엄격 모드가 적용됨.
 }
 
-(function() {
+(function () {
   'use strict'; // 여기도 엄격 모드
   x = 1; // 그래서 ReferenceError 발생함: assignment to undeclared variable x
 })();
@@ -170,7 +170,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 유효범위 체인을 변경하는 `with`문은 엄격 모드에서 사용할 수 없다.
 
 ```js
-(function() {
+(function () {
   'use strict';
   with (Math) {
     // do something
@@ -183,7 +183,7 @@ obj = {}; // ReferenceError: assignment to undeclared variable obj
 함수가 메서드가 아닌 함수로 호출될 때 `this`는 `undefined`가 된다(표준 모드에선 함수로 호출될 때의 `this`는 `Window` 같은 전역 객체다). 이를 이용하면 엄격 모드 지원 여부를 판단할 수 있다.
 
 ```js
-var supportStrictMode = (function() {
+var supportStrictMode = (function () {
   'use strict';
   return this === undefined;
 })();

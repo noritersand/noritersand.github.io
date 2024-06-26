@@ -53,7 +53,7 @@ puts("당신의 이름은" + name + "입니다.");
 
 ```js
 puts("이름을 입력하세요");
-gets(function(name) {
+gets(function (name) {
   puts("당신의 이름은" + name + "입니다.");
 });
 ```
@@ -94,12 +94,12 @@ function drawCircle() {
 exports.drawCircle = drawCircle;
 
 //Syntex 2: module.exports = 함수리터럴 혹은 익명함수
-exports.fibonacchi = function(num) {
+exports.fibonacchi = function (num) {
   return -1;
 };
 
 //Syntex 3: 변수 = module.exports = 함수
-var show = exports.show = function() {
+var show = exports.show = function () {
   console.log('hi');
 }
 ```
@@ -127,7 +127,7 @@ var userModule = require('./user_module');
 #### 작성 예시 \#1
 
 ```js
-function printA(){};
+function printA() {};
 var PI = 3.14;
 
 exports.printA = printA;

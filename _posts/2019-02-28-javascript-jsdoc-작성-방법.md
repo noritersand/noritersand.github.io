@@ -63,7 +63,7 @@ npm exec jsdoc ./src/test/js-doc-test.js
  * @param {string|number} myArg I dunno
  * @returns {string|Object} return string or number
  */
-function myFunction(myDate, myString, myFlag, myArg) {
+function myFn(myDate, myString, myFlag, myArg) {
   // do stuff
 }
 
@@ -89,7 +89,7 @@ function sumAsync(a, b) {
  *
  * @param {string} color - The shoe's color.
  */
-Shoe.prototype.setColor = function(color) {
+Shoe.prototype.setColor = function (color) {
     // ...
 };
 ```

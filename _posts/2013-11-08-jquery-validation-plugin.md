@@ -43,7 +43,7 @@ validate( { options } )
 다음은 searchForm에서 submit 이벤트가 발생할 때 플러그인이 자동으로 작동하게 하는 예시다:
 
 ```js
-$(function() {
+$(function () {
   $('#searchForm').validate({
     debug: false,
     onfocusout: false,
@@ -57,9 +57,9 @@ $(function() {
         required: '검색조건은 필수값입니다.',
         maxlength: $.validator.format('{0}자 내로 입력하세요.')
       }
-    }, errorPlacement: function(error, element) {
+    }, errorPlacement: function (error, element) {
       // do nothing
-    }, invalidHandler: function(form, validator) {
+    }, invalidHandler: function (form, validator) {
        var errors = validator.numberOfInvalids();
        if (errors) {
          alert(validator.errorList[0].message);
@@ -88,7 +88,7 @@ function search() {
 }
 
 // document on ready callback function
-$(function() {
+$(function () {
   $('#searchForm').validate({
     onfocusout: false,
     rules: {
@@ -101,15 +101,15 @@ $(function() {
         required: '검색조건은 필수값입니다.',
         maxlength: $.validator.format('{0}자 내로 입력하세요.')
       }
-    }, errorPlacement: function(error, element) {
+    }, errorPlacement: function (error, element) {
       // do nothing
-    }, invalidHandler: function(form, validator) {
+    }, invalidHandler: function (form, validator) {
        var errors = validator.numberOfInvalids();
        if (errors) {
          alert(validator.errorList[0].message);
          validator.errorList[0].element.focus();
        }
-    }, submitHandler: function(form) {
+    }, submitHandler: function (form) {
       alert('handler invoke');
     }
   });
@@ -153,7 +153,7 @@ checkbox가 체크 되기 전에는 required는 작동하지 않는다. `#other`
          required: true
        },
        parent: {
-         required: function(element) {
+         required: function (element) {
            return $("#age").val() < 13;
         }
       }
@@ -184,7 +184,7 @@ $("#myform").validate({
         url : "check-email.php",
         type : "post",
         data : {
-          username : function() {
+          username : function () {
             return $("#username").val();
           }
         }
@@ -201,7 +201,7 @@ $("#myform").validate({
 ```html
 <script>
   // document on ready callback function
-  $(function() {
+  $(function () {
     $("#myForm").validate({
       rules: {
         password: "required",
@@ -321,11 +321,11 @@ creditcard: true
 이 외에 찾는 rule이 없다면 다음처럼 custom rule을 작성한다:
 
 ```js
-$.validator.addMethod("domain", function(value, element) {
+$.validator.addMethod("domain", function (value, element) {
   return this.optional(element) || /^http:\/\/mycorporatedomain.com/.test(value);
 }, "Please specify the correct domain for your documents");
 
-$.validator.addMethod("math", function(value, element, params) {
+$.validator.addMethod("math", function (value, element, params) {
   return this.optional(element) || value == params[0] + params[1];
 }, $.validator.format("Please enter the correct value for {0} + {1}"));
 ```

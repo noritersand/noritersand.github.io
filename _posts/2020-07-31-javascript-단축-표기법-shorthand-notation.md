@@ -97,7 +97,7 @@ const {log} = console;
 
 ```js
 var obj = {
-  // hello: function() { return 'hello world!' }
+  // hello: function () { return 'hello world!' }
   hello() {
     return 'hello world!';
   }
@@ -140,7 +140,7 @@ obj['c.c']; // 123
 단축 메서드명도 이렇게 할 수 있음:
 
 ```js
-// name: function() {}은 name() {}과 같으므로
+// name: function () {}은 name() {}과 같으므로
 var obj = {
   'c.c'() {
     console.log('hi');

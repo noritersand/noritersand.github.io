@@ -40,12 +40,12 @@ tags:
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script src="../lib/jquery.fileupload.js"></script>
 <script >
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('#upFile').fileupload({
       url : '/bo/sample/file/uploadProcess.do',
       dataType: 'json',
       //replaceFileInput: false,
-      add: function(e, data){
+      add: function (e, data) {
         var uploadFile = data.files[0];
         var isValid = true;
         if (!(/png|jpe?g|gif/i).test(uploadFile.name)) {
@@ -58,7 +58,7 @@ tags:
         if (isValid) {
           data.submit();
         }
-      }, progressall: function(e,data) {
+      }, progressall: function (e,data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
         $('#progress .bar').css(
           'width',
@@ -72,7 +72,7 @@ tags:
         } else {
           alert(code + ' : ' + msg);
         }
-      }, fail: function(e, data){
+      }, fail: function (e, data) {
         // data.errorThrown
         // data.textStatus;
         // data.jqXHR;
@@ -121,12 +121,12 @@ public String upload(HttpServletRequest req) throws IOException {
 FileUpload plugin을 사용하면 파일첨부 시점에 add 메서드가 실행되는 점을 이용하여 첨부된 파일의 검증만을 수행한다.
 
 ```js
-$(document).ready(function() {
+$(document).ready(function () {
   $('#upFile').fileupload({
     url : '/sample/file/uploadProcessJson.action',
     dataType: 'json',
     replaceFileInput: false,
-    add: function(e, data){
+    add: function (e, data) {
       var isValid = true;
       var uploadFile = data.files[0];
       if (!(/png|jpe?g|gif/i).test(uploadFile.name)) {

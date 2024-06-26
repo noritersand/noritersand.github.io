@@ -44,7 +44,7 @@ focus 이벤트를 발생시킨다.
 
 ```js
 // 엔터치면 다음으로 이동
-$(function() {
+$(function () {
   $('input').not($(':button')).keypress(function (evt) {
     if (evt.keyCode == 13) {
       var fields = $(this).parents('form:eq(0),body').find('button,input,select');
@@ -178,10 +178,10 @@ $.ajax({
   contentType: 'application/json; charset=utf-8', // 전송 데이터 타입
   dataType: 'json', // 응답 데이터 타입
   beforeSend: showRequest, //ajax로 전송 전 호출할 함수
-  success: function(data) {
+  success: function (data) {
     $('#result').html(data);
   },
-  error: function(e) {
+  error: function (e) {
     alert(e.responseText);
   }
 });
@@ -190,7 +190,7 @@ $.ajax({
 success 옵션을 다음처럼 작성하면 응답값을 자세히 확인할 수 있다:
 
 ```js
-success: function(responseData, textStatus, jqXHR) {
+success: function (responseData, textStatus, jqXHR) {
   console.log(responseData);
   console.log(textStatus);
   console.log(jqXHR.status);
@@ -200,7 +200,7 @@ success: function(responseData, textStatus, jqXHR) {
 마찬가지로 실패 시 응답값을 자세히 보려면 error 옵션을 다음처럼 작성한다:
 
 ```js
-error: function(jqXHR, textStatus, errorThrown) {
+error: function (jqXHR, textStatus, errorThrown) {
   var errorMsg = 'status(code): ' + jqXHR.status + '\n';
   errorMsg += 'statusText: ' + jqXHR.statusText + '\n';
   errorMsg += 'responseText: ' + jqXHR.responseText + '\n';
@@ -224,7 +224,7 @@ jQuery( selector ).load( url [, data ] [, complete ] )
 - `complete`: 요청 완료 후 수행할 콜백 함수
 
 ```js
-$('#success').load('demo.jsp', function(response, status, xhr) {
+$('#success').load('demo.jsp', function (response, status, xhr) {
   if (status == 'error') {
     alert(xhr.status + ' ' + xhr.statusText);
   }
@@ -232,7 +232,7 @@ $('#success').load('demo.jsp', function(response, status, xhr) {
 
 $('#success').load('demo.jsp', { "choices[]": ["han", "lee"] } );
 
-$('#success').load('demo.jsp', {limit: 25}, function() {
+$('#success').load('demo.jsp', {limit: 25}, function () {
   alert('Test~!');
 });
 ```
@@ -253,7 +253,7 @@ jQuery.get( url [, data ] [, success ] [, dataType ] )
 
 ```js
 //get 방식(responseText)
-$.get(url, { num1: num1, num2: num2, oper: o }, function(data) {
+$.get(url, { num1: num1, num2: num2, oper: o }, function (data) {
     $('#result').html(data);
 });
 ```
@@ -322,7 +322,7 @@ jQuery.post( [settings ] )
 - `dataType`: 응답 데이터의 타입을 지정한다. (xml, json, script, html)
 
 ```js
-$.post(url, { num1: num1, num2: num2, oper: o }, function(data) {
+$.post(url, { num1: num1, num2: num2, oper: o }, function (data) {
     $('#result').html(data);
 });
 ```
@@ -333,11 +333,11 @@ $.post(url, { num1: num1, num2: num2, oper: o }, function(data) {
 `jQuery.ajax()`와 그 파생 메서드들은 jQuery-XMLHttpRequest Object를 반환하는데, 이를 통해 수신된 결과를 처리하도록 핸들러를 등록할 수 잇다.
 
 ```js
-var jqxhr = $.post('example.php', function() {
+var jqxhr = $.post('example.php', function () {
     alert('success');
 });
 
-jqxhr.fail(function() {
+jqxhr.fail(function () {
     alert('error');
 });
 ```
@@ -345,13 +345,13 @@ jqxhr.fail(function() {
 그리고 done, fail, always 등의 Ajax 이벤트 관련 메서드는 항상 this를 반환한다는 점을 이용하여 다음처럼 콜체인 형식으로 작성할 수도 있다.
 
 ```js
-$.get('example.php', function() {
+$.get('example.php', function () {
     alert('success');
-}).done(function() {
+}).done(function () {
     alert('second success');
-}).fail(function() {
+}).fail(function () {
     alert('error');
-}).always(function() {
+}).always(function () {
     alert('finished');
 });
 ```
@@ -373,23 +373,23 @@ $.ajax({
     method: 'post',
     url: '/member/updatePassword.do',
     data: 'memberNumber=65536',
-    beforeSend: function() {
+    beforeSend: function () {
       console.log('before send');
     },
-    success: function() {
+    success: function () {
         console.log('success');
     },
-    error: function() {
+    error: function () {
         console.log('error');
     },
-    complete: function() {
+    complete: function () {
         console.log('complete');
     }
-}).done(function() {
+}).done(function () {
     console.log('done');
-}).fail(function() {
+}).fail(function () {
     console.log('fail');
-}).always(function() {
+}).always(function () {
     console.log('always');
 });
 ```
@@ -407,9 +407,9 @@ $.ajax({
 - `.ajaxStop( callback )`: Ajax request의 송신 종료 시 실행되는 함수를 지정한다.
 
 ```js
-$(document).ajaxStart(function() {
+$(document).ajaxStart(function () {
   console.log('ajax stated');
-}).ajaxComplete(function() {
+}).ajaxComplete(function () {
   console.log('ajax complete');
 });
 ```

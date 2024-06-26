@@ -53,6 +53,11 @@ data:image/png;base64,iVBORw0KGgoAAAANSU....
     alt="Red dot"/>
 ```
 
-작은 빨간색 점 이미지를 base64로 인코딩하여 `src` 속성에 데이터로 끼워넣은(?) 것이다. 이렇게 하면 외부 자원인 이미지를 웹으로 요청하거나 다운로드하는 과정을 생략하고 바로 볼 수 있게 된다. 물론 이걸 그리는 건 브라우저가 알아서 할 일이다.
+작은 빨간색 점 이미지를 base64로 인코딩하여 `src` 속성에 데이터로 끼워넣은 것이다. 이렇게 하면 원래는 외부 자원이라 웹으로 요청하거나 다운로드해야 했던 이미지 파일을 그런 과정 없이 바로 볼 수 있게 된다. 물론 이걸 그리는 건 브라우저가 알아서 할 일이다.
 
-[오류 처리를 위한 적절한 수단이 없고, 브라우저마다 최대 길이 제한이 다르며, 쿼리스트링을 쓸 수 없는 등의 제약](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#common_problems)이 있다. 또 피싱같은 보안 문제가 있어서 [특정 내용의 data URL은 브라우저가 차단](https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/)하기도 한다. 
+
+## 제한 사항
+
+[오류 처리를 위한 적절한 수단이 없고, 브라우저마다 최대 길이 제한이 다르며, 쿼리스트링을 쓸 수 없는 등의 제약](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#common_problems)이 있다. 
+
+피싱같은 보안 문제가 있어서 [특정 내용의 data URL은 브라우저가 차단](https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/)하기도 한다. 

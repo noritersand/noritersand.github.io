@@ -44,7 +44,7 @@ readValue( arg, type )
 ```java
 mapper.readValue(arg, ArrayList.class);
 mapper.readValue(arg, new ArrayList<HashMap<String, String>>().getClass());
-mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>(){});
+mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>() {});
 ```
 
 ### map

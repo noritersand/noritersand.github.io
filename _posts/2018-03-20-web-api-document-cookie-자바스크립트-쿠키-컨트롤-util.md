@@ -208,7 +208,7 @@ class Cook {
 |*|
 \*/
 var docCookies = {
-  getItem: function(sKey) {
+  getItem: function (sKey) {
     if (!sKey) {
       return null;
     }
@@ -216,7 +216,7 @@ var docCookies = {
             + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&")
             + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null;
   },
-  setItem: function(sKey, sValue, sSamesite, vEnd, sPath, sDomain, bSecure) {
+  setItem: function (sKey, sValue, sSamesite, vEnd, sPath, sDomain, bSecure) {
     if (!sSamesite || !/^lax$|^strict$|^none$/.test(sSamesite = sSamesite.toLowerCase())) { 
       console.error('sameSite 값이 없거나 허용 범위가 아닙니다.')
       return false; 
@@ -248,7 +248,7 @@ var docCookies = {
             + (bSecure ? "; secure" : "");
     return true;
   },
-  removeItem: function(sKey, sPath, sDomain) {
+  removeItem: function (sKey, sPath, sDomain) {
     if (!this.hasItem(sKey)) {
         return false;
     }
@@ -257,14 +257,14 @@ var docCookies = {
             + (sPath ? "; path=" + sPath : "");
     return true;
   },
-  hasItem: function(sKey) {
+  hasItem: function (sKey) {
     if (!sKey) {
         return false;
     }
     return (new RegExp("(?:^|;\\s*)" + encodeURIComponent(sKey).replace(/[\-\.\+\*]/g, "\\$&")
         + "\\s*\\=")).test(document.cookie);
   },
-  keys: function() {
+  keys: function () {
     var aKeys = document.cookie.replace(/((?:^|\s*;)[^\=]+)(?=;|$)|^\s*|\s*(?:\=[^;]*)?(?:\1|$)/g, "")
             .split(/\s*(?:\=[^;]*)?;\s*/);
     for (var nLen = aKeys.length, nIdx = 0; nIdx < nLen; nIdx++) {

@@ -94,13 +94,13 @@ public class InterceptorTest {
 
         HandlerInterceptor[] interceptors = handlerExecutionChain.getInterceptors();
 
-        for (HandlerInterceptor interceptor : interceptors){
+        for (HandlerInterceptor interceptor : interceptors) {
             interceptor.preHandle(request, response, handlerExecutionChain.getHandler());
         }
 
         ModelAndView mav = handlerAdapter. handle(request, response, handlerExecutionChain.getHandler());
 
-        for (HandlerInterceptor interceptor : interceptors){
+        for (HandlerInterceptor interceptor : interceptors) {
             interceptor.postHandle(request, response, handlerExecutionChain.getHandler(), mav);
         }
 

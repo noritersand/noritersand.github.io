@@ -104,7 +104,7 @@ tags:
   </tr>
 </table>
 <script>
-  document.querySelector('#inptKeyCodeTest').onkeydown = function(event) {
+  document.querySelector('#inptKeyCodeTest').onkeydown = function (event) {
     document.querySelector('#keydown-keyCode').textContent = event.keyCode;
     document.querySelector('#keydown-which').textContent = event.which;
     document.querySelector('#keydown-ctrlKey').textContent = event.ctrlKey;
@@ -115,7 +115,7 @@ tags:
     document.querySelector('#keydown-charCode').textContent = event.charCode;
   };
 
-  document.querySelector('#inptKeyCodeTest').onkeypress = function(event) {
+  document.querySelector('#inptKeyCodeTest').onkeypress = function (event) {
     document.querySelector('#keypress-keyCode').textContent = event.keyCode;
     document.querySelector('#keypress-which').textContent = event.which;
     document.querySelector('#keypress-ctrlKey').textContent = event.ctrlKey;
@@ -126,7 +126,7 @@ tags:
     document.querySelector('#keypress-charCode').textContent = event.charCode;
   };
 
-  document.querySelector('#inptKeyCodeTest').onkeyup = function(event) {
+  document.querySelector('#inptKeyCodeTest').onkeyup = function (event) {
     document.querySelector('#keyup-keyCode').textContent = event.keyCode;
     document.querySelector('#keyup-which').textContent = event.which;
     document.querySelector('#keyup-ctrlKey').textContent = event.ctrlKey;

@@ -60,10 +60,10 @@ Cookie: SESSIONID=MTctZOTjA5NZVLMMkxTkUMxMi0Gg2MDhAtwTyD0DkzmTOODZ
     data: '[{"name1":"value1", "name2":"value2"}, {"name1":"value3", "name2":"value4"}]',
     dataType: 'json',
     contentType: 'application/json; charset=utf-8',
-    success: function(data) {
+    success: function (data) {
       ob = data;
     },
-    error: function(jqXHR, textStatus, errorThrown) {
+    error: function (jqXHR, textStatus, errorThrown) {
       console.log(jqXHR);
       console.log(textStatus);
       console.log(errorThrown);

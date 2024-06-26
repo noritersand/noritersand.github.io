@@ -41,11 +41,11 @@ function meIzDaBest() {
 함수 선언문은 새 함수 객체를 만들되 함수 이름을 변수로 생성하여 함수 객체를 할당한다. 때문에 함수의 이름이 반드시 필요하며 위 코드와 같은 단 한 가지의 형태만 존재한다.
 
 ```js
-var a = function() {
+var a = function () {
   // do something
 };
 
-(function() {
+(function () {
   // do something
 })();
 ```
@@ -76,7 +76,7 @@ fnExpression(); // TypeError: fnExpression is not a function
 function fnDeclaration() {
   console.debug('hi');
 }
-var fnExpression = function() {
+var fnExpression = function () {
   console.debug('im not');
 };
 ```
@@ -90,7 +90,7 @@ function fnDeclaration() {
 var fnExpression;
 fnDeclaration(); // hi
 fnExpression(); // TypeError: fnExpression is not a function
-fnExpression = function() {
+fnExpression = function () {
   console.debug('im not');
 };
 ```

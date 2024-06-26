@@ -176,7 +176,7 @@ company.#privateMethod(); // Uncaught SyntaxError: reference to undeclared priva
 ### 빌트인 프로토타입의 확장
 
 ```js
-Number.prototype.format = function(n, x) {
+Number.prototype.format = function (n, x) {
   var re = '\\d(?=(\\d{' + (x || 3) + '})+' + (n > 0 ? '\\.' : '$') + ')';
   return this.toFixed(Math.max(0, ~~n)).replace(new RegExp(re, 'g'), '$&,');
 }

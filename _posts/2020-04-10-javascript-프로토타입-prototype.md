@@ -250,11 +250,11 @@ o.__proto__.c; // 4
 
 ```js
 function HelloWorld() {
-  this.sayHi = function() {
+  this.sayHi = function () {
     console.log('Hi!');
   };
 };
-HelloWorld.prototype.sayHello = function() {
+HelloWorld.prototype.sayHello = function () {
   console.log('Hello!');
 };
 
@@ -410,7 +410,7 @@ Object.getPrototypeOf(fatboy) === bomb; // true
 function Calculator(number) {
   this.number = number;
 }
-Calculator.prototype.getDouble = function() {
+Calculator.prototype.getDouble = function () {
   return this.number * 2;
 }
 function Laptop(number) {
