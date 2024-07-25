@@ -636,11 +636,11 @@ useEffect(() => {
 
 ## 퍼포먼스 훅 Performance Hooks 
 
-불필요한 렌더링을 방지하고 성능을 취적화하는 데 사용되는 훅이다. `useMemo`는 계산된 값을, `useCallback`은 함수 객체를 메모이제이션(memoization, 동일한 입력이면 저장해 둔 결과를 재사용하는 것) 한다.
+불필요한 렌더링을 방지하고 성능을 취적화하는 데 사용되는 훅이다.
 
 ### useMemo
 
-계산된 값을 메모이제이션하여 리렌더링간에 재사용한다.
+계산된 값을 메모이제이션(memoization, 동일한 입력이면 저장해 둔 결과를 재사용하는 것)하여 리렌더링간에 재사용한다.
 
 ```
 const cachedValue = React.useMemo(fn, dependencies)
@@ -690,6 +690,8 @@ export default function TestUseMemo() {
 
 함수 정의를 캐싱하여 리렌더링간에 재사용이 가능하도록 해주는 훅이다. 함수형 컴포넌트는 렌더링될 때마다 내부의 모든 함수를 새로 생성하는데, `useCallback`을 사용하면 함수를 메모이제이션하여 입력이 동일하면 이전에 생성한 함수를 재사용하는 식으로 작동한다.
 
+ℹ️ 값을 메모이제이션 하는 `useMemo`와 달리, `useCallback`은 함수 객체를 메모이제이션 한다는 차이가 있다.
+
 ```
 React.useCallback(fn, dependencies)
 ```
@@ -718,6 +720,24 @@ const MyComponent = () => {
 
   return <MyChildComponent onClick={handleClick} />;
 };
+```
+
+```js
+// 코드 출처: https://react.dev/reference/react/useCallback
+import { useCallback } from 'react';
+
+export default function ProductPage({ productId, referrer, theme }) {
+  const handleSubmit = useCallback((orderDetails) => {
+    post('/product/' + productId + '/buy', {
+      referrer,
+      orderDetails,
+    });
+  }, [productId, referrer]);
+
+  return (
+    // ...
+  )
+}
 ```
 
 

@@ -96,7 +96,7 @@ public class BoardServlet extends HttpServlet {
         String encType = "UTF-8";
         int maxFilesize = 5 * 1024 * 1024;
 
-        // MultipartRequest(request, 저장경로[, 최대허용크기, 인코딩케릭터셋, 동일한 파일명 보호 여부])
+        // MultipartRequest(request, 저장경로[, 최대허용크기, 인코딩케릭터 셋, 동일한 파일명 보호 여부])
         MultipartRequest mr = new MultipartRequest(req, pathname, maxFilesize,
                 encType, new DefaultFileRenamePolicy());
 

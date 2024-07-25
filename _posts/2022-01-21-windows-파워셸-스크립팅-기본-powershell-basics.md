@@ -170,9 +170,20 @@ $i = 5
 
 ### 파이프라인 입력 Pipeline Input `|`
 
-**TODO**
+어떤 명령의 출력을 다른 명령의 입력으로 전달하는 데 사용된다. *입력을 스트림으로 전달*한다고 하기도 한다.
 
-참고로 파이프라인으로 이어지는 명령을 한 라이너(one-liners)라고 함.
+ℹ️ 파이프라인으로 이어지는 명령을 한 라이너(one-liners)라고 함.
+
+```bash
+# 123을 Node.js로 실행한 solution.js 파일에 표준입력으로 보내기
+echo 123 | node .\solution.js
+
+# 현재 실행 중인 프로세스 목록을 정렬하여 Select-Object로 보내 상위 5개만 선택
+Get-Process | Sort-Object CPU -Descending | Select-Object -First 5
+
+# Logs 디렉터리의 *.log 파일 중 Error가 포함된 줄 출력
+Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
+```
 
 ### 줄 바꿈
 

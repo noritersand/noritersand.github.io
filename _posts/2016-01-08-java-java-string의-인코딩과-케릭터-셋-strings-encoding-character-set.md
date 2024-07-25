@@ -56,19 +56,19 @@ String(byte[] bytes): 바이트 배열을 플랫폼의 기본 charset으로 복�
 String(byte[] bytes, Charset charset): 바이트 배열을 주어진 charset으로 복호화하여 새로운 String을 생성
 ```
 
-다만, 생성자를 이용하여, 특정 문자의 바이트가 어떤 케릭터셋의 코드값과 일치하는지 일일이 확인하는 방법이 있긴 하다:
+다만, 생성자를 이용하여, 특정 문자의 바이트가 어떤 케릭터 셋의 코드값과 일치하는지 일일이 확인하는 방법이 있긴 하다:
 
 ```java
 byte[] bs = str.getBytes();
 byte[] bs2 = str.getBytes("utf-8");
 
 // 복호화를 시도했을 때 글자가 깨지지 않고 온전한 것을 찾는다.
-System.out.println(new String(bs)); // UTF-8. 시스템 기본 케릭터셋으로 복호화됨
+System.out.println(new String(bs)); // UTF-8. 시스템 기본 케릭터 셋으로 복호화됨
 System.out.println(new String(bs2, "utf-8")); // UTF-8
 System.out.println(new String(bs2, "euc-kr")); // �������ㅼ���
 ```
 
-이 방법은 모든 사용 가능한 모든 문자를 대입해보지 않는한 정확한 케릭터셋은 찾기 힘들다는 한계가 있다.
+이 방법은 모든 사용 가능한 모든 문자를 대입해보지 않는한 정확한 케릭터 셋은 찾기 힘들다는 한계가 있다.
 
 
 ## 인코딩 변환하기

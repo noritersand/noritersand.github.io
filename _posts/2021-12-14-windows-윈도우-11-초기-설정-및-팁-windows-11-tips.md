@@ -145,12 +145,12 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - 다른 브라우저
 - Epic Games
 - Bluestack
-- IDE(IntelliJ, WebStorm)
+- IDE(IntelliJ, WebStorm, ...)
 - MSOffice 문서
 
 Autohotkey로 확장한 키 조합:
 
-- <kbd>win + \-</kbd>: DBMS Tool(DataGrip)
+- <kbd>win + \-</kbd>: DBMS Tool(DataGrip, ...)
 - <kbd>win + ctrl + \-</kbd>: Notion
 - <kbd>win + alt + \-</kbd>: Obsidian
 - <kbd>win + \=</kbd>: Edge

@@ -56,7 +56,7 @@ HTML5 관련 다 모음.
 </html>
 ```
 
-참고로 케릭터셋 설정은 HTML5 이전엔 아래처럼 쓰였다:
+참고로 케릭터 셋 설정은 HTML5 이전엔 아래처럼 쓰였다:
 
 ```html
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>

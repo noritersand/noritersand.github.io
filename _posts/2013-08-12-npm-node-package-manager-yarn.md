@@ -461,10 +461,13 @@ Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라
 
 ```bash
 # 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
-yarn global add nodemon --prefix /usr/local
+yarn global add PACKAGE_NAME --prefix /usr/local
 
 # 글로벌 패키지 확인
 yarn global list
+
+# 글로벌로 설치한 패키지 삭제
+yarn global remove PACKAGE_NAME
 ```
 
 글로벌 설치 경로 기본값은 [npm](https://nodejs.dev/learn/where-does-npm-install-the-packages)과 달라서 Yarn으로 설치한 글로벌 패키지가 npm으로는 안보일 수 있다.

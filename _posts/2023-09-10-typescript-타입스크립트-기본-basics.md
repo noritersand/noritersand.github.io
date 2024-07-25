@@ -628,7 +628,7 @@ function caller(callee: (a: string) => void) {
 }
 ```
 
-예를 들어 콜백 함수의 매개변수가 없고 반환 타입이 `string`이면 아래처럼 표기한다:
+다른 예로 콜백 함수의 매개변수가 없고 반환 타입이 `string`이면 아래처럼 표기한다:
 
 ```ts
 function caller2(callee: () => string) {

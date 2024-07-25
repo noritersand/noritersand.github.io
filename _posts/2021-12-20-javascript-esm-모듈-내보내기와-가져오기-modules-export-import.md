@@ -277,7 +277,7 @@ console.log(math.KAPREKA_NNUMBER); // "495, 6174"
 ```
 
 
-## default export, import 기본값으로 내보내고 가져오기
+## 기본값으로 내보내고 가져오기 default export, import
 
 주의: [일부 브라우저에서 제한되는 기능](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export#browser_compatibility)임.
 
@@ -315,25 +315,32 @@ yourName(); // I'm waldo.
 이름을 지정할 땐 중괄호와 `default as`를 생략할 수 있다. 중괄호를 생략하면 무조건 기본값을 참조한다고 간주된다. 요 특성을 잘 모르면 기본값 사용이 아닌 가져오기에서 자꾸 문법 에러가 발생할 것이다.
 
 
-## Dynamic module loading 동적 모듈 로딩
+## 동적 모듈 로딩 Dynamic module loading
 
 필요할 때만 모듈을 동적으로 가져오는 기능이다. 스크립트 파일을 원하는 시점에 로딩하기 때문에 성능 이점이 있다. 사용하려면 [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)에 대해 대충이라도 아는게 좋음.
 
 `import()` 함수는 Promise 객체를 반환하는데, 해당 객체를 통해 모듈에서 내보낸 기능에 접근한다. 아래 예시를 보자:
 
 ```js
-// module1.js
-export const message = 'wassssssssssssup';
-// 내보내는 모듈에선 특이한 게 없다.
+// messages.js
+export default {
+  wassup: 'wassssssssssssup'
+};
+
+export const foo = {
+  bar: 'Hello world!'
+};
 ```
 
 ```js
-// main.js
-var btn = document.querySelector('button#btn');
+let btn = document.querySelector('button#btn');
 
 btn.addEventListener('click', () => {
-  import('./module1.js').then((module) => {
-    alert(module.message); // 경고창 "wassssssssssssup" 표시
+  import('./messages.js').then(module => {
+    console.log(module); // Object { default: {…}, foo: {…}, … }
+    console.log(module.default); // Object { wassup: "wassssssssssssup" }
+    console.log(module.default.wassup); // wassssssssssssup
+    console.log(module.foo.bar); // Hello world!
   });
 });
 ```
@@ -367,9 +374,9 @@ import "module-name"; // 변수 바인딩 없이 스크립트를 실행만 할 �
 import.meta; // Uncaught SyntaxError: import.meta may only appear in a module
 ```
 
-`import.meta`의 프로퍼티가 어떤 것이 있어야하는지 정해진 적은 없지만 일반적으로 구현되어지는 속성들이 있다. 그 중 `import.meta.url`은 모듈에 대한 전체 URL(프로토콜부터 쿼리스트링까지)을 반환한다.
+`import.meta`의 프로퍼티가 어떤 것이 있어야하는지 정해진 적은 없지만 일반적으로 구현되는 속성들이 있다. 그 중 `import.meta.url`은 모듈에 대한 전체 URL(프로토콜부터 쿼리스트링까지)을 반환한다.
 
-모듈이면 내보내기(export)를, 모듈이 아니면 내보내지 않도록 하는 코드를 검색하다가 찾은 프로퍼티다. try-catch로 `import.meta`를 감싼다 해도, `export`는 try-catch 내에서 사용할 수 없는 키워드라서 해당 용도로는 사용할 수 없다:
+⚠️ 모듈이면 내보내기(export)를, 모듈이 아니면 내보내지 않는 기능을 구현하려다 찾은 프로퍼티인데, try-catch로 `import.meta`를 감싼다 해도 `export`는 try-catch 내에서 사용할 수 없는 키워드라서 이 용도로는 사용할 수 없다:
 
 ```js
 // 이렇게는 못 씀
