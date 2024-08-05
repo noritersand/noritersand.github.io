@@ -378,10 +378,10 @@ function identity<T>(arg: T): T {
 - `OmitThisParameter<Type>`
 - `ThisType<Type>`
 - 내장 문자열 조작 타입
--   `Uppercase<StringType>`
--   `Lowercase<StringType>`
--   `Capitalize<StringType>`
--   `Uncapitalize<StringType>`
+  - `Uppercase<StringType>`
+  - `Lowercase<StringType>`
+  - `Capitalize<StringType>`
+  - `Uncapitalize<StringType>`
 
 
 ## 변수의 타입 제한
