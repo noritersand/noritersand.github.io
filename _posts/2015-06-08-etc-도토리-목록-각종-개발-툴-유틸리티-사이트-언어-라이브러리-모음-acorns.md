@@ -79,6 +79,11 @@ tags:
 - [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 툴인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
 - [Scoop](https://scoop.sh/): Chocolatey에 비해 규모와 사용자는 적지만, 개발자 커뮤니티가 매우 활성화되어 있다고 함.
 
+### SDK Manager
+
+- [Node Version Manager](https://github.com/nvm-sh/nvm): Node.js의 설치/버전 관리 툴. 여러 버전의 Node.js를 설치하고 지금 사용하려는 버전으로 손쉽게 전환할 수 있게 해준다. 통칭 nvm
+- [SDKMAN](https://sdkman.io/): nvm처럼 여러 버전의 SDK를 설치하고 특정 버전으로 전환하는 기능을 제공하는 SDK 관리 툴이다. 지원하는 SDK로 Java, Scala, Groovy, Kotlin, Ceylon, Gradle, Maven 등이 있다. 단점으로, SDKMAN을 실행하려면 bash 환경이 필요하기 때문에 WSL이 아니면 **윈도우에서는 쓸 수 없음**.
+
 
 ## 프로그래밍 언어 Programming Language
 
@@ -168,12 +173,13 @@ tags:
 - [Vuetify](https://vuetifyjs.com/en/): 뷰용 컴포넌트 프레임워크
 
 
-## 자바스크립트 라이브러리
+## 자바스크립트/Node.js 라이브러리
 
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
 - [Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
 - [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
 - [@babel][https://babeljs.io/]: 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
+- [json-server][https://github.com/typicode/json-server]: JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 
 ### 리액트용 라이브러리
 

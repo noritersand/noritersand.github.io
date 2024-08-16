@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈관리 도구다.
+npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 모듈 관리 도구다.
 
 
 ## ⚠️ 해킹 방지 부적(?)
@@ -109,17 +109,17 @@ npm -v
 # 현재 경로의 로컬 패키지 확인
 npm ls
 
-# 글로벌 모듈 확인
+# 설치된 글로벌 패키지 확인
 npm ls -g
 
-# 로컬 모듈들의 종속관계 확인. global은 지원하지 않음
+# 설치된 로컬 패키지들의 종속관계 확인. global은 지원하지 않음
 npm fund
 ```
 
-`fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 모듈 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
+`fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 패키지 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
 
 
-## 패키지 버전 업데이트
+## 패키지 버전 업그레이드
 
 ```
 npm update [<pkg>...]
@@ -128,20 +128,23 @@ npm update [<pkg>...]
 별칭: `up`, `upgrade`, `udpate`
 
 ```bash
-# 업데이트 가능한 패키지의 버전 정보 표시: : 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 로컬 설치 경로, 종속성
+# 버전 업그레이드 가능한 패키지의 버전 정보 표시: : 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 로컬 설치 경로, 종속성
 npm outdated
 
-# 모듈명을 명시 하지 않으면 로컬 모듈을 모두 업데이트
-npm update [모듈명]
+# 특정 로컬 패키지의 버전을 업그레이드
+npm update [패키지명]
 
-# 모듈명을 명시 하지 않으면 글로벌 모듈을 모두 업데이트
-npm update [모듈명] -g
+# 특정 글로벌 패키지의 버전을 업그레이드
+npm update [패키지명] -g
+
+# 모든 패키지의 버전을 업그레이드 하고 package.json의 의존성 업데이트
+npm update --save
 ```
 
 패키지가 아니라 Node.js 클라이언트의 버전을 올리고 싶으면 [NVM](https://github.com/nvm-sh/nvm)을 설치할 것.
 
 
-## 모듈 삭제
+## 패키지 삭제
 
 ```bash
 npm uninstall [<@scope>/]<pkg>...
@@ -149,24 +152,24 @@ npm uninstall [<@scope>/]<pkg>...
 ```
 
 ```bash
-# 로컬 모듈 삭제
-npm uninstall 모듈명
+# 로컬 패키지 삭제
+npm uninstall 패키지명
 
-# 글로벌 모듈 삭제
-npm uninstall 모듈명 -g
+# 글로벌 패키지 삭제
+npm uninstall 패키지명 -g
 ```
 
 
-## 설치한 모듈 실행
+## 설치한 패키지 실행
 
 [npm Docs \| npm-exec](https://docs.npmjs.com/cli/v8/commands/npm-exec)
 
 ```bash
-# 로컬에 설치한 mocha 모듈 실행
-npm exec 모듈명
+# 로컬에 설치한 mocha 패키지 실행
+npm exec 패키지명
 ```
 
-모듈을 전역으로 설치한게 아니라면 이 명령어로 실행해야함.
+패키지를 전역으로 설치한게 아니라면 이 명령어로 실행해야함.
 
 예시:
 
@@ -223,7 +226,7 @@ Yarn은 이런 거 안해도 `yarn run` 명령으로 그냥 된다. npx 싫으�
 
 ## package.json
 
-`package.json`은 프로젝트(혹은 모듈)의 설명, 의존관계, 빌드/실행 스크립트 등을 정의하는 파일이다. 직접 만들어도 되지만 보통은 `init`을 씀:
+`package.json`은 프로젝트(혹은 패키지)의 설명, 의존관계, 빌드/실행 스크립트 등을 정의하는 파일이다. 직접 만들어도 되지만 보통은 `init`을 씀:
 
 ### npm init
 
@@ -252,8 +255,8 @@ npm init <@scope> (same as `npx <@scope>/create`)
 - scripts: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. (npm help scripts로 확인할 것)
 - author: 작성자
 - license:
-- dependencies: 필요한 모듈 정보를 적는다. npm install 명령으로 자동 설치된다.
-- devDependencies: 개발 시에만 필요한 모듈을 명시한다. config(package.json의 config와는 다르다. npm config list -l 명령으로 설정목록을 확인 할 수 있고 production 값을 바꾸려면 npm config set production true를 사용한다.)에 production이 true일 때는 배포버전이라 간주하고 설치하지 않는다.
+- dependencies: 의존하는 패키지 정보를 적는다. npm install 명령으로 자동 설치된다.
+- devDependencies: 개발 시에만 필요한 패키지를 명시한다. config(package.json의 config와는 다르다. npm config list -l 명령으로 설정목록을 확인 할 수 있고 production 값을 바꾸려면 npm config set production true를 사용한다.)에 production이 true일 때는 배포버전이라 간주하고 설치하지 않는다.
 - repository:
 - keywords: 키워드
 
@@ -395,6 +398,9 @@ npm의 속도와 보안을 강화한 새 패키지 매니저. [npm vs. Yarn: Whi
 
 ```bash
 corepack enable
+
+# 코어팩이 없을 경우
+npm install -g corepack
 ```
 
 ℹ️ 예전에는 `npm install yarn -g`라고 적어놨지만, 다시 찾아보니 코어팩(Corepack) 프로젝트에 Yarn이 포함되었으니 코어팩 활성화만 하면 된다고 한다. 만약 코어팩이 없다면 npm으로 설치하자. `npm install -g corepack` [관련글 링크](https://yarnpkg.com/corepack)
@@ -433,11 +439,14 @@ yarn remove PACKAGE_NAME
 # 업그레이드 가능한 패키지의 버전 정보를 표시: 현재 설치된 버전, 원하는 버전, 사용 가능한 최신 버전, 종속성 타입, URL
 yarn outdated
 
-# 특정 패키지 버전 업그레이드
+# 특정 패키지의 버전 업그레이드
 yarn upgrade PACKAGE_NAME
 
 # 대화형으로 버전 업그레이드
 yarn upgrade-interactive
+
+# 모든 패키지를 package.json을 무시하고 가장 최신 버전으로 업그레이드. package.json의 의존성도 업데이트 한다.
+yarn upgrade --latest
 
 # 캐시 지우기
 yarn cache clean
