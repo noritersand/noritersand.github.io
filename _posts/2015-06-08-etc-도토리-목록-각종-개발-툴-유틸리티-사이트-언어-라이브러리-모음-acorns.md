@@ -122,7 +122,7 @@ tags:
 - [Svelte](https://svelte.dev/): 리액트, 뷰를 잇는 프론트엔드 프레임워크. 비교적 가볍고 단순한 게 특징이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
 - [Next.js](https://nextjs.org/): 리액트 기반의 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
-- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 툴. 리액트, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
+- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 툴. 리액트, 뷰, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - [Remix](https://remix.run/): 리액트 기반의 SSR/CSR 프레임워크. CSR보단 SSR로 주로 쓰이는 듯 하며, 백엔드에서 리액트를 실행하고 결과를 클라이언트에 전송하는 방식이다.

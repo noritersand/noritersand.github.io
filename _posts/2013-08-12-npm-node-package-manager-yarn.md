@@ -238,11 +238,18 @@ npm init <@scope> (same as `npx <@scope>/create`)
 별칭: create, innit
 ```
 
-`npm init`은 프로젝트를 새로 만들어나, 기존 패키지를 재설정할 때 사용하는 명령어다.
+`npm init`은 프로젝트를 새로 만들거나, 기존 패키지를 재설정할 때 사용하는 명령어다.
 
 이 명령을 추가 인자 없이 실행하면 패키지 이름, 버전, 설명 등을 물어보는 프롬프트가 나타난다. 끝까지 입력을 마치면 입력한 내용대로 `package.json` 파일이 만들어진다. 이미 `package.json` 파일이 있으면 내용을 수정한다.
 
-패키지나 스코프를 지정한 경우엔 `npm exec` 명령으로 바뀐다. [자세한 내용은 이 링크를 보자](https://docs.npmjs.com/cli/v9/commands/npm-init#description).
+`init` 뒤에 패키지 이름을 붙여 특정 템플릿이나 스타터 킷으로 프로젝트를 스케폴딩 하기도 한다:
+
+```bash
+# Vite 기반 프로젝트 만들기
+npm init vite@latest
+```
+
+이런식으로 패키지를 지정하면 `npm exec` 명령으로 바뀐다고 한다. [자세한 내용은 이 링크를 보자](https://docs.npmjs.com/cli/v9/commands/npm-init#description).
 
 ### package.json 구성요소
 
@@ -455,6 +462,19 @@ yarn cache clean
 Yarn으로 패키지를 추가하거나 삭제해도 `package.json` 내용이 수정되니 주의할 것.
 
 `yarn install`의 단축어는 `yarn`이다.
+
+### yarn init vs yarn create
+
+npm과 다르게 yarn은 `init`과 `create`의 행동이 다르다(npm의 `create`는 `init`의 별칭이다).
+
+`yarn init`은 현재 경로에 단순한 Node.js 프로젝트를 생성할 때 사용한다. `package.json`, `.gitignore` 등의 기본적인 파일들이 생성된다.
+
+`yarn create`는 특정 템플릿이나 스타터 킷을 기반으로 프로젝트를 스케폴딩 할 때 사용한다.
+
+```bash
+# Vite 기반 프로젝트 만들기
+yarn create vite
+```
 
 ### yarn.lock
 
