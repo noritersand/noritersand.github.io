@@ -169,6 +169,7 @@ from test_table, (select @rownum := 0) r
 ```sql
 select group_concat(member_name)
 from some_member_table
+group by member_no
 ```
 
 응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
