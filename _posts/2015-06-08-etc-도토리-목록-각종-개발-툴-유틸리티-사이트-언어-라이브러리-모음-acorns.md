@@ -187,6 +187,7 @@ tags:
 - [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
 - [Redux](https://redux.js.org/): 리덕스. 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
 - [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다는 평. 
+- [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리
 
 ### UI 컴포넌트 라이브러리
 
