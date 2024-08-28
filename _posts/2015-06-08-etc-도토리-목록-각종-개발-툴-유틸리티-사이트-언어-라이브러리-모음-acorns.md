@@ -19,7 +19,7 @@ tags:
 
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
 
-자주 쓰거나 중요한 것은 ⭐ 표시함.
+자주 쓰거나 중요한 것은 ⭐표시함.
 
 
 ## 분류 없음
@@ -29,16 +29,16 @@ tags:
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
 - [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
 - [Chromium](https://www.chromium.org/): 구글의 오픈 소스 웹 브라우저 프로젝트. 크롬의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
-- [⭐ Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
-- [⭐ KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
+- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+- [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 
 
 ## 각종 문서(메뉴얼, API Doc, 튜토리얼 등)
 
 - [MDN](https://developer.mozilla.org/): 그 MDN
-- [⭐ DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
-- [⭐ Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
+- [⭐DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
+- [⭐Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동 소수점에 대해 설명하는 문서
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
@@ -87,7 +87,7 @@ tags:
 
 ## 프로그래밍 언어 Programming Language
 
-- [⭐ Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. 시스템 프로그래밍, 웹 어셈블리, 임베디드 시스템 등 다양한 분야에서 사용되는 범용 언어다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다.
+- [⭐Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. 시스템 프로그래밍, 웹 어셈블리, 임베디드 시스템 등 다양한 분야에서 사용되는 범용 언어다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다.
 - [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 자바라면 Elixir는 코틀린에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 쓰레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
 - [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. 자바와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
 - [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #2. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
@@ -133,7 +133,7 @@ tags:
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 - [Mocha](https://mochajs.org/): 오래된 자바스크립트 테스팅 프레임워크 #1. 이하 모카
 - [Chai](https://www.chaijs.com/): 자바스크립트용 Assertion 라이브러리. 가독성 좋고 유연한 문법을 제공한다. 보통 모카와 같이 쓴다.
-- [⭐ Jest](https://jestjs.io/): 자바스크립트 테스팅 프레임워크 #2. Facebook에서 개발했다고 한다.(지금은 OpenJS 재단에서 관리하는 모양인데). 감시모드를 꽤 잘 만들어놨음
+- [⭐Jest](https://jestjs.io/): 자바스크립트 테스팅 프레임워크 #2. Facebook에서 개발했다고 한다.(지금은 OpenJS 재단에서 관리하는 모양인데). 감시모드를 꽤 잘 만들어놨음
 
 ### CSS 프레임워크
 
@@ -142,16 +142,16 @@ tags:
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): CSS 프레임웍과 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
-- [⭐ Bulma](https://bulma.io/): Flexbox 기반
+- [⭐Bulma](https://bulma.io/): Flexbox 기반
 - [Foundation Framework](https://get.foundation/): **TODO**
 - [Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
-- [⭐ StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
+- [⭐StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
 - [Open Props](https://open-props.style/): **TODO**
 - [Basscss](https://basscss.com/): **TODO**
 - [Water.css](https://watercss.kognise.dev/): **TODO**
 - [MVP.css](https://andybrewer.github.io/mvp/): **TODO**
 - [Materialize CSS](https://materializecss.com/): **TODO**
-- [⭐ System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다...고 한다.
+- [⭐System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다...고 한다.
 - [NES.css](https://nostalgic-css.github.io/NES.css/): 닌텐도 스타일
 - [PSone.css](https://micah5.github.io/PSone.css/): 플스 1 스타일
 - [98.css](https://jdan.github.io/98.css/): 이건 윈도우 98
@@ -160,7 +160,7 @@ tags:
 - [Bojier](https://bojler.slicejack.com/): 이메일용
 - [Chota](https://jenil.github.io/chota/): **TODO**
 - [Pico.css](https://picocss.com/): **TODO**
-- [⭐ ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
+- [⭐ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Mantine](https://mantine.dev/): **TODO**
 - [Ant Design](https://ant.design/): **TODO**
 - [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
@@ -176,11 +176,11 @@ tags:
 ## 자바스크립트/Node.js 라이브러리
 
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
-- [⭐ Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
+- [⭐Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
 - [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
 - [@babel](https://babeljs.io/): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
 - [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
-- [⭐ live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
+- [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 
 ### 리액트용 라이브러리
 
@@ -193,7 +193,7 @@ tags:
 
 그리드나 달력 등 UI 관련 라이브러리 중 단독으로 사용할 수 있는 것들 모음.
 
-- [⭐ Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 일명 데이트피커. 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [⭐Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 일명 데이트피커. 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 자바스크립트 기반이다.
 - [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 유료 그리드
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
@@ -253,7 +253,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### DBMS
 
-- [⭐ SQLite](https://www.sqlite.org/index.html): RDBMS. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. 근데 어떤 사람의 주장으로는 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고. 시퀄라이트라고도 읽는다.
+- [⭐SQLite](https://www.sqlite.org/index.html): RDBMS. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. 근데 어떤 사람의 주장으로는 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고. 시퀄라이트라고도 읽는다.
 - [Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
 - [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
 
@@ -266,7 +266,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## UML/MDA/다이어그램/마인드 맵/드로잉 툴
 
-- [⭐ eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
+- [⭐eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
 - [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
 - [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 툴. 좋지만 무료 플랜이 없는 게 단점
 - [StarUML](http://staruml.sourceforge.net/ko)
@@ -280,7 +280,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Moqups](https://moqups.com/): 챗피티 추천 UI 설계 툴 #2
 - [Cacoo](https://nulab.com/cacoo/): 챗피티 추천 UI 설계 툴 #3
 - [Wireframe.cc](https://wireframe.cc/): 챗피티 추천 UI 설계 툴 #4
-- [⭐ Axure](https://www.axure.com/): N모사에서 기획안/와이어프레임 작성에 사용한다는 툴이다. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
+- [⭐Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 툴. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
 
 ### ERD
 
@@ -315,8 +315,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 일정/TODO 관리
 
-- [⭐ Workflowy](https://workflowy.com/): 온라인 TODO 툴
-- [⭐ ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 툴. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
+- [⭐Workflowy](https://workflowy.com/): 온라인 TODO 툴
+- [⭐ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 툴. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
 - [Calendly](https://calendly.com): 이메일로 일정 맞추기
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
@@ -350,7 +350,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [Fork](https://fork.dev): Git GUI #1. 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다. 구입하면 보상은 하트 ❤
 - [GitKraken](https://www.gitkraken.com): Git GUI #2. 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [⭐ Sublime Merge](https://www.sublimemerge.com): Git GUI #3. 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
+- [⭐Sublime Merge](https://www.sublimemerge.com): Git GUI #3. 지원하는 기능은 Fork나 GitKraken에 비해서 딸리지만 속도가 CLI 수준으로 빠르다.
 - [gitui](https://github.com/extrawurst/gitui): Git GUI #4. Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하지만...
 
 
@@ -368,11 +368,11 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 텍스트 에디터
 
-- [⭐ Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
+- [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
 - [Notepad++](https://notepad-plus-plus.org)
 - [UltraEdit](http://www.ultraedit.com/loc/ko/index_ko.html)
 - [Nova](https://nova.app)
-- [⭐ Visual Studio Code](https://code.visualstudio.com): 요즘 대세
+- [⭐Visual Studio Code](https://code.visualstudio.com): 요즘 대세
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능도 제공한다. 또 사용자 플러그인 설치가 가능한 점, 오프라인 파일이 생성되어 백업이 쉽다는 점이 있다. 동기화 기능(Obsidian Sync)은 유료다.
 
 
@@ -464,7 +464,7 @@ Project manager 혹은 Issue tracker
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
 - [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 #2. 자바/PHP/닷넷 앱 모니터링. 상용
 - [WhaTap](https://www.whatap.io/ko): APM 툴 #3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
-- [⭐ Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
+- [⭐Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
 - [Kibana](https://www.elastic.co/kr/kibana/): Elastic Stack의 일부인 데이터 시각화 및 분석 도구. 모니터링과 APM 기능도 제공됨.
@@ -499,8 +499,8 @@ Project manager 혹은 Issue tracker
 
 ## 기타 웹 서비스
 
-- [⭐ JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [⭐ Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
+- [⭐JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
+- [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
 - [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
 - [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
 - [Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
@@ -544,7 +544,7 @@ Project manager 혹은 Issue tracker
 
 ### 이미지, 비디오, 오디오
 
-- [⭐ paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
+- [⭐paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
 - [VLC media player](https://www.videolan.org/vlc/): 기본 기능에 충실한 미디어 플레이어
 - [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
