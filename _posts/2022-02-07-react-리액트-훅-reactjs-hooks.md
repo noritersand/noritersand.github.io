@@ -696,8 +696,8 @@ export default function TestUseMemo() {
 React.useCallback(fn, dependencies)
 ```
 
-- `fn`: 캐싱할 함수 겍체. 다음 렌더링에서 `dependencies`의 값이 이전과 같다면 리액트는 같은 함수를 반환한다.
-- `dependencies`: `fn` 내에서 참조되는 모든 반응형 값의 목록.
+- `fn`: 캐싱할 함수 겍체. 다음 렌더링에서 `dependencies`의 값이 전과 같다면 동일한 함수를 반환한다.
+- `dependencies`: **`fn` 내에서 참조되는 모든 반응형 값의 목록**. 빈 배열을 할당하면, `fn`은 첫 렌더링 시에만 생성되고, 이후 동일한 함수가 계속 반환된다.
 
 최초 렌더링에서는 전달한 `fn`을 그대로 반환하지만, 다음 렌더링부터는 의존하는 값의 변화에 따라 이전 렌더링에 저장한 `fn` 함수를 반환하거나, 현재 렌더링 중 전달한 `fn` 함수를 반환한다.
 
@@ -739,6 +739,19 @@ export default function ProductPage({ productId, referrer, theme }) {
   )
 }
 ```
+
+🚨 앞에서 의존성 배열에 대해 '`fn` 내에서 참조되는 모든 반응형 값의 목록'이라 했다. 이 말은 장난이 아니라 반드시 함수 내부에서 참조하는 모든 reactive state를 의존성 배열에 추가해야 한다. 그렇지 않으면 함수에서 참조하는 state는 최신 값으로 갱신되지 않는다. 예를 들어:
+
+```js
+const [foo, setFoo] = useState(0);
+const [refresh, setRefresh] = useState(true);
+
+const callback = useCallback(() => {
+  return foo;
+}, [refresh]);
+```
+
+이렇게 작성한 함수 `callback()`은 `refresh` 값이 변경될 때까지 `foo`의 초기값인 `0`을 반환하게 된다.
 
 
 ## 커스텀 훅 Custom Hooks

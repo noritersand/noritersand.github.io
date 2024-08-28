@@ -175,10 +175,10 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 ## 추천 플러그인
 
-- ⭐MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
-- ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+- ⭐ MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
+- ⭐ CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
 - Grep Console: 콘솔 로그에 색을 입히거나 필터링하는 플러그인. 인터페이스가 좀 복잡하긴 한데 쓸만함
-- ⭐Emmet: HTML 태그를 단축어로 작성할 수 있게 해줌
+- ⭐ Emmet: HTML 태그를 단축어로 작성할 수 있게 해줌
 
 ### Extra Actions
 

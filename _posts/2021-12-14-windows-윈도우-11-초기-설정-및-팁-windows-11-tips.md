@@ -116,7 +116,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ### 창 크기/위치
 
-- <kbd>win + z</kbd>: ⭐스냅 레이아웃 열기. 활성화된 창의 위치를 조정할 때 사용한다. 최근 업데이트로 쓰기 편해졌음.
+- <kbd>win + z</kbd>: ⭐ 스냅 레이아웃 열기. 활성화된 창의 위치를 조정할 때 사용한다. 최근 업데이트로 쓰기 편해졌음.
 - <kbd>win + alt + 방향키</kbd>: 스냅 레이아웃 전환
 
 ### 파일 탐색기
