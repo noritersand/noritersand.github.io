@@ -240,13 +240,15 @@ let n: myNumber = 1;
 n = '1'; // OK
 n = false; // error TS2322: Type 'boolean' is not assignable to type 'myNumber'.
 
+// 배열 내부 요소에 적용
 type myNumber2 = 1 | 2 | 3 | '1' | '2' | '3';
 let n2: myNumber2 = 1;
 n2 = '3'; // OK
 n2 = 4; // error TS2322: Type '4' is not assignable to type 'myNumber2'.
-
-// 배열 내부 요소에 적용
 let arr2: myNumber2[] = [1, '2', 3]; // OK
+
+// 타입 별칭 없이 유니언
+let arr3: (RegExp | string)[] = [/\d/, '-', /\d/];
 ```
 
 ```ts
@@ -256,16 +258,39 @@ type Human = {breathing: boolean};
 let waldo: Person | Human;
 
 waldo = {
-  name: 'waldo',
+  name: 'Waldo',
   age: 47,
   breathing: true
-}; // O
+}; // OK
+
+waldo = {
+  breathing: true
+}; // OK
+
+waldo = {
+  age: 12
+}; // error TS2322: Type '{ age: number; }' is not assignable to type 'Person | Human'. Property 'name' is missing in type '{ age: number; }' but required in type 'Person'.
 
 waldo = {
   hello: 'Hello there!'
-  // error TS2353: Object literal may only specify known properties, and 'hello' does not exist in type 'Person | Human'.
-};
+}; // error TS2353: Object literal may only specify known properties, and 'hello' does not exist in type 'Person | Human'.
 ```
+
+🚨 객체 타입끼리 유니언할 때 빈 객체를 지정하면 객체 프로퍼티 제한이 풀려버리는 현상이 있다:
+
+```ts
+type FullObject = {name: string; age: number};
+type EmptyObject = {};
+
+let whetherOrNot: FullObject | EmptyObject;
+
+whetherOrNot = {
+  name: 'Jack'
+}; // OK
+```
+
+이것은 `{name: 'Jack'}` 값이 `FullObject` 타입에는 만족하지 않지만 `EmptyObject`에는 만족하기 때문이다.
+
 
 ### 인터섹션 Intersections
 
@@ -281,7 +306,7 @@ waldo = {
   name: 'waldo',
   age: 47,
   breathing: true
-}; // O
+}; // OK
 
 waldo = {
   name: 'waldo',
