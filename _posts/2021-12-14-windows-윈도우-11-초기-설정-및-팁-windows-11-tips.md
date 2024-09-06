@@ -85,7 +85,7 @@ show me the money
 
 윈도우를 쓰다보면 어느 순간 이렇게 글자간 간격이 너무 넓어지는 경우가 있는데, '문자 너비'가 '반자'에서 '전자'로 변경됐기 때문이다.
 
-되돌리려면 문자 너비 변경 단축키 <kbd>alt + \=</kbd>를 누르거나, 트레이 근처에 있는 입력 언어 표시줄에서 변경하면 된다.
+되돌리려면 문자 너비 변경 단축키 <kbd>alt + =</kbd>를 누르거나, 트레이 근처에 있는 입력 언어 표시줄에서 변경하면 된다.
 
 ### 시스템 정보 보기
 
@@ -150,8 +150,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 Autohotkey로 확장한 키 조합:
 
-- <kbd>win + \-</kbd>: DBMS Tool(DataGrip, ...)
-- <kbd>win + ctrl + \-</kbd>: Notion
-- <kbd>win + alt + \-</kbd>: Obsidian
-- <kbd>win + \=</kbd>: Edge
+- <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
+- <kbd>win + ctrl + - </kbd>: Notion
+- <kbd>win + alt + - </kbd>: Obsidian
+- <kbd>win + =</kbd>: Edge
 - <kbd>win + backspace</kbd>: WorkFlowy

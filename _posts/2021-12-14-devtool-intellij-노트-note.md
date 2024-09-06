@@ -194,7 +194,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 - 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
-- 코파일럿 발동: <kbd>alt + \\</kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
+- 코파일럿 발동: <kbd>alt + \ </kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
 - 코파일럿 제안 선택: <kbd>tab</kbd>
 - 다음 제안 보기: <kbd>alt + [</kbd>
 - 이전 제안 보기: <kbd>alt + ]</kbd>
@@ -223,8 +223,8 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
 - Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
 - Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \\</kbd> 추가. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
-- Main Menu > Window > Editor Tabs > Split Right/Down: 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지우고 <kbd>alt + shift + \=</kbd> <kbd>alt + shift + \-</kbd> 로 지정
+- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \ </kbd> 추가. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
+- Main Menu > Window > Editor Tabs > Split Right/Down: 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지우고 <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd> 로 지정
 
 
 ## 기본 단축키
@@ -255,7 +255,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
 - <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
-- <kbd>ctrl + shift+ \\</kbd>: Go to URL Mapping
+- <kbd>ctrl + shift+ \ </kbd>: Go to URL Mapping
 
 ### 북마크
 
@@ -321,7 +321,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 
 - <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
-- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \\</kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
+- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \ </kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
 - <kbd>shift + f9</kbd>: Debug 모드로 시작
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 어떤 것을 Debug 모드로 시작할지 묻는 대화창이 나타남

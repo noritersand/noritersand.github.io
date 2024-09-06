@@ -118,8 +118,8 @@ tags:
 ### 커서/포커스 이동
 
 - <kbd>ctrl + 1</kbd>: 에디터로 포커스
-- <kbd>ctrl + \\</kbd>: 파일 탐색창 토글
-- <kbd>ctrl + shift + \\</kbd>: 파일 탐색창 열면서 현재 보고있는 파일의 위치로 이동
+- <kbd>ctrl + \ </kbd>: 파일 탐색창 토글
+- <kbd>ctrl + shift + \ </kbd>: 파일 탐색창 열면서 현재 보고있는 파일의 위치로 이동
 - <kbd>ctrl + k, 방향키</kbd>: 지정한 방향으로 pane 나누기
 - <kbd>ctrl + k, ctrl + 방향키</kbd>: 지정한 방향의 pane으로 포커스
 - <kbd>ctrl + r</kbd>: Toggle File Symbols

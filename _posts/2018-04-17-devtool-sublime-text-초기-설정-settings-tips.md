@@ -124,7 +124,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
 
-설치가 끝나면 (<kbd>ctrl + \`</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
+설치가 끝나면 (<kbd>ctrl + `</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
 
 ### 추천 패키지
 
@@ -241,7 +241,7 @@ Build 3126 이후에 기록함.
 
 ### 커서/포커스 이동
 
-- <kbd>alt + \-</kbd>: Jump Back 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
+- <kbd>alt + - </kbd>: Jump Back 이전 포커스로 이동. 이클립스의 <kbd>alt + ←</kbd>와 비슷
 - <kbd>alt + shift +  '+'</kbd>: Jump Forward 다음 포커스로 이동. 이클립스의 <kbd>alt + →</kbd>와 비슷
 - <kbd>ctrl + r</kbd>: 현재 파일의 모든 심볼(함수, 변수, 프로퍼티, 제목 등) 보기. 선택하면 포커스 이동.
 - <kbd>ctrl + shift + r</kbd>: 현재 프로젝트(혹은 열려있는 폴더)의 모든 심볼 보기. 선택하면 포커스 이동.
@@ -274,7 +274,7 @@ Build 3126 이후에 기록함.
 
 ### 오버레이 Overlay
 
-- <kbd>ctrl + \`</kbd>: 콘솔창
+- <kbd>ctrl + `</kbd>: 콘솔창
 - <kbd>ctrl + shift + p</kbd>: Command Palatte 빠른 명령어 탐색창 열기
 - <kbd>ctrl + p</kbd>: (폴더 열기 이후)빠른 파일 탐색창 열기
 - <kbd>ctrl + r</kbd>: 함수 단위 탐색창 열기

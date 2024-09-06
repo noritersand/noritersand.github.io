@@ -514,6 +514,6 @@ sudo apt-get remove byobu hollywood
 
 ### Windows Terminal
 
-- <kbd>win + \`</kbd>: 윈도우 터미널의 기본 셸로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
+- <kbd>win + ` </kbd>: 윈도우 터미널의 기본 셸로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
 
 끝.

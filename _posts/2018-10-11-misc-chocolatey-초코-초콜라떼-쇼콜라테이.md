@@ -71,6 +71,15 @@ choco list
 
 # Chocolatey로 설치한 것과 그렇지 않은 것 모두 출력
 choco list -i
+
+# 이름이 정확히 같은 패키지만 출력
+choco list --exact nvm
+
+# 자세한 메시지 출력
+choco list --trace
+
+# trace보다 더 장황한 메시지 출력. 패키지 설치 경로를 알고 싶을 떄 쓴다.
+choco list --verbose
 ```
 
 ### 패키지 버전 업그레이드
@@ -109,7 +118,3 @@ choco search jdk # find의 alias
 Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를 다시 불러올 수 있다.
 
 명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안 되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
-
-
-## Debug
-

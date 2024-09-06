@@ -638,7 +638,7 @@ useEffect(() => {
 
 불필요한 렌더링을 방지하고 성능을 최적화하는 데 사용되는 훅이다.
 
-🚨 퍼포먼스 훅은 참조하는 변수뿐만 아니라 참조하는 함수의 클로저까지 고려하며 사용해야 하는 훅이다. 생각 없이 마구 남발하면 온세상이 버그 천지다. 🥲
+🚨 퍼포먼스 훅은 참조하는 변수뿐만 아니라 참조하는 함수 객체와 클로저까지 고려하며 사용해야 하는 훅이다. 생각 없이 마구 남발하면 온세상이 버그 천지다. 🥲
 
 ### useMemo
 
@@ -742,7 +742,7 @@ export default function ProductPage({ productId, referrer, theme }) {
 }
 ```
 
-🚨 앞에서 의존성 배열에 대해 '`fn` 내에서 참조되는 모든 반응형 값의 목록'이라 했다. 이 말은 장난이 아니라 반드시 함수 내부에서 참조하는 모든 reactive state를 의존성 배열에 추가해야 한다. 그렇지 않으면 함수에서 참조하는 state는 최신 값으로 갱신되지 않는다. 예를 들어:
+⚠️ 앞에서 의존성 배열에 대해 '`fn` 내에서 참조되는 모든 반응형 값의 목록'이라 했다. 이 말은 장난이 아니라 반드시 함수 내부에서 참조하는 모든 reactive state를 의존성 배열에 추가해야 한다. 그렇지 않으면 함수에서 참조하는 state는 최신 값으로 갱신되지 않는다. 예를 들어:
 
 ```js
 const [foo, setFoo] = useState(0);
@@ -754,6 +754,55 @@ const callback = useCallback(() => {
 ```
 
 이렇게 작성한 함수 `callback()`은 `refresh` 값이 변경될 때까지 `foo`의 초기값인 `0`을 반환하게 된다.
+
+#### 🚨 useCallback의 잘못된 사용 사례
+
+```jsx
+import {useCallback, useEffect, useRef, useState} from 'react';
+
+export default function UseCallbackWrongUsages() {
+  const [foo, setFoo] = useState('');
+  const [flag, setFlag] = useState(false);
+
+  function featureFunction() {
+    setFlag(foo === '');
+  }
+
+  function bridge() {
+    featureFunction();
+  }
+
+  const wrongFunction = useCallback(() => {
+    bridge();
+  }, []); // <-- 문제를 해소하려면 의존성 배열로 foo가 추가되어야 함
+
+  useEffect(() => {
+    console.log('rendered');
+    wrongFunction();
+  }, [foo])
+
+  return (
+    <>
+      <section>
+        <h2>useCallback의 잘못된 사용 사례</h2>
+        <section>
+          <h3>함수의 클로저</h3>
+          <div className="code-result">
+            <input type="text" value={foo} onChange={e => setFoo(e.target.value)} /><br />
+            <p>foo는 빈 문자열인가? {flag ? '예' : '아니오'}</p>
+          </div>
+        </section>
+      </section>
+    </>
+  );
+}
+```
+
+이 코드에서 `flag`는 항상 `true`다. 
+
+`useCallback` 훅으로 함수를 생성하면 생성 시점의 참조값을 *클로저로 캡처*한다. 캡처된 값은 함수를 다시 생성할 때까지 변하지 않는다. (원래 클로저는 변수를 참조하기만 하지 그 값을 고정하거나 캡처하지 않는다.)
+
+`wrongFunction()`은 `useCallback`으로 생성되었고 처음 렌더링될 때 `foo`의 값을 클로저로 캡처하게 된다. 하지만 의존성 배열이 비어있어서 처음 한 번만 생성된다. 그 결과 `foo`가 변경되어도 `wrongFunction()`과 캡처된 값은 변경되지 않는다.
 
 
 ## 커스텀 훅 Custom Hooks

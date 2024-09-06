@@ -289,7 +289,7 @@ whetherOrNot = {
 }; // OK
 ```
 
-이것은 `{name: 'Jack'}` 값이 `FullObject` 타입에는 만족하지 않지만 `EmptyObject`에는 만족하기 때문이다.
+`{name: 'Jack'}` 값이 `FullObject` 타입에는 만족하지 않지만 `EmptyObject` 타입에 만족하기 때문.
 
 
 ### 인터섹션 Intersections
