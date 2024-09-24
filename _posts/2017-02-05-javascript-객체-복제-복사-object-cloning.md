@@ -137,7 +137,7 @@ console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불
 
 간단한 방법은 없고 따로 정의해야 함.
 
-### #1
+### 재귀 함수 방식
 
 ⚠️ 이 함수는 getter/setter 메서드가 필드로 바뀌는 하자가 있다:
 
@@ -176,7 +176,3 @@ console.log(child); // Object { _x: 123, x: Getter & Setter }
 Object.keys(child); // Array [ "_x", "x" ]
 child['x']; // 65536
 ```
-
-### #2
-
-**TODO** `Object.getOwnPropertyDescriptors()`를 활용해야 할 것 같은데?

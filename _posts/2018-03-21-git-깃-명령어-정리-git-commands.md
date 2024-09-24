@@ -687,7 +687,16 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 ## diff
 
-지정한 영역끼리의 변경 사항을 출력한다.
+커밋 간 차이점 혹은 워킹 트리의 변경 사항을 출력한다.
+
+```
+git diff [<options>] [<commit>] [--] [<path>…]
+git diff [<options>] --cached [--merge-base] [<commit>] [--] [<path>…]
+git diff [<options>] [--merge-base] <commit> [<commit>…] <commit> [--] [<path>…]
+git diff [<options>] <commit>…<commit> [--] [<path>…]
+git diff [<options>] <blob> <blob>
+git diff [<options>] --no-index [--] <path> <path>
+```
 
 #### Options
 
