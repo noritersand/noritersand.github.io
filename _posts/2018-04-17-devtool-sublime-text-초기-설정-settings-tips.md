@@ -149,11 +149,9 @@ console.debug('${1:msg}:', ${2:msg});
 
 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
 
-#### ⛔ ~~[Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)~~
+#### [Compare Side-By-Side](https://packagecontrol.io/packages/Compare%20Side-By-Side)
 
-~~FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)~~
-
-이 패키지는 기본 단축키를 바꿔버려서 안쓰기로 함.
+FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)
 
 #### [⭐Clickable URLs](https://packagecontrol.io/packages/Clickable%20URLs)
 
