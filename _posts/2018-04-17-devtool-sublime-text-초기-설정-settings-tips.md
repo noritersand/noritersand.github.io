@@ -152,7 +152,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
 
-```
+```json
 {"detect_acronyms": false}
 ```
 

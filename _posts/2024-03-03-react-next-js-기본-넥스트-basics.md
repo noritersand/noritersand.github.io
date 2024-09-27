@@ -429,6 +429,54 @@ export default function Page({
 ⚠️ HTML 내보내기로 빌드하면 SSR 렌더링은 사용할 수 없음
 
 
+## Dynamic Routes
+
+[Routing: Dynamic Routes \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
+
+URL의 특정 부분을 동적 파라미터로 처리하는 기능. `[slug]` 같은 대괄호 문법을 사용하여, 파일 이름에 Dynamic Segment를 설정할 수 있다. 이렇게 파일 경로와 파라미터를 동시에 정의하고, 해당 경로에 따라 동적으로 페이지를 렌더링하는 기능이다.
+
+```jsx
+export default function Page({ params }) {
+  return <div>My Post: {params.slug}</div>
+}
+```
+
+예를 들어 `app/product/[id].js`라는 파일은 `/product/123` 같은 URL을 처리할 수 있다. `app/product/[category]/[id].js`라는 파일을 만들어 `/product/laptop/123` 같은 다중 파라미터 처리도 가능하다.
+
+```jsx
+export default function ProductPage({ params }) {
+  const { category, id } = params;
+
+  return (
+    <div>
+      <h1>Category: {category}</h1>
+      <p>Product ID: {id}</p>
+    </div>
+  );
+}
+```
+
+[...slug]와 같은 문법(공식 용어는 Catch-all Segments)으로 경로의 나머지 부분을 모두 '캐치'할 수 있다. 예를 들어 `app/[...slug].js`는 `/blog/2024/september/my-post`와 같은 URL을 처리한다.
+
+```jsx
+export default function BlogPostPage({ params }) {
+  const { slug } = params;
+
+  return (
+    <div>
+      <h1>Blog Post</h1>
+      <p>Full Slug: {slug.join('/')}</p>
+      <p>Year: {slug[0]}</p>
+      <p>Month: {slug[1]}</p>
+      <p>Title: {slug[2]}</p>
+    </div>
+  );
+}
+```
+
+Next.js 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 제약이 따른다. 미리 페이지를 만들어놔야 한다고 하는데... 자세한 설명은 **TODO**
+
+
 ## 자주 쓰는 API
 
 ### useRouter
