@@ -506,7 +506,7 @@ let obj: {name: string; sirname?: string} = {
 console.log(obj.sirname); // undefined
 ```
 
-### 프로퍼티 이름의 타입 정의 Index Signatures
+### 프로퍼티 이름의 타입 정의: 인덱스 시그니처 Index Signatures
 
 아래처럼 대괄호 표기법을 이용한 동적 프로퍼티 접근 코드는 에러를 유발하는데:
 
@@ -522,7 +522,7 @@ console.log(obj[b]);
 //   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
 ```
 
-다음처럼 인덱스 시그니처([Index Signatures \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures))로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
+이럴 땐 아래처럼 [인덱스 시그니처](https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures)로 프로퍼티 이름과 값의 타입을 정의하여 해소할 수 있다:
 
 ```ts
 let obj: {[key: string]: number} = {

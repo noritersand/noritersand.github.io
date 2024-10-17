@@ -200,8 +200,8 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - 이전 제안 보기: <kbd>alt + ]</kbd>
 - 제안을 단어 단위로 적용하기: <kbd>ctrl + right</kbd>
 - 제안을 줄 단위로 적용하기: <kbd>ctrl + alt + right</kbd>
-- 코파일럿 창 열기: <kbd>alt + p</kbd>로 변경
-- 코파일럿 채팅 창 열기: <kbd>alt + shift + p</kbd>로 변경
+- Tool Windows > GitHub Copilot: 코파일럿 창 열기 <kbd>alt + p</kbd>로 변경
+- Tool Windows > GitHub Copilot Chat: 코파일럿 채팅 창 열기 <kbd>alt + shift + p</kbd>로 변경
 
 
 ## 작성자 저장용 단축키 설정

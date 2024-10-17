@@ -419,7 +419,7 @@ const UnorderedList2 = (
 );
 ```
 
-그래서 [Array.prototype.map()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 활용하는 코드가 자주 보인다.
+그래서 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 활용하는 코드가 자주 보인다.
 
 ### 삼항 연산자 적용
 
@@ -430,6 +430,34 @@ const conditional = (
     {doNotRender ? (<></>) : (<div>hi</div>)}
   </div>
 );
+```
+
+### dangerouslySetInnerHTML: 마크업 그대로(raw HTML) 표시하기
+
+```jsx
+const markup = { __html: '<p>some raw html</p>' };
+return <div dangerouslySetInnerHTML={markup} />;
+```
+
+리액트에서 마크업 컨텐츠를 날 것 그대로 문서에 포함시키기 위한 속성이다.
+
+[도움말](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)에선 `{__html}` 객체를 `<div dangerouslySetInnerHTML={{__html: markup}} />` 처럼 인라인으로 생성하지 말고, 아래 예시의 `renderMarkdownToHTML()` 함수와 같이 가능한 한 HTML이 만들어지는 곳 가까이에서 생성(?)하라고 권장한다:
+
+```jsx
+import { Remarkable } from 'remarkable';
+
+const md = new Remarkable();
+
+function renderMarkdownToHTML(markdown) {
+  // This is ONLY safe because the output HTML is shown to the same user, and because you trust this Markdown parser to not have bugs.
+  const renderedHTML = md.render(markdown);
+  return {__html: renderedHTML};
+}
+
+export default function MarkdownPreview({ markdown }) {
+  const markup = renderMarkdownToHTML(markdown);
+  return <div dangerouslySetInnerHTML={markup} />;
+}
 ```
 
 
@@ -498,20 +526,19 @@ const element3 = React.createElement('h2', {
 
 위 예시에서 `element3`는 `props.children`으로 하위 노드를 할당하는 식인데, `props` 자리에 세 번째 span 태그처럼 `{ key: somevalue }` 대신 null을 넘기면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다.
 
-> 리스트를 렌더링할 때 React는 렌더링하는 리스트 아이템에 대한 정보를 저장합니다. 리스트를 업데이트 할 때 React는 무엇이 변했는 지 결정해야 합니다. 리스트의 아이템들은 추가, 제거, 재배열, 업데이트 될 수 있습니다.
-> ... 현재 리스트가 이전 리스트에 존재했던 키를 가지고 있지 않다면 React는 그 키를 가진 컴포넌트를 제거합니다. 두 키가 일치한다면 해당 구성요소는 이동합니다. 키는 각 컴포넌트를 구별할 수 있도록 하여 React에게 다시 렌더링할 때 state를 유지할 수 있게 합니다. 컴포넌트의 키가 변한다면 컴포넌트는 제거되고 새로운 state와 함께 다시 생성됩니다.
->
-> [https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key](https://ko.reactjs.org/tutorial/tutorial.html#picking-a-key)
+[Rendering Lists – React](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)
 
-대충 요약하면 렌더링 최적화에 필요한 프로퍼티다:
+설명을 대충 요약하면 렌더링 최적화에 필요한 프로퍼티다:
 
-```xml
+```jsx
 <li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
 ```
 
 전역에 걸쳐 유일한 값일 필요는 없으며 컴포넌트 내에서만 유일하면 된다고 함.
 
-그리고 `key`가 `props`에 속하는 것처럼 보이지만 `this.props.key`로 참조할 수 없다고 한다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
+그리고 key가 `props`에 속하는 것처럼 보이지만 `this.props.key`로 참조할 수 없다고 한다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
+
+🚨 배열의 index를 key에 할당하면 배열 데이터가 변경되었을 때 성능 문제가 발생한다. [이 문서](https://yozm.wishket.com/magazine/detail/2634/) 참고
 
 ### ReactDOM.render()
 
@@ -1033,6 +1060,136 @@ export default function Root() {
 ```
 
 자세한 내용은 [도움말 참고](https://reactrouter.com/en/main/start/tutorial).
+
+
+## StrictMode 컴포넌트
+
+StrictMode 컴포넌트는 리액트의 추가적인 개발환경 전용 검사 기능인 Strict Mode(ECMAScript의 엄격 모드와 다름)를 활성화하는 컴포넌트다. Strict Mode가 활성화되면 다음과 같은 변화가 있다:
+
+- 컴포넌트가 순수하지 않은 렌더링으로 인한 버그를 찾기 위해 추가로 다시 렌더링한다.
+- 컴포넌트가 Effect 클린업이 누락되어 발생한 버그를 찾기 위해 Effect를 다시 실행한다.
+- 컴포넌트가 더 이상 사용되지 않는 API를 사용하는지 확인한다.
+
+Strict Mode를 활성화하려면, 아래처럼 전체 앱을 감싸 전역적으로 활성화하거나:
+
+```jsx
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const root = createRoot(document.getElementById('root'));
+root.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
+```
+
+아래처럼 일부분만 활성화하는 방법이 있다:
+
+```jsx
+import { StrictMode } from 'react';
+
+function App() {
+  return (
+    <>
+      <Header />
+      <StrictMode>
+        <main>
+          <Sidebar />
+          <Content />
+        </main>
+      </StrictMode>
+      <Footer />
+    </>
+  );
+}
+```
+
+리액트가 Strict Mode로 어떻게 버그를 찾아내는지는 [이 문서](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)를 보자.
+
+
+## 리액트 서버 컴포넌트 React Server Components
+
+[React Server Components – React](https://react.dev/reference/rsc/server-components)
+
+**React 19에 추가된 실험적 기능**. 렌더링에 필요한 라이브러리를 클라이언트가 다운로드할 필요 없이, 서버 사이드에서 HTML을 미리 렌더링하여 그 결과만을 클라이언트에 전송하는 기능이다.
+
+```jsx
+import marked from 'marked'; // Not included in bundle
+import sanitizeHtml from 'sanitize-html'; // Not included in bundle
+
+async function Page({page}) {
+  // NOTE: loads *during* render, when the app is built.
+  const content = await file.readFile(`${page}.md`);
+  
+  return <div>{sanitizeHtml(marked(content))}</div>;
+}
+```
+
+컴포넌트를 비동기 함수로 만들면 서버 컴포넌트가 되는 것으로 보임.
+
+서버 컴포넌트에선 useState 같은 상호작용 API를 사용할 수 없다. 상호작용이 필요하면 컴포넌트 상단에 `"use client"` 지시어를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
+
+```jsx
+// Server Component
+import Expandable from './Expandable';
+
+async function Notes() {
+  const notes = await db.notes.getAll();
+  return (
+    <div>
+      {notes.map(note => (
+        <Expandable key={note.id}>
+          <p note={note} />
+        </Expandable>
+      ))}
+    </div>
+  )
+}
+```
+
+```jsx
+// Client Component
+"use client"
+
+export default function Expandable({children}) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div>
+      <button
+        onClick={() => setExpanded(!expanded)}
+      >
+        Toggle
+      </button>
+      {expanded && children}
+    </div>
+  )
+}
+```
+
+서버 컴포넌트를 위한 지시어는 따로 없다. `"use server"`는 서버 컴포넌트가 아니라 서버 액션에 사용된다. Next.js 때문에 생긴 오해인 듯.
+
+### 서버 액션 Server Actions
+
+[Server Actions – React](https://react.dev/reference/rsc/server-actions)
+
+**React 19에 추가된 실험적 기능**. 클라이언트 컴포넌트에서 호출하고 서버에서 실행되는 비동기 함수를 의미한다.
+
+```jsx
+// Server Component
+import Button from './Button';
+
+function EmptyNote () {
+  async function createNoteAction() {
+    // Server Action
+    'use server';
+    
+    await db.notes.create();
+  }
+
+  return <Button onClick={createNoteAction}/>;
+}
+```
 
 
 {% endraw %}

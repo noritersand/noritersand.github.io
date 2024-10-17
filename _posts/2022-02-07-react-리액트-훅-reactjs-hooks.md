@@ -37,7 +37,7 @@ tags:
 - 조건문이나 반복문 혹은 기타 중첩 함수 내부에서는 호출할 수 없다.
 - 리액트 함수가 아닌 일반적인 자바스크립트 함수에서는 호출할 수 없다.
 
-요약하면 컴포넌트를 정의하는 함수의 가장 상위 스코프와 커스텀 훅에서만 호출 가능하다는 것. 위반하면 이런 에러 메시지를 얻게 된다:
+요약하면 컴포넌트를 정의하는 함수의 가장 상위 스코프와 커스텀 훅에서만, 그리고 그 안에서도 제어문 바깥 지역에서만 호출 가능하다는 것. 위반하면 이런 에러 메시지를 얻게 된다:
 
 ```js
 Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
@@ -45,6 +45,11 @@ Uncaught Error: Invalid hook call. Hooks can only be called inside of the body o
 2. You might be breaking the Rules of Hooks
 3. You might have more than one copy of React in the same app
 See https://reactjs.org/link/invalid-hook-call for tips about how to debug and fix this problem.
+
+// 혹은
+
+ESLint: React Hook "useCallback" is called conditionally. React Hooks must be called in the exact same order in every component render. 
+Did you accidentally call a React Hook after an early return?(react-hooks/ rules-of-hooks)
 ```
 
 VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)를 설치해서 규칙 위반을 확인할 수 있다.
@@ -629,9 +634,11 @@ useEffect(() => {
 
 이런 특징을 이용해서 원래의 목적(외부 시스템과 연결)을 벗어나 코드 실행 주기를 제어하기 위해 사용하기도 한다.
 
-🚨 리액트는 개발모드에서 설정 코드를 실행하기 전에 [버그 탐지와 검증을 위해 설정 코드와 정리 코드를 미리 한 번 더 실행](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)시킨다. 따라서 개발 모드에서 `useEffect()`에 작성한 콘솔 출력은 두 번 작동할 것이다.
+🚧 불필요한 이펙트 훅 사용은 코드를 복잡하게 하고 실행 속도를 느려지게 만든다. [이 문서](https://react.dev/learn/you-might-not-need-an-effect)를 참고할 것.
 
-🚧 불필요한 이펙트 훅은 코드를 복잡하게 하고 실행 속도를 느려지게 만든다. 이 [문서](https://react.dev/learn/you-might-not-need-an-effect)를 참고할 것.
+ℹ️ 개발환경에서 Strict Mode(ECMAScript의 엄격 모드와 다름)가 활성화되어 있다면, 리액트는 버그 탐지와 검증을 위해 [설정 코드(setup code)를 실행하기 전에 설정 코드와 정리 코드를 미리 한 번 더 실행한다](https://react.dev/reference/react/useEffect#my-effect-runs-twice-when-the-component-mounts).
+
+ℹ️ 정리 코드(cleanup code)가 필요한 이유는 [이 문서](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)를 보자.
 
 
 ## 퍼포먼스 훅 Performance Hooks 

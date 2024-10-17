@@ -73,7 +73,7 @@ tags:
 
 ### 호스팅
 
-- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 (심자어 https로!) 서비스. 윈도우에선 chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다. expo는 터널링 옵션을 위해 ngrok을 내장하고 있기도 하다.
+- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 (HTTPS 지원) 서비스. 윈도우에선 chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다. expo는 터널링 옵션을 위해 ngrok을 내장하고 있기도 하다.
 
 ### 의존성 관리(라이브러리 설치/조회/삭제)
 
@@ -144,14 +144,14 @@ tags:
 - [component.gallery](https://component.gallery/): CSS 프레임웍과 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
 - [⭐Bulma](https://bulma.io/): Flexbox 기반
-- [Foundation Framework](https://get.foundation/): **TODO**
+- [Foundation Framework](https://get.foundation/): ?
 - [Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
 - [⭐StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
-- [Open Props](https://open-props.style/): **TODO**
-- [Basscss](https://basscss.com/): **TODO**
-- [Water.css](https://watercss.kognise.dev/): **TODO**
-- [MVP.css](https://andybrewer.github.io/mvp/): **TODO**
-- [Materialize CSS](https://materializecss.com/): **TODO**
+- [Open Props](https://open-props.style/): ?
+- [Basscss](https://basscss.com/): ?
+- [Water.css](https://watercss.kognise.dev/): ?
+- [MVP.css](https://andybrewer.github.io/mvp/): ?
+- [Materialize CSS](https://materializecss.com/): ?
 - [⭐System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다...고 한다.
 - [NES.css](https://nostalgic-css.github.io/NES.css/): 닌텐도 스타일
 - [PSone.css](https://micah5.github.io/PSone.css/): 플스 1 스타일
@@ -159,17 +159,17 @@ tags:
 - [XP.css](https://nostalgic-css.github.io/NES.css/): 윈도우 XP
 - [7.css](https://khang-nd.github.io/7.css/): 이건 윈도우 7
 - [Bojier](https://bojler.slicejack.com/): 이메일용
-- [Chota](https://jenil.github.io/chota/): **TODO**
-- [Pico.css](https://picocss.com/): **TODO**
+- [Chota](https://jenil.github.io/chota/): ?
+- [Pico.css](https://picocss.com/): ?
 - [⭐ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
-- [Mantine](https://mantine.dev/): **TODO**
-- [Ant Design](https://ant.design/): **TODO**
+- [Mantine](https://mantine.dev/): ?
+- [Ant Design](https://ant.design/): ?
 - [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
-- [NextUI](https://nextui.org/): **TODO**
-- [리액트 UI](https://reach.tech/): **TODO**
+- [NextUI](https://nextui.org/): ?
+- [리액트 UI](https://reach.tech/): ?
 - [Headless UI](https://headlessui.dev/): 리액트 혹은 뷰에 적용할 수 있음
 - [@mdi/svg](https://www.npmjs.com/package/@mdi/svg): MDI(Material Design Icons) 프로젝트의 SVG 아이콘을 제공하는 라이브러리. 단독 기능은 필요한 아이콘을 svg로 만들어주는 게 있다. (아마도?)
-- [Vitebook](https://vitebook.dev/): **TODO**
+- [Vitebook](https://vitebook.dev/): ?
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Vuetify](https://vuetifyjs.com/en/): 뷰용 컴포넌트 프레임워크
 
@@ -179,10 +179,13 @@ tags:
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
 - [⭐Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
 - [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
-- [@babel](https://babeljs.io/): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
+- [⭐babel](https://github.com/babel/babel): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
 - [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - [Immer](https://immerjs.github.io/immer/): 불변성을 유지하면서 객체를 쉽게 수정할 수 있게 해주는 라이브러리. 리액트에서 상태값이 객체일 때 활용하기 좋다. 제공된 draft를 직접 변경하는 방식으로 사용하는데, 변경된 부분만 복제하도록 최적화되어 있`기 때문에 객체 전체의 깊은 복제용으로는 적합하지 않다.
+- [sharp](https://github.com/lovell/sharp): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
+- [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
+- [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
 
 ### 리액트용 라이브러리
 
@@ -208,7 +211,7 @@ tags:
 
 ### PaaS
 
-PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가는 클라우드 서비스들이다.
+PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
 
 - [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
   - [Koyeb](https://www.koyeb.com/)
@@ -218,6 +221,7 @@ PaaS 중에 유명한 것들은 대체로 소스만 올리면 앱이 돌아가�
 - [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
+- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
 
 ### IaaS
 
