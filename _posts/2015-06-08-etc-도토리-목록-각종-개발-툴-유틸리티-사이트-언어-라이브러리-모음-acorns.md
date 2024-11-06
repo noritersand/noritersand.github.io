@@ -28,6 +28,7 @@ tags:
 - [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
 - [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
+- [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
 - [Chromium](https://www.chromium.org/): 구글의 오픈 소스 웹 브라우저 프로젝트. 크롬의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
 - [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 - [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)

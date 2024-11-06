@@ -450,10 +450,10 @@ yarn install --check-cache
 # 패키지 버전(resolution)은 그대로 유지하면서 패키지 메타데이터 갱신
 yarn install --refresh-lockfile
 
-# 설치된 패키지 관련 정보 표시
+# 직접 설치된 모든 패키지의 버전, 실행 가능한 파일, 의존성을 표시
 yarn info
 
-# PACKAGE_NAME에 대한 정보 표시
+# PACKAGE_NAME에 대한 버전, 실행 가능한 파일, 의존성을 표시
 yarn info PACKAGE_NAME
 
 # Yarn으로 PACKAGE_NAME 삭제
@@ -491,16 +491,13 @@ Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라
 주요 필드로:
 
 - `nodeLinker`: Node 패키지 설치 방법을 정의한다. `pnp`, `pnpm`, `node-modules`(기존 방식) 중 택일.
-- `packageExtensions`: 특정 패키지의 추가적인 의존성을 지정하거나 기존의 필드를 수정하기 위해 사용한다. `package.json`의 `resolutions` 필드와 달리 특정 패키지에만 적용 가능.
+- `packageExtensions`: 특정 패키지의 추가적인 의존성을 지정하거나 기존의 필드를 수정하기 위해 사용한다. `package.json`의 `resolutions` 필드와 달리 특정 패키지에만 적용 가능. 
 
 ```yml
-"packageExtensions":
-  "react-element-to-jsx-string@15.0.0":
-    "dependencies":
-      "react-dom": "^18.3.1"
-  "tcompare@9.0.0":
-    "dependencies":
-      "react": "^18.3.1"
+packageExtensions:
+  "@babel/core@*":
+    dependencies:
+      "@babel/types": "*"
 ```
 
 이 외의 설정 가능한 필드는 `yarn config -v` 명령으로 조회 하던지 아니면 [이 문서](https://yarnpkg.com/configuration/yarnrc)를 보자.
@@ -569,7 +566,7 @@ npm scripts로 정의한 명령어를 실행한다.
 yarn run live-server --open=out
 ```
 
-만약 `script`가 npm scripts에 정의되어 있지 않은 키워드라면, 로컬에 설치된 패키지의 실행 파일(`node_modules/.bin/`)을 찾는다. 이것도 없으면 워크스페이스의 스크립트를 찾는다.
+만약 `script`가 npm scripts에 정의되어 있지 않은 키워드라면, 로컬에 설치된 패키지의 실행 파일(`node_modules/.bin/`의 바이너리 파일)을 찾는다. 이것도 없으면 워크스페이스의 스크립트를 찾는다.
 
 ### yarn dlx
 
@@ -600,7 +597,9 @@ yarn explain peer-requirements [hash]
 
 `hash`를 생략하고 사용하면 모든 항목과 해시값을 출력한다. 여기서 출력되는 해시를 `hash`로 지정하면 더 상세한 내용이 출력된다.
 
-문제가 있는 경우 `yarn why` 등으로 원인을 확인한 뒤, `package.json`의 `resolutions` 혹은 `.yarnrc.yml`의 `packageExtensions` 필드로 특정 패키지의 버전을 강제로 지정하여 해결하면 된다.
+문제가 있는 경우 `yarn why` 등으로 원인을 확인한 뒤, 상황에 따라 필요한 패키지를 추가하거나 `package.json`의 `resolutions` 혹은 `.yarnrc.yml`의 `packageExtensions` 필드로 의존성 설정을 적절히 수정하여 해결하면 된다.
+
+ℹ️ 여기서 말하는 의존성 문제란 대부분 ghost dependencies를 의미한다. Ghost dependencies란 하위 패키지에서 의존하는 또 다른 패키지를 명시적인 선언 없이 프로젝트에서 참조하는 것을 말한다. Ghost dependencies는 불안정한 빌드를 야기하거나 업데이트 문제 등이 발생시킬 수 있기 때문에 고치는게 좋다. Yarn PnP는 ghost dependencies를 방지하기 위해 명시적으로 의존하지 않는 패키지는 자동으로 참조하지 않는다.
 
 ### yarn why
 
@@ -618,11 +617,11 @@ yarn why <query>
 
 Yarn PnP는 Yarn 2.x 버전 이상부터 사용 가능한 Yarn의 새로운 패키지 설치 방식이다. 전통적인 `node_modules` 방식과 다르게, 의존하는 패키지를 하나의 압축 파일 형태로 저장한다.
 
-PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 충돌 문제를 방지하고, 의존성 문제가 발생했을 때 디버깅이 쉽다는 장점이 있다. 다만 일부 패키지는 아직 PnP 환경에 호환되지 않을 수 있으니 이 점은 주의할 것.
+PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 충돌 문제를 방지하고, 의존성 문제가 발생했을 때 디버깅이 쉽다는 장점이 있다. 다만 일부 패키지는 아직 PnP 환경에 호환되지 않을 수 있으니 이 점은 주의할 것. (특히 리액트 네이티브와 Expo가 그렇다)
 
 PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 필드가 `pnp`일 때, 혹은 `.yarnrc.yml` 파일이 아예 없을 때 자동으로 활성화된다. 활성화 상태라면 `yarn install` 시 `.yarn` 디렉터리, `.pnp.cjs`, `.pnp.loader.mjs` 파일 등이 자동으로 생성된다.
 
-`yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드값을 Yarn의 최신 버전으로 변경한다. 참고로 berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭함.
+`yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드값을 Yarn의 최신 버전으로 변경한다. 참고로 berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다.
 
 
 ## Node.js 패키지 모음
