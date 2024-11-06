@@ -174,7 +174,9 @@ tags:
 - [Vuetify](https://vuetifyjs.com/en/): 뷰용 컴포넌트 프레임워크
 
 
-## 자바스크립트/Node.js 라이브러리
+## Node.js 패키지
+
+NPM에 등록된 자바스크립트 라이브러리들.
 
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
 - [⭐Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
@@ -186,6 +188,7 @@ tags:
 - [sharp](https://github.com/lovell/sharp): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
+- [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉬운 라이브러리입니다... 라는데 사실 뭔지 잘 몲.
 
 ### 리액트용 라이브러리
 
@@ -279,7 +282,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Draw.io (web)](http://www.draw.io)
 - [Gliffy (web)](http://www.gliffy.com)
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
-- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징(근데 그게 매력 터짐)
+- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
 - [XMind](http://www.xmind.net): 마인드 맵
 - [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page): 마인드 맵 #2
 - [MockFlow](https://www.mockflow.com/): 챗피티 추천 UI 설계 툴 #1
@@ -293,7 +296,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 좋음.
 
 
-## 메시지 브로커
+## 메시지 브로커(메시지 큐 시스템)
 
 - [Apache Kafka](https://kafka.apache.org/): 카프카. 아파치 소프트웨어 재단이 스칼라로 개발한 오픈소스 분산 스트리밍 플랫폼. '메시지 브로커 프로젝트' 혹은 '분산 환경에서 사용되는 데이터 스트리밍 플랫폼'으로 소개된다. 여러 데이터베이스의 동기화 작업이나, 비동기로 메시지를 주고 받을 때 사용한다(데이터 입출력도 여기에 해당함). 에이전트를 설치하는 방식이라 카더라.
 - [RabbitMQ](https://www.rabbitmq.com/): MQTT, AMQP를 구현한 오픈 소스 메시지 브로커. Erlang으로 만들어졌다(얼랭?). 사용자 요청의 비동기 처리, 앱 간 메시지 교환, 분산 시스템에서의 메시지 브로커링 등에 활용된다.

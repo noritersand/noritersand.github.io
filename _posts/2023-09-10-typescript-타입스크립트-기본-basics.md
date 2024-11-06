@@ -169,19 +169,19 @@ printCoordinate({latitude: 0, longitude: 0}); // '0 0'
 ```
 
 ```ts
-type myNumber3 = number | string;
-let num3: myNumber3 = 10;
-let num4: myNumber3 = '10';
+type MyNumber3 = number | string;
+let num3: MyNumber3 = 10;
+let num4: MyNumber3 = '10';
 ```
 
 ```ts
-type person = {
+type Person = {
   name: string;
   age: number;
   email: string;
 };
 
-let obj: person = {
+let obj: Person = {
   name: 'Waldo',
   age: 123,
   email: 'a@b.co'
@@ -235,17 +235,17 @@ function fn123(str: SomeInterface['option']) {
 여러 타입 중 하나일 수 있음을 나타내는 방법이다. 허용할 타입들은 파이프`|`로 구분한다.
 
 ```ts
-type myNumber = number | string;
-let n: myNumber = 1;
+type MyNumber = number | string;
+let n: MyNumber = 1;
 n = '1'; // OK
-n = false; // error TS2322: Type 'boolean' is not assignable to type 'myNumber'.
+n = false; // error TS2322: Type 'boolean' is not assignable to type 'MyNumber'.
 
 // 배열 내부 요소에 적용
-type myNumber2 = 1 | 2 | 3 | '1' | '2' | '3';
-let n2: myNumber2 = 1;
+type MyNumber2 = 1 | 2 | 3 | '1' | '2' | '3';
+let n2: MyNumber2 = 1;
 n2 = '3'; // OK
-n2 = 4; // error TS2322: Type '4' is not assignable to type 'myNumber2'.
-let arr2: myNumber2[] = [1, '2', 3]; // OK
+n2 = 4; // error TS2322: Type '4' is not assignable to type 'MyNumber2'.
+let arr2: MyNumber2[] = [1, '2', 3]; // OK
 
 // 타입 별칭 없이 유니언
 let arr3: (RegExp | string)[] = [/\d/, '-', /\d/];
@@ -294,7 +294,7 @@ whetherOrNot = {
 
 ### 인터섹션 Intersections
 
-공식 도움말에선 *교집합*으로 번역한다. 여러 타입 중 하나(OR)라도 만족하면 되는 유니언과 다르게 인터섹션은 여러 타입을 모두 만족(AND)해야 한다:
+여러 타입 중 하나(OR)라도 만족하면 되는 유니언과 다르게 인터섹션은 여러 타입을 모두 만족(AND)해야 한다. 쉽게 설명하면 나열된 타입을 합친 새로운 타입을 만든다고 볼 수 있다. 객체 타입의 인터섹션은 객체의 프로퍼티를 병합하는데, 이 점은 인터페이스의 확장(Interface Extension)과 유사하다.
 
 ```ts
 type Person = {name: string; age: number};
@@ -316,12 +316,12 @@ waldo = {
 };
 ```
 
-인터섹션 타입으로 원시 타입은 지정할 수 없다. 숫자이면서 동시에 문자열인 값은 존재할 수 없기 때문:
+인터섹션으로 서로 다른 원시 타입을 지정하면 실질적으로 사용할 수 없는 변수가 된다. 숫자이면서 동시에 문자열인 값은 존재할 수 없기 때문:
 
 ```ts
-type conflicting = number & string;
+type Conflicting = number & string;
 
-let foo1: conflicting;
+let foo1: Conflicting;
 foo1 = '123'; // error TS2322: Type 'string' is not assignable to type 'never'.
 foo1 = 123; // error TS2322: Type 'number' is not assignable to type 'never'.
 ```

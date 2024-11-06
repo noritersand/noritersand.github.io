@@ -721,9 +721,12 @@ FROM emp;
 
 #### 부서별 급여순위(내림차순) 조회
 
-같은 부서 내`PARTITION BY deptno`에서 급여가 많은 순`ORDER BY sal DESC`으로 순위`RANK()` 표시:
 
 ```sql
+# 등록일시 순으로 순위 매기기(가장 빠르게 등록된 데이터가 1위)
+select rank() over(order by createDt) from someTable;
+
+# 같은 부서 내`PARTITION BY deptno`에서 급여가 많은 순`ORDER BY sal DESC`으로 순위`RANK()` 표시
 SELECT deptno, empno, ename, sal,
   RANK() OVER(PARTITION BY deptno ORDER BY sal DESC) AS RK
 FROM emp

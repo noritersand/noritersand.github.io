@@ -217,7 +217,7 @@ function Button({text}) {
 
 ## JSX
 
-JavaScript XML 혹은 JavaScript eXtended. 페이스북이 리액트와 함께 만들었고 **컴파일이 필요한 언어**다. 스크립트 내에서 HTML 태그를 가독성 있게 작성하기 위해 사용한다.
+JavaScript XML 혹은 JavaScript eXtended. 리액트에서 만들었고 컴파일이 필요한 언어 확장이다. 스크립트 내에서 HTML 태그를 가독성 있게 작성하기 위해 사용한다.
 
 ```jsx
 const element = (
@@ -395,9 +395,9 @@ React DOM은 HTML 어트리뷰트 이름 대신 camelCase 프로퍼티 명명 �
 <div className="abc"><div>
 ```
 
-### 배열 표현
+### 배열을 목록으로 표현하기
 
-아래 둘은 같은 결과가 나온다:
+우선 아래 둘은 결과가 같다:
 
 ```jsx
 const UnorderedList = (
@@ -419,7 +419,30 @@ const UnorderedList2 = (
 );
 ```
 
-그래서 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)을 활용하는 코드가 자주 보인다.
+배열 항목을 나열할 땐 주로 [Array.prototype.map()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) 메서드를 활용한다:
+
+```jsx
+export default function List() {
+  const listItems = people.map(person =>
+    <li>{person}</li>
+  );
+  return <ul>{listItems}</ul>;
+}
+```
+
+#### 노드 목록의 Key
+
+[Rendering Lists – React](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)
+
+바로 위 예시를 실행해보면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다. `<li>` 엘리먼트에 `key`를 생략해서 나타나는 경고인데, 도움말을 대충 요약하면 `key`는 렌더링 최적화에 필요한 프로퍼티로 생략할 경우 성능 저하 문제가 발생할 수 있다.
+
+```jsx
+<li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
+```
+
+`key`의 값은 전역에 걸쳐 유일한 값일 필요는 없으며 컴포넌트 내에서만 유일하면 된다. `props`의 프로퍼티처럼 보이지만 `props.key`로 참조할 수는 없다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
+
+🚨 배열의 index를 key에 할당하면 배열 데이터가 변경되었을 때 성능 문제가 발생한다. [이 문서](https://yozm.wishket.com/magazine/detail/2634/) 참고
 
 ### 삼항 연산자 적용
 
@@ -430,6 +453,32 @@ const conditional = (
     {doNotRender ? (<></>) : (<div>hi</div>)}
   </div>
 );
+```
+
+### 이벤트 핸들러 할당
+
+요따구로 하면 됨:
+
+```jsx
+class Square extends React.Component {
+  render() {
+    return (
+      <button
+        onClick={() => {
+          console.log('click');
+        }}
+      ></button>
+    );
+    // return React.createElement("button", {onClick: () => {console.log('click')}});
+  }
+}
+```
+
+`onclick`이 아니라 `onClick`인 것에 주의하자:
+
+```jsx
+<button type="button" onclick={() => setCounter(current => current + 1)}>Click Me</button>
+// Warning: Invalid event handler property `onclick`. Did you mean `onClick`?
 ```
 
 ### dangerouslySetInnerHTML: 마크업 그대로(raw HTML) 표시하기
@@ -461,9 +510,7 @@ export default function MarkdownPreview({ markdown }) {
 ```
 
 
-## 리액트의 주요 API
-
-### 리액트 엘리먼트
+## 리액트 엘리먼트
 
 리액트의 핵심(이지만 직접 호출할 일은 절대 없는) API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
 
@@ -484,7 +531,10 @@ export default function MarkdownPreview({ markdown }) {
 }
 ```
 
-### React.createElement
+
+## 레거시 API
+
+### React.createElement()
 
 주어진 인자에 따라 새로운 React 엘리먼트를 생성하는 함수. JSX를 사용한다면 직접 호출할 일은 없다.
 
@@ -514,31 +564,13 @@ const element2 = React.createElement('h2', {
 const element3 = React.createElement('h2', {
   className: 'title',
   children: [
-    React.createElement('span', {key: 1}, '대통령 선거'),
-    React.createElement('span', {key: 2}, ' : '),
-    React.createElement('span', null, '대통령 앉은거')
+    React.createElement('span', '대통령 선거'),
+    React.createElement('span', ' : '),
+    React.createElement('span', '대통령 앉은거')
   ]
 });
 // <h2 class="title"><span>대통령 선거</span><span> : </span><span>대통령 앉은거</span></h2>
 ```
-
-#### 노드 리스트의 Key
-
-위 예시에서 `element3`는 `props.children`으로 하위 노드를 할당하는 식인데, `props` 자리에 세 번째 span 태그처럼 `{ key: somevalue }` 대신 null을 넘기면 `Warning: Each child in a list should have a unique "key" prop.`라는 경고 메시지가 발생한다.
-
-[Rendering Lists – React](https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key)
-
-설명을 대충 요약하면 렌더링 최적화에 필요한 프로퍼티다:
-
-```jsx
-<li key={user.id}>{user.name}: {user.taskCount} tasks left</li>
-```
-
-전역에 걸쳐 유일한 값일 필요는 없으며 컴포넌트 내에서만 유일하면 된다고 함.
-
-그리고 key가 `props`에 속하는 것처럼 보이지만 `this.props.key`로 참조할 수 없다고 한다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
-
-🚨 배열의 index를 key에 할당하면 배열 데이터가 변경되었을 때 성능 문제가 발생한다. [이 문서](https://yozm.wishket.com/magazine/detail/2634/) 참고
 
 ### ReactDOM.render()
 
@@ -565,6 +597,9 @@ root.render(element);
 console.log(element); // Object { "$$typeof": Symbol("react.element"), ... }
 console.log(root); // Object { _internalRoot: {…} }
 ```
+
+
+## 클라이언트 API
 
 ### ReactDOM.createRoot()
 
@@ -637,33 +672,6 @@ root.render(<Newbie/>);
 
 \* 주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함
 \* 최신 버전에서(2024-03-03) [클래스 대신 함수로 컴포넌트를 정의하도록 권장](https://react.dev/reference/react/Component)하고 있다.
-
-
-## 이벤트 핸들러 할당
-
-요따구로 하면 됨:
-
-```jsx
-class Square extends React.Component {
-  render() {
-    return (
-      <button
-        onClick={() => {
-          console.log('click');
-        }}
-      ></button>
-    );
-    // return React.createElement("button", {onClick: () => {console.log('click')}});
-  }
-}
-```
-
-`onclick`이 아니라 `onClick`인 것에 주의하자:
-
-```jsx
-<button type="button" onclick={() => setCounter(current => current + 1)}>Click Me</button>
-// Warning: Invalid event handler property `onclick`. Did you mean `onClick`?
-```
 
 
 ## state
@@ -835,7 +843,7 @@ function App() {
 
 - [npm \| prop-types](https://www.npmjs.com/package/prop-types)
 
-props의 타입을 제한할 때 사용하는 패키지. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
+props의 타입을 제한할 때 사용하는 패키지. 타입스크립트로 대체 가능하다. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -928,140 +936,6 @@ const MyComponent = React.memo(props => {
 ```
 
 
-## 라우터 React Router
-
-[React Router](https://reactrouter.com/)
-
-모던 프론트엔드 개발에서 라우팅이란 보통 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
-
-리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
-
-```bash
-npm install react-router-dom
-```
-
-react-router-dom 패키지는 react-router의 확장이며 react-router를 내부에 포함하고 있으니 이것만 설치하면 된다.
-
-사용방법은 버전에 따라 다른데, 5.x 버전의 경우 아래와 같고:
-
-```jsx
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-```
-
-```jsx
-// App.js
-import {
-  useState,
-  useEffect
-} from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
-
-import Button from './component/Button';
-import Home from './route/Home';
-import Detail from './route/Detail';
-
-function App() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/movie">
-          <Detail />
-        </Route>
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  );
-}
-
-export default App;
-```
-
-최신(2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
-
-```jsx
-// index.js
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-
-import Root from './routes/root';
-import Hello2 from './routes/hello2';
-import Hello1 from './routes/hello1';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Root />,
-    children: [
-      {
-        path: 'hello1',
-        element: <Hello1 />
-      },
-      {
-        path: 'hello2',
-        element: <Hello2 />
-      }
-    ]
-  }
-]);
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
-);
-```
-
-```jsx
-// routes/root.jsx
-import {Link, Outlet} from 'react-router-dom';
-
-export default function Root() {
-  return (
-    <>
-      <div id="sidebar">
-        <h1>React Router Example</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to={`/`}>home</Link>
-            </li>
-            <li>
-              <Link to={`/hello1`}>hello 1</Link>
-            </li>
-            <li>
-              <Link to={`/hello2`}>hello 2</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div id="detail">
-        <Outlet />
-      </div>
-    </>
-  );
-}
-```
-
-자세한 내용은 [도움말 참고](https://reactrouter.com/en/main/start/tutorial).
-
-
 ## StrictMode 컴포넌트
 
 StrictMode 컴포넌트는 리액트의 추가적인 개발환경 전용 검사 기능인 Strict Mode(ECMAScript의 엄격 모드와 다름)를 활성화하는 컴포넌트다. Strict Mode가 활성화되면 다음과 같은 변화가 있다:
@@ -1084,7 +958,7 @@ root.render(
 );
 ```
 
-아래처럼 일부분만 활성화하는 방법이 있다:
+아니면 아래처럼 앱의 일부분에서 활성화하는 방법이 있다:
 
 ```jsx
 import { StrictMode } from 'react';
@@ -1106,6 +980,32 @@ function App() {
 ```
 
 리액트가 Strict Mode로 어떻게 버그를 찾아내는지는 [이 문서](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)를 보자.
+
+
+## Suspense 컴포넌트
+
+[Suspense – React](https://react.dev/reference/react/Suspense)
+
+자식 요소가 로드가 완료될 때까지 대체 UI를 표시한다.
+
+```jsx
+<Suspense fallback={<Loading />}>
+  <SomeComponent />
+</Suspense>
+```
+
+
+## Profiler 컴포넌트
+
+[Profiler – React](https://react.dev/reference/react/Profiler)
+
+렌더링 성능을 프로그래밍 방식으로 측정할 때 사용한다.
+
+```jsx
+<Profiler id="App" onRender={onRender}>
+  <App />
+</Profiler>
+```
 
 
 ## 리액트 서버 컴포넌트 React Server Components
@@ -1190,6 +1090,136 @@ function EmptyNote () {
   return <Button onClick={createNoteAction}/>;
 }
 ```
+
+
+## 라우터 React Router
+
+[React Router](https://reactrouter.com/)
+
+모던 프론트엔드 개발에서 라우팅이란 보통 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
+
+리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
+
+```bash
+npm install react-router-dom
+```
+
+react-router-dom 패키지는 react-router의 확장이며 react-router를 내부에 포함하고 있으니 이것만 설치하면 된다.
+
+사용방법은 버전에 따라 다른데, 5.x 버전의 경우 아래와 같고:
+
+```jsx
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <App />
+);
+```
+
+```jsx
+// App.js
+import {
+  useState,
+  useEffect
+} from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
+
+import Button from './component/Button';
+import Home from './route/Home';
+import Detail from './route/Detail';
+
+function App() {
+  return (
+    <Router>
+      <Switch>
+        <Route path="/movie">
+          <Detail />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+최신(2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
+
+```jsx
+// index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+
+import Root from './routes/root';
+import Hello2 from './routes/hello2';
+import Hello1 from './routes/hello1';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Root />,
+    children: [
+      {
+        path: 'hello1',
+        element: <Hello1 />
+      },
+      {
+        path: 'hello2',
+        element: <Hello2 />
+      }
+    ]
+  }
+]);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <RouterProvider router={router} />
+);
+```
+
+```jsx
+// routes/root.jsx
+import {Link, Outlet} from 'react-router-dom';
+
+export default function Root() {
+  return (
+    <>
+      <div id="sidebar">
+        <h1>React Router Example</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to={`/`}>home</Link>
+            </li>
+            <li>
+              <Link to={`/hello1`}>hello 1</Link>
+            </li>
+            <li>
+              <Link to={`/hello2`}>hello 2</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="detail">
+        <Outlet />
+      </div>
+    </>
+  );
+}
+```
+
+자세한 내용은 [도움말 참고](https://reactrouter.com/en/main/start/tutorial).
 
 
 {% endraw %}

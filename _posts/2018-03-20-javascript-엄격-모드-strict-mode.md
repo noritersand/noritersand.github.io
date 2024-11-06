@@ -219,7 +219,7 @@ a(); // ReferenceError: a is not defined
 
 ### arguments 객체의 분리
 
-표준 모드에선 함수의 매개변수와 `arguments`의 원소가 같은 참조값을 갖는다. 엄격 모드에선 이 둘이 분리된다.
+표준 모드에선 함수의 매개변수와 `arguments`의 요소가 서로 동일한 참조값을 갖는다. 엄격 모드에선 이 둘이 분리된다.
 
 ```js
 function standard(param) {

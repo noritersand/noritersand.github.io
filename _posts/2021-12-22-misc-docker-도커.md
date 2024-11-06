@@ -106,7 +106,7 @@ docker tag fixalot/testbed fixalot/testbed:1.0
 docker push fixalot/testbed
 ```
 
-`commit`, `tag`, `push` 명령은 이미지명 뒤에 `:tag` 형태로 태그 이름을 지정할 수 있는데 생략하면 `latest`로 설정된다.
+`commit`, `tag`, `push` 명령은 이미지명 바로 뒤에 `:tag` 형태로 태그 이름을 지정할 수 있는데 생략하면 `latest`로 설정된다.
 
 `push` 명령은 저장소와 이미지 이름이 일치하지 않으면 실패하는 것 같음.
 
@@ -234,6 +234,8 @@ docker-compose version
 # 실행
 docker-compose up
 ```
+
+**TODO**
 
 
 ## 네트워킹

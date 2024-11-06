@@ -346,7 +346,6 @@ from (
 - `MICROSECOND(expr)`: 0-999999 반환
 
 
-
 ## DATETIME을 DATE로 BETWEEN 비교
 
 먼저 BETWEEN 비교가 조건항을 포함하는지를 보자:

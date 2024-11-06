@@ -95,7 +95,7 @@ string 내의 문자열을 separator를 기준으로 잘려진 문자열들을 �
 String join( String[], String separator )
 ```
 
-배열 원소들을 모두 연결해 반환한다. 이때 각 원소 사이에 separator를 구분자로 사용한다.
+배열 요소들을 모두 연결해 반환한다. 이때 각 요소 사이에 separator를 구분자로 사용한다.
 
 ```java
 <c:set var="texts" value="${fn:split('Hi My name is waldo', ' ')}"/>
@@ -110,7 +110,7 @@ String join( String[], String separator )
 int length( Object  item )
 ```
 
-item이 배열이나 컬렉션이면 원소의 개수를, 문자열이면 문자의 길이를 반환한다.
+item이 배열이나 컬렉션이면 요소의 개수를, 문자열이면 문자의 길이를 반환한다.
 
 ```java
 <c:set var="texts" value="${fn:split('Hi My name is waldo', ' ')}"/>
