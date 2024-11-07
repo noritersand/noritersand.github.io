@@ -815,7 +815,7 @@ git diff-tree -p feature master  # 현재 feature 브랜치 기준으로 master 
 - `-m`: `diff-tree`는 기본적으로 머지 커밋과의 차이점은 생략하는데, 이 옵션을 지정하면 생략하지 않음
 - `-p` `-u` `--patch`: 패치로 사용할 수 있는 내용을 출력한다.
 - `-s` `--no-patch`: 패치 내용을 출력하지 않게 한다.
-- `--pretty[=<format>]` `--format=<format>`
+- `--pretty[=<format>]` `--format=<format>`: `log`의 옵션과 거의 같으므로 `log` 항목 참고
 
 
 ## fetch
@@ -1731,12 +1731,12 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 
 #### Options
 
-옵션은 [diff-tree](https://git-scm.com/docs/git-diff-tree)와 동일하게 사용할 수 있다고 한다. 따라서 여기에는 자주 쓰는 옵션만 적는다(뭐 다 그렇게 했지만):
-
-- `-p`: 패치 형태로 출력
+- `-s` `--no-patch`: 이 옵션을 사용하면 변경 내용을 출력하지 않고 작성자, 시간, 커밋 메시지만 출력한다. `git show -s`는 `git log -1`과 출력 내용이 같다.
+- `-p` `-u` `--patch`: 패치로 사용할 수 있는 내용을 출력한다.
 - `-c`: `log`와 마찬가지로 머지 커밋은 해당 커밋에 포함된 파일 목록만 출력하는게 기본값인데, 이 옵션을 사용하면 머지 커밋과 부모 커밋을 비교해 변경 사항을 모두 출력한다.
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
+- `--pretty[=<format>]` `--format=<format>`: `log`의 옵션과 같으므로 `log` 항목 참고
 
 
 ## show-ref
