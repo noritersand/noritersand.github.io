@@ -544,7 +544,7 @@ let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
 let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
 ```
 
-**어떤 값이 올 수 있는 자리에 대한 타입 선언이 아니라 실제 값의 타입이 어떤 것인지를 설명한다는 차이**가 있다.
+**어떤 값이 올 수 있는 자리에 대한 타입을 '미리' 선언하는 것이 아니라, 이미 존재하는 값의 타입이 어떤 것인지를 개발자가 컴파일러에게 '나중에' 알려준다는 차이**가 있다.
 
 🚨 타입 단언은 타입 체커를 무시하며 코드 안정성을 보장하지 않는다. 가급적이면 타입 단언 대신 타입 가드나 타입 체크를 사용하는 것이 권장된다.
 

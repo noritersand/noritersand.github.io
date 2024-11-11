@@ -255,7 +255,7 @@ module.exports = {
 - `destination`: 보낼 주소
 - `permanent`: 브라우저에 이 리디렉션이 영구적인지 아닌지를 결정한다. `true`면 308 Permanent Redirect로 응답하고 `false`면 307 Temporary Redirect로 응답한다.
 
-`source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
+`source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
 
 #### rewrites
 
@@ -277,7 +277,7 @@ module.exports = {
 - `source`: rewrites할 요청 경로 패턴
 - `destination`: 매핑할 주소
 
-`redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
+`redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
 
 ⚠️ `redirects`와 `rewrites`는 HTML 내보내기 방식(`next.config.js`의 `output` 옵션이 `export`일 때)에서 사용할 수 없음
 

@@ -261,9 +261,11 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 
 ### Assertions
 
+[Assertions - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions)
+
 #### `^`
 
-입력 문자열의 시작 위치를 검색. `^A` 는 검색하고자 하는 문장의 시작문자가 A인지를 검사. `^qwe`는 정확히 'qwe'로 시작하는지를 검사한다. 여기서 문장은 문자열 전체를 의미할 수도 있고, 줄 바꿈 문자를 기준으로 한 각 라인일 수도 있다. 이것은 정규식 플래그에 따라 달라지는데, 멀티 라인(`m`) 플래그가 있으면 각 라인마다 지정한 문자로 시작하는지를 검사한다.
+입력 문자열의 시작 위치를 검색. `^A` 는 검색하고자 하는 문장의 시작문자가 A인지를 검사. `^qwe`는 정확히 'qwe'로 시작하는지를 검사한다. 여기서 문장은 문자열 전체를 의미할 수도 있고, 줄 바꿈 문자를 기준으로 한 각 라인일 수도 있다. 이것은 정규식 플래그에 따라 달라지는데, 멀티 라인`m` 플래그가 있으면 각 라인마다 지정한 문자로 시작하는지를 검사한다.
 
 검색할 때 자주 쓰인다. 예를 들어 (멀티 라인 플래그가 있다고 가정하고) `\n`은 모든 줄 바꿈 문자인데 `^\n`은 라인의 시작이 줄 바꿈인 것, 그러니까 줄 바꿈 문자만 있는 줄을 의미한다. `##`는 `#` 두 개가 포함된 모든 문자를 찾지만, `^## `라고 작성하면 `#` 두 개로 시작하고 공백 하나가 바로 이어지는 문자를 찾는다. (문서 내 모든 헤더2를 찾을 때 쓴다)
 
@@ -300,31 +302,33 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 
 #### `x(?=y)`
 
-이름은 긍정형 전방 탐색(Positive lookahead)이다.
+이름은 긍정형 전방 탐색(Positive lookahead)이다. `y`가 `x` 뒤에 있는 경우만 일치로 판단한다.
 
-**TODO**
+정규식 `foo(?=bar)`는 'bar'가 바로 뒤에 오는 'foo'와 일치한다.
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions#other_assertions
+ℹ️ lookahead나 lookbehind는 탐색 조건으로 사용하되 선택은 하지 않는다는 특징이 있다.
 
 #### `x(?!y)`
 
-이름은 부정형 전방 탐색(Negative lookahead).
+이름은 부정형 전방 탐색(Negative lookahead). `y`가 `x` 뒤에 오지 않는 경우만 일치로 판단한다.
 
-**TODO**
+`foo(?!bar)`는 'bar'가 바로 뒤에 오지 않는 `foo`, 그러니까 `foobar`를 제외한 모든 `foo`와 일치한다.
 
 #### `(?<=y)x`
 
-이름은 긍정형 후방 탐색(Positive lookbehind). `y`가 `x` 앞에 있는 경우만 일치하다고 판단한다.
+이름은 긍정형 후방 탐색(Positive lookbehind). `y`가 `x` 앞에 있는 경우만 일치로 판단한다.
 
 `(?<=foo)bar`는 정확히 'foo'가 앞에 있는 'bar'와 일치하는 패턴이다. 'foobar'만 일치하고, 'bar', 'fobar', 'fooobar', 'abar'는 일치하지 않는다.
 
 #### `(?<!y)x`
 
-이름은 부정형 후방 탐색(Negative lookbehind). `y`가 `x` 앞에 오지 않는 경우만 일치하다고 판단한다.
+이름은 부정형 후방 탐색(Negative lookbehind). `y`가 `x` 앞에 오지 않는 경우만 일치로 판단한다.
 
 `(?<!foo)bar`는 'foo'로 시작하지 않는 'bar'와 일치하는 패턴이다. 
 
 ### Character classes
+
+[Character classes - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
 
 #### `[xyz]`
 
@@ -424,6 +428,8 @@ X가 나타내는 제어 문자를 찾는다. `\cM`은 `Control-M`, 즉 캐리�
 
 ### Groups and backreferences
 
+[Groups and backreferences - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Groups_and_backreferences)
+
 #### `()`
 
 소괄호`()`는 Grouping(그룹화)와 Capturing(캡처화)에 사용된다. 그룹화는 어떤 패턴을 하나의 그룹으로 묶는 것, 캡처화는 패턴과 일치하는 문자를 재사용하기 위해 추출 혹은 별도로 기억하는 것을 말한다. `()`로 그룹을 만들면 이 그룹은 자동으로 캡처 된다.
@@ -465,6 +471,8 @@ X가 나타내는 제어 문자를 찾는다. `\cM`은 `Control-M`, 즉 캐리�
 ```
 
 ### Quantifiers
+
+[Quantifiers - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
 
 Quantifiers는 찾으려는 문자나 문자열 패턴이 몇 번 반복될 것인지를 지정한다. 항상 Quantifiers가 아닌 패턴과 조합해 사용한다.
 

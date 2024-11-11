@@ -435,7 +435,7 @@ git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가�
 추적중이지 않은(untracked) 파일 삭제하기.
 
 ```bash
-git clean -f
+git clean -f .  # 이 옵션은 경로를 별도로 지정하지 않으면 하위 디렉터리를 삭제하지 않음
 git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은 파일과 폴더를 모두 삭제한다.
 ```
 

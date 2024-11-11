@@ -45,7 +45,7 @@ select concat('2021-01-01', ' 23:59:59'); -- 2021-01-01 23:59:59
 
 ## 백틱의 의미
 
-MariaDB에서 ``` ` ```은 [Quote Identifier](https://mariadb.com/kb/en/identifier-names/)라고 하며 테이블이나 컬럼명을 명시할 때 사용한다. 대부분의 경우 생략해도 결과는 같다.
+MariaDB에서 백틱``` ` ```은 [Quote Identifier](https://mariadb.com/kb/en/identifier-names/)라고 하며 테이블이나 컬럼명을 명시할 때 사용한다. 대부분의 경우 생략해도 결과는 같다.
 
 그러나 간혹 테이블 혹은 컬럼, 별칭의 이름이 문법 에러를 발생시키는 경우가 있는데:
 
@@ -173,6 +173,14 @@ group by member_no
 ```
 
 응용하면 1:N 관계의 데이터를 하나의 로우로 이어붙이는 게 가능한데, [여기에](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/) 잘 설명돼있음.
+
+데이터 간 구분자는 `separator` 키워드로, `group_concat()` 함수 내의 정렬은 `order by` 키워드로 지정한다(`order by`가 먼저 와야함):
+
+```sql
+select group_concat(member_name order by member_no desc separator ', ')
+from some_member_table
+group by member_no
+```
 
 
 ## 정렬 order by
@@ -349,7 +357,7 @@ left join (t2 cross join t3 cross join t4)
 
 [https://mariadb.com/kb/en/with/](https://mariadb.com/kb/en/with/)
 
-`WITH`는 CTE(Common Table Expression)를 나타내는 키워드다. MariaDB 10.2.1에 소개되었다.
+`WITH`는 CTE(Common Table Expression)를 나타내는 키워드다. MariaDB 10.2.1 버전부터 쓸 수 있다.
 
 CTE란 임시 결과 집합을 정의하는 방법이자 표현식을 의미한다. 서브쿼리의 일종이라 볼 수 있고, 쿼리 실행 시간 동안만 존재하는 임시 테이블을 만들어 여러번 참조할 수 있게 하는 기능이라 대충 이해하면 된다.
 
