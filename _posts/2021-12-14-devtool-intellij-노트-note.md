@@ -225,6 +225,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 - Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
 - Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \ </kbd> 추가. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
 - Main Menu > Window > Editor Tabs > Split Right/Down: 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지우고 <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd> 로 지정
+- Main Menu > Window > Tool Window Layouts > Restore Current Layout: 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
 
 
 ## 기본 단축키

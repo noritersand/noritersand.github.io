@@ -17,15 +17,16 @@ tags:
 
 #### 참고 문서
 
-- [RegExp \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Regular expressions \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExp - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- [Regular expressions Reference - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Regular_expressions)
+- [Regular expressions Guide - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [RegExr](https://regexr.com/)
-- [https://regexr.com/5ml92](https://regexr.com/5ml92)
+- [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
 - [regular expressions 101](https://regex101.com/)
 - [REGEXPER](https://regexper.com/)
 - [regular expression library](http://regexlib.com/DisplayPatterns.aspx)
 - [RegexOne](https://regexone.com/)
-- [http://blog.outsider.ne.kr/360](http://blog.outsider.ne.kr/360)
+- [알고 있어야 할 8가지 정규식 표현 from nettuts+ :: Outsider's Dev Story](http://blog.outsider.ne.kr/360)
 
 
 ## 개요
