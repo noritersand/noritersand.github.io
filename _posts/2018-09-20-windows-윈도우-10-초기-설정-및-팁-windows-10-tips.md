@@ -28,8 +28,8 @@ tags:
 
 ## Windows 터미널
 
-[Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)  
-[Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
+- [Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)
+- [Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
 
 2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 셸(CMD, 파워셸, 파워셸 레거시, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
 
@@ -225,7 +225,8 @@ telnet localhost 4000
 
 ### 앱으로 인식되지 않는 파일을 시작 화면에 등록하기
 
-`C:\ProgramData\Microsoft\Windows\Start Menu` 여기에 바로가기를 붙여넣고 검색<kbd>win + s</kbd>하면 앱으로 뜸.  
+`C:\ProgramData\Microsoft\Windows\Start Menu` 여기에 바로가기를 붙여넣고 검색<kbd>win + s</kbd>하면 앱으로 뜸.
+
 `%APPDATA%\Microsoft\Windows\Start Menu\Programs` 여기에 놔도 된다. 이 경로는 `shell:programs`으로 접근할 수 있다.
 
 ### 시작 프로그램 등록

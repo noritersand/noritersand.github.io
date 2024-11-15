@@ -161,7 +161,7 @@ class Excep {
             } finally {
                 // catch문이 없으면 finally라도 있어야 컴파일 에러가 발생하지 않음
                 logger.debug("You know nothing John snow!");
-            }            
+            }
         } catch (ArithmeticException e) {
             logger.error(e.getMessage(), e);
         }

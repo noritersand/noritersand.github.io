@@ -87,7 +87,7 @@ basename 속성에 지정된 properties 파일을 찾아서 locale에 따라 읽
 ### Syntax 1: body가 없을때
 
 ```
-<fmt:message  key="messageKey"  
+<fmt:message  key="messageKey"
     [bundle="resourceBundle"]
     [var="varName"]
     [scope="{page|request|session|application}"]/>
@@ -107,7 +107,7 @@ basename 속성에 지정된 properties 파일을 찾아서 locale에 따라 읽
 ### Syntax 3: 키와 선택적 메시지 파라미터를 지정하는 body가 있을때
 
 ```
-<fmt:message  
+<fmt:message
     [bundle="resourceBundle"]
     [var="varName"]
     [scope="{page|request|session|application}"]>
@@ -273,7 +273,7 @@ formatNumber tag와 반대로 정해진 패턴의 문자열에서 수치를 추�
 ### Syntax 2: body가 있을때
 
 ```
-<fmt:parseNumber  
+<fmt:parseNumber
     [type="{number|currency|percent}"]
     [pattern="customPattern"]
     [parseLocale="parseLocale"]
@@ -373,9 +373,9 @@ formatNumber tag와 반대로 정해진 패턴의 문자열에서 수치를 추�
 ### Syntax 2: body가 있을때
 
 ```
-<fmt:parseDate  
+<fmt:parseDate
     [type="{time|date|both}"]
-    [dateStyle="{default|short|medium|long|full}"]  
+    [dateStyle="{default|short|medium|long|full}"]
     [timeStyle="{default|short|medium|long|full}"]
     [pattern="customPattern"]
     [timeZone="timeZone"]

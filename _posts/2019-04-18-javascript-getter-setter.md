@@ -71,7 +71,7 @@ var obj = {
   set findMe(value) {
     // this._findMe = value;
     console.log('Denied');
-  }     
+  }
 };
 
 obj._findMe; // "Hello"

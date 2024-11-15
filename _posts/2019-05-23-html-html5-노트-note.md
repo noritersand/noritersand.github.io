@@ -66,7 +66,7 @@ HTML5 관련 다 모음.
 ## data-* custom data attributes
 
 - [data-\* \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
-- [HTMLElement.dataset \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)                             
+- [HTMLElement.dataset \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 - [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
 - [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
 

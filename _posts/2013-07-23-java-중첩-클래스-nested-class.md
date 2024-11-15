@@ -261,7 +261,7 @@ class Sum {
     private int maxNumber = 0;
     private OnMaxNumberCb myCallback;
 
-    public void setOnMaxNumberCb(OnMaxNumberCb callback) {              
+    public void setOnMaxNumberCb(OnMaxNumberCb callback) {
         myCallback = callback;
     }
 

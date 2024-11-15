@@ -31,7 +31,7 @@ tags:
 
 ## Ultimate와 Community 버전 간 차이
 
-지원하는 언어, 프레임웍에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
+지원하는 언어나 프레임워크에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
 
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 

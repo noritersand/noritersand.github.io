@@ -37,7 +37,7 @@ class Child extends Parent {
 class Child2 extends Parent {
     public void sayWhoyouare() {
         System.out.println("Class Child2");
-    }    
+    }
 }
 ```
 

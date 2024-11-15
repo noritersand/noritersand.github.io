@@ -222,7 +222,7 @@ git branch -m NAME_FROM NAME_TO
 git branch -d mybranch
 
 # 로컬 브랜치 강제삭제(보통 non-merged 브랜치를 삭제할 때 사용)
-git branch -D mybranch  
+git branch -D mybranch
 
 # 리모트 트래킹 브랜치 삭제(리모트 저장소의 브랜치가 삭제되는 건 아님)
 # git branch --remotes --delete origin/abc
@@ -310,7 +310,8 @@ git checkout -b 브랜치
 
 #### 리모트 저장소에 있는 브랜치를 로컬에 만들기
 
-~~이 때 `--track` 옵션을 사용해야 업스트림 브랜치로 설정됨.~~  
+~~이 때 `--track` 옵션을 사용해야 업스트림 브랜치로 설정됨.~~
+
 최근 버전에선 생략해도 된다.
 
 ```bash
@@ -352,7 +353,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 
 ```bash
 # 현재 경로의 모든 추적중인 파일 되돌리기
-git checkout -- .  
+git checkout -- .
 git checkout HEAD .
 ```
 
@@ -1402,7 +1403,8 @@ git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
 git rebase -i HEAD~3  # 헤드부터 2회 전 커밋까지를 대화형으로 수정
 ```
 
-**주의: `git rebase HEAD~N`에서 N은 다른 명령어와 다르게 N회 전 이 아니라 N-1회 전 커밋을 의미한다.**  
+**주의: `git rebase HEAD~N`에서 N은 다른 명령어와 다르게 N회 전 이 아니라 N-1회 전 커밋을 의미한다.**
+
 예를 들어 `git show HEAD~2`로 보이는 커밋(1)과 `git rebase -i HEAD~2`에서 맨 위에 표시되는 커밋(2)은 다른데, (1)은 (2)의 부모 커밋이다.
 
 ```bash

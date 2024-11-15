@@ -36,7 +36,7 @@ SELECT empno, ename, mgr FROM emp;
       7499 ALLEN            7698
       7521 WARD             7698
 ...
-      7839 KING                  
+      7839 KING
 
  14개의 행이 선택됨
 ```
@@ -62,7 +62,7 @@ CONNECT BY PRIOR empno=mgr;
 
      LEVEL      EMPNO ENAME             MGR
 ---------- ---------- ---------- ----------
-         1       7839 KING                  
+         1       7839 KING
          2       7566 JONES            7839
          3       7788 SCOTT            7566
          4       7876 ADAMS            7788
@@ -100,11 +100,11 @@ START WITH ename ='ADAMS'
 CONNECT BY empno = PRIOR mgr;
 
 ->
-EMPNO        ENAME    
+EMPNO        ENAME
 -----------------------------
-7876        ADAMS      
-....7788        SCOTT      
-........7566    JONES      
+7876        ADAMS
+....7788        SCOTT
+........7566    JONES
 ............7839     KING
 ```
 
@@ -150,7 +150,7 @@ SELECT LPAD(empno, LEVEL*4, ' ') AS empno, ename, sal,
 FROM emp
 START WITH mgr IS NULL
 CONNECT BY PRIOR empno=mgr
-ORDER SIBLINGS BY sal      
+ORDER SIBLINGS BY sal
 ```
 
 ![](/images/oracle-hierarchical-query-1.png)

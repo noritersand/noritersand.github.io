@@ -35,9 +35,9 @@ Vue.js 사용 방법 정리 글.
 
 [Quick Start](https://vuejs.org/guide/quick-start.html)
 
-### 빌드 단계 생략하기
+### HTML에서 외부 스크립트로 사용하기
 
-Vue를 그저 자바스크립트 라이브러리처럼 사용하는 방법이다. 이쪽은 스크립트 태그 혹은 CDN 방식이라 한다. (ESM 쓰면 ESM 방식이라 해도 될 것 같은데?)
+Vue를 자바스크립트 라이브러리처럼 사용하는 방법이다. 이쪽은 스크립트 태그 혹은 CDN 방식이라 한다.
 
 External link:
 
@@ -68,9 +68,9 @@ createApp({
 </script>
 ```
 
-### 빌드해서 쓰기
+### Node.js 모듈로 사용하기
 
-Node.js CLI 환경에서 Vue 컴파일러로 빌하는 방식을 말한다(Vue 패키지는 컴파일러와 웹 서버를 포함한다). Vue CLI 혹은 SFC(Single-File Components) 방식이라고 한다.
+Node.js CLI 환경에서 Vue 컴파일러로 빌드하는 방식을 말한다(Vue 패키지는 컴파일러와 웹 서버를 포함한다). Vue CLI 혹은 SFC(Single-File Components) 방식이라고 한다.
 
 [npm](https://www.npmjs.com/package/vue)으로 설치한다:
 

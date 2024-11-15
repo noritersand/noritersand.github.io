@@ -69,7 +69,7 @@ fis.close();
 
 ```java
 FileInputStream fis = new FileInputStream("c:\\iotest\\origin.txt");
-FileOutputStream fos = new FileOutputStream("c:\\iotest\\clone.txt", false);         
+FileOutputStream fos = new FileOutputStream("c:\\iotest\\clone.txt", false);
 
 int data = 0;
 while ((data = fis.read()) != -1) { // 더 이상 읽을것이 없을 때 -1
@@ -268,7 +268,7 @@ out2.close();
 // 쓰기
 BufferedWriter out = new BufferedWriter(new FileWriter("c:\\iotest\\buffer.txt", false));
 out.write("버퍼드리더를 활용한 \r\n파일출력");
-out.flush();        
+out.flush();
 out.close();
 
 // 읽기

@@ -88,7 +88,7 @@ public class Test2 {
         String jsn = "{\"age\":\"32\",\"name\":\"steave\",\"job\":\"baker\"}";
 
         map = mapper.readValue(jsn,
-                new TypeReference<HashMap<String, String>>() {});        
+                new TypeReference<HashMap<String, String>>() {});
 
         System.out.println(map);
     }
@@ -132,7 +132,7 @@ public class Test2 {
         String jsn = "[{\"age\":\"32\",\"name\":\"steave\",\"job\":\"baker\"},"
                 + "{\"age\":\"25\",\"name\":\"matt\",\"job\":\"soldier\"}]";
         list = mapper.readValue(jsn,
-                new TypeReference<ArrayList<HashMap<String, String>>>() {});        
+                new TypeReference<ArrayList<HashMap<String, String>>>() {});
 
         System.out.println(list);
     }

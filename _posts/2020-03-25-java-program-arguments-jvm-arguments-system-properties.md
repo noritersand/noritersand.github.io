@@ -17,8 +17,7 @@ tags:
 
 ## Program Arguments
 
-'Java Command Line Arguments'가 더 정확한 이름이다. 자바 프로그램을 실행할 때 Main Class에 전달하는 인자를 의미한다.  
-`java`를 실행할 때 클래스 뒤에 붙이는 기호가 없으며 빈 칸으로 구분되는 연속적인 문자에 해당한다.
+'Java Command Line Arguments'가 더 정확한 이름이다. 자바 프로그램을 실행할 때 Main Class에 전달하는 인자를 의미한다. `java`를 실행할 때 클래스 뒤에 붙이는 기호가 없으며 빈 칸으로 구분되는 연속적인 문자에 해당한다.
 
 예를 들어 셸 명령어로 아래처럼 작성하면:
 

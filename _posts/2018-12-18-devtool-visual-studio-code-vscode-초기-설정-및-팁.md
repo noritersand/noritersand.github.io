@@ -57,7 +57,7 @@ Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 ### 코드 스니펫 추가하기
 
-[공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)  
+[공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
 Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
 

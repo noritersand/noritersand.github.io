@@ -182,7 +182,7 @@ const handleEvent2 = event => {
 
 modifier는 비동기적으로 작동하기 때문에 modifier 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
 
-\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)  
+\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
 
 ```jsx
 import {useState} from 'react';

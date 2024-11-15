@@ -24,6 +24,7 @@ tags:
 
 ## 분류 없음
 
+- [mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
 - [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
 - [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
@@ -115,7 +116,7 @@ tags:
 
 ## 프레임워크
 
-- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임웍. 지금은 retired 상태라서 업데이트는 없다.
+- [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임워크. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
 - [Vue](https://vuejs.org/): 뷰. 설명이 필요없는 프론트엔드 라이브러리 #1.
@@ -142,7 +143,7 @@ tags:
 [2023 베스트 CSS 프레임워크 소개 \| 니콜라스 유튜브](https://www.youtube.com/watch?v=FRSUP2sbgTY)
 
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
-- [component.gallery](https://component.gallery/): CSS 프레임웍과 디자인 시스템 같은 것을 모아놓은 사이트
+- [component.gallery](https://component.gallery/): CSS 프레임워크와 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
 - [⭐Bulma](https://bulma.io/): Flexbox 기반
 - [Foundation Framework](https://get.foundation/): ?
@@ -270,7 +271,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### DBMS Tool
 
-- [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 프레임웍으로 추정.
+- [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 프레임워크로 추정.
 - [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
 - [Flyway](https://flywaydb.org/): 데이터베이스의 버전 관리 툴. 마구잡이로 헤집어놓은 데이터도 원하는 시점으로 되돌리는 기능 등을 제공한다. 개발과 테스트를 위한 데이터베이스 구축에 매우 쓸만한 오픈 소스 도구.
 

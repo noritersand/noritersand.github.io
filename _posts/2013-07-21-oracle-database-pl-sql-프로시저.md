@@ -33,7 +33,7 @@ SET SERVEROUTPUT ON
 ```sql
 DECLARE --선언부, 생략가능
   n NUMBER := 1;
-  s NUMBER := 0;  
+  s NUMBER := 0;
 BEGIN --프로그램의 시작
   WHILE n < 100 LOOP
   s := s + n;

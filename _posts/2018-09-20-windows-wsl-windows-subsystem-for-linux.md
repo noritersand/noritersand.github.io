@@ -43,33 +43,10 @@ wsl -l -v
 그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워셸이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
 
 
-## 이전 설치 방법
-
-~~설치 방법은 우선 'Linux용 Windows 하위 시스템' 옵션 기능을 사용하도록 설정하고:~~
-
-```bash
-# PowerShell 관리자 권한으로 실행, 재시작 필요
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-
-# 예전 버전의 도움말에선 이렇게 알랴줌
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
-```
-
-~~그 다음, WSL 2를 쓸 생각이 없다면 바로 서브 시스템을 설치하면 된다. [요것](https://aka.ms/wslstore) 혹은 [요놈](ms-windows-store://collection/?CollectionId=LinuxDistros)을 눌러 나오는 앱 중 하나를 골라 설치하거나,~~
-
-~~아니면 파워셸에서 직접:~~
-
-```bash
-Invoke-WebRequest -Uri https://aka.ms/wsl-ubuntu-1604 -OutFile Ubuntu.appx -UseBasicParsing
-```
-
-~~명령어로 다운로드/설치 하면 됨~~  
-~~오늘(2021-01-20) 확인해보니 설치가 제대로 안 되며, 도움말에서도 셸 명령어로 설치하라는 내용은 사라짐. 되는 방법 찾기 귀찮으니 그냥 스토어 가서 까세영. 😒~~
-
-
 ## 서브 시스템의 실제 경로
 
-WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.  
+WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.
+
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 
 **WSL2**: 버전 2에선 셸에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl.localhost` 혹은 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
@@ -121,7 +98,7 @@ zsh
 bash
 ```
 
-그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.  
+그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.
 
 윈도우 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json`의 우분투 프로파일에 `"font": { "face": "MesloLGS NF" }`를 추가하면 된다.
 
@@ -131,8 +108,7 @@ bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정.  
-터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
+깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정. 터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
 
 마지막으로 ls color는 아래 실행:
 

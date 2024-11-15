@@ -125,7 +125,7 @@ SQL>spool off
 SQL> select instance from v$thread
 
 -- 접속된 user의 모든 테이블 검색
-SQL> SELECT * FROM TAB;         
+SQL> SELECT * FROM TAB;
 SQL> DESC[RIBE] insa;
 SQL> select * from v$pwfile_users;
 SQL> select * from all_users;
@@ -245,7 +245,8 @@ AND TABLE_NAME = 'MY_TABLE_1'
 ORDER BY GRANTEE;
 ```
 
-아래는 현재 접속한 유저의 권한을 조회하는 데이터 사전들이다.  
+아래는 현재 접속한 유저의 권한을 조회하는 데이터 사전들이다.
+
 코멘트 출처: http://www.gurubee.net/lecture/1009
 
 ```sql

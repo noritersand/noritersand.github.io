@@ -18,7 +18,7 @@ tags:
 
 ```
 abstract class 클래스명 {
-    abstract 접근제어자 리턴타입 메서드명();  
+    abstract 접근제어자 리턴타입 메서드명();
 }
 ```
 

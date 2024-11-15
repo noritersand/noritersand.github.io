@@ -196,7 +196,8 @@ line2
 </c:forEach>
 ```
 
-`varStatus`는 반복 회차 각각의 메타정보를 담고 있다:  
+`varStatus`는 반복 회차 각각의 메타정보를 담고 있다:
+
 - current: 현재 아이템
 - index: 0부터의 순서
 - count: 1부터의 순서
@@ -474,7 +475,7 @@ Hello <c:out value="${user.username}" default="Guest"/>!
 
 ## set, remove
 
-set은 `HttpServletRequest.setAttribute()`와 역할이 같다. `scope` 속성으로 `page`, `request`, `session`, `application` 중 하나의 유효범위를 설정할 수 있다.  
+set은 `HttpServletRequest.setAttribute()`와 역할이 같다. `scope` 속성으로 `page`, `request`, `session`, `application` 중 하나의 유효범위를 설정할 수 있다.
 
 remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `request`, `session`, `application` 범위의 변수를 제거한다.
 

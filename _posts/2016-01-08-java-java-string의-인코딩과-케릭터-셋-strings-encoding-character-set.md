@@ -37,9 +37,9 @@ System.getProperty("file.encoding");
 ## '한글'을 UTF-8로 인코딩 했을때의 16진수 표현값:
 
 ```java
-String string = "한글";  
-byte[] bytes = string.getBytes("UTF-8");  
-for (byte b : bytes) {  
+String string = "한글";
+byte[] bytes = string.getBytes("UTF-8");
+for (byte b : bytes) {
     System.out.print(String.format("0x%02X ", b));
 }
 ```
