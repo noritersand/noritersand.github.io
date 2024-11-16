@@ -91,7 +91,7 @@ tags:
 ## 프로그래밍 언어 Programming Language
 
 - [⭐Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. 시스템 프로그래밍, 웹 어셈블리, 임베디드 시스템 등 다양한 분야에서 사용되는 범용 언어다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다.
-- [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 자바라면 Elixir는 코틀린에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 쓰레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
+- [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 자바라면 Elixir는 코틀린에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 스레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
 - [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. 자바와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
 - [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #2. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
 - [Zig](https://ziglang.org/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #3. 셋 중 가장 최신 언어다(Ada의 표준화는 1983년, Rust의 최초 릴리즈가 2010년, Zig는 2015년에 개발 시작).
@@ -191,6 +191,7 @@ tags:
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
 - [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉬운 라이브러리입니다... 라는데 사실 뭔지 잘 몲.
+- [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 
 ### UI 컴포넌트 라이브러리
 
@@ -204,12 +205,16 @@ tags:
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
 - [Reveal.js](https://revealjs.com/): HTML로 만드는 PPT
 
-### 리액트용 라이브러리
+### 리액트 전용 라이브러리
 
 - [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
 - [Redux](https://redux.js.org/): 리덕스. 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
 - [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다는 평. 
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
+
+### 뷰 전용 라이브러리
+
+- [Pinia](https://pinia.vuejs.org/): 뷰에서 공식으로 지원하는 전역 상태 관리 라이브러리다.
 
 
 ## 인프라
@@ -469,7 +474,7 @@ Project manager 혹은 Issue tracker
 
 - [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다.
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
-- [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 쓰레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
+- [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 스레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
 - [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴 #2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
 - [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴 #3. 자바 웹 앱 전용이다. 상용
 - [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴 #4. 10일 무료. IDE와 연동할 수 있음. 상용

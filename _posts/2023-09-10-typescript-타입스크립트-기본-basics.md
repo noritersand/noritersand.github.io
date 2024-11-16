@@ -328,7 +328,9 @@ foo1 = 123; // error TS2322: Type 'number' is not assignable to type 'never'.
 
 ### 제네릭 Generics
 
-배열처럼 내부에서 별도로 처리하는 값들의 타입을 정의할 때 사용한다.
+제네릭은 타입을 파라미터로 받는 재사용 가능한 코드를 작성할 때 사용한다. 함수, 클래스, 인터페이스, 타입 별칭에서 모두 사용할 수 있다. 
+
+제네릭의 대표적인 예시로 배열이 있다:
 
 ```ts
 type StringArray = Array<string>;
@@ -342,7 +344,7 @@ type ObjectWithNameArray = Array<{name: string}>;
 let objArr: ObjectWithNameArray = [{name: '1'}, {name: '2'}];
 ```
 
-아래는 공식 가이드의 예시를 약간 수정한 것:
+아래는 사용자 정의 타입에서의 제네릭 활용 방법이다(공식 가이드의 예시를 약간 수정함):
 
 ```ts
 interface Backpack<Type> {
@@ -370,6 +372,22 @@ backpack.add('23'); // OK
 console.log(object); // ['23']
 
 backpack.add(23); // error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+```
+
+배열이나 사용자 정의 타입뿐만 아니라, `Map<K, V>`, `Set<T>`, `Promise<T>` 같은 데이터 타입도 제네릭을 활용한다:
+
+```ts
+function resolveAfter2Seconds(): Promise<Map<string, string>> {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      let map = new Map<string, string>();
+      map.set('key1', 'value1');
+      resolve(map);
+      // resolve('done'); // ⛔ error TS2345: Argument of type 'string' is not assignable 
+      //     to parameter of type 'Map<string, string> | PromiseLike<Map<string, string>>'.
+    }, 2000);
+  });
+}
 ```
 
 아래는 함수 매개변수에 적용하는 방식이다. 이쪽은 *제네릭 타입 매개변수*라고 한다:

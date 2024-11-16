@@ -78,7 +78,7 @@ choco list --exact nvm
 # 자세한 메시지 출력
 choco list --trace
 
-# trace보다 더 장황한 메시지 출력. 패키지 설치 경로를 알고 싶을 떄 쓴다.
+# trace보다 더 장황한 메시지 출력. 패키지 설치 경로를 알고 싶을 때 쓴다.
 choco list --verbose
 ```
 

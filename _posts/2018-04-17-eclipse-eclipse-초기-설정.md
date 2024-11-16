@@ -203,7 +203,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
   *.dep
   src/include/version.h# this specific file is also generated.
   ```
-- [Snyk Security Scanner](https://snyk.io/): 써드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
+- [Snyk Security Scanner](https://snyk.io/): 서드 파티 라이브러리의 취약점 등을 찾아주는(혹은 취약점이 보고된 라이브러리를 찾아주는) 확장 기능. 한 번 설치해서 돌려봤는데 보고서의 한글이 깨진다. ~~占쏙옙占쏙옙~~ Node.js 버전이 메인인것 같으니 이걸 쓰자. 원래 이클립스 확장 기능은 뭐든지 션찮음.
 
 
 ## 작성자가 쓰는 단축키 설정
