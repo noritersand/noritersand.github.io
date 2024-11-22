@@ -423,6 +423,10 @@ npm install -g corepack
 
 [코어팩(Corepack)](https://yarnpkg.com/corepack) 프로젝트에 Yarn이 포함되어있으니 따로 설치할 필요 없이 코어팩만 활성화하면 된다. 코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 16.13.0 버전 이상이면 자동으로 설치된다.
 
+ℹ️ NPM 코어팩은 글로벌로 설치된다. 코어팩이 활성화된 상태에선 `yarn` 명령어도 글로벌로 실행할 수 있다. 만약 프로젝트 로컬에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전의 Yarn을 실행한다. Yarn의 글로벌 설정 옵션인 `--global`은 Berry 버전에서 사라졌으며, 모든 설정은 프로젝트 로컬의 `.yarnrc.yml` 파일에 저장된다.
+
+ℹ️ Berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다.
+
 ```bash
 # Yarn으로 Node 실행(현재 프로젝트 환경에 호환되는 방식으로)
 yarn node ./SCRIPT_NAME
@@ -502,44 +506,15 @@ packageExtensions:
 
 이 외의 설정 가능한 필드는 `yarn config -v` 명령으로 조회 하던지 아니면 [이 문서](https://yarnpkg.com/configuration/yarnrc)를 보자.
 
-### Yarn Global
+### ~~Yarn Global~~
 
-참고: https://classic.yarnpkg.com/en/docs/cli/global
+⚠️ Yarn Berry부터 글로벌 설치 옵션은 사라졌다.
 
-```bash
-# 패키지를 글로벌로 설치하되 설치 경로는 /usr/local로
-yarn global add PACKAGE_NAME --prefix /usr/local
+참고: 
 
-# 글로벌 패키지 확인
-yarn global list
-
-# 글로벌로 설치한 패키지 삭제
-yarn global remove PACKAGE_NAME
-```
-
-글로벌 설치 경로 기본값은 [npm](https://nodejs.dev/learn/where-does-npm-install-the-packages)과 달라서 Yarn으로 설치한 글로벌 패키지가 npm으로는 안보일 수 있다.
-
-```bash
-"$env:APPDATA\npm\node_modules"
-# C:\Users\fixalot\AppData\Roaming\npm\node_modules
-npm root -g
-# C:\Program Files\nodejs\node_modules
-
-yarn global dir
-# C:\Users\fixalot\AppData\Local\Yarn\Data\global
-```
-
-만약 `yarn global add`로 설치했는데 해당 패키지의 명령어를 못찾는다고 하면 다음처럼 path에 글로벌 패키지의 bin 파일 모음 경로를 추가한다:
-
-```bash
-[Environment]::SetEnvironmentVariable("PATH", "$env:PATH;$(yarn global bin)", "User")
-```
-
-[NVM을 쓰는 경우 Yarn을 통한 글로벌 설치가 문제가 될 수 있다는 말이 있다](https://stackoverflow.com/questions/56941551/is-there-any-difference-between-installing-global-packages-with-yarn-or-npm).
-
-실제 겪은 일: NVM을 쓰는 환경에서 Yarn 글로벌로 `react-devtools`를 설치했는데 React Native Debugger에서 자꾸 높은 버전으로 올리라고 함. npm 글로벌로 설치했더니 해당 메시지 사라짐. (2022-01-28, Yarn v1.22.17)
-
-**그냥 글로벌 패키지는 npm으로 하는게 좋을 것 같음.**
+- [https://classic.yarnpkg.com/en/docs/cli/global](https://classic.yarnpkg.com/en/docs/cli/global)
+- [https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global](https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global)
+- [https://github.com/yarnpkg/berry/issues/821](https://github.com/yarnpkg/berry/issues/821)
 
 ### yarn init vs yarn create
 
@@ -556,17 +531,31 @@ yarn create vite
 
 ### yarn run
 
+`package.json`에 npm scripts로 정의한 명령어를 실행한다.
+
 ```
 yarn run [script] [<args>]
 ```
-
-npm scripts로 정의한 명령어를 실행한다.
 
 ```bash
 yarn run live-server --open=out
 ```
 
-만약 `script`가 npm scripts에 정의되어 있지 않은 키워드라면, 로컬에 설치된 패키지의 실행 파일(`node_modules/.bin/`의 바이너리 파일)을 찾는다. 이것도 없으면 워크스페이스의 스크립트를 찾는다.
+만약 `script`가 npm scripts에 정의되어 있지 않은 키워드라면, 로컬에 설치된 패키지의 실행 파일(`node_modules`가 있다면 `/.bin/`의 바이너리 파일같은)을 찾는다.
+
+```bash
+# 실행 가능한 스크립트 모두 표시
+yarn run
+```
+
+이 명령을 추가 인자 없이 실행하면, 현재 프로젝트에서 사용할 수 있는 모든 스크립트와 의존성 바이너리의 목록이 표시된다.
+
+```bash
+# api 워크스페이스의 build 스크립트 실행
+yarn run api:build
+```
+
+`script`에 지정한 이름이 콜론`:`이 포함되어 있으면, 프로젝트 내의 특정 워크스페이스에서만 스크립트를 찾아 실행한다. 예를 들어 모노레포 구조에서 `packages/api`와 `packages/web` 두 개의 워크스페이스가 있고, 각각 build 스크립트를 가지고 있다고 가정했을 때, `yarn run api:build`를 실행하면 `packages/api` 워크스페이스의 build 스크립트가 실행되는 식이다.
 
 ### yarn dlx
 
@@ -621,7 +610,7 @@ PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 �
 
 PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 필드가 `pnp`일 때, 혹은 `.yarnrc.yml` 파일이 아예 없을 때 자동으로 활성화된다. 활성화 상태라면 `yarn install` 시 `.yarn` 디렉터리, `.pnp.cjs`, `.pnp.loader.mjs` 파일 등이 자동으로 생성된다.
 
-`yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드값을 Yarn의 최신 버전으로 변경한다. 참고로 berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다.
+`yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드값을 Yarn의 최신 버전으로 변경한다.
 
 
 ## Node.js 패키지 모음

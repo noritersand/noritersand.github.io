@@ -143,6 +143,8 @@ const handleEvent3 = event => {
 };
 ```
 
+ℹ️ 모든 modifier가 호출될 때마다 렌더링 되는 것은 아니다. 리액트는 modifier를 실행 대기 큐에 적재하고 이벤트 핸들러의 모든 코드가 실행되기를 기다린 다음 다시 렌더링한다. [자세한 내용은 여기](https://react.dev/learn/queueing-a-series-of-state-updates#react-batches-state-updates)를 보자.
+
 #### 현재 state를 기반으로 업데이트하기
 
 리액트는 state 값의 변경을 비동기로 처리한다. 따라서 다음처럼 현재 state를 기반으로 값을 업데이트 하는 코드는 타이밍 문제가 발생한다:

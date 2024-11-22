@@ -328,7 +328,15 @@ foo1 = 123; // error TS2322: Type 'number' is not assignable to type 'never'.
 
 ### 제네릭 Generics
 
-제네릭은 타입을 파라미터로 받는 재사용 가능한 코드를 작성할 때 사용한다. 함수, 클래스, 인터페이스, 타입 별칭에서 모두 사용할 수 있다. 
+제네릭은 함수, 클래스, 인터페이스, 타입 별칭을 정의할 때 내부에서 사용할 변수의 타입을 나중에 지정할 수 있게 하는 기능이다. 타입을 파라미터로 받는 재사용 가능한 코드를 작성할 때 사용한다. 
+
+제네릭 타입을 정의하려면 타입 이름 뒤에 제네릭 타입 변수(Generic type variables)를 홑화살괄호`<>`와 함께 표기하면 된다. 제네릭 타입 변수의 이름은 흔히들 `T`나 `Type`으로 작성한다.
+
+```ts
+function doSomething<T>(arg: T): T { 
+  return arg;
+}
+```
 
 제네릭의 대표적인 예시로 배열이 있다:
 
@@ -377,14 +385,11 @@ backpack.add(23); // error TS2345: Argument of type 'number' is not assignable t
 배열이나 사용자 정의 타입뿐만 아니라, `Map<K, V>`, `Set<T>`, `Promise<T>` 같은 데이터 타입도 제네릭을 활용한다:
 
 ```ts
-function resolveAfter2Seconds(): Promise<Map<string, string>> {
-  return new Promise(resolve => {
+function resolveAfter2Seconds(): Promise<string> {
+  return new Promise<string>(resolve => {
     setTimeout(() => {
-      let map = new Map<string, string>();
-      map.set('key1', 'value1');
-      resolve(map);
-      // resolve('done'); // ⛔ error TS2345: Argument of type 'string' is not assignable 
-      //     to parameter of type 'Map<string, string> | PromiseLike<Map<string, string>>'.
+      resolve('done');
+      // resolve(1234); // ⛔ error TS2345: Argument of type 'number' is not assignable to parameter of type 'string | PromiseLike<string>'.
     }, 2000);
   });
 }
