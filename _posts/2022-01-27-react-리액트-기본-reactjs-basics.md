@@ -163,7 +163,7 @@ class Button extends Component {
 }
 ```
 
-원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 import 하라 알리면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
+원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 가져오라고 알려주면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
 
 ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져온다: [Create React App \| Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
 
@@ -202,7 +202,7 @@ function Button({text}) {
 <button class="Button_btn__9-J4X">Continue</button>
 ```
 
-이처럼 CSS 모듈은 `[filename]\_[classname]\_\_[hash]` 형식의 고유한 이름으로 클래스 이름을 자동 지정한다. 따라서 실제 `btn` 클래스 이름을 갖는 다른 요소와 충돌하지 않는 것이 특징이다.
+이처럼 CSS 모듈은 `[filename]\_[classname]\_\_[hash]` 형식의 고유한 이름으로 클래스 이름을 자동 지정한다. 따라서 실제 `btn` 클래스 이름을 갖는 다른 엘리먼트와 충돌하지 않는 것이 특징이다.
 
 ### CRA: CSS Reset
 
@@ -354,7 +354,7 @@ const btn = <button style={{backgroundColor: 'green'}}>Click Me</button>;
 
 참고로 JSX에서는 삽입된 모든 값을 렌더링 전에 이스케이프하기 때문에 **XSS 같은 명령어 주입 공격에서 안전**하다고 한다.
 
-### JSX 요소는 단일 태그로 감싸야 함
+### JSX 엘리먼트는 단일 태그로 감싸야 함
 
 그렇지 않은 표현은 문법 에러다:
 
@@ -633,7 +633,7 @@ ReactDOM.hydrateRoot(domNode, reactNode, options)
 
 서버에서 렌더링된 마크업에 이벤트 핸들러 같은 자바스크립트 기능을 '부착' 시켜준다. `createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 
 
-ℹ️ *Hydration*은 클라이언트 측에서 자바스크립트를 실행하여 이미 존재하는 HTML 요소에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
+ℹ️ *Hydration*은 클라이언트(=브라우저) 측에서 자바스크립트를 실행하여 이미 존재하는 DOM 엘리먼트에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
 
 ```js
 import {hydrateRoot} from 'react-dom/client';
@@ -986,7 +986,7 @@ function App() {
 
 [Suspense – React](https://react.dev/reference/react/Suspense)
 
-자식 요소가 로드가 완료될 때까지 대체 UI를 표시한다.
+자식 엘리먼트의 로드가 완료될 때까지 대체 UI를 표시한다.
 
 ```jsx
 <Suspense fallback={<Loading />}>

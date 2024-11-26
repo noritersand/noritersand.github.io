@@ -1212,7 +1212,7 @@ git ls-tree HEAD ./docs
 
 #### Options
 
-- `-d`: 명명된 트리 구성요소만 출력한다. (공식 문서에선 파일을 `children`, 디렉터리를 `named tree entry`라고 표현함)
+- `-d`: 명명된 트리 구성 요소만 출력한다. (공식 문서에선 파일을 `children`, 디렉터리를 `named tree entry`라고 표현함)
 - `-r`: 현재 경로 포함, 하위 경로를 재귀한다.
 
 

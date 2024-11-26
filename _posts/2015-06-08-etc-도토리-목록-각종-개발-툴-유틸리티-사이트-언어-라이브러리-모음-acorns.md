@@ -146,14 +146,14 @@ tags:
 - [component.gallery](https://component.gallery/): CSS 프레임워크와 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
 - [⭐Bulma](https://bulma.io/): Flexbox 기반
-- [Foundation Framework](https://get.foundation/): ?
+- [Foundation Framework](https://get.foundation/)
 - [Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
 - [⭐StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
-- [Open Props](https://open-props.style/): ?
-- [Basscss](https://basscss.com/): ?
-- [Water.css](https://watercss.kognise.dev/): ?
-- [MVP.css](https://andybrewer.github.io/mvp/): ?
-- [Materialize CSS](https://materializecss.com/): ?
+- [Open Props](https://open-props.style/)
+- [Basscss](https://basscss.com/)
+- [Water.css](https://watercss.kognise.dev/)
+- [MVP.css](https://andybrewer.github.io/mvp/)
+- [Materialize CSS](https://materializecss.com/)
 - [⭐System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다...고 한다.
 - [NES.css](https://nostalgic-css.github.io/NES.css/): 닌텐도 스타일
 - [PSone.css](https://micah5.github.io/PSone.css/): 플스 1 스타일
@@ -161,17 +161,17 @@ tags:
 - [XP.css](https://nostalgic-css.github.io/NES.css/): 윈도우 XP
 - [7.css](https://khang-nd.github.io/7.css/): 이건 윈도우 7
 - [Bojier](https://bojler.slicejack.com/): 이메일용
-- [Chota](https://jenil.github.io/chota/): ?
-- [Pico.css](https://picocss.com/): ?
+- [Chota](https://jenil.github.io/chota/)
+- [Pico.css](https://picocss.com/)
 - [⭐ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
-- [Mantine](https://mantine.dev/): ?
-- [Ant Design](https://ant.design/): ?
+- [Mantine](https://mantine.dev/)
+- [Ant Design](https://ant.design/)
 - [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
-- [NextUI](https://nextui.org/): ?
-- [리액트 UI](https://reach.tech/): ?
+- [NextUI](https://nextui.org/)
+- [리액트 UI](https://reach.tech/)
 - [Headless UI](https://headlessui.dev/): 리액트 혹은 뷰에 적용할 수 있음
 - [@mdi/svg](https://www.npmjs.com/package/@mdi/svg): MDI(Material Design Icons) 프로젝트의 SVG 아이콘을 제공하는 라이브러리. 단독 기능은 필요한 아이콘을 svg로 만들어주는 게 있다. (아마도?)
-- [Vitebook](https://vitebook.dev/): ?
+- [Vitebook](https://vitebook.dev/)
 - [Quasar Framework](https://quasar.dev/): 뷰 전용인듯?
 - [Vuetify](https://vuetifyjs.com/en/): 뷰용 컴포넌트 프레임워크
 
@@ -192,6 +192,13 @@ tags:
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
 - [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉬운 라이브러리입니다... 라는데 사실 뭔지 잘 몲.
 - [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
+
+### 번들러
+
+- [webpack](https://webpack.js.org/)
+- [Browserify](https://browserify.org/)
+- [rollup.js]()https://rollupjs.org/
+- [Parcel](https://parceljs.org/)
 
 ### UI 컴포넌트 라이브러리
 
@@ -388,8 +395,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
 - [Notepad++](https://notepad-plus-plus.org)
 - [UltraEdit](http://www.ultraedit.com/loc/ko/index_ko.html)
-- [Nova](https://nova.app)
-- [⭐Visual Studio Code](https://code.visualstudio.com): 요즘 대세
+- [Nova](https://nova.app): macOS만 지원하고 30일 체험판 이후 유료로 전환됨
+- [⭐Visual Studio Code](https://code.visualstudio.com)
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능도 제공한다. 또 사용자 플러그인 설치가 가능한 점, 오프라인 파일이 생성되어 백업이 쉽다는 점이 있다. 동기화 기능(Obsidian Sync)은 유료다.
 
 
@@ -398,7 +405,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 사실 윈도우 10부터는 Windows Terminal이 있어서 이런 거 필요 없지만... 🤭
 
 - [WinSCP](https://winscp.net/eng/download.php)
-- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty): SSH = putty
+- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty)
 - [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 유료 라이선스.
 - [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
 - [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 툴 중에서 여러 서버 동시 접속 기능은 그나마...
@@ -570,6 +577,7 @@ Project manager 혹은 Issue tracker
 
 ## 브라우저 
 
+- [DuckDuckGo browser](https://duckduckgo.com/app)
 - [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저 #1
 - [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
 

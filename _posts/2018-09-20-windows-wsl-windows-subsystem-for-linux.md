@@ -135,7 +135,7 @@ chsh -s $(which zsh)
 - Docker에선 이상하게 선택 불가하고 `(4) Pure.`로 고정됨.
 
 
-## WSL용 쉘 사용자 정의 설정 모음
+## WSL용 셸 사용자 정의 설정 모음
 
 ```bash
 # .bashrc 또는 .zshrc 파일에 추가

@@ -281,15 +281,21 @@ sudo apt-get remove byobu hollywood
 - `JAVA_HOME`: `C:\Program Files\Java\jdk1.8.0_112`
 
 
-## shell: 프로토콜로 접근 가능한 특수 폴더 목록
+## shell: 프로토콜
 
-파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 파워셸에서 굳이 쓴다면 `explorer shell:AppData`와 같은 형태로 써야 함.
+윈도우의 특수 폴더(special folder)에 접근하는데 사용하는 명령어. 'shell: protocol' 혹은 'shell: commands'라 부른다. 
+
+이 특수 폴더들은 일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 
+
+그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, 파워셸에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
+
+아래는 `shell:` 프로토콜로 접근 가능한 특수 폴더의 목록이다:
 
 - `shell:3D Objects`
 - `shell:AccountPictures`
 - `shell:AddNewProgramsFolder`
 - `shell:Administrative Tools`
-- `shell:AppData`
+- `shell:AppData`: AppData 디렉터리
 - `shell:AppDataDesktop`
 - `shell:AppDataDocuments`
 - `shell:AppDataFavorites`
@@ -297,7 +303,7 @@ sudo apt-get remove byobu hollywood
 - `shell:AppMods`
 - `shell:AppUpdatesFolder`
 - `shell:Application Shortcuts`
-- `shell:AppsFolder`
+- `shell:AppsFolder`: 앱 실행 링크 파일 모여있는 곳
 - `shell:CD Burning`
 - `shell:CSCFolder`
 - `shell:Cache`

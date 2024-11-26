@@ -242,7 +242,7 @@ AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
 ### 전역
 
 - <kbd>esc</kbd>: 파일 에디터로 포커스
-- <kbd>alt + insert</kbd>: 새로 추가. 상황에 따라 구성요소/파일/rule 등을 추가하는 메뉴를 보여줌.
+- <kbd>alt + insert</kbd>: 새로 추가. 상황에 따라 구성 요소/파일/rule 등을 추가하는 메뉴를 보여줌.
 - <kbd>shift, shift</kbd>: Search Everywhere 모든 것(?) 열기
 - <kbd>ctrl, ctrl</kbd>: Run Anything 모든 것(?) run하기
 - <kbd>ctrl + alt + s</kbd>: Settings 인텔리제이 설정

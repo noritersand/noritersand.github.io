@@ -154,12 +154,16 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 Autohotkey로 확장한 키 조합:
 
-<kbd>win + alt + = </kbd> 조합은 작동하지 않음(윈도우 기본 단축키인가...?).
-
+- <kbd>win + alt + 6</kbd>: Discord
 - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
-- <kbd>win + backspace</kbd>: WorkFlowy
-- <kbd>win + alt + backspace </kbd>: 아웃룩
 - <kbd>win + ctrl + - </kbd>: Notion
 - <kbd>win + alt + - </kbd>: Obsidian
-- <kbd>win + = </kbd>: Edge
+- <kbd>win + = </kbd>: Microsoft Edge
 - <kbd>win + ctrl + = </kbd>: 야카오톡
+- <kbd>win + backspace</kbd>: WorkFlowy
+- <kbd>win + ctrl + backspace </kbd>: 아웃룩
+- <kbd>win + alt + backspace </kbd>: 어나더 툴
+
+윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음. 
+
+그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지?

@@ -421,7 +421,7 @@ data() {
 
 ### v-if
 
-조건식이 `false`이면 요소가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM 자체가 사라진다.
+조건식이 `false`이면 엘리먼트가 비활성화 되는데, 단순히 CSS로 감추는게 아니라 DOM 자체가 사라진다.
 
 ```js
 export default {
@@ -441,7 +441,7 @@ export default {
 
 ### v-else, v-else-if
 
-else 블록 혹은 else-if 블록을 표현하는 디렉티브. 반드시 `v-if` 바로 다음에 오는 형제 요소여야 한다.
+else 블록 혹은 else-if 블록을 표현하는 디렉티브. 반드시 `v-if` 바로 다음에 오는 형제 엘리먼트여야 한다.
 
 ```html
 <div>
@@ -543,7 +543,7 @@ export default {
 
 #### v-if 같이 쓰기
 
-[가이드](https://vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)에 따르면 같은 요소에 둘을 같이 쓰는 것은 좋지 않다고 하니 다음처럼 하위 요소로 분리하는 게 좋다:
+[가이드](https://vuejs.org/style-guide/rules-essential.html#avoid-v-if-with-v-for)에 따르면 같은 엘리먼트에 둘을 같이 쓰는 것은 좋지 않다고 하니 다음처럼 하위 엘리먼트로 분리하는 게 좋다:
 
 ```html
 <ul>
@@ -601,7 +601,7 @@ createApp({
 - `.stop`: `Event.stopPropagation()`과 같음
 - `.prevent`: `Event.preventDefault()`와 같음
 - `.self`: 이벤트 발동 대상이 정확히 자기 자신일 때만 핸들러 실행
-- `.capture`: 이 요소의 핸들러는 하위 요소의 핸들러보다 먼저 작동함
+- `.capture`: 이 엘리먼트의 핸들러는 하위 엘리먼트의 핸들러보다 먼저 작동함
 - `.once`: 한 번만 실행
 - `.passive`: `Event.preventDefault()` 호출을 무시하고 이벤트의 기본 행동이 발생함
 
@@ -960,7 +960,7 @@ export const childComponent = {
 
 ## Template Refs
 
-DOM 요소 혹은 컴포넌트를 직접 다뤄야 때 사용한다.
+DOM 엘리먼트 혹은 컴포넌트를 직접 다뤄야 때 사용한다.
 
 선언은 `ref` 혹은 `:ref`로 하며:
 
@@ -980,7 +980,7 @@ export default {
 
 ### v-for에서 사용하기
 
-`ref`를 `v-for` 내부 요소에 사용하면, `ref` 값은 반복된 요소들을 갖는 배열이 된다:
+`ref`를 `v-for` 내부 엘리먼트에 사용하면, `ref` 값은 반복된 엘리먼트들을 갖는 배열이 된다:
 
 ```html
 <template v-for="(ele, index) in elements" :key="index">

@@ -59,7 +59,7 @@ Map.groupBy(items, callbackFn)
 function callbackFn(element, index) {}
 ```
 
-`Map`을 이용한 그룹화 함수. 배열과 사용자 정의 함수를 인자로 받으며, 배열의 구성요소를 사용자 정의 함수에서 반환한 값으로 묶어 `Map` 타입으로 반환한다:
+`Map`을 이용한 그룹화 함수. 배열과 사용자 정의 함수를 인자로 받으며, 배열의 구성 요소를 사용자 정의 함수에서 반환한 값으로 묶어 `Map` 타입으로 반환한다:
 
 ```js
 var inventory = [
