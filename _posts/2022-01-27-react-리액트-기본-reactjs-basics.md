@@ -839,62 +839,6 @@ function App() {
 </div>
 ```
 
-### prop-types
-
-- [npm \| prop-types](https://www.npmjs.com/package/prop-types)
-
-props의 타입을 제한할 때 사용하는 패키지. 타입스크립트로 대체 가능하다. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
-
-```jsx
-import PropTypes from 'prop-types';
-
-const Btn = (props) => {
-  return (
-    <button type={props.type} onClick={props.clickHandler}>
-      {props.text}
-    </button>
-  );
-};
-
-Btn.propTypes = {
-  text: PropTypes.string,
-  clickHandler: PropTypes.func,
-  type: PropTypes.string,
-  backgroundColor: PropTypes.string,
-  fontSize: PropTypes.number
-};
-
-const App = () => {
-  return (
-    <div>
-      <Btn text='some-text' fontSize={'18'}></Btn>
-    </div>
-  );
-};
-```
-
-위 코드에서 `Btn` 컴포넌트의 `fontSize`를 `number`로 제한했다. 하지만 실제 넘겨진 값은 `'18'`이므로 아래와 같은 경고창이 발생하는 식이다:
-
-```
-Warning: Failed prop type: Invalid prop `fontSize` of type `string` supplied to `Btn`, expected `number`.
-```
-
-그리고 필수값으로 지정하는 방법도 제공한다:
-
-```jsx
-Btn.propTypes = {
-  type: PropTypes.string.isRequired,
-};
-```
-
-`.isRequired`로 `type`를 필수값으로 지정했다. 여기서 만약 `type`을 제공하지 않으면:
-
-```
-Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but its value is `undefined`.
-```
-
-이렇게 된다.
-
 
 ## React.memo()
 
@@ -1026,9 +970,9 @@ async function Page({page}) {
 }
 ```
 
-컴포넌트를 비동기 함수로 만들면 서버 컴포넌트가 되는 것으로 보임.
+**컴포넌트를 비동기 함수로 만들면 서버 컴포넌트가 되는 것으로 보임**.
 
-서버 컴포넌트에선 useState 같은 상호작용 API를 사용할 수 없다. 상호작용이 필요하면 컴포넌트 상단에 `"use client"` 지시어를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
+서버 컴포넌트에선 useState 같은 상호작용 API를 사용할 수 없다. 상호작용이 필요하면 컴포넌트 상단에 `'use client'` 지시어(directive)를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
 
 ```jsx
 // Server Component
@@ -1050,7 +994,7 @@ async function Notes() {
 
 ```jsx
 // Client Component
-"use client"
+'use client'
 
 export default function Expandable({children}) {
   const [expanded, setExpanded] = useState(false);
@@ -1067,13 +1011,16 @@ export default function Expandable({children}) {
 }
 ```
 
-서버 컴포넌트를 위한 지시어는 따로 없다. `"use server"`는 서버 컴포넌트가 아니라 서버 액션에 사용된다. Next.js 때문에 생긴 오해인 듯.
+서버 컴포넌트를 위한 지시어는 따로 없다. `'use server'`는 서버 컴포넌트가 아니라 **서버 액션**에 사용된다.
 
 ### 서버 액션 Server Actions
 
-[Server Actions – React](https://react.dev/reference/rsc/server-actions)
+- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
+- ['use server' directive – React](https://react.dev/reference/rsc/use-server)
 
 **React 19에 추가된 실험적 기능**. 클라이언트 컴포넌트에서 호출하고 서버에서 실행되는 비동기 함수를 의미한다.
+
+서버 액션은 함수나 모듈의 맨 처음에 `'use server'` 지시어를 붙여 선언할 수 있다:
 
 ```jsx
 // Server Component
@@ -1081,7 +1028,7 @@ import Button from './Button';
 
 function EmptyNote () {
   async function createNoteAction() {
-    // Server Action
+    // 서버 액션 지시어
     'use server';
     
     await db.notes.create();
@@ -1091,8 +1038,78 @@ function EmptyNote () {
 }
 ```
 
+함수 각각에 지정해도 되지만, 어떤 모듈 파일의 모든 export를 서버 액션으로 만들기 위체 파일의 맨 상단에 지정하는 방법도 있다. 이 경우 import를 포함한 다른 모든 코드보다 위에 있어야 한다(코멘트 라인 제외):
 
-## 라우터 React Router
+```js
+'use server';
+
+export async function createNoteAction() {
+  await db.notes.create();
+}
+```
+
+
+## 서드 파티 라이브러리
+
+### prop-types
+
+- [npm \| prop-types](https://www.npmjs.com/package/prop-types)
+
+props의 타입을 제한할 때 사용하는 패키지. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
+
+ℹ️ 타입스크립트를 사용할 땐 필요 음슴
+
+```jsx
+import PropTypes from 'prop-types';
+
+const Btn = (props) => {
+  return (
+    <button type={props.type} onClick={props.clickHandler}>
+      {props.text}
+    </button>
+  );
+};
+
+Btn.propTypes = {
+  text: PropTypes.string,
+  clickHandler: PropTypes.func,
+  type: PropTypes.string,
+  backgroundColor: PropTypes.string,
+  fontSize: PropTypes.number
+};
+
+const App = () => {
+  return (
+    <div>
+      <Btn text='some-text' fontSize={'18'}></Btn>
+    </div>
+  );
+};
+```
+
+위 코드에서 `Btn` 컴포넌트의 `fontSize`를 `number`로 제한했다. 하지만 실제 넘겨진 값은 `'18'`이므로 아래와 같은 경고창이 발생하는 식이다:
+
+```
+Warning: Failed prop type: Invalid prop `fontSize` of type `string` supplied to `Btn`, expected `number`.
+```
+
+그리고 필수값으로 지정하는 방법도 제공한다:
+
+```jsx
+Btn.propTypes = {
+  type: PropTypes.string.isRequired,
+};
+```
+
+`.isRequired`로 `type`를 필수값으로 지정했다. 여기서 만약 `type`을 제공하지 않으면:
+
+```
+Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but its value is `undefined`.
+```
+
+이렇게 된다.
+
+### React Router
 
 [React Router](https://reactrouter.com/)
 

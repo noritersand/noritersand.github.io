@@ -527,3 +527,36 @@ alter table TestTable add column txt2 varchar(2) null after txt;
 ```
 
 새 컬럼은 `txt`의 바로 뒤 순서로 만들어진다.
+
+
+## INSERT
+
+[INSERT - MariaDB Knowledge Base](https://mariadb.com/kb/en/insert/)
+
+MariaDB는 기본적인 insert 외에 중복을 무시하는 옵션과 (Oracle의 merge into와 비슷한) insert 혹은 update를 알아서 처리하는 기능을 제공한다.
+
+### INSERT IGNORE INTO
+
+```sql
+insert ignore into users (
+    id, username, email
+) values (
+    1, 'alice', 'alice@example.com'
+);
+```
+
+`users` 테이블의 `id` 컬럼이 PK일 때, 이미 존재하는 키를 값으로 지정하면 해당 insert는 무시된다.
+
+### INSERT INTO ... ON DUPLICATE KEY UPDATE
+
+```sql
+insert into users (
+    id, username, email
+) values (
+    2, 'bob', 'bob@example.com'
+)
+on duplicate key update
+    email = 'bob_new@example.com'
+```
+
+마찬가지로 PK가 이미 존재하는 값이면, 이 경우엔 무시하는게 아니라 update로 처리된다.

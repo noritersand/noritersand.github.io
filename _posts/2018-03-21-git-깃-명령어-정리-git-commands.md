@@ -35,7 +35,7 @@ git update-git-for-windows
 ## 용어
 
 - 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
-- 스테이징 에어리어(staging area): 인덱스라고도 부른다.
+- 스테이징 에어리어(staging area): 인덱스(index)라고도 부른다.
 - 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 가령 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
 - 깃 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
 - 델타(delta): 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
@@ -1722,6 +1722,8 @@ git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
 
 
 ## rm
+
+remove. 워킹트리와 스테이징 에어리어에서 파일을 삭제한다.
 
 #### 파일/폴더 삭제
 

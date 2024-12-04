@@ -218,9 +218,11 @@ npm jsdoc ./src --destination ./doc --configure ./conf/jsdoc-config.json
 ```
 
 
-## 기타 블록 태그들
+## 블록 태그들
 
-### @description, @desc
+### @description
+
+별칭: `@desc`
 
 함수나 변수의 설명을 작성할 때 사용한다. 이 태그를 명시하면 태그가 적용되지 않은 코멘트는 무시된다(`@file`도 같이 무시하는 걸로 보임). 만약 태그가 없는 설명 코멘트가 다른 태그들보다 위에 있을 경우 `@desc`를 생략할 수 있다.
 
@@ -228,11 +230,15 @@ npm jsdoc ./src --destination ./doc --configure ./conf/jsdoc-config.json
 
 ### @param
 
-**TODO**
+별칭: `@arg`, `@argument`
+
+함수나 클래스의 파라미터에 대한 설명을 작성한다.
 
 ### @returns
 
-**TODO**
+별칭: `@return`
+
+함수의 리턴값에 대한 설명.
 
 ### @deprecated
 
@@ -241,3 +247,28 @@ npm jsdoc ./src --destination ./doc --configure ./conf/jsdoc-config.json
  * @deprecated since version 2.0
  */ 
 ```
+
+### @file
+
+별칭: `@fileoverview`, `@overview`
+
+파일에 대한 설명을 작성하는 태그.
+
+### @class (별칭: `@constructor`)
+
+이 함수는 `new` 키워드로 호출되도록 만들었음을 표시한다. 그러니까 생성자 함수를 반드시 호출해야 하는 경우를 의미한다.
+
+### @classdesc
+
+클래스에 대한 설명을 작성하는 태그.
+
+
+## 인라인 태그들
+
+### @link
+
+**TODO**
+
+### @tutorial
+
+**TODO**

@@ -165,6 +165,8 @@ setCounter(current => current + 1); // O
 
 이 콜백 함수를 *updater function* 혹은 *functional update*라고 부른다.
 
+#### 배열 state 업데이트하기
+
 만약 state가 배열이고 새 요소를 덧붙이려면 다음처럼 작성한다:
 
 ```jsx
@@ -174,10 +176,79 @@ const [values, setValues] = useState([]);
 
 const handleEvent2 = event => {
   let value = event.target.value;
-  // setValues(values.push(value)); // 잘못된 방법
-  setValues(prev => [...prev, value]); // 이렇게 하거나
-  // setValues([...values, value]); // 이렇게 해도 됨
+
+  // 여기서 값을 수정한다고 할 때...
 };
+```
+
+```jsx
+// ❌ 잘못된 방법
+setValues(values.push(value));
+
+// ✅ 이렇게 하거나
+setValues(prev => [...prev, value]);
+
+// ✅ 이렇게 해도 됨
+setValues([...values, value]);
+```
+
+배열의 요소 하나를 교체하거나, 요소가 객체일 때 프로퍼티를 수정하려는 경우에도 원본 배열을 변경하지 말고 변경된 새 배열을 할당하는 게 올바른 방법이다(🚨 객체 배열의 얕은 복제에 주의할 것):
+
+```jsx
+import React, {useState} from 'react';
+
+export default function Fruits() {
+  const [list, setList] = useState([
+    {seq: 1, shape: '🍎'},
+    {seq: 2, shape: '🍌'},
+    {seq: 3, shape: '🍊'},
+    {seq: 4, shape: '🍇'}
+  ]);
+
+  function updateArray(index, replacement) {
+    setList(prev => {
+      // 원래의 배열을 변형하지 않고, 복제된 새 배열 만들기
+      return prev.map((item, idx) => {
+        if (idx === index) {
+          // 변경된 새 객체 반환
+          return {
+            ...item,
+            shape: replacement
+          };
+        }
+        // 변경되지 않은 나머지 반환
+        return item;
+      });
+    });
+  }
+
+  return (
+    <ul>
+      {list.map((item, index) => (
+        <li key={item.seq}>
+          <span>{item.shape}</span>
+          <button onClick={() => updateArray(index, '🍉')}>수박으로 변경하기</button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+```
+
+서드 파티 라이브러리인 [Immer](https://immerjs.github.io/immer/)를 활용하면 업데이트 함수 로직이 간결해진다:
+
+```jsx
+import {produce} from 'immer';
+
+// ...
+
+function updateArray(index, replacement) {
+  setList(produce(draft => {
+    if (draft[index]) {
+      draft[index].shape = replacement;
+    }
+  }));
+}
 ```
 
 #### state 변경 감지하기

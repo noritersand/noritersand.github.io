@@ -35,6 +35,7 @@ tags:
 - [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
+- [Advent of Code](https://adventofcode.com/): 매년 일정 시간마다 하나씩 공개되는 프로그래밍 퍼즐 사이트. 모든 언어로 풀 수 있음. ~~UI에서해커스멜이난다~~
 
 
 ## 각종 문서(메뉴얼, API Doc, 튜토리얼 등)
@@ -226,50 +227,25 @@ tags:
 
 ## 인프라
 
-### PaaS
+### 프로세스 매니저
 
-PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
+- [PM2](https://pm2.io/): Node.js 앱을 운영하는데 자주 쓰이는 프로세스 매니저. 자동 재시작, 로드 밸런싱, 모니터링, 로그 관리, 무중다 배포(Zero downtime deployment) 등의 기능을 제공한다.
 
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
-  - [Koyeb](https://www.koyeb.com/)
-  - [Fly.io](https://fly.io/)
-  - [Northflank](https://northflank.com/)
-- [Kubernetes](https://kubernetes.io/): 통칭 K8s이라 쓰는 쿠버네티스. 컨테이너화된 애플리케이션을 관리하고 배포하기 위한 오픈소스 플랫폼이다. 기존 PaaS 범주와 비슷하지만 다르다고 한다. [공식 문서 링크](https://kubernetes.io/docs/concepts/overviw/). "컨테이너화된 애플리케이션을 배포, 관리, 확장할 때 수반되는 다수의 수동 프로세스를 자동화하는 오픈소스 컨테이너 오케스트레이션 플랫폼"이라 소개된다.
-- [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
-- [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
-- [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
-- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+### 메시지 브로커(메시지 큐 시스템)
 
-### IaaS
-
-인프라만 제공하는 클라우드 서비스.
-
-- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
-- [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
-- [Azure](https://azure.microsoft.com/)
-- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
-- [Pulumi](https://www.pulumi.com/}): 자바스크립트 코드로 클라우드 인프라를 관리하는 IaC\* 서비스. 개인 용도는 무료(2023-09-13)
-
-\* IaC(Infrastructure as Code): 코드를 사용하여 수동 프로세스가 아닌 자동으로 인프라를 정의하고 관리하는 방법론의 일종
-
-### BaaS, Backend as a Service
-
-BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
-
-- [Firebase](https://firebase.google.com/): 구글의 그 파이어베이스
-- [Supabase](https://supabase.com/): 오픈소스 백엔드 서비스. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공함. 파이어베이스에는 없는 RDBMS(PostgreSQL)을 제공한다고 함.
-- [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
-
-### VPN
-
-- [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않음.
-- [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
+- [Apache Kafka](https://kafka.apache.org/): 카프카. 아파치 소프트웨어 재단이 스칼라로 개발한 오픈소스 분산 스트리밍 플랫폼. '메시지 브로커 프로젝트' 혹은 '분산 환경에서 사용되는 데이터 스트리밍 플랫폼'으로 소개된다. 여러 데이터베이스의 동기화 작업이나, 비동기로 메시지를 주고 받을 때 사용한다(데이터 입출력도 여기에 해당함). 에이전트를 설치하는 방식이라 카더라.
+- [RabbitMQ](https://www.rabbitmq.com/): MQTT, AMQP를 구현한 오픈 소스 메시지 브로커. Erlang으로 만들어졌다(얼랭?). 사용자 요청의 비동기 처리, 앱 간 메시지 교환, 분산 시스템에서의 메시지 브로커링 등에 활용된다.
 
 ### CDN
 
 - [cdnjs](https://cdnjs.com): Cloudflare에 의해 호스팅되는 무료 오픈 소스 CDN
 - [JSDELIVR](https://www.jsdelivr.com): 역시 무료 CDN. npm과 GitHub에 최적화되어 있다고 한다.
 - [UNPKG](https://unpkg.com/): npm으로 배포된 패키지를 불러올 수 있는 CDN. `unpkg.com/react@16.7.0/umd/react.production.min.js` 요런식으로 씀
+
+### VPN
+
+- [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않음.
+- [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
 
 
 ## 데이터베이스
@@ -309,12 +285,6 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### ERD
 
 - [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 좋음.
-
-
-## 메시지 브로커(메시지 큐 시스템)
-
-- [Apache Kafka](https://kafka.apache.org/): 카프카. 아파치 소프트웨어 재단이 스칼라로 개발한 오픈소스 분산 스트리밍 플랫폼. '메시지 브로커 프로젝트' 혹은 '분산 환경에서 사용되는 데이터 스트리밍 플랫폼'으로 소개된다. 여러 데이터베이스의 동기화 작업이나, 비동기로 메시지를 주고 받을 때 사용한다(데이터 입출력도 여기에 해당함). 에이전트를 설치하는 방식이라 카더라.
-- [RabbitMQ](https://www.rabbitmq.com/): MQTT, AMQP를 구현한 오픈 소스 메시지 브로커. Erlang으로 만들어졌다(얼랭?). 사용자 요청의 비동기 처리, 앱 간 메시지 교환, 분산 시스템에서의 메시지 브로커링 등에 활용된다.
 
 
 ## 온라인 코드 편집기(에디터) & 코드 스니펫
@@ -394,10 +364,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
 - [Notepad++](https://notepad-plus-plus.org)
-- [UltraEdit](http://www.ultraedit.com/loc/ko/index_ko.html)
 - [Nova](https://nova.app): macOS만 지원하고 30일 체험판 이후 유료로 전환됨
 - [⭐Visual Studio Code](https://code.visualstudio.com)
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능도 제공한다. 또 사용자 플러그인 설치가 가능한 점, 오프라인 파일이 생성되어 백업이 쉽다는 점이 있다. 동기화 기능(Obsidian Sync)은 유료다.
+- [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCODE와 인터페이스가 매우 유사하다.
 
 
 ## SSH/텔넷/FTP 클라이언트
@@ -519,6 +489,7 @@ Project manager 혹은 Issue tracker
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 툴 모음 사이트
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 툴이다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
+- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 
 
 ## 기타 웹 서비스
@@ -534,6 +505,40 @@ Project manager 혹은 Issue tracker
 - [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴
 - [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 #2
 - [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
+
+### PaaS
+
+PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
+
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
+  - [Koyeb](https://www.koyeb.com/)
+  - [Fly.io](https://fly.io/)
+  - [Northflank](https://northflank.com/)
+- [Kubernetes](https://kubernetes.io/): 통칭 K8s이라 쓰는 쿠버네티스. 컨테이너화된 애플리케이션을 관리하고 배포하기 위한 오픈소스 플랫폼이다. 기존 PaaS 범주와 비슷하지만 다르다고 한다. [공식 문서 링크](https://kubernetes.io/docs/concepts/overviw/). "컨테이너화된 애플리케이션을 배포, 관리, 확장할 때 수반되는 다수의 수동 프로세스를 자동화하는 오픈소스 컨테이너 오케스트레이션 플랫폼"이라 소개된다.
+- [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
+- [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
+- [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
+- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+
+### IaaS
+
+인프라만 제공하는 클라우드 서비스.
+
+- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
+- [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
+- [Azure](https://azure.microsoft.com/)
+- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
+- [Pulumi](https://www.pulumi.com/}): 자바스크립트 코드로 클라우드 인프라를 관리하는 IaC\* 서비스. 개인 용도는 무료(2023-09-13)
+
+\* IaC(Infrastructure as Code): 코드를 사용하여 수동 프로세스가 아닌 자동으로 인프라를 정의하고 관리하는 방법론의 일종
+
+### BaaS, Backend as a Service
+
+BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
+
+- [Firebase](https://firebase.google.com/): 구글의 그 파이어베이스
+- [Supabase](https://supabase.com/): 오픈소스 백엔드 서비스. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공함. 파이어베이스에는 없는 RDBMS(PostgreSQL)을 제공한다고 함.
+- [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
 
 
 ## non-dev 유틸리티

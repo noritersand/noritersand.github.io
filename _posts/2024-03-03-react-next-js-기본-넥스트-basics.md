@@ -167,6 +167,17 @@ export default function Page() {
 
 ℹ️ 클라이언트 사이드 렌더링(CSR)에서 hydration은 필요하지 않지만, 서버 사이드 렌더링(SSR)의 **클라이언트 컴포넌트**에는 hydration이 필요하다.
 
+### 'use server'
+
+[Directives: use server \| Next.js](https://nextjs.org/docs/app/api-reference/directives/use-server)
+
+`'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 지정한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
+
+ℹ️ 사실 이것은 리액트의 기능임:
+
+- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
+- ['use server' directive – React](https://react.dev/reference/rsc/use-server)
+
 
 ## 프레임워크 설정
 

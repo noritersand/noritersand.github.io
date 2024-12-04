@@ -193,7 +193,9 @@ console.debug('${1:msg}:', ${2:msg});
   { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
   { "keys": ["ctrl+b"], "command": "do_nothing" },
   { "keys": ["ctrl+tab"], "command": "next_view" },
-  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+  { "keys": ["ctrl+alt+shift+pagedown"], "command": "next_view", "args": {"extend": true} },
+  { "keys": ["ctrl+alt+shift+pageup"], "command": "prev_view", "args": {"extend": true} }
 ]
 ```
 

@@ -588,7 +588,7 @@ yarn explain peer-requirements [hash]
 
 문제가 있는 경우 `yarn why` 등으로 원인을 확인한 뒤, 상황에 따라 필요한 패키지를 추가하거나 `package.json`의 `resolutions` 혹은 `.yarnrc.yml`의 `packageExtensions` 필드로 의존성 설정을 적절히 수정하여 해결하면 된다.
 
-ℹ️ 여기서 말하는 의존성 문제란 대부분 ghost dependencies를 의미한다. Ghost dependencies란 하위 패키지에서 의존하는 또 다른 패키지를 명시적인 선언 없이 프로젝트에서 참조하는 것을 말한다. Ghost dependencies는 불안정한 빌드를 야기하거나 업데이트 문제 등이 발생시킬 수 있기 때문에 고치는게 좋다. Yarn PnP는 ghost dependencies를 방지하기 위해 명시적으로 의존하지 않는 패키지는 자동으로 참조하지 않는다.
+ℹ️ 여기서 말하는 의존성 문제는 대부분 ghost dependencies로 발생한다. Ghost dependencies란 하위 패키지에서 의존하는 또 다른 패키지를 명시적인 선언 없이 프로젝트에서 참조하는 것을 말한다. Ghost dependencies는 불안정한 빌드와 업데이트 문제를 유발할 수 있으므로 반드시 고치는 게 좋다. Yarn PnP는 이 문제를 방지하기 위해 명시적으로 선언하지 않은 패키지를 참조할 수 없도록 설계되었다.
 
 ### yarn why
 
