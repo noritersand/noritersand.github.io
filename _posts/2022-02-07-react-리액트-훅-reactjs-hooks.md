@@ -80,6 +80,8 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
   - useDebugValue
   - useId
   - useSyncExternalStore
+  - useActionState 🧪(React 19 기능)
+  - useOptimistic 🧪(React 19 기능)
 - Custom Hooks
 
 
@@ -549,7 +551,7 @@ console.log(rf); // Object { current: "멋에쓰는물건인고" }
 
 #### 렌더링을 유발하지 않는 별도의 상태값
 
-`useRef` 값의 변경은 `.current` 프로퍼티를 통해 재할당한다. 이 행동은 렌더링을 유발하지 않으며, 한 번 할당된 값은 (일부러 재할당 하지 않는 이상) 컴포넌트의 리렌더링이 발생해도 초기화되지 않는다. 이 특성을 이용해 별도의 저장공간으로 활용되곤 한다.
+`useRef` 값의 변경은 `.current` 프로퍼티를 통해 재할당한다. 이 행동은 렌더링을 유발하지 않으며, 한 번 할당된 값은 일부러 재할당 하지 않는 이상 컴포넌트의 리렌더링이 발생해도 초기화되지 않는다. 이 특성을 이용해 별도의 저장공간으로 활용되곤 한다.
 
 아래의 코드는 상태값이 변경되어도 `useEffect`에서 할당한 값이 변화하지 않는 것을 보여준다:
 
@@ -883,6 +885,25 @@ export default function UseCallbackWrongUsages() {
 `useCallback` 훅으로 함수를 생성하면 생성 시점의 참조값을 *클로저로 캡처*한다. 캡처된 값은 함수를 다시 생성할 때까지 변하지 않는다. (원래 클로저는 변수를 참조하기만 하지 그 값을 고정하거나 캡처하지 않는다.)
 
 `wrongFunction()`은 `useCallback`으로 생성되었고 처음 렌더링될 때 `foo`의 값을 클로저로 캡처하게 된다. 하지만 의존성 배열이 비어있어서 처음 한 번만 생성된다. 그 결과 `foo`가 변경되어도 `wrongFunction()`과 캡처된 값은 변경되지 않는다.
+
+
+## 기타 훅 Other Hooks
+
+### useActionState
+
+https://react.dev/reference/react/useActionState
+
+폼 태그에 연결해 사용하는 state 관리 훅이다. 액션이라는 용어가 사용된다. 리액트 19에 추가되었다.
+
+**TODO**
+
+### useOptimistic
+
+https://react.dev/reference/react/useOptimistic
+
+어떤 작업이 완료될 때까지의 '낙관적'인 상태를 반환하는 훅. 네트워크 요청 같은 비동기 작업이 완료될 때까지 어떤 변화를 화면에 표시할 용도로 사용한다. 리액트 19에 추가되었다.
+
+**TODO**
 
 
 ## 커스텀 훅 Custom Hooks

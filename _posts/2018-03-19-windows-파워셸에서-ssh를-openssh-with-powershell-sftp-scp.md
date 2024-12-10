@@ -53,7 +53,7 @@ $ service ssh status
 
 ## ssh
 
-putty는 안녕. 터미널은 이제 파워셸로 접속한다. ~~사실 WSL이 더 편하다~~
+putty는 안녕. 터미널은 이제 파워셸로 접속한다.
 
 우선 설치를 하자.
 
@@ -219,7 +219,9 @@ OpenSSH 설치하면 `sftp`도 쓸 수 있음.
 sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
 ```
 
-### 업로드: 대화형으로 put
+### 대화형으로 업로드/다운로드
+
+업로드는 `put`, 다운로드는 `get`이다.
 
 ```bash
 PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
@@ -227,15 +229,51 @@ Connected to 101.202.303.404.
 
 sftp> cd temp
 
-sftp> put ./upload.me
-Uploading ./upload.me to /home/ubuntu/temp/upload.me
-./upload.me                                        100%   14     0.2KB/s   00:00
-
+# 원격지의 파일 목록 보기
 sftp> ls
-upload.me
+DOWNLOAD.me
 
-sftp> quit
+# 로컬의 파일 목록 보기
+sftp> lls
+ Volume in drive C is Windows
+ Volume Serial Number is 84E5-F770
+
+ Directory of C:\dev
+
+2024-12-09  14:13    <DIR>          .
+2024-12-09  14:13    <DIR>          temp
+2024-12-09  14:19                 2 UPLOAD.me
+
+# 업로드
+sftp> put ./UPLOAD.me
+Uploading ./UPLOAD.me to /home/ubuntu/temp/UPLOAD.me
+UPLOAD.me                                        100%    6     0.1KB/s   00:00
+
+# 경로와 이름 지정하며 업로드
+sftp> put ./UPLOAD.me /home/ubuntu/UPLOAD2.me
+Uploading ./UPLOAD.me to /home/ubuntu/UPLOAD2.me
+UPLOAD.me                                        100%    6     0.1KB/s   00:00
+
+# 다운로드
+sftp> get DOWNLOAD.me
+Fetching /home/ubuntu/DOWNLOAD.me to DOWNLOAD.me
+DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
+
+# 경로와 이름 지정하며 다운로드
+sftp> get DOWNLOAD.me c:/dev/temp/DOWNLOAD2.me
+Fetching /home/ubuntu/DOWNLOAD.me to c:/dev/temp/DOWNLOAD2.me
+DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
+
+# 나가기(별칭: bye, quit)
+sftp> exit
 ```
+
+#### put과 get의 Options
+
+- `-a`: 전송하려는 파일과 동일한 이름의 파일이 이미 존재하는 경우, 해당 파일의 끝에 전송하는 파일의 내용을 이어붙인다(appending).
+- `-f`: (가능한 경우) 전송이 불완전하게 중단된 파일을 재개(resume)한다.
+- `-p`: 원본 파일의 수정 시간, 접근 권한, 소유권 같은 메타데이터를 그대로 보존(preserve)한다.
+- `-R`: 디렉터리 내의 모든 파일과 하위 디렉터리를 재귀적(recursive)으로 전송한다.
 
 파워셸에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
 
@@ -299,5 +337,5 @@ scp [options] source target
 ```
 
 ```bash
-scp -i .\PRIVATE_KEY_FILE.pem .\upload.me ubuntu@101.202.303.404:/home/ubuntu/temp/upload.me
+scp -i .\PRIVATE_KEY_FILE.pem .\UPLOAD.me ubuntu@101.202.303.404:/home/ubuntu/temp/UPLOAD.me
 ```

@@ -272,20 +272,25 @@ jQuery.getJSON( url [, data ] [, success ] )
 
 ```js
 $.getJSON('testJSON.js', function (data) {
-  $('#pnlDisplay').empty(); //패널(div)의 내용 초기화
+  $('#pnlDisplay').empty(); // 패널(div)의 내용 초기화
+
   var table = '<table border='1'><tr><td>인덱스</td><td>번호</td><td>이름</td></tr>';
-  //data를 탐색:each()메서드를 사용해서 데이터가 있는 만큼 반복
+  
+  // data를 탐색:each()메서드를 사용해서 데이터가 있는 만큼 반복
   $.each(data, function (index, entity) {
     table += '<tr>';
     table += '<td>' + index + '</td>';
     table += '<td>' + entity['Num'] + '</td>';
-    if (entity['Name']) { //특정필드를 비교할때 이러한 표현법
+    
+    if (entity['Name']) { // 특정필드를 비교할때 이러한 표현법
       table += '<td>' + entity['Name'] + '</td>';
     }
+    
     table += '</tr>';
   });
   table += '</table>';
-  $('#pnlDisplay').append(table); //패널에 추가하기
+  
+  $('#pnlDisplay').append(table); // 패널에 추가하기
 });
 ```
 
@@ -302,7 +307,7 @@ jQuery.getScript( url [, success ] )
 
 ```js
 $('#btn').click(function () {
-  //에러 코드가 실행되는 시점에 js파일의 기능 실행됨
+  // 에러 코드가 실행되는 시점에 js 파일의 기능 실행됨
   $.getScript('testScript.js');
 });
 ```

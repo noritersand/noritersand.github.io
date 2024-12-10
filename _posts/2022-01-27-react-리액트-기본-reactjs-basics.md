@@ -75,6 +75,8 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 그게 아니면... React와 React DOM 패키지 정도만 설치해서 바로 개발이 가능하긴 한데, 이러면 JSX를 사용할 수 없고 웹팩이나 번들러를 별도로 설치해야 하는 등 번거로운 작업이 많으니 그냥 CRA, 그것도 아니면 Next.js, Vite 같은 프레임워크를 쓰자.
 
+ℹ️ [React DOM](https://www.npmjs.com/package/react-dom)은 리액트 애플리케이션의 렌더링과 DOM 상호작용을 담당하는 핵심 라이브러리로, 리액트 컴포넌트를 브라우저의 실제 DOM 요소로 변환하고, UI 업데이트와 이벤트 관리를 수행한다.
+
 
 ## CRA, Create React App
 

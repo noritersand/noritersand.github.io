@@ -430,7 +430,7 @@ with recursive subordinates as (
         0 as level
     from employees
     where managerNo is null
-#     where employeeNo = 재귀탐색을_시작할_번호
+#     where employeeNo = 재귀_검색을_시작할_번호
     union all
     select
         child.employeeNo, child.name, child.managerNo,
@@ -445,7 +445,7 @@ order by employeeNo
 
 `managerNo`가 `null`인 데이터를 초기값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
 
-특정 `employeeNo`부터 탐색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where managerNo is null` 부분을 코멘트 처리하면 된다.
+특정 `employeeNo`부터 검색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where managerNo is null` 부분을 코멘트 처리하면 된다.
 
 
 ## DELETE와 TRUNCATE의 차이
