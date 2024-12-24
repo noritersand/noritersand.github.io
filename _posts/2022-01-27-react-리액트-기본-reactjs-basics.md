@@ -954,7 +954,7 @@ function App() {
 ```
 
 
-## 리액트 서버 컴포넌트 React Server Components
+## 🧪 리액트 서버 컴포넌트 React Server Components
 
 [React Server Components – React](https://react.dev/reference/rsc/server-components)
 
@@ -972,9 +972,9 @@ async function Page({page}) {
 }
 ```
 
-**컴포넌트를 비동기 함수로 만들면 서버 컴포넌트가 되는 것으로 보임**.
+ℹ️ 서버 컴포넌트를 특정하는 별도의 지시어나 문법, 패턴은 없다. 어떤 컴포넌트가 서버 컴포넌트로 작동할지는 빌드/번들링 환경과 사용하는 프레임워크의 규칙에 달려 있다. 예를 들어 Next.js의 App Router 환경에선 기본적으로 모든 컴포넌트가 서버 컴포넌트로 간주된다. 공식 문서에서는 React만으로 서버 컴포넌트를 직접 구현하는 것은 어렵고 번거롭다고 명시하고 있으며, 복잡도를 최소화하기 위해 프레임워크 사용을 권장한다.
 
-서버 컴포넌트에선 useState 같은 상호작용 API를 사용할 수 없다. 상호작용이 필요하면 컴포넌트 상단에 `'use client'` 지시어(directive)를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
+서버 컴포넌트에선 `useState()` 같은 상호작용 API를 사용할 수 없다. 사용자와의 상호작용이 필요하면 컴포넌트 상단에 `'use client'` 지시어(directive)를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
 
 ```jsx
 // Server Component
@@ -1013,16 +1013,18 @@ export default function Expandable({children}) {
 }
 ```
 
-서버 컴포넌트를 위한 지시어는 따로 없다. `'use server'`는 서버 컴포넌트가 아니라 **서버 액션**에 사용된다.
+서버 컴포넌트가 지원되는 환경에서는 기본적으로 모든 컴포넌트가 서버 컴포넌트다. 따라서 서버 컴포넌트를 위한 지시어는 따로 존재하지 않는다. `'use server'`는 서버 컴포넌트가 아니라 **서버 액션**에 사용된다.
 
-### 서버 액션 Server Actions
+### 🧪 서버 함수 Server Functions
 
-- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
+ℹ️ 2024년 10월부터 서버 액션(Server Actions)에서 서버 함수로 변경되었음. 이제 서버 액션은 특정 맥락(예시: action prop에 전달되거나 다른 액션 내부에서 호출되는 경우)에서 '액션'으로서의 역할을 하는 함수를 지칭한다.
+
+- [Server Functions – React](https://react.dev/reference/rsc/server-functions)
 - ['use server' directive – React](https://react.dev/reference/rsc/use-server)
 
 **React 19에 추가된 실험적 기능**. 클라이언트 컴포넌트에서 호출하고 서버에서 실행되는 비동기 함수를 의미한다.
 
-서버 액션은 함수나 모듈의 맨 처음에 `'use server'` 지시어를 붙여 선언할 수 있다:
+서버 함수는 함수나 모듈의 맨 처음에 `'use server'` 지시어를 붙여 선언할 수 있다:
 
 ```jsx
 // Server Component
@@ -1030,7 +1032,7 @@ import Button from './Button';
 
 function EmptyNote () {
   async function createNoteAction() {
-    // 서버 액션 지시어
+    // 서버 함수 지시어
     'use server';
     
     await db.notes.create();
@@ -1040,7 +1042,7 @@ function EmptyNote () {
 }
 ```
 
-함수 각각에 지정해도 되지만, 어떤 모듈 파일의 모든 export를 서버 액션으로 만들기 위체 파일의 맨 상단에 지정하는 방법도 있다. 이 경우 import를 포함한 다른 모든 코드보다 위에 있어야 한다(코멘트 라인 제외):
+함수 각각에 지정해도 되지만, 어떤 모듈 파일의 모든 export를 서버 함수로 만들기 위체 파일의 맨 상단에 지정하는 방법도 있다. 이 경우 import를 포함한 다른 모든 코드보다 위에 있어야 한다(코멘트 라인 제외):
 
 ```js
 'use server';

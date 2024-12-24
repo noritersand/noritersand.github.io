@@ -463,7 +463,7 @@ yarn info PACKAGE_NAME
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
 
-# 프로젝트의 모든 패키지 버전 업그레이드
+# 프로젝트의 모든 패키지 버전 업그레이드(upgrade는 없는 명령어)
 yarn up
 
 # PACKAGE_NAME 패키지의 버전 업그레이드
@@ -613,7 +613,7 @@ PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 
 `yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드값을 Yarn의 최신 버전으로 변경한다.
 
 
-## Node.js 패키지 모음
+## 자주 사용하는 Node.js 패키지
 
 ### nodemon
 
@@ -669,3 +669,9 @@ nodemon --exec 'tsc'
  |_|   |___/_/\_\ /_/   \_\ |_____\___/ |_|
                                                
 ```
+
+### Jest
+
+[https://jestjs.io/](https://jestjs.io/)
+
+자바스크립트 테스팅 프레임워크.

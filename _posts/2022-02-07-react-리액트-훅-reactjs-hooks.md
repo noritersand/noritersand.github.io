@@ -315,7 +315,7 @@ const [state, dispatch] = React.useReducer(reducer, initialArg, init?)
 ```
 
 - `reducer`: 상태를 업데이트할 함수 객체. 이 함수는 첫 번째 매개변수로 `state`, 두 번째 매개변수로 `action`을 갖는 순수 함수여야 하며 `state`를 반환해야 한다.
-- `initialArg`: `state` 초기값. 모든 데이터 타입을 할당할 수 있따.
+- `initialArg`: `state` 초기값. 모든 데이터 타입을 할당할 수 있다.
 - `init`: 초기화 함수. 이 함수의 반환값이 `state`의 초기값으로 설정된다. 생략하면 `state`의 초기값은 `initialArg`와 같다.
 - `state`: 상태값을 저장하는 변수. `useState`의 `state`와 개념은 같다
 - `dispatch`: 상태값을 업데이트할 때 호출하는 함수로, 이 함수의 호출은 리렌더링을 유발한다.
@@ -336,7 +336,7 @@ function reducer(state, action) {
   }
 }
 
-export default function TestUseReducer1() {
+export default function UseReducerTest1() {
   const [state, dispatch] = useReducer(reducer, {count: 0});
 
   return (
@@ -351,6 +351,22 @@ export default function TestUseReducer1() {
 ```
 
 `dispatch`는 내부에서 `reducer`를 호출하는데 이 때 첫 번째 인수로 이전 상태값을, 두 번째 인수로 `dispatch()`의 매개변수를 그대로 전달한다. 
+
+`state`와 `action`은 무시하고 어쨋든 `reducer`를 호출만 하는 식으로 사용하기도 한다(챗피티는 이럴꺼면 그냥 `useState` 쓰라고 하지만):
+
+```jsx
+export default function UseReducerTest3() {
+  const [count, dispatch] = useReducer(x => x + 1, 1);
+
+  return (
+    <section>
+      <p>count: {count}</p>
+      <button onClick={dispatch}>Increment</button>
+      <br />
+    </section>
+  );
+}
+```
 
 아래는 객체 타입의 상태를 관리하는 코드다:
 

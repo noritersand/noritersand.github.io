@@ -473,6 +473,11 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 ## clone
 
+#### Options
+
+- `--bare`: 워킹 트리가 없는 베어 저장소(bare Git repository)를 생성한다. 리모트 서버용으로 클론할 때 사용하는 옵션. 이 옵션을 사용하면 로컬 브랜치(`refs/heads/`)와 태그(`refs/tags/`)는 복제되지만, 원격 추적 브랜치(`refs/remotes/`), 노트(`refs/notes/`), 플러그인 등으로 생성된 기타 참조(`refs/`) 및 리플로그 정보는 복제되지 않는다.
+- `--mirror`: 이 옵션도 워킹 트리가 없는 베어 저장소를 생성하지만, `--bare`와 다르게 모든 원격 참조(remote references)와 설정을 포함하여 원본 저장소의 완벽한 복제본을 만든다. 저장소를 미러링하여 백업하거나 다른 서버로 이전할 때 사용한다.
+
 #### 저장소 복제
 
 현재 경로에 로컬 깃 저장소가 될 디렉터리를 만들고 리모트 저장소의 데이터를 모두 받아온다. 디렉터리명을 따로 명시하지 않으면 리모트 저장소의 이름과 동일하게 생성된다.
@@ -483,7 +488,7 @@ git clone file://c:/users/noritersand/noriterGit/localServer from-local-repo
 git clone https://github.com/noritersand/laboratory.git from-github-repo
 ```
 
-#### 리모트 저장소를 복제하면서 bare repository로 설정
+#### 리모트 저장소를 복제하면서 bare Git repository로 설정
 
 ```bash
 git clone --bare 저장소주소 [디렉터리]
@@ -1009,7 +1014,7 @@ git help -a # 모든 명령어 보기
 git init
 ```
 
-#### bare repository
+#### bare Git repository
 
 워킹 트리가 없는 저장소를 만든다. 이 명령은 로컬 저장소가 아닌 리모트 저장소를 생성할 때 사용한다.
 
@@ -1020,9 +1025,9 @@ git init --bare
 
 ## lfs
 
-LFS(Large File Storage)는 대용량 파일을 더 효율적으로 관리할 수 있게 도와주는 Git의 확장이다. [여기](https://git-lfs.com/)서 별도로 다운로드 할 수 있지만, Git 클라이언트에 포함되어 있으니 설치할 때 (Select Components 단계) 제외한 게 아니라면 그냥 쓸 수 있다.
+LFS(Large File Storage)는 대용량 파일을 더 효율적으로 관리할 수 있게 도와주는 Git의 확장이다. [여기](https://git-lfs.com/)서 별도로 다운로드 할 수 있지만, Git 클라이언트에 포함되어 있으니 설치할 때 'Select Components' 단계에서 제외한 게 아니라면 그냥 쓸 수 있다.
 
-어쨋든, LFS를 적용하려면 아래처럼 LFS를 초기화하고 `git lfs track` 명령으로 특정 파일이나 패턴을 추적하게 한다. 그러면 추적 대상을 기록하는 `.gitattributes` 파일이 생성되는데 이 파일을 버전관리 대상으로 추가하고, 그 다음은 평소처럼 쓰면 된다:
+어쨋든, LFS를 적용하려면 아래처럼 LFS를 초기화하고 `git lfs track` 명령으로 특정 파일이나 패턴을 추적하게 한다. 그러면 추적 대상을 기록하는 `.gitattributes` 파일이 생성되는데, 이 파일을 버전관리 대상으로 추가한 다음 평소처럼 쓰면 된다:
 
 ```bash
 # LFS를 초기화
@@ -1031,9 +1036,10 @@ git lfs install
 # psd 확장자 파일을 LFS로 추적
 git lfs track "*.psd"
 
-# LFS로 추적한 파일을 Git에 추가
+# LFS 추적 대상 기록 파일
 git add .gitattributes
 
+# LFS로 추적한 파일을 커밋 대상으로 추가
 git add file.psd
 git commit -m "Add design file"
 git push origin main
@@ -1066,6 +1072,15 @@ git log master origin/master
 
 # 삭제(Deleted)된 파일만 출력하면서 상태 항목도 같이 표시
 git log --diff-filter=D --name-status
+
+# 커밋 메시지로 검색
+git log --grep="검색할_문구"
+
+# 파일 내용(변경사항)으로 검색하기. '검색할_문구'가 변경사항에 포함된 커밋을 찾고, 해당 커밋을 패치 형태로 출력한다.
+git log -S '검색할_문구' -p
+
+# 작성자로 검색
+git log --author="작성자이름 또는 이메일"
 ```
 
 #### Options
@@ -1075,6 +1090,10 @@ git log --diff-filter=D --name-status
 - `--all`: 헤드와 모든 refs의 이력을 출력함. 즉, 헤드 + 추적 중인 브랜치 + 태그의 이력이다.
 - `-p`: 각 커밋에 적용된 패치(patch, 반영된 변경 사항)를 보여준다.
 - `-c`: 머지 커밋과 부모 커밋을 비교해 변경 사항을 모두 출력하는 옵션
+- `-S`: 커밋의 변경 내역 중 특정 문자열이 처음으로 등장하거나 제거된 시점을 찾아주는 옵션
+- `--grep=<pattern>`: 지정한 패턴의 커밋 메시지가 있는 커밋으로 출력을 제한한다. `pattern`은 단순 문자열이 아니라 정규식이다.
+- `--author=<pattern>`: 지정된 패턴과 일치하는 author 헤더 줄이 있는 커밋으로 출력을 제한한다. `pattern`은 정규식이며, author는 커밋을 처음 만든 사람이다.
+- `--committer=<pattern> `: 지정된 패턴과 일치하는 committer 헤더 줄이 있는 커밋으로 출력을 제한한다. `pattern`은 정규식이며, committer는 커밋을 마지막으로 리베이스한 사람이다.
 - `--merges`: 머지 커밋만 출력.
 - `--no-merges`: 머지 커밋이 아닌 것만 출력한다.
 - `--min-parents=<number>` `--max-parents=<number>`: 부모 커밋이 최소(혹은 최대) 몇 개가 있는 커밋인지를 특정할 때 사용하는 옵션이다. 가령 `--max-parents=1`은 부모 커밋이 하나인 커밋만 출력하라는 의미라 `--no-merges`와 같고, `--min-parents=2`는 부모 커밋이 최소 2개여야 한다는 의미니까 `--merges`와 같다.
@@ -1146,7 +1165,6 @@ git log --pretty=format:"%h %s" --graph
 git log --since=2.weeks
 git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
 ```
-
 
 ## ls-files
 
@@ -1631,6 +1649,12 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 
 변경 사항을 정확히 반전시킨 새 커밋을 생성하는 명령어.
 
+#### Options
+
+- `e` `--edit`
+- `-n` `--no-commit`: 워킹 트리와 스테이징 에어리어의 상태만 되돌리고 커밋은 생성하지 않는다.
+- `-m parent-number` `--mainline parent-number`: 머지 커밋을 리버트 할 때 사용하는 옵션.
+
 #### 커밋 되돌리기 \#2
 
 1회 전의 커밋으로 되돌리되 단순히 헤드를 이동하는게 아니라, 되돌려지는 내용을 기록한 **새로운 커밋을 생성**한다.
@@ -1650,12 +1674,6 @@ git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경 사항을 
 ```
 
 `HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD~4`까지만 쓰면 4회 전 커밋이다. 🤔
-
-#### Options
-
-- `e` `--edit`
-- `-n` `--no-commit`: 워킹 트리와 스테이징 에어리어의 상태만 되돌리고 커밋은 생성하지 않는다.
-- `-m parent-number` `--mainline parent-number`: 머지 커밋을 리버트 할 때 사용하는 옵션.
 
 #### 머지 커밋을 리버트하기
 

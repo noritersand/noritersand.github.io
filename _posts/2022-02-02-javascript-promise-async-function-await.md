@@ -247,7 +247,9 @@ Promise.reject(2).catch(console.log); // 2
 ```
 
 
-## async function
+## async function, await
+
+### async function
 
 ```
 async function fn() {}
@@ -286,9 +288,7 @@ function () {
 }
 ```
 
-같은게 아니라 비슷한 이유는 async 함수가 Promise로 감싸진 것처럼 작동하지만 완전히 동일하진 않기 때문이다.
-
-만약 반환하려는 참조가 Promise라면 async 함수는 새 참조를 반환하지만 `Promise.resolve()`는 일치하는 참조를 반환한다:
+같은게 아니라 비슷한 이유: async 함수는 항상 새 객체를 만들어서 반환하지만, `Promise.resolve()`는 전달된 값이 Promise일 때 해당 객체를 그대로 반환하기 때문:
 
 ```js
 var p = new Promise(res => {res(1)});
@@ -304,8 +304,7 @@ function basicReturn() {
 console.log(p === basicReturn()); // true
 ```
 
-
-## await
+### await
 
 ```
 await expression
@@ -362,6 +361,22 @@ async () => {
 };
 ```
 
+### async 함수가 아무것도 반환하지 않으면?
+
+async 함수는 명시적인 반환값이 없더라도 Promise 객체를 반환한다. 이 객체는 async 함수의 실행이 종료되었을 때 fulfilled 상태로 바뀐다. 하지만 반환한 값이 없으므로 resolved value는 `undefined`다:
+
+```js
+async function waitSomething() {
+  await Promise.resolve('done');
+}
+
+var p = waitSomething();
+
+console.log(p); // Promise { <state>: "pending" }
+p.then(console.log); // undefined
+setTimeout(() => console.log(p), 100); // Promise { <state>: "fulfilled", <value>: undefined }
+```
+
 ### async 함수를 비동기로 만드는 것은 await
 
 async 함수의 본문은 0개 이상의 `await`으로 분할된다고 볼 수 있다(라는 MDN의 설명😇). 첫 번째 `await`을 만날때 까지 async 함수는 동기적으로 실행된다. 이 말은 `await`이 없는 async 함수는 일반 함수와 같다는 말이다:
@@ -397,8 +412,6 @@ console.log('답: 고양이실패단');
 
 `await`을 적용할 대상은 Promise 객체여야 한다. 만약 문법적 실수로 Promise가 아닌 것을 지정했다면 의도와 다르게 작동하면서 버그가 만들어질 것이다. 아래 예시를 보자:
 
-<!-- `await`을 적용할 대상은 Promise 객체여야 한다. 만약 문법적 실수로 Promise가 아닌 것을 지정했다면, 즉시 완료되는 Promise가 만들어지며 의도와 다르게 작동한다. 아래 예시를 보자: -->
-
 ```js
 function promiseMe() {
   return new Promise((resolve) => {
@@ -433,7 +446,7 @@ incorrectUsage(); // #2: undefined
 let data = await promiseMe().data;
 ```
 
-원래 의도는 Promise의 이행을 기다렸다가 `data`를 꺼내는 것이겠지만 그렇게 작동하지 않는다. 단계별로 나누어 설명하면, 우선 `promiseMe().data` `undefined`를 반환한다. `promiseMe()`가 Promise 객체를 반환했으나 `data`라는 프로퍼티가 없으니 `.data`가 `undefined`를 반환하기 때문.
+원래 의도는 Promise의 이행을 기다렸다가 `data`를 꺼내는 것이겠지만 그렇게 작동하지 않는다. 단계별로 나누어 설명하면, 우선 `promiseMe().data`는 `undefined`를 반환한다. `promiseMe()`가 Promise 객체를 반환했으나 `data`라는 프로퍼티가 없으니 `.data`가 `undefined`를 반환하기 때문.
 
 ```js
 // wrong
