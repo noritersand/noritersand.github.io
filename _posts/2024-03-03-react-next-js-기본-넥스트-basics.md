@@ -23,6 +23,7 @@ tags:
 #### 테스트 환경 정보
 
 - Next.js 14.x.x
+- Next.js 15.x.x
 - 타입스크립트를 사용한다 가정하고 작성함
 
 
@@ -63,37 +64,70 @@ root
 - `src`: 소스 코드 루트 경로. 이 아래에 App router에선 `app` 디렉터리가, Pages router에선 `page` 디렉터리가 있어야 한다. (`src` 디렉터리를 생략하도록 설정할 수 있음)
 
 
-## 앱 라우터 App Router vs 페이지 라우터 Pages Router
+## 페이지 라우터 Pages Router vs 앱 라우터 App Router
 
-- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
 - [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
+- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
 
-앱 라우터(App Router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages Router)라고 부른다.
+앱 라우터(App router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages router)라고 부른다.
 
-개발자는 앱 라우터와 페이지 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
-
-앱 라우터:
-
-- `src/app` 디렉터리에서 라우팅을 구성한다.
-- `src/app/page.jsx`가 시작 파일이다.
-- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/pages.jsx` 파일을 찾는다.
-- 기본적으로 서버 컴포넌트로 작동한다.
+개발자는 페이지 라우터와 앱 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
 
 페이지 라우터:
 
 - `src/pages` 디렉터리에서 라우팅을 구성한다.
-- `src/pages/index.jsx`가 시작 파일이다.
-- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.jsx` 파일을 찾는다.
-- 기본적으로 클라이언트 컴포넌트로 작동한다.
+- `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
+- 서버 컴포넌트 개념이 없다.
+- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
+- `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
+- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
 
-어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 이 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/pages.jsx`와 `src/pages/index.jsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
+앱 라우터:
+
+- `src/app` 디렉터리에서 라우팅을 구성한다.
+- `src/app/page.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
+- 기본적으로 서버 컴포넌트로 작동한다.
+- `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
+- 데이터 패칭으로 `fetch`와 `async를` 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
+
+어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
+
+🚨 두 방식을 모두 사용할 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/page.tsx`와 `src/pages/index.tsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
 
 ```
 Conflicting app and page file was found, please remove the conflicting files to continue:
   "src\pages\index.tsx" - "src\app\page.tsx"
 ```
 
-이것은 `src\pages\a\b.tsx` 파일과 `src\app\a\b\page.tsx` 파일이 동시에 존재해도 마찬가지다. 따라서 앱 라우터와 페이지 라우터 둘 다 쓰고 싶다면 루트`/` URL을 포함한 URL에 각각의 라우터를 적용한 분리 작업이 필요하다.
+이것은 `src/pages/A/B.tsx` 파일과 `src/app/A/B/page.tsx` 파일이 동시에 존재해도 마찬가지다.
+
+### layout.tsx
+
+앱 라우터에선 반복되는 레이아웃이나 전역 스타일을 `layout.tsx`에서 정의한다. `layout`이란 이름은 정해진 규칙이라 변경할 수 없으며, 확장자는 다음 넷 중 하나여야 한다: `.ts`, `.js`, `.tsx`, `.jsx`
+
+루트 경로의 `layout.tsx`는 사이트 전체에 적용되는 공통 레이아웃 파일이다. 특정 경로 아래에서만 적용되는 레이아웃 파일을 별도로 추가할 수 있는데, 이를 하위 레이아웃 혹은 중첩 레이아웃(nested layout)이라 한다. 예를 들어 `src/app/A/B/layout.tsx` 파일은 `/A/B` 경로 아래의 페이지에만 적용된다. 
+
+하위 레이아웃은 상위 레이아웃 내부에서 중첩 적용된다. 예를 들어 파일 구조가 아래와 같을 때:
+
+- `src/app/layout.tsx`
+- `src/app/A/layout.tsx`
+- `src/app/A/B/layout.tsx`
+- `src/app/A/B/page.tsx`
+
+URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 `src/app/A/B/layout.tsx`, `src/app/A/layout.tsx`, `src/app/layout.tsx` 순으로 감싸지는 식이다.
+
+### 라우트 그룹 Route Groups
+
+파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
+
+🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
+
+- `src/app/(A)/C/page.tsx`
+- `src/app/(B)/C/page.tsx`
+
+ℹ️ 넥스트에서 '라우트'는 보통 URL 경로 또는 페이지 한 개를 의미한다.
 
 ### 'use client'
 
@@ -222,6 +256,10 @@ const nextConfig = {
 export default nextConfig;
 ```
 
+#### reactStrictMode
+
+리액트의 Strict Mode를 활성화할지를 결정하는 프로퍼티.
+
 #### output
 
 빌드 결과의 모양을 결정하는 옵션.
@@ -243,6 +281,13 @@ location / {
     try_files $uri $uri/ $uri.html =404;
 }
 ```
+
+#### trailingSlash
+
+넥스트는 기본적으로 URL을 리다이렉션할 때 트레일링 슬래시(URL 경로 바로 뒤에 `/`가 붙는 것)를 제거하는데, 이 값을 `true`로 설정하면 반대로 작동한다. 가령 `/about` 경로는 `/about/`으로 바뀐다.
+
+`output: 'export'` 일 때 넥스트는 슬러그 이름으로 HTML 파일을 생성한다. 가령 `/about` 슬러그가 있으면 `/about.html` 파일이 생성되는 식이다. 하지만 `trailingSlash`가 `true`면 `/about.html` 대신 `/about/index.html`을 생성한다.
+
 
 #### redirects
 
@@ -384,7 +429,7 @@ NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 
 앱 라우터 방식에선 async 함수 컴포넌트가 JSX를 반환하기 전에 원하는 데이터를 받아오면 된다. 이 작업은 비동기가 아니기 때문에 `useState()`가 필요하지 않으며, SSR 시점에 완료되는 작업이기 때문에 `useEffect()` 또한 필요하지 않다:
 
-```tsx
+```jsx
 // 코드 출처: https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating
 
 async function getData() {
@@ -440,11 +485,30 @@ export default function Page({
 ⚠️ HTML 내보내기로 빌드하면 SSR 렌더링은 사용할 수 없음
 
 
-## Dynamic Routes
+## 라우트 핸들러 Route Handlers
+
+GET, POST 같은 HTTP 메서드에 대응하는 서버 사이드 함수. 클라이언트의 요청을 받아 (필요한 경우) 로직을 처리하고 JSON 등의 데이터로 응답하는 엔드 포인트를 이르는 말.
+
+파일 이름은 `route.ts|js`여야 한다. 내보내는 함수는 여러 개일 수 있으며, 이름은 반드시 HTTP 메서드와 동일해야 한다:
+
+```ts
+export async function GET(request: Request) {
+  // GET 로직
+}
+
+export async function POST(request: Request) {
+  // POST 로직
+}
+
+// PUT, DEL, ...
+```
+
+
+## 다이나믹 라우트 Dynamic Routes
 
 [Routing: Dynamic Routes \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
 
-URL의 특정 부분을 동적 파라미터로 처리하는 기능. `[slug]` 같은 대괄호 문법을 사용하여, 파일 이름에 Dynamic Segment를 설정할 수 있다. 이렇게 파일 경로와 파라미터를 동시에 정의하고, 해당 경로에 따라 동적으로 페이지를 렌더링하는 기능이다.
+URL의 특정 부분을 동적 파라미터로 처리하는 기능. `[slug]` 같은 대괄호 문법을 사용하여, 파일 이름에 다이나믹 세그먼트(Dynamic Segment)를 설정할 수 있다. 이렇게 파일 경로와 파라미터를 동시에 정의하고, 해당 경로에 따라 동적으로 페이지를 렌더링하는 기능이다.
 
 ```jsx
 export default function Page({ params }) {
@@ -487,6 +551,18 @@ export default function BlogPostPage({ params }) {
 
 Next.js 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 제약이 따른다. 미리 페이지를 만들어놔야 한다고 하는데... 자세한 설명은 **TODO**
 
+라우트 핸들러에선 다이나믹 세그먼트를 아래처럼 처리한다:
+
+```tsx
+// 코드 출처: https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ slug: string }> }
+) {
+  const slug = (await params).slug // 'a', 'b', or 'c'
+}
+```
+
 
 ## 자주 쓰는 API
 
@@ -494,7 +570,7 @@ Next.js 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 
 
 라우팅을 프로그래밍 방식으로 변경(programmatically change)하는 클라이언트 훅.
 
-```tsx
+```jsx
 'use client'
  
 import { useRouter } from 'next/navigation'
@@ -514,7 +590,7 @@ export default function Page() {
 
 현재 URL의 경로 정보를 가져오는 클라이언트 훅. 
 
-```tsx
+```jsx
 'use client'
  
 import { usePathname } from 'next/navigation'
@@ -552,7 +628,7 @@ export default function ExampleClientComponent() {
 
 SSR 제어를 위해 쓰기도 한다:
 
-```tsx
+```jsx
 import dynamic from 'next/dynamic';
 
 const DynamicComponent = dynamic(() => import('../components/DynamicComponent'), {

@@ -186,7 +186,7 @@ tags:
 - [⭐babel](https://github.com/babel/babel): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
 - [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
-- [Immer](https://immerjs.github.io/immer/): 불변성을 유지하면서 객체를 쉽게 수정할 수 있게 해주는 라이브러리. 리액트에서 상태값이 객체일 때 활용하기 좋다. 제공된 draft를 직접 변경하는 방식으로 사용하는데, 변경된 부분만 복제하도록 최적화되어 있`기 때문에 객체 전체의 깊은 복제용으로는 적합하지 않다.
+- [Immer](https://immerjs.github.io/immer/): 불변성을 유지하면서 객체를 쉽게 수정할 수 있게 해주는 라이브러리. 리액트에서 상태값이 객체일 때 활용하기 좋다. 제공된 draft를 직접 변경하는 방식으로 사용하는데, 변경된 부분만 복제하도록 최적화되어 있기 때문에 객체 전체의 깊은 복제용으로는 적합하지 않다.
 - [sharp](https://github.com/lovell/sharp): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.

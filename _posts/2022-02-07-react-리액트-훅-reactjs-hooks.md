@@ -237,6 +237,8 @@ export default function Fruits() {
 }
 ```
 
+#### Immer로 객체나 배열 state 업데이트하기
+
 서드 파티 라이브러리인 [Immer](https://immerjs.github.io/immer/)를 활용하면 업데이트 함수 로직이 간결해진다:
 
 ```jsx
@@ -244,11 +246,34 @@ import {produce} from 'immer';
 
 // ...
 
+const [item, setItem] = useState({
+  subItem: {
+    shape: '🍎'
+  }
+});
+
+function updateObject(replacement) {
+  setItem(prev => produce(prev, draft => {
+    draft.subItem.shape = replacement
+  }));
+}
+```
+
+```jsx
+import {produce} from 'immer';
+
+// ...
+
+const [list, setList] = useState([
+  { seq: 1, shape: '🍎' },
+  { seq: 2, shape: '🍌' },
+  { seq: 3, shape: '🍊' },
+  { seq: 4, shape: '🍇' }
+]);
+
 function updateArray(index, replacement) {
-  setList(produce(draft => {
-    if (draft[index]) {
-      draft[index].shape = replacement;
-    }
+  setList(prev => produce(prev, draft => {
+    draft[index].shape = replacement;
   }));
 }
 ```

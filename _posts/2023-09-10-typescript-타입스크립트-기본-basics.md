@@ -146,6 +146,7 @@ tsc --build --watch
 - 인터섹션: 여러 타입을 모두 만족하는 타입
 - 제네릭: 타입을 매개변수화하여 재사용 가능한 컴포넌트를 만드는 기능
 - `any`: 어떠한 값도 할당 가능한 타입. 타입 검사를 비활성화한다.
+- `unknown`: 실제로 무엇인지 모르는(아직 확실하게 타입이 정해지지 않은) 데이터를 다룰 때 쓴다. `unknown` 타입의 값은 그대로 사용할 수 없고, 타입 가드(조건문으로 타입을 좁히는 로직)나 타입 단언(`as`)을 통해 해당 값이 특정 타입이라는 것을 증명해주어야 한다.
 - `null`과 `undefined`: 각각 `null` 값과 `undefined` 값을 나타내는 타입
 - `void`: 함수에서 반환 값이 없을 때 사용하는 타입
 - `never`: 절대 발생하지 않는 값의 타입 (예: 항상 예외를 throw하는 함수)
@@ -567,7 +568,17 @@ let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
 let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
 ```
 
-**어떤 값이 올 수 있는 자리에 대한 타입을 '미리' 선언하는 것이 아니라, 이미 존재하는 값의 타입이 어떤 것인지를 개발자가 컴파일러에게 '나중에' 알려준다는 차이**가 있다.
+```ts
+let value: unknown = "Hello TypeScript!";
+
+// value는 unknown이기 때문에 바로 toUpperCase() 호출 불가
+console.log((value).toUpperCase()); // error TS2571: Object is of type 'unknown'.
+
+// 타입 단언으로 string이라는 것을 알려줌
+console.log((value as string).toUpperCase()); // "HELLO TYPESCRIPT!"
+```
+
+어떤 값이 올 수 있는 자리에 대한 타입을 '미리' 선언하는 것이 아니라, 이미 존재하는 값의 타입이 어떤 것인지를 개발자가 컴파일러에게 '나중에' 알려준다는 차이가 있다.
 
 🚨 타입 단언은 타입 체커를 무시하며 코드 안정성을 보장하지 않는다. 가급적이면 타입 단언 대신 타입 가드나 타입 체크를 사용하는 것이 권장된다.
 
@@ -580,8 +591,6 @@ let a = [1, 2, 3] as const;
 a.push(102); // error
 a[0] = 101; // error
 ```
-
-**TODO** 설명 추가
 
 
 ## 함수의 타입 제한
@@ -738,6 +747,12 @@ getWaldo('Waldo').age = 128;
 ### 생성자 시그니처 Construct Signatures
 
 [https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
+
+**TODO**
+
+### 함수 오버로드 Function Overloads
+
+[https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)
 
 **TODO**
 
