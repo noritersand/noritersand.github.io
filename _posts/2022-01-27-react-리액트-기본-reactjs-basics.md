@@ -490,7 +490,7 @@ const markup = { __html: '<p>some raw html</p>' };
 return <div dangerouslySetInnerHTML={markup} />;
 ```
 
-리액트에서 마크업 컨텐츠를 날 것 그대로 문서에 포함시키기 위한 속성이다.
+리액트에서 마크업 콘텐츠를 날 것 그대로 문서에 포함시키기 위한 속성이다.
 
 [도움말](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)에선 `{__html}` 객체를 `<div dangerouslySetInnerHTML={{__html: markup}} />` 처럼 인라인으로 생성하지 말고, 아래 예시의 `renderMarkdownToHTML()` 함수와 같이 가능한 한 HTML이 만들어지는 곳 가까이에서 생성(?)하라고 권장한다:
 
@@ -952,6 +952,63 @@ function App() {
   <App />
 </Profiler>
 ```
+
+
+## 자동 배칭 Automatic Batching
+
+[Queueing a Series of State Updates – React](https://react.dev/learn/queueing-a-series-of-state-updates)
+
+배칭은 여러 번의 상태 업데이트(useState의 set 함수)를 한 번의 렌더링으로 처리하는 최적화 기법이다. 
+
+리액트 17까지는 이벤트 핸들러 내부에서 동기적으로 발생한 여러 번의 set 함수만 묶어 한 번 렌더링을 수행했으나(예: 버튼 클릭 함수 안에 `setCount()`를 여러 번 호출해도 한 번만 렌더링), 리액트 18부터는 비동기 코드(예: `await`, `setTimeout()`, `Promise.then()`, `fetch()`, 이벤트 루프가 갈리는 콜백 등)에서 발생한 여러 번의 set 함수 호출도 자동 배칭에 포함되어, 같은 이벤트 루프(또는 동일 microtask) 내에서 발생하는 업데이트는 모두 묶어 한 번에 렌더링하도록 변경되었다.
+
+단, 모든 비동기 로직을 무조건 한꺼번에 배치하는 것은 아니며, 같은 이벤트 루프(동일 microtask) 안에서 발생하는 상태 업데이트끼리만 묶어서 한 번의 렌더링으로 처리한다. 비동기 코드로 이벤트 루프가 명확히 끊기는 시점이 있다면, 그 끊긴 지점마다 별도의 렌더링이 트리거될 수 있다.
+
+정리하면, 리액트 18에서 자동 배칭 범위는 확장되었지만, 현재 콜스택(이벤트 루프 or microtask) 내에서만 여러 업데이트를 묶을 수 있고, 이벤트 루프가 갈라지면 새로운 배치가 시작되어 렌더링이 여러 번 발생할 수 있다.
+
+#### 예시 #1: `setTimout()`으로 이벤트 루프 분리
+
+```jsx
+function handleClick() {
+  setTimeout(() => {
+    setCount(prev => prev + 1); 
+    setCount(prev => prev + 1);
+    setCount(prev => prev + 1); 
+    // 상태 업데이트 #1 (별도의 이벤트 루프)
+  }, 1000);
+
+  setName('Waldo'); // 상태 업데이트 #2 (현재 이벤트 루프)
+}
+```
+
+- `setName('Waldo')`는 버튼 클릭 이벤트 핸들러가 동작하는 현재 이벤트 루프에서 즉시 호출됨 -> 첫 번째 렌더링
+- 1초 뒤 `setTimeout()` 콜백(= 다른 이벤트 루프) 안에서 3번의 `setCount()`가 발생
+  - 이 3번의 `setCount()`는 같은 타이머 콜백(동일 이벤트 루프) 내에서 연속 호출되므로, 한 번에 배치되어 렌더링을 딱 한 번만 더 일으킴
+  - 두 번째 렌더링 발생
+
+#### 예시 #2: `await`으로 이벤트 루프 분리
+
+```jsx
+const [list, setList] = useState([]);
+
+function wait(ms): Promise {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fillList() {
+  let i = 0;
+  while (i < 10) {
+    await wait(100); // 매 반복마다 새로운 이벤트 루프(혹은 microtask)가 시작된다
+    setList(prev => [...prev, i]);
+    i++;
+  }
+}
+```
+
+- `fillList()` 내부의 `while`문은 매 반복마다 `await wait(100)`로 이벤트 루프를 끊는다.
+- 각 루프마다 `setList()`가 별도의 이벤트 루프(또는 microtask)에서 호출되므로, 연속 배치는 되지 않고 매 0.1초마다 렌더링이 한 번씩 발생한다.
+  - 즉, 10번 반복 시 10번 렌더링
+- 만약 `await wait(100)`이 없고 10번의 `setList()`가 같은 이벤트 루프 안에서 연속 호출된다면, 그 10번은 자동 배칭을 통해 한 번에 렌더링될 것이다.
 
 
 ## 🧪 리액트 서버 컴포넌트 React Server Components

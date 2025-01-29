@@ -601,9 +601,68 @@ export default function ExampleClientComponent() {
 }
 ```
 
+### useSearchParams
+
+현재 URL의 쿼리 문자열을 읽을 수 있게 해주는 클라이언트 컴포넌트 훅이다. `URLSearchParams` 인터페이스의 읽기 전용 버전을 반환한다.
+
+```tsx
+// 코드 출처: https://nextjs.org/docs/app/api-reference/functions/use-search-params
+
+'use client'
+ 
+import { useSearchParams } from 'next/navigation'
+ 
+export default function SearchBar() {
+  const searchParams = useSearchParams()
+ 
+  const search = searchParams.get('search')
+ 
+  // URL -> `/dashboard?search=my-project`
+  // `search` -> 'my-project'
+  return <>Search: {search}</>
+}
+```
+
+라우트가 정적으로 렌더링되더라도, `useSearchParams`를 사용하는 컴포넌트는 가장 가까운(closest) `<Suspense>` 경계까지 클라이언트 사이드에서 렌더링된다. 검색 파라미터(쿼리 스트링)는 동적인 데이터라서 서버 사이드 렌더링 시점에는 값을 알 수 없기 때문이다.
+
+넥스트는 `useSearchParams`가 있는 컴포넌트 바깥을 `<Suspense>`로 감싸도록 권장한다. 이렇게 구성하면 `<Suspense>` 경계 바깥의 정적 콘텐츠는 서버에서 렌더링되어 초기 HTML에 포함되며, 경계 안쪽의 클라이언트 컴포넌트만 동적으로 렌더링된다.
+
+⚠️ `<Suspense>` 사용은 권장사항이지만, `output: 'export'` 설정에서는 `useSearchParams` 사용이 제한되어 빌드가 실패할 수 있다.
+
+아래는 넥스트 공식 문서에서 제안하는 구현 예시다:
+
+```tsx
+'use client'
+ 
+import { useSearchParams } from 'next/navigation'
+ 
+export default function SearchBar() {
+  const searchParams = useSearchParams()
+
+  // ... 
+ 
+  return <>Search: {search}</>
+}
+```
+
+```tsx
+import { Suspense } from 'react'
+
+export default function Page() {
+  return (
+    <>
+      <Suspense>
+        <SearchBar />
+      </Suspense>
+      <h1>Dashboard</h1>
+    </>
+  )
+}
+```
+
 ### useParams
 
-동적 파라미터를 읽을 때 사용하는 클라이언트 훅
+동적 파라미터를 읽을 때 사용하는 클라이언트 컴포넌트 훅.
 
 ```tsx
 'use client'

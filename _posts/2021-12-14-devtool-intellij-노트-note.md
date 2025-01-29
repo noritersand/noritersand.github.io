@@ -108,20 +108,39 @@ Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행�
 
 ## File and Code Templates
 
-**TODO**
+평소 설정 그대로 붙여놓음
 
-작성 예시:
+#### Class
 
 ```java
-#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};#end
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME};
+
+#end
 #parse("File Header.java")
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
+/**
+ * class description
+ * 
+ * @author ${USER}
+ * @since ${DATE}
+ */
+@Slf4j
 public class ${NAME} {
-    private static final Logger logger = LoggerFactory.getLogger(${NAME}.class);
+
 }
+
+```
+
+#### JavaScript, JSX, TypeScript, TypeScript JSX
+
+```js
+/**
+ * @file file description
+ * @author ${USER}
+ * @since ${DATE}
+ */
 
 ```
 

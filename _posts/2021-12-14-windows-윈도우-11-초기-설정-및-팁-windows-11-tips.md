@@ -141,8 +141,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 6</kbd>: Discord, Slack
 - <kbd>win + 7</kbd>: Steam, WebStorm
 - <kbd>win + 8</kbd>: VSCODE
-- <kbd>win + 9</kbd>: 가변 #3
-- <kbd>win + 0</kbd>: 가변 #4
+- <kbd>win + 9</kbd>: 가변 #1
+- <kbd>win + 0</kbd>: 가변 #2
 
 가변 항목:
 
@@ -154,6 +154,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 Autohotkey로 확장한 키 조합:
 
+- <kbd>win + alt + 5</kbd>: Fork
 - <kbd>win + alt + 6</kbd>: Discord
 - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
 - <kbd>win + ctrl + - </kbd>: Notion
@@ -166,4 +167,4 @@ Autohotkey로 확장한 키 조합:
 
 윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음. 
 
-그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지?
+그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지? 🙄

@@ -68,14 +68,22 @@ new Promise( function ( resolve, reject ) { ... } )
 
 ### Promise.prototype.then()
 
+Promise가 이행(fulfilled) 되었을 때 실행되는 메서드. 거부(rejected) 되었을 때 실행될 두 번째 콜백 함수를 받을 수도 있다.
+
 ```
-promise.then( onFulfilled, onRejected )
+promiseInstance.then(onFulfilled)
+promiseInstance.then(onFulfilled, onRejected)
+
+function onFulfilled(value) {}
+function onRejected(reason) {}
 ```
 
 - `onFulfilled`: resolve 때 실행할 함수
+  - `value`: Promise가 이행되며 전달된 값
 - `onRejected`: reject 때 실행할 함수
+  - `reason`: Promise가 거부되며 전달된 값
 
-`Promise.prototype.then()`은 파라미터로 resolve 혹은 reject를 처리할 핸들러 함수를 받는다.
+`Promise.prototype.then()`은 첫 번째 파라미터로 resolve를, 두 번째 파라미터로 reject를 처리할 핸들러 함수를 받는다.
 
 생성자 함수와 `.then()`은 Promise를 반환한다(나중에 설명할 `.catch()`와 `.finally()`도 마찬가지). 따라서 메서드 체이닝 패턴으로 작성해야 함:
 
@@ -107,11 +115,16 @@ willBeFail.then(() => {
 
 ### Promise.prototype.catch()
 
+Promise 체인에서 발생하는 모든 에러를 처리하는 메서드.
+
 ```
-promise.catch( onRejected )
+promiseInstance.catch(onRejected)
+
+function onRejected(reason) {}
 ```
 
 - `onRejected`: reject 때 실행할 함수
+  - `reason`: Promise가 거부되며 전달된 값
 
 `Promise.prototype.catch()`는 reject된 경우에 실행할 함수 하나만 받는다. 내부에서 `promise.then(undefined, onRejected)`를 호출한다고 함.
 
@@ -132,44 +145,70 @@ willBeFail2.catch((reason) => {
 아래 예시를 보면 Promise의 상태가 `onRejected` 호출 후 fulfilled로 바뀐다:
 
 ```js
-var pr3 = new Promise((resolve, reject) => {
+var pr1 = new Promise((resolve, reject) => {
   reject('rejection reason');
-})
-var pr4 = pr3.then(msg => {
-  console.log('pr3-msg:', msg); // 실행 안됨
-})
-var pr5 = pr4.catch(msg => {
-  console.log('pr4-msg:', msg); // pr4-msg: rejection reason
 });
-var pr6 = pr5.then(msg => {
-  console.log('pr5-msg:', msg); // pr5-msg: undefined
+var pr2 = pr1.then(msg => {
+  console.log('pr1-msg:', msg); // 실행 안됨
+});
+var pr3 = pr2.catch(msg => {
+  console.log('pr2-msg:', msg); // pr2-msg: rejection reason
+});
+var pr4 = pr3.then(msg => {
+  console.log('pr3-msg:', msg); // pr3-msg: undefined
 });
 
-console.log(pr3); // Promise { <state>: "rejected", <reason>: "rejection reason" }
-console.log(pr4); // Promise { <state>: "rejected", <reason>: "rejection reason" }
-console.log(pr5); // Promise { <state>: "fulfilled", <value>: undefined }
-console.log(pr6); // Promise { <state>: "fulfilled", <value>: undefined }
+console.log(pr1); // Promise { <state>: "rejected", <reason>: "rejection reason" }
+console.log(pr2); // Promise { <state>: "rejected", <reason>: "rejection reason" }
+console.log(pr3); // Promise { <state>: "fulfilled", <value>: undefined }
+console.log(pr4); // Promise { <state>: "fulfilled", <value>: undefined }
 ```
 
-주의: `pr3`, `pr4`, `pr5`, `pr6`은 다 다른 인스턴스다.
+🚨 `pr1`, `pr2`, `pr3`, `pr4`은 각각 다른 인스턴스이니 주의(매번 새로 만들어짐)
 
-#### 에러 처리
+#### Promise 체인 위치에 따른 에러 처리
 
-메서드 체인 상의 에러는 `.catch()`가 받아준다:
+위에서 모든 에러를 처리한다고 설명했지만, 정확히는 Promise 체인 내에서 `.catch()` 위치를 기준으로 이전에 발생한 에러만 처리한다. 아래 예시를 보자:
 
 ```js
 new Promise((resolve, reject) => {
   resolve();
-}).then((msg) => {
-  throw new Error('I am error'); // 이 코드를 두 줄 위로 올려도 결과는 같음
-  console.log('moo');
-}).catch((reason) => {
-  console.log('ya');
-}).then((msg) => {
-  console.log('ho');
-});
-// catch에서 'ya' 출력
-// 두 번째 then에서 'ho' 출력
+  // 여기서 에러가 발생해도 첫 번째 catch()가 처리함
+})
+  .then(msg => {
+    // 첫 번째 then()
+    throw new Error('중간 에러'); // 에러 발생
+  })
+  .catch(error => {
+    // 첫 번째 catch()
+    // 위에서 발생한 에러 처리
+    console.error('에러:', error);
+  })
+  .then(() => {
+    // 두 번째 then()
+    // 에러 처리 후에도 계속 이어짐
+    console.log('계속 진행');
+  })
+  .catch(error => {
+    // 두 번째 then()에서 발생한 에러 처리
+    console.error('에러:', error);
+  });
+```
+
+`.catch()` 블록에서 에러를 다시 던지지 않으면, 그 이후의 체인에서는 에러가 발생하지 않은 것으로 간주된다. 반대로 아래처럼 에러를 다시 던지면, 그 이후의 `.catch()`가 해당 에러를 받는다:
+
+```js
+new Promise((resolve, reject) => {
+  throw new Error('에러 발생');
+})
+  .catch(error => {
+    console.error('첫 번째 catch:', error);
+    throw error; // 이 에러는 두 번째 catch()에서 처리됨
+  })
+  .catch(error => {
+    // 두 번째 catch()
+    console.error('두 번째 catch:', error);
+  });
 ```
 
 만약 `.catch()`가 없으면?
@@ -199,7 +238,7 @@ promise.finally( onFinally )
 `Promise.prototype.finally()`는 Promise가 이행만 되면 resolve/reject에 상관없이 무조건 실행하는 함수를 받는다. `onFinally`는 인자도 없고 Promise의 결과 값에 영향을 주지도 않는다:
 
 ```js
-var pr7 = new Promise((resolve, reject) => {
+var pr5 = new Promise((resolve, reject) => {
   resolve('me is result value'); // 여기가 reject()여도 결과는 같음
 }).finally(() => {
   console.log('알파카로 만든 파카는 알파카파카');

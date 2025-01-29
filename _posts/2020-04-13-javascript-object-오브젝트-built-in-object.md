@@ -322,10 +322,12 @@ Object.is(obj, {}); // false
 
 ### Object.prototype.hasOwnProperty()
 
-**TODO**
-
 어떤 프로퍼티가 `obj`의 자체 프로퍼티(own property, 상속받은 게 아니라 객체가 소유한 프로퍼티)인지를 불리언 값으로 반환한다.
 
+```js
+console.log(Window.prototype.hasOwnProperty('getComputedStyle')); // false
+console.log(window.hasOwnProperty('getComputedStyle')); // true
+```
 
 ### Object.prototype.propertyIsEnumerable()
 

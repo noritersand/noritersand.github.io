@@ -183,7 +183,7 @@ tags:
 - [Moment.js](https://momentjs.com/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #1. 포매터가 필요하면 이걸 쓰자
 - [⭐Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
 - [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
-- [⭐babel](https://github.com/babel/babel): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해준다.
+- [babel](https://github.com/babel/babel): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해 준다.
 - [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - [Immer](https://immerjs.github.io/immer/): 불변성을 유지하면서 객체를 쉽게 수정할 수 있게 해주는 라이브러리. 리액트에서 상태값이 객체일 때 활용하기 좋다. 제공된 draft를 직접 변경하는 방식으로 사용하는데, 변경된 부분만 복제하도록 최적화되어 있기 때문에 객체 전체의 깊은 복제용으로는 적합하지 않다.
@@ -204,7 +204,7 @@ tags:
 
 그리드나 달력 등 UI 관련 라이브러리 중 단독으로 사용할 수 있는 것들 모음.
 
-- [⭐Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 일명 데이트피커. 순수 자바스크립트 기반. 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 컴포넌트. 순수 자바스크립트 기반이며, 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 자바스크립트 기반이다.
 - [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 유료 그리드
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
@@ -220,6 +220,7 @@ tags:
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
 - [useHooks](https://github.com/uidotdev/usehooks?tab=readme-ov-file): 리액트 훅 모음 #1. 리액트 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 리액트의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://github.com/streamich/react-use): 리액트 훅 모음 #2. 이 패키지도 리액트 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
+- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 패칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하도 함. 예전 이름은 React Query였다.
 
 ### 뷰 전용 라이브러리
 
@@ -492,7 +493,7 @@ Project manager 혹은 Issue tracker
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 툴 모음 사이트
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 툴이다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
-- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
+- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 
 
 ## 기타 웹 서비스
@@ -546,7 +547,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## non-dev 유틸리티
 
-- [⭐Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): 윈도우 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(윈도우판 Spotlight) 같은 기능을 추가해준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹) 
+- [⭐Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): 윈도우 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(윈도우판 Spotlight) 같은 기능을 추가해 준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹) 
 - [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
 - [RunCat](https://github.com/Kyome22/RunCat_for_windows/releases): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
 - [스텔라리움](https://stellarium.org/ko/): 스텔라륨. 오픈 소스 천체 투영관
@@ -561,7 +562,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
 - [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
 - [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(2023-08-09) 버전은 3.1
-- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
+- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해 준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
 
 ### 인풋 매크로, 키 매핑 등
 

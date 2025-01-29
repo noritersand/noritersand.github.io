@@ -294,6 +294,8 @@ arr.fill(5, 1);
 
 ### Array.prototype.filter()
 
+특정 조건으로 필터링한 새 배열을 반환한다.
+
 ```
 array.filter(callbackFn)
 array.filter(callbackFn, thisArg)
@@ -301,11 +303,12 @@ array.filter(callbackFn, thisArg)
 function callbackFn(element, index, array) {}
 ```
 
-- `element`: 배열의 각 요소
-- `index`: 인덱스
-- `array`: 배열 전체
+- `callbackFn`: 배열의 각 요소마다 실행될 콜백 함수. `true` 혹은 `false`를 반환해야 함
+  - `element`: 배열의 각 요소
+  - `index`: 인덱스
+  - `array`: 배열 전체
 
-특정 조건으로 필터링한 새 배열을 반환한다. 콜백 함수에서 `true` 혹은 `false`를 반환해야 하며, `true`가 아닐 경우 해당 요소를 제외한 배열을 반환한다. 원본은 변하지 않는다.
+콜백 함수에서 반환한 값이 `true`가 아닐 경우 해당 요소를 제외한 배열을 반환한다. 원본은 변하지 않는다.
 
 ```js
 var arr = [1, 2, 3, 4];

@@ -21,6 +21,7 @@ tags:
 
 #### 테스트 환경 정보
 
+- React 19
 - React 18
 
 
@@ -94,12 +95,12 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
 Reactive state를 정의하는 훅.
 
 ```
-const [state, modifier] = React.useState(initialState);
+const [state, setState] = React.useState(initialState);
 ```
 
 - `initialState`: `state`의 초기값.
 - `state`: `useState`가 반환한 Reactive state(줄여서 상태 혹은 state). 리액트는 이 값이 변화할 때 자동으로 다시 렌더링한다. 그러니까 state의 변화는 리렌더링을 유발한다.
-- `modifier`: `state`의 값을 변경하기 위해 호출하는 함수. 이 함수의 이름은 state 변수의 이름 앞에 `set`을 붙이는 게 관행적이다. (따라서 위 예시에선 `setState()`가 되어야 한다)
+- `setState`: `state`의 값을 변경하기 위해 호출하는 set 함수. 이 함수의 이름은 관행적으로 state 변수의 이름 앞에 `set`을 붙여 사용한다. 예전 버전에선 'modifier'라고 불렀다.
 
 ```jsx
 import {useState} from 'react';
@@ -118,7 +119,7 @@ return (
 
 #### state 값 변경하기
 
-state의 값은 직접 재할당하는 게 아니라 modifier를 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
+state의 값은 직접 재할당하는 게 아니라 set 함수를 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
 ```jsx
 import {useState} from 'react';
@@ -145,7 +146,7 @@ const handleEvent3 = event => {
 };
 ```
 
-ℹ️ 모든 modifier가 호출될 때마다 렌더링 되는 것은 아니다. 리액트는 modifier를 실행 대기 큐에 적재하고 이벤트 핸들러의 모든 코드가 실행되기를 기다린 다음 다시 렌더링한다. [자세한 내용은 여기](https://react.dev/learn/queueing-a-series-of-state-updates#react-batches-state-updates)를 보자.
+ℹ️ 모든 set 함수가 호출될 때마다 렌더링 되는 것은 아니다. 리액트는 set 함수를 실행 대기 큐에 적재하고 이벤트 핸들러의 모든 코드가 실행되기를 기다린 다음 다시 렌더링한다. [자세한 내용은 여기](https://react.dev/learn/queueing-a-series-of-state-updates#react-batches-state-updates)를 보자.
 
 #### 현재 state를 기반으로 업데이트하기
 
@@ -280,9 +281,9 @@ function updateArray(index, replacement) {
 
 #### state 변경 감지하기
 
-modifier는 비동기적으로 작동하기 때문에 modifier 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
+set 함수는 비동기적으로 작동하기 때문에 set 함수 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
 
-\* 좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
+좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
 
 ```jsx
 import {useState} from 'react';
@@ -589,6 +590,8 @@ const ref = React.useRef(initialValue)
 const rf = useRef('멋에쓰는물건인고');
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
+
+⚠️ 리액트 19 도움말 페이지 [https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 리액트는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
 
 #### 렌더링을 유발하지 않는 별도의 상태값
 

@@ -554,7 +554,7 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `reque
 
 ## url
 
-`<c:url/>` 태그는 컨텍스트를 자동으로 추가해서 주소를 자동으로 생성해준다.  `context` 속성이 지정되었을 경우 `value`와 `context`의 값은 `/`로 시작을 해야  된다. `context` 속성이 생략되면 당연히 현재의 컨텍스트가 적용된다.
+`<c:url/>` 태그는 컨텍스트를 자동으로 추가해서 주소를 자동으로 생성해 준다.  `context` 속성이 지정되었을 경우 `value`와 `context`의 값은 `/`로 시작을 해야  된다. `context` 속성이 생략되면 당연히 현재의 컨텍스트가 적용된다.
 
 ### Syntax 1: Body 없는 경우
 
