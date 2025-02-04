@@ -39,9 +39,9 @@ tags:
 
 ## 프로토타입 확인
 
-객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 프로퍼티 `Object.prototype.__proto__`\*를 이용하는 방법이 있다:
+객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 프로퍼티 `Object.prototype.__proto__`를 이용하는 방법이 있다:
 
-\* `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
+🚨 `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
 
 ```js
 var o = new Object();
@@ -71,7 +71,7 @@ Mankind.prototype === human.__proto__; // true
 
 어떤 객체의 `foo`라는 프로퍼티를 참조할 때, `foo`가 그 객체에 있을 수도 없을 수도 있다. 만약 없다면 프로토타입에서 `foo`를 찾는다. 여기에도 없다면 더 상위 프로토타입에 있는지 찾아 올라가는 것을 반복한다. 이런 과정 혹은 구조를 **프로토타입 체인**이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다.
 
-프로토타입 체인으로 `Object` 프로토타입까지 도달했는데 여기에도 `foo`가 없다면 ~~마참내~~그제야 `undefined`를 반환한다. `Object` 프로토타입은 최상위 프로토타입이라서 더 이상 찾아 올라갈 대상이 없기 때문.
+프로토타입 체인으로 `Object` 프로토타입까지 도달했는데 여기에도 `foo`가 없다면 마참내3 `undefined`를 반환한다. `Object` 프로토타입은 최상위 프로토타입이라서 더 이상 찾아 올라갈 대상이 없기 때문.
 
 ```js
 function Fruit() {}
@@ -136,7 +136,7 @@ noob.constructor === Newbie; // true
 Newbie.prototype.constructor === Newbie; // true
 ```
 
-⚠️ 이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니라** 단순히 프로퍼티를 통해 연결된 것 뿐이니 오해하지 말자.
+이것은 **`Newbie` 프로토타입을 `Newbie()` 생성자 함수가 만들어냈다는 뜻이 아니라** 단순히 프로퍼티를 통해 연결된 것 뿐이니 오해하지 말자.
 
 ### 프로토타입 이름 알아내기
 
@@ -170,9 +170,9 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 
 ### 쓰잘머리 없는 정보: 그럼 생성자 함수의 프로토타입은?
 
-`Function` 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것\*과 비교해 차이가 있다:
+`Function` 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것과 비교해 차이가 있다:
 
-\* **주의**: `Newbie.prototype`은 `Newbie()` 함수의 프로토타입이 아니라 `Newbie()` 함수로 만들어질 객체의 프로토타입`[[Prototype]]`임을 기억할 것. `Newbie()` 함수의 프로토타입은 `Newbie.[[Prototype]]`이라 표현한다.
+🚨 `Newbie.prototype`은 `Newbie()` 함수의 프로토타입이 아니라 `Newbie()` 함수로 만들어질 객체의 프로토타입`[[Prototype]]`임을 기억할 것. `Newbie()` 함수의 프로토타입은 `Newbie.[[Prototype]]`이라 표현한다.
 
 ```js
 Function.__proto__ === Function.prototype; // true
@@ -193,7 +193,7 @@ Newbie.__proto__.__proto__ === Object.prototype; // true
 Function.__proto__.__proto__ === Object.prototype; // true
 ```
 
-사실 이딴 건 몰라도 됨 😏
+사실 몰라도 됨 😏
 
 <!-- **TODO** 이 밑에는 왜 써놓은 걸까? -->
 <!--
@@ -217,11 +217,11 @@ Function.assign; // undefined
 
 ## 프로퍼티의 가려짐 Property Shadowing
 
-객체의 프로퍼티는 객체 자신이 소유한 프로퍼티(own properties)\*와 프로토타입의 프로퍼티로 나뉜다. 소유한 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
+객체의 프로퍼티는 객체 자신이 소유한 프로퍼티(own properties)와 프로토타입의 프로퍼티로 나뉜다. 소유한 프로퍼티가 없고 프로토타입의 프로퍼티만 있는 객체는 해당 프로퍼티를 읽으려고 할 때 프로토타입의 것을 반환할 것이다.
 
 만약 소유한 프로퍼티와 프로토타입의 프로퍼티가 동시에 존재한다면, 소유한 프로퍼티가 우선되며 프로토타입의 프로퍼티는 객체의 프로토타입을 통해서만 확인할 수 있는 상태가 된다. 이를 '프로퍼티의 가려짐'이라고 한다.
 
-\* 객체가 소유한 프로퍼티인지 아닌지는 [`Object.prototype.hasOwnProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)로 확인할 수 있음.
+ℹ️ 객체가 소유한 프로퍼티인지 아닌지는 [`Object.prototype.hasOwnProperty()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty)로 확인할 수 있음.
 
 ```js
 function Fn() {
@@ -425,3 +425,6 @@ notebook.getDouble() // 512
 ```
 
 이 방법도 런타임 중에 프로토타입을 바꾸는거라 `__proto__`처럼 속도 이슈가 있을것 같음.
+
+
+끗.

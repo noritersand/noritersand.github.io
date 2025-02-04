@@ -645,6 +645,21 @@ export default function App() {
 
 #### forwardRef
 
+🚨 리액트 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
+
+[https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19](https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19)
+
+```jsx
+function MyInput({placeholder, ref}) {
+  return <input placeholder={placeholder} ref={ref} />
+}
+
+//...
+<MyInput ref={ref} />
+````
+
+---
+
 `React.forwardRef()` 함수는 `ref` 객체를 자식 컴포넌트의 DOM 객체와 연결할 때 사용한다.
 
 ```

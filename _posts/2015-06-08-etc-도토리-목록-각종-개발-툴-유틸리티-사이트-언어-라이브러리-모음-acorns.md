@@ -586,6 +586,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 브라우저 
 
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. `about:config`에서 `browser.uidensity`를 1로 해볼 것. [개발자용 불여시](https://www.mozilla.org/en-US/firefox/developer/)
 - [DuckDuckGo browser](https://duckduckgo.com/app)
 - [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저 #1
 - [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
