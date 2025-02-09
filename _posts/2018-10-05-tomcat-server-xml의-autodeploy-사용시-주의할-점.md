@@ -5,6 +5,7 @@ title: '[Tomcat] server.xml의 autoDeploy 사용시 주의할 점'
 categories:
   - tomcat
 tags:
+  - infrastructure
   - was
   - tomcat
   - autodeploy

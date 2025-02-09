@@ -5,6 +5,7 @@ title: '[Tomcat] 웹 애플리케이션(WAR) 배포'
 categories:
   - tomcat
 tags:
+  - infrastructure
   - was
   - tomcat
   - deploy

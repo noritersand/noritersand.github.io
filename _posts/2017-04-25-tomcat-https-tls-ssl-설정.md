@@ -5,6 +5,7 @@ title: '[Tomcat] HTTPS(TLS/SSL) 설정'
 categories:
   - tomcat
 tags:
+  - infrastructure
   - was
   - tomcat
   - https

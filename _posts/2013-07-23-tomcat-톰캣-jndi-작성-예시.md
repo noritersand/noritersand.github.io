@@ -1,10 +1,11 @@
 ---
 layout: post
 date: 2013-07-23 02:42:00 +0900
-title: '[Servlet] 톰캣 JNDI 작성 예시'
+title: '[Tomcat] 톰캣 JNDI 작성 예시'
 categories:
-  - servlet
+  - tomcat
 tags:
+  - infrastructure
   - java
   - servlet
   - tomcat
@@ -70,12 +71,12 @@ public class DBCPConn {
     }
 
     public static Connection getConnection() {
-        if (conn==null) {
+        if (conn == null) {
             try {
                 Context init = new InitialContext();
-            //java:/comp/env -> 이름으로 바인딩된 객체를 검색
-                Context content = (Context)init.lookup("java:/comp/env");
-                DataSource ds = (DataSource)content.lookup("jdbc/myoracle");
+                // java:/comp/env -> 이름으로 바인딩된 객체를 검색
+                Context content = (Context) init.lookup("java:/comp/env");
+                DataSource ds = (DataSource) content.lookup("jdbc/myoracle");
                 conn = ds.getConnection();
             } catch (Exception e) {
                 System.out.println(e);
@@ -85,7 +86,7 @@ public class DBCPConn {
     }
 
     public static void close() {
-        if (conn!=null) {
+        if (conn != null) {
             try{
                 if (!conn.isClosed()) {
                     conn.close();
@@ -101,7 +102,7 @@ public class DBCPConn {
 
 #### 객체 생성 확인
 
-```xml
+```jsp
 <%= DBCPConn.getConnection() %>
 ```
 

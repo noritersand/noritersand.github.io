@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2018-04-17 11:20:58 +0900
-title: '[Eclipse] eclipse 초기 설정'
+title: '[devtool] eclipse 초기 설정'
 categories:
-  - eclipse
+  - devtool
 tags:
   - devtool
   - eclipse

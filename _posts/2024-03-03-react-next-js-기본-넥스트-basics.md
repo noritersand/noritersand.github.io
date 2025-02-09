@@ -29,7 +29,7 @@ tags:
 
 ## 개요
 
-넥스트(Next.js) 사용방법 간단 정리.
+Next.js(이하 넥스트) 사용방법 간단 정리.
 
 
 ## 스캐폴딩
@@ -245,15 +245,42 @@ export default function Page() {
 - [Next.js \| API Reference: next.config.js Options](https://nextjs.org/docs/pages/api-reference/next-config-js)
 - [GitHub \| next.js/packages/next/src/server/config-shared.ts at canary · vercel/next.js](https://github.com/vercel/next.js/blob/canary/packages/next/src/server/config-shared.ts)
 
-next.config.js 혹은 next.config.mjs로 관리하는 Next.js의 빌드 설정 파일.
+넥스트의 빌드 설정 파일. 프로젝트 루트 경로에 위치해야 하며 한다.
 
 ```js
+/**
+ * @type {import('next').NextConfig}
+ */
 const nextConfig = {
-  reactStrictMode: true,
-  output: undefined
-};
+  /* config options here */
+}
+ 
+module.exports = nextConfig
+```
 
-export default nextConfig;
+ECMAScript의 모듈 시스템이 필요하면 파일 확장자를 `.mjs` 혹은 넥스트 15부터 지원하는 `.ts`로 작성한다:
+
+```js
+// .mjs
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  /* config options here */
+}
+ 
+export default nextConfig
+```
+
+```ts
+// .ts
+import type { NextConfig } from 'next'
+ 
+const nextConfig: NextConfig = {
+  /* config options here */
+}
+ 
+export default nextConfig
 ```
 
 #### reactStrictMode
@@ -274,7 +301,7 @@ module.exports = {
 - `standalone`: 모든 필요한 종속성이 함께 번들링되는 방식. Docker 컨테이너에 배포할 때 사용한다. `.next/standalone`에 빌드 결과가 저장된다.
 - `export`: 정적 사이트로 내보내기 위한 옵션으로 Node.js 환경이 아닐 때 사용한다. 따라서 서버 사이드 렌더링/로직을 사용할 수 없다. `out` 디렉터리에 빌드 결과가 저장된다.
 
-⚠️ `export`는 보통 웹 서버를 통한 단순 배포 용도로 사용한다. 하지만 웹 서버는 `https://host/dashboard` 같은 URL을 이해하지 못하고 404로 응답하게 된다. 따라서 들어오는 요청의 path 값에 `.html` 붙여 파일을 찾도록 하는 추가 작업이 필요하다. 아래는 nginx일 경우의 설정이다:
+⚠️ `output: 'export'`는 보통 웹 서버를 통한 단순 배포 용도로 사용한다. 하지만 웹 서버는 `https://host/dashboard` 같은 URL을 이해하지 못하고 404로 응답하게 된다. 따라서 아래 `trailingSlash`를 `true`로 설정하거나, 들어오는 요청의 path 값에 `.html` 붙여 파일을 찾도록 하는 추가 작업이 필요하다. 아래는 nginx일 경우의 설정이다:
 
 ```
 location / {
@@ -290,6 +317,8 @@ location / {
 
 
 #### redirects
+
+⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없는 기능
 
 특정 요청을 다른 경로로 리다이렉션하는 옵션이다.
 
@@ -315,7 +344,9 @@ module.exports = {
 
 #### rewrites
 
-요청 경로를 다른 경로에 매핑한다. 포워딩과 유사하지만 약간 다르며, 웹 서버에서 제공하는 rewrite와도 다르다. Next.js에선 들어오는 요청을 내부에서 다른 주소로 매핑하는데, 이 과정에서 클라이언트, 그러니까 브라우저는 URL 변경을 감지하지 못한다. 이를 *URL masking*이나 *URL hiding*이라 부른다. 클라이언트의 특정 요청을 Next.js 서버에서 감지하고 매핑된 다른 주소로 대신 요청을 보내 데이터를 받아오는 방식이라서 가능한 것. 이를 이용해서 외부에 노출되면 안되는 (API 키 같은) 중요한 값을 숨길 수 있다.
+⚠️ 넥스트 설정이 `output: 'export'`일 땐 사용할 수 없는 기능
+
+요청 경로를 다른 경로에 매핑한다. 포워딩과 유사하지만 약간 다르며, 웹 서버에서 제공하는 rewrite와도 다르다. 넥스트에선 들어오는 요청을 내부에서 다른 주소로 매핑하는데, 이 과정에서 클라이언트, 그러니까 브라우저는 URL 변경을 감지하지 못한다. 이를 *URL masking*이나 *URL hiding*이라 부른다. 클라이언트의 특정 요청을 넥스트 서버에서 감지하고 매핑된 다른 주소로 대신 요청을 보내 데이터를 받아오는 방식이라서 가능한 것. 이를 이용해서 외부에 노출되면 안되는 (API 키 같은) 중요한 값을 숨길 수 있다.
 
 ```js
 module.exports = {
@@ -334,8 +365,6 @@ module.exports = {
 - `destination`: 매핑할 주소
 
 `redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
-
-⚠️ `redirects`와 `rewrites`는 HTML 내보내기 방식(`next.config.js`의 `output` 옵션이 `export`일 때)에서 사용할 수 없음
 
 
 ## 환경 변수
@@ -425,6 +454,8 @@ NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 
 ## 데이터 받아오기 Data Fetching
 
+⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없는 기능
+
 이 글에서 데이터 받아오기는 단순히 어딘가에 데이터를 요청하고 그걸 받아오는 것을 말하는 게 아니라, SSR 시점에 fetching을 완료하고 그걸 컴포넌트에 그려넣는 방법을 말한다.
 
 앱 라우터 방식에선 async 함수 컴포넌트가 JSX를 반환하기 전에 원하는 데이터를 받아오면 된다. 이 작업은 비동기가 아니기 때문에 `useState()`가 필요하지 않으며, SSR 시점에 완료되는 작업이기 때문에 `useEffect()` 또한 필요하지 않다:
@@ -482,10 +513,10 @@ export default function Page({
 }
 ```
 
-⚠️ HTML 내보내기로 빌드하면 SSR 렌더링은 사용할 수 없음
-
 
 ## 라우트 핸들러 Route Handlers
+
+[Routing: Route Handlers \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 
 GET, POST 같은 HTTP 메서드에 대응하는 서버 사이드 함수. 클라이언트의 요청을 받아 (필요한 경우) 로직을 처리하고 JSON 등의 데이터로 응답하는 엔드 포인트를 이르는 말.
 
@@ -549,7 +580,7 @@ export default function BlogPostPage({ params }) {
 }
 ```
 
-Next.js 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 제약이 따른다. 미리 페이지를 만들어놔야 한다고 하는데... 자세한 설명은 **TODO**
+⚠️ 넥스트 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 제약이 따른다. 미리 페이지를 만들어놔야 한다고 하는데... 자세한 설명은 **TODO**
 
 라우트 핸들러에선 다이나믹 세그먼트를 아래처럼 처리한다:
 

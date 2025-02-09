@@ -22,21 +22,6 @@ tags:
 자주 쓰거나 중요한 것은 ⭐표시함.
 
 
-## 분류 없음
-
-- [mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
-- [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
-- [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
-- [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
-- [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
-- [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
-- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
-- [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
-- [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
-- [Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
-- [Advent of Code](https://adventofcode.com/): 매년 일정 시간마다 하나씩 공개되는 프로그래밍 퍼즐 사이트. 모든 언어로 풀 수 있음. ~~UI에서해커스멜이난다~~
-
-
 ## 각종 문서(메뉴얼, API Doc, 튜토리얼 등)
 
 - [MDN](https://developer.mozilla.org/): 그 MDN
@@ -95,9 +80,9 @@ tags:
 - [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. 자바와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
 - [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #2. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
 - [Zig](https://ziglang.org/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #3. 셋 중 가장 최신 언어다(Ada의 표준화는 1983년, Rust의 최초 릴리즈가 2010년, Zig는 2015년에 개발 시작).
-- [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. 자바(Java) 기반이며 JVM에서 실행된다.
+- [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. 자바 기반이며 JVM에서 실행된다.
 - [Kotlin](https://kotlinlang.org/): JVM에서 실행되는 자바와 상호 운용 가능한 언어. 안드로이드 개발에 주로 쓰인다. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
-- [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). 자바, 파이썬(Python), 루비(Ruby) 등의 언어에서 영향을 받았다 한다. 
+- [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). 자바, 파이썬, 루비 등의 언어에서 영향을 받았다 한다. 
 - [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷하다고 함. 자바처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 - [TypeScript](https://www.typescriptlang.org/): 타입스크립트. 자바스크립트의 슈퍼셋(superset)으로, 이름처럼 정적 데이터 타입이 추가되어 컴파일 에러 검출이 가능한 게 대표적인 특징이다. 컴파일 타임이 존재하며 자바스크립트 코드로 변환된다.
@@ -114,13 +99,13 @@ tags:
 - [Bun](https://bun.sh/): 최적화된 성능, 더 나은 메모리 관리 등이 목표인 서버 사이드 자바스크립트 런타임. Node.js, Deno보다 빠르다고 주장한다. 실제로 그런 것 같고, Node.js 대체제로 떠오르는 중(2023-09-11)...
 
 
-## 프레임워크
+## 프레임워크 Frameworks
 
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임워크. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
-- [Vue](https://vuejs.org/): 뷰. 설명이 필요없는 프론트엔드 라이브러리 #1.
-- [React](https://react.dev/): 리액트. 설명이 필요없는 프론트엔드 라이브러리 #2.
+- [Vue](https://vuejs.org/): 설명이 필요없는 프론트엔드 라이브러리 #1.
+- [React](https://react.dev/): 설명이 필요없는 프론트엔드 라이브러리 #2.
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 리액트, 뷰를 잇는 프론트엔드 프레임워크. 비교적 가볍고 단순한 게 특징이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
@@ -272,8 +257,8 @@ tags:
 - [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
 - [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 툴. 좋지만 무료 플랜이 없는 게 단점
 - [StarUML](http://staruml.sourceforge.net/ko)
-- [Draw.io (web)](http://www.draw.io)
-- [Gliffy (web)](http://www.gliffy.com)
+- [Draw.io](http://www.draw.io)
+- [Gliffy](http://www.gliffy.com)
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
 - [XMind](http://www.xmind.net): 마인드 맵
@@ -364,7 +349,7 @@ tags:
 - [hilite.me](http://hilite.me/): 인라인 코드 하이라이터 #3
 
 
-## 텍스트 에디터
+## 텍스트 에디터 Text Edtors
 
 - [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4)
 - [Notepad++](https://notepad-plus-plus.org)
@@ -372,6 +357,7 @@ tags:
 - [⭐Visual Studio Code](https://code.visualstudio.com)
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능도 제공한다. 또 사용자 플러그인 설치가 가능한 점, 오프라인 파일이 생성되어 백업이 쉽다는 점이 있다. 동기화 기능(Obsidian Sync)은 유료다.
 - [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCODE와 인터페이스가 매우 유사하다.
+- [Zed](http://zedapp.org): 윈도우는 아직 지원 예정(2025-02-05)이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
 
 
 ## SSH/텔넷/FTP 클라이언트
@@ -387,7 +373,7 @@ tags:
 
 ## Mobile development
 
-- [troy (web)](http://troy.labs.daum.net)
+- [troy](http://troy.labs.daum.net)
 - [Adobe Edge Inspect](https://creative.adobe.com/ko/products/inspect)
 - [browser-deeplink](https://github.com/hampusohlsson/browser-deeplink): 브라우저에서 앱 실행
 
@@ -404,10 +390,9 @@ tags:
 - [IntelliJ](http://www.jetbrains.com/idea/download/index.html)
 - [jEdit](http://www.jedit.org/index.php?page=download)
 - [NetBeans](https://netbeans.org/downloads/index.html)
-- [Cloud9 (WEB)](https://c9.io)
+- [Cloud9](https://c9.io)
 - [WebStorm](http://www.jetbrains.com/webstorm/download/index.html)
 - [Aptana](http://www.aptana.com/products/studio3/download)
-- [ZED](http://zedapp.org)
 
 
 ## 디컴파일러 decompiler
@@ -496,6 +481,78 @@ Project manager 혹은 Issue tracker
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 
 
+## non-dev 유틸리티
+
+- [⭐Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): 윈도우 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(윈도우판 Spotlight) 같은 기능을 추가해 준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹) 
+- [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
+- [RunCat](https://github.com/Kyome22/RunCat_for_windows/releases): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
+- [스텔라리움](https://stellarium.org/ko/): 스텔라륨. 오픈 소스 천체 투영관
+- [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
+- [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
+- [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 툴. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
+
+### 컴퓨터 관리
+
+- [구라제거기](https://teus.me): 악성 코드 제거 툴
+- [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
+- [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
+- [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
+- [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(2023-08-09) 버전은 3.1
+- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해 준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
+
+### 인풋 매크로, 키 매핑 등
+
+- [autohotkey](https://www.autohotkey.com): 스크립트로 작성하는 매크로
+- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 매핑 앱
+- [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 매크로와 터보 기능은 유료다.
+
+### Presentation
+
+- [Prezi(web)](http://prezi.com)
+- [Slideshare(web)](http://www.slideshare.net)
+
+### 이미지, 비디오, 오디오
+
+- [⭐paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
+- [VLC media player](https://www.videolan.org/vlc/): 기본 기능에 충실한 미디어 플레이어
+- [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기
+- [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
+- [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 파이썬으로 실행하는 모양
+
+
+## 브라우저 Browsers
+
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. `about:config`에서 `browser.uidensity`를 1로 해볼 것. [개발자용 불여시](https://www.mozilla.org/en-US/firefox/developer/)
+- [DuckDuckGo browser](https://duckduckgo.com/app)
+- [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저 #1
+- [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
+- [Nyxt](https://nyxt.atlas.engineer/): 해커용 브라우저(?). 고급 사용자를 위한 브라우저로, 키보드 탐색, 점프 헤딩, 쉬운 탭 관리, 명령 퍼지 검색, 내장 REPL, 스마트 북마크 검색, 사용자 정의 가능한 자동 완성, 클립보드 기록, 트리 기반의 방문 페이지 기록 등의 기능을 제공한다고 함. 2024-12-09 기준 윈도우는 아직 미지원.
+- [Chromium](https://www.chromium.org/): 구글의 오픈 소스 웹 브라우저 프로젝트. 크롬의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
+
+### 플러그인: 파이어폭스
+
+- Mate Translate
+- PocketTube
+- Save webP as PNG or JPEG
+- uBlacklist
+- uBlock Origin
+
+### 플러그인: 크롬
+
+- Go Back With Backspace
+- ~~Move Tab Hotkeys~~
+- Mate Translate
+- Chrome Remote Desktop
+
+여기에 개발용 크롬이면:
+
+- CSSViewer
+- JSON Formatter
+- Vue.js devtools
+- Wappalyzer
+- Authenticator(인증 도구)
+
+
 ## 기타 웹 서비스
 
 - [⭐JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
@@ -545,73 +602,16 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
 
 
-## non-dev 유틸리티
+## 미분류
 
-- [⭐Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): 윈도우 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(윈도우판 Spotlight) 같은 기능을 추가해 준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹) 
-- [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
-- [RunCat](https://github.com/Kyome22/RunCat_for_windows/releases): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
-- [스텔라리움](https://stellarium.org/ko/): 스텔라륨. 오픈 소스 천체 투영관
-- [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
-- [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
-- [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 툴. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
-
-### 컴퓨터 관리
-
-- [구라제거기](https://teus.me): 악성 코드 제거 툴
-- [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
-- [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
-- [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
-- [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(2023-08-09) 버전은 3.1
-- [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해 준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
-
-### 인풋 매크로, 키 매핑 등
-
-- [autohotkey](https://www.autohotkey.com): 스크립트로 작성하는 매크로
-- [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 매핑 앱
-- [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 매크로와 터보 기능은 유료다.
-
-### Presentation
-
-- [Prezi(web)](http://prezi.com)
-- [Slideshare(web)](http://www.slideshare.net)
-
-### 이미지, 비디오, 오디오
-
-- [⭐paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
-- [VLC media player](https://www.videolan.org/vlc/): 기본 기능에 충실한 미디어 플레이어
-- [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기
-- [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
-- [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 파이썬으로 실행하는 모양
-
-
-## 브라우저 
-
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. `about:config`에서 `browser.uidensity`를 1로 해볼 것. [개발자용 불여시](https://www.mozilla.org/en-US/firefox/developer/)
-- [DuckDuckGo browser](https://duckduckgo.com/app)
-- [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저 #1
-- [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
-- [Chromium](https://www.chromium.org/): 구글의 오픈 소스 웹 브라우저 프로젝트. 크롬의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
-- [Nyxt](https://nyxt.atlas.engineer/): 해커용 브라우저(?). 고급 사용자를 위한 브라우저로, 키보드 탐색, 점프 헤딩, 쉬운 탭 관리, 명령 퍼지 검색, 내장 REPL, 스마트 북마크 검색, 사용자 정의 가능한 자동 완성, 클립보드 기록, 트리 기반의 방문 페이지 기록 등의 기능을 제공한다고 함. 2024-12-09 기준 윈도우는 아직 미지원.
-
-### 플러그인: 파이어폭스
-
-- Mate Translate
-- PocketTube
-- Save webP as PNG or JPEG
-- uBlacklist
-- uBlock Origin
-
-### 플러그인: 크롬
-
-- Go Back With Backspace
-- ~~Move Tab Hotkeys~~
-- Mate Translate
-- Chrome Remote Desktop
-
-여기에 개발용 크롬이면:
-
-- CSSViewer
-- JSON Formatter
-- Vue.js devtools
-- Wappalyzer
-- Authenticator(인증 도구)
+- [mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
+- [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
+- [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
+- [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
+- [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
+- [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
+- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+- [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
+- [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
+- [Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
+- [Advent of Code](https://adventofcode.com/): 매년 일정 시간마다 하나씩 공개되는 프로그래밍 퍼즐 사이트. 모든 언어로 풀 수 있음. ~~UI에서해커냄새가난다~~
