@@ -16,6 +16,7 @@ tags:
 #### 참고 문서
 
 - [TypeScript Documentation](https://www.typescriptlang.org/ko/docs/)
+- [TypeScript: Documentation - Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
 
 #### 테스트 환경 정보
 
@@ -220,6 +221,8 @@ const person2: Developer = {
 ℹ️ 객체 타입을 정의할 땐 프로퍼티 구분자로 쉼표`,` 대신 세미콜론`;`이 권장된다. (둘 다 가능하긴 함)
 
 #### 인터페이스의 프로퍼티를 타입 제한에 사용하기
+
+새로운 타입을 만들지 않고 이미 선언한 타입의 프로퍼티를 가져다 쓰는 방식이다.
 
 ```ts
 interface SomeInterface {
@@ -908,7 +911,9 @@ greet(Base);
 
 ## .d.ts Files
 
-[Creating .d.ts Files from .js files \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
+- [Creating .d.ts Files from .js files \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/declaration-files/dts-from-js.html)
+- [TypeScript: Documentation - Modules .d.ts](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html)
+- [TypeScript: Documentation - Deep Dive](https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html)
 
 `.d.ts` 파일은 타입스크립트 선언 파일(Declaration File)로, 실제 실행되는 코드가 아니라 타입 정보를 제공하기 위한 파일. 이 파일들은 컴파일 중 코드로 변환되지 않으며, 오직 타입 체크와 자동 완성, 문서화를 위해 사용된다.
 
@@ -924,13 +929,16 @@ greet(Base);
 
 ```ts
 // 인터페이스 선언
-interface User {
+export interface User {
   id: number;
   name: string;
 }
 
 // 타입 별칭 선언
-type ID = number | string;
+export type ID = number | string;
+
+// 앰비언트 클래스 선언
+declare class Person {}
 
 // 앰비언트 모듈 선언
 declare module "my-library" {
@@ -938,23 +946,17 @@ declare module "my-library" {
 }
 ```
 
-`.d.ts` 파일에 선언된 타입은 전역 스코프에서 선언한 것으로 간주된다. 따라서 일반적으로 타입을 사용할 때 모듈 가져오기(import)는 필요 없다. 하지만 `.d.ts` 파일에서도 모듈 내보내기(export)를 사용하여 타입이나 값을 내보낼 수 있으며, 이 경우 사용하는 측에서 명시적으로 모듈을 가져와야 한다:
-
-```ts
-// import 필요 없음 (전역 선언)
-interface User {
-  id: number;
-  name: string;
-}
-```
+타입을 선언할 때 `export`로 내보냈다면 사용하는 측에서도 명시적으로 `import`를 해야 한다. 하지만 `export` 없이 선언하면 전역 스코프에서 선언한 것으로 간주되어 별도의 `import` 없이 모든 곳에서 사용할 수 있다:
 
 ```ts
 // import 필요함 (모듈 선언)
-export interface User {
-  id: number;
-  name: string;
-}
+export interface User1 {}
+
+// import 필요 없음 (전역 선언)
+interface User2 {}
 ```
+
+ℹ️ 공식 도움말이나 오픈 소스들을 참고해보면, 모듈로 선언하는 게 일반적인 걸로 보인다. ESM이 도입되기 전에는 `namespace` 방식이 쓰였던 모양.
 
 #### `.d.ts` 관련 `tsconfig.json` 설정들
 
