@@ -20,11 +20,13 @@ tags:
 - [https://docs.oracle.com/javase/tutorial/reflect/](https://docs.oracle.com/javase/tutorial/reflect/)
 - [http://gyrfalcon.tistory.com/entry/Java-Reflection](http://gyrfalcon.tistory.com/entry/Java-Reflection)
 
+
 ## 개요
 
 리플렉션이란 인스턴스로 클래스의 정보를 분석하기 위한 기법이면서, 자바에서 해당 기법을 구현한 클래스와 패키지의 통칭이다.
 
-## 변수의 이름을 파라미터로 다루기
+
+## 변수의 이름을 매개변수로 다루기
 
 ```java
 public class Test {
@@ -40,7 +42,7 @@ public class Test {
 }
 ```
 
-String 타입의 인스턴스 변수인 person1, person2가 선언되어 있는 클래스가 있다. 그리고 그 필드의 값을 파라미터에 따라 선택하여 출력하는 `getValue()` 메서드를 구현한다고 하자.
+String 타입의 인스턴스 변수인 person1, person2가 선언되어 있는 클래스가 있다. 그리고 그 필드의 값을 매개변수에 따라 선택하여 출력하는 `getValue()` 메서드를 구현한다고 하자.
 
 일반적으로는 다음처럼 가장 간단하고 고전적인 방식인, 비교에 의한 분기문으로 구현할 수 있을것이다:
 
@@ -89,6 +91,7 @@ target.get(test);
 ```
 
 이 정보는 Field 클래스 타입이며 여기서 getName 혹은 get을 이용하면 프로퍼티의 이름과 값을 구할 수 있다. 여기서 get메서드의 인자값으로는 같은 타입의 인스턴스 객체를 넘겨줘야한다.
+
 
 ## setAccessible()
 
@@ -164,6 +167,7 @@ public class MainClass {
 ```
 
 단, 이 방법은 reflect를 통한 필드나 메서드 접근에 한하며 접근연산자(.)를 통한 방식은 불가능하다.
+
 
 ## example
 

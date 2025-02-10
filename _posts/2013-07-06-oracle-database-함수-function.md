@@ -237,7 +237,7 @@ SELECT MOD(6, 3) FROM DUAL -- 0
 ABS( A )
 ```
 
-A의 절대값 반환.
+A의 절댓값 반환.
 
 ```sql
 SELECT ABS(-11) FROM DUAL -- 11

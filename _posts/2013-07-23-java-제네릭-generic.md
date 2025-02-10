@@ -170,7 +170,7 @@ gen.getSome("123"); // 컴파일 에러
 // The method getSome(T) in the type GenericMethodTest.CustomGeneric is not applicable for the arguments (String)
 ```
 
-### 제네릭 타입이 파라미터일 때의 타입 제한
+### 제네릭 타입이 매개변수일 때의 타입 제한
 
 `T`가 와일드카드`?`로 바뀌는 것 빼고 같다:
 

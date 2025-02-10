@@ -191,7 +191,7 @@ m.forEach((value, key, map) => {
 // map: Map(2) { "a": 1, "b": 2, }
 ```
 
-같은 이름인 `Array.prototype.forEach()`와 비교하면 콜백 함수 파라미터에서 차이가 있다(`Array`는 `(element, index, object)`).
+같은 이름인 `Array.prototype.forEach()`와 비교하면 콜백 함수 매개변수에서 차이가 있다(`Array`는 `(element, index, object)`).
 
 
 끟.

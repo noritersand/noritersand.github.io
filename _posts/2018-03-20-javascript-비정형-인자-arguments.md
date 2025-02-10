@@ -16,7 +16,7 @@ tags:
 
 ## 개요
 
-자바스크립트에는 선언부에 명시되지 않은 파라미터를 별도로 저장하는 프로퍼티가 존재한다.
+자바스크립트에는 선언부에 명시되지 않은 매개변수를 별도로 저장하는 프로퍼티가 존재한다.
 
 ```js
 function argsTest() {
@@ -32,7 +32,7 @@ argsTest('arg1', 'arg2', 'arg3');
 ```js
 function argsTest() {
     if (arguments.length < 1) {
-        throw new Error('usage: argsTest(url, 파라미터1, 파라미터2, ...)');
+        throw new Error('usage: argsTest(url, 매개변수1, 매개변수2, ...)');
     }
     for (var i = 0; i < arguments.length; i++) {
         if (i != 1 && typeof arguments[i] != 'string') {

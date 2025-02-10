@@ -40,7 +40,7 @@ public class MainTest {
 
 ## JVM Arguments
 
-'J' 빼고 VM Arguments라고 부르기도 하며, `java` 명령어에 붙이는 모든 파라미터에 해당한다.
+'J' 빼고 VM Arguments라고 부르기도 하며, `java` 명령어에 붙이는 모든 옵션에 해당한다.
 
 ```bash
 java -classpath C:/somewhere -Dspring.profiles.active=real -XX:+UseG1GC -Xms1024m -Xmx2048m -Duser.name=noritersand MainTest

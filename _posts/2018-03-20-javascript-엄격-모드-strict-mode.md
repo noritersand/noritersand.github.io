@@ -54,7 +54,7 @@ function test() {
 
 아래는 표준 모드에서도 문제가 있거나 실패하는 구문이지만 에러가 발생하지는 않던 구문들이다. 엄격 모드에선 에러가 발생한다.
 
-### var로 선언된 변수와 함수 선언문으로 생성된 함수, 함수의 파라미터 삭제 불가
+### var로 선언된 변수와 함수 선언문으로 생성된 함수, 함수의 매개변수 삭제 불가
 
 단순히 실패만 하던 삭제 시도는 이제 에러가 발생한다.
 
@@ -120,7 +120,7 @@ nonconfigurable();
 
 ES2015에서 허용됨.
 
-### 함수에 동일한 이름의 파라미터가 존재할 수 없음
+### 함수에 동일한 이름의 매개변수가 존재할 수 없음
 
 ```js
 function strict(param, param) { // SyntaxError: Duplicate parameter name not allowed in this context
@@ -268,7 +268,7 @@ var arguments = 123; // SyntaxError: redefining arguments is deprecated
 
 ### 엄격 모드에서 사용할 수 없는 예약어들
 
-다음 목록은 키워드로 예약되어 있어서 식별자로 사용할 수 없다. (변수, 함수, 파라미터, 레이블의 이름으로 사용 불가):
+다음 목록은 키워드로 예약되어 있어서 식별자로 사용할 수 없다. (변수, 함수, 매개변수, 레이블의 이름으로 사용 불가):
 
 - implements
 - interface

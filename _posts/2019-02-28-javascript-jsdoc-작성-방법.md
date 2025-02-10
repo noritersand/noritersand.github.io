@@ -119,7 +119,7 @@ Shoe.prototype.setColor = function (color) {
 
 ## 데이터 타입
 
-부수효과로 편집기에 따라 툴팁으로 파라미터의 타입이 보인다거나, 자동 완성 기능이 타입에 맞춰서 알아서 된다거나 하는게 있다.
+부수효과로 편집기에 따라 툴팁으로 매개변수의 타입이 보인다거나, 자동 완성 기능이 타입에 맞춰서 알아서 된다거나 하는게 있다.
 
 구성 요소의 타입을 특정할 수 없는 배열이면 `Array` 혹은 `any[]`라고 적는다. 반대의 경우엔 해당 타입과 대괄호`[]`를 적는다. 가령 `string` 타입의 배열이면 `string[]`이다.
 
@@ -160,7 +160,7 @@ const foo = 'bar';
 ```
 
 
-## 구조 분해 할당을 사용하는 함수 파라미터는?
+## 구조 분해 할당을 사용하는 함수 매개변수는?
 
 ```js
 // 소스 출처: https://stackoverflow.com/questions/36916790/document-destructured-function-parameter-in-jsdoc
@@ -232,7 +232,7 @@ npm jsdoc ./src --destination ./doc --configure ./conf/jsdoc-config.json
 
 별칭: `@arg`, `@argument`
 
-함수나 클래스의 파라미터에 대한 설명을 작성한다.
+함수나 클래스의 매개변수에 대한 설명을 작성한다.
 
 ### @returns
 

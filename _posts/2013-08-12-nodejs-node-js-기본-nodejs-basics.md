@@ -73,7 +73,7 @@ gets(function (name) {
 - 변수와 프로퍼티: 소문자로 시작하는 카멜케이스를 사용한다.
 - 클래스: 대문자로 시작하는 카멜케이스를 사용한다.
 - 동등 비교: == 대신 ===를 사용한다.
-- 콜백 함수: 콜백 함수에서 첫 파라미터(혹은 인자)는 노드 코어의 콜백 함수처럼 에러 파라미터로 사용한다.
+- 콜백 함수: 콜백 함수에서 첫 매개변수는 노드 코어의 콜백 함수처럼 에러 매개변수로 사용한다.
 - [nodejs style guide(eng).pdf](/attachments/nodejs-style-guide-eng.pdf)
 - [nodejs style guide(kor).pdf](/attachments/nodejs-style-guide-kor.pdf)
 

@@ -233,7 +233,7 @@ array.every(callbackFn, thisArg)
 function callbackFn(element, index, array) {}
 ```
 
-`forEach()`와 같이 배열의 모든 요소를 콜백 함수 첫 번째 파라미터로 제공한다. 다만 모든 반복에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 사용한다.
+`forEach()`와 같이 배열의 모든 요소를 콜백 함수 첫 번째 매개변수로 제공한다. 다만 모든 반복에서 `return true`면 `true`, 하나라도 `return false`가 되면 `false`를 반환하는 특징을 이용해서 모든 요소가 특정 테스트를 통과하는지 확인할 때 사용한다.
 
 ```js
 [1, 2, 3].every(ele => isFinite(ele)); // true
@@ -669,7 +669,7 @@ function callbackFn(accumulator, currentValue, currentIndex, array) {}
 
 이전 요소의 연산결과를 넘겨준다.
 
-- `initialValue`: `accumulator`의 초기값. 생략하면 배열의 첫 번째 요소가 사용된다.
+- `initialValue`: `accumulator`의 초깃값. 생략하면 배열의 첫 번째 요소가 사용된다.
 - `callbackFn`
   - `accumulator`: 이전 콜백 함수 호출의 반환값
   - `currentValue`: 현재 순회 중인 배열 요소
@@ -684,7 +684,7 @@ var arr = [1, 2, 3, 4];
 arr.reduce((prev, cur) => prev + cur); // 10
 
 var arr2 = [1, 2, 3, 4];
-arr2.reduce((prev, cur) => prev + cur, 20); // 초기값 20에 10을 더한 30이 반환됨
+arr2.reduce((prev, cur) => prev + cur, 20); // 초깃값 20에 10을 더한 30이 반환됨
 ```
 
 `reduce()` 메서드는 배열의 왼쪽 요소부터 오른쪽으로 순회한다. 반대로, 오른쪽에서 왼쪽으로 순회하는 메서드인 `Array.prototype.reduceRight()`도 있다.
@@ -700,7 +700,7 @@ reduceRight(callbackFn, initialValue)
 function callbackFn(accumulator, currentValue, currentIndex, array) {}
 ```
 
-- `initialValue`: `accumulator`의 초기값. 생략하면 배열의 마지막 요소가 사용된다.
+- `initialValue`: `accumulator`의 초깃값. 생략하면 배열의 마지막 요소가 사용된다.
 - `callbackFn`
   - `accumulator`: 이전 콜백 함수 호출의 반환값
   - `currentValue`: 현재 순회 중인 배열 요소
@@ -726,7 +726,7 @@ reversed; // Array(4) [ 4, 3, 2, 1 ]
 arr; // Array(4) [ 4, 3, 2, 1 ]
 ```
 
-메서드 파라미터는 음슴.
+메서드 매개변수는 음슴.
 
 ### Array.prototype.shift()
 

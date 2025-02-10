@@ -98,7 +98,7 @@ Reactive state를 정의하는 훅.
 const [state, setState] = React.useState(initialState);
 ```
 
-- `initialState`: `state`의 초기값.
+- `initialState`: `state`의 초깃값.
 - `state`: `useState`가 반환한 Reactive state(줄여서 상태 혹은 state). 리액트는 이 값이 변화할 때 자동으로 다시 렌더링한다. 그러니까 state의 변화는 리렌더링을 유발한다.
 - `setState`: `state`의 값을 변경하기 위해 호출하는 set 함수. 이 함수의 이름은 관행적으로 state 변수의 이름 앞에 `set`을 붙여 사용한다. 예전 버전에선 'modifier'라고 불렀다.
 
@@ -324,7 +324,7 @@ const handleEvent = event => {
 
 useEffect(() => {
   if (isMounted.current) {
-    // 최초 렌더링 때는 초기값인 false로 설정되어 있음
+    // 최초 렌더링 때는 초깃값인 false로 설정되어 있음
     console.log('obj:', obj);
   } else {
     isMounted.current = true;
@@ -341,8 +341,8 @@ const [state, dispatch] = React.useReducer(reducer, initialArg, init?)
 ```
 
 - `reducer`: 상태를 업데이트할 함수 객체. 이 함수는 첫 번째 매개변수로 `state`, 두 번째 매개변수로 `action`을 갖는 순수 함수여야 하며 `state`를 반환해야 한다.
-- `initialArg`: `state` 초기값. 모든 데이터 타입을 할당할 수 있다.
-- `init`: 초기화 함수. 이 함수의 반환값이 `state`의 초기값으로 설정된다. 생략하면 `state`의 초기값은 `initialArg`와 같다.
+- `initialArg`: `state` 초깃값. 모든 데이터 타입을 할당할 수 있다.
+- `init`: 초기화 함수. 이 함수의 반환값이 `state`의 초깃값으로 설정된다. 생략하면 `state`의 초깃값은 `initialArg`와 같다.
 - `state`: 상태값을 저장하는 변수. `useState`의 `state`와 개념은 같다
 - `dispatch`: 상태값을 업데이트할 때 호출하는 함수로, 이 함수의 호출은 리렌더링을 유발한다.
 
@@ -582,9 +582,9 @@ export default function Button({children}) {
 const ref = React.useRef(initialValue)
 ```
 
-- `initialValue`: 초기값
+- `initialValue`: 초깃값
 
-반환값은 `.current` 프로퍼티 하나만 있는 객체다. `initialValue`가 `.current` 프로퍼티의 초기값으로 할당된다.
+반환값은 `.current` 프로퍼티 하나만 있는 객체다. `initialValue`가 `.current` 프로퍼티의 초깃값으로 할당된다.
 
 ```js
 const rf = useRef('멋에쓰는물건인고');
@@ -894,7 +894,7 @@ const callback = useCallback(() => {
 }, [refresh]);
 ```
 
-이렇게 작성한 함수 `callback()`은 `refresh` 값이 변경될 때까지 `foo`의 초기값인 `0`을 반환하게 된다.
+이렇게 작성한 함수 `callback()`은 `refresh` 값이 변경될 때까지 `foo`의 초깃값인 `0`을 반환하게 된다.
 
 #### 🚨 useCallback의 잘못된 사용 사례
 

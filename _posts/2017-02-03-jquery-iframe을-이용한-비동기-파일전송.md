@@ -57,7 +57,7 @@ $(document).ready(function () {
     var $frame = $('<iframe>', {
       src: "javascript: false;",
       name: frameName
-    }).appendTo('body').hide();; // Add iframe to body and hide
+    }).appendTo('body').hide(); // Add iframe to body and hide
 
     var form = document.forms.submitForm;
     form.target = frameName;  //set form target to iframe

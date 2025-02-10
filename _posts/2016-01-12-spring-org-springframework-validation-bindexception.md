@@ -14,9 +14,9 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-## 원인: 파라미터 바인딩 중 캐스팅 에러
+## 원인: 매개변수 바인딩 중 캐스팅 에러
 
-메서드의 파라미터를 지정하여 화면에서 전달된 값을 자동으로 할당하는 방식을 사용할 때 간혹 컨트롤러에 진입조차 못하고 org.springframework.validation.BindException 에러가 발생할 때가 있다. 브라우저의 웹 디버거로 확인해보면 HTTP 응답의 상태코드가 400 bad request일 것이다. 아마도
+메서드의 매개변수를 지정하여 화면에서 전달된 값을 자동으로 할당하는 방식을 사용할 때 간혹 컨트롤러에 진입조차 못하고 org.springframework.validation.BindException 에러가 발생할 때가 있다. 브라우저의 웹 디버거로 확인해보면 HTTP 응답의 상태코드가 400 bad request일 것이다. 아마도
 
 ```java
 @RequestMapping("/setModelTest.do")
@@ -87,7 +87,7 @@ Field error in object 'exampleBean' on field 'intValue': rejected value [null]; 
 "/setModelTest.do?stringLiteral=imnotempty" // correct
 ```
 
-추천하는 방법은 파라미터를 바인딩하는 용도의 빈에는 원시 타입을 사용하지 않는것이다. 이렇게하면 empty string일 때 null로 초기화된다:
+추천하는 방법은 매개변수를 바인딩하는 용도의 빈에는 원시 타입을 사용하지 않는것이다. 이렇게하면 empty string일 때 null로 초기화된다:
 
 ```java
 public class ExampleBean {

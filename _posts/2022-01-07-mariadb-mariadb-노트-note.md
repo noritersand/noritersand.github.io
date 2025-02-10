@@ -400,7 +400,7 @@ with recursive dates(date) as (
 select * from dates
 ```
 
-간단히 설명하면, `dates`라는 이름의 CTE를 정의하고, `select '2023-03-11'`를 `date` 컬럼의 초기값으로 설정한다. 그리고 `union all` 다음에 오는 쿼리에서 `dates`와 `date`를 활용해 점점 증가하는 데이터를 만들고 `where date < curdate()`에서 종료 지점을 정의한다.
+간단히 설명하면, `dates`라는 이름의 CTE를 정의하고, `select '2023-03-11'`를 `date` 컬럼의 초깃값으로 설정한다. 그리고 `union all` 다음에 오는 쿼리에서 `dates`와 `date`를 활용해 점점 증가하는 데이터를 만들고 `where date < curdate()`에서 종료 지점을 정의한다.
 
 ### WITH RECURSIVE 사용 예시 #2
 
@@ -443,7 +443,7 @@ from subordinates
 order by employeeNo
 ```
 
-`managerNo`가 `null`인 데이터를 초기값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
+`managerNo`가 `null`인 데이터를 초깃값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
 
 특정 `employeeNo`부터 검색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where managerNo is null` 부분을 코멘트 처리하면 된다.
 
@@ -452,7 +452,7 @@ order by employeeNo
 
 - `TRUNCATE`는 `WHERE` 절을 사용할 수 없다.
 - `TRUNCATE`는 `DELETE`보다 빠르게 작동한다. `TRUNCATE`는 테이블 전체를 잠그고 데이터를 삭제하는 반면, `DELETE`는 각 행을 스캔하여 삭제하기 때문
-- `TRUNCATE`는 삭제된 행의 수를 반환하지 않는다. 또한 테이블의 auto-increment 값도 초기값으로 재설정된다.
+- `TRUNCATE`는 삭제된 행의 수를 반환하지 않는다. 또한 테이블의 auto-increment 값도 초깃값으로 재설정된다.
 
 
 ## LAST_INSERT_ID()
@@ -472,7 +472,7 @@ select last_insert_id()
 COALESCE(value1, value2, ...)
 ```
 
-주어진 파라미터를 순서대로 평가하여 `NULL`이 아닌 값을 반환한다.
+주어진 매개변수를 순서대로 평가하여 `NULL`이 아닌 값을 반환한다.
 
 ```sql
 select coalesce(null, null, 3, 4);

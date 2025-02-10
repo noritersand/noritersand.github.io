@@ -32,11 +32,11 @@ tags:
 ## 문법
 
 ```js
-// 파라미터가 하나일 때 괄호는 선택사항
+// 매개변수가 하나일 때 괄호는 선택사항
 (param) => expression
 param => expression
 
-// 파라미터가 둘 이상
+// 매개변수가 둘 이상
 (param1, paramN) => expression
 
 // 매개변수가 없는 함수는 괄호 필수

@@ -101,9 +101,9 @@ CREATE TABLE test5 (
 ```sql
 CREATE SEQUENCE GUEST_SEQ
 INCREMENT BY 1        -- 증가값
-START WITH 1          -- 초기값
+START WITH 1          -- 초깃값
 NOMAXVALUE            -- 최댓값을 지정한다.
-NOCYCLE               -- 최댓값 이후 초기값으로 돌아갈지 여부
+NOCYCLE               -- 최댓값 이후 초깃값으로 돌아갈지 여부
 NOCACHE               -- 캐시 사용 안함
 ```
 

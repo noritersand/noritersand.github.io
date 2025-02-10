@@ -61,156 +61,7 @@ root
 - `.next`: 빌드에 필요한 파일과 빌드 결과가 생성되는 경로
 - `node_modules`: node 패키지 로컬 경로.
 - `public`: 정적 파일이 위치하는 경로.
-- `src`: 소스 코드 루트 경로. 이 아래에 App router에선 `app` 디렉터리가, Pages router에선 `page` 디렉터리가 있어야 한다. (`src` 디렉터리를 생략하도록 설정할 수 있음)
-
-
-## 페이지 라우터 Pages Router vs 앱 라우터 App Router
-
-- [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
-- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
-
-앱 라우터(App router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages router)라고 부른다.
-
-개발자는 페이지 라우터와 앱 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
-
-페이지 라우터:
-
-- `src/pages` 디렉터리에서 라우팅을 구성한다.
-- `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
-- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
-- 서버 컴포넌트 개념이 없다.
-- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
-- `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
-- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
-
-앱 라우터:
-
-- `src/app` 디렉터리에서 라우팅을 구성한다.
-- `src/app/page.tsx`가 루트 경로 인덱스 파일이다.
-- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
-- 기본적으로 서버 컴포넌트로 작동한다.
-- `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
-- 데이터 패칭으로 `fetch`와 `async를` 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
-
-어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
-
-🚨 두 방식을 모두 사용할 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/page.tsx`와 `src/pages/index.tsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
-
-```
-Conflicting app and page file was found, please remove the conflicting files to continue:
-  "src\pages\index.tsx" - "src\app\page.tsx"
-```
-
-이것은 `src/pages/A/B.tsx` 파일과 `src/app/A/B/page.tsx` 파일이 동시에 존재해도 마찬가지다.
-
-### layout.tsx
-
-앱 라우터에선 반복되는 레이아웃이나 전역 스타일을 `layout.tsx`에서 정의한다. `layout`이란 이름은 정해진 규칙이라 변경할 수 없으며, 확장자는 다음 넷 중 하나여야 한다: `.ts`, `.js`, `.tsx`, `.jsx`
-
-루트 경로의 `layout.tsx`는 사이트 전체에 적용되는 공통 레이아웃 파일이다. 특정 경로 아래에서만 적용되는 레이아웃 파일을 별도로 추가할 수 있는데, 이를 하위 레이아웃 혹은 중첩 레이아웃(nested layout)이라 한다. 예를 들어 `src/app/A/B/layout.tsx` 파일은 `/A/B` 경로 아래의 페이지에만 적용된다. 
-
-하위 레이아웃은 상위 레이아웃 내부에서 중첩 적용된다. 예를 들어 파일 구조가 아래와 같을 때:
-
-- `src/app/layout.tsx`
-- `src/app/A/layout.tsx`
-- `src/app/A/B/layout.tsx`
-- `src/app/A/B/page.tsx`
-
-URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 `src/app/A/B/layout.tsx`, `src/app/A/layout.tsx`, `src/app/layout.tsx` 순으로 감싸지는 식이다.
-
-### 라우트 그룹 Route Groups
-
-파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
-
-🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
-
-- `src/app/(A)/C/page.tsx`
-- `src/app/(B)/C/page.tsx`
-
-ℹ️ 넥스트에서 '라우트'는 보통 URL 경로 또는 페이지 한 개를 의미한다.
-
-### 'use client'
-
-앱 라우터는 기본적으로 모든 컴포넌트가 서버 사이드 렌더링(SSR) 되는 서버 컴포넌트로 취급된다. 서버 컴포넌트는 다음과 같은 특징이 있다:
-
-- 상태(state)와 라이프사이클 메서드(`useState`, `useReduce`)를 사용할 수 없다.
-- 브라우저 API(`window`, `document`, `location`, `console` 등)에 접근할 수 없다.
-- 이벤트 핸들러(`onClick`, `onSubmit`, ...)를 사용할 수 없다.
-- `useEffect`, `useLayoutEffect` 같은 일부 훅을 사용할 수 없다.
-- `useRef`로 DOM에 접근할 수 없다.
-
-서버 컴포넌트는 서버에서 실행되기 때문에 발생하는 제약 사항들이다. 만약 이를 회피(?)하고 싶다면 `'use client'` 디렉티브를 파일 최상단에 추가하여, 클라이언트(브라우저)에서 작동해야 함을 넥스트에 알려줘야 한다:
-
-```jsx
-'use client';
-
-import { useState } from 'react';
-
-export default function Counter() {
-  const path = usePathname(); // 서버 컴포넌트에서 사용 불가능한 코드
-  console.log('path:', path)
-
-  const [count, setCount] = useState(0); // 서버 컴포넌트에서 사용 불가능한 코드
-
-  return (
-    <div>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </div>
-  );
-}
-```
-
-이렇게 하면 클라이언트 컴포넌트가 된다. 하지만 넥스트는 하이브리드 방식으로 렌더링하며, **이 코드 또한 초기 렌더링은 서버에서 처리된다**. 이 과정에서 서버에서 실행할 수 없는 코드는 넥스트가 알아서 분할(*Code Splitting*)한다. 그 다음 사용자 상호작용과 업데이트를 클라이언트 측에서 처리한다고 이해하면 된다.
-
-### 브라우저 전용 API에 대한 접근
-
-`'use client'`로 클라이언트 컴포넌트로 선언했다 하더라도 앱 라우터 방식에선 여전히 제약이 존재하는데, 대표적으로 `window` 같은 브라우저 전용 API를 쓸 수 없다는 점이다
-
-```jsx
-'use client';
-
-export default function Page() {
-  console.log('window.name', window.name);
-  return <h2>about-us</h2>;
-}
-// Unhandled Runtime Error
-// Error: window is not defined
-```
-
-이를 해결하려면 `useEffect` 훅으로 컴포넌트 렌더링 후 접근하도록 코드를 수정한다:
-
-```jsx
-'use client';
-
-import { useEffect } from 'react';
-
-export default function Page() {
-  useEffect(() => {
-    console.log('window.name', window.name);
-  }, []);
-  return <h2>about-us</h2>;
-}
-```
-
-### Hydration
-
-리액트에서 *Hydration*이란 서버에서 렌더링된 초기 HTML과 클라이언트에서 실행되는 자바스크립트가 연결되는 과정을 말한다. 이는 브라우저에서 실행될 자바스크립트 코드가 없다면 hydration이 필요하지 않다는 것을 의미한다.
-
-앞서 언급한 서버 컴포넌트의 제약 사항을 살펴보면, 모두 브라우저에서의 사용자 상호작용과 관련된 내용들이다. 이를 통해 서버 컴포넌트에는 브라우저에서 실행될 자바스크립트가 포함되지 않는다는 것을 알 수 있다. 따라서 hydration이 필요한 컴포넌트는 오직 `'use client'` 디렉티브를 선언한 클라이언트 컴포넌트라는 말이 된다.
-
-ℹ️ 클라이언트 사이드 렌더링(CSR)에서 hydration은 필요하지 않지만, 서버 사이드 렌더링(SSR)의 **클라이언트 컴포넌트**에는 hydration이 필요하다.
-
-### 'use server'
-
-[Directives: use server \| Next.js](https://nextjs.org/docs/app/api-reference/directives/use-server)
-
-`'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 지정한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
-
-ℹ️ 사실 이것은 리액트의 기능임:
-
-- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
-- ['use server' directive – React](https://react.dev/reference/rsc/use-server)
+- `src`: 소스 코드 루트 경로. 이 아래에 App router에선 `app` 디렉터리가, Pages router에선 `pages` 디렉터리가 있어야 한다. (`src` 디렉터리를 생략하도록 설정할 수 있음)
 
 
 ## 프레임워크 설정
@@ -411,8 +262,8 @@ const db = {
 - `.env.development`: 개발 환경(`next dev`)일 때 불러오는 환경 변수 파일.
 - `.env.production`: 프로덕션 환경(`next build`, `next start`)에 불러오는 환경 변수 파일이다.
 - `.env.test`: 테스트(`next test`) 모드에서만 불러오는 환경 변수 파일.
-- `.env.local`: 개발환경 구분 없이 사용되는 개발자 개인용 환경 변수 파일. 일반적으로 개인 API 키 같은 민감 정보를 설정하며, 버전 관리 대상에서 제외한다. 
-- `.env.development.local` | `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개인자 개인용 환경 변수 파일. `.env.local`과 달리 개발 환경 구분이 필요할 때 사용한다.
+- `.env.local`: 개발환경 구분 없이 사용되는 개발자 로컬용 환경 변수 파일. 일반적으로 개인 API 키 같은 민감 정보를 설정하며, 버전 관리 대상에서 제외한다. 
+- `.env.development.local` | `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개발자 로컬용 환경 변수 파일. `.env.local`과 달리 개발 환경 구분이 필요할 때 사용한다.
 
 우선 순위가 높은 순으로 나열하면 다음과 같다:
 
@@ -452,7 +303,195 @@ NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 ```
 
 
-## 데이터 받아오기 Data Fetching
+## 라우팅
+
+### 페이지 라우터 Pages Router vs 앱 라우터 App Router
+
+- [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
+- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
+
+앱 라우터(App router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages router)라고 부른다.
+
+개발자는 페이지 라우터와 앱 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
+
+페이지 라우터:
+
+- `src/pages` 디렉터리에서 라우팅을 구성한다.
+- `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
+- 서버 컴포넌트 개념이 없다.
+- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
+- `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
+- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
+
+앱 라우터:
+
+- `src/app` 디렉터리에서 라우팅을 구성한다.
+- `src/app/page.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
+- 기본적으로 서버 컴포넌트로 작동한다.
+- `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
+- 데이터 패칭으로 `fetch`와 `async`를 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
+
+어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
+
+🚨 두 방식을 모두 사용할 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/page.tsx`와 `src/pages/index.tsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
+
+```
+Conflicting app and page file was found, please remove the conflicting files to continue:
+  "src\pages\index.tsx" - "src\app\page.tsx"
+```
+
+이것은 `src/pages/A/B.tsx` 파일과 `src/app/A/B/page.tsx` 파일이 동시에 존재해도 마찬가지다.
+
+### 레이아웃 컴포넌트 layout.tsx
+
+앱 라우터에선 반복되는 레이아웃이나 전역 스타일을 `layout.tsx`에서 정의한다. `layout`이란 이름은 정해진 규칙이라 변경할 수 없으며, 확장자는 다음 넷 중 하나여야 한다: `.ts`, `.js`, `.tsx`, `.jsx`
+
+루트 경로의 `layout.tsx`는 사이트 전체에 적용되는 공통 레이아웃 파일이다. 특정 경로 아래에서만 적용되는 레이아웃 파일을 별도로 추가할 수 있는데, 이를 하위 레이아웃 혹은 중첩 레이아웃(nested layout)이라 한다. 예를 들어 `src/app/A/B/layout.tsx` 파일은 `/A/B` 경로 아래의 페이지에만 적용된다. 
+
+하위 레이아웃은 상위 레이아웃 내부에서 중첩 적용된다. 예를 들어 파일 구조가 아래와 같을 때:
+
+- `src/app/layout.tsx`
+- `src/app/A/layout.tsx`
+- `src/app/A/B/layout.tsx`
+- `src/app/A/B/page.tsx`
+
+URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 `src/app/A/B/layout.tsx`, `src/app/A/layout.tsx`, `src/app/layout.tsx` 순으로 감싸지는 식이다.
+
+레이아웃 컴포넌트는 매개변수로 `props` 객체를 전달 받는다. 이 객체의 주요 프로퍼티로, 레이아웃이 감싸야할 하위 컴포넌트를 나타내는 `children`과 동적 라우트를 사용하는 경우 해당 `slug`가 포함된 `params`가 있다. 이 중 `params`는 넥스트 버전에 따라 타입이 다른데, 넥스트 14 이전에는 일반 객체가, 넥스트 15부터는 `Promise` 객체가 전달된다:
+
+```ts
+// 소스 출처: https://nextjs.org/docs/app/building-your-application/upgrading/version-15#params--searchparams
+
+// 14 이전
+type Params = { slug: string }
+ 
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Params
+}) {
+  const { slug } = params
+}
+ 
+// 15
+type Params = Promise<{ slug: string }>
+ 
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Params
+}) {
+  const { slug } = await params
+}
+```
+
+### 라우트 그룹 Route Groups
+
+파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
+
+🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
+
+- `src/app/(A)/C/page.tsx`
+- `src/app/(B)/C/page.tsx`
+
+ℹ️ 넥스트에서 '라우트'는 보통 URL 경로 또는 페이지 한 개를 의미한다.
+
+
+## 클라이언트 렌더링
+
+### 'use client'
+
+앱 라우터는 기본적으로 모든 컴포넌트가 서버 사이드 렌더링(SSR) 되는 서버 컴포넌트로 취급된다. 서버 컴포넌트는 다음과 같은 특징이 있다:
+
+- 상태(state)와 라이프사이클 메서드(`useState`, `useReducer`)를 사용할 수 없다.
+- 브라우저 API(`window`, `document`, `location`, `console` 등)에 접근할 수 없다.
+- 이벤트 핸들러(`onClick`, `onSubmit`, ...)를 사용할 수 없다.
+- `useEffect`, `useLayoutEffect` 같은 일부 훅을 사용할 수 없다.
+- `useRef`로 DOM에 접근할 수 없다.
+
+서버 컴포넌트는 서버에서 실행되기 때문에 발생하는 제약 사항들이다. 만약 이를 회피(?)하고 싶다면 `'use client'` 디렉티브를 파일 최상단에 추가하여, 클라이언트(브라우저)에서 작동해야 함을 넥스트에 알려줘야 한다:
+
+```jsx
+'use client';
+
+import { useState } from 'react';
+
+export default function Counter() {
+  const path = usePathname(); // 서버 컴포넌트에서 사용 불가능한 코드
+  console.log('path:', path)
+
+  const [count, setCount] = useState(0); // 서버 컴포넌트에서 사용 불가능한 코드
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+이렇게 하면 클라이언트 컴포넌트가 된다. 하지만 넥스트는 하이브리드 방식으로 렌더링하며, **이 코드 또한 초기 렌더링은 서버에서 처리된다**. 이 과정에서 서버에서 실행할 수 없는 코드는 넥스트가 알아서 분할(*Code Splitting*)한다. 그 다음 사용자 상호작용과 업데이트를 클라이언트 측에서 처리한다고 이해하면 된다.
+
+### 브라우저 전용 API에 대한 접근
+
+`'use client'`로 클라이언트 컴포넌트로 선언했다 하더라도 앱 라우터 방식에선 여전히 제약이 존재하는데, 대표적으로 `window` 같은 브라우저 전용 API를 쓸 수 없다는 점이다
+
+```jsx
+'use client';
+
+export default function Page() {
+  console.log('window.name', window.name);
+  return <h2>about-us</h2>;
+}
+// Unhandled Runtime Error
+// Error: window is not defined
+```
+
+이를 해결하려면 `useEffect` 훅으로 컴포넌트 렌더링 후 접근하도록 코드를 수정한다:
+
+```jsx
+'use client';
+
+import { useEffect } from 'react';
+
+export default function Page() {
+  useEffect(() => {
+    console.log('window.name', window.name);
+  }, []);
+  return <h2>about-us</h2>;
+}
+```
+
+### Hydration
+
+리액트에서 *Hydration*이란 서버에서 렌더링된 초기 HTML과 클라이언트에서 실행되는 자바스크립트가 연결되는 과정을 말한다. 이는 브라우저에서 실행될 자바스크립트 코드가 없다면 hydration이 필요하지 않다는 것을 의미한다.
+
+앞서 언급한 서버 컴포넌트의 제약 사항을 살펴보면, 모두 브라우저에서의 사용자 상호작용과 관련된 내용들이다. 이를 통해 서버 컴포넌트에는 브라우저에서 실행될 자바스크립트가 포함되지 않는다는 것을 알 수 있다. 따라서 hydration이 필요한 컴포넌트는 오직 `'use client'` 디렉티브를 선언한 클라이언트 컴포넌트라는 말이 된다.
+
+ℹ️ 클라이언트 사이드 렌더링(CSR)에서 hydration은 필요하지 않지만, 서버 사이드 렌더링(SSR)의 **클라이언트 컴포넌트**에는 hydration이 필요하다.
+
+
+## 서버 사이드 기능
+
+### 'use server'
+
+[Directives: use server \| Next.js](https://nextjs.org/docs/app/api-reference/directives/use-server)
+
+`'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 지정한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
+
+ℹ️ 사실 이것은 리액트의 기능이다:
+
+- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
+- ['use server' directive – React](https://react.dev/reference/rsc/use-server)
+
+### 데이터 받아오기 Data Fetching
 
 ⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없는 기능
 
@@ -513,8 +552,7 @@ export default function Page({
 }
 ```
 
-
-## 라우트 핸들러 Route Handlers
+### 라우트 핸들러 Route Handlers
 
 [Routing: Route Handlers \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 
@@ -534,12 +572,29 @@ export async function POST(request: Request) {
 // PUT, DEL, ...
 ```
 
+ℹ️ 라우트 핸들러의 두 번째 매개변수는 `params`를 포함하는데, 넥스트 15부터는 `Promise` 타입의 비동기 객체로 제공된다:
 
-## 다이나믹 라우트 Dynamic Routes
+```ts
+// 14 이전
+type Params = { slug: string }
+ 
+export async function GET(request: Request, {params}: { params: Params }) {
+  const { slug } = params
+}
+ 
+// 15
+type Params = Promise<{ slug: string }>
+ 
+export async function GET(request: Request, {params}: { params: Params }) {
+  const { slug } = await params
+}
+```
+
+### 다이나믹 라우트 Dynamic Routes
 
 [Routing: Dynamic Routes \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
 
-URL의 특정 부분을 동적 파라미터로 처리하는 기능. `[slug]` 같은 대괄호 문법을 사용하여, 파일 이름에 다이나믹 세그먼트(Dynamic Segment)를 설정할 수 있다. 이렇게 파일 경로와 파라미터를 동시에 정의하고, 해당 경로에 따라 동적으로 페이지를 렌더링하는 기능이다.
+URL의 특정 부분을 동적 매개변수로 처리하는 기능. `[slug]` 같은 대괄호 문법을 사용하여, 파일 이름에 다이나믹 세그먼트(Dynamic Segment)를 설정할 수 있다. 이렇게 파일 경로와 매개변수를 동시에 정의하고, 해당 경로에 따라 동적으로 페이지를 렌더링하는 기능이다.
 
 ```jsx
 export default function Page({ params }) {
@@ -547,7 +602,7 @@ export default function Page({ params }) {
 }
 ```
 
-예를 들어 `app/product/[id].js`라는 파일은 `/product/123` 같은 URL을 처리할 수 있다. `app/product/[category]/[id].js`라는 파일을 만들어 `/product/laptop/123` 같은 다중 파라미터 처리도 가능하다.
+예를 들어 `app/product/[id].js`라는 파일은 `/product/123` 같은 URL을 처리할 수 있다. `app/product/[category]/[id].js`라는 파일을 만들어 `/product/laptop/123` 같은 다중 매개변수 처리도 가능하다.
 
 ```jsx
 export default function ProductPage({ params }) {
@@ -582,15 +637,11 @@ export default function BlogPostPage({ params }) {
 
 ⚠️ 넥스트 설정이 `output: 'export'`인 경우 다이나믹 라우트 기능에 제약이 따른다. 미리 페이지를 만들어놔야 한다고 하는데... 자세한 설명은 **TODO**
 
-라우트 핸들러에선 다이나믹 세그먼트를 아래처럼 처리한다:
+ℹ️ 레이아웃 컴포넌트, 라우트 핸들러와 마찬가지로 넥스트 15부터 `params`가 `Promise` 객체로 제공되며 다음처럼 작성해야 한다:
 
-```tsx
-// 코드 출처: https://nextjs.org/docs/app/building-your-application/routing/route-handlers#dynamic-route-segments
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ slug: string }> }
-) {
-  const slug = (await params).slug // 'a', 'b', or 'c'
+```ts
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
 }
 ```
 
@@ -693,7 +744,7 @@ export default function Page() {
 
 ### useParams
 
-동적 파라미터를 읽을 때 사용하는 클라이언트 컴포넌트 훅.
+동적 매개변수를 읽을 때 사용하는 클라이언트 컴포넌트 훅.
 
 ```tsx
 'use client'

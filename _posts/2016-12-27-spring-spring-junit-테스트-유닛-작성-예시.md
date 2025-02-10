@@ -223,7 +223,7 @@ public class FileUploaderTest {
         File file = new File(uploadResource.getFile() + "/temp/example/" + uploadedFile.getTargetFileNameOnly());
         assertTrue(file.exists());
 
-        System.out.println(fileUploader.getWebPath(uploadedFile.getTargetFile().toPath()));;
+        System.out.println(fileUploader.getWebPath(uploadedFile.getTargetFile().toPath()));
     }
 
 

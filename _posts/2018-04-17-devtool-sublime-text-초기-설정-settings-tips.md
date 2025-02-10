@@ -120,7 +120,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ## 패키지 Sublime Text Packages
 
-패키지는 서브라임 커뮤니티에 공유되는 플러그인 같은 거라고 생각하면 된다.
+패키지는 서브라임 커뮤니티에서 공유되는 확장 기능이다(=플러그인).
 
 일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
 

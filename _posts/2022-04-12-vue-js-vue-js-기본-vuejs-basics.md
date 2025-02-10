@@ -832,7 +832,7 @@ export default {
 }
 ```
 
-`required=true`일 때 초기값이 null이면 경고 발생함.
+`required=true`일 때 초깃값이 null이면 경고 발생함.
 
 Composition API `<script setup>` 스타일에서 문자열 배열 방식:
 

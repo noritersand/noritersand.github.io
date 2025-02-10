@@ -21,7 +21,7 @@ tags:
 
 - spring framework 2.5 or higher
 
-RequestParam annotation은 `key=value` 형태로 화면에서 넘어오는 쿼리스트링 혹은 폼 데이터를 메서드의 파라미터로 지정한다. 대체로 파라미터의 개수가 적을때 사용한다.
+RequestParam annotation은 `key=value` 형태로 화면에서 넘어오는 쿼리스트링 혹은 폼 데이터를 메서드의 매개변수로 지정한다.
 
 ```java
 method( @RequestParam( PARAM ) Obj )
@@ -33,7 +33,7 @@ method( @RequestParam Map)
 
 ## 이름과 변수를 지정하는 방식
 
-아래에서 `xxx/editBlog.do?blogId=3` 과 같이 접근할 때, editBlogHandler 메서드의 파라미터인 blogId에는 3이 셋팅된다. 필수 요건이 아닐 경우, `@RequestParam(value="id", required="false")`와 같이 옵션을 주고 사용할 수 있다.
+아래에서 `xxx/editBlog.do?blogId=3` 과 같이 접근할 때, editBlogHandler 메서드의 매개변수인 blogId에는 3이 셋팅된다. 필수 요건이 아닐 경우, `@RequestParam(value="id", required="false")`와 같이 옵션을 주고 사용할 수 있다.
 
 ```java
 @Controller

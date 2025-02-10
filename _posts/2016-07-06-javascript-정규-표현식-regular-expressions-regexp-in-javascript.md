@@ -158,7 +158,7 @@ regexp.test(testString)
 ```js
 var regex = /a/g;
 
-console.log(regex.lastIndex); // 0 (초기값)
+console.log(regex.lastIndex); // 0 (초깃값)
 
 console.log(regex.test('a'));  // true (검색 성공)
 console.log(regex.lastIndex);  // 1 (검색 위치의 다음 인덱스로 변경됨)
