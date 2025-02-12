@@ -43,7 +43,7 @@ tags:
 
 **윈도우 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음.**
 
-터미널의 시작 위치를 변경하려면 설정 파일`settings.json`을 열어서(터미널 앱의 설정 화면<kbd>ctrl + ,</kbd>에서 좌측 하단 `Json 파일 열기`를 누르면 됨):
+터미널의 시작 위치를 변경하려면 설정 파일 `settings.json`을 아래처럼 수정한다. 해당 파일은 터미널 앱의 설정 화면(<kbd>ctrl + ,</kbd>)에서 좌측 하단 `Json 파일 열기`를 누르면 열림:
 
 ```js
 "profiles": {
@@ -212,7 +212,7 @@ telnet localhost 4000
 
 ### 구버전 제어판 열기
 
-윈도우 검색<kbd>win + s</kbd>에서 '제어판'으로 검색하면 나온다. 만약 검색이 안 되면 실행 대화 상자<kbd>win + r</kbd>에서 `control` 혹은 `Control Panel` 입력.
+윈도우 검색(<kbd>win + s</kbd>)에서 '제어판'으로 검색하면 나온다. 만약 검색이 안 되면 실행 대화 상자(<kbd>win + r</kbd>)에서 `control` 혹은 `Control Panel` 입력.
 
 ### 파일 탐색기(File Explorer) 아이콘 오버레이 우선순위 설정
 
@@ -225,7 +225,7 @@ telnet localhost 4000
 
 ### 앱으로 인식되지 않는 파일을 시작 화면에 등록하기
 
-`C:\ProgramData\Microsoft\Windows\Start Menu` 여기에 바로가기를 붙여넣고 검색<kbd>win + s</kbd>하면 앱으로 뜸.
+`C:\ProgramData\Microsoft\Windows\Start Menu` 여기에 바로가기를 붙여넣고 검색(<kbd>win + s</kbd>)하면 앱으로 뜸.
 
 `%APPDATA%\Microsoft\Windows\Start Menu\Programs` 여기에 놔도 된다. 이 경로는 `shell:programs`으로 접근할 수 있다.
 

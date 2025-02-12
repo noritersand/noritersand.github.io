@@ -901,9 +901,14 @@ export const emittingTest = {
 
 ### 컴포넌트와 v-model
 
-`props`로 내려보내진 부모 컴포넌트의 반응형 상태값을 자식 컴포넌트에서 변경할 수 있게 하는 방법이다. 요약하면 emit을 이용한 `props`의 우회 변경인데, `props`는 읽기 전용이라서 직접 변경하는 것은 불가능하다. 따라서 여기서는 부모 컴포넌트에게 어떤 값으로 변경하라는 이벤트를 `emit()`하여 부모 컴포넌트가 스스로 변경하게 한다.
+ℹ️ 아래 내용은 Vue 3.4 버전에 추가된 `definedModel()`로 더 간단하게 구현할 수 있음. 단, Composition API 스타일만 가능
 
-ℹ️ Composition API 스타일이라면 Vue.js 3.4 버전에 추가된 `definedModel()`을 쓰는게 더 쉽다. 이 문서들을 보자: [#1](https://vuejs.org/guide/components/v-model.html), [#2](https://vuejs.org/api/sfc-script-setup.html#definemodel)
+- [Component v-model \| Vue.js](https://vuejs.org/guide/components/v-model.html)
+- [\<script setup\> \| Vue.js](https://vuejs.org/api/sfc-script-setup.html#definemodel)
+
+---
+
+`props`로 내려보내진 부모 컴포넌트의 반응형 상태값을 자식 컴포넌트에서 변경할 수 있게 하는 방법이다. 요약하면 emit을 이용한 `props`의 우회 변경인데, `props`는 읽기 전용이라서 직접 변경하는 것은 불가능하다. 따라서 여기서는 부모 컴포넌트에게 어떤 값으로 변경하라는 이벤트를 `emit()`하여 부모 컴포넌트가 스스로 변경하게 한다.
 
 [가이드](https://vuejs.org/guide/components/v-model.html)를 보면 여러 구현 방법이 있지만, 이게 가장 좋음(하지만 코드 양도 많지):
 

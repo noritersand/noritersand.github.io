@@ -14,10 +14,10 @@ tags:
 
 #### 참고 문서
 
-- [https://git-scm.com/docs](https://git-scm.com/docs)
-- [https://git-scm.com/book/ko/v2](https://git-scm.com/book/ko/v2)
-- [https://ohshitgit.com/](https://ohshitgit.com/)
-- [https://learngitbranching.js.org/?locale=ko](https://learngitbranching.js.org/?locale=ko)
+- [Git - Reference](https://git-scm.com/docs)
+- [Git - book](https://git-scm.com/book/en/v2)
+- [Oh Shit, Git!?!](https://ohshitgit.com/)
+- [Learn Git Branching](https://learngitbranching.js.org/?locale=ko)
 
 
 ## 개요
@@ -137,10 +137,19 @@ git blame -C -C 파일
 
 ## branch
 
+[Git - git-branch Documentation](https://git-scm.com/docs/git-branch)
+
 브랜치를 조회하거나 생성/삭제한다.
 
 #### Options
 
+- `-l` `--list`: 브랜치 목록을 출력한다. 브랜치 삭제 같은 옵션을 생략했을 때의 기본 옵션
+- `-a` `--all`: 로컬 브랜치와 리모트 트래킹 브랜치 모두 출력
+- `-r` `--remotes`: 리모트 트래킹 브랜치만 출력하거나 삭제(`-d` 옵션과 같이 사용 시)한다. `-a`와 `-r` 옵션을 모두 생략하면 로컬 저장소만 선택한다.
+- `-d` `--delete `: 브랜치를 삭제한다. 머지 상태에 따라 실패할 수 있다.
+- `-D`: 머지 상태와 상관없이 지정한 브랜치를 삭제한다. `-d --force`와 같다.
+- `--merged [<commit>] `: 특정 브랜치(생략하면 HEAD)에 머지가 완료된 브랜치만 출력
+- `--no-merged [<commit>]`: 특정 브랜치(생략하면 HEAD)에 머지가 완료되지 않은 브랜치만 출력
 - `--show-current`: 현재 브랜치 출력
 - `-c`: 기존 브랜치를 복사할 때 사용하는 옵션
 - `-C` `--copy --force`: 새로 복사될 브랜치의 이름이 이미 존재하는 경우 덮어씀
@@ -195,7 +204,7 @@ git branch --unset-upstream  # 업스트림 브랜치 지정 해제
 
 #### 머지 여부 확인
 
-머지가 완료되었거나 그렇지 않은 브랜치만 표시한다. 삭제해도 되는 브랜치를 조회할 때 사용한다.
+머지가 완료되었거나 그렇지 않은 브랜치만 출력한다. 삭제해도 되는 브랜치를 조회할 때 사용한다.
 
 ```bash
 git branch --merged
@@ -282,6 +291,8 @@ blob
 
 
 ## checkout
+
+[Git - git-checkout Documentation](https://git-scm.com/docs/git-checkout)
 
 브랜치를 전환하거나 워킹 트리를 되돌린다. 되돌리는 기능은 이 명령어 말고 새로 추가된 `restore`를 쓰자.
 
@@ -503,6 +514,8 @@ git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제�
 
 
 ## commit
+
+[Git - git-commit Documentation](https://git-scm.com/docs/git-commit)
 
 staged 상태인 파일을 깃 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
 
@@ -907,9 +920,11 @@ git am FILE
 
 ## filter-branch
 
+[Git - git-filter-branch Documentation](https://git-scm.com/docs/git-filter-branch)
+
 커밋 히스토리를 다시 작성하는 고급 기능.
 
-**TODO** 사용에 주의 필요. [https://git-scm.com/docs/git-filter-branch](https://git-scm.com/docs/git-filter-branch)
+**TODO** 사용에 주의 필요. 
 
 
 ## fsck
@@ -971,7 +986,7 @@ export GIT_ASK_YESNO=false
 
 - `--aggressive`: 더 많은 시간을 들여서 '공격적'으로 최적화하는 옵션. 크기가 큰 저장소를 최적화할 때 사용한다.
 - `--auto`
-- `--prune=<date>`: 지정한 날짜보다 오래된 객체 중 연결이 끊긴 객체를 정리한다. 날짜를 지정하지 않으면 2주가 기본값이며, `gc` 명령을 옵션없이 실행했을 때의 기본 옵션이다. `date`는 `2023-01-01`, `30.days.ago`, `2.weeks.ago` 등으로 지정하며, `now`로 지정하면 날짜를 무시하고 모든 객체를 검사한다. 🚨 이 옵션은 이름이 이상하다. `gc` 명령 자체가 가비지 컬렉션을 수행하면서 객체를 자동으로 삭제(prune)한다. 그러니까 gc가 이미 pruning이란 뜻을 내포하고 있는데, 날짜를 지정하는 옵션의 이름을 왜 이따구로 만들었는지...
+- `--prune=<date>`: 지정한 날짜보다 오래된 객체 중 연결이 끊긴 객체를 정리한다. 날짜를 지정하지 않으면 2주가 기본값이며, `gc` 명령을 옵션없이 실행했을 때의 기본 옵션이다. `date`는 `2023-01-01`, `30.days.ago`, `2.weeks.ago` 등으로 지정하며, `now`로 지정하면 날짜를 무시하고 모든 객체를 검사한다. 🤔 이 옵션은 이름이 이상하다. `gc` 명령 자체가 가비지 컬렉션을 수행하면서 객체를 자동으로 삭제(prune)한다. 그러니까 gc가 이미 pruning이란 뜻을 내포하고 있는데, 날짜를 지정하는 옵션의 이름을 왜 이따구로 만들었는지...
 - `--no-prune`: pruning은 건너뛰고 최적화 작업만 수행하게 하는 옵션
 - `--quiet`
 - `--force`
@@ -1053,7 +1068,7 @@ LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한
 
 ## log
 
-[Git \| git-log Documentation](https://git-scm.com/docs/git-log)
+[Git - git-log Documentation](https://git-scm.com/docs/git-log)
 
 ```
 git log [<options>] [<revision range>] [[--] <path>...]
@@ -1107,7 +1122,7 @@ git log --author="작성자이름 또는 이메일"
 - `--pretty[=<format>]` `--format=<format>`: 지정한 포맷으로 보여준다.
   - `--pretty=full`: 커밋의 최초 생성자(author)와 마지막으로 리베이스 한 사람(commiter)을 표시한다.
   - `--pretty=fuller`: `--pretty=full` 옵션에 더해 커밋 최초 생성 시각(authorDate)과 마지막 리베이스 시각(commitDate)도 출력한다.
-  - `--pretty=oneline`: 커밋 정보를 한 줄로 표시한다.
+  - `--pretty=oneline`: 커밋 정보를 한 줄로 출력한다.
   - `--pretty=short`: **TODO**
 - `--relative-date`: 정확한 시간을 보여주는 것이 아니라 '2주 전'처럼 상대적인 형식으로 보여준다.
 - `--shortstat`: `--stat` 옵션의 결과 중에서 수정한 파일, 추가된 줄, 삭제된 줄만 보여준다.
@@ -1169,7 +1184,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 
 ## ls-files
 
-스테이징 에어리어나 워킹 트리에 있는 파일들의 정보를 표시한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
+스테이징 에어리어나 워킹 트리에 있는 파일들의 정보를 출력한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
 
 #### Options
 
@@ -1182,7 +1197,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 - `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된(assumed unchanged)' 파일은 소문자로 표시한다.
 
 ```bash
-git ls-files -v | grep ^h  # assumed unchanged 파일만 표시
+git ls-files -v | grep ^h  # assumed unchanged 파일만 출력
 ```
 
 #### 파일 상태
@@ -1237,7 +1252,7 @@ git ls-tree HEAD ./docs
 
 ## merge
 
-현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 표시해 준다.
+현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
 
 깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다. [^1]
 
@@ -1507,7 +1522,7 @@ git merge --squash HEAD@{1} # 헤드와 헤드의 직전 이력을 스쿼시 머
 
 `reflog` 명령의 옵션, 특히 출력 모양 관련 옵션은 `log`의 옵션과 동일하다. `log` 쪽을 살펴볼 것.
 
-예를 들어 지난 10개의 헤드 이동 이력을 리플로그 메시지, 커밋 메시지, 커밋 생성자(author), 커밋 생성 시간과 함께 표시하려면 `--pretty` 옵션을 덧붙인다.
+예를 들어 지난 10개의 헤드 이동 이력을 리플로그 메시지, 커밋 메시지, 커밋 생성자(author), 커밋 생성 시간과 함께 출력하려면 `--pretty` 옵션을 덧붙인다.
 
 ```bash
 git reflog -10 --pretty
@@ -1524,7 +1539,7 @@ git reflog -10 --pretty
 
 #### 리모트 저장소 목록
 
-로컬 저장소에 등록된 리모트 저장소를 모두 출력하되 단축이름만 표시한다.
+로컬 저장소에 등록된 모든 리모트 저장소의 단축이름을 출력한다.
 
 ```bash
 git remote
@@ -1532,7 +1547,7 @@ git remote
 
 #### 리모트 저장소 URL 확인
 
-리모트 저장소의 단축이름과 URL을 표시한다.
+리모트 저장소의 단축이름과 URL을 출력한다.
 
 ```bash
 git remote -v
@@ -1553,10 +1568,10 @@ git remote add remoteRepo https://noritersand@dev.naver.com/git/exlernforscm.git
 
 #### 리모트 저장소 살펴보기
 
-특정 로컬 저장소의 구체적인 정보(URL, 추적중인 브랜치 등)를 표시한다.
+특정 로컬 저장소의 구체적인 정보(URL, 추적중인 브랜치 등)를 출력한다.
 
 ```bash
-git remote show origin  # origin 저장소의 상세정보 표시
+git remote show origin  # origin 저장소의 상세정보 출력
 ```
 
 #### 리모트 저장소 이름 바꾸기

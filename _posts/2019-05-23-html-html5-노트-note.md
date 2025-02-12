@@ -6,6 +6,7 @@ categories:
   - html
 tags:
   - html
+  - html-standard
   - s
   - del
   - ins
@@ -15,6 +16,10 @@ tags:
 
 * Kramdown table of contents
 {:toc .toc}
+
+#### 참고 문서
+
+- [HTML Standard \| WHATWG](https://html.spec.whatwg.org/)
 
 
 ## 개요 

@@ -444,7 +444,7 @@ export default function List() {
 
 `key`의 값은 전역에 걸쳐 유일한 값일 필요는 없으며 컴포넌트 내에서만 유일하면 된다. `props`의 프로퍼티처럼 보이지만 `props.key`로 참조할 수는 없다. 일종의 숨겨진 프로퍼티로 작동하는 모양.
 
-🚨 배열의 index를 key에 할당하면 배열 데이터가 변경되었을 때 성능 문제가 발생한다. [이 문서](https://yozm.wishket.com/magazine/detail/2634/) 참고
+⚠️ 배열의 index를 key에 할당하면 배열 데이터가 변경되었을 때 성능 문제가 발생한다. [이 문서](https://yozm.wishket.com/magazine/detail/2634/) 참고
 
 ### 삼항 연산자 적용
 

@@ -84,6 +84,8 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
   - useActionState 🧪(React 19 기능)
   - useOptimistic 🧪(React 19 기능)
 - Custom Hooks
+- React DOM Hooks
+  - useFormStatus
 
 
 ## 스테이트 훅 State Hooks
@@ -195,7 +197,7 @@ setValues(prev => [...prev, value]);
 setValues([...values, value]);
 ```
 
-배열의 요소 하나를 교체하거나, 요소가 객체일 때 프로퍼티를 수정하려는 경우에도 원본 배열을 변경하지 말고 변경된 새 배열을 할당하는 게 올바른 방법이다(🚨 객체 배열의 얕은 복제에 주의할 것):
+배열의 요소 하나를 교체하거나, 요소가 객체일 때 프로퍼티를 수정하려는 경우에도 원본 배열을 변경하지 말고 변경된 새 배열을 할당하는 게 올바른 방법이다(⚠️ 객체 배열의 얕은 복제에 주의할 것):
 
 ```jsx
 import React, {useState} from 'react';
@@ -591,7 +593,7 @@ const rf = useRef('멋에쓰는물건인고');
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
 
-⚠️ 리액트 19 도움말 페이지 [https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 리액트는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
+⚠️ 리액트 19 [도움말 페이지](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 리액트는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
 
 #### 렌더링을 유발하지 않는 별도의 상태값
 
@@ -645,7 +647,7 @@ export default function App() {
 
 #### forwardRef
 
-🚨 리액트 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
+ℹ️ 리액트 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
 
 [https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19](https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19)
 
@@ -708,6 +710,10 @@ export default function ParentComponent() {
   );
 }
 ```
+
+### useImperativeHandle
+
+**TODO**
 
 
 ## 이펙트 훅 Effect Hooks
@@ -774,12 +780,20 @@ useEffect(() => {
 
 ℹ️ 정리 코드(cleanup code)가 필요한 이유는 [이 문서](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)를 보자.
 
+### useLayoutEffect
+
+**TODO**
+
+### useInsertionEffect
+
+**TODO**
+
 
 ## 퍼포먼스 훅 Performance Hooks 
 
 불필요한 렌더링을 방지하고 성능을 최적화하는 데 사용되는 훅이다.
 
-🚨 퍼포먼스 훅은 참조하는 변수뿐만 아니라 참조하는 함수 객체와 클로저까지 고려하며 사용해야 하는 훅이다. 생각 없이 마구 남발하면 온세상이 버그 천지다. 🥲
+⚠️ 퍼포먼스 훅은 참조하는 변수뿐만 아니라 참조하는 함수 객체와 클로저까지 고려하며 사용해야 하는 훅이다. 생각 없이 마구 남발하면 온세상이 버그 천지다. 🥲
 
 ### useMemo
 
@@ -1028,6 +1042,14 @@ export const useAuth = () => {
   return context;
 };
 ```
+
+
+## React DOM Hooks
+
+### useFormStatus
+
+**TODO**
+
 
 
 {% endraw %}

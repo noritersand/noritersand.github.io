@@ -43,7 +43,7 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 
 ## 검색 창 설정 변경
 
-- 검색 창<kbd>ctrl + h</kbd>에서 'Customize' 진입, 'Task'와 'Plug-in' 체크 해제.
+- 검색 창(<kbd>ctrl + h</kbd>)에서 'Customize' 진입, 'Task'와 'Plug-in' 체크 해제.
 
 
 ## 파일 자동 갱신
@@ -191,7 +191,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 - [SonarLint](https://www.sonarlint.org/): SonarQube의 이클립스판. PMD와 비슷한 코드 정적분석/품질관리 툴.
 - [CodeMix](https://marketplace.eclipse.org/content/codemix): 파이썬, PHP, 자바스크립트 등을 빠와하게 지원하는 확장 기능이다. 우와웅! 사실 안써봐서 좋은지는 몲.
 근데 이거 설치해서 쓸 바에 그냥 vscode 씀. 마소 짱짱맨
-- [AutoDeriv](http://nodj.github.io/AutoDeriv/#install): **마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기<kbd>ctrl + shift + r</kbd>의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 'Derived'로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.
+- [AutoDeriv](http://nodj.github.io/AutoDeriv/#install): **마켓에 없어서 수동 설치해야 함.** target이나 bin같은 소스가 컴파일되거나 배포되는 폴더는 이클립스 내에서 빠른 열기(<kbd>ctrl + shift + r</kbd>)의 대상에서 제외하는게 편하다. 제외하는 방법은 간단한데, 해당 폴더의 속성을 'Derived'로 설정하면 끝. (derived resource: 파생된 자원. 소스 코드가 아님을 의미) 문제는 폴더째로 삭제되고 다시 생성되었을 때 설정한 속성이 날라간다는 점이다. 이럴 때 필요한 확장 기능.
 이 확장 기능은 설치만 하면 끝나는게 아니라, workspace 아래에 `.derived` 파일을 만들고 아래처럼 내용을 작성해야 한다:
   ```bash
   # set the 'target' and 'ext' folders as derived

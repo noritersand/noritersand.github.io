@@ -164,7 +164,7 @@ console.log(pr3); // Promise { <state>: "fulfilled", <value>: undefined }
 console.log(pr4); // Promise { <state>: "fulfilled", <value>: undefined }
 ```
 
-🚨 `pr1`, `pr2`, `pr3`, `pr4`은 각각 다른 인스턴스이니 주의(매번 새로 만들어짐)
+⚠️ `pr1`, `pr2`, `pr3`, `pr4`은 각각 다른 인스턴스이니 주의(매번 새로 만들어짐)
 
 #### Promise 체인 위치에 따른 에러 처리
 

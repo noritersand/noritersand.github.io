@@ -49,7 +49,7 @@ tags:
 
 ### 자동 저장
 
-`Settings > Installed Packages > fuzzy-finder`의 설정에서 `Ignored Names` 항목에 file finder<kbd>ctrl + p</kbd>가 무시할 패턴 입력.
+`Settings > Installed Packages > fuzzy-finder`의 설정에서 `Ignored Names` 항목에 file finder(<kbd>ctrl + p</kbd>)가 무시할 패턴 입력.
 
 ### 붙여넣기 시 자동 들여쓰기 해제
 
@@ -65,7 +65,7 @@ tags:
 
 ## 작성자 저장용 단축키 설정
 
-커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'Application: Open Your Keymap' 입력 후 엔터. 그리고 열리는 keymap.cson을 아래처럼 변경:
+커맨드 팔레트(<kbd>ctrl + shift + p</kbd>)에서 'Application: Open Your Keymap' 입력 후 엔터. 그리고 열리는 keymap.cson을 아래처럼 변경:
 
 ```yml
 '.platform-win32, .platform-win32 .command-palette atom-text-editor':
@@ -107,7 +107,7 @@ tags:
 ## 추천 패키지(플러그인)
 
 - ~~[keyboard-scroll](https://atom.io/packages/keyboard-scroll)~~: ~~다른 에디터처럼 키보드로 스크롤만 한 줄씩 이동할 때 필요함.~~  
-  멀티 캐럿 증식(?)키<kbd>ctrl + alt + up/down</kbd>가 이상작동하는 현상이 있음.
+  멀티 캐럿 증식(?)키(<kbd>ctrl + alt + up/down</kbd>)가 이상작동하는 현상이 있음.
 - [url-encode](https://atom.io/packages/url-encode): ?
 - [goto-last-edit](https://atom.io/packages/goto-last-edit): <kbd>ctrl + i</kbd> 혹은 <kbd>ctrl + alt + i</kbd>로 마지막 수정 이력 이동... 인데 서브라임이랑 같도록 바꿔서 씀. 키 바꿔서 쓸꺼면 해당 패키지 settings에서 `Keybindings`는 끌 것
 - [sort-lines](https://atom.io/packages/sort-lines): 아톰에 없는 sorting 기능 추가. 기본 단축키는 <kbd>f5</kbd>지만 서브라임이랑 키 같게 수정함.

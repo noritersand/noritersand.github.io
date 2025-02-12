@@ -522,7 +522,8 @@ Project manager 혹은 Issue tracker
 
 ## 브라우저 Browsers
 
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. `about:config`에서 `browser.uidensity`를 1로 해볼 것. [개발자용 불여시](https://www.mozilla.org/en-US/firefox/developer/)
+- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. 개발자용 불여시는 [여기로](https://www.mozilla.org/en-US/firefox/developer/)
+  - `about:config`에서 `browser.uidensity`를 1로 해볼 것
 - [DuckDuckGo browser](https://duckduckgo.com/app)
 - [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저 #1
 - [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정

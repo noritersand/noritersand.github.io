@@ -90,11 +90,11 @@ Gradle 빌드는 JDK도 필요한데, JDK 버전이 최신이면 Gradle의 버�
 distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-all.zip
 ```
 
-그냥 안드로이드 스튜디오 > Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 바꿔도 된다.
+그냥 안드로이드 스튜디오 > Project Structure(<kbd>ctrl + alt + shift + s</kbd>)에서 바꿔도 된다.
 
 #### SDK Platforms
 
-안드로이드 스튜디오에서 Android SDK 설정으로 이동한다: Settings<kbd>ctrl + alt + s</kbd> > Appearance & Behavior > System Settings > Android SDK > SDK Platforms
+안드로이드 스튜디오에서 Android SDK 설정으로 이동한다: Settings(<kbd>ctrl + alt + s</kbd>) > Appearance & Behavior > System Settings > Android SDK > SDK Platforms
 
 그리고 원하는 버전 아무거나 골라서 설치하면 되는데, 리액트 네이티브를 빌드하려면 Android 10 (Q)는 필수라고 함.
 

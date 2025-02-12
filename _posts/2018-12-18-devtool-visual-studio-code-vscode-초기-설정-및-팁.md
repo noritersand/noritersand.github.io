@@ -20,9 +20,9 @@ tags:
 
 Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
-- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
-- Settings<kbd>ctrl + ,</kbd>에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
-- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands<kbd>ctrl + shift + p</kbd>에서 'Preferences: Open User Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
+- Settings(<kbd>ctrl + ,</kbd>)에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
+- Settings(<kbd>ctrl + ,</kbd>)에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
+- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 'Preferences: Open User Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
 
 ```json
 "editor.quickSuggestions": {
@@ -34,7 +34,7 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
 
 ### 타이틀에 파일 전체 경로 표시
 
-Settings<kbd>ctrl + ,</kbd>에서 'window.title' 검색 후 입력란에 아래 추가:
+Settings(<kbd>ctrl + ,</kbd>)에서 'window.title' 검색 후 입력란에 아래 추가:
 
 ```
 ${activeEditorLong}${separator}${rootName}
@@ -42,7 +42,7 @@ ${activeEditorLong}${separator}${rootName}
 
 ### 들여쓰기 설정 변경
 
-Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후:
+Settings(<kbd>ctrl + ,</kbd>)에서 'indentation'검색 후:
 
 - `Detect Indentation`은 체크 해제
 - `Insert Spaces`나 `Tab Size`는 취향껏...
@@ -50,7 +50,7 @@ Settings<kbd>ctrl + ,</kbd>에서 'indentation'검색 후:
 
 ### 파일 제외하기
 
-Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
+Settings(<kbd>ctrl + ,</kbd>)에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 
 ## 팁
@@ -59,7 +59,7 @@ Settings<kbd>ctrl + ,</kbd>에서 'exclude' 검색 후 추가하면 된다. `Fil
 
 [공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
-Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
+Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
 
 ```js
 {
@@ -142,7 +142,12 @@ Show All Commands<kbd>ctrl + shift + p</kbd>에서 `Snippets: Configure User Sni
 - indent-rainbow `oderwat.indent-rainbow`
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
 - Naming-Shiba `fredkeemhaus.Naming-Shiba`: 한국어 문장을 영문변수명으로 바꿔주는 플러그인. 노매드코더 슬랙 참가자 중 한 명이 말듦. 단축키는 <kbd>ctrl + shift + a</kbd>와 <kbd>ctrl + shift + s</kbd>인데 다른 거랑 겹치니까 딴 걸로 바꿔야 함.
-- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인. 단축키는 발동 <kbd>alt + \ </kbd>, 제안 선택 <kbd>tab</kbd>, 자동 완성 제안 창 보기 <kbd>ctrl + enter</kbd>, 코파일럿 빠른 채팅 열기 <kbd>ctrl + shift + i</kbd>, GitHub Copilot View 포커싱 <kbd>alt + shift + p</kbd>가 있다(마지막은 없어서 추가한 거).
+- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인
+  - <kbd>alt + \ </kbd>: 발동 단축키
+  - <kbd>tab</kbd>: 제안 선택
+  - <kbd>ctrl + enter</kbd>: 자동 완성 제안 창 보기
+  - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기
+  - <kbd>alt + shift + p</kbd>: GitHub Copilot View 포커싱(이건 없어서 추가)
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
 - ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
 
@@ -246,7 +251,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 ### 파일 에디터
 
 - <kbd>ctrl + .</kbd>: Quick Fix...
-- <kbd>ctrl + k, ctrl + q<kbd>: Go to Last Edit Location
+- <kbd>ctrl + k, ctrl + q</kbd>: Go to Last Edit Location
 - <kbd>ctrl + k, ctrl + i</kbd>: Show Hover. documentation popup 띄우기(함수의 JS Doc 같은거 보기)
 - <kbd>f12</kbd>: Go To Definition. 선언부로 이동
 - <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)

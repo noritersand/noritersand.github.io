@@ -118,11 +118,11 @@ console.debug('${1:msg}:', ${2:msg});
 작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행할 것.
 
 
-## 패키지 Sublime Text Packages
+## 패키지(플러그인) Sublime Text Packages
 
-패키지는 서브라임 커뮤니티에서 공유되는 확장 기능이다(=플러그인).
+패키지는 서브라임 커뮤니티에서 공유되는 확장 기능이다.
 
-일단 package control을 설치한다. 커맨드 팔레트<kbd>ctrl + shift + p</kbd>에서 'install package control' 입력 후 엔터.
+일단 package control을 설치한다. 커맨드 팔레트(<kbd>ctrl + shift + p</kbd>)에서 'install package control' 입력 후 엔터.
 
 설치가 끝나면 (<kbd>ctrl + `</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
 
@@ -140,21 +140,20 @@ console.debug('${1:msg}:', ${2:msg});
 - ⭐Emmet: 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. [Emmet 문법은 여기](https://docs.emmet.io/)를 보면 됨.
 - Log Highlight: 로그 파일 가독성이 아주 약간 좋아짐.
 - ⭐Pretty JSON: JSON 문자열을 한 줄로 압축하거나 반대로 예쁘게 포맷해주는 플러그인
-- MoveTab: <kbd>ctrl + shift + pageup/pagedown</kbd>으로 탭의 위치를 좌우로 이동한다. 이 플러그인을 설치하면 기본 단축키인 next view extend(다음 탭을 현재 화면에 나눠서 보기)을 덮어쓴다.
-- ⭐Insert Nums: 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음. 기본 단축키는 <kbd>ctrl + alt + n</kbd>, <kbd>ctrl + alt + shift + n</kbd>
+- MoveTab: 탭의 위치를 좌우로 이동하는 단축키를 추가한다. 이 플러그인을 설치하면 기본 단축키인 next view extend(다음 탭을 현재 화면에 나눠서 보기)을 덮어쓴다.
+  - <kbd>ctrl + shift + pageup</kbd>: 현재 탭의 위치를 왼쪽으로 이동
+  - <kbd>ctrl + shift + pagedown</kbd>: 현재 탭의 위치를 오른쪽으로 이동
+- ⭐Insert Nums: 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음
+  - <kbd>ctrl + alt + n</kbd>: 순번 입력하기 
+  - <kbd>ctrl + alt + shift + n</kbd>: 미리보기 없이 순번 입력하기 
 - ⭐Compare Side-By-Side: FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)
-- ⭐Clickable URLs: URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키 <kbd>ctrl + alt + enter</kbd>를 누르면 브라우저로 연결함. 설치하면 기본 단축키인 `replace_all`을 덮어쓴다.
-- ⭐InsertDate: 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기. 기본 단축키는 <kbd>f5</kbd>이며 [strftime](https://www.strfti.me) 포맷 커스텀 입력은 <kbd>alt + f5</kbd>.
-
-#### ⭐Case Conversion
-
-영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.
-
-두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 이걸 붙여넣으면 된다:
-
-```json
-{"detect_acronyms": false}
-```
+- ⭐Clickable URLs: URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키를 누르면 브라우저로 연결함. 설치하면 기본 단축키인 `replace_all`을 덮어쓴다.
+  - <kbd>ctrl + alt + enter</kbd>: 브라우저에서 URL 열기
+- ⭐InsertDate: 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기
+  - <kbd>f5</kbd>: 기본 단축키
+  - <kbd>alt + f5</kbd>: [strftime](https://www.strfti.me) 포맷 커스텀 입력
+- ⭐Case Conversion: 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.
+  - 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 `{"detect_acronyms": false}` 이걸 붙여넣으면 된다.
 
 
 ## 작성자 저장용 사용자 설정

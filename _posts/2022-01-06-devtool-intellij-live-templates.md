@@ -44,14 +44,12 @@ tags:
 
 윈도우 OS일 때 라이브 템플릿의 단축키는 <kbd>ctrl + space</kbd>이며 그 다음 (필요하면 방향키로 이동해서) <kbd>enter</kbd> 혹은 <kbd>tab</kbd>으로 선택한다.
 
-여기까지는 누가 알려주지 않아도 아는 내용이쥬?
-
 
 ## 템플릿 커스터마이징
 
 필요한 템플릿을 마음대로 추가/수정하는 방법을 알아보자.
 
-환경 설정 경로: Settings<kbd>ctrl + alt + s</kbd> > Editor > Live Templates
+환경 설정 경로: Settings(<kbd>ctrl + alt + s</kbd>) > Editor > Live Templates
 
 ![](/images/intellij-settings-live-templates.png)
 
@@ -65,7 +63,7 @@ tags:
 6. 이 템플릿이 문맥상 어느 위치에서 활성화 되는지 선택
 
 
-## 변수가 뭔디
+## 변수 설정
 
 변수에는 인텔리제이가 알아서 적절한 값으로 채워줄 내용을 정의한다.
 
@@ -92,7 +90,7 @@ for(int $INDEX$ = 0; $INDEX$ < $LIMIT$; $INDEX$++) {
 ### 사전 정의 변수
 
 - `$END$`: 코드 자동 완성 후 캐럿이 위치할 자리를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 _Surround With_<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With(<kbd>ctrl + alt + t</kbd>)로 라이브 템플릿을 선택하면 `$SELECTION$` 자리에 선택했던 코드가 자동으로 입력됨
 
 
 ## 설정 예시

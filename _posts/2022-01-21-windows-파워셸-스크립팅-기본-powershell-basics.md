@@ -370,7 +370,7 @@ Start-Job -ScriptBlock {Get-Process -Name pwsh}
 
 ## 명령어 Cmdlet
 
-[블로그 내부 링크 \| 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+[이 블로그 내부 링크 \| 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
 
 
 ## CmdletBinding()

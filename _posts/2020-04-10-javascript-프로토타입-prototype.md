@@ -41,7 +41,7 @@ tags:
 
 객체(=인스턴스)의 프로토타입을 확인하는 방법은 `Object.getPrototypeOf()` 메서드를 이용하는 것과, 객체의 프로토타입을 가리키는 **비표준이지만 표준처럼 쓰이는** 프로퍼티 `Object.prototype.__proto__`를 이용하는 방법이 있다:
 
-🚨 `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
+⚠️ `Object.prototype.__proto__`는 [지원이 중단된(deprecated)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto) 기능이다.
 
 ```js
 var o = new Object();
@@ -172,7 +172,7 @@ Function.constructor.constructor.constructor.constructor === Function; // true
 
 `Function` 프로토타입은 `Function.__proto__`와 같은데, `Newbie.__proto__`와 `Newbie.prototype`이 일치하지 않는것과 비교해 차이가 있다:
 
-🚨 `Newbie.prototype`은 `Newbie()` 함수의 프로토타입이 아니라 `Newbie()` 함수로 만들어질 객체의 프로토타입`[[Prototype]]`임을 기억할 것. `Newbie()` 함수의 프로토타입은 `Newbie.[[Prototype]]`이라 표현한다.
+⚠️ `Newbie.prototype`은 `Newbie()` 함수의 프로토타입이 아니라 `Newbie()` 함수로 만들어질 객체의 프로토타입`[[Prototype]]`임을 기억할 것. `Newbie()` 함수의 프로토타입은 `Newbie.[[Prototype]]`이라 표현한다.
 
 ```js
 Function.__proto__ === Function.prototype; // true

@@ -52,7 +52,7 @@ tags:
 
 ## 빌드나 런타임 에러가 발생하면
 
-Project Structure<kbd>ctrl + alt + shift + s</kbd>에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
+Project Structure(<kbd>ctrl + alt + shift + s</kbd>)에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
 
 ![](/images/intellij-project-settings-2.png)
 
@@ -85,9 +85,9 @@ Hot deploy, Hot swap, Hot code replace 등으로 불리는(엄밀히 따지면 �
 
 로컬 서버로 톰캣을 별도로 추가해서 사용할 때만 해당. **TODO** 스프링 부트같은 내장 WAS는 확인 필요
 
-일단 별도 설정 없이도 디버그 모드라면 Update Running Application<kbd>ctrl + f10</kbd>을 누르면 된다.
+일단 별도 설정 없이도 디버그 모드라면 Update Running Application(<kbd>ctrl + f10</kbd>)을 누르면 된다.
 
-그런데 귀찮으니께, Run/Debug Configurations<kbd>alt + u, r</kbd>에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 (필요한 경우 빌드 후) 자동으로 리로드한다.
+그런데 귀찮으니께, Run/Debug Configurations(<kbd>alt + u, r</kbd>)에서 'On frame deactivation' 항목의 값을 'Update classes and resources'로 변경한다. 이렇게 하면 인텔리제이가 포커스를 잃을 때마다 (필요한 경우 빌드 후) 자동으로 리로드한다.
 
 JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행 모드에 따른 차이가 없다. 하지만 Java 클래스의 경우 일단 빌드하는 시간이 필요하기도 하고, 앱을 디버그 모드로 실행시키지 않으면 갱신하지 않는다. (Run 모드여도 빌드는 하는 것 같은디...)
 
@@ -96,14 +96,14 @@ JSP나 HTML 등의 리소스 파일은 바로 확인할 수 있고 서버 실행
 
 ## 인텔리제이에서 사용할 VM options 지정하기
 
-Find Action<kbd>ctrl + shift + a</kbd>에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
+Find Action(<kbd>ctrl + shift + a</kbd>)에서 'Edit Custom VM Options'을 실행하면 파일이 하나 열리는데 여기에 입력하면 됨.
 
 
 ## 프로젝트별 배경 화면 다르게
 
 원래는 테마를 프로젝트별로 설정하려고 했으나 현재(2023-07-09) 지원하지 않는다. 
 
-우선 식별용 이미지 몇 장을 적당히 마련한 뒤, Find Action<kbd>ctrl + shift + a</kbd>에서 `Set Background Image`를 실행한다. `This project only` 항목에 체크하고 이미지를 설정하면 끝.
+우선 식별용 이미지 몇 장을 적당히 마련한 뒤, Find Action(<kbd>ctrl + shift + a</kbd>)에서 `Set Background Image`를 실행한다. `This project only` 항목에 체크하고 이미지를 설정하면 끝.
 
 
 ## File and Code Templates
@@ -189,7 +189,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 #### 사전 정의 변수 Predefined template variables﻿
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
-- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With<kbd>ctrl + alt + t</kbd>로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
+- `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With(<kbd>ctrl + alt + t</kbd>)로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
 
 
 ## 추천 플러그인
@@ -198,53 +198,45 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
 - Grep Console: 콘솔 로그에 색을 입히거나 필터링하는 플러그인. 인터페이스가 좀 복잡하긴 한데 쓸만함
 - ⭐Emmet: HTML 태그를 단축어로 작성할 수 있게 해줌
-
-### Extra Actions
-
-기본 인텔리제이에 없는 추가 기능을 제공하는 플러그인이다. (사실 캐럿 추가 기능 하나 때문에 쓰는 거)
-
-- 에디터에서 선택한 영역의 각 줄에 캐럿 추가
-- 다음 paragraph(단락, 문단)에 캐럿 추가
-- 따옴표 감싸기 토글
-- String 리터럴을 더하기 연산자로 자르기
-
-### GitHub Copilot
-
-AI가 코드를 작성해주는 쩌는 플러그인. 단축키는:
-
-- 활성화/비활성화 토글: <kbd>ctrl + alt + shift + o</kbd>
-- 코파일럿 발동: <kbd>alt + \ </kbd> 인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함.
-- 코파일럿 제안 선택: <kbd>tab</kbd>
-- 다음 제안 보기: <kbd>alt + [</kbd>
-- 이전 제안 보기: <kbd>alt + ]</kbd>
-- 제안을 단어 단위로 적용하기: <kbd>ctrl + right</kbd>
-- 제안을 줄 단위로 적용하기: <kbd>ctrl + alt + right</kbd>
-- Tool Windows > GitHub Copilot: 코파일럿 창 열기 <kbd>alt + p</kbd>로 변경
-- Tool Windows > GitHub Copilot Chat: 코파일럿 채팅 창 열기 <kbd>alt + shift + p</kbd>로 변경
+- Extra Actions: 기본 인텔리제이에 없는 추가 기능을 제공하는 플러그인이다. (사실 캐럿 추가 기능 하나 때문에 쓰는 거)
+  - 에디터에서 선택한 영역의 각 줄에 캐럿 추가
+  - 다음 paragraph(단락, 문단)에 캐럿 추가
+  - 따옴표 감싸기 토글
+  - String 리터럴을 더하기 연산자로 자르기
+- GitHub Copilot: AI가 코드를 작성해주는 쩌는 플러그인
+  - <kbd>ctrl + alt + shift + o</kbd>: 활성화/비활성화 토글
+  - <kbd>alt + \ </kbd>: 코파일럿 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
+  - <kbd>tab</kbd>: 코파일럿 제안 선택
+  - <kbd>alt + [</kbd>: 다음 제안 보기
+  - <kbd>alt + ]</kbd>: 이전 제안 보기
+  - <kbd>ctrl + right</kbd>: 제안을 단어 단위로 적용하기
+  - <kbd>ctrl + alt + right</kbd>: 제안을 줄 단위로 적용하기
+  - <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기 (원래 키에서 변경)
+  - <kbd>alt + shift + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
 
 
 ## 작성자 저장용 단축키 설정
 
-- File Open Actions > Recent Project: <kbd>ctrl + alt + shift + e</kbd> 최근 열었던 프로젝트 열기
-- Help > Find Action: <kbd>f1</kbd> 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
-- Edit > Undo: <kbd>ctrl + z</kbd>: 되돌리기. 다른 키는 다 지움
-- Edit > Redo: <kbd>ctrl + y</kbd>: 다시 되돌리기. 다른 키는 다 지움
-- Editor Actions > Delete Line: <kbd>ctrl + shift + d</kbd> 라인 삭제. 기존 키 매핑은 삭제
-- Editor Actions > Clone Caret Above: <kbd>ctrl + alt + up</kbd> 위로 멀티 캐럿 생성. 다른 키는 지움
-- Editor Actions > Clone Caret Below: <kbd>ctrl + alt + down</kbd> 아래로 멀티 캐럿 생성. 다른 키는 지움
-- Editor Actions > Duplicate Line or Selection: <kbd>ctrl + shift + k</kbd> 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
-- Editor Tabs > Select Previous Tab: <kbd>ctrl + pageup</kbd> 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
-- Editor Tabs > Select Next Tab: <kbd>ctrl + pagedown</kbd> 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
-- Editor Tabs > Maximize Editor/Normalize Splits: <kbd>ctrl + alt + shift + '</kbd> 에디터 창 최대화/원래대로 토글
-- Navigate > Back: <kbd>alt + left</kbd> 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Navigate > Forward: <kbd>alt + right</kbd> 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- Database > Attach Session: <kbd>alt + s</kbd>로 단축키 추가. 데이터베이스 연결 선택하는 기능임
-- Active Editor > Soft-Wrap: <kbd>alt + z</kbd>
-- Other > Clear text: <kbd>alt + x</kbd>: 콘솔 지우기
-- Debugger Actions > Add to Watches: <kbd>alt + w</kbd> 디버그 모드에서 지켜볼 표현식 영역에 추가
-- Navigate > Goto by Reference Actions > File Structure: <kbd>ctrl + \ </kbd> 추가. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
-- Main Menu > Window > Editor Tabs > Split Right/Down: 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지우고 <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd> 로 지정
-- Main Menu > Window > Tool Window Layouts > Restore Current Layout: 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
+- <kbd>ctrl + alt + shift + e</kbd>: File Open Actions > Recent Project. 최근 열었던 프로젝트 열기
+- <kbd>f1</kbd>: Help > Find Action. 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
+- <kbd>ctrl + z</kbd>: Edit > Undo. 되돌리기. 다른 키는 다 지움
+- <kbd>ctrl + y</kbd>: Edit > Redo. 다시 되돌리기. 다른 키는 다 지움
+- <kbd>ctrl + shift + d</kbd>: Editor Actions > Delete Line. 라인 삭제. 기존 키 매핑은 삭제
+- <kbd>ctrl + alt + up</kbd>: Editor Actions > Clone Caret Above. 위로 멀티 캐럿 생성. 다른 키는 지움
+- <kbd>ctrl + alt + down</kbd>: Editor Actions > Clone Caret Below. 아래로 멀티 캐럿 생성. 다른 키는 지움
+- <kbd>ctrl + shift + k</kbd>: Editor Actions > Duplicate Line or Selection. 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
+- <kbd>ctrl + pageup</kbd>: Editor Tabs > Select Previous Tab. 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
+- <kbd>ctrl + pagedown</kbd>: Editor Tabs > Select Next Tab. 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- <kbd>ctrl + alt + shift + '</kbd>: Editor Tabs > Maximize Editor/Normalize Splits. 에디터 창 최대화/원래대로 토글
+- <kbd>alt + left</kbd>: Navigate > Back. 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- <kbd>alt + right</kbd>: Navigate > Forward. 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- <kbd>alt + s</kbd>: Database > Attach Session. 데이터베이스 연결 선택하는 기능
+- <kbd>alt + z</kbd>: Active Editor > Soft-Wrap
+- <kbd>alt + x</kbd>: Other > Clear text. 콘솔 지우기
+- <kbd>alt + w</kbd>: Debugger Actions > Add to Watches. 디버그 모드에서 지켜볼 표현식 영역에 추가
+- <kbd>ctrl + \ </kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
+- <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: Main Menu > Window > Editor Tabs > Split Right/Down. 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
+- <kbd>shift + f12</kbd>: Main Menu > Window > Tool Window Layouts > Restore Current Layout. 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
 
 
 ## 기본 단축키
