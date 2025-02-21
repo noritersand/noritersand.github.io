@@ -57,7 +57,7 @@ Write-Output $env:path
 # 위와 같음
 echo $env:path
 
-# 이렇게만 쳐도 됨 (암시적인 출력은 Write-Output이 처리함)
+# 이렇게만 쳐도 됨 (암묵적인 출력은 Write-Output이 처리함)
 $env:path
 ```
 
@@ -191,19 +191,26 @@ Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
 
 ### 줄 바꿈
 
-줄을 바꿔도 명령을 이어가도록 하려면 백틱``` ` ```이나 파이프`|`를 줄 마지막에 붙이면 된다:
+줄을 바꿔도 명령을 이어가도록 하려면 백틱``` ` ```을 줄 마지막에 붙인다:
 
 ```bash
 # js 파일을 찾아서 temp.md에 파일 이름을 작성하는 스크립트
 Get-ChildItem `
   -Path . `
   -Recurse `
-  -Filter *.js | 
+  -Filter *.js | `
     Select-Object `
       -Property FullName > temp.md
 
 # 아래처럼 한 줄로 작성한 것과 같음
 # Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
+```
+
+줄 끝이 파이프`|`일 땐 백틱``` ` ```을 생략해도 된다:
+
+```bash
+Get-ChildItem |
+  Where-Object name -eq 'temp.md'
 ```
 
 ### 한 줄에 여러 명령어 작성하기
@@ -744,7 +751,66 @@ Line |
 
 ## 데이터 타입
 
-### [해시 테이블](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_hash_tables?view=powershell-7.2)
+[Types - PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.5)
+
+파워셸에서 지원하는 데이터 타입은 아래와 같다:
+
+- Special types
+  - The void type
+  - The null type
+  - The object type
+- Value types
+  - Boolean
+  - Character
+  - Integer
+  - Real number
+    - float and double
+    - decimal
+  - The switch type
+  - Enumeration types
+    - Action-Preference type
+    - Confirm-Impact type
+    - File-Attributes type
+    - Regular-Expression-Option type
+- Reference types 
+  - Strings
+  - Arrays
+  - Hashtables
+  - The xml type
+  - The regex type
+  - The ref type
+  - The scriptblock type
+  - The math type
+  - The ordered type
+  - The pscustomobject type
+
+🙄... 생각보다 많다.
+
+참고로 데이터 타입은 `GetType()` 메서드로 확인할 수 있음:
+
+```bash
+PS> $n1 = 1
+PS> $n1.GetType()
+
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     Int32                                    System.ValueType
+
+PS> $n2 = 2.3
+PS> $n2.GetType()
+
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     Double                                   System.ValueType
+
+PS> $s1.GetType()
+
+IsPublic IsSerial Name                                     BaseType
+-------- -------- ----                                     --------
+True     True     String                                   System.Object
+```
+
+### 해시테이블 Hashtables
 
 ```bash
 $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
@@ -784,19 +850,23 @@ Set-Alias dk 'docker'
 Set-Alias -Name grep -Value findstr
 Set-Alias -Name 햣 -Value git
 
-########################
+################################################
 
 function Get-Child-Item-Force { 
   Get-ChildItem -Force 
 }
 Set-Alias -Name ll -Value Get-Child-Item-Force
 
-function Remove-Item-Recurse-Force { 
-  Remove-Item -Recurse -Force @args
+function Remove-Item-Recurse-Force {
+  # Remove-Item -Recurse -Force @args # 이렇게 해도 작동...하나?
+  param(
+    [String[]]$Path
+  )
+  Remove-Item -Recurse -Force $Path
 }
 Set-Alias -Name rmrf -Value Remove-Item-Recurse-Force
 
-########################
+################################################
 
 $RemoteIp = @{ 
   production = '1.2.3.4';

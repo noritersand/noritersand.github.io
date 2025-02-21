@@ -485,7 +485,7 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 
 기본 별칭은 `echo`. 특정 객체를 파이프라인에 쓴다. 다른 cmdlet으로 파이프하거나 변수에 할당할 수 있다. 만약 `Write-Output`이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다.
 
-다른 명령어나 스크립트에서 발생하는 암시적인 출력은 `Write-Output`을 통한 출력이다.
+다른 명령어나 스크립트에서 발생하는 암묵적인 출력은 `Write-Output`을 통한 출력이다.
 
 ```bash
 # 파워셸 설치 경로 출력

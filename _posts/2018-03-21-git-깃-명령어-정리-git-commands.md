@@ -35,7 +35,7 @@ git update-git-for-windows
 ## 용어
 
 - 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
-- 스테이징 에어리어(staging area): 인덱스(index)라고도 부른다.
+- 스테이징 영역(staging area): 인덱스(index)라고도 부른다.
 - 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 가령 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
 - 깃 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
 - 델타(delta): 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
@@ -303,7 +303,7 @@ blob
 
 #### 브랜치 전환
 
-헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 전환한다. 전환할 때 워킹 트리와 스테이징 에어리어가 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 전환한다.**
+헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 전환한다. 전환할 때 워킹 트리와 스테이징 영역이 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 전환한다.**
 
 ```bash
 # master 브랜치로 전환
@@ -361,7 +361,7 @@ do so (now or later) by using -b with the checkout command again. Example:
 
 #### 파일 변경 사항 되돌리기
 
-워킹 트리와 스테이징 에어리어를 헤드의 내용대로 되돌린다. 이미 추적중인 대상만 되돌릴 수 있다. `status`에 표시되는 기준으로 modified, renamed, deleted는 되돌리지만 new file은 되돌리지 않는다.
+워킹 트리와 스테이징 영역을 헤드의 내용대로 되돌린다. 이미 추적중인 대상만 되돌릴 수 있다. `status`에 표시되는 기준으로 modified, renamed, deleted는 되돌리지만 new file은 되돌리지 않는다.
 
 ```bash
 # 현재 경로의 모든 추적중인 파일 되돌리기
@@ -485,10 +485,15 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 ## clone
 
+[Git - git-clone Documentation](https://git-scm.com/docs/git-clone)
+
+깃 저장소를 복제하여 새 저장소를 만드는 명령어
+
 #### Options
 
 - `--bare`: 워킹 트리가 없는 베어 저장소(bare Git repository)를 생성한다. 리모트 서버용으로 클론할 때 사용하는 옵션. 이 옵션을 사용하면 로컬 브랜치(`refs/heads/`)와 태그(`refs/tags/`)는 복제되지만, 원격 추적 브랜치(`refs/remotes/`), 노트(`refs/notes/`), 플러그인 등으로 생성된 기타 참조(`refs/`) 및 리플로그 정보는 복제되지 않는다.
 - `--mirror`: 이 옵션도 워킹 트리가 없는 베어 저장소를 생성하지만, `--bare`와 다르게 모든 원격 참조(remote references)와 설정을 포함하여 원본 저장소의 완벽한 복제본을 만든다. 저장소를 미러링하여 백업하거나 다른 서버로 이전할 때 사용한다.
+- `--recurse-submodules[=<pathspec>]`: 저장소를 복제한 뒤 해당 저장소 내부의 서브 모듈을 재귀적으로 복제하도록 하는 옵션. `pathspec`을 생략하면 모든 서브모듈을 복제한다. `git submodule update --init --recursive`를 수동으로 수행한 것과 같다.
 
 #### 저장소 복제
 
@@ -726,6 +731,8 @@ git config --global http.https://noritersand.github.io.sslverify false
 
 ## diff
 
+[Git - git-diff Documentation](https://git-scm.com/docs/git-diff)
+
 커밋 간 차이점 혹은 워킹 트리의 변경 사항을 출력한다.
 
 ```
@@ -739,9 +746,11 @@ git diff [<options>] --no-index [--] <path> <path>
 
 #### Options
 
+- `--cached`: 스테이징 영역과 현재 커밋 사이의 차이점을 출력한다. 이 옵션이 없으면 워킹 트리와 커밋 간 차이를 출력한다.
 - `--check`: 충돌(conflict) 문자 혹은 공백 오류가 있는지 확인
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
+- `--submodule[=<format>]`: 서브모듈의 변경사항을 자세히 표시한다. 이 옵션이 없으면 서브모듈의 변경사항을 커밋 해시 단위로만 표시한다.
 
 #### diff 도구 실행
 
@@ -1184,7 +1193,7 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 
 ## ls-files
 
-스테이징 에어리어나 워킹 트리에 있는 파일들의 정보를 출력한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
+스테이징 영역이나 워킹 트리에 있는 파일들의 정보를 출력한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
 
 #### Options
 
@@ -1604,18 +1613,18 @@ git remote prune 리모트저장소
 
 #### Options
 
-- `--soft`: 헤드만 옮긴다. 스테이징 에어리어와 워킹 트리는 유지
-- `--mixed`: 명시하지 않을때의 기본값. 헤드와 스테이징 에어리어를 특정 커밋으로 변경한다. 워킹 트리는 유지
-- `--hard`: 헤드와 스테이징 에어리어, 워킹 트리를 모두 특정 커밋으로 변경한다.
+- `--soft`: 헤드만 옮긴다. 스테이징 영역과 워킹 트리는 유지
+- `--mixed`: 명시하지 않을때의 기본값. 헤드와 스테이징 영역을 특정 커밋으로 변경한다. 워킹 트리는 유지
+- `--hard`: 헤드와 스테이징 영역, 워킹 트리를 모두 특정 커밋으로 변경한다.
 
 ```bash
 git reset --soft HEAD~2  # 헤드만 2회 전 커밋으로 이동
-git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 에어리어, 워킹 트리를 헤드와 동일하게 변경
+git reset --hard 4990ef  # 헤드를 4990ef 체크섬으로 이동하고 스테이징 영역, 워킹 트리를 헤드와 동일하게 변경
 ```
 
 #### staged 되돌리기(스테이징 취소)
 
-`add`로 스테이징 에어리어에 등록한 파일을 unstaged 상태로 바꾼다. 헤드가 이동하지 않으니 제자리 리셋이다.
+`add`로 스테이징 영역에 등록한 파일을 unstaged 상태로 바꾼다. 헤드가 이동하지 않으니 제자리 리셋이다.
 
 ```bash
 git reset HEAD 파일 # 특정 파일만 스테이징 취소
@@ -1629,14 +1638,14 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 
 ## restore
 
-2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 에어리어를 되돌린다. new file은 되돌리지 않는다.
+2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 영역을 되돌린다. new file은 되돌리지 않는다.
 
 #### Options
 
 - `-s <tree>` `--source=<tree>`
 - `-p` `--patch`
 - `-W` `--worktree`: 워킹 트리만 되돌린다. 지정하지 않았을 때의 기본값이다.
-- `-S` `--staged`: 스테이징 에어리어만 되돌린다.
+- `-S` `--staged`: 스테이징 영역만 되돌린다.
 - `-q` `--quiet`
 - `--progress`
 - `--no-progress`
@@ -1658,7 +1667,7 @@ git restore . # 워킹 트리의 모든 파일을 되돌림
 git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 ```
 
-`-W`와 `-S`는 워킹 트리와 스테이징 에어리어 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
+`-W`와 `-S`는 워킹 트리와 스테이징 영역 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
 
 
 ## revert
@@ -1668,7 +1677,7 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 #### Options
 
 - `e` `--edit`
-- `-n` `--no-commit`: 워킹 트리와 스테이징 에어리어의 상태만 되돌리고 커밋은 생성하지 않는다.
+- `-n` `--no-commit`: 워킹 트리와 스테이징 영역의 상태만 되돌리고 커밋은 생성하지 않는다.
 - `-m parent-number` `--mainline parent-number`: 머지 커밋을 리버트 할 때 사용하는 옵션.
 
 #### 커밋 되돌리기 \#2
@@ -1757,7 +1766,7 @@ git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
 
 ## rm
 
-remove. 워킹트리와 스테이징 에어리어에서 파일을 삭제한다.
+remove. 워킹트리와 스테이징 영역에서 파일을 삭제한다.
 
 #### 파일/폴더 삭제
 
@@ -1835,7 +1844,7 @@ git show-ref --head
 
 #### 스태시 생성(임시 저장본 만들기)
 
-추적 중인 파일의 모든 변경 사항을 스태시에 저장되며 워킹 트리와 스테이징 에어리어는 헤드와 같아진다. `stash` 다음의 명령어를 생략하면 `stash push`와 같다.
+추적 중인 파일의 모든 변경 사항을 스태시에 저장되며 워킹 트리와 스테이징 영역는 헤드와 같아진다. `stash` 다음의 명령어를 생략하면 `stash push`와 같다.
 
 ```bash
 git stash push # 스태시 생성. push 키워드는 생략할 수 있음
@@ -2076,7 +2085,7 @@ git tag -d v0.9
 
 ## update-index
 
-파일을 인덱스(=스테이징 에어리어)에 등록하거나 수정한다.
+파일을 인덱스(=스테이징 영역)에 등록하거나 수정한다.
 
 #### Options
 

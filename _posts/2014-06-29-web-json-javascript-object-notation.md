@@ -13,8 +13,13 @@ tags:
 
 #### 참고 문서
 
-- [http://www.json.org/json-ko.html](http://www.json.org/json-ko.html)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [Introducing JSON](https://www.json.org/json-en.html)
+- [JSON - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
+- [RFC 8259 - The JavaScript Object Notation (JSON) Data Interchange Format](https://datatracker.ietf.org/doc/html/rfc8259)
+- [ECMA-404 - Ecma International](https://ecma-international.org/publications-and-standards/standards/ecma-404/)
+
+
+## 개요
 
 데이터를 표현하는 방법 중 하나. 뜻을 직역하면 자바스크립트 객체 표기법이다. 경량이며 읽고 쓰기 편리하다는 특징이 있다. 이름과는 달리 특정 프로그래밍 언어에 의존하지 않는다. 그래서 XML이나 CSV와 같은 범용 데이터 교환 포맷으로 사용된다.
 
@@ -62,6 +67,7 @@ JSON은 기본적으로 이름과 값을 쌍(*Key-Value Pair*)으로 갖는 형�
 ]
 ```
 
+
 ## JavaScript와 JSON
 
 ### JSON.parse()
@@ -102,6 +108,7 @@ var foo = {
 
 JSON.stringify(foo); // "{"num":123,"name":"who i'm"}"
 ```
+
 
 ## JAVA와 JSON
 

@@ -25,7 +25,7 @@ JOIN은 테이블간 논리적인 관계를 바탕으로 두 개 이상의 테�
 
 ```
 SELECT 컬럼 FROM 테이블1 JOIN 테이블2 -- 명시적 표현
-SELECT 컬럼 FROM 테이블1, 테이블2 -- 암시적 표현
+SELECT 컬럼 FROM 테이블1, 테이블2 -- 암묵적 표현
 ```
 
 ```sql
@@ -49,7 +49,7 @@ ON 테이블1.컬럼 연산자 테이블2.컬럼  -- 명시적 표현, 'INNER JO
 
 SELECT 컬럼
 FROM 테이블1, 테이블2
-WHERE 테이블1.컬럼 연산자 테이블2.컬럼  -- 암시적 표현
+WHERE 테이블1.컬럼 연산자 테이블2.컬럼  -- 암묵적 표현
 ```
 
 ```sql
@@ -59,7 +59,7 @@ ORDER BY b.deptno, a.empno;  -- 명시적 표현
 
 SELECT b.deptno, b.dname, a.empno, a.ename
 FROM emp a, dept b WHERE a.deptno = b.deptno
-ORDER BY b.deptno, a.empno  -- 암시적 표현
+ORDER BY b.deptno, a.empno  -- 암묵적 표현
 ```
 
 ![](/images/oracle-join-2.jpg)
@@ -126,7 +126,7 @@ ON E.department_id = D.department_id
 
 kimberely grant는 부서가 없기 때문에 내부 조인으로는 출력할 수 없다.
 
-#### 외부 조인의 암시적 표현
+#### 외부 조인의 암묵적 표현
 
 ```sql
 SELECT d.deptno, e.empno, e.ename

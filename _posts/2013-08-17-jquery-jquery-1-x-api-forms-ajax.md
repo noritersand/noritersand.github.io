@@ -82,7 +82,7 @@ $.param({
 
 ### .select()
 
-select 이벤트를 발생시킨다. select 이벤트는 텍스트 에어리어의 문자열을 선택 상태로 하거나 선택 범위를 변경했을 때에 실행 한다.
+select 이벤트를 발생시킨다. 원래 select 이벤트는 textarea의 문자열을 선택 상태로 하거나 선택 범위를 변경했을 때 생성된다.
 
 ### .select( handler )
 

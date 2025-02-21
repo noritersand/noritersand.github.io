@@ -1,14 +1,14 @@
 ---
 layout: post
 date: 2018-03-20 16:15:11 +0900
-title: '[JavaScript] 타입 변환 type conversion'
+title: '[JavaScript] 타입 변환 Type conversion'
 categories:
   - javascript
 tags:
   - javascript
   - ecmascript
-  - type
-  - conversion
+  - type-conversion
+  - type-coercion
 ---
 
 * Kramdown table of contents
@@ -17,12 +17,20 @@ tags:
 #### 참고 문서
 
 - 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
-- [Type conversion \| MDN](https://developer.mozilla.org/en-US/docs/Mozilla/js-ctypes/Using_js-ctypes/Type_conversion)
+- [Type conversion - MDN Web Docs Glossary: Definitions of Web-related terms \| MDN](https://developer.mozilla.org/en-US/docs/Glossary/Type_Conversion)
+- [Type coercion - MDN Web Docs Glossary: Definitions of Web-related terms \| MDN](https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion)
 
 
-## 암시적 타입 변환
+## 개요
 
-자바스크립트는 필요에 따라 타입 변환을 자동으로 수행한다. 가령 문자열이 필요한 위치에 할당된 값이 문자열이 아니면 문자열 타입으로 변환을 시도할 것이다. 이 과정에서 타입이 올바르지 않아 에러가 발생하는 경우는 거의 없다. 다음은 암시적 타입 변환의 사례들이다:
+자바스크립트의 타입 변환에 대해 정리한 글.
+
+
+## 암묵적 타입 변환 Type coercion
+
+Type coercion 또는 implicit(automatic) type conversion이라 한다. 자바스크립트가 필요에 따라 타입 변환을 자동으로 수행하는 것을 말한다. 가령 문자열이 필요한 위치인데 실제 값은 문자열이 아니라면 자바스크립트는 해당 값을 문자열 타입으로 변환하려 한다.
+
+다음은 암묵적 타입 변환의 사례들이다:
 
 ```js
 if (1) {
@@ -52,7 +60,7 @@ var c = "xxx";
 c++; // NaN
 ```
 
-산술 연산자 `+`는 피연산자가 문자열일 때 다른 피연산자를 문자열로 변환한다. `+`가 단항 연산자로 사용되면 피연산자를 숫자로 변환한다. 단항 연산자 `-`와 증감 연산자 `--`, `++`의 암시적 변환도 동일하게 작동한다. 만약 숫자로 변환할 수 없는 문자열이면 `NaN`을 반환한다.
+산술 연산자 `+`는 피연산자가 문자열일 때 다른 피연산자를 문자열로 변환한다. `+`가 단항 연산자로 사용되면 피연산자를 숫자로 변환한다. 단항 연산자 `-`와 증감 연산자 `--`, `++`의 암묵적 타입 변환도 동일하게 작동한다. 만약 숫자로 변환할 수 없는 문자열이면 `NaN`을 반환한다.
 
 ```js
 1 == "1"; // "1"은 1로 변환
@@ -70,7 +78,7 @@ false == 0; // false는 0으로 변환
 - 둘 중 하나가 객체고 나머지 하나가 숫자 또는 문자열이면 객체를 문자열로 변환한다. 이 때 해당 객체의 `toString()`이나 `valueOf()`가 사용된다.
 
 
-## 명시적 타입 변환
+## 명시적 타입 변환 Type conversion
 
 ```js
 Boolean('abcd'); // true

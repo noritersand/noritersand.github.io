@@ -82,13 +82,15 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 [Create React App \| Getting Started](https://create-react-app.dev/docs/getting-started/)
 
+리액트 환경의 스캐폴딩(scaffolding)을 도와주는 공식 툴.
+
 ```bash
 npx create-react-app APP_NAME
 # npm init react-app APP_NAME
 # yarn dlx create-react-app APP_NAME
 ```
 
-`APP_NAME`을 루트 경로로 하는 리액트 앱이 생성(scaffolding)되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
+`APP_NAME`을 루트 경로로 하는 리액트 앱이 생성되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
 
 ### 초기 파일 구조
 
