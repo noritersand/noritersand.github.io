@@ -803,6 +803,7 @@ IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     Double                                   System.ValueType
 
+PS> $s1 = 'Hello'
 PS> $s1.GetType()
 
 IsPublic IsSerial Name                                     BaseType

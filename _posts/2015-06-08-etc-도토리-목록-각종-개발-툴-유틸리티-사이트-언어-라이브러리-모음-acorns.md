@@ -112,7 +112,7 @@ tags:
 - [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 툴. 리액트, 뷰, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
-- [Next.js](https://nextjs.org/): 리액트 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
+- [⭐Next.js](https://nextjs.org/): 리액트 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
 - [⭐React Router](https://reactrouter.com/): 리액트 애플리케이션에서 클라이언트 사이드 라우팅을 구현하기 위해 사용되는 라이브러리. 7.x 버전부터는 Remix 3와 통합된 프레임워크 모드를 지원한다.
 - [⭐Remix](https://remix.run/): 리액트 기반 풀스택 웹 프레임워크. Next.js보다 가볍고 배우기 쉽다. Remix는 표준 웹 API를 활용해 만들어졌기 때문에 브라우저, Node.js, 서버리스 플랫폼, 클라우드 엣지 등의 다양한 환경에 동일한 코드 베이스로 배포할 수 있다(Next.js는 Node.js 환경에서만 배포가 가능하다). 최신 버전인 Remix 3은 [React Router 7의 프레임워크 모드로 통합](https://remix.run/blog/incremental-path-to-react-19)되었다.
 
@@ -131,25 +131,25 @@ tags:
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): CSS 프레임워크와 디자인 시스템 같은 것을 모아놓은 사이트
 - [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
-- [Bulma](https://bulma.io/): Flexbox 기반
+- [⭐Bulma](https://bulma.io/): Flexbox 기반
 - [Foundation Framework](https://get.foundation/)
 - [Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
-- [StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
+- [⭐StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. 자바스크립트 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. 리액트 없이도 쓸 수 있는 것으로 보임.
 - [Open Props](https://open-props.style/)
 - [Basscss](https://basscss.com/)
 - [Water.css](https://watercss.kognise.dev/)
 - [MVP.css](https://andybrewer.github.io/mvp/)
 - [Materialize CSS](https://materializecss.com/)
-- [System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다고 한다.
+- [⭐System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다고 한다.
 - [NES.css](https://nostalgic-css.github.io/NES.css/): 닌텐도 스타일
 - [PSone.css](https://micah5.github.io/PSone.css/): 플스 1 스타일
 - [98.css](https://jdan.github.io/98.css/): 이건 윈도우 98
 - [XP.css](https://nostalgic-css.github.io/NES.css/): 윈도우 XP
 - [7.css](https://khang-nd.github.io/7.css/): 이건 윈도우 7
-- [Bojier](https://bojler.slicejack.com/): 이메일용
+- [Bojier](https://bojler.slicejack.com/): 메일용
 - [Chota](https://jenil.github.io/chota/)
 - [Pico.css](https://picocss.com/)
-- [ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
+- [⭐ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Mantine](https://mantine.dev/)
 - [Ant Design](https://ant.design/)
 - [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
@@ -178,6 +178,7 @@ tags:
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
 - [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉬운 라이브러리입니다... 라는데 사실 뭔지 잘 몲.
 - [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
+- [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
 
 ### 번들러
 
@@ -240,9 +241,9 @@ tags:
 
 ### DBMS
 
-- [SQLite](https://www.sqlite.org/index.html): 오픈 소스 RDBMS #1. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. ACID(Atomicity, Consistency, Isolation, Durability) 특성을 준수하는 기능과 트랜잭션을 지원한다. 시스템이 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고 하는 사람도 있다. 에스큐엘라이트 혹은 시퀄라이트라고 읽는다. 경량 DB라서 SQL 표준 기능이 일부 빠져있거나 제한적으로 제공한다. 예를 들어 외래키는 기본적으로 비활성화되어 있고 사용 제한이 있다. 그리고 프로시저는 미지원, 트리거와 윈도우 함수 등은 부분적으로 지원한다. 동시성 제어와 격리 수준도 다른 DBMS만큼 세밀하지 않으며 여러 사용자의 동시 쓰기 시 충돌 가능성이 있다. 따라서 SQLite를 서버에서 사용한다면 읽기 전용으로만 설계하고, 쓰기는 다른 수단을 마련할 것. 그리고 기본적으로 체크섬을 수행하지 않기 때문에, 디스크 손상으로 인한 데이터 무결성을 보장하지 않는다는 점은 주의해야 한다.
+- [⭐SQLite](https://www.sqlite.org/index.html): 오픈 소스 RDBMS #1. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. ACID(Atomicity, Consistency, Isolation, Durability) 특성을 준수하는 기능과 트랜잭션을 지원한다. 시스템이 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고 하는 사람도 있다. 에스큐엘라이트 혹은 시퀄라이트라고 읽는다. 경량 DB라서 SQL 표준 기능이 일부 빠져있거나 제한적으로 제공한다. 예를 들어 외래키는 기본적으로 비활성화되어 있고 사용 제한이 있다. 그리고 프로시저는 미지원, 트리거와 윈도우 함수 등은 부분적으로 지원한다. 동시성 제어와 격리 수준도 다른 DBMS만큼 세밀하지 않으며 여러 사용자의 동시 쓰기 시 충돌 가능성이 있다. 따라서 SQLite를 서버에서 사용한다면 읽기 전용으로만 설계하고, 쓰기는 다른 수단을 마련할 것. 그리고 기본적으로 체크섬을 수행하지 않기 때문에, 디스크 손상으로 인한 데이터 무결성을 보장하지 않는다는 점은 주의해야 한다.
 - [⭐PostgreSQL](https://www.postgresql.org/): 오픈 소스 RDBMS #2. SQL 표준을 높은 수준으로 준수하며 ACID와 트랜잭션을 지원한다. JSON이나 XML 같은 데이터 타입을 그대로 저장할 수 있고, 플러그인과 확장 모듈을 통해 사용자 정의 함수나, 데이터 타입, 인덱스 방식 등을 추가할 수 있다는 점이 기존 RDBMS들과 다르다. 예를 들어 [PGMQ](https://github.com/tembo-io/pgmq) 확장을 설치하면 데이터베이스와 메시지 큐를 복잡한 구성 없이 단일 트랜잭션으로 묶을 수 있다.
-- [Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
+- [⭐Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
 - [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
 
 ### DBMS Tool
@@ -299,7 +300,7 @@ tags:
 
 - [⭐Workflowy](https://workflowy.com/): 온라인 TODO 툴
 - [⭐ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 툴. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
-- [Calendly](https://calendly.com): 이메일로 일정 맞추기
+- [Calendly](https://calendly.com): 메일로 일정 맞추기
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
@@ -424,10 +425,11 @@ Project manager 혹은 Issue tracker
 
 ## 메일 서비스/메일 서버
 
-- [stibee](https://www.stibee.com/?utm_source=stibee&utm_campaign=sponsorbanner&utm_medium=email&uid=b2ZmaWNpYWxAbmV3bmVlay5jbw): 이메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원. 메일링.
-- [https://www.guerrillamail.com/ko](https://www.guerrillamail.com/ko): 일회용 이메일 서버. 60분 동안만 유효한 메일 주소를 제공.
-- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 이메일 서버 #2. 이건 꽤 오래감.
-- [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 이메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 이메일을 진짜처럼 쓸 수 있게 해주는 것.
+- [stibee](https://www.stibee.com/?utm_source=stibee&utm_campaign=sponsorbanner&utm_medium=email&uid=b2ZmaWNpYWxAbmV3bmVlay5jbw): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
+- [https://www.guerrillamail.com/ko](https://www.guerrillamail.com/ko): 일회용 메일 서버. 60분 동안만 유효한 메일 주소를 제공.
+- [https://www.sharklasers.com](https://www.sharklasers.com): 일회용 메일 서버 #2. 이건 꽤 오래감.
+- [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 메일을 진짜처럼 쓸 수 있게 해주는 것.
+- [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 
 
 ## 테스트 툴
@@ -449,7 +451,7 @@ Project manager 혹은 Issue tracker
 - [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
 - [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 #2. 자바/PHP/닷넷 앱 모니터링. 상용
 - [WhaTap](https://www.whatap.io/ko): APM 툴 #3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
-- [Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
+- [⭐Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
 - [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
 - [Kibana](https://www.elastic.co/kr/kibana/): Elastic Stack의 일부인 데이터 시각화 및 분석 도구. 모니터링과 APM 기능도 제공됨.
@@ -582,7 +584,7 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 - [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
-- [Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
 
 ### IaaS
 
@@ -613,7 +615,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
 - [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
 - [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
-- [Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
 - [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [⭐Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [⭐Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
