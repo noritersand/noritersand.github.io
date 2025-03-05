@@ -43,9 +43,9 @@ wsl -l -v
 그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워셸이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
 
 
-## 서브 시스템의 실제 경로
+## 서브시스템의 실제 경로
 
-WSL1: 루트의 실제 경로는 설치한 서브 시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.
+WSL1: 루트의 실제 경로는 설치한 서브시스템별로 다르지만, 공통적으로 `%USERPROFILE%\AppData\Local\Packages` 까지는 같고 `\LocalState\rootfs`로 끝난다.
 
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 

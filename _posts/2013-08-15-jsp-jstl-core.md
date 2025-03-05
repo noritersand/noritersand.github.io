@@ -293,7 +293,7 @@ line2
 <c:import url="url" [context="context"]
     [var="varName"]  [scope="{page|request|session|application}"]
     [charEncoding="charEncoding"]>
-  <c:param> 서브 태그 위치
+  <c:param> 서브태그 위치
 </c:import>
 ```
 
@@ -521,9 +521,9 @@ remove는 JSP의 `removeAttribute()`와 같은 역할을 한다.  `page`, `reque
 <c:set target="${map}" property="hi" value="hello world!"/> // map.put("hi", "hello world!")
 <c:out value="${map.hi}"/> // map.get("hi")
 
-<jsp:useBean id="vo" class="com.test.TestVO"/>
-<c:set target="${vo}" property="name" value="who?"/> // vo.setName("who?")
-<c:out value="${vo.name}"/> // vo.getName()
+<jsp:useBean id="dto" class="com.test.TestDto"/>
+<c:set target="${dto}" property="name" value="who?"/> // dto.setName("who?")
+<c:out value="${dto.name}"/> // dto.getName()
 
 <c:forEach items="${sampleList}" var="list">
 <c:set target="${list}" property="col1" value="1234"/> // sampleList.get(loop).setCol1("1234")

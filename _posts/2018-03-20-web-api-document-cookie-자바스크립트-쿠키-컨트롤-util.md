@@ -35,7 +35,7 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 
 #### Attributes
 
-- `Domain=<domain-value>`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브 도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
+- `Domain=<domain-value>`: 서버 이름에 따라 쿠키 사용여부가 결정된다. .tistory.com 처럼 메인 도메인명을 지정하면 a.tistory.com, b.tistory.com과 같이 서브도메인이 달라도 쿠키를 공유한다. 명시하지 않으면 현재 페이지의 location.host값으로 설정된다.
 - `Expires=<date> `: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
 - `Max-Age=<number>`: `Expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
 - `Path=<path-value>`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
@@ -47,7 +47,7 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 
 이 외에 `HttpOnly`라는 속성이 있는데, HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
 
-ℹ️ 쿠키의 `Domain` 속성은 프로토콜과 도메인, 서브 도메인만 일치하면 동일한 사이트로 판단하지만, `SameSite` 속성은 프로토콜, 도메인, 서브 도메인에 포트 번호까지 모두 일치해야 동일한 사이트로 판단한다.
+ℹ️ 쿠키의 `Domain` 속성은 프로토콜과 도메인, 서브도메인만 일치하면 동일한 사이트로 판단하지만, `SameSite` 속성은 프로토콜, 도메인, 서브도메인에 포트 번호까지 모두 일치해야 동일한 사이트로 판단한다.
 
 ℹ️ `Secure` 옵션이 `true`면 HTTPS 프로토콜을 통해서만 쿠키를 전송하게 강제한다. 하지만 브라우저에 따라 호스트가 `localhost`나 `127.0.0.1`일 때 이 옵션을 무시한다.
 

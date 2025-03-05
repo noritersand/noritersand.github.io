@@ -170,15 +170,19 @@ tags:
 - [⭐Day.js](https://day.js.org/): 날짜와 시간을 다루는 자바스크립트 라이브러리 #2. 포매터 지원함. MUI의 Date picker에 적용된 라이브러리다.
 - [Lodash](https://lodash.com/): 모듈 시스템을 지원하는 모던 자바스크립트 유틸리티 라이브러리. 성능 향상을 위해 쓰인다. 대표적으로 [lodash.debounce](https://lodash.com/docs/4.17.15#debounce)가 있음.
 - [babel](https://github.com/babel/babel): 일종의 컴파일러(?). 작성한 자바스크립트 코드의 최신 문법과 기능을 구버전의 브라우저나 환경에서 실행될 수 있도록 변환해 준다.
-- [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
-- [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - [Immer](https://immerjs.github.io/immer/): 불변성을 유지하면서 객체를 쉽게 수정할 수 있게 해주는 라이브러리. 리액트에서 상태값이 객체일 때 활용하기 좋다. 제공된 draft를 직접 변경하는 방식으로 사용하는데, 변경된 부분만 복제하도록 최적화되어 있기 때문에 객체 전체의 깊은 복제용으로는 적합하지 않다.
 - [sharp](https://github.com/lovell/sharp): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
-- [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉬운 라이브러리입니다... 라는데 사실 뭔지 잘 몲.
+- [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
+
+### 서버
+
+- [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
+- [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
+- [⭐serve](https://github.com/vercel/serve): 빠르고 가벼운 정적 파일 제공용 웹 서버. Live reload 기능은 없으며, 프로덕션 환경을 미리 보고 싶을 때 사용한다.
 
 ### 번들러
 
@@ -202,8 +206,10 @@ tags:
 ### 리액트 전용 라이브러리
 
 - [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
-- [Redux](https://redux.js.org/): 리덕스. 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다.
-- [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다는 평. 
+- [Redux](https://redux.js.org/): 리덕스. 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다. 그런데 문법이 너무 복잡한 탓인지 인기가 점점 시들해진다고...
+- [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다.
+- [recoiljs](https://recoiljs.org/): 리액트용 상태 관리 라이브러리 #3
+- [Jotai](https://jotai.org/): 리액트용 상태 관리 라이브러리 #4
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
 - [useHooks](https://github.com/uidotdev/usehooks?tab=readme-ov-file): 리액트 훅 모음 #1. 리액트 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 리액트의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://github.com/streamich/react-use): 리액트 훅 모음 #2. 이 패키지도 리액트 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
@@ -263,13 +269,14 @@ tags:
 - [Gliffy](http://www.gliffy.com)
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
-- [XMind](http://www.xmind.net): 마인드 맵
-- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page): 마인드 맵 #2
-- [MockFlow](https://www.mockflow.com/): 챗피티 추천 UI 설계 툴 #1
-- [Moqups](https://moqups.com/): 챗피티 추천 UI 설계 툴 #2
-- [Cacoo](https://nulab.com/cacoo/): 챗피티 추천 UI 설계 툴 #3
-- [Wireframe.cc](https://wireframe.cc/): 챗피티 추천 UI 설계 툴 #4
+- [XMind](http://www.xmind.net)
+- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
+- [MockFlow](https://www.mockflow.com/)
+- [Moqups](https://moqups.com/)
+- [Cacoo](https://nulab.com/cacoo/)
+- [Wireframe.cc](https://wireframe.cc/)
 - [⭐Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 툴. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
+- [⭐tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리스트링에 포함되기 때문에 공유가 쉽다.
 
 ### ERD
 
@@ -319,7 +326,7 @@ tags:
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
-- [https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k](https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k): CSS 코드 생성기 모음
+- [Awesome list of free CSS Generator - DEV Community](https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k): CSS 코드 생성기 모음
 
 
 ## 공인 IP 확인
@@ -396,11 +403,6 @@ tags:
 - [Cloud9](https://c9.io)
 - [WebStorm](http://www.jetbrains.com/webstorm/download/index.html)
 - [Aptana](http://www.aptana.com/products/studio3/download)
-
-
-## 디컴파일러 decompiler
-
-- [JD Project](http://java-decompiler.github.io): 자바 디컴파일러. Java 1.1.8 부터 12까지 지원한다고 한다(2020-01-06 기준).
 
 
 ## Web server/WAS
@@ -615,7 +617,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
 - [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
 - [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
-- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서브 프레임워크
+- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
 - [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [⭐Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [⭐Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.

@@ -18,10 +18,11 @@ tags:
 - [Oracle \| Database SQL Language Reference: Merge](https://docs.oracle.com/cd/B28359_01/server.111/b28286/statements_9016.htm#SQLRF01606)
 - [Merge (SQL) \| 위키백과](https://ko.wikipedia.org/wiki/Merge_%28SQL%29)
 
-### syntax
+
+## syntax
 
 ```
-MERGE INTO 메인-테이블 USING 서브-테이블 ON (조건)
+MERGE INTO 메인_테이블 USING 서브_테이블 ON (조건)
 WHEN MATCHED THEN
   UPDATE SET 컬럼1 = 값1 [, 컬럼2 = 값2 ...]
 WHEN NOT MATCHED THEN
@@ -30,9 +31,10 @@ WHEN NOT MATCHED THEN
 
 UPDATE문에서 WHERE절은 생략할 수 있다. WHERE절을 생략하면 UPDATE문 실행 시 USING-ON의 조건을 그대로 적용하고, WHERE절을 명시하면 USING-ON의 조건에 추가로 조건을 더하는 방식이다.
 
-### example
 
-#### MEMBER 테이블에 회원번호가 10인 데이터가 있으면 UPDATE, 없으면 INSERT
+## example
+
+### MEMBER 테이블에 회원번호가 10인 데이터가 있으면 UPDATE, 없으면 INSERT
 
 ```sql
 MERGE INTO MEMBER

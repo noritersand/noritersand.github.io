@@ -141,7 +141,7 @@ logger.error($var$.getMessage(), $var$);
 
 `$var$` 변수의 값은 `variableOfType("Exception")`, 적용 범위는 `expression`을 선택한다.
 
-- `variableOfType("Exception")`: 문맥에 맞는 `Exception`의 서브 타입 변수를 채워 넣는다.
+- `variableOfType("Exception")`: 문맥에 맞는 `Exception`의 서브타입 변수를 채워 넣는다.
 
 ![](/images/intellij-live-templates-le.gif)
 

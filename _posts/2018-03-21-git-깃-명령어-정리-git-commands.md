@@ -493,7 +493,7 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 - `--bare`: 워킹 트리가 없는 베어 저장소(bare Git repository)를 생성한다. 리모트 서버용으로 클론할 때 사용하는 옵션. 이 옵션을 사용하면 로컬 브랜치(`refs/heads/`)와 태그(`refs/tags/`)는 복제되지만, 원격 추적 브랜치(`refs/remotes/`), 노트(`refs/notes/`), 플러그인 등으로 생성된 기타 참조(`refs/`) 및 리플로그 정보는 복제되지 않는다.
 - `--mirror`: 이 옵션도 워킹 트리가 없는 베어 저장소를 생성하지만, `--bare`와 다르게 모든 원격 참조(remote references)와 설정을 포함하여 원본 저장소의 완벽한 복제본을 만든다. 저장소를 미러링하여 백업하거나 다른 서버로 이전할 때 사용한다.
-- `--recurse-submodules[=<pathspec>]`: 저장소를 복제한 뒤 해당 저장소 내부의 서브 모듈을 재귀적으로 복제하도록 하는 옵션. `pathspec`을 생략하면 모든 서브모듈을 복제한다. `git submodule update --init --recursive`를 수동으로 수행한 것과 같다.
+- `--recurse-submodules[=<pathspec>]`: 저장소를 복제한 뒤 해당 저장소 내부의 서브모듈을 재귀적으로 복제하도록 하는 옵션. `pathspec`을 생략하면 모든 서브모듈을 복제한다. `git submodule update --init --recursive`를 수동으로 수행한 것과 같다.
 
 #### 저장소 복제
 

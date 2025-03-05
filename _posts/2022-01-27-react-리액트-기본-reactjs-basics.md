@@ -80,15 +80,13 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 ## CRA, Create React App
 
-⚠️ CRA는 [2025-02-14 부터 지원이 중단되었다](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). 
-
-[Next.js](https://nextjs.org/), [Vite](https://vite.dev/), [React Router](https://reactrouter.com/), [Remix](https://remix.run/) 등으로 대체할 것.
+🚨 CRA는 [2025-02-26부터 지원이 중단되었다](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). Next.js, Vite, React Router, Remix 등으로 대체할 것.
 
 ---
 
 [Create React App \| Getting Started](https://create-react-app.dev/docs/getting-started/)
 
-리액트 환경의 스캐폴딩(scaffolding)을 도와주는 공식 툴.
+리액트 개발 환경을 빠르게 구축해 주는 공식 스캐폴딩(scaffolding) 도구.
 
 ```bash
 npx create-react-app APP_NAME

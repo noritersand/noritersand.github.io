@@ -32,7 +32,7 @@ tags:
 
 'ESM(ECMAScript modules)'은 ESMAScript에서 제안하는 표준 모듈 시스템이다(Web API 아님). 'JavaScript modules'라고도 한다. 모듈을 내보내거나 가져올 때 사용하는데, 모듈은 함수, 객체, 원시 값 등을 포함한다.
 
-참고로 ESM이 구현되기 전의 자바스크립트에는 모듈 기능이 없었다. 그래서 사용하던 것이 CJS(CommonJS), AMD(Asynchronous Module Definition의 줄임말, RequireJS에서 사용), UMD(Universal Module Definition의 줄임말, Backbone.js에서 사용).
+참고로 ESM이 구현되기 전의 자바스크립트에는 모듈 기능이 없었다. 그래서 사용하던 것이 CJS(CommonJS), AMD(Asynchronous Module Definition), UMD(Universal Module Definition).
 
 ESM의 모듈은 `export`와 `import` 구문으로 구현하며, 내보내거나 가져오는 모듈은 무조건 엄격 모드로 작동한다는 특징이 있다. 그리고 라이브러리(기존 방식을 말함)를 사용하는 것보다 더 효율적이라고 한다.
 

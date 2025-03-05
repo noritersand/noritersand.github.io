@@ -34,22 +34,22 @@ import java.io.Serializable;
 public class JavaSerializationSample {
     public static void main(String[] args) throws IOException {
 
-        VO vo = new VO();
-        vo.setName("호옹이");
-        vo.setAge(11);
-        vo.setEmail("a@a.com");
+        Dto dto = new Dto();
+        dto.setName("호옹이");
+        dto.setAge(11);
+        dto.setEmail("a@a.com");
 
         FileOutputStream fos = new FileOutputStream("c:\\iotest\\serial.txt",
                 false);
         BufferedOutputStream bos = new BufferedOutputStream(fos);
         ObjectOutputStream out = new ObjectOutputStream(bos);
 
-        out.writeObject(vo);
+        out.writeObject(dto);
         out.close();
     }
 }
 
-class VO implements Serializable {
+class Dto implements Serializable {
     private static final long serialVersionUID = -395246598280398285L;
 
     private String name;
@@ -89,7 +89,7 @@ class VO implements Serializable {
 ```java
 import java.io.Serializable;
 
-public class VO implements Serializable{
+public class Dto implements Serializable{
     String name; // 직렬화 가능
     String email; // 직렬화 가능
     int age; // 직렬화 가능
@@ -123,14 +123,14 @@ FileOutputStream fos = new FileOutputStream("c:\\iotest\\serial.bin", false);
 BufferedOutputStream bos = new BufferedOutputStream(fos);
 ObjectOutputStream out = new ObjectOutputStream(bos);
 
-VO vo1 = new VO("ob1", "aaa@domain.com", 11);
-VO vo2 = new VO("ob2", "bbb@domain.com", 12);
-ArrayList<VO> list = new ArrayList<>();
-list.add(vo1);
-list.add(vo2);
+Dto dto1 = new Dto("ob1", "aaa@domain.com", 11);
+Dto dto2 = new Dto("ob2", "bbb@domain.com", 12);
+ArrayList<Dto> list = new ArrayList<>();
+list.add(dto1);
+list.add(dto2);
 
-out.writeObject(vo1); // first object
-out.writeObject(vo2); // second object
+out.writeObject(dto1); // first object
+out.writeObject(dto2); // second object
 out.writeObject(list); // third object
 
 out.close();
@@ -143,12 +143,12 @@ FileInputStream fis = new FileInputStream("c:\\iotest\\serial.txt");
 BufferedInputStream bis = new BufferedInputStream(fis);
 ObjectInputStream ois = new ObjectInputStream(bis);
 
-VO vo1 = (VO) ois.readObject(); // first object
-VO vo2 = (VO) ois.readObject(); // second object
-ArrayList<VO> list = (ArrayList<VO>) ois.readObject(); // third object
+Dto dto1 = (Dto) ois.readObject(); // first object
+Dto dto2 = (Dto) ois.readObject(); // second object
+ArrayList<Dto> list = (ArrayList<Dto>) ois.readObject(); // third object
 
-System.out.println(vo1);
-System.out.println(vo2);
+System.out.println(dto1);
+System.out.println(dto2);
 System.out.println(list.get(0));
 System.out.println(list.get(1));
 
@@ -161,7 +161,7 @@ ois.close();
 선언부에 `transient` 제어자를 사용하면 직렬화에서 제외된다.
 
 ```java
-public class VO implements Serializable{
+public class Dto implements Serializable{
     int age;
     String name;
     transient String email; // 직렬화 대상에서 제외되며 역직렬화 시 기본값으로 초기화된다.
@@ -176,7 +176,7 @@ public class VO implements Serializable{
 명시하지 않을 경우 객체가 직렬화될 때 클래스에 정의된 멤버들의 정보를 이용해서 `serialVersionUID`에 클래스의 버전을 JVM이 자동으로 생성하여 직렬화 내용에 포함한다.
 
 ```java
-public class VO implements Serializable {
+public class Dto implements Serializable {
     private static final long serialVersionUID = 8987889780557008769L;
 
 // 생략
@@ -185,7 +185,7 @@ public class VO implements Serializable {
 만약 직렬화 시점의 serial version과 역직렬화 시점의 serial version이 일치하지 않는다면 아래처럼 `java.io.InvalidClassException`이 발생하면서 역직렬화는 실패한다.
 
 ```java
-Exception in thread "main" java.io.InvalidClassException: com.test.VO;
+Exception in thread "main" java.io.InvalidClassException: com.test.Dto;
 local class incompatible: stream classdesc serialVersionUID = 1001, local class serialVersionUID = 1002
 ```
 
