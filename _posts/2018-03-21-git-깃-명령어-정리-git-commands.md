@@ -1744,7 +1744,7 @@ git rev-list --max-count=1 HEAD
 
 ## rev-parse
 
-커밋이나 브랜치, 태그, 파일같은 Git 저장소 객체(혹은 레퍼런스)의 해시값(=revision)을 계산하고 출력하는 명령어. 일반적으로 쓸 일이 거의 없다.
+커밋이나 브랜치, 태그, 파일같은 Git 저장소 객체(혹은 레퍼런스)의 해시값(=revision)을 계산하고 출력하는 명령어. 일반적으로 쓸 일은 거의 없다.
 
 ```
 git rev-parse [<options>] <args>…
@@ -1753,10 +1753,13 @@ git rev-parse [<options>] <args>…
 가령 특정 파일이나 파일 구조(트리)에 대한 해시를 계산하려면 아래처럼 입력한다:
 
 ```bash
+# HEAD의 커밋 해시 출력
+git rev-parse HEAD
+
 # HEAD의 README.md 파일 해시 출력
 git rev-parse HEAD:README.md
 
-# HEAD의 ./ 디렉터리에 대한 해시 출력. 이 값은 tree 해시와 같다
+# HEAD의 ./ 디렉터리에 대한 해시 출력. 이 값은 트리 해시라고도 함
 git rev-parse HEAD:./
 
 # 대상을 여러 개 지정하기

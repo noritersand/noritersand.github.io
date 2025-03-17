@@ -47,6 +47,8 @@ mapper.readValue(arg, new ArrayList<HashMap<String, String>>().getClass());
 mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>() {});
 ```
 
+ℹ️ 자바 최근(2025-03-16) 버전에선 `mapper.readValue(result, new TypeReference<>() {})` 라고만 해도 변수의 타입에 맞춰서 알아서 작동한다.
+
 ### map
 
 맵 타입이 JSON 형식의 String 타입으로 변환된다. 자바스크립트에 JSON을 넘겨줄 때 유용하다.

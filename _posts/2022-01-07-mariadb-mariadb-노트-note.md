@@ -560,3 +560,86 @@ on duplicate key update
 ```
 
 마찬가지로 PK가 이미 존재하는 값이면, 이 경우엔 무시하는게 아니라 update로 처리된다.
+
+
+## SHOW
+
+[SHOW - MariaDB Knowledge Base](https://mariadb.com/kb/en/show/)
+
+데이터베이스(스키마), 테이블, 컬럼, 서버 상태 정보 등을 조회하는 명령어.
+
+몇몇 명령어는 특정 권한이 필요하다.
+
+```sql
+# 서버의 시스템 변수와 값 출력
+show variables;
+
+# 서버의 상태 정보 출력
+show status;
+
+# 현재 실행 중인 프로세스(쿼리, 연결 등) 출력
+show processlist;
+
+# ENGINE_NAME 엔진의 상태 출력
+show engine ENGINE_NAME status;
+
+# 서버에 존재하는 모든 데이터베이스(스키마) 출력
+show databases;
+
+# 현재 사용자나 특정 사용자의 권한 출력
+show grants;
+
+# MariaDB에서 지원하는 권한 종류 출력
+show privileges;
+
+# 현재 데이터베이스 내 테이블들의 상세 상태(엔진, 행 수, 데이터 크기 등) 출력
+show table status
+
+# 특정 데이터베이스의 생성 스크립트 출력
+show create database DATABASE_NAME;
+
+# 현재 데이터베이스의 모든 테이블 목록 출력
+show tables;
+
+# TABLE_NAME 테이블의 생성 스크립트 출력
+show create table TABLE_NAME;
+
+# TABLE_NAME 테이블의 컬럼 정보 출력. describe TABLE_NAME 과 같음
+show columns from TABLE_NAME;
+
+# TABLE_NAME 테이블에 정의된 인덱스 정보 출력
+show index from TABLE_NAME;
+
+# 현재 데이터베이스에 정의된 모든 트리거 출력
+show triggers;
+
+# 트리거의 생성 스크립트 출력
+show create trigger TRIGGER_NAME;
+
+# 현재 데이터베이스에 정의된 저장 프로시저 목록 출력
+show procedure status
+
+# 특정 프로시저의 생성 스크립트 출력
+show create procedure PROCEDURE_NAME
+
+# 현재 데이터베이스에 정의된 저장 함수 목록 출력
+show function status
+
+# 특정 함수의 생성 스크립트 출력
+show create function FUNCTION_NAME
+
+# 이전 쿼리에서 발생한 경고 메시지 출력
+show warnings
+
+# 이전 쿼리에서 발생한 오류 메시지 출
+show errors
+
+# 현재 데이터베이스에 정의된 스케줄링 이벤트 출력
+show events
+
+# 특정 이벤트의 생성 스크립트 출력
+show create event EVENT_NAME
+
+# 서버에 설치된 플러그인 출력
+show plugins
+```

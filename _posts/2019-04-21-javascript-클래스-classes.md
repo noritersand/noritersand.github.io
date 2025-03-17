@@ -92,6 +92,51 @@ class Numeric extends Number {
 인스턴스를 생성하고 초기화하기 위한 class의 특수 메서드. **생성자 함수(constructor function)가 아니다.**
 
 
+## 메서드 methods
+
+메서드는 프로토타입에 정의되며 모든 인스턴스에서 재사용한다. 메서드는 일반 함수이거나 비동기 함수, 제네레이터, 비동기 제네레이터일 수 있다.
+
+메서드 정의 문법은 아래와 같다:
+
+```js
+({
+  property(parameters) {},
+  *generator(parameters) {},
+  async property(parameters) {},
+  async *generator(parameters) {},
+
+  // with computed keys
+  [expression](parameters) {},
+  *[expression](parameters) {},
+  async [expression](parameters) {},
+  async *[expression](parameters) {},
+})
+```
+
+```js
+class Pair {
+  constructor(a, b) {
+    this.a = a;
+    this.b = b;
+  }
+
+  print() {
+    console.log('a:', this.a);
+    console.log('b:', this.b);
+  }
+
+  *gen() {
+    yield this.a;
+    yield this.b;
+  }
+
+  async plus() {
+    return await this.a + this.b;
+  }
+}
+```
+
+
 ## static
 
 생성자 함수의 메서드 혹은 프로퍼티(필드 혹은 메서드)를 만드는 키워드. 이 키워드가 붙은 프로퍼티를 스태틱 필드 혹은 스태틱 메서드라고 한다.
@@ -129,7 +174,7 @@ building.location; // "some-where"
 building.number; // 1234
 ```
 
-그냥 특별한 표시 없이 식별자로 선언만 하면 퍼블릭 프로퍼티다. 스태틱 프로퍼티도 public class feature로 포함한다.
+그냥 특별한 표시 없이 식별자로 선언만 하면 퍼블릭 프로퍼티다. 스태틱 프로퍼티도 public class feature에 포함된다.
 
 
 ## private class feature
@@ -223,12 +268,3 @@ var noob = new Newbie();
 noob.constructor.caller; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 noob.constructor.arguments; // TypeError: "'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them"
 ```
-
-
-## async method
-
-클래스에 async function을 정의하면 async method가 된다.
-
-**TODO**
-
-

@@ -292,13 +292,15 @@ for (let prop in arr) {
 
 ### for-of
 
+`for-of`는 `for-in`과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. 
+
 ```
 for (변수 of 객체) {
   코드 블록
 }
 ```
 
-`for-of`는 `for-in`과 비슷하지만 프로퍼티의 이름이 아니라 프로퍼티의 값을 변수에 할당한다. **반복 가능한 객체(iterable object)만 `for-of`를 사용할 수 있다.**, 반복 가능한 객체의 데이터 타입은 `arguments object`와 `Array`, `String`, `TypedArray`, `Map`, `Set`, `NodeList` 등이 있다.
+Iterator 프로토콜을 따르는 **반복 가능한 객체(iterable object)만 `for-of`를 사용할 수 있다.**, 반복 가능한 객체의 데이터 타입은 `arguments object`와 `Array`, `String`, `TypedArray`, `Map`, `Set`, `NodeList` 등이 있다. (+ 제네레이터가 반환한 객체)
 
 [ES2015에서 새로 추가되었고](http://www.ecma-international.org/ecma-262/6.0/#sec-for-in-and-for-of-statements), IE에서는 사용할 수 없다.
 

@@ -142,7 +142,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 7</kbd>: Steam, WebStorm
 - <kbd>win + 8</kbd>: VSCODE
 - <kbd>win + 9</kbd>: 가변 #1
-- <kbd>win + 0</kbd>: 가변 #2
+- <kbd>win + 0</kbd>: 가변 #2 (MSOffice)
 
 가변 항목:
 
@@ -156,6 +156,8 @@ Autohotkey로 확장한 키 조합:
 
 - <kbd>win + alt + 5</kbd>: Fork
 - <kbd>win + alt + 6</kbd>: Discord
+- <kbd>win + alt + 7</kbd>: Postman
+- <kbd>win + alt + 0</kbd>: 가변 #3 (MSOffice)
 - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
 - <kbd>win + ctrl + - </kbd>: Notion
 - <kbd>win + alt + - </kbd>: Obsidian

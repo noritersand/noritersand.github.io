@@ -91,7 +91,7 @@ const {log} = console;
 ```
 {
   property([parameters]) {},
-  * generator() {}
+  *generator() {}
 }
 ```
 
@@ -110,7 +110,7 @@ generator function을 단축하려면 다음처럼 한다:
 ```js
 var obj = {
   // gen: function* (n) { return 'ssup' }
-  * gen() {
+  *gen() {
     return 'ssup';
   }
 }

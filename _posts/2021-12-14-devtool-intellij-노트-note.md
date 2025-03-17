@@ -313,6 +313,9 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 - <kbd>f2</kbd> <kbd>shift + f2</kbd>: Highlighted Error. 다음/이전 에러 지점으로 이동
 - <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
 - <kbd>ctrl + alt + t</kbd>: Surround With. 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
+- <kbd>ctrl + alt + shift + t</kbd>: Refactor This. 캐럿 위치 기준으로 소스 리팩토링 하기
+- <kbd>ctrl + j</kbd>: Insert Live Template. 라이브 템플릿 삽입하기
+- <kbd>ctrl + alt + j</kbd>: Surround With Live Template. 선택한 텍스트를 라이브 템플릿으로 감싸
 - <kbd>ctrl + alt + q</kbd>: Toggle Rendered View. 자바독 편집/읽기 모드 토글
 - <kbd>ctrl + shift + t</kbd>: Go To Test. 현재 클래스의 테스트 클래스로 이동하거나 되돌아옴
 - <kbd>ctrl + h</kbd>: Type Hierarchy. 타입 계층 보기
