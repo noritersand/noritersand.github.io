@@ -24,7 +24,7 @@ tags:
 
 ## 각종 문서(메뉴얼, API Doc, 튜토리얼 등)
 
-- [MDN](https://developer.mozilla.org/): 그 MDN
+- [MDN](https://developer.mozilla.org/)
 - [⭐DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [깃허브 링크](https://github.com/freeCodeCamp/devdocs)
 - [⭐Can I use](https://caniuse.com/): 웹 API, HTML, CSS 등을 어떤 브라우저에서 지원하는지를 알려주는 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
@@ -104,8 +104,8 @@ tags:
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임워크. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
-- [Vue](https://vuejs.org/): 설명이 필요없는 프론트엔드 라이브러리 #1.
-- [⭐React](https://react.dev/): 설명이 필요없는 프론트엔드 라이브러리 #2.
+- [Vue](https://vuejs.org/): 프론트엔드 라이브러리 #1.
+- [⭐React](https://react.dev/): 프론트엔드 라이브러리 #2.
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 프론트엔드 프레임워크. 가볍고 단순한 게 특징. 일반적인 프레임워크와 다르게 런타임 대신 컴파일러로 작동한다. 이 말은 빌드 후에 별도로 불러오는 라이브러리가 없어 성능과 로딩 속도에서 이점이 있다는 뜻이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
@@ -130,7 +130,7 @@ tags:
 
 - [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲. 근데 가급적 빨리 써보는 게 좋을 것 같은 느낌적인 느낌
 - [component.gallery](https://component.gallery/): CSS 프레임워크와 디자인 시스템 같은 것을 모아놓은 사이트
-- [Bootstrap](https://getbootstrap.com/): 가장 유명하고 오래된 그 부트스트랩. 범용 프레임워크로 분류됨
+- [Bootstrap](https://getbootstrap.com/): 범용 프레임워크로 분류됨
 - [⭐Bulma](https://bulma.io/): Flexbox 기반
 - [Foundation Framework](https://get.foundation/)
 - [Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
@@ -249,7 +249,7 @@ tags:
 
 - [⭐SQLite](https://www.sqlite.org/index.html): 오픈 소스 RDBMS #1. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. ACID(Atomicity, Consistency, Isolation, Durability) 특성을 준수하는 기능과 트랜잭션을 지원한다. 시스템이 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고 하는 사람도 있다. 에스큐엘라이트 혹은 시퀄라이트라고 읽는다. 경량 DB라서 SQL 표준 기능이 일부 빠져있거나 제한적으로 제공한다. 예를 들어 외래키는 기본적으로 비활성화되어 있고 사용 제한이 있다. 그리고 프로시저는 미지원, 트리거와 윈도우 함수 등은 부분적으로 지원한다. 동시성 제어와 격리 수준도 다른 DBMS만큼 세밀하지 않으며 여러 사용자의 동시 쓰기 시 충돌 가능성이 있다. 따라서 SQLite를 서버에서 사용한다면 읽기 전용으로만 설계하고, 쓰기는 다른 수단을 마련할 것. 그리고 기본적으로 체크섬을 수행하지 않기 때문에, 디스크 손상으로 인한 데이터 무결성을 보장하지 않는다는 점은 주의해야 한다.
 - [⭐PostgreSQL](https://www.postgresql.org/): 오픈 소스 RDBMS #2. SQL 표준을 높은 수준으로 준수하며 ACID와 트랜잭션을 지원한다. JSON이나 XML 같은 데이터 타입을 그대로 저장할 수 있고, 플러그인과 확장 모듈을 통해 사용자 정의 함수나, 데이터 타입, 인덱스 방식 등을 추가할 수 있다는 점이 기존 RDBMS들과 다르다. 예를 들어 [PGMQ](https://github.com/tembo-io/pgmq) 확장을 설치하면 데이터베이스와 메시지 큐를 복잡한 구성 없이 단일 트랜잭션으로 묶을 수 있다.
-- [⭐Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높은 그 레디스. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
+- [⭐Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높음. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
 - [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
 
 ### DBMS Tool
@@ -362,10 +362,9 @@ tags:
 ## 텍스트 에디터 Text Edtors
 
 - [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4): 윈도우 기본 노트패드를 완벽히 대체 가능한 앱. 빠르고 가볍고 멀티 캐럿을 지원한다. 무료 버전은 가끔 저장할 때 팝업이 뜬다.
-- [Notepad++](https://notepad-plus-plus.org): 가볍게 쓰기 좋지만 좀 오래된 에디터
-- [Nova](https://nova.app): macOS만 지원하고 30일 체험판 이후 유료로 전환됨
-- [⭐Visual Studio Code](https://code.visualstudio.com): 그 VSCODE
-- [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능도 제공한다. 또 사용자 플러그인 설치가 가능한 점, 오프라인 파일이 생성되어 백업이 쉽다는 점이 있다. 동기화 기능(Obsidian Sync)은 유료다.
+- [Notepad++](https://notepad-plus-plus.org): 좀 오래됐지만 가볍게 쓰기 좋음. 서브라임으로 열었을 때 앱이 멈춰버릴 정도로 큰 파일도 노트패드++ 에선 잘 열린다.
+- [⭐Visual Studio Code](https://code.visualstudio.com)
+- [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능이 있다. 작성한 파일의 클라우드 동기화 기능(Obsidian Sync)은 유료다.
 - [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCODE와 인터페이스가 매우 유사하다.
 - [Zed](http://zedapp.org): 윈도우는 아직 지원 예정(2025-02-05)이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
 
@@ -407,7 +406,7 @@ tags:
 
 ## Web server/WAS
 
-- [Apache HTTP Server](https://www.apachelounge.com/download): 그 아파치. 검색으론 다운로드 링크 찾기 힘듬.
+- [Apache HTTP Server](https://www.apachelounge.com/download): 검색으론 다운로드 링크 찾기 힘듬.
 
 
 ## 프로젝트 관리 도구 
@@ -604,7 +603,7 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 
 BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
-- [Firebase](https://firebase.google.com/): 구글의 그 파이어베이스
+- [Firebase](https://firebase.google.com/): 파이어베이스
 - [Supabase](https://supabase.com/): 오픈소스 백엔드 서비스. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공함. 파이어베이스에는 없는 RDBMS(PostgreSQL)을 제공한다고 함.
 - [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
 

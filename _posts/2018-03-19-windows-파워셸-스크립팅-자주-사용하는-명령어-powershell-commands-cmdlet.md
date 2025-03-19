@@ -252,7 +252,7 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 
 ### Remove-Item
 
-기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
+지정된 항목을 삭제한다. 기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
 
 ```bash
 Remove-Item .\copy\ -r -Force
@@ -260,8 +260,9 @@ Remove-Item .\copy\ -r -Force
 
 #### Parameters
 
-- `-Force`: 확인 프롬프트 없이 삭제
-- `-Recurse`: 재귀 삭제
+- `-Force`: 숨김 파일, 읽기 전용 파일, 읽기 전용 별칭이나 변수 같은 항목도 강제로 삭제
+- `-Recurse`: 디렉터리 재귀 삭제
+- `-WhatIf`: 명령이 실행되면 어떻게 될지 보여주기만 하고 실제로 삭제하지는 않음
 
 ### Get-Member
 
