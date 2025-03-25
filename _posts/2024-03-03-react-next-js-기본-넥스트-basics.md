@@ -166,6 +166,24 @@ location / {
 
 `output: 'export'` 일 때 넥스트는 슬러그 이름으로 HTML 파일을 생성한다. 가령 `/about` 슬러그가 있으면 `/about.html` 파일이 생성되는 식이다. 하지만 `trailingSlash`가 `true`면 `/about.html` 대신 `/about/index.html`을 생성한다.
 
+#### basePath
+
+넥스트 앱의 기본 경로를 설정하는 옵션. 호스트 도메인의 서브 경로(예시: `example.com/docs`)에 배포할 때 사용된다. 이 설정으로 모든 페이지, API 경로, 정적 리소스 등의 URL에 자동으로 접두어를 추가할 수 있다. 생략했을 때의 기본값은 빈 문자열이다.
+
+```js
+module.exports = {
+  basePath: '/docs',
+};
+```
+
+예를 들어 `basePath`를 `/docs`로 설정 시:
+
+- `/about` -> `/docs/about`
+- `/api/data` -> `/docs/api/data`
+
+이렇게 바뀐다.
+
+`next/link`와 `next/router`는 `basePath`가 자동으로 적용되지만, `next/image`는 서브 경로를 수동으로 설정해야 한다.
 
 #### redirects
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2015-06-08 18:47:33 +0900
-title: '[etc] 도토리 목록: 각종 개발 툴, 유틸리티 사이트, 언어, 라이브러리 모음'
+title: '[etc] 도토리 목록: 각종 개발 도구, 유틸리티 사이트, 언어, 라이브러리 모음'
 categories:
   - etc
 tags:
@@ -19,7 +19,22 @@ tags:
 
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
 
-자주 쓰거나 중요한 것은 ⭐표시함.
+늘 사용하고 있거나 중요한 것은 ⭐표시함.
+
+
+## 미분류
+
+- [⭐mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
+- [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
+- [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
+- [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
+- [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
+- [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
+- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
+- [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
+- [⭐Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
+- [⭐Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
+- [Advent of Code](https://adventofcode.com/): 매년 일정 시간마다 하나씩 공개되는 프로그래밍 퍼즐 사이트. 모든 언어로 풀 수 있음. ~~UI에서해커냄새가난다~~
 
 
 ## 각종 문서(메뉴얼, API Doc, 튜토리얼 등)
@@ -43,6 +58,75 @@ tags:
 - [The W3C Markup Validation Service](https://validator.w3.org/): W3C에서 운영하는 걸로 보이는 마크업 검사기. 소스 입력 방법으로 URL, 파일, 직접 입력 세 가지를 제공한다. 그런데 이 검사기는 순수 HTML을 대상으로 작성된 검사기라서 리엑트 같은 프론트엔드용 프레임워크 소스를 검사하면 죄 틀렸다고 나온다. 자매품으로 [CSS Validator](https://jigsaw.w3.org/css-validator/)도 있다.
 
 
+## UML/MDA/다이어그램/마인드 맵/드로잉
+
+- [⭐eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 앱을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
+- [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 앱. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
+- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 앱. 좋지만 무료 플랜이 없는 게 단점
+- [StarUML](http://staruml.sourceforge.net/ko)
+- [Draw.io](http://www.draw.io)
+- [Gliffy](http://www.gliffy.com)
+- [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
+- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
+- [XMind](http://www.xmind.net)
+- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
+- [MockFlow](https://www.mockflow.com/)
+- [Moqups](https://moqups.com/)
+- [Cacoo](https://nulab.com/cacoo/)
+- [Wireframe.cc](https://wireframe.cc/)
+- [⭐Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 앱. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
+- [⭐tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리스트링에 포함되기 때문에 공유가 쉽다.
+
+
+## 기타 웹 서비스
+
+- [⭐JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
+- [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
+- [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
+- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
+- [Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
+- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 문서 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
+- [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
+- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
+- [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 도구
+- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 도구 #2
+- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
+
+### PaaS
+
+PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
+
+- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
+  - [Koyeb](https://www.koyeb.com/)
+  - [Fly.io](https://fly.io/)
+  - [Northflank](https://northflank.com/)
+- [Kubernetes](https://kubernetes.io/): 통칭 K8s이라 쓰는 쿠버네티스. 컨테이너화된 애플리케이션을 관리하고 배포하기 위한 오픈소스 플랫폼이다. 기존 PaaS 범주와 비슷하지만 다르다고 한다. [공식 문서 링크](https://kubernetes.io/docs/concepts/overviw/). "컨테이너화된 애플리케이션을 배포, 관리, 확장할 때 수반되는 다수의 수동 프로세스를 자동화하는 오픈소스 컨테이너 오케스트레이션 플랫폼"이라 소개된다.
+- [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
+- [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
+- [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
+- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+
+### IaaS
+
+인프라만 제공하는 클라우드 서비스.
+
+- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
+- [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
+- [Azure](https://azure.microsoft.com/)
+- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
+- [Pulumi](https://www.pulumi.com/}): 자바스크립트 코드로 클라우드 인프라를 관리하는 IaC\* 서비스. 개인 용도는 무료(2023-09-13)
+
+\* IaC(Infrastructure as Code): 코드를 사용하여 수동 프로세스가 아닌 자동으로 인프라를 정의하고 관리하는 방법론의 일종
+
+### BaaS, Backend as a Service
+
+BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
+
+- [Firebase](https://firebase.google.com/): 파이어베이스
+- [Supabase](https://supabase.com/): 오픈소스 백엔드 서비스. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공함. 파이어베이스에는 없는 RDBMS(PostgreSQL)을 제공한다고 함.
+- [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
+
+
 ## 정규식 Regular Expression
 
 - [regular expressions 101](https://regex101.com/): 정규식 테스트 겸 코드 공유 사이트. (근데 왜 101일까)
@@ -60,17 +144,17 @@ tags:
 
 ### 호스팅
 
-- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 (HTTPS 지원) 서비스. 윈도우에선 chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다. expo는 터널링 옵션을 위해 ngrok을 내장하고 있기도 하다.
+- [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 로컬 터널링 도구. HTTPS 프로토콜도 지원한다. 윈도우에선 chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다. expo는 터널링 옵션을 위해 ngrok을 내장하고 있기도 하다.
 
 ### 의존성 관리(라이브러리 설치/조회/삭제)
 
-- [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 툴인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
+- [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 도구인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
 - [Scoop](https://scoop.sh/): Chocolatey보다 규모와 사용자는 적지만, 개발자 커뮤니티가 매우 활성화되어 있다고 함.
 
 ### SDK Manager
 
-- [Node Version Manager](https://github.com/nvm-sh/nvm): Node.js의 설치/버전 관리 툴. 여러 버전의 Node.js를 설치하고 지금 사용하려는 버전으로 손쉽게 전환할 수 있게 해준다. 통칭 nvm
-- [SDKMAN](https://sdkman.io/): nvm처럼 여러 버전의 SDK를 설치하고 특정 버전으로 전환하는 기능을 제공하는 SDK 관리 툴이다. 지원하는 SDK로 Java, Scala, Groovy, Kotlin, Ceylon, Gradle, Maven 등이 있다. 단점으로, SDKMAN을 실행하려면 bash 환경이 필요하기 때문에 WSL이 아니면 **윈도우에서는 쓸 수 없음**.
+- [Node Version Manager](https://github.com/nvm-sh/nvm): Node.js의 설치/버전 관리 도구. 여러 버전의 Node.js를 설치하고 지금 사용하려는 버전으로 손쉽게 전환할 수 있게 해준다. 통칭 nvm
+- [SDKMAN](https://sdkman.io/): nvm처럼 여러 버전의 SDK를 설치하고 특정 버전으로 전환하는 기능을 제공하는 SDK 관리 도구다. 지원하는 SDK로 Java, Scala, Groovy, Kotlin, Ceylon, Gradle, Maven 등이 있다. 단점으로, SDKMAN을 실행하려면 bash 환경이 필요하기 때문에 WSL이 아니면 **윈도우에서는 쓸 수 없음**.
 
 
 ## 프로그래밍 언어 Programming Language
@@ -109,7 +193,7 @@ tags:
 - [React Native](https://reactnative.dev/): 리액트 기반의 크로스 플랫폼 개발 프레임워크. 자바스크립트 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 프론트엔드 프레임워크. 가볍고 단순한 게 특징. 일반적인 프레임워크와 다르게 런타임 대신 컴파일러로 작동한다. 이 말은 빌드 후에 별도로 불러오는 라이브러리가 없어 성능과 로딩 속도에서 이점이 있다는 뜻이다.
 - [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
-- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 툴. 리액트, 뷰, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
+- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 도구. 리액트, 뷰, 스벨트와 순수 자바스크립트를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Gatsby](https://www.gatsbyjs.com/): 리액트 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - [⭐Next.js](https://nextjs.org/): 리액트 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
@@ -254,29 +338,9 @@ tags:
 
 ### DBMS Tool
 
-- [DBeaver](https://dbeaver.io): 벤더 안가리는 툴. 이클립스와 같은 프레임워크로 추정.
-- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 툴. 기업용은 유료.
-- [Flyway](https://flywaydb.org/): 데이터베이스의 버전 관리 툴. 마구잡이로 헤집어놓은 데이터도 원하는 시점으로 되돌리는 기능 등을 제공한다. 개발과 테스트를 위한 데이터베이스 구축에 매우 쓸만한 오픈 소스 도구.
-
-
-## UML/MDA/다이어그램/마인드 맵/드로잉 툴
-
-- [⭐eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 툴을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
-- [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 툴. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
-- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 툴. 좋지만 무료 플랜이 없는 게 단점
-- [StarUML](http://staruml.sourceforge.net/ko)
-- [Draw.io](http://www.draw.io)
-- [Gliffy](http://www.gliffy.com)
-- [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
-- [chart.xkcd](https://github.com/timqian/chart.xkcd): 자바스크립트로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
-- [XMind](http://www.xmind.net)
-- [FreeMind](http://freemind.sourceforge.net/wiki/index.php/Main_Page)
-- [MockFlow](https://www.mockflow.com/)
-- [Moqups](https://moqups.com/)
-- [Cacoo](https://nulab.com/cacoo/)
-- [Wireframe.cc](https://wireframe.cc/)
-- [⭐Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 툴. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
-- [⭐tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리스트링에 포함되기 때문에 공유가 쉽다.
+- [DBeaver](https://dbeaver.io): 벤더 안가리는 도구. 이클립스와 같은 프레임워크로 추정.
+- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 앱. 기업용은 유료.
+- [Flyway](https://flywaydb.org/): 데이터베이스의 버전 관리 도구. 마구잡이로 헤집어놓은 데이터도 원하는 시점으로 되돌리는 기능 등을 제공한다. 개발과 테스트를 위한 데이터베이스 구축에 매우 쓸만한 오픈 소스 도구.
 
 ### ERD
 
@@ -289,11 +353,11 @@ tags:
 - [JSFiddle](https://jsfiddle.net): 온라인 코드 편집기 #2
 - [CodeSandbox](https://codesandbox.io): 온라인 코드 편집기 #3. 웹으로 직접 작성 말고도 [CLI 업로드](https://www.npmjs.com/package/codesandbox)를 지원한다.
 - [StackBlitz](https://stackblitz.com): 온라인 코드 편집기 #4. 프로트엔드에 특화되어 있다. 깃허브 저장소와 연동할 수 있고, Node.js 같은 런타임 환경을 제공한다. public 프로젝트에 한해 무료로 사용 가능.
-- [GitHub Gist](https://gist.github.com/): 코드 스니펫 공유용 툴 #1. 사용하려면 깃허브 아이디 필요
-- [Pastebin](https://pastebin.com/): 코드 스니펫 공유용 툴 #2. 로그인 필요함
-- [Hastebin | Toptal](https://www.toptal.com/developers/hastebin): 코드 스니펫 공유용 툴 #3. 로그인 필요 없음
-- [Snippet.host](https://snippet.host/): 코드 스니펫 공유용 툴 #4. 로그인 필요 없음
-- [Carbon](https://carbon.now.sh/): 코드 스니펫 공유용 툴 #5. 이쪽은 코드를 이미지로 만들어주는 사이트다.
+- [GitHub Gist](https://gist.github.com/): 코드 스니펫 공유용 앱 #1. 사용하려면 깃허브 아이디 필요
+- [Pastebin](https://pastebin.com/): 코드 스니펫 공유용 앱 #2. 로그인 필요함
+- [Hastebin | Toptal](https://www.toptal.com/developers/hastebin): 코드 스니펫 공유용 앱 #3. 로그인 필요 없음
+- [Snippet.host](https://snippet.host/): 코드 스니펫 공유용 앱 #4. 로그인 필요 없음
+- [Carbon](https://carbon.now.sh/): 코드 스니펫 공유용 앱 #5. 이쪽은 코드를 이미지로 만들어주는 사이트다.
 
 
 ## CVE 아카이빙 사이트
@@ -305,8 +369,8 @@ tags:
 
 ## 일정/TODO 관리
 
-- [⭐Workflowy](https://workflowy.com/): 온라인 TODO 툴
-- [⭐ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 툴. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
+- [⭐Workflowy](https://workflowy.com/): 온라인 할 일 관리 도구
+- [⭐ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
 - [Calendly](https://calendly.com): 메일로 일정 맞추기
 - [Linear](https://linear.app/)
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
@@ -322,10 +386,10 @@ tags:
 
 ## 디자인
 
-- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 툴. 기본은 무료고, 대-충 비공개 프로젝트를 여러명이 사용할 땐 유료인듯
+- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 대-충 비공개 프로젝트를 여러명이 사용할 땐 유료인듯
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
-- [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 툴을 제공하며 맞춤 디자인 의뢰도 가능함.
+- [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 도구를 제공하며 맞춤 디자인 의뢰도 가능함.
 - [Awesome list of free CSS Generator - DEV Community](https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k): CSS 코드 생성기 모음
 
 
@@ -338,17 +402,17 @@ tags:
 
 ## 버전 관리
 
-- [Fork](https://fork.dev): Git GUI 클라이언트 #1. 가볍고 그래프가 보기 좋은게 특징인 툴. 무료지만 후원 방식으로 라이선스 구입이 가능하다.
+- [Fork](https://fork.dev): Git GUI 클라이언트 #1. 가볍고 그래프가 보기 좋은게 특징. 무료지만 후원 방식으로 라이선스 구입이 가능하다.
 - [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트 #2. 속도는 느리지만 편의성은 탑. 그런데 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
-- [⭐Sublime Merge](https://www.sublimemerge.com): Git GUI 클라이언트 #3. 기본적으로 무료 툴이며 다크 모드를 쓰고 싶을 때만 결제하면 된다. 속도가 CLI 수준으로 빠르고 키보드 단축키 지원이 훌륭한 편.
-- [gitui](https://github.com/extrawurst/gitui): Git GUI 클라이언트 #4. Mdir(?) 스타일의 GUI 툴. 옛날 갬성이 좋으면 쓸만하다. 단점으로 커밋 그래프 기능이 없고, 셸에서 저장소 경로로 이동하여 실행하는 방식이라 여러 저장소를 관리하기 불편하다.
+- [⭐Sublime Merge](https://www.sublimemerge.com): Git GUI 클라이언트 #3. 기본적으로 무료 앱이며 다크 모드를 쓰고 싶을 때만 결제하면 된다. 속도가 CLI 수준으로 빠르고 키보드 단축키 지원이 훌륭한 편.
+- [gitui](https://github.com/extrawurst/gitui): Git GUI 클라이언트 #4. Mdir(?) 스타일의 GUI 앱. 옛날 갬성이 좋으면 쓸만하다. 단점으로 커밋 그래프 기능이 없고, 셸에서 저장소 경로로 이동하여 실행하는 방식이라 여러 저장소를 관리하기 불편하다.
 - [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능이 없다.
 
 
 ## 트래픽 캡쳐
 
-- [Fiddler](http://www.telerik.com/fiddler): 네트워크 디버깅 툴. 파폭은 SSL 인증서 때문에 빡칠 수 있다. 유료
-- [Wirehsark](https://www.wireshark.org/download.html): 패킷 추적 툴.
+- [Fiddler](http://www.telerik.com/fiddler): 네트워크 디버깅 도구. 파폭은 SSL 인증서 때문에 빡칠 수 있다. 유료
+- [Wirehsark](https://www.wireshark.org/download.html): 패킷 추적 도구.
 
 
 ## 코드 하이라이팅/컬러링
@@ -377,7 +441,7 @@ tags:
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty)
 - [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 유료 라이선스.
 - [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
-- [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 툴 중에서 여러 서버 동시 접속 기능은 그나마...
+- [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 앱 중에서 여러 서버 동시 접속 기능은 그나마...
 
 
 ## Mobile development
@@ -433,28 +497,28 @@ Project manager 혹은 Issue tracker
 - [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 
 
-## 테스트 툴
+## 테스트 도구
 
 - [postman](https://www.getpostman.com): HTTP Request/Response 테스트
-- [Selenium](https://www.selenium.dev/): 동적 웹 앱(페이지 로딩 후 자바스크립트 등에 의해 동적으로 구성이 변경되는 사이트) 테스트 혹은 크롤링에 사용되는 툴이다.
+- [Selenium](https://www.selenium.dev/): 동적 웹 앱(페이지 로딩 후 자바스크립트 등에 의해 동적으로 구성이 변경되는 사이트) 테스트 혹은 크롤링에 사용되는 도구다.
 
 
 ## APM(Application Performance Management)/성능 분석/프로파일링/데이터 시각화
 
-통칭 모니터링 툴 모음. 얘네들은 웬만하면 상용툴이다.
+통칭 모니터링 도구 모음. 얘네들은 웬만하면 상용이다.
 
 - [Datadog](https://www.datadoghq.com): 데이터독. 인프라 모니터링. APM 기능도 있지만 시스템 성능 지표 분석 기능이 주력이다. 설치형이 아니라 데이터는 저쪽에서 관리하며, 비싸다.
 - [제니퍼](https://jennifersoft.com/ko/product/java): 자바앱 모니터링
-- [VisualVM](https://visualvm.github.io): 프로파일링 툴#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 스레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
-- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 툴 #2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
-- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 툴 #3. 자바 웹 앱 전용이다. 상용
-- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 툴 #4. 10일 무료. IDE와 연동할 수 있음. 상용
-- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 툴#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
-- [Jennifer](https://jennifersoft.com/ko/product/java): APM 툴 #2. 자바/PHP/닷넷 앱 모니터링. 상용
-- [WhaTap](https://www.whatap.io/ko): APM 툴 #3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
+- [VisualVM](https://visualvm.github.io): 프로파일링 도구#1. 자바 앱용. VM의 환경, CPU와 메모리의 사용량, 클래스와 스레드의 점유율, CPU/메모리/JDBC 프로파일링 등의 기능을 제공한다. 오픈 소스
+- [Eclipse Memory Analyzer](https://www.eclipse.org/mat/downloads.php): 프로파일링 도구 #2. 자바 앱용. VisualVM보다 기능이 조금 더 많고 도움말이 잘 되어 있어서 쓰기 편함. UI는 이클립스 기반임. 오픈 소스
+- [XRebel](https://www.jrebel.com/products/xrebel): 프로파일링 도구 #3. 자바 웹 앱 전용이다. 상용
+- [JProfiler](https://www.ej-technologies.com/products/jprofiler/overview.html): 프로파일링 도구 #4. 10일 무료. IDE와 연동할 수 있음. 상용
+- [YourKit Java Profiler](https://www.yourkit.com/java/profiler/features): 프로파일링 도구#5. 이것도 IDE 연동 쌉가능. 단, Java 1.7 미만의 환경은 지원하지 않으며 상용이다.
+- [Jennifer](https://jennifersoft.com/ko/product/java): APM #2. 자바/PHP/닷넷 앱 모니터링. 상용
+- [WhaTap](https://www.whatap.io/ko): APM #3. 앱/서버/DB/URL/컨테이너/인프라 모니터링. 상용이며 한국기업이라 한국어판을 제공한다.
 - [⭐Pinpoint](https://pinpoint-apm.gitbook.io/pinpoint/): 오픈 소스 APM. 네이버에서 만들었다 함
 - [Scouter](https://github.com/scouter-project/scouter): 오픈 소스 APM. LG CNS랑 관련이 있나 봄. 이거 만든 사람들이 WhaTap 만들었다고 하던디...?
-- [Grafana](https://grafana.com/): 메트릭/로그 시각화 툴. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
+- [Grafana](https://grafana.com/): 메트릭/로그 시각화 도구. 오픈 소스다. 메트릭이란 주기적으로 발생하는 타임스탬프를 포함한 수치 데이터라고 한다.
 - [Kibana](https://www.elastic.co/kr/kibana/): Elastic Stack의 일부인 데이터 시각화 및 분석 도구. 모니터링과 APM 기능도 제공됨.
 
 
@@ -480,8 +544,8 @@ Project manager 혹은 Issue tracker
 
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 대형 언어 모델 #1
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
-- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 툴 모음 사이트
-- [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 툴이다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
+- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
+- [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 
@@ -494,11 +558,11 @@ Project manager 혹은 Issue tracker
 - [스텔라리움](https://stellarium.org/ko/): 스텔라륨. 오픈 소스 천체 투영관
 - [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 - [Meld](https://meldmerge.org/): 윈도우 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
-- [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 툴. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
+- [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 도구. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
 
 ### 컴퓨터 관리
 
-- [구라제거기](https://teus.me): 악성 코드 제거 툴
+- [구라제거기](https://teus.me): 악성 코드 제거 도구
 - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
 - [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
@@ -557,67 +621,3 @@ Project manager 혹은 Issue tracker
 - Vue.js devtools
 - Wappalyzer
 - Authenticator(인증 도구)
-
-
-## 기타 웹 서비스
-
-- [⭐JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버.
-- [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
-- [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
-- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
-- [Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
-- [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 문서 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
-- [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
-- [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
-- [evanw: Source Map Visualization](https://evanw.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴
-- [sokra: source-map-visualization](https://sokra.github.io/source-map-visualization/): 자바스크립트 소스 맵 시각화 툴 #2
-- [Meta Tags](https://metatags.io/): 메타 태그 만들어주는 사이트.
-
-### PaaS
-
-PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
-
-- [Heroku](https://www.heroku.com/): 애플리케이션 개발과 배포를 위한 PaaS 서비스. 초반에 있었다는 일부 무료 정책(앱 5개까지 무료)은 없어진 모양이다. 다음 목록은 추천 받은 대체제들:
-  - [Koyeb](https://www.koyeb.com/)
-  - [Fly.io](https://fly.io/)
-  - [Northflank](https://northflank.com/)
-- [Kubernetes](https://kubernetes.io/): 통칭 K8s이라 쓰는 쿠버네티스. 컨테이너화된 애플리케이션을 관리하고 배포하기 위한 오픈소스 플랫폼이다. 기존 PaaS 범주와 비슷하지만 다르다고 한다. [공식 문서 링크](https://kubernetes.io/docs/concepts/overviw/). "컨테이너화된 애플리케이션을 배포, 관리, 확장할 때 수반되는 다수의 수동 프로세스를 자동화하는 오픈소스 컨테이너 오케스트레이션 플랫폼"이라 소개된다.
-- [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
-- [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
-- [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
-- [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
-
-### IaaS
-
-인프라만 제공하는 클라우드 서비스.
-
-- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
-- [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
-- [Azure](https://azure.microsoft.com/)
-- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
-- [Pulumi](https://www.pulumi.com/}): 자바스크립트 코드로 클라우드 인프라를 관리하는 IaC\* 서비스. 개인 용도는 무료(2023-09-13)
-
-\* IaC(Infrastructure as Code): 코드를 사용하여 수동 프로세스가 아닌 자동으로 인프라를 정의하고 관리하는 방법론의 일종
-
-### BaaS, Backend as a Service
-
-BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
-
-- [Firebase](https://firebase.google.com/): 파이어베이스
-- [Supabase](https://supabase.com/): 오픈소스 백엔드 서비스. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공함. 파이어베이스에는 없는 RDBMS(PostgreSQL)을 제공한다고 함.
-- [PocketBase](https://pocketbase.io/): 오픈소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
-
-
-## 미분류
-
-- [⭐mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
-- [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
-- [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
-- [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
-- [Electron](https://electronjs.org/): 크로스 플랫폼 데스크탑 앱 개발 프레임워크. 오픈 소스고 자바스크립트 기반이다. VSCode, Atom, Notion desktop 등이 이걸로 만들어짐. 
-- [Tauri](https://tauri.app/): 크로스 플랫폼 앱 개발 프레임워크(안드로이드나 iOS도 되는 모양). 일렉트론의 경쟁 모델이다. OS의 네이티브 웹 런타임을 활용하며 백엔드는 러스트, 프론트엔드는 자바스크립트 기반이다. 리액트나 뷰 등의 대부분의 프론트엔드용 프레임워크를 지원한다. 일렉트론보다 가볍고 빠르며, 더 나은 보안을 장점으로 내세운다.
-- [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
-- [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
-- [⭐Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 자바스크립트 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
-- [⭐Emmet](https://emmet.io/): 예전 이름은 Zen Coding. 마크업이나 CSS 코드를 짧은 문법을 통해 자동으로 확장해주는 코드 단축 도구. 웬만한 편집기나 IDE에는 기본으로 포함되어 있다.
-- [Advent of Code](https://adventofcode.com/): 매년 일정 시간마다 하나씩 공개되는 프로그래밍 퍼즐 사이트. 모든 언어로 풀 수 있음. ~~UI에서해커냄새가난다~~

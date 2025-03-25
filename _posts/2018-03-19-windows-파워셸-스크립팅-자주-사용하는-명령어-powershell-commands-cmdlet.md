@@ -146,6 +146,31 @@ New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 - `-Path`: 생성할 심볼릭 링크의 이름
 - `-Target`: 심볼릭 링크가 가리킬 대상 디렉터리
 
+### Move-Item
+
+현 위치에서 다른 위치로 항목 이동하기. 기본 별칭은 `mi`, `move`, `mv`
+
+```bash
+# 현재 경로의 모든 html 파일을 aaa/bbb 아래로 이동
+Move-Item -Path ./*.html -Destination ./aaa/bbb/
+
+# 위와 같음
+mv ./*.html ./aaa/bbb/
+
+# aaa/bbb 아래의 모든 파일을 현재 경로로 이동
+Move-Item -Path ./aaa/bbb/* -Destination .
+
+# 현재 경로의 모든 아이템 중 aaa를 제외한 나머지를 aaa/bbb 아래로 이동
+Get-ChildItem -Path . -Exclude 'aaa' | Move-Item -Destination ./aaa/bbb/
+```
+
+#### Parameters
+
+- `-Path`: 이동할 항목의 현재 위치를 지정한다. 생략하면 현재 디렉터리다. 와일드카드가 허용된다.
+- `-LiteralPath`: ?
+- `-Destination`: 목적지 경로를 지정한다. 생략하면 현재 경로로 설정된다. 와일드카드는 허용되지 않는다. 이동하려는 항목의 이름을 바꾸려면 이 매개변수의 값으로 새 이름을 지정한다.
+- `-Filter`: `Path` 매개변수의 필터를 지정한다.
+
 ### Get-Process
 
 프로세스 가져오기. 기본 별칭은 `ps`와 `gps`.
@@ -161,7 +186,7 @@ Get-Process 'SoundSwitch'
 #### Parameters
 
 - `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러 개일 땐 쉼표`,`로 구분함
-- `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러 개일 땐 쉼표`,`로 구분하며 파라미터명 `Name`은 생략할 수 있음.
+- `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러 개일 땐 쉼표`,`로 구분하며 `-Name` 키워드는 생략해도 됨.
 
 ### Start-Process
 
@@ -187,7 +212,7 @@ Stop-Process -Name 'SoundSwitch'
 
 #### Parameters
 
-- `-Name`: 파라미터의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
+- `-Name`: 매개변수의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
 
 ### Stop-Service
 
@@ -209,7 +234,7 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 아이템은 파일이나 디렉터리 중 하나다. 기본 별칭은 `ls`. 
 
-파라미터 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
+매개변수 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
 
 ```bash
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
@@ -471,7 +496,7 @@ Set-Alias -Name grep -Value findstr
 code $PROFILE
 ```
 
-만약 파라미터(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
+만약 매개변수(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
 
 ```bash
 function Get-FilesIncludeHidden {
@@ -527,17 +552,17 @@ tree | Out-File -Encoding utf8 -FilePath tree.md
 
 #### Parameters
 
-- `-FilePath`: 출력할 파일의 경로를 지정한다. 파라미터 이름이 생략된 전달인수는 이 파라미터로 간주된다.
+- `-FilePath`: 출력할 파일의 경로를 지정한다. 매개변수 이름이 생략된 전달인수는 이 매개변수로 간주된다.
 - `-Encoding`: 대상 파일의 인코딩을 지정한다 기본값은 `utf8NoBOM`이다. 유효한 값은 다음 중 하나다: `ascii`, `ansi`, `bigendianunicode`, `bigendianutf32`, `oem`, `unicode`, `utf7`, `utf8`, `utf8BOM`, `utf8NoBOM`, `utf32`
 - `-Append`: 기존 파일의 내용을 덮어쓰지 않고 이어 쓴다.
 - `-Confirm`: 명령을 실행하기 전에 프롬프트를 표시한다.
-- `-Force`: 읽기 전용 파일을 덮어 쓸 때 필요한 파라미터
+- `-Force`: 읽기 전용 파일을 덮어 쓸 때 필요한 매개변수
 - `-InputObject`: **TODO**
 - `-LiteralPath`: **TODO**
 - `-NoClobber`: 기존 파일에 덮어쓰기를 시도하는 경우 메시지를 표시하고 명령을 중단시킨다.
 - `-NoNewline`: 파일 내용이 줄 바꿈 문자로 끝나지 않도록 한다.
 - `-WhatIf`: 명령을 실제로 수행하지는 않고 어떻게 될지만 표시한다.
-- `-Width`: 각 출력 줄의 최대 문자 수를 지정하는 파라미터. 이 값보다 길면 다음 줄에 출력한다.
+- `-Width`: 각 출력 줄의 최대 문자 수를 지정하는 매개변수. 이 값보다 길면 다음 줄에 출력한다.
 
 ### Invoke-WebRequest
 
@@ -559,7 +584,7 @@ Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&
 
 ### Get-Filehash
 
-지정한 파일의 해시값을 계산한다. 파라미터로 해시 알고리즘을 선택할 수 있고 생략하면 SHA256을 사용한다.
+지정한 파일의 해시값을 계산한다. 매개변수로 해시 알고리즘을 선택할 수 있고 생략하면 SHA256을 사용한다.
 
 ```bash
 Get-FileHash FILE_NAME
@@ -570,4 +595,4 @@ Get-FileHash FILE_NAME -Algorithm MD5 | Format-list
 
 #### Parameters
 
-- `-Algorithm`: 해시값 계산에 사용할 해시 알고리즘(cryptographic hash function)을 지정한다. 이 파라미터를 생략하면 SHA256 알고리즘으로 계산한다. 유효한 값은 다음 중 하나다: `SHA1`, `SHA256`, `SHA384`, `SHA512`, `MD5`.
+- `-Algorithm`: 해시값 계산에 사용할 해시 알고리즘(cryptographic hash function)을 지정한다. 이 매개변수를 생략하면 SHA256 알고리즘으로 계산한다. 유효한 값은 다음 중 하나다: `SHA1`, `SHA256`, `SHA384`, `SHA512`, `MD5`.
