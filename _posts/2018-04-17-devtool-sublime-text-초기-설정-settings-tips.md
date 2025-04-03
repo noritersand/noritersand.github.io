@@ -111,9 +111,9 @@ console.debug('${1:msg}:', ${2:msg});
 </snippet>
 ```
 
-확장자명을 반드시 `sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정된다.
+확장자를 `.sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정된다.
 
-⚠️ **`<snippet>` 태그는 스니펫 파일의 루트 태그여야 한다. 그러니까 `<snippet>` 하나당 스니펫 파일 하나씩이다.**
+⚠️ **`<snippet>` 태그는 스니펫 파일의 루트 태그여야 한다. 그러니까 스니펫 한 개당 파일 하나씩 추가해야한다.**
 
 작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행할 것.
 

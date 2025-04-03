@@ -105,19 +105,19 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 ```
 
-이 때 "UNPROTECTED PRIVATE KEY FILE!" 경고가 출력되면서 접속이 안될 수 있는데, 이 때는 해당 파일의 권한을 아래 둘 중 하나의 방법으로 조정해주면 됨.
+이 때 'UNPROTECTED PRIVATE KEY FILE!' 경고가 출력되면서 접속이 안될 수 있는데, 이 때는 해당 파일의 권한을 아래 둘 중 하나의 방법으로 조정해주면 됨.
 
 ### GUI
 
 1. 탐색기에서 파일 속성 > 보안 > 고급
-2. 상속 사용 안 함 > "이 개체에서 상속된 사용 권한을 모두 제거합니다."
+2. 상속 사용 안 함 > '이 개체에서 상속된 사용 권한을 모두 제거합니다.'
 3. 추가 > 보안 주체 선택 > 윈도우 계정명 적고 확인
 4. 기본 권한 중 '읽기 및 실행', '읽기'만 체크
 5. 끟
 
 ### CLI
 
-파워셸에서 아래 스크립트 실행:
+아래 스크립트를 `ps1` 파일로 만들고 파워셸에서 실행한다:
 
 ```bash
 # Set Key File Variable:
@@ -145,6 +145,28 @@ Remove-Variable -Name Key
 ```
 
 스크립트 출처: [https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
+
+#### REMOTE HOST IDENTIFICATION HAS CHANGED
+
+```
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that a host key has just been changed.
+The fingerprint for the ED25519 key sent by the remote host is
+SHA256:Ob14mljl...
+Please contact your system administrator.
+Add correct host key in C:\\Users\\fixal/.ssh/known_hosts to get rid of this message.
+Offending ECDSA key in C:\\Users\\fixal/.ssh/known_hosts:24
+Host key for ... has changed and you have requested strict checking.
+Host key verification failed.
+```
+
+간혹 위와 같은 경고와 함께 접속이 안 될 때가 있는데, 서버의 호스트 키가 변경된 경우 `%USERPROFILE%\.ssh\known_hosts` 파일에서 접속하려는 서버의 IP와 관련된 항목을 삭제하면 된다.
+
+ℹ️ 호스트 키(Host Key)는 SSH 연결에서 서버의 신원을 확인하는 데 사용되는 암호화 키다. 쉽게 말해 서버의 신원을 증명하는 디지털 신분증. 일반적으로 RSA, ECDSA, ED25519 같은 알고리즘으로 생성된다. SSH 연결에 성공하면 이 값을 `known_hosts` 파일에 저장한다. 이후 동일한 서버에 다시 접속하려고 할 때 서버가 같은 키를 보내면 아무 문제가 없지만, 서버가 다른 키를 전송하면 SSH가 위와 같은 경고를 띄우는 것이다.
 
 
 ## ssh-keygen

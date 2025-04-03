@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-07-23 21:21:00 +0900
-title: '[Java] 제네릭 generic'
+title: '[Java] 제네릭 Generics'
 categories:
   - java
 tags:
@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/tutorial/java/generics/index.html](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
+- [Lesson: Generics (The Java™ Tutorials > Learning the Java Language)](https://docs.oracle.com/javase/tutorial/java/generics/index.html)
 
 제네릭이란 클래스 혹은 메서드 내부에서 사용될 데이터 타입을 외부에서 지정하는 기법, 혹은 이러한 기법을 구현한 클래스와 메서드를 의미한다. 제네릭 클래스나 제네릭 메서드에선 제네릭 변수(혹은 `Type` 변수)를 사용하는데, 제네릭 변수는 `T` 키워드로 선언하며 데이터 타입은 컴파일 시점에 결정된다.
 
@@ -54,12 +54,10 @@ class Gen3<Type1, Type2> {
 }
 ```
 
-오직 인스턴스 변수만이 제네릭 타입으로 선언될 수 있으며 스태틱이나 파이널 키워드는 사용할 수 없다:
+제네릭 타입은 인스턴스가 생성될 때 어떤 타입인지 결정된다. 따라서 스태틱 컨텍스트에서는 제네릭을 사용할 수 없다:
 
 ```java
 public static T num; // Cannot make a static reference to the non-static type T
-public final T num = 0; // Type mismatch: cannot convert from int to T
-public final static T num = 0; // Cannot make a static reference to the non-static type T
 ```
 
 ### 초기화
@@ -74,14 +72,14 @@ Gen<Object> oGen = new Gen<Object>();
 다음은 생성자로 참조값을 전달하고 그 값을 다시 가져오는 클래스를 구현한 예다:
 
 ```java
-class GenericExample<T> {
+class Generics<T> {
     public T parameter;
 
-    public GenericExample() {
+    public Generics() {
         //제네릭 클래스의 기본생성자
     }
 
-    public GenericExample(T parameter) {
+    public Generics(T parameter) {
         this.parameter = parameter;
     }
 
@@ -92,10 +90,10 @@ class GenericExample<T> {
 ```
 
 ```java
-GenericExample<String> strGen = new GenericExample<String>("ㅎㅇ");
+Generics<String> strGen = new Generics<String>("ㅎㅇ");
 System.out.println(strGen.getParameter()); // "ㅎㅇ"
 
-GenericExample<Integer> intGen = new GenericExample<Integer>(12);
+Generics<Integer> intGen = new Generics<Integer>(12);
 System.out.println(intGen.getParameter()); // 12
 ```
 
@@ -114,7 +112,7 @@ public T getData() {
 제네릭 메서드는 매개변수의 타입을 제네릭 변수로 선언한 메서드를 말한다. 하나 이상의 타입에 대응하는 메서드를 작성해야 할 때 사용한다. 타입은 메서드 반환 타입 전 `<>` 안에서 정의한다. 반환 타입과 혼동하기 쉬우니 주의할 것.
 
 ```java
-public class GenericExample {
+public class Generics {
     public static void main(String[] args) {
         getType(new Integer(0)); // class java.lang.Integer
         getType(new String()); // class java.lang.String
@@ -126,6 +124,22 @@ public class GenericExample {
     }
 }
 ```
+
+제네릭 메서드에서 `<T>`는 '로컬 제네릭 타입 파라미터'라고 하며, 해당 메서드 내에서만 유효하다. 클래스 수준에서 선언된 제네릭 타입과 별개다:
+
+```java
+public class WrongGenerics<T> {
+    private T data;
+
+    private <T> void setData(T data) {
+        this.data = data; // error: incompatible types: T#1 cannot be converted to T#2
+        // where T#1,T#2 are type-variables:
+        //   T#1 extends Object declared in method <T#1>setData(T#1)
+        //   T#2 extends Object declared in class Generics
+    }
+}
+```
+
 
 
 ## 타입 제한 Bounded Type Parameters

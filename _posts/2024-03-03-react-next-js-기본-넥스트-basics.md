@@ -64,6 +64,106 @@ root
 - `src`: 소스 코드 루트 경로. 이 아래에 App router에선 `app` 디렉터리가, Pages router에선 `pages` 디렉터리가 있어야 한다. (`src` 디렉터리를 생략하도록 설정할 수 있음)
 
 
+## 라우팅
+
+### 페이지 라우터 Pages Router vs 앱 라우터 App Router
+
+- [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
+- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
+
+앱 라우터(App router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages router)라고 부른다.
+
+개발자는 페이지 라우터와 앱 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
+
+페이지 라우터:
+
+- `src/pages` 디렉터리에서 라우팅을 구성한다.
+- `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
+- 서버 사이드 렌더링은 있지만 서버 컴포넌트는 없다.
+- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
+- `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
+- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
+
+앱 라우터:
+
+- `src/app` 디렉터리에서 라우팅을 구성한다.
+- `src/app/page.tsx`가 루트 경로 인덱스 파일이다.
+- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
+- 기본적으로 서버 컴포넌트로 작동한다.
+- `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
+- 데이터 패칭으로 `fetch`와 `async`를 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
+
+어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
+
+🚨 두 방식을 모두 사용할 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/page.tsx`와 `src/pages/index.tsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
+
+```
+Conflicting app and page file was found, please remove the conflicting files to continue:
+  "src\pages\index.tsx" - "src\app\page.tsx"
+```
+
+이것은 `src/pages/A/B.tsx` 파일과 `src/app/A/B/page.tsx` 파일이 동시에 존재해도 마찬가지다.
+
+### 레이아웃 컴포넌트 layout.tsx
+
+앱 라우터에선 반복되는 레이아웃이나 전역 스타일을 `layout.tsx`에서 정의한다. `layout`이란 이름은 정해진 규칙이라 변경할 수 없으며, 확장자는 다음 넷 중 하나여야 한다: `.ts`, `.js`, `.tsx`, `.jsx`
+
+루트 경로의 `layout.tsx`는 사이트 전체에 적용되는 공통 레이아웃 파일이다. 특정 경로 아래에서만 적용되는 레이아웃 파일을 별도로 추가할 수 있는데, 이를 하위 레이아웃 혹은 중첩 레이아웃(nested layout)이라 한다. 예를 들어 `src/app/A/B/layout.tsx` 파일은 `/A/B` 경로 아래의 페이지에만 적용된다. 
+
+하위 레이아웃은 상위 레이아웃 내부에서 중첩 적용된다. 예를 들어 파일 구조가 아래와 같을 때:
+
+- `src/app/layout.tsx`
+- `src/app/A/layout.tsx`
+- `src/app/A/B/layout.tsx`
+- `src/app/A/B/page.tsx`
+
+URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 `src/app/A/B/layout.tsx`, `src/app/A/layout.tsx`, `src/app/layout.tsx` 순으로 감싸지는 식이다.
+
+레이아웃 컴포넌트는 매개변수로 `props` 객체를 전달 받는다. 이 객체의 주요 프로퍼티로, 레이아웃이 감싸야할 하위 컴포넌트를 나타내는 `children`과 동적 라우트를 사용하는 경우 해당 `slug`가 포함된 `params`가 있다. 이 중 `params`는 넥스트 버전에 따라 타입이 다른데, 넥스트 14 이전에는 일반 객체가, 넥스트 15부터는 `Promise` 객체가 전달된다:
+
+```ts
+// 소스 출처: https://nextjs.org/docs/app/building-your-application/upgrading/version-15#params--searchparams
+
+// 14 이전
+type Params = { slug: string }
+ 
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Params
+}) {
+  const { slug } = params
+}
+ 
+// 15
+type Params = Promise<{ slug: string }>
+ 
+export default async function Layout({
+  children,
+  params,
+}: {
+  children: React.ReactNode
+  params: Params
+}) {
+  const { slug } = await params
+}
+```
+
+### 라우트 그룹 Route Groups
+
+파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
+
+🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
+
+- `src/app/(A)/C/page.tsx`
+- `src/app/(B)/C/page.tsx`
+
+ℹ️ 넥스트에서 '라우트'는 보통 URL 경로 또는 페이지 한 개를 의미한다.
+
+
 ## 프레임워크 설정
 
 ### `import {inter} from '@/app/ui/fonts'`에서 `@`의 의미
@@ -319,106 +419,6 @@ ENV_VARIABLE="server_only_variable"
 # 브라우저에서 접근 가능
 NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 ```
-
-
-## 라우팅
-
-### 페이지 라우터 Pages Router vs 앱 라우터 App Router
-
-- [Pages router \| Next.js](https://nextjs.org/docs/pages/building-your-application/routing)
-- [App router \| Next.js](https://nextjs.org/docs/app/building-your-application/routing)
-
-앱 라우터(App router)는 넥스트 13.4 버전에서 도입된 새로운 라우팅 방식이다. 이전 버전의 라우팅은 페이지 라우터(Pages router)라고 부른다.
-
-개발자는 페이지 라우터와 앱 라우터 중 하나를 선택할 수 있다. 둘의 차이를 요약하면 다음과 같다:
-
-페이지 라우터:
-
-- `src/pages` 디렉터리에서 라우팅을 구성한다.
-- `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
-- 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
-- 서버 컴포넌트 개념이 없다.
-- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
-- `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
-- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
-
-앱 라우터:
-
-- `src/app` 디렉터리에서 라우팅을 구성한다.
-- `src/app/page.tsx`가 루트 경로 인덱스 파일이다.
-- 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
-- 기본적으로 서버 컴포넌트로 작동한다.
-- `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
-- 데이터 패칭으로 `fetch`와 `async`를 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
-
-어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
-
-🚨 두 방식을 모두 사용할 경우 앱 라우터가 우선권을 가져가긴 하지만 동일한 URL을 사용할 순 없다(*The App Router takes priority over the Pages Router. Routes across directories should not resolve to the same URL path and will cause a build-time error to prevent a conflict*). 실제로 `src/app/page.tsx`와 `src/pages/index.tsx`가 동시에 존재하면 아래와 같은 에러가 발생한다:
-
-```
-Conflicting app and page file was found, please remove the conflicting files to continue:
-  "src\pages\index.tsx" - "src\app\page.tsx"
-```
-
-이것은 `src/pages/A/B.tsx` 파일과 `src/app/A/B/page.tsx` 파일이 동시에 존재해도 마찬가지다.
-
-### 레이아웃 컴포넌트 layout.tsx
-
-앱 라우터에선 반복되는 레이아웃이나 전역 스타일을 `layout.tsx`에서 정의한다. `layout`이란 이름은 정해진 규칙이라 변경할 수 없으며, 확장자는 다음 넷 중 하나여야 한다: `.ts`, `.js`, `.tsx`, `.jsx`
-
-루트 경로의 `layout.tsx`는 사이트 전체에 적용되는 공통 레이아웃 파일이다. 특정 경로 아래에서만 적용되는 레이아웃 파일을 별도로 추가할 수 있는데, 이를 하위 레이아웃 혹은 중첩 레이아웃(nested layout)이라 한다. 예를 들어 `src/app/A/B/layout.tsx` 파일은 `/A/B` 경로 아래의 페이지에만 적용된다. 
-
-하위 레이아웃은 상위 레이아웃 내부에서 중첩 적용된다. 예를 들어 파일 구조가 아래와 같을 때:
-
-- `src/app/layout.tsx`
-- `src/app/A/layout.tsx`
-- `src/app/A/B/layout.tsx`
-- `src/app/A/B/page.tsx`
-
-URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 `src/app/A/B/layout.tsx`, `src/app/A/layout.tsx`, `src/app/layout.tsx` 순으로 감싸지는 식이다.
-
-레이아웃 컴포넌트는 매개변수로 `props` 객체를 전달 받는다. 이 객체의 주요 프로퍼티로, 레이아웃이 감싸야할 하위 컴포넌트를 나타내는 `children`과 동적 라우트를 사용하는 경우 해당 `slug`가 포함된 `params`가 있다. 이 중 `params`는 넥스트 버전에 따라 타입이 다른데, 넥스트 14 이전에는 일반 객체가, 넥스트 15부터는 `Promise` 객체가 전달된다:
-
-```ts
-// 소스 출처: https://nextjs.org/docs/app/building-your-application/upgrading/version-15#params--searchparams
-
-// 14 이전
-type Params = { slug: string }
- 
-export default async function Layout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: Params
-}) {
-  const { slug } = params
-}
- 
-// 15
-type Params = Promise<{ slug: string }>
- 
-export default async function Layout({
-  children,
-  params,
-}: {
-  children: React.ReactNode
-  params: Params
-}) {
-  const { slug } = await params
-}
-```
-
-### 라우트 그룹 Route Groups
-
-파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
-
-🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
-
-- `src/app/(A)/C/page.tsx`
-- `src/app/(B)/C/page.tsx`
-
-ℹ️ 넥스트에서 '라우트'는 보통 URL 경로 또는 페이지 한 개를 의미한다.
 
 
 ## 클라이언트 렌더링

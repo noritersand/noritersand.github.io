@@ -411,7 +411,7 @@ add('a', 'b'); // Error: 숫자가 아니네
 ```
 
 
-## 예외 처리 exception handling
+## 예외 처리 Exception Handling
 
 ### try-catch-finally
 

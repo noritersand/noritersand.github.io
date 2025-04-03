@@ -18,9 +18,9 @@ tags:
 
 - [Template literals (Template strings) \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 
-#### 테스트 환경 정보
+#### 브라우저 호환 정보
 
-- IE에서만 사용 불가
+- IE 제외 모든 브라우저에서 지원함
 
 
 ## 개요
@@ -34,7 +34,7 @@ ES2105의 새 문법 템플릿 리터럴의 간단 정리 글. 원래 명칭은 
 `string text ${expression} string text`
 ```
 
-따옴표 대신 백틱(backticks 혹은 grave accent)``` ` ```으로 표현하는 문자열 리터럴. 보통 플레이스 홀더(placeholders)`${}`와 같이 쓰이며, 플레이스 홀더의 표현식을 먼저 평가하고 문자열에 삽입한 결과를 반환한다.
+따옴표 대신 백틱(backticks 혹은 grave accent)``` ` ```으로 표현하는 문자열 리터럴. 플레이스 홀더(placeholders, `${}`)와 같이 쓰이며, 플레이스 홀더의 표현식을 먼저 평가하고 문자열에 삽입한 결과를 반환한다.
 
 이렇게 쓴다:
 

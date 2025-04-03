@@ -491,8 +491,8 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 #### Options
 
-- `--bare`: 워킹 트리가 없는 베어 저장소(bare Git repository)를 생성한다. 리모트 서버용으로 클론할 때 사용하는 옵션. 이 옵션을 사용하면 로컬 브랜치(`refs/heads/`)와 태그(`refs/tags/`)는 복제되지만, 원격 추적 브랜치(`refs/remotes/`), 노트(`refs/notes/`), 플러그인 등으로 생성된 기타 참조(`refs/`) 및 리플로그 정보는 복제되지 않는다.
-- `--mirror`: 이 옵션도 워킹 트리가 없는 베어 저장소를 생성하지만, `--bare`와 다르게 모든 원격 참조(remote references)와 설정을 포함하여 원본 저장소의 완벽한 복제본을 만든다. 저장소를 미러링하여 백업하거나 다른 서버로 이전할 때 사용한다.
+- `--bare`: 워킹 트리가 없는 베어 저장소(bare Git repository)를 생성한다. 리모트 서버용으로 클론할 때 사용하는 옵션. 이 옵션을 사용하면 로컬 브랜치(`refs/heads/`)와 태그(`refs/tags/`)는 복제되지만, 리모트 추적 브랜치(`refs/remotes/`), 노트(`refs/notes/`), 플러그인 등으로 생성된 기타 참조(`refs/`) 및 리플로그 정보는 복제되지 않는다.
+- `--mirror`: 이 옵션도 워킹 트리가 없는 베어 저장소를 생성하지만, `--bare`와 다르게 모든 리모트 참조(remote references)와 설정을 포함하여 원본 저장소의 완벽한 복제본을 만든다. 저장소를 미러링하여 백업하거나 다른 서버로 이전할 때 사용한다.
 - `--recurse-submodules[=<pathspec>]`: 저장소를 복제한 뒤 해당 저장소 내부의 서브모듈을 재귀적으로 복제하도록 하는 옵션. `pathspec`을 생략하면 모든 서브모듈을 복제한다. `git submodule update --init --recursive`를 수동으로 수행한 것과 같다.
 
 #### 저장소 복제
@@ -729,6 +729,43 @@ git config --global http.https://noritersand.github.io.sslverify false
 특정 리모트 주소만 검증을 끄도록 하는 방법도 있다.
 
 
+## count-objects
+
+저장소의 객체 수와 크기를 출력하는 명령어. 성능 문제를 진단할 때 사용한다.
+
+```bash
+git count-objects -vH
+```
+
+실행하면 아래처럼 출력되는데:
+
+```
+count: 3850
+size: 1.68 MiB
+in-pack: 2028
+packs: 4
+size-pack: 810.87 KiB
+prune-packable: 66
+garbage: 0
+size-garbage: 0 bytes
+```
+
+각 항목은 다음을 의미한다:
+
+- count: 느슨한 객체의 개수. 느슨한 객체란 `.git/objects` 디렉터리에 개별 파일로 저장된 객체(커밋, 트리, 블롭 등)다.
+- size: 느슨한 객체의 전체 크기
+- in-pack: 팩 파일에 포함된 객체 수. 깃은 효율성을 위해 객체를 팩 파일로 묶어 저장한다.
+- packs: 팩 파일의 개수
+- size-pack: 팩 파일의 전체 크기
+- prune-packable: 팩에 존재하는 느슨한 객체의 개수
+- garbage: 손상되거나 유효하지 않은 객체의 개수
+- size-garbage: gabage 객체의 전체 크기
+
+느슨한 객체가 많거나 팩 파일이 여러 개면 `git gc`를 실행해서 저장소를 최적화한다. `git count-objects`를 다시 실행했을 때 count가 0, packs이 1이 되면 성공. 
+
+`git gc` 실행 후에도 팩 파일의 크기가 줄어들지 않으면 `git repack`을 찾아보자. prune-packable은 `git prune-packed` 명령으로 정리할 수 있다. garbage가 있다면 `git fsck`로 손상된 객체를 복구하거나 저장소를 새로 만든다.
+
+
 ## diff
 
 [Git - git-diff Documentation](https://git-scm.com/docs/git-diff)
@@ -938,17 +975,53 @@ git am FILE
 
 ## fsck
 
-File System ChecK의 약자. 무결성 검사 수행 도구다. 저장소의 손상 여부를 검사하거나 복구할 때 사용한다고 한다. (아직 잘 몲)
+[Git - git-fsck Documentation](https://git-scm.com/docs/git-fsck)
 
-#### 누락된 커밋 객체 복원하기
+File System ChecK의 약자. 저장소의 무결성(integrity)을 점검하고 손상된 부분이나 문제가 있는 객체를 식별하기 위한 명령어.
 
-```bash
-git fsck --lost-found
+#### Options
+
+- `--full`: 느슨한 객체와 팩 파일을 전부 점검한다. 이 옵션이 없으면 팩 파일만 확인했었으나, 최근 버전에서 기본값으로 지정되었으니 생략해도 된다. `--no-full` 옵션으로 끌 수 있다.
+- `--strict`: 검사를 더 엄격하게 수행하며, 사소한 문제도 보고한다.
+- `--unreachable`: 존재하지만 어떤 참조에서도 도달할 수 없는 객체를 출력한다.
+- `--lost-found`: 도달할 수 없는 객체를 `.git/lost-found/` 디렉터리에 복구한다. 스테이징 상태에서 hard reset을 했을 때, 잃어버린 변경 사항을 복구했다는 제보가 있다.
+
+#### 저장소 문제 유형
+
+`git fsck`를 실행했을 때 문제가 있는 경우 아래처럼 출력된다:
+
+**dangling**: 참조되지 않는 객체가 존재함을 의미한다. 삭제된 브랜치나 리베이스 과정에서 버려진 커밋 등에 해당한다. 오류가 아니라 정상적인 경우에도 발생할 수 있다. 보통은 자동으로 정리되니 무시해도 되지만, 크기가 너무 크다면 `git gc`로 정리할 수 있다. 만약 복구가 필요하면 해당 객체의 해시로 브랜치를 생성한다.
+
+```
+dangling commit 1a2b3c4d5e6f...
+dangling blob 7g8h9i0j1k2l...
 ```
 
-Git 데이터베이스에서 누락된 객체를 검사하고, 복구 가능한 커밋은 `.git/lost-found/other` 디렉터리에 복구한다고 한다. 데이터 손실 가능성이 있기 때문에 실행 전에 Git 저장소를 백업하는 게 좋다고...
+**missing**: 있어야 하는 객체가 실제로는 존재하지 않음을 의미한다. 저장소 손상을 의미할 수 있다.
 
-스테이징 상태에서 hard reset을 했을 때, 잃어버린 변경 사항을 복구했다는 제보가 있다.
+```
+missing blob 3x4y5z6a7b8c...
+```
+
+**corrupt**: 객체가 손상되어 읽을 수 없음을 나타낸다.
+
+```
+corrupt tree 9m0n1o2p3q4r...
+```
+
+**hash mismatch**: 저장된 객체의 실제 내용이 해당 객체의 해시 값과 일치하지 않는다는 뜻이다. 객체가 손상되었거나 변조되었을 가능성이 있으며, 심각한 데이터 무결성 문제를 나타낸다.
+
+```
+broken link from commit 1a2b3c4d5e6f to tree 7g8h9i0j1k2l
+hash mismatch 7g8h9i0j1k2l...
+```
+
+#### dangling과 unreachable의 차이
+
+- dangling: '매달려 있는' 상태. 아직 리플로그에 남아있거나 간접적으로 접근 가능한 경우다. 완전히 끊어진 상태는 아니며 복구가 쉬운 편
+- unreachable: '도달할 수 없는' 상태. 리플로그마저 만료되거나 어떤 방식으로도 도달할 수 없는 객체를 의미한다. 더 철저히 고립된 상태
+
+그런데 dangling, unreachable 둘 다 표시되는 객체가 간혹 있다. 무슨 차이인지는 아직 정확히 몰?루 🤔
 
 
 ## gc
@@ -1349,18 +1422,21 @@ git pull --rebase  # fetch 후 머지 대신 리베이스
 
 ## push
 
+[Git - git-push Documentation](https://git-scm.com/docs/git-push)
+
 로컬 저장소의 데이터를 리모트 저장소에 업로드한다.
 
 ```bash
 git push [리모트저장소] [브랜치]
-git push  # origin 리모트 저장소에 현재 브랜치를 업로드
+git push  # origin 리모트 저장소에 현재 브랜치를 push
 ```
 
 #### Options
 
-- `--force-with-lease`: `--force` 옵션과 비슷하지만 다른 사람이 올린 커밋이 있을 땐 강제 푸시를 취소한다.
-- `-u` `--set-upstream`: 업스트림 브랜치를 특정 리모트의 브랜치로 설정하며 업로드한다. `branch` 명령의 비슷한 기능을 하는 옵션은 `--set-upstream-to`로 이름이 약간 다르다.
-
+- `--force-with-lease`: `--force` 옵션과 비슷하지만 다른 사람이 올린 커밋이 있을 땐 강제 push를 취소한다.
+- `-u` `--set-upstream`: 업스트림 브랜치를 특정 리모트의 브랜치로 설정하며 push 한다. `branch` 명령의 비슷한 기능을 하는 옵션은 `--set-upstream-to`로 이름이 약간 다르다.
+- `--all` `--branches`: 모든 브랜치(`refs/heads/` 아래의 모든 참조)를 push 한다. 태그는 포함되지 않는다. 이 옵션을 쓰면 refspec을 따로 지정할 수 없다.
+- `--mirror`: 브랜치, 태그 등의 모든 참조를 원격 저장소에 그대로 push 한다. 로컬과 원격을 완벽히 동일하게 동기화하는 옵션이다. 차이가 있는 부분은 로컬 기준으로 덮어쓰고, 삭제된 ref도 원격에서 삭제된다.
 
 #### 업스트림 브랜치 설정 \#3
 
@@ -2005,7 +2081,7 @@ git svn rebase
 git svn dcommit
 ```
 
-#### 상위 SVN 저장소에 푸싱될 커밋 목록 보기
+#### 상위 SVN 저장소에 push 될 커밋 목록 보기
 
 ```bash
 git svn dcommit -n

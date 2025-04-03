@@ -119,9 +119,11 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + q</kbd> <kbd>win + s</kbd>: *시작 메뉴 검색*
 - <kbd>win + w</kbd>: *위젯 열기* 원래는 'Windows Ink 열기' 였음
 - <kbd>win + h</kbd>: *보이스 타이핑* Microsoft 음성 명령 서비스다.
-- <kbd>alt + esc</kbd>: 창이 열렸던 순서대로 거꾸로 순환
 - <kbd>win + ctrl + v</kbd> *사운드 출력* 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
 - <kbd>win + esc</kbd>: 돋보기가 켜졌을 때 누르면 꺼짐
+- <kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능이지만, PowerToys를 설치하면 PowerToys 실행 단축키로 바뀜.
+- <kbd>alt + esc</kbd>: 창을 연 순서대로 거꾸로 순환. 안될 때도 있지만, 현재 활성화된 창을 즉시 최소화하는 기능으로 사용할 수 있음.
+- <kbd>alt + shift + esc</kbd>: 창을 연 순서대로 순환
 
 ### 창 크기/위치
 
@@ -170,8 +172,8 @@ Autohotkey로 확장한 키 조합:
 - <kbd>win + ctrl + = </kbd>: 야카오톡
 - <kbd>win + backspace</kbd>: WorkFlowy
 - <kbd>win + ctrl + backspace </kbd>: 아웃룩
-- <kbd>win + alt + backspace </kbd>: 어나더 툴
+- <kbd>win + alt + backspace </kbd>: 가변 #4
 
-윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음. 
+윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음. 그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지? 🙄
 
-그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지? 🙄
+⚠️ <kbd>win + ctrl + 숫자</kbd> 조합은 기존 기능인 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨

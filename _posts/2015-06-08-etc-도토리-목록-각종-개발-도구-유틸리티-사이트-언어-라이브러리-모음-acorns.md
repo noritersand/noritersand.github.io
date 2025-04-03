@@ -206,7 +206,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 자바 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 - [Mocha](https://mochajs.org/): 오래된 자바스크립트 테스팅 프레임워크 #1. 이하 모카
 - [Chai](https://www.chaijs.com/): 자바스크립트용 Assertion 라이브러리. 가독성 좋고 유연한 문법을 제공한다. 보통 모카와 같이 쓴다.
-- [⭐Jest](https://jestjs.io/): 자바스크립트 테스팅 프레임워크 #2. Facebook에서 개발했다고 한다.(지금은 OpenJS 재단에서 관리하는 모양인데). 감시모드를 꽤 잘 만들어놨음
+- [Jest](https://jestjs.io/): 리액트 프로젝트에서 많이 사용하는 테스팅 프레임워크. Facebook에서 개발했다. 지금은 OpenJS 재단에서 관리하는 모양.
+- [⭐Vitest](https://vitest.dev/): Vite 생태계의 테스팅 프레임워크. Vite와의 쉬운 통합, 빠른 실행 속도가 특징. ESM을 지원한다.
 
 ### CSS 프레임워크
 
