@@ -159,6 +159,47 @@ public class JsonResponse {
     // ... 생략
 ```
 
+### @JsonIgnore
+
+특정 필드를 JSON 변환 시(JSON 문자를 모델로 변환할 때도 포함이다) 무시하도록 하는 어노테이션. 메서드와 필드에 적용 가능하다.
+
+```java
+@Getter
+@Setter
+public class BaseYearMonthWeek {
+    
+    @JsonIgnore
+    private String baseYearMonth;
+
+}
+```
+
+### @JsonIgnoreProperties
+
+JSON 변환 시 무시할 필드를 묶어서 지정할 수 있는 어노테이션. 
+
+```java
+@JsonIgnoreProperties({ "field1", "field2" })
+public class MyClass {
+    private String field1;
+    private String field2;
+    private String field3;
+}
+```
+
+`allowGetters`나 `allowSetters` 속성을 통해 `getter()` 혹은 `setter()` 둘 중에 하나만 허용하도록 할 수 있다.
+
+```java
+@Getter
+@Setter
+@JsonIgnoreProperties(value = { "field1", "field2" }, allowSetters = true)
+public class SomeApiRequest {
+    private String field1; // 이 필드는 모델에서 JSON으로 변환할 때 무시됨
+    private String field2; // 이 필드는 모델에서 JSON으로 변환할 때 무시됨
+    private String field3;
+}
+```
+
 
 ## 문자열에서 java.time 패키지로 타입 변환하기
 

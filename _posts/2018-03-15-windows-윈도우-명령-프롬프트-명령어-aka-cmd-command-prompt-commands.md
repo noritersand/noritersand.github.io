@@ -236,8 +236,10 @@ tree /f /a
 ### 해시값 체크
 
 ```bash
-certutil -hashfile 파일명 [해시방식]
+certutil -hashfile 파일명 [해시알고리즘]
 ```
+
+해시 알고리즘은 `MD2`, `MD4`, `MD5`, `SHA1`, `SHA256`, `SHA384`, `SHA512` 중에 하나여야 함. 생략했을 때의 기본값은 `SHA1`이다.
 
 ```bash
 certutil -hashfile .\example.txt MD5

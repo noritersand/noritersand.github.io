@@ -156,8 +156,8 @@ git blame -C -C 파일
 - `-m`: 기존 브랜치의 이름을 변경할 때 사용하는 옵션
 - `-M` `--move --force`: 변경할 이름이 이미 존재하는 경우 덮어씀
 - `-v` `--verbose`: 마지막 커밋의 커밋 해시와 커밋 제목을 출력한다.
-- ``-vv``: `-v` 옵션에 추가로 업스트림 브랜치 정보도 출력한다.
-- `-u <upstream>` `--set-upstream-to=<upstream>`: 업스트림 브랜치를 `upstream`으로 설정한다. `push` 명령어의 비슷한 옵션은 `--set-upstream-to`가 아니라 `--set-upstream`이다. 😒
+- `-vv`: `-v` 옵션에 추가로 업스트림 브랜치 정보도 출력한다.
+- `-u <upstream>` `--set-upstream-to=<upstream>`: 현재 브랜치의 업스트림 브랜치를 설정하는 옵션. `push` 명령어에도 비슷한 옵션이 있는데, 그 쪽은 `--set-upstream-to`가 아니라 `--set-upstream`이다. 😒
 
 #### 브랜치 생성
 
@@ -761,7 +761,7 @@ size-garbage: 0 bytes
 - garbage: 손상되거나 유효하지 않은 객체의 개수
 - size-garbage: gabage 객체의 전체 크기
 
-느슨한 객체가 많거나 팩 파일이 여러 개면 `git gc`를 실행해서 저장소를 최적화한다. `git count-objects`를 다시 실행했을 때 count가 0, packs이 1이 되면 성공. 
+느슨한 객체가 많거나 팩 파일이 여러 개면 `git gc`를 실행해서 저장소를 최적화한다. `git count-objects`를 다시 실행했을 때 count: 0, packs: 1이 되면 성공. 
 
 `git gc` 실행 후에도 팩 파일의 크기가 줄어들지 않으면 `git repack`을 찾아보자. prune-packable은 `git prune-packed` 명령으로 정리할 수 있다. garbage가 있다면 `git fsck`로 손상된 객체를 복구하거나 저장소를 새로 만든다.
 
@@ -1437,6 +1437,8 @@ git push  # origin 리모트 저장소에 현재 브랜치를 push
 - `-u` `--set-upstream`: 업스트림 브랜치를 특정 리모트의 브랜치로 설정하며 push 한다. `branch` 명령의 비슷한 기능을 하는 옵션은 `--set-upstream-to`로 이름이 약간 다르다.
 - `--all` `--branches`: 모든 브랜치(`refs/heads/` 아래의 모든 참조)를 push 한다. 태그는 포함되지 않는다. 이 옵션을 쓰면 refspec을 따로 지정할 수 없다.
 - `--mirror`: 브랜치, 태그 등의 모든 참조를 원격 저장소에 그대로 push 한다. 로컬과 원격을 완벽히 동일하게 동기화하는 옵션이다. 차이가 있는 부분은 로컬 기준으로 덮어쓰고, 삭제된 ref도 원격에서 삭제된다.
+
+⚠️ `--all`이나 `--mirror` 옵션을 사용해도 로컬에 없는 리모트 추적 브랜치(`refs/remotes/`)는 올라가지 않는다. 리모트 추적 브랜치를 포함한 모든 참조를 push 하고 싶으면 먼저 로컬 브랜치를 생성하는 작업이 필요하다. `/git/git-깃-노트-note/`에 작성한 스크립트를 참고할 것.
 
 #### 업스트림 브랜치 설정 \#3
 

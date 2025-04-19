@@ -36,11 +36,6 @@ tags:
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
 
-## 톰캣 퍼블리싱 폴더는 어디일까
-
-`shell:local appdata\JetBrains\IntelliJIdeaXXXX.X\tomcat\36자리-의-랜덤-한-번호`
-
-
 ## IDE log 파일 위치
 
 [https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files)
@@ -190,6 +185,49 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 - `$END$`: 라이브 템플릿 작동 후 커서의 위치를 지정
 - `$SELECTION$`: 특정 코드를 선택(드래그)한 뒤 Surround With(<kbd>ctrl + alt + t</kbd>)로 라이브 템플릿을 선택하면 지정한 위치에 선택했던 코드가 자동으로 입력됨
+
+
+## 외부 톰캣 사용하기
+
+우선 번들 플러그인 Tomcat and TomEE를 활성화해야 하면 실행 설정으로 톰캣을 추가할 수 있다.
+
+### 톰캣 퍼블리싱 폴더는 어디일까
+
+`shell:local appdata\JetBrains\IntelliJIdeaXXXX.X\tomcat\36자리-의-랜덤-한-번호`
+
+### Artifacts
+
+빌드 프로세스에서 생성된 배포 가능한 결과 즉, 프로젝트를 실행하거나 배포하기 위해 필요한 파일들을 JAR나 WAR 따위로 패키징한 것을 말함. 별도로 설정하지 않으면 IntelliJ에서는 `out/` 디렉터리에 저장된다. 
+
+exploded artifacts는 이 패키징 파일의 압축 해제 상태를 의미한다.
+
+톰캣 플러그인과 외부 톰캣을 사용한다면 `Run/Debug Configurations`에서 배포할 artifact를 지정해야 하며, IntelliJ는 artifact를 Tomcat의 webapps 디렉토리에 복사하거나 참조하도록 설정된다. `out/artifacts/` 디렉터리가 이 과정에서 사용된다.
+
+### Modules
+
+프로젝트의 작업 단위 혹은 구성 단위를 의미한다. 소스 코드, 리소스, 라이브러리, 빌드 설정 등을 포함하는 논리적 단위다. `Project Structure`에서 설정하며, 각 모듈은 소스 폴더, 의존성, 컴파일 출력 경로 등을 정의한다.
+
+모듈은 소스 코드를 컴파일해서 클래스 파일이나 리소스를 생성하는 데 사용된다. 예를 들어, 웹 앱 프로젝트라면 모듈은 자바 클래스, JSP, HTML, CSS 등을 포함하고, 이를 컴파일해서 `out/production/` 또는 `out/classes/`에 결과물을 만든다. 하나의 프로젝트에는 여러 모듈이 있을 수 있다.
+
+### Artifacts는 Modules를 기반으로 생성된다
+
+Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)과 추가 설정(예: 라이브러리, WEB-INF 구조)을 패키징해서 배포 가능한 형태(WAR, JAR, exploded WAR 등)로 만든다.
+
+예를 들어, 웹 앱 모듈이 있으면 그 모듈의 소스와 리소스를 컴파일한 뒤, WEB-INF, lib, 정적 파일 등을 포함해 WAR 파일이나 exploded WAR로 artifact를 만든다.
+
+`Project Structure`에서의 차이는 다음과 같다:
+
+- Modules: 소스 코드와 의존성을 정의
+- Artifacts: 모듈의 출력물을 어떻게 패키징할지 정의(예: WAR로 묶을지, 어떤 파일을 포함할지)
+
+그리고 `Run/Debug Configurations`에서의 차이는 다음과 같다:
+
+- Modules: 프로젝트의 모듈 목록이 나타나며, 어떤 모듈을 빌드하고 실행할지 선택할 수 있다. 예를 들어, 웹 모듈을 선택하면 해당 모듈의 소스가 컴파일된다.
+- Artifacts: 배포할 최종 출력물을 선택한다. 예를 들어, `프로젝트명:war` 또는 `프로젝트명:war exploded`를 선택해서 Tomcat에 배포한다. 이 artifact는 모듈의 컴파일 결과와 설정을 포함한다.
+
+### 그럼 배포할 Artifact로 뭘 골라야 하는가?
+
+보통은 hot deploy가 가능하고 배포 속도가 빠른 exploded artifact를 선택한다. 만약 둘 다 선택할 경우, 기본적으로 exploded 쪽이 사용되긴 하나 설정에 따라 달라질 수 있다.
 
 
 ## 추천 플러그인

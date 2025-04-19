@@ -50,6 +50,7 @@ tags:
 - [ECMA International: ecma-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/): 비영리 국제 표준화 기구인 ECMA Internation의 사이트. 이 문서에서는 ECMAScript의 버전별 명세와 현재 유효한 표준을 볼 수 있다.
 - [You might not need jQuery](https://youmightnotneedjquery.com/): jQuery API 대신 쓸 수 있는 자바스크립트 + CSS 코드를 알려주는 사이트. 예를 들어 `$(el).show()`를 찾으면, `el.style.display = ''`를 알려주는 식이다.
 - [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): 누군가 만들어놓은 README 작성 표준
+- [CVE](https://cve.mitre.org): 공통 취약점 아카이빙 사이트
 
 ### HTTP 표준
 
@@ -345,7 +346,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### ERD
 
-- [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 좋음.
+- [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 쓸만함. 별도의 스키마 문법을 사용하는 건 안좋음.
+- [⭐erd-editor](https://github.com/dineug/erd-editor): VSCode에서 사용하기 좋은 무료 ERD 에디터. IntelliJ와 웹 버전도 지원한다.
 
 
 ## 온라인 코드 편집기(에디터) & 코드 스니펫
@@ -430,7 +432,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Notepad++](https://notepad-plus-plus.org): 좀 오래됐지만 가볍게 쓰기 좋음. 서브라임으로 열었을 때 앱이 멈춰버릴 정도로 큰 파일도 노트패드++ 에선 잘 열린다.
 - [⭐Visual Studio Code](https://code.visualstudio.com)
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능이 있다. 작성한 파일의 클라우드 동기화 기능(Obsidian Sync)은 유료다.
-- [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCODE와 인터페이스가 매우 유사하다.
+- [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCode와 인터페이스가 매우 유사하다.
 - [Zed](http://zedapp.org): 윈도우는 아직 지원 예정(2025-02-05)이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
 
 
