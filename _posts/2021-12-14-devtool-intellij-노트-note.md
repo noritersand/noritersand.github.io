@@ -333,6 +333,8 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 ### 코드 에디터
 
+- <kbd>ctrl + \[/\]</kbd>: Move Caret to Code Block Start/End. 코드 블록의 처음 혹은 끝으로 이동하는 기능
+- <kbd>ctrl + shift + \[/\]</kbd>: Move Caret to Code Block Start/End with Selection. 코드 블록의 처음 혹은 끝으로 이동하면서 그 사이의 코드를 선택한다.
 - <kbd>ctrl + q</kbd>: Quick Documentation 퀵 뷰 창에서 서식이 적용된 자바독 보기
 - <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기

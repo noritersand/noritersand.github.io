@@ -285,7 +285,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 자바스크립트 기반이다.
 - [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 유료 그리드
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
-- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다. 4.21.9 버전 기준, 스크롤 기능에 버그가 있고, 제공되는 소팅 옵션이 너무 적어 서버 사이드 소팅 구현이 이상하다.
+- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다.
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
 - [Reveal.js](https://revealjs.com/): HTML로 만드는 PPT
 
@@ -389,7 +389,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 디자인
 
-- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 대-충 비공개 프로젝트를 여러명이 사용할 땐 유료인듯
+- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 대-충 비공개 프로젝트를 여러 명이 사용할 땐 유료인듯
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 도구를 제공하며 맞춤 디자인 의뢰도 가능함.

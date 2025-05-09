@@ -304,7 +304,7 @@ c.fruit; // true
 
 ## 프로토타입 상속(확장)
 
-프로토타입을 상속하는 방법은 여러가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
+프로토타입을 상속하는 방법은 여러 가지가 있다. 그 중 가장 추천하는 방법은 class인데, 실행 환경에 따라 사용 불가일 수도 있으니 적절히 다른 방법을 쓰면 된다. (IE는 클래스 문법을 지원하지 않음, `Object.create()`는 IE9부터 가능)
 
 ### [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 

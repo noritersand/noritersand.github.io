@@ -1180,7 +1180,7 @@ Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but i
 
 [React Router](https://reactrouter.com/)
 
-모던 프론트엔드 개발에서 라우팅이란 보통 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
+모던 프론트엔드 개발에서 라우팅이란 보통, 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
 
 리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
 

@@ -24,7 +24,7 @@ tags:
 
 ## 개요
 
-CPU 구리면 설치도 못하는 윈도우 11 초기 설정 및 팁 등을 정리함.
+구형 CPU 쓰면 설치도 못하는 윈도우 11 초기 설정 및 팁 등 정리.
 
 
 ## 초기 설정
@@ -144,13 +144,13 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 1</kbd>: Terminal
 - <kbd>win + 2</kbd>: Sublime Text
 - <kbd>win + 3</kbd>: Firefox
-- <kbd>win + 4</kbd>: Chrome
+- <kbd>win + 4</kbd>: Chrome dev
 - <kbd>win + 5</kbd>: Sublime Merge
 - <kbd>win + 6</kbd>: Discord, Slack
 - <kbd>win + 7</kbd>: Steam, WebStorm
 - <kbd>win + 8</kbd>: VSCODE
-- <kbd>win + 9</kbd>: 가변 #1
-- <kbd>win + 0</kbd>: 가변 #2 (MSOffice)
+- <kbd>win + 9</kbd>: 가변 #1 (IntelliJ, Steam)
+- <kbd>win + 0</kbd>: 가변 #2 (MSOffice, Chrome)
 
 가변 항목:
 
