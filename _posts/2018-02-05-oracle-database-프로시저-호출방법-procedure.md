@@ -13,7 +13,7 @@ tags:
 이런 프로시저가 있을 때:
 
 ```sql
-  CREATE OR REPLACE PROCEDURE TEST_PROCEDURE_01(
+  CREATE OR REPLACE PROCEDURE TEST_ME(
     PARAMETER1 IN VARCHAR2,
     RESULT OUT VARCHAR2
   )
@@ -32,7 +32,7 @@ tags:
 DECLARE
   RESULT VARCHAR2(100);
 BEGIN
-  TEST_PROCEDURE_BY_NORITER('hello!', RESULT);
+  TEST_ME('hello!', RESULT);
   DBMS_OUTPUT.PUT_LINE(RESULT);
 END;
 COMMIT;
@@ -41,8 +41,8 @@ COMMIT;
 요로코롬 찍힌다:
 
 ```
-  hello!
-  END
+hello!
+END
 ```
 
 끗.

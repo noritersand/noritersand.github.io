@@ -333,13 +333,13 @@ lmkdir DIRECTORY_NAME
 # FILE을 원격 서버로 업로드한다. FILE의 경로는 로컬 컴퓨터 작업 디렉터리 경로를 기준으로 작성한다.
 put FILE
 
-# 
+# LOCAL_FILE을 REMOTE_FILE 경로로 업로드한다.
 put LOCAL_FILE REMOTE_FILE
 
 # FILE을 원격 서버에서 다운로드한다.
 get FILE
 
-# REMOTE_FILE을 LOCAL_FILE로 다운로드한다.
+# REMOTE_FILE을 LOCAL_FILE 경로로 다운로드한다.
 get REMOTE_FILE LOCAL_FILE
 ```
 

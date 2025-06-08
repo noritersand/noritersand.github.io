@@ -207,8 +207,9 @@ Build 3126 이후에 기록함.
 
 무슨 명령인지 모르겠으면 [여기](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
 
-### 단어 선택
+### 선택
 
+- <kbd>ctrl + l</kbd>: 캐럿이 위치한 라인 전체를 선택한다.
 - <kbd>ctrl + shift + left/right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
 - <kbd>alt + shift + left/right</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
 

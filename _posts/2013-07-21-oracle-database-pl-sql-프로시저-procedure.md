@@ -13,9 +13,13 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+
+## 개요
+
 PL/SQL은 오라클 DBMS에서 SQL 언어를 확장하기 위해 사용하는 컴퓨터 프로그래밍 언어이며 'Procedure Language / Structured Query Language'의 약자다. PL/SQL은 주로 자료 내부에서 SQL 명령문만으로 처리하기에는 복잡한 자료의 저장이나 프로시저와 트리거 등을 작성하는 데 쓰인다. SQL보다 속도가 미세하게 빠르며 SQL에서는 불가능한 제어문, 반복문 사용이 가능하다.
 
-#### SET SERVEROUTPUT 변수설정
+
+## SET SERVEROUTPUT 변수설정
 DBMS_OUTPUT.PUT_LINE에 의한 출력여부를 지정하며, 출력할 수 있는 최대 크기는 32767바이트이다.
 
 ```

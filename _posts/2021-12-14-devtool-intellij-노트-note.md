@@ -366,6 +366,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + shift + l</kbd>(서브라임 스타일): Split Selection into Lines. Extra Actions 플러그인을 설치해야 사용 가능. 기존 바인딩은 삭제
 - <kbd>alt + shift + l</kbd>: Save Context. 컨텍스트를 저장한다. 컨텍스트는 열려있는 파일들을 의미하는 모양
 - <kbd>alt + shift + s</kbd>: Load Context. 저장한 컨텍스트를 불러온다.
+- <kbd>ctrl + shift + del</kbd>: **TODO**
 
 ### 복사/붙이기
 

@@ -147,8 +147,6 @@ public class Test2 {
 
 ## 어노테이션
 
-**TODO**
-
 ### @JsonInclude
 
 보통 아래처럼 `null`이 아닌 필드만 변환하도록 씀:
@@ -199,6 +197,25 @@ public class SomeApiRequest {
     private String field3;
 }
 ```
+
+### @JsonNaming
+
+JSON 값의 네이밍 규칙과 자바 필드의 네이밍 규칙이 일치하지 않을 때, 클래스 레벨에 적용하는 어노테이션. 입력값과 출력값에 대한 형식을 지정하는 방식이다.
+
+가령 입력값이 SNAKE_CASE일 때, 이 값을 자바 필드로 역직렬화(입력) 했다가 다시 직렬화(출력)할 때 SNAKE_CASE로 내보내고 싶다면 다음처럼 설정한다:
+
+```java
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+public class Board {}
+```
+
+### @JsonProperty
+
+`@JsonNaming`의 필드 레벨 버전으로, 각 필드마다 일일이 지정할 때 사용하는 어노테이션.
+
+### @JsonAlias
+
+앞의 `@JsonNaming`과 `@JsonProperty` 어노테이션은 직렬화와 역직렬화 모두 작동한다. 만약 역직렬화, 그러니까 입력값에 대해서만 형식을 지정하고 싶다면 이 어노테이션을 쓰면 된다.
 
 
 ## 문자열에서 java.time 패키지로 타입 변환하기

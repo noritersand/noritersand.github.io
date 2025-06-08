@@ -79,6 +79,13 @@ select * from information_schema.columns;
 
 # 사용 가능한 엔진 목록... 인가?
 select * from information_schema.engines;
+
+# 특정 테이블의 유니크 속성 조회하기
+select *
+from information_schema.table_constraints
+where table_schema = 'your_db_name'
+and table_name = 'your_table'
+and constraint_type = 'unique';
 ```
 
 
@@ -642,4 +649,20 @@ show create event EVENT_NAME
 
 # 서버에 설치된 플러그인 출력
 show plugins
+```
+
+
+## ALTER
+
+```sql
+# 특정 테이블에 복합 유니크 생성
+alter table TABLE_NAME add constraint UNIQUE_NAME unique (COLUMN_1, COLUMN_2);
+```
+
+
+## DROP
+
+```sql
+# 특정 테이블의 인덱스 드랍
+drop index INDEX_NAME on TABLE_NAME;
 ```

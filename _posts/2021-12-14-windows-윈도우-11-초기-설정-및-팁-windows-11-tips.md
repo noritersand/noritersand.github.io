@@ -62,6 +62,32 @@ tags:
 
 ## 기타 팁
 
+### 네트워크 장치 우선순위 지정하기
+
+PC에 여러 네트워크 장치가 활성화되어 있을 때 네트워크 우선순위를 지정하는 방법이다.
+
+GUI:
+
+설정에서 `접근성 > 네트워크 및 인터넷 > 고급 네트워크 설정` 에서 네트워크 어댑터를 고르고, `추가 어댑터 옵션`에서 `TCP/IPv4`와 `TCP/IPv6`를 더블 클릭, `고급`으로 이동한 뒤 `자동 메트릭` 항목의 체크를 해제하고 `인터페이스 메트릭`의 값을 직접 지정한다.
+
+ℹ️ 인터페이스 메트릭 값이 낮을 수록 우선순위가 높다.
+
+CLI:
+
+```bash
+# 네트워크 인터페이스 목록
+Get-NetIPInterface
+```
+
+`Get-NetIPInterface`로 원하는 네트워크 인터페이스의 `ifIndex` 값을 확인하고,
+
+```bash
+# 메트릭 지정하기
+Set-NetIPInterface -InterfaceIndex <ifIndex> -InterfaceMetric 10
+```
+
+`Set-NetIPInterface`으로 지정하면 끗.
+
 ### 파일 탐색기에서 파일 목록에 포커싱하기
 
 Windows 10에선 그냥 <kbd>space</kbd> 누르면 됐는데 이제는 <kbd>alt</kbd>, <kbd>esc</kbd>, <kbd>아래 방향키</kbd>를 순서대로 하나씩 눌러야 한다.
