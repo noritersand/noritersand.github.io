@@ -143,7 +143,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
-alias adb='adb.exe'
+# alias adb='adb.exe'
 ```
 
 

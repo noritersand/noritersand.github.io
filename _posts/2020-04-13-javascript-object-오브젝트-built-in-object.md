@@ -317,6 +317,10 @@ Object.is(obj, obj); // true
 Object.is(obj, {}); // false
 ```
 
+### Object.groupBy()
+
+**TODO**
+
 
 ## 인스턴스 메서드
 

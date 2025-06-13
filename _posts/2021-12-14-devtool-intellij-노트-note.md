@@ -275,6 +275,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + \ </kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
 - <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: Main Menu > Window > Editor Tabs > Split Right/Down. 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
 - <kbd>shift + f12</kbd>: Main Menu > Window > Tool Window Layouts > Restore Current Layout. 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
+- <kbd>end</kbd>: Code > Code Completion > Insert Inline Proposal's Line. 언젠가부터 자동완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
 
 
 ## 기본 단축키

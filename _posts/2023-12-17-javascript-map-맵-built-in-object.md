@@ -83,7 +83,7 @@ console.log(result.get('lesserThanEqual'));
 // [{ name: "asparagus", quantity: 9 }, { name: "bananas", quantity: 5 }]
 ```
 
-최신 기술이라 아직 지원하지 않는 브라우저가 있으니 주의할 것.
+최신(2024) 기술이라 아직 지원하지 않는 브라우저가 있으니 주의할 것.
 
 
 ## 인스턴스 메서드
