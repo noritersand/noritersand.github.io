@@ -154,7 +154,7 @@ export default async function Layout({
 
 ### 라우트 그룹 Route Groups
 
-파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
+파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 소괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
 
 🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
 
@@ -381,7 +381,7 @@ const db = {
 - `.env.production`: 프로덕션 환경(`next build`, `next start`)에 불러오는 환경 변수 파일이다.
 - `.env.test`: 테스트(`next test`) 모드에서만 불러오는 환경 변수 파일.
 - `.env.local`: 개발환경 구분 없이 사용되는 개발자 로컬용 환경 변수 파일. 일반적으로 개인 API 키 같은 민감 정보를 설정하며, 버전 관리 대상에서 제외한다. 
-- `.env.development.local` | `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개발자 로컬용 환경 변수 파일. `.env.local`과 달리 개발 환경 구분이 필요할 때 사용한다.
+- `.env.development.local` `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개발자 로컬용 환경 변수 파일. `.env.local`과 달리 개발 환경 구분이 필요할 때 사용한다.
 
 우선 순위가 높은 순으로 나열하면 다음과 같다:
 

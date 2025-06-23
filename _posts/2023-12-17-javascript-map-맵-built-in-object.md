@@ -71,7 +71,7 @@ var inventory = [
 ];
 
 var result = Map.groupBy(inventory, element => {
-  return element.quantity > 9 ? 'greaterThan' : 'lesserThanEqual'
+  return element.quantity > 9 ? 'greaterThan' : 'lesserThanOrEqualTo'
 });
 
 console.log(result instanceof Map); // true;
@@ -79,11 +79,11 @@ console.log(result instanceof Map); // true;
 console.log(result.get('greaterThan'));
 // [{ name: "goat", quantity: 23 }, { name: "cherries", quantity: 12 }, { name: "fish", quantity: 22 }]
 
-console.log(result.get('lesserThanEqual'));
+console.log(result.get('lesserThanOrEqualTo'));
 // [{ name: "asparagus", quantity: 9 }, { name: "bananas", quantity: 5 }]
 ```
 
-최신(2024) 기술이라 아직 지원하지 않는 브라우저가 있으니 주의할 것.
+최신(2024) 기술이라 아직 지원하지 않는 브라우저가 있음.
 
 
 ## 인스턴스 메서드

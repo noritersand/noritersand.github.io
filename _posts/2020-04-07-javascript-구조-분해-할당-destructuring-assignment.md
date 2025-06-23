@@ -30,7 +30,7 @@ tags:
 구조 분해 할당은 배열이나 객체의 프로퍼티를 해체하여 개별 변수에 할당하는 표현식을 말한다. 'Destructuring expression'이라고도 함.
 
 
-## 배열 구조 분해
+## 배열 구조 분해 Array destructuring
 
 ```js
 var [min = 0, max = Infinity, ...rest] = [1, 2, 3, 4, 5];
@@ -79,7 +79,7 @@ b; // 3
 ```
 
 
-## 객체 구조 분해
+## 객체 구조 분해 Object destructuring
 
 객체의 구조 분해 할당식은 배열과 조금 다르다. 요소의 순서에 의존하지 않고 이름이 중요한데:
 

@@ -415,17 +415,20 @@ npm init vite@latest
 npm의 속도와 보안을 강화한 새 패키지 매니저. 속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나.
 
 ```bash
-corepack enable
+# 코어팩 버전 확인
+corepack -v
 
-# 코어팩이 없을 경우
-npm install -g corepack
+# 코어팩 활성화
+corepack enable
 ```
 
-[코어팩(Corepack)](https://yarnpkg.com/corepack) 프로젝트에 Yarn이 포함되어있으니 따로 설치할 필요 없이 코어팩만 활성화하면 된다. 코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 16.13.0 버전 이상이면 자동으로 설치된다.
+Yarn은 [코어팩(Corepack) 프로젝트](https://www.npmjs.com/package/corepack)에 [포함 되어있으니](https://yarnpkg.com/corepack) 따로 설치할 필요 없이 코어팩만 활성화하면 된다. 코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 14.19/16.9 버전 이상이면 자동으로 설치된다. 코어팩 버전을 올리고 싶으면 Node.js 버전을 업그레이드 하자. 
 
-ℹ️ NPM 코어팩은 글로벌로 설치된다. 코어팩이 활성화된 상태에선 `yarn` 명령어도 글로벌로 실행할 수 있다. 만약 프로젝트 로컬에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전의 Yarn을 실행한다. Yarn의 글로벌 옵션은 Berry 버전에서 사라졌으며, 모든 설정은 프로젝트 로컬의 `.yarnrc.yml` 파일에 저장된다.
+코어팩이 활성화되면 `yarn` 명령어를 글로벌로 실행할 수 있다. 만약 로컬 프로젝트에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전을 사용한다. 과거에는 Yarn 자체를 npm 글로벌 패키지로 설치하여 사용하곤 했으나, 패키지 매니저의 버전 관리가 필요해지면서 사장되었다.
 
-ℹ️ Berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다.
+Yarn Berry 부터 `yarn install -g` 같은 글로벌 옵션이 제거되었다. 글로벌 패키지가 필요하면 `yarn dlx`를 사용하자. 그리고 Yarn의 모든 설정은 로컬 프로젝트의 `.yarnrc.yml` 파일에 저장된다.
+
+ℹ️ Berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다. 이전 버전은 Classic이라 부름.
 
 ```bash
 # Yarn으로 Node 실행(현재 프로젝트 환경에 호환되는 방식으로)
