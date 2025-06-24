@@ -71,16 +71,16 @@ select `column` from `table`;
 - Information schema: 오라클에서 Data dictionaries 쯤 되는 것
 
 ```sql
-# 테이블 목록
+-- 테이블 목록
 select * from information_schema.tables;
 
-# 컬럼 목록
+-- 컬럼 목록
 select * from information_schema.columns;
 
-# 사용 가능한 엔진 목록... 인가?
+-- 사용 가능한 엔진 목록... 인가?
 select * from information_schema.engines;
 
-# 특정 테이블의 유니크 속성 조회하기
+-- 특정 테이블의 유니크 속성 조회하기
 select *
 from information_schema.table_constraints
 where table_schema = 'your_db_name'
@@ -110,7 +110,7 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 ```sql
 create database maria_db_test default character set utf8;
 
-# create schema는 create database의 별칭이라서 결과는 위와 같음.
+-- create schema는 create database의 별칭이라서 결과는 위와 같음.
 create schema maria_db_test default character set utf8;
 ```
 
@@ -230,20 +230,18 @@ from (
 order by a.txt
 ```
 
-의 결과는:
-
 | txt |
-| :--- |
-| 1 |
-| 2 |
-| 3 |
-| a |
-| A |
-| b |
-| ㄱ |
-| 가 |
-| 히 |
-| ㅔ |
+|-----|
+| 1   |
+| 2   |
+| 3   |
+| a   |
+| A   |
+| b   |
+| ㄱ  |
+| ㅔ  |
+| 가  |
+| 히  |
 
 ### 맴대로 정렬하기
 
@@ -252,7 +250,7 @@ order by a.txt
 아래는 '영문 > 한글 > 숫자 순으로 정렬'이라는 요건을 구현한 쿼리다. 첫 글자만 잘라 ASCII 코드로 숫자인지, 영문인지, 한글인지를 구분한다:
 
 ```sql
-# 영문, 한글, 숫자 순으로 정렬하기
+-- 영문, 한글, 숫자 순으로 정렬하기
 select a.txt,
     convert(a.txt using utf8) as utf8,
     ascii(a.txt) as ascii,
@@ -262,10 +260,10 @@ select a.txt,
     ascii(substr(a.txt, 2, 1)) as "ascii-of-second-letter",
     convert(a.txt, unsigned) as "converted-number",
     case
-        when ascii(a.txt) between 48 and 57 then 2 /*number*/
-        when ascii(a.txt) between 65 and 90 then 0 /*alphabet capital*/
-        when ascii(a.txt) between 97 and 122 then 0 /*alphabet small letter*/
-        else 1 /*unicode*/
+        when ascii(a.txt) between 48 and 57 then 2 /* number */
+        when ascii(a.txt) between 65 and 90 then 0 /* alphabet capital */
+        when ascii(a.txt) between 97 and 122 then 0 /* alphabet small letter */
+        else 1 /* unicode */
     end as sortOrder
 from (
     select '111반' as txt
@@ -305,27 +303,25 @@ from (
 order by sortOrder, convert(a.txt, unsigned), a.txt
 ```
 
-실행 결과:
-
-| txt | utf8 | ascii | first-letter | second-letter | ascii-of-first-letter | ascii-of-second-letter | converted-number | sortOrder |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| abcdf | abcdf | 97 | a | b | 97 | 98 | 0 | 0 |
-| Aqwe | Aqwe | 65 | A | q | 65 | 113 | 0 | 0 |
-| ba뀨sdf | ba뀨sdf | 98 | b | a | 98 | 97 | 0 | 0 |
-| Zsadf | Zsadf | 90 | Z | s | 90 | 115 | 0 | 0 |
-| zx뿅zcv | zx뿅zcv | 122 | z | x | 122 | 120 | 0 | 0 |
-| ㄱ | ㄱ | 227 | ㄱ |  | 227 | 0 | 0 | 1 |
-| 가 | 가 | 234 | 가 |  | 234 | 0 | 0 | 1 |
-| ㅎ | ㅎ | 227 | ㅎ |  | 227 | 0 | 0 | 1 |
-| 히 | 히 | 237 | 히 |  | 237 | 0 | 0 | 1 |
-| ㅏ | ㅏ | 227 | ㅏ |  | 227 | 0 | 0 | 1 |
-| ㅔ | ㅔ | 227 | ㅔ |  | 227 | 0 | 0 | 1 |
-| 0000 | 0000 | 48 | 0 | 0 | 48 | 48 | 0 | 2 |
-| 23 | 23 | 50 | 2 | 3 | 50 | 51 | 23 | 2 |
-| 24 | 24 | 50 | 2 | 4 | 50 | 52 | 24 | 2 |
-| 111반 | 111반 | 49 | 1 | 1 | 49 | 49 | 111 | 2 |
-| 222 | 222 | 50 | 2 | 2 | 50 | 50 | 222 | 2 |
-| 333 | 333 | 51 | 3 | 3 | 51 | 51 | 333 | 2 |
+| txt     | utf8    | ascii | first-letter | second-letter | ascii-of-first-letter | ascii-of-second-letter | converted-number | sortOrder |
+|---------|---------|-------|--------------|---------------|-----------------------|------------------------|------------------|-----------|
+| abcdf   | abcdf   | 97    | a            | b             | 97                    | 98                     | 0                | 0         |
+| Aqwe    | Aqwe    | 65    | A            | q             | 65                    | 113                    | 0                | 0         |
+| ba뀨sdf | ba뀨sdf | 98    | b            | a             | 98                    | 97                     | 0                | 0         |
+| Zsadf   | Zsadf   | 90    | Z            | s             | 90                    | 115                    | 0                | 0         |
+| zx뿅zcv | zx뿅zcv | 122   | z            | x             | 122                   | 120                    | 0                | 0         |
+| ㄱ      | ㄱ      | 227   | ㄱ           | ""            | 227                   | 0                      | 0                | 1         |
+| ㅎ      | ㅎ      | 227   | ㅎ           | ""            | 227                   | 0                      | 0                | 1         |
+| ㅏ      | ㅏ      | 227   | ㅏ           | ""            | 227                   | 0                      | 0                | 1         |
+| ㅔ      | ㅔ      | 227   | ㅔ           | ""            | 227                   | 0                      | 0                | 1         |
+| 가      | 가      | 234   | 가           | ""            | 234                   | 0                      | 0                | 1         |
+| 히      | 히      | 237   | 히           | ""            | 237                   | 0                      | 0                | 1         |
+| 0000    | 0000    | 48    | 0            | 0             | 48                    | 48                     | 0                | 2         |
+| 23      | 23      | 50    | 2            | 3             | 50                    | 51                     | 23               | 2         |
+| 24      | 24      | 50    | 2            | 4             | 50                    | 52                     | 24               | 2         |
+| 111반   | 111반   | 49    | 1            | 1             | 49                    | 49                     | 111              | 2         |
+| 222     | 222     | 50    | 2            | 2             | 50                    | 50                     | 222              | 2         |
+| 333     | 333     | 51    | 3            | 3             | 51                    | 51                     | 333              | 2         |
 
 `convert(a.txt, unsigned)`는 숫자로 이뤄진 문자를 제대로 정렬하지 못하는 문제를 해소하기 위한 정렬 조건이다.
 
@@ -339,13 +335,13 @@ order by sortOrder, convert(a.txt, unsigned), a.txt
 가령 t1 테이블과 t2 테이블을 outer join 할 때, 먼저 t2와 t3, t4 테이블의 inner join을 먼저 하고 싶다면?
 
 ```sql
-# t2, t3, t4를 inner join하고 t1과 outer join
+-- t2, t3, t4를 inner join하고 t1과 outer join
 select * 
 from t1 
 left join (t2, t3, t4)
     on (t2.a = t1.a and t3.b = t1.b and t4.c = t1.c)
 
-# 위와 같음
+-- 위와 같음
 select * 
 from t1 
 left join (t2 cross join t3 cross join t4) 
@@ -402,7 +398,7 @@ with recursive dates(date) as (
     select date_add(date, interval 1 day)
     from dates
     where date < curdate()
-    # where date < last_day('2023-05-01') # 2023년 5월의 마지막 날까지
+--  where date < last_day('2023-05-01') /* 2023년 5월의 마지막 날까지 */
 )
 select * from dates
 ```
@@ -413,10 +409,10 @@ select * from dates
 
 ```sql
 create table employees (
-    employeeNo int primary key,
+    employee_no int primary key,
     name varchar(100),
-    managerNo int,
-    foreign key (managerNo) references employees(employeeNo) on delete cascade
+    manager_no int,
+    foreign key (manager_no) references employees(employee_no) on delete cascade
 );
 
 insert into employees values (1001, 'A', null); -- 0
@@ -433,26 +429,26 @@ insert into employees values (1007, 'G', 1004); -- 3
 ```sql
 with recursive subordinates as (
     select
-        employeeNo, name, managerNo,
+        employee_no, name, manager_no,
         0 as level
     from employees
-    where managerNo is null
-#     where employeeNo = 재귀_검색을_시작할_번호
+    where manager_no is null
+--  where employee_no = 재귀_검색을_시작할_번호
     union all
     select
-        child.employeeNo, child.name, child.managerNo,
+        child.employee_no, child.name, child.manager_no,
         subordinates.level + 1
     from employees child
-    inner join subordinates on child.managerNo = subordinates.employeeNo
+    inner join subordinates on child.manager_no = subordinates.employee_no
 )
 select *
 from subordinates
-order by employeeNo
+order by employee_no
 ```
 
-`managerNo`가 `null`인 데이터를 초깃값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
+`manager_no`가 `null`인 데이터를 초깃값으로 조회(`union` 위의 쿼리)하여 `subordinates`에 할당하고, 이를 join하여 조회(여기부턴 `union` 아래의 쿼리를 반복함)한 결과를 다시 `subordinates`에 할당한다. 이 과정을 더 이상 조회되는 데이터가 없을 때까지 반복하는 쿼리라고 이해하면 된다.
 
-특정 `employeeNo`부터 검색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where managerNo is null` 부분을 코멘트 처리하면 된다.
+특정 `employee_no`부터 검색을 하게 하려면 코멘트 처리된 라인을 해제하고 원하는 키값을 입력한다. 그리고 `where manager_no is null` 부분을 코멘트 처리하면 된다.
 
 
 ## DELETE와 TRUNCATE의 차이
@@ -482,25 +478,18 @@ COALESCE(value1, value2, ...)
 주어진 매개변수를 순서대로 평가하여 `NULL`이 아닌 값을 반환한다.
 
 ```sql
-select coalesce(null, null, 3, 4);
-# 3 출력
-
-select coalesce(null, 0, 1, 2);
-# 0 출력
-
-select coalesce(-1, 0, 1, 2);
-# -1 출력
-
-select coalesce(5, 4, 3, 2, 1);
-# 5 출력
+select coalesce(null, null, 3, 4); /* 3 출력 */
+select coalesce(null, 0, 1, 2); /* 0 출력 */
+select coalesce(-1, 0, 1, 2); /* -1 출력 */
+select coalesce(5, 4, 3, 2, 1); /* 5 출력 */
 ```
 
 `0`과 `-1`은 `NOT NULL`이다.
 
-이 함수는 정렬에서 활용할 수 있다:
+이 함수는 정렬에서 활용할 수 있는데:
 
 ```sql
-ORDER BY COALESCE(B, A) DESC, A DESC
+order by coalesce(b, a) desc, a desc
 ```
 
 `B`가 `NULL`인 경우 `B` 대신 `A`의 값으로 정렬하고, 같은 순위 내에서 `A`를 기준으로 다시 정렬하는 쿼리다.
@@ -513,24 +502,24 @@ ORDER BY COALESCE(B, A) DESC, A DESC
 가령 아래와 같은 테이블이 있을 때:
 
 ```sql
-create table TestTable (
+create table test_table (
   num int primary key,
   txt varchar(20) not null,
   bool boolean
 );
-alter table TestTable add column txt2 varchar(2) null after txt;
+alter table test_table add column txt2 varchar(2) null after txt;
 ```
 
 `ALTER`를 아래처럼 하면:
 
 ```sql
-alter table TestTable add column txt2 varchar(2) null;
+alter table test_table add column txt2 varchar(2) null;
 ```
 
 새 컬럼이 `boolean` 컬럼 뒤, 그러니까 맨 마지막에 위치하게 되지만, 아래처럼 `after txt`를 붙여주면:
 
 ```sql
-alter table TestTable add column txt2 varchar(2) null after txt;
+alter table test_table add column txt2 varchar(2) null after txt;
 ```
 
 새 컬럼은 `txt`의 바로 뒤 순서로 만들어진다.
@@ -578,76 +567,76 @@ on duplicate key update
 몇몇 명령어는 특정 권한이 필요하다.
 
 ```sql
-# 서버의 시스템 변수와 값 출력
+-- 서버의 시스템 변수와 값 출력
 show variables;
 
-# 서버의 상태 정보 출력
+-- 서버의 상태 정보 출력
 show status;
 
-# 현재 실행 중인 프로세스(쿼리, 연결 등) 출력
+-- 현재 실행 중인 프로세스(쿼리, 연결 등) 출력
 show processlist;
 
-# ENGINE_NAME 엔진의 상태 출력
+-- ENGINE_NAME 엔진의 상태 출력
 show engine ENGINE_NAME status;
 
-# 서버에 존재하는 모든 데이터베이스(스키마) 출력
+-- 서버에 존재하는 모든 데이터베이스(스키마) 출력
 show databases;
 
-# 현재 사용자나 특정 사용자의 권한 출력
+-- 현재 사용자나 특정 사용자의 권한 출력
 show grants;
 
-# MariaDB에서 지원하는 권한 종류 출력
+-- MariaDB에서 지원하는 권한 종류 출력
 show privileges;
 
-# 현재 데이터베이스 내 테이블들의 상세 상태(엔진, 행 수, 데이터 크기 등) 출력
+-- 현재 데이터베이스 내 테이블들의 상세 상태(엔진, 행 수, 데이터 크기 등) 출력
 show table status
 
-# 특정 데이터베이스의 생성 스크립트 출력
+-- 특정 데이터베이스의 생성 스크립트 출력
 show create database DATABASE_NAME;
 
-# 현재 데이터베이스의 모든 테이블 목록 출력
+-- 현재 데이터베이스의 모든 테이블 목록 출력
 show tables;
 
-# TABLE_NAME 테이블의 생성 스크립트 출력
+-- TABLE_NAME 테이블의 생성 스크립트 출력
 show create table TABLE_NAME;
 
-# TABLE_NAME 테이블의 컬럼 정보 출력. describe TABLE_NAME 과 같음
+-- TABLE_NAME 테이블의 컬럼 정보 출력. describe TABLE_NAME 과 같음
 show columns from TABLE_NAME;
 
-# TABLE_NAME 테이블에 정의된 인덱스 정보 출력
+-- TABLE_NAME 테이블에 정의된 인덱스 정보 출력
 show index from TABLE_NAME;
 
-# 현재 데이터베이스에 정의된 모든 트리거 출력
+-- 현재 데이터베이스에 정의된 모든 트리거 출력
 show triggers;
 
-# 트리거의 생성 스크립트 출력
+-- 트리거의 생성 스크립트 출력
 show create trigger TRIGGER_NAME;
 
-# 현재 데이터베이스에 정의된 저장 프로시저 목록 출력
+-- 현재 데이터베이스에 정의된 저장 프로시저 목록 출력
 show procedure status
 
-# 특정 프로시저의 생성 스크립트 출력
+-- 특정 프로시저의 생성 스크립트 출력
 show create procedure PROCEDURE_NAME
 
-# 현재 데이터베이스에 정의된 저장 함수 목록 출력
+-- 현재 데이터베이스에 정의된 저장 함수 목록 출력
 show function status
 
-# 특정 함수의 생성 스크립트 출력
+-- 특정 함수의 생성 스크립트 출력
 show create function FUNCTION_NAME
 
-# 이전 쿼리에서 발생한 경고 메시지 출력
+-- 이전 쿼리에서 발생한 경고 메시지 출력
 show warnings
 
-# 이전 쿼리에서 발생한 오류 메시지 출
+-- 이전 쿼리에서 발생한 오류 메시지 출
 show errors
 
-# 현재 데이터베이스에 정의된 스케줄링 이벤트 출력
+-- 현재 데이터베이스에 정의된 스케줄링 이벤트 출력
 show events
 
-# 특정 이벤트의 생성 스크립트 출력
+-- 특정 이벤트의 생성 스크립트 출력
 show create event EVENT_NAME
 
-# 서버에 설치된 플러그인 출력
+-- 서버에 설치된 플러그인 출력
 show plugins
 ```
 
@@ -655,7 +644,7 @@ show plugins
 ## ALTER
 
 ```sql
-# 특정 테이블에 복합 유니크 생성
+-- 특정 테이블에 복합 유니크 생성
 alter table TABLE_NAME add constraint UNIQUE_NAME unique (COLUMN_1, COLUMN_2);
 ```
 
@@ -663,6 +652,6 @@ alter table TABLE_NAME add constraint UNIQUE_NAME unique (COLUMN_1, COLUMN_2);
 ## DROP
 
 ```sql
-# 특정 테이블의 인덱스 드랍
+-- 특정 테이블의 인덱스 드랍
 drop index INDEX_NAME on TABLE_NAME;
 ```

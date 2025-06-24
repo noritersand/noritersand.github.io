@@ -90,7 +90,7 @@ VSCODE를 쓴다면 [ESLint `dbaeumer.vscode-eslint`](https://marketplace.visual
 
 ## 스테이트 훅 State Hooks
 
-스테이트 훅은 **TODO**
+스테이트 훅은 컴포넌트 내부에서 값(상태)을 저장하고 바꿀 수 있게 해주는 기능을 제공한다.
 
 ### useState
 
@@ -782,9 +782,19 @@ useEffect(() => {
 
 ### useLayoutEffect
 
+⚠️ 공식 문서에서 이 훅은 성능 문제가 발생할 수 있으니, 가능한 `useEffect`를 사용할 것을 권장한다.
+
+DOM이 변경된 직후 실행되는 훅으로 `useEffect`와 비슷하지만, 실행 타이밍이 더 빠르다.
+
 **TODO**
 
 ### useInsertionEffect
+
+⚠️ 공식 문서에서 이 훅은 CSS-in-JS 라이브러리 작성자를 위한 것이며, CSS-in-JS 라이브러리 작업 중에 스타일을 주입할 위치가 필요한 것이 아니라면, `useEffect`나 `useLayoutEffect`를 사용할 것을 권장한다.
+
+DOM이 그려지기 직전, layout effect(`useLayoutEffect`)보다 더 먼저 실행되는 훅으로, 스타일 삽입(css rules 삽입)과 같은 작업을 렌더링 전에 보장하고 싶을 때 사용한다. 브라우저가 스타일 계산을 시작하기 전에 작업이 끝나야 레이아웃 시프트가 발생하지 않는다.
+
+ℹ️ 레이아웃 시프트(Layout Shift): 사용자가 페이지를 읽거나 상호작용하는 도중 웹 페이지 요소가 갑자기 위치를 바꾸는 현상
 
 **TODO**
 
@@ -1047,6 +1057,8 @@ export const useAuth = () => {
 ## React DOM Hooks
 
 ### useFormStatus
+
+마지막으로 제출(submit)한 폼 데이터의 상태(완료 되었는지)와, 제출한 폼 데이터를 읽을 때 사용하는 훅.
 
 **TODO**
 

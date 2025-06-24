@@ -165,6 +165,12 @@ for (let str of testStrings) {
 
 ## 함수 적용 예시 모음
 
+### 영문과 숫자, 하이픈만 입력했으며 하이픈이 중간에 위치했을 때만 true
+
+```js
+/^[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*$/.test('1a-s3df4'); // true
+```
+
 ### 숫자를 통화로
 
 ```js
@@ -230,6 +236,11 @@ String.prototype.trim = function () {
 var reg = /[a-zA-Z0-9]+(?:(\.|_)[A-Za-z0-9!#$%&'*+/=?^`{|}~-]+)*@(?!([a-zA-Z0-9]*\.[a-zA-Z0-9]*\.[a-zA-Z0-9]*\.))(?:[A-Za-z0-9](?:[a-zA-Z0-9-]*[A-Za-z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?/g;
 var value = 'abc@qwe.org';
 console.assert(reg.test(value), '이메일 형식이 아님');
+```
+
+```js
+var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+console.assert(emailRegex.test('abc.com'), '이메일 형식이 아님');
 ```
 
 ```js

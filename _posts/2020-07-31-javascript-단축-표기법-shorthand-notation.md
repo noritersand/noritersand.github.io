@@ -126,7 +126,7 @@ var obj = {
 new obj.notSure(); // TypeError: obj.notSure is not a constructor
 ```
 
-### 식별자 규칙을 위반하는 프로퍼티명
+### 특수 문자가 포함된 메서드 이름
 
 객체 리터럴에선 이런게 가능한 것처럼:
 
@@ -151,4 +151,6 @@ typeof obj['c.c']; // "function"
 obj['c.c'](); // 'hi' 출력
 ```
 
-끗.
+누가 이렇게까지 하겠냐만은...
+
+어쨋든 끗.

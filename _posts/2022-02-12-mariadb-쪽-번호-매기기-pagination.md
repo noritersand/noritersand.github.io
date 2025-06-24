@@ -29,13 +29,13 @@ MariaDB, MySQL에서 쓰는 페이징 쿼리 저장
 ## [LIMIT](https://mariadb.com/kb/en/limit/)
 
 ```
-LIMIT offset, pageSize
+LIMIT offset, page_size
 
-LIMIT pageSize OFFSET offset
+LIMIT page_size OFFSET offset
 ```
 
 - `offset`: 가져오기 시작할 데이터의 인덱스
-- `pageSize`: 가져올 데이터의 수
+- `page_size`: 가져올 데이터의 수
 
 `ROWNUM` 안써도 됨:
 
@@ -51,7 +51,7 @@ limit 3 offset 0 -- 첫 번째(0)부터 3개
 
 ```sql
 select
-  count(1) over() as entireDataCount,
+  count(1) over() as entire_data_count,
   st.*
 from some_table st
 limit 5 offset 10 -- 열한 번째부터 5개
@@ -62,31 +62,31 @@ limit 5 offset 10 -- 열한 번째부터 5개
 
 OFFSET 계산은 요딴식으로:
 
-```java
+```js
 /** OFFSET 계산 */
-calculateOffset(pageSize, pageNum) {
-    if (pageNum <= 1) {
-        return 0;
-    }
-    return (pageNum - 1) * pageSize;
+function calculateOffset(pageSize, pageNum) {
+  if (pageNum <= 1) {
+    return 0;
+  }
+  return (pageNum - 1) * pageSize;
 }
 
 /** 남은 로우의 수 계산 */
-getRestRows(entireDataCount, pageSize, pageNum) {
-    if (pageNum <= 0) {
-        throw new IllegalArgumentException("pageNum must be greater than 0");
-    }
-    rest = entireDataCount - pageSize * pageNum;
-    return rest > 0 ? rest : 0;
+function getRestRows(entireDataCount, pageSize, pageNum) {
+  if (pageNum <= 0) {
+    throw new Error('pageNum must be greater than 0');
+  }
+  const rest = entireDataCount - pageSize * pageNum;
+  return rest > 0 ? rest : 0;
 }
 
 /** 다음 페이지 번호 계산 */
-getNextPageNum(entireDataCount, pageSize, currentPageNum) {
-    if (currentPageNum <= 0) {
-        throw new IllegalArgumentException("currentPageNum must be greater than 0");
-    }
-    rest = getRestRows(entireDataCount, pageSize, currentPageNum);
-    return rest > 0 ? currentPageNum + 1 : 0;
+function getNextPageNum(entireDataCount, pageSize, currentPageNum) {
+  if (currentPageNum <= 0) {
+    throw new Error('currentPageNum must be greater than 0');
+  }
+  const rest = getRestRows(entireDataCount, pageSize, currentPageNum);
+  return rest > 0 ? currentPageNum + 1 : 0;
 }
 ```
 
