@@ -238,9 +238,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [⭐ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Mantine](https://mantine.dev/)
 - [Ant Design](https://ant.design/)
-- [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
 - [NextUI](https://nextui.org/)
-- [리액트 UI](https://reach.tech/)
+- [Reach UI](https://reach.tech/)
 - [Headless UI](https://headlessui.dev/): 리액트 혹은 뷰에 적용할 수 있음
 - [@mdi/svg](https://www.npmjs.com/package/@mdi/svg): MDI(Material Design Icons) 프로젝트의 SVG 아이콘을 제공하는 라이브러리. 단독 기능은 필요한 아이콘을 svg로 만들어주는 게 있다. (아마도?)
 - [Vitebook](https://vitebook.dev/)
@@ -293,13 +292,15 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [Million](https://million.dev/): 리액트를 빠르게 만들어준다고 함. (무려 70%)
 - [Redux](https://redux.js.org/): 리덕스. 리액트용 상태(reactive state) 관리 라이브러리 #1. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. 리액트에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, 리덕스는 이러한 작업을 간소화할 수 있는 라이브러리다. 그런데 문법이 너무 복잡한 탓인지 인기가 점점 시들해진다고...
-- [zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다.
+- [⭐zustand](https://github.com/pmndrs/zustand): 리액트용 상태 관리 라이브러리 #2. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다.
 - [recoiljs](https://recoiljs.org/): 리액트용 상태 관리 라이브러리 #3
 - [Jotai](https://jotai.org/): 리액트용 상태 관리 라이브러리 #4
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
 - [useHooks](https://github.com/uidotdev/usehooks?tab=readme-ov-file): 리액트 훅 모음 #1. 리액트 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 리액트의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://github.com/streamich/react-use): 리액트 훅 모음 #2. 이 패키지도 리액트 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
 - [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 패칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하도 함. 예전 이름은 React Query였다.
+- [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
+- [⭐shadcn/ui](https://ui.shadcn.com/): 리액트용 UI 컴포넌트 컬렉션. 소스 코드를 복사해 커스터마이징하는 방식으로, 전통적인 라이브러리와 차이가 있다. Tailwindd CSS와 [Radix UI](https://www.radix-ui.com/) 기반으로 만들어졌다.
 
 ### 뷰 전용 라이브러리
 
@@ -632,3 +633,8 @@ Project manager 혹은 Issue tracker
 - Vue.js devtools
 - Wappalyzer
 - Authenticator(인증 도구)
+
+
+## 쪼마난 사이드 프로젝트 모음
+
+- [프리랜서를 위한 메세지 템플릿 서비스](https://fressa.vercel.app/)

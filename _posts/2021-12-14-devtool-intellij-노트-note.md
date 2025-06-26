@@ -241,16 +241,17 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
   - 다음 paragraph(단락, 문단)에 캐럿 추가
   - 따옴표 감싸기 토글
   - String 리터럴을 더하기 연산자로 자르기
-- GitHub Copilot: AI가 코드를 작성해주는 쩌는 플러그인
+- GitHub Copilot: AI가 코드를 작성해주는 🐶쩌는 플러그인
   - <kbd>ctrl + alt + shift + o</kbd>: 활성화/비활성화 토글
-  - <kbd>alt + \ </kbd>: 코파일럿 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
+  - <kbd>alt + \ </kbd>: 코파일럿 자동 완성 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
   - <kbd>tab</kbd>: 코파일럿 제안 선택
   - <kbd>alt + [</kbd>: 다음 제안 보기
   - <kbd>alt + ]</kbd>: 이전 제안 보기
   - <kbd>ctrl + right</kbd>: 제안을 단어 단위로 적용하기
   - <kbd>ctrl + alt + right</kbd>: 제안을 줄 단위로 적용하기
-  - <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기 (원래 키에서 변경)
-  - <kbd>alt + shift + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
+  - <kbd>ctrl + alt + shift + \ </kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기. 이 창에선 코드 자동 완성 추천 목록이 나온다. (원래 키에서 변경)
+  - <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
+  - <kbd>alt + shift + p</kbd>: Plugins > GitHub Copilot > Inline Chat. 에디터 인라인으로 코파일럿 채팅 창 열기 (원래 키에서 변경)
 
 
 ## 작성자 저장용 단축키 설정

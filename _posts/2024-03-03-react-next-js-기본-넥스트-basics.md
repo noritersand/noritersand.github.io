@@ -410,7 +410,7 @@ console.log(process.env.TWITTER_URL); // https://twitter.com/nextjs
 
 ### 브라우저에서 사용 가능한 환경 변수
 
-환경 변수 이름이 `NEXT_PUBLIC_`로 시작하면 클라이언트 측 코드(=브라우저에서 실행될 코드)에 노출되는 환경 변수가 된다. 그렇지 않은 환경 변수는 서버 측 코드에서만 접근할 수 있다:
+환경 변수 이름이 `NEXT_PUBLIC_`로 시작하면 클라이언트 측 코드(=브라우저에서 실행될 클라이언트 컴포넌트)에 노출되는 환경 변수가 된다. 그렇지 않은 환경 변수는 서버 측 코드(서버 컴포넌트)에서만 접근할 수 있다:
 
 ```bash
 # 브라우저에서 접근 불가
@@ -582,7 +582,7 @@ export default function Page({
 
 [Routing: Route Handlers \| Next.js](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)
 
-GET, POST 같은 HTTP 메서드에 대응하는 서버 사이드 함수. 클라이언트의 요청을 받아 (필요한 경우) 로직을 처리하고 JSON 등의 데이터로 응답하는 엔드 포인트를 이르는 말.
+GET, POST 같은 HTTP 메서드에 대응하는 서버 사이드 함수. 클라이언트의 요청을 받아 (필요한 경우) 로직을 처리하고 JSON 등의 데이터로 응답하는 엔드 포인트를 이르는 말. '서버 라우트'라고 해도 의미는 통한다.
 
 파일 이름은 `route.ts|js`여야 한다. 내보내는 함수는 여러 개일 수 있으며, 이름은 반드시 HTTP 메서드와 동일해야 한다:
 
@@ -598,23 +598,37 @@ export async function POST(request: Request) {
 // PUT, DEL, ...
 ```
 
-ℹ️ 라우트 핸들러의 두 번째 매개변수는 `params`를 포함하는데, 넥스트 15부터는 `Promise` 타입의 비동기 객체로 제공된다:
+라우트 핸들러의 두 번째 매개변수로 `params`가 전달되는데, 다이나믹 세그먼트(URL 경로에 포함된 동적 매개변수)를 꺼낼 때 사용한다.
 
 ```ts
-// 14 이전
+// Next.js 14 이전
 type Params = { slug: string }
  
 export async function GET(request: Request, {params}: { params: Params }) {
   const { slug } = params
 }
  
-// 15
+// Next.js 15
 type Params = Promise<{ slug: string }>
  
 export async function GET(request: Request, {params}: { params: Params }) {
   const { slug } = await params
 }
 ```
+
+ℹ️ 넥스트 15부터 `params`는 `Promise` 타입의 비동기 객체로 제공됨
+
+라우트 핸들러에서 쿼리 스트링에 접근하려면 [`NextRequest.nextUrl.searchParams`](https://nextjs.org/docs/app/api-reference/functions/next-request#nexturl)를 쓴다:
+
+```ts
+import { NextRequest, NextResponse } from 'next/server';
+
+export async function GET(request: NextRequest) {
+  const foo = request.nextUrl.searchParams.get('foo');
+  // ...
+}
+```
+
 
 ### 다이나믹 라우트 Dynamic Routes
 
@@ -643,7 +657,7 @@ export default function ProductPage({ params }) {
 }
 ```
 
-[...slug]와 같은 문법(공식 용어는 Catch-all Segments)으로 경로의 나머지 부분을 모두 '캐치'할 수 있다. 예를 들어 `app/[...slug].js`는 `/blog/2024/september/my-post`와 같은 URL을 처리한다.
+[...slug]와 같은 문법(공식 용어는 Catch-all Segments)으로 경로의 나머지 부분을 모두 '캐치'할 수 있다. 예를 들어 `app/[...slug].js`는 `/blog/2024/september/my-post`와 같은 URL을 아래처럼 받는다:
 
 ```jsx
 export default function BlogPostPage({ params }) {
@@ -711,7 +725,7 @@ export default function ExampleClientComponent() {
 
 ### useSearchParams
 
-현재 URL의 쿼리 문자열을 읽을 수 있게 해주는 클라이언트 컴포넌트 훅이다. `URLSearchParams` 인터페이스의 읽기 전용 버전을 반환한다.
+현재 URL의 쿼리 스트링을 읽을 수 있게 해주는 클라이언트 컴포넌트 훅이다. `URLSearchParams` 인터페이스의 읽기 전용 버전을 반환한다.
 
 ```tsx
 // 코드 출처: https://nextjs.org/docs/app/api-reference/functions/use-search-params

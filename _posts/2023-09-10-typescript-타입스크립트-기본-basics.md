@@ -1061,6 +1061,19 @@ let s: symbol = Symbol('s');
 
 ## 연산자
 
+### Non-null Assertion Operator
+
+[Non-null Assertion Operator \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#non-null-assertion-operator-postfix-)
+
+Non-null assertion operator는 해당 값이 `null`이나 `undefined`가 아님을 컴파일러에게 알려줄 때 사용한다. 변수나 표현식 뒤에 `!`를 붙여주면 됨:
+
+```ts
+function liveDangerously(x?: number | null) {
+  console.log(x!.toFixed); // ✅
+  console.log(x.toFixed()); // ❌ 'x' is possibly 'null' or 'undefined'.
+}
+```
+
 ### Keyof 타입 연산자
 
 [Keyof Type Operator \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/keyof-types.html)
