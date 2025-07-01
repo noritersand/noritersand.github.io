@@ -392,7 +392,27 @@ const db = {
 
 만약 같은 이름의 환경 변수가 여러 파일에 존재하면, 불러온 파일 중 우선 순위가 가장 높은 파일의 환경 변수가 나머지를 덮어쓴다.
 
-**TODO** 이 외에 `.env.dev`나 `.env.staging`처럼 별도의 환경 변수가 필요한 경우 추가 설정이 필요하다.
+⚠️ `.env.production`은 `next build` 명령을 실행할 때 적용되지만, 일부 배포 플랫폼에서는 이 파일이 무시될 수 있다. Vercel의 경우 프로덕션 환경 변수를 Vercel Dashboard에서 직접 설정해줘야 한다.
+
+### dev나 staging 환경 구분하기
+
+Next.js는 공식적으로 development, production 두 환경만 구분하지만, dev, staging 등 중간 환경이 필요한 경우가 있다. 이럴 때는:
+
+```json
+{
+  "name": "my-next-js-project",
+  "scripts": {
+    "build:dev": "cross-env shx cp .env.production.dev .env.production && next build && cross-env shx rm .env.production",
+    "build:stage": "cross-env shx cp .env.production.stage .env.production && next build && cross-env shx rm .env.production",
+    "build:prod": "cross-env shx cp .env.production.prod .env.production && next build && cross-env shx rm .env.production",
+  }
+}
+```
+
+우선 각 환경에서 사용할 `.env.dev`와 `.env.staging` 파일을 만들어놓고, 빌드 명령을 실행하면 환경 변수 파일을 복사하여 `.env.production` 파일을 생성하는 방법을 쓴다.
+
+- `shx`: Node.js 환경에서 셸 명령어(cp, rm)를 cross-platform으로 실행하기 위한 패키지
+- `cross-env`: Windows, macOS, Linux 간 환경 변수 설정 방식 차이를 해결해주는 패키지
 
 ### 다른 환경 변수를 참조하기
 
