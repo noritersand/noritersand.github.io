@@ -460,12 +460,12 @@ export default function TestUseReducer2() {
 
 ## 컨텍스트 훅 Context Hooks
 
-컨텍스트(context)를 다루기 위한 훅이다. 현재(2024-03-29)는 `useContext` 하나만 제공하며, 컨텍스트란 일반적인 컴포넌트 유효 범위를 넘어서는 state 정도로 해석된다.
+컨텍스트(context)를 다루기 위한 훅이다. 현재(2024-03-29)는 `useContext` 하나만 제공한다. 컨텍스트란 일반적인 `props` 전달을 거치지 않고 컴포넌트 트리 전체에 걸쳐 데이터를 공유할 수 있게 해주는 메커니즘이다. 마치 전역 상태처럼 작동하지만, 주로 테마나 인증 정보, 로케일 등 비교적 자주 바뀌지 않는 데이터를 공유하는 데 적합하다.
 
 ### useContext
 
-- [React \| useContext}(https://react.dev/reference/react/useContext)
-- [React \| createContext}(https://react.dev/reference/react/createContext)
+- [React \| useContext](https://react.dev/reference/react/useContext)
+- [React \| createContext](https://react.dev/reference/react/createContext)
 
 ```
 useContext(SomeContext)
@@ -476,20 +476,37 @@ useContext(SomeContext)
 `useContext`는 컴포넌트의 깊이와 상관없이 컴포넌트 간 정보를 주고 받기 위한 훅이다. 사용 방법을 요약하면, `createContext()`로 컨텍스트 객체를 생성하고, `Provider`로 컨텍스트에 값을 전달하며 `useContext()`로 가져오는 방식이다.
 
 ```jsx
-// test-use-context.jsx
+// FooProvider.jsx
 import {createContext, useState} from 'react';
-import Button from 'components/button';
-import Paragraph from 'components/paragraph';
 
-export const Foo = createContext({});
+// provider 없이 사용될 때 fallback으로 쓰일 기본값
+export const Foo = createContext({
+  count: undefined,
+  increment: undefined
+});
 
-export default function TestUseContext() {
+export default function FooProvider({children}) {
   const [count, setCount] = useState(0);
-  const increment = () => setCount(prev => prev + 1);
+
+  function increment() {
+    setCount(prev => prev + 1);
+  }
+
+  return <Foo.Provider value={{count, increment}}>{children}</Foo.Provider>;
+}
+```
+
+```jsx
+import React from 'react';
+import Button from '../../components/Button';
+import Paragraph from '../../components/Paragraph';
+import FooProvider from '../../components/FooProvider';
+
+export default function UseContextTest() {
   return (
-    <article>
-      <h2>useContext</h2>
-      <Foo.Provider value={{count, increment}}>
+    <section>
+      <h2>useContext 테스트</h2>
+      <FooProvider>
         <div>
           <Button>이 버튼이나</Button>
         </div>
@@ -499,17 +516,17 @@ export default function TestUseContext() {
         <div>
           <Paragraph />
         </div>
-      </Foo.Provider>
+      </FooProvider>
       <Button>여긴 안됨</Button>
-    </article>
+    </section>
   );
 }
 ```
 
 ```jsx
-// button.jsx
-import {useContext} from 'react';
-import {Foo} from 'pages/test-use-context';
+// Button.jsx
+import React, {useContext} from 'react';
+import {Foo} from './FooProvider';
 
 export default function Button({children}) {
   const {increment} = useContext(Foo);
@@ -522,9 +539,9 @@ export default function Button({children}) {
 ```
 
 ```jsx
-// paragraph.jsx
-import {useContext} from 'react';
-import {Foo} from 'pages/test-use-context';
+// Paragraph.jsx
+import React, {useContext} from 'react';
+import {Foo} from './FooProvider';
 
 export default function Paragraph() {
   const {count} = useContext(Foo);
@@ -532,11 +549,11 @@ export default function Paragraph() {
 }
 ```
 
-도움말에서는 `useContext()`를 호출하는 컴포넌트를 consumer라 표현하는데, 실제로 이전 버전에선 `.Consumer` 프로퍼티를 통해 읽어왔다고 한다:
+공식 문서에서는 `useContext()`를 호출하는 컴포넌트를 consumer라 표현하는데, 실제로 이전 버전에선 `.Consumer` 프로퍼티를 통해 읽어왔다고 한다:
 
 ```jsx
 function Button() {
-  // 🟡 이전 방식 (권장하지 않음)
+  // 🪦 이전 방식 (권장하지 않음)
   return (
     <ThemeContext.Consumer>
       {theme => (
@@ -547,7 +564,7 @@ function Button() {
 }
 ```
 
-⚠️ provider가 공유한 값은 오직 하위 컴포넌트에서만 접근할 수 있다. 만약 아래처럼 컴포넌트를 provider 바깥에서 선언하면 `useContext()`는 빈 객체`{}`를 반환한다:
+⚠️ provider가 공유한 값은 오직 하위 컴포넌트에서만 접근할 수 있다. 만약 아래처럼 컴포넌트를 provider 바깥에서 선언하면 `useContext()`는 `createContext()`에 넘긴 기본값(default value, fallback value)을 반환한다:
 
 ```jsx
 export default function TestUseContext() {
@@ -555,22 +572,21 @@ export default function TestUseContext() {
   return (
     <article>
       <h2>useContext</h2>
-      <Foo.Provider value={{count, increment}}>
+      <FooProvider>
         <>...</>
-      </Foo.Provider>
-      <Button>여긴 안됨</Button>
+      </FooProvider>
+      <OutOfScopeButton>Context의 외부 컴포넌트</OutOfScopeButton>
     </article>
   );
 }
 ```
 
 ```jsx
-export default function Button({children}) {
-  const context = useContext(Foo);
-  console.log(Object.keys(context).length === 0); // true
+export default function OutOfScopeButton({children}) {
+  const {count} = useContext(Foo);
+  console.log(count); // undefined
   // 생략
 }
-
 ```
 
 

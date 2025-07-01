@@ -534,7 +534,7 @@ export default function Page() {
 
 ℹ️ 사실 이것은 리액트의 기능이다:
 
-- [Server Actions – React](https://react.dev/reference/rsc/server-actions)
+- [Server Functions – React](https://react.dev/reference/rsc/server-functions)
 - ['use server' directive – React](https://react.dev/reference/rsc/use-server)
 
 ### 데이터 받아오기 Data Fetching
