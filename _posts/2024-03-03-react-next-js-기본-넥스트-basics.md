@@ -83,7 +83,7 @@ root
 - 서버 사이드 렌더링은 있지만 서버 컴포넌트는 없다.
 - `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
 - `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
-- 데이터 패칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
+- 데이터 페칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
 
 앱 라우터:
 
@@ -92,7 +92,7 @@ root
 - 파일 시스템 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/app/A/B/page.tsx` 파일을 찾는다.
 - 기본적으로 서버 컴포넌트로 작동한다.
 - `layout.tsx`에서 반복되는 레이아웃이나 전역 스타일 등을 정의한다. (페이지 라우터의 `_app.tsx`와 `_document.tsx`를 합쳤다고 보면 됨)
-- 데이터 패칭으로 `fetch`와 `async`를 통한 서버 컴포넌트 내 데이터 패칭, 또는 `use`를 활용하는 패턴이 있다.
+- 데이터 페칭으로 `fetch`와 `async`를 통한 서버 컴포넌트 내 데이터 페칭, 또는 `use`를 활용하는 패턴이 있다.
 
 어느 한 쪽을 선택한다고 해서 반대쪽을 아예 사용 못하는 건 아니다. 구버전으로 개발된 소스에 `src/app` 디렉터리를 만들기만 하면 앱 라우터를 사용할 수 있다. 
 
@@ -128,7 +128,7 @@ URL `/A/B`의 페이지를 보여줄 때는 `src/app/A/B/page.tsx`의 내용을 
 // 14 이전
 type Params = { slug: string }
  
-export default async function Layout({
+export default function Layout({
   children,
   params,
 }: {
@@ -530,12 +530,14 @@ export default function Page() {
 
 [Directives: use server \| Next.js](https://nextjs.org/docs/app/api-reference/directives/use-server)
 
-`'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 지정한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
+`'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 만들 때 사용하며 이를 서버 함수라 한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
 
 ℹ️ 사실 이것은 리액트의 기능이다:
 
 - [Server Functions – React](https://react.dev/reference/rsc/server-functions)
 - ['use server' directive – React](https://react.dev/reference/rsc/use-server)
+
+리액트는 이 기능을 처음 공개할 때 서버 액션(Server Action)이라 했지만, 곧 서버 함수로 이름을 바꿨다. [넥스트 도움말](https://nextjs.org/docs/app/guides/forms)에 서버 액션이란 용어가 아직 남아있긴 한데, 서버 함수를 지칭하는 게 맞다.
 
 ### 데이터 받아오기 Data Fetching
 

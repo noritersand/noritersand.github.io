@@ -191,7 +191,7 @@ Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
 
 ### 줄 바꿈
 
-줄을 바꿔도 명령을 이어가도록 하려면 백틱``` ` ```을 줄 마지막에 붙인다:
+줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱``` ` ```을 붙인다:
 
 ```bash
 # js 파일을 찾아서 temp.md에 파일 이름을 작성하는 스크립트

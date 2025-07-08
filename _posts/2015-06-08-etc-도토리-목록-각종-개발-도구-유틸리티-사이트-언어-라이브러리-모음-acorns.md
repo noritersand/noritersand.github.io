@@ -298,9 +298,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
 - [useHooks](https://github.com/uidotdev/usehooks?tab=readme-ov-file): 리액트 훅 모음 #1. 리액트 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 리액트의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://github.com/streamich/react-use): 리액트 훅 모음 #2. 이 패키지도 리액트 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
-- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 패칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하도 함. 예전 이름은 React Query였다.
+- [⭐TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 페칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하도 함. 예전 이름은 React Query였다.
 - [Material UI](https://mui.com/material-ui/): 리액트용 UI 컴포넌트 모음
 - [⭐shadcn/ui](https://ui.shadcn.com/): 리액트용 UI 컴포넌트 컬렉션. 소스 코드를 복사해 커스터마이징하는 방식으로, 전통적인 라이브러리와 차이가 있다. Tailwindd CSS와 [Radix UI](https://www.radix-ui.com/) 기반으로 만들어졌다.
+- [⭐SWR](https://swr.vercel.app/): 데이터 페칭과 캐싱을 간편히 처리해주는 라이브러리. Vercel에 만듦.
 
 ### 뷰 전용 라이브러리
 

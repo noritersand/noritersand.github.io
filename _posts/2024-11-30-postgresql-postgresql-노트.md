@@ -233,13 +233,13 @@ explain analyze select * from examples where id = 123;
 ### 현재 시간 조회하기
 
 ```sql
--- 타임존 지정 없이 조회
+-- UTC 기준 시각 조회(timestamptz)
 select now();
 
--- UTC 시각 조회
+-- UTC 시각 지정
 select (now() at time zone 'UTC');
 
--- 한국 시각 조회하기
+-- 한국 시각 지정
 select (now() at time zone 'KST');
 select (now() at time zone 'Asia/Seoul');
 ```
@@ -255,3 +255,28 @@ from MY_TABLE
 order by MY_COLUMN desc
 limit 2 offset 5
 ```
+
+
+## 데이터 타입 Data Types
+
+[PostgreSQL: Documentation: 17: Chapter 8. Data Types](https://www.postgresql.org/docs/current/datatype.html)
+
+### timestamptz, timestamp with time zone
+
+특정 시간대를 기준으로 해석되어야 하는 시각 정보를 저장하는 데이터 타입. 시간값 뒤에 `+XX:XX`로 시간대를 표시하지만, 실제 저장흔 항상 UTC 기준이다.
+
+세션에 따라 시간대가 자동으로 해석된다:
+
+- 입력 시: 세션의 시간대 기준으로 해석한 뒤 → UTC로 변환해서 저장
+- 조회 시: 저장된 UTC 값을 → 세션의 시간대 기준으로 자동 변환하여 표시
+
+ℹ `now()` 함수가 반환하는 값의 데이터 타입이다.
+
+⚠️ 이 타입의 기본값으로 `now() AT TIME ZONE 'KST'::text`를 설정하면 현재 시각보다 9시간 빠른 시각으로 저장될 수 있다. PostgreSQL에서 `now() AT TIME ZONE 'KST'`는 timestamp without time zone 타입으로 KST 시각을 반환하는데, 이걸 `timestamptz` 컬럼에 넣으면 그대로 UTC로 해석, 저장되기 때문이다.
+
+
+## ETC.
+
+### DBMS 툴과 연결할 때
+
+데이터그립 같은 DBMS 툴을 사용하여 접속하려는 경우 Session pooler 항목을 찾아볼 것. (Direct connection이나 Transaction pooler는 사용하면 안 됨)

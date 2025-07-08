@@ -325,6 +325,19 @@ order by sortOrder, convert(a.txt, unsigned), a.txt
 
 `convert(a.txt, unsigned)`는 숫자로 이뤄진 문자를 제대로 정렬하지 못하는 문제를 해소하기 위한 정렬 조건이다.
 
+정규식으로 하는 방법도 있다:
+
+```sql
+-- 나머지 > 영문 > 숫자 순 정렬
+order by (
+    case
+        when ${sortField} regexp '^[0-9]' then 2
+        when ${sortField} regexp '^[a-zA-Z]' then 1
+        else 0
+    end
+)
+```
+
 
 ## 테이블 조인 JOIN
 

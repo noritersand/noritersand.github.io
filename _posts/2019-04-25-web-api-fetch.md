@@ -21,18 +21,15 @@ tags:
 - [Fetch basic concepts \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Basic_concepts)
 - [FetchEvent \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent)
 - [Fetch Living Standard](https://fetch.spec.whatwg.org/)
-- [Headers \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
-- [Request \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Request)
-- [Response \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/Response)
 
 #### 브라우저 호환
 
-- IE
+- IE와 오페라 미니 빼고 전부 지원함.
 
 
 ## 개요
 
-xhr의 모던 버전인 fetch API에 대한 설명 글.
+XHR(XMLHttpRequest)의 모던 버전인 fetch API에 대한 설명 글.
 
 
 ## fetch()
@@ -115,10 +112,15 @@ console.log(json);
 
 **TODO**
 
-곁다리: `FormData`로 파일을 전송할 땐 `Content-Type` 헤더를 설정하지 않아도 `multipart/form-data`로 설정된다. 오히려 명시하면 파일이 전송되지 않을 수 있음.
+곁다리: `FormData`로 파일을 전송할 땐 `Content-Type` 헤더를 설정하지 않아도 `multipart/form-data`로 설정된다.
 
 
 ## Request
+
+**TODO**
+
+
+## RequestInit
 
 **TODO**
 
@@ -192,3 +194,12 @@ fetch('https://example.com/submit', {
   });
 </script>
 ```
+
+
+## 스트리밍
+
+[ReadableStream - Web APIs \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream)
+
+fetch API는 응답이 완료되기 전에도 `ReadableStream`을 통해 데이터를 청크 단위로 읽을 수 있다. (XHR로도 가능하긴 하지만...)
+
+**TODO**

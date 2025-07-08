@@ -36,6 +36,13 @@ tags:
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
 
+## 코드의 빨간 밑줄이 안 없어진다면...
+
+JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시작하면 해결되지만, 이게 귀찮은 경우 메뉴의 `Code > Inspect Code`를 실행하면 해소되는 경우가 있다.
+
+이래도 안되면 재시작... 🥲
+
+
 ## IDE log 파일 위치
 
 [https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files)

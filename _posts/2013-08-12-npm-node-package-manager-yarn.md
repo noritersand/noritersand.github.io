@@ -485,15 +485,20 @@ yarn cache clean
 
 ### yarn.lock
 
-Yarn은 `yarn.lock`이라는 별도의 lock 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.
+Yarn은 `yarn.lock`이라는 별도의 락 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.
 
-기본적인 역할은 npm의 `package-lock.json` 파일과 같은데, 실제 설치한 패키지의 버전을 기록하며 이 lock 파일이 있다면 `install` 시 정확히 동일한 버전의 패키지를 설치한다. 따라서 개발자들끼리의 소스 공유 시엔 이 파일을 반드시 버전 관리에 추가해야 한다.
-
-`--no-lockfile` 등의 옵션으로 lock 파일을 생성하지 않게 할 수도 있다. 설치만 Yarn으로 할 때 쓰려나...?
+기본적인 역할은 npm의 `package-lock.json` 파일과 같다. 실제 설치한 패키지의 버전을 기록할 때 쓰이며, `install` 시 락 파일이 있는 경우 정확히 동일한 버전의 패키지를 설치한다.
 
 ### .yarnrc.yml
 
-`.yarnrc.yml` 파일은 Yarn 설정 파일로 2.x 버전 이상부터 사용된다. 
+`.yarnrc.yml` 파일은 Yarn의 로컬 프로젝트 설정 파일로 2.x 버전 이상부터 사용된다.
+
+이 파일이 없으면 `yarn config set <name> <value>` 명령을 실행했을 때 자동으로 생성된다.
+
+```bash
+# nodeLinker 필드의 값을 pnp로 설정
+yarn config set nodeLinker pnp
+```
 
 주요 필드로:
 

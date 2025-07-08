@@ -523,7 +523,7 @@ export default {
 
 #### key
 
-`key`는 special attribute 중 하나로 Vue의 가상 DOM 알고리즘에서 vnodes(Vue's Virtual DOM)를 식별하기 위한 힌트로 사용된다. Vue는 키가 없을 때 가능한 한 원래의 자리에서 이동하지 않고 패치/재사용하려고 시도한다. 반면 키가 제공되면 키의 변경에 따라 요소를 재정렬하거나 제거/삭제한다. 이런 특성을 이용해 파일 첨부용 `<input type="file">` 엘리먼트를 키값을 바꿔 초기화하는 방법이 있다. [페이지 링크](/vuejs/vue-js-vue-js-트릭-모음-tricky-tips/#heading-file-input-초기화-하기)
+`key`는 special attribute 중 하나로 Vue의 가상 DOM 알고리즘에서 vnodes(Vue's Virtual DOM)를 식별하기 위한 힌트로 사용된다. Vue는 키가 없을 때 가능한 한 원래의 자리에서 이동하지 않고 패치(patch)/재사용하려고 시도한다. 반면 키가 제공되면 키의 변경에 따라 요소를 재정렬하거나 제거/삭제한다. 이런 특성을 이용해 파일 첨부용 `<input type="file">` 엘리먼트를 키값을 바꿔 초기화하는 방법이 있다. [페이지 링크](/vuejs/vue-js-vue-js-트릭-모음-tricky-tips/#heading-file-input-초기화-하기)
 
 `v-for`에서도 마찬가지인데, 키가 없을 때의 알고리즘 때문에 의도대로 작동하지 않을 수 있다. 따라서 요소를 재정렬 하거나 삭제를 해야 한다면 키를 제공할 것.
 
