@@ -567,7 +567,7 @@ yarn run api:build
 
 ### yarn dlx
 
-`dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다.
+`dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다. DLX는 아마도 DownLoad and Execute의 줄임말...?
 
 ⚠️ Yarn을 `npm install yarn -g` 명령으로 설치했다면 `yarn dlx`를 실행했을 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것.
 

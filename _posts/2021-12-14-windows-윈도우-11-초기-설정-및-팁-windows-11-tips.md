@@ -173,9 +173,9 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 4</kbd>: Chrome dev
 - <kbd>win + 5</kbd>: Sublime Merge
 - <kbd>win + 6</kbd>: Discord, Slack
-- <kbd>win + 7</kbd>: Steam, WebStorm
-- <kbd>win + 8</kbd>: VSCODE
-- <kbd>win + 9</kbd>: 가변 #1 (IntelliJ, Steam)
+- <kbd>win + 7</kbd>: WebStorm
+- <kbd>win + 8</kbd>: Steam, VSCODE
+- <kbd>win + 9</kbd>: 가변 #1 (ETC., IntelliJ)
 - <kbd>win + 0</kbd>: 가변 #2 (MSOffice, Chrome)
 
 가변 항목:
@@ -201,6 +201,6 @@ Autohotkey로 확장한 키 조합:
 - <kbd>win + ctrl + backspace </kbd>: 아웃룩
 - <kbd>win + alt + backspace </kbd>: 가변 #4
 
-윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음. 그런데 <kbd>win + ctrl + backspace</kbd>은 잘됨... 뭐지? 🙄
+윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음.
 
 ⚠️ <kbd>win + ctrl + 숫자</kbd> 조합은 기존 기능인 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨

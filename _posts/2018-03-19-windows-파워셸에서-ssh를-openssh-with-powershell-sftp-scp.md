@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-2018년에 윈도우 정식 기능으로 포함된 오픈소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
+2018년에 윈도우 정식 기능으로 포함된 오픈 소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
 
 
 ## SSH란?

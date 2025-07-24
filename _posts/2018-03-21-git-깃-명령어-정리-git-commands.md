@@ -669,6 +669,7 @@ git config --global alias.ck 'checkout'
 git config --global alias.sw 'switch'
 git config --global alias.rs 'restore'
 git config --global alias.cp 'cherry-pick'
+git config --global alias.wt 'worktree'
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.visual '!gitk'
 git config --global alias.hide 'update-index --assume-unchanged'
@@ -824,14 +825,14 @@ git diff 87a8baee219b8a9ad2dfd5415e5257b7c5389277..d5bedb1e2624ad080e0aae4ed66ac
 #### 브랜치간 비교
 
 ```bash
-# 워킹트리와 draft/noritersand 브랜치의 전체 파일 비교
+# 워킹 트리와 draft/noritersand 브랜치의 전체 파일 비교
 git diff draft/noritersand
 
 # HEAD와 draft/noritersand 브랜치의 전체 파일 비교
 git diff draft/noritersand HEAD
 ```
 
-`HEAD`를 생략하면 워킹트리와 비교하니 주의.
+`HEAD`를 생략하면 워킹 트리와 비교하니 주의.
 
 ```bash
 # 'hugo' 브랜치와 현재 브랜치의 README.md 파일만 비교
@@ -1848,7 +1849,7 @@ git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
 
 ## rm
 
-remove. 워킹트리와 스테이징 영역에서 파일을 삭제한다.
+remove. 워킹 트리와 스테이징 영역에서 파일을 삭제한다.
 
 #### 파일/폴더 삭제
 
@@ -2173,7 +2174,7 @@ git tag -d v0.9
 
 - `--add`
 - `--remove`
-- `--refresh`: 워킹트리에 대한 인덱스를 갱신한다.
+- `--refresh`: 워킹 트리에 대한 인덱스를 갱신한다.
 - `--really-refresh`: `--refresh`와 비슷하지만, 이 옵션은 '변경되지 않음' 상태인 파일도 갱신한다.
 - `--assume-unchanged`: 특정 파일을 변경되지 않은 것으로 간주한다. 이후 해당 파일은 스테이지 목록에 나타나지 않는다.
 - `--no-assume-unchanged`: '변경되지 않음' 상태의 파일을 되돌린다.
@@ -2199,5 +2200,55 @@ git update-index --no-assume-unchanged IGNORE_ME
 ```bash
 git update-index --really-refresh
 ```
+
+
+## worktree
+
+[Git - git-worktree Documentation](https://git-scm.com/docs/git-worktree)
+
+`worktree`는 하나의 깃 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
+
+```
+git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]] [--orphan] [(-b | -B) <new-branch>] <path> [<commit-ish>]
+git worktree list [-v | --porcelain [-z]]
+git worktree lock [--reason <string>] <worktree>
+git worktree move <worktree> <new-path>
+git worktree prune [-n] [-v] [--expire <expire>]
+git worktree remove [-f] <worktree>
+git worktree repair [<path>…​]
+git worktree unlock <worktree>
+```
+
+원래는 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 했지만, `worktree`를 사용하면 기존 워킹 트리를 그대로 둔 채 새로운 디렉터리에서 다른 브랜치로 작업할 수 있다. 이 방식은 예를 들어 긴급 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
+
+```bash
+# 새 워킹 트리 생성
+git worktree add -b test ../another-repo
+```
+
+위 명령은 `../another-repo` 디렉터리에 `test` 브랜치를 위한 새로운 워킹 트리를 생성한다. `-b test`는 브랜치를 새로 만들고 체크아웃하겠다는 의미다.
+
+새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 하위 경로에 만들어버리면 기존 워킹 트리에 마치 새 파일들이 잔뜩 생긴 것처럼 보이기 때문.
+
+생성된 워킹 트리는 겉보기에 독립된 깃 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 깃 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음)
+
+```bash
+# 생성한 워킹 트리 목록 확인
+git worktree list
+
+# 워킹 트리 삭제
+git worktree remove another-repo
+
+# 쓰레기 데이터 정리
+git worktree prune
+```
+
+생성한 워킹 트리 목록 확인은 `worktree list`로, 삭제는 `worktree remove`로 하면 됨. 워킹 트리를 삭제할 때 실제 디렉터리도 전부 삭제되니 변경사항을 날려먹지 않도록 주의하자.
+
+`worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, 깃은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
+
+
+끗.
+
 
 [^1]: [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
