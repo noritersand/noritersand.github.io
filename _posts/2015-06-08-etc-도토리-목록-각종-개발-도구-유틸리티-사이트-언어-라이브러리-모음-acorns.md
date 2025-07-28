@@ -100,6 +100,7 @@ tags:
 
 - [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 도구인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
 - [Scoop](https://scoop.sh/): Chocolatey보다 규모와 사용자는 적지만, 개발자 커뮤니티가 매우 활성화되어 있다고 함.
+- [uv](https://github.com/astral-sh/uv): `pip`, `virtualenv`, `pip-tools`를 대체하는 파이썬의 패키지 매니저. 의존성 관리와 가상 환경 관리 등을 지원한다.
 
 ### SDK Manager
 
