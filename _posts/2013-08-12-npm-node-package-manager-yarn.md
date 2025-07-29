@@ -466,15 +466,6 @@ yarn info PACKAGE_NAME
 # Yarn으로 PACKAGE_NAME 삭제
 yarn remove PACKAGE_NAME
 
-# 프로젝트의 모든 패키지 버전 업그레이드(upgrade는 없는 명령어)
-yarn up
-
-# PACKAGE_NAME 패키지의 버전 업그레이드
-yarn up PACKAGE_NAME
-
-# 대화형으로 버전 업그레이드
-yarn upgrade-interactive
-
 # 캐시 지우기
 yarn cache clean
 ```
@@ -523,6 +514,34 @@ packageExtensions:
 - [https://classic.yarnpkg.com/en/docs/cli/global](https://classic.yarnpkg.com/en/docs/cli/global)
 - [https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global](https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global)
 - [https://github.com/yarnpkg/berry/issues/821](https://github.com/yarnpkg/berry/issues/821)
+
+### yarn up
+
+패키지를 최신 버전으로 업그레이드하는 명령어. 패키지를 특정하지 않으면 로컬 프로젝트에서 의존하는 모든 패키지를 업그레이드 한다.
+
+🚫 `yarn upgrade`는 없는 명령어다.
+
+```bash
+# 프로젝트의 모든 패키지 버전 업그레이드
+yarn up
+
+# PACKAGE_NAME 패키지의 버전 업그레이드
+yarn up PACKAGE_NAME
+
+# PACKAGE_NAME 패키지를 재귀 모드로 업그레이드
+yarn up PACKAGE_NAME -R
+```
+
+`-R` `--recursive`은 재귀 모드를 활성화하는 옵션이다. 이 옵션을 사용하면 명령어의 작동 방식이 바뀌며, 다른 옵션과 함께 사용할 수 없다. 이 모드에서는 지정한 패키지를 의존성 트리 전체에서 찾아, 가능한 가장 최신 버전으로 업그레이드한 뒤 `yarn.lock` 파일에 반영한다. `package.json`은 수정하지 않기 때문에, 완전한 업데이트를 원한다면 `yarn up`과 `yarn up -R` 둘 다 실행하는 것이 좋다.
+
+`yarn up`과 다르게, `package.json`에 명시되지 않은 패키지라도 의존성 트리 내에 존재하기만 하면 지정하여 업데이트할 수 있다. 예를 들어, Next.js를 사용중이면 가끔 `caniuse-lite`를 업그레이드 하라는 경고가 발생하는데, 이 경고는 `yarn up caniuse-lite -R` 명령을 실행하면 해결된다.
+
+설치할 버전을 대화형으로 선택할 수 있는 명령도 있다:
+
+```bash
+# 대화형 버전 업그레이드
+yarn upgrade-interactive
+```
 
 ### yarn init vs yarn create
 

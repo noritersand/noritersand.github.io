@@ -228,10 +228,6 @@ tags:
 
 ## 5. 인프라, 배포
 
-### Web server/WAS
-
-- [Apache HTTP Server](https://www.apachelounge.com/download): 검색으론 다운로드 링크 찾기 힘듬.
-
 ### PaaS (Platform as a Service)
 
 PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌드와 배포를 해주는 클라우드 서비스들이다.
@@ -262,6 +258,12 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Firebase](https://firebase.google.com/): 파이어베이스
 - [Supabase](https://supabase.com/): PostgreSQL 기반의 백엔드 기능을 제공하는 BaaS 플랫폼. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공한다.
 - [PocketBase](https://pocketbase.io/): 오픈 소스 백엔드 서비스 #2. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
+
+### Web Server/WAS
+
+- [Apache HTTP Server](https://www.apachelounge.com/download): the 웹 서버. 검색으론 다운로드 링크 찾기 힘듬.
+- [nginx](https://nginx.org/): the 웹 서버 #2
+- [copyparty](https://github.com/9001/copyparty): 파이썬만 있으면 실행 가능한 파일 서버. 의존하는 라이브러리는 하나도 없으면서, HTTP, 웹 브라우저 접속, WebDAV, FTP, TFTP, SMB/CIFS, zeroconf, 미디어 인덱싱, 검색, 썸네일 생성, 압축 다운로드까지 뭐 안되는 게 없다. 업/다운로드는 조각별 해시와 병렬 연결 기반으로 작동한다.
 
 ### CDN
 
@@ -616,7 +618,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 자바 라이브러리
 - [⭐KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. 자바스크립트 혹은 타입스크립트로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Chosic](https://www.chosic.com/): 비슷한 노래 찾기 등 노래 관련 탐색 서비스 제공하는 사이트
-- [Everynews](https://every.news/): 뉴스레터 서비스인 것 같은데...
+- [Everynews](https://every.news/): 뉴스에서 관련성 높은 정보를 적절하게 필터링해 전달하는 모니터링 플랫폼. 뉴스레터 서비스의 일종이긴 한데 AI를 끼얹었다. 원하는 주제를 구독하는 방식이다. 해커뉴스 번역판이 가장 인기 많음
 - [프리랜서를 위한 메세지 템플릿 서비스](https://fressa.vercel.app/)
 
 
