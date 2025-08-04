@@ -143,7 +143,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
 - Naming-Shiba `fredkeemhaus.Naming-Shiba`: 한국어 문장을 영문변수명으로 바꿔주는 플러그인. 노매드코더 슬랙 참가자 중 한 명이 말듦. 단축키는 <kbd>ctrl + shift + a</kbd>와 <kbd>ctrl + shift + s</kbd>인데 다른 거랑 겹치니까 딴 걸로 바꿔야 함.
 - GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인
-  - <kbd>alt + \ </kbd>: 발동 단축키
+  - <kbd>alt + \\ </kbd>: 발동 단축키
   - <kbd>tab</kbd>: 제안 선택
   - <kbd>ctrl + enter</kbd>: 자동 완성 제안 창 보기
   - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기

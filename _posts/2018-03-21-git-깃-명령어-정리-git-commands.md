@@ -1864,7 +1864,11 @@ rm 명령어는 깃이 추적중인 파일 혹은 폴더에만 사용할 수 있
 실제 파일은 남기고 깃의 관리 대상에서만 제외한다.
 
 ```bash
+# 파일
 git rm --cached readme.txt
+
+# 디렉터리
+git rm --cached -r target
 ```
 
 #### file-glob 패턴으로 범위삭제

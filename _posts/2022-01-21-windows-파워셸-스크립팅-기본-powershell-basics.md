@@ -703,7 +703,7 @@ Test-Fn10 -Server my-server
 # Test-Fn10: Cannot validate argument on parameter 'Server'. The argument "my-server" does not belong to the set "production,stage,test,vpn" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
 ```
 
-이렇게 지정한 값은 탭 키를 눌러 자동완성이 된다:
+이렇게 지정한 값은 탭 키를 눌러 자동 완성이 된다:
 
 ![](/images/powershell-scripting-validateset3.gif)
 

@@ -248,17 +248,6 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
   - 다음 paragraph(단락, 문단)에 캐럿 추가
   - 따옴표 감싸기 토글
   - String 리터럴을 더하기 연산자로 자르기
-- GitHub Copilot: AI가 코드를 작성해주는 🐶쩌는 플러그인
-  - <kbd>ctrl + alt + shift + o</kbd>: 활성화/비활성화 토글
-  - <kbd>alt + \ </kbd>: 코파일럿 자동 완성 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
-  - <kbd>tab</kbd>: 코파일럿 제안 선택
-  - <kbd>alt + [</kbd>: 다음 제안 보기
-  - <kbd>alt + ]</kbd>: 이전 제안 보기
-  - <kbd>ctrl + right</kbd>: 제안을 단어 단위로 적용하기
-  - <kbd>ctrl + alt + right</kbd>: 제안을 줄 단위로 적용하기
-  - <kbd>ctrl + alt + shift + \ </kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기. 이 창에선 코드 자동 완성 추천 목록이 나온다. (원래 키에서 변경)
-  - <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
-  - <kbd>alt + shift + p</kbd>: Plugins > GitHub Copilot > Inline Chat. 에디터 인라인으로 코파일럿 채팅 창 열기 (원래 키에서 변경)
 
 
 ## 작성자 저장용 단축키 설정
@@ -280,10 +269,33 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>alt + z</kbd>: Active Editor > Soft-Wrap
 - <kbd>alt + x</kbd>: Other > Clear text. 콘솔 지우기
 - <kbd>alt + w</kbd>: Debugger Actions > Add to Watches. 디버그 모드에서 지켜볼 표현식 영역에 추가
-- <kbd>ctrl + \ </kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
+- <kbd>ctrl + \\</kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제
 - <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: Main Menu > Window > Editor Tabs > Split Right/Down. 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
 - <kbd>shift + f12</kbd>: Main Menu > Window > Tool Window Layouts > Restore Current Layout. 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
-- <kbd>end</kbd>: Code > Code Completion > Insert Inline Proposal's Line. 언젠가부터 자동완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
+- <kbd>end</kbd>: Code > Code Completion > Insert Inline Proposal's Line. 언젠가부터 자동 완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
+
+### GitHub Copilot을 쓸 때
+
+코파일럿 플러그인 사용할 땐 이렇게:
+
+- <kbd>ctrl + alt + shift + o</kbd>: 활성화/비활성화 토글
+- <kbd>alt + \\</kbd>: 코파일럿 자동 완성 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
+- <kbd>tab</kbd>: 코파일럿 제안 선택
+- <kbd>alt + [</kbd>: 다음 제안 보기
+- <kbd>alt + ]</kbd>: 이전 제안 보기
+- <kbd>ctrl + right</kbd>: 제안을 단어 단위로 적용하기
+- <kbd>ctrl + alt + right</kbd>: 제안을 줄 단위로 적용하기
+- <kbd>ctrl + alt + shift + \\</kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기. 이 창에선 코드 자동 완성 추천 목록이 나온다. (원래 키에서 변경)
+- <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
+- <kbd>alt + shift + p</kbd>: Plugins > GitHub Copilot > Inline Chat. 에디터 인라인으로 코파일럿 채팅 창 열기 (원래 키에서 변경)
+
+### AI Assistant를 쓸 때
+
+JetBrains에서 제공하는 LLM을 쓴다면:
+
+- <kbd>alt + \\</kbd>: Plugins > JetBrains AI Assistant > Generate Code. 자동 완성 발동 키 (원래 키에서 변)
+- <kbd>alt + p</kbd>: Tool Windows > AI Assistant.  LLM 채팅창 열기 (원래 키에서 변경)
+- <kbd>alt + shift + p</kbd>: Plugins > JetBrains AI Assistant > Ask AI Assistant. 이게 뭔지 작동을 안하네? (원래 키에서 변경)
 
 
 ## 기본 단축키
@@ -314,7 +326,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
 - <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
-- <kbd>ctrl + shift+ \ </kbd>: Go to URL Mapping
+- <kbd>ctrl + shift+ \\</kbd>: Go to URL Mapping
 
 ### 북마크
 
@@ -377,6 +389,15 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>alt + shift + s</kbd>: Load Context. 저장한 컨텍스트를 불러온다.
 - <kbd>ctrl + shift + del</kbd>: **TODO**
 
+#### 자동 완성 Code Completion
+
+- <kbd>ctrl + space</kbd>: Main Manu > Code > Code Completion > Basic. 기본 자동 완성
+- <kbd>ctrl + shift + space</kbd>: Type-Matching. 타입 매칭 자동 완성
+- <kbd>alt + shift + \\</kbd>: Call Inline Completion. 기본과 뭐가 다른지 모르겠다. AI Assistant에선 여러 줄 자동 완성 발동 키. <kbd>alt + \\</kbd>도 Generate Code인데 뭔가 잘 안되니 이걸 쓸 것.
+- <kbd>tab</kbd>: Insert Inline Proposal. 자동 완성 제안 적용하기
+- <kbd>ctrl + right</kbd>: Insert Inline Proposal's Word. 자동 완성 제안을 단어로 끊어서 적용하기
+
+
 ### 복사/붙이기
 
 - <kbd>ctrl + alt + shift + c</kbd>: Copy Reference. 현재 커서/캐럿/포커스의 위치를 기준으로 상대 경로를 복사한다. 예를 들어자바 클래스의 메서드에 캐럿을 두고 누르면 `패키지/클래스명#메서드명`의 형태로 복사한다. 심볼을 특정할 수 없는 경우엔 `디렉터리/파일명:라인번호`의 형태로 복사한다.
@@ -386,7 +407,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 - <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
-- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \ </kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
+- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \\</kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
 - <kbd>shift + f9</kbd>: Debug 모드로 시작
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 어떤 것을 Debug 모드로 시작할지 묻는 대화창이 나타남

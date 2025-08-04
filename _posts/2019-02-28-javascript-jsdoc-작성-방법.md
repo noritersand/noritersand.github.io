@@ -123,7 +123,7 @@ Shoe.prototype.setColor = function (color) {
 
 요소의 타입을 제한하지 않거나 알 수 없는 배열이면 `Array` 혹은 `any[]`라고 적는다. 요소의 타입을 제한하거나 특정할 수 있으면 해당 타입 뒤에 대괄호`[]`를 붙여 적는다. 가령 `string` 타입의 배열이면 `string[]`이다.
 
-자동완성되는 걸 보면 이런 것도 가능:
+자동 완성되는 걸 보면 이런 것도 가능:
 
 ```
 @returns {Promise<void>}

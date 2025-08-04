@@ -66,7 +66,7 @@ tags:
 - [⭐Sublime Text](https://www.sublimetext.com/blog/articles/sublime-text-4): 윈도우 기본 노트패드를 완벽히 대체 가능한 앱. 빠르고 가볍고 멀티 캐럿을 지원한다. 무료 버전은 가끔 저장할 때 팝업이 뜬다.
 - [Notepad++](https://notepad-plus-plus.org): 좀 오래됐지만 가볍게 쓰기 좋음. 서브라임으로 열었을 때 앱이 멈춰버릴 정도로 큰 파일도 노트패드++ 에선 잘 열린다.
 - [⭐Visual Studio Code](https://code.visualstudio.com)
-- [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능이 있다. 작성한 파일의 클라우드 동기화 기능(Obsidian Sync)은 유료다.
+- [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능이 있다. 💰작성한 파일의 클라우드 동기화 기능(Obsidian Sync)은 유료다.
 - [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCode와 인터페이스가 매우 유사하다.
 - [Zed](http://zedapp.org): 윈도우는 아직 지원 예정(2025-02-05)이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
 - [Eclipse](http://www.eclipse.org/downloads)
@@ -219,7 +219,7 @@ tags:
 
 - [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 컴포넌트. 순수 자바스크립트 기반이며, 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 자바스크립트 기반이다.
-- [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 유료 그리드
+- [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 💰유료 그리드
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
 - [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다.
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
@@ -297,7 +297,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### DBMS Tool
 
 - [DBeaver](https://dbeaver.io): 벤더 안가리는 도구. 이클립스와 같은 프레임워크로 추정.
-- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 앱. 기업용은 유료.
+- [QueryBox](http://www.querybox.com): 벤더 가리지 않고 접속할 수 있는 국산 앱. 💰기업용은 유료.
 - [Flyway](https://flywaydb.org/): 데이터베이스의 버전 관리 도구. 마구잡이로 헤집어놓은 데이터도 원하는 시점으로 되돌리는 기능 등을 제공한다. 개발과 테스트를 위한 데이터베이스 구축에 매우 쓸만한 오픈 소스 도구.
 - [⭐DataGrip](https://www.jetbrains.com/datagrip/): IntelliJ IDEA Ultimate 패키지에 포함된 제품. 성능은 돈 값 한다.
 
@@ -419,7 +419,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 디자인 리소스
 
-- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 대-충 비공개 프로젝트를 여러 명이 사용할 땐 유료인듯
+- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 💰비공개 프로젝트를 여러 명이 사용할 땐 유료
 - [ThemeForest](https://themeforest.net/): 언어, 엔진, 프레임워크 별 테마(HTML과 CSS 묶음. 필요하면 JS까지) 파는 사이트
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
 - [미리캔버스](https://www.miricanvas.com/): 자칭 디자인 플랫폼. 템플릿 활용할 수 있는 간편한 디자인 도구를 제공하며 맞춤 디자인 의뢰도 가능함.
@@ -435,18 +435,18 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [WinSCP](https://winscp.net/eng/download.php)
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty)
-- [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 유료 라이선스.
+- [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 💰유료 라이선스.
 - [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
 - [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 앱 중에서 여러 서버 동시 접속 기능은 그나마...
 
 ### VPN
 
 - [OpenVPN GUI](https://github.com/OpenVPN/openvpn-gui): OpenVPN 커뮤니티 버전의 클라이언트 앱. 공식 앱의 이름은 OpenVPN Connect이며 OpenVPN GUI와는 다르다. VPN 설정과 같은 네트웤에서도 앱에 따라 차이가 있을 수 있다. 예를 들어 OpenVPN Connect로 특정 VPN에 붙었더니 인터넷 먹통 현상이 발생했는데, OpenVPN GUI에선 같은 문제가 발생하지 않음.
-- [Surfshark](https://surfshark.com): 접속 국가 변조용 유료 VPN
+- [Surfshark](https://surfshark.com): 접속 국가 변조용 💰유료 VPN
 
 ### 트래픽 캡처
 
-- [Fiddler](http://www.telerik.com/fiddler): 네트워크 디버깅 도구. 파폭은 SSL 인증서 때문에 빡칠 수 있다. 유료
+- [Fiddler](http://www.telerik.com/fiddler): 네트워크 디버깅 도구. 파폭은 SSL 인증서 때문에 빡칠 수 있다. 💰유료
 - [Wirehsark](https://www.wireshark.org/download.html): 패킷 추적 도구.
 
 ### IP 확인
@@ -460,7 +460,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [⭐Sublime Merge](https://www.sublimemerge.com): Git GUI 클라이언트 #1. 기본적으로 무료 앱이며 다크 모드를 쓰고 싶을 때만 결제하면 된다. 속도가 CLI 수준으로 빠르고 키보드 단축키 지원이 훌륭한 편.
 - [Fork](https://fork.dev): Git GUI 클라이언트 #2. 가볍고 그래프가 보기 좋은게 특징. 무료지만 후원 방식으로 라이선스 구입이 가능하다.
-- [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트 #3. 속도는 느리지만 편의성은 탑. 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다. 😩
+- [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트 #3. 속도는 느리지만 편의성은 탑. 💰사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다.
 - [gitui](https://github.com/extrawurst/gitui): Mdir(?) 스타일의 GUI 앱. 옛날 갬성이 좋으면 쓸만하다. 단점으로 커밋 그래프 기능이 없고, 셸에서 저장소 경로로 이동하여 실행하는 방식이라 여러 저장소를 관리하기 불편하다.
 - [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능이 없다.
 
@@ -498,7 +498,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [i'mport](https://www.iamport.kr): 아임포트. 결제/본인인증 중계 서비스. 예를 들면 쇼핑몰과 PG사(혹은 신용조회회사)의 중간에 위치한다고 보면 됨.
 
 
-## 18. AI, 머신러닝
+## 18. AI
 
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 대형 언어 모델 #1
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
@@ -507,6 +507,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 - [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
+- [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 비슷한 서비스: [Stitch](https://stitch.withgoogle.com/), [Readdy](https://readdy.ai/)
+- [⭐DeepWiki](https://deepwiki.org/): 깃 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
+- [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있는게 🍯꿀이다.
+- [GitMCP](https://gitmcp.io/): 깃허브 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다.  Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹기 때문에, LLM 토큰을 아끼고 싶다면 이게 좋다. 그리고 이쪽은 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
 
 
 ## 19. 모바일 개발
@@ -523,7 +527,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [⭐mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
 - [⭐Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, 포매터, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
 - [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
-- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 유료일듯?
+- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 💰유료일듯?
 - [Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
 - [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 문서 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
@@ -554,7 +558,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [autohotkey](https://www.autohotkey.com): 스크립트로 작성하는 매크로
 - [joytokey](https://joytokey.net/en): 게임패드-키보드(와 마우스) 매핑 앱
-- [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 매크로와 터보 기능은 유료다.
+- [REWASD](https://www.rewasd.com/map-xbox-elite): 게임패드-키보드(와 마우스) 매핑 앱. 💰매크로와 터보 기능은 유료다.
 
 ### 미디어 플레이어
 
