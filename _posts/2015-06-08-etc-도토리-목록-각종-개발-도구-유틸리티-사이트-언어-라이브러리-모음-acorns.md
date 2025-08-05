@@ -113,6 +113,10 @@ tags:
 - [jsoneditoronline.org](https://www.jsoneditoronline.org): JSON 편집 및 뷰어
 - [jsonviewer.codeplex.com](https://jsonviewer.codeplex.com): JSON 뷰어
 
+### 빌드 도구
+
+- [Bazel](https://github.com/bazelbuild/bazel/): 멀티 언어 빌드 도구. Maven, Gradle, Webpack 등과 달리 다양한 언어(Java, C++, Python 등)를 하나의 시스템에서 통합 빌드할 수 있다는 점이 특징이다.
+
 
 ## 4. 프레임워크, 라이브러리
 
@@ -135,6 +139,7 @@ tags:
 
 - [⭐Netty](https://netty.io/): 자바 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
 - [Spring](https://spring.io/): 자바 백엔드의 대명사 격인 자바 서버 애플리케이션 개발 프레임워크
+- [Spring Modulith](https://github.com/spring-projects/spring-modulith): 하나의 앱 안에 여러 개의 모듈을 구성하고, 모듈 간 명확한 경계를 유지하도록 도와주는 프레임워크. 잘 구조화된 모놀리틱 시스템을 만들고 싶거나, 나중에 MSA로 전환할 계획일 경우 사용하면 된다.
 - [NestJS](https://nestjs.com/): 타입스크립트 기반의 백엔드 애플리케이션(=API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Tiles](https://tiles.apache.org/): 자바에서 사용하는 템플릿 프레임워크. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
@@ -224,6 +229,10 @@ tags:
 - [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다.
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
 - [Reveal.js](https://revealjs.com/): HTML로 만드는 PPT
+
+### Java 라이브러리
+
+- [⭐JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드의 파라미터나 반환값이 `null`일 수 있는지를 어노테이션으로 명시해, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 돕는다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 자바에 통합될 가능성도 있다 함.
 
 
 ## 5. 인프라, 배포
@@ -357,7 +366,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 10. 프로그래밍 언어 Programming Language
 
-- [⭐Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. 시스템 프로그래밍, 웹 어셈블리, 임베디드 시스템 등 다양한 분야에서 사용되는 범용 언어다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다.
+- [⭐Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어 #1. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다. 성능이 중요한 네이티브 앱, 고성능 웹 서버, CLI 도구, 임베디드 시스템, OS 수준의 코드를 개발할 때 적합하다.
 - [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 자바라면 Elixir는 코틀린에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 스레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
 - [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. 자바와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
 - [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어 #2. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
@@ -365,8 +374,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. 자바 기반이며 JVM에서 실행된다.
 - [Kotlin](https://kotlinlang.org/): JVM에서 실행되는 자바와 상호 운용 가능한 언어. 안드로이드 개발에 주로 쓰인다. 네이티브, 자바스크립트(?)까지 지원한다고 하며 기존의 자바 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). 자바, 파이썬, 루비 등의 언어에서 영향을 받았다 한다. 
-- [Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다고...
-- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷하다고 함. 자바처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
+- [⭐Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다. 간단한 API 서버나 백엔드 애플리케이션 개발에 적합하다.
+- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷. 자바처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 - [⭐TypeScript](https://www.typescriptlang.org/): 타입스크립트. 자바스크립트의 슈퍼셋(superset)으로, 이름처럼 정적 데이터 타입이 추가되어 컴파일 에러 검출이 가능한 게 대표적인 특징이다. 컴파일 타임이 존재하며 자바스크립트 코드로 변환된다.
 - [Mojo](https://www.modular.com/mojo): 파이썬의 슈퍼셋. 파이썬의 느린 속도를 개선했으며 저수준의 제어가 가능한 것이 특징. Python 3.x를 완벽하게 호환한다.
 - [Jsonnet](https://jsonnet.org/): 환경 설정용 언어(A configuration language). 오직 JSON 데이터를 만들기 위한 언어로, 기존 JSON에선 불가능하던 변수 참조, 조건 분기, 함수, import 등의 기능을 사용할 수 있다.

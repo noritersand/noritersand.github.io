@@ -33,7 +33,7 @@ s.substring(1, 2); // 'b'
 
 `s`는 분명 문자열 원시 타입이다. 그런데 어떻게 메서드를 갖고 있을까?
 
-```js
+```java
 public class LogicTest {
   public static void main(String... args) {
     String s = "abc"; // new String("abc");
