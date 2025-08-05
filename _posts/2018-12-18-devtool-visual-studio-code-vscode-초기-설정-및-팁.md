@@ -136,14 +136,14 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
 - Open file `fr43nk.seito-openfile`
 - Bookmarks `alefragnani.bookmarks`
 - Auto Close Tag `formulahendry.auto-close-tag`
-- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. 윈도우일 경우 기본 단축키는 <kbd>ctrl + 방향키 위/아래</kbd>임.
+- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. MS 윈도우 기본 단축키는 <kbd>ctrl + 위방향키</kbd> <kbd>ctrl + 아래방향키</kbd>
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
 - Remote - WSL `ms-vscode-remote.remote-wsl`: WSL을 사용한다면 필요한 플러그인. 요거 설치하면 WSL 내의 프로젝트를 VSCODE로 열 수 있음.
 - Naming-Shiba `fredkeemhaus.Naming-Shiba`: 한국어 문장을 영문변수명으로 바꿔주는 플러그인. 노매드코더 슬랙 참가자 중 한 명이 말듦. 단축키는 <kbd>ctrl + shift + a</kbd>와 <kbd>ctrl + shift + s</kbd>인데 다른 거랑 겹치니까 딴 걸로 바꿔야 함.
-- GitHub Copilot `github.copilot`: AI가 코드를 작성해주는 쩌는 플러그인
-  - <kbd>alt + \\ </kbd>: 발동 단축키
+- GitHub Copilot `github.copilot`: LLM 자동완성
+  - <kbd>alt + \ </kbd>: 발동 단축키
   - <kbd>tab</kbd>: 제안 선택
   - <kbd>ctrl + enter</kbd>: 자동 완성 제안 창 보기
   - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기
@@ -256,8 +256,8 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - <kbd>f12</kbd>: Go To Definition. 선언부로 이동
 - <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)
 - <kbd>ctrl + shift + r</kbd>: Refactor... 현재 캐럿이 위치에 따라 가능한 코드 리팩터링 옵션을 보여준다.
-- <kbd>ctrl + shift + left/right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
-- <kbd>alt + shift + left/right</kbd>: Expand/Shrink Selection. 단어보다 더 넓은 범위로 선택 영역을 확장하거나 좁힌다. (서브라임 텍스트에서는 보조 단어(subwords) 단위의 선택 영역을 좌우로 확장하는 단축키임)
+- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
+- <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: Expand/Shrink Selection. 단어보다 더 넓은 범위로 선택 영역을 확장하거나 좁힌다. (서브라임 텍스트에서는 보조 단어(subwords) 단위의 선택 영역을 좌우로 확장하는 단축키임)
 
 ### 멀티 캐럿
 
@@ -265,7 +265,7 @@ Add Selection
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: 위나 아래로 멀티 캐럿
+- <kbd>ctrl + alt + 위방향키</kbd> <kbd>ctrl + alt + 아래방향키</kbd>: 위나 아래로 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: Select All Occurrences of Find Match. 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>alt + shift + i</kbd>: add cursors to line ends 선택한 영역에서 각 라인마다 캐럿 분리
 

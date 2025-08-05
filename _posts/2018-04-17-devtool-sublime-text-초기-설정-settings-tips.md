@@ -210,8 +210,8 @@ Build 3126 이후에 기록함.
 ### 선택
 
 - <kbd>ctrl + l</kbd>: 캐럿이 위치한 라인 전체를 선택한다.
-- <kbd>ctrl + shift + left/right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
-- <kbd>alt + shift + left/right</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
+- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
+- <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
 
 ### 멀티 캐럿(Multiple Selection)
 
@@ -221,7 +221,7 @@ Build 3126 이후에 기록함.
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 방향키 위/아래</kbd>: select_lines 위나 아래로 멀티 캐럿
+- <kbd>ctrl + alt + 위방향키</kbd> <kbd>ctrl + alt + 아래방향키</kbd>: select_lines 위나 아래로 멀티 캐럿
 - <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: split_selection_into_lines 선택한 영역에서 각 라인마다 캐럿 분리
 

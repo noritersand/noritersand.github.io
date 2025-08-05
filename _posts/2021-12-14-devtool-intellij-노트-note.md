@@ -350,19 +350,19 @@ JetBrains에서 제공하는 LLM을 쓴다면:
 - <kbd>ctrl + h</kbd>: Hierarchy 윈도우로 포커싱
 - <kbd>shift + esc</kbd>: 현재 윈도우 최소화
 - <kbd>ctrl + shift + '</kbd>: 현재 윈도우 최대화, 다시 누르면 원래 크기로
-- <kbd>ctrl + alt + shift + left/right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 (가능할 경우에만) Move Element Left/Right 기능으로 작동한다.
+- <kbd>ctrl + alt + shift + left</kbd> <kbd>ctrl + alt + shift + right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 (가능할 경우에만) Move Element Left/Right 기능으로 작동한다.
 
 ### 코드 에디터
 
-- <kbd>ctrl + \[/\]</kbd>: Move Caret to Code Block Start/End. 코드 블록의 처음 혹은 끝으로 이동하는 기능
-- <kbd>ctrl + shift + \[/\]</kbd>: Move Caret to Code Block Start/End with Selection. 코드 블록의 처음 혹은 끝으로 이동하면서 그 사이의 코드를 선택한다.
+- <kbd>ctrl + [</kbd> <kbd>ctrl + ]</kbd>: Move Caret to Code Block Start/End. 코드 블록의 처음 혹은 끝으로 이동하는 기능
+- <kbd>ctrl + shift + [</kbd> <kbd>ctrl + shift + ]</kbd>: Move Caret to Code Block Start/End with Selection. 코드 블록의 처음 혹은 끝으로 이동하면서 그 사이의 코드를 선택한다.
 - <kbd>ctrl + q</kbd>: Quick Documentation 퀵 뷰 창에서 서식이 적용된 자바독 보기
 - <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
 - <kbd>ctrl + u</kbd>: 오버라이딩 메서드의 super 메서드로 이동
 - <kbd>alt + enter</kbd>: Show Context Actions 파일 에디터에서 발동하면 상황에 맞는 메뉴 보여줌. 대부분 리팩터링 관련.
-- <kbd>alt + f1</kbd>: Select in/ 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
+- <kbd>alt + f1</kbd>: Select in... 어느 윈도우에서 현재 파일(혹은 포커스가 있는 요소)을 보여줄 지 선택하는 창이 열림. <kbd>alt + f1, 1</kbd> 누르면 프로젝트 윈도우에서 현재 파일이 보이는 식.
 - <kbd>alt + f7</kbd>: Find Usages 포커스된 대상이 어디서 쓰이고 있는지 프로젝트 전체 검색
 - <kbd>ctrl + alt + f7</kbd>: Show Usages 대상을 참조하고 있는 코드를 퀵 뷰 창에서 보여줌
 - <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데, 인텔리제이 2020.1 버전부터 두 기능 간 차이가 없다고 한다. [JetBrains Support 답변](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008113359--Find-usages-in-file-vs-Highlight-usages-in-file-)
@@ -382,7 +382,7 @@ JetBrains에서 제공하는 LLM을 쓴다면:
 - <kbd>ctrl + h</kbd>: Type Hierarchy. 타입 계층 보기
 - <kbd>ctrl + shift + h</kbd>: Method Hierarchy. 메서드 계층 보기
 - <kbd>ctrl + alt + h</kbd>: Call Hierarchy. 호출 계층 보기
-- <kbd>ctrl + alt + shift + left/right</kbd>: Move Element Left/Right. 메서드 매개변수의 순서를 변경할 때 사용함.
+- <kbd>ctrl + alt + shift + left</kbd> <kbd>ctrl + alt + shift + right</kbd>: Move Element Left/Right. 메서드 매개변수의 순서를 변경할 때 사용함.
 - <kbd>alt + shift + c</kbd>: Recent changes. 파일 시스템의 최근 변경 목록을 보여주는 것 같은데, 어떤 기준으로 나오는지 잘 모르겠음 🤔
 - <kbd>ctrl + shift + l</kbd>(서브라임 스타일): Split Selection into Lines. Extra Actions 플러그인을 설치해야 사용 가능. 기존 바인딩은 삭제
 - <kbd>alt + shift + l</kbd>: Save Context. 컨텍스트를 저장한다. 컨텍스트는 열려있는 파일들을 의미하는 모양
