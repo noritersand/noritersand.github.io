@@ -372,7 +372,6 @@ JetBrains에서 제공하는 LLM을 쓴다면:
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: Open source in new window. 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> <kbd>shift + f2</kbd>: Highlighted Error. 다음/이전 에러 지점으로 이동
-- ~~<kbd>ctrl + alt + left</kbd> <kbd>ctrl + alt + right</kbd>: 이전/다음 포커스가 있던 지점으로 이동~~
 - <kbd>ctrl + alt + t</kbd>: Surround With. 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
 - <kbd>ctrl + alt + shift + t</kbd>: Refactor This. 캐럿 위치 기준으로 소스 리팩토링 하기
 - <kbd>ctrl + j</kbd>: Insert Live Template. 라이브 템플릿 삽입하기

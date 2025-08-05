@@ -90,9 +90,7 @@ Set-NetIPInterface -InterfaceIndex <ifIndex> -InterfaceMetric 10
 
 ### 파일 탐색기에서 파일 목록에 포커싱하기
 
-~~Windows 10에선 그냥 <kbd>space</kbd> 누르면 됐는데 이제는 <kbd>alt</kbd>, <kbd>esc</kbd>, <kbd>down</kbd>을 순서대로 하나씩 눌러야 한다~~ 
-
-업데이트를 반복하더니 이제 탐색기 열자마자 아래 방향키 누르면 됨.
+최신 버전(대략 24H2 26100.4770 쯤) 기준, 탐색기 열자마자 아래 방향키 누르면 됨.
 
 ### 여러 파일을 한 번에 관리자 권한으로 실행하기
 
@@ -104,13 +102,9 @@ start "" "C:\전체경로\파일이름3"
 
 이런식으로 드라이브부터 시작하는 전체경로를 작성한 뒤 `bat` 확장자로 저장한다. 그리고 이 bat 파일을 관리자 권한으로 실행하면 됨.
 
-### 새 텍스트 파일을 만드는 가장 빠른 방법
-
-파일 탐색기(File Explorer)에서 <kbd>alt + f</kbd>, <kbd>w</kbd>를 누르고 <kbd>up</kbd>으로 '텍스트 문서'를 고른다.
-
 ### 파일 탐색기가 프리징 등으로 작동하지 않으면
 
-*작업 관리자*<kbd>ctrl + shift + esc</kbd>에서 *Windows 탐색기* 혹은 *explorer*를 찾아 종료시킨다. 이렇게 하면 작업 표시줄이 사라지는데, *작업 관리자* 창에서 *새 작업 실행*을 누르고 `explorer`를 입력하면 다시 나타난다.
+작업 관리자<kbd>ctrl + shift + esc</kbd>에서 'Windows 탐색기' 혹은 'explorer'를 찾아 종료시킨다. 이렇게 하면 작업 표시줄이 사라지는데, 작업 관리자 창에서 '새 작업 실행'을 누르고 `explorer`를 입력하면 다시 나타난다.
 
 ### 영타 간격이 이상할 때
 
@@ -142,12 +136,12 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ### 전역
 
-- <kbd>win + a</kbd>: *빠른 설정 열기* 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
-- <kbd>win + n</kbd>: *알림과 달력 열기*
-- <kbd>win + q</kbd> <kbd>win + s</kbd>: *시작 메뉴 검색*
-- <kbd>win + w</kbd>: *위젯 열기* 원래는 'Windows Ink 열기' 였음
-- <kbd>win + h</kbd>: *보이스 타이핑* Microsoft 음성 명령 서비스다.
-- <kbd>win + ctrl + v</kbd> *사운드 출력* 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
+- <kbd>win + a</kbd>: 빠른 설정 열기. 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
+- <kbd>win + n</kbd>: 알림과 달력 열기
+- <kbd>win + q</kbd> <kbd>win + s</kbd>: 시작 메뉴 검색
+- <kbd>win + w</kbd>: 위젯 열기. 원래는 'Windows Ink 열기' 였음
+- <kbd>win + h</kbd>: 보이스 타이핑. Microsoft 음성 명령 서비스다.
+- <kbd>win + ctrl + v</kbd> 사운드 출력. 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
 - <kbd>win + esc</kbd>: 돋보기가 켜졌을 때 누르면 꺼짐
 - <kbd>win + space</kbd>: 입력기 변환
 - <kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능이지만, PowerToys를 설치하면 PowerToys 실행 단축키로 바뀜.
@@ -161,7 +155,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ### 파일 탐색기
 
-- <kbd>alt + f</kbd> 혹은 <kbd>shift + 우클릭</kbd>: 파일 탐색기의 구 컨텍스트 메뉴를 활성화한다. Windows 10부터 추가된 새 컨텍스트 메뉴에서 '추가 옵션 표시'를 누르는 것과 같다.
+- <kbd>shift + 우클릭</kbd>: 파일 탐색기의 구 컨텍스트 메뉴를 활성화한다. Windows 10부터 추가된 새 컨텍스트 메뉴에서 '추가 옵션 표시'를 누르는 것과 같다.
 - <kbd>Numpad Plus</kbd>: 사이드바에서 모든 하위 디렉터리 펼치기
 - <kbd>Numpad minus</kbd>: 사이드바에서 모든 하위 디렉터리 접기
 - <kbd>alt + p</kbd>: 미리보기 패널 열기

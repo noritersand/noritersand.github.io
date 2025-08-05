@@ -136,7 +136,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
 - Open file `fr43nk.seito-openfile`
 - Bookmarks `alefragnani.bookmarks`
 - Auto Close Tag `formulahendry.auto-close-tag`
-- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. MS 윈도우 기본 단축키는 <kbd>ctrl + up</kbd> <kbd>ctrl + down</kbd>
+- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. 윈도우 버전의 기본 단축키는 <kbd>ctrl + up</kbd> <kbd>ctrl + down</kbd>
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
