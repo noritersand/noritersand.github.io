@@ -136,7 +136,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
 - Open file `fr43nk.seito-openfile`
 - Bookmarks `alefragnani.bookmarks`
 - Auto Close Tag `formulahendry.auto-close-tag`
-- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. MS 윈도우 기본 단축키는 <kbd>ctrl + 위방향키</kbd> <kbd>ctrl + 아래방향키</kbd>
+- Go to Next/Previous Member `mishkinf.goto-next-previous-member`: 전과 후의 멤버(함수, 메서드, 프로퍼티, 지역변수 등)로 이동하는 기능을 추가한다. MS 윈도우 기본 단축키는 <kbd>ctrl + up</kbd> <kbd>ctrl + down</kbd>
 - Highlight Matching Tag `vincaslt.highlight-matching-tag`
 - Bracket Pair Colorizer 2 `coenraads.bracket-pair-colorizer-2`
 - indent-rainbow `oderwat.indent-rainbow`
@@ -265,7 +265,7 @@ Add Selection
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 위방향키</kbd> <kbd>ctrl + alt + 아래방향키</kbd>: 위나 아래로 멀티 캐럿
+- <kbd>ctrl + alt + up</kbd> <kbd>ctrl + alt + down</kbd>: 위나 아래로 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: Select All Occurrences of Find Match. 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>alt + shift + i</kbd>: add cursors to line ends 선택한 영역에서 각 라인마다 캐럿 분리
 

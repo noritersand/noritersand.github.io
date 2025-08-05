@@ -263,8 +263,8 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + pageup</kbd>: Editor Tabs > Select Previous Tab. 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
 - <kbd>ctrl + pagedown</kbd>: Editor Tabs > Select Next Tab. 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
 - <kbd>ctrl + alt + shift + '</kbd>: Editor Tabs > Maximize Editor/Normalize Splits. 에디터 창 최대화/원래대로 토글
-- <kbd>alt + left</kbd>: Navigate > Back. 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- <kbd>alt + right</kbd>: Navigate > Forward. 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- <kbd>alt + left</kbd> <kbd>alt + right</kbd>: Navigate > Back. 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- : Navigate > Forward. 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
 - <kbd>alt + s</kbd>: Database > Attach Session. 데이터베이스 연결 선택하는 기능
 - <kbd>alt + z</kbd>: Active Editor > Soft-Wrap
 - <kbd>alt + x</kbd>: Other > Clear text. 콘솔 지우기
@@ -372,7 +372,7 @@ JetBrains에서 제공하는 LLM을 쓴다면:
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: Open source in new window. 현재 파일 새 창에서 보기
 - <kbd>f2</kbd> <kbd>shift + f2</kbd>: Highlighted Error. 다음/이전 에러 지점으로 이동
-- <kbd>ctrl + alt + 방향키좌우</kbd>: 이전/다음 포커스가 있던 지점으로 이동
+- ~~<kbd>ctrl + alt + left</kbd> <kbd>ctrl + alt + right</kbd>: 이전/다음 포커스가 있던 지점으로 이동~~
 - <kbd>ctrl + alt + t</kbd>: Surround With. 선택한 코드를 제어문(if, while, try-catch 등)으로 감싸주는 기능
 - <kbd>ctrl + alt + shift + t</kbd>: Refactor This. 캐럿 위치 기준으로 소스 리팩토링 하기
 - <kbd>ctrl + j</kbd>: Insert Live Template. 라이브 템플릿 삽입하기

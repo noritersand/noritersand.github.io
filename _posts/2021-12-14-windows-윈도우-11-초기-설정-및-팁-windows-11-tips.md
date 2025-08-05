@@ -90,7 +90,9 @@ Set-NetIPInterface -InterfaceIndex <ifIndex> -InterfaceMetric 10
 
 ### 파일 탐색기에서 파일 목록에 포커싱하기
 
-Windows 10에선 그냥 <kbd>space</kbd> 누르면 됐는데 이제는 <kbd>alt</kbd>, <kbd>esc</kbd>, <kbd>아래 방향키</kbd>를 순서대로 하나씩 눌러야 한다.
+~~Windows 10에선 그냥 <kbd>space</kbd> 누르면 됐는데 이제는 <kbd>alt</kbd>, <kbd>esc</kbd>, <kbd>down</kbd>을 순서대로 하나씩 눌러야 한다~~ 
+
+업데이트를 반복하더니 이제 탐색기 열자마자 아래 방향키 누르면 됨.
 
 ### 여러 파일을 한 번에 관리자 권한으로 실행하기
 
@@ -104,7 +106,7 @@ start "" "C:\전체경로\파일이름3"
 
 ### 새 텍스트 파일을 만드는 가장 빠른 방법
 
-파일 탐색기(File Explorer)에서 <kbd>alt + f</kbd>, <kbd>w</kbd>를 누르고 위 방향키(<kbd>↑</kbd>)로 *텍스트 문서*를 고른다.
+파일 탐색기(File Explorer)에서 <kbd>alt + f</kbd>, <kbd>w</kbd>를 누르고 <kbd>up</kbd>으로 '텍스트 문서'를 고른다.
 
 ### 파일 탐색기가 프리징 등으로 작동하지 않으면
 

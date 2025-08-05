@@ -221,7 +221,7 @@ Build 3126 이후에 기록함.
 
 - <kbd>ctrl + d</kbd>: 선택한 단어와 동일한 다음 단어에 캐럿 추가
 - <kbd>ctrl + u</kbd>: 캐럿 추가 되돌리기
-- <kbd>ctrl + alt + 위방향키</kbd> <kbd>ctrl + alt + 아래방향키</kbd>: select_lines 위나 아래로 멀티 캐럿
+- <kbd>ctrl + alt + up</kbd> <kbd>ctrl + alt + down</kbd>: select_lines 위나 아래로 멀티 캐럿
 - <kbd>alt + f3</kbd>: 현재 파일에서 선택한 단어와 같은 모든 단어에 멀티 캐럿
 - <kbd>ctrl + shift + l</kbd>: split_selection_into_lines 선택한 영역에서 각 라인마다 캐럿 분리
 
