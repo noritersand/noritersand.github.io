@@ -293,7 +293,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 JetBrains에서 제공하는 LLM을 쓴다면:
 
-- <kbd>alt + \ </kbd>: Plugins > JetBrains AI Assistant > Generate Code. 자동 완성 발동 키 (원래 키에서 변)
+- <kbd>alt + \ </kbd>: Plugins > JetBrains AI Assistant > Generate Code. 인라인 코드 생성창 열기 (원래 키에서 변경)
 - <kbd>alt + p</kbd>: Tool Windows > AI Assistant.  LLM 채팅창 열기 (원래 키에서 변경)
 - <kbd>alt + shift + p</kbd>: Plugins > JetBrains AI Assistant > Ask AI Assistant. 이게 뭔지 작동을 안하네? (원래 키에서 변경)
 

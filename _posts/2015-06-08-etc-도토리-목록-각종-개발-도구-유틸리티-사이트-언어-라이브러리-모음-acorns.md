@@ -68,14 +68,9 @@ tags:
 - [⭐Visual Studio Code](https://code.visualstudio.com)
 - [Obsidian](https://obsidian.md/): 신개념 텍스트 에디터. 마크다운과 다이어그램을 기본으로 지원하고, 노트끼리 링크로 연결할 수 있다. 작성된 노트 기반으로 자동 생성되는 마인드맵 기능이 있다. 💰작성한 파일의 클라우드 동기화 기능(Obsidian Sync)은 유료다.
 - [Cursor](https://www.cursor.com/): AI 기반 코드 에디터. 일렉트론 + 모나코 에디터 기반이라 VSCode와 인터페이스가 매우 유사하다.
-- [Zed](http://zedapp.org): 윈도우는 아직 지원 예정(2025-02-05)이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
-- [Eclipse](http://www.eclipse.org/downloads)
-- [IntelliJ](http://www.jetbrains.com/idea/download/index.html)
-- [jEdit](http://www.jedit.org/index.php?page=download)
-- [NetBeans](https://netbeans.org/downloads/index.html)
-- [Cloud9](https://c9.io)
-- [WebStorm](http://www.jetbrains.com/webstorm/download/index.html)
-- [Aptana](http://www.aptana.com/products/studio3/download)
+- [Zed](http://zedapp.org): 윈도우는 아직(2025-02-05) 지원 예정이라 기대만 하고 있는 텍스트 에디터. 특징은 고성능, 경량, 실시간 협업 기능이다.
+- [IntelliJ](http://www.jetbrains.com/idea/download/index.html): 자바 한정 최강. 단점은 💰유료
+- [WebStorm](http://www.jetbrains.com/webstorm/download/index.html): JS/TS 웹 개발에 최적화된 IDE. 원래는 유료였다가 2025년에 무료로 풀림
 
 ### 온라인 코드 에디터, 스니펫
 
@@ -518,8 +513,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 비슷한 서비스: [Stitch](https://stitch.withgoogle.com/), [Readdy](https://readdy.ai/)
 - [⭐DeepWiki](https://deepwiki.org/): 깃 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
-- [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있는게 🍯꿀이다.
-- [GitMCP](https://gitmcp.io/): 깃허브 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다.  Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹기 때문에, LLM 토큰을 아끼고 싶다면 이게 좋다. 그리고 이쪽은 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
+- [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
+- [GitMCP](https://gitmcp.io/): 깃허브 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. 깃허브 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
 
 
 ## 19. 모바일 개발

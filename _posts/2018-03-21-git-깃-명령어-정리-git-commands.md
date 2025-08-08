@@ -761,11 +761,11 @@ size-garbage: 0 bytes
 - size-pack: 팩 파일의 전체 크기
 - prune-packable: 팩에 존재하는 느슨한 객체의 개수
 - garbage: 손상되거나 유효하지 않은 객체의 개수
-- size-garbage: gabage 객체의 전체 크기
+- size-garbage: garbage 객체의 전체 크기
 
-느슨한 객체가 많거나 팩 파일이 여러 개면 `git gc`를 실행해서 저장소를 최적화한다. `git count-objects`를 다시 실행했을 때 count: 0, packs: 1이 되면 성공. 
+느슨한 객체가 많거나 팩 파일이 여러 개면 `git gc`를 실행해서 저장소를 최적화한다. `git count-objects`를 다시 실행했을 때 `count: 0`, `packs: 1`이 되면 성공. 
 
-`git gc` 실행 후에도 팩 파일의 크기가 줄어들지 않으면 `git repack`을 찾아보자. prune-packable은 `git prune-packed` 명령으로 정리할 수 있다. garbage가 있다면 `git fsck`로 손상된 객체를 복구하거나 저장소를 새로 만든다.
+`git gc`보다 더 세밀한 최적화를 하고 싶다면 `git repack`을 찾아보자. `prune-packable`은 `git prune-packed` 명령으로 정리할 수 있다. `garbage`가 있다면 `git fsck`로 손상된 객체를 복구하거나 저장소를 새로 만든다.
 
 
 ## diff
@@ -1030,18 +1030,19 @@ hash mismatch 7g8h9i0j1k2l...
 
 오래된 이력과 레퍼런스를 정리/압축해서 저장소를 최적화하는 명령어다.
 
-```bash
-git gc
+```
+git gc [--aggressive] [--auto] [--[no-]detach] [--quiet] [--prune=<date> | --no-prune] [--force] [--keep-largest-pack]
 ```
 
-`git gc`는 깃 저장소에서 가비지 컬렉션을 수행하면서 사용되지 않는 객체를 제거한다. 완전히 깨끗한 상태로 만들고 싶으면 `--prune=now` 옵션을 붙인다:
+`git gc`는 깃 저장소에서 가비지 컬렉션을 수행하면서 사용되지 않는 객체를 제거하고, 저장소를 최적화한다. 보통은 깃이 자동으로 실행하므로 신경 쓸 필요가 없지만, 저장소가 지나치게 느리거나 크기가 비정상적으로 커졌을 때 사용한다.
 
 ```bash
-# 최근에 생성된 객체까지 모두 삭제
-git gc --prune=now
+# 자동 실행 조건을 무시하고 강제 실행 + 최근에 생성된 객체까지 모두 삭제 + 더 많은 델타 압축 수행
+# ⚠️ 이 명령은 가장 강력한 청소 및 압축 방법이지만, 최근에 생성된 객체까지 삭제되며 복구가 어려우니 주의 필요
+git gc --force --prune=now --aggressive
 ```
 
-gc 중 다음과 같은 메시지가 나타날 수 있는데:
+GC 중 다음과 같은 메시지가 나타날 수 있는데:
 
 ```bash
 PS C:\dev\git\noritersand.github.io> git gc --prune=now
@@ -1054,7 +1055,7 @@ Total 396731 (delta 254114), reused 396729 (delta 254112), pack-reused 0
 Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.pack' failed. Should I try again? (y/n)
 ```
 
-여기선 그냥 'N'을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:
+여기선 그냥 `N`을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:
 
 ```bash
 # 파워셸
@@ -2223,7 +2224,7 @@ git worktree repair [<path>…​]
 git worktree unlock <worktree>
 ```
 
-원래는 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 했지만, `worktree`를 사용하면 기존 워킹 트리를 그대로 둔 채 새로운 디렉터리에서 다른 브랜치로 작업할 수 있다. 이 방식은 예를 들어 긴급 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
+원래 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 한다, 여기서 `worktree`를 사용하면 **기존 워킹 트리를 그대로 두고** 새로운 디렉터리에서 다른 브랜치로 전환하여 작업할 수 있다. 이 방식은 예를 들어 긴급한 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
 
 ```bash
 # 새 워킹 트리 생성
