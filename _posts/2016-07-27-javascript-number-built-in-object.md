@@ -333,7 +333,7 @@ MDN의 설명에 따르면 이 메서드는 특이사항이 몇 가지 있다.
 Number.isInteger(5.0000000000000001); // true
 ```
 
-그리고 `Number.MAX_SAFE_INTEGER` 값 `9.007199254740991e+15`와 자리수 기준으로 근접한 수에 도달하면 정밀도 손상이 발생하여 정수 판단을 제대로 하지 못한다. 이것은 소수점 아래를 표현할 비트가 부족하여 발생하는 현상이다:
+그리고 `Number.MAX_SAFE_INTEGER` 값 `9.007199254740991e+15`와 자릿수 기준으로 근접한 수에 도달하면 정밀도 손상이 발생하여 정수 판단을 제대로 하지 못한다. 이것은 소수점 아래를 표현할 비트가 부족하여 발생하는 현상이다:
 
 ```js
 Number.isInteger(4500000000000000.5); // false
@@ -450,7 +450,35 @@ Number(undefined); // NaN
 
 ### Number.prototype.toExponential()
 
-**TODO**
+숫자값을 지수 표기법(exponential notation)으로 변환하는 메서드. 이 메서드는 숫자를 지수부(exponent)와 가수부(mantissa)로 나눠 표현한다.
+
+```
+number.toExponential()
+number.toExponential(fractionDigits)
+```
+
+- `fractionDigits`: 소수점 이하의 자릿수. 생략하면 자바스크립트가 필요한 자릿수를 알아서 결정한다.
+
+반환되는 값은 숫자를 지수 표기법으로 나타낸 문자열이다.
+
+```js
+(1).toExponential(); // "1e+0"
+(10).toExponential(); // "1e+1"
+(100).toExponential(); // "1e+2"
+(2000).toExponential(); // "2e+3"
+(30000).toExponential(); // "3e+4"
+(400001).toExponential(); // "4.00001e+5"
+```
+
+`fractionDigits`는 '소수점 이하 `n`자리까지'를 의미하는 매개변수다. 실제 값의 자릿수가 `fractionDigits` 보다 크면, 지정한 자리 아래는 반올림한다:
+
+```js
+(12345).toExponential(5); // "1.23450e+4"
+(12345).toExponential(4); // "1.2345e+4"
+(12345).toExponential(3); // "1.235e+4"
+(12345).toExponential(2); // "1.23e+4"
+(12345).toExponential(1); // "1.2e+4"
+```
 
 ### Number.prototype.toFixed()
 
