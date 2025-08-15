@@ -192,6 +192,31 @@ Node.js는 `./myModule/lib/temp.js` 를 찾는다.
 
 npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키지(혹은 모듈) 관리 도구다.
 
+### ℹ️ 파워셸에서 npm 명령이 실행되지 않을 때
+
+```bash
+PS> npm
+npm : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\nvm4w\nodejs\npm.ps1 파일을 로드할 수 없습니다
+. 자세한 내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=135170)를 참조하십시
+오.
+위치 줄:1 문자:1
++ npm
++ ~~~~
+    + CategoryInfo          : 보안 오류: (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+OS 초기화 후 처음 Node.js를 설치했다면 이런 문제가 발생할 수 있다. 원인은 파워셸의 스크립트 실행을 막는 실행 정책 때문인데, `npm` 명령이 윈도우에서는 내부적으로 `npm.ps1`을 실행하도록 되어 있고, 파워셸의 기본 보안 설정에 의해 이 스크립트 실행이 차단된 것.
+
+아래 명령을 실행하면 해결된다:
+
+```bash
+# 파워셸 실행 정책 변경: 
+# - 현재 사용자에게만 적용
+# - 스크립트를 로컬에서 직접 작성했거나 신뢰할 수 있는 게시자가 서명한 경우에만 실행
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 ### ⚠️ 해킹 방지 부적(?)
 
 npm의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고 설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데 Supply Chanin Attack 이라 한다고... 
@@ -694,7 +719,7 @@ nodemon --exec 'tsc'
  | |_   | | \  /    / _ \   | |  | | | || |
  |  _|  | | /  \   / ___ \  | |__| |_| || |
  |_|   |___/_/\_\ /_/   \_\ |_____\___/ |_|
-                                               
+                                             
 ```
 
 ### Jest

@@ -606,7 +606,7 @@ FROM (
         TO_CHAR(created, 'yyyy-mm-dd') as created
      FROM bbs
 )  
-WHERE rnum >= #{start} AND rnum <= #{end}  
+WHERE rnum >= #{start} AND rnum <= #{end}
 ```
 
 - `#{뿅뿅}`: Java 마이바티스 매개변수

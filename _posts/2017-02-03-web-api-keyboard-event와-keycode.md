@@ -47,7 +47,7 @@ tags:
 
 > Warning: Since this event has been deprecated, you should look to use beforeinput or keydown instead.
 >
-> https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event
+> [https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event](https://developer.mozilla.org/en-US/docs/Web/API/Document/keypress_event)
 
 
 ## 입력 테스트

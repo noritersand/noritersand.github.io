@@ -1312,7 +1312,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 - `-h` `--heads`: 헤드만 출력, 즉 브랜치만 보는 옵션.
 - `-t` `--tags `: 태그만 출력한다.
-- `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags는 저도 모르니 묻지 마십씨오~~
+- `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags가 대체 뭐람...~~
 
 
 ## ls-tree
@@ -1337,9 +1337,11 @@ git ls-tree HEAD ./docs
 
 ## merge
 
-현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
+> 깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다.
+>
+> [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
 
-깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다. [^1]
+현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
 
 ```bash
 git merge 브랜치1 [브랜치2 브랜치3 브랜치3 ...]
@@ -2254,6 +2256,3 @@ git worktree prune
 
 
 끗.
-
-
-[^1]: [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
