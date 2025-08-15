@@ -196,19 +196,12 @@ npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키�
 
 ```bash
 PS> npm
-npm : 이 시스템에서 스크립트를 실행할 수 없으므로 C:\nvm4w\nodejs\npm.ps1 파일을 로드할 수 없습니다
-. 자세한 내용은 about_Execution_Policies(https://go.microsoft.com/fwlink/?LinkID=135170)를 참조하십시
-오.
-위치 줄:1 문자:1
-+ npm
-+ ~~~~
-    + CategoryInfo          : 보안 오류: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
+npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
-OS 초기화 후 처음 Node.js를 설치했다면 이런 문제가 발생할 수 있다. 원인은 파워셸의 스크립트 실행을 막는 실행 정책 때문인데, `npm` 명령이 윈도우에서는 내부적으로 `npm.ps1`을 실행하도록 되어 있고, 파워셸의 기본 보안 설정에 의해 이 스크립트 실행이 차단된 것.
+이 문제는 파워셸의 실행 정책(Execution Policy) 때문에 발생한다. 파워셸은 기본적으로 보안을 위해 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 스크립트 파일이 차단되어 에러가 발생하는 것.
 
-아래 명령을 실행하면 해결된다:
+아래 명령으로 실행 정책을 변경해주면 해결된다:
 
 ```bash
 # 파워셸 실행 정책 변경: 
