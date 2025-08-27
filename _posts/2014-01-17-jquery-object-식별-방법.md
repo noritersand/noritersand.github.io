@@ -59,7 +59,7 @@ selector2 instanceof jQuery; // true
 </html>
 ```
 
-페이지가 위와 같을때 자바스크립트에선:
+페이지가 위와 같을때 JavaScript에선:
 
 ```js
 document.getElementById('target') == document.getElementById('target');  // true

@@ -407,7 +407,7 @@ from (
 
 ## 23시 59분 59초
 
-위에 작성한 쿼리 중 `DATE`에 시분초를 더해 `DATETIME`을 만드는 부분이 있는데:
+위에 작성한 쿼리 중 `DATE`에 시분초를 더해 `DATETIME` 값을 만드는 부분이 있는데:
 
 ```sql
 convert(concat(date_format(a.end_date, '%Y-%m-%d'), ' 23:59:59'), datetime)
@@ -422,6 +422,18 @@ date_sub(date_add('2022-12-24', interval 1 day), interval 1 second)
 ```
 
 문자열 리터럴은 안쓰는 게 좋으니 가급적 이걸 사용하도록 하자. 😏
+
+### DATETIME을 범위 검색할 때
+
+`DATETIME` 타입의 컬럼을 범위 검색에 사용할 때, 위에서 언급한 것처럼 시분초 `23:59:59`를 더하는 방식은 가독성, 정확성이 떨어지는 문제가 있다:
+
+```sql
+-- ❌ 비추천: 함수 중첩으로 읽기 힘들고, 밀리초 단위 데이터를 놓칠 가능성 있음
+where ap.sendDt between '2025-08-20' and date_sub(date_add('2025-08-20', interval 1 day), interval 1 second)
+
+-- ✅ 추천: 간결하고 정확함
+where '2025-08-20' <= ap.sendDt and ap.sendDt < '2025-08-20' + interval 1 day
+```
 
 
 ## 세션의 시간대 변경하기

@@ -128,13 +128,13 @@ new obj.notSure(); // TypeError: obj.notSure is not a constructor
 
 ### 특수 문자가 포함된 메서드 이름
 
-객체 리터럴에선 이런게 가능한 것처럼:
+객체 리터럴에서 프로퍼티 이름에 특수문자를 포함할 수 있는 것처럼:
 
 ```js
 var obj = {
-  'c.c': 123
+  's-t-ring': 123
 };
-obj['c.c']; // 123
+obj['s-t-ring']; // 123
 ```
 
 단축 메서드명도 이렇게 할 수 있음:
@@ -142,15 +142,13 @@ obj['c.c']; // 123
 ```js
 // name: function () {}은 name() {}과 같으므로
 var obj = {
-  'c.c'() {
+  's-t-ring'() {
     console.log('hi');
   }
 };
 
-typeof obj['c.c']; // "function"
-obj['c.c'](); // 'hi' 출력
+typeof obj['s-t-ring']; // "function"
+obj['s-t-ring'](); // 'hi' 출력
 ```
 
-누가 이렇게까지 하겠냐만은...
-
-어쨋든 끗.
+끗.

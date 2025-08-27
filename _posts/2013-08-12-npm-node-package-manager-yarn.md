@@ -719,4 +719,4 @@ nodemon --exec 'tsc'
 
 [https://jestjs.io/](https://jestjs.io/)
 
-자바스크립트 테스팅 프레임워크.
+JavaScript 테스팅 프레임워크.

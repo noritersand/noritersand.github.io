@@ -28,7 +28,7 @@ Standard built-in Objects: Number
 
 ## Number() 생성자 함수
 
-`new Number()`는 주어진 값을 숫자로 변환한다. 주어진 값이 `underfined`이거나 수가 아닌 문자, 길이가 `2` 이상인 배열일 때 `NaN`을 반환한다.
+`new Number()`는 주어진 값을 수로 변환한다. 주어진 값이 `undefined`이거나 숫자가 아닌 문자, 길이가 `2` 이상인 배열일 때 `NaN`을 반환한다.
 
 이 생성자 함수의 반환 타입은 레퍼 객체인데, `new`를 생략하고 일반 함수 `Number()`로 호출하면 원시 타입의 값을 반환한다. 두 방식의 변환 규칙은 같다.
 
@@ -39,7 +39,7 @@ Standard built-in Objects: Number
 
 `2.220446049250313e-16` 값을 반환하는 상수. (소수점으로 표현하면 `2.220446049250313 / 10^16 = 0.0000000000000002220446049250313`)
 
-자바스크립트는 ECMAScript 표준에 따라 자바스크립트의 모든 산술을 IEEE 754 배정밀도 부동소수점 연산(Double-precision floating-point arithmetic, 64비트)을 사용하여 수행하는데, `Number.EPSILON`은 이 연산에서 1과 1보다 큰 다음 표현 가능한 숫자 사이의 가장 작은 차이를, 쉽게 말하면 1과 그보다 약간 큰 수를 구분할 수 있는 최소한의 간격을 의미한다.
+자바스크립트는 ECMAScript 표준에 따라 자바스크립트의 모든 산술을 IEEE 754 배정밀도 부동소수점 연산(Double-precision floating-point arithmetic, 64비트)을 사용하여 수행하는데, `Number.EPSILON`은 이 연산에서 `1`과 `1`보다 큰 다음 표현 가능한 수 사이의 가장 작은 차이를, 쉽게 말하면 1과 그보다 약간 큰 수를 구분할 수 있는 최소한의 간격을 의미한다.
 
 이 값은 아주 작은 값이라서, 보통 부동소수점 비교 연산에서 사실상 같다고 볼 수 있는 범위를 결정할 때 활용한다. 예를 들어 두 수 `a`와 `b`의 차이가 `Number.EPSILON` 보다 작다면, 이를 사실상 같은 값으로 간주하는 것이다.
 
@@ -57,7 +57,7 @@ result < Number.EPSILON; // true
 
 자바스크립트에서 안전하게 표현할 수 있는 가장 큰 정수. 2의 53제곱에 1을 뺀 값으로 `9007199254740991`이다(약 구천조). 여기서 '안전'하다는 말은 이 값을 넘어가면 에러가 발생한다는 뜻이 아니라, 수학적으로 부정확한(mathematically incorrect) 연산 결과가 나온다는 뜻이다.
 
-자바스크립트의 숫자 타입 `Number`는 이중 정밀도 부동 소수점 형식을 사용하여 64비트로 숫자를 표현한다. 이 형식은 53비트의 정밀도를 제공하기 때문에, 정확하게 표현할 수 있는 정수의 범위는 `-(2^53 - 1)`부터 `2^53 - 1`까지다. 이 범위를 넘어서는 정수는 정확하게 표현되지 않거나 정밀도 손실이 발생할 수 있다.
+자바스크립트에서 `number` 타입의 수는 64비트 이중 정밀도 부동소수점 형식으로 표현된다. 이 형식은 53비트의 정밀도를 제공하기 때문에, 정확하게 표현할 수 있는 정수의 범위는 `-(2^53 - 1)`부터 `2^53 - 1`까지다. 이 범위를 넘어서는 정수는 정확하게 표현되지 않거나 정밀도 손실이 발생할 수 있다.
 
 ```js
 typeof Number.MAX_SAFE_INTEGER; // "number" 
@@ -81,7 +81,7 @@ unsafeNumber2 - unsafeNumber1; // 0
 
 ### Number.MAX_VALUE
 
-자바스크립트에서 표현할 수 있는 가장 큰 양의 부동소수점 수를 나타내는 상수.
+자바스크립트에서 표현할 수 있는 가장 큰 양의 부동소수점 값을 나타내는 상수.
 
 ```js
 Number.MAX_VALUE; // 1.7976931348623157e+308
@@ -117,7 +117,7 @@ Number.MAX_SAFE_INTEGER < Number.MAX_VALUE; // true
 
 ### Number.MIN_SAFE_INTEGER
 
-자바스크립트에서 안전하게 표현할 수 있는 가장 작은 정수. 반환하는 값은 `-(2^53 - 1)` 혹은 `-9007199254740991`이다. 여기서 '안전'하다는 말은 `Number.MAX_SAFE_INTEGER`와 `Number.MIN_SAFE_INTEGER` 범위 내의 정수들이 `Number` 타입(IEEE 754 표준에 따른 64비트 부동소수점 숫자)으로 정확하게 표현되고, 연산 과정에서 정밀도 손실 없이 사용할 수 있다는 것을 의미한다.
+자바스크립트에서 안전하게 표현할 수 있는 가장 작은 정수. 반환하는 값은 `-(2^53 - 1)` 혹은 `-9007199254740991`이다. 여기서 '안전'하다는 말은 `Number.MAX_SAFE_INTEGER`와 `Number.MIN_SAFE_INTEGER` 범위 내의 정수들이 `number` 타입(IEEE 754 표준에 따른 64비트 부동소수점 수)으로 정확하게 표현되고, 연산 과정에서 정밀도 손실 없이 사용할 수 있다는 것을 의미한다.
 
 ```js
 typeof Number.MIN_SAFE_INTEGER; // "number"
@@ -137,7 +137,7 @@ unsafeNumber1 - unsafeNumber2; // 0
 
 ### Number.MIN_VALUE
 
-자바스크립트에서 표현할 수 있는 가장 작은 양의 부동소수점 수를 나타낸다.
+자바스크립트에서 표현할 수 있는 가장 작은 양의 부동소수점 값을 나타낸다.
 
 ```js
 Number.MIN_VALUE; // 5e-324
@@ -191,7 +191,7 @@ isNaN(Number.NaN); // true
 isFinite(Number.NaN); // false
 ```
 
-`typeof NaN`은 `"number"`으로 평가된다. '수가 아님'을 의미하더라도 표현 방식 자체는 64비트 부동소수점이며, `NaN`도 내부적으로는 숫자 타입의 표현 방식(부호, 지수, 가수)을 사용하기 때문이라고 한다.
+`typeof NaN`은 `"number"`으로 평가된다. '수가 아님'을 의미하더라도 표현 방식 자체는 64비트 부동소수점이며, `NaN`도 내부적으로는 `number` 타입의 표현 방식(부호, 지수, 가수)을 사용하기 때문이라고 한다.
 
 ```js
 typeof NaN; // "number"
@@ -209,7 +209,7 @@ Number.NEGATIVE_INFINITY * 2; // -Infinity
 Number.NEGATIVE_INFINITY * 2 === Number.NEGATIVE_INFINITY; // true
 ```
 
-표현 가능한 수의 범위를 음의 방향으로 초과하는 연산은 `-Infinity`를 반환한다:
+표현 가능한 값의 범위를 음의 방향으로 초과하는 연산은 `-Infinity`를 반환한다:
 
 ```js
 -1e308 * 2; // -Infinity 
@@ -243,7 +243,7 @@ Number.POSITIVE_INFINITY * 2; // Infinity
 Number.POSITIVE_INFINITY * 2 === Number.POSITIVE_INFINITY; // true
 ```
 
-`1`을 `0`으로 나누거나, 표현 가능한 수의 범위를 초과하는 연산은 `Infinity`를 반환한다:
+`1`을 `0`으로 나누거나, 표현 가능한 값의 범위를 초과하는 연산은 `Infinity`를 반환한다:
 
 ```js
 1 / 0; // Infinity
@@ -276,7 +276,7 @@ Number.POSITIVE_INFINITY + Number.NEGATIVE_INFINITY; // NaN
 Number.isFinite(value)
 ```
 
-`value`가 숫자이며 `Infinity`, `NaN`, `undefined`가 아니면 `true`를 반환한다:
+`value`가 수이며 `Infinity`, `NaN`이 아니면 `true`를 반환한다:
 
 ```js
 Number.isFinite(123); // true
@@ -287,7 +287,6 @@ Number.isFinite(0x12); // true
 Number.isFinite(Infinity); // false
 Number.isFinite(-Infinity); // false
 Number.isFinite(NaN); // false
-Number.isFinite(undefined); // false
 ```
 
 전역 내장 함수인 `isFinite()`와 다르게 암묵적 타입 변환은 발생하지 않는다:
@@ -358,8 +357,8 @@ Number.isNaN('false'); // false
 Number.isNaN(undefined); // false
 Number.isNaN({}); // false
 
-isNaN('not a number'); // true (숫자로 변환 불가)
-isNaN('false'); // true (문자열 "false"는 숫자로 변환 불가)
+isNaN('not a number'); // true (수로 변환 불가)
+isNaN('false'); // true (문자열 "false"는 수로 변환 불가)
 isNaN(undefined); // true
 isNaN({}); // true
 ```
@@ -381,9 +380,9 @@ Number.isSafeInteger(Number.MIN_SAFE_INTEGER - 1); // false
 
 ### Number.parseFloat()
 
-주어진 값을 부동 소수점 형식의 숫자로 변환한다. 전역 함수 `parseFloat()`와 동일한 함수다.
+주어진 값을 부동소수점 형식의 수로 변환한다. 전역 함수 `parseFloat()`와 동일한 함수다.
 
-이 메서드는 파라미터를 `string`으로 간주하며, 맨 앞의 공백을 무시한다. 공백이 아닌 첫 번째 문자를 `number`로 변환할 수 없으면 `NaN`을 반환한다:
+이 메서드는 파라미터를 `string`으로 간주하며, 맨 앞의 공백을 무시한다. 공백이 아닌 첫 번째 문자부터 시작해서 수로 변환할 수 없는 문자를 만날 때까지 읽는다. 시작 부분을 수로 변환할 수 없으면 `NaN`을 반환한다:
 
 ```js
 Number.parseFloat('0'); // 0
@@ -391,11 +390,11 @@ Number.parseFloat('1234'); // 1234
 Number.parseFloat('3.14159265'); // 3.14159265
 Number.parseFloat(Number.MIN_VALUE); // 5e-324
 
-const f = Number.parseFloat('1.234');
+var f = Number.parseFloat('1.234');
 Object.getPrototypeOf(f); // Number { 0 }
 ```
 
-숫자가 이어지는 도중 문자를 만나면, 그때까지의 유효한 숫자만 잘라낸다:
+변환 중 수로 해석할 수 없는 문자를 만나면, 그때까지 변환한 값을 반환한다:
 
 ```js
 Number.parseFloat('4a'); // 4
@@ -416,7 +415,7 @@ Number.parseInt(string)
 Number.parseInt(string, radix)
 ```
 
-- `string`: 정수로 변환할 값. 공백이 아닌 첫 번째 문자를 `number`로 변환할 수 없으면 `NaN`을 반환한다.
+- `string`: 정수로 변환할 값. 공백이 아닌 첫 번째 문자를 수로 변환할 수 없으면 `NaN`을 반환한다.
 - `radix`: 진법의 기수. 생략하면 `string`이 `0x`로 시작할 때만 16진수로, 나머지는 10진수로 해석한다.
 
 ```js
@@ -450,7 +449,7 @@ Number(undefined); // NaN
 
 ### Number.prototype.toExponential()
 
-숫자값을 지수 표기법(exponential notation)으로 변환하는 메서드. 이 메서드는 숫자를 지수부(exponent)와 가수부(mantissa)로 나눠 표현한다.
+수를 지수 표기법(exponential notation)으로 변환하는 메서드. 이 메서드는 수를 지수부(exponent)와 가수부(mantissa)로 나눠 표현한다.
 
 ```
 number.toExponential()
@@ -459,7 +458,7 @@ number.toExponential(fractionDigits)
 
 - `fractionDigits`: 소수점 이하의 자릿수. 생략하면 자바스크립트가 필요한 자릿수를 알아서 결정한다.
 
-반환되는 값은 숫자를 지수 표기법으로 나타낸 문자열이다.
+반환되는 값은 수를 지수 표기법으로 나타낸 문자열이다.
 
 ```js
 (1).toExponential(); // "1e+0"
@@ -482,7 +481,7 @@ number.toExponential(fractionDigits)
 
 ### Number.prototype.toFixed()
 
-부동 소수점으로 다뤄지고 있는 소수점 아래의 수를 고정 소수점으로 변환하여 표시하는 메서드.
+부동소수점으로 다뤄지는 소수점 이하 값을 고정 소수점으로 변환하는 메서드.
 
 ```
 number.toFixed()
@@ -491,13 +490,13 @@ number.toFixed(digits)
 
 - `digits`: 소수점 아래 자릿수. `0`부터 `100`까지 지정할 수 있고 생략하면 `0`이다.
 
-`Number` 인스턴스의 값을 지정한 소수점 아래 자릿수만큼의 길이를 갖는 문자열로 반환한다:
+이 메서드는 수를 지정한 소수점 아래 자릿수만큼의 길이를 갖는 문자열로 반환한다:
 
 ```js
 (0.55).toFixed(20); // "0.55000000000000004441" 
 ```
 
-만약 소수점 아래의 수가 지정한 길이보다 길면 반올림하여 반환한다:
+만약 소수점 이하 값이 지정한 길이보다 길면 반올림한다:
 
 ```js
 (0.1).toFixed(30); // "0.100000000000000005551115123126" 
@@ -508,7 +507,21 @@ MDN에선 이를 고정 소수점 표기법(fixed-point notation)이라 설명�
 
 ### Number.prototype.toLocaleString()
 
-**TODO**
+수를 지역별 형식에 맞춰 문자열로 변환.
+
+```js
+var num = 1234567.89;
+
+num.toLocaleString('ko-KR'); // "1,234,567.89"
+num.toLocaleString('en-US'); // "1,234,567.89"
+num.toLocaleString('de-DE'); // "1.234.567,89"
+
+// 통화 형식
+num.toLocaleString('ko-KR', { 
+  style: 'currency', 
+  currency: 'KRW' 
+}); // "₩1,234,568"
+```
 
 ### Number.prototype.toPrecision()
 
@@ -516,8 +529,26 @@ MDN에선 이를 고정 소수점 표기법(fixed-point notation)이라 설명�
 
 ### Number.prototype.toString()
 
-**TODO**
+수를 문자열로 변환한다. 진법(radix)을 지정할 수 있다.
+
+```js
+var num = 255;
+
+num.toString();    // "255" (기본 10진법)
+num.toString(2);   // "11111111" (2진법)
+num.toString(16);  // "ff" (16진법)
+num.toString(8);   // "377" (8진법)
+```
 
 ### Number.prototype.valueOf()
 
-**TODO**
+원시 `number` 타입의 수를 반환한다. 보통 직접 호출하는 일은 없는 메서드.
+
+```js
+var num = new Number(42);
+num; // Number { 42 }
+typeof num; // "object"
+
+num.valueOf(); // 42
+typeof num.valueOf(); // "number"
+```

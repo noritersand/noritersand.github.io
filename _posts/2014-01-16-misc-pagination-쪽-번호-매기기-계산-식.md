@@ -46,7 +46,7 @@ totalNumberOfPages = totalRows / rowsPerPage + ((totalRows % rowsPerPage == 0) ?
 계산 결과의 소숫점 이하는 버리거나, 아니면 처음부터 소수점 올림 함수를 이용한다:
 
 ```js
-// 자바스크립트일 때, 소수점 올림
+// JavaScript: 소수점 올림
 totalNumberOfPages = Math.ceil(totalRows / rowsPerPage)
 ```
 

@@ -383,7 +383,7 @@ line2
 
 `<c:if/>` 에서 나온 결과를 `var` 속성으로 지정하고 나중에 활용이 가능하다. `scope` 속성은 생략할 경우 기본 값은 `page`이다. 참고로 `<c:else>` 태그는 없다.
 
-### 자바스크립트 제어
+### JavaScript 제어
 
 ```html
 <c:if test="${sessionScope.session.userId == dto.userId}">
@@ -394,7 +394,7 @@ line2
 </c:if>
 ```
 
-이렇게들 많이 쓰지만 사실 자바스크립트 쪽은 JSTL 없이 별도의 js 파일로 분리하는게 좋다. (캐시와 난독화 적용하려면...)
+이렇게들 많이 쓰지만 사실 JavaScript 쪽은 JSTL 없이 별도의 js 파일로 분리하는게 좋다. (캐시와 난독화 적용하려면...)
 
 ## out
 

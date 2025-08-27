@@ -825,16 +825,18 @@ DOM이 그려지기 직전, layout effect(`useLayoutEffect`)보다 더 먼저 �
 
 계산된 값을 메모이제이션(memoization, 동일한 입력이면 저장해 둔 결과를 재사용하는 것)하여 리렌더링간에 재사용한다.
 
+ℹ️ `setState` 함수가 필요 없는 `state`는 `useMemo`로 대체할 수 있다.
+
 ```
 const cachedValue = React.useMemo(fn, dependencies)
 ```
 
-- `fn`: 캐싱하려는 값을 계산하는 함수 객체. 순수 함수여야 하며 인자를 받지 않아야 한다. 지난 렌더링에서 `dependencies`가 변경되지 않으면 동일한 값을 다시 반환한다. `dependencies`가 변경되면 이 함수를 다시 호출하여 반환하고, 다음에 재사용할 수 있도록 저장한다.
-- `dependencies`: `fn` 내에서 참조되는 모든 반응형 값의 목록.
+- `fn`: 메모이제이션할 값을 계산하는 함수. 순수 함수여야 하며 인자를 받지 않아야 한다.
+- `dependencies`: fn 코드 내에서 참조하는 모든 반응형 값들의 배열
 
-반환값은 `fn` 함수가 반환한 값이다.
+이 훅은 첫 렌더링일 때 `fn`의 실행 결과, 이후 렌더링에서는 `dependencies`가 변경되지 않았으면 캐싱된 값을, 변경되었으면 `fn`을 재실행한 새 값을 반환한다.
 
-아래 예시를 실행해 보면 의존성 배열에 없는 `value3`이 변경될 때만 `useMemo`가 실행되지 않는 것을 확인할 수 있다:
+아래 예시를 실행해 보면 의존성 배열에 없는 `value3`이 변경될 때는 `useMemo`가 실행되지 않는 것을 확인할 수 있다:
 
 ```jsx
 import {useMemo, useState} from 'react';

@@ -51,7 +51,7 @@ mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>() {}
 
 ### map
 
-맵 타입이 JSON 형식의 String 타입으로 변환된다. 자바스크립트에 JSON을 넘겨줄 때 유용하다.
+맵 타입이 JSON 형식의 String 타입으로 변환된다. JavaScript에 JSON을 넘겨줄 때 유용하다.
 
 ```java
 import com.fasterxml.jackson.databind.ObjectMapper;
