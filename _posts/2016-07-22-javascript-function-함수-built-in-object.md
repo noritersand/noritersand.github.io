@@ -139,7 +139,7 @@ function.bind( thisArg [, arg1 [, arg2 [, ... ] ] ] )
 
 함수의 `this`를 교체하고 고정 인수를 지정하는 메서드. 이 메서드는 호출될 때 제공된 첫 번째 전달인자를 `this` 키워드로 지정하고, 두 번째 전달인자부터는 함수의 고정 인수로 지정한 새 함수를 생성하여 반환한다. 이 작업을 바인딩이라고 표현하는 모양이다.
 
-ES2015에서 정의된 Exotic function object에 속한다고 한다. 다른 Exotic function object로 `Array`, `String`, `Arguments`, `Proxy` 등이 있는데, 특수한 기능을 수행하는 객체라고 하지만 정확하게 뭘 하는지를 아직 몲. 
+ES2015에서 정의된 Exotic function object에 속한다고 한다. 다른 Exotic function object로 `Array`, `String`, `Arguments`, `Proxy` 등이 있는데, 특수한 기능을 수행하는 객체... 라고 하는데 아직 정확하게 뭘 하는지는 몲. 
 
 #### this의 교체
 

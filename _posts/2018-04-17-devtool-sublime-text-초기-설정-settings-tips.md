@@ -212,6 +212,8 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + l</kbd>: 캐럿이 위치한 라인 전체를 선택한다.
 - <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
 - <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
+- <kbd>ctrl + .</kbd>: next_modification. 현재 파일의 이전 변경사항을 덩어리로 선택한다.
+- <kbd>ctrl + ,</kbd>: prev_modification. 현재 파일의 다음 변경사항을 덩어리로 선택한다.
 
 ### 멀티 캐럿(Multiple Selection)
 
@@ -257,7 +259,8 @@ Build 3126 이후에 기록함.
 - <kbd>F9</kbd>: 대소문자 무시하고 라인 단위 알파벳 오름차순 정렬
 - <kbd>ctrl + F9</kbd>: 라인 단위 알파벳 오름차순 정렬
 - <kbd>ctrl + m</kbd>: 가까운 닫는 괄호(bracket) 혹은 여는 괄호로 이동.
-- <kbd>ctrl + shift + m</kbd>: 가까운 닫는 괄호까지 텍스트 선택.
+- <kbd>ctrl + shift + m</kbd>: 가까운 닫는 괄호 혹은 여는 괄호까지의 텍스트 전체 선택.
+- <kbd>alt + .</kbd>: close_tag. 닫는 태그 자동 입력
 
 ### 오버레이 Overlay
 

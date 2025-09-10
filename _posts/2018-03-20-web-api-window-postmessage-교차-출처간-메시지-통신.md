@@ -75,4 +75,5 @@ child.postMessage("whispering", "https://secure.tistory.com");
 - B 윈도우에서 메시지 이벤트가 발생하고 핸들러 작동. 이 때 로그로 A 윈도우가 보낸 message를 출력하고 A 윈도우로 메시지 이벤트를 발생시킴
 - A 윈도우에서 메시지 이벤트 핸들러 작동하며 B 윈도우가 보낸 메시지 출력
 
+
 끗.

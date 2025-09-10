@@ -258,6 +258,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
 - <kbd>ctrl + shift + r</kbd>: Refactor... 현재 캐럿이 위치에 따라 가능한 코드 리팩터링 옵션을 보여준다.
 - <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
 - <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: Expand/Shrink Selection. 단어보다 더 넓은 범위로 선택 영역을 확장하거나 좁힌다. (서브라임 텍스트에서는 보조 단어(subwords) 단위의 선택 영역을 좌우로 확장하는 단축키임)
+- <kbd>ctrl + shift + \ </kbd> Go To Bracket. 여는 괄호와 닫는 괄호를 번갈아 이동한다. (근데 뭔가 잘 안되네)
 
 ### 멀티 캐럿
 

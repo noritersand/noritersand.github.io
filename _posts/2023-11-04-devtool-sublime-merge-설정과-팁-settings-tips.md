@@ -102,7 +102,11 @@ file:"ddl.sql" line:719-801 from:73333a
   { "keys": ["ctrl+shift+t"], "command": "show_command_palette", "args": {"command": "create_tag"} },
   { "keys": ["ctrl+shift+c"], "command": "show_command_palette", "args": {"command": "commit"} },
   { "keys": ["ctrl+m"], "command": "show_command_palette", "args": {"command": "merge_branch"} },
-  { "keys": ["ctrl+alt+shift+b"], "command": "show_command_palette", "args": {"command": "create_branch_from_remote_branch"} }
+  // { 
+  //   "keys": ["ctrl+alt+shift+b"],
+  //   "command": "show_command_palette",
+  //   "args": {"command": "create_branch_from_remote_branch"}
+  // },
   // { 
   //   "keys": ["ctrl+alt+shift+enter"], 
   //   "command": "commit", 
@@ -117,5 +121,6 @@ file:"ddl.sql" line:719-801 from:73333a
 
 - `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
 - `discard_all_modified`은 모든 변경 사항을 취소하니 주의해서 사용할 것. 
+- <kbd>ctrl + alt + shift + b</kbd>는 특정 트래킹 브랜치에서 새 브랜치 만드는 기능인데 잘 안씀.
 - <kbd>ctrl + alt + shift + enter</kbd>는 amend commit인데, 실수하면 되돌리기 귀찮아서 막아놨음.
 - `create_tag` 처럼 커맨드 팔레트에서 옵션을 추가 입력해야 하는 명령은 `show_command_palette`의 보조 명령으로 실행해야 함.

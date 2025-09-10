@@ -39,22 +39,67 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 - `Expires=<date> `: 쿠키의 만료시간을 의미한다. 명시하지 않거나 잘못된 값을 입력하면 세션쿠키로 생성되서 브라우저 종료 시 삭제된다.
 - `Max-Age=<number>`: `Expires`와 비슷하지만 시각이 아니라 초로 입력한다. (1년이면 31536000초)
 - `Path=<path-value>`: 서버 이름 뒤에 오는 경로에 따라 쿠키 사용여부가 결정된다. 슬래쉬( / )로 설정하면 모든 path에서 공유한다. 명시하지 않으면 현재 페이지의 location.path값으로 설정된다.
-- `SameSite=<samesite-value>`: 사이트간 요청 위조(CSRF)를 방지하기 위한 옵션. `Lax`, `Strict`, `None` 중에 하나로 설정한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
+- `SameSite=<samesite-value>`: 사이트간 요청 위조(CSRF)를 방지하기 위한 속성. `Lax`, `Strict`, `None` 중에 하나로 설정한다. 명시하지 않으면 브라우저에서 허용하지 않는 경우가 있으니, 그냥 필수값이라고 생각하자.
   - `Strict`: 이 쿠키는 동일한 사이트 간 요청에만 포함된다. 외부에서 현재 사이트로 이동하는 경우 전송되지 않는다. 가장 엄격한 옵션이다.
   - `Lax`: `Strict`처럼 동일한 사이트 간 요청에만 쿠키를 전송하지만, 외부에서 현재 사이트로 이동하는 경우에도 쿠키를 전송한다.
-  - `None`: 이 쿠키는 제한 없이 모든 요청과 함께 전송될 수 있다. `None`으로 설정하는 경우 반드시 `Secure` 옵션도 추가하여 HTTPS 요청일 때만 전송하도록 해야 한다. 보통 크로스 사이트 요청에 사용할 쿠키를 `None`으로 설정한다.
-- `Secure`: 값은 없고 이름만 있는 옵션. 이름만 써도 secure 쿠키가 된다. SSL 통신에서만 사용가능한 쿠키가 생성되며, 이 옵션을 활성화하지 않는 한 HTTP/HTTPS 어느 쪽에서 생성한 쿠키든 서로 공유한다. 위 예시처럼 `Secure`는 알아서 `true` 값으로 설정되므로 이름만 언급해도 된다.
-
-이 외에 `HttpOnly`라는 속성이 있는데, HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성이 있는데 자바스크립트로는 이 속성을 결정할 수 없다.
+  - `None`: 이 쿠키는 제한 없이 모든 요청과 함께 전송될 수 있다. `None`으로 할 때에는 `Secure` 설정도 추가해서 HTTPS 요청일 때만 전송하도록 해야 한다. 보통 크로스 사이트 요청에 사용할 쿠키를 `None`으로 설정한다.
+- `Secure`: 이 속성을 사용하면 SSL 통신에서만 사용가능한 쿠키가 생성된다. HTTP/HTTPS 양쪽에서 쿠키를 공유하고 싶으면 이 속성을 활성화하면 안된다. 값은 없고 이름만 있는 속성이라 이름만 언급해도 `true` 값으로 설정된다.
+- `HttpOnly`: HTTP 전송에만 포함되고 스크립트에서 읽을 수 없게 하는 속성. 자바스크립트로는 이 속성을 결정할 수 없다.
+- `Partitioned`: 쿠키를 사이트별로 분리 저장하게 하는 CHIPS 활성화 속성. 브라우저의 서드파티 쿠키 차단에 대응하기 위해 등장했다. 각 사이트마다 독립된 저장소를 갖게 되어 크로스사이트 추적은 방지하면서도 서드파티 기능은 유지할 수 있다. `Partitioned` 쿠키는 `Secure`와 `SameSite=None` 속성도 함께 사용해야 한다. [Cookies Having Independent Partitioned State (CHIPS) \| MDN](https://developer.mozilla.org/en-US/docs/Web/Privacy/Guides/Privacy_sandbox/Partitioned_cookies).
 
 ℹ️ 쿠키의 `Domain` 속성은 도메인, 서브도메인만 일치하면 동일한 사이트로 판단하지만, `SameSite` 속성은 프로토콜, 도메인, 서브도메인까지 모두 일치해야 동일한 사이트로 판단한다.
 
-ℹ️ `Secure` 옵션이 `true`면 HTTPS 프로토콜을 통해서만 쿠키를 전송하게 강제한다. 하지만 브라우저에 따라 호스트가 `localhost`나 `127.0.0.1`일 때 이 옵션을 무시한다.
+ℹ️ `Secure` 속성이 `true`면 HTTPS 프로토콜을 통해서만 쿠키를 전송하도록 강제한다. 하지만 브라우저에 따라 호스트가 `localhost`나 `127.0.0.1`일 때 이 속성을 무시한다.
 
 
 ## 주의사항
 
-[쿠키의 값에는 쉼표`,`와 세미콜론`;`을 포함하면 안된다](http://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value).
+### value로 허용되는 특수 문자
+
+쿠키의 값에는 쉼표`,`와 세미콜론`;`을 직접 포함할 수 없다. [http - Is comma a valid character in cookie-value - Stack Overflow](https://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value).
+
+이 문자들을 포함하려면 URL 인코딩(`,` -> `%2C`, `;` -> `%3B`)을 해야 한다.
+
+### SameSite는 서드파티 쿠키 차단과는 별개
+
+브라우저들은 서드파티 쿠키를 보안 위협으로 보고 점점 차단하는 추세다: 
+
+- Safari: 2017년부터 Intelligent Tracking Prevention(ITP)으로 강력하게 차단
+- Firefox: Enhanced Tracking Protection으로 기본 차단
+- Chrome: 2025년 초부터 단계적 차단 예정 (Privacy Sandbox로 대체)
+
+그리고 브라우저의 차단이 먼저 작동하기 때문에 `SameSite=None` 쿠키도 이 차단을 우회하지 못한다. `SameSite` 속성은 그저 같은 사이트 내에서의 쿠키 전송 규칙을 정하는 것 뿐이고, 서드파티 차단과는 별개라 이해하면 된다.
+
+브라우저의 서드파티 차단과 `SameSite`의 작동 방식을 코드로 표현하면 이렇다:
+
+```js
+// 쿠키 전송 결정 과정 (단순화)
+function shouldSendCookie(cookie, requestContext) {
+  // 1단계: 서드파티 컨텍스트 체크
+  // (iframe이나 외부 리소스 요청 등)
+  if (requestContext.isThirdParty && browser.blockThirdPartyCookies) {
+    return false; // 브라우저 정책으로 차단
+  }
+  
+  // 2단계: SameSite 속성 체크 
+  // (eTLD+1 기준으로 cross-site 여부 판단)
+  if (requestContext.isCrossSite) {
+    if (cookie.sameSite === "Strict") {
+      return false;
+    }
+    if (cookie.sameSite === "Lax" && !requestContext.isTopLevelNavigation) {
+      return false;
+    }
+    if (cookie.sameSite === "None" && !cookie.secure) {
+      return false;
+    }
+  }
+  
+  return true;
+}
+```
+
+ℹ️ 서드파티 쿠키 차단에 대한 대안으로는 Storage Access API, CHIPS(Cookies Having Independent Partitioned State) 등이 개발되고 있다.
 
 
 ## examples
