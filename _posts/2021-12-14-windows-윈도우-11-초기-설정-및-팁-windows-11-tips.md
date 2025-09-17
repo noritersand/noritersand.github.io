@@ -138,6 +138,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 - <kbd>win + a</kbd>: 빠른 설정 열기. 10에서 빠른 설정과 알림이 같이 있었는데 분리되었음.
 - <kbd>win + n</kbd>: 알림과 달력 열기
+- <kbd>win + c</kbd>: Copilot 앱 실행
 - <kbd>win + q</kbd> <kbd>win + s</kbd>: 시작 메뉴 검색
 - <kbd>win + w</kbd>: 위젯 열기. 원래는 'Windows Ink 열기' 였음
 - <kbd>win + h</kbd>: 보이스 타이핑. Microsoft 음성 명령 서비스다.

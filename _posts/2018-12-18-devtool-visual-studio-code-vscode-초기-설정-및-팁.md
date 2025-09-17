@@ -150,6 +150,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
   - <kbd>alt + shift + p</kbd>: GitHub Copilot View 포커싱(이건 없어서 추가)
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
 - ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
+- Insert Date String `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌.
 
 
 ## 작성자 저장용 단축키 설정
@@ -239,6 +240,14 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
     "key": "shift+alt+a",
     "command": "-editor.action.blockComment",
     "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+alt+oem_6",
+    "command": "workbench.action.quickSwitchWindow"
+  },
+  {
+    "key": "ctrl+alt+oem_4",
+    "command": "workbench.action.switchWindow"
   }
 ]
 ```

@@ -209,6 +209,9 @@ git branch --unset-upstream  # 업스트림 브랜치 지정 해제
 ```bash
 git branch --merged
 git branch --no-merged
+
+# main 브랜치에 머지 완료된 리모트 브랜치 표시
+git branch -r --merged origin/main
 ```
 
 #### 현재 브랜치를 다른 브랜치에 덮어쓰기

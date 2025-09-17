@@ -109,7 +109,7 @@ function shallowClone({targetObj, ignoreNull = false}) {
 
 ### JSON 문자열로 바꾼뒤 다시 객체로 변환
 
-`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. JSON 표현이 불가능한 타입(e.g., Function)은 복제할 수 없다. 일부 타입들을 제외하면 어쨋든 객체간 연결은 끊어지므로 깊은 복제로 분류하는 경우도 있다.
+`JSON.stringify()`와 `JSON.parse()`를 이용한 얕은 복제 방법. JSON 표현이 불가능한 타입인 `undefined`, `Symbol`, `Function`, `RegExp`, `Date`, `Map`, `Set` 등은 복제할 수 없다. 어쨋든 객체간 연결은 끊어지므로 깊은 복제로 보는 사람도 있다.
 
 ```js
 // 복제할 대상
@@ -139,7 +139,7 @@ console.log(typeof newone.child.grandson.fn); // undefined, 함수는 복제 불
 
 ### 재귀 함수 방식
 
-⚠️ 이 함수는 getter/setter 메서드가 필드로 바뀌는 하자가 있다:
+⚠️ 이 함수는 getters와 setters 메서드가 필드로 바뀌는 하자가 있다:
 
 ```js
 function deepClone(obj) {
@@ -154,11 +154,9 @@ function deepClone(obj) {
   }
   return clone;
 }
-```
 
-테스트 코드:
+// 아래는 테스트
 
-```js
 var child = {
   _x: 3,
   set x(value) {
@@ -175,4 +173,30 @@ console.log(child); // Object { _x: 123, x: Getter & Setter }
 
 Object.keys(child); // Array [ "_x", "x" ]
 child['x']; // 65536
+```
+
+### window.structuredClone()
+
+최신 브라우저에서 지원하는 전역 메서드. JSON 방식보다 더 넓은 범위의 복제가 가능하지만 `Function`, DOM 노드 같은 일부 타입은 여전히 복제 불가.
+
+```js
+// 상태 관리에서 불변성 유지
+var currentState = {
+  user: { id: 1, settings: { theme: 'dark' } },
+  posts: [{ id: 1, content: 'Hello' }]
+};
+
+var nextState = structuredClone(currentState);
+nextState.user.settings.theme = 'light';
+// currentState는 변경되지 않음
+
+// 복잡한 데이터 구조 복사
+var complexData = {
+  buffer: new ArrayBuffer(8),
+  typed: new Uint8Array([1, 2, 3]),
+  blob: new Blob(['hello']),
+  set: new Set([1, 2, 3])
+};
+
+var copy = structuredClone(complexData);
 ```

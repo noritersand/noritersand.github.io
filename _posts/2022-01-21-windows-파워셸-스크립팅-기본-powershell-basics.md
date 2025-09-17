@@ -409,26 +409,40 @@ if ($condition) {
 }
 ```
 
-if 조건식에서 사용하는 비교 연산자:
+if 조건식에서 사용하는 연산자:
 
-- `-eq`: case-insensitive equality
-- `-ieq`: case-insensitive equality
-- `-ceq`: case-sensitive equality
-- `-ne`: case-insensitive not equal
-- `-ine`: case-insensitive not equal
-- `-cne`: case-sensitive not equal
-- `-gt`: greater than
-- `-igt`: greater than, case-insensitive
-- `-cgt`: greater than, case-sensitive
-- `-ge`: greater than or equal
-- `-ige`: greater than or equal, case-insensitive
-- `-cge`: greater than or equal, case-sensitive
-- `-lt`: less than
-- `-ilt`: less than, case-insensitive
-- `-clt`: less than, case-sensitive
-- `-le`: less than or equal
-- `-ile`: less than or equal, case-insensitive
-- `-cle`: less than or equal, case-sensitive
+- 논리 연산자
+  - `-not`: `$false`를 `$true`로, 또는 `$true`를 `$false`로 뒤집는다.
+  - `!`: `-not`의 별칭
+  - `-and`
+  - `-or`
+  - `-xor`
+- 비교 연산자
+  - `-eq`: case-insensitive equality
+  - `-ieq`: case-insensitive equality
+  - `-ceq`: case-sensitive equality
+  - `-ne`: case-insensitive not equal
+  - `-ine`: case-insensitive not equal
+  - `-cne`: case-sensitive not equal
+  - `-gt`: greater than
+  - `-igt`: greater than, case-insensitive
+  - `-cgt`: greater than, case-sensitive
+  - `-ge`: greater than or equal
+  - `-ige`: greater than or equal, case-insensitive
+  - `-cge`: greater than or equal, case-sensitive
+  - `-lt`: less than
+  - `-ilt`: less than, case-insensitive
+  - `-clt`: less than, case-sensitive
+  - `-le`: less than or equal
+  - `-ile`: less than or equal, case-insensitive
+  - `-cle`: less than or equal, case-sensitive
+- 비트 연산자
+  - `-band`: binary AND
+  - `-bor`: binary OR
+  - `-bxor`: binary exclusive OR
+  - `-bnot`: binary NOT
+  - `-shl`: shift left
+  - `-shr`: shift right
 
 ```js
 $con = 123
@@ -437,7 +451,7 @@ if (123 -eq $con) {
 }
 ```
 
-이 외에 라이크 검색, 정규식 논리 연산자 등이 있으니 [여기](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.3)를 볼 것.
+이 외에 라이크 검색, 정규식 논리 연산자 등이 있으니 [여기](https://learn.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-if?view=powershell-7.5)를 볼 것.
 
 ### [switch](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_switch?view=powershell-7.3)
 

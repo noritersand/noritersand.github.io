@@ -228,7 +228,7 @@ tags:
 
 ### Java 라이브러리
 
-- [⭐JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드의 파라미터나 반환값이 `null`일 수 있는지를 어노테이션으로 명시해, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 돕는다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 Java에 통합될 가능성도 있다 함.
+- [⭐JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드 파라미터나 반환값의 `null` 허용 여부를 `@Nullable`, `@NullMarked`, `@NullUnmarked`, `@NonNull` 어노테이션으로 명시해서, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 한다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 Java에 통합될 가능성도 있다 함.
 
 
 ## 5. 인프라, 배포
