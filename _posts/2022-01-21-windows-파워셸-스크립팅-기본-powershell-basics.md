@@ -774,7 +774,7 @@ Line |
   - The null type
   - The object type
 - Value types
-  - Boolean
+  - Boolean: 파워셸에서 불리언 값은 `$true`, `$false`로 표현함
   - Character
   - Integer
   - Real number

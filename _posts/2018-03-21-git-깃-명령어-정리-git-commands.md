@@ -773,8 +773,6 @@ size-garbage: 0 bytes
 
 ## diff
 
-[Git - git-diff Documentation](https://git-scm.com/docs/git-diff)
-
 커밋 간 차이점 혹은 워킹 트리의 변경 사항을 출력한다.
 
 ```
@@ -786,6 +784,15 @@ git diff [<options>] <blob> <blob>
 git diff [<options>] --no-index [--] <path> <path>
 ```
 
+```bash
+# unstaged와 staged의 비교
+git diff
+
+# staged와 commited의 비교
+git diff --cached
+git diff --staged
+```
+
 #### Options
 
 - `--cached`: 스테이징 영역과 현재 커밋 사이의 차이점을 출력한다. 이 옵션이 없으면 워킹 트리와 커밋 간 차이를 출력한다.
@@ -793,27 +800,6 @@ git diff [<options>] --no-index [--] <path> <path>
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
 - `--submodule[=<format>]`: 서브모듈의 변경사항을 자세히 표시한다. 이 옵션이 없으면 서브모듈의 변경사항을 커밋 해시 단위로만 표시한다.
-
-#### diff 도구 실행
-
-```bash
-git difftool
-```
-
-`diff.tool`로 지정한 도구를 실행한다.
-
-#### unstaged와 staged의 비교
-
-```bash
-git diff
-```
-
-#### staged와 commited의 비교
-
-```bash
-git diff --cached
-git diff --staged
-```
 
 #### 커밋끼리 비교
 
@@ -884,6 +870,12 @@ index 6494d80,862c24c..0000000
 ++=======
 ++3333
 ++>>>>>>> main
+```
+
+#### diff 도구 실행
+
+```bash
+git difftool
 ```
 
 
@@ -979,8 +971,6 @@ git am FILE
 
 
 ## fsck
-
-[Git - git-fsck Documentation](https://git-scm.com/docs/git-fsck)
 
 File System ChecK의 약자. 저장소의 무결성(integrity)을 점검하고 손상된 부분이나 문제가 있는 객체를 식별하기 위한 명령어.
 
@@ -1322,7 +1312,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 지정한 경로에 있는 깃이 추적중인 파일목록을 출력한다.
 
-```
+```bash
 git ls-tree -d origin/main
 git ls-tree c29acb72a600 -r
 git ls-tree HEAD ./docs
@@ -1398,6 +1388,36 @@ git merge --squash TARGET_BRANCH
 머지할 브랜치의 커밋 이력을 하나로 압축한 별도의 커밋을 만들고 헤드 브랜치에 머지한다. 일반 머지와 다르게 하나의 부모커밋(헤드 브랜치 기준)만 갖는다.
 
 [이 블로그 내부 링크 \| Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
+
+
+## merge-base
+
+지정한 두 커밋 사이에서 머지 작업의 기준점이 되는 공통 조상(good common ancestors)을 찾는다.
+
+```
+git merge-base [-a | --all] <commit> <commit>…
+git merge-base [-a | --all] --octopus <commit>…
+git merge-base --is-ancestor <commit> <commit>
+git merge-base --independent <commit>…
+git merge-base --fork-point <ref> [<commit>]
+```
+
+예를 들어 `git merge-base main feature` 명령은 `main`과 `feature`가 갈라진 지점의 커밋 아이디를 반환한다. 이 커밋이 두 브랜치의 공통 조상이자, 머지의 기준이 되는 지점이다.
+
+```bash
+# dev와 stage의 공통 조상 찾기
+git merge-base dev stage
+```
+
+충돌 해결이나 리베이스 기준점 설정, 변경 사항 비교 등에 사용하긴 하는데, 사실 평소에 쓸 일은 별로 없음.
+
+#### Options
+
+- `-a` `--all`: 모든 공통 조상을 찾아서 출력
+- `--octopus`: 세 개 이상의 커밋을 지정할 때 사용하는 옵션
+- `--independent`: 지정한 두 커밋의 공통 조상들 중 상호 조상-자손 관계가 아닌 독립적인 공통 조상만 찾는다.
+- `--is-ancestor`: 지정한 두 커밋 중 하나가 다른 하나의 조상인지 여부를 확인한다. 파워셸 스크립트 등에서 조건 분기에 사용되는 옵션으로 명령어만 실행하선 아무것도 출력되지 않는다.
+- `--fork-point`: 두 커밋 중 하나가 다른 브랜치에서 갈라져 나온 지점(fork point)을 찾는다.
 
 
 ## mv
@@ -1923,7 +1943,7 @@ git show-ref --head
 
 ## stash
 
-커밋이나 스테이지가 아닌 별도의 공간에 변경 사항을 임시 저장하거나 저장한 내용을 다시 불러오는 명령어.
+커밋이나 스테이징 영역이 아닌 별도의 공간에 변경 사항을 임시 저장하거나 저장한 내용을 다시 불러오는 명령어.
 
 #### Options
 
@@ -2225,7 +2245,7 @@ git worktree lock [--reason <string>] <worktree>
 git worktree move <worktree> <new-path>
 git worktree prune [-n] [-v] [--expire <expire>]
 git worktree remove [-f] <worktree>
-git worktree repair [<path>…​]
+git worktree repair [<path>…]
 git worktree unlock <worktree>
 ```
 
