@@ -469,7 +469,7 @@ yarn add --dev PACKAGE_NAME
 # yarn.lock이 있으면 해당 의존성을 우선함
 yarn install
 
-# 패키지를 다시 받아오고 체크섬을 확인한다(=캐시 무시 재설치)
+# 패키지를 다시 받아오고 체크섬을 확인한다(= 캐시 무시 재설치)
 yarn install --check-cache
 
 # 패키지 버전(resolution)은 그대로 유지하면서 패키지 메타데이터 갱신

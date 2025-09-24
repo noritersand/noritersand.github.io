@@ -281,6 +281,19 @@ https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language
 cd $(yarn global bin)
 ```
 
+```bash
+$count = 5
+
+# ✅ '5 개' 출력
+echo "$count 개"
+
+# ✅ '5개' 출력
+echo "$($count)개"
+
+# ❌ 이렇게 하면 '$count개'라는 변수를 찾기 때문에 아무것도 안나옴
+echo "$count개"
+```
+
 #### Array subexpression operator `@( )`
 
 **TODO**

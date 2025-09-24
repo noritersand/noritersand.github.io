@@ -154,7 +154,7 @@ MDN을 보면 이런 말이 있는데:
 
 > this, arguments, super가 없고 메서드로 사용하면 안됨
 
-화살표 함수는 어떤 객체가 소유한 함수(=메서드)로 취급하면 안 되며, 문맥에 주의하라는 뜻이다.
+화살표 함수는 어떤 객체가 소유한 함수(= 메서드)로 취급하면 안 되며, 문맥에 주의하라는 뜻이다.
 
 > \- Arrow functions don't have their own bindings to this, arguments or super, and should not be used as methods.  
 > \- Arrow functions don't have access to the new.target keyword.  

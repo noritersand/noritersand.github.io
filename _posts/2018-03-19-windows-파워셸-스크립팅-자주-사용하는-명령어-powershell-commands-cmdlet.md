@@ -246,7 +246,7 @@ Get-ChildItem -Path C:/dev/git -Filter README.md -Recurse -Name -ErrorAction Sil
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + FullName 프로퍼티를 콘솔 대신 temp2.md 파일에 쓰기
 Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
 
-# 확장자가 js인 파일 찾기 + 파일의 전체 경로(=파일 객체의 FullName 프로퍼티)에서 "\target\"가 포함된 것은 제외
+# 확장자가 js인 파일 찾기 + 파일의 전체 경로(= 파일 객체의 FullName 프로퍼티)에서 "\target\"가 포함된 것은 제외
 Get-ChildItem -Filter *.js | Where-Object { $_.FullName -notmatch '\\target\\' }
 
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + 파일 내용 중 "axios"가 있는 라인 찾기 + 찾은 MatchInfo 객체에서 Path만 추출한 뒤 유일한 값만 출력
@@ -389,7 +389,7 @@ Get-Variable -Include m*, p*
 
 ### Get-Host
 
-명령어를 입력하고 있는 호스트 프로그램(=파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
+명령어를 입력하고 있는 호스트 프로그램(= 파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
 ```bash
 # 파워셸 버전 확인하기
@@ -496,7 +496,7 @@ Set-Alias -Name grep -Value findstr
 code $PROFILE
 ```
 
-만약 매개변수(=옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
+만약 매개변수(= 옵션)를 포함한 명령을 별칭으로 만들려면 프로필 파일에 아래처럼:
 
 ```bash
 function Get-FilesIncludeHidden {

@@ -38,7 +38,7 @@ static class Foo {
 }
 ```
 
-Java 8 전에는 내부 클래스나 익명 클래스로 구현체(=인스턴스)를 만들었다면:
+Java 8 전에는 내부 클래스나 익명 클래스로 구현체(인스턴스)를 만들었다면:
 
 ```java
 final String txt = "Hello";

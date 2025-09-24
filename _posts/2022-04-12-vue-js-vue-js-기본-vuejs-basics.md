@@ -257,7 +257,7 @@ createApp({
 <p>{{mustache}}</p>
 ```
 
-\* 수학의 보간법과는 관련이 없고, interpolate의 뜻 중 하나인 '덧붙이다' 혹은 '삽입하다'(=insert)라는 뜻임 (출처: 뇌피셜)
+\* 수학의 보간법과는 관련이 없고, interpolate의 뜻 중 하나인 '덧붙이다' 혹은 '삽입하다'(insert)라는 뜻임 (출처: 뇌피셜)
 
 ### Raw HTML
 

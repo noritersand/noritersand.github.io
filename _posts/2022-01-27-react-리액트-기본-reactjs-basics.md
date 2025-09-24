@@ -641,7 +641,7 @@ ReactDOM.hydrateRoot(domNode, reactNode, options)
 
 서버에서 렌더링된 마크업에 이벤트 핸들러 같은 자바스크립트 기능을 '부착' 시켜준다. `createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 
 
-ℹ️ *Hydration*은 클라이언트(=브라우저) 측에서 자바스크립트를 실행하여 이미 존재하는 DOM 엘리먼트에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
+ℹ️ *Hydration*은 클라이언트(브라우저) 측에서 자바스크립트를 실행하여 이미 존재하는 DOM 엘리먼트에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
 
 ```js
 import {hydrateRoot} from 'react-dom/client';

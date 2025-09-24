@@ -87,7 +87,7 @@ var b = new B(); // logs "B"
 // 코드 출처: https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/new.target
 ```
 
-한편, 화살표 함수는 `new.target`을 둘러싸는 함수(=화살표 함수를 내포하는 상위 함수)의 `new.target`을 반환한다:
+한편, 화살표 함수는 `new.target`을 둘러싸는 함수(= 화살표 함수를 내포하는 상위 함수)의 `new.target`을 반환한다:
 
 ```js
 function Bar() {

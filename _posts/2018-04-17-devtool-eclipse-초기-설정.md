@@ -27,7 +27,7 @@ eclipse.ini에 `-Dfile.encoding=UTF-8` 추가
 
 ### user
 
-eclipse.ini에 `-Duser.name=이름` 추가. 이클립스 VM arguments(=시스템 프로퍼티)명은 `user`임.
+eclipse.ini에 `-Duser.name=이름` 추가. 이클립스 VM arguments(= 시스템 프로퍼티)명은 `user`임.
 
 ### vm 경로 지정 방법
 

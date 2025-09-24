@@ -34,7 +34,7 @@ tags:
 
 [React \| Meet your first Hook ](https://react.dev/learn/state-a-components-memory#meet-your-first-hook)
 
-- 훅은 컴포넌트의 최상위 수준(=스코프, 유효범위) 또는 커스텀 훅에서만 호출할 수 있다.
+- 훅은 컴포넌트의 최상위 수준(= 스코프, 유효범위) 또는 커스텀 훅에서만 호출할 수 있다.
 - 조건문이나 반복문 혹은 기타 중첩 함수 내부에서는 호출할 수 없다.
 - 리액트 함수가 아닌 일반적인 자바스크립트 함수에서는 호출할 수 없다.
 
