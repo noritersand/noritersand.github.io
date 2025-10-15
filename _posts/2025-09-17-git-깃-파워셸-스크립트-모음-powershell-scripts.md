@@ -16,7 +16,7 @@ tags:
 
 ## 파워셸 스크립트: 모든 리모트 추적 브랜치를 로컬 브랜치로 생성하는 스크립트
 
-```bash
+```ps
 # 현재 로컬 브랜치 목록 가져오기
 $localBranches = git branch --list | ForEach-Object { $_ -replace '^\*?\s+', '' }
 
@@ -48,7 +48,7 @@ Write-Host "Done creating local branches from remote tracking branches."
 - 💾 파일 이름: `cleanup-merged-branches-multi-repo.ps1`
 - ⚠️ 이 스크립트는 로컬 깃 저장소 경로의 바로 상위 경로에서 실행해야 함. 아니면 `-Path`로 그 경로를 지정하던지...
 
-```bash
+```ps
 param(
     [int]$Days = 30,
     [string]$Path = ".",
