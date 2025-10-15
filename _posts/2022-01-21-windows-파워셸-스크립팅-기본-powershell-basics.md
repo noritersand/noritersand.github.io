@@ -242,7 +242,7 @@ Get-ChildItem # 이것도 한 줄 코멘트
 
 배열:
 
-```ps
+```powershell
 function Add-Numbers {
     param($a, $b, $c)
     "$a + $b + $c = " + ($a + $b + $c)
@@ -256,7 +256,7 @@ Add-Numbers @argsArray
 
 해시 테이블:
 
-```ps
+```powershell
 function Show-User {
     param($Name, $Age)
     "Name: $Name, Age: $Age"
@@ -455,7 +455,7 @@ if (<test1>)
 
 `else if`가 아니라 `elseif`인 점과 연산자를 제외하면 다른 언어와 크게 다르지 않음.
 
-```ps
+```powershell
 $condition = $true
 if ($condition) {
   echo "Hello there!"
@@ -499,7 +499,7 @@ if 조건식에서 사용하는 연산자:
   - `-shl`: shift left
   - `-shr`: shift right
 
-```ps
+```powershell
 $con = 123
 if (123 -eq $con) {
   echo 'Hi'
@@ -524,7 +524,7 @@ switch [-regex | -wildcard | -exact] [-casesensitive] (<test-expression>)
 }
 ```
 
-```ps
+```powershell
 switch ('a') {
   'a' { echo "It's a." }
   'b' { echo "It's b." }
@@ -536,7 +536,7 @@ switch ('a') {
 
 아래를 실행해 보면:
 
-```ps
+```powershell
 switch (1, 3) {
   1 {"It is one."}
   2 {"It is two."}
@@ -563,7 +563,7 @@ switch (3, 1) {
 
 일단 생김새는 이렇다:
 
-```ps
+```powershell
 function Get-PSVersion {
   $PSVersionTable.PSVersion
 }
@@ -592,7 +592,7 @@ Get-ChildItem -Path Function:\ABC | Remove-Item
 
 ### 파라미터
 
-```ps
+```powershell
 function Test-Fn {
   param (
     $Param1
@@ -603,7 +603,7 @@ function Test-Fn {
 
 함수 블록 내에 `param(a, b, c, ...)`으로 파라미터를 정의한다. 단축 표기는 아래와 같다:
 
-```ps
+```powershell
 function Test-Fn($Param1) {
   echo $Param1
 }
@@ -617,7 +617,7 @@ Test-Fn -Param1 789
 
 파라미터가 여러 개일 경우 다음처럼 정의하고:
 
-```ps
+```powershell
 function Test-Fn($Param1, $Param2) {
   Write-Host '$Param1:'$Param1
   Write-Host '$Param2:'$Param2
@@ -638,7 +638,7 @@ Test-Fn -Param2 abc -Param1 def
 
 하나의 파라미터는 쉼표`,`로 구분된 값 여러 개를 전달할 수 있다. 이 때 해당 파라미터는 배열처럼 다룰 수 있다:
 
-```ps
+```powershell
 function Test-Fn($Param1) {
   Write-Host '$Param1:'$Param1
 }
@@ -667,7 +667,7 @@ Test-Fn2 4, 5, 6
 
 파라미터의 이름 앞에 대괄호`[]`로 감싸고 타입을 지정한다. 이렇게 하면 해당 타입이 아닌 값이 전달됐을 때 메시지와 함께 에러가 발생한다:
 
-```ps
+```powershell
 function Test-Fn3([string]$Param1) {}
 
 Test-Fn3 123
@@ -693,7 +693,7 @@ Test-Fn5 $False
 
 `string` 타입은 배열도 되는데 딱히 뭔가를 제한 기능은 음슴(왜냐면 길이 1짜리 배열도 있으니께):
 
-```ps
+```powershell
 function Test-Fn6([string[]]$Arr) {}
 
 Test-Fn6 1
@@ -705,7 +705,7 @@ Test-Fn6 a, b
 
 `Parameter(Mandatory)` 혹은 `[Parameter(Mandatory=$true)]`로 해당 파라미터가 필수임을 지정한다:
 
-```ps
+```powershell
 # 단축 표기로 해도 되지만 가독성을 위해서 풀어서 씀
 function Test-Fn7 {
   param (
@@ -738,7 +738,7 @@ Test-Fn7 -Param1 1, 2, 3
 
 기본값은 `ValidateNotNullOrEmpty()`과 함께 등호`=`로 할당한다:
 
-```ps
+```powershell
 function Test-Fn9 {
   param (
     [ValidateNotNullOrEmpty()]
@@ -755,7 +755,7 @@ Test-Fn9
 
 특정 파라미터의 값으로 허용된 값만 받도록 제한하는 방법이다. `ValidateSet()`으로 지정한다:
 
-```ps
+```powershell
 function Test-Fn10 {
   param (
     [Parameter(Mandatory)]
@@ -778,7 +778,7 @@ Test-Fn10 -Server my-server
 
 아래 예시는 `ValidateSet()`와 해시 테이블을 응용해서 ssh로 서버에 접속할 때 쓰는 함수다:
 
-```ps
+```powershell
 $hashtable = @{
   production = '1.2.3.4';
   stage = '2.3.4.5';
@@ -802,7 +802,7 @@ Connect-RemoteServer -Server vpn
 
 `@hashtable.keys`를 `ValidateSet()`에서 받아주면 좋겠는데 에러가 남:
 
-```ps
+```powershell
 function Connect-RemoteServer {
   param (
     [ValidateSet($hashtable.keys)]
@@ -913,7 +913,7 @@ $hash.Number
 
 자주 쓰는 거 저장해 둠.
 
-```ps
+```powershell
 Set-Alias ex explorer
 Set-Alias sb 'C:\Program Files\Sublime Text\subl.exe'
 Set-Alias dk 'docker'
