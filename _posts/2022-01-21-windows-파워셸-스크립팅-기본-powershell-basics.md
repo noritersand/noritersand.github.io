@@ -225,12 +225,12 @@ $Service = 'w32time'; Get-Service -Name $Service
 
 ### 코멘트 처리
 
-```
+```powershell
 # 한 줄 코멘트
 Get-ChildItem # 이것도 한 줄 코멘트
 ```
 
-```
+```powershell
 <#
    이것은 여러줄 코멘트
 #>
