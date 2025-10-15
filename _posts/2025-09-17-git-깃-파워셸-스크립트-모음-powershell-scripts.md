@@ -45,9 +45,8 @@ Write-Host "Done creating local branches from remote tracking branches."
 ## 파워셸 스크립트: 한 달 이상 지난 머지된 리모트 브랜치 목록 보기
 
 - 버전: 4.8
-- 💾 파일 이름은 `cleanup-merged-branches-multi-repo.ps1`으로 저장할 것
-- ⚠️ 이 스크립트는 로컬 깃 저장소 경로의 바로 상위 경로에서 실행해야 함
-- Claude(Opus 4.1) 시켜서 개선했더니 이렇게 길어짐...
+- 💾 파일 이름: `cleanup-merged-branches-multi-repo.ps1`
+- ⚠️ 이 스크립트는 로컬 깃 저장소 경로의 바로 상위 경로에서 실행해야 함. 아니면 `-Path`로 그 경로를 지정하던지...
 
 ```bash
 param(
@@ -383,7 +382,7 @@ try {
     # 최종 요약
     if ($totalBranchesFound -gt 0) {
         Write-Host "📊 요약" -ForegroundColor Cyan
-        Write-Host "   총 $($repositories.Count)개 저장소에서 $totalBranchesFound개 브랜치 발견" -ForegroundColor Yellow
+        Write-Host "   총 $($repositories.Count)개 저장소에서 $($totalBranchesFound)개 브랜치 발견" -ForegroundColor Yellow
         
         # 실행 시간
         $executionTime = (Get-Date) - $scriptStartTime

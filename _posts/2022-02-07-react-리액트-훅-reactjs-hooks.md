@@ -987,24 +987,28 @@ export default function UseCallbackWrongUsages() {
 
 `wrongFunction()`은 `useCallback`으로 생성되었고 처음 렌더링될 때 `foo`의 값을 클로저로 캡처하게 된다. 하지만 의존성 배열이 비어있어서 처음 한 번만 생성된다. 그 결과 `foo`가 변경되어도 `wrongFunction()`과 캡처된 값은 변경되지 않는다.
 
+### useTransition
+
+`useTransition`은 리액트의 동시성(Concurrent Rendering) 기능을 활용해, 긴급(urgent)하지 않은 상태 업데이트(전환 업데이트, transition)를 백그라운드에서(non-blocking) 처리하도록 하는 훅이다.
+
+시간이 오래 걸리는 상태 업데이트를 `startTransition()`으로 감싸면, 해당 작업이 진행되는 동안에도 UI가 멈추지 않고, 사용자 입력과 같은 긴급한 업데이트를 우선 처리해 응답성을 유지할 수 있다.
+
+**TODO** https://ko.react.dev/reference/react/useTransition
+
 
 ## 기타 훅 Other Hooks
 
 ### useActionState
 
-https://react.dev/reference/react/useActionState
-
 폼 태그에 연결해 사용하는 state 관리 훅이다. 액션이라는 용어가 사용된다. 리액트 19에 추가되었다.
 
-**TODO**
+**TODO** https://react.dev/reference/react/useActionState
 
 ### useOptimistic
 
-https://react.dev/reference/react/useOptimistic
-
 어떤 작업이 완료될 때까지의 '낙관적'인 상태를 반환하는 훅. 네트워크 요청 같은 비동기 작업이 완료될 때까지 어떤 변화를 화면에 표시할 용도로 사용한다. 리액트 19에 추가되었다.
 
-**TODO**
+**TODO** https://react.dev/reference/react/useOptimistic
 
 
 ## 커스텀 훅 Custom Hooks

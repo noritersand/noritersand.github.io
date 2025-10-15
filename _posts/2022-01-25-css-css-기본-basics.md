@@ -141,3 +141,30 @@ CSS는 상속을 제어하기 위한 특수 범용 프로퍼티 값(special univ
 - `revert`: 현재 요소에 적용된 스타일 선언이 없었을 때 적용되었을 값으로 되돌린다. 즉, 만약 현재의 CSS 규칙이 없다면 브라우저 기본 스타일(또는 사용자 스타일) 등 다른 출처의 스타일 규칙이 적용되었을 '원래의' 값으로 되돌린다.
 - `revert-layer`: CSS Cascade Layers 기능을 사용할 때 유효한 값. 현재 레이어의 스타일 선언을 무시하고, 바로 아래(우선순위가 낮은) 레이어에 정의된 값으로 되돌린다
 - `unset`: 프로퍼티를 초기 상태로 되돌리는 설정. 상속되는 프로퍼티는 `inherit` 처럼 작동하고, 상속되지 않는 속성은 `initial` 처럼 작동한다. (공식 용어는 아니지만 natural 값이라고도 하는 모양)
+
+
+## 값과 단위
+
+[CSS values and units - Learn web development \| MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units)
+
+**TODO**
+
+### 길이 Lengths
+
+#### 절대 길이 단위 Absolute length units
+
+- `cm`: 센티미터 단위. 1센티미터 = 37.8픽셀 = 25.2/64인치
+- `mm`: 밀리미터 단위. 1밀리미터 = 0.1센티미터
+- `Q`: 쿼터밀리미터 단위. 1쿼터밀리미터 = 1/40센티미터(= 0.025)
+- `in`: 인치 단위. 1인치 = 2.54센티미터 = 96픽셀
+- `pc`: ~~피까?~~ 피카 단위. 1피카 = 1/6인치(= 0.1666666667)
+- `pt`: 포인트 단위. 1포인트 = 1/72인치(= 0.0138888889)
+- `px`: 픽셀 단위. 1픽셀 = 1/96인치(= 0.0104166667)
+
+#### 상대 길이 단위 Relative length units
+
+**TODO**
+
+- `em`: 
+- `vh`, `vw`: 
+- `dvh`: 

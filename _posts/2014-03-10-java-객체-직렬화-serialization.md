@@ -99,7 +99,7 @@ public class Dto implements Serializable{
 // 생략
 ```
 
-또한 Object 클래스의 인스턴스는 직렬화 할 수 없다. 모든 클래스의 조상인 Object 클래스는 Serializable을 구상화하기 않았기 때문인데, 실제 인스턴스가 Serializable을 구상화한 클래스의 인스턴스이며 Object 타입으로 업캐스팅된 경우라면 직렬화가 가능하다. (가령 String을 Object로 업캐스팅한 경우)
+또한 Object 클래스의 인스턴스는 직렬화 할 수 없다. 모든 클래스의 조상인 Object 클래스는 Serializable을 구상화하기 않았기 때문인데, 만약 Serializable 구상 클래스의 인스턴스이며 Object 타입으로 업캐스팅된 경우라면 직렬화가 가능하다. (가령 `String`을 `Object`로 업캐스팅한 경우)
 
 ```java
 class Parent {

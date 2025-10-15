@@ -170,8 +170,8 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + 4</kbd>: Chrome dev
 - <kbd>win + 5</kbd>: Sublime Merge
 - <kbd>win + 6</kbd>: Discord, Slack
-- <kbd>win + 7</kbd>: WebStorm
-- <kbd>win + 8</kbd>: Steam, VSCODE
+- <kbd>win + 7</kbd>: Steam, WebStorm
+- <kbd>win + 8</kbd>: VSCODE
 - <kbd>win + 9</kbd>: 가변 #1 (ETC., IntelliJ)
 - <kbd>win + 0</kbd>: 가변 #2 (MSOffice, Chrome)
 

@@ -467,6 +467,8 @@ obj.c.d; // 3
 
 객체의 프로퍼티에 접근하는 방법은 두 가지로 점 표기법(dot notation, `obj.prop`)과 대괄호 표기법(bracket notation, `obj['prop']`)이 있다.
 
+ℹ️ 대괄호 표기법은 인덱스 표기법(indexed notation)이라고도 함
+
 자바스크립트의 객체는 map, dictionary, hash 타입 같은 연관 배열(associative array)로 생각할 수 있으며 객체의 프로퍼티가 배열의 키가 된다고 한다. 이를 이용하는 것이 대괄호 표기법이다.
 
 ```js

@@ -133,25 +133,25 @@ tsc --build --watch
   - `boolean`: 논리 타입 (true/false)
   - `symbol`: ES6에서 추가된 심볼 타입
   - `bigint`: ES2020에서 추가된 큰 정수 타입
-- 배열:
+- 배열(Array):
   - `number[]`: 숫자 타입의 배열
   - `string[]`: 문자열 타입의 배열
   - ...
   - `Array<number>`: 제네릭 배열 타입 (이 경우 number 타입의 배열을 의미함)
-- 튜플: 고정된 개수의 요소와 각 요소의 타입을 정확히 지정한 배열
-- 열거형: 명명된 상수들의 집합을 정의하는 타입
+- 튜플(Tuple): 고정된 개수의 요소와 각 요소의 타입을 정확히 지정한 배열
+- 열거형(Enums): 명명된 상수들의 집합을 정의하는 타입
 - 사용자 정의 타입:
   - 타입 별칭: 복잡한 타입에 별칭을 붙여 사용하는 타입
   - 인터페이스: 객체 구조를 정의하는 타입
-- 유니언: 여러 타입 중 하나일 수 있는 타입
-- 인터섹션: 여러 타입을 모두 만족하는 타입
-- 제네릭: 타입을 매개변수화하여 재사용 가능한 컴포넌트를 만드는 기능
+- 유니언(Unions): 여러 타입 중 하나일 수 있는 타입
+- 인터섹션(Intersections): 여러 타입을 모두 만족하는 타입
+- 제네릭(Generics): 타입을 매개변수화하여 재사용 가능한 컴포넌트를 만드는 기능
 - `any`: 어떠한 값도 할당 가능한 타입. 타입 검사를 비활성화한다.
 - `unknown`: 실제로 무엇인지 모르는(아직 확실하게 타입이 정해지지 않은) 데이터를 다룰 때 쓴다. `unknown` 타입의 값은 그대로 사용할 수 없고, 타입 가드(조건문으로 타입을 좁히는 로직)나 타입 단언(`as`)을 통해 해당 값이 특정 타입이라는 것을 증명해주어야 한다.
 - `null`과 `undefined`: 각각 `null` 값과 `undefined` 값을 나타내는 타입
 - `void`: 함수에서 반환 값이 없을 때 사용하는 타입
 - `never`: 절대 발생하지 않는 값의 타입 (예: 항상 예외를 throw하는 함수)
-- 유틸리티 타입: 타입 변환용 편의성 타입
+- 유틸리티 타입(Utility Types): 타입 변환용 편의성 타입
 
 ### 열거형 Enums
 
@@ -434,6 +434,26 @@ function identity<T>(arg: T): T {
   - `Lowercase<StringType>`
   - `Capitalize<StringType>`
   - `Uncapitalize<StringType>`
+
+#### Omit\<Type, Keys\>
+
+특정 타입에서 일부 프로퍼티를 제외한 새 타입을 정의하는 유틸리티 타입이다. 아래처럼 쓴다:
+
+```ts
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
+  createdAt: number;
+}
+ 
+type TodoInfo = Omit<Todo, "completed" | "createdAt">;
+ 
+const todoInfo: TodoInfo = {
+  title: "Pick up kids",
+  description: "Kindergarten closes at 5pm",
+};
+```
 
 
 ## 변수의 타입 제한
@@ -793,9 +813,9 @@ class Newbie {
 
 **TODO**
 
-### 구현/구상화 implements
+### 구상화(구체화) implements
 
-타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 클래스의 구상화 기능을 제공한다:
+타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 구상 클래스를 만들 수 있다:
 
 ```ts
 // 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage
@@ -1059,6 +1079,39 @@ let s: symbol = Symbol('s');
 ```
 
 
+## 인덱싱된 접근 타입 Indexed Access Types
+
+기존 타입의 특정 프로퍼티에 정의된 타입을 추출하여 새로운 타입을 생성하는 기능. 자바스크립트의 괄호 표기법(Bracket Notation)을 타입 레벨에서 활용하여, 복잡하게 중첩된 타입 구조에서 필요한 부분만 쏙 빼오는 문법이다.
+
+```ts
+interface Database {
+  public: {
+    Tables: {
+      posts: {
+        Row: {
+          seq: number
+          title: string
+          content: string
+          created_at: string
+          updated_at: string
+        }
+      }
+    }
+  }
+}
+
+type Post = Database['public']['Tables']['posts']['Row'];
+
+const post: Post = {
+  seq: 1,
+  title: 'Hello World',
+  content: 'This is my first post.',
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
+}
+```
+
+
 ## 연산자
 
 ### Non-null Assertion Operator
@@ -1133,6 +1186,35 @@ getProperty(person3, 'city'); // New York
 ```
 
 제네릭 타입 `T`와 `K`를 사용하며, `K`의 타입을 `keyof T`로 제한했다. 이는 `K`가 `T` 타입의 프로퍼티 이름 중 하나여야 함을 의미한다.
+
+#### 배열과 튜플에서의 keyof
+
+`keyof` 연산자는 일반 객체뿐만 아니라 배열이나 튜플 타입에도 적용할 수 있으며, 이 경우 결과는 해당 타입의 키(인덱스와 프로퍼티 이름)들의 유니언이 된다.
+
+배열의 인덱스는 숫자로 접근하지만, 타입스크립트의 `keyof` 연산자는 이 인덱스들을 숫자 리터럴 타입으로 처리한다. 여기에 `Array.prototype`에 정의된 모든 프로퍼티 및 메서드 이름들을 문자열 리터럴로 추가한다.
+
+```ts
+type TupleType = [string, number, boolean];
+let tuple: TupleType;
+tuple = ['a', 1, true];
+
+type KeyOfTuple = keyof TupleType;
+// KeyOfTuple의 결과는: 0 | 1 | 2 | 'length' | 'toString' | 'pop' | ... (등 Array prototype의 메서드들)
+// Array.prototype의 메서드들과 함께, 숫자 리터럴 타입도 포함됨
+
+let keyOfTuple: KeyOfTuple = 0;
+keyOfTuple = 1;
+keyOfTuple = 2;
+keyOfTuple = 'length';
+keyOfTuple = 'toString';
+keyOfTuple = 'pop';
+
+// 배열의 프로퍼티나 메서드에 'false'는 없음ㄴ
+keyOfTuple = false; // ⛔ TS2322: Type false is not assignable to type keyof TupleType
+
+// 배열의 프로퍼티나 메서드에 'substring'은 없음
+keyOfTuple = 'substring' // ⛔ TS2322: Type "substring" is not assignable to type keyof TupleType
+```
 
 ### Typeof 타입 연산자
 

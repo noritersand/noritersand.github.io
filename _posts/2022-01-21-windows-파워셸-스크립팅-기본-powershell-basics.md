@@ -236,10 +236,48 @@ Get-ChildItem # 이것도 한 줄 코멘트
 #>
 ```
 
+### 전개 Splatting \@\<Array\>
+
+배열이나 해시 테이블의 요소들을 개별적인 인수로 전개하는 문법.
+
+배열:
+
+```bash
+function Add-Numbers {
+    param($a, $b, $c)
+    "$a + $b + $c = " + ($a + $b + $c)
+}
+
+$argsArray = 1, 2, 3
+Add-Numbers @argsArray
+
+# @argsArray가 1 2 3 으로 전개되며 1 + 2 + 3 = 6 출력
+```
+
+해시 테이블:
+
+```powershell
+function Show-User {
+    param($Name, $Age)
+    "Name: $Name, Age: $Age"
+}
+
+$params = @{
+    Name = "Alice"
+    Age  = 30
+}
+
+Show-User @params
+
+# params가 -Name "Alice" -Age 30 로 전개되며 Name: Alice, Age: 30 출력
+```
+
+**TODO** https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_splatting?view=powershell-7.6
+
 
 ## 연산자
 
-### 리다이렉션 연산자 `>` `>>`
+### 리디렉션 연산자 \> \>\>
 
 ```bash
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
@@ -269,9 +307,11 @@ https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language
 
 ### [특수 연산자 Special Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2#special-operators)
 
-#### Grouping operator `( )`
+#### 그룹화 연산자 Grouping operator `( )`
 
-#### Subexpression operator `$( )`
+**TODO** https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.6#grouping-operator--
+
+#### 하위 식 연산자 Subexpression operator `$( )`
 
 괄호 안 표현식의 실행 결과를 반환한다. 명령의 결과를 문자열 혹은 또다른 명령에 포함시킬 때 사용한다:
 
@@ -294,13 +334,15 @@ echo "$($count)개"
 echo "$count개"
 ```
 
-#### Array subexpression operator `@( )`
+#### 배열 하위 식 연산자 Array subexpression operator `@( )`
 
-**TODO**
+괄호 안 표현식을 배열로 만들어 반환한다. 배열을 생성하거나 변환할 때 사용한다. `@()`만 실행하면 빈 배열이 생성된다.
 
 ```bash
 @('*.txt', '*.md') | ForEach-Object { Get-ChildItem -Filter $_ -Recurse }
 ```
+
+**TODO** https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.6#array-subexpression-operator--
 
 #### 해시 테이블 리터럴 구문 Hash table literal syntax `@{}`
 
@@ -734,7 +776,7 @@ Test-Fn10 -Server my-server
 
 ![](/images/powershell-scripting-validateset3.gif)
 
-아래 예시는 `ValidateSet()`와 해시테이블을 응용해서 ssh로 서버에 접속할 때 쓰는 함수다:
+아래 예시는 `ValidateSet()`와 해시 테이블을 응용해서 ssh로 서버에 접속할 때 쓰는 함수다:
 
 ```bash
 $hashtable = @{
@@ -838,7 +880,7 @@ IsPublic IsSerial Name                                     BaseType
 True     True     String                                   System.Object
 ```
 
-### 해시테이블 Hashtables
+### 해시 테이블 Hashtables
 
 ```bash
 $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}

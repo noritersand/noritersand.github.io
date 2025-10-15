@@ -262,7 +262,7 @@ location / {
 
 #### trailingSlash
 
-넥스트는 기본적으로 URL을 리다이렉션할 때 트레일링 슬래시(URL 경로 바로 뒤에 `/`가 붙는 것)를 제거하는데, 이 값을 `true`로 설정하면 반대로 작동한다. 가령 `/about` 경로는 `/about/`으로 바뀐다.
+넥스트는 기본적으로 URL을 리디렉션할 때 트레일링 슬래시(URL 경로 바로 뒤에 `/`가 붙는 것)를 제거하는데, 이 값을 `true`로 설정하면 반대로 작동한다. 가령 `/about` 경로는 `/about/`으로 바뀐다.
 
 `output: 'export'` 일 때 넥스트는 슬러그 이름으로 HTML 파일을 생성한다. 가령 `/about` 슬러그가 있으면 `/about.html` 파일이 생성되는 식이다. 하지만 `trailingSlash`가 `true`면 `/about.html` 대신 `/about/index.html`을 생성한다.
 
@@ -287,9 +287,9 @@ module.exports = {
 
 #### redirects
 
-⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없는 기능
+⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없음
 
-특정 요청을 다른 경로로 리다이렉션하는 옵션이다.
+특정 요청을 다른 경로로 리디렉션하는 옵션이다.
 
 ```js
 module.exports = {
@@ -305,15 +305,15 @@ module.exports = {
 }
 ```
 
-- `source`: 리다이렉션 대상이 될 요청 경로 패턴
+- `source`: 리디렉션 대상이 될 요청 경로 패턴
 - `destination`: 보낼 주소
-- `permanent`: 브라우저에 이 리다이렉션이 영구적인지 아닌지를 결정한다. `true`면 308 Permanent Redirect로 응답하고 `false`면 307 Temporary Redirect로 응답한다.
+- `permanent`: 브라우저에 이 리디렉션이 영구적인지 아닌지를 결정한다. `true`면 308 Permanent Redirect로 응답하고 `false`면 307 Temporary Redirect로 응답한다.
 
-`source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리다이렉션하게 된다. 
+`source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
 
 #### rewrites
 
-⚠️ 넥스트 설정이 `output: 'export'`일 땐 사용할 수 없는 기능
+⚠️ 넥스트 설정이 `output: 'export'`일 땐 사용할 수 없음
 
 요청 경로를 다른 경로에 매핑한다. 포워딩과 유사하지만 약간 다르며, 웹 서버에서 제공하는 rewrite와도 다르다. 넥스트에선 들어오는 요청을 내부에서 다른 주소로 매핑하는데, 이 과정에서 클라이언트, 그러니까 브라우저는 URL 변경을 감지하지 못한다. 이를 *URL masking*이나 *URL hiding*이라 부른다. 클라이언트의 특정 요청을 넥스트 서버에서 감지하고 매핑된 다른 주소로 대신 요청을 보내 데이터를 받아오는 방식이라서 가능한 것. 이를 이용해서 외부에 노출되면 안되는 (API 키 같은) 중요한 값을 숨길 수 있다.
 
@@ -526,7 +526,7 @@ export default function Page() {
 
 ## 서버 사이드 기능
 
-### 'use server'
+### Server Functions: 'use server'
 
 [Directives: use server \| Next.js](https://nextjs.org/docs/app/api-reference/directives/use-server)
 
@@ -543,7 +543,7 @@ export default function Page() {
 
 ### 데이터 받아오기 Data Fetching
 
-⚠️ 넥스트 설정(`next.config.js`)이 `output: 'export'`일 땐 사용할 수 없는 기능
+⚠️ 넥스트 설정이 `output: 'export'`일 땐 사용할 수 없음
 
 이 글에서 데이터 받아오기는 단순히 어딘가에 데이터를 요청하고 그걸 받아오는 것을 말하는 게 아니라, SSR 시점에 fetching을 완료하고 그걸 컴포넌트에 그려넣는 방법을 말한다.
 

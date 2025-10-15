@@ -109,6 +109,22 @@ var foo = {
 JSON.stringify(foo); // "{"num":123,"name":"who i'm"}"
 ```
 
+⚠️ 이 메서드는 값이 `undefined`인 경우 변수나 프로퍼티를 없는 것처럼 취급하니 주의:
+
+```js
+var a = null;
+JSON.stringify(a); // "null"
+
+var b = undefined;
+JSON.stringify(b); // undefined
+
+var o = {
+  a: null,
+  b: undefined
+};
+JSON.stringify(o); // '{"a":null}' 
+```
+
 
 ## JAVA와 JSON
 
