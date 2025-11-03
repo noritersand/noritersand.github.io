@@ -485,8 +485,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [⭐Workflowy](https://workflowy.com/): 온라인 할 일 관리 도구
 - [⭐ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
-- [Calendly](https://calendly.com): 메일로 일정 맞추기
-- [Linear](https://linear.app/)
+- [Calendly](https://calendly.com): 일정 예약 + 스케줄링 자동화 도구. 메일로 일정 맞추는 신박한 기능도 있다.
+- [Linear](https://linear.app/): 소프트웨어 개발팀용 이슈 트래커/프로젝트 관리 도구
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
 ### 메일 서비스

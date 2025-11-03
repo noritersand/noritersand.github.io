@@ -813,9 +813,9 @@ class Newbie {
 
 **TODO**
 
-### 구상화(구체화) implements
+### 구상화(구현, 구체화) implements
 
-타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 구상 클래스를 만들 수 있다:
+타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 구현 클래스를 만들 수 있다:
 
 ```ts
 // 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage

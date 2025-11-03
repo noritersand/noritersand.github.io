@@ -15,7 +15,7 @@ tags:
 #### 참고 문서
 
 - [Git - Reference](https://git-scm.com/docs)
-- [Git - book](https://git-scm.com/book/en/v2)
+- [Git - book](https://git-scm.com/book/ko/v2)
 - [Oh Shit, Git!?!](https://ohshitgit.com/)
 - [Learn Git Branching](https://learngitbranching.js.org/?locale=ko)
 
@@ -136,8 +136,6 @@ git blame -C -C 파일
 
 
 ## branch
-
-[Git - git-branch Documentation](https://git-scm.com/docs/git-branch)
 
 브랜치를 조회하거나 생성/삭제한다.
 
@@ -294,8 +292,6 @@ blob
 
 
 ## checkout
-
-[Git - git-checkout Documentation](https://git-scm.com/docs/git-checkout)
 
 브랜치를 전환하거나 워킹 트리를 되돌린다. 되돌리는 기능은 이 명령어 말고 새로 추가된 `restore`를 쓰자.
 
@@ -488,8 +484,6 @@ git clean -dfx  # ignore 설정된 파일을 포함하며 추적중이지 않은
 
 ## clone
 
-[Git - git-clone Documentation](https://git-scm.com/docs/git-clone)
-
 깃 저장소를 복제하여 새 저장소를 만드는 명령어
 
 #### Options
@@ -522,8 +516,6 @@ git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제�
 
 
 ## commit
-
-[Git - git-commit Documentation](https://git-scm.com/docs/git-commit)
 
 staged 상태인 파일을 깃 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
 
@@ -963,8 +955,6 @@ git am FILE
 
 ## filter-branch
 
-[Git - git-filter-branch Documentation](https://git-scm.com/docs/git-filter-branch)
-
 커밋 히스토리를 다시 작성하는 고급 기능.
 
 **TODO** 사용에 주의 필요. 
@@ -1145,8 +1135,6 @@ LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한
 
 
 ## log
-
-[Git - git-log Documentation](https://git-scm.com/docs/git-log)
 
 ```
 git log [<options>] [<revision range>] [[--] <path>...]
@@ -1449,8 +1437,6 @@ git pull --rebase  # fetch 후 머지 대신 리베이스
 
 
 ## push
-
-[Git - git-push Documentation](https://git-scm.com/docs/git-push)
 
 로컬 저장소의 데이터를 리모트 저장소에 업로드한다.
 
@@ -2052,13 +2038,13 @@ git switch -c abc 4d0dc05b1f # 4d0dc05b1f 커밋에서 abc 브랜치 생성하�
 - `-f` `--force`
 - `--discard-changes`
 - `-m` `--merge`
-- `--conflict=<style>``
+- `--conflict=<style>`
 - `-q` `--quiet`
 - `--progress`
 - `--no-progress`
 - `-t` `--track`
 - `--no-track`
-- `--orphan <new-branch>``
+- `--orphan <new-branch>`
 - `--ignore-other-worktrees`
 - `--recurse-submodules`
 - `--no-recurse-submodules`
@@ -2233,8 +2219,6 @@ git update-index --really-refresh
 
 
 ## worktree
-
-[Git - git-worktree Documentation](https://git-scm.com/docs/git-worktree)
 
 `worktree`는 하나의 깃 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
 

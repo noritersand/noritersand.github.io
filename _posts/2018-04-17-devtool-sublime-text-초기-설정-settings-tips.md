@@ -128,7 +128,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 추천 패키지
 
-- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, 파워셸 코드 하이라이팅 때문에 설치함
+- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, 파워셸 코드 하이라이팅 때문에 설치함. 설정에서 `mde.auto_fold_link.enabled` 항목은 끄자.
 - StyleToken: 파일 내에서 특정 단어별 하이라이팅
 - FileDiffs: 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
 - ConvertToUTF8: `EUC-KR`로 작성된 파일을 `UTF-8`로 전환해서 열어주는 패키지. 이 패키지를 활성화하면 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음

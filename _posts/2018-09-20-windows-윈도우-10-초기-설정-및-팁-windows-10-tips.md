@@ -454,7 +454,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + d</kbd>: 바탕화면 보기. 다시 WIN + D를 누르면 이전 상태로 돌아온다
 - <kbd>win + e</kbd>: 파일 탐색기(내 PC) 실행
 - <kbd>win + enter</kbd>: 내레이터 설정
-- <kbd>win + g</kbd>: 게임 표시줄 열기. 화면 캡처 혹은 녹화 등의 기능을 제공
+- <kbd>win + g</kbd>: 윈도우 게임 바 열기. 화면 캡처 혹은 녹화 등의 기능을 제공
 - <kbd>win + home</kbd>: 현재 사용중인 창을 제외한 모든 창 최소화.
 - <kbd>win + i</kbd>: Metro 설정 열기
 - <kbd>win + k</kbd>: 연결(무선 디스플레이 및 오디오)
@@ -467,7 +467,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + s</kbd>: 윈도우 검색. 앱, 파일 등을 찾을 수 있음
 - <kbd>win + shift + left</kbd> <kbd>win + shift + right</kbd>: 현재 창 이전/다음 모니터로 이동
 - <kbd>win + shift + up</kbd>: 현재 창 수직 최대화
-- <kbd>win + shift + s</kbd>: 캡처 표시줄 열기
+- <kbd>win + shift + s</kbd>: 캡처창 열기
 - <kbd>win + u</kbd>: 접근성 센터 열기.
 - <kbd>win + v</kbd>: 클립보드 이력
 - <kbd>win + w</kbd>: Windows Ink 열기
@@ -500,8 +500,9 @@ sudo apt-get remove byobu hollywood
 
 ### 파일 탐색기
 
-- <kbd>ctrl + tab</kbd>: 포커스가 주소 표시줄이나 검색 상자같은 곳에 있을 때 누르면 파일 목록으로 포커싱한다. 정식 명칭은 Property Tab Navigation인 모양. 진짜 탐색기에서만 유효하고 다른 앱의 파일 열기 탐색기에선 작동 안함.
-- <kbd>ctrl + shift + tab</kbd>: 위와 비슷한데, 파일 목록 대신 열 머리 항목으로 포커싱.
+- 얘네 언젠가부터 작동 안함:
+  - ~~<kbd>ctrl + tab</kbd>: 포커스가 주소 표시줄이나 검색 상자같은 곳에 있을 때 누르면 파일 목록으로 포커싱한다. 정식 명칭은 Property Tab Navigation인 모양. 진짜 탐색기에서만 유효하고 다른 앱의 파일 열기 탐색기에선 작동 안함.~~
+  - ~~<kbd>ctrl + shift + tab</kbd>: 위와 비슷한데, 파일 목록 대신 열 머리 항목으로 포커싱.~~
 - <kbd>alt + left arrow</kbd>: 뒤로
 - <kbd>alt + right arrow</kbd>: 앞으로
 - <kbd>alt + up arrow</kbd>: 위로

@@ -609,6 +609,8 @@ const rf = useRef('멋에쓰는물건인고');
 console.log(rf); // Object { current: "멋에쓰는물건인고" }
 ```
 
+⚠️ `useRef()`로 생성한 객체는 `useEffect()`에서 변화를 감지할 수 없다. 만약 감지되는 것처럼 보인다면, 그것은 다른 상태값(state)이나 props가 변해 리렌더링이 일어났기 때문이다.
+
 ⚠️ 리액트 19 [도움말 페이지](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 리액트는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
 
 #### 렌더링을 유발하지 않는 별도의 상태값
@@ -815,7 +817,7 @@ DOM이 그려지기 직전, layout effect(`useLayoutEffect`)보다 더 먼저 �
 **TODO**
 
 
-## 퍼포먼스 훅 Performance Hooks 
+## 퍼포먼스 훅 Performance Hooks
 
 불필요한 렌더링을 방지하고 성능을 최적화하는 데 사용되는 훅이다.
 

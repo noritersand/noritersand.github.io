@@ -197,21 +197,28 @@ var loopMe = {
   c: 9
 };
 
-Object.entries(loopMe); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
+var entries = Object.entries(loopMe);
+console.log(entries); // Array(3) [ [ "a", 7 ], [ "b", 8 ], [ "c", 9 ] ]
+
+entries.forEach(ele => {
+  const [key, value] = ele;
+  console.log(`key: ${key}, value: ${value}`);
+});
+
+// key: a, value: 7
+// key: b, value: 8
+// key: c, value: 9
 ```
 
 ```js
 var arr = [{true: 123}, {false: 345}]
 arr.forEach(item => {
   var [key, value] = Object.entries(item)[0];
-  console.log('key:', key);
-  console.log('value:', value);
+  console.log(`key: ${key}, value: ${value}`);
 });
 
-// key: true
-// value: 123
-// key: false
-// value: 345
+// key: true, value: 123
+// key: false, value: 345
 ```
 
 ### Object.freeze()

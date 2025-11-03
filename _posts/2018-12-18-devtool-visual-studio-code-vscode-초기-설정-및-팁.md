@@ -147,7 +147,6 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
   - <kbd>tab</kbd>: 제안 선택
   - <kbd>ctrl + enter</kbd>: 자동 완성 제안 창 보기
   - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기
-  - <kbd>alt + shift + p</kbd>: GitHub Copilot View 포커싱(이건 없어서 추가)
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
 - ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
 - Insert Date String `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌.
@@ -228,8 +227,14 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
     "command": "workbench.action.compareEditor.focusOtherSide"
   },
   {
-    "key": "shift+alt+p",
-    "command": "workbench.panel.chat.view.copilot.focus"
+    "key": "ctrl+shift+alt+a",
+    "command": "extension.translateToSnakeCaseEnglish",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+s",
+    "command": "-extension.translateToSnakeCaseEnglish",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+oem_2",
@@ -248,11 +253,28 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "ctrl+alt+oem_4",
     "command": "workbench.action.switchWindow"
+  },
+  {
+    "key": "shift+alt+oem_5",
+    "command": "editor.action.inlineSuggest.triggerInlineEditExplicit"
+  },
+  {
+    "key": "ctrl+shift+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   }
 ]
 ```
 
-`oem_3`는 [사용자의 키보드 레이아웃에 따라 다를 수 있는데](https://github.com/microsoft/vscode/issues/27491) 작성자의 경우 백틱``` ` ```에 해당함.
+`oem_n`은 [사용자의 키보드 레이아웃에 따라 다를 수 있음](https://github.com/microsoft/vscode/issues/27491).
+
+작성자의 경우 다음과 같음: 
+
+- `oem_2`: `/`
+- `oem_3`: ``` ` ```
+- `oem_4`: `[`
+- `oem_5`: `\`
+- `oem_6`: `]`
 
 
 ## 기본 단축키
@@ -293,3 +315,13 @@ Add Selection
 - <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
+
+### 편집 제안 기능(Next Edit Suggestions, NES)
+
+최근에 추가된 신규 기능이다. 코파일럿을 구독하지 않아도 사용 가능
+
+- <kbd>alt + \ </kbd>: Trigger Inline Suggestion. 기능 발동 #1. 코파일럿의 코드 제안 기능과 거의 비슷함
+- <kbd>alt + shift + \ </kbd>: Trigger Next Edit Suggestion. 기능 발동 #2. 위의 기능과 차이점은 단순 제안이 아니라 '편집' 제안이라는 것. ✅ 없어서 추가한 단축키
+- <kbd>alt + ]</kbd>: Show Next Inline Suggestion. 다음 제안 보기
+- <kbd>alt + [</kbd>: Show Previous Inline Suggestion. 이전 제안 보기
+- <kbd>ctrl + alt + i</kbd>: Open/Toggle Chat. 에이전트 채팅창 토글 기능
