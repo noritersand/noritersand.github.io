@@ -199,7 +199,7 @@ tags:
 - [recoiljs](https://recoiljs.org/): 상태 관리 라이브러리 #3
 - [Jotai](https://jotai.org/):  상태 관리 라이브러리 #4
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
-- [useHooks](https://github.com/uidotdev/usehooks?tab=readme-ov-file): 훅 모음 #1. React 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 React의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
+- [useHooks](https://github.com/uidotdev/usehooks): 훅 모음 #1. React 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 React의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://github.com/streamich/react-use): 훅 모음 #2. 이 패키지도 React 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
 - [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 페칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하기도 함. 예전 이름은 React Query였음.
 - [⭐SWR](https://swr.vercel.app/): 데이터 페칭과 캐싱을 간편히 처리해주는 라이브러리. Vercel에 만듦.

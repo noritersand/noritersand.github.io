@@ -1087,5 +1087,44 @@ export const useAuth = () => {
 **TODO**
 
 
+## 서드파티 훅
+
+### useScript
+
+[useHooks](https://github.com/uidotdev/usehooks)의 훅으로, SFC 방식을 지원하지 않는 라이브러리를 쓰고 싶을 때 사용한다.
+
+```jsx
+export default function CustomWysiwygEditor({
+  setValue
+}) {
+  const status = useScript('/tinymce/tinymce.js');
+
+  function drawEditor() {
+    if (typeof window.tinymce === 'undefined') {
+      throw new Error('TinyMCE 라이브러리를 먼저 불러와야 합니다.');
+    }
+    window.tinymce.init({
+      selector: '#editor',
+      setup: editor => {
+        editor.on('change keyup', () => {
+          if (setValue) {
+            setValue(editor.getContent());
+          }
+        });
+      },
+      // 생략
+    });
+  }
+
+  useEffect(() => {
+    if (status === 'ready') {
+      drawEditor();
+    }
+  }, [status]);
+
+  return <textarea id="editor" rows={10}></textarea>;
+};
+```
+
 
 {% endraw %}
