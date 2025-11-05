@@ -32,7 +32,8 @@ tags:
 - [The Concise TypeScript Book](https://github.com/gibbok/typescript-book): TypeScript의 모든 것을 정리한 문서.
 - [ECMA International: ecma-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/): 비영리 국제 표준화 기구인 ECMA Internation의 사이트. 이 문서에서는 ECMAScript의 버전별 명세와 현재 유효한 표준을 볼 수 있다.
 - [You might not need jQuery](https://youmightnotneedjquery.com/): jQuery API 대신 쓸 수 있는 JavaScript + CSS 코드를 알려주는 사이트. 예를 들어 `$(el).show()`를 찾으면, `el.style.display = ''`를 알려주는 식이다.
-- [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): 누군가 만들어놓은 README 작성 표준
+- [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): README 작성 표준
+- [컨퍼런스 비디오](https://conference-view.vercel.app/): 개발 컨퍼런스 발표 영상 모음. 🧪 누군가의 토이 프로젝트임
 
 ### JavaScript
 
