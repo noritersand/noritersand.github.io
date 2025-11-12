@@ -45,7 +45,7 @@ Write-Host "Done creating local branches from remote tracking branches."
 ## 파워셸 스크립트: 한 달 이상 지난 머지된 리모트 브랜치 목록 보기
 
 - 버전: 4.8
-- 💾 파일 이름: `cleanup-merged-branches-multi-repo.ps1`
+- 💾 파일 이름: `show-merged-branches-multi-repo.ps1`
 - ⚠️ 이 스크립트는 로컬 깃 저장소 경로의 바로 상위 경로에서 실행해야 함. 아니면 `-Path`로 그 경로를 지정하던지...
 
 ```powershell
@@ -69,9 +69,9 @@ if ($Help) {
     Write-Host ""
     
     Write-Host "기본 사용법:" -ForegroundColor Yellow
-    Write-Host "  .\cleanup-merged-branches.ps1           # 기본 설정으로 실행 (현재 폴더와 하위)"
-    Write-Host "  .\cleanup-merged-branches.ps1 -Help     # 이 도움말 표시"
-    Write-Host "  .\cleanup-merged-branches.ps1 -Path 'C:\my-projects'  # 특정 경로의 모든 하위 저장소 검색" -ForegroundColor Gray
+    Write-Host "  .\show-merged-branches.ps1           # 기본 설정으로 실행 (현재 폴더와 하위)"
+    Write-Host "  .\show-merged-branches.ps1 -Help     # 이 도움말 표시"
+    Write-Host "  .\show-merged-branches.ps1 -Path 'C:\my-projects'  # 특정 경로의 모든 하위 저장소 검색" -ForegroundColor Gray
     Write-Host ""
     
     Write-Host "주요 옵션:" -ForegroundColor Yellow

@@ -490,6 +490,13 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Linear](https://linear.app/): 소프트웨어 개발팀용 이슈 트래커/프로젝트 관리 도구
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
 
+### 워크플로 자동화
+
+- [n8n](https://n8n.io/): 오픈 소스 워크플로 자동화 도구. API 호출, 데이터 통합, 스케줄링 등을 통해 애플리케이션 간 워크플로를 자동화. 노코드/로우코드 방식으로 직관적인 워크플로 설계 가능. n8n은 nodemation을 줄인말이고, node-based automation tool이란 뜻이다.
+- [Make](https://www.make.com/en/integromat-evolves-to-make): 옛날 이름은 Integromat
+- [Zapier](https://zapier.com/)
+- [Node-RED](https://nodered.org/)
+
 ### 메일 서비스
 
 - [Guerrilla Mail](https://www.guerrillamail.com/): 일회용 메일 서버. 60분 동안만 유효한 메일 주소를 제공.

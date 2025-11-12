@@ -187,11 +187,10 @@ Autohotkey로 확장한 키 조합:
 
 - <kbd>win + alt + 5</kbd>: Fork
 - <kbd>win + alt + 6</kbd>: Discord
-- <kbd>win + alt + 9</kbd>: Postman
 - <kbd>win + alt + 0</kbd>: 가변 #3 (MSOffice)
 - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
 - <kbd>win + ctrl + - </kbd>: Notion
-- <kbd>win + alt + - </kbd>: Obsidian
+- <kbd>win + alt + - </kbd>: Postman
 - <kbd>win + = </kbd>: Microsoft Edge
 - <kbd>win + ctrl + = </kbd>: 야카오톡
 - <kbd>win + backspace</kbd>: WorkFlowy

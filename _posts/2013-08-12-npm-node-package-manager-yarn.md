@@ -28,6 +28,15 @@ tags:
 npm과 Yarn 사용법 간단 정리
 
 
+## 모듈과 패키지의 차이
+
+모듈(Module)은 Node.js의 가장 기본적인 단위로, 보통 하나의 파일이 하나의 모듈로 간주된다. `require()` 함수나 ESM의 `import`, `export` 구문을 통해 불러오거나 내보낼 수 있는 코드 덩어리이며, 특정 기능을 캡슐화하고 재사용하기 위한 코드 단위다.
+
+패키지(Package)는 배포 및 관리 관점에서의 단위다. 하나의 패키지는 하나 이상의 모듈과 이를 설명하는 메타데이터를 포함하며, 이 메타데이터가 담긴 `package.json` 파일이 존재해야 패키지로 인정된다. 이 파일을 통해 의존성 관리, 설치, 버전 지정, 배포 등이 가능해진다.
+
+요약하면, **모든 패키지는 모듈을 포함하지만, 모든 모듈이 패키지는 아니다.**
+
+
 ## package.json
 
 `package.json`은 프로젝트(혹은 패키지)의 설명, 의존관계, 빌드/실행 스크립트 등을 정의하는 파일이다. `npm`이나 `yarn` 명령은 이 파일을 기반으로 의존성 설치나 스크립트 실행 등을 자동으로 처리한다.
@@ -167,15 +176,15 @@ npm과 Yarn 사용법 간단 정리
 
 ### 모듈을 디렉터리 단위로 관리하기
 
-package.json을 조작하면 한 디렉터리에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다:
+`package.json`을 활용하면 한 디렉터리에 있는 모듈을 마치 라이브러리 파일처럼 다룰 수 있다. 방법은 다음과 같다:
 
 ```js
 var myModule = require('./myModule');
 ```
 
-위와 같이 모듈을 로드할 때 디렉터리를 지정하면, Node.js는 그 디렉터리를 패키지로 가정하고, 내부에서 `package.json` 파일을 찾는다. 만약 `package.json`이 있다면 `main` 필드에 정의된 파일을 시작점으로 사용한다. `package.json` 파일이 없다면 `index.js` 파일을 패키지의 시작점으로 간주한다. 예를 들어 `/myModule/index.js`가 있다면, Node.js는 `/myModule`을 패키지의 루트 경로로 보고 해당 파일을 로드한다.
+Node.js는 모듈을 로드할 때 디렉터리를 지정하면, 해당 디렉터리를 시작점으로 삼아 내부에서 `package.json` 파일을 찾는다. 만약 `package.json`이 있다면 `main` 필드에 정의된 파일을 로드하며, 없다면 `index.js`를 로드하여 디렉터리 전체를 하나의 모듈로 제공한다.
 
-만약 `package.json` 에서 다음처럼 시작점의 상대경로를 지정했다면:
+예를 들어 `package.json` 에서 다음처럼 시작점의 상대경로를 지정했다면:
 
 ```js
 {
@@ -190,7 +199,7 @@ Node.js는 `./myModule/lib/temp.js` 를 찾는다.
 
 ## npm
 
-npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키지(혹은 모듈) 관리 도구다.
+npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키지 관리 도구다.
 
 ### ℹ️ 파워셸에서 npm 명령이 실행되지 않을 때
 
@@ -218,17 +227,17 @@ npm의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 
 
 - 꼭 필요한 서드 파티 라이브러리만 사용할 것
 - 패키지 설치 시 오타에 주의하고 패키지 게시자를 확인할 것
-- `npm install` 실행 시 항상 `--ignore-scripts` 옵션을 붙일 것
+- 🚨 `npm install` 실행 시 항상 `--ignore-scripts` 옵션을 붙일 것
 
 ```bash
 npm insatll --ignore-scripts
 ```
 
-`--ignore-scripts`는 npm이 package.json에 작성된 pre-scripts, post-scripts를 자동으로 실행하지 않도록 하는 옵션이다.
+`--ignore-scripts`는 npm이 `package.json`에 작성된 `pre-scripts`, `post-scripts`를 자동으로 실행하지 않도록 하는 옵션이다.
 
 \* Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
 
-### 패키지(Package) 설치
+### 패키지 설치
 
 ```bash
 npm install [<package-spec> ...]
@@ -444,7 +453,7 @@ Yarn은 [코어팩(Corepack) 프로젝트](https://www.npmjs.com/package/corepac
 
 코어팩이 활성화되면 `yarn` 명령어를 글로벌로 실행할 수 있다. 만약 로컬 프로젝트에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전을 사용한다. 과거에는 Yarn 자체를 npm 글로벌 패키지로 설치하여 사용하곤 했으나, 패키지 매니저의 버전 관리가 필요해지면서 사장되었다.
 
-Yarn Berry 부터 `yarn install -g` 같은 글로벌 옵션이 제거되었다. 글로벌 패키지가 필요하면 `yarn dlx`를 사용하자. 그리고 Yarn의 모든 설정은 로컬 프로젝트의 `.yarnrc.yml` 파일에 저장된다.
+Yarn Berry 부터 `yarn install -g` 같은 글로벌 옵션이 제거되었다. 글로벌 패키지가 필요하면 `yarn dlx`를 사용하자. 참고로 Yarn의 모든 설정은 로컬 프로젝트의 `.yarnrc.yml` 파일에 저장된다.
 
 ℹ️ Berry는 Yarn 2.x 버전부터 시작된 대규모 업데이트의 코드네임으로, Yarn 2.x 이상 버전을 지칭한다. 이전 버전은 Classic이라 부름.
 
@@ -627,7 +636,7 @@ yarn dlx create-react-app ./my-app
 yarn explain peer-requirements [hash]
 ```
 
-패키지들 간의 peer dependency(설치한 패키지가 의존하는 또 다른 패키지) 요구사항과 현재 상태를 분석해서 보여주는 명령어. 의존성 문제를 디버깅할 때 사용한다.
+패키지 간 peer dependency(설치한 패키지가 의존하는 또 다른 패키지) 요구사항과 현재 상태를 분석해서 보여주는 명령어. 의존성 문제를 디버깅할 때 사용한다.
 
 `hash`를 생략하고 사용하면 모든 항목과 해시값을 출력한다. 여기서 출력되는 해시를 `hash`로 지정하면 더 상세한 내용이 출력된다.
 
