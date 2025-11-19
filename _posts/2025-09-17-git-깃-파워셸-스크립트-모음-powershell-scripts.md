@@ -405,7 +405,7 @@ try {
             Write-Host ""
         }
         
-        Write-Host "💡 팁: 위 목록을 확인하고, 필요시 다음 명령어로 수동 삭제하세요." -ForegroundColor Cyan
+        Write-Host "ℹ️ 위 목록을 확인하고, 필요시 다음 명령어로 수동 삭제하세요." -ForegroundColor Cyan
         Write-Host "  git push <remote_name> --delete <branch_name>" -ForegroundColor Gray
     } else {
         Write-Host "✅ 모든 저장소가 깨끗합니다 - 삭제할 브랜치가 없습니다" -ForegroundColor Green

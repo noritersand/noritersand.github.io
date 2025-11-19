@@ -334,6 +334,39 @@ useEffect(() => {
 }, [obj]);
 ```
 
+#### Controlled Input에서 자주 발생하는 타입 불일치 문제
+
+`useState`를 `<input>`과 연결하여 사용할 때, 실제 데이터의 타입과 맞지 않아 set 함수가 제대로 작동하지 않을 수 있다.
+
+이것은 기본적으로 `<input>` 엘리먼트가 모든 value를 문자열로 다루기 때문인데, 예를 들어 `boolean` 타입의 값을 `<input type="radio">`과 연결해 사용한다면, `<input>`의 `value`는 `string` 타입이라 JSX의 바인딩 로직에서 타입 불일치가 발생하며 화면이 예상대로 작동하지 않을 것이다.
+
+이럴 때는 아래 예시처럼, 이벤트 핸들러와 초깃값 설정 코드에서 set 함수를 별도로 호출하며 명시적으로 타입을 변환해주는 편이 좋다:
+
+```jsx
+const [boolValue, setBoolValue] = useState(false);
+
+function handleChange(e) {
+  const value = e.target.value;
+  console.log(typeof value); // string
+  setBoolValue(value === 'true');
+}
+
+return (
+  <>
+    <label>
+      <input type="radio" name="input" value="true"
+          checked={boolValue === true} onChange={handleChange} />
+      &nbsp;true
+    </label>
+    <label>
+      <input type="radio" name="input" value="false"
+          checked={boolValue === false} onChange={handleChange} />
+      &nbsp;false
+    </label>
+  </>
+);
+```
+
 ### useReducer
 
 [React \| Extracting State Logic into a Reducer](https://react.dev/learn/extracting-state-logic-into-a-reducer)

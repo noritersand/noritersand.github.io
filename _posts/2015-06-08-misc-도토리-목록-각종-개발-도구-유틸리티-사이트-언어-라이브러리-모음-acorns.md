@@ -1,9 +1,9 @@
 ---
 layout: post
 date: 2015-06-08 18:47:33 +0900
-title: '[etc] 🌰🐿️ 각종 개발 도구, 유틸리티 사이트, 언어, 라이브러리 모음'
+title: '[misc] 🌰🐿️ 각종 개발 도구, 유틸리티 사이트, 언어, 라이브러리 모음'
 categories:
-  - etc
+  - misc
 tags:
   - note
   - devtool
@@ -19,7 +19,7 @@ tags:
 
 쓰니는 다람쥐같은 습성이 있어서 일단 모으는 것을 좋아한다고 한다.
 
-자주 사용하거나 중요한 것은 ⭐표시함.
+자주 사용하거나 중요한 것은 ⭐, 누군가의 사이드 프로젝트는 🧪 표시함.
 
 
 ## 1. 문서, 메뉴얼, 참고 자료
@@ -33,7 +33,7 @@ tags:
 - [ECMA International: ecma-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/): 비영리 국제 표준화 기구인 ECMA Internation의 사이트. 이 문서에서는 ECMAScript의 버전별 명세와 현재 유효한 표준을 볼 수 있다.
 - [You might not need jQuery](https://youmightnotneedjquery.com/): jQuery API 대신 쓸 수 있는 JavaScript + CSS 코드를 알려주는 사이트. 예를 들어 `$(el).show()`를 찾으면, `el.style.display = ''`를 알려주는 식이다.
 - [standard-readme](https://github.com/RichardLitt/standard-readme/blob/main/spec.md#specification): README 작성 표준
-- [컨퍼런스 비디오](https://conference-view.vercel.app/): 개발 컨퍼런스 발표 영상 모음. 🧪 누군가의 토이 프로젝트임
+- [🧪컨퍼런스 비디오](https://conference-view.vercel.app/): 개발 컨퍼런스 발표 영상 모음.
 
 ### JavaScript
 
@@ -521,10 +521,13 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 - [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
-- [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 비슷한 서비스: [Stitch](https://stitch.withgoogle.com/), [Readdy](https://readdy.ai/)
+- [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 
+  - [Stitch](https://stitch.withgoogle.com/)
+  - [Readdy](https://readdy.ai/)
 - [⭐DeepWiki](https://deepwiki.org/): 깃 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
 - [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
 - [GitMCP](https://gitmcp.io/): 깃허브 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. 깃허브 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
+- [🧪claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
 
 
 ## 19. 모바일 개발

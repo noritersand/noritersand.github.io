@@ -715,8 +715,7 @@ export default {
 <input type="checkbox" v-model="yn" true-value="Y" :false-value="'N'" />
 ```
 
-값이 문자열이면 콜론과 작은따옴표
-는 생략해도 된다.
+값이 문자열이면 콜론과 작은따옴표는 생략해도 된다.
 
 ### Modifiers
 
@@ -773,7 +772,7 @@ createApp({
 
 `<literal-template>`이라고 작성한 부분은 '사용자 정의 컴포넌트를 HTML 템플릿에 삽입'한다고 표현한다.
 
-### Slots 
+### Slots
 
 컴포넌트를 부모 템플릿에 삽입할 때, 바디 부분에 작성한 값을 다루는 방법이다. [여기](https://vuejs.org/guide/components/slots.html)를 볼 것.
 
