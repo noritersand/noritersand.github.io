@@ -192,8 +192,10 @@ console.debug('${1:msg}:', ${2:msg});
   { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
   { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
   { "keys": ["ctrl+b"], "command": "do_nothing" },
-  // { "keys": ["ctrl+tab"], "command": "next_view" },
+  // { "keys": ["ctrl+tab"], "command": "next_view" }, // 보이는 순서대로 순환
   // { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+  { "keys": ["ctrl+tab"], "command": "next_view_in_stack" }, // 활성화 이력대로 순환(이게 원본). 추가 패키지가 덮어쓰는 것 방지하기 위해 추가함
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
   { "keys": ["ctrl+alt+shift+pagedown"], "command": "next_view", "args": {"extend": true} },
   { "keys": ["ctrl+alt+shift+pageup"], "command": "prev_view", "args": {"extend": true} }
 ]

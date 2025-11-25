@@ -244,6 +244,74 @@ select (now() at time zone 'KST');
 select (now() at time zone 'Asia/Seoul');
 ```
 
+### 타임존 변환
+
+```sql
+select
+  now(),
+  now() AT TIME ZONE 'America/Los_Angeles',
+  now() AT TIME ZONE 'Asia/Seoul'
+```
+
+`{time} AT TIME ZONE {timeZone}`은 값의 데이터 타입에 따라 결과가 다르다. `timestamp` 타입일 땐 주어진 시각을 '지정된 시간대의 시각으로 해석'하여 `timestamptz`로 변환한다. 반면 `timestamptz`일 때는 주어진 시각을 '지정한 시간대의 로컬 시각으로 변환'한다.
+
+### 시간 형식(포맷)
+
+#### TO_CHAR()
+
+```
+TO_CHAR(source, format)
+```
+
+`format`은 다음과 같음:
+
+- `YYYY`: 4자리 연도 (2025)
+- `MM`: 2자리 월 (11)
+- `DD`: 2자리 일 (24)
+- `HH24`: 24시간 표기의 시간 (19)
+- `HH`: 12시간 표기의 시간 (07)
+- `MI`: 분 (03)
+- `SS`: 초 (18)
+- `MS`: 밀리초 (123)
+- `AM` `PM`: 오전/오후 구분 (PM)
+- `Day`: 요일 이름 (Monday)
+
+```sql
+SELECT
+  -- 기본 형식: YYYY-MM-DD HH24:MI:SS
+  TO_CHAR(now(), 'YYYY-MM-DD HH24:MI:SS') AS full_datetime,
+
+  -- 파일명이나 로그용: YYYYMMDDHH24MISS
+  TO_CHAR(now(), 'YYYYMMDDHH24MISS') AS log_datetime,
+
+  -- 사용자 친화적 형식: 2025년 11월 24일 (월) 오후 7:03
+  TO_CHAR(now(), 'YYYY"년" MM"월" DD"일" (DY) PM HH:MI') AS human_friendly
+```
+
+#### DATE_TRUNC()
+
+```
+DATE_TRUNC(field, source)
+```
+
+`field`는 다음 중 하나여야 함:
+
+- `year`: 연도의 첫날 (2025-01-01 00:00:00)
+- `month`: 월의 첫날 (2025-11-01 00:00:00)
+- `day`: 그 날의 자정 (2025-11-24 00:00:00)
+- `hour`: 해당 시간의 시작 (2025-11-24 19:00:00)
+- `minute`: 해당 분의 시작 (2025-11-24 19:03:00)
+
+```sql
+SELECT
+  -- 당일 자정으로 절삭 (일별 집계 기준)
+  DATE_TRUNC('day', now()) AS start_of_day,
+
+  -- 해당 주의 시작일 (월요일)로 절삭 (주별 집계 기준)
+  DATE_TRUNC('week', now()) AS start_of_week
+```
+
+
 ## LIMIT
 
 조회할 데이터의 수를 제한하는 기능. `OFFSET` 키워드로 시작 인덱스를 지정할 수 있다. MySQL, MariaDB의 `LIMIT`와 같다.

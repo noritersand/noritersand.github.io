@@ -778,6 +778,8 @@ arr.slice(1, -1) // Array [ "다", "라" ]
 
 ### Array.prototype.some()
 
+배열의 요소 중 하나라도 주어진 테스트를 통과하면 `true`를 반환하는 함수. 특정 요소의 존재 여부를 확인하는 용도로 가장 적합하다.
+
 ```
 array.some(callbackFn)
 array.some(callbackFn, thisArg)
