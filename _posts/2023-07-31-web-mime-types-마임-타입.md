@@ -27,15 +27,31 @@ tags:
 type/subtype
 ```
 
-MIME 타입은 원래 이메일에서 사용하던 일종의 인코딩 규칙이다. 
+MIME(Multipurpose Internet Mail Extensions)은 원래 이메일 확장을 위해 만들어진 표준이다. 초기 SMTP는 ASCII 문자만 전송할 수 있었는데, MIME 표준과 Base64 같은 인코딩 기법이 도입되면서 텍스트 이외의 데이터도 SMTP 환경에서 전송할 수 있게 됐다. MIME은 여러 새로운 헤더 필드를 정의했는데, 그중 하나가 `Content-Type`이며 이 값을 **MIME 타입**이라고 한다.
 
-어떤 파일의 MIME 타입을 판단할 때, 브라우저나 OS는 보통 '파일 확장자-MIME 타입 매핑 테이블'을 사용한다.
+MIME 타입은 HTTP에서도 그대로 사용된다. HTTP 응답과 요청에서 `Content-Type` 헤더를 통해 데이터 형식을 지정하거나 식별한다. 만약 `Content-Type`이 없거나 `application/octet-stream`처럼 지나치게 범용적인 타입이 들어오면 브라우저(혹은 서버)는 바이너리 시그니처나 앞부분을 검사해 형식을 추론하려고 시도하는데, 이를 **MIME 타입 스니핑**이라 한다.
 
-MIME 타입은 HTTP에서도 그대로 사용되는데, HTTP 헤더 중 `Content-Type` 필드로 타입을 지정하거나 식별한다. `Content-Type` 헤더가 없거나 `application/octet-stream` 처럼 너무 범용적인 타입이 전송되면 브라우저(혹은 서버)는 데이터의 내용(바이너리 시그니처나 파일의 앞부분)을 분석해서 데이터 형식을 추축하려고 시도하는데, 이걸 *MIME 타입 스니핑*이라고 한다.
+MIME 타입은 웹이 아닌 곳에서도 사용된다. 예를 들어 운영체제는 보통 '파일 확장자 - MIME 타입 매핑 테이블'을 통해 파일의 유형을 식별하고, 브라우저도 파일 업로드 시 같은 방식으로 MIME 타입을 결정한다.
 
-모든 텍스트 기반 파일은 `text/plain`이 기본값이며, 이외에는 모두 `application/octet-stream`이 기본값이다. 
 
-ℹ️ `application/octet-stream`은 알려지지 않은 바이너리 데이터의 기본 타입이기도 하다. misc 같은 늭김.
+## 주의사항
+
+- MIME 타입 스니핑은 XSS 공격에 활용될 수 있기 때문에 `X-Content-Type-Options: nosniff` 헤더로 비활성화하는 게 일반적이다.
+- MIME 타입은 조작 가능하기 때문에, 서버는 클라이언트가 전송한 MIME 타입 외에도 파일 내용 기반의 검증을 반드시 추가해야 한다. (확장자 whitelist, Magic Number나 바이너리 시그니처 검사)
+- 서버는 별도의 매핑 파일을 통해 MIME 타입을 결정한다. (nginx는 `mime.types`, Apache는 `.htaccess` 혹은 `mime.types`)
+- 텍스트 콘텐츠는 `text/plain; charset=utf-8`처럼 케릭터 셋을 명시하는 게 안전하다.
+
+ℹ️ MIME 타입 스니핑은 막으라면서 서버에선 내용 기반 검사를 하라니... 모순처럼 보일 수 있는데, 브라우저 스니핑은 악성 코드 렌더링이나 자동 실행을 막기 위해 비활성화해야 하는 기능이고, 서버의 내용 기반 검사는 MIME 타입과 실제 파일 내용이 일치하는지 확인하기 위한 검증 단계일 뿐이다. 목적이 다르다.
+
+
+## 기본값
+
+대부분의 환경에서 알 수 없는 텍스트는 기본적으로 `text/plain`, 알 수 없는 바이너리는 `application/octet-stream`으로 매핑된다. `application/octet-stream`은 '정체 불명의 바이너리 blob'의 기본 타입으로 취급한다. misc 같은 늭김.
+
+
+## 파일 다운로드 유도하기
+
+`Content-Type`이 `application/octet-stream`이면 대부분의 브라우저는 콘텐츠를 직접 렌더링하지 않고 파일 다운로드를 시도한다. 그래서 의도적으로 이 타입을 쓰기도 하며, 이 경우 `Content-Disposition: attachment; filename="name.ext"` 헤더도 추가하면 좋다.
 
 
 ## 주요 MIME 타입 목록
@@ -65,8 +81,7 @@ MIME 타입은 HTTP에서도 그대로 사용되는데, HTTP 헤더 중 `Content
 - `.json`: `application/json`
 - `.bin`: `application/octet-stream`
 
-
-## 특이케이스
+### 특이케이스
 
 한글(`.hwp`) 문서는 다음 중 하나다~~엠뵹~~:
 
