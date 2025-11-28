@@ -46,7 +46,7 @@ data:image/png;base64,iVBORw0KGgoAAAANSU....
 
 이미지의 소스를 URL로 링크하는 대신, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
 
-가령 아래 코드는:
+아래 코드는:
 
 ```html
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="

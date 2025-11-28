@@ -202,7 +202,7 @@ public class SomeApiRequest {
 
 JSON 값의 네이밍 규칙과 자바 필드의 네이밍 규칙이 일치하지 않을 때, 클래스 레벨에 적용하는 어노테이션. 입력값과 출력값에 대한 형식을 지정하는 방식이다.
 
-가령 입력값이 SNAKE_CASE일 때, 이 값을 자바 필드로 역직렬화(입력) 했다가 다시 직렬화(출력)할 때 SNAKE_CASE로 내보내고 싶다면 다음처럼 설정한다:
+예를 들어 입력값이 SNAKE_CASE일 때, 이 값을 자바 필드로 역직렬화(입력) 했다가 다시 직렬화(출력)할 때 SNAKE_CASE로 내보내고 싶다면 다음처럼 설정한다:
 
 ```java
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)

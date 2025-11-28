@@ -19,7 +19,7 @@ tags:
 
 ## 개요
 
-기본형(primitive, 원시형) 타입의 변수를 객체로 다루기 위해 만들어진 클래스를 래퍼(wrapper) 클래스라고 한다. 가령 int 타입의 래퍼 클래스는 Integer고 실제 코드는 다음처럼 구성되어 있다:
+기본형(primitive, 원시형) 타입의 변수를 객체로 다루기 위해 만들어진 클래스를 래퍼(wrapper) 클래스라고 한다. 예를 들어 `int` 타입의 래퍼 클래스는 `Integer`고 실제 코드는 다음처럼 구성되어 있다:
 
 ```java
 public final class Integer extends Number implements Comparable {
@@ -102,7 +102,7 @@ assertFalse(a == b); // 값이 같아도 인스턴스가 달라서 false
 assertTrue(a.equals(b)); // 이렇게 하면 오버라이드 된 .equals()를 호출하므로 동등 비교 가능
 ```
 
-단, 예외가 있다. 가령 `Long` wrapper 타입은 -128부터 127까지의 값을 인스턴스로 만들 때 미리 만들어놓은 인스턴스를 내부 캐시에서 꺼내 재사용하기 때문에 동등연산자`==`를 사용해도 문제가 없다:
+단, 예외가 있다. `Long` wrapper 타입은 `-128`부터 `127`까지의 값을 인스턴스로 만들 때 미리 만들어놓은 인스턴스를 내부 캐시에서 꺼내 재사용하기 때문에 동등연산자`==`를 사용해도 문제가 없다:
 
 ```java
 assertTrue(Long.valueOf(-129) != Long.valueOf(-129));

@@ -206,7 +206,7 @@ xhr.getResponseHeader('Content-Type')
 
 ### XMLHttpRequest.statusText
 
-응답의 상태코드를 의미하는 문자열. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 가령 상태코드가 `404`일 때 할당되는 값은 "Not Found"
+응답의 상태코드를 의미하는 문자열. 단순히 숫자를 문자열로 표현하는게 아니라 상태코드가 뭘 의미하는지 나타낸다. 예시로 상태코드가 `404`일 때 할당되는 값은 "Not Found"
 
 ### XMLHttpRequest.readyState
 

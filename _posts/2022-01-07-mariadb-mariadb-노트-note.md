@@ -345,7 +345,7 @@ order by (
 
 ### outer join 중 inner join을 먼저 수행하고 싶을 때
 
-가령 t1 테이블과 t2 테이블을 outer join 할 때, 먼저 t2와 t3, t4 테이블의 inner join을 먼저 하고 싶다면?
+t1 테이블과 t2 테이블을 outer join 할 때, 먼저 t2와 t3, t4 테이블의 inner join을 먼저 하고 싶다면?
 
 ```sql
 -- t2, t3, t4를 inner join하고 t1과 outer join
@@ -512,7 +512,7 @@ order by coalesce(b, a) desc, a desc
 
 `ALTER TABLE`문에서 쓰이는 `AFTER` 키워드는 MariaDB에서 새 컬럼을 테이블에 추가할 때, 그 컬럼이 테이블 내에서 어느 컬럼 다음에 위치할 지를 지정할 때 쓰인다.
 
-가령 아래와 같은 테이블이 있을 때:
+아래와 같은 테이블이 있을 때:
 
 ```sql
 create table test_table (

@@ -35,7 +35,7 @@ window.open( URL, name [ , specs ] [ , replace ] )
 
 - `URL`: 문서의 URL
 - `name`: URL이 로드될 창의 이름을 지정하거나 기존의 창 이름을 지정할 경우 해당 윈도우를 재사용한다.
-- `specs`: 창의 위치와 크기, 기능 등 창이 갖는 특성을 지정한다. 이 값은 브라우저/버전마다 적용이 되기도 하고 무시되기도 한다. 가령 `location`은 과거엔(IE 구버전에선 아직도 적용됨) 숨길 수 있었으나, 최근엔 대부분의 브라우저에서 보안상의 이유로 무시하는 값이다.
+- `specs`: 창의 위치와 크기, 기능 등 창이 갖는 특성을 지정한다. 이 값은 브라우저/버전마다 적용이 되기도 하고 무시되기도 한다. 예를 들어 `location`은 과거엔 `no`로 지정해서 숨길 수 있었으나, 최근엔 대부분의 브라우저에서 보안상의 이유로 무시하는 값이다(IE 구버전에선 아직도 적용됨).
 - `replace`: true일 땐 새 문서가 이전의 문서와 교체된다. false이거나 지정되지 않으면 새 문서는 창의 브라우징 히스토리에 새 항목으로 추가된다.
 
 ```js
@@ -238,14 +238,14 @@ SecurityError: Blocked a frame with origin "http://www.daum.net" from accessing 
 Error: Permission denied to access property 'name' // 불여시
 ```
 
-window.open()으로 생성된 새 창(자식 창)에서 부모 창에 접근할 수 없는 경우가 있는데, 이것은 보통 부모 창과 자식 창의 호스트명이나 프로토콜, 포트가 다를때 [동일 출처 정책(same-origin policy)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)에 따라 브라우저가 접근을 차단하는 경우다.
+`window.open()`으로 생성된 새 창(자식 창)에서 부모 창에 접근할 수 없는 경우가 있는데, 이것은 보통 부모 창과 자식 창의 호스트명이나 프로토콜, 포트가 다를때 [동일 출처 정책(same-origin policy)](https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy)에 따라 브라우저가 접근을 차단하는 경우다.
 
 이를 해결하는 방법은 두 가지가 있다.
 
 
 #### document.domain 변경
 
-부모 창의 도메인은 'abc.tistory.com'이고 자식 창의 도메인은 'def.tistory.com'일 때 두 창의 도메인을 모두 'tistory.com'으로 변경한다. 도메인은 원하는 값으로 마음대로 변경할 수 있는건 아니고 서브도메인을 삭제하는것만 허용된다. 가령 실제 도메인이 'noritersand.tistory.com'일 때 변경 가능한 값은 'noritersand.tistory.com' 혹은 'tistory.com'이다.
+부모 창의 도메인은 `abc.tistory.com`이고 자식 창의 도메인은 `def.tistory.com`일 때 두 창의 도메인을 모두 `tistory.com`으로 변경한다. 도메인은 원하는 값으로 마음대로 변경할 수 있는건 아니고 서브도메인을 삭제하는것만 허용된다. 실제 도메인이 `noritersand.tistory.com`일 때 변경 가능한 값은 `noritersand.tistory.com` 혹은 `tistory.com`이다.
 
 ```js
 document.domain; // 'noritersand.tistory.com'

@@ -262,9 +262,9 @@ location / {
 
 #### trailingSlash
 
-넥스트는 기본적으로 URL을 리디렉션할 때 트레일링 슬래시(URL 경로 바로 뒤에 `/`가 붙는 것)를 제거하는데, 이 값을 `true`로 설정하면 반대로 작동한다. 가령 `/about` 경로는 `/about/`으로 바뀐다.
+넥스트는 기본적으로 URL을 리디렉션할 때 트레일링 슬래시(URL 경로 바로 뒤에 `/`가 붙는 것)를 제거하는데, 이 값을 `true`로 설정하면 반대로 작동한다. 예를 들어 `/about` 경로는 `/about/`으로 바뀐다.
 
-`output: 'export'` 일 때 넥스트는 슬러그 이름으로 HTML 파일을 생성한다. 가령 `/about` 슬러그가 있으면 `/about.html` 파일이 생성되는 식이다. 하지만 `trailingSlash`가 `true`면 `/about.html` 대신 `/about/index.html`을 생성한다.
+`output: 'export'` 일 때 넥스트는 슬러그 이름으로 HTML 파일을 생성한다. `/about` 슬러그가 있으면 `/about.html` 파일이 생성되는 식이다. 하지만 `trailingSlash`가 `true`면 `/about.html` 대신 `/about/index.html`을 생성한다.
 
 #### basePath
 

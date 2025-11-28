@@ -28,7 +28,7 @@ tags:
 
 ## 암묵적 타입 변환 Type coercion
 
-Type coercion 또는 implicit(automatic) type conversion이라 한다. 자바스크립트가 필요에 따라 타입 변환을 자동으로 수행하는 것을 말한다. 가령 문자열이 필요한 위치인데 실제 값은 문자열이 아니라면 자바스크립트는 해당 값을 문자열 타입으로 변환하려 한다.
+Type coercion 또는 implicit(automatic) type conversion이라 한다. 자바스크립트가 필요에 따라 타입 변환을 자동으로 수행하는 것을 말한다. 만약 문자열이 필요한 위치인데 실제 값은 문자열이 아니라면 자바스크립트는 해당 값을 문자열 타입으로 변환하려 한다.
 
 다음은 암묵적 타입 변환의 사례들이다:
 

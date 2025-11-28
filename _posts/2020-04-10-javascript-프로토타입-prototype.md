@@ -50,7 +50,7 @@ Object.getPrototypeOf(o) === o.__proto__; // true
 
 함수의 프로퍼티인 `Object.prototype`은 해당 함수로 생성된 객체의 프로토타입을 가리킨다.
 
-가령 생성자 함수 `Mankind()`와 이 함수로 생성한 객체 `human`이 있을때:
+생성자 함수 `Mankind()`와 이 함수로 생성한 객체 `human`이 있을때:
 
 ```js
 function Mankind() {}
@@ -113,7 +113,7 @@ Object.getPrototypeOf(berry).aaa; // 123
 
 ## .constructor
 
-객체에는 생성자 함수를 가리키는 프로퍼티 `constructor`가 있다. 가령 다음의 경우:
+객체에는 생성자 함수를 가리키는 프로퍼티 `constructor`가 있다. 다음의 경우:
 
 ```js
 function Newbie() {}

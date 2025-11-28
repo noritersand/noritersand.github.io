@@ -998,7 +998,7 @@ declare class MyClass {}
 
 ### 전역 타입 확장
 
-가령 전역 객체 `window`의 프로퍼티 `foo`를 추가하려면 `.d.ts` 파일에 다음처럼 작성하면 된다:
+예를 들어 전역 객체 `window`의 프로퍼티 `foo`를 추가하려면 `.d.ts` 파일에 다음처럼 작성하면 된다:
 
 ```ts
 export {};

@@ -239,7 +239,7 @@ function callbackFn(element, index, array) {}
 [1, 2, 3].every(ele => isFinite(ele)); // true
 ```
 
-가령 다음의 경우:
+예를 들어 다음의 경우:
 
 ```js
 // 코드 출처: https://bobbyhadz.com/blog/javascript-check-if-all-object-properties-are-null
