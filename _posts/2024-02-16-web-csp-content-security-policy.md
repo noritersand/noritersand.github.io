@@ -131,3 +131,46 @@ Other Values:
 # 리소스를 가져올 사이트를 현재 출처(= 접속한 사이트)와 www.google-analytics.com, fonts.googleapis.com, fonts.gstatic.com, chart.apis.google.com만을 허용한다
 Content-Security-Policy: default-src 'self' 'unsafe-eval' 'unsafe-inline' data: www.google-analytics.com fonts.googleapis.com fonts.gstatic.com;
 ```
+
+
+## CSP 적용 전 테스트 하는 방법
+
+CSP를 실제로 작동하는 사이트에 적용하면 사이트가 망가질 수 있기 때문에 `Content-Security-Policy-Report-Only` 모드를 활용해서, 위반 사항에 대한 보고서를 먼저 받은 다음 적용하는 게 좋다.
+
+대충 이렇게 하면 됨:
+
+```bash
+# Report-To 헤더
+Report-To: {
+  "group": "security-reports",
+  "max_age": 86400,
+  "endpoints": [
+    {"url": "https://example.com/csp-violation-report"}
+  ]
+}
+
+# Content-Security-Policy-Report-Only 헤더
+Content-Security-Policy-Report-Only: 
+  default-src 'self'; 
+  script-src 'self' https://cdn.example.com; 
+  report-uri /csp-violation-report;
+  report-to security-reports;
+```
+
+도메인이 `example.com` 일 때, `report-uri`를 위처럼 작성하면 `example.com/csp-violation-report` URL로 위반 내용이 전송된다. `https://monitoring.example.com/csp-report;` 처럼 절대 경로로 작성하여 다른 도메인으로 보낼 수도 있다. 
+
+사실 `report-uri`는 deprected 상태라서 `report-to`를 써야 한다. 위 예시에서 같이 사용한 이유는, `report-to`를 아직 지원하지 않는 브라우저의 호환성 때문이다.
+
+⚠️ 이 보고서는 자동으로 처리되거나 하는 게 아니니까 API 엔드포인트를 미리 만들어놓아야 한다. 보고서의 `Content-Type`은 `application/csp-report` 또는 `application/reports+json`이다.
+
+`connect-src` 디렉티브가 `none`이면 전송이 차단되니 주의할 것. 그래서 보통 아래처럼 설정한다:
+
+```bash
+Content-Security-Policy: 
+  default-src 'self'; 
+  connect-src 'self' https://analytics.example.com; 
+  report-uri /csp-violation-report;
+  report-to security-reports;
+```
+
+ℹ️ 보고서는 `Content-Security-Policy-Report-Only` 모드가 아니어도 활성화할 수 있음.

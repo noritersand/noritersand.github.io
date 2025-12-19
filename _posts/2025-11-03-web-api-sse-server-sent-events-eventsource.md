@@ -94,7 +94,7 @@ data: 깜짝 이벤트 알림!\n\n
 - 각 항목의 구분은 줄 바꿈(`\n`)으로 하며, 종료 문자는 두 번의 줄 바꿈(`\n\n`)이다.
 - 콜론 뒤의 첫 공백은 무시된다.
 - `id`는 필요 없으면 생략할 수 있다.
-- `event`는 '이벤트 유형'을 의미한다. 이 값을 생략하면 `eventSource.onmessage()` 에서 처리하고, 지정하면 `eventSource.addEventListener(이벤트유형)`에서 처리한다.
+- `event`는 이벤트 유형을 의미한다. 이 값이 없으면 `eventSource.onmessage()` 에서, 값이 있으면 `eventSource.addEventListener(이벤트_유형)`에서 처리한다.
 - `data`는 생략하면 EventSource API가 제대로 작동하지 않을 수 있다. 빈 값이라도 보내는 걸 권장
 - 추가 필드로 `retry`를 지정하면 재연결 지연 시간(밀리초)을 설정할 수 있고, `:`로 시작하는 줄은 주석으로 취급된다.
 

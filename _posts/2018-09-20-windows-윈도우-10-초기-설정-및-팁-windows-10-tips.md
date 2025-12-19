@@ -39,11 +39,28 @@ tags:
 
 ~~이거 쓰고 있으면 좀 해커 같아 보임~~
 
+### 터미널 단축키 변경
+
+설정(<kbd>ctrl + ,</kbd>)에서 `settings.json` 열고 `keybinding` 항목에 아래 추가:
+
+```json
+        {
+            "id": "Terminal.ToggleCommandPalette",
+            "keys": "f1"
+        },
+        {
+            "id": null,
+            "keys": "ctrl+shift+p"
+        },
+```
+
+설정 > 작업 메뉴를 열어서 변경해도 됨.
+
 ### 시작 위치 변경
 
 **윈도우 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음.**
 
-터미널의 시작 위치를 변경하려면 설정 파일 `settings.json`을 아래처럼 수정한다. 해당 파일은 터미널 앱의 설정 화면(<kbd>ctrl + ,</kbd>)에서 좌측 하단 `Json 파일 열기`를 누르면 열림:
+터미널의 시작 위치를 변경하려면 설정 파일 `settings.json`을 아래처럼 수정한다. 해당 파일은 터미널 앱의 설정에서 좌측 하단 `Json 파일 열기`를 누르면 열림:
 
 ```js
 "profiles": {

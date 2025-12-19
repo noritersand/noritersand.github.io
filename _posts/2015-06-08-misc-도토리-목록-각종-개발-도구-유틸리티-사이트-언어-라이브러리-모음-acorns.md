@@ -19,7 +19,7 @@ tags:
 
 쓰니는 다람쥐🐿️처럼 일단 저장하고 보는 습성이 있다고 한다. 
 
-자주 사용하거나 중요한 것은 ⭐ 표시함. 🧪 표시는 누군가의 사이드 프로젝트라서 언제 사라질 지 모름.
+자주 사용하거나 중요한 건 ⭐ 표시함. 🧪 표시는 누군가의 사이드 프로젝트라서 언제 사라질 지 모름.
 
 
 ## 1. 문서, 메뉴얼, 참고 자료
@@ -223,9 +223,10 @@ tags:
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 JavaScript 기반.
 - [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 💰유료 그리드
 - [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
-- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 좀 많이 느리다.
+- [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 깃허브 대응이 ~~조금~~ 많이 느리다.
 - [Fontello](https://fontello.com/): 아이콘을 폰트로 구현할 때 씀. 사이트에서 선택한 아이콘만 다운로드할 수 있음.
 - [Reveal.js](https://revealjs.com/): HTML로 만드는 PPT
+- [React Bits](https://reactbits.dev/): React 기반 웹/앱에서 쓸 수 있는 애니메이션 + 인터렉티브 UI 컴포넌트 모음
 
 ### Java 라이브러리
 
@@ -244,6 +245,7 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
 - [⭐Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+- [⭐Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 웹 애플리케이션 개발 플랫폼. Workers 기반의 서버리스 컴퓨팅을 중심으로, 정적 사이트 호스팅(Pages), 오브젝트 스토리지(R2), 데이터베이스(D1) 등을 제공한다.
 
 ### IaaS (Infrastructure as a Service)
 
@@ -514,7 +516,9 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 18. AI
 
-- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 대형 언어 모델 #1
+- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 LLM
+- [Gemini](https://gemini.google.com/): 구글의 LLM
+- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷의 방대한 정보를 가져와 답변하는 것과 다르게, 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등)를 학습해서 그 안에서만 정보를 찾아주는 게 가장 큰 특징.
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
