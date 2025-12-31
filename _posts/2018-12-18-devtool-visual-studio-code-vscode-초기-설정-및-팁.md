@@ -261,7 +261,7 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
   {
     "key": "ctrl+shift+v",
     "command": "-markdown.showPreview",
-    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    "when": "!notebookEditorFocused && editorLangId =~ /^(markdown|prompt|instructions|chatmode)$/"
   }
 ]
 ```

@@ -381,7 +381,7 @@ const db = {
 - `.env.production`: 프로덕션 환경(`next build`, `next start`)에 불러오는 환경 변수 파일이다.
 - `.env.test`: 테스트(`next test`) 모드에서만 불러오는 환경 변수 파일.
 - `.env.local`: 개발환경 구분 없이 사용되는 개발자 로컬용 환경 변수 파일. 일반적으로 개인 API 키 같은 민감 정보를 설정하며, 버전 관리 대상에서 제외한다. 
-- `.env.development.local` `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개발자 로컬용 환경 변수 파일. `.env.local`과 달리 개발 환경 구분이 필요할 때 사용한다.
+- `.env.development.local` `.env.production.local`: 각각 개발 환경이거나 프로덕션 환경일 때 불러오는 개발자 로컬용 환경 변수 파일. `.env.local`보다 우선순위가 낮으며, 환경 구분이 필요할 때 사용한다.
 
 우선 순위가 높은 순으로 나열하면 다음과 같다:
 
@@ -768,6 +768,43 @@ export default function SearchBar() {
   return <>Search: {search}</>
 }
 ```
+
+#### ⚠️ 첫 렌더링에 `null`을 반환하는 문제
+
+`useEffect`로 확인해보면 첫 렌더링에 `null`을, 두 번째 렌더링부터 실제 값을 반환한다. 이것은 Next.js의 정적 렌더링(Static Rendering) 특성상 서버는 쿼리 스트링을 모르는 상태로 HTML을 생성하며, 클라이언트에서 URL 정보를 동기화(하이드레이션)하기 전까지는 값이 `null`로 유지되기 때문이다.
+
+이 문제는 아래 예시처럼 `null`을 확인하는 방어로직과 의존성 배열로 해결할 수 있다:
+
+```tsx
+'use client';
+
+import {useSearchParams} from 'next/navigation';
+import {useCallback, useEffect, useState} from 'react';
+
+export default function QrCodePage() {
+  const searchParams = useSearchParams();
+  const [data, setData] = useState(null);
+
+  const ticket = searchParams.get('ticket');
+
+  const loadData = useCallback(async () => {
+    // 방어 로직
+    if (!ticket) {
+      return;
+    }
+
+    // 생략
+  }, [ticket]); // ticket 변화 감시
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]); // 함수 갱신 감시
+
+  return <div>hello world</div>;
+}
+```
+
+#### useSearchParams 사용 시 Suspense 경계 설정과 정적 렌더링의 작동 방식
 
 라우트가 정적으로 렌더링되더라도, `useSearchParams`를 사용하는 컴포넌트는 가장 가까운(closest) `<Suspense>` 경계까지 클라이언트 사이드에서 렌더링된다. 검색 파라미터(쿼리 스트링)는 동적인 데이터라서 서버 사이드 렌더링 시점에는 값을 알 수 없기 때문이다.
 

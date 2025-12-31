@@ -202,7 +202,9 @@ set mykey2 qwer asdf
 
 [Redis \| Commands](https://redis.io/commands/)
 
-참고: 레디스의 명령어는 대소문자를 구분하지 않는다.
+레디스의 명령어는 대소문자를 구분하지 않으며, 일부 명령어에서 쓰이는 패턴 문자열은 글롭 패턴(glob patterns)으로 입력한다. 
+
+ℹ️ 글롭 패턴 요약: 모든 글자`*`, 한 글자`?`, 문자 범위 지정`[]`
 
 ### MONITOR
 
@@ -319,7 +321,7 @@ flushall
 KEYS pattern
 ```
 
-- `pattern`: 찾으려는 키의 글롭 패턴(glob patterns). 생략할 수 없고 모든 키를 반환하게 하려면 `*` 라고 작성한다.
+- `pattern`: 찾으려는 키의 패턴. 생략할 수 없고 모든 키를 반환하게 하려면 `*` 라고 작성한다.
 
 ```bash
 keys *
@@ -338,7 +340,7 @@ SCAN cursor [MATCH pattern] [COUNT count] [TYPE type]
 ```
 
 - `cursor`: 순회중인 데이터 집합의 현재 위치(여기까지 검색했다는 뜻). `0`은 시작지점을 의미한다. 그러니 처음부터 검색하려면 `0`으로 지정하면 됨.
-- `pattern`: 찾으려는 키의 글롭 패턴. **생략하면 모든 데이터**가 `count`만큼 반환된다. (글롭 패턴 요약: 모든 글자`*`, 한 글자`?`, 문자 범위 지정`[]`)
+- `pattern`: 찾으려는 키의 패턴. **생략하면 모든 데이터**가 `count`만큼 반환된다.
 - `count`: 반환되는 데이터의 수를 지정하는 옵션. `scan`은 `count`로 지정된 만큼 반환하려고 하지만 내부 알고리즘과 데이터베이스의 상태에 따라 근사치로 반환될 수 있다. 이 옵션을 생략하면 대략 10개 씩 가져옴.
 - `type`: **TODO**
 
@@ -402,6 +404,13 @@ scan 5 match ?a?
 
 ### SET
 
+```
+SET key value [NX | XX | IFEQ ifeq-value | IFNE ifne-value |
+  IFDEQ ifdeq-digest | IFDNE ifdne-digest] [GET] [EX seconds |
+  PX milliseconds | EXAT unix-time-seconds |
+  PXAT unix-time-milliseconds | KEEPTTL]
+```
+
 문자열 값을 지정한 키로 메모리에 새로 저장한다.
 
 ```bash
@@ -410,7 +419,7 @@ set mykey 'qwer'
 set q:w:e:r 1234
 ```
 
-만료시간을 지정하려면 `ex` 혹은 `px` 옵션을 사용함:
+만료시간을 지정하려면 `ex` 혹은 `px` 옵션을 덧붙인다:
 
 ```bash
 # 만료시간 5초 설정(초 단위)
@@ -453,18 +462,16 @@ del mykey1 mykey2 mykey3
 
 삭제에 성공하면 1, 지정한 키를 찾을 수 없으면 `0`을 반환한다.
 
-이 명령은 키 삭제와 메모리 회수를 블로킹 방식으로 처리하기 때문에, 운영 환경에서는 사용하지 않는 게 좋다.
+⚠️ 이 명령은 키 삭제와 메모리 회수를 블로킹 방식으로 처리하기 때문에, 운영 환경에서는 사용하지 않는 게 좋다.
 
 ### UNLINK
 
-`DEL`처럼 지정한 키를 삭제한다.
+`DEL`처럼 지정한 키를 삭제하되, 메모리 회수를 백그라운드에서 수행한다.
 
 ```bash
 unlink mykey
 unlink mykey1 mykey2 mykey3
 ```
-
-`DEL`과 다르게 메모리 회수를 백그라운드에서 수행한다.
 
 ### EXPIRE
 
@@ -701,21 +708,21 @@ auth default nopass
 
 ### 사용 방법 예시
 
-우선 `SUBSCRIBE`로 `test.channel`을 구독한다:
+우선 `SUBSCRIBE`로 `notice.published` 채널을 구독한다:
 
 ```
-> SUBSCRIBE test.channel
+> SUBSCRIBE notice.published
 
 1) "subscribe"
-2) "test.channel"
+2) "notice.published"
 3) (integer) 1
 Reading messages... (press Ctrl-C to quit or any key to type command)
 ```
 
-이제 이 터미널은 그대로 두고 새 터미널을 열어서, `PUBLISH`로 메시지를 발행한다:
+이제 이 터미널은 그대로 두고 새 터미널을 열어서, `PUBLISH`로 `notice.published` 채널에 메시지를 발행한다:
 
 ```
-> PUBLISH test.channel hello
+> PUBLISH notice.published hello
 
 (integer) 1
 ```
@@ -724,6 +731,28 @@ Reading messages... (press Ctrl-C to quit or any key to type command)
 
 ```
 1) "message"
-2) "test.channel"
+2) "notice.published"
 3) "hello"
+```
+
+### 관련 명령어
+
+```bash
+# 특정 채널 구독
+SUBSCRIBE channel [channel ...]
+
+# 특정 채널 구독 해제
+UNSUBSCRIBE [channel [channel ...]]
+
+# 채널 이름 패턴으로 구독
+PSUBSCRIBE pattern [pattern ...]
+
+# 채널 이름 패턴으로 구독 해제
+PUNSUBSCRIBE [pattern [pattern ...]]
+
+# pubsub 명령어 도움말 보기
+PUBSUB HELP
+
+# 패턴으로 모든 활성화 채널 조회. 누군가가 구독중이어야 활성화 채널로 간주함
+PUBSUB CHANNELS [pattern]
 ```

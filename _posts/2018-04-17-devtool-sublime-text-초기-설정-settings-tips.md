@@ -175,9 +175,10 @@ console.debug('${1:msg}:', ${2:msg});
   "tab_size": 2,
   "translate_tabs_to_spaces": true,
   "save_on_focus_lost": true,
-  "show_full_path": false,
-  "show_rel_path": true,
-  "open_tabs_after_current": true
+  "show_full_path": true,
+  "show_rel_path": false,
+  "enable_tab_scrolling": false,
+  "open_tabs_after_current": false
 }
 ```
 

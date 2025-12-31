@@ -518,7 +518,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 LLM
 - [Gemini](https://gemini.google.com/): 구글의 LLM
-- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷의 방대한 정보를 가져와 답변하는 것과 다르게, 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등)를 학습해서 그 안에서만 정보를 찾아주는 게 가장 큰 특징.
+- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
