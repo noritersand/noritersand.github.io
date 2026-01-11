@@ -1184,6 +1184,8 @@ Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but i
 
 모던 프론트엔드 개발에서 라우팅이란 보통, 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
 
+ℹ️ 리액트 라우팅은 History API를 기반으로 작동한다. 초기 SPA 환경에서는 구형 브라우저 호환성과 서버 폴백(Fallback) 설정의 번거로움 때문에 Hash 기반 라우팅이 흔히 쓰였으나, 현재는 브라우저 표준의 발전으로 History API가 기본 사양이 되었다.
+
 리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
 
 ```bash

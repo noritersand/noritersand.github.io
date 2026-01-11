@@ -387,6 +387,7 @@ JetBrains에서 제공하는 LLM을 쓴다면:
 - <kbd>alt + shift + l</kbd>: Save Context. 컨텍스트를 저장한다. 컨텍스트는 열려있는 파일들을 의미하는 모양
 - <kbd>alt + shift + s</kbd>: Load Context. 저장한 컨텍스트를 불러온다.
 - <kbd>ctrl + shift + del</kbd>: Unwrap/Remove. 캐럿 기준 현재 스코프의 상위 영역을 지우는 기능
+- <kbd>ctrl + alt + u</kbd>: Show Diagram Popup. 기본 플러그인 Diagrams의 단축키로, 의존성이나 계층, 상속 관계, 호출 구조 같은 걸 다이어그램으로 보여주는 기능
 
 #### 자동 완성 Code Completion
 

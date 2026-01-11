@@ -2236,8 +2236,14 @@ git worktree unlock <worktree>
 원래 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 한다. 여기서 `worktree`를 사용하면 **기존 워킹 트리를 그대로 두고** 새로운 디렉터리에서 다른 브랜치로 전환하여 작업할 수 있다. 이 방식은 예를 들어 긴급한 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
 
 ```bash
-# 새 워킹 트리 생성
+# 새 워킹 트리 생성 #1: 현재 브랜치를 기준으로 생성되며 test 브랜치로 전환됨. 물리 경로는 ../another-repo
 git worktree add -b test ../another-repo
+
+# 새 워킹 트리 생성 #2: origin/master를 기준으로 master 브랜치를 생성하며 전환. 물리 경로는 ../another-repo
+git worktree add -b master ../another-repo origin/master
+
+# 새 워킹 트리 생성 #3: 바로 위 명령과 비슷한데, 만약 master 로컬 브랜치가 이미 있는 경우 해당 브랜치의 커밋 위치를 기준으로 생성된다.
+git worktree add ../another-repo master
 ```
 
 위 명령은 `../another-repo` 디렉터리에 `test` 브랜치를 위한 새로운 워킹 트리를 생성한다. `-b test`는 브랜치를 새로 만들고 체크아웃하겠다는 의미다.
