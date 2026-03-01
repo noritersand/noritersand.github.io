@@ -255,8 +255,8 @@ Show All Commands에서 'Preferences: Open Keyboard Shortcuts (JSON)' 입력하�
     "command": "workbench.action.switchWindow"
   },
   {
-    "key": "shift+alt+oem_5",
-    "command": "editor.action.inlineSuggest.triggerInlineEditExplicit"
+    "key": "alt+oem_5",
+    "command": "editor.action.inlineSuggest.trigger"
   },
   {
     "key": "ctrl+shift+v",

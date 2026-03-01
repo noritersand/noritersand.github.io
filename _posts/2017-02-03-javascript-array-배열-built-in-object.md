@@ -361,7 +361,7 @@ arr.find(ele => {
 // undefined
 ```
 
-\* `find()`, `map()`, `filter()` 처럼 함수를 인자로 받거나 반환하면 고차 함수(higher-order functions)라고 한다.
+ℹ️ `find()`, `map()`, `filter()` 처럼 함수를 인자로 받거나 반환하면 고차 함수(higher-order functions)라고 한다.
 
 ### Array.prototype.findIndex()
 

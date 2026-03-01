@@ -630,7 +630,7 @@ root.render(<App />);
 
 이 함수는 리액트의 동시성 모드 기능을 활성화한다. 동시성 모드를 활용하면 렌더링, 인테릭션 처리, 비동기 작업의 속도가 빨라진다고 한다.
 
-\* 서버사이드 렌더링인 경우 `createRoot()` 대신 `hydrateRoot()`를 사용해야 함
+ℹ️ 서버 사이드 렌더링인 경우 `createRoot()` 대신 `hydrateRoot()`를 사용해야 함
 
 ### ReactDOM.hydrateRoot()
 
@@ -678,8 +678,9 @@ const root = ReactDOM.createRoot(document.querySelector('#root'));
 root.render(<Newbie/>);
 ```
 
-\* 주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함
-\* 최신 버전에서(2024-03-03) [클래스 대신 함수로 컴포넌트를 정의하도록 권장](https://react.dev/reference/react/Component)하고 있다.
+ℹ️ 주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함
+
+ℹ️ 최신 버전에서(2024-03-03) [클래스 대신 함수로 컴포넌트를 정의하도록 권장](https://react.dev/reference/react/Component)하고 있다.
 
 
 ## state
@@ -765,7 +766,7 @@ function App() {
 // <h2>Hello world!</h2> 출력
 ```
 
-ℹ️ props의 변화는 자식 컴포넌트의 리렌더링을 유발한다. 단, 부모 컴포넌트에 state로 등록되어 있는 경우에만 그렇다. 만약 지역 변수나 `useRef`로 등록되었다면 값이 바뀌어도 자식 컴포넌트의 리렌더링을 유발하지 않는다.
+ℹ️ props의 변화는 자식 컴포넌트의 리렌더링을 유발한다. 단, 부모 컴포넌트에 state로 등록되어 있는 경우에만 그렇다. 만약 지역 변수나 `useRef()`로 등록되었다면 값이 바뀌어도 자식 컴포넌트의 리렌더링을 유발하지 않는다.
 
 #### props와 전개 연산자
 
@@ -1308,6 +1309,15 @@ export default function Root() {
 ```
 
 자세한 내용은 [도움말 참고](https://reactrouter.com/en/main/start/tutorial).
+
+
+## 자주 발생하는 오류(혹은 경고)
+
+### uncontrolled input
+
+> Warning: A component is changing a controlled input to be uncontrolled. This is likely caused by the value changing from a defined to undefined, which should not happen. Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+
+이 경고는 `<input>`의 `value` 속성의 초깃값이 `null`/`undefined`거나, 값이 있는 상태(defined)에서 `null`/`undefined`로 바뀌었을 때 발생한다.
 
 
 {% endraw %}

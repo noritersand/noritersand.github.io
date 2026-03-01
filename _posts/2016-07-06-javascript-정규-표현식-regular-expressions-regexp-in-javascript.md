@@ -151,9 +151,9 @@ regexp.test(testString)
 /[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/.test('한글'); // true
 ```
 
-`g` 플래그가 주어진 `Regex` 인스턴스는 `test()`를 호출할 때 내부에서 `lastIndex`\*를 마지막 검색 위치의 바로 다음 인덱스로 업데이트한다:
+`g` 플래그가 주어진 `Regex` 인스턴스는 `test()`를 호출할 때 내부에서 `lastIndex`를 마지막 검색 위치의 바로 다음 인덱스로 업데이트한다:
 
-\* `RegExp.prototype.lastIndex`: 다음 검색 시작 위치를 저장하는 `RegExp` 인스턴스 프로퍼티
+ℹ️ `RegExp.prototype.lastIndex`: 다음 검색 시작 위치를 저장하는 `RegExp` 인스턴스 프로퍼티
 
 ```js
 var regex = /a/g;
@@ -288,12 +288,12 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 
 #### `\b`
 
-단어 경계(word boundary) 위치가 일치하는지 검색한다. 단어 경계란 단어 구성 문자(word character)\* 뒤에 공백이나 쉼표 같은 비단어 구성 문자(non-word character, 비문자라고 하기도 함)가 이어지는 것을 말한다.
+단어 경계(word boundary) 위치가 일치하는지 검색한다. 단어 경계란 단어 구성 문자(word character) 뒤에 공백이나 쉼표 같은 비단어 구성 문자(non-word character, 비문자라고 하기도 함)가 이어지는 것을 말한다.
 
 - 정규식 `\babc\b`는 '(공백)abc,'과 일치하지만 'qabce,'는 일치하지 않는다.
 - 정규식 `er\b`는 'never'에서 'er'은 찾지만 'verb'의 'er'은 일치하지 않는다.
 
-\* 정규식에서 한글 같은 유니코드는 '단어 구성 문자'로 취급되지 않으니 주의할 것.
+ℹ️ 정규식에서 한글 같은 유니코드는 '단어 구성 문자'로 취급되지 않으니 주의할 것.
 
 #### `\B`
 

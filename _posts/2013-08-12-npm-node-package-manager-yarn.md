@@ -235,7 +235,7 @@ npm insatll --ignore-scripts
 
 `--ignore-scripts`는 npm이 `package.json`에 작성된 `pre-scripts`, `post-scripts`를 자동으로 실행하지 않도록 하는 옵션이다.
 
-\* Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
+ℹ️ Node.js 20부터는 권한을 관리할 수 있는 기능이 추가되었다고 한다.
 
 ### 패키지 설치
 
@@ -654,6 +654,38 @@ yarn why <query>
 
 `query`는 패키지 이름이나 패키지의 디렉터리명, 패키지의 디렉터리명 + 파일이름으로 지정할 수 있다.
 
+### yarn dedup
+
+`yarn.lock` 파일에서 중복된 패키지 의존성을 정리하는 명령어.
+
+```
+yarn dedup [PACKAGE_NAME]
+```
+
+`PACKAGE_NAME`을 지정하면 해당 패키지에 대해서만 중복 제거를 수행하고, 생략하면 전체 패키지를 모두 대상으로 한다.
+
+이 명령은 여러 패키지가 동일한 라이브러리를 서로 다른 버전으로 요구하여 같은 패키지가 버전별로 설치된 상황일 때, 버전 범위가 겹치는(semver overlap) 패키지를 가장 최신 버전 하나로 통일하는 기능을 수행한다.
+
+#### options
+
+- `--check`: 실제 수정 없이 중복이 존재하는지만 확인
+
+#### Semver Overlap
+
+버전 범위가 겹친다는 말은 다음과 같은 경우를 의미한다:
+
+- 패키지 A의 요구사항: `lodash ^4.10.0` (4.10.0 이상 5.0.0 미만의 모든 버전 허용)
+- 패키지 B의 요구사항: `lodash ^4.15.0` (4.15.0 이상 5.0.0 미만의 모든 버전 허용)
+
+두 패키지의 요구 사항이 겹치는 구간(overlap)은 4.15.0 이상 5.0.0 미만이다. 이 경우 가장 높은 버전인 `lodash 4.15.0`로 통합한다.
+
+#### No Overlap
+
+다음의 경우 겹치는 버전 범위가 없다:
+
+- 패키지 A의 요구사항: `lodash ^3.0.0` (3.0.0 이상 4.0.0 미만의 모든 버전 허용)
+- 패키지 B의 요구사항: `lodash ^4.0.0` (4.0.0 이상 5.0.0 미만의 모든 버전 허용)
+
 ### Yarn PnP(Plug'n'Play)
 
 [Plug'n'Play \| Yarn](https://yarnpkg.com/features/pnp)
@@ -667,6 +699,44 @@ PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 
 `yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드 값을 Yarn의 최신 버전으로 변경한다.
 
 ℹ️ `yarn set version berry`에서 `berry`는 2.x 이상의 가장 최신 안정화 버전을 의미한다. 이 외에 `latest`와 `stable`은 `berry`와 동일, `canary`는 최신 canary 버전을, `classic`은 2.x 미만의 구 버전을 의미한다.
+
+### 자주 발생하는 오류와 경고
+
+#### 오래된 baseline-browser-mapping
+
+> [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+
+Vite나 Next.js 같은 프론트엔드 프레임워크를 사용할 때, npm이나 yarn 명령을 실행하면 위처럼 출력될 때가 있다. 구글과 WebDX 커뮤니티 그룹이 만든 `baseline-browser-mapping` 패키지는 브라우저 호환성(CSS나 JavaScript의 특정 기능 지원 여부 등) 데이터를 담고 있는데, 프론트엔드 빌드 도구들이 브라우저 호환성을 체크할 때 이 데이터를 참조한다. 만약 해당 데이터가 두 달 넘게 오래되었다 판단하면 위 메시지를 출력하는 것.
+
+어쨋든 해소하고 싶으면 아래 조치들을 단계별로 진행해보자.
+
+`baseline-browser-mapping` 패키지 버전 업그레이드:
+
+```bash
+yarn add -D baseline-browser-mapping@latest
+```
+
+`caniuse-lite` 패키지 버전 업그레이드:
+
+```bash
+yarn dlx update-browserslist-db@latest
+```
+
+패키지 캐시 삭제:
+
+```bash
+yarn cache clean
+```
+
+`baseline-browser-mapping` 패키지의 중복 의존성 제거:
+
+```bash
+yarn dedupe baseline-browser-mapping
+```
+
+여기까지 했는데도 경고 메시지가 사라지지 않으면, 사용중인 프레임워크 내부에서 오래된 데이터를 캐싱하고 있을 수 있으니 프레임워크의 버전도 업그레이드 해보자.
+
+가능성은 별로 없지만 `baseline-browser-mapping` 패키지의 버전이 진짜로 2달이 넘도록 업데이트가 안됐을 수 있음... 🙄
 
 
 ## 자주 사용하는 Node.js 패키지
@@ -725,9 +795,3 @@ nodemon --exec 'tsc'
  |_|   |___/_/\_\ /_/   \_\ |_____\___/ |_|
                                              
 ```
-
-### Jest
-
-[https://jestjs.io/](https://jestjs.io/)
-
-JavaScript 테스팅 프레임워크.

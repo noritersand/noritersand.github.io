@@ -66,6 +66,50 @@ select `column` from `table`;
 ```
 
 
+## 시스템 정보 조회
+
+```sql
+-- 버전 조회
+select version();
+
+-- 서버의 시스템 변수와 값 조회
+show variables;
+
+-- 시스템 변수: 포트번호 조회
+show variables like 'port';
+
+-- 시스템 변수: 컴파일 옵션 조회
+show variables like 'have_%';
+
+-- 서버 상태 조회
+show status;
+
+-- 서버 상태: 가동 시간 조회
+show status like 'uptime';
+
+-- 현재 실행 중인 쿼리 및 접속자 목록
+show processlist;
+
+-- 현재 사용자: 클라이언트가 접속할 때 사용한 아이디/호스트 주소 조회
+select user();
+
+-- 현재 사용자: 실제로 매칭되어 권한을 부여받은 계정 조회
+select current_user();
+
+-- 현재 지원하거나 사용할 수 있는 스토리지 엔진 조회
+show engines;
+
+-- ENGINE_NAME 엔진의 상태 출력
+show engine ENGINE_NAME status;
+
+-- 플러그인 조회
+show plugins;
+
+-- 타임존, 시스템 시간 조회
+select @@system_time_zone, @@time_zone, now();
+```
+
+
 ## 메타 데이터 조회
 
 - Information schema: 오라클에서 Data dictionaries 쯤 되는 것
@@ -575,23 +619,11 @@ on duplicate key update
 
 [SHOW - MariaDB Knowledge Base](https://mariadb.com/kb/en/show/)
 
-데이터베이스(스키마), 테이블, 컬럼, 서버 상태 정보 등을 조회하는 명령어.
+데이터베이스(스키마), 테이블, 컬럼, 서버 상태 정보 등을 조회하는 명령어. 쪼 위 '시스템 정보 조회'에서 언급한 쿼리는 생략함.
 
-몇몇 명령어는 특정 권한이 필요하다.
+⚠️ 몇몇 명령어는 특정 권한이 필요하다.
 
 ```sql
--- 서버의 시스템 변수와 값 출력
-show variables;
-
--- 서버의 상태 정보 출력
-show status;
-
--- 현재 실행 중인 프로세스(쿼리, 연결 등) 출력
-show processlist;
-
--- ENGINE_NAME 엔진의 상태 출력
-show engine ENGINE_NAME status;
-
 -- 서버에 존재하는 모든 데이터베이스(스키마) 출력
 show databases;
 
@@ -648,9 +680,6 @@ show events
 
 -- 특정 이벤트의 생성 스크립트 출력
 show create event EVENT_NAME
-
--- 서버에 설치된 플러그인 출력
-show plugins
 ```
 
 

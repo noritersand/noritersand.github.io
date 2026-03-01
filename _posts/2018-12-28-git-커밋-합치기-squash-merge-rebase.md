@@ -160,7 +160,7 @@ pick 810000f I added file too.
 # ...
 ```
 
-과거의 커밋 순으로 나오는데, 다음처럼 맨 위만 빼고 `squash`\*로 바꿔준다:
+과거의 커밋 순으로 나오는데, 다음처럼 맨 위만 빼고 `squash`로 바꿔준다:
 
 ```bash
 pick d5ecc08 Hello!
@@ -168,7 +168,7 @@ squash 4def5aa Update 3, 4, 5 lines.
 squash 810000f I added file too.
 ```
 
-\* 기본 에디터인 Vim에선 <kbd>ctrl + a</kbd>와 <kbd>ctrl + x</kbd>로 rebase 옵션을 변경할 수 있다.
+ℹ️ 기본 에디터인 Vim에선 <kbd>ctrl + a</kbd>와 <kbd>ctrl + x</kbd>로 rebase 옵션을 변경할 수 있다.
 
 이 후 저장하고 커밋 메시지까지 입력하면 아래처럼:
 

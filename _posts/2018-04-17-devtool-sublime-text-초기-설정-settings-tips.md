@@ -29,17 +29,23 @@ tags:
 
 ## 기본 설정
 
+### 한국어 입력기 문제 해결하기
+
+윈도우 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 서브라임과 Flowy 같은 몇몇 앱에서 'IME 조합 문자 유실' 현상을 유발한다.
+
+해결 방법은 윈도우 설정에서 `시간 및 언어 > 언어 및 지역 > 한국어 > 언어 옵션 > Microsoft 입력기 > 키보드 옵션`에서 `이전 버전의 Microsoft IME`를 끈다.
+
 ### 터미널에서 서브라임 실행하기
 
 Windows에선 아래 세 가지 방법이 있는데:
 
-- 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
-- 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
-- [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
+1. 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
+2. 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
+3. [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-세 번째 방법을 추천. 방법은 아래 코드를 복사해서 파워셸에 입력한다:
+이 중 추천하는 방법은 세 번째로, 아래 코드를 복사해서 파워셸에 입력한다:
 
-```js
+```bash
 if (!(Test-Path -Path $PROFILE)) {
   New-Item -ItemType File -Path $PROFILE -Force
 }
@@ -47,15 +53,20 @@ if (!(Test-Path -Path $PROFILE)) {
 . $PROFILE
 ```
 
-이게 끝이고 이제 `sb`로 서브라임 실행 가능:
+이게 끝이고 이제 `sb`로 서브라임 실행할 수 있음:
 
 ```bash
-sb  # 서브라임 실행
-sb .  # 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열기
-sb .\.gitignore  # .gitignore 파일을 서브라임으로 열기
+# 서브라임 실행
+sb
+
+# 새 서브라임을 실행하면서 현재 경로를 Open Folder로 열기
+sb .
+
+# .gitignore 파일을 서브라임으로 열기
+sb .\.gitignore
 ```
 
-WSL에선 셸 설정파일(rc)에 호스트 PC의 경로를 별칭으로 추가하면 끝:
+WSL이라면 셸 설정파일(rc)에 호스트 PC의 경로를 별칭으로 추가하면 끝:
 
 ```bash
 alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
@@ -207,7 +218,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ## 기본 단축키
 
-Build 3126 이후에 기록함.
+Build 3126 이후부터 기록함.
 
 무슨 명령인지 모르겠으면 [여기](https://docs.sublimetext.io/reference/commands.html#about-paths-in-command-arguments)를 보자.
 
@@ -221,7 +232,7 @@ Build 3126 이후에 기록함.
 
 ### 멀티 캐럿(Multiple Selection)
 
-서브라임에선 Expand Selection 기능으로 분류한다.
+서브라임에선 Expand Selection 기능으로 분류한다. 멀티 커서라 부르기도 함.
 
 캐럿을 추가해 여러 지역에서 작업을 동시에 할 때 사용하는 기능. 에디터마다 부르는 이름이 제각각이다. 서브라임은 Expand Selection, 아톰과 VSCODE는 Add Selection, 인텔리제이는 Select Next Occurrence 😒
 
@@ -265,6 +276,7 @@ Build 3126 이후에 기록함.
 - <kbd>ctrl + m</kbd>: 가까운 닫는 괄호(bracket) 혹은 여는 괄호로 이동.
 - <kbd>ctrl + shift + m</kbd>: 가까운 닫는 괄호 혹은 여는 괄호까지의 텍스트 전체 선택.
 - <kbd>alt + .</kbd>: close_tag. 닫는 태그 자동 입력
+- <kbd>ctrl + t</kbd>: Transpose. 누를 때마다 캐럿 바로 좌측의 문자를 오른쪽으로 시프트하는 기능. 줄의 끝을 만나면 다음 줄로 이동한다. 만약 캐럿의 위치가 줄의 맨 처음이면 캐럿 다음의 단어를 윗줄로 옮긴다. 멀티 캐럿으로 두 개 이상의 텍스트 영역을 선택한 상태에서 실행하면 선택된 내용끼리 위치를 바꾼다.
 
 ### 오버레이 Overlay
 

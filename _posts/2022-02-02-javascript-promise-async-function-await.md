@@ -64,7 +64,7 @@ new Promise( function ( resolve, reject ) { ... } )
 
 `Promise()` 생성자 함수는 `executor`를 실행하고 Promise 객체를 반환한다.
 
-\* Promise는 웹 워커에서도 사용할 수 있다고 한다.
+ℹ️ Promise는 웹 워커에서도 사용할 수 있다.
 
 ### Promise.prototype.then()
 

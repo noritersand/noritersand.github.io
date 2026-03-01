@@ -203,14 +203,14 @@ M2용 라이브러리를 지정하는 방법으로 해결할 수 있다.
 ## 빌드 설정
 
 - build
-  - finalName: 프로젝트를 빌드할 때 사용할 이름이다. m2e\*에서 이 값은 이클립스 설정 중 `Project Properties > Web Project Settings > Context root`를 덮어쓴다.
+  - finalName: 프로젝트를 빌드할 때 사용할 이름이다. m2e에서 이 값은 이클립스 설정 중 `Project Properties > Web Project Settings > Context root`를 덮어쓴다.
     - plugins
       - plugin
         - artifactId
         - version
         - configuration
 
-\* m2e: 이클립스의 메이븐 지원 플러그인
+ℹ️ m2e: 이클립스의 메이븐 지원 플러그인
 
 
 ## 플러그인

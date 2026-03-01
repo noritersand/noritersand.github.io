@@ -188,7 +188,7 @@ tags:
 - [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
-- [json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
+- [⭐json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - [⭐live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - [⭐serve](https://github.com/vercel/serve): 빠르고 가벼운 정적 파일 제공용 웹 서버. Live reload 기능은 없으며, 프로덕션 환경을 미리 보고 싶을 때 사용한다.
 
@@ -501,11 +501,17 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 메일 서비스
 
+- [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
+- [stibee](https://www.stibee.com/): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
+
+#### 임시 메일
+
 - [Guerrilla Mail](https://www.guerrillamail.com/): 일회용 메일 서버. 60분 동안만 유효한 메일 주소를 제공.
 - [sharklasers.com](https://www.sharklasers.com): 일회용 메일 서버 #2. 이건 꽤 오래감.
 - [Firefox Relay](https://relay.firefox.com): 파폭 계정으로 사용한 메일에 별칭을 만들 수 있고, 해당 별칭으로 메일이 오면 파폭이 포워딩 해줌. fㅔ이크 메일을 진짜처럼 쓸 수 있게 해주는 것.
-- [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
-- [stibee](https://www.stibee.com/): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
+- [InstAddr](https://m.kuku.lu/)
+- AdGuard
+- Temp Mail
 
 ### 결제
 
@@ -516,22 +522,23 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 18. AI
 
-- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 LLM
-- [Gemini](https://gemini.google.com/): 구글의 LLM
-- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
-- [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
-- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
-- [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
-- [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
-- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
-- [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
+- [OpenClaw](https://openclaw.ai/): 로컬 환경에서 구동되는 오픈소스 실행형 AI 에이전트 프로젝트. 단순한 대화형 AI를 넘어 사용자의 OS를 직접 제어할 수 있는 권한을 가진다. 텔레그램, 슬랙, 디스코드 등 주요 메신저와 연동하여 원격으로 로컬 컴퓨터에 명령을 하달하고 작업을 수행하게 할 수 있는 것이 특징이다. 앤트로픽과의 상표권 이슈로 인해 Clawdbot, Moltbot을 거쳐 현재의 명칭으로 확정되었다.
+- [🧪claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 
   - [Stitch](https://stitch.withgoogle.com/)
   - [Readdy](https://readdy.ai/)
-- [⭐DeepWiki](https://deepwiki.org/): 깃 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
-- [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
 - [GitMCP](https://gitmcp.io/): 깃허브 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. 깃허브 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
-- [🧪claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
+- [Gitingest](https://gitingest.com/): 깃 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. 깃허브 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
+- [⭐DeepWiki](https://deepwiki.org/): 깃 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
+- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
+- [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
+- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
+- [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
+- [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
+- [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
+- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
+- [Gemini](https://gemini.google.com/): 구글의 LLM
+- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 LLM
 
 
 ## 19. 모바일 개발
@@ -588,7 +595,8 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 미디어 편집
 
 - [⭐paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
-- [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기
+- [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기 #1 ...였는데 뭔가 기능이 덕지덕지 붙으면서 이제 안간단해졌음.
+- [Ocenaudio](https://www.ocenaudio.com/): 간단한 음원 편집기 #2
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
 - [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 깃허브 설명을 보면 Python으로 실행하는 모양
 - [OpenCut](https://github.com/OpenCut-app/OpenCut): 오픈 소스 영상 편집기. React 기반의 웹 애플리케이션이며 소스를 받아 로컬 서버를 띄워 사용하는 방식이다.
