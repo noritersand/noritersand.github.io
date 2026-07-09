@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2025-09-17 16:15:33 +0900
-title: '[Git] 깃 파워셸 스크립트 모음'
+title: '[Git] 파워셸용 깃 스크립트 모음'
 categories:
   - git
 tags:
@@ -14,7 +14,7 @@ tags:
 {:toc .toc}
 
 
-## 파워셸 스크립트: 모든 리모트 추적 브랜치를 로컬 브랜치로 생성하는 스크립트
+## 모든 리모트 추적 브랜치를 로컬 브랜치로 생성하는 스크립트
 
 ```powershell
 # 현재 로컬 브랜치 목록 가져오기
@@ -42,7 +42,7 @@ Write-Host "Done creating local branches from remote tracking branches."
 ```
 
 
-## 파워셸 스크립트: 한 달 이상 지난 머지된 리모트 브랜치 목록 보기
+## 한 달 이상 지난 머지된 리모트 브랜치 목록 보기
 
 - 버전: 4.8
 - 💾 파일 이름: `show-merged-branches-multi-repo.ps1`

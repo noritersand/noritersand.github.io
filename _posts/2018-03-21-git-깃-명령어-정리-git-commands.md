@@ -305,8 +305,8 @@ blob
 헤드를 특정 브랜치의 마지막(가장 최근) 커밋으로 전환한다. 전환할 때 워킹 트리와 스테이징 영역이 변경 없이 깨끗하다면 이 둘은 헤드와 동일한 상태가 된다. 만약 unstaged(modified), untracked file 상태의 파일이 있다면 **변경점을 유지하며 전환한다.**
 
 ```bash
-# master 브랜치로 전환
-git checkout master
+# main 브랜치로 전환
+git checkout main
 ```
 
 `checkout` 명령은 때에 따라 실패하기도 하는데, 대표적인 예로 현재 브랜치의 변경점을 커밋하지 않았으면서 전환하려는 브랜치와 충돌(conflict)이 발생하는 경우다.
@@ -403,7 +403,7 @@ git checkout -b 생성할브랜치 리모트저장소/리모트브랜치
 ```
 
 ```bash
-git checkout -b hotFix anotherServer/master  # 이 명령은 지정한 리모트 저장소의 브랜치를 업스트림 브랜치로 만든다.
+git checkout -b hotFix anotherServer/main  # 이 명령은 지정한 리모트 저장소의 브랜치를 업스트림 브랜치로 만든다.
 ```
 
 #### 업스트림 브랜치 설정 \#2
@@ -440,7 +440,7 @@ git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아
 ```bash
 git cherry-pick 커밋명
 git cherry-pick 376361 # 현재 브랜치에 376361 커밋의 변경 사항을 반영한 신규 커밋 생성
-git cherry-pick master # 현재 브랜치에 master 브랜치의 커밋 중 가장 마지막 커밋의 변경 사항을 반영한 신규 커밋 생성
+git cherry-pick main # 현재 브랜치에 main 브랜치의 커밋 중 가장 마지막 커밋의 변경 사항을 반영한 신규 커밋 생성
 ```
 
 #### Options
@@ -545,7 +545,7 @@ git commit -m "hello this is test commit"
 
 ```bash
 git commit -s -m 'commit message test'
-[master 1204311] commit message test
+[main 1204311] commit message test
  1 file changed, 1 insertion(+)
 
 git log -1 HEAD
@@ -822,11 +822,11 @@ git diff draft/noritersand HEAD
 # 'hugo' 브랜치와 현재 브랜치의 README.md 파일만 비교
 git diff hugo ./README.md
 
-# 'hugo' 브랜치와 'master' 브랜치의 README.md 파일만 비교
-git diff hugo  master ./README.md
+# 'hugo' 브랜치와 'main' 브랜치의 README.md 파일만 비교
+git diff hugo  main ./README.md
 
 # 위와 같음
-git diff hugo..master ./README.md
+git diff hugo..main ./README.md
 ```
 
 #### 충돌 문자나 공백 에러 확인
@@ -882,7 +882,7 @@ git difftool
 
 ```bash
 git diff-tree -p feature  # 현재 브랜치 기준으로 feature 브랜치의 차이점 출력
-git diff-tree -p feature master  # 현재 feature 브랜치 기준으로 master 브랜치의 차이점 출력
+git diff-tree -p feature main  # 현재 feature 브랜치 기준으로 main 브랜치의 차이점 출력
 ```
 
 **TODO** 현재 브랜치랑 비교할 때 `HEAD`를 명시한 것과 아닌 것의 결과가 다른데 왜 그런지 몲. 😒
@@ -918,7 +918,7 @@ git fetch --tags
 Fast-forward 머지에 한해 가능한 방법이다.
 
 ```bash
-git fetch . foo:master # 로컬 브랜치 foo를 로컬 브랜치 master로 머지
+git fetch . foo:main # 로컬 브랜치 foo를 로컬 브랜치 main로 머지
 git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 머지
 ```
 
@@ -1152,8 +1152,8 @@ git log
 # hotfix123 브랜치 이력 조회
 git log hotfix123
 
-# 로컬의 master와 origin remote의 master 브랜치 이력 조회
-git log master origin/master
+# 로컬의 main와 origin remote의 main 브랜치 이력 조회
+git log main origin/main
 
 # 삭제(Deleted)된 파일만 출력하면서 상태 항목도 같이 표시
 git log --diff-filter=D --name-status
@@ -1432,7 +1432,7 @@ git pull [리모트저장소] [브랜치]
 
 ```bash
 git pull  # 업스트림 브랜치를 현재 브랜치로 pull
-git pull origin master  # origin 저장소의 master 브랜치를 현재 브랜치로 pull
+git pull origin main  # origin 저장소의 main 브랜치를 현재 브랜치로 pull
 git pull --rebase  # fetch 후 머지 대신 리베이스
 ```
 
@@ -1462,8 +1462,8 @@ git push  # origin 리모트 저장소에 현재 브랜치를 push
 로컬 저장소를 `init`으로 생성했거나 로컬에서 새로 생성한 브랜치일 때, `push`와 동시에 업스트림 브랜치를 설정하는 방법이다.
 
 ```bash
-git push --set-upstream origin master
-Branch master set up to track remote branch master from origin.
+git push --set-upstream origin main
+Branch main set up to track remote branch main from origin.
 Everything up-to-date
 ```
 
@@ -1489,14 +1489,14 @@ git init
 git add README.md
 git commit -m "first commit"
 git remote add origin https://noritersand@127.0.0.1:8443/r/test.git
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
 
 #### 로컬 저장소의 데이터 업로드
 
 ```bash
 git remote add origin https://noritersand@127.0.0.1:8443/r/test.git
-git push --set-upstream origin master
+git push --set-upstream origin main
 ```
 
 #### 리모트 저장소의 태그나 브랜치 삭제
@@ -1522,18 +1522,20 @@ git push --tags  # 생성한 태그를 모두 업로드
 
 #### rebase로 머지
 
-`merge` 명령이 두 브랜치의 최종결과만을 기준으로 머지한다면 리베이스는 브랜치의 변경 사항을 순서대로 다른 브랜치에 적용하며 머지한다. 저장소의 커밋 로그와 이력을 한 줄로 정리해주기 때문에 보통 완료된 브랜치를 마스터에 머지할 때 사용한다.
+`merge` 명령이 두 브랜치의 최종결과만을 기준으로 머지한다면 리베이스는 브랜치의 변경 사항을 순서대로 다른 브랜치에 적용하며 머지한다. 저장소의 커밋 로그와 이력을 한 줄로 정리해주기 때문에 보통 완료된 브랜치를 머지할 때 사용한다.
 
 ```bash
-git rebase master  # 현재 브랜치를 master 브랜치로 리베이스
+git rebase main  # 현재 브랜치를 main 브랜치로 리베이스
 ```
 
-위의 경우 현재 브랜치(HEAD)의 델타를 패치(patch)로 만들어놓고, 현재 브랜치를 master의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다. (가지를 줄기서부터 잘라 다른 위치에 접붙이는 걸 상상해 보자)
+위의 경우 현재 브랜치(HEAD)의 델타를 패치(patch)로 만들어놓고, 현재 브랜치를 main의 마지막 커밋으로 이동한 뒤, 만들어뒀던 패치를 반영하는것과 결과가 같다. (가지를 줄기째 잘라 다른 곳에 접붙인다고 상상해 보자)
 
 자세한 내용은 아래 링크를 참고:
 
 - [Pro Git book: Git브랜치 Rebase하기](https://git-scm.com/book/ko/v2/Git-브랜치-Rebase-하기)
 - [Pro Git book: Rebase의 위험성](https://git-scm.com/book/ko/v2/Git-브랜치-Rebase-하기#_rebase_peril)
+
+🚨 리베이스 중 충돌이 발생하면 중단하고 머지로 진행하는 것이 좋다. 리베이스는 각 커밋을 재작성하며 충돌 해소를 위한 변경을 해당 커밋 안에 녹여버리기 때문에, 충돌 해소인지 일반 변경인지 구분할 수 없게 된다. 그리고 커밋이 여러 개일 땐 충돌 해소를 여러 번 해야 할 수도 있다.
 
 #### 대화형 리베이스 도구로 여러 커밋 수정
 
@@ -1611,9 +1613,9 @@ git reflog -3 --date=iso
 ```bash
 $ git reflog -5
 
-2fbc899 HEAD@{0}: checkout: moving from master to master
+2fbc899 HEAD@{0}: checkout: moving from main to main
 2fbc899 HEAD@{1}: pull: Merge made by the 'recursive' strategy.
-7107b9e HEAD@{2}: checkout: moving from d to master
+7107b9e HEAD@{2}: checkout: moving from d to main
 53576ad HEAD@{3}: merge c: Fast-forward
 2bc9237 HEAD@{4}: checkout: moving from c to d
 ```
@@ -1773,7 +1775,7 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 
 - `e` `--edit`
 - `-n` `--no-commit`: 워킹 트리와 스테이징 영역의 상태만 되돌리고 커밋은 생성하지 않는다.
-- `-m parent-number` `--mainline parent-number`: 머지 커밋을 리버트 할 때 사용하는 옵션.
+- `-m parent-number` `--mainline parent-number`: 머지 커밋을 revert 할 때 사용하는 옵션.
 
 #### 커밋 되돌리기 \#2
 
@@ -1795,7 +1797,7 @@ git revert HEAD~4..HEAD  # HEAD부터 3회 전 커밋까지의 변경 사항을 
 
 `HEAD~4..HEAD`의 경우 오타가 아니라 3회 전 커밋까지가 맞다. 그런데 `HEAD~4`까지만 쓰면 4회 전 커밋이다. 🤔
 
-#### 머지 커밋을 리버트하기
+#### 머지 커밋을 revert 하기
 
 ```bash
 commit fc30cfe9255837f6810eb75adacaf93696828afe (HEAD -> revert-test)
@@ -1803,13 +1805,13 @@ Merge: 7be20ca ca433d3
 # 7be20ca에 ca433d3을 머지하여 만들어진 커밋 fc30cf를 조회한 로그
 ```
 
-머지 커밋을 리버트 할 때는 어느 부모가 메인라인(되돌리지 않을 커밋)인지 알 수 있도록 `-m` 옵션과 함께 부모 번호(1부터 시작하는 부모 커밋을 가리키는 숫자)를 입력해줘야 한다:
+머지 커밋을 리버트 할 때는 어느 부모가 '되돌리지 않을 커밋'인지 알 수 있도록 `-m` 옵션과 함께 부모 번호(1부터 시작하는 부모 커밋을 가리키는 숫자)를 입력해줘야 한다:
 
 ```bash
 git revert fc30cf -m 1
 ```
 
-여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 위 예시에선 `7be20ca`가 메인라인이 되며 `ca433d3`의 변경 사항이 되돌려진다.
+여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 위 예시에선 `7be20ca`가 되돌리지 않을 커밋이 되며 `ca433d3`의 변경 사항이 되돌려진다.
 
 
 ## rev-list
@@ -2239,21 +2241,22 @@ git worktree unlock <worktree>
 원래 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 한다. 여기서 `worktree`를 사용하면 **기존 워킹 트리를 그대로 두고** 새로운 디렉터리에서 다른 브랜치로 전환하여 작업할 수 있다. 이 방식은 예를 들어 긴급한 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
 
 ```bash
-# 새 워킹 트리 생성 #1: 현재 브랜치를 기준으로 생성되며 test 브랜치로 전환됨. 물리 경로는 ../another-repo
-git worktree add -b test ../another-repo
+# 새 워킹 트리 생성 #1: 현재 작업 중인 브랜치를 기준으로 새 브랜치 'test1'를 만들고, ../another-repo 폴더에 연결
+git worktree add -b test1 ../another-repo
 
-# 새 워킹 트리 생성 #2: origin/master를 기준으로 master 브랜치를 생성하며 전환. 물리 경로는 ../another-repo
-git worktree add -b master ../another-repo origin/master
+# 새 워킹 트리 생성 #2: 원격 저장소의 origin/main를 기준으로 로컬 브랜치 'test2'를 새로 만들고, 이를 ../another-repo 폴더에 연결함.
+git worktree add -b test2 ../another-repo origin/main
 
-# 새 워킹 트리 생성 #3: 바로 위 명령과 비슷한데, 만약 master 로컬 브랜치가 이미 있는 경우 해당 브랜치의 커밋 위치를 기준으로 생성된다.
-git worktree add ../another-repo master
+# 새 워킹 트리 생성 #3: 로컬 main 브랜치를(없으면 원격의 main를 찾음) 체크아웃한 새 워킹 트리를 생성한다. 
+# ⚠️ 기존 워킹트리가 main 브랜치를 보고 있으면 실행 안됨
+git worktree add ../another-repo main
 ```
 
-위 명령은 `../another-repo` 디렉터리에 `test` 브랜치를 위한 새로운 워킹 트리를 생성한다. `-b test`는 브랜치를 새로 만들고 체크아웃하겠다는 의미다.
+위 명령들은 `../another-repo` 디렉터리에 특정 브랜치를 위한 새로운 워킹 트리를 생성한다. `-b test`는 `test` 브랜치를 새로 만들면서 체크아웃 하겠다는 의미다.
 
-새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 하위 경로에 만들어버리면 기존 워킹 트리에 마치 새 파일들이 잔뜩 생긴 것처럼 보이기 때문.
+새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 기존 경로 하위에 만들면 깃이 마치 새 파일들이 잔뜩 생긴 것처럼 인식하기 때문.
 
-생성된 워킹 트리는 겉보기에 독립된 깃 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 깃 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음)
+생성된 워킹 트리는 겉보기에 독립된 깃 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 깃 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음) 그래서 다른 워킹트리가 이미 체크아웃한 브랜치로는 전환할 수 없다.
 
 ```bash
 # 생성한 워킹 트리 목록 확인

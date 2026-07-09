@@ -248,7 +248,7 @@ console.log(regx2.lastIndex); // 0
 regexp.compile(pattern, [flags])
 ```
 
-과거에 정규식을 컴파일할 때 사용하던 메서드. 현재는 인스턴스 생성 시 자동으로 컴파일한다. 따라서 없는 메서드로 취급하면 된다.
+과거에 정규식을 컴파일할 때 사용하던 메서드. 현재는 인스턴스 생성 시 자동으로 컴파일한다. 그러니께 없는 메서드로 취급하면 됨.
 
 
 ## 정규 표현식에서 사용하는 특수문자
@@ -307,8 +307,6 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 
 정규식 `foo(?=bar)`는 'bar'가 바로 뒤에 오는 'foo'와 일치한다.
 
-ℹ️ lookahead나 lookbehind는 탐색 조건으로 사용하되 선택은 하지 않는다는 특징이 있다.
-
 #### `x(?!y)`
 
 이름은 부정형 전방 탐색(Negative lookahead). `y`가 `x` 뒤에 오지 않는 경우만 일치로 판단한다.
@@ -326,6 +324,8 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 이름은 부정형 후방 탐색(Negative lookbehind). `y`가 `x` 앞에 오지 않는 경우만 일치로 판단한다.
 
 `(?<!foo)bar`는 'foo'로 시작하지 않는 'bar'와 일치하는 패턴이다. 
+
+ℹ️ 긍정형이든 부정형이든 전방/후방 탐색 정규식은 특정 패턴의 존재 여부를 조건으로만 확인하고, 해당 패턴을 선택(소비)하지 않는다. 예를 들어 `a(?=b)`와 `ab`는 모두 `a` 오른쪽에 `b`가 있는지 확인하는 건 같지만, `a(?=b)`는 `a`만 선택한다는 차이가 있다.
 
 ### Character classes
 

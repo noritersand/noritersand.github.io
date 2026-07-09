@@ -77,8 +77,8 @@ decodeURIComponent( string )
 
 - `string`: 변환할 문자열
 
-`encodeURI()`와 `decodeURI()`는 string을 쿼리스트링 전체라고 보며 `?`, `=`, `&`를 변환하지 않는다.
-반면 `encodeURIComponent()`와 `decodeURIComponent()`는 string을 쿼리스트링의 일부분이라 보며 예외 없이 모든 문자를 변환한다.
+`encodeURI()`와 `decodeURI()`는 string을 쿼리 스트링 전체라고 보며 `?`, `=`, `&`를 변환하지 않는다.
+반면 `encodeURIComponent()`와 `decodeURIComponent()`는 string을 쿼리 스트링의 일부분이라 보며 예외 없이 모든 문자를 변환한다.
 
 ```js
 encodeURI('?=&');  // "?=&"

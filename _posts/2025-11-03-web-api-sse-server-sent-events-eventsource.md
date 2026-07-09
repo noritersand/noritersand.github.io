@@ -56,17 +56,31 @@ new EventSource(url, options)
 ```js
 const eventSource = new EventSource('/api/v1/sse');
 
-// 이벤트 유형이 없을 때 실행
+// 연결 시도 직후 실행되는 코드
+// EventSource 생성자는 비동기 함수라서 여기서 성공/실패 여부를 알 수 없음
+console.log('SSE connecting...');
+
+// 실제 연결 성공 시 실행
+eventSource.onopen = (event) => {
+  console.log('SSE connection established.');
+};
+
+// 연결 오류 발생 시 실행
+eventSource.onerror = (event) => {
+  console.error('SSE connection failed.');
+};
+
+// 서버 이벤트에 유형이 없거나 'message'일 때 실행
 eventSource.onmessage = (event) => {
   console.log('받은 데이터:', event.data);
 };
 
-// 이벤트 유형이 notice일 때 실행
+// 서버 이벤트 유형이 'notice'일 때 실행
 eventSource.addEventListener('notice', (event) => {
   console.log('알림:', event.data);
 });
 
-// 이벤트 유형이 tick일 때 실행
+// 서버 이벤트 유형이 'tick'일 때 실행
 eventSource.addEventListener('tick', (event) => {
   console.log('서버 시각:', event.data);
 });
@@ -137,12 +151,63 @@ app.get('/api/sse', (req, res) => {
 
 ℹ️ Nginx를 리버스 프록시로 사용하는 경우 `proxy_buffering off;`와 `X-Accel-Buffering: no`를 설정해야 한다. 그렇지 않으면 이벤트가 버퍼에 쌓였다가 한꺼번에 전송된다.
 
-#### Java - Spring - WebFlux
+#### Java - Spring
 
-Spring WebFlux의 Flux를 사용하여 비동기적으로 이벤트 스트림 처리:
+Spring Web MVC의 `SseEmitter`로 이벤트 스트림 처리:
 
 ```java
-// Spring Boot (WebFlux)
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+// 클래스인데 왜 annotation 패키지에 있지...? 🤔
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+@RestController
+public class SseController {
+    private final ExecutorService executor = Executors.newSingleThreadExecutor();
+
+    @GetMapping(value = "/api/v1/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public SseEmitter streamEvents() {
+        // 타임아웃을 무제한으로 설정 (실제 서비스에서는 적절한 값 설정 필요)
+        SseEmitter emitter = new SseEmitter(Long.MAX_VALUE);
+
+        // 별도 쓰레드에서 스트리밍 10번 반복
+        executor.execute(() -> {
+            try {
+                for (int i = 0; i < 10; i++) {
+                    // eventSource.onmessage에 대응하는 기본 데이터 전송
+                    emitter.send(SseEmitter.event()
+                            .data("연결 확인용 데이터 " + i));
+
+                    Thread.sleep(1000);
+
+                    // eventSource.addEventListener("tick", ...)에 대응하는 전송
+                    emitter.send(SseEmitter.event()
+                            .name("tick")
+                            .id(String.valueOf(i))
+                            .data(LocalDateTime.now().toString()));
+                }
+                emitter.complete();
+            } catch (IOException | InterruptedException e) {
+                emitter.completeWithError(e);
+            }
+        });
+
+        emitter.onCompletion(() -> System.out.println("연결 종료"));
+        emitter.onTimeout(() -> System.out.println("타임아웃 발생"));
+        return emitter;
+    }
+}
+```
+
+Spring WebFlux의 `Flux`로 비동기적 이벤트 스트림 처리:
+
+```java
 import org.springframework.http.CacheControl;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -151,24 +216,27 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
-@GetMapping(value = "/api/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-public ResponseEntity<Flux<ServerSentEvent<String>>> streamEvents() {
+public class ... {
 
-    // 1초마다 이벤트를 생성하여 스트리밍
-    Flux<ServerSentEvent<String>> eventStream = Flux.interval(Duration.ofSeconds(1))
-            .map(sequence -> ServerSentEvent.<String>builder()
-                    .id(String.valueOf(sequence))
-                    .event("tick")
-                    .data(LocalDateTime.now().toString())
-                    .build());
+    @GetMapping(value = "/api/sse", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public ResponseEntity<Flux<ServerSentEvent<String>>> streamEvents() {
 
-    return ResponseEntity.ok()
-            .cacheControl(CacheControl.noCache())
-            .body(eventStream);
+        // 1초마다 이벤트를 생성하여 스트리밍
+        Flux<ServerSentEvent<String>> eventStream = Flux.interval(Duration.ofSeconds(1))
+                .map(sequence -> ServerSentEvent.<String>builder()
+                        .id(String.valueOf(sequence))
+                        .event("tick")
+                        .data(LocalDateTime.now().toString())
+                        .build());
+
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.noCache())
+                .body(eventStream);
+    }
 }
 ```
 
-ℹ️ 클라이언트가 재연결 시 마지막으로 받은 이벤트의 아이디를 `Last-Event-ID` 헤더로 전송하므로, 서버에서 이를 받아 누락된 이벤트를 보낼 수도 있다.
+ℹ️ 클라이언트가 재연결 시 마지막으로 받은 이벤트의 아이디를 `Last-Event-ID` 헤더로 전송하므로, 서버에서 이를 찾아 전송 누락된 이벤트를 보내는 것도 가능하다.
 
 #### Python - Flask
 

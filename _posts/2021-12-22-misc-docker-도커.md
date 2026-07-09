@@ -31,9 +31,9 @@ tags:
 
 ## Docker Desktop on Windows
 
-윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [WSL 2에서 Docker 원격 컨테이너 시작 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자.
+윈도우 WSL 환경에서 도커를 사용하고 싶으면 도움말 [WSL 2에서 Docker 원격 컨테이너 시작 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/windows/wsl/tutorials/wsl-containers)을 보자. 
 
-참고로 Docker Desktop이란 앱이 설치되는데 이 앱을 꺼버리면 WSL에서 `docker` 명령도 안먹음.
+Docker Desktop이란 앱이 설치되는데 이 앱을 꺼버리면 WSL에서 `docker` 명령도 안먹음.
 
 
 ## 용어
@@ -123,8 +123,8 @@ docker push fixalot/testbed
 # IMAGE_NAME 이미지로 컨테이너 생성. 만약 이미지가 없으면 자동으로 다운로드
 docker create IMAGE_NAME
 
-# 호스트 80, 컨테이너 80 포트로 실행할 컨테이너 생성
-docker create -p 80:80 IMAGE_NAME
+# 호스트 7070 포트 접속 시 컨테이너 80 포트로 연결하는 컨테이너 생성
+docker create -p 7070:80 --name CONTAINER_ID IMAGE_NAME
 
 # CONTAINER_ID 컨테이너 삭제
 docker rm CONTAINER_ID
@@ -174,8 +174,8 @@ docker run -d IMAGE_NAME
 docker run -rm IMAGE_NAME
 
 # docker/getting-started 이미지가 없으면 다운로드 받은 다음 컨테이너 생성/실행하고
-# 호스트 80, 컨테이너 80 포트로 백그라운드(-d)에서 실행
-docker run -d -p 80:80 docker/getting-started
+# 호스트 7070 포트 접속 시 컨테이너 80 포트로 연결하여 백그라운드(-d)에서 실행
+docker run -d -p 7070:80 docker/getting-started
 ```
 
 `--rm` 옵션은 보통 `-it`와 같이 쓰는 모양.

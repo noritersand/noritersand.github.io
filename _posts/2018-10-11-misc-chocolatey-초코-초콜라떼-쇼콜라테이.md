@@ -29,12 +29,12 @@ Winget에서 좀 더 발전된 패키지(혹은 애플리케이션) 관리 툴. 
 
 ## 설치
 
-[https://chocolatey.org/install](https://chocolatey.org/install)
+[https://chocolatey.org/install#individual](https://chocolatey.org/install#individual)
 
 파워셸(관리자 권한)에서 다음 줄 실행:
 
 ```bash
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 
@@ -105,11 +105,15 @@ choco source
 choco source add -n=bob -s="https://somewhere/out/there/api/v2/"
 ```
 
-### 패키지 검색
+### 패키지 조회/검색
 
 ```bash
-choco find jdk # 'jdk'가 포함된 패키지 검색
-choco search jdk # find의 alias
+# 'jdk'가 포함된 패키지 검색
+choco find jdk
+
+# 로컬이나 원격 저장소에서 패키지를 찾고, 해당 패키지의 자세한 정보를 출력
+# 별칭은 info
+choco search jdk
 ```
 
 

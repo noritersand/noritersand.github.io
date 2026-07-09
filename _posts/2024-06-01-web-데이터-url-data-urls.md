@@ -58,6 +58,6 @@ data:image/png;base64,iVBORw0KGgoAAAANSU....
 
 ## 제한 사항
 
-[오류 처리를 위한 적절한 수단이 없고, 브라우저마다 최대 길이 제한이 다르며, 쿼리스트링을 쓸 수 없는 등의 제약](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#common_problems)이 있다. 
+[오류 처리를 위한 적절한 수단이 없고, 브라우저마다 최대 길이 제한이 다르며, 쿼리 스트링을 쓸 수 없는 등의 제약](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Data_URLs#common_problems)이 있다. 
 
 피싱같은 보안 문제가 있어서 [특정 내용의 data URL은 브라우저가 차단](https://blog.mozilla.org/security/2017/11/27/blocking-top-level-navigations-data-urls-firefox-59/)하기도 한다. 

@@ -149,7 +149,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
   - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
 - ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
-- Insert Date String `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌.
+- Insert Date String `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌. 단축키는 해제하는 게 좋음
 
 
 ## 작성자 저장용 단축키 설정
@@ -321,7 +321,11 @@ Add Selection
 최근에 추가된 신규 기능이다. 코파일럿을 구독하지 않아도 사용 가능
 
 - <kbd>alt + \ </kbd>: Trigger Inline Suggestion. 기능 발동 #1. 코파일럿의 코드 제안 기능과 거의 비슷함
-- <kbd>alt + shift + \ </kbd>: Trigger Next Edit Suggestion. 기능 발동 #2. 위의 기능과 차이점은 단순 제안이 아니라 '편집' 제안이라는 것. ✅ 없어서 추가한 단축키
+- <kbd>alt + shift + \ </kbd>: ~~Trigger Next Edit Suggestion. 기능 발동 #2. 위의 기능과 차이점은 단순 제안이 아니라 '편집' 제안이라는 것. ✅ 없어서 추가한 단축키~~ ... 였었는데, 언제인지 또 없어졌다??
 - <kbd>alt + ]</kbd>: Show Next Inline Suggestion. 다음 제안 보기
 - <kbd>alt + [</kbd>: Show Previous Inline Suggestion. 이전 제안 보기
+
+### 그 외 뭔지 잘 모르겠는 AI 기능
+
 - <kbd>ctrl + alt + i</kbd>: Open/Toggle Chat. 에이전트 채팅창 토글 기능
+- <kbd>ctrl + i</kbd>: Open inline chat. 인라인 채팅창 토글 기능인데, 질문은 안받고 코드 생성만 함

@@ -103,7 +103,7 @@ tags:
 - [Node Version Manager](https://github.com/nvm-sh/nvm): Node.js의 설치/버전 관리 도구. 여러 버전의 Node.js를 설치하고 지금 사용하려는 버전으로 손쉽게 전환할 수 있게 해준다. 통칭 nvm
 - [SDKMAN](https://sdkman.io/): nvm처럼 여러 버전의 SDK를 설치하고 특정 버전으로 전환하는 기능을 제공하는 SDK 관리 도구다. 지원하는 SDK로 Java, Scala, Groovy, Kotlin, Ceylon, Gradle, Maven 등이 있다. 단점으로, SDKMAN을 실행하려면 bash 환경이 필요하기 때문에 WSL이 아니면 **윈도우에서는 쓸 수 없음**.
 
-### JSON 도구
+### JSON
 
 - [⭐JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버
 - [jsoneditoronline.org](https://www.jsoneditoronline.org): JSON 편집 및 뷰어
@@ -233,7 +233,7 @@ tags:
 - [⭐JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드 파라미터나 반환값의 `null` 허용 여부를 `@Nullable`, `@NullMarked`, `@NullUnmarked`, `@NonNull` 어노테이션으로 명시해서, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 한다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 Java에 통합될 가능성도 있다 함.
 
 
-## 5. 인프라, 배포
+## 5. 백킹 서비스(인프라 구성 요소)와 인프라 그 자체를 제공하는 서비스, 배포 툴
 
 ### PaaS (Platform as a Service)
 
@@ -291,6 +291,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [Apache Kafka](https://kafka.apache.org/): 카프카. 아파치 소프트웨어 재단이 스칼라로 개발한 오픈 소스 분산 스트리밍 플랫폼. '메시지 브로커 프로젝트' 혹은 '분산 환경에서 사용되는 데이터 스트리밍 플랫폼'으로 소개된다. 여러 데이터베이스의 동기화 작업이나, 비동기로 메시지를 주고 받을 때 사용한다(데이터 입출력도 여기에 해당함). 에이전트를 설치하는 방식이라 카더라.
 - [RabbitMQ](https://www.rabbitmq.com/): MQTT, AMQP를 구현한 오픈 소스 메시지 브로커. Erlang으로 만들어졌다(얼랭?). 사용자 요청의 비동기 처리, 앱 간 메시지 교환, 분산 시스템에서의 메시지 브로커링 등에 활용된다.
+
+### 메일 서버
+
+- [Postfix](https://www.postfix.org/): 리눅스 기반 환경에서 메일 서버를 구축할 때 사용되는 오픈소스 소프트웨어
 
 
 ## 6. 데이터베이스
@@ -410,7 +414,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Gliffy](http://www.gliffy.com)
 - [⭐Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 JavaScript 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, 깃 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): JavaScript로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
-- [⭐tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리스트링에 포함되기 때문에 공유가 쉽다.
+- [⭐tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리 스트링에 포함되기 때문에 공유가 쉽다.
 
 ### 마인드맵
 
@@ -501,8 +505,11 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 메일 서비스
 
+ℹ️ 메일 시스템은 발신을 담당하는 SMTP 서버, 수신을 담당하는 POP3 혹은 IMAP 서버, 웹 상의 UI를 제공하는 웹메일로 나뉘는데, 이 세 가지를 모두 제공하면 ESP(Email Service Provider, 이메일 서비스 제공자)라고 부른다.
+
 - [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 - [stibee](https://www.stibee.com/): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
+- [SendGrid](https://sendgrid.com/en-us): 클라우드 기반 SMTP 서비스
 
 #### 임시 메일
 
@@ -522,6 +529,17 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 18. AI
 
+### 챗봇, LLM
+
+- [Gemini](https://gemini.google.com/): 구글의 챗봇
+- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
+- [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 챗봇. 발음은 '클로드'
+- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 챗봇
+- [Grok](https://grok.com/): xAI에서 개발한 챗봇
+
+### AI 엔지니어링 스택
+
+- [⭐Repomix](https://github.com/yamadashy/repomix): 코드베이스를 분석해서 XML이나 마크다운 파일 하나로 묶어주는 Node.js 패키지로 AI가 읽기 좋은 구조로 만들어준다. 에이전트를 붙이지 않았거나, 비공개 저장소일 때 유용하다. [웹 버전](https://repomix.com/)도 있다. `.gitignore` 설정이 있으면 알아서 제외해준다. 참고로 AI한테 요약 파일 만들어줄거면 마크다운보다 XML이 좋다. AI 토큰 아끼고 싶으면 이런 옵션들 쓰면 되는데: `repomix  --remove-empty-lines --remove-comments --no-file-summary --compress --include 포함하길원하는파일을앤트패턴으로`, 압축 옵션인 `--compress`는 자바 어노테이션도 지워버리니 주의해서 사용해야 함.
 - [OpenClaw](https://openclaw.ai/): 로컬 환경에서 구동되는 오픈소스 실행형 AI 에이전트 프로젝트. 단순한 대화형 AI를 넘어 사용자의 OS를 직접 제어할 수 있는 권한을 가진다. 텔레그램, 슬랙, 디스코드 등 주요 메신저와 연동하여 원격으로 로컬 컴퓨터에 명령을 하달하고 작업을 수행하게 할 수 있는 것이 특징이다. 앤트로픽과의 상표권 이슈로 인해 Clawdbot, Moltbot을 거쳐 현재의 명칭으로 확정되었다.
 - [🧪claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 
@@ -534,11 +552,6 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
-- [Grok](https://grok.com/): xAI에서 개발한 대형 언어 모델 #3
-- [Claude](https://claude.ai/): Anthropic 사의 GPT 기반 대형 언어 모델 #2. 발음은 '클로드'. 스스로 주장하기를 ChatGPT보다 성능이 좋다고 함.
-- [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
-- [Gemini](https://gemini.google.com/): 구글의 LLM
-- [ChatGPT](https://chat.openai.com/): OpenAI 사의 GPT 기반 LLM
 
 
 ## 19. 모바일 개발

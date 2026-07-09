@@ -147,4 +147,25 @@ logger.error($var$.getMessage(), $var$);
 
 변수의 Expression들이 어떻게 작동하는 지는 [공식 가이드](https://www.jetbrains.com/help/idea/template-variables.html#predefined_functions)를 볼 것.
 
+### JS console logging
+
+자바스크립트 콘솔 로깅용 템플릿.
+
+```js
+// abbreviation: cd, description: console.debug
+console.debug('##', $first$);
+
+// abbreviation: cl, description: console.log
+console.log('##', $first$); // XXX test code
+
+// abbreviation: cd2, description: console.debug
+console.debug('## $first$SELECTME:', SELECTME);
+
+// abbreviation: cl2, description: console.log
+console.log('## $first$SELECTME:', SELECTME); // XXX test code
+```
+
+`$first$`는 `completeSmart()`로 설정하고, 적용 범위는 자바스크립트/타입스크립트의 `statement`를 선택한다.
+
+
 -끝-

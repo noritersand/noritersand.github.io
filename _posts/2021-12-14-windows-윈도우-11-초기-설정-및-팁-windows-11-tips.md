@@ -29,13 +29,11 @@ tags:
 
 ## 초기 설정
 
-### 끌기 레이아웃 끄기
+### 한국어 입력기 문제 해결하기
 
-`윈도우 설정 > 시스템 > 멀티태스킹 > 창 끌기`에서 `작업 표시줄 단추를 마우스로 가리킬 때 앱이 속한 끌기 레이아웃 표시`를 체크 해제한다.
+윈도우 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 서브라임과 Flowy 같은 몇몇 앱에서 'IME 조합 문자 유실' 현상을 유발한다.
 
-두 창을 맞춤상태로 했을 때의 그룹이 표시되는 기능인데, 켜두면 같은 앱을 여러 창으로 띄웠을 때 가끔 <kbd>win + 숫자</kbd>키가 먹통되는 버그가 있음.
-
-최근 업데이트에서 '작업 표시줄 앱 위로 마우스를 가져갈 때, 작업 보기에서, Alt + Tab을 누를 때 내 스냅된 창 표시'로 바꼈고, 체크 상태라면 <kbd>win + tab</kbd>, <kbd>alt + tab</kbd>에서도 창 그룹이 표시된다.
+`윈도우 설정 > 시간 및 언어 > 언어 및 지역 > 한국어 > 언어 옵션 > Microsoft 입력기 > 키보드 옵션`에서 `이전 버전의 Microsoft IME`를 켜기
 
 ### 자판 배열 전환키 해제
 
@@ -50,6 +48,14 @@ tags:
 ![](/images/let-me-press-ctrl-shift-0-bitch-2.png)
 
 `자판 배열 전환`을 할당 해제하면 됨. 여기까지만 해도 <kbd>ctrl + shift + 0</kbd>은 잘 작동한다. 찝찝하면 `입력 언어 전환`도 꺼버리자.
+
+### 끌기 레이아웃 끄기
+
+`윈도우 설정 > 시스템 > 멀티태스킹 > 창 끌기`에서 `작업 표시줄 단추를 마우스로 가리킬 때 앱이 속한 끌기 레이아웃 표시`를 체크 해제한다.
+
+두 창을 맞춤상태로 했을 때의 그룹이 표시되는 기능인데, 켜두면 같은 앱을 여러 창으로 띄웠을 때 가끔 <kbd>win + 숫자</kbd>키가 먹통되는 버그가 있음.
+
+최근 업데이트에서 '작업 표시줄 앱 위로 마우스를 가져갈 때, 작업 보기에서, Alt + Tab을 누를 때 내 스냅된 창 표시'로 바꼈고, 체크 상태라면 <kbd>win + tab</kbd>, <kbd>alt + tab</kbd>에서도 창 그룹이 표시된다.
 
 ### alt + tab 목록에서 앱의 탭 제외하기
 
@@ -146,7 +152,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + esc</kbd>: 돋보기가 켜졌을 때 누르면 꺼짐
 - <kbd>win + space</kbd>: 입력기 변환
 - <kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능이지만, PowerToys를 설치하면 PowerToys 실행 단축키로 바뀜.
-- <kbd>alt + esc</kbd>: 창을 연 순서대로 거꾸로 순환. 안될 때도 있지만, 현재 활성화된 창을 즉시 최소화하는 기능으로 사용할 수 있음.
+- <kbd>alt + esc</kbd>: 창을 연 순서대로 거꾸로 순환. 아쉬운 대로 현재 활성화된 창을 안 보이게 숨기는 기능으로 사용할 수 있음. (최소화 단축키 좀 만들어줘... 😟)
 - <kbd>alt + shift + esc</kbd>: 창을 연 순서대로 순환
 
 ### 창 크기/위치
@@ -193,12 +199,13 @@ Autohotkey로 확장한 키 조합:
 - <kbd>win + alt + - </kbd>: Postman
 - <kbd>win + = </kbd>: Microsoft Edge
 - <kbd>win + ctrl + = </kbd>: 야카오톡
+- <kbd>win + alt + = </kbd>: 🚫 반응 없음
 - <kbd>win + backspace</kbd>: WorkFlowy
 - <kbd>win + ctrl + backspace </kbd>: 아웃룩
 - <kbd>win + alt + backspace </kbd>: 미사용
 - <kbd>win + [</kbd>: 미사용
 - <kbd>win + ]</kbd>: 미사용
 
-윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음.
+ℹ️ 윈도우 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음.
 
 ⚠️ <kbd>win + ctrl + 숫자</kbd> 조합은 기존 기능인 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨

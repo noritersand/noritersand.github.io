@@ -21,7 +21,7 @@ tags:
 
 - spring framework 2.5 or higher
 
-RequestParam annotation은 `key=value` 형태로 화면에서 넘어오는 쿼리스트링 혹은 폼 데이터를 메서드의 매개변수로 지정한다.
+RequestParam annotation은 `key=value` 형태로 화면에서 넘어오는 쿼리 스트링 혹은 폼 데이터를 메서드의 매개변수로 지정한다.
 
 ```java
 method( @RequestParam( PARAM ) Obj )

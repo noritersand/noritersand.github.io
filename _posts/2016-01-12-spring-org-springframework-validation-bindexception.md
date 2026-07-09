@@ -81,7 +81,7 @@ Field error in object 'exampleBean' on field 'intValue': rejected value [null]; 
     ...
 ```
 
-간단한 해소방법으로 아무 값이나 명시하여 넘기는 것과 값이 없는 항목은 쿼리스트링이나 폼 데이터에서 아예 이름까지 제외시키는 방법이 있다:
+간단한 해소방법으로 아무 값이나 명시하여 넘기는 것과 값이 없는 항목은 쿼리 스트링이나 폼 데이터에서 아예 이름까지 제외시키는 방법이 있다:
 
 ```java
 "/setModelTest.do?doubleValue=99&longValue=99&intValue=99" // correct

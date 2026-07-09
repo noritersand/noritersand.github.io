@@ -63,7 +63,7 @@ public class URLConnection {
     }
 
     /**
-     * 파라미터가 쿼리스트링일 때 사용
+     * 파라미터가 쿼리 스트링일 때 사용
      * @param url
      * @param method GET|POST
      * @param encoding
