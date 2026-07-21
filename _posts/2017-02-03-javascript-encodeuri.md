@@ -63,7 +63,7 @@ function keyupHandler() {
 
 ## encodeURI()와 encodeURIComponent()의 차이
 
-자바스크립트는 `encodeURI()`와 `encodeURIComponent()` 함수를 제공한다. 둘의 차이점은 다음과 같다:
+JavaScript는 `encodeURI()`와 `encodeURIComponent()` 함수를 제공한다. 둘의 차이점은 다음과 같다:
 
 ```js
 encodeURI('?a=b&c=d');  // "?a=b&c=d"

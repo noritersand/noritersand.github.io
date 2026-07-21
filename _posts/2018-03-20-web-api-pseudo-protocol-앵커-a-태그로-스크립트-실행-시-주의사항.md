@@ -62,7 +62,7 @@ tags:
 
 ## 함수가 undefined를 반환
 
-자바스크립트의 함수는 브레이스`}`  혹은 return을 만났을 때 undefined를 반환한다. 즉, 반환값을 명시하지 않는 방법이다.
+JavaScript의 함수는 브레이스`}`  혹은 return을 만났을 때 undefined를 반환한다. 즉, 반환값을 명시하지 않는 방법이다.
 
 ```html
 <script>

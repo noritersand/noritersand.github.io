@@ -39,7 +39,7 @@ Standard built-in Objects: Number
 
 `2.220446049250313e-16` 값을 반환하는 상수. (소수점으로 표현하면 `2.220446049250313 / 10^16 = 0.0000000000000002220446049250313`)
 
-자바스크립트는 ECMAScript 표준에 따라 자바스크립트의 모든 산술을 IEEE 754 배정밀도 부동소수점 연산(Double-precision floating-point arithmetic, 64비트)을 사용하여 수행하는데, `Number.EPSILON`은 이 연산에서 `1`과 `1`보다 큰 다음 표현 가능한 수 사이의 가장 작은 차이를, 쉽게 말하면 1과 그보다 약간 큰 수를 구분할 수 있는 최소한의 간격을 의미한다.
+JavaScript는 ECMAScript 표준에 따라 모든 산술을 IEEE 754 배정밀도 부동소수점 연산(Double-precision floating-point arithmetic, 64비트)을 사용하여 수행하는데, `Number.EPSILON`은 이 연산에서 `1`과 `1`보다 큰 다음 표현 가능한 수 사이의 가장 작은 차이를, 쉽게 말하면 1과 그보다 약간 큰 수를 구분할 수 있는 최소한의 간격을 의미한다.
 
 이 값은 아주 작은 값이라서, 보통 부동소수점 비교 연산에서 사실상 같다고 볼 수 있는 범위를 결정할 때 활용한다. 예를 들어 두 수 `a`와 `b`의 차이가 `Number.EPSILON` 보다 작다면, 이를 사실상 같은 값으로 간주하는 것이다.
 
@@ -55,9 +55,9 @@ result < Number.EPSILON; // true
 
 ### Number.MAX_SAFE_INTEGER
 
-자바스크립트에서 안전하게 표현할 수 있는 가장 큰 정수. 2의 53제곱에 1을 뺀 값으로 `9007199254740991`이다(약 구천조). 여기서 '안전'하다는 말은 이 값을 넘어가면 에러가 발생한다는 뜻이 아니라, 수학적으로 부정확한(mathematically incorrect) 연산 결과가 나온다는 뜻이다.
+JavaScript에서 안전하게 표현할 수 있는 가장 큰 정수. 2의 53제곱에 1을 뺀 값으로 `9007199254740991`이다(약 구천조). 여기서 '안전'하다는 말은 이 값을 넘어가면 에러가 발생한다는 뜻이 아니라, 수학적으로 부정확한(mathematically incorrect) 연산 결과가 나온다는 뜻이다.
 
-자바스크립트에서 `number` 타입의 수는 64비트 이중 정밀도 부동소수점 형식으로 표현된다. 이 형식은 53비트의 정밀도를 제공하기 때문에, 정확하게 표현할 수 있는 정수의 범위는 `-(2^53 - 1)`부터 `2^53 - 1`까지다. 이 범위를 넘어서는 정수는 정확하게 표현되지 않거나 정밀도 손실이 발생할 수 있다.
+JavaScript에서 `number` 타입의 수는 64비트 이중 정밀도 부동소수점 형식으로 표현된다. 이 형식은 53비트의 정밀도를 제공하기 때문에, 정확하게 표현할 수 있는 정수의 범위는 `-(2^53 - 1)`부터 `2^53 - 1`까지다. 이 범위를 넘어서는 정수는 정확하게 표현되지 않거나 정밀도 손실이 발생할 수 있다.
 
 ```js
 typeof Number.MAX_SAFE_INTEGER; // "number" 
@@ -81,7 +81,7 @@ unsafeNumber2 - unsafeNumber1; // 0
 
 ### Number.MAX_VALUE
 
-자바스크립트에서 표현할 수 있는 가장 큰 양의 부동소수점 값을 나타내는 상수.
+JavaScript에서 표현할 수 있는 가장 큰 양의 부동소수점 값을 나타내는 상수.
 
 ```js
 Number.MAX_VALUE; // 1.7976931348623157e+308
@@ -117,7 +117,7 @@ Number.MAX_SAFE_INTEGER < Number.MAX_VALUE; // true
 
 ### Number.MIN_SAFE_INTEGER
 
-자바스크립트에서 안전하게 표현할 수 있는 가장 작은 정수. 반환하는 값은 `-(2^53 - 1)` 혹은 `-9007199254740991`이다. 여기서 '안전'하다는 말은 `Number.MAX_SAFE_INTEGER`와 `Number.MIN_SAFE_INTEGER` 범위 내의 정수들이 `number` 타입(IEEE 754 표준에 따른 64비트 부동소수점 수)으로 정확하게 표현되고, 연산 과정에서 정밀도 손실 없이 사용할 수 있다는 것을 의미한다.
+JavaScript에서 안전하게 표현할 수 있는 가장 작은 정수. 반환하는 값은 `-(2^53 - 1)` 혹은 `-9007199254740991`이다. 여기서 '안전'하다는 말은 `Number.MAX_SAFE_INTEGER`와 `Number.MIN_SAFE_INTEGER` 범위 내의 정수들이 `number` 타입(IEEE 754 표준에 따른 64비트 부동소수점 수)으로 정확하게 표현되고, 연산 과정에서 정밀도 손실 없이 사용할 수 있다는 것을 의미한다.
 
 ```js
 typeof Number.MIN_SAFE_INTEGER; // "number"
@@ -137,7 +137,7 @@ unsafeNumber1 - unsafeNumber2; // 0
 
 ### Number.MIN_VALUE
 
-자바스크립트에서 표현할 수 있는 가장 작은 양의 부동소수점 값을 나타낸다.
+JavaScript에서 표현할 수 있는 가장 작은 양의 부동소수점 값을 나타낸다.
 
 ```js
 Number.MIN_VALUE; // 5e-324
@@ -454,7 +454,7 @@ number.toExponential()
 number.toExponential(fractionDigits)
 ```
 
-- `fractionDigits`: 소수점 이하의 자릿수. 생략하면 자바스크립트가 필요한 자릿수를 알아서 결정한다.
+- `fractionDigits`: 소수점 이하의 자릿수. 생략하면 JS가 필요한 자릿수를 알아서 결정한다.
 
 반환되는 값은 수를 지수 표기법으로 나타낸 문자열이다.
 

@@ -107,7 +107,7 @@ $('form').serialize();
 // checkbox1=11&textInput=22&selected=33
 ```
 
-`.serializeArray()`는 문자열이 아니라 JS 객체 배열로 반환한다:
+`.serializeArray()`는 문자열이 아니라 JavaScript 객체 배열로 반환한다:
 
 ```js
 $('form').serializeArray();

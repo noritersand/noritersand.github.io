@@ -106,7 +106,7 @@ root
 ```
 
 - `node_modules`: node 패키지 로컬 경로. 리액트 앱 개발에 필수적인 패키지들이 기본으로 설치되어 있다. react, react-dom, react-scripts, webpack, babel, eslin, postcss 등이 포함된다.
-- `src`: 소스 코드가 위치하는 경로. 리액트 컴포넌트, 테스트 파일, CSS 파일과 기타 자바스크립트 모듈 등이 포함된다.
+- `src`: 소스 코드가 위치하는 경로. 리액트 컴포넌트, 테스트 파일, CSS 파일과 기타 JavaScript 모듈 등이 포함된다.
 - `public`: 정적 파일들이 저장되는 경로다. 유일한 HTML이자 앱의 진입점 역할인 `index.html` 파일이 이 경로에 반드시 있어야 한다. 이 외에 파비콘 이미지, `robots.txt`, `manifest.json` 파일 등이 포함된다. 이 파일들은 빌드 시 `build` 디렉터리로 복사된다(특정 파일은 약간의 내용 수정이 있을 수 있음).
 
 ### CRA: react-scripts
@@ -171,7 +171,7 @@ class Button extends Component {
 }
 ```
 
-원래는 자바스크립트 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 가져오라고 알려주면 웹팩이 CSS를 자바스크립트 모듈로 변환하는 식.
+원래는 JavaScript 파일만 ESM으로 가져올 수 있지만, CRA에선 CSS 파일도 가져오는 게 가능하다. 대충 CRA가 웹팩에 CSS를 가져오라고 알려주면 웹팩이 CSS를 JavaScript 모듈로 변환하는 식.
 
 ℹ️ 이미지나 폰트 같은 파일도 import 구문으로 가져온다: [Create React App \| Adding Images, Fonts, and Files](https://create-react-app.dev/docs/adding-images-fonts-and-files)
 
@@ -242,7 +242,7 @@ const image = <img src={user.avatarUrl} />;
 
 ### 이걸 브라우저가 읽을 수 있나?
 
-당연히 그대로는 못 읽는다. JSX는 Babel에 의해 자바스크립트 파일로 컴파일된다. Babel 설치는 위의 [설치](#heading-설치) 항목을 보자
+당연히 그대로는 못 읽는다. JSX는 Babel에 의해 JavaScript 파일로 컴파일된다. Babel 설치는 위의 [설치](#heading-설치) 항목을 보자
 
 예를 들어 아래 코드는:
 
@@ -331,7 +331,7 @@ root.render(React.createElement(ShoppingList, null));
 - `http-equiv` -> `httpEquiv`
 - `classid` -> `classID`
 
-`class`와 `for`, `http-equiv` 같은 몇 가지 예외가 있지만, 대체로 대소문자를 구분하는 카멜케이스 규칙이 적용되는 식이다. 이유는 기존 속성 이름이 자바스크립트의 키워드와 충돌하기 때문. 만약 이 규칙을 무시하면:
+`class`와 `for`, `http-equiv` 같은 몇 가지 예외가 있지만, 대체로 대소문자를 구분하는 카멜케이스 규칙이 적용되는 식이다. 이유는 기존 속성 이름이 JavaScript의 키워드와 충돌하기 때문. 만약 이 규칙을 무시하면:
 
 ```jsx
 <label for="minutes">Minutes</label>
@@ -340,9 +340,9 @@ root.render(React.createElement(ShoppingList, null));
 
 (개발모드일 때에 한해서) 이렇게 경고 로그가 발생한다.
 
-### 자바스크립트 표현식 삽입
+### JavaScript 표현식 삽입
 
-JSX에서 자바스크립트 표현식을 사용하려면 중괄호`{}`(Curly Braces)로 감싸면 된다:
+JSX에서 JavaScript 표현식을 사용하려면 중괄호`{}`(Curly Braces)로 감싸면 된다:
 
 ```jsx
 const element = <img src={user.avatarUrl}></img>;
@@ -354,7 +354,7 @@ return (
 );
 ```
 
-이중 중괄호`{{}}`가 감싼 코드를 볼 수 있는데, 첫 번째 중괄호는 자바스크립트 표현식을 알리는 중괄호이고, 두 번째 중괄호는 객체 리터럴의 중괄호다:
+이중 중괄호`{{}}`가 감싼 코드를 볼 수 있는데, 첫 번째 중괄호는 JavaScript 표현식을 알리는 중괄호이고, 두 번째 중괄호는 객체 리터럴의 중괄호다:
 
 ```jsx
 const btn = <button style={{backgroundColor: 'green'}}>Click Me</button>;
@@ -639,9 +639,9 @@ ReactDOM.hydrateRoot(domNode, reactNode)
 ReactDOM.hydrateRoot(domNode, reactNode, options)
 ```
 
-서버에서 렌더링된 마크업에 이벤트 핸들러 같은 자바스크립트 기능을 '부착' 시켜준다. `createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 
+서버에서 렌더링된 마크업에 이벤트 핸들러 같은 JavaScript 기능을 '부착' 시켜준다. `createRoot()`와 비슷하지만 이 함수는 SSR(Server-Side Rendering)일 때만 사용한다. 
 
-ℹ️ *Hydration*은 클라이언트(브라우저) 측에서 자바스크립트를 실행하여 이미 존재하는 DOM 엘리먼트에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
+ℹ️ *Hydration*은 클라이언트(브라우저) 측에서 JavaScript를 실행하여 이미 존재하는 DOM 엘리먼트에 이벤트 리스너와 상태 등을 연결하는 과정을 말한다. 이를 통해 초기 HTML이 동적인 웹 애플리케이션으로 변환된다.
 
 ```js
 import {hydrateRoot} from 'react-dom/client';

@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-자바스크립트 프로토타입을 분석한 글.
+JavaScript 프로토타입을 분석한 글.
 
 
 ## 프로토타입이란?
@@ -34,7 +34,7 @@ tags:
 >
 > [위키백과 \| 프로토타입 기반 프로그래밍](https://ko.wikipedia.org/wiki/프로토타입_기반_프로그래밍)
 
-간단히 말해 객체이면서 동시에 다른 객체의 원형이 되는 것. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, 자바스크립트는 프로토타입을 복제하는 방식으로 객체를 만든다.
+간단히 말해 객체이면서 동시에 다른 객체의 원본인 것. 클래스 기반 언어에서 클래스의 생성자를 통해 객체(혹은 인스턴스)가 생성되는 것과 다르게, JavaScript는 프로토타입을 복제하는 방식으로 객체를 만든다.
 
 
 ## 프로토타입 확인
@@ -57,7 +57,7 @@ function Mankind() {}
 var human = new Mankind();
 ```
 
-자바스크립트는 `Mankind()` 함수에서 만들어질 객체의 부모를 내부 슬롯(internal slot)인 `human.[[Prototype]]`에 할당한다:
+JavaScript는 `Mankind()` 함수에서 만들어질 객체의 부모를 내부 슬롯(internal slot)인 `human.[[Prototype]]`에 할당한다:
 
 ```js
 Mankind.prototype === Object.getPrototypeOf(human); // true
@@ -69,9 +69,9 @@ Mankind.prototype === human.__proto__; // true
 
 ![](/images/javascript-prototype-2.png)
 
-어떤 객체의 `foo`라는 프로퍼티를 참조할 때, `foo`가 그 객체에 있을 수도 없을 수도 있다. 만약 없다면 프로토타입에서 `foo`를 찾는다. 여기에도 없다면 더 상위 프로토타입에 있는지 찾아 올라가는 것을 반복한다. 이런 과정 혹은 구조를 **프로토타입 체인**이라 하며, 자바스크립트에선 이를 이용해 상속과 확장을 구현한다.
+어떤 객체의 `foo`라는 프로퍼티를 참조할 때, `foo`가 그 객체에 있을 수도 없을 수도 있다. 만약 없다면 프로토타입에서 `foo`를 찾는다. 여기에도 없다면 더 상위 프로토타입에 있는지 찾아 올라가는 것을 반복한다. 이런 과정 혹은 구조를 **프로토타입 체인**이라 하며, JavaScript에선 이를 이용해 상속과 확장을 구현한다.
 
-프로토타입 체인으로 `Object` 프로토타입까지 도달했는데 여기에도 `foo`가 없다면 마참내3 `undefined`를 반환한다. `Object` 프로토타입은 최상위 프로토타입이라서 더 이상 찾아 올라갈 대상이 없기 때문.
+프로토타입 체인으로 `Object` 프로토타입까지 도달했는데 여기에도 `foo`가 없다면 마참내! `undefined`를 반환한다. `Object` 프로토타입은 최상위 프로토타입이라서 더 이상 찾아 올라갈 대상이 없기 때문.
 
 ```js
 function Fruit() {}
@@ -159,7 +159,7 @@ function handleEvent(event) {
 Newbie.constructor === Function; // true
 ```
 
-그리고 `Function()`의 생성자 함수는 `Function()`이며, `Function()`의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자의 생성자의 생성자의 생성자도 `Function()`이다. ~~고만해미친놈아~~:
+그리고 `Function()`의 생성자 함수는 `Function()`이며, `Function()`의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자 함수의 생성자 함수의 생성자 함수도 `Function()`이고, `Function()`의 생성자 함수의 생성자 함수의 생성자 함수의 생성자 함수도 `Function()`이다. ~~고만해미친놈아~~:
 
 ```js
 Function.constructor === Function; // true

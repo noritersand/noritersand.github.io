@@ -73,7 +73,7 @@ $('#target') == $('#target');  // false
 $('#target') === $('#target');  // false
 ```
 
-위처럼은 불가능하다. 이는 jQuery 선택자가 반환하는 객체가 기본적으로 배열의 형태를 띄기 때문이다. 따라서 jQuery로 선택한 엘리먼트를 비교하려면 자바스크립트 객체로 변환하거나 배열에서 꺼내야 한다:
+위처럼은 불가능하다. 이는 jQuery 선택자가 반환하는 객체가 기본적으로 배열의 형태를 띄기 때문이다. 따라서 jQuery로 선택한 엘리먼트를 비교하려면 JavaScript 객체로 변환하거나 배열에서 꺼내야 한다:
 
 ```js
 // return javascript DOM element

@@ -68,7 +68,7 @@ fetch 디렉티브:
 - `manifest-src`: 매니페스트 파일의 출처
 - `media-src`: 오디오 및 비디오 파일을 로드할 수 있는 출처
 - `object-src`: `<object>`, `<embed>`, `<applet>` 태그를 통해 불러올 수 있는 리소스의 출처
-- `script-src`: 자바스크립트에 대한 검증된 출처
+- `script-src`: JavaScript에 대한 검증된 출처
 - `style-src`: 스타일시트 출처
 - `worker-src`: `Worker`, `SharedWorker`, `ServiceWorker` 스크립트를 불러올 수 있는 출처
 
@@ -108,7 +108,7 @@ Keyword Values:
 
 Unsafe Keyword Values:
 
-- `'unsafe-inline'`: 인라인 자바스크립트와 CSS를 허용한다.
+- `'unsafe-inline'`: 인라인 JavaScript와 CSS를 허용한다.
 - `'unsafe-eval'`:  `eval()`, `setTimeout()`, `window.execScript()` 같은 동적 코드 평가(evaluation) 사용을 허용한다. `setTimeout()`은 함수 자체가 아니라, `setTimeout('console.log(123)', 100);`처럼 첫 번째 인수가 문자열인 경우를 의미한다.
 - `'unsafe-hashes'`: **TODO**
 - `'wasm-unsafe-eval'`: **TODO**

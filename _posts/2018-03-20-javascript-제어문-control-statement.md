@@ -264,7 +264,7 @@ for (변수 in 객체) {
 
 객체가 소유한 프로퍼티의 길이만큼 반복하며, 각 반복 회차마다 객체의 프로퍼티를 하나씩 꺼내 지정한 변수에 할당한다.
 
-모든 프로퍼티의 수 만큼 반복하는 것은 아니고 열거 가능한 자체 프로퍼티(enumerable own properties)의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 고유의 프로퍼티 설명자](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable`이 `true`인 프로퍼티를 말한다. 예를 들어 `Object.prototype.toString()`은 `for-in`에서 무시되는데 `enumerable`이 `false`라서 그렇다. (단, 자바스크립트 구현체마다 열거 가능한 프로퍼티가 동일하지 않을 수 있음)
+모든 프로퍼티의 수 만큼 반복하는 것은 아니고 열거 가능한 자체 프로퍼티(enumerable own properties)의 길이만큼만 반복한다. 열거 할 수 있는 프로퍼티란, [객체 고유의 프로퍼티 설명자](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor)에서 `enumerable`이 `true`인 프로퍼티를 말한다. 예를 들어 `Object.prototype.toString()`은 `for-in`에서 무시되는데 `enumerable`이 `false`라서 그렇다. (단, JavaScript 구현체마다 열거 가능한 프로퍼티가 동일하지 않을 수 있음)
 
 ```js
 for (let prop in window) {
@@ -272,7 +272,7 @@ for (let prop in window) {
 }
 ```
 
-자바스크립트는 반복을 실행하기 전에 먼저 객체를 평가한다. 객체 타입이 아니라 원시 타입이면 래퍼(wrapper) 객체로 대체된다:
+JavaScript는 반복을 실행하기 전에 먼저 객체를 평가한다. 객체 타입이 아니라 원시 타입이면 래퍼(wrapper) 객체로 대체된다:
 
 ```js
 var str = 'abc';

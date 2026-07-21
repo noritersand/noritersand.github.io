@@ -45,7 +45,7 @@ npm과 Yarn 사용법 간단 정리
 
 ### 필드 설명
 
-`init` 으로 자동생성되는 필드들은 다음과 같다:
+`npm init` 으로 자동생성되는 필드들은 다음과 같다:
 
 - `name`: 프로젝트 이름. 배포 시 필수
 - `version`: 버전. 배포 시 필수
@@ -95,9 +95,9 @@ npm과 Yarn 사용법 간단 정리
 - `~version`: '대략적으로 동일한 버전'을 허용한다. `version`을 명시한 단위보다 낮은 단위는 아무 버전이나 괜찮다는 뜻이다. 예를 들어 `~0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다는 낮은 버전을 허용한다. `~1.2`는  `1.2.x`와 같다. `~0`은 `0.x`와 같다.
 - `^version`: '호환되는 버전'만 허용한다. 지정한 버전의 **0이 아닌 가장 왼쪽에 있는 숫자**가 변하지 않는 선에서 같거나 높은 버전을 허용한다. `^1.2.3`은 1.2.3보다 높거나 같고 2.0.0보다 낮아야 한다. `^0.2.3`은 0.2.3보다 높거나 같고 0.3.0보다 낮아야 한다. `^0.0.3`은 `>=0.0.3 <0.0.4-0`라고 하는 것과 같다. 더 자세한 내용은 [여기](https://github.com/npm/node-semver#caret-ranges-123-025-004)를 보자.
 
-참고로 npm은 [Semantic Versioning](https://semver.org/)(줄여서 SemVer)을 따른다.
+참고로 npm은 [Semantic Versioning](https://semver.org/)을 따른다.
 
-ℹ️ Node.js에서 패키지의 특정 버전을 가라키는 용어로 'resolution'이 사용된다. (특히 Yarn에서)
+ℹ️ Node.js에서 패키지의 특정 버전을 가리키는 용어로 'resolution'이 사용된다. (특히 Yarn에서)
 
 ### example
 
@@ -307,7 +307,7 @@ npm ls -g
 npm fund
 ```
 
-`fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 패키지 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 `fund`인 것.
+`npm fund` 명령은 단순히 종속관계 목록을 출력하는게 아니라 웬 사이트 주소를 함께 표시해 주는데, 이 주소는 패키지 제작자에게 기부를 할 수 있는 페이지다. 그래서 이름이 'fund'인 것.
 
 ### 패키지 버전 업그레이드
 
@@ -427,7 +427,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 
 이 명령을 추가 인자 없이 실행하면 패키지 이름, 버전, 설명 등을 물어보는 프롬프트가 나타난다. 끝까지 입력을 마치면 입력한 내용대로 `package.json` 파일이 만들어진다. 이미 `package.json` 파일이 있으면 내용을 수정한다.
 
-`init` 뒤에 패키지 이름을 붙여 특정 템플릿이나 스타터 킷으로 프로젝트를 스케폴딩 하기도 한다:
+`npm init` 뒤에 패키지 이름을 붙여 특정 템플릿이나 스타터 킷으로 프로젝트를 스케폴딩 하기도 한다:
 
 ```bash
 # Vite 기반 프로젝트 만들기
@@ -447,6 +447,12 @@ corepack -v
 
 # 코어팩 활성화
 corepack enable
+
+# Yarn 버전 확인
+yarn -v
+
+# Yarn 최신 버전 사용 설정
+yarn set version berry
 ```
 
 Yarn은 [코어팩(Corepack) 프로젝트](https://www.npmjs.com/package/corepack)에 [포함 되어있으니](https://yarnpkg.com/corepack) 따로 설치할 필요 없이 코어팩만 활성화하면 된다. 코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 14.19/16.9 버전 이상이면 자동으로 설치된다. 코어팩 버전을 올리고 싶으면 Node.js 버전을 업그레이드 하자. 
@@ -499,13 +505,19 @@ yarn cache clean
 
 ⚠️ Yarn으로 패키지를 추가/삭제/업그레이드 해도 `package.json` 내용이 수정된다.
 
-ℹ️ `yarn` 명령은 하위 명령어가 없으면 `yarn install`, 있으면 `yarn run`으로 작동한다.
+ℹ️ `yarn` 명령은 보조 명령어가 없으면 `yarn install`, 있으면 `yarn run`으로 작동한다.
 
 ### yarn.lock
 
-Yarn은 `yarn.lock`이라는 별도의 락 파일(패키지 잠금 파일이라고도 함)을 `add` 혹은 `install` 시 자동으로 생성한다.
+Yarn은 `yarn.lock`이라는 별도의 락 파일(패키지 잠금 파일이라고도 함)을 `yarn add` 혹은 `yarn install` 시 자동으로 생성한다.
 
-기본적인 역할은 npm의 `package-lock.json` 파일과 같다. 실제 설치한 패키지의 버전을 기록할 때 쓰이며, `install` 시 락 파일이 있는 경우 정확히 동일한 버전의 패키지를 설치한다.
+기본적인 역할은 npm의 `package-lock.json` 파일과 같다. 실제 설치한 패키지의 버전을 기록할 때 쓰이며, `yarn install` 시 락 파일이 있는 경우 정확히 동일한 버전의 패키지를 설치한다.
+
+만약 `yarn install` 실행 시:
+
+> Usage Error: The nearest package directory (...) doesn't seem to be part of the project declared in ...
+
+라며 설치가 안된다면 상위 경로에 `package.json`, `yarn.lock`, `.yarnrc.yml` 파일이 있는지 찾아보고, 있으면 삭제해서 해결할 수 있다. 삭제가 어려운 상황일 때 내용이 없는 `yarn.lock` 파일을 만드는 임시 방편이 있긴 함.
 
 ### .yarnrc.yml
 
@@ -572,7 +584,7 @@ yarn upgrade-interactive
 
 ### yarn init vs yarn create
 
-npm과 다르게 Yarn은 `init`과 `create`의 행동이 다르다(npm의 `create`는 `init`의 별칭이다).
+npm에서 `npm init`과 `npm create`는 같은 명령이지만, Yarn에선 다르다.
 
 `yarn init`은 현재 경로에 단순한 Node.js 프로젝트를 생성할 때 사용한다. `package.json`, `.gitignore` 등의 기본적인 파일들이 생성된다.
 

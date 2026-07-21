@@ -149,7 +149,7 @@ logger.error($var$.getMessage(), $var$);
 
 ### JS console logging
 
-자바스크립트 콘솔 로깅용 템플릿.
+JavaScript 콘솔 로깅용 템플릿.
 
 ```js
 // abbreviation: cd, description: console.debug
@@ -165,7 +165,7 @@ console.debug('## $first$SELECTME:', SELECTME);
 console.log('## $first$SELECTME:', SELECTME); // XXX test code
 ```
 
-`$first$`는 `completeSmart()`로 설정하고, 적용 범위는 자바스크립트/타입스크립트의 `statement`를 선택한다.
+`$first$`는 `completeSmart()`로 설정하고, 적용 범위는 JavaScript/TypeScript의 `statement`를 선택한다.
 
 
 -끝-

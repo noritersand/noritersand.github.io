@@ -27,11 +27,11 @@ tags:
 
 Microsoft에서 만든 TypeScript(이하 타입스크립트)의 기본적인 내용을 정리한 글.
 
-타입스크립트는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. 자바스크립트의 슈퍼셋(superset)이라 하기도 한다.
+타입스크립트는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. JavaScript의 슈퍼셋(superset)이라 하기도 한다.
 
-타입스크립트로 작성된 소스는 브라우저나 자바스크립트 엔진이 읽을 수 없기 때문에 컴파일을 통해 자바스크립트 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다.
+타입스크립트로 작성된 소스는 브라우저나 JavaScript 엔진이 읽을 수 없기 때문에 컴파일을 통해 JavaScript 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다.
 
-타입스크립트의 주요 장점은 스크립트를 실행하기 전에 미리 문제를 발견할 수 있다는 점이다. 그러나 이 장점은 자바스크립트의 유연성을 제물로 바친 대가이며, 엄격한 타입 체크가 때로는 생산성을 떨어트리는 단점이 되기도 한다.
+타입스크립트의 주요 장점은 스크립트를 실행하기 전에 미리 문제를 발견할 수 있다는 점이다. 그러나 이 장점은 JavaScript의 유연성을 제물로 바친 대가이며, 엄격한 타입 체크가 때로는 생산성을 떨어트리는 단점이 되기도 한다.
 
 
 ## 설치
@@ -71,7 +71,7 @@ tsc --init
 
 #### tsconfig.json의 주요 설정
 
-- `target`: 컴파일될 자바스크립트 코드의 ECMAScript 버전을 지정한다. `es3`, `es5`, `es6`/`es2015`, `es2016`, `es2017`, `es2018`, `es2019`, `es2020`, ..., `esnext` 중에 하나이며 대소문자는 상관 없는 모양이다.
+- `target`: 컴파일될 JavaScript 코드의 ECMAScript 버전을 지정한다. `es3`, `es5`, `es6`/`es2015`, `es2016`, `es2017`, `es2018`, `es2019`, `es2020`, ..., `esnext` 중에 하나이며 대소문자는 상관 없는 모양이다.
 - `module`: 모듈 시스템을 지정한다. `none`, `commonjs`, `amd`, `umd`, `system`, `es6/es2015`, `es2020`, `es2022`, `esnext`, `node16`, `nodenext` 이것도 대소문자는 가리지 않는 걸로 보인다.
 - `outDir`: 컴파일된 파일들이 저장된 디렉터리 경로
 - `rootDir`: **TODO**
@@ -1081,7 +1081,7 @@ let s: symbol = Symbol('s');
 
 ## 인덱싱된 접근 타입 Indexed Access Types
 
-기존 타입의 특정 프로퍼티에 정의된 타입을 추출하여 새로운 타입을 생성하는 기능. 자바스크립트의 괄호 표기법(Bracket Notation)을 타입 레벨에서 활용하여, 복잡하게 중첩된 타입 구조에서 필요한 부분만 쏙 빼오는 문법이다.
+기존 타입의 특정 프로퍼티에 정의된 타입을 추출하여 새로운 타입을 생성하는 기능. JavaScript의 괄호 표기법(Bracket Notation)을 타입 레벨에서 활용하여, 복잡하게 중첩된 타입 구조에서 필요한 부분만 쏙 빼오는 문법이다.
 
 ```ts
 interface Database {
@@ -1155,7 +1155,7 @@ foo4 = 'd';
 // foo4 = 'g'; // Type '"g"' is not assignable to type 'keyof BType'.
 ```
 
-그러니까 `keyof AType`은 `'a' | 'b'`, `keyof BType`은 `'c' | 'd'`가 되는 식이다. 자바스크립트의 `Object.keys()`와 유사하지만, 런타임에는 존재하지 않는 문법이므로 출력에 직접 사용할 수는 없다:
+그러니까 `keyof AType`은 `'a' | 'b'`, `keyof BType`은 `'c' | 'd'`가 되는 식이다. JavaScript의 `Object.keys()`와 유사하지만, 런타임에는 존재하지 않는 문법이므로 출력에 직접 사용할 수는 없다:
 
 ```ts
 console.log(keyof Atype); // error TS1005: ',' expected.

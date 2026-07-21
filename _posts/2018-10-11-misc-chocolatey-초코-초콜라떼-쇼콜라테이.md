@@ -95,7 +95,7 @@ choco upgrade chocolatey
 choco upgrade all
 ```
 
-### source(패키지 저장소) 보기/설정
+### source(패키지 원격 저장소) 보기/설정
 
 ```bash
 # default source 보기
@@ -108,12 +108,16 @@ choco source add -n=bob -s="https://somewhere/out/there/api/v2/"
 ### 패키지 조회/검색
 
 ```bash
-# 'jdk'가 포함된 패키지 검색
-choco find jdk
+# 원격 저장소에서 패키지 검색
+# 별칭은 search
+choco find 패키지이름
 
-# 로컬이나 원격 저장소에서 패키지를 찾고, 해당 패키지의 자세한 정보를 출력
-# 별칭은 info
-choco search jdk
+# 패키지 정보를 상세 출력한다
+# search 패키지이름 --exact --verbose 의 별칭
+choco info 패키지이름
+
+# 패키지의 로컬 정보만 출력
+choco info 패키지이름 --local-only
 ```
 
 

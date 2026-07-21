@@ -139,7 +139,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Response/text
 
 https://developer.mozilla.org/en-US/docs/Web/API/Response/json
 
-`Response.prototype.text()` 메서드와 비슷한데, 이 쪽은 응답값이 문자열 대신 자바스크립트 객체로 반환된다는 점이 다르다. 실제 반환값이 Promise 객체라는 것은 동일하다.
+`Response.prototype.text()` 메서드와 비슷한데, 이 쪽은 응답값이 문자열 대신 JavaScript 객체로 반환된다는 점이 다르다. 실제 반환값이 Promise 객체라는 것은 동일하다.
 
 ### Response.prototype.blob()
 

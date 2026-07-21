@@ -20,7 +20,7 @@ tags:
 - 'parent'는 탑(혹은 메인) 프레임, body 내에 iframe을 갖는 페이지를 뜻한다.
 - 'child'는 parent의 body 내에 있는 iframe을 뜻한다.
 
-## child나 parent에서 서로의 자바스크립트 객체나 DOM 객체에 접근 불가
+## child나 parent에서 서로의 JavaScript 객체나 DOM 객체에 접근 불가
 
 동일 출처 정책 위반으로 브라우저가 차단함. parent와 child간 상호작용은 거의 불가능하다고 봐야 한다.
 
