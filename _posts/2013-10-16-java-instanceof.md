@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-`instanceof`는 자바에서 제공하는 연산자의 일종으로, 참조변수가 참조하고 있는 인스턴스의 실제 타입을 알아보기 위해 사용한다.
+`instanceof`는 Java에서 제공하는 연산자의 일종으로, 참조변수가 참조하고 있는 인스턴스의 실제 타입을 알아보기 위해 사용한다.
 
 ```java
 A instanceof b // A가 B클래스로 만들어진 인스턴지인지 여부를 boolean 값으로 반환

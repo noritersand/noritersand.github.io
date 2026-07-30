@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-15 13:46:15 +0900
-title: '[Windows] 윈도우 명령 프롬프트 명령어 aka CMD'
+title: '[Windows] Windows 명령 프롬프트 명령어 aka CMD'
 categories:
   - windows
 tags:
@@ -16,14 +16,14 @@ tags:
 
 #### 참고 문서
 
-- [윈도우 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
+- [Windows 사용자라면? 꼭 알아야 할 명령 프롬프트 명령 14가지!](https://sergeswin.com/961)
 
 
 ## 개요
 
-명령 프롬프트(윈도우 기본 셸인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
+명령 프롬프트(Windows 기본 셸인 Command prompt commands, 통칭 CMD)에서 자주 쓰이는 명령어 모음. 대부분 Powershell에서도 쓸 수 있는 명령어들이다.
 
-여담으로 윈도우 설치 화면(별도의 설치 디스크로 부팅하면 설치할 디스크와 파티션을 설정하던 그 화면)에서는 `shift + f10`으로 cmd에 진입할 수 있음.
+여담으로 Windows 설치 화면(별도의 설치 디스크로 부팅하면 설치할 디스크와 파티션을 설정하던 그 화면)에서는 `shift + f10`으로 cmd에 진입할 수 있음.
 
 
 ## 문법
@@ -55,7 +55,7 @@ set a=1 # 환경 변수 a 추가
 dir | find "Videos" # "Videos"를 포함하는 라인만 출력
 ```
 
-`find` 뒤에 오는 큰따옴표로 감싸진 문자열을 포함하는 라인만 출력한다. 윈도우답지 않게 대소문자를 구분함.
+`find` 뒤에 오는 큰따옴표로 감싸진 문자열을 포함하는 라인만 출력한다. Windows답지 않게 대소문자를 구분함.
 
 ### findstr
 
@@ -131,7 +131,7 @@ taskkill /f /pid 5888
 
 ### diskpart
 
-윈도우 전통의 디스크 관리 명령어. 디스크, 파티션, 볼륨 등을 확인하고 지정/변경할 수 있다.
+Windows 전통의 디스크 관리 명령어. 디스크, 파티션, 볼륨 등을 확인하고 지정/변경할 수 있다.
 
 ```
 Microsoft Windows [Version 10.0.18363.535]

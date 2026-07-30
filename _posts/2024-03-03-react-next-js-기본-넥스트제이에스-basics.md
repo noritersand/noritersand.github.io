@@ -24,7 +24,7 @@ tags:
 
 - Next.js 14.x.x
 - Next.js 15.x.x
-- 타입스크립트를 사용한다 가정하고 작성함
+- TypeScript를 사용한다 가정하고 작성함
 
 
 ## 개요
@@ -81,7 +81,7 @@ root
 - `src/pages/index.tsx`가 루트 경로 인덱스 파일이다.
 - 파일 이름 기반 라우팅을 사용한다. URL이 `A/B`인 경우 `src/pages/A/B.tsx` 파일을 찾는다.
 - 서버 사이드 렌더링은 있지만 서버 컴포넌트는 없다.
-- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 리액트 렌더링 계층에서 가장 상위에 위치한다.
+- `_app.tsx`는 모든 페이지를 감싸는 루트 컴포넌트이며 React 렌더링 계층에서 가장 상위에 위치한다.
 - `_document.tsx`가 SSR 시점의 HTML 뼈대룰 작성하는 파일이다.
 - 데이터 페칭(data fetching)으로 `getServerSideProps()`, `getStaticProps()`, `getInitialProps()` 등의 API를 사용한다.
 
@@ -236,7 +236,7 @@ export default nextConfig
 
 #### reactStrictMode
 
-리액트의 Strict Mode를 활성화할지를 결정하는 프로퍼티.
+React의 Strict Mode를 활성화할지를 결정하는 프로퍼티.
 
 #### output
 
@@ -509,7 +509,7 @@ export default function Page() {
 
 ### Hydration
 
-리액트에서 *Hydration*이란 서버에서 렌더링된 초기 HTML과 클라이언트에서 실행되는 JavaScript가 연결되는 과정을 말한다. 이는 브라우저에서 실행될 JavaScript 코드가 없다면 hydration이 필요하지 않다는 것을 의미한다.
+React에서 *Hydration*이란 서버에서 렌더링된 초기 HTML과 클라이언트에서 실행되는 JavaScript가 연결되는 과정을 말한다. 이는 브라우저에서 실행될 JavaScript 코드가 없다면 hydration이 필요하지 않다는 것을 의미한다.
 
 앞서 언급한 서버 컴포넌트의 제약 사항을 살펴보면, 모두 브라우저에서의 사용자 상호작용과 관련된 내용들이다. 이를 통해 서버 컴포넌트에는 브라우저에서 실행될 JavaScript가 포함되지 않는다는 것을 알 수 있다. 따라서 hydration이 필요한 컴포넌트는 오직 `'use client'` 디렉티브를 선언한 클라이언트 컴포넌트라는 말이 된다.
 
@@ -532,14 +532,14 @@ export default function Page() {
 
 `'use server'` 지시어는 서버 측에서 실행될 함수나 파일을 만들 때 사용하며 이를 **서버 함수**라 한다. 지시어는 함수나 파일의 맨 위에 위치해야 한다.
 
-사실 이것은 리액트의 기능이다:
+사실 이것은 React의 기능이다:
 
 - [Server Functions – React](https://react.dev/reference/rsc/server-functions)
 - ['use server' directive – React](https://react.dev/reference/rsc/use-server)
 
 서버 함수는 라우트 핸들러와 기능적으로 유사하며, 호출 방식과 문법만 다를 뿐 대부분의 경우 대체가 가능하다. 단, URL 기반 API가 필요할 때는 라우트 핸들러를 사용하는 것이 적절하다.
 
-ℹ️ 리액트는 이 기능을 서버 액션(Server Action)이라 처음 소개했지만, 지금은 서버 함수(Server Functions)로 이름을 바꿨다. [넥스트 도움말](https://nextjs.org/docs/app/guides/forms)에 서버 액션이란 용어가 아직 남아있긴 하는데, 서버 함수를 지칭하는 게 맞다.
+ℹ️ React는 이 기능을 서버 액션(Server Action)이라 처음 소개했지만, 지금은 서버 함수(Server Functions)로 이름을 바꿨다. [넥스트 도움말](https://nextjs.org/docs/app/guides/forms)에 서버 액션이란 용어가 아직 남아있긴 하는데, 서버 함수를 지칭하는 게 맞다.
 
 ### 데이터 받아오기 Data Fetching
 

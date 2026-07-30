@@ -645,7 +645,7 @@ System Modifier keys:
 
 ### $event
 
-이벤트 핸들러에 전달하는 그 Event 인스턴스다. 뷰 표현식에서는 `$event`로 명시한다.
+이벤트 핸들러에 전달하는 그 Event 인스턴스다. Vue 표현식에서는 `$event`로 명시한다.
 
 ```html
 <button type="button" @click="search($event)">push-me</button>

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-21 13:43:45 +0900
-title: '[Windows] 파워셸 스크립팅: 기본'
+title: '[Windows] PowerShell 스크립팅: 기본'
 categories:
   - windows
 tags:
@@ -28,10 +28,10 @@ tags:
 
 ## 개요
 
-파워셸에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
+PowerShell에서 스크립트를 작성하고 사용하는 방법과 문법 등을 정리한 글.
 
 
-## 파워셸 최신 버전 설치하기
+## PowerShell 최신 버전 설치하기
 
 ```bash
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
@@ -61,7 +61,7 @@ echo $env:path
 $env:path
 ```
 
-명령어 설명은 [여기](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)에서.
+명령어 설명은 [이 블로그 내부 링크 \| PowerShell 스크립팅: 자주 사용하는 명령어(cmdlet)](/windows/windows-powershell-스크립팅-자주-사용하는-명령어-commands-cmdlet/)에서.
 
 ### 로컬 환경 변수 추가/삭제
 
@@ -113,7 +113,7 @@ Stop-Process -Name 'SoundSwitch'
 Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 ```
 
-이 스크립트를 실행하면 되는데, 문제는 파워셸 스크립트 파일은 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 파워셸 스크립트를 실행한다:
+이 스크립트를 실행하면 되는데, 문제는 PowerShell 스크립트 파일은 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 스크립트를 실행한다:
 
 ```bash
 # restart-soundswitch.bat
@@ -143,7 +143,7 @@ gv abc
 
 ### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
 
-파워셸에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
+PowerShell에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
 
 ```bash
 $i = 5
@@ -432,7 +432,7 @@ Start-Job -ScriptBlock {Get-Process -Name pwsh}
 
 ## 명령어 Cmdlet
 
-[이 블로그 내부 링크 \| 파워셸 스크립팅: 자주 사용하는 명령어](/windows/windows-파워셸-스크립팅-자주-사용하는-명령어-powershell-commands-cmdlet/)
+[이 블로그 내부 링크 \| PowerShell 스크립팅: 자주 사용하는 명령어](/windows/windows-powershell-스크립팅-자주-사용하는-명령어-commands-cmdlet/)
 
 
 ## CmdletBinding()
@@ -532,7 +532,7 @@ switch ('a') {
 }
 ```
 
-`break`도 쓸 수 있는데, 파워셸에선 자바나 JavaScript와 다르게 다음 실행문으로 이어지는 것을 막는게 아니라 `switch`를 중단하는 것을 의미한다. 웬 뜬금없이 중단이냐 하겠지만 파워셸의 `switch`는 파라미터의 수 만큼 반복한다.
+`break`도 쓸 수 있는데, PowerShell에선 Java나 JavaScript와 다르게 다음 실행문으로 이어지는 것을 막는게 아니라 `switch`를 중단하는 것을 의미한다. 웬 뜬금없이 중단이냐 하겠지만 PowerShell의 `switch`는 파라미터의 수 만큼 반복한다.
 
 아래를 실행해 보면:
 
@@ -569,7 +569,7 @@ function Get-PSVersion {
 }
 ```
 
-함수 정의는 단순히 커맨드라인에서 함수 리터럴을 입력하면 된다. 하지만 이렇게 하면 현재 세션에만 유효한 함수가 되므로, [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 작성하거나 [스크립트 모듈](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/10-script-modules?view=powershell-7.2)로 등록한다.
+함수 정의는 단순히 커맨드라인에서 함수 리터럴을 입력하면 된다. 하지만 이렇게 하면 현재 세션에만 유효한 함수가 되므로, [PowerShell 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 작성하거나 [스크립트 모듈](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/10-script-modules?view=powershell-7.2)로 등록한다.
 
 프로파일은 일단 한 번 추가하면 `$PROFILE` 변수에서 파일 경로를 찾을 수 있음:
 
@@ -822,14 +822,14 @@ function Connect-RemoteServer {
 
 [Types - PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/scripting/lang-spec/chapter-04?view=powershell-7.5)
 
-파워셸에서 지원하는 데이터 타입은 아래와 같다:
+PowerShell에서 지원하는 데이터 타입은 아래와 같다:
 
 - Special types
   - The void type
   - The null type
   - The object type
 - Value types
-  - Boolean: 파워셸에서 불리언 값은 `$true`, `$false`로 표현함
+  - Boolean: PowerShell에서 불리언 값은 `$true`, `$false`로 표현함
   - Character
   - Integer
   - Real number

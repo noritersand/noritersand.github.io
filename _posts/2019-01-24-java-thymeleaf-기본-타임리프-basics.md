@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2019-01-24 15:04:00 +0900
-title: '[Java] 타임리프 기본'
+title: '[Java] Thymeleaf 기본'
 categories:
   - java
 tags:
@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-자바기반 템플릿 엔진인 타임리프 사용법 정리.
+Java 기반 템플릿 엔진인 Thymeleaf 사용법 정리.
 
 
 ## HTML 템플릿
@@ -570,7 +570,7 @@ Note that the th:if attribute will not only evaluate boolean conditions. Its cap
 </table>
 ```
 
-위에서 `iterStat`이란 반복문의 상태를 알 수 있는 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 타임리프는 요소가 할당되는 변수의 이름 뒤에 'Stat'을 붙여서 자동으로 정의한다. 위 예시의 경우 `iterStat`이 생략되면 status 변수는 `prodStat`이 된다.
+위에서 `iterStat`이란 반복문의 상태를 알 수 있는 status 변수다. `th:each`에서 status 변수가 명시되지 않으면 Thymeleaf는 요소가 할당되는 변수의 이름 뒤에 'Stat'을 붙여서 자동으로 정의한다. 위 예시의 경우 `iterStat`이 생략되면 status 변수는 `prodStat`이 된다.
 
 #### status 변수의 프로퍼티:
 
@@ -739,7 +739,7 @@ Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Access to reque
   ...
 ```
 
-아마 파라미터 말고도 더 있을것 같은데, 타임리프의 보안정책으로 추정되며 escape 표현식(`th:text`, `[[...]]`)에선 아무 문제 없다:
+아마 파라미터 말고도 더 있을것 같은데, Thymeleaf의 보안정책으로 추정되며 escape 표현식(`th:text`, `[[...]]`)에선 아무 문제 없다:
 
 ```html
 <span th:text="${#request.getParameter('productNumber')}"></span>

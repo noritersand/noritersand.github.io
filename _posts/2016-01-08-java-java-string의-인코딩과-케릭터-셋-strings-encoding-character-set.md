@@ -22,7 +22,7 @@ tags:
 
 ## 개요
 
-자바 `String`의 인코딩과 케릭터 셋에 대한 내용 정리. 
+Java `String`의 인코딩과 케릭터 셋에 대한 내용 정리. 
 
 이 문서에서 인코딩 규칙은 '인코딩'으로, 문자와 숫자 간 변환 과정은 '부호화'와 '복호화'로 표기한다.
 
@@ -75,7 +75,7 @@ System.out.println(new String(bs2, "euc-kr")); // �������ㅼ��
 
 ### String은 인코딩이 없다
 
-자바에서 `String` 객체는 내부적으로 문자를 UTF-16으로 표현한다.
+Java에서 `String` 객체는 내부적으로 문자를 UTF-16으로 표현한다.
 
 인터넷에서 `String`의 인코딩 변환 방법을 검색하면 이런 결과들이 나오곤 하는데:
 
@@ -89,7 +89,7 @@ log.debug("convertedText: {}", convertedText); // 12 ab 媛���
 
 **결과부터 말하면 엉터리다**. 얼핏 보기엔 UTF-8에서 EUC-KR 인코딩으로 변경하는 것처럼 보이지만 실상은 그렇지 않다.
 
-`originalText`는 플랫폼이나 실제 입력된 값을 자바가 알아서 관리하는 `String` 값이다. 내부적으로는 UTF-16으로 다뤄지긴 하지만 개발자가 신경쓰지 않아도 된다.
+`originalText`는 플랫폼이나 실제 입력된 값을 Java가 알아서 관리하는 `String` 값이다. 내부적으로는 UTF-16으로 다뤄지긴 하지만 개발자가 신경쓰지 않아도 된다.
 
 `originalText.getBytes(StandardCharsets.UTF_8)`는 문자열을 UTF-8 바이트 배열로 부호화하고 그 배열을 반환한다. 
 

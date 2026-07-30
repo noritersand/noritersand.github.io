@@ -24,14 +24,14 @@ tags:
 
 ## 개요
 
-Winget에서 좀 더 발전된 패키지(혹은 애플리케이션) 관리 툴. 윈도우 전용이다.
+Winget에서 좀 더 발전된 패키지(혹은 애플리케이션) 관리 툴. Windows 전용이다.
 
 
 ## 설치
 
 [https://chocolatey.org/install#individual](https://chocolatey.org/install#individual)
 
-파워셸(관리자 권한)에서 다음 줄 실행:
+PowerShell(관리자 권한)에서 다음 줄 실행:
 
 ```bash
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))

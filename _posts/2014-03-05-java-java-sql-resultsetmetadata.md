@@ -31,7 +31,7 @@ int cols = resultMetaData.getColumnCount(); // 필드 수 구하기
 ## 주요 메서드
 
 - `getCatalogName(int column)`: 주어진 컬럼의 이름을 돌려준다.
-- `getColumnClassName(int column)`: 주어진 컬럼의 객체를 저장할 때 사용되는 자바 클래스 이름을 돌려준다.
+- `getColumnClassName(int column)`: 주어진 컬럼의 객체를 저장할 때 사용되는 Java 클래스 이름을 돌려준다.
 - `getColumnCount()`: 컬럼의 개수를 돌려준다.
 - `getColumnDisplaySize(int column)`: 주어진 컬럼의 최대 문자 개수를 돌려준다.
 - `getColumnLabel(int column)`: 주어진 컬럼의 권장 타이틀을 돌려준다.

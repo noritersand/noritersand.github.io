@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워셸 스크립팅: 자주 사용하는 명령어(cmdlet)'
+title: '[Windows] PowerShell 스크립팅: 자주 사용하는 명령어(cmdlet)'
 categories:
   - windows
 tags:
@@ -23,12 +23,12 @@ tags:
 
 ## 개요
 
-악의축에서 갓갓으로 거듭나고 있는 마소의 파워셸 명령어 정리 글.
+악의축에서 갓갓으로 거듭나고 있는 마소의 PowerShell 명령어 정리 글.
 
-파워셸 명령어는 *Cmdlet*이라 부른다. 'command-let'으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
+PowerShell 명령어는 *Cmdlet*이라 부른다. 'command-let'으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
 
-## 파워셸 명령어 기본 별칭
+## PowerShell 명령어 기본 별칭
 
 ```
 ? -> Where-Object                 % -> ForEach-Object               ac -> Add-Content
@@ -193,7 +193,7 @@ Get-Process 'SoundSwitch'
 프로세스 시작. 기본 별칭은 `saps`.
 
 ```bash
-Start-Process powershell –verb runAs # 관리자 권한으로 파워셸 실행
+Start-Process powershell –verb runAs # 관리자 권한으로 PowerShell 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
@@ -389,10 +389,10 @@ Get-Variable -Include m*, p*
 
 ### Get-Host
 
-명령어를 입력하고 있는 호스트 프로그램(= 파워셸)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
+명령어를 입력하고 있는 호스트 프로그램(= PowerShell)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
 ```bash
-# 파워셸 버전 확인하기
+# PowerShell 버전 확인하기
 Get-Host | Select-Object Version
 ```
 
@@ -488,7 +488,7 @@ Set-Alias grep findstr
 Set-Alias -Name grep -Value findstr
 ```
 
-이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [파워셸 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.4)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [PowerShell 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.4)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
@@ -514,7 +514,7 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 다른 명령어나 스크립트에서 발생하는 암묵적인 출력은 `Write-Output`을 통한 출력이다.
 
 ```bash
-# 파워셸 설치 경로 출력
+# PowerShell 설치 경로 출력
 Write-Output $PSHOME
 
 # 비어있는 파일 생성. 'touch'와 같음
@@ -525,7 +525,7 @@ Write-Output $null >> dummy-for-commit.txt
 
 기본 별칭은 없음. 오직 호스트 출력만을 위한 명령어. `Write-Output`과 달리 파이프라인에 보내지 않고 호스트에 직접 쓴다. 따라서 다른 cmdlet으로 파이프하거나 변수 할당은 불가능. 대신 색이나 구분자 등을 지정할 수 있다.
 
-ℹ️ 파워셸에서 호스트란 파워셸 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
+ℹ️ PowerShell에서 호스트란 PowerShell 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
 
 ```bash
 PS> Write-Host '$abc:'$abc
@@ -573,7 +573,7 @@ tree | Out-File -Encoding utf8 -FilePath tree.md
 Invoke-WebRequest -Uri "https://google.com"
 
 # 헤더와 바디를 지정하는 방법
-# 백틱(`)은 파워셸에서 줄 바꿈을 의미함
+# 백틱(`)은 PowerShell에서 줄 바꿈을 의미함
 Invoke-WebRequest -Method Get -Uri https://google.com/search `
   -Headers @{ 'Accept' = 'application/json'; 'X-My-Header' = 'Hello World' } `
   -Body @{ 'q' = 'Invoke-WebRequest+headers' }

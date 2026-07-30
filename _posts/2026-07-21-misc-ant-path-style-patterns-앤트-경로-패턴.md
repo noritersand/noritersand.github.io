@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2026-07-21 10:30:30 +0900
-title: '[misc] 앤트 경로 패턴 Ant Path Style Patterns'
+title: '[misc] Ant Path Style Patterns'
 categories:
   - misc
 tags:

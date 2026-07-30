@@ -68,7 +68,7 @@ C:\Program Files\openjdk\jdk-10\bin\javaw.exe
 - `Window` > `Preferences` > `General` > `Contents type` 우측 화면에서 원하는 항목을 선택하고, 'Default encoding'을 `utf-8`로 변경 후 'update' 버튼 클릭
 
 
-## 자바독 자동 완성
+## Javadoc 자동 완성
 
 `Window` > `Preferences` > `Java` > `Code Style` > `Code Templates` 메뉴로 이동하고 항목 중 Types의 Edit 창을 열어서 다음처럼 작성한다.
 
@@ -111,7 +111,7 @@ ${id:date('yyyy-MM-dd')}
 
 ## Syntax Coloring
 
-자바 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window` > `Preferences` > `Java` > `Editor` > `Syntax Coloring`에서 'Element' 목록 중 'Methods'와 'Inherited method invocations' 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
+Java 메서드 호출 표현식이 눈에 잘 띄도록 변경한다. `Window` > `Preferences` > `Java` > `Editor` > `Syntax Coloring`에서 'Element' 목록 중 'Methods'와 'Inherited method invocations' 수정. **이클립스 버전에 따라 필요 없을 수도 있다.**
 
 
 ## JSP 템플릿

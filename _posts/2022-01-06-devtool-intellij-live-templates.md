@@ -42,7 +42,7 @@ tags:
 
 ![](/images/intellij-live-templates-hi.gif)
 
-윈도우 OS일 때 라이브 템플릿의 단축키는 <kbd>ctrl + space</kbd>이며 그 다음 (필요하면 방향키로 이동해서) <kbd>enter</kbd> 혹은 <kbd>tab</kbd>으로 선택한다.
+Windows일 때 라이브 템플릿의 단축키는 <kbd>ctrl + space</kbd>이며 그 다음 (필요하면 방향키로 이동해서) <kbd>enter</kbd> 혹은 <kbd>tab</kbd>으로 선택한다.
 
 
 ## 템플릿 커스터마이징

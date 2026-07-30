@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-03-19 18:27:24 +0900
-title: '[Windows] 파워셸에서 SSH를: OpenSSH'
+title: '[Windows] PowerShell에서 SSH를: OpenSSH'
 categories:
   - windows
 tags:
@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-2018년에 윈도우 정식 기능으로 포함된 오픈 소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
+2018년에 Windows 정식 기능으로 포함된 오픈 소스인 OpenSSH 관련 간단 정리글. OpenSSH는 하위 기능으로 `ssh`, `sftp`, `ssh-keygen` 등을 포함하고 있다.
 
 
 ## SSH란?
@@ -53,17 +53,17 @@ $ service ssh status
 
 ## ssh
 
-putty는 안녕. 윈도우는 이제 터미널(앱)과 파워셸이다.
+putty는 안녕. Windows는 이제 터미널(앱)과 PowerShell이다.
 
 우선 설치를 해보자.
 
 ### GUI
 
-윈도우 설정 > 앱 > 선택적 기능 > 선택적 기능 추가 > 'OpenSSH 클라이언트' 검색해서 설치
+Windows 설정 > 앱 > 선택적 기능 > 선택적 기능 추가 > 'OpenSSH 클라이언트' 검색해서 설치
 
 ### CLI
 
-파워셸(관리자 권한)에서 다음 줄 실행:
+PowerShell(관리자 권한)에서 다음 줄 실행:
 
 ```bash
 # OpenSSH 설치
@@ -111,13 +111,13 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 
 1. 탐색기에서 파일 속성 > 보안 > 고급
 2. 상속 사용 안 함 > '이 개체에서 상속된 사용 권한을 모두 제거합니다.'
-3. 추가 > 보안 주체 선택 > 윈도우 계정명 적고 확인
+3. 추가 > 보안 주체 선택 > Windows 계정명 적고 확인
 4. 기본 권한 중 '읽기 및 실행', '읽기'만 체크
 5. 끟
 
 ### CLI
 
-아래 스크립트를 `ps1` 파일로 만들고 파워셸에서 실행한다:
+아래 스크립트를 `ps1` 파일로 만들고 PowerShell에서 실행한다:
 
 ```bash
 # Set Key File Variable:
@@ -297,7 +297,7 @@ sftp> exit
 - `-p`: 원본 파일의 수정 시간, 접근 권한, 소유권 같은 메타데이터를 그대로 보존(preserve)한다.
 - `-R`: 디렉터리 내의 모든 파일과 하위 디렉터리를 재귀적(recursive)으로 전송한다.
 
-파워셸에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
+PowerShell에서 명렁어 한 줄로 업로드하는 건 못찾음. WSL에선 [여기](https://stackoverflow.com/questions/16721891/single-line-sftp-from-terminal) 보면 됨.
 
 ### 자주 쓰는 명령어
 

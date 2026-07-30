@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-WSL은 가상 머신 등의 설정 없이 윈도우 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
+WSL은 가상 머신 등의 설정 없이 Windows 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
 
 
 ## 설치
@@ -40,7 +40,7 @@ wsl -l -v
 
 버전 확인해서 2가 아니면 뭔가 잘못된 거니까 가이드 보고 다시 설치하자.
 
-그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 파워셸이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
+그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 PowerShell이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
 
 
 ## 서브시스템의 실제 경로
@@ -49,12 +49,12 @@ WSL1: 루트의 실제 경로는 설치한 서브시스템별로 다르지만, �
 
 예를 들어 우분투는 `C:\Users\norit\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs` 요렇게 됨.
 
-**WSL2**: 버전 2에선 셸에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 윈도우 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl.localhost` 혹은 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
+**WSL2**: 버전 2에선 셸에서 `powershell.exe /c start .`을 입력하면 해당하는 경로로 Windows 탐색기가 열린다. 혹은 실행 대화 상자나 탐색기에서 `\\wsl.localhost` 혹은 `\\wsl$`을 입력하면 OS별 루트 경로에 바로 접근할 수 있다.
 
 
 ## WSL에서 호스트 디렉터리 접근
 
-우분투 말고는 설치를 안해봐서 정확하진 않으나 `/mnt` 아래에 있는 드라이브들이 호스트(WSL이 설치된 윈도우의 루트 경로) 디렉터리다.
+우분투 말고는 설치를 안해봐서 정확하진 않으나 `/mnt` 아래에 있는 드라이브들이 호스트(WSL이 설치된 Windows의 루트 경로) 디렉터리다.
 
 ```bash
 $ df -h
@@ -65,7 +65,7 @@ drvfs           930G   69G  862G   8% /mnt/d
 ```
 
 
-## [CMD 혹은 파워셸에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
+## [CMD 혹은 PowerShell에서 Linux 명령어 실행](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#run-linux-tools-from-a-windows-command-line)
 
 ```bash
 wsl ls -la
@@ -78,7 +78,7 @@ dir | wsl grep git
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
 
-[개발자를 위한 윈도우 셋업 \| 니콜라스 유튜브](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
+[개발자를 위한 Windows 셋업 \| 니콜라스 유튜브](https://nomadcoders.co/windows-setup-for-developers/lectures/1833)
 
 Zsh는 리눅스 기본 셸인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 
@@ -100,7 +100,7 @@ bash
 
 그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.
 
-윈도우 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json`의 우분투 프로파일에 `"font": { "face": "MesloLGS NF" }`를 추가하면 된다.
+Windows 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json`의 우분투 프로파일에 `"font": { "face": "MesloLGS NF" }`를 추가하면 된다.
 
 [PowerLevel10k](https://github.com/romkatv/powerlevel10k/#oh-my-zsh) 설치는 아래 명령으로:
 
@@ -108,7 +108,7 @@ bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-깃 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정. 터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
+Git 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정. 터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
 
 마지막으로 ls color는 아래 실행:
 
@@ -147,11 +147,11 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 ```
 
 
-## WSL에서 윈도우의 환경 변수 사용하지 않기
+## WSL에서 Windows의 환경 변수 사용하지 않기
 
 [https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
 
-WSL에서 윈도우의 환경 변수를 사용하지 않는 방법이다.
+WSL에서 Windows의 환경 변수를 사용하지 않는 방법이다.
 
 루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
 
@@ -171,7 +171,7 @@ wsl --shutdown
 
 ## WSL에서 Git Credential Manager for Windows 사용하기
 
-윈도우 환경에서는 기본값으로 '자격 증명 관리자'를 사용하는데, 이걸 변경하는 것.
+Windows 환경에서는 기본값으로 '자격 증명 관리자'를 사용하는데, 이걸 변경하는 것.
 
 WSL 터미널에서 아래를 입력하면 된다:
 

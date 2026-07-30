@@ -478,7 +478,7 @@ void(); // SyntaxError: expected expression, got ')'
 - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
 - [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
 
-다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 자바스크립트에선 `?.`라고 쓴다.
+다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 JavaScript에선 `?.`라고 쓴다.
 
 ```
 obj?.prop

@@ -60,7 +60,7 @@ Integer num = Integer.valueOf("65536");
 
 ## Autoboxing
 
-JDK 1.5 이상에서 자바는 기본형과 래퍼 클래스간의 오토박싱(autoboxing), 오토언박싱(autounboxing)을 제공한다.
+JDK 1.5 이상에서 Java는 기본형과 래퍼 클래스간의 오토박싱(autoboxing), 오토언박싱(autounboxing)을 제공한다.
 
 다음을 보면:
 
@@ -69,7 +69,7 @@ int num = 10;
 Integer number = num;
 ```
 
-int 타입 변수인 num을 타입 변환 없이 Integer 타입변수에 할당해도 컴파일 에러가 발생하지 않는다. 원칙적으로는 틀린 코드지만 자바 컴파일러가 다음처럼 코드를 자동으로 변경하며, 이를 오토박싱이라 한다:
+int 타입 변수인 num을 타입 변환 없이 Integer 타입변수에 할당해도 컴파일 에러가 발생하지 않는다. 원칙적으로는 틀린 코드지만 Java 컴파일러가 다음처럼 코드를 자동으로 변경하며, 이를 오토박싱이라 한다:
 
 ```java
 int num = 10;

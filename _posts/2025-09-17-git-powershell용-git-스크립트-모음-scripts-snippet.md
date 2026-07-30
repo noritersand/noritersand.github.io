@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2025-09-17 16:15:33 +0900
-title: '[Git] 파워셸용 깃 스크립트 모음'
+title: '[Git] PowerShell용 Git 스크립트 모음'
 categories:
   - git
 tags:
@@ -46,7 +46,7 @@ Write-Host "Done creating local branches from remote tracking branches."
 
 - 버전: 4.8
 - 💾 파일 이름: `show-merged-branches-multi-repo.ps1`
-- ⚠️ 이 스크립트는 로컬 깃 저장소 경로의 바로 상위 경로에서 실행해야 함. 아니면 `-Path`로 그 경로를 지정하던지...
+- ⚠️ 이 스크립트는 로컬 Git 저장소 경로의 바로 상위 경로에서 실행해야 함. 아니면 `-Path`로 그 경로를 지정하던지...
 
 ```powershell
 param(

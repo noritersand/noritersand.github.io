@@ -19,6 +19,7 @@ tags:
 - iSQL Plus URL: http://ADMIN:5560/isqlplus  (iSQL Plus 실행)
 - iSQL Plus DBA URL: http://ADMIN:5560/isqlplus/dba
 
+
 ## 서버 시작/종료
 
 ```sql
@@ -29,7 +30,8 @@ SQL> shutdown immediate
 SQL> startup
 ```
 
-휴지인스턴스 문제 발생 시 startup 혹은 윈도우 서비스에서 해당 항목을 시작한다
+휴지인스턴스 문제 발생 시 startup 혹은 Windows 서비스에서 해당 항목을 시작한다
+
 
 ## 리스너 시작/종료
 
@@ -51,6 +53,7 @@ c:\> lsnrctl start # start | stop | status
 # SID 확인
 c:\> lsnrctl services
 ```
+
 
 ## 로그인/로그오프/콘솔
 
@@ -77,6 +80,7 @@ SQL> disconn
 SQL> conn sys/[PASSWORD] as sysdba
 ```
 
+
 ## 계정 생성/삭제
 
 ```sql
@@ -99,6 +103,7 @@ sqlplus nextree/nextree[@db_sid]
 sqlplus> @C:\oraclexe\app\oracle\product\11.2.0\server\RDBMS\ADMIN\scott.sql
 ```
 
+
 ## 파일관리
 
 ```sql
@@ -117,6 +122,7 @@ SQL>SELECT * FROM insa;
 -- 스풀 정지
 SQL>spool off
 ```
+
 
 ## 조회
 
@@ -177,6 +183,7 @@ SELECT view_name, text FROM user_views;
 SELECT * FROM seq;
 SELECT * FROM user_sequences;
 ```
+
 
 ## 권한 ROLE
 

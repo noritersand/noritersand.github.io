@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-19 15:04:00 +0900
-title: '[JSP] JSP와 자바 빈즈(Java Beans)'
+title: '[JSP] JSP와 Java Beans'
 categories:
   - jsp
 tags:
@@ -13,11 +13,11 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-자바 빈즈는 JSP 페이지의 로직 부분을 분리해서 코드를 재사용함으로 프로그램의 효율을 높이기 위해 사용한다. 프로그램의 모듈화는 코드를 재사용하므로 프로그램의 작성기간이 단축되고, 이미 사용되던 코드이므로 안정성이 보장되며 유지보수가 쉽다. MVC 패턴에서 자바 빈은 프로그램 로직을 소유할 수 있고 DB와 연동해서 작업을 처리한다.
+Java Beans는 JSP 페이지의 로직 부분을 분리해서 코드를 재사용함으로 프로그램의 효율을 높이기 위해 사용한다. 프로그램의 모듈화는 코드를 재사용하므로 프로그램의 작성기간이 단축되고, 이미 사용되던 코드이므로 안정성이 보장되며 유지보수가 쉽다. MVC 패턴에서 Java 빈은 프로그램 로직을 소유할 수 있고 DB와 연동해서 작업을 처리한다.
 
-## 자바 빈 작성
+## Java 빈 작성
 
-자바 빈(JavaBean)은 데이터를 표현하는 것을 목적으로 하는 자바 클래스다. 컴포넌트와 비슷한 의미로 사용되기도 한다. 자바빈은 자바빈 규칙을 따르며 다음과 같은 형태로 구성된다:
+Java 빈은 데이터를 표현하는 것을 목적으로 하는 Java 클래스다. 컴포넌트와 비슷한 의미로 사용되기도 한다. Java Bean은 Java Bean 규칙을 따르며 다음과 같은 형태로 구성된다:
 
 ```java
 package 패키지명;
@@ -37,7 +37,7 @@ public class Bean_ClassName [ implements java.io.Serializable ] {
 }
 ```
 
-`java.io.Serializable` 인터페이스는 생략 가능하나 빈즈 규약에 명시된 내용으로 자바 빈즈에 저장된 프로퍼티를 포함한 채로 파일시스템에 저장되거나 네트워크로 전송될 수 있도록 객체 직렬화를 제공 해야 하므로 implement 한다.
+`java.io.Serializable` 인터페이스는 생략 가능하나 Beans 규약에 명시된 내용으로 Java Bean즈에 저장된 프로퍼티를 포함한 채로 파일시스템에 저장되거나 네트워크로 전송될 수 있도록 객체 직렬화를 제공 해야 하므로 implement 한다.
 
 위에서 인스턴스 변수(프로퍼티)의 값을 읽고 쓰는 메서드의 이름은 일반적으로 변수명 앞에 get이나 set을 붙이지만 반환값이 boolean일 경우엔 is + 변수명으로 명명한다. (get이라 해도 그닥 문제되는건 없음)
 
@@ -53,7 +53,7 @@ public class Temp {
 
 ## 작성 위치
 
-빈즈(클래스 파일)은 `웹 애플리케이션\WEB-INF\classes` 폴더에 존재해야 한다. 따라서 일반적으로 src 폴더를 하나 더 만들고 소스는 src 폴더 작성하고 컴파일 한 후 해당 클래스 파일은 classes 폴더 아래 패키지 폴더를 만들고 만들어진 패키지 폴더에 복사한다.
+Beans 클래스 파일은 `웹 애플리케이션\WEB-INF\classes` 폴더에 존재해야 한다. 따라서 일반적으로 src 폴더를 하나 더 만들고 소스는 src 폴더 작성하고 컴파일 한 후 해당 클래스 파일은 classes 폴더 아래 패키지 폴더를 만들고 만들어진 패키지 폴더에 복사한다.
 
 예를 들어 `톰캣루트\webapps\study`에서 작업을 하는 경우 `톰캣루트\webapps\study\WEB-INF\classes` 폴더 및 `톰캣루트\webapps\study\WEB-INF\web.xml` 파일을 작성한다. web.xml 파일은 `톰캣루트\webapps\ROOT\WEB-INF` 파일을 복사한다.
 
@@ -97,9 +97,9 @@ JSP 파일 작성 - HelloBean.jsp(study 폴더에 저장)
 <jsp:useBean id="myBean" class="com.test.bean.HelloBean" scope="page" />
 
 <html>
-<head><title>빈즈 테스트</title></head>
+<head><title>Java Beans 테스트</title></head>
 <body>
-<h3>빈즈 테스트</h3>
+<h3>Java Beans 테스트</h3>
 <hr/>
 <%= myBean.getName()%><br/>
 <% myBean.setName("이순신");%><%=myBean.getName()%><br/>
@@ -182,8 +182,8 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 <jsp:setProperty name="myBean" property="name"/>
 <%    myBean.setEmail(request.getParameter("email"));%>
 <html>
-<head><title>빈즈 테스트</title></head> <body>
-<h3>빈즈 테스트</h3>
+<head><title>Java Beans 테스트</title></head> <body>
+<h3>Java Beans 테스트</h3>
 아이디 : <%= myBean.getId()%><br/>
 이름 : <%= myBean.getName()%><br/>
 이메일 : <%= myBean.getEmail()%> <br/>
@@ -193,13 +193,13 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 
 ## 그 외
 
-다음 코드는 Form 태그에서 넘어온 id 필드명과 같은 자바 빈의 `setId()` 메서드를 검색하여 프로퍼티에 값을 할당한다.
+다음 코드는 Form 태그에서 넘어온 id 필드명과 같은 Java Bean의 `setId()` 메서드를 검색하여 프로퍼티에 값을 할당한다.
 
 ```html
 <jsp:setProperty name="myBean" property="id"/>
 ```
 
-만약 폼 필드의 이름이 "username"이고 자바 빈의 프로퍼티가 "name"인 경우에는:
+만약 폼 필드의 이름이 "username"이고 Java Bean의 프로퍼티가 "name"인 경우에는:
 
 ```html
 <jsp:setProperty name="myBean" property="name"/>
@@ -211,7 +211,7 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 <jsp:setProperty name="myBean" property="name" param="username"/>
 ```
 
-만약 폼 필드의 이름과 자바 빈 프로퍼티의 이름이 모두 일치한다면 다음처럼 3, 4, 5번 라인은 다음처럼 한줄로 처리할 수 있다:
+만약 폼 필드의 이름과 Java Bean 프로퍼티의 이름이 모두 일치한다면 다음처럼 3, 4, 5번 라인은 다음처럼 한줄로 처리할 수 있다:
 
 ```html
 <jsp:setProperty name="myBean" property="*"/>
@@ -219,7 +219,7 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 
 이는 각 폼 필드의 이름에 해당하는 `setXxx()` 메서드를 찾아 프로퍼티를 설정하라는 의미이다.
 
-빈즈의 name 프로퍼티를 출력하기 위해서는 다음과 같이 기술 한다:
+Bean의 name 프로퍼티를 출력하기 위해서는 다음과 같이 기술 한다:
 
 ```html
 <% out.println("이름 : " + myBean.getName());%>
@@ -231,7 +231,7 @@ JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
 이름: <jsp:getProperty name="myBean" property="name"/>
 ```
 
-폼에서 넘어온 데이터가 아닌 JSP 페이지에서 값을 자바 빈의 프로퍼티에 설정하기 위해서는 `<jsp:setProperty>` 태그에서 value 속성을 이용한다:
+폼에서 넘어온 데이터가 아닌 JSP 페이지에서 값을 Bean의 프로퍼티에 설정하기 위해서는 `<jsp:setProperty>` 태그에서 value 속성을 이용한다:
 
 ```html
 <% String name = "홍길동";%>

@@ -31,7 +31,7 @@ API에 따라 예외를 내부에서 알아서 처리(`try-catch`)하거나 선�
 
 ## RuntimeException
 
-JVM 실행 중에 발생하는 예외를 의미한다. 자바독을 보면 다음처럼 명시되어 있다.
+JVM 실행 중에 발생하는 예외를 의미한다. Javadoc을 보면 다음처럼 명시되어 있다.
 
 >RuntimeException and its subclasses are uncheckedexceptions. Unchecked exceptions do not need to bedeclared in a method or constructor's throws clause if theycan be thrown by the execution of the method or constructor andpropagate outside the method or constructor boundary.
 

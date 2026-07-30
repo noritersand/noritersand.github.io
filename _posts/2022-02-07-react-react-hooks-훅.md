@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-02-07 00:16:51 +0900
-title: '[React] 리액트 훅 React Hooks'
+title: '[React] React Hooks'
 categories:
   - react
 tags:
@@ -27,7 +27,7 @@ tags:
 
 ## 개요
 
-리액트 훅에 대해 정리한 문서
+React 훅에 대해 정리한 문서
 
 
 ## 훅 호출 규칙
@@ -36,7 +36,7 @@ tags:
 
 - 훅은 컴포넌트의 최상위 수준(= 스코프, 유효범위) 또는 커스텀 훅에서만 호출할 수 있다.
 - 조건문이나 반복문 혹은 기타 중첩 함수 내부에서는 호출할 수 없다.
-- 리액트 함수가 아닌 일반적인 JavaScript 함수에서는 호출할 수 없다.
+- React 함수가 아닌 일반적인 JavaScript 함수에서는 호출할 수 없다.
 
 요약하면 컴포넌트를 정의하는 함수의 가장 상위 스코프와 커스텀 훅에서만, 그리고 그 안에서도 제어문 바깥 지역에서만 호출 가능하다는 것. 위반하면 이런 에러 메시지를 얻게 된다:
 
@@ -101,7 +101,7 @@ const [state, setState] = React.useState(initialState);
 ```
 
 - `initialState`: `state`의 초깃값.
-- `state`: `useState`가 반환한 Reactive state(줄여서 상태 혹은 state). 리액트는 이 값이 변화할 때 자동으로 다시 렌더링한다. 그러니까 state의 변화는 리렌더링을 유발한다.
+- `state`: `useState`가 반환한 Reactive state(줄여서 상태 혹은 state). React는 이 값이 변화할 때 자동으로 다시 렌더링한다. 그러니까 state의 변화는 리렌더링을 유발한다.
 - `setState`: `state`의 값을 변경하기 위해 호출하는 set 함수. 이 함수의 이름은 관행적으로 state 변수의 이름 앞에 `set`을 붙여 사용한다. 예전 버전에선 'modifier'라고 불렀다.
 
 ```jsx
@@ -121,7 +121,7 @@ return (
 
 #### state 값 변경하기
 
-state의 값은 직접 재할당하는 게 아니라 set 함수를 통해서 리액트에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
+state의 값은 직접 재할당하는 게 아니라 set 함수를 통해서 React에 해당 컴포넌트와 관련 컴포넌트들이 다시 렌더링해야 한다고 알리는 방식을 쓴다:
 
 ```jsx
 import {useState} from 'react';
@@ -148,11 +148,11 @@ const handleEvent3 = event => {
 };
 ```
 
-ℹ️ 모든 set 함수가 호출될 때마다 렌더링 되는 것은 아니다. 리액트는 set 함수를 실행 대기 큐에 적재하고 이벤트 핸들러의 모든 코드가 실행되기를 기다린 다음 다시 렌더링한다. [자세한 내용은 여기](https://react.dev/learn/queueing-a-series-of-state-updates#react-batches-state-updates)를 보자.
+ℹ️ 모든 set 함수가 호출될 때마다 렌더링 되는 것은 아니다. React는 set 함수를 실행 대기 큐에 적재하고 이벤트 핸들러의 모든 코드가 실행되기를 기다린 다음 다시 렌더링한다. [자세한 내용은 여기](https://react.dev/learn/queueing-a-series-of-state-updates#react-batches-state-updates)를 보자.
 
 #### 현재 state를 기반으로 업데이트하기
 
-리액트는 state 값의 변경을 비동기로 처리한다. 따라서 다음처럼 현재 state를 기반으로 값을 업데이트 하는 코드는 타이밍 문제가 발생한다:
+React는 state 값의 변경을 비동기로 처리한다. 따라서 다음처럼 현재 state를 기반으로 값을 업데이트 하는 코드는 타이밍 문제가 발생한다:
 
 ```jsx
 import {useState} from 'react';
@@ -161,7 +161,7 @@ const [counter, setCounter] = useState(0);
 const onClick = () => setCounter(counter + 1); // X
 ```
 
-대신 아래처럼 현재값을 받아와 계산하는 코드를 리액트가 실행하도록 콜백 함수로 전달해야 한다:
+대신 아래처럼 현재값을 받아와 계산하는 코드를 React가 실행하도록 콜백 함수로 전달해야 한다:
 
 ```jsx
 setCounter(current => current + 1); // O
@@ -285,7 +285,7 @@ function updateArray(index, replacement) {
 
 set 함수는 비동기적으로 작동하기 때문에 set 함수 호출 직후 state를 읽는 코드는 문제를 일으킬 수 있다.
 
-좀 더 정확히 표현하면, 리액트는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
+좀 더 정확히 표현하면, React는 컴포넌트가 다시 렌더링 될 때까지 state의 값을 갱신하지 않는다. 이 글을 보자 [React GitHub \| this.state는 왜 즉시 갱신되지 않는가?](https://github.com/facebook/react/issues/11527#issuecomment-360199710)
 
 ```jsx
 import {useState} from 'react';
@@ -644,7 +644,7 @@ console.log(rf); // Object { current: "멋에쓰는물건인고" }
 
 ⚠️ `useRef`로 생성한 객체는 `useEffect`에서 변화를 감지할 수 없다. 만약 감지되는 것처럼 보인다면, 그것은 다른 상태값(state)이나 props가 변해 리렌더링이 일어났기 때문이다.
 
-⚠️ 리액트 19 [도움말 페이지](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 리액트는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
+⚠️ React 19 [도움말 페이지](https://react.dev/reference/react/useRef#referencing-a-value-with-a-ref)의 Pitfall 항목을 보면, `ref.current`를 렌더링 중에 읽거나 쓰지 말라고 권장한다. 왜때문이냐면 React는 내가 만드는 함수가 [순수 함수처럼 행동](https://react.dev/learn/keeping-components-pure)하길 기대하기 때문이라나?
 
 #### 렌더링을 유발하지 않는 별도의 상태값
 
@@ -694,11 +694,11 @@ export default function App() {
 }
 ```
 
-ℹ️ 리액트는 렌더링 때마다 변경된 DOM 노드를 `ref`로 전달한다고 한다.
+ℹ️ React는 렌더링 때마다 변경된 DOM 노드를 `ref`로 전달한다고 한다.
 
 #### forwardRef
 
-ℹ️ 리액트 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
+ℹ️ React 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
 
 [https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19](https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19)
 
@@ -769,13 +769,13 @@ export default function ParentComponent() {
 
 ## 이펙트 훅 Effect Hooks
 
-이펙트 훅은 이펙트(effect)를 통해 컴포넌트를 *외부 시스템*(네트워크, 브라우저 DOM, 애니메이션 등 리액트가 제어하기 않는 모든 코드)과 연결하고 동기화하는데 사용한다. 
+이펙트 훅은 이펙트(effect)를 통해 컴포넌트를 *외부 시스템*(네트워크, 브라우저 DOM, 애니메이션 등 React가 제어하기 않는 모든 코드)과 연결하고 동기화하는데 사용한다. 
 
 **FIXME** 여기서 이펙트란, 렌더링 자체에 의해 발생하는 부수 효과를 의미하며 일반적은 프로그래밍의 부수 효과와는 다르다. 아마 사용자에 의해 발생하는 어떤 트리거를 이벤트라고 한다면, 어떤 상호 작용 없이도 발생할 수 있는 트리거를 이펙트라고 하는 모양.
 
 ### useEffect
 
-공식 도움말에서는 *컴포넌트를 외부 시스템에 연결한다(connects a component to an external system)*라고 설명한다. 또 다른 설명에서는 *리액트 컴포넌트가 렌더링된 후 부수 효과를 실행하기 위한 훅*이라고 한다.
+공식 도움말에서는 *컴포넌트를 외부 시스템에 연결한다(connects a component to an external system)*라고 설명한다. 또 다른 설명에서는 *React 컴포넌트가 렌더링된 후 부수 효과를 실행하기 위한 훅*이라고 한다.
 
 ```
 React.useEffect(setup)
@@ -827,7 +827,7 @@ useEffect(() => {
 
 🚧 불필요한 이펙트 훅 사용은 코드를 복잡하게 하고 실행 속도를 느려지게 만든다. [이 문서](https://react.dev/learn/you-might-not-need-an-effect)를 참고할 것.
 
-ℹ️ 개발환경에서 Strict Mode(ECMAScript의 엄격 모드와 다름)가 활성화되어 있다면, 리액트는 버그 탐지와 검증을 위해 [설정 코드(setup code)를 실행하기 전에 설정 코드와 정리 코드를 미리 한 번 더 실행한다](https://react.dev/reference/react/useEffect#my-effect-runs-twice-when-the-component-mounts).
+ℹ️ 개발환경에서 Strict Mode(ECMAScript의 엄격 모드와 다름)가 활성화되어 있다면, React는 버그 탐지와 검증을 위해 [설정 코드(setup code)를 실행하기 전에 설정 코드와 정리 코드를 미리 한 번 더 실행한다](https://react.dev/reference/react/useEffect#my-effect-runs-twice-when-the-component-mounts).
 
 ℹ️ 정리 코드(cleanup code)가 필요한 이유는 [이 문서](https://react.dev/learn/synchronizing-with-effects#step-3-add-cleanup-if-needed)를 보자.
 
@@ -962,7 +962,7 @@ export default function ProductPage({ productId, referrer, theme }) {
 
 #### useMemo와 useCallback의 의존성 배열(dependencies)
 
-⚠️ 리액트는 의존성 배열을 '`fn` 내에서 참조되는 모든 반응형 값의 목록'이라고 설명한다. 농담이 아니라, 반드시 함수 내부에서 참조하는 모든 reactive state를 의존성 배열에 추가해야 한다. 그렇지 않으면 함수에서 참조하는 state는 최신 값으로 갱신되지 않는다. 예를 들어:
+⚠️ React는 의존성 배열을 '`fn` 내에서 참조되는 모든 반응형 값의 목록'이라고 설명한다. 농담이 아니라, 반드시 함수 내부에서 참조하는 모든 reactive state를 의존성 배열에 추가해야 한다. 그렇지 않으면 함수에서 참조하는 state는 최신 값으로 갱신되지 않는다. 예를 들어:
 
 ```js
 const [foo, setFoo] = useState(0);
@@ -1028,7 +1028,7 @@ export default function UseCallbackWrongUsages() {
 
 ### useTransition
 
-`useTransition()`은 리액트의 동시성(Concurrent Rendering) 기능을 활용해, 긴급(urgent)하지 않은 상태 업데이트(전환 업데이트, transition)를 백그라운드에서(non-blocking) 처리하도록 하는 훅이다.
+`useTransition()`은 React의 동시성(Concurrent Rendering) 기능을 활용해, 긴급(urgent)하지 않은 상태 업데이트(전환 업데이트, transition)를 백그라운드에서(non-blocking) 처리하도록 하는 훅이다.
 
 시간이 오래 걸리는 상태 업데이트를 `startTransition()`으로 감싸면, 해당 작업이 진행되는 동안에도 UI가 멈추지 않고, 사용자 입력과 같은 긴급한 업데이트를 우선 처리해 응답성을 유지할 수 있다.
 
@@ -1039,20 +1039,20 @@ export default function UseCallbackWrongUsages() {
 
 ### useActionState
 
-폼 태그에 연결해 사용하는 state 관리 훅이다. 액션이라는 용어가 사용된다. 리액트 19에 추가되었다.
+폼 태그에 연결해 사용하는 state 관리 훅이다. 액션이라는 용어가 사용된다. React 19에 추가되었다.
 
 **TODO** https://react.dev/reference/react/useActionState
 
 ### useOptimistic
 
-어떤 작업이 완료될 때까지의 '낙관적'인 상태를 반환하는 훅. 네트워크 요청 같은 비동기 작업이 완료될 때까지 어떤 변화를 화면에 표시할 용도로 사용한다. 리액트 19에 추가되었다.
+어떤 작업이 완료될 때까지의 '낙관적'인 상태를 반환하는 훅. 네트워크 요청 같은 비동기 작업이 완료될 때까지 어떤 변화를 화면에 표시할 용도로 사용한다. React 19에 추가되었다.
 
 **TODO** https://react.dev/reference/react/useOptimistic
 
 
 ## 커스텀 훅 Custom Hooks
 
-커스텀 훅이란 개발자가 정의한 훅으로, 리액트가 제공하는 기본 훅들을 내부에서 호출하는 로직이 포함된 함수를 의미한다.
+커스텀 훅이란 개발자가 정의한 훅으로, React가 제공하는 기본 훅들을 내부에서 호출하는 로직이 포함된 함수를 의미한다.
 
 간단한 예로 아래처럼 작성할 수 있다:
 

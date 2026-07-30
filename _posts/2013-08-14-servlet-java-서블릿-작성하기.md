@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2013-08-14 05:00:00 +0900
-title: '[Servlet] 자바 서블릿 작성하기'
+title: '[Servlet] Java 서블릿 작성하기'
 categories:
   - servlet
 tags:

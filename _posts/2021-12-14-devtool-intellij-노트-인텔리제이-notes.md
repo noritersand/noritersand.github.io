@@ -26,12 +26,12 @@ tags:
 
 인텔리제이 관련 단축키와 설정 등의 간단 정리 글.
 
-자바 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
+Java 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이클립스로 못돌아간다는 전설이 있다고 하더라. ~~뻥임~~
 
 
 ## Ultimate와 Community 버전 간 차이
 
-지원하는 언어나 프레임워크에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 자바 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
+지원하는 언어나 프레임워크에서 차이가 많이 난다. 몇 개만 꼽자면 Community 버전은 Spring, Java EE, JavaScript, TypeScript, Node.js, PHP, SQL 등을 미지원. 사실 순수 Java 프로젝트는 그냥 커뮤니티 버전 써도 됨. (JS 같은 건 VSCODE로 한다 치고)
 
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
@@ -214,7 +214,7 @@ exploded artifacts는 이 패키징 파일의 압축 해제 상태를 의미한�
 
 프로젝트의 작업 단위 혹은 구성 단위를 의미한다. 소스 코드, 리소스, 라이브러리, 빌드 설정 등을 포함하는 논리적 단위다. `Project Structure`에서 설정하며, 각 모듈은 소스 폴더, 의존성, 컴파일 출력 경로 등을 정의한다.
 
-모듈은 소스 코드를 컴파일해서 클래스 파일이나 리소스를 생성하는 데 사용된다. 예를 들어, 웹 앱 프로젝트라면 모듈은 자바 클래스, JSP, HTML, CSS 등을 포함하고, 이를 컴파일해서 `out/production/` 또는 `out/classes/`에 결과물을 만든다. 하나의 프로젝트에는 여러 모듈이 있을 수 있다.
+모듈은 소스 코드를 컴파일해서 클래스 파일이나 리소스를 생성하는 데 사용된다. 예를 들어, 웹 앱 프로젝트라면 모듈은 Java 클래스, JSP, HTML, CSS 등을 포함하고, 이를 컴파일해서 `out/production/` 또는 `out/classes/`에 결과물을 만든다. 하나의 프로젝트에는 여러 모듈이 있을 수 있다.
 
 ### Artifacts는 Modules를 기반으로 생성된다
 
@@ -326,7 +326,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
 - <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
-- <kbd>ctrl + shift+ \ </kbd>: Go to URL Mapping
+- <kbd>ctrl + shift + \ </kbd>: Go to URL Mapping
 
 ### 북마크
 
@@ -356,7 +356,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 - <kbd>ctrl + [</kbd> <kbd>ctrl + ]</kbd>: Move Caret to Code Block Start/End. 코드 블록의 처음 혹은 끝으로 이동하는 기능
 - <kbd>ctrl + shift + [</kbd> <kbd>ctrl + shift + ]</kbd>: Move Caret to Code Block Start/End with Selection. 코드 블록의 처음 혹은 끝으로 이동하면서 그 사이의 코드를 선택한다.
-- <kbd>ctrl + q</kbd>: Quick Documentation 퀵 뷰 창에서 서식이 적용된 자바독 보기
+- <kbd>ctrl + q</kbd>: Quick Documentation 퀵 뷰 창에서 서식이 적용된 javadoc 보기
 - <kbd>ctrl + shift + i</kbd>: Quick Definition. 툴팁창으로 선언부 보기
 - <kbd>ctrl + b</kbd>: 정의된 파일이나 선언부로 이동, 이미 선언부일 땐 참조하는 코드 미리보기
 - <kbd>ctrl + alt + b</kbd>: (인터페이스의) 구현부가 따로 있으면 그 쪽으로, 아니면 선언부로 이동
@@ -376,7 +376,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + alt + shift + t</kbd>: Refactor This. 캐럿 위치 기준으로 소스 리팩토링 하기
 - <kbd>ctrl + j</kbd>: Insert Live Template. 라이브 템플릿 삽입하기
 - <kbd>ctrl + alt + j</kbd>: Surround With Live Template. 선택한 텍스트를 라이브 템플릿으로 감싸
-- <kbd>ctrl + alt + q</kbd>: Toggle Rendered View. 자바독 편집/읽기 모드 토글
+- <kbd>ctrl + alt + q</kbd>: Toggle Rendered View. javadoc 편집/읽기 모드 토글
 - <kbd>ctrl + shift + t</kbd>: Go To Test. 현재 클래스의 테스트 클래스로 이동하거나 되돌아옴
 - <kbd>ctrl + h</kbd>: Type Hierarchy. 타입 계층 보기
 - <kbd>ctrl + shift + h</kbd>: Method Hierarchy. 메서드 계층 보기
@@ -400,14 +400,14 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 ### 복사/붙이기
 
-- <kbd>ctrl + alt + shift + c</kbd>: Copy Reference. 현재 커서/캐럿/포커스의 위치를 기준으로 상대 경로를 복사한다. 예를 들어자바 클래스의 메서드에 캐럿을 두고 누르면 `패키지/클래스명#메서드명`의 형태로 복사한다. 심볼을 특정할 수 없는 경우엔 `디렉터리/파일명:라인번호`의 형태로 복사한다.
-- <kbd>ctrl + shift + c</kbd>: Copy Absolute Path. 현재 파일의 (윈도우에선 드라이브 문자 `C:`, `D:` 부터 시작하는) 절대 경로를 복사한다.
+- <kbd>ctrl + alt + shift + c</kbd>: Copy Reference. 현재 커서/캐럿/포커스의 위치를 기준으로 상대 경로를 복사한다. 예를 들어 Java 클래스의 메서드에 캐럿을 두고 누르면 `패키지/클래스명#메서드명`의 형태로 복사한다. 심볼을 특정할 수 없는 경우엔 `디렉터리/파일명:라인번호`의 형태로 복사한다.
+- <kbd>ctrl + shift + c</kbd>: Copy Absolute Path. 현재 파일의 (Windows에선 드라이브 문자 `C:`, `D:` 부터 시작하는) 절대 경로를 복사한다.
 
 ### 빌드, 실행
 
 - <kbd>ctrl + f2</kbd>: 실행 중인 앱 중단
 - <kbd>ctrl + f9</kbd>: 빌드하기
-- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \ </kbd>도 추가함. (윈도우 11 문제 같은데, 어떻게 하면 또 풀린다.)
+- <kbd>ctrl + f10</kbd>: Update Running Application. 런타임이 끝나지 않은 애플리케이션에 어떻게 할 지 묻는 대화창이 나타남. 근데 2023년 3월부터 자꾸 하라는 업데이트는 안하고 IME 툴팁이 나타나서 <kbd>ctrl + alt + \ </kbd>도 추가함. (Windows 11 문제 같은데, 어떻게 하면 또 풀린다.)
 - <kbd>shift + f9</kbd>: Debug 모드로 시작
 - <kbd>shift + f10</kbd>: Run 모드로 시작
 - <kbd>ctrl + shift + f9</kbd>: 어떤 것을 Debug 모드로 시작할지 묻는 대화창이 나타남

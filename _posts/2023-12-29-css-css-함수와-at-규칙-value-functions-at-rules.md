@@ -107,7 +107,7 @@ CSS가 어떻게 작동해야하는지를 정의하는 지시어.
 
 [https://developer.mozilla.org/en-US/docs/Web/CSS/@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
 
-브라우저가 어떤 프로퍼티(+ 프로퍼티 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의한는 방법이다.
+브라우저가 어떤 프로퍼티(+ 프로퍼티 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의하는 방법이다.
 
 ```
 @supports (<supports-condition>) {

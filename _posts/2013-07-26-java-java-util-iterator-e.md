@@ -18,7 +18,7 @@ tags:
 
 ## java.util.Iterator
 
-이터레이터는 자바 컬렉션 프레임워크(Java Collections Framework)에서 Enumeration을 대체하는 인터페이스로 객체들의 집합을 구성하는 각각의 요소를 순차적으로 추출할 때 사용된다. Enumeration과 비교해 메서드명이 개선되었으며 호출측에서 집합의 요소를 삭제할 수 있게 한다.
+이터레이터는 Java 컬렉션 프레임워크(Java Collections Framework)에서 Enumeration을 대체하는 인터페이스로 객체들의 집합을 구성하는 각각의 요소를 순차적으로 추출할 때 사용된다. Enumeration과 비교해 메서드명이 개선되었으며 호출측에서 집합의 요소를 삭제할 수 있게 한다.
 
 ```java
 public interface Iterator<E> {

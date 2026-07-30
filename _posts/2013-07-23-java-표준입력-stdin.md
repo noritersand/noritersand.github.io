@@ -39,7 +39,7 @@ System.out.println(ch); // '1'
 위처럼 `<LINE BREAK>`가 버퍼에 남아버려서 다음과 같은 현상이 발생한다:
 
 ```java
-// OS가 윈도우일 때
+// OS가 Windows일 때
 System.in.read(); //입력대기
 System.in.read(); //\r
 System.in.read(); //\n

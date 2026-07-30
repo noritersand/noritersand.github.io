@@ -27,7 +27,7 @@ tags:
 
 > SWR은 먼저 캐시(stale)로부터 데이터를 반환한 후, fetch 요청(revalidate)을 하고, 최종적으로 최신화된 데이터를 가져오는 전략입니다.
 
-SWR은 Next.js 팀이 만든 리액트 훅으로 `useEffect` 훅을 대체하여 사용할 수 있다.
+SWR은 Next.js 팀이 만든 React 훅으로 `useEffect` 훅을 대체하여 사용할 수 있다.
 
 'SWR'이란 이름은 [HTTP RFC 5861](https://datatracker.ietf.org/doc/html/rfc5861)의 HTTP 캐시 무효 전략인 `stale-while-revalidate`에서 유래되었다고 한다. 
 
@@ -124,7 +124,7 @@ SWR은 키를 기준으로 데이터 고유성을 판단한다. 그런데 만약
 ```js
 // 코드 출처: https://swr.vercel.app/docs/arguments#multiple-arguments
 
-// ❌ 잘못된 방법 - token이 바뀌어도 같은 캐시 사용
+// ⛔ 잘못된 방법 - token이 바뀌어도 같은 캐시 사용
 useSWR('my-awesome-key', key => fetchWithToken(key, token))
 
 // ✅ 올바른 방법 - token마다 별도 캐시

@@ -82,7 +82,7 @@ class Dto implements Serializable {
 }
 ```
 
-인스턴스를 직렬화하여 파일로 내보내는 코드다. 이처럼 자바 직렬화는 ObjectOutputStream의 `writeObject()`를 이용해 아주 간단하게 구현할 수 있다.(BufferedOutputStream은 반드시 거치지 않아도 되는 보조스트림)
+인스턴스를 직렬화하여 파일로 내보내는 코드다. 이처럼 Java 직렬화는 ObjectOutputStream의 `writeObject()`를 이용해 아주 간단하게 구현할 수 있다.(BufferedOutputStream은 반드시 거치지 않아도 되는 보조스트림)
 
 단, 직렬화 대상이 되는 클래스는 반드시 Serializable 인터페이스를 구상화(implements)해야 하는데, 그렇지 않으면 NotSerializableException이 발생한다.
 

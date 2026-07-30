@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-27 17:14:00 +0900
-title: '[React] 리액트 기본'
+title: '[React] React 기본'
 categories:
   - react
 tags:
@@ -31,7 +31,7 @@ tags:
 
 ## 개요
 
-리액트의 기초, 규칙, 문법 등을 정리한 글. 공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
+React의 기초, 규칙, 문법 등을 정리한 글. 공식 문서의 한글화가 매우 잘 돼있다. 튜토리얼은 꼭 한 번 해볼 것.
 
 
 ## 설치
@@ -40,7 +40,7 @@ HTML 파일을 직접 작성할 건지, Node.js로 작업할 건지에 따라 �
 
 ### HTML에서 외부 스크립트로 사용하기
 
-통칭 스크립트 태그 방식 혹은 CDN 방식. 빌드 과정을 생략하고 바로 리액트를 사용하려면 이렇게:
+통칭 스크립트 태그 방식 혹은 CDN 방식. 빌드 과정을 생략하고 바로 React를 사용하려면 이렇게:
 
 ```html
 <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
@@ -75,7 +75,7 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 그게 아니면... React와 React DOM 패키지 정도만 설치해서 바로 개발이 가능하긴 한데, 이러면 JSX를 사용할 수 없고 웹팩이나 번들러를 별도로 설치해야 하는 등 번거로운 작업이 많으니 그냥 CRA, 그것도 아니면 Next.js, Vite 같은 프레임워크를 쓰자.
 
-ℹ️ [React DOM](https://www.npmjs.com/package/react-dom)은 리액트 애플리케이션의 렌더링과 DOM 상호작용을 담당하는 핵심 라이브러리로, 리액트 컴포넌트를 브라우저의 실제 DOM 요소로 변환하고, UI 업데이트와 이벤트 관리를 수행한다.
+ℹ️ [React DOM](https://www.npmjs.com/package/react-dom)은 React 애플리케이션의 렌더링과 DOM 상호작용을 담당하는 핵심 라이브러리로, React 컴포넌트를 브라우저의 실제 DOM 요소로 변환하고, UI 업데이트와 이벤트 관리를 수행한다.
 
 
 ## CRA, Create React App
@@ -86,7 +86,7 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 [Create React App \| Getting Started](https://create-react-app.dev/docs/getting-started/)
 
-리액트 개발 환경을 빠르게 구축해 주는 공식 스캐폴딩(scaffolding) 도구.
+React 개발 환경을 빠르게 구축해 주는 공식 스캐폴딩(scaffolding) 도구.
 
 ```bash
 npx create-react-app APP_NAME
@@ -94,7 +94,7 @@ npx create-react-app APP_NAME
 # yarn dlx create-react-app APP_NAME
 ```
 
-`APP_NAME`을 루트 경로로 하는 리액트 앱이 생성되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
+`APP_NAME`을 루트 경로로 하는 React 앱이 생성되며, 해당 디렉터리로 이동해서 로컬 서버를 기동하거나 빌드, 테스트 등을 진행하면 된다.
 
 ### 초기 파일 구조
 
@@ -105,8 +105,8 @@ root
  └─src
 ```
 
-- `node_modules`: node 패키지 로컬 경로. 리액트 앱 개발에 필수적인 패키지들이 기본으로 설치되어 있다. react, react-dom, react-scripts, webpack, babel, eslin, postcss 등이 포함된다.
-- `src`: 소스 코드가 위치하는 경로. 리액트 컴포넌트, 테스트 파일, CSS 파일과 기타 JavaScript 모듈 등이 포함된다.
+- `node_modules`: node 패키지 로컬 경로. React 앱 개발에 필수적인 패키지들이 기본으로 설치되어 있다. react, react-dom, react-scripts, webpack, babel, eslin, postcss 등이 포함된다.
+- `src`: 소스 코드가 위치하는 경로. React 컴포넌트, 테스트 파일, CSS 파일과 기타 JavaScript 모듈 등이 포함된다.
 - `public`: 정적 파일들이 저장되는 경로다. 유일한 HTML이자 앱의 진입점 역할인 `index.html` 파일이 이 경로에 반드시 있어야 한다. 이 외에 파비콘 이미지, `robots.txt`, `manifest.json` 파일 등이 포함된다. 이 파일들은 빌드 시 `build` 디렉터리로 복사된다(특정 파일은 약간의 내용 수정이 있을 수 있음).
 
 ### CRA: react-scripts
@@ -118,7 +118,7 @@ react-scripts는 CRA에 포함된 스크립트 패키지다(CLI 명령어 패키
 npm exec react-scripts start
 ```
 
-`start`는 리액트 앱을 로컬에서 개발 모드로 기동한다. 개발 모드에서는 빌드 과정이 생략되며 소스 코드를 실시간으로 반영한다는 차이가 있다.
+`start`는 React 앱을 로컬에서 개발 모드로 기동한다. 개발 모드에서는 빌드 과정이 생략되며 소스 코드를 실시간으로 반영한다는 차이가 있다.
 
 ```bash
 # 별칭: `npm run build`.
@@ -141,7 +141,7 @@ npm exec react-scripts test
 npm exec react-scripts eject
 ```
 
-`eject`는 CRA로 구축된 리액트 앱에서 CRA 종속성을 제거하는 명령어다. CRA로 구축한 앱은 웹팩, 바벨, ESLint 등의 설정이 내부에 숨겨진 상태다. 이는 개발자가 복잡한 설정 없이 바로 코드 작성에 집중할 수 있기 위함인데, `eject`는 이 숨겨진 설정들을 직접 제어할 수 있도록 프로젝트 구조를 변경한다.
+`eject`는 CRA로 구축된 React 앱에서 CRA 종속성을 제거하는 명령어다. CRA로 구축한 앱은 웹팩, 바벨, ESLint 등의 설정이 내부에 숨겨진 상태다. 이는 개발자가 복잡한 설정 없이 바로 코드 작성에 집중할 수 있기 위함인데, `eject`는 이 숨겨진 설정들을 직접 제어할 수 있도록 프로젝트 구조를 변경한다.
 
 `eject`를 한 번 실행된 후에 다시 `CRA`로 되돌릴 방법은 버전관리 시스템에서 롤백하는 것 외엔 없다.
 
@@ -225,7 +225,7 @@ function Button({text}) {
 
 ## JSX
 
-JavaScript XML 혹은 JavaScript eXtended. 리액트에서 만들었고 컴파일이 필요한 언어 확장이다. 스크립트 내에서 HTML 태그를 가독성 있게 작성하기 위해 사용한다.
+JavaScript XML 혹은 JavaScript eXtended. React에서 만들었고 컴파일이 필요한 언어 확장이다. 스크립트 내에서 HTML 태그를 가독성 있게 작성하기 위해 사용한다.
 
 ```jsx
 const element = (
@@ -496,7 +496,7 @@ const markup = { __html: '<p>some raw html</p>' };
 return <div dangerouslySetInnerHTML={markup} />;
 ```
 
-리액트에서 마크업 콘텐츠를 날 것 그대로 문서에 포함시키기 위한 속성이다.
+React에서 마크업 콘텐츠를 날 것 그대로 문서에 포함시키기 위한 속성이다.
 
 [도움말](https://react.dev/reference/react-dom/components/common#dangerously-setting-the-inner-html)에선 `{__html}` 객체를 `<div dangerouslySetInnerHTML={{__html: markup}} />` 처럼 인라인으로 생성하지 말고, 아래 예시의 `renderMarkdownToHTML()` 함수와 같이 가능한 한 HTML이 만들어지는 곳 가까이에서 생성(?)하라고 권장한다:
 
@@ -518,11 +518,11 @@ export default function MarkdownPreview({ markdown }) {
 ```
 
 
-## 리액트 엘리먼트
+## React 엘리먼트
 
-리액트의 핵심(이지만 직접 호출할 일은 절대 없는) API인 `React.createElement()`는 객체를 생성하는데 이를 리액트 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
+React의 핵심(이지만 직접 호출할 일은 절대 없는) API인 `React.createElement()`는 객체를 생성하는데 이를 React 엘리먼트라고 하며 DOM을 구성할 때 사용된다.
 
-리액트 엘리먼트 객체를 뜯어보면 대충 이렇게 생겼다:
+React 엘리먼트 객체를 뜯어보면 대충 이렇게 생겼다:
 
 ```js
 {
@@ -553,9 +553,9 @@ React.createElement(type, props, children)
 React.createElement(type, props, children, children2, ...)
 ```
 
-- `type`: 태그 이름 문자열 혹은 리액트 컴포넌트, 리액트 Fragment 중 하나
+- `type`: 태그 이름 문자열 혹은 React 컴포넌트, React Fragment 중 하나
 - `props`: 엘리먼트의 속성을 결정하는 object
-- `children`: 원시 타입 값(보통은 문자열 혹은 숫자) 혹은 리액트 엘리먼트. 원시 타입를 할당하면 텍스트 노드가 된다.
+- `children`: 원시 타입 값(보통은 문자열 혹은 숫자) 혹은 React 엘리먼트. 원시 타입를 할당하면 텍스트 노드가 된다.
 
 만약 직접 호출한다면 아래처럼 사용한다:
 
@@ -596,7 +596,7 @@ const ele = ReactDOM.render(element, rootElement);
 console.log(Object.getPrototypeOf(ele)); // HTMLHeadingElement {...}
 ```
 
-⚠️ 이 함수는 리액트 버전 18부터 지원하지 않는다. `ReactDOM.createRoot()`로 대체되었음. 위 코드는 아래처럼 바꿔야 한다:
+⚠️ 이 함수는 React 버전 18부터 지원하지 않는다. `ReactDOM.createRoot()`로 대체되었음. 위 코드는 아래처럼 바꿔야 한다:
 
 ```js
 const element = React.createElement('h2', null, '뿅뿅');
@@ -616,7 +616,7 @@ ReactDOM.createRoot(domNode)
 ReactDOM.createRoot(domNode, options)
 ```
 
-루트 DOM 노드에 리액트 컴포넌트 트리를 렌더링하는 새 함수. 리액트 버전 18부터 신규 추가되어 `ReactDOM.render()`를 대체한다.
+루트 DOM 노드에 React 컴포넌트 트리를 렌더링하는 새 함수. React 버전 18부터 신규 추가되어 `ReactDOM.render()`를 대체한다.
 
 [React \| createRoot()](https://react.dev/reference/react-dom/client/createRoot#createroot)
 
@@ -628,7 +628,7 @@ const root = createRoot(domNode);
 root.render(<App />);
 ```
 
-이 함수는 리액트의 동시성 모드 기능을 활성화한다. 동시성 모드를 활용하면 렌더링, 인테릭션 처리, 비동기 작업의 속도가 빨라진다고 한다.
+이 함수는 React의 동시성 모드 기능을 활성화한다. 동시성 모드를 활용하면 렌더링, 인테릭션 처리, 비동기 작업의 속도가 빨라진다고 한다.
 
 ℹ️ 서버 사이드 렌더링인 경우 `createRoot()` 대신 `hydrateRoot()`를 사용해야 함
 
@@ -650,12 +650,12 @@ const domNode = document.getElementById('root');
 const root = hydrateRoot(domNode, reactNode);
 ```
 
-ℹ️ 예전에는 `ReactDOM.hydrate()`를 사용했지만 리액트 18부터 `hydrateRoot()`로 대체되었음
+ℹ️ 예전에는 `ReactDOM.hydrate()`를 사용했지만 React 18부터 `hydrateRoot()`로 대체되었음
 
 
 ## 함수 컴포넌트 Function Components
 
-리액트에서 [컴포넌트](https://react.dev/reference/react/Component)란 리액트 앱을 구성하는 최소 단위를 말한다. 컴포넌트의 최소 요구조건은 리액트 엘리먼트를 반환하는 것이다. 그래서 항상 뭔가를 반환한다.
+React에서 [컴포넌트](https://react.dev/reference/react/Component)란 React 앱을 구성하는 최소 단위를 말한다. 컴포넌트의 최소 요구조건은 React 엘리먼트를 반환하는 것이다. 그래서 항상 뭔가를 반환한다.
 
 함수 컴포넌트는 컴포넌트를 정의하는 가장 간단한 방법이며, 함수는 딱 하나의 인수 `props`를 전달 받는다. (간단하지 않은 방법으로는 클래스 문법으로 만드는 **클래스 컴포넌트**가 있는데, 이 글의 예시 중 `Newbie` 혹은 `ShoppingList`에 해당함.)
 
@@ -728,7 +728,7 @@ class App extends React.Component {
 
 ### 폼 바인딩 or 양방향 데이터 바인딩
 
-그런 거 없다. 리액트는 Vue의 `v-model`과 같은 사용자 입력값과 state를 자동으로 동기화하는 장치를 제공하지 않는다. 대신 우리가 직접 이벤트 핸들러를 작성해야 한다:
+그런 거 없다. React는 Vue의 `v-model`과 같은 사용자 입력값과 state를 자동으로 동기화하는 장치를 제공하지 않는다. 대신 우리가 직접 이벤트 핸들러를 작성해야 한다:
 
 ```jsx
 function TextInput() {
@@ -749,7 +749,7 @@ function TextInput() {
 
 요약하면 부모로부터 전달되는 읽기 전용 프로퍼티 집합이다.
 
-리액트는 사용자 정의 컴포넌트의 태그 속성으로 전달된 값을 해당 컴포넌트에 단일 객체로 전달하는데 이 객체를 props라고 한다:
+React는 사용자 정의 컴포넌트의 태그 속성으로 전달된 값을 해당 컴포넌트에 단일 객체로 전달하는데 이 객체를 props라고 한다:
 
 ```jsx
 function Header(props) {
@@ -820,7 +820,7 @@ function Header(props) {
 
 [React \| Passing JSX as children ](https://react.dev/learn/passing-props-to-a-component#passing-jsx-as-children)
 
-HTML에선 여는 태그와 닫는 태그가 존재하며 그 사이에 어떤 내용(content)을 작성할 수 있는 태그를 *바디 있는 태그* 혹은 *컨테이너 태그(container tag)*라고 부른다. 리액트에선 컨테이너 태그의 내용을 컴포넌트에 전달할 때 `props.children`을 사용한다(Vue의 `v-slot` 디렉티브와 비슷).
+HTML에선 여는 태그와 닫는 태그가 존재하며 그 사이에 어떤 내용(content)을 작성할 수 있는 태그를 *바디 있는 태그* 혹은 *컨테이너 태그(container tag)*라고 부른다. React에선 컨테이너 태그의 내용을 컴포넌트에 전달할 때 `props.children`을 사용한다(Vue의 `v-slot` 디렉티브와 비슷).
 
 ```jsx
 // SomeComponent.js
@@ -851,7 +851,7 @@ function App() {
 
 ## React.memo()
 
-`memo()`는 리액트의 고차 컴포넌트(Higher-Order Component)로 컴포넌트의 props가 변경되지 않은 경우 리렌더링을 건너뛰라 지시할 때 사용한다.
+`memo()`는 React의 고차 컴포넌트(Higher-Order Component)로 컴포넌트의 props가 변경되지 않은 경우 리렌더링을 건너뛰라 지시할 때 사용한다.
 
 ℹ️ `memo()`는 props의 변환를 얕은 비교(shallow comparison)를 통해 감지한다. 객체의 가장 상위 레벨에 있는 프로퍼티만 비교한다는 뜻이다.
 
@@ -862,7 +862,7 @@ React.memo(SomeComponent, arePropsEqual)
 function arePropsEqual(oldProps, newProps)
 ```
 
-- `SomeComponent`: 메모(memoize)하려는 컴포넌트. 함수 컴포넌트, forwardRef 컴포넌트 등 모든 리액트 컴포넌트를 할당할 수 있다.
+- `SomeComponent`: 메모(memoize)하려는 컴포넌트. 함수 컴포넌트, forwardRef 컴포넌트 등 모든 React 컴포넌트를 할당할 수 있다.
 - `arePropsEqual`: 이전 props와 새로운 props를 인수로 받는 함수. `true`는 같음을, `false`는 다름을 의미한다. props의 특정 프로퍼티만 감지할 때 사용한다.
 
 반환 값은 `SomeComponent`를 기반으로 생성된 메모화(memoized)된 컴포넌트다.
@@ -891,7 +891,7 @@ const MyComponent = React.memo(props => {
 
 ## StrictMode 컴포넌트
 
-StrictMode 컴포넌트는 리액트의 추가적인 개발환경 전용 검사 기능인 Strict Mode(ECMAScript의 엄격 모드와 다름)를 활성화하는 컴포넌트다. Strict Mode가 활성화되면 다음과 같은 변화가 있다:
+StrictMode 컴포넌트는 React의 추가적인 개발환경 전용 검사 기능인 Strict Mode(ECMAScript의 엄격 모드와 다름)를 활성화하는 컴포넌트다. Strict Mode가 활성화되면 다음과 같은 변화가 있다:
 
 - 컴포넌트가 순수하지 않은 렌더링으로 인한 버그를 찾기 위해 추가로 다시 렌더링한다.
 - 컴포넌트가 Effect 클린업이 누락되어 발생한 버그를 찾기 위해 Effect를 다시 실행한다.
@@ -932,7 +932,7 @@ function App() {
 }
 ```
 
-리액트가 Strict Mode로 어떻게 버그를 찾아내는지는 [이 문서](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)를 보자.
+React가 Strict Mode로 어떻게 버그를 찾아내는지는 [이 문서](https://react.dev/reference/react/StrictMode#fixing-bugs-found-by-double-rendering-in-development)를 보자.
 
 
 ## Suspense 컴포넌트
@@ -967,11 +967,11 @@ function App() {
 
 배칭은 여러 번의 상태 업데이트(useState의 set 함수)를 한 번의 렌더링으로 처리하는 최적화 기법이다. 
 
-리액트 17까지는 이벤트 핸들러 내부에서 동기적으로 발생한 여러 번의 set 함수만 묶어 한 번 렌더링을 수행했으나(예: 버튼 클릭 함수 안에 `setCount()`를 여러 번 호출해도 한 번만 렌더링), 리액트 18부터는 비동기 코드(예: `await`, `setTimeout()`, `Promise.then()`, `fetch()`, 이벤트 루프가 갈리는 콜백 등)에서 발생한 여러 번의 set 함수 호출도 자동 배칭에 포함되어, 같은 이벤트 루프(또는 동일 microtask) 내에서 발생하는 업데이트는 모두 묶어 한 번에 렌더링하도록 변경되었다.
+React 17까지는 이벤트 핸들러 내부에서 동기적으로 발생한 여러 번의 set 함수만 묶어 한 번 렌더링을 수행했으나(예: 버튼 클릭 함수 안에 `setCount()`를 여러 번 호출해도 한 번만 렌더링), React 18부터는 비동기 코드(예: `await`, `setTimeout()`, `Promise.then()`, `fetch()`, 이벤트 루프가 갈리는 콜백 등)에서 발생한 여러 번의 set 함수 호출도 자동 배칭에 포함되어, 같은 이벤트 루프(또는 동일 microtask) 내에서 발생하는 업데이트는 모두 묶어 한 번에 렌더링하도록 변경되었다.
 
 단, 모든 비동기 로직을 무조건 한꺼번에 배치하는 것은 아니며, 같은 이벤트 루프(동일 microtask) 안에서 발생하는 상태 업데이트끼리만 묶어서 한 번의 렌더링으로 처리한다. 비동기 코드로 이벤트 루프가 명확히 끊기는 시점이 있다면, 그 끊긴 지점마다 별도의 렌더링이 트리거될 수 있다.
 
-정리하면, 리액트 18에서 자동 배칭 범위는 확장되었지만, 현재 콜스택(이벤트 루프 or microtask) 내에서만 여러 업데이트를 묶을 수 있고, 이벤트 루프가 갈라지면 새로운 배치가 시작되어 렌더링이 여러 번 발생할 수 있다.
+정리하면, React 18에서 자동 배칭 범위는 확장되었지만, 현재 콜스택(이벤트 루프 or microtask) 내에서만 여러 업데이트를 묶을 수 있고, 이벤트 루프가 갈라지면 새로운 배치가 시작되어 렌더링이 여러 번 발생할 수 있다.
 
 #### 예시 #1: `setTimout()`으로 이벤트 루프 분리
 
@@ -1038,7 +1038,7 @@ async function Page({page}) {
 
 서버 컴포넌트를 특정하는 별도의 지시어나 문법, 패턴은 없다. 어떤 컴포넌트가 서버 컴포넌트로 작동할지는 빌드/번들링 환경과 사용하는 프레임워크의 규칙에 달려 있다. 예를 들어 Next.js의 App Router 환경에선 기본적으로 모든 컴포넌트가 서버 컴포넌트로 간주된다. 
 
-공식 문서에서는 리액트만으로 서버 컴포넌트를 직접 구현하는 것은 어렵고 번거롭다고 명시하고 있으며, 복잡도를 최소화하기 위해 프레임워크 사용을 권장한다.
+공식 문서에서는 React만으로 서버 컴포넌트를 직접 구현하는 것은 어렵고 번거롭다고 명시하고 있으며, 복잡도를 최소화하기 위해 프레임워크 사용을 권장한다.
 
 서버 컴포넌트에선 `useState()` 같은 상호작용 API를 사용할 수 없다. 사용자와의 상호작용이 필요하면 컴포넌트 상단에 `'use client'` 지시어(directive)를 덧붙여서 클라이언트 컴포넌트로 만들어야 한다:
 
@@ -1127,7 +1127,7 @@ export async function createNoteAction() {
 
 props의 타입을 제한할 때 사용하는 패키지. CDN 방식이면 [여기](https://unpkg.com/prop-types/prop-types.js)에서 다운로드 할 것.
 
-ℹ️ 타입스크립트를 사용할 땐 필요 음슴
+ℹ️ TypeScript를 사용할 땐 필요 음슴
 
 ```jsx
 import PropTypes from 'prop-types';
@@ -1185,9 +1185,9 @@ Warning: Failed prop type: The prop `type` is marked as required in `Btn`, but i
 
 모던 프론트엔드 개발에서 라우팅이란 보통, 하나의 HTML로 구성된 페이지에서 다른 URL로 이동하지 않고 사용자의 상호 작용에 따라 동적으로 화면 내용을 업데이트하는 것을 말한다. 정식 명칭은 *클라이언트 사이드 라우팅(Client-side Routing)*이다.
 
-ℹ️ 리액트 라우팅은 History API를 기반으로 작동한다. 초기 SPA 환경에서는 구형 브라우저 호환성과 서버 폴백(Fallback) 설정의 번거로움 때문에 Hash 기반 라우팅이 흔히 쓰였으나, 현재는 브라우저 표준의 발전으로 History API가 기본 사양이 되었다.
+ℹ️ React 라우팅은 History API를 기반으로 작동한다. 초기 SPA 환경에서는 구형 브라우저 호환성과 서버 폴백(Fallback) 설정의 번거로움 때문에 Hash 기반 라우팅이 흔히 쓰였으나, 현재는 브라우저 표준의 발전으로 History API가 기본 사양이 되었다.
 
-리액트에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
+React에서 라우팅을 구현하려면 별도의 react-router 패키지 설치가 필요하다.
 
 ```bash
 npm install react-router-dom

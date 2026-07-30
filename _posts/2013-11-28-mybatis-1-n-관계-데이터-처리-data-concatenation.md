@@ -21,7 +21,7 @@ tags:
 
 ## 컬럼명과 필드명의 불일치의 해결은 아주 간단.
 
-보통의 경우, SELECT 결과값은 자바 클래스(자바빈 or Plain Object), HashMap, 단일 값이라면 String 등으로 resultType을 결정한다.
+보통의 경우, SELECT 결과값은 Java 클래스(Java Bean 혹은 Plain Object), HashMap, 단일 값이라면 `String` 등으로 `resultType`을 결정한다.
 
 ```java
 public class User {
@@ -33,7 +33,7 @@ public class User {
 }
 ```
 
-resultType으로 자바 클래스를 명시했을 때 만약 두 모델, 즉 자바 클래스와 데이터 모델간 프로퍼티명이 다르면 마이바티스의 자동 매핑이 무력화될 것이다. 따라서 이 경우엔 다음처럼 둘의 이름이 일치하도록 alias를 사용하거나:
+`resultType`으로 Java 클래스를 명시했을 때 만약 두 모델, 즉 Java 클래스와 데이터 모델간 프로퍼티명이 다르면 마이바티스의 자동 매핑이 무력화될 것이다. 따라서 이 경우엔 다음처럼 둘의 이름이 일치하도록 `alias`를 사용하거나:
 
 ```xml
 <select id="selectUsers" parameterType="int" resultType="com.someapp.model.User">
@@ -46,7 +46,7 @@ resultType으로 자바 클래스를 명시했을 때 만약 두 모델, 즉 자
 </select>
 ```
 
-혹은 resultType을 resultMap으로 대체하는 방법을 택해야 한다:
+혹은 `resultType`을 `resultMap`으로 대체하는 방법을 택해야 한다:
 
 ```xml
 <resultMap id="userResultMap" type="com.someapp.model.User">
@@ -78,9 +78,9 @@ resultType으로 자바 클래스를 명시했을 때 만약 두 모델, 즉 자
 </configuration>
 ```
 
-property 속성은 자바 클래스의 프로퍼티(Map 타입의 키값 포함)를, column 속성은 데이터 모델의 컬럼명을 의미한다.
+`property` 속성은 Java 클래스의 프로퍼티(`Map` 타입의 키값 포함)를, `column` 속성은 데이터 모델의 컬럼명을 의미한다.
 
-## 1:N 관계의 데이터를 자바 모델로?
+## 1:N 관계의 데이터를 Java 모델로?
 
 하지만 개발을 하다보면 '컬럼명과 필드명의 불일치'같은 간단한 문제만 있는게 아니다. 예를 들어 다음 그림처럼 BBS 테이블과 그것을 참조하는 Attach 테이블이 있다고 가정하자:
 
@@ -99,7 +99,7 @@ property 속성은 자바 클래스의 프로퍼티(Map 타입의 키값 포함)
 </select>
 ```
 
-두 테이블의 관계는 1:N 의 관계이므로 하나의 글에 여러 첨부파일이 존재할 수 있다. 때문에 자바코드를 하나의 로우에만 대응하도록 작성했다면 데이터 조회 시점에서 예외가 발생할 가능성이 높다.
+두 테이블의 관계는 1:N 의 관계이므로 하나의 글에 여러 첨부파일이 존재할 수 있다. 때문에 Java 코드를 하나의 로우에만 대응하도록 작성했다면 데이터 조회 시점에서 예외가 발생할 가능성이 높다.
 
 쿼리의 결과:
 
@@ -117,7 +117,7 @@ bbs_id  |  name  |  title  |       content          |  attach_id  |     file_nam
 org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis.exceptions.TooManyResultsException
 ```
 
-위 문제는 DBMS에서 제공하는 **data concatenating**(child rows를 하나의 컬럼으로 출력. MS-SQL이라면 `Cross Apply / FOR XML PATH`, 오라클이라면 LISTAGG를 사용한 방식)으로 해결할 수도 있으나 여기선 resultMap을 활용해보겠다:
+위 문제는 DBMS에서 제공하는 **data concatenating**(child rows를 하나의 컬럼으로 출력. MS-SQL이라면 `Cross Apply / FOR XML PATH`, 오라클이라면 `LISTAGG`를 사용한 방식)으로 해결할 수도 있으나 여기선 `resultMap`을 활용해보겠다:
 
 ```xml
 <select id="selectBbsDetail" parameterType="java.lang.Integer" resultType="com.model.Bbs">
@@ -129,7 +129,7 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
 </select>
 ```
 
-참조하고 있는 bbsResultMap은 :
+참조하고 있는 `bbsResultMap`은 :
 
 ```xml
 <resultMap id="bbsResultMap" type="java.util.HashMap">
@@ -140,9 +140,9 @@ org.mybatis.spring.MyBatisSystemException: nested exception is org.apache.ibatis
     <collection property="attachList" javaType="java.util.ArrayList" resultMap="bbsAttachResultMap"/>
 </resultMap>
 ```
-type을 자바빈이 아닌 HashMap으로 받는것 외엔 차이가 없다. 그러나 위처럼 resultMap으로 매핑할 경우 단순히 컬럼명과 프로퍼티명의 불일치만 해결해주는 것이 아니라 중복되는 결과를 받았을 때 이를 자동으로 걸러내주는 효과도 있다. 이는 하위 태그인 `<id>`를 사용했기 때문이다. `<id>`는 해당 컬럼이 식별자임을 명시하며 전반적인 성능을 향상시킨다고 한다. (더 이상 설명이 없어서 자세한 건 몲 [^1])
+`type`을 Java Bean이 아닌 `HashMap`으로 받는것 외엔 차이가 없다. 그러나 위처럼 `resultMap`으로 매핑할 경우 단순히 컬럼명과 프로퍼티명의 불일치만 해결해주는 것이 아니라 중복되는 결과를 받았을 때 이를 자동으로 걸러내주는 효과도 있다. 이는 하위 태그인 `<id>`를 사용했기 때문이다. `<id>`는 해당 컬럼이 식별자임을 명시하며 전반적인 성능을 향상시킨다고 한다. (더 이상 설명이 없어서 자세한 건 몲 [^1])
 
-그리고 `<collection>`은 **child rows**(1:N의 관계로 설정된 테이블에서 N의 레코드)를 처리하는 방법을 나타낸다. 여기서는 bbsAttachResultMap을 참조하고 있고 이는 다음과 같다:
+그리고 `<collection>`은 **child rows**(1:N의 관계로 설정된 테이블에서 N의 레코드)를 처리하는 방법을 나타낸다. 여기서는 `bbsAttachResultMap`을 참조하고 있고 이는 다음과 같다:
 
 ```xml
 <resultMap id="bbsAttachResultMap" type="java.util.HashMap">
@@ -152,7 +152,7 @@ type을 자바빈이 아닌 HashMap으로 받는것 외엔 차이가 없다. 그
 </resultMap>
 ```
 
-이제 마이바티스는 다음과 같은 MAP 타입의 값을 돌려 줄 것이다:
+이제 마이바티스는 다음과 같은 `Map` 타입의 값을 돌려 줄 것이다:
 
 ```java
 {

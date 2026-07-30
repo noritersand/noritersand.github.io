@@ -35,9 +35,9 @@ Windows에선 아래 세 가지 방법이 있는데:
 
 1. 설치 폴더(기본 설정이면 `C:\Program Files\Sublime Text 3`)를 시스템 환경 변수 `Path`에 추가한다.
 2. 설치 폴더의 `subl.exe` 파일을 `C:\Windows\System32` 경로에 복사한다.
-3. [파워셸 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
+3. [PowerShell 프로파일](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.2)에 별칭을 추가한다.
 
-이 중 추천하는 방법은 세 번째로, 아래 코드를 복사해서 파워셸에 입력한다:
+이 중 추천하는 방법은 세 번째로, 아래 코드를 복사해서 PowerShell에 입력한다:
 
 ```bash
 if (!(Test-Path -Path $PROFILE)) {
@@ -116,7 +116,7 @@ console.debug('${1:msg}:', ${2:msg});
 </snippet>
 ```
 
-확장자를 `.sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 윈도우 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정된다.
+확장자를 `.sublime-snippet`으로 해서 패키지 파일 디렉터리에 저장한다. 패키지 파일 디렉터리는 Windows 기준 `%APPDATA%\Sublime Text\Packages\User`이며 저장할 때 자동으로 지정된다.
 
 ⚠️ **`<snippet>` 태그는 스니펫 파일의 루트 태그여야 한다. 그러니까 스니펫 한 개당 파일 하나씩 추가해야한다.**
 
@@ -133,7 +133,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 추천 패키지
 
-- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, 파워셸 코드 하이라이팅 때문에 설치함. 하이퍼링크 접히는 거 귀찮으면 설정에 `"mde.auto_fold_link.enabled": true` 추가.
+- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, PowerShell 코드 하이라이팅 때문에 설치함. 하이퍼링크 접히는 거 귀찮으면 설정에 `"mde.auto_fold_link.enabled": true` 추가.
 - StyleToken: 파일 내에서 특정 단어별 하이라이팅
 - FileDiffs: 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
 - ConvertToUTF8: `EUC-KR`로 작성된 파일을 `UTF-8`로 전환해서 열어주는 패키지. 이 패키지를 활성화하면 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음

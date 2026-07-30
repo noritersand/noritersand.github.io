@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2023-09-10 17:44:38 +0900
-title: '[TypeScript] 타입스크립트 기본'
+title: '[TypeScript] TypeScript 기본'
 categories:
   - typescript
 tags:
@@ -25,13 +25,13 @@ tags:
 
 ## 개요
 
-Microsoft에서 만든 TypeScript(이하 타입스크립트)의 기본적인 내용을 정리한 글.
+Microsoft에서 만든 TypeScript의 기본적인 내용을 정리한 글.
 
-타입스크립트는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. JavaScript의 슈퍼셋(superset)이라 하기도 한다.
+TypeScript는 이름처럼 정적 데이터 타입이 추가된 언어로, Node.js 환경에서 작동한다. JavaScript의 슈퍼셋(superset)이라 하기도 한다.
 
-타입스크립트로 작성된 소스는 브라우저나 JavaScript 엔진이 읽을 수 없기 때문에 컴파일을 통해 JavaScript 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다.
+TypeScript로 작성된 소스는 브라우저나 JavaScript 엔진이 읽을 수 없기 때문에 컴파일을 통해 JavaScript 코드로 변환된다. 이 때 정적 타입 검사기(static type checker)가 작동하며 문제를 발견하면 컴파일 에러를 발생시킨다.
 
-타입스크립트의 주요 장점은 스크립트를 실행하기 전에 미리 문제를 발견할 수 있다는 점이다. 그러나 이 장점은 JavaScript의 유연성을 제물로 바친 대가이며, 엄격한 타입 체크가 때로는 생산성을 떨어트리는 단점이 되기도 한다.
+TypeScript의 주요 장점은 스크립트를 실행하기 전에 미리 문제를 발견할 수 있다는 점이다. 그러나 이 장점은 JavaScript의 유연성을 제물로 바친 대가이며, 엄격한 타입 체크가 때로는 생산성을 떨어트리는 단점이 되기도 한다.
 
 
 ## 설치
@@ -55,7 +55,7 @@ tsc --help
 
 ## 스캐폴딩: 프로젝트 기본 뼈대 만들기
 
-CLI 명령으로 타입스크립트 프로젝트의 기본 구조를 생성하는 방법이다:
+CLI 명령으로 TypeScript 프로젝트의 기본 구조를 생성하는 방법이다:
 
 ```bash
 tsc --init
@@ -67,7 +67,7 @@ tsc --init
 
 [tsconfig \| TypeScript Documentation ](https://www.typescriptlang.org/tsconfig)
 
-타입스크립트 컴파일러가 프로젝트를 어떻게 컴파일 할지에 대한 설정을 정의한다. 저 아래 '빌드하기' 항목에서처럼 빌드할 항목 등을 직접 지정하는 방법도 있지만 그건 귀찮으니께...
+TypeScript 컴파일러가 프로젝트를 어떻게 컴파일 할지에 대한 설정을 정의한다. 저 아래 '빌드하기' 항목에서처럼 빌드할 항목 등을 직접 지정하는 방법도 있지만 그건 귀찮으니께...
 
 #### tsconfig.json의 주요 설정
 
@@ -242,13 +242,13 @@ function fn123(str: SomeInterface['option']) {
 type MyNumber = number | string;
 let n: MyNumber = 1;
 n = '1'; // OK
-n = false; // error TS2322: Type 'boolean' is not assignable to type 'MyNumber'.
+n = false; // ❌ error TS2322: Type 'boolean' is not assignable to type 'MyNumber'.
 
 // 배열 내부 요소에 적용
 type MyNumber2 = 1 | 2 | 3 | '1' | '2' | '3';
 let n2: MyNumber2 = 1;
 n2 = '3'; // OK
-n2 = 4; // error TS2322: Type '4' is not assignable to type 'MyNumber2'.
+n2 = 4; // ❌ error TS2322: Type '4' is not assignable to type 'MyNumber2'.
 let arr2: MyNumber2[] = [1, '2', 3]; // OK
 
 // 타입 별칭 없이 유니언
@@ -273,11 +273,11 @@ waldo = {
 
 waldo = {
   age: 12
-}; // error TS2322: Type '{ age: number; }' is not assignable to type 'Person | Human'. Property 'name' is missing in type '{ age: number; }' but required in type 'Person'.
+}; // ❌ error TS2322: Type '{ age: number; }' is not assignable to type 'Person | Human'. Property 'name' is missing in type '{ age: number; }' but required in type 'Person'.
 
 waldo = {
   hello: 'Hello there!'
-}; // error TS2353: Object literal may only specify known properties, and 'hello' does not exist in type 'Person | Human'.
+}; // ❌ error TS2353: Object literal may only specify known properties, and 'hello' does not exist in type 'Person | Human'.
 ```
 
 ⚠️ 객체 타입끼리 유니언할 때 빈 객체를 지정하면 객체 프로퍼티 제한이 풀려버리는 현상이 있다:
@@ -315,8 +315,8 @@ waldo = {
 waldo = {
   name: 'waldo',
   age: 47
-  // error TS2322: Type '{ name: string; age: number; }' is not assignable to type 'Person & Human'.
-  // Property 'breathing' is missing in type '{ name: string; age: number; }' but required in type 'Human'.
+  // ❌ error TS2322: Type '{ name: string; age: number; }' is not assignable to type 'Person & Human'.
+  //   Property 'breathing' is missing in type '{ name: string; age: number; }' but required in type 'Human'.
 };
 ```
 
@@ -326,8 +326,8 @@ waldo = {
 type Conflicting = number & string;
 
 let foo1: Conflicting;
-foo1 = '123'; // error TS2322: Type 'string' is not assignable to type 'never'.
-foo1 = 123; // error TS2322: Type 'number' is not assignable to type 'never'.
+foo1 = '123'; // ❌ error TS2322: Type 'string' is not assignable to type 'never'.
+foo1 = 123; // ❌ error TS2322: Type 'number' is not assignable to type 'never'.
 ```
 
 ### 제네릭 Generics
@@ -350,7 +350,7 @@ let strArr: StringArray = ['a', 'b', 'c'];
 
 type NumberArray = Array<number>;
 let numArr: NumberArray = [1, 2, 3];
-numArr.push('4'); // error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+numArr.push('4'); // ❌ error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
 
 type ObjectWithNameArray = Array<{name: string}>;
 let objArr: ObjectWithNameArray = [{name: '1'}, {name: '2'}];
@@ -383,7 +383,7 @@ console.log(object); // []
 backpack.add('23'); // OK
 console.log(object); // ['23']
 
-backpack.add(23); // error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+backpack.add(23); // ❌ error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
 ```
 
 배열이나 사용자 정의 타입뿐만 아니라, `Map<K, V>`, `Set<T>`, `Promise<T>` 같은 데이터 타입도 제네릭을 활용한다:
@@ -393,7 +393,7 @@ function resolveAfter2Seconds(): Promise<string> {
   return new Promise<string>(resolve => {
     setTimeout(() => {
       resolve('done');
-      // resolve(1234); // ⛔ error TS2345: Argument of type 'number' is not assignable to parameter of type 'string | PromiseLike<string>'.
+      // resolve(1234); // ❌ error TS2345: Argument of type 'number' is not assignable to parameter of type 'string | PromiseLike<string>'.
     }, 2000);
   });
 }
@@ -411,7 +411,7 @@ function identity<T>(arg: T): T {
 
 [Utility Types \| TypeScript: Documentation](https://www.typescriptlang.org/ko/docs/handbook/utility-types.html#recordkeystype)
 
-타입스크립트에서 제공하는 타입 변환을 쉽게 하기 위한 유틸리티 타입이다. ~~넘모많다~~
+TypeScript에서 제공하는 타입 변환을 쉽게 하기 위한 유틸리티 타입이다. ~~넘모많다~~
 
 - `Partial<Type>`
 - `Required<Type>`
@@ -464,12 +464,12 @@ const todoInfo: TodoInfo = {
 let foo: number = 123;
 ```
 
-위 코드는 `foo`가 `number` 타입임을 선언한다. 사실 타입스크립트는 변수에 할당된 값을 통해 *타입을 자동으로 추론*하기 때문에 변수에 대한 타입 표기는 선택 사항이다. (가독성을 위해 표기한다는 프로젝트 규칙이 있는 게 아니라면)
+위 코드는 `foo`가 `number` 타입임을 선언한다. 사실 TypeScript는 변수에 할당된 값을 통해 *타입을 자동으로 추론*하기 때문에 변수에 대한 타입 표기는 선택 사항이다. (가독성을 위해 표기한다는 프로젝트 규칙이 있는 게 아니라면)
 
 만약 선언한 타입과 다른 타입의 값을 할당하려 하면 타입 에러가 발생한다:
 
 ```ts
-let foo2: string = 123; // error TS2322: Type 'number' is not assignable to type 'string'.
+let foo2: string = 123; // ❌ error TS2322: Type 'number' is not assignable to type 'string'.
 ```
 
 ### 배열 Array
@@ -485,12 +485,12 @@ arr.push(4);
 일반 원시 타입 값과 마찬가지로 선언한 타입과 할당값의 타입이 다르면 에러가 발생한다:
 
 ```ts
-let arr: string[] = [1, 2, 3]; // error TS2322: Type 'number' is not assignable to type 'string'.
+let arr: string[] = [1, 2, 3]; // ❌ error TS2322: Type 'number' is not assignable to type 'string'.
 ```
 
 ### 튜플 Tuple
 
-튜플은 타입스크립트에 배열을 정의하는 방법 중 하나로, 배열의 고정된 개수의 요소와 각 요소의 타입을 정확히 지정할 때 사용한다.
+튜플은 TypeScript에 배열을 정의하는 방법 중 하나로, 배열의 고정된 개수의 요소와 각 요소의 타입을 정확히 지정할 때 사용한다.
 
 ```ts
 let tuple: [string, number];
@@ -511,12 +511,12 @@ console.log(area); // 출력: 12
 
 ### 리터럴 타입 사용하기
 
-타입스크립트에선 특이하게도 값의 범위도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입* 또는 *리터럴 집합*이라 한다:
+TypeScript에선 특이하게도 값의 범위도 지정할 수 있는데, 이것도 타입 체크의 범주로 포함하며 *리터럴 타입* 또는 *리터럴 집합*이라 한다:
 
 ```ts
 let one: 1;
-one = 1;
-one = 2; // error TS2322: Type '2' is not assignable to type '1'.
+one = 1; // ✅
+one = 2; // ❌ error TS2322: Type '2' is not assignable to type '1'.
 ```
 
 변수 `one`에 대한 타입으로 리터럴 `1`을 명시했기 때문에 `1` 외에는 할당할 수 없는 변수가 된다.
@@ -540,7 +540,7 @@ let obj: {name: string} = {
   name: 'John'
 };
 
-console.log(obj.sirname); // error TS2339: Property 'sirname' does not exist on type '{ name: string; }'.
+console.log(obj.sirname); // ❌ error TS2339: Property 'sirname' does not exist on type '{ name: string; }'.
 ```
 
 특정 프로퍼티가 있을 수도 없을 수도 있다면(이것은 객체 프로퍼티로 `undefined` 할당을 허용하는 것과 같다) 콜론에 물음표를 붙여서 `?:` *옵셔널 프로퍼티(Optional properties)*로 지정한다:
@@ -565,7 +565,7 @@ let obj = {
 
 let b = 'b';
 console.log(obj[b]);
-// error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ a: number; b: number; c: number; }'.
+// ❌ error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ a: number; b: number; c: number; }'.
 //   No index signature with a parameter of type 'string' was found on type '{ a: number; b: number; c: number; }'.
 ```
 
@@ -595,7 +595,7 @@ let myCanvas2 = <HTMLCanvasElement>document.querySelector('#myCanvas');
 let value: unknown = "Hello TypeScript!";
 
 // value는 unknown이기 때문에 바로 toUpperCase() 호출 불가
-console.log((value).toUpperCase()); // error TS2571: Object is of type 'unknown'.
+console.log((value).toUpperCase()); // ❌ error TS2571: Object is of type 'unknown'.
 
 // 타입 단언으로 string이라는 것을 알려줌
 console.log((value as string).toUpperCase()); // "HELLO TYPESCRIPT!"
@@ -611,8 +611,8 @@ console.log((value as string).toUpperCase()); // "HELLO TYPESCRIPT!"
 
 ```ts
 let a = [1, 2, 3] as const;
-a.push(102); // error
-a[0] = 101; // error
+a.push(102); // ❌ error
+a[0] = 101; // ❌ error
 ```
 
 
@@ -660,7 +660,7 @@ function printFooBar2(foobar: {foo: string; bar: number}) {
   // ...
 }
 printFooBar2({foo: 'foo'});
-// error TS2345: Argument of type '{ foo: string; }' is not assignable to parameter of type '{ foo: string; bar: number; }'. Property 'bar' is missing in type '{ foo: string; }' but required in type '{ foo: string; bar: number; }'.
+// ❌ error TS2345: Argument of type '{ foo: string; }' is not assignable to parameter of type '{ foo: string; bar: number; }'. Property 'bar' is missing in type '{ foo: string; }' but required in type '{ foo: string; bar: number; }'.
 ```
 
 객체 리터럴에서처럼 `undefined` 할당을 허용하는 *옵셔널 프로퍼티*로 만들려면 물음표`?`를 붙인다:
@@ -729,7 +729,7 @@ names.forEach(s => console.log(s.toUpperCase()));
 ```ts
 let arr2 = [];
 arr2.forEach(n => console.log(n.toFixed(2)));
-// error TS7034: Variable 'arr2' implicitly has type 'any[]' in some locations where its type cannot be determined.
+// ❌ error TS7034: Variable 'arr2' implicitly has type 'any[]' in some locations where its type cannot be determined.
 ```
 
 위 코드는 이렇게 바꿔야 한다:
@@ -755,7 +755,7 @@ let getWaldo = (name: string) => {
   return {name};
 };
 getWaldo('Waldo').age = 128;
-// error TS2339: Property 'age' does not exist on type '{ name: string; }'.
+// ❌ error TS2339: Property 'age' does not exist on type '{ name: string; }'.
 ```
 
 `getWaldo()`가 반환하는 객체의 프로퍼티로 `age`가 명시되지 않았기 때문에 에러가 발생한다. 이를 해결하려면:
@@ -815,7 +815,7 @@ class Newbie {
 
 ### 구상화(구현, 구체화) implements
 
-타입 스크립트의 인터페이스도 자바의 인터페이스와 유사하게 구현 클래스를 만들 수 있다:
+타입 스크립트의 인터페이스도 Java의 인터페이스와 유사하게 구현 클래스를 만들 수 있다:
 
 ```ts
 // 코드 출처: https://www.typescriptlang.org/docs/handbook/2/classes.html#class-heritage
@@ -834,13 +834,13 @@ class Sonar implements Pingable {
 
 ```ts
 class Ball implements Pingable {
-  // error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
+  // ❌ error TS2420: Class 'Ball' incorrectly implements interface 'Pingable'.
   //   Property 'ping' is missing in type 'Ball' but required in type 'Pingable'.
   // ping() 메서드를 구현하지 않은 경우
 }
 ```
 
-⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(_It doesn’t change the type of the class or its methods at all_: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
+⚠️ `implements`는 클래스나 메서드의 타입을 변경하지 않는다(_It doesn't change the type of the class or its methods at all_: 타입 선언을 의미하는 것 같음). 이것은 인터페이스에 정의된 메서드의 매개변수 타입이 자동으로 구현 클래스에 적용되지 않는다는 말이다:
 
 ```ts
 interface Checkable {
@@ -849,7 +849,7 @@ interface Checkable {
 
 class NameChecker implements Checkable {
   check(s): boolean {
-    // error TS7006: Parameter 's' implicitly has an 'any' type.
+    // ❌ error TS7006: Parameter 's' implicitly has an 'any' type.
     return false;
   }
 }
@@ -888,12 +888,12 @@ d.printName(); // Hello, world
 만약 `getName()` 메서드를 구현하지 않으면 에러가 발생한다:
 
 ```ts
-class Derived extends Base {} // error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
+class Derived extends Base {} // ❌ error TS18052: Non-abstract class 'Derived' does not implement all abstract members of 'Base'
 ```
 
 ### 추상 생성자 시그니처 Abstract Construct Signatures
 
-타입스크립트에선 매개변수에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별것이 다 있다 🥲)
+TypeScript에선 매개변수에 대한 타입으로 생성자를 선언할 수 있다. 이것은 그 중 추상 클래스의 생성자 타입을 제한하는 방법이다. (별것이 다 있다 🥲)
 
 ```ts
 abstract class Base {
@@ -920,8 +920,8 @@ greet(Derived);
 
 ```ts
 greet(Base);
-// error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
-// Cannot assign an abstract constructor type to a non-abstract constructor type.
+// ❌ error TS2345: Argument of type 'typeof Base' is not assignable to parameter of type 'new () => Base'.
+//   Cannot assign an abstract constructor type to a non-abstract constructor type.
 ```
 
 추상 클래스는 인스턴스를 만들 수 없기 때문에 에러가 발생한다.
@@ -935,7 +935,7 @@ greet(Base);
 - [TypeScript: Documentation - Modules .d.ts](https://www.typescriptlang.org/docs/handbook/declaration-files/templates/module-d-ts.html)
 - [TypeScript: Documentation - Deep Dive](https://www.typescriptlang.org/docs/handbook/declaration-files/deep-dive.html)
 
-`.d.ts` 파일은 타입스크립트 선언 파일(Declaration File)로, 실제 실행되는 코드가 아니라 타입 정보를 제공하기 위한 파일. 이 파일들은 컴파일 중 코드로 변환되지 않으며, 오직 타입 체크와 자동 완성, 문서화를 위해 사용된다.
+`.d.ts` 파일은 TypeScript 선언 파일(Declaration File)로, 실제 실행되는 코드가 아니라 타입 정보를 제공하기 위한 파일. 이 파일들은 컴파일 중 코드로 변환되지 않으며, 오직 타입 체크와 자동 완성, 문서화를 위해 사용된다.
 
 `.d.ts` 파일이 인식되지 않는다면 `tsconfig.json`에서 `include` 해놨는지 확인해보자:
 
@@ -986,7 +986,7 @@ interface User2 {}
 
 ### 앰비언트 선언 Ambient Declarations
 
-`declare` 키워드로 변수나 모듈, 함수, 클래스 등의 존재를 타입스크립트에 알리기 위해 사용하는 선언 방식.
+`declare` 키워드로 변수나 모듈, 함수, 클래스 등의 존재를 TypeScript에 알리기 위해 사용하는 선언 방식.
 
 ```ts
 declare var myVariable: string;
@@ -1044,8 +1044,8 @@ const rect = {x: 33, y: 3, width: 30, height: 80}; // OK
 
 ```ts
 const color = {hex: '#187ABF'};
-// error TS2345: Argument of type '{ hex: string; }' is not assignable to parameter of type 'Point'.
-// Type '{ hex: string; }' is missing the following properties from type 'Point': x, y
+// ❌ error TS2345: Argument of type '{ hex: string; }' is not assignable to parameter of type 'Point'.
+//   Type '{ hex: string; }' is missing the following properties from type 'Point': x, y
 ```
 
 반기는 것은 타입 에러다.
@@ -1075,7 +1075,7 @@ var person = 'John Doe';
 ```ts
 // "target": "es5"
 let s: symbol = Symbol('s');
-// error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
+// ❌ error TS2585: 'Symbol' only refers to a type, but is being used as a value here. Do you need to change your target library? Try changing the 'lib' compiler option to es2015 or later.
 ```
 
 
@@ -1147,7 +1147,7 @@ interface BType {
 let foo3: keyof AType;
 foo3 = 'a';
 foo3 = 'b';
-// foo3 = 'c'; // error TS2322: Type '"c"' is not assignable to type 'keyof AType'.
+// foo3 = 'c'; // ❌ error TS2322: Type '"c"' is not assignable to type 'keyof AType'.
 
 let foo4: keyof BType;
 foo4 = 'c';
@@ -1158,7 +1158,7 @@ foo4 = 'd';
 그러니까 `keyof AType`은 `'a' | 'b'`, `keyof BType`은 `'c' | 'd'`가 되는 식이다. JavaScript의 `Object.keys()`와 유사하지만, 런타임에는 존재하지 않는 문법이므로 출력에 직접 사용할 수는 없다:
 
 ```ts
-console.log(keyof Atype); // error TS1005: ',' expected.
+console.log(keyof Atype); // ❌ error TS1005: ',' expected.
 ```
 
 아래는 제네릭 타입에 활용한 예시다:
@@ -1191,7 +1191,7 @@ getProperty(person3, 'city'); // New York
 
 `keyof` 연산자는 일반 객체뿐만 아니라 배열이나 튜플 타입에도 적용할 수 있으며, 이 경우 결과는 해당 타입의 키(인덱스와 프로퍼티 이름)들의 유니언이 된다.
 
-배열의 인덱스는 숫자로 접근하지만, 타입스크립트의 `keyof` 연산자는 이 인덱스들을 숫자 리터럴 타입으로 처리한다. 여기에 `Array.prototype`에 정의된 모든 프로퍼티 및 메서드 이름들을 문자열 리터럴로 추가한다.
+배열의 인덱스는 숫자로 접근하지만, TypeScript의 `keyof` 연산자는 이 인덱스들을 숫자 리터럴 타입으로 처리한다. 여기에 `Array.prototype`에 정의된 모든 프로퍼티 및 메서드 이름들을 문자열 리터럴로 추가한다.
 
 ```ts
 type TupleType = [string, number, boolean];
@@ -1210,10 +1210,10 @@ keyOfTuple = 'toString';
 keyOfTuple = 'pop';
 
 // 배열의 프로퍼티나 메서드에 'false'는 없음ㄴ
-keyOfTuple = false; // ⛔ TS2322: Type false is not assignable to type keyof TupleType
+keyOfTuple = false; // ❌ TS2322: Type false is not assignable to type keyof TupleType
 
 // 배열의 프로퍼티나 메서드에 'substring'은 없음
-keyOfTuple = 'substring' // ⛔ TS2322: Type "substring" is not assignable to type keyof TupleType
+keyOfTuple = 'substring' // ❌ TS2322: Type "substring" is not assignable to type keyof TupleType
 ```
 
 ### Typeof 타입 연산자
@@ -1223,7 +1223,7 @@ keyOfTuple = 'substring' // ⛔ TS2322: Type "substring" is not assignable to ty
 **TODO**
 
 
-## 타입스크립트의 JSDoc
+## TypeScript의 JSDoc
 
 [JSDoc Reference \| TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/jsdoc-supported-types.html)
 

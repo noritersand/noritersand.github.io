@@ -38,7 +38,7 @@ git fetch origin feature/login:feature/auth
 여기서 `main:main`, `dev:production`, `feature/login:feature/auth`가 refspec이다.
 
 
-## 윈도우에 Git 서버 설치하기
+## Windows에 Git 서버 설치하기
 
 - [http://gitblit.com/](http://gitblit.com/)
 - [http://www.lesstif.com/pages/viewpage.action?pageId=26084460](http://www.lesstif.com/pages/viewpage.action?pageId=26084460)
@@ -57,7 +57,7 @@ git fetch origin feature/login:feature/auth
 
 [https://github.com/newren/git-filter-repo](https://github.com/newren/git-filter-repo)
 
-깃 히스토리를 재작성하기 위한 서드파티 툴. 예를 들어 특정 파일이나 민감한 정보 등을 히스토리에서 제거할 때 사용한다.
+Git 히스토리를 재작성하기 위한 서드파티 툴. 예를 들어 특정 파일이나 민감한 정보 등을 히스토리에서 제거할 때 사용한다.
 
 ```bash
 # 설치
@@ -70,7 +70,7 @@ git-filter-repo --path out/some-awesome-file.apk --invert-paths
 git-filter-repo --strip-blobs-bigger-than 100M
 ```
 
-깃랩에서 깃허브로 저장소를 옮길 때 사용했다. 깃허브는 무료 티어일 때 LFS를 100MB까지만 지원하기 때문에, 그 이상의 파일은 히스토리에서 지워줬어야 했다.
+GitLab에서 GitHub로 저장소를 옮길 때 사용했다. GitHub는 무료 티어일 때 LFS를 100MB까지만 지원하기 때문에, 그 이상의 파일은 히스토리에서 지워줬어야 했다.
 
 ℹ️ 히스토리를 재작성하는 공식 기능으로 `git-filter-brach`가 이미 있지만 [성능이 나쁘다며 오히려 이 툴을 추천](https://git-scm.com/docs/git-filter-branch#_warning)한다.
 
@@ -158,9 +158,9 @@ git config --global credential.helper "/mnt/c/Program\\ Files/Git/mingw64/libexe
 
 ## 자격 증명 관리자 Credential Manager
 
-윈도우에선 보통 git을 설치할 때 'Git Credential Manager for Windows'를 같이 설치하는데, 요걸로 권한이 필요한 저장소에 접속할 때 필요한 자격증명을 관리한다.
+Windows에선 보통 git을 설치할 때 'Git Credential Manager for Windows'를 같이 설치하는데, 요걸로 권한이 필요한 저장소에 접속할 때 필요한 자격증명을 관리한다.
 
-문제는 다른 계정으로 바꾸는 방법을 모르겠다는 건데... 임시 방편으로 윈도우 설정 메뉴인 '자격 증명 관리자'를 열어서 지워버리거나 직접 수정하는 방법이 있다.
+문제는 다른 계정으로 바꾸는 방법을 모르겠다는 건데... 임시 방편으로 Windows 설정 메뉴인 '자격 증명 관리자'를 열어서 지워버리거나 직접 수정하는 방법이 있다.
 
 
 ## GitHub CLI
@@ -253,9 +253,9 @@ git config gc.auto 0
 
 ## config의 user
 
-`user.name`과 `user.email`은 작성자와 커미터로 사용되긴 하지만, 저장소 접근 권한과 연관된 것은 아니다. 만약 pull/push 등의 명령이 거부되었다면 문제는 `user` 설정이 아니므로 다른곳을 찾아봐야 함. 예를 들어 'Git Credential Manager for Windows(윈도우용 깃 자격 증명 관리자)'를 사용한다면 같은 저장소에 여러 권한을 설정할 수가 없는데, SSH 설정 등으로 해결할 수 있다 하나 귀찮으므로 깃허브의 콜라보레이터 추가로 해결해부렀다.
+`user.name`과 `user.email`은 작성자와 커미터로 사용되긴 하지만, 저장소 접근 권한과 연관된 것은 아니다. 만약 pull/push 등의 명령이 거부되었다면 문제는 `user` 설정이 아니므로 다른곳을 찾아봐야 함. 예를 들어 'Git Credential Manager for Windows(Windows용 Git 자격 증명 관리자)'를 사용한다면 같은 저장소에 여러 권한을 설정할 수가 없는데, SSH 설정 등으로 해결할 수 있다 하나 귀찮으므로 GitHub의 콜라보레이터 추가로 해결해부렀다.
 
-참고로 자격 증명 관리자는 Atom, git bash, fork 등에서 사용하며, eclipse는 자체 관리하기 때문에 윈도우의 자격 증명 관리자를 사용하지 않는다.
+참고로 자격 증명 관리자는 Atom, git bash, fork 등에서 사용하며, eclipse는 자체 관리하기 때문에 Windows의 자격 증명 관리자를 사용하지 않는다.
 
 
 ## author와 committer의 차이

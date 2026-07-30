@@ -25,7 +25,7 @@ tags:
 Git CLI에서 자주 쓰이는 명령어와 옵션을 정리한 글.
 
 
-## 윈도우용 깃 클라이언트 업데이트
+## Windows용 Git 클라이언트 업데이트
 
 ```bash
 git update-git-for-windows
@@ -37,7 +37,7 @@ git update-git-for-windows
 - 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
 - 스테이징 영역(staging area): 인덱스(index)라고도 부른다.
 - 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 예를 들어 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
-- 깃 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
+- Git 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
 - 델타(delta): 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
 - 리모트 트래킹 브랜치(remote-tracking branches): 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
 
@@ -79,7 +79,7 @@ git update-git-for-windows
 
 #### staging / do track
 
-작업폴더의 파일을 깃이 추적하게 하거나 커밋을 위한 준비상태로 만듦.
+작업폴더의 파일을 Git이 추적하게 하거나 커밋을 위한 준비상태로 만듦.
 
 ```bash
 git add *
@@ -185,7 +185,7 @@ git branch -vv  # 추적중인 브랜치 확인(업스트림 브랜치 확인)
 
 #### 업스트림(Upstream) 브랜치 설정 \#1
 
-깃이 리모트 저장소의 특정 브랜치를 추적하도록 설정한다. 추적 중인 브랜치를 업스트림 브랜치라고 하는데, 업스트림 브랜치가 설정되어 있으면 `pull`이나 `push`할 때 리모트의 저장소명과 브랜치명을 생략할 수 있다.
+Git이 리모트 저장소의 특정 브랜치를 추적하도록 설정한다. 추적 중인 브랜치를 업스트림 브랜치라고 하는데, 업스트림 브랜치가 설정되어 있으면 `pull`이나 `push`할 때 리모트의 저장소명과 브랜치명을 생략할 수 있다.
 
 ```bash
 git branch -u origin/test3  # origin 리모트의 test3 브랜치로 업스트림 브랜치 설정
@@ -244,7 +244,7 @@ git branch -rd origin/abc
 
 이 명령은 리모트 저장소에서 삭제된 모든 브랜치를 로컬 브랜치와 리모트 트래킹 브랜치에서 삭제한다.
 
-주의: 파워셸에선 안됨
+주의: PowerShell에선 안됨
 
 ```bash
 # 출처: https://stackoverflow.com/questions/7726949/remove-tracking-branches-no-longer-on-remote
@@ -341,7 +341,7 @@ git checkout 태그
 git checkout v0.3.1.5
 ```
 
-브랜치가 아닌 커밋을 체크아웃 하면 이를 '분리된 헤드(detached HEAD)' 상태에 있다고 한다. 깃은 이 상태에서 바로 작업하지 말고 별도의 브랜치를 생성하여 작업할 것을 권장하고 있다.
+브랜치가 아닌 커밋을 체크아웃 하면 이를 '분리된 헤드(detached HEAD)' 상태에 있다고 한다. Git은 이 상태에서 바로 작업하지 말고 별도의 브랜치를 생성하여 작업할 것을 권장하고 있다.
 
 ```bash
 $ git checkout afa51b4684417b3cfae3768f93b1fe73a206acf3
@@ -487,7 +487,7 @@ git clean -dfx
 
 ## clone
 
-깃 저장소를 복제하여 새 저장소를 만드는 명령어
+Git 저장소를 복제하여 새 저장소를 만드는 명령어
 
 #### Options
 
@@ -497,7 +497,7 @@ git clean -dfx
 
 #### 저장소 복제
 
-현재 경로에 로컬 깃 저장소가 될 디렉터리를 만들고 리모트 저장소의 데이터를 모두 받아온다. 디렉터리명을 따로 명시하지 않으면 리모트 저장소의 이름과 동일하게 생성된다.
+현재 경로에 로컬 Git 저장소가 될 디렉터리를 만들고 리모트 저장소의 데이터를 모두 받아온다. 디렉터리명을 따로 명시하지 않으면 리모트 저장소의 이름과 동일하게 생성된다.
 
 ```bash
 git clone ~/Documents/workspace/ex/cal/src
@@ -520,7 +520,7 @@ git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제�
 
 ## commit
 
-staged 상태인 파일을 깃 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
+staged 상태인 파일을 Git 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
 
 ```bash
 git commit
@@ -589,7 +589,7 @@ git commit -C HEAD --amend
 
 ## config
 
-깃 저장소의 설정을 조회/관리하는 명령어.
+Git 저장소의 설정을 조회/관리하는 명령어.
 
 #### Options
 
@@ -696,7 +696,7 @@ git config --global --unset alias.ss
 
 #### SSL 검증 비활성화
 
-윈도우 환경에선 가끔 `SSL Certificate problem: unable to get local issuer certificate` 에러가 터지며 `fetch`나 `push`가 안될때가 있는데, 이럴 때는 아래처럼 SSL 검증을 꺼버리면 해결되긴 한다:
+Windows 환경에선 가끔 `SSL Certificate problem: unable to get local issuer certificate` 에러가 터지며 `fetch`나 `push`가 안될때가 있는데, 이럴 때는 아래처럼 SSL 검증을 꺼버리면 해결되긴 한다:
 
 ```bash
 git config --global http.sslVerify false
@@ -708,11 +708,11 @@ git config --global http.sslVerify false
 git config --global http.sslbackend schannel
 ```
 
-`http.sslbackend`를 `schannel`로 변경하자. [Schannel은 윈도우의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)이다. 정식 명칭은 Secure Channel
+`http.sslbackend`를 `schannel`로 변경하자. [Schannel은 Windows의 빌트인 암호화 공급자](https://docs.microsoft.com/ko-kr/windows/win32/secauthn/secure-channel?redirectedfrom=MSDN)이다. 정식 명칭은 Secure Channel
 
-[깃이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
+[Git이 기본적으로 'Linux' crypto backend를 사용하는게 원인](https://stackoverflow.com/questions/23885449/unable-to-resolve-unable-to-get-local-issuer-certificate-using-git-on-windows#answer-53064542)이라는 말이 있음.
 
-그런데 깃 최초 설치 후 확인해보면 이렇게 나옴 🤔:
+그런데 Git 최초 설치 후 확인해보면 이렇게 나옴 🤔:
 
 ```bash
 $ git config -l | grep ssl
@@ -754,7 +754,7 @@ size-garbage: 0 bytes
 
 - count: 느슨한 객체의 개수. 느슨한 객체란 `.git/objects` 디렉터리에 개별 파일로 저장된 객체(커밋, 트리, 블롭 등)다.
 - size: 느슨한 객체의 전체 크기
-- in-pack: 팩 파일에 포함된 객체 수. 깃은 효율성을 위해 객체를 팩 파일로 묶어 저장한다.
+- in-pack: 팩 파일에 포함된 객체 수. Git은 효율성을 위해 객체를 팩 파일로 묶어 저장한다.
 - packs: 팩 파일의 개수
 - size-pack: 팩 파일의 전체 크기
 - prune-packable: 팩에 존재하는 느슨한 객체의 개수
@@ -1020,7 +1020,7 @@ hash mismatch 7g8h9i0j1k2l...
 git gc [--aggressive] [--auto] [--[no-]detach] [--quiet] [--prune=<date> | --no-prune] [--force] [--keep-largest-pack]
 ```
 
-`git gc`는 깃 저장소에서 가비지 컬렉션을 수행하면서 사용되지 않는 객체를 제거하고, 저장소를 최적화한다. 보통은 깃이 자동으로 실행하므로 신경 쓸 필요가 없지만, 저장소가 지나치게 느리거나 크기가 비정상적으로 커졌을 때 사용한다.
+`git gc`는 Git 저장소에서 가비지 컬렉션을 수행하면서 사용되지 않는 객체를 제거하고, 저장소를 최적화한다. 보통은 Git이 자동으로 실행하므로 신경 쓸 필요가 없지만, 저장소가 지나치게 느리거나 크기가 비정상적으로 커졌을 때 사용한다.
 
 ```bash
 # 자동 실행 조건을 무시하고 강제 실행 + 최근에 생성된 객체까지 모두 삭제 + 더 많은 델타 압축 수행
@@ -1044,7 +1044,7 @@ Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.
 여기선 그냥 `N`을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:
 
 ```bash
-# 파워셸
+# PowerShell
 $env:GIT_ASK_YESNO = 'false'
 
 # git bash
@@ -1301,7 +1301,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 ## ls-tree
 
-지정한 경로에 있는 깃이 추적중인 파일목록을 출력한다.
+지정한 경로에 있는 Git이 추적중인 파일목록을 출력한다.
 
 ```bash
 git ls-tree -d origin/main
@@ -1321,11 +1321,11 @@ git ls-tree HEAD ./docs
 
 ## merge
 
-> 깃의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다.
+> Git의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다.
 >
 > [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
 
-현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 깃은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
+현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 Git은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
 
 ```bash
 git merge 브랜치1 [브랜치2 브랜치3 브랜치3 ...]
@@ -1407,7 +1407,7 @@ git merge-base dev stage
 - `-a` `--all`: 모든 공통 조상을 찾아서 출력
 - `--octopus`: 세 개 이상의 커밋을 지정할 때 사용하는 옵션
 - `--independent`: 지정한 두 커밋의 공통 조상들 중 상호 조상-자손 관계가 아닌 독립적인 공통 조상만 찾는다.
-- `--is-ancestor`: 지정한 두 커밋 중 하나가 다른 하나의 조상인지 여부를 확인한다. 파워셸 스크립트 등에서 조건 분기에 사용되는 옵션으로 명령어만 실행하선 아무것도 출력되지 않는다.
+- `--is-ancestor`: 지정한 두 커밋 중 하나가 다른 하나의 조상인지 여부를 확인한다. PowerShell 스크립트 등에서 조건 분기에 사용되는 옵션으로 명령어만 실행하선 아무것도 출력되지 않는다.
 - `--fork-point`: 두 커밋 중 하나가 다른 브랜치에서 갈라져 나온 지점(fork point)을 찾는다.
 
 
@@ -1455,7 +1455,7 @@ git push  # origin 리모트 저장소에 현재 브랜치를 push
 - `--all` `--branches`: 모든 브랜치(`refs/heads/` 아래의 모든 참조)를 push 한다. 태그는 포함되지 않는다. 이 옵션을 쓰면 refspec을 따로 지정할 수 없다.
 - `--mirror`: 브랜치, 태그 등의 모든 참조를 원격 저장소에 그대로 push 한다. 로컬과 원격을 완벽히 동일하게 동기화하는 옵션이다. 차이가 있는 부분은 로컬 기준으로 덮어쓰고, 삭제된 ref도 원격에서 삭제된다.
 
-⚠️ `--all`이나 `--mirror` 옵션을 사용해도 로컬에 없는 리모트 추적 브랜치(`refs/remotes/`)는 올라가지 않는다. 리모트 추적 브랜치를 포함한 모든 참조를 push 하고 싶으면 먼저 로컬 브랜치를 생성하는 작업이 필요하다. `/git/git-깃-노트-note/`에 작성한 스크립트를 참고할 것.
+⚠️ `--all`이나 `--mirror` 옵션을 사용해도 로컬에 없는 리모트 추적 브랜치(`refs/remotes/`)는 올라가지 않는다. 리모트 추적 브랜치를 포함한 모든 참조를 push 하고 싶으면 먼저 로컬 브랜치를 생성하는 작업이 필요하다. `/git/git-git-노트-notes/`에 작성한 스크립트를 참고할 것.
 
 #### 업스트림 브랜치 설정 \#3
 
@@ -1874,11 +1874,11 @@ remove. 워킹 트리와 스테이징 영역에서 파일을 삭제한다.
 git rm readme.txt
 ```
 
-rm 명령어는 깃이 추적중인 파일 혹은 폴더에만 사용할 수 있다.
+rm 명령어는 Git이 추적중인 파일 혹은 폴더에만 사용할 수 있다.
 
-#### 깃의 추적을 중단시키기
+#### Git의 추적을 중단시키기
 
-실제 파일은 남기고 깃의 관리 대상에서만 제외한다.
+실제 파일은 남기고 Git의 관리 대상에서만 제외한다.
 
 ```bash
 # 파일
@@ -1964,7 +1964,7 @@ git stash -u  # --include-untracked: 추적중이지 않은 파일도 스태시�
 git stash list  # 스태시 목록 확인
 git stash show  # 첫 번째 스태시 상세 확인
 git stash show stash@{0}  # 리눅스에서만 됨
-git stash show 'stash@{0}'  # 윈도우 파워셸은 이렇게
+git stash show 'stash@{0}'  # Windows PowerShell은 이렇게
 git stash show 0  # git stash show stash@{0}과 같음
 ```
 
@@ -2225,7 +2225,7 @@ git update-index --really-refresh
 
 ## worktree
 
-`worktree`는 하나의 깃 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
+`worktree`는 하나의 Git 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
 
 ```
 git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]] [--orphan] [(-b | -B) <new-branch>] <path> [<commit-ish>]
@@ -2254,9 +2254,9 @@ git worktree add ../another-repo main
 
 위 명령들은 `../another-repo` 디렉터리에 특정 브랜치를 위한 새로운 워킹 트리를 생성한다. `-b test`는 `test` 브랜치를 새로 만들면서 체크아웃 하겠다는 의미다.
 
-새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 기존 경로 하위에 만들면 깃이 마치 새 파일들이 잔뜩 생긴 것처럼 인식하기 때문.
+새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 기존 경로 하위에 만들면 Git이 마치 새 파일들이 잔뜩 생긴 것처럼 인식하기 때문.
 
-생성된 워킹 트리는 겉보기에 독립된 깃 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 깃 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음) 그래서 다른 워킹트리가 이미 체크아웃한 브랜치로는 전환할 수 없다.
+생성된 워킹 트리는 겉보기에 독립된 Git 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 Git 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음) 그래서 다른 워킹트리가 이미 체크아웃한 브랜치로는 전환할 수 없다.
 
 ```bash
 # 생성한 워킹 트리 목록 확인
@@ -2271,7 +2271,7 @@ git worktree prune
 
 생성한 워킹 트리 목록 확인은 `worktree list`로, 삭제는 `worktree remove`로 하면 됨. 워킹 트리를 삭제할 때 실제 디렉터리도 전부 삭제되니 변경사항을 날려먹지 않도록 주의하자.
 
-`worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, 깃은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
+`worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, Git은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
 
 
 끗.

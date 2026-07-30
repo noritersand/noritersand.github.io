@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[Windows] 윈도우 10 초기 설정 및 팁'
+title: '[Windows] Windows 10 초기 설정 및 팁'
 categories:
   - windows
 tags:
@@ -23,7 +23,7 @@ tags:
 
 ## 개요
 
-요즘 들어 혜자로워진 마소의 윈도우 10 초기 설정을 정리한 글.
+요즘 들어 혜자로워진 마소의 Windows 10 초기 설정을 정리한 글.
 
 
 ## Windows 터미널
@@ -31,7 +31,7 @@ tags:
 - [Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)
 - [Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
 
-2020년인가... 새로 나온 윈도우용 터미널. 앱 하나에서 윈도우의 각종 셸(CMD, 파워셸, 파워셸 레거시, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
+2020년인가... 새로 나온 Windows용 터미널. 앱 하나에서 Windows의 각종 셸(CMD, PowerShell, PowerShell Core, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
 
 [이 링크](https://www.microsoft.com/ko-kr/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)에서 설치하거나, 스토어에서 'Windows Terminal'을 검색하면 나온다.
 
@@ -60,7 +60,7 @@ tags:
 
 ### 시작 위치 변경
 
-**윈도우 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음.**
+**Windows 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음.**
 
 터미널의 시작 위치를 변경하려면 설정 파일 `settings.json`을 아래처럼 수정한다. 해당 파일은 터미널 앱의 설정에서 좌측 하단 `Json 파일 열기`를 누르면 열림:
 
@@ -179,7 +179,7 @@ telnet localhost 4000
 
 ~~뭔소리야~~ 잘 모르겠지만 프로그램에서 지역을 알기 위해 참조하는 환경 변수로 보인다.
 
-어쨋든 파워셸을 관리자 권한으로 열고 아래 명령을 실행한다:
+어쨋든 PowerShell을 관리자 권한으로 열고 아래 명령을 실행한다:
 
 ```bash
 [System.Environment]::SetEnvironmentVariable('LC_ALL', 'ko_KR.UTF-8', 'Machine')
@@ -237,7 +237,7 @@ telnet localhost 4000
 
 ### 구버전 제어판 열기
 
-윈도우 검색(<kbd>win + s</kbd>)에서 '제어판'으로 검색하면 나온다. 만약 검색이 안 되면 실행 대화 상자(<kbd>win + r</kbd>)에서 `control` 혹은 `Control Panel` 입력.
+Windows 검색(<kbd>win + s</kbd>)에서 '제어판'으로 검색하면 나온다. 만약 검색이 안 되면 실행 대화 상자(<kbd>win + r</kbd>)에서 `control` 혹은 `Control Panel` 입력.
 
 ### 파일 탐색기(File Explorer) 아이콘 오버레이 우선순위 설정
 
@@ -290,7 +290,7 @@ sudo apt-get remove byobu hollywood
 
 ## 환경 변수
 
-### 미리 설정되어 있는 윈도우 환경 변수
+### 미리 설정되어 있는 Windows 환경 변수
 
 - `%USERPROFILE%`: 사용자 홈 폴더
 - `%HOMEPATH%`: 사용자 홈 폴더2, userprofile하고 뭔 차이인지...
@@ -308,11 +308,11 @@ sudo apt-get remove byobu hollywood
 
 ## shell: 프로토콜
 
-윈도우의 특수 폴더(special folder)에 접근하는데 사용하는 명령어. 'shell: protocol' 혹은 'shell: commands'라 부른다. 
+Windows의 특수 폴더(special folder)에 접근하는데 사용하는 명령어. 'shell: protocol' 혹은 'shell: commands'라 부른다. 
 
 이 특수 폴더들은 일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 
 
-그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, 파워셸에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
+그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, PowerShell에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
 
 아래는 `shell:` 프로토콜로 접근 가능한 특수 폴더의 목록이다:
 
@@ -477,7 +477,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + d</kbd>: 바탕화면 보기. 다시 WIN + D를 누르면 이전 상태로 돌아온다
 - <kbd>win + e</kbd>: 파일 탐색기(내 PC) 실행
 - <kbd>win + enter</kbd>: 내레이터 설정
-- <kbd>win + g</kbd>: 윈도우 게임 바 열기. 화면 캡처 혹은 녹화 등의 기능을 제공
+- <kbd>win + g</kbd>: Windows 게임 바 열기. 화면 캡처 혹은 녹화 등의 기능을 제공
 - <kbd>win + home</kbd>: 현재 사용중인 창을 제외한 모든 창 최소화.
 - <kbd>win + i</kbd>: Metro 설정 열기
 - <kbd>win + k</kbd>: 연결(무선 디스플레이 및 오디오)
@@ -487,7 +487,7 @@ sudo apt-get remove byobu hollywood
 - <kbd>win + pause</kbd>: 시스템 정보 창 열기
 - <kbd>win + prtsc</kbd>: (PrintScreen) 화면 캡처 후 파일로 저장. 경로는 `%userprofiles%\Pictures\Screenshots`
 - <kbd>win + r</kbd>: 실행 대화 상자 열기
-- <kbd>win + s</kbd>: 윈도우 검색. 앱, 파일 등을 찾을 수 있음
+- <kbd>win + s</kbd>: Windows 검색. 앱, 파일 등을 찾을 수 있음
 - <kbd>win + shift + left</kbd> <kbd>win + shift + right</kbd>: 현재 창 이전/다음 모니터로 이동
 - <kbd>win + shift + up</kbd>: 현재 창 수직 최대화
 - <kbd>win + shift + s</kbd>: 캡처창 열기
@@ -547,6 +547,6 @@ sudo apt-get remove byobu hollywood
 
 ### Windows Terminal
 
-- <kbd>win + ` </kbd>: 윈도우 터미널의 기본 셸로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
+- <kbd>win + ` </kbd>: Windows 터미널의 기본 셸로 지정된 앱 실행. 터미널이 실행된 상태에서만 작동한다.
 
 끝.

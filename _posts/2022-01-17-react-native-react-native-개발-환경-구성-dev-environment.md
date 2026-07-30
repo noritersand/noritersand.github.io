@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2022-01-17 18:49:33 +0900
-title: '[React Native] 리액트 네이티브 개발 환경 구성'
+title: '[React Native] React Native 개발 환경 구성'
 categories:
   - react-native
 tags:
@@ -36,7 +36,7 @@ tags:
 
 ## 개요
 
-리액트 네이티브 개발 환경 구성 방법 요약 정리. 글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
+React Native 개발 환경 구성 방법 요약 정리. 글쓴이는 맥을 안써서 iOS는 해당 엇ㅂ음.
 
 
 ## 설치
@@ -96,7 +96,7 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-all.zip
 
 안드로이드 스튜디오에서 Android SDK 설정으로 이동한다: Settings(<kbd>ctrl + alt + s</kbd>) > Appearance & Behavior > System Settings > Android SDK > SDK Platforms
 
-그리고 원하는 버전 아무거나 골라서 설치하면 되는데, 리액트 네이티브를 빌드하려면 Android 10 (Q)는 필수라고 함.
+그리고 원하는 버전 아무거나 골라서 설치하면 되는데, React Native를 빌드하려면 Android 10 (Q)는 필수라고 함.
 
 우측 하단의 'Show Package Details' 눌러서 Android 10 (Q) 아래에 있는:
 
@@ -123,7 +123,7 @@ PATH에 요것도 추가:
 [Environment]::SetEnvironmentVariable("PATH", "$env:PATH;$env:LOCALAPPDATA\Android\Sdk\platform-tools", "User")
 ```
 
-파워셸 재시작 후 `adb` 명령어 잘 실행되는지 확인.
+PowerShell 재시작 후 `adb` 명령어 잘 실행되는지 확인.
 
 ### React Native CLI
 
@@ -142,13 +142,13 @@ npm install yarn -g # Yarn이 있으면 init 할 때 빠름
 ```
 
 ```bash
-# NEW_DIR 경로에 새 리액트 네이티브 앱 구성파일 생성
+# NEW_DIR 경로에 새 React Native 앱 구성파일 생성
 react-native init NEW_DIR
 
-# --version: 특정 리액트 네이티브의 버전 지정
+# --version: 특정 React Native의 버전 지정
 react-native init NEW_DIR --version X.XX.X
 
-# --template: 래익트 네이티브 템플릿 지정 옵션
+# --template: React Native 템플릿 지정 옵션
 react-native init NEW_DIR --template react-native-template-typescript
 ```
 
@@ -236,7 +236,7 @@ react-native run-android
 
 ## 디버깅
 
-리액트 네이티브에 기본 내장된 웹 버전 디버거와 앱 버전 디버거가 있다. 일단 연결되면 마치 브라우저 개발자 도구 쓰듯이 쓸 수 있다. (콘솔, 노드 트리, 코드 브레이킹, 네트워크 트래픽 등등)
+React Native에 기본 내장된 웹 버전 디버거와 앱 버전 디버거가 있다. 일단 연결되면 마치 브라우저 개발자 도구 쓰듯이 쓸 수 있다. (콘솔, 노드 트리, 코드 브레이킹, 네트워크 트래픽 등등)
 
 AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되거나 브레이크가 제대로 안걸리거나 하는 문제가 있었음.
 
@@ -262,7 +262,7 @@ AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되�
 
 메트로&앱을 디버거보다 먼저 실행했으면 <kbd>r</kbd>을 눌러 새로고침 해줘야 함.
 
-근데 디버거 사용성이 좀 션찮다... 게다가 리프레시도 느려짐. (윈도우만 그런가?)
+근데 디버거 사용성이 좀 션찮다... 게다가 리프레시도 느려짐. (Windows만 그런가?)
 
 ### [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)를 쓰는 경우 리모트 디버깅 불가능
 

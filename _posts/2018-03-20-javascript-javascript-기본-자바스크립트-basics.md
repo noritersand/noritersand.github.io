@@ -397,7 +397,7 @@ JavaScript의 문자열 리터럴은 여타 언어와 마찬가지로 따옴표�
 Java와 비교해 다른점은 큰따옴표, 작은따옴표 어느것을 사용해도 무방하다는 것이다:
 
 ```js
-" ' testing' "   // ' testing ', 자바와 같다.
+" ' testing' "   // ' testing ', Java와 같다.
 ' " testing " '   // " testing ", JavaScript만 가능한 표현
 ```
 

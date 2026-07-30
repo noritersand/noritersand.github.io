@@ -201,19 +201,19 @@ Node.js는 `./myModule/lib/temp.js` 를 찾는다.
 
 npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키지 관리 도구다.
 
-### ℹ️ 파워셸에서 npm 명령이 실행되지 않을 때
+### ℹ️ PowerShell에서 npm 명령이 실행되지 않을 때
 
 ```bash
 PS> npm
 npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
-이 문제는 파워셸의 실행 정책(Execution Policy) 때문에 발생한다. 파워셸은 기본적으로 보안을 위해 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 스크립트 파일이 차단되어 에러가 발생하는 것.
+이 문제는 PowerShell의 실행 정책(Execution Policy) 때문에 발생한다. PowerShell은 기본적으로 보안을 위해 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 스크립트 파일이 차단되어 에러가 발생하는 것.
 
 아래 명령으로 실행 정책을 변경해주면 해결된다:
 
 ```bash
-# 파워셸 실행 정책 변경: 
+# PowerShell 실행 정책 변경: 
 # - 현재 사용자에게만 적용
 # - 스크립트를 로컬에서 직접 작성했거나 신뢰할 수 있는 게시자가 서명한 경우에만 실행
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -634,7 +634,7 @@ yarn dlx <command> ...
 ```
 
 ```bash
-# my-app 디렉터리에 CRA로 리액트 앱 스캐폴딩
+# my-app 디렉터리에 CRA로 React 앱 스캐폴딩
 yarn dlx create-react-app ./my-app
 ```
 
@@ -704,7 +704,7 @@ yarn dedup [PACKAGE_NAME]
 
 Yarn PnP는 Yarn 2.x 버전 이상부터 사용 가능한 Yarn의 새로운 패키지 설치 방식이다. 전통적인 `node_modules` 방식과 다르게, 의존하는 패키지를 하나의 압축 파일 형태로 저장한다.
 
-PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 충돌 문제를 방지하고, 의존성 문제가 발생했을 때 디버깅이 쉽다는 장점이 있다. 다만 일부 패키지는 아직 PnP 환경에 호환되지 않을 수 있으니 이 점은 주의할 것. (특히 리액트 네이티브와 Expo가 그렇다)
+PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 충돌 문제를 방지하고, 의존성 문제가 발생했을 때 디버깅이 쉽다는 장점이 있다. 다만 일부 패키지는 아직 PnP 환경에 호환되지 않을 수 있으니 이 점은 주의할 것. (특히 React 네이티브와 Expo가 그렇다)
 
 PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 필드가 `pnp`일 때, 혹은 `.yarnrc.yml` 파일이 아예 없을 때 자동으로 활성화된다. 활성화 상태라면 `yarn install` 시 `.yarn` 디렉터리, `.pnp.cjs`, `.pnp.loader.mjs` 파일 등이 자동으로 생성된다.
 
