@@ -24,7 +24,7 @@ tags:
 
 - Next.js 14.x.x
 - Next.js 15.x.x
-- TypeScript를 사용한다 가정하고 작성함
+- TypeScript 사용 기준으로 작성함
 
 
 ## 개요
