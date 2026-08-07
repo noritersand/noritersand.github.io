@@ -70,7 +70,7 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 
 서브라임에서 자동 완성 항목을 추가하는 방법이다.
 
-메뉴에서 `Tools` > `Developer` > `New Snippet...` 을 누르면 새 스니펫 파일이 열린다. 거기에 아래처럼 작성한 뒤:
+메뉴에서 `Tools > Developer > New Snippet...` 을 누르면 새 스니펫 파일이 열린다. 거기에 아래처럼 작성한 뒤:
 
 ```xml
 <!-- javascript-cl.sublime-snippet -->
@@ -123,6 +123,13 @@ console.debug('${1:msg}:', ${2:msg});
 작성한 파일을 다시 열어보고 싶으면 `View Package File` 명령을 실행할 것.
 
 
+## 기타 정보
+
+### 임시 데이터 지우기
+
+`%APPDATA%\Sublime Text\Local` 경로에 있는 `Session.sublime_session` 파일을 지우면 마지막으로 열었던 정보, 최근 열었던 프로젝트 같은 임시 데이터가 초기화되는데... 최근 프로젝트만 지우고 싶으면 해당 파일을 열어서 `workspaces > recent_workspaces` 내용을 수정하는 게 낫다.
+
+
 ## 패키지(플러그인) Sublime Text Packages
 
 패키지는 서브라임 커뮤니티에서 공유되는 확장 기능이다.
@@ -141,9 +148,9 @@ console.debug('${1:msg}:', ${2:msg});
 - Sync View Scroll: 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
 - ⭐URLEncode: URL 인코드-디코드 기능 제공.
 - ⭐HexViewer: 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
-- ⭐SideBarEnhancements: 서브라임의 부실한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
+- ⭐SideBarEnhancements: 서브라임의 단순한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
 - MarkdownPreview: 마크다운 파일 브라우저로 미리보기
-- Emmet: 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. [Emmet 문법은 여기](https://docs.emmet.io/)를 보면 됨.
+- ⭐Emmet: 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. [Emmet 문법은 여기](https://docs.emmet.io/)를 보면 됨.
 - Log Highlight: 로그 파일 가독성이 아주 약간 좋아짐.
 - ⭐Pretty JSON: JSON 문자열을 한 줄로 압축하거나 반대로 예쁘게 포맷해주는 플러그인
 - ⭐MoveTab: 탭의 위치를 좌우로 이동하는 단축키를 추가한다. 이 플러그인을 설치하면 기본 단축키인 next view extend(다음 탭을 현재 화면에 나눠서 보기)을 덮어쓴다.
@@ -160,6 +167,8 @@ console.debug('${1:msg}:', ${2:msg});
   - <kbd>alt + f5</kbd>: [strftime](https://www.strfti.me) 포맷 커스텀 입력
 - ⭐Case Conversion: 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.
   - 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 `{"detect_acronyms": false}` 이걸 붙여넣으면 된다.
+- CommandsBrowser: 서브라임(특히 Sublime Merge가)은 명령어 도움말이 부실하다. 이거 설치 후 커맨드 팔레트에서 `CommandsBrowser` 입력해보자
+- ⭐rainbow_csv: CSV Syntax를 지원하는 패키지. 열을 기준으로 알록달록하게 보여줌
 
 
 ## 작성자 저장용 사용자 설정

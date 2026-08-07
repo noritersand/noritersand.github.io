@@ -44,7 +44,7 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 
 ### 환경 변수 조회
 
-```bash
+```powershell
 # 모든 환경 변수 보기,
 Get-ChildItem Env:
 
@@ -67,7 +67,7 @@ $env:path
 
 현재 세션에서만 유효한 로컬 환경 변수. 터미널을 닫으면 사라진다.
 
-```bash
+```powershell
 # 환경 변수 test 추가
 $env:test = 1234
 
@@ -82,7 +82,7 @@ Remove-Item Env:\test
 
 글로벌 환경 변수는 세션이 아니라 사용자 혹은 시스템 전체에 적용되며, 터미널을 닫아도 유지된다.
 
-```bash
+```powershell
 # 로그인한 사용자의 환경 변수로 'test' 추가
 [Environment]::SetEnvironmentVariable("test", "1234", "User")
 
@@ -107,7 +107,7 @@ Remove-Item Env:\test
 
 아래는 Sound Switch 프로세스를 강제로 재시작하는 스크립트다:
 
-```bash
+```powershell
 # restart-soundswitch.ps1
 Stop-Process -Name 'SoundSwitch'
 Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
@@ -115,7 +115,7 @@ Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 
 이 스크립트를 실행하면 되는데, 문제는 PowerShell 스크립트 파일은 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 스크립트를 실행한다:
 
-```bash
+```powershell
 # restart-soundswitch.bat
 pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 ```
@@ -127,7 +127,7 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 
 ### 변수선언과 사용
 
-```bash
+```powershell
 $abc = 1234
 
 $abc
@@ -145,7 +145,7 @@ gv abc
 
 PowerShell에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
 
-```bash
+```powershell
 $i = 5
 "The value of $i is $i."
 # The value of 5 is 5.
@@ -178,7 +178,7 @@ $i = 5
 
 ℹ️ 파이프라인으로 이어지는 명령을 한 라이너(one-liners)라고 함.
 
-```bash
+```powershell
 # 123을 Node.js로 실행한 solution.js 파일에 표준입력으로 보내기
 echo 123 | node .\solution.js
 
@@ -193,7 +193,7 @@ Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
 
 줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱``` ` ```을 붙인다:
 
-```bash
+```powershell
 # js 파일을 찾아서 temp.md에 파일 이름을 작성하는 스크립트
 Get-ChildItem `
   -Path . `
@@ -208,7 +208,7 @@ Get-ChildItem `
 
 줄 끝이 파이프`|`일 땐 백틱``` ` ```을 생략해도 된다:
 
-```bash
+```powershell
 Get-ChildItem |
   Where-Object name -eq 'temp.md'
 ```
@@ -217,7 +217,7 @@ Get-ChildItem |
 
 세미콜론`;`으로 각 명령어를 구분할 수 있음:
 
-```bash
+```powershell
 Get-Process; Get-Service
 
 $Service = 'w32time'; Get-Service -Name $Service
@@ -279,7 +279,7 @@ Show-User @params
 
 ### 리디렉션 연산자 `>` `>>`
 
-```bash
+```powershell
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
@@ -315,13 +315,13 @@ https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language
 
 괄호 안 표현식의 실행 결과를 반환한다. 명령의 결과를 문자열 혹은 또다른 명령에 포함시킬 때 사용한다:
 
-```bash
+```powershell
 # yarn global bin: Yarn의 글로벌 경로를 반환하는 명령어
 # 경로를 받아온 다음 해당 경로로 전환
 cd $(yarn global bin)
 ```
 
-```bash
+```powershell
 $count = 5
 
 # ✅ '5 개' 출력
@@ -338,7 +338,7 @@ echo "$count개"
 
 괄호 안 표현식을 배열로 만들어 반환한다. 배열을 생성하거나 변환할 때 사용한다. `@()`만 실행하면 빈 배열이 생성된다.
 
-```bash
+```powershell
 @('*.txt', '*.md') | ForEach-Object { Get-ChildItem -Filter $_ -Recurse }
 ```
 
@@ -354,8 +354,8 @@ echo "$count개"
 
 예를 들어 유틸리티 모듈에는 `Format-List`라는 리스트를 세로 목록으로 출력하는 명령이 있는데, 파이프를 활용하면:
 
-```bash
-PS> Get-FileHash .\upload.me | Format-list
+```powershell
+PS > Get-FileHash .\upload.me | Format-list
 
 Algorithm : SHA256
 Hash      : 90B56139615DA8FE23201FD4C5FFE6E40EB16A8D544387B8056D2E1CF8D4AFF9
@@ -370,21 +370,21 @@ Path      : C:\dev\upload.me
 
 JavaScript의 `eval()`과 비슷하다. 예를 들어 서브라임의 실행 파일을 전체 경로로 실행하려고 할 때, 공백을 포함한 전체 경로를 지정하려면 다음처럼 해야하는데:
 
-```bash
+```powershell
 'C:\Program Files\Sublime Text\subl.exe'
 # C:\Program Files\Sublime Text\subl.exe 출력됨
 ```
 
 이러면 파일을 실행하는게 아니라 문자열을 출력해 버린다. 이럴 땐 호출 연산자를 앞에 붙여서 문자열을 스크립트로 실행하도록 하면 된다:
 
-```bash
+```powershell
 & 'C:\Program Files\Sublime Text\subl.exe'
 # 서브라임을 실행함
 ```
 
 그런데 호출 연산자는 문자열을 **구문 분석** 하지 않는다고 한다. 그래서 명령어의 파라미터를 사용할 수 없다:
 
-```bash
+```powershell
 $c = "Get-Service -Name Spooler"
 
 & $c
@@ -394,7 +394,7 @@ $c = "Get-Service -Name Spooler"
 
 이럴 땐 호출 연산자 대신 [Invoke-Expression](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-expression?view=powershell-7.2)을 사용하라고 함:
 
-```bash
+```powershell
 Invoke-Expression $c
 # Status   Name               DisplayName
 # ------   ----               -----------
@@ -405,7 +405,7 @@ Invoke-Expression $c
 
 명령을 백그라운드에서 실행한다. 호출 연산자와 다르게 앰퍼샌드가 명령 마지막에 위치한다.
 
-```bash
+```powershell
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3#background-operator-
 
 Get-Process -Name pwsh &
@@ -423,7 +423,7 @@ Start-Job -ScriptBlock {Get-Process -Name pwsh}
 
 #### 점 소싱 연산자 Dot sourcing operator `.`
 
-```bash
+```powershell
 . $PROFILE
 ```
 
@@ -573,7 +573,7 @@ function Get-PSVersion {
 
 프로파일은 일단 한 번 추가하면 `$PROFILE` 변수에서 파일 경로를 찾을 수 있음:
 
-```bash
+```powershell
 Write-Output $PROFILE
 # C:\Users\fixalot\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
 ```
@@ -582,7 +582,7 @@ Write-Output $PROFILE
 
 메모리에 함수가 로드됐는지는 'Function PSDrive'란 곳에서 볼 수 있다고 함:
 
-```bash
+```powershell
 # Function PSDrive에서 'Get-'으로 시작하고 'Version'으로 끝나는 함수 조회
 Get-ChildItem -Path Function:\Get-*Version
 
@@ -626,7 +626,7 @@ function Test-Fn($Param1, $Param2) {
 
 호출할 때는 파라미터 구분을 `-파라미터이름`으로 지정하거나, 아니면 아예 생략한 뒤 순서에 맞춰 공백으로 구분한다:
 
-```bash
+```powershell
 Test-Fn abc def
 # $Param1: abc
 # $Param2: def
@@ -726,7 +726,7 @@ Test-Fn7
 
 `Parameter(Mandatory)`의 부수효과로 데이터 개수 제한이 있다. 위 예시에서 `$Param1`의 데이터 타입은 `string`인데 배열이 아니라서 딱 하나의 값만 허용한다:
 
-```bash
+```powershell
 Test-Fn7 -Param1 1
 $Param1: 1
 
@@ -857,23 +857,23 @@ PowerShell에서 지원하는 데이터 타입은 아래와 같다:
 
 참고로 데이터 타입은 `GetType()` 메서드로 확인할 수 있음:
 
-```bash
-PS> $n1 = 1
-PS> $n1.GetType()
+```powershell
+PS > $n1 = 1
+PS > $n1.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     Int32                                    System.ValueType
 
-PS> $n2 = 2.3
-PS> $n2.GetType()
+PS > $n2 = 2.3
+PS > $n2.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     Double                                   System.ValueType
 
-PS> $s1 = 'Hello'
-PS> $s1.GetType()
+PS > $s1 = 'Hello'
+PS > $s1.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
@@ -882,7 +882,7 @@ True     True     String                                   System.Object
 
 ### 해시 테이블 Hashtables
 
-```bash
+```powershell
 $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
 
 $hash

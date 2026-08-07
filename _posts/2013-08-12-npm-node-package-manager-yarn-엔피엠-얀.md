@@ -204,7 +204,7 @@ npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키�
 ### ℹ️ PowerShell에서 npm 명령이 실행되지 않을 때
 
 ```bash
-PS> npm
+PS > npm
 npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
@@ -532,14 +532,20 @@ yarn config set nodeLinker pnp
 
 주요 필드로:
 
-- `nodeLinker`: Node 패키지 설치 방법을 정의한다. `pnp`, `pnpm`, `node-modules`(기존 방식) 중 택일.
-- `packageExtensions`: 특정 패키지의 추가적인 의존성을 지정하거나 기존의 필드를 수정하기 위해 사용한다. `package.json`의 `resolutions` 필드와 달리 특정 패키지에만 적용 가능. 
+- `nodeLinker`: Node 패키지 설치 및 연결 방식을 정의한다. `pnp`(기본값), `pnpm`, `node-modules`(기존 node_modules 방식) 중 선택.
+- `npmMinimalAgeGate`: 배포된 지 일정 시간이 지나지 않은 npm 패키지 버전을 설치 대상에서 제외하는 보안 설정. `0`이면 제한을 해제하고, `1d`(1일), `7d`(7일)처럼 설정하면 해당 시간이 지난 버전만 설치한다.
+- `packageExtensions`: 특정 서드파티 패키지가 누락한 의존성(`dependencies` 또는 `peerDependencies`)을 메타데이터 수준에서 직접 추가/수정할 때 사용한다. 특히 PnP 모드에서 패키지의 의존성 누락으로 인한 에러를 해결할 때 유용하다.
 
 ```yml
+nodeLinker: pnp
+npmMinimalAgeGate: 7d
 packageExtensions:
   "@babel/core@*":
     dependencies:
       "@babel/types": "*"
+
+...
+
 ```
 
 이 외의 설정 가능한 필드는 `yarn config -v` 명령으로 조회 하던지 아니면 [이 문서](https://yarnpkg.com/configuration/yarnrc)를 보자.
@@ -707,6 +713,8 @@ Yarn PnP는 Yarn 2.x 버전 이상부터 사용 가능한 Yarn의 새로운 패�
 PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 충돌 문제를 방지하고, 의존성 문제가 발생했을 때 디버깅이 쉽다는 장점이 있다. 다만 일부 패키지는 아직 PnP 환경에 호환되지 않을 수 있으니 이 점은 주의할 것. (특히 React 네이티브와 Expo가 그렇다)
 
 PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 필드가 `pnp`일 때, 혹은 `.yarnrc.yml` 파일이 아예 없을 때 자동으로 활성화된다. 활성화 상태라면 `yarn install` 시 `.yarn` 디렉터리, `.pnp.cjs`, `.pnp.loader.mjs` 파일 등이 자동으로 생성된다.
+
+ℹ️ Yarn PnP는 아직(2026-08-07) 호환성 문제가 있다. 특히 Next.js나 Remix 최신 버전은 빌드 문제가 발생하기 때문에 `nodeLinker: node-modules` 설정을 추가해야 한다.
 
 `yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드 값을 Yarn의 최신 버전으로 변경한다.
 

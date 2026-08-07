@@ -83,7 +83,7 @@ if ($Help) {
     Write-Host "  -TimeoutSeconds <숫자>          # 네트워크 타임아웃 (기본값: 600초)"
     Write-Host ""
     
-    Write-Host "주의사항:" -ForegroundColor Red
+    Write-Host "주의 사항:" -ForegroundColor Red
     Write-Host "  • 이 스크립트는 삭제 대상을 식별만 하며, 실제 삭제는 직접 수행해야 합니다."
     Write-Host "  • git branch --merged 기준으로 머지 여부를 판단함"
     Write-Host ""

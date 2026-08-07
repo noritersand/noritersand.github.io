@@ -52,7 +52,7 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 ℹ️ `Secure` 속성이 `true`면 HTTPS 프로토콜을 통해서만 쿠키를 전송하도록 강제한다. 하지만 브라우저에 따라 호스트가 `localhost`나 `127.0.0.1`일 때 이 속성을 무시한다.
 
 
-## 주의사항
+## 주의 사항
 
 ### value로 허용되는 특수 문자
 

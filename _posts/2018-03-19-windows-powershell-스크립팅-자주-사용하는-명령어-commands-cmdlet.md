@@ -18,7 +18,9 @@ tags:
 
 #### 참고 문서
 
-- [Cmdlet 개요 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview?view=powershell-7.4)
+- [PowerShell 설명서를 사용하는 방법 - PowerShell \| Microsoft Learn](https://learn.microsoft.com/ko-kr/powershell/scripting/how-to-use-docs)
+- [Cmdlet 개요 \| Microsoft Learn](https://docs.microsoft.com/ko-kr/powershell/scripting/developer/cmdlet/cmdlet-overview)
+- [Microsoft.PowerShell.Core Module - PowerShell \| Microsoft Learn](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/)
 
 
 ## 개요
@@ -81,15 +83,15 @@ wjb -> Wait-Job                   write -> Write-Output
 ```
 
 
-## Microsoft.Powershell.Core
+## Microsoft.PowerShell.Core Module
 
-[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/?view=powershell-7.4)
+PowerShell 환경 자체의 핵심 엔진 및 기본 기능을 제공하는 모듈
 
 ### Get-Command
 
 명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다.
 
-```bash
+```powershell
 # 명령어 explorer의 명령어타입, 이름, 버전, 소스(경로) 출력
 Get-Command explorer
 ```
@@ -98,7 +100,7 @@ Get-Command explorer
 
 명령어 실행 이력 보기. 기본 별칭 `history`
 
-```bash
+```powershell
 Get-History # 모든 명령어 이력 보기
 Get-History 10 # 열 번째로 실행한 명령어 보기
 Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
@@ -108,7 +110,7 @@ Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 �
 
 기본 별칭 `r`, `ihy`
 
-```bash
+```powershell
 Invoke-History # 마지막 명령어 실행
 Invoke-History -Id 132 # 132번 명령어 실행
 Invoke-History 132 # 위와 같음
@@ -118,7 +120,7 @@ Invoke-History 132 # 위와 같음
 
 프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
 
-```bash
+```powershell
 # name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
 Get-ChildItem | Where-Object name -eq 'httpd.exe'
 
@@ -127,15 +129,15 @@ Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js
 ```
 
 
-## Microsoft.PowerShell.Management
+## Microsoft.PowerShell.Management Module
 
-[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.management/?view=powershell-7.4)
+운영체제(Windows)의 시스템 자원 및 파일 시스템을 제어하는 모듈
 
 ### New-Item
 
 파일이나 디렉터리, 심볼릭 링크 등을 생성한다.
 
-```bash
+```powershell
 # TARGET_PATH를 가리키는 심볼릭 링크 LINK 생성
 New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 ```
@@ -150,7 +152,7 @@ New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 
 현 위치에서 다른 위치로 항목 이동하기. 기본 별칭은 `mi`, `move`, `mv`
 
-```bash
+```powershell
 # 현재 경로의 모든 html 파일을 aaa/bbb 아래로 이동
 Move-Item -Path ./*.html -Destination ./aaa/bbb/
 
@@ -175,7 +177,7 @@ Get-ChildItem -Path . -Exclude 'aaa' | Move-Item -Destination ./aaa/bbb/
 
 프로세스 가져오기. 기본 별칭은 `ps`와 `gps`.
 
-```bash
+```powershell
 # PID가 2832 혹은 836인 프로세스 출력
 Get-Process -Id 2832, 836
 
@@ -192,7 +194,7 @@ Get-Process 'SoundSwitch'
 
 프로세스 시작. 기본 별칭은 `saps`.
 
-```bash
+```powershell
 Start-Process powershell –verb runAs # 관리자 권한으로 PowerShell 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
@@ -201,7 +203,7 @@ Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 �
 
 하나 이상의 프로세스를 중지하는 명령어. 기본 별칭은 `kill`.
 
-```bash
+```powershell
 # 이름이 SoundSwitch인 프로세스를 중지. (Get-Process랑 다르게 -Name 생략 불가)
 Stop-Process -Name 'SoundSwitch'
 ```
@@ -218,7 +220,7 @@ Stop-Process -Name 'SoundSwitch'
 
 하나 이상의 서비스를 중지하는 명령어. 기본 별칭은 `spsv`.
 
-```bash
+```powershell
 Stop-Service -Name "sysmonlog"
 ```
 
@@ -226,7 +228,7 @@ Stop-Service -Name "sysmonlog"
 
 기본 별칭 `type`
 
-```bash
+```powershell
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 ```
 
@@ -236,7 +238,7 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 매개변수 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
 
-```bash
+```powershell
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
 Get-ChildItem -Recurse -Filter *.js
 
@@ -271,7 +273,7 @@ Get-ChildItem -Recurse -Name | findstr main.js
 
 기본 별칭 `copy`
 
-```bash
+```powershell
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 ```
 
@@ -279,7 +281,7 @@ Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 
 지정된 항목을 삭제한다. 기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
 
-```bash
+```powershell
 Remove-Item .\copy\ -r -Force
 ```
 
@@ -295,13 +297,13 @@ Remove-Item .\copy\ -r -Force
 
 파이프라인을 통해 전달된 객체가 어떤 타입 혹은 어떤 클래스의 인스턴스인지 확인하려면 단순히 아래처럼 입력하면 된다:
 
-```bash
+```powershell
 [명령어] | Get-Member
 ```
 
 이러면 `TypeName` 섹션에서 객체의 타입을 확인할 수 있다. 
 
-```bash
+```powershell
 # System.IO.FileInfo, System.IO.DirectoryInfo 둘 중 하나
 Get-ChildItem | Get-Member
 
@@ -319,7 +321,7 @@ Get-ChildItem | Select-String foobar
 
 지정된 아이템의 전체 경로를 출력한다. 기본 별칭은 `rvpa`.
 
-```bash
+```powershell
 # 홈 디렉터리의 경로 출력
 Resolve-Path ~
 
@@ -340,7 +342,7 @@ Resolve-Path -Relative ~
 
 cmd의 `ping`과 같은 명령어. 지정한 컴퓨터에 ping(혹은 ICMP 에코 요청)을 보내고 결과를 출력한다.
 
-```bash
+```powershell
 # KT 서버에 중단없이 연결 테스트 + 현재 시각 출력
 Test-Connection -Repeat -ComputerName 168.126.63.1 | Format-Table @{Name='TimeStamp';Expression={Get-Date}},Address,ProtocolAddress,ResponseTime
 
@@ -351,15 +353,15 @@ ping -t 168.126.63.1 | Foreach{"{0} - {1}" -f (Get-Date),$_}
 **TODO** 사실 위 코드에서 `Test-Connection`은 주고 받은 바이트, 시간, TTL은 표시되지 않음. 찾아서 추가할 것
 
 
-## Microsoft.Powershell.Utility
+## Microsoft.PowerShell.Utility Module
 
-[https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/?view=powershell-7.4](https://learn.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/?view=powershell-7.4)
+데이터의 가공, 변환, 출력 및 포맷팅을 담당하는 유틸리티 모듈
 
 ### Set-Variable
 
 현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함. 기본 별칭은 `set`, `sv`
 
-```bash
+```powershell
 Set-Variable test abcd
 $test
 # abcd
@@ -371,9 +373,9 @@ $qwer
 
 ### Get-Variable
 
-변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes?view=powershell-7.4).
+변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes).
 
-```bash
+```powershell
 # 로컬 스코프의 모든 변수 출력
 Get-Variable
 
@@ -391,7 +393,7 @@ Get-Variable -Include m*, p*
 
 명령어를 입력하고 있는 호스트 프로그램(= PowerShell)의 객체 정보를 출력함. 버전이나 언어 등이 나온다.
 
-```bash
+```powershell
 # PowerShell 버전 확인하기
 Get-Host | Select-Object Version
 ```
@@ -400,7 +402,7 @@ Get-Host | Select-Object Version
 
 오브젝트를 문자열로 출력한다. 이렇게 활용 가능:
 
-```bash
+```powershell
 # pwsh 프로세스 출력 결과를 result.txt 파일에 쓰기
 Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 ```
@@ -409,7 +411,7 @@ Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 
 객체나 객체의 프로퍼티를 선택하는 명령어. 보통은 다른 명령어와 파이프라인 입력으로 연결하여 사용한다.
 
-```bash
+```powershell
 # Get-ChildItem 결과의 처음부터 다섯 건만 출력
 Get-ChildItem | Select-Object -First 5
 
@@ -430,7 +432,7 @@ Get-Process | Select-Object -Property ProcessName, Id, WS
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
-```bash
+```powershell
 # 'Hello'와 'HELLO' 출력 라인 중 'HELLO'만 필터링하되 대소문자를 구분하며 단순 일치하는지 판단
 'Hello', 'HELLO' | Select-String -Pattern 'HELLO' -CaseSensitive -SimpleMatch
 
@@ -453,7 +455,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 
 #### Select-String AND, OR, NOT
 
-```bash
+```powershell
 # AND: 'c'와 '1'이 모두 포함된 라인만 출력
 'xyz', 'abc', 'abc123' | Select-String 'c' | Select-String '1'
 
@@ -468,7 +470,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 
 기본 별칭은 `gal`, `alias`. 설정된 별칭 목록을 출력한다.
 
-```bash
+```powershell
 Get-Alias # 설정된 모든 별칭 출력
 alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 모든 별칭 출력
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
@@ -476,9 +478,9 @@ gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 
 ### Set-Alias
 
-신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias?view=powershell-7.4)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
+신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
 
-```bash
+```powershell
 # 탐색기의 별칭으로 ex 추가
 Set-Alias ex explorer
 
@@ -488,11 +490,11 @@ Set-Alias grep findstr
 Set-Alias -Name grep -Value findstr
 ```
 
-이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [PowerShell 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles?view=powershell-7.4)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
+이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [PowerShell 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
 일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
-```bash
+```powershell
 code $PROFILE
 ```
 
@@ -505,7 +507,7 @@ function Get-FilesIncludeHidden {
 Set-Alias -Name ll -Value Get-FilesIncludeHidden
 ```
 
-함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias?view=powershell-7.4#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-7.4).
+함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions).
 
 ### Write-Output
 
@@ -513,7 +515,7 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 
 다른 명령어나 스크립트에서 발생하는 암묵적인 출력은 `Write-Output`을 통한 출력이다.
 
-```bash
+```powershell
 # PowerShell 설치 경로 출력
 Write-Output $PSHOME
 
@@ -527,8 +529,8 @@ Write-Output $null >> dummy-for-commit.txt
 
 ℹ️ PowerShell에서 호스트란 PowerShell 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
 
-```bash
-PS> Write-Host '$abc:'$abc
+```powershell
+PS > Write-Host '$abc:'$abc
 $abc: 123
 ```
 
@@ -536,7 +538,7 @@ $abc: 123
 
 기본 별칭은 `oh`. 호스트에 출력한다. 이 명령은 보통 출력 내용이 너무 길어서 페이징 처리가 필요할 때 사용한다.
 
-```bash
+```powershell
 # 하위 디렉터리를 한 페이지씩 출력
 Get-ChildItem | Out-Host -Paging
 ```
@@ -545,7 +547,7 @@ Get-ChildItem | Out-Host -Paging
 
 출력 내용을 파일로 내보낸다. 
 
-```bash
+```powershell
 # 트리 명령의 출력 내용을 test.md 파일에 UTF-8 인코딩으로 내보내기
 tree | Out-File -Encoding utf8 -FilePath tree.md
 ```
@@ -568,7 +570,7 @@ tree | Out-File -Encoding utf8 -FilePath tree.md
 
 웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다. 기본 별칭은 `iwr`.
 
-```bash
+```powershell
 # 단순 요청
 Invoke-WebRequest -Uri "https://google.com"
 
@@ -586,7 +588,7 @@ Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&
 
 지정한 파일의 해시값을 계산한다. 매개변수로 해시 알고리즘을 선택할 수 있고 생략하면 SHA256을 사용한다.
 
-```bash
+```powershell
 Get-FileHash FILE_NAME
 
 # MD5 알고리즘을 사용하면서 세로 목록 포맷으로 출력
@@ -596,3 +598,40 @@ Get-FileHash FILE_NAME -Algorithm MD5 | Format-list
 #### Parameters
 
 - `-Algorithm`: 해시값 계산에 사용할 해시 알고리즘(cryptographic hash function)을 지정한다. 이 매개변수를 생략하면 SHA256 알고리즘으로 계산한다. 유효한 값은 다음 중 하나다: `SHA1`, `SHA256`, `SHA384`, `SHA512`, `MD5`.
+
+
+## Appx Module
+
+Windows의 UWP(Universal Windows Platform) 앱 및 AppX/MSIX 패키지를 관리하는 모듈
+
+### Get-AppxPackage
+
+시스템에 설치된 UWP(Universal Windows Platform) 앱 및 AppX 패키지 목록을 조회한다. 특정 사용자나 전체 사용자에 설치된 앱을 필터링해서 확인할 수 있다.
+
+```powershell
+# 설치된 모든 Appx 패키지 목록 조회
+Get-AppxPackage
+
+# 특정 앱(예: Calculator) 검색 및 상세 정보 출력
+Get-AppxPackage *Calculator*
+
+# 시스템 전체 사용자(AllUsers) 기준으로 설치된 패키지 조회
+Get-AppxPackage -AllUsers
+```
+
+
+## StartLayout Module
+
+Windows의 시작 메뉴 및 작업 표시줄 레이아웃을 관리하는 모듈
+
+### Get-StartApps
+
+시작 메뉴에 등록되어 있는 애플리케이션 목록을 조회한다. 앱의 이름(Name)과 시스템 내부 고유 식별자인 AppID(AppUserModelId)를 확인할 수 있다.
+
+```PowerShell
+# 시작 메뉴의 모든 앱 목록을 세로 목록 포맷으로 출력
+Get-StartApps
+
+# 특정 이름(예: Edge)이 포함된 시작 메뉴 앱 검색
+Get-StartApps -Name "*Edge*"
+```

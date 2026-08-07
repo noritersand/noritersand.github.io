@@ -394,7 +394,7 @@ const db = {
 
 ⚠️ `.env.production`은 `next build` 명령을 실행할 때 적용되지만, 일부 배포 플랫폼에서는 이 파일이 무시될 수 있다. Vercel의 경우 프로덕션 환경 변수를 Vercel Dashboard에서 직접 설정해줘야 한다.
 
-### dev나 staging 환경 구분하기
+### 💡 dev나 staging 환경 구분하기
 
 Next.js는 공식적으로 development, production 두 환경만 구분하지만, dev, staging 등 중간 환경이 필요한 경우가 있다. 이럴 때는:
 

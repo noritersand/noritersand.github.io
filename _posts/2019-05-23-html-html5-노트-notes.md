@@ -37,7 +37,7 @@ HTML5 관련 다 모음.
   <meta charset="UTF-8">
 </head>
 <body>
-    <div class="content">Hello world!</div>
+  <div class="content">Hello world!</div>
 </body>
 </html>
 ```
@@ -56,7 +56,7 @@ HTML5 관련 다 모음.
   <link rel="shortcut icon" href="/favicon.ico">
 </head>
 <body>
-    <div class="content">Hello world!</div>
+  <div class="content">Hello world!</div>
 </body>
 </html>
 ```
@@ -134,8 +134,8 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
   }
 </script>
 <form name="testForm" onsubmit="test01(event)">
-    <input type="text" required><br>
-    <button type="submit">SUBMIT</button><br>
+  <input type="text" required><br>
+  <button type="submit">SUBMIT</button><br>
 </form>
 <button type="button" onclick="test02(event)">BUTTON</button>
 ```
@@ -154,7 +154,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ```html
 <form>
-    <button type="button"></button>
+  <button type="button"></button>
 </form>
 ```
 
@@ -171,8 +171,8 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 
 ```html
 <fieldset>
-    <legend>제목</legend>
-    내용
+  <legend>제목</legend>
+  <p>내용</p>
 </fieldset>
 ```
 
@@ -180,17 +180,17 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 ```html
 <form method="post" action="#">
-    <fieldset>
-        <legend>주문 상세 페이지</legend>
-        <table cellspacing="0" cellpadding="0">
-            <caption>주문 상세 페이지</caption>
-            <colgroup>
-                <col width="15%"/>
-                <col width="85%"/>
-            </colgroup>
-            <tbody>
-                <tr>
-                <!-- 이하 생략 -->
+  <fieldset>
+    <legend>주문 상세 페이지</legend>
+    <table cellspacing="0" cellpadding="0">
+      <caption>주문 상세 페이지</caption>
+      <colgroup>
+        <col width="15%"/>
+        <col width="85%"/>
+      </colgroup>
+      <tbody>
+        <tr>
+        <!-- 이하 생략 -->
 ```
 
 
@@ -198,11 +198,11 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 ```html
 <form action="">
-    <fieldset>
-        <legend>하이</legend>
-        <input type="checkbox" id="a1"/><label for="a1" title="풍선도움말">남자</label>
-        <input type="checkbox" id="a2"/><label for="a2">여자</label>
-    </fieldset>
+  <fieldset>
+    <legend>하이</legend>
+    <input type="checkbox" id="a1"/><label for="a1" title="풍선도움말">남자</label>
+    <input type="checkbox" id="a2"/><label for="a2">여자</label>
+  </fieldset>
 </form>
 ```
 
@@ -298,7 +298,7 @@ p {
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1,
-        maximum-scale=1, minimum-scale=1.0, user-scalable=no">
+    maximum-scale=1, minimum-scale=1.0, user-scalable=no">
 ```
 
 ![](/images/all-k.jpg)

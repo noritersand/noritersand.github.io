@@ -37,7 +37,7 @@ tags:
 <mvc:default-servlet-handler />
 ```
 
-## 주의사항
+## 주의 사항
 
 단, 이 설정을 사용할 경우 jsp 액션태그의 page 속성값으로 정적 자원을 지정할 수 없다. 예를 들어:
 

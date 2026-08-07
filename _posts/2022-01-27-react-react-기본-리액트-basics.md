@@ -22,7 +22,7 @@ tags:
 - [React \| Built-in React Hooks](https://react.dev/reference/react/hooks)
 - [React \| Writing Markup with JSX](https://react.dev/learn/writing-markup-with-jsx)
 - [React \| JavaScript in JSX with Curly Braces](https://react.dev/learn/javascript-in-jsx-with-curly-braces)
-- [비공식 튜토리얼#1](https://velopert.com/3613)
+- [비공식 튜토리얼 #1](https://velopert.com/3613)
 
 #### 테스트 환경 정보
 

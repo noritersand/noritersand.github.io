@@ -65,21 +65,21 @@ Windows 설정 > 앱 > 선택적 기능 > 선택적 기능 추가 > 'OpenSSH 클
 
 PowerShell(관리자 권한)에서 다음 줄 실행:
 
-```bash
+```powershell
 # OpenSSH 설치
 Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'
 ```
 
 클라이언트 기능을 활성화하고:
 
-```bash
+```powershell
 # Install the OpenSSH Client
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 ```
 
 접속한다:
 
-```bash
+```powershell
 # 접속
 ssh username@servername
 
@@ -89,7 +89,7 @@ ssh username@servername -p 22
 
 만약 SSH 서버를 구성하려면 아래 명령어로 서버 기능을 활성화하면 되는데:
 
-```bash
+```powershell
 # Install the OpenSSH Server
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 ```
@@ -101,7 +101,7 @@ Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
 
 키는 어떻게 만들었다 치고, 아래처럼 한다
 
-```bash
+```powershell
 ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 ```
 
@@ -119,7 +119,7 @@ ssh -i PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 
 아래 스크립트를 `ps1` 파일로 만들고 PowerShell에서 실행한다:
 
-```bash
+```powershell
 # Set Key File Variable:
 New-Variable -Name Key -Value "./PRIVATE_KEY_FILE.pem"
 
@@ -177,8 +177,8 @@ ssh-keygen
 
 RSA 키 페어를 생성하는 명령어. 명령 실행 시 이름과 비밀번호를 묻는 프롬프트가 나타나며, 입력을 마치면 현재 경로에 공개키와 비공개키 하나씩 생성된다. 생성 단계에서 묻는 비밀번호는 2단계 인증용 비밀번호이며 입력하지 않아도 된다.
 
-```bash
-PS C:\Users\user\.ssh> ssh-keygen
+```powershell
+PS > ssh-keygen
 
 Generating public/private rsa key pair.
 Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
@@ -216,7 +216,7 @@ Mode                LastWriteTime         Length Name
 
 비공개키를 관리하는 서비스와 명령어.
 
-```bash
+```powershell
 # Make sure you're running as an Administrator
 Start-Service ssh-agent
 
@@ -236,7 +236,7 @@ OpenSSH 설치하면 `sftp`도 쓸 수 있음.
 
 ### 다운로드
 
-```bash
+```powershell
 # secure shell 인증은 PRIVATE_KEY_FILE.pem으로 하고, 101.202.303.404 서버에서 ubuntu 유저의 홈경로/DOWNLOAD_ME.md를 다운로드
 sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME.md $env:userprofile\Downloads
 ```
@@ -245,8 +245,8 @@ sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME
 
 업로드는 `put`, 다운로드는 `get`이다.
 
-```bash
-PS> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+```powershell
+PS > sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 Connected to 101.202.303.404.
 
 sftp> cd temp
@@ -358,6 +358,6 @@ get REMOTE_FILE LOCAL_FILE
 scp [options] source target
 ```
 
-```bash
+```powershell
 scp -i .\PRIVATE_KEY_FILE.pem .\UPLOAD.me ubuntu@101.202.303.404:/home/ubuntu/temp/UPLOAD.me
 ```

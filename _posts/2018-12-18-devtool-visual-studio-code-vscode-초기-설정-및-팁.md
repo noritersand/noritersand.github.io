@@ -148,8 +148,8 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
   - <kbd>ctrl + enter</kbd>: 자동 완성 제안 창 보기
   - <kbd>ctrl + shift + i</kbd>: 코파일럿 빠른 채팅 열기
 - Auto Import `steoates.autoimport`: import 구문을 자동으로 작성해주는 개꿀 익스텐션.
-- ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
-- Insert Date String `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌. 단축키는 해제하는 게 좋음
+- ⭐ERD Editor `dineug.vuerd-vscode`: 간단하게 쓸 수 있는 ERD 에디터. 컬럼 속성, 테이블 속성, 관계설정 등 필요한 건 다 있음
+- ⭐Insert Date & Time `jsynowiec.vscode-insertdatestring`: 단축키 등으로 원하는 형식의 날짜나 시간을 입력할 수 있게 해줌. 단축키는 해제하는 게 좋음
 
 
 ## 작성자 저장용 단축키 설정
@@ -339,7 +339,7 @@ Add Selection
 
 - <kbd>ctrl + k, m</kbd>: Change Language Mode. Syntax 변경
 - <kbd>ctrl + k, ctrl + s</kbd>: Open Keyboard Shortcuts 단축키 목록 열기
-- <kbd>shift + alt + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
+- <kbd>alt + shift + .</kbd>: Auto Fix... 에러가 발생했을 때 어떻게 수정할 지 선택지를 제시해 준다.
 - <kbd>ctrl + shift + space</kbd>: Trigger Parameter Hints
 - <kbd>ctrl + m</kbd>: Toggle Tab Key Moves Focus 탭 키의 들여쓰기/내어쓰기 기능을 비활성화하고 포커스 이동만 가능하도록 변환.
 
@@ -347,10 +347,10 @@ Add Selection
 
 최근에 추가된 신규 기능이다. 코파일럿을 구독하지 않아도 사용 가능
 
-- <kbd>alt + \ </kbd>: Trigger Inline Suggestion. 기능 발동 #1. 코파일럿의 코드 제안 기능과 거의 비슷함
-- <kbd>alt + shift + \ </kbd>: ~~Trigger Next Edit Suggestion. 기능 발동 #2. 위의 기능과 차이점은 단순 제안이 아니라 '편집' 제안이라는 것. ✅ 없어서 추가한 단축키~~ ... 였었는데, 언제인지 또 없어졌다??
-- <kbd>alt + ]</kbd>: Show Next Inline Suggestion. 다음 제안 보기
-- <kbd>alt + [</kbd>: Show Previous Inline Suggestion. 이전 제안 보기
+- <kbd>alt + \ </kbd>: `Trigger Inline Suggestion` 기능 발동. 코파일럿의 코드 제안 기능과 거의 비슷함
+- <kbd>alt + shift + \ </kbd>: ~~`Trigger Next Edit Suggestion`. 기능 발동. 위의 기능과 차이점은 단순 제안이 아니라 '편집' 제안이라는 것. ✅ 없어서 추가한 단축키~~ ... 였었는데, 언제인지 또 없어졌다??
+- <kbd>alt + ]</kbd>: `Show Next Inline Suggestion` 다음 제안 보기
+- <kbd>alt + [</kbd>: `Show Previous Inline Suggestion` 이전 제안 보기
 
 ### 그 외 뭔지 잘 모르겠는 AI 기능
 

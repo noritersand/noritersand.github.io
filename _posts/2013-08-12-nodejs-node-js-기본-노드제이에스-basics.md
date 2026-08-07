@@ -157,7 +157,7 @@ console.log('dbinfo.password:', dbinfo.password);
 ```
 
 ```bash
-PS> node .\run-me.js
+PS > node .\run-me.js
 dbinfo.connectString: 10.20.30.40:1234/QADB
 dbinfo.user: fixalot
 dbinfo.password: 1234abcd!

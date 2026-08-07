@@ -15,7 +15,7 @@ tags:
 #### 참고 문서
 
 - [Git - Reference](https://git-scm.com/docs)
-- [Git - book](https://git-scm.com/book/ko/v2)
+- [Git - book](https://git-scm.com/book/ko/)
 - [Oh Shit, Git!?!](https://ohshitgit.com/)
 - [Learn Git Branching](https://learngitbranching.js.org/?locale=ko)
 
@@ -107,7 +107,7 @@ git add -i
 
 ~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며, 주로 디버깅 용도로 사용한다.
 
-다른 디버깅 도구로 `bisect`가 있다: [Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/v2/Git-도구-Git으로-버그-찾기)
+다른 디버깅 도구로 `bisect`가 있다: [Pro Git book: Git으로 버그 찾기](https://git-scm.com/book/ko/Git-도구-Git으로-버그-찾기)
 
 #### 파일 커밋 정보 줄 단위로 보기
 
@@ -435,7 +435,7 @@ git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아
 
 특정 커밋 하나만 현재 브랜치에 리베이스한다.
 
-[Pro Git book: Rebase와 Cherry-Pick 워크플로](https://git-scm.com/book/ko/v2/%EB%B6%84%EC%82%B0-%ED%99%98%EA%B2%BD%EC%97%90%EC%84%9C%EC%9D%98-Git-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0#_rebase_cherry_pick)
+[Pro Git book: Rebase와 Cherry-Pick 워크플로](https://git-scm.com/book/ko/v2/분산-환경에서의-Git-프로젝트-관리하기#_rebase_cherry_pick)
 
 ```bash
 git cherry-pick 커밋명
@@ -448,7 +448,7 @@ git cherry-pick main # 현재 브랜치에 main 브랜치의 커밋 중 가장 �
 - `-n` `--no-commit`: 커밋을 만들지 않은 상태로 체리픽 한다.
 - `-x`: 체리픽 할 때 선택한 커밋을 `cherry pick from commit ...`와 함께 메시지에 추가한다.
 
-#### 주의사항
+#### 주의 사항
 
 '특정 커밋만 반영한다'는 말을 오해하지 말자. 하나의 파일에 한해선 그간의 모든 변경 사항이 반영된다:
 
@@ -1236,7 +1236,7 @@ git log --author="작성자이름 또는 이메일"
 git log --pretty=format:"%h %s" --graph
 ```
 
-[Pro Git book: 더 많은 옵션](https://git-scm.com/book/ko/v2/Git%EC%9D%98-%EA%B8%B0%EC%B4%88-%EC%BB%A4%EB%B0%8B-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EC%A1%B0%ED%9A%8C%ED%95%98%EA%B8%B0)
+[Pro Git book: 더 많은 옵션](https://git-scm.com/book/ko/Git의-기초-커밋-히스토리-조회하기)
 
 #### 조회 범위 제한 옵션
 
@@ -1593,7 +1593,7 @@ pick 7715f75fa (HEAD)
 
 ℹ️ 기본 에디터인 Vim에선 <kbd>ctrl + a</kbd>와 <kbd>ctrl + x</kbd>로 rebase 옵션을 변경할 수 있음.
 
-[Pro Git book: 커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/v2/Git-%EB%8F%84%EA%B5%AC-%ED%9E%88%EC%8A%A4%ED%86%A0%EB%A6%AC-%EB%8B%A8%EC%9E%A5%ED%95%98%EA%B8%B0#_changing_multiple)
+[Pro Git book: 커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/Git-도구-히스토리-단장하기#_changing_multiple)
 
 #### rebase로 커밋 합치기
 

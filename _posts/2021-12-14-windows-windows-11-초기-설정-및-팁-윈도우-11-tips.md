@@ -33,13 +33,13 @@ tags:
 
 Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 서브라임과 Flowy 같은 몇몇 앱에서 'IME 조합 문자 유실' 현상을 유발한다.
 
-`Windows 설정` > `시간 및 언어` > `언어 및 지역` > `한국어` > `언어 옵션` > `Microsoft 입력기` > `키보드 옵션`에서 `이전 버전의 Microsoft IME`를 켜기
+`Windows 설정 > 시간 및 언어 > 언어 및 지역 > 한국어 > 언어 옵션 > Microsoft 입력기 > 키보드 옵션`에서 `이전 버전의 Microsoft IME`를 켜기
 
 ### 자판 배열 전환키 해제
 
 다른 언어는 모르겠으나 한국어로 설치된 Windows는 기본적으로 '입력 언어 전환'키와 '자판 배열 전환'키가 지정돼 있는데, 문제는 얘네 때문에 <kbd>ctrl + shift + 0</kbd> 키 조합을 사용할 수 없고, <kbd>alt + shift</kbd>만 눌러도 입력 언어가 바뀐다.
 
-`Windows 설정` > `시간 및 언어` > `입력` > `고급 키보드 설정`에서 `입력 언어 바로 가기 키` 클릭:
+`Windows 설정 > 시간 및 언어 > 입력 > 고급 키보드 설정`에서 `입력 언어 바로 가기 키` 클릭:
 
 ![](/images/let-me-press-ctrl-shift-0-bitch-1.png)
 
@@ -51,7 +51,7 @@ Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 �
 
 ### 끌기 레이아웃 끄기
 
-`Windows 설정` > `시스템` > `멀티태스킹` > `창 끌기`에서 `작업 표시줄 단추를 마우스로 가리킬 때 앱이 속한 끌기 레이아웃 표시`를 체크 해제한다.
+`Windows 설정 > 시스템 > 멀티태스킹 > 창 끌기`에서 `작업 표시줄 단추를 마우스로 가리킬 때 앱이 속한 끌기 레이아웃 표시`를 체크 해제한다.
 
 두 창을 맞춤상태로 했을 때의 그룹이 표시되는 기능인데, 켜두면 같은 앱을 여러 창으로 띄웠을 때 가끔 <kbd>win + 숫자</kbd>키가 먹통되는 버그가 있음.
 
@@ -59,15 +59,15 @@ Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 �
 
 ### alt + tab 목록에서 앱의 탭 제외하기
 
-기본 설정 상으론 Edge 같은 앱의 탭 목록이 alt + tab에서도 보인다. 귀찮으니 `시스템` > `멀티태스킹` > `스냅하거나 Alt+Tab을 누를 때 앱의 탭 표시` 항목을 '탭 표시 안 함'으로 변경하자.
+기본 설정 상으론 Edge 같은 앱의 탭 목록이 alt + tab에서도 보인다. 귀찮으니 `시스템 > 멀티태스킹 > 스냅하거나 Alt+Tab을 누를 때 앱의 탭 표시` 항목을 '탭 표시 안 함'으로 변경하자.
 
 ### 색 필터 단축키 끄기
 
-`Windows 설정` > `접근성` > `색상 필터`에서 `색 필터용 바로 가기 키` 끄기
+`Windows 설정 > 접근성 > 색상 필터`에서 `색 필터용 바로 가기 키` 끄기
 
 ### 스크린샷 자동 저장 경로 변경
 
-`캡처 도구` 앱 실행 > `설정`에서 `다운로드/스크린샷`으로 경로 변경
+`캡처 도구 앱 실행 > 설정`에서 `다운로드/스크린샷`으로 경로 변경
 
 
 ## 최적화 설정
@@ -76,7 +76,7 @@ PC 성능이 구릴 때 하는 설정
 
 ### 애니메이션, 투명 효과 끄기
 
-`Windows 설정` > `접근성`에서 `애니메이션 효과`와 `투명 효과` 끄기
+`Windows 설정 > 접근성`에서 `애니메이션 효과`와 `투명 효과` 끄기
 
 ### 시각 효과 최소화
 
@@ -91,7 +91,7 @@ PC에 여러 네트워크 장치가 활성화되어 있을 때 네트워크 우�
 
 GUI:
 
-`Windows 설정` > `접근성` > `네트워크 및 인터넷` > `고급 네트워크 설정`에서 네트워크 어댑터를 고르고, `추가 어댑터 옵션`에서 `TCP/IPv4`와 `TCP/IPv6`를 더블 클릭, `고급`으로 이동한 뒤 `자동 메트릭` 항목의 체크를 해제하고 `인터페이스 메트릭`의 값을 직접 지정한다.
+`Windows 설정 > 접근성 > 네트워크 및 인터넷 > 고급 네트워크 설정`에서 네트워크 어댑터를 고르고, `추가 어댑터 옵션`에서 `TCP/IPv4`와 `TCP/IPv6`를 더블 클릭, `고급`으로 이동한 뒤 `자동 메트릭` 항목의 체크를 해제하고 `인터페이스 메트릭`의 값을 직접 지정한다.
 
 ℹ️ 인터페이스 메트릭 값은 1부터 지정 가능하고, 낮을 수록 우선순위가 높다.
 
@@ -127,7 +127,7 @@ start "" "C:\전체경로\파일이름3"
 
 ### 파일 탐색기가 프리징 등으로 작동하지 않으면
 
-작업 관리자<kbd>ctrl + shift + esc</kbd>에서 'Windows 탐색기' 혹은 'explorer'를 찾아 종료시킨다. 이렇게 하면 작업 표시줄이 사라지는데, 작업 관리자 창에서 '새 작업 실행'을 누르고 `explorer`를 입력하면 다시 나타난다.
+작업 관리자<kbd>ctrl + shift + esc</kbd>에서 `Windows 탐색기` 혹은 `explorer`를 찾아 종료시킨다. 이렇게 하면 작업 표시줄이 사라지는데, 작업 관리자 창에서 `새 작업 실행`을 누르고 `explorer`를 입력하면 다시 나타난다.
 
 ### 영타 간격이 이상할 때
 
@@ -189,43 +189,64 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 - <kbd>win + 1</kbd>: Terminal
 - <kbd>win + 2</kbd>: Sublime Text
-- <kbd>win + 3</kbd>: Firefox
+- <kbd>win + 3</kbd>: Firefox dev
 - <kbd>win + 4</kbd>: Chrome dev
 - <kbd>win + 5</kbd>: Sublime Merge
-- <kbd>win + 6</kbd>: 가변 #0 (Discord, Slack, ...)
+- <kbd>win + 6</kbd>: 가변
 - <kbd>win + 7</kbd>: Steam, WebStorm
 - <kbd>win + 8</kbd>: VSCODE
-- <kbd>win + 9</kbd>: 가변 #1 (ETC., IntelliJ, ...)
-- <kbd>win + 0</kbd>: 가변 #2 (MSOffice, Chrome, ...)
+- <kbd>win + 9</kbd>: 가변
+- <kbd>win + 0</kbd>: 가변
 
 가변 항목:
 
-- 다른 브라우저
+- Chrome
 - Epic Games
-- IDE(IntelliJ, WebStorm, ...)
-- MSOffice 문서
+- Xbox 액세서리
+- IntelliJ, WebStorm, DataGrip, ...
 
 Autohotkey로 확장한 키 조합:
 
-- <kbd>win + alt + 5</kbd>: Fork
-- <kbd>win + alt + 6</kbd>: Discord
-- <kbd>win + ctrl + alt + 6</kbd>: Slack
-- <kbd>win + alt + 0</kbd>: 엑셀
-- <kbd>win + ctrl + alt + 0</kbd>: 파워포인트
-- <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
-- <kbd>win + ctrl + - </kbd>: Notion
-- <kbd>win + alt + - </kbd>: Postman
-- <kbd>win + = </kbd>: Microsoft Edge
-- <kbd>win + ctrl + = </kbd>: 야카오톡
-- <kbd>win + alt + = </kbd>: 🚫 반응 없음
-- <kbd>win + backspace</kbd>: WorkFlowy
-- <kbd>win + ctrl + backspace </kbd>: 아웃룩
-- <kbd>win + alt + backspace </kbd>: 미사용
-- <kbd>win + [</kbd>: 미사용
-- <kbd>win + ]</kbd>: 미사용
+- 숫자 확장
+  - <kbd>win + alt + 5</kbd>: 🧾 Fork
+  - <kbd>win + alt + 6</kbd>: 🎤 Discord
+  - <kbd>win + ctrl + alt + 6</kbd>: 🎤 Slack
+  - <kbd>win + alt + 0</kbd>: Microsoft Excel
+  - <kbd>win + ctrl + alt + 0</kbd>: Microsoft PowerPoint
+- 하이픈
+  - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
+  - <kbd>win + ctrl + - </kbd>: Notion
+  - <kbd>win + alt + - </kbd>: Postman
+  - <kbd>win + shift + - </kbd>: 🔒 미사용
+  - <kbd>win + ctrl + alt + -</kbd>: 🔒 미사용
+- 등호
+  - <kbd>win + = </kbd>: Microsoft Edge
+  - <kbd>win + ctrl + = </kbd>: 야카오톡
+  - <kbd>win + alt + = </kbd>: 🚫 반응 없음
+  - <kbd>win + shift + = </kbd>: 🔒 미사용
+  - <kbd>win + ctrl + alt + =</kbd>: 🔒 미사용
+- 백스페이스
+  - <kbd>win + backspace</kbd>: WorkFlowy
+  - <kbd>win + ctrl + backspace</kbd>: Spark Desktop
+  - <kbd>win + alt + backspace</kbd>: 🔒 미사용
+  - <kbd>win + shift + backspace</kbd>: 🔒 미사용
+  - <kbd>win + ctrl + alt + backspace</kbd>: 🔒 미사용
+- 여는 대괄호
+  - <kbd>win + [</kbd>: DuckDuckGo
+  - <kbd>win + ctrl + [</kbd>: 🔒 미사용
+  - <kbd>win + alt + [</kbd>: 🔒 미사용
+  - <kbd>win + shift + [</kbd>: 🔒 미사용
+  - <kbd>win + ctrl + alt + [</kbd>: 🔒 미사용
+- 닫는 대괄호
+  - <kbd>win + ]</kbd>: Brave
+  - <kbd>win + ctrl + ]</kbd>: 🔒 미사용
+  - <kbd>win + alt + ]</kbd>: 🔒 미사용
+  - <kbd>win + shift + ]</kbd>: Opera
+  - <kbd>win + ctrl + alt + ]</kbd>: 🔒 미사용
 
-ℹ️ Windows 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음
+### 🚨 반드시 읽을 것
 
-⚠️ <kbd>win + ctrl + 숫자</kbd> 조합은 Windows 기능 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨
-
-⚠️ <kbd>win + ctrl + shift + 숫자</kbd> 조합은 Windows 기능 '관리자 권한으로 실행'이니 이것도 쓰면 안됨
+- Windows 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음
+- <kbd>win + ctrl + 숫자</kbd> 조합은 Windows 기능 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨
+- <kbd>win + ctrl + shift + 숫자</kbd> 조합은 Windows 기능 '관리자 권한으로 실행'이니 이것도 쓰면 안됨
+- <kbd>win + ctrl + alt + shift</kbd> 조합은 **Office key**니까 사용하지 말 것

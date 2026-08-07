@@ -76,7 +76,7 @@ public class MainTest {
 ```
 
 
-## 주의사항
+## 주의 사항
 
 ```
 java [options] <mainclass> [args...]

@@ -19,7 +19,7 @@ tags:
 
 쓰니는 다람쥐🐿️처럼 일단 저장하고 보는 습성이 있다고 한다. 
 
-자주 사용하거나 중요한 건 ⭐ 표시함. 🧪 표시는 누군가의 사이드 프로젝트라서 언제 사라질 지 모름.
+자주 사용하거나 중요한 건 ⭐ 표시, 아직 안써봤지만 좋아보이는 것은 ✨ 표시함. 🧪 표시는 누군가의 사이드 프로젝트라서 언제 사라질 지 모름.
 
 
 ## 1. 문서, 메뉴얼, 참고 자료
@@ -27,7 +27,7 @@ tags:
 ### 일반
 
 - [MDN Web Docs](https://developer.mozilla.org/): Mozilla Developer Network의 개발자를 위한 기술 문서.
-- ⭐[DevDocs](https://devdocs.io): 개발자용 API 문서 모음 사이트. [GitHub 링크](https://github.com/freeCodeCamp/devdocs)
+- ⭐[DevDocs](https://github.com/freeCodeCamp/devdocs): 개발자용 API 문서 모음 사이트.
 - [WikiDocs](https://wikidocs.net): 온라인 책 제작 공유, 프로그래밍 언어별 튜토리얼이 있음.
 - [The Concise TypeScript Book](https://github.com/gibbok/typescript-book): TypeScript의 모든 것을 정리한 문서.
 - [ECMA International: ecma-262](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/): 비영리 국제 표준화 기구인 ECMA Internation의 사이트. 이 문서에서는 ECMAScript의 버전별 명세와 현재 유효한 표준을 볼 수 있다.
@@ -104,7 +104,7 @@ tags:
 
 ### JSON
 
-- ⭐[JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버
+- ✨[JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버
 - [jsoneditoronline.org](https://www.jsoneditoronline.org): JSON 편집 및 뷰어
 - [jsonviewer.codeplex.com](https://jsonviewer.codeplex.com): JSON 뷰어
 
@@ -131,14 +131,14 @@ tags:
 - [Gatsby](https://www.gatsbyjs.com/): React 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - ⭐[Next.js](https://nextjs.org/): React 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
 - [React Router](https://reactrouter.com/): React 애플리케이션에서 클라이언트 사이드 라우팅을 구현하기 위해 사용되는 라이브러리. 7.x 버전부터는 Remix 3와 통합된 프레임워크 모드를 지원한다.
-- ⭐[Remix](https://remix.run/): React 기반 풀스택 웹 프레임워크. 가볍고 배우기 쉽다. Remix는 표준 웹 API를 활용해 만들어졌기 때문에 브라우저, Node.js, 서버리스 플랫폼, 클라우드 엣지 등의 다양한 환경에 동일한 코드 베이스로 배포할 수 있다(반면 어떤 프레임워크들은 Node.js 환경에서만 작동한다). 개발 측면에서 Next.js와 비교해보면, 서버 사이드 렌더링에서 더 세밀한 제어가 필요한 상황이나 복잡한 중첩 라우팅 구조에서는 Remix가 더 유리하지만, 서드파티 라이브러리나 고급 API 지원, 커뮤니티 등이 부족한 단점이 있다. 최신 버전인 Remix 3은 [React Router 7의 프레임워크 모드로 통합](https://remix.run/blog/incremental-path-to-react-19)되었으니, 도움말이 필요하면 [React Router의 문서](https://reactrouter.com/start/framework/installation)를 볼 것. 
+- ✨[Remix 3](https://remix.run/): Preact 포크 기반 풀스택 웹 프레임워크. 경량, zero-dependency, bundler-free가 특징. 표준 웹 API를 활용해 만들어졌기 때문에 브라우저, Node.js, 서버리스 플랫폼, 클라우드 엣지 등의 다양한 환경에 동일한 코드베이스로 배포할 수 있다. 참고로 React 기반인 Remix 2는 [React Router 7의 프레임워크 모드로 통합](https://remix.run/blog/incremental-path-to-react-19)됐고, 그쪽 문서가 필요하면 [React Router 문서](https://reactrouter.com/start/framework/installation)를 보면 됨.
 - [Quasar Framework](https://quasar.dev/): Vue 전용인듯?
 - [Vuetify](https://vuetifyjs.com/en/): Vue용 컴포넌트 프레임워크
-- ⭐[Ionic](https://ionicframework.com/)/[Capacitor](https://capacitorjs.com/): 하이브리드 앱 개발에 사용되는 도구 세트. Ionic은 화면과 디자인을 담당하는 UI 컴포넌트 라이브러리, Capacitor는 엔진 역할을 하는 네이티브 런타임 빌드/배포를 담당한다. 둘 다 [Ionic](https://ionic.io/)에서 만들었다. 웹 코드를 모바일 앱 패키징 형태로 감싸 배포하는 방식인데, 아주 간단하게 설명하면 웹뷰 만드는 도구다. 프로토타입이나 MVP 용도로 Ionic/Capacitor를 쓰고, 앱을 더 고도화하고 싶을 때 Flutter나 Kotlin Multiplatform(KMP)으로 넘어가는 방식이 자주 쓰인다고 함.
+- ✨[Ionic](https://ionicframework.com/)/[Capacitor](https://capacitorjs.com/): 하이브리드 앱 개발에 사용되는 도구 세트. Ionic은 화면과 디자인을 담당하는 UI 컴포넌트 라이브러리, Capacitor는 엔진 역할을 하는 네이티브 런타임 빌드/배포를 담당한다. 둘 다 [Ionic](https://ionic.io/)에서 만들었다. 웹 코드를 모바일 앱 패키징 형태로 감싸 배포하는 방식인데, 아주 간단하게 설명하면 웹뷰 만드는 도구다. 프로토타입이나 MVP 용도로 Ionic/Capacitor를 쓰고, 앱을 더 고도화하고 싶을 때 Flutter나 Kotlin Multiplatform(KMP)으로 넘어가는 방식이 자주 쓰인다고 함.
 
 ### 백엔드 프레임워크
 
-- ⭐[Netty](https://netty.io/): Java 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
+- ✨[Netty](https://netty.io/): Java 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
 - [Spring](https://spring.io/): Java 백엔드의 대명사 격인 Java 서버 애플리케이션 개발 프레임워크
 - [Spring Modulith](https://github.com/spring-projects/spring-modulith): 하나의 앱 안에 여러 개의 모듈을 구성하고, 모듈 간 명확한 경계를 유지하도록 도와주는 프레임워크. 잘 구조화된 모놀리틱 시스템을 만들고 싶거나, 나중에 MSA로 전환할 계획일 경우 사용하면 된다.
 - [NestJS](https://nestjs.com/): TypeScript 기반의 백엔드 애플리케이션(= API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
@@ -178,13 +178,13 @@ tags:
 - [sharp](https://github.com/lovell/sharp): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://github.com/puppeteer/puppeteer): Google에서 개발한 헤드리스 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 헤드리스 모드(브라우저 UI 없이 실행)로 작동하지만, 헤드 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
-- [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹 사이트(단일 페이지 웹 사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
+- [fullPage.js](https://github.com/alvarotrigo/fullPage.js): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹사이트(단일 페이지 웹사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - [Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
-- ⭐[json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
+- ✨[json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - ⭐[live-server](https://github.com/tapio/live-server): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - ⭐[serve](https://github.com/vercel/serve): 빠르고 가벼운 정적 파일 제공용 웹 서버. Live reload 기능은 없으며, 프로덕션 환경을 미리 보고 싶을 때 사용한다.
-- ⭐[Video.js](https://github.com/videojs): HTML5 기반 비디오 플레이어 프레임워크. 모듈형 UI 컴포넌트, 스트리밍 프로토콜 지원, 넓은 확장성, CSS 스킨 시스템이 특징. 오픈소스 프로젝트다.
+- ✨[Video.js](https://github.com/videojs): HTML5 기반 비디오 플레이어 프레임워크. 모듈형 UI 컴포넌트, 스트리밍 프로토콜 지원, 넓은 확장성, CSS 스킨 시스템이 특징. 오픈소스 프로젝트다.
 
 ### React 전용 라이브러리
 
@@ -226,7 +226,7 @@ tags:
 - [React Bits](https://reactbits.dev/): React 기반 웹/앱에서 쓸 수 있는 애니메이션 + 인터렉티브 UI 컴포넌트 모음
 - [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 대응이 ~~조금~~ 많이 느리다.
 - [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 JavaScript 기반
-- ⭐[shadcn/ui](https://ui.shadcn.com/): React용 UI 컴포넌트 컬렉션. 소스 코드를 복사해 커스터마이징하는 방식으로, 전통적인 라이브러리와 차이가 있다. Tailwindd CSS와 [Radix UI](https://www.radix-ui.com/) 기반으로 만들어졌다. 사실 CSS 프레임워크라기보단 UI 컴포넌트 라이브러리에 가깝다.
+- ✨[shadcn/ui](https://ui.shadcn.com/): React용 UI 컴포넌트 컬렉션. 소스 코드를 복사해 커스터마이징하는 방식으로, 전통적인 라이브러리와 차이가 있다. Tailwindd CSS와 [Radix UI](https://www.radix-ui.com/) 기반으로 만들어졌다. 사실 CSS 프레임워크라기보단 UI 컴포넌트 라이브러리에 가깝다.
 
 ### 아이콘 라이브러리
 
@@ -235,7 +235,7 @@ tags:
 
 ### Java 라이브러리
 
-- ⭐[JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드 파라미터나 반환값의 `null` 허용 여부를 `@Nullable`, `@NullMarked`, `@NullUnmarked`, `@NonNull` 어노테이션으로 명시해서, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 한다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 Java에 통합될 가능성도 있다 함.
+- ✨[JSpecify](https://github.com/jspecify/jspecify): IDE나 프레임워크마다 제각각 작동하던 `null` 관련 어노테이션들을 표준화한 명세이자 라이브러리. 메서드 파라미터나 반환값의 `null` 허용 여부를 `@Nullable`, `@NullMarked`, `@NullUnmarked`, `@NonNull` 어노테이션으로 명시해서, 정적 분석 도구가 NPE 위험을 사전에 감지할 수 있도록 한다(런타임에는 아무런 일도 하지 않음). 메이븐 등으로 별도 설치 가능하며 Spring Framework 7에는 아예 내장되어 있음. 나중에는 Java에 통합될 가능성도 있다 함.
 
 
 ## 5. 백킹 서비스(인프라 구성 요소)와 인프라 그 자체를 제공하는 서비스, 배포 툴
@@ -249,8 +249,8 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 - [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
-- ⭐[Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
-- ⭐[Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 웹 애플리케이션 개발 플랫폼. Workers 기반의 서버리스 컴퓨팅을 중심으로, 정적 사이트 호스팅(Pages), 오브젝트 스토리지(R2), 데이터베이스(D1) 등을 제공한다.
+- ✨[Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+- ✨[Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 웹 애플리케이션 개발 플랫폼. Workers 기반의 서버리스 컴퓨팅을 중심으로, 정적 사이트 호스팅(Pages), 오브젝트 스토리지(R2), 데이터베이스(D1) 등을 제공한다.
 
 ### IaaS (Infrastructure as a Service)
 
@@ -306,7 +306,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### DBMS
 
-- ⭐[SQLite](https://www.sqlite.org/index.html): 오픈 소스 RDBMS. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. ACID(Atomicity, Consistency, Isolation, Durability) 특성을 준수하는 기능과 트랜잭션을 지원한다. 시스템이 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고 하는 사람도 있다. 에스큐엘라이트 혹은 시퀄라이트라고 읽는다. 경량 DB라서 SQL 표준 기능이 일부 빠져있거나 제한적으로 제공한다. 예를 들어 외래키는 기본적으로 비활성화되어 있고 사용 제한이 있다. 그리고 프로시저는 미지원, 트리거와 윈도우 함수 등은 부분적으로 지원한다. 동시성 제어와 격리 수준도 다른 DBMS만큼 세밀하지 않으며 여러 사용자의 동시 쓰기 시 충돌 가능성이 있다. 따라서 SQLite를 서버에서 사용한다면 읽기 전용으로만 설계하고, 쓰기는 다른 수단을 마련할 것. 그리고 기본적으로 체크섬을 수행하지 않기 때문에, 디스크 손상으로 인한 데이터 무결성을 보장하지 않는다는 점은 주의해야 한다.
+- ✨[SQLite](https://www.sqlite.org/index.html): 오픈 소스 RDBMS. 매우 가벼워서 보통 서버가 아닌 소프트웨어에 내장시키는 임베디드용으로 쓰인다. ACID(Atomicity, Consistency, Isolation, Durability) 특성을 준수하는 기능과 트랜잭션을 지원한다. 시스템이 매우 안정적이라 프로시저 같은 추가 기능이 필요한 게 아니라면 서버용으로 써도 된다고 하는 사람도 있다. 에스큐엘라이트 혹은 시퀄라이트라고 읽는다. 경량 DB라서 SQL 표준 기능이 일부 빠져있거나 제한적으로 제공한다. 예를 들어 외래키는 기본적으로 비활성화되어 있고 사용 제한이 있다. 그리고 프로시저는 미지원, 트리거와 윈도우 함수 등은 부분적으로 지원한다. 동시성 제어와 격리 수준도 다른 DBMS만큼 세밀하지 않으며 여러 사용자의 동시 쓰기 시 충돌 가능성이 있다. 따라서 SQLite를 서버에서 사용한다면 읽기 전용으로만 설계하고, 쓰기는 다른 수단을 마련할 것. 그리고 기본적으로 체크섬을 수행하지 않기 때문에, 디스크 손상으로 인한 데이터 무결성을 보장하지 않는다는 점은 주의해야 한다.
 - ⭐[PostgreSQL](https://www.postgresql.org/): 오픈 소스 RDBMS. SQL 표준을 높은 수준으로 준수하며 ACID와 트랜잭션을 지원한다. JSON이나 XML 같은 데이터 타입을 그대로 저장할 수 있고, 플러그인과 확장 모듈을 통해 사용자 정의 함수나, 데이터 타입, 인덱스 방식 등을 추가할 수 있다는 점이 기존 RDBMS들과 다르다. 예를 들어 [PGMQ](https://github.com/tembo-io/pgmq) 확장을 설치하면 데이터베이스와 메시지 큐를 복잡한 구성 없이 단일 트랜잭션으로 묶을 수 있다.
 - ⭐[Redis](https://redis.io/): 인메모리 데이터베이스 중 가장 인지도 높음. 메모리에 데이터를 저장해서 속도가 빠른게 특징이며 디스크 백업 기능도 제공함.
 - [SwayDB](https://swaydb.io/?language=java): 레디스같은 인메모리 데이터베이스. 레디스처럼 서버용은 아니고 임베디드로 쓰이는 모양?
@@ -373,7 +373,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 10. 프로그래밍 언어 Programming Language
 
-- ⭐[Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다. 성능이 중요한 네이티브 앱, 웹 서버, CLI 도구, 임베디드 시스템이나 OS 수준의 코드를 개발할 때 적합하다.
+- ✨[Rust](https://www.rust-lang.org/): 가비지 컬렉션(GC)을 사용하지 않으며 메모리 안전성(memory safe)을 추구하는 언어. 마찬가지로 GC가 없지만 memory unsafe한 C와 C++의 대체제로 꼽힌다. [Mozilla Research](https://research.mozilla.org/)에서 개발했다. 성능이 중요한 네이티브 앱, 웹 서버, CLI 도구, 임베디드 시스템이나 OS 수준의 코드를 개발할 때 적합하다.
 - [Elixir](https://elixir-lang.org/): BEAM(Erlang의 가상머신) 위에서 실행되는 함수형 프로그래밍 언어. 동시성과 분산 처리에 강하며, 프로세스 간의 격리(한 프로세스의 실패가 시스템 전체에 영향을 주지 않음)를 통한 안정성이 특징이다. Erlang이 Java라면 Elixir는 Kotlin에 비견된다. 디스코드는 실시간 메시징 처리를 Elixir로 구현했다고 함. 비결은 Erlang VM이 관리하는 Erlang 프로세스(OS의 프로세스나 스레드와 다른 개념)와 concurrency 지원 기능 덕분이라나...
 - [Erlang](https://www.erlang.org/): 1980년대에 통신 시스템 구축을 위해 만들어진 언어(그래서 Erlang/OTP, Open Telecom Platform이라 함). 짧은 지연시간, 견고함, 내결함성, 분산 시스템 지원 등이 특징이다. Java와 유사하게 다른 언어가 컴파일하는 가상머신(Erlang의 VM, BEAM이라 부른다)에서 작동한다. 
 - [Ada](https://ada-lang.io/): GC를 사용하지 않으며 메모리 안전성을 추구하는 언어. 항공, 방위, 우주 산업처럼 높은 수준의 안전성과 정확성이 요구되는 시스템에서 쓰인다고 한다.
@@ -381,7 +381,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Scala](https://www.scala-lang.org/): 객체 지향 프로그래밍과 함수형 프로그래밍을 결합한 개발 언어. 왜인지 모르겠지만 개발자 설문조사 언어별 평균연봉 항목에서 늘 상위권을 차지한다. Java 기반이며 JVM에서 실행된다.
 - [Kotlin](https://kotlinlang.org/): JVM에서 실행되는 Java와 상호 운용 가능한 언어. 안드로이드 개발에 주로 쓰인다. 네이티브, JavaScript(?)까지 지원한다고 하며 기존의 Java 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). Java, Python, Ruby 등의 언어에서 영향을 받았다 한다. 
-- ⭐[Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다. 간단한 API 서버나 백엔드 애플리케이션 개발에 적합하다.
+- ✨[Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다. 간단한 API 서버나 백엔드 애플리케이션 개발에 적합하다.
 - [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 - ⭐[TypeScript](https://www.typescriptlang.org/): JavaScript의 슈퍼셋(superset)으로, 이름처럼 정적 데이터 타입이 추가되어 컴파일 에러 검출이 가능한 게 대표적인 특징이다. 컴파일 타임이 존재하며 JavaScript 코드로 변환된다.
 - [Mojo](https://www.modular.com/mojo): Python의 슈퍼셋. Python의 느린 속도를 개선했으며 저수준의 제어가 가능한 것이 특징. Python 3.x를 완벽하게 호환한다.
@@ -410,14 +410,14 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 다이어그램, UML
 
-- ⭐[eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 앱을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
-- [Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 앱. 무료 사용 가능. eraser에 비해 가볍게 쓰기 좋다.
-- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 앱. 좋지만 무료 플랜이 없는 게 단점
-- [StarUML](http://staruml.sourceforge.net/ko)
+- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 앱. 좋지만 무료 플랜이 없는 게 💰단점
 - [Draw.io](http://www.draw.io)
 - [Gliffy](http://www.gliffy.com)
-- ⭐[Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 JavaScript 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, Git 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
+- [StarUML](http://staruml.sourceforge.net/ko)
 - [chart.xkcd](https://github.com/timqian/chart.xkcd): JavaScript로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
+- [eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 앱을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
+- ⭐[Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 앱. eraser에 비해 가볍게 쓰기 좋다. 기본 기능은 무료로 사용 가능하고 워크스페이스나 자동 클라우드 동기화 같은 건 💰유료
+- [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 JavaScript 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, Git 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - ⭐[tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리 스트링에 포함되기 때문에 공유가 쉽다.
 
 ### 마인드맵
@@ -431,13 +431,13 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Moqups](https://moqups.com/)
 - [Cacoo](https://nulab.com/cacoo/)
 - [Wireframe.cc](https://wireframe.cc/)
-- ⭐[Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 앱. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
+- [Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 앱. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
 
 ### 디자인 리소스
 
 - [Awesome list of free CSS Generator - DEV Community](https://dev.to/jon_snow789/awesome-list-of-free-css-generator-293k): CSS 코드 생성기 모음
 - [component.gallery](https://component.gallery/): CSS 프레임워크와 디자인 시스템 같은 것을 모아놓은 사이트
-- [Figma](https://www.figma.com): 요즘(2021-05-03) 뜬다는 UI 디자인 도구. 기본은 무료고, 💰비공개 프로젝트를 여러 명이 사용할 땐 유료
+- ✨[Figma](https://www.figma.com): 유우우우명한 UI 디자인 툴. 💰기본은 무료고 비공개 프로젝트를 여러 명에게 공유할 땐 유료
 - [Fluent Icons](https://fluenticons.co/): 마소의 오픈 소스 아이콘 저장소. 마소가 만든건 아님. SVG 혹은 PNG로 받을 수 있다.
 - [Framer](https://www.framer.com/): 노코드 웹사이트 빌더. 코드 없이 웹사이트 만드는 게 주요 기능인데, 최소 기능 제품(MVP)이나 개념 증명(POC)에 활용하기 좋다. 제품의 마케팅이나 소개 페이지, 간단한 포트폴리오 등을 빠르게 만드는 데도 좋다.
 - [loading.io](https://loading.io/): 로딩 이미지, 패턴, 텍스트 등을 받을 수 있는 사이트. 무료버전인 경우 색 정도밖에 못바꿈.
@@ -496,7 +496,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 일정, TODO
 
 - ⭐[Workflowy](https://workflowy.com/): 온라인 할 일 관리 도구
-- ⭐[ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
+- ✨[ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
 - [Calendly](https://calendly.com): 일정 예약 + 스케줄링 자동화 도구. 메일로 일정 맞추는 신박한 기능도 있다.
 - [Linear](https://linear.app/): 소프트웨어 개발팀용 이슈 트래커/프로젝트 관리 도구
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
@@ -512,9 +512,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ℹ️ 메일 시스템은 발신을 담당하는 SMTP 서버, 수신을 담당하는 POP3 혹은 IMAP 서버, 웹 상의 UI를 제공하는 웹메일로 나뉘는데, 이 세 가지를 모두 제공하면 ESP(Email Service Provider, 이메일 서비스 제공자)라고 부른다.
 
-- [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 - [stibee](https://www.stibee.com/): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
+- [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 - [SendGrid](https://sendgrid.com/en-us): 클라우드 기반 SMTP 서비스
+- [Resend](https://resend.com/): 개발자 친화적인 이메일 발송 플랫폼. 기존 SendGrid, Mailgun 같은 서비스를 대체하는 현대적인 이메일 API 서비스. Node.js, Python, Go, Rust 등 다양한 언어용 SDK와 깔끔한 REST API/SMTP를 제공해 연동이 쉽다. 💰3000개 까지 무료 발송
 
 #### 임시 메일
 
@@ -552,11 +553,16 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다.
 - [Junie](https://www.jetbrains.com/junie/): JetBrains의 코딩 에이전트
 
+#### 에이전트용 프롬프트/스킬 라이브러리
+
+- ✨[Taste Skill](https://github.com/leonxlnx/taste-skill): 코딩 에이전트가 흔하고 촌스러운(Generic Slop) UI 대신 감각적이고 고품질의 프론트엔드 디자인을 생성하도록 지시어(Prompt) 및 규칙을 제공한다.
+
 ### 로컬 자율 실행형 에이전트
 
 - [OpenClaw](https://github.com/openclaw/openclaw): 로컬 환경에서 구동되는 자율형 AI 에이전트 오픈소스 프로젝트. 단순한 대화형 AI를 넘어 사용자의 OS를 직접 제어할 수 있는 권한을 가진다. 텔레그램, 슬랙, 디스코드 등의 메신저와 연동하여 원격으로 로컬 컴퓨터에 명령을 하달하고 작업을 수행하게 할 수 있다. 앤트로픽과의 상표권 이슈로 인해 Clawdbot, Moltbot을 거쳐 현재의 명칭으로 확정되었다. 주요 사용자 층 일반 사용자, 개발자다.
 - [Hermes Agent](https://github.com/NousResearch/hermes-agent): Nous Research의 자율형 오픈소스 AI 에이전트. 작업 수행 과정에서 얻은 경험을 바탕으로 스킬(Skill)을 스스로 생성하고 개선하는 지속적 학습 루프(Built-in Learning Loop)를 갖추고 있다. CLI, Docker, 백엔드 서버 환경에서 독자적으로 구동되며, 여러 에이전트 플랫폼의 백엔드 실행 엔진으로 활용된다. 주요 사용자층은 AI 연구자, MLOps 엔지니어, 백엔드 개발자.  
-- [Hermit](https://github.com/benschrauwen/hermit): Hermes 모델 및 에이전트 아키텍처를 기반으로 하는 파일 중심(File-first) 로컬 자율 실행형 AI 에이전트 런타임. Hermes가 자율 구동, 스킬 생성, 기억 기능을 제공하는 핵심 엔진이라면, Hermit은 이를 바탕으로 사용자 인터페이스(UI), 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 결합해 쉽게 다룰 수 있게 구성한 프로젝트다. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터.
+- ✨[Hermit](https://github.com/benschrauwen/hermit): Hermes 모델 및 에이전트 아키텍처를 기반으로 하는 파일 중심(File-first) 로컬 자율 실행형 AI 에이전트 런타임. Hermes가 자율 구동, 스킬 생성, 기억 기능을 제공하는 핵심 엔진이라면, Hermit은 이를 바탕으로 사용자 인터페이스(UI), 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 결합해 쉽게 다룰 수 있게 구성한 프로젝트다. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터.
+- [Claude Cowork](https://claude.com/product/cowork): Claude 기반의 에이전트 서비스. 오픈소스 에이전트들과 달리 자체 폐쇄형 모델 및 고도화된 스킬/플러그인 생태계와 결합되어 구동된다. 다중 서브에이전트(Subagent)에게 병렬 분산해 자동 처리하는 데 특화되어 있다. 주요 사용자층은 기획자, 마케터, 재무/법무 담당자 등 일반 사무직 및 공부 노동자(대학원생, 교수, ...)
 
 ### ADK, Agent Development Kit
 
@@ -577,11 +583,13 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
   - [Readdy](https://readdy.ai/)
 - [GitMCP](https://gitmcp.io/): GitHub 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. GitHub 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
 - [Gitingest](https://gitingest.com/): Git 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. GitHub 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
-- ⭐[DeepWiki](https://deepwiki.org/): Git 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
+- ✨[DeepWiki](https://deepwiki.org/): Git 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰유료인지 아닌지는 안해봐서 몰?루
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
 - [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
+- ✨[Firecrawl](https://github.com/firecrawl/firecrawl): 웹사이트의 구조와 데이터를 마크다운이나 JSON 형태로 만들어주는 API 기반 웹 스크래핑/크롤링 서비스. 💰무료 플랜 제공함
+- [getdesign.md](https://getdesign.md/): AI 코딩 에이전트에 적용할 디자인 시스템 라이브러리. 유명 브랜드의 색상같은 주요 스타일과 타이포그래피, 컴포넌트 명세 등을 마크다운 파일로 정리해 제공한다. 💰일부 브랜드와 심화 기능은 유료다. ℹ️Figma에서 동일한 기능을 무료로 제공한다는 정보가 있음.
 
 
 ## 19. 모바일 개발
@@ -595,11 +603,11 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 개발 관련
 
-- ⭐[mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
+- ✨[mockaroo](https://www.mockaroo.com/): mock 데이터(더미 데이터, 가짜 데이터) 만들어주는 사이트
 - ⭐[Small Dev tools](https://smalldev.tools/): 인코딩/디코딩, formatter, 테스트 데이터 생성 등 개발에 필요한 웹 도구 모음.
 - [Itty bitty](https://itty.bitty.site): 간단한 서식의 글을 작성하고 URL로 공유하는 사이트. 데이터베이스를 사용하지 않고 URL에 작성한 글 내용이 모두 담겨있는 게 특징. 설명서는 [여기에](https://github.com/alcor/itty-bitty/wiki/).
-- [TypeForm](https://www.typeform.com): 설문 조사용 웹 사이트. 여태 봤던것 중 가장 깔끔. 💰유료일듯?
-- [Chatbase](https://www.chatbase.co/): 웹 사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
+- [TypeForm](https://www.typeform.com): 설문 조사용 웹사이트. 여태 봤던것 중 가장 깔끔. 💰유료일듯?
+- [Chatbase](https://www.chatbase.co/): 웹사이트에 위젯처럼 간단히 추가할 수 있는 AI 챗봇.
 - [GitBook](https://www.gitbook.com/): 마크다운으로 웹 문서 만드는 사이트. 웹에서 직접 에디트도 가능하지만 도저히 쓸 물건이 아니라서(다국어 입력하다 보면 먹통됨) 마크다운이나 노션으로 작성한 후 복붙해야 됨. 문서 버전 관리보단 완성된 결과물의 출판용으로 적합한 서비스.
 - [ON24](https://www.on24.com/): 웨비나(Webinar, 웹 세미나) 서비스 사이트. Why Slack에서 쓰길래 줍줍
 - [Firefox Monitor](https://monitor.firefox.com): 다른 사이트 가입할 때 사용한 내 계정 정보가 털렸는지 안털렸는지 알려줌
@@ -612,18 +620,17 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 시스템 유틸리티
 
 - ⭐[Microsoft PowerToys](https://learn.microsoft.com/en-us/windows/powertoys/install): Windows 고급 사용자를 위한 유틸리티 모음. Color Picker, 항상 위, 마우스 찾기, PowerToys Run(Windows판 Spotlight) 같은 기능을 추가해 준다. 그 중 가장 쩌는건 **PowerRename**(이제 파일명 바꾼다고 코딩 안해도 됨 🥹) 
-- [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ PC가 절전 모드 혹은 화면 보호기 모드로 바뀌지 않게 해주는 앱. 개발사는 Zhorn Software.
+- [Caffeine](https://www.zhornsoftware.co.uk/caffeine/index.html): ~~월급루팡의 필수품~~ 일정시간마다 입력을 발생시켜 절전이나 수면모드로 진입하지 않게 하는 앱. 개발사는 Zhorn Software
 - [RunCat](https://github.com/Kyome22/RunCat_for_windows/releases): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
-- [스텔라리움](https://stellarium.org/ko/): 스텔라륨. 오픈 소스 천체 투영관
-- [SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
-- [Meld](https://meldmerge.org/): Windows 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
+- ⭐[SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
+- ⭐[Meld](https://meldmerge.org/): Windows 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
 - [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 도구. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
 - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
 - [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
 - [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(2023-08-09) 버전은 3.1
 - [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해 준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
-- [구라제거기](https://teus.me): 악성 코드 제거 도구
+- ⭐[구라제거기](https://teus.me): 악성 코드 제거 도구
 
 ### 매크로, 키 매핑
 
@@ -693,10 +700,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [stream](https://getstream.io/): 채팅 관련 오픈 소스 같은데 뭔지 잘 몲
 - [Sanity](https://www.sanity.io/): CMS(Content Management System)라는데 이게 뭘까
 - [Apache Tika](https://tika.apache.org/): 파일 콘텐츠를 분석해주는 Java 라이브러리
-- ⭐[KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. JavaScript 혹은 TypeScript로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
+- ✨[KeystoneJS](https://keystonejs.com/): 어드민 패널 라이브러리. 애플리케이션에 필요한 관리자 화면을 만들어주는 라이브러리다. JavaScript 혹은 TypeScript로 사용할 수 있음. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 - [Chosic](https://www.chosic.com/): 비슷한 노래 찾기 등 노래 관련 탐색 서비스 제공하는 사이트
-- [Everynews](https://every.news/): 뉴스에서 관련성 높은 정보를 적절하게 필터링해 전달하는 모니터링 플랫폼. 뉴스레터 서비스의 일종이긴 한데 AI를 끼얹었다. 원하는 주제를 구독하는 방식이다. 해커뉴스 번역판이 가장 인기 많음
-- [프리랜서를 위한 메세지 템플릿 서비스](https://fressa.vercel.app/)
+- 🧪[Everynews](https://every.news/): 뉴스에서 관련성 높은 정보를 적절하게 필터링해 전달하는 모니터링 플랫폼. 뉴스레터 서비스의 일종이긴 한데 AI를 끼얹었다. 원하는 주제를 구독하는 방식이다. 해커뉴스 번역판이 가장 인기 많음
+- [Namelix](https://namelix.com/): 키워드와 선호하는 네이밍 스타일을 선택하면 브랜드 이름을 만들어주는 서비스
 
 
 ## 23. 통계, 분석

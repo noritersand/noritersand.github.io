@@ -38,7 +38,7 @@ Java 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이�
 
 ## 코드의 빨간 밑줄이 안 없어진다면...
 
-JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시작하면 해결되지만, 이게 귀찮은 경우 메뉴의 `Code` > `Inspect Code`를 실행하면 해소되는 경우가 있다.
+JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시작하면 해결되지만, 이게 귀찮은 경우 메뉴의 `Code > Inspect Code`를 실행하면 해소되는 경우가 있다.
 
 이래도 안되면 재시작... 🥲
 
@@ -71,14 +71,14 @@ Project Structure(<kbd>ctrl + alt + shift + s</kbd>)에서 Modules 항목 설정
 
 #### \#2 에디터 인코딩
 
-`Settings` > `Editor` > `File Encodings`로 이동한 뒤:
+`Settings > Editor > File Encodings`로 이동한 뒤:
 
 - Project Encoding을 UTF-8로 변경
 - Default encoding for properties files를 UTF-8, 그 옆에 `Transparent native-to-ascii conversion` 체크
 
 #### \#3 콘솔 출력 인코딩
 
-`Settings` > `Editor` > `General` > `Console`로 이동해서 `Default Encoding`을 `UTF-8`로 변경
+`Settings > Editor > General > Console`로 이동해서 `Default Encoding`을 `UTF-8`로 변경
 
 
 ## 런타임 중 변경된 파일 자동으로 다시 불러오기
@@ -161,13 +161,13 @@ public class ${NAME} {
 
 ### File and Code Templates
 
-`Settings` > `Editor` > `File and Code Templates`
+`Settings > Editor > File and Code Templates`
 
 ### Live Templates
 
 이클립스에서 특정 키워드 후의 자동 완성과 같은 기능이다.
 
-`Settings` > `Editor` > `Live Templates`으로 이동해서 그룹 선택 후 우측의 십자 모양 아이콘 클릭한 다음 요딴식으로 작성한다:
+`Settings > Editor > Live Templates`으로 이동해서 그룹 선택 후 우측의 십자 모양 아이콘 클릭한 다음 요딴식으로 작성한다:
 
 ```java
 Logger logger = LoggerFactory.getLogger($className$.class);
@@ -239,8 +239,8 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 ## 추천 플러그인
 
-- ⭐MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>shift + ctrl + alt + pageup/pagedown</kbd>으로 변경
-- ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>shift + alt + u</kbd>
+- ⭐MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>ctrl + alt + shift + pageup/pagedown</kbd>으로 변경
+- ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>alt + shift + u</kbd>
 - Grep Console: 콘솔 로그에 색을 입히거나 필터링하는 플러그인. 인터페이스가 좀 복잡하긴 한데 쓸만함
 - ⭐Emmet: HTML 태그를 단축어로 작성할 수 있게 해줌
 - Extra Actions: 기본 인텔리제이에 없는 추가 기능을 제공하는 플러그인이다. (사실 캐럿 추가 기능 하나 때문에 쓰는 거)
@@ -252,26 +252,28 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 
 ## 작성자 저장용 단축키 설정
 
-- <kbd>ctrl + alt + shift + e</kbd>: File Open Actions > Recent Project. 최근 열었던 프로젝트 열기
-- <kbd>f1</kbd>: Help > Find Action. 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
-- <kbd>ctrl + z</kbd>: Edit > Undo. 되돌리기. 다른 키는 다 지움
-- <kbd>ctrl + y</kbd>: Edit > Redo. 다시 되돌리기. 다른 키는 다 지움
-- <kbd>ctrl + shift + d</kbd>: Editor Actions > Delete Line. 라인 삭제. 기존 키 매핑은 삭제
-- <kbd>ctrl + alt + up</kbd>: Editor Actions > Clone Caret Above. 위로 멀티 캐럿 생성. 다른 키는 지움
-- <kbd>ctrl + alt + down</kbd>: Editor Actions > Clone Caret Below. 아래로 멀티 캐럿 생성. 다른 키는 지움
-- <kbd>ctrl + shift + k</kbd>: Editor Actions > Duplicate Line or Selection. 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
-- <kbd>ctrl + pageup</kbd>: Editor Tabs > Select Previous Tab. 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
-- <kbd>ctrl + pagedown</kbd>: Editor Tabs > Select Next Tab. 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
-- <kbd>ctrl + alt + shift + '</kbd>: Editor Tabs > Maximize Editor/Normalize Splits. 에디터 창 최대화/원래대로 토글
-- <kbd>alt + left</kbd> <kbd>alt + right</kbd>: Navigate > Back. 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- : Navigate > Forward. 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- <kbd>alt + s</kbd>: Database > Attach Session. 데이터베이스 연결 선택하는 기능
-- <kbd>alt + z</kbd>: Active Editor > Soft-Wrap
-- <kbd>alt + x</kbd>: Other > Clear text. 콘솔 지우기
-- <kbd>alt + w</kbd>: Debugger Actions > Add to Watches. 디버그 모드에서 지켜볼 표현식 영역에 추가
-- <kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: Main Menu > Window > Editor Tabs > Split Right/Down. 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
-- <kbd>shift + f12</kbd>: Main Menu > Window > Tool Window Layouts > Restore Current Layout. 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
-- <kbd>end</kbd>: Code > Code Completion > Insert Inline Proposal's Line. 언젠가부터 자동 완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
+- <kbd>ctrl + alt + shift + e</kbd>: `File Open Actions > Recent Project` 최근 열었던 프로젝트 열기
+- <kbd>f1</kbd>: `Help > Find Action` 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
+- ✂️<kbd>ctrl + z</kbd>: `Edit > Undo` 되돌리기. 다른 키는 다 지움
+- ✂️<kbd>ctrl + y</kbd>: `Edit > Redo` 다시 되돌리기. 다른 키는 다 지움
+- ✂️<kbd>ctrl + shift + d</kbd>: `Editor Actions > Delete Line` 라인 삭제. 기존 키 매핑은 삭제
+- ✂️<kbd>ctrl + alt + up</kbd>: `Editor Actions > Clone Caret Above` 위로 멀티 캐럿 생성. 다른 키는 지움
+- ✂️<kbd>ctrl + alt + down</kbd>: `Editor Actions > Clone Caret Below` 아래로 멀티 캐럿 생성. 다른 키는 지움
+- ✂️<kbd>ctrl + shift + k</kbd>: `Editor Actions > Duplicate Line or Selection` 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
+- ✂️<kbd>ctrl + pageup</kbd>: `Editor Tabs > Select Previous Tab` 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
+- ✂️<kbd>ctrl + pagedown</kbd>: `Editor Tabs > Select Next Tab` 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
+- <kbd>ctrl + alt + shift + '</kbd>: `Editor Tabs > Maximize Editor/Normalize Splits` 에디터 창 최대화/원래대로 토글
+- <kbd>alt + left</kbd>: `Navigate > Back` 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- <kbd>alt + right</kbd>: `Navigate > Forward` 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
+- <kbd>alt + s</kbd>: `Database > Attach Session` 데이터베이스 연결 선택하는 기능
+- <kbd>alt + z</kbd>: `Active Editor > Soft-Wrap`
+- <kbd>alt + x</kbd>: `Other > Clear text` 선택한 콘솔이나 에디터의 내용을 모두 지우는 단축키
+- <kbd>alt + w</kbd>: `Debugger Actions > Add to Watches` 디버그 모드에서 지켜볼 표현식 영역에 추가
+- ✂️<kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: `Main Menu > Window > Editor Tabs > Split Right/Down` 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
+- 🗑️<kbd>shift + f12</kbd>: `Main Menu > Window > Tool Window Layouts > Restore Current Layout` 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
+- 🗑️<kbd>end</kbd>: `Code > Code Completion > Insert Inline Proposal's Line` 언젠가부터 자동 완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
+- 🗑️<kbd>ctrl + shift + c</kbd>: `Plugins > Markdown > Code` 파일 경로 복사 방해하는 단축키. 지울 것
+
 <!-- - <kbd>ctrl + \ </kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제 -->
 
 <!-- ### GitHub Copilot을 쓸 때 -->
