@@ -98,7 +98,7 @@ console.log('${1:msg}:', ${2:msg});
 <!-- javascript-cd.sublime-snippet -->
 <snippet>
   <content><![CDATA[
-console.log(${1});
+console.debug(${1});
 ]]></content>
   <tabTrigger>cd</tabTrigger>
   <scope>source.js</scope>
@@ -160,8 +160,8 @@ console.debug('${1:msg}:', ${2:msg});
   - <kbd>ctrl + alt + n</kbd>: 순번 입력하기 
   - <kbd>ctrl + alt + shift + n</kbd>: 미리보기 없이 순번 입력하기 
 - Compare Side-By-Side: FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)
-- ⭐Clickable URLs: URL에 해당하는 텍스트에 커서를 놓고(혹은 드래그 후) 단축키를 누르면 브라우저로 연결함. 설치하면 기본 단축키인 `replace_all`을 덮어쓴다.
-  - <kbd>ctrl + alt + enter</kbd>: 브라우저에서 URL 열기
+- ⭐Open URL: 하이퍼링크를 바로 브라우저로 열어주는 패키지
+  - <kbd>ctrl + alt + u</kbd>: 캐럿 위치의 URL을 브라우저로 바로 열기. <kbd>alt + 더블클릭</kbd>하거나 우클릭 해도 됨
 - InsertDate: 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기
   - <kbd>f5</kbd>: 기본 단축키
   - <kbd>alt + f5</kbd>: [strftime](https://www.strfti.me) 포맷 커스텀 입력
@@ -173,7 +173,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ## 작성자 저장용 사용자 설정
 
-### settings - user
+### Settings
 
 ```json
 {
@@ -196,7 +196,7 @@ console.debug('${1:msg}:', ${2:msg});
 }
 ```
 
-### key bindings - user
+### Key Bindings
 
 ```json
 [
@@ -217,6 +217,17 @@ console.debug('${1:msg}:', ${2:msg});
 ```
 
 걸리적거려서 기본 단축키 몇 개는 끔.
+
+### Mouse Bindings
+
+```json
+[
+  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "do_nothing" },
+  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "do_nothing" },  
+]
+```
+
+<kbd>ctrl + 마우스휠</kbd> 조작이 폰트 크기 변경인데 꺼버리자.
 
 
 ## 기본 단축키

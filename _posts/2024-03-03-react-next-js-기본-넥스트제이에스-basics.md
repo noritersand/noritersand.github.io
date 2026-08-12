@@ -376,7 +376,7 @@ const db = {
 
 환경 변수 파일로 인식하는 이름은 다음과 같다:
 
-- `.env`: 개발 환경(공식 도움말에선 `NODE_ENV`로 표시함) 구분 없이 사용되는 기본 환경 변수 파일.
+- `.env`: 개발 환경 구분 없이 사용되는 기본 환경 변수 파일. Next.js가 `NODE_ENV`로 자동으로 읽는다.
 - `.env.development`: 개발 환경(`next dev`)일 때 불러오는 환경 변수 파일.
 - `.env.production`: 프로덕션 환경(`next build`, `next start`)에 불러오는 환경 변수 파일이다.
 - `.env.test`: 테스트(`next test`) 모드에서만 불러오는 환경 변수 파일.

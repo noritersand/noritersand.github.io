@@ -3,10 +3,11 @@ layout: post
 date: 2024-02-16 14:50:30 +0900
 title: '[Web] CSP, Content Security Policy'
 categories:
-  - categorize-me
+  - web
 tags:
-  - draft-permanantly
-  - tag-me
+  - web
+  - csp
+  - policy
 ---
 
 * Kramdown table of contents

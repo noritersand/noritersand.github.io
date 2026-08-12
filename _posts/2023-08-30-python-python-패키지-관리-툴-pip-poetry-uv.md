@@ -3,10 +3,10 @@ layout: post
 date: 2023-08-30 17:28:57 +0900
 title: '[python] Python 패키지 관리 툴: pip, poetry, uv'
 categories:
-  - categorize-me
+  - python
 tags:
-  - draft-permanantly
-  - tag-me
+  - python
+  - uv
 ---
 
 * Kramdown table of contents

@@ -29,6 +29,10 @@ tags:
 
 ## 초기 설정
 
+### Windows 11 날씨 앱 삭제
+
+메모리 점유 문제가 보고되었다. [링크](https://news.hada.io/topic?id=32310)
+
 ### 한국어 입력기 문제 해결하기
 
 Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 서브라임과 Flowy 같은 몇몇 앱에서 'IME 조합 문자 유실' 현상을 유발한다.
@@ -236,12 +240,12 @@ Autohotkey로 확장한 키 조합:
   - <kbd>win + ctrl + [</kbd>: 🔒 미사용
   - <kbd>win + alt + [</kbd>: 🔒 미사용
   - <kbd>win + shift + [</kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + [</kbd>: 🔒 미사용
+  - <kbd>win + ctrl + alt + [</kbd>: Opera
 - 닫는 대괄호
   - <kbd>win + ]</kbd>: Brave
   - <kbd>win + ctrl + ]</kbd>: 🔒 미사용
   - <kbd>win + alt + ]</kbd>: 🔒 미사용
-  - <kbd>win + shift + ]</kbd>: Opera
+  - <kbd>win + shift + ]</kbd>: 🔒 미사용
   - <kbd>win + ctrl + alt + ]</kbd>: 🔒 미사용
 
 ### 🚨 반드시 읽을 것

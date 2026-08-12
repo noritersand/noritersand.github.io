@@ -184,3 +184,57 @@ const {log} = require('console');
 ```js
 const {log} = console;
 ```
+ 
+
+## 환경 변수 Environment Variable
+
+운영체제나 실행 환경에서 애플리케이션에 전달하는 `이름=값` 형태의 설정값이다. 데이터베이스 주소, API 키, 포트 번호, 실행 환경 등의 값을 외부에서 주입할 때 사용한다.
+
+환경 변수의 이름이나 용도는 공식적으로 정해져 있는 것이 없다. 다만 Node.js 생태계에서는 관례적으로 `NODE_ENV`를 현재 애플리케이션의 실행 환경(`development`, `production`, `test`)을 나타내는 용도로 사용한다.
+
+그리고 `.env`, `.env.development`, `.env.production` 같은 파일로 나누어 관리하는 경우가 많은데, 이것은 Node.js가 아니라 Next.js, Nuxt 같은 프레임워크나 dotenv 같은 라이브러리에서 제공하는 기능이다.
+
+ℹ️ Node.js는 `--env-file` 또는 `--env-file-if-exists` 옵션으로 지정한 파일의 환경 변수를 읽어오는 기능을 내장하고 있다. 이 방법으로 정의된 환경 변수는 인라인 환경 변수보다 우선순위가 낮다.
+
+### 예시
+
+`package.json`:
+
+```json
+{
+  "name": "test",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development MY_CUSTOM_ENV='Hello world!' node --env-file-if-exists=.env test-me.js"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0"
+  },
+  "packageManager": "yarn@4.18.0"
+}
+```
+
+`.env`:
+
+```
+A=AAA
+B=BBB
+NODE_ENV=1 # 인라인 환경 변수 때문에 이 설정은 무시됨
+MY_CUSTOM_ENV=2 # 인라인 환경 변수 때문에 이 설정은 무시됨
+```
+
+`test-me.js`:
+
+```js
+console.log(process.env.NODE_ENV); // 'development'
+console.log(process.env.MY_CUSTOM_ENV); // 'Hello world!'
+console.log(process.env.A); // 'AAA'
+console.log(process.env.B); // 'BBB'
+```
+
+`package.json: start` 스크립트 해석:
+
+1. `cross-env`: OS 호환 실행(Windows에서는 `NODE_ENV=development` 같은 명령이 작동하지 않음)
+2. `NODE_ENV=development`: `NODE_ENV`라는 인라인 환경 변수 설정 (이 예시에선 출력용 변수 말고 아무런 역할 없음)
+3. `MY_CUSTOM_ENV='Hello world!'`: `MY_CUSTOM_ENV`라는 인라인 환경 변수 설정
+4. `--env-file-if-exists=.env`: `.env` 파일이 존재하면 그 안의 환경 변수를 읽어들인다.
+5. `test-me.js`: Node.js로 `test-me.js` 파일 실행

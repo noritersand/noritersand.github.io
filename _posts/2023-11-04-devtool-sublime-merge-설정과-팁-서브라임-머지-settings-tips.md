@@ -85,9 +85,11 @@ file:"ddl.sql" line:719-801 from:73333a
 
 ## 작성자 저장용 사용자 설정
 
-#### key bindings - user
+#### Key Bindings
 
 현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser) 패키지로 설치해서 확인해야 함.
+
+`메뉴 > Preferences > Edit Key Bindings ...`를 누르면 파일이 하나 열리는데 아래처럼 수정하면 됨.
 
 ```json
 [
@@ -124,3 +126,20 @@ file:"ddl.sql" line:719-801 from:73333a
 - <kbd>ctrl + alt + shift + b</kbd>는 특정 트래킹 브랜치에서 새 브랜치 만드는 기능인데 잘 안씀.
 - <kbd>ctrl + alt + shift + enter</kbd>는 amend commit인데, 실수하면 되돌리기 귀찮아서 막아놨음.
 - `create_tag` 처럼 커맨드 팔레트에서 옵션을 추가 입력해야 하는 명령은 `show_command_palette`의 보조 명령으로 실행해야 함.
+
+#### Mouse Bindings
+
+마우스 쪽은 따로 메뉴가 없어서 설정 파일을 직접 만들어야 한다. `메뉴 > Preferences > Browse Packages ...`를 눌러서 열리는 디렉터리에 파일을 직접 생성하면 된다. ~~돈받아먹으면서뭐하는거야~~
+
+`Default (Windows).sublime-mousemap`:
+
+```JSON
+[
+  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "do_nothing" },
+  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "do_nothing" },  
+]
+```
+
+<kbd>ctrl + 마우스휠</kbd> 조작이 폰트 크기 변경인데 귀찮으니 꺼버리자.
+
+🤔 사실 메뉴가 없길래 서브라임 텍스트랑 같은 모양의 파일을 만들어본 건데... 될 줄은 몰랐다.

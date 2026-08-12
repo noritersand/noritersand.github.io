@@ -273,6 +273,99 @@ form field set 태그라고 하며 웹페이지의 내용을 그룹화 하는데
 
 키보드 탭 컨트롤 시 포커스를 가져갈 순서를 지정하는 속성이다. 순서는 1이 가장 빠르며 정수로만 입력한다. `tabindex`가 0이면 가장 마지막에 도달한다. 만약 `-1`로 설정하면 해당 요소는 탭 컨트롤로 포커스를 가질 수 없다.
 
+### autocomplete
+
+브라우저의 폼 자동 완성 기능에 대한 힌트를 작성하는 속성이다.
+
+> ⚠️ Input elements should have autocomplete attributes
+
+브라우저에 따라 이 속성이 없으면 접근성/UX 권장사항 위반 경고가 뜨기도 한다. 항상 그러는 건 아니고 `<form>` 안에 있는지, `name`이나 `id`가 있는지 등의 기준이 있다. 해소하려면 `autocomplete="off"`라도 명시하면 된다.
+
+```html
+<input type="text" name="name" autocomplete="name">
+<input type="email" name="email" autocomplete="email">
+<input type="tel" name="phone" autocomplete="tel">
+```
+
+`autocomplete`의 값으로 가능한 건 다음과 같다:
+
+- `on` — 자동완성 켜기, 구체적 힌트가 없는 설정이라 사실상 없는 것과 같다.
+- `off` — 자동완성 끄기 (브라우저가 무시할 수 있음)
+- `name` — 전체 이름
+- `honorific-prefix` — 경칭(Mr., Dr. 등)
+- `given-name` — 이름(First name)
+- `additional-name` — 중간 이름
+- `family-name` — 성(Last name)
+- `honorific-suffix` — 접미 경칭(Jr., PhD 등)
+- `nickname` — 별명/닉네임
+- `username` — 로그인 아이디
+- `new-password` — 새로 만드는 비밀번호
+- `current-password` — 기존 비밀번호
+- `one-time-code` — OTP 인증번호
+- `organization-title` — 직함
+- `organization` — 회사/조직명
+- `street-address` — 도로명 주소 전체(여러 줄 가능)
+- `address-line1` / `address-line2` / `address-line3` — 주소를 줄 단위로 나눌 때
+- `address-level1` — 가장 큰 행정구역(주, 도 등)
+- `address-level2` — 그다음 단위(시/군/구)
+- `address-level3` / `address-level4` — 더 세부 행정구역
+- `country` — 국가 코드
+- `country-name` — 국가명 전체
+- `postal-code` — 우편번호
+- `cc-name` — 카드 소유자 이름
+- `cc-given-name` / `cc-additional-name` / `cc-family-name` — 카드 소유자 이름 세분화
+- `cc-number` — 카드 번호
+- `cc-exp` — 유효기간(MM/YY)
+- `cc-exp-month` / `cc-exp-year` — 유효기간 월/년
+- `cc-csc` — 보안코드(CVC/CVV)
+- `cc-type` — 카드 종류(Visa 등)
+- `transaction-currency` — 거래 통화
+- `transaction-amount` — 거래 금액
+- `language` — 선호 언어(BCP 47 형식)
+- `bday` — 생년월일 전체
+- `bday-day` / `bday-month` / `bday-year` — 생년월일 세분화
+- `sex` — 성별(자유 텍스트)
+- `url` — 홈페이지/회사 웹사이트 URL
+- `photo` — 프로필 사진 URL
+- `tel` — 전화번호 전체
+- `tel-country-code` — 국가 코드
+- `tel-national` — 국가코드 제외 번호
+- `tel-area-code` — 지역번호
+- `tel-local` — 지역번호 제외 로컬 번호
+- `tel-extension` — 내선번호
+- `email` — 이메일
+- `impp` — 메시징 프로토콜 URL (예: xmpp:...)
+- `home` / `work` / `mobile` / `fax` / `pager` — 위 연락처 앞에 붙는 수신자 타입 (예: `home tel`, `work email`)
+- `shipping` / `billing` — 배송지/청구지 그룹 지정 (필드 앞에 붙임)
+- `section-*` — 같은 종류 필드가 여러 개일 때 그룹 구분용 (맨 앞에 위치)
+- `webauthn` — 패스키(WebAuthn) 자동완성 지원, 토큰 맨 마지막에 붙임
+
+배송지나 청구서 폼에서는 토큰을 여러 개 조합할 수 있다. 이 경우 정해진 토큰 순서를 지켜야 하는데, 순서가 맞지 않으면 무시된다.
+
+```html
+<!-- 
+  토큰 순서: 
+  1. section-*
+  2. shipping/billing
+  3. 수신자 타입(home 등)
+  4. 실제 필드
+  5. webauthn
+-->
+
+<!-- 배송지 우편번호 -->
+<input autocomplete="shipping postal-code">
+
+<!-- 회사 전화번호 -->
+<input autocomplete="work tel">
+
+<!-- 청구지 그룹을 두 개 이상 구분해야 할 때 -->
+<input autocomplete="section-red billing postal-code">
+<input autocomplete="section-blue billing postal-code">
+
+<!-- 패스키 지원 로그인 아이디 -->
+<input autocomplete="username webauthn">
+```
+
 
 ## 취소선(strike through line) 표현하기
 

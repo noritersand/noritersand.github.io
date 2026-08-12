@@ -3,10 +3,10 @@ layout: post
 date: 2024-11-30 22:24:48 +0900
 title: '[PostgreSQL] PostgreSQL 노트'
 categories:
-  - categorize-me
+  - postgresql
 tags:
-  - draft-permanantly
-  - tag-me
+  - dbms
+  - postgresql
 ---
 
 * Kramdown table of contents

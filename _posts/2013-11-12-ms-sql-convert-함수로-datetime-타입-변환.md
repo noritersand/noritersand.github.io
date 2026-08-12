@@ -3,7 +3,7 @@ layout: post
 date: 2013-11-12 12:27:00 +0900
 title: '[MS-SQL] CONVERT 함수로 DATETIME 타입 변환'
 categories:
-  - dbms
+  - ms-sql
 tags:
   - dbms
   - mssql
