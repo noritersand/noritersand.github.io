@@ -53,7 +53,7 @@ choco install winscp
 # notepad++ 설치
 choco install notepadplusplus
 
-# 파폭과 크롬 설치
+# 파폭과 초로미 설치
 choco install firefox-dev googlechrome googlechrome.dev
 
 # 이미 설치된 openjdk 패키지가 있어도 무시하고 강제 설치하되 프롬프트는 무조건 yes 입력

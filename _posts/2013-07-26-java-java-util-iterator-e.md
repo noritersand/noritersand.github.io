@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2013-07-24 23:30:00 +0900
+date: 2013-07-26 23:30:00 +0900
 title: '[Java] java.util.Iterator'
 categories:
   - java

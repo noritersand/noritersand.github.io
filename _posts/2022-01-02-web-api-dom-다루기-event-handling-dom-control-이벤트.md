@@ -152,10 +152,10 @@ element.addEventListener('build', function (e) { /* ... */ }, false);
 element.dispatchEvent(event);
 ```
 
-ℹ️ 크롬 개발자 도구를 이용해서 디버깅할 때, `dispatchEvent()`를 활용해서 마우스오버 이벤트를 강제로 발생시키는 꼼수가 있다:
+ℹ️ 초로미 개발자 도구를 이용해서 디버깅할 때, `dispatchEvent()`를 활용해서 마우스오버 이벤트를 강제로 발생시키는 꼼수가 있다:
 
 ```js
-// 크롬 개발자 도구의 Elements 패널에서 클릭한 요소는 $0 변수에 저장된다.
+// 초로미 개발자 도구의 Elements 패널에서 클릭한 요소는 $0 변수에 저장된다.
 $0.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
 ```
 

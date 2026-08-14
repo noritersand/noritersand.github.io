@@ -256,6 +256,9 @@ Get-ChildItem -Path . -Filter *.js -Recurse | Select-String -Pattern "axios" | S
 
 # 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
 Get-ChildItem -Recurse -Name | findstr main.js
+
+# 💡 하위 경로에서 이름에 대문자가 섞인 파일 찾기
+Get-ChildItem -Path _posts,_drafts,_hidden -File -Recurse | Where-Object { $_.Name -cmatch '[A-Z]' } | Select-Object -ExpandProperty FullName
 ```
 
 #### Parameters

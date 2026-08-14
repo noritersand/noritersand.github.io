@@ -38,7 +38,7 @@ AJAX는 'Asynchronous JavaScript and XML'의 약자로, 페이지 새로고침 �
 
 ## XMLHttpRequest API
 
-XMLHttpRequest API는 먼저 `XMLHttpRequest` 객체(의외지만 XMLHttpRequest는 마이크로소프트에서 처음 만들었다)를 생성해야 한다. 과거엔 `ActiveXObject`라는 소름 돋는 이름의 생성자를 사용했었다:
+XMLHttpRequest API는 먼저 `XMLHttpRequest` 객체(의외지만 XMLHttpRequest는 Microsoft에서 처음 만들었다)를 생성해야 한다. 과거엔 `ActiveXObject`라는 소름 돋는 이름의 생성자를 사용했었다:
 
 ```js
 var xmlReq = false;

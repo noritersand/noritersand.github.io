@@ -132,7 +132,7 @@ tags:
 - [Preact](https://preactjs.com/): React 경량 대체 라이브러리로 번들 크기가 훨씬 작다. React와 거의 같은 API를 제공하고 JSX 문법을 그대로 쓸 수 있다.
 - [React Native](https://reactnative.dev/): React 기반의 크로스 플랫폼 개발 프레임워크. JavaScript 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 프론트엔드 프레임워크. 가볍고 단순한 게 특징. 일반적인 프레임워크와 다르게 런타임 대신 컴파일러로 작동한다. 이 말은 빌드 후에 별도로 불러오는 라이브러리가 없어 성능과 로딩 속도에서 이점이 있다는 뜻이다.
-- [Flutter](https://flutter.dev/): 구글이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
+- [Flutter](https://flutter.dev/): Google이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
 - [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 도구. React, Vue, Svelte와 순수 JavaScript를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [Gatsby](https://www.gatsbyjs.com/): React 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - ⭐[Next.js](https://nextjs.org/): React 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
@@ -184,6 +184,7 @@ tags:
 - [sharp](https://sharp.pixelplumbing.com/): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://pptr.dev/): Google에서 개발한 headless 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 headless 모드(시각적 화면인 GUI가 없다는 의미)로 작동하지만, head 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
+- ✨[Playwright](https://playwright.dev/): Microsoft에서 개발한 오픈소스 웹 자동화 프레임워크로, Puppeteer의 핵심 개발진이 이적하여 제작한 **직계 후속** 도구다. Chrome/Chromium에 한정되지 않고 Firefox와 WebKit(Safari)을 모두 단일 API로 제어하며, Node.js 외에도 Python, Java, `C#`을 공식 지원한다. 요소 준비 상태를 검증하는 자동 대기(Auto-waiting), 독립 세션 고속 생성(Browser Context), 사용자 동작 녹화(Codegen), 타임라인 기반 디버깅(Trace Viewer) 등 테스트에 특화된 기능을 제공한다.
 - ✨[fullPage.js](https://alvarotrigo.com/fullPage/): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹사이트(단일 페이지 웹사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - ✨[Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
@@ -274,7 +275,7 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 
 BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
-- [Firebase](https://firebase.google.com/): 구글의 BaaS 플랫폼.
+- [Firebase](https://firebase.google.com/): Google의 BaaS 플랫폼.
 - [Supabase](https://supabase.com/): PostgreSQL 기반의 백엔드 기능을 제공하는 BaaS 플랫폼. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공한다.
 - [PocketBase](https://pocketbase.io/): 오픈 소스 백엔드 서비스. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
 
@@ -388,7 +389,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Kotlin](https://kotlinlang.org/): JVM에서 실행되는 Java와 상호 운용 가능한 언어. 안드로이드 개발에 주로 쓰인다. 네이티브, JavaScript(?)까지 지원한다고 하며 기존의 Java 코드를 호환해줘서 그대로 사용할 수 있다고 한다.
 - [Apache Groovy](https://groovy-lang.org/): JVM에서 작동하는 동적 타입 프로그래밍 언어(? 그게 뭔데). Java, Python, Ruby 등의 언어에서 영향을 받았다 한다. 
 - ✨[Go](https://golang.org): 한 때 세계에서 가장 돈을 많이 버는 프로그래밍 언어로 집계되기도 했으며 개발 속도와 실행 속도 둘 다 빠른 획기적인 언어라고 함. 언어 자체가 경량이라 늘 쓰던것만 쓴다는 소소한 단점이 있지만, 그만큼 빠르고 쉽게 익힐 수 있다. 간단한 API 서버나 백엔드 애플리케이션 개발에 적합하다.
-- [Dart](https://dart.dev/): 구글이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
+- [Dart](https://dart.dev/): Google이 멀티 플랫폼 작동을 목적으로 만든 언어. 문법은 C와 비슷. Java처럼 DVM(Dart VM) 상에서 작동하거나 네이티브 컴파일을 따로 한다.
 - ⭐[TypeScript](https://www.typescriptlang.org/): JavaScript의 슈퍼셋(superset)으로, 이름처럼 정적 데이터 타입이 추가되어 컴파일 에러 검출이 가능한 게 대표적인 특징이다. 컴파일 타임이 존재하며 JavaScript 코드로 변환된다.
 - [Mojo](https://www.modular.com/mojo): Python의 슈퍼셋. Python의 느린 속도를 개선했으며 저수준의 제어가 가능한 것이 특징. Python 3.x를 완벽하게 호환한다.
 - [Jsonnet](https://jsonnet.org/): 환경 설정용 언어(A configuration language). 오직 JSON 데이터를 만들기 위한 언어로, 기존 JSON에선 불가능하던 변수 참조, 조건 분기, 함수, import 등의 기능을 사용할 수 있다.
@@ -543,7 +544,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 챗봇, LLM
 
-- [Gemini](https://gemini.google.com/): 구글의 LLM 챗봇
+- [Gemini](https://gemini.google.com/): Google의 LLM 챗봇
 - [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
 - [Claude](https://claude.ai/): Anthropic의 LLM 챗봇. 발음은 '클로드'
 - [ChatGPT](https://chat.openai.com/): OpenAI의 LLM 챗봇
@@ -555,33 +556,41 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Devin Desktop](https://devin.ai/): Cognition의 에이전트 기반 코드 에디터. 이쪽도 VSCode와 모양이 유사하다. 원래는 Windsurf(Codeium 개발)였는데 인수되면서 이름이 바뀌었다.
 - [Claude Code](https://claude.com/ko/product/claude-code): Anthropic의 CLI 기반 에이전트 서비스. 별도의 GUI 툴 없이 로컬 터미널 환경에서 실행된다.
 - [Codex](https://openai.com/codex/): OpenAI의 ChatGPT 기반 AI 코딩 에이전트 서비스. IDE의 플러그인이나 CLI 형태로 사용할 수 있다.
-- [Google Antigravity](https://antigravity.google/): Google의 에이전트 중심(Agent-First) 개발 플랫폼. CLI 및 IDE 통합 환경에서 비동기 멀티 에이전트가 에디터, 터미널, 내장 브라우저를 직접 제어하며 소프트웨어 작성부터 빌드, 테스트까지 자율 실행한다. 코드 생성 속도와 멀티에이전트 오케스트레이션이 강점이다.
+- ✨[Google Antigravity](https://antigravity.google/): Google의 에이전트 중심 개발 플랫폼. CLI와 IDE가 합쳐진 환경에서 여러 에이전트가 동시에 에디터, 터미널, 브라우저를 직접 조작하며 코드 작성부터 빌드, 테스트까지 알아서 처리함. 빠른 코드 생성 속도와 여러 에이전트를 동시에 굴리는 오케스트레이션이 강점.
 - [Junie](https://www.jetbrains.com/junie/): JetBrains의 코딩 에이전트
-- [v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다.
+- ⭐[v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다.
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰코드 생성부터는 유료다. 
   - [Stitch](https://stitch.withgoogle.com/)
   - [Readdy](https://readdy.ai/)
 
 ### 로컬 자율 실행형 에이전트
 
-- [OpenClaw](https://openclaw.ai/): 로컬 환경에서 구동되는 자율형 AI 에이전트 오픈소스 프로젝트. 단순한 대화형 AI를 넘어 사용자의 OS를 직접 제어할 수 있는 권한을 가진다. 텔레그램, 슬랙, 디스코드 등의 메신저와 연동하여 원격으로 로컬 컴퓨터에 명령을 하달하고 작업을 수행하게 할 수 있다. 앤트로픽과의 상표권 이슈로 인해 Clawdbot, Moltbot을 거쳐 현재의 명칭으로 확정되었다. 주요 사용자 층 일반 사용자, 개발자다.
-- [Hermes Agent](https://hermes-agent.nousresearch.com/): Nous Research의 자율형 오픈소스 AI 에이전트. 작업 수행 과정에서 얻은 경험을 바탕으로 스킬(Skill)을 스스로 생성하고 개선하는 지속적 학습 루프(Built-in Learning Loop)를 갖추고 있다. CLI, Docker, 백엔드 서버 환경에서 독자적으로 구동되며, 여러 에이전트 플랫폼의 백엔드 실행 엔진으로 활용된다. 주요 사용자층은 AI 연구자, MLOps 엔지니어, 백엔드 개발자.  
-- ✨[Hermit](https://hermit-ai.com/): Hermes 모델 및 에이전트 아키텍처를 기반으로 하는 파일 중심(File-first) 로컬 자율 실행형 AI 에이전트 런타임. Hermes가 자율 구동, 스킬 생성, 기억 기능을 제공하는 핵심 엔진이라면, Hermit은 이를 바탕으로 사용자 인터페이스(UI), 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 결합해 쉽게 다룰 수 있게 구성한 프로젝트다. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터.
-- [Claude Cowork](https://claude.com/product/cowork): Claude 기반의 에이전트 서비스. 오픈소스 에이전트들과 달리 자체 폐쇄형 모델 및 고도화된 스킬/플러그인 생태계와 결합되어 구동된다. 다중 서브에이전트(Subagent)에게 병렬 분산해 자동 처리하는 데 특화되어 있다. 주요 사용자층은 기획자, 마케터, 재무/법무 담당자 등 일반 사무직 및 공부 노동자(대학원생, 교수, ...)
+- [OpenClaw](https://openclaw.ai/): 로컬 환경에서 돌아가는 오픈소스 자율 AI 에이전트. 단순 대화형 챗봇이 아니라 사용자 OS를 직접 제어할 수 있는 권한을 가지고 있어서, 텔레그램/슬랙/디스코드 같은 메신저로 원격에서 명령을 내려 로컬 작업을 수행하게 할 수 있다. 앤트로픽과의 상표권 문제로 Clawdbot -> Moltbot을 거쳐 지금 이름으로 정착함. 주요 사용자층은 일반 사용자와 개발자
+- [Hermes Agent](https://hermes-agent.nousresearch.com/): Nous Research의 자율형 오픈소스 AI 에이전트. 작업하면서 얻은 경험을 바탕으로 스스로 스킬을 만들고 개선해나가는 학습 루프를 내장하고 있음. CLI, Docker, 백엔드 서버 환경에서 독자적으로 구동되고, 다른 에이전트 플랫폼의 백엔드 실행 엔진으로도 많이 쓰임. 주요 사용자층은 AI 연구자, MLOps 엔지니어, 백엔드 개발자
+- ✨[Hermit](https://hermit-ai.com/): Hermes 모델과 에이전트 구조를 기반으로 만든, 파일 중심(File-first)의 로컬 자율 실행 에이전트 런타임. Hermes가 자율 구동/스킬 생성/기억 기능을 담당하는 엔진이라면, Hermit은 그 위에 사용자 인터페이스, 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 얹어서 다루기 쉽게 만든 프로젝트임. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터
+- [Claude Cowork](https://claude.com/product/cowork): Claude 기반 에이전트 서비스. 오픈소스 에이전트들과 달리 앤트로픽의 폐쇄형 모델과 고도화된 스킬/플러그인 생태계를 그대로 활용함. 여러 서브에이전트에게 작업을 병렬로 나눠서 자동 처리하는 데 특화되어 있음. 주요 사용자층은 기획자, 마케터, 재무/법무 담당자 같은 일반 사무직과 대학원생/교수 같은 지식 노동자
 
 ### ADK, Agent Development Kit
 
 ℹ️ ADK는 AI 에이전트를 조립하고 관리하는 개발 도구를 말함
 
-- [LangGraph](https://docs.langchain.com/oss/python/langgraph/overview): LangChain 생태계 기반의 그래프 구조형 AI 에이전트 프레임워크. 에이전트의 상태(State)와 루프, 조건부 분기를 '그래프' 형태로 정밀하게 제어할 수 있어 순클로즈드 루프나 복잡한 프로덕션 워크플로를 구축할 때 유용하다. 주요 사용자층은 백엔드 개발자, AI 엔지니어, 엔터프라이즈 솔루션 개발자다.
-- [Google ADK](https://adk.dev/): Google이 발표한 멀티 에이전트 개발 프레임워크. 단일 에이전트부터 계층적 구조의 멀티 에이전트 시스템까지 구축, 디버깅, 평가, 배포를 종합적으로 지원하며, 양방향 스트리밍 처리 및 멀티모달 환경에 최적화되어 있다. 주요 사용자층은 Google Cloud/Vertex AI 기반 엔지니어, 멀티모달 AI 개발자다.
-- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/): OpenAI 생태계에 특화된 공식 에이전트 오케스트레이션 SDK. 에이전트 간 핸드오프(Handoff)와 도구 호출(Tool Calling)을 최소한의 코드로 구현할 수 있게 설계되었으며, 선언적이고 간결한 API가 특징이다. 주요 사용자층은 OpenAI API 기반 앱 개발자, 빠른 프로토타이핑이 필요한 개발자다.
-- [Microsoft AutoGen / AG2](https://microsoft.github.io/autogen/stable/): 마이크로소프트가 주도하는 멀티 에이전트 대화형 프레임워크. 여러 에이전트가 대화를 주고받으며 문제를 해결하는 구조에 강점이 있으며, 자율 실행과 인간 개입(Human-in-the-loop) 패턴을 유연하게 결합할 수 있다. 주요 사용자층은 AI 연구자, 시스템 아키텍트, 백엔드 개발자다.
-- [CrewAI](https://crewai.com/): 에이전트 조직화에 특화된 역할 기반(Role-based) 멀티 에이전트 프레임워크. 각 에이전트에게 역할(Role), 목표(Goal), 백스토리(Backstory)를 부여하여 하나의 팀(Crew)처럼 협업하도록 직관적인 구조를 제공한다. 주요 사용자층은 소프트웨어 개발자, 자동화 시스템 구축자, 빠른 도메인 에이전트 구현을 목표로 하는 팀이다.
+#### Framework/Harness 레이어
+
+이 목록은 추상화 레벨이 높은 순에서 낮은 순으로 나열함.
+
+- [CrewAI](https://crewai.com/): 에이전트에게 역할, 목표, 배경 이야기를 하나씩 정해줘서 여러 에이전트가 한 팀처럼 나눠서 일하게 만드는 프레임워크. "너는 리서처, 너는 작가"처럼 배역을 나눠주는 방식이라 구조가 직관적이고 배우기 쉬움. 주요 사용자층은 소프트웨어 개발자, 자동화 시스템 개발자, 빠르게 뭔가 만들어보고 싶은 팀
+- [Microsoft AutoGen / AG2](https://microsoft.github.io/autogen/stable/): Microsoft가 만든, 여러 에이전트끼리 서로 대화하면서 문제를 풀게 하는 프레임워크. 에이전트들끼리 알아서 얘기하다가 필요하면 사람이 중간에 끼어들 수도 있게 유연하게 짜여 있음. 주요 사용자층은 AI 연구자, 시스템 아키텍트, 백엔드 개발자
+- [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/): OpenAI가 공식으로 만든 에이전트 SDK. 에이전트 간 작업 넘기기(handoff)와 도구 호출을 최소한의 코드로 구현할 수 있게 해줘서 간결함. 주요 사용자층은 OpenAI API 기반 앱 개발자, 빠른 프로토타이핑이 필요한 개발자다. 예전 이름은 🦗Swarm.
+- [Google ADK](https://adk.dev/): Google이 만든 에이전트 개발 도구. 단일 에이전트부터 계층적으로 얽힌 멀티 에이전트 시스템까지 구축, 디버깅, 배포를 종합적으로 지원함. 스트리밍과 멀티모달 처리에 특히 강함. 주요 사용자층은 Google Cloud/Vertex AI 기반 엔지니어, 멀티모달 AI 개발자
+- [LangGraph](https://docs.langchain.com/oss/python/langgraph/overview): LangChain 기반으로, 에이전트의 상태와 흐름을 '그래프(노드와 화살표)' 형태로 정밀하게 제어할 수 있는 프레임워크. 조건부 분기나 복잡한 프로덕션 워크플로를 짤 때 유용함. 주요 사용자층은 백엔드 개발자, AI 엔지니어, 엔터프라이즈 솔루션 개발자
+
+#### Runtime 레이어
+
+- [Cloudflare Agents SDK](https://developers.cloudflare.com/agents/): 에이전트가 실제로 '돌아가는' 서버 인프라를 대신 관리해주는 SDK. 에이전트가 어떻게 생각하고 행동할지는 안 알려주고, 대신 상태 저장, 실시간 연결(WebSocket), 스케줄링 같은 걸 알아서 처리해줘서 서버 관리 걱정 없이 배포만 하면 되게 해준다. Framework/harness 계열 ADK들과 같이 써야 하는 하부 인프라 역할이라 보면 됨. 주요 사용자층은 Cloudflare Workers로 서비스 만드는 웹 개발자, 에이전트를 실제로 배포하고 운영해야 하는 백엔드 개발자다.
 
 ### AI 엔지니어링 스택
 
-- [Teachable Machine](https://teachablemachine.withgoogle.com/): 구글 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
+- [Teachable Machine](https://teachablemachine.withgoogle.com/): Google 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
 - 🚧[claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
@@ -684,7 +693,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저
 - [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
 - [Nyxt](https://nyxt.atlas.engineer/): 해커용 브라우저(?). 고급 사용자를 위한 브라우저로, 키보드 탐색, 점프 헤딩, 쉬운 탭 관리, 명령 퍼지 검색, 내장 REPL, 스마트 북마크 검색, 사용자 정의 가능한 자동 완성, 클립보드 기록, 트리 기반의 방문 페이지 기록 등의 기능을 제공한다고 함. 🗓️ 2024-12-09 기준 Windows는 아직 미지원.
-- [Chromium](https://www.chromium.org/): 구글의 오픈 소스 웹 브라우저 프로젝트. 크롬의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
+- [Chromium](https://www.chromium.org/): Google의 오픈 소스 웹 브라우저 프로젝트. Chrome의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
 
 ### Firefox 플러그인
 
@@ -700,7 +709,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - Mate Translate
 - Chrome Remote Desktop
 
-여기에 개발용 크롬이면:
+여기에 개발용 Chrome이면:
 
 - CSSViewer
 - JSON Formatter

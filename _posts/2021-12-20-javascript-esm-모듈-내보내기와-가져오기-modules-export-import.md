@@ -43,7 +43,7 @@ ESM의 모듈은 `export`와 `import` 구문으로 구현하며, 내보내거나
 교차 출처 요청 차단: 동일 출처 정책으로 인해 file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.js에 있는 원격 리소스를 차단하였습니다. (원인: http가 아닌 CORS 요청).
 이 문서에서 모듈 원본 URI가 허용되지 않음: “file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.js”.
 
-// 크롬
+// 초로미
 Access to script at 'file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.js' from origin 'null' has been blocked by CORS policy: Cross origin requests are only supported for protocol schemes: http, data, chrome, chrome-extension, chrome-untrusted, https.
 index.html:11 GET file:///C:/dev/git/mdn-js-examples/modules/basic-modules/main.js net::ERR_FAILED
 ```
@@ -69,7 +69,7 @@ import와 export 구문은 모듈 내에서만 사용할 수 있다. 모듈이 �
 // 파폭
 Uncaught SyntaxError: import declarations may only appear at top level of a module
 
-// 크롬
+// 초로미
 Uncaught SyntaxError: Cannot use import statement outside a module
 ```
 

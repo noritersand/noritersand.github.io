@@ -46,7 +46,7 @@ https://localhost:8443 접속 테스트
 
 ## 버그
 
-HTTPS 커넥터의 포트를 8443으로, HTTP 커넥터의 포트를 8080으로 했을 때, 먼저 8443으로 접속한 뒤 8080으로 접속하면 JSESSIONID가 쿠키 목록에 보이지 않는다. 이 현상은 크롬에서만 발견되는데, secure 쿠키와 non-secure 쿠키가 동시에 존재할 때 (예를 들면 HTTPS를 최초로 접속하고 HTTP로 이동했으며 두 페이지의 호스트명이 일치할 때 secure 쿠키와 non-secure 쿠키가 동시에 존재한다) set-cookie 헤더를 크롬이 무시해서 나타나는 현상이다.
+HTTPS 커넥터의 포트를 8443으로, HTTP 커넥터의 포트를 8080으로 했을 때, 먼저 8443으로 접속한 뒤 8080으로 접속하면 JSESSIONID가 쿠키 목록에 보이지 않는다. 이 현상은 초로미에서만 발견되는데, secure 쿠키와 non-secure 쿠키가 동시에 존재할 때 (예를 들면 HTTPS를 최초로 접속하고 HTTP로 이동했으며 두 페이지의 호스트명이 일치할 때 secure 쿠키와 non-secure 쿠키가 동시에 존재한다) set-cookie 헤더를 Chrome이 무시해서 나타나는 현상이다.
 
 한 번 이렇게 되어버리면 secure 쿠키가 우선권을 갖게 되며 secure 쿠키를 날리기 전까지 non-secure 쿠키는 생성되지 않는다.
 

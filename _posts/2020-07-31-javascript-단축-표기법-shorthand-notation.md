@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2020-08-02 16:25:00 +0900
+date: 2020-07-31 16:25:00 +0900
 title: '[JavaScript] 단축 표기법 Shorthand notation'
 categories:
   - javascript

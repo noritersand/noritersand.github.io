@@ -54,7 +54,7 @@ npm과 Yarn 사용법 간단 정리
 - `scripts`: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. (npm help scripts로 확인할 것)
 - `author`: 작성자
 - `license`:
-- `dependencies`: 의존하는 패키지 정보를 적는다. npm install 명령으로 자동 설치된다.
+- `dependencies`: 의존하는 패키지 정보를 적는다. `npm install` 명령으로 자동 설치된다.
 - `devDependencies`: 개발 시에만 필요한 패키지를 명시한다. config(`package.json`의 `config` 필드와는 다르다. `npm config list -l` 명령으로 설정목록을 확인 할 수 있고 production 값을 바꾸려면 `npm config set production true`를 사용한다.)에 production이 `true`일 때는 배포버전이라 간주하고 설치하지 않는다.
 - `repository`: 버전 관리 저장소 정보
 - `keywords`: 키워드
@@ -577,7 +577,7 @@ yarn up PACKAGE_NAME
 yarn up PACKAGE_NAME -R
 ```
 
-`-R` `--recursive`은 재귀 모드를 활성화하는 옵션이다. 이 옵션을 사용하면 명령어의 작동 방식이 바뀌며, 다른 옵션과 함께 사용할 수 없다. 이 모드에서는 지정한 패키지를 의존성 트리 전체에서 찾아, 가능한 가장 최신 버전으로 업그레이드한 뒤 `yarn.lock` 파일에 반영한다. `package.json`은 수정하지 않기 때문에, 완전한 업데이트를 원한다면 `yarn up`과 `yarn up -R` 둘 다 실행하는 것이 좋다.
+`-R` `--recursive`는 재귀 모드를 활성화하는 옵션이다. 이 옵션을 사용하면 명령어의 작동 방식이 바뀌며, 다른 옵션과 함께 사용할 수 없다. 이 모드에서는 지정한 패키지를 의존성 트리 전체에서 찾아, 가능한 가장 최신 버전으로 업그레이드한 뒤 `yarn.lock` 파일에 반영한다. `package.json`은 수정하지 않기 때문에, 완전한 업데이트를 원한다면 `yarn up`과 `yarn up -R` 둘 다 실행하는 것이 좋다.
 
 `yarn up`과 다르게, `package.json`에 명시되지 않은 패키지라도 의존성 트리 내에 존재하기만 하면 지정하여 업데이트할 수 있다. 예를 들어, Next.js를 사용중이면 가끔 `caniuse-lite`를 업그레이드 하라는 경고가 발생하는데, 이 경고는 `yarn up caniuse-lite -R` 명령을 실행하면 해결된다.
 
@@ -633,7 +633,7 @@ yarn run api:build
 
 `dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다. DLX는 아마도 DownLoad and Execute의 줄임말...?
 
-⚠️ Yarn을 `npm install yarn -g` 명령으로 설치했다면 `yarn dlx`를 실행했을 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것.
+⚠️ Yarn을 npm 글로벌로 설치했으면 `yarn dlx`를 실행할 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것
 
 ```
 yarn dlx <command> ...
@@ -726,7 +726,7 @@ PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 
 
 > [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
 
-Vite나 Next.js 같은 프론트엔드 프레임워크를 사용할 때, npm이나 yarn 명령을 실행하면 위처럼 출력될 때가 있다. 구글과 WebDX 커뮤니티 그룹이 만든 `baseline-browser-mapping` 패키지는 브라우저 호환성(CSS나 JavaScript의 특정 기능 지원 여부 등) 데이터를 담고 있는데, 프론트엔드 빌드 도구들이 브라우저 호환성을 체크할 때 이 데이터를 참조한다. 만약 해당 데이터가 두 달 넘게 오래되었다 판단하면 위 메시지를 출력하는 것.
+Vite나 Next.js 같은 프론트엔드 프레임워크를 사용할 때, npm이나 yarn 명령을 실행하면 위처럼 출력될 때가 있다. Google과 WebDX 커뮤니티 그룹이 만든 `baseline-browser-mapping` 패키지는 브라우저 호환성(CSS나 JavaScript의 특정 기능 지원 여부 등) 데이터를 담고 있는데, 프론트엔드 빌드 도구들이 브라우저 호환성을 체크할 때 이 데이터를 참조한다. 만약 해당 데이터가 두 달 넘게 오래되었다 판단하면 위 메시지를 출력하는 것.
 
 어쨋든 해소하고 싶으면 아래 조치들을 단계별로 진행해보자.
 
