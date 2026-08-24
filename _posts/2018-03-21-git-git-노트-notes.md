@@ -13,6 +13,20 @@ tags:
 {:toc .toc}
 
 
+## 서브모듈(submodule) 초기화 하기
+
+```
+repo/
+├── .git/
+└── child/
+    └── .git/
+```
+
+1. `child/.git`을 완전히 제거한다.
+2. `git rm --cached child` 명령으로 인덱스에서 제거
+3. `git add child`로 다시 추가
+4. 끗.
+
 
 ## Refspec이란?
 

@@ -439,14 +439,14 @@ npm init vite@latest
 
 ## Yarn
 
-npm의 속도와 보안을 강화한 새 패키지 매니저. 속도가 빠른 이유는 병렬로 수행해서 그런다나 뭐라나.
+npm과 같은 역할을 하는 패키지 매니저. Plug'n'Play를 활성화하면 pnpm이나 npm보다 빠르다. (다만 아직 안정성 문제가 있음)
 
 ```bash
+# ✅ 코어팩 설치(Node.js 25 이후)
+npm install -g corepack
+
 # 코어팩 버전 확인
 corepack -v
-
-# 코어팩 활성화
-corepack enable
 
 # Yarn 버전 확인
 yarn -v
@@ -455,9 +455,13 @@ yarn -v
 yarn set version berry
 ```
 
-Yarn은 [코어팩(Corepack) 프로젝트](https://www.npmjs.com/package/corepack)에 [포함 되어있으니](https://yarnpkg.com/corepack) 따로 설치할 필요 없이 코어팩만 활성화하면 된다. 코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 14.19/16.9 버전 이상이면 자동으로 설치된다. 코어팩 버전을 올리고 싶으면 Node.js 버전을 업그레이드 하자. 
+~~Yarn은 [코어팩 프로젝트](https://www.npmjs.com/package/corepack)에 [포함 되어있으니](https://yarnpkg.com/corepack) 따로 설치할 필요 없이 코어팩만 활성화(`corepack enable`)하면 된다.~~
 
-코어팩이 활성화되면 `yarn` 명령어를 글로벌로 실행할 수 있다. 만약 로컬 프로젝트에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전을 사용한다. 과거에는 Yarn 자체를 npm 글로벌 패키지로 설치하여 사용하곤 했으나, 패키지 매니저의 버전 관리가 필요해지면서 사장되었다.
+~~코어팩은 패키지 매니저(Yarn, npm, pnpm)의 버전 관리를 위한 도구로, Node.js 14.19/16.9 버전 이상이면 자동으로 설치된다. 코어팩 버전을 올리고 싶으면 Node.js 버전을 업그레이드 하자.~~
+
+코어팩(Corepack)을 설치하면 `yarn` 명령어를 글로벌로 실행할 수 있다. 만약 로컬 프로젝트에 특정 Yarn 버전이 명시되어 있다면 코어팩은 해당 버전을 사용한다. 과거에는 Yarn 자체를 npm 글로벌 패키지로 설치하여 사용하곤 했으나, 패키지 매니저의 버전 관리가 필요해지면서 사장되었다.
+
+ℹ️ 릴리즈 주기 문제가 있어서 25 버전부터는 Node.js에 코어팩이 포함되지 않는다. 버전을 확인하고 글로벌로 설치할 것
 
 Yarn Berry 부터 `yarn install -g` 같은 글로벌 옵션이 제거되었다. 글로벌 패키지가 필요하면 `yarn dlx`를 사용하자. 참고로 Yarn의 모든 설정은 로컬 프로젝트의 `.yarnrc.yml` 파일에 저장된다.
 
@@ -505,7 +509,7 @@ yarn cache clean
 
 ⚠️ Yarn으로 패키지를 추가/삭제/업그레이드 해도 `package.json` 내용이 수정된다.
 
-ℹ️ `yarn` 명령은 보조 명령어가 없으면 `yarn install`, 있으면 `yarn run`으로 작동한다.
+ℹ️ `yarn` 명령은 하위 명령어가 없으면 `yarn install`, 있으면 `yarn run`으로 작동한다.
 
 ### yarn.lock
 

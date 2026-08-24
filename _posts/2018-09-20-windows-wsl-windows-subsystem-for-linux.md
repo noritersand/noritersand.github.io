@@ -125,15 +125,6 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 chsh -s $(which zsh)
 ```
 
-#### 작성자 저장용 PowerLevel10k 환경설정
-
-어디에 붙은건지 헷갈림을 방지하기 위해 Prompt Style은 아래처럼 한다:
-
-- WSL은 `(3) Rainbow.`
-- 원격 서버의 일반 유저는 `(2) Classic.`
-- 원격 서버의 루트 유저는 `(1) Lean.`
-- Docker에선 이상하게 선택 불가하고 `(4) Pure.`로 고정됨.
-
 
 ## WSL용 셸 사용자 정의 설정 모음
 

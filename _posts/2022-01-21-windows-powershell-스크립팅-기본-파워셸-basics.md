@@ -37,6 +37,16 @@ PowerShell에서 스크립트를 작성하고 사용하는 방법과 문법 등�
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
 
+사실 Chocolatey로 설치하는 게 낫다:
+
+```bash
+choco install powershell-core -y
+```
+
+```
+# PowerShell 버전 확인하기
+Get-Host | Select-Object Version
+```
 
 ## 환경 변수
 
@@ -59,6 +69,9 @@ echo $env:path
 
 # 이렇게만 쳐도 됨 (암묵적인 출력은 Write-Output이 처리함)
 $env:path
+
+# ; 단위로 줄 바꾸기
+$env:path -split ';'
 ```
 
 명령어 설명은 [이 블로그 내부 링크 \| PowerShell 스크립팅: 자주 사용하는 명령어(cmdlet)](/windows/windows-powershell-스크립팅-자주-사용하는-명령어-commands-cmdlet/)에서.
@@ -283,6 +296,17 @@ Show-User @params
 명령어 > 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 지움
 명령어 >> 파일명  # 파일이 없으면 생성하고, 있으면 기존내용을 추가
 ```
+
+파일에 문자열 추가(append)하기:
+
+```powershell
+# FILE_NAME에 'SOME_TEXT' 문자열 추가
+"SOME_TEXT" >> FILE_NAME
+
+# 빈 줄 하나 먼저 추가하기
+"`nSOME_TEXT" >> FILE_NAME
+```
+
 
 ### 산술 연산자
 
@@ -909,65 +933,14 @@ $hash.Number
 **TODO**
 
 
-## 작성자 저장용 스크립트
+## 기본 단축키
 
-자주 쓰는 거 저장해 둠.
+PowerShell 7.6.4 부터 기록
 
-```powershell
-Set-Alias ex explorer
-Set-Alias sb 'C:\Program Files\Sublime Text\subl.exe'
-Set-Alias dk 'docker'
-Set-Alias -Name grep -Value findstr
-Set-Alias -Name 햣 -Value git
-
-################################################
-
-function Get-Child-Item-Force { 
-  Get-ChildItem -Force 
-}
-Set-Alias -Name ll -Value Get-Child-Item-Force
-
-function Remove-Item-Recurse-Force {
-  # Remove-Item -Recurse -Force @args # 이렇게 해도 작동...하나?
-  param(
-    [String[]]$Path
-  )
-  Remove-Item -Recurse -Force $Path
-}
-Set-Alias -Name rmrf -Value Remove-Item-Recurse-Force
-
-################################################
-
-$RemoteIp = @{ 
-  production = '1.2.3.4';
-  stage = '1.2.3.4';
-  dev = '1.2.3.4';
-  'dev-old' = '1.2.3.4';
-}
-
-function Connect-RemoteServer {
-  param (
-    [Parameter(Mandatory)]
-    [ValidateSet('production', 'stage', 'dev', 'dev-old')]
-    [string]$Server
-  )
-
-  $target = $RemoteIp.$Server;
-
-  switch ($Server) {
-    'production' { $keyfile = "C:\dev\ssh-keys\infra_production.pem" }
-    'stage' { $keyfile = "C:\dev\ssh-keys\infra_stage.pem" }
-    default { $keyfile = "C:\dev\ssh-keys\default.pem" }
-  }
-
-  # if ('production' -eq $Server) {
-  #   $keyfile = "C:\dev\ssh-keys\infra_production.pem"
-  # } elseif ('stage' -eq $Server) {
-  #   $keyfile = "C:\dev\ssh-keys\infra_stage.pem"
-  # }
-
-  ssh -i $keyfile "ubuntu@$target"
-}
-
-Set-Alias -Name sshrs -Value Connect-RemoteServer
-```
+- <kbd>ctrl + shift + p</kbd>: 커멘드 팔레트 열기
+- <kbd>ctrl + shift + 숫자</kbd>: (숫자별로 정해진 프로필로) 새 탭 열기
+- <kbd>ctrl + shift + w</kbd>: 현재 탭 닫기
+- <kbd>ctrl + alt + 숫자</kbd>: 해당 번호의 탭으로 포커스 이동
+- <kbd>ctrl + shift + k</kbd>: `버퍼 지우기`. 현재 화면과 스크롤백 버퍼에 저장된 출력을 삭제한다. `clear` 명령 실행과 결과 같음
+- <kbd>ctrl + shift + f</kbd>: `찾기`. 현재 화면과 스크롤백 버퍼의 텍스트를 검색한다.
+- <kbd>ctrl + shift + up/down/pageup/pagedown/home/end</kbd>: 스크롤 이동

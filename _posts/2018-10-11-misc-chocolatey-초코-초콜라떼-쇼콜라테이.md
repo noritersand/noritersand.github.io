@@ -61,6 +61,9 @@ choco install openjdk --force -y
 
 # mysql-cli 제거
 choco uninstall mysql-cli
+
+# 캐시/임시 파일 제거
+choco cache remove
 ```
 
 ### 설치된 패키지 확인
@@ -126,3 +129,39 @@ choco info 패키지이름 --local-only
 Chocolatey에 포함된 기능으로 터미널 재시작 없이 환경 변수를 다시 불러올 수 있다.
 
 명령어는 `RefreshEnv`... 지만, 관리자 권한 없이 실행한 터미널에선 그냥은 안 되고 Chocolatey 설치 경로(`C:\ProgramData\chocolatey\bin`)를 path에 추가해야 됨.
+
+
+## 자주 다운로드 하는 패키지 목록
+
+Visual C++:
+
+```bash
+choco install vcredist140 -y
+choco install vcredist2015 -y
+```
+
+아래는 PC 초기화 후 실행하는 거:
+
+```bash
+choco install autohotkey -y
+choco install bandizip -y
+choco install discord -y
+choco install everything -y
+choco install git -y
+choco install git-fork -y
+choco install jetbrainstoolbox -y
+choco install meld -y
+choco install notepadplusplus -y
+choco install notion -y
+choco install nvm -y
+choco install openjdk -y
+choco install paint.net -y
+choco install powershell-core -y
+choco install powertoys -y
+choco install slack -y
+choco install uv -y
+choco install vlc -y
+choco install vscode -y
+```
+
+끗.

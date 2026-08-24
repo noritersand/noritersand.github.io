@@ -127,7 +127,9 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 임시 데이터 지우기
 
-`%APPDATA%\Sublime Text\Local` 경로에 있는 `Session.sublime_session` 파일을 지우면 마지막으로 열었던 정보, 최근 열었던 프로젝트 같은 임시 데이터가 초기화되는데... 최근 프로젝트만 지우고 싶으면 해당 파일을 열어서 `workspaces > recent_workspaces` 내용을 수정하는 게 낫다.
+`%APPDATA%\Sublime Text\Local` 경로에 있는 `Session.sublime_session` 파일을 지우면 마지막으로 열었던 정보, 최근 열었던 프로젝트 같은 임시 데이터가 초기화되는데... 
+
+최근 프로젝트만 지우고 싶으면 해당 파일을 열어서 `workspaces > recent_workspaces` 내용을 수정하는 게 낫다. ⚠️ 벗뜨 수정하는 순간 `Auto Save Session.sublime_session` 파일이 자동생성되면서 서브라임을 닫을 때 복구돼버린다. 메커니즘이 어떻게 된 건지 이 파일을 삭제해도 소용없다. 그래서 `Session.sublime_session` 내용을 수정하고 싶다면 다른 디렉터리로 옮겨서 수정한 뒤 서브라임을 끄고 원래 경로에 덮어써야 한다.
 
 
 ## 패키지(플러그인) Sublime Text Packages
@@ -140,7 +142,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 추천 패키지
 
-- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, PowerShell 코드 하이라이팅 때문에 설치함. 하이퍼링크 접히는 거 귀찮으면 설정에 `"mde.auto_fold_link.enabled": false` 추가.
+- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, PowerShell 코드 하이라이팅 때문에 설치함. 그냥 쓰면 여러모로 귀찮으니 설정에 `"mde.auto_fold_link.enabled": false, "mde.list_auto_bullets": false` 추가.
 - StyleToken: 파일 내에서 특정 단어별 하이라이팅
 - FileDiffs: 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
 - ConvertToUTF8: `EUC-KR`로 작성된 파일을 `UTF-8`로 전환해서 열어주는 패키지. 이 패키지를 활성화하면 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음
@@ -169,65 +171,6 @@ console.debug('${1:msg}:', ${2:msg});
   - 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 `{"detect_acronyms": false}` 이걸 붙여넣으면 된다.
 - CommandsBrowser: 서브라임(특히 Sublime Merge가)은 명령어 도움말이 부실하다. 이거 설치 후 커맨드 팔레트에서 `CommandsBrowser` 입력해보자
 - ⭐rainbow_csv: CSV Syntax를 지원하는 패키지. 열을 기준으로 알록달록하게 보여줌
-
-
-## 작성자 저장용 사용자 설정
-
-### Settings
-
-```json
-{
-  "fallback_encoding": "UTF-8",
-  "font_face": "Consolas",
-  "font_size": 10,
-  "tab_completion": false,
-  "auto_complete": true,
-  "auto_complete_commit_on_tab": true,
-  "auto_complete_with_fields": true,
-  "show_encoding": true,
-  "show_line_endings": true,
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "save_on_focus_lost": true,
-  "show_full_path": true,
-  "show_rel_path": false,
-  "enable_tab_scrolling": false,
-  "open_tabs_after_current": false
-}
-```
-
-### Key Bindings
-
-```json
-[
-  { "keys": ["f1"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
-  { "keys": ["ctrl+shift+s"], "command": "save_all" },
-  { "keys": ["ctrl+k", "ctrl+k"], "command": "do_nothing" },
-  { "keys": ["ctrl+k", "ctrl+backspace"], "command": "do_nothing" },
-  { "keys": ["ctrl+b"], "command": "do_nothing" },
-  // { "keys": ["ctrl+tab"], "command": "next_view" }, // 보이는 순서대로 순환
-  // { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
-  { "keys": ["ctrl+tab"], "command": "next_view_in_stack" }, // 활성화 이력대로 순환(이게 원본). 추가 패키지가 덮어쓰는 것 방지하기 위해 추가함
-  { "keys": ["ctrl+shift+tab"], "command": "prev_view_in_stack" },
-  { "keys": ["ctrl+alt+shift+pagedown"], "command": "next_view", "args": {"extend": true} },
-  { "keys": ["ctrl+alt+shift+pageup"], "command": "prev_view", "args": {"extend": true} }
-]
-```
-
-걸리적거려서 기본 단축키 몇 개는 끔.
-
-### Mouse Bindings
-
-```json
-[
-  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "do_nothing" },
-  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "do_nothing" },  
-]
-```
-
-<kbd>ctrl + 마우스휠</kbd> 조작이 폰트 크기 변경인데 꺼버리자.
 
 
 ## 기본 단축키

@@ -240,7 +240,8 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 ## 추천 플러그인
 
 - ⭐MoveTab: 단축키로 탭 이동하고 싶으면 설치. 단축키는 Move Tab Left/Right 찾아서 <kbd>ctrl + alt + shift + pageup/pagedown</kbd>으로 변경
-- ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원. 기본 단축키: <kbd>alt + shift + u</kbd>
+- ⭐CamelCase: 카멜, 케밥, 스네이크 등 케이스 변환 지원
+  - <kbd>alt + shift + u</kbd>: 기본 단축키
 - Grep Console: 콘솔 로그에 색을 입히거나 필터링하는 플러그인. 인터페이스가 좀 복잡하긴 한데 쓸만함
 - ⭐Emmet: HTML 태그를 단축어로 작성할 수 있게 해줌
 - Extra Actions: 기본 인텔리제이에 없는 추가 기능을 제공하는 플러그인이다. (사실 캐럿 추가 기능 하나 때문에 쓰는 거)
@@ -248,56 +249,8 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
   - 다음 paragraph(단락, 문단)에 캐럿 추가
   - 따옴표 감싸기 토글
   - String 리터럴을 더하기 연산자로 자르기
-
-
-## 작성자 저장용 단축키 설정
-
-- <kbd>ctrl + alt + shift + e</kbd>: `File Open Actions > Recent Project` 최근 열었던 프로젝트 열기
-- <kbd>f1</kbd>: `Help > Find Action` 모든 명령 검색창인데 f1이 원래 도움말이었던거 지워버리고 요 키도 추가함
-- ✂️<kbd>ctrl + z</kbd>: `Edit > Undo` 되돌리기. 다른 키는 다 지움
-- ✂️<kbd>ctrl + y</kbd>: `Edit > Redo` 다시 되돌리기. 다른 키는 다 지움
-- ✂️<kbd>ctrl + shift + d</kbd>: `Editor Actions > Delete Line` 라인 삭제. 기존 키 매핑은 삭제
-- ✂️<kbd>ctrl + alt + up</kbd>: `Editor Actions > Clone Caret Above` 위로 멀티 캐럿 생성. 다른 키는 지움
-- ✂️<kbd>ctrl + alt + down</kbd>: `Editor Actions > Clone Caret Below` 아래로 멀티 캐럿 생성. 다른 키는 지움
-- ✂️<kbd>ctrl + shift + k</kbd>: `Editor Actions > Duplicate Line or Selection` 중복 라인 생성. 기존 다른 명령의 키 매핑은 삭제
-- ✂️<kbd>ctrl + pageup</kbd>: `Editor Tabs > Select Previous Tab` 이전 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제
-- ✂️<kbd>ctrl + pagedown</kbd>: `Editor Tabs > Select Next Tab` 다음 탭으로 이동. 기존 다른 명령의 키 매핑은 삭제(캐럿을 현재 화면 내 맨 위나 아래로 이동인데 잘 안써서 삭제함)
-- <kbd>ctrl + alt + shift + '</kbd>: `Editor Tabs > Maximize Editor/Normalize Splits` 에디터 창 최대화/원래대로 토글
-- <kbd>alt + left</kbd>: `Navigate > Back` 이전 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- <kbd>alt + right</kbd>: `Navigate > Forward` 다음 포커스 지점으로 이동. 다른 키 매핑은 내비둠
-- <kbd>alt + s</kbd>: `Database > Attach Session` 데이터베이스 연결 선택하는 기능
-- <kbd>alt + z</kbd>: `Active Editor > Soft-Wrap`
-- <kbd>alt + x</kbd>: `Other > Clear text` 선택한 콘솔이나 에디터의 내용을 모두 지우는 단축키
-- <kbd>alt + w</kbd>: `Debugger Actions > Add to Watches` 디버그 모드에서 지켜볼 표현식 영역에 추가
-- ✂️<kbd>alt + shift + = </kbd> <kbd>alt + shift + - </kbd>: `Main Menu > Window > Editor Tabs > Split Right/Down` 에디터를 수평/수직으로 분할하는 기능이다. 해당 키 조합의 기본값 Zoom in/out은 지움
-- 🗑️<kbd>shift + f12</kbd>: `Main Menu > Window > Tool Window Layouts > Restore Current Layout` 기껏 변경한 레이아웃 되돌리는 단축키니까 지우자.
-- 🗑️<kbd>end</kbd>: `Code > Code Completion > Insert Inline Proposal's Line` 언젠가부터 자동 완성 제안의 라인 단위 수락 키로 추가됐는데 안지우면 🐶불편함.
-- 🗑️<kbd>ctrl + shift + c</kbd>: `Plugins > Markdown > Code` 파일 경로 복사 방해하는 단축키. 지울 것
-
-<!-- - <kbd>ctrl + \ </kbd>: Navigate > Goto by Reference Actions > File Structure. 기존 단축키는 *Root directory* 인데, 어차피 잘 안쓰니 삭제 -->
-
-<!-- ### GitHub Copilot을 쓸 때 -->
-
-<!-- 코파일럿 플러그인 사용할 땐 이렇게:
-
-- <kbd>ctrl + alt + shift + o</kbd>: 활성화/비활성화 토글
-- <kbd>alt + \ </kbd>: 코파일럿 자동 완성 발동인데, 이 키가 IntelliJ 2022.3 버전의 Show Collapsed Main Menu 명령과 충돌하니 삭제해줘야 함
-- <kbd>tab</kbd>: 코파일럿 제안 선택
-- <kbd>alt + [</kbd>: 다음 제안 보기
-- <kbd>alt + ]</kbd>: 이전 제안 보기
-- <kbd>ctrl + right</kbd>: 제안을 단어 단위로 적용하기
-- <kbd>ctrl + alt + right</kbd>: 제안을 줄 단위로 적용하기
-- <kbd>ctrl + alt + shift + \ </kbd>: Tool Windows > GitHub Copilot. 코파일럿 창 열기. 이 창에선 코드 자동 완성 추천 목록이 나온다. (원래 키에서 변경)
-- <kbd>alt + p</kbd>: Tool Windows > GitHub Copilot Chat. 코파일럿 채팅 창 열기 (원래 키에서 변경)
-- <kbd>alt + shift + p</kbd>: Plugins > GitHub Copilot > Inline Chat. 에디터 인라인으로 코파일럿 채팅 창 열기 (원래 키에서 변경) -->
-
-<!-- ### AI Assistant를 쓸 때 -->
-
-<!-- JetBrains에서 제공하는 LLM을 쓴다면:
-
-- <kbd>alt + \ </kbd>: Plugins > JetBrains AI Assistant > Generate Code. 인라인 코드 생성창 열기 (원래 키에서 변경)
-- <kbd>alt + p</kbd>: Tool Windows > AI Assistant.  LLM 채팅창 열기 (원래 키에서 변경)
-- <kbd>alt + shift + p</kbd>: Plugins > JetBrains AI Assistant > Ask AI Assistant. 이게 뭔지 작동을 안하네? (원래 키에서 변경) -->
+- ⭐InputSequence: 멀티 캐럿 지원하는 자동 순번 입력기. 
+  - <kbd>alt + shift + f12</kbd>: 기본 단축키
 
 
 ## 기본 단축키
@@ -369,7 +322,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + alt + f7</kbd>: Show Usages 대상을 참조하고 있는 코드를 퀵 뷰 창에서 보여줌
 - <kbd>ctrl + f7</kbd>: Find Usages in File/ 포커스된 대상이 어디서 쓰이고 있는지 현재 파일 내 검색. <kbd>ctrl + shift + f7</kbd>은 Highlight Usages in File인데, 인텔리제이 2020.1 버전부터 두 기능 간 차이가 없다고 한다. [JetBrains Support 답변](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360008113359--Find-usages-in-file-vs-Highlight-usages-in-file-)
 - <kbd>ctrl + f1</kbd>: Error Description. 에러 툴팁 보기
-- <kbd>ctrl + f12</kbd>: File Structure. eclipse의 빠른 아웃라인 보기 기능과 같음.
+- <kbd>ctrl + f12</kbd>: File Structure. <kbd>alt + 7</kbd>로 활성화되는 Structure 창을 팝업 형태로 보는 기능(빠른 아웃라인)
 - <kbd>ctrl + alt + l</kbd>: 오토 fㅗ매팅
 - <kbd>ctrl + shift + backspace</kbd>: 마지막 수정 지점으로 이동
 - <kbd>shift + f4</kbd>: Open source in new window. 현재 파일 새 창에서 보기

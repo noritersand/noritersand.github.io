@@ -26,11 +26,6 @@ tags:
 서브라임 머지 기본 설정값과 팁을 작성하는 글.
 
 
-## 기본 설정
-
-**TODO**
-
-
 ## 검색 기능 활용하기
 
 ```bash
@@ -83,63 +78,9 @@ file:"ddl.sql" line:719-801 from:73333a
 - `()`
 
 
-## 작성자 저장용 사용자 설정
-
-#### Key Bindings
+## 기타
 
 현재(2022-05-04) 공식 문서에서 command 목록을 찾을 수가 없다. 그래서 [누군가 답답해서 만들어버린 걸](https://github.com/Sublime-Instincts/CommandsBrowser) 패키지로 설치해서 확인해야 함.
 
-`메뉴 > Preferences > Edit Key Bindings ...`를 누르면 파일이 하나 열리는데 아래처럼 수정하면 됨.
 
-```json
-[
-  { "keys": ["f1"], "command": "show_command_palette" },
-  { "keys": ["ctrl+shift+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
-  { "keys": ["ctrl+shift+k"], "command": "duplicate_line" },
-  { "keys": ["ctrl+p"], "command": "quick_switch_repository" },
-  { "keys": ["ctrl+alt+shift+a"], "command": "stage_all" },
-  { "keys": ["ctrl+alt+shift+u"], "command": "unstage_all" },
-  { "keys": ["ctrl+alt+shift+d"], "command": "discard_all_modified" },
-  { "keys": ["ctrl+,"], "command": "open_preferences" },
-  { "keys": ["ctrl+shift+t"], "command": "show_command_palette", "args": {"command": "create_tag"} },
-  { "keys": ["ctrl+shift+c"], "command": "show_command_palette", "args": {"command": "commit"} },
-  { "keys": ["ctrl+m"], "command": "show_command_palette", "args": {"command": "merge_branch"} },
-  // { 
-  //   "keys": ["ctrl+alt+shift+b"],
-  //   "command": "show_command_palette",
-  //   "args": {"command": "create_branch_from_remote_branch"}
-  // },
-  // { 
-  //   "keys": ["ctrl+alt+shift+enter"], 
-  //   "command": "commit", 
-  //   "args": { "mode": "commit --amend" }, 
-  //   "context": [
-  //     { "key": "setting.commit_message" }, 
-  //     { "key": "can_commit" }
-  //   ]
-  // }
-]
-```
-
-- `stage_all`은 untracked 파일도 같이 스테이징하는 명령이다. 
-- `discard_all_modified`은 모든 변경 사항을 취소하니 주의해서 사용할 것. 
-- <kbd>ctrl + alt + shift + b</kbd>는 특정 트래킹 브랜치에서 새 브랜치 만드는 기능인데 잘 안씀.
-- <kbd>ctrl + alt + shift + enter</kbd>는 amend commit인데, 실수하면 되돌리기 귀찮아서 막아놨음.
-- `create_tag` 처럼 커맨드 팔레트에서 옵션을 추가 입력해야 하는 명령은 `show_command_palette`의 보조 명령으로 실행해야 함.
-
-#### Mouse Bindings
-
-마우스 쪽은 따로 메뉴가 없어서 설정 파일을 직접 만들어야 한다. `메뉴 > Preferences > Browse Packages ...`를 눌러서 열리는 디렉터리에 파일을 직접 생성하면 된다. ~~돈받아먹으면서뭐하는거야~~
-
-`Default (Windows).sublime-mousemap`:
-
-```JSON
-[
-  { "button": "scroll_down", "modifiers": ["ctrl"], "command": "do_nothing" },
-  { "button": "scroll_up", "modifiers": ["ctrl"], "command": "do_nothing" },  
-]
-```
-
-<kbd>ctrl + 마우스휠</kbd> 조작이 폰트 크기 변경인데 귀찮으니 꺼버리자.
-
-🤔 사실 메뉴가 없길래 서브라임 텍스트랑 같은 모양의 파일을 만들어본 건데... 될 줄은 몰랐다.
+끗.

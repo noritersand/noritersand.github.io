@@ -35,6 +35,23 @@ tags:
 
 어차피 안쓰니 지우자.
 
+### 클립보드 기록 저장
+
+`설정 > 시스템 > 클립보드`에서 '클립보드 검색 기록' 켬.
+
+귀찮으면 그냥 <kbd>win + v</kbd> 누르면 됨.
+
+### 바로 가기 키 끄기
+
+`설정 > 접근성 > 키보드`에서 시프트 연타 등의 고정키, 필터 키 설정 끄기.
+
+### 날짜와 시간 형식 변경
+
+`설정 > 시간 및 언어 > 언어 및 지역 > 사용지역 언어`에서
+
+- 시작 요일: 월요일로 변경
+- 간단한/자세한 시간: 24시간제로 변경
+
 ### 한국어 입력기 문제 해결하기
 
 Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 서브라임과 Flowy 같은 몇몇 앱에서 'IME 조합 문자 유실' 현상을 유발한다.
@@ -55,13 +72,12 @@ Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 �
 
 `자판 배열 전환`을 할당 해제하면 됨. 여기까지만 해도 <kbd>ctrl + shift + 0</kbd>은 잘 작동한다. 찝찝하면 `입력 언어 전환`도 꺼버리자.
 
-### 끌기 레이아웃 끄기
+### 창 끌기 설정 변경
 
-`Windows 설정 > 시스템 > 멀티태스킹 > 창 끌기`에서 `작업 표시줄 단추를 마우스로 가리킬 때 앱이 속한 끌기 레이아웃 표시`를 체크 해제한다.
+`Windows 설정 > 시스템 > 멀티태스킹 > 창 끌기`에서: 
 
-두 창을 맞춤상태로 했을 때의 그룹이 표시되는 기능인데, 켜두면 같은 앱을 여러 창으로 띄웠을 때 가끔 <kbd>win + 숫자</kbd>키가 먹통되는 버그가 있음.
-
-최근 업데이트에서 '작업 표시줄 앱 위로 마우스를 가져갈 때, 작업 보기에서, Alt + Tab을 누를 때 내 스냅된 창 표시'로 바꼈고, 체크 상태라면 <kbd>win + tab</kbd>, <kbd>alt + tab</kbd>에서도 창 그룹이 표시된다.
+- `창을 스냅할 때 옆에 맞춤할 수 있는 항목을 제안합니다.` 체크 해제.
+- `작업 표시줄 앱 위로 마우스를 가져갈 때, 작업 보기에서, Alt + Tab을 누를 때 내 스냅된 창 표시'` 이것도 체크 해제. 체크 상태라면 <kbd>win + tab</kbd>, <kbd>alt + tab</kbd>에서도 창 그룹이 표시된다. 두 창을 맞춤상태로 했을 때의 그룹이 표시되는 기능인데, 켜두면 같은 앱을 여러 창으로 띄웠을 때 가끔 <kbd>win + 숫자</kbd>키가 먹통되는 버그가 있음.
 
 ### alt + tab 목록에서 앱의 탭 제외하기
 
@@ -75,21 +91,61 @@ Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 �
 
 `캡처 도구 앱 실행 > 설정`에서 `다운로드/스크린샷`으로 경로 변경
 
+### 텔넷 활성화
+
+셸(관리자 권한)에서 아래 실행:
+
+```bash
+# PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
+dism /online /Enable-Feature /FeatureName:TelnetClient
+
+# localhost:4000 텔넷 접속
+telnet localhost 4000
+```
+
+### 260자 경로 제한 풀기
+
+레지스트리 편집기 > `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\FileSystem > LongPathsEnabled`의 값을 1로 변경
+
 
 ## 최적화 설정
 
 PC 성능이 구릴 때 하는 설정
 
+### 업데이트용 임시 파일 보관하지 않기
+
+`설정 > Windows 업데이트 > 고급 옵션 > 다운로드 최적화`에서 '다른 PC에서 다운로드 허용'을 끔.
+
 ### 애니메이션, 투명 효과 끄기
 
-`Windows 설정 > 접근성`에서 `애니메이션 효과`와 `투명 효과` 끄기
+`Windows 설정 > 접근성 > 시각 효`에서 `애니메이션 효과`와 `투명 효과` 끄기
 
 ### 시각 효과 최소화
 
 실행 창에서 `SystemPropertiesPerformance`로 `성능 옵션` 설정창을 띄워서 `최적 성능으로 조정`을 선택하면 모든 효과가 다 꺼지는데, `화면 글꼴의 가장자리 다듬기` 하나만 살림.
 
+### 자동 프록시 끄기
+
+❓ `설정 > 네트워크 및 인터넷 > 프록시`에서 '자동으로 설정 검색'을 끔. 이거 끄면 브라우저 페이지 이동 속도 빨라진다는데...
+
+### 작업 기록 끄기
+
+야동, 야짤을 누군가에게 들키기 싫으면:
+
+~~`설정 > 개인 정보 > Windows 사용 권한 > 작업 기록`에서 '이 장치에서 내 활동 기록 저장'과 'Microsoft에 내 활동 기록 보내기'를 끈다.~~
+
+없어졌고, `설정 > 개인 정보 및 보안 > 검색`에서 '기록 검색'과 끄기
+
+### 피드백 끄기
+
+`설정 > 개인 정보 및 보안 > 피드백 및 진단`에서 피드백, 진단 등의 기능을 끔.
+
 
 ## 기타 팁
+
+### Windows 위젯 삭제
+
+시스템 앱이라 그런지 아직은 삭제는 모르겠고 <kbd>win + ctrl + backspace</kbd> 눌러서 보이는 거 다 끄는 방법 뿐.
 
 ### 네트워크 장치 우선순위 지정하기
 
@@ -161,7 +217,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 
 ## 단축키
 
-10에서 11로 넘어오며 추가/변경된 것만 정리함. [이 블로그 내부 링크 \| Windows 10 게시글 링크](/windows/windows-windows-10-초기-설정-및-팁-윈도우-10-tips/)
+10에서 11로 넘어오며 추가/변경된 것만 정리함. 나머지는 [이 블로그 내부 링크 \| Windows 10 게시글 링크](/windows/windows-windows-10-초기-설정-및-팁-윈도우-10-tips/)
 
 ### 전역
 
@@ -174,7 +230,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + ctrl + v</kbd> 사운드 출력. 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
 - <kbd>win + esc</kbd>: 돋보기가 켜졌을 때 누르면 꺼짐
 - <kbd>win + space</kbd>: 입력기 변환
-- <kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능이지만, PowerToys를 설치하면 PowerToys 실행 단축키로 바뀜.
+- ✂️<kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능. PowerToys를 설치하고 `명령 도구 모음 > 명령 팔레트 열기` 단축키로 변경할 것
 - <kbd>alt + esc</kbd>: 창을 연 순서대로 거꾸로 순환. 아쉬운 대로 현재 활성화된 창을 안 보이게 숨기는 기능으로 사용할 수 있음. (최소화 단축키 좀 만들어줘... 😟)
 - <kbd>alt + shift + esc</kbd>: 창을 연 순서대로 순환
 
@@ -189,70 +245,3 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>Numpad Plus</kbd>: 사이드바에서 모든 하위 디렉터리 펼치기
 - <kbd>Numpad minus</kbd>: 사이드바에서 모든 하위 디렉터리 접기
 - <kbd>alt + p</kbd>: 미리보기 패널 열기
-
-
-## 작성자 저장용 작업표시줄 고정 설정
-
-- <kbd>win + 1</kbd>: Terminal
-- <kbd>win + 2</kbd>: Sublime Text
-- <kbd>win + 3</kbd>: Firefox dev
-- <kbd>win + 4</kbd>: Chrome dev
-- <kbd>win + 5</kbd>: Sublime Merge
-- <kbd>win + 6</kbd>: 가변
-- <kbd>win + 7</kbd>: Steam, WebStorm
-- <kbd>win + 8</kbd>: VSCODE
-- <kbd>win + 9</kbd>: 가변
-- <kbd>win + 0</kbd>: 가변
-
-가변 항목:
-
-- Chrome
-- Epic Games
-- Xbox 액세서리
-- IntelliJ, WebStorm, DataGrip, ...
-
-Autohotkey로 확장한 키 조합:
-
-- 숫자 확장
-  - <kbd>win + alt + 5</kbd>: 🧾 Fork
-  - <kbd>win + alt + 6</kbd>: 🎤 Discord
-  - <kbd>win + ctrl + alt + 6</kbd>: 🎤 Slack
-  - <kbd>win + alt + 0</kbd>: Microsoft Excel
-  - <kbd>win + ctrl + alt + 0</kbd>: Microsoft PowerPoint
-- 하이픈
-  - <kbd>win + - </kbd>: DBMS Tool(DataGrip, ...)
-  - <kbd>win + ctrl + - </kbd>: Notion
-  - <kbd>win + alt + - </kbd>: Postman
-  - <kbd>win + shift + - </kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + -</kbd>: 🔒 미사용
-- 등호
-  - <kbd>win + = </kbd>: Microsoft Edge
-  - <kbd>win + ctrl + = </kbd>: 야카오톡
-  - <kbd>win + alt + = </kbd>: 🚫 반응 없음
-  - <kbd>win + shift + = </kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + =</kbd>: 🔒 미사용
-- 백스페이스
-  - <kbd>win + backspace</kbd>: WorkFlowy
-  - <kbd>win + ctrl + backspace</kbd>: Spark Desktop
-  - <kbd>win + alt + backspace</kbd>: 🔒 미사용
-  - <kbd>win + shift + backspace</kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + backspace</kbd>: 🔒 미사용
-- 여는 대괄호
-  - <kbd>win + [</kbd>: DuckDuckGo
-  - <kbd>win + ctrl + [</kbd>: 🔒 미사용
-  - <kbd>win + alt + [</kbd>: 🔒 미사용
-  - <kbd>win + shift + [</kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + [</kbd>: Opera
-- 닫는 대괄호
-  - <kbd>win + ]</kbd>: Brave
-  - <kbd>win + ctrl + ]</kbd>: 🔒 미사용
-  - <kbd>win + alt + ]</kbd>: 🔒 미사용
-  - <kbd>win + shift + ]</kbd>: 🔒 미사용
-  - <kbd>win + ctrl + alt + ]</kbd>: 🔒 미사용
-
-### 🚨 반드시 읽을 것
-
-- Windows 기본 단축키 <kbd>alt + = </kbd> 때문인지 <kbd>win + alt + = </kbd> 조합은 작동하지 않음
-- <kbd>win + ctrl + 숫자</kbd> 조합은 Windows 기능 '마지막 활성 창으로 전환'을 자주 사용하기 때문에 다른 기능으로 재지정하면 안됨
-- <kbd>win + ctrl + shift + 숫자</kbd> 조합은 Windows 기능 '관리자 권한으로 실행'이니 이것도 쓰면 안됨
-- <kbd>win + ctrl + alt + shift</kbd> 조합은 **Office key**니까 사용하지 말 것

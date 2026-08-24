@@ -25,7 +25,7 @@ tags:
 
 ## 개요
 
-악의축에서 갓갓으로 거듭나고 있는 마소의 PowerShell 명령어 정리 글.
+악의축에서 혜자로 거듭나고 있는 마소의 PowerShell 명령어 정리 글.
 
 PowerShell 명령어는 *Cmdlet*이라 부른다. 'command-let'으로 읽는다고 함. 이름은 동사-명사 형태로 만들고 단어의 처음은 대문자로 표기한다.
 
@@ -89,7 +89,7 @@ PowerShell 환경 자체의 핵심 엔진 및 기본 기능을 제공하는 모�
 
 ### Get-Command
 
-명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다.
+명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다. 별칭은 `gcm`
 
 ```powershell
 # 명령어 explorer의 명령어타입, 이름, 버전, 소스(경로) 출력
@@ -132,6 +132,20 @@ Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js
 ## Microsoft.PowerShell.Management Module
 
 운영체제(Windows)의 시스템 자원 및 파일 시스템을 제어하는 모듈
+
+### Set-Clipboard
+
+지정한 문자열이나 데이터를 Windows 클립보드에 복사한다. 기본 별칭은 `scb`
+
+```powershell
+# 'Hello World'를 클립보드에 저장
+Set-Clipboard "Hello World"
+
+# ⭐ 현재 경로를 클립보드에 저장
+(pwd).Path | scb
+```
+
+ℹ️ `Get-Clipboard` 명령도 있음.
 
 ### New-Item
 
@@ -234,13 +248,18 @@ Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 
 ### Get-ChildItem
 
-지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 아이템은 파일이나 디렉터리 중 하나다. 기본 별칭은 `ls`. 
+지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 파일 검색에 사용한다. 기본 별칭은 `ls`. 
+
+ℹ️ 아이템: 파일이나 디렉터리
 
 매개변수 없이 작동하지 않는 `Get-Item`과 다르게, `Get-ChildItem`은 명령어만 입력하면 현재 디렉터리 내에 있는 모든 파일과 디렉터리의 객체 정보를 가져온다.
 
 ```powershell
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기
 Get-ChildItem -Recurse -Filter *.js
+
+# 현재 경로 재귀 검색 + 숨겨져있는 .git 디렉터리 찾기
+Get-ChildItem -Recurse -Force -Filter .git
 
 # c:\dev\git 경로에서 README.md를 숨긴파일 포함하여 재귀 검색하며 에러 났을 땐 그냥 넘어가고, 찾으면 경로와 파일명을 모두 출력
 Get-ChildItem -Path C:/dev/git -Filter README.md -Recurse -Name -ErrorAction SilentlyContinue -Force
@@ -254,7 +273,7 @@ Get-ChildItem -Filter *.js | Where-Object { $_.FullName -notmatch '\\target\\' }
 # 현재 경로에서 재귀 검색 + 확장자가 js인 파일 찾기 + 파일 내용 중 "axios"가 있는 라인 찾기 + 찾은 MatchInfo 객체에서 Path만 추출한 뒤 유일한 값만 출력
 Get-ChildItem -Path . -Filter *.js -Recurse | Select-String -Pattern "axios" | Select-Object -Unique Path
 
-# 현재 위치에서 모든 하위 파일과 폴더를 재귀 검색해서 출력하며 main.js로 필터링
+# 현재 위치에서 모든 하위 파일과 디렉터리를 재귀 검색해서 출력하며 main.js로 필터링
 Get-ChildItem -Recurse -Name | findstr main.js
 
 # 💡 하위 경로에서 이름에 대문자가 섞인 파일 찾기
@@ -263,14 +282,15 @@ Get-ChildItem -Path _posts,_drafts,_hidden -File -Recurse | Where-Object { $_.Na
 
 #### Parameters
 
-- `Filter`: 특정 파일이나 폴더로 결과를 제한한다. 패턴은 와일드카드 패턴(Wildcard Patterns)이다.
+- `Filter`: 특정 파일이나 디렉터리로 결과를 제한한다. 패턴은 와일드카드 패턴(Wildcard Patterns)이다.
 - `Path`: 명령을 수행할 경로(명령의 시작 위치)
 - `Recurse`: 재귀 검색 
-- `Name`: 현재 폴더 기준, 상대 경로와 파일명을 한 줄에 같이 표시한다.
+- `Name`: 현재 디렉터리 기준, 상대 경로와 파일명을 한 줄에 같이 출력
 - `Include`: ?
 - `Exclude`: ?
 - `ErrorAction`: ?
 - `Force`: ?
+- `Directory`: 디렉터리 목록만 출력
 
 ### Copy-Item
 
@@ -629,12 +649,52 @@ Windows의 시작 메뉴 및 작업 표시줄 레이아웃을 관리하는 모�
 
 ### Get-StartApps
 
-시작 메뉴에 등록되어 있는 애플리케이션 목록을 조회한다. 앱의 이름(Name)과 시스템 내부 고유 식별자인 AppID(AppUserModelId)를 확인할 수 있다.
+시작 메뉴(start menu)에 등록되어 있는 애플리케이션 목록을 조회한다. 앱의 이름(Name)과 시스템 내부 고유 식별자인 AppID(AppUserModelId)를 확인할 수 있다.
 
-```PowerShell
+⚠️ 자동 시작 앱(startup apps)을 조회하는 게 아니다
+
+```powershell
 # 시작 메뉴의 모든 앱 목록을 세로 목록 포맷으로 출력
 Get-StartApps
 
 # 특정 이름(예: Edge)이 포함된 시작 메뉴 앱 검색
 Get-StartApps -Name "*Edge*"
+```
+
+
+## NetTCPIP Module
+
+Windows의 IP 설정, 네트워크 인터페이스, TCP/IP 연결 등을 PowerShell에서 조회/관리하게 해주는 모듈
+
+### Get-NetTCPConnection
+
+TCP 연결/리스닝 상태를 조회한다. `netstat`의 PowerShell 버전
+
+```powershell
+# 모든 TCP 연결의 주소, 포트번호, 상태, 소유자(프로세스) 조회
+Get-NetTCPConnection
+
+# 로컬 포트번호가 135, 445, 56308인 연결만 조회
+Get-NetTCPConnection -LocalPort 135, 445, 56308
+```
+
+#### Parameters
+
+- `-LocalPort`: 로컬 포트번호를 단독 혹은 배열로 입력한다.
+
+#### 특정 아이피 점유한 프로세스 죽이기
+
+```powershell
+# 조회해서
+Get-NetTCPConnection -LocalPort 8000
+# OwningProcess: 123456 조회됨
+
+# 필요하면 상세 조회
+Get-Process -Id 123456
+
+# 죽이기
+Stop-Process -Id 123456
+
+# 위 과정을 한 번에
+Stop-Process -Id (Get-NetTCPConnection -LocalPort 8000).OwningProcess -Force
 ```

@@ -75,7 +75,7 @@ git update-git-for-windows
 - `--list-cmds=group[,group…]`
 
 
-## add
+## git add
 
 #### staging / do track
 
@@ -103,7 +103,7 @@ git add -i
 ```
 
 
-## blame
+## git blame
 
 ~~바보같은 커밋을 비난하기 위한 명령어~~ 데이터의 각 줄을 누가 언제 마지막으로 고쳤는지 확인할 수 있으며, 주로 디버깅 용도로 사용한다.
 
@@ -135,7 +135,7 @@ git blame -C -C 파일
 ```
 
 
-## branch
+## git branch
 
 브랜치를 조회하거나 생성/삭제한다.
 
@@ -255,7 +255,7 @@ git fetch -p && git branch -vv | grep ': gone]'|  grep -v "\*" | awk '{ print $1
 ```
 
 
-## cat-file
+## git cat-file
 
 커밋이나 트리, Blob 등의 Git 객체의 내용을 출력하는 명령어. 일반 사용자보다는 저장소 디버깅이나 저레벨의 저장소 컨트롤에 쓰인다. 
 
@@ -291,7 +291,7 @@ blob
 `cat`은 concatenate를 의미한다. 선조들이 사용하던 `cat`은 원래 여러 파일을 '연결'해서 출력하는 명령어였다고...
 
 
-## checkout
+## git checkout
 
 브랜치를 전환하거나 워킹 트리를 되돌린다. 되돌리는 기능은 이 명령어 말고 새로 추가된 `restore`를 쓰자.
 
@@ -431,7 +431,22 @@ git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아
 ```
 
 
-## cherry-pick
+## git check-ignore
+
+특정 파일이 `.gitignore` 규칙에 의해 무시되는지 확인하는 명령어.
+
+```
+git check-ignore [<options>] <pathname>…​
+git check-ignore [<options>] --stdin
+```
+
+```bash
+# 상세 출력
+git check-ignore -v .env
+```
+
+
+## git cherry-pick
 
 특정 커밋 하나만 현재 브랜치에 리베이스한다.
 
@@ -461,7 +476,7 @@ pick-me 브랜치에 파일 `CONFLICT_ME.md`를 수정한 커밋이 세 개가 �
 실제 결과는 그렇지 않다. 세 번째 커밋보다 앞에 있는 첫 번째와 두 번째 커밋 모두 `CONFLICT_ME.md` 파일에 대한 변경이므로 원래 의도와는 다르게 모든 커밋이 main 브랜치에 반영된다. (그 와중의 충돌은 덤)
 
 
-## clean
+## git clean
 
 추적중이지 않은(untracked) 파일 삭제하기.
 
@@ -485,7 +500,7 @@ git clean -dfx
 - `-X`: ignore 룰이 적용된 파일**만** 삭제한다.
 
 
-## clone
+## git clone
 
 Git 저장소를 복제하여 새 저장소를 만드는 명령어
 
@@ -518,7 +533,7 @@ git clone --depth 200 ~/Documents/work/  # 마지막 200개의 커밋만 복제�
 ```
 
 
-## commit
+## git commit
 
 staged 상태인 파일을 Git 디렉터리에 저장한다. 커밋 메시지를 입력받기 위해 미리 지정된 에디터가 자동으로 실행되며 에디터에서 메시지를 작성하고 종료하면 커밋이 완료된다. 이 때 커밋 메시지가 코멘트(#으로 시작하는 라인)로만 작성되어 있으면 커밋은 취소된다.
 
@@ -587,7 +602,7 @@ git commit -C HEAD --amend
 ```
 
 
-## config
+## git config
 
 Git 저장소의 설정을 조회/관리하는 명령어.
 
@@ -729,7 +744,7 @@ git config --global http.https://noritersand.github.io.sslverify false
 특정 리모트 주소만 검증을 끄도록 하는 방법도 있다.
 
 
-## count-objects
+## git count-objects
 
 저장소의 객체 수와 크기를 출력하는 명령어. 성능 문제를 진단할 때 사용한다.
 
@@ -766,7 +781,7 @@ size-garbage: 0 bytes
 `git gc`보다 더 세밀한 최적화를 하고 싶다면 `git repack`을 찾아보자. `prune-packable`은 `git prune-packed` 명령으로 정리할 수 있다. `garbage`가 있다면 `git fsck`로 손상된 객체를 복구하거나 저장소를 새로 만든다.
 
 
-## diff
+## git diff
 
 커밋 간 차이점 혹은 워킹 트리의 변경 사항을 출력한다.
 
@@ -874,7 +889,7 @@ git difftool
 ```
 
 
-## diff-tree
+## git diff-tree
 
 '두 개의 트리 개체를 통해 blob의 내용과 모드를 비교'한다고 한다. (뭔 소린지...)
 
@@ -895,7 +910,7 @@ git diff-tree -p feature main  # 현재 feature 브랜치 기준으로 main 브�
 - `--pretty[=<format>]` `--format=<format>`: `log`의 옵션과 거의 같으므로 `log` 항목 참고
 
 
-## fetch
+## git fetch
 
 리모트 저장소의 데이터를 로컬 저장소로 다운로드한다. 옵션 지정이 없을 경우, 서버의 데이터를 모두 가져오지만 로컬 브랜치로의 머지는 생략한다.
 
@@ -925,7 +940,7 @@ git fetch origin foo:foo # 리모트 브랜치 foo를 로컬 브랜치 foo로 �
 `:` 기준 좌측이 가져올 브랜치다. 로컬 브랜치면 `.`을, 리모트 브랜치면 리모트 이름을 입력한다. 우측은 당연히 로컬 브랜치이므로 그런거 없어도 됨.
 
 
-## format-patch
+## git format-patch
 
 메일 전송용으로 규격화된 패치 만들기. **주의: 머지 커밋은 패치 대상에서 제외됨**.
 
@@ -956,14 +971,14 @@ git am FILE
 - `apply`는 `format-patch` 포함 `diff`로 생성한 패치도 적용할 수 있다고 하며(된다는데난외않되😑), 커밋을 생성하지 않는다.
 
 
-## filter-branch
+## git filter-branch
 
 커밋 히스토리를 다시 작성하는 고급 기능.
 
 **TODO** 사용에 주의 필요. 
 
 
-## fsck
+## git fsck
 
 File System ChecK의 약자. 저장소의 무결성(integrity)을 점검하고 손상된 부분이나 문제가 있는 객체를 식별하기 위한 명령어.
 
@@ -1012,7 +1027,7 @@ hash mismatch 7g8h9i0j1k2l...
 그런데 dangling, unreachable 둘 다 표시되는 객체가 간혹 있다. 무슨 차이인지는 아직 정확히 몰?루 🤔
 
 
-## gc
+## git gc
 
 오래된 이력과 레퍼런스를 정리/압축해서 저장소를 최적화하는 명령어다.
 
@@ -1064,7 +1079,7 @@ export GIT_ASK_YESNO=false
 - `--keep-largest-pack`
 
 
-## gitk
+## git gitk
 
 ```
 gitk [<options>] [<revision range>] [--] [<path>...]
@@ -1082,7 +1097,7 @@ gitk main draft/noritersand legacy # main, draft/noritersand, legacy 브랜치�
 ![](/images/gitk.png)
 
 
-## help
+## git help
 
 도움말 보기
 
@@ -1093,7 +1108,7 @@ git help -a # 모든 명령어 보기
 ```
 
 
-## init
+## git init
 
 #### 디렉터리를 git 저장소로 만들기
 
@@ -1110,7 +1125,7 @@ git init --bare
 ```
 
 
-## lfs
+## git lfs
 
 LFS(Large File Storage)는 대용량 파일을 더 효율적으로 관리할 수 있게 도와주는 Git의 확장이다. [여기](https://git-lfs.com/)서 별도로 다운로드 할 수 있지만, Git 클라이언트에 포함되어 있으니 설치할 때 'Select Components' 단계에서 제외한 게 아니라면 그냥 쓸 수 있다.
 
@@ -1137,7 +1152,7 @@ LFS를 사용하면 추적 대상 파일을 별도의 LFS 저장소에 저장한
 [official man pages](https://github.com/git-lfs/git-lfs/tree/main/docs/man)를 보면 `git-lfs-push.adoc`, `git-lfs-track.adoc`처럼 메뉴얼이 여러 개로 나뉘어 있는데 `lfs` 다음에 오는 키워드는 옵션이 아니라 **하위 명령**으로 다루는 모양이다.
 
 
-## log
+## git log
 
 ```
 git log [<options>] [<revision range>] [[--] <path>...]
@@ -1251,12 +1266,13 @@ git log --since=2.weeks
 git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="2008-11-01" --no-merges -- t/
 ```
 
-## ls-files
+## git ls-files
 
 스테이징 영역이나 워킹 트리에 있는 파일들의 정보를 출력한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
 
 #### Options
 
+- `-t`: 현재 경로와 하위 모든 파일을 상태 태그(status tags)와 함께 출력
 - `-c` `--cached`
 - `-d` `--deleted`
 - `-m` `--modified`
@@ -1266,10 +1282,14 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 - `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된(assumed unchanged)' 파일은 소문자로 표시한다.
 
 ```bash
-git ls-files -v | grep ^h  # assumed unchanged 파일만 출력
+# DIR_NAME과 하위 파일들의 상태 태그 출력
+git ls-files -t DIR_NAME
+
+# assumed unchanged 파일만 출력
+git ls-files -v | grep ^h
 ```
 
-#### 파일 상태
+#### 상태 태그
 
 - `H`: cached
 - `S`: skip-worktree
@@ -1280,7 +1300,7 @@ git ls-files -v | grep ^h  # assumed unchanged 파일만 출력
 - `?`: other
 
 
-## ls-remote
+## git ls-remote
 
 저장소의 정보를 조회하는 명령어. 옵션을 명시하지 않으면 연결된 저장소의 태그, 머지 리퀘스트, 브랜치 등을 모두 조회한다.
 
@@ -1299,7 +1319,7 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 - `--refs `: 'peeled tags'와 HEAD 같은 'pseudorefs'를 제외하고 출력한다. ~~peeled tags가 대체 뭐람...~~
 
 
-## ls-tree
+## git ls-tree
 
 지정한 경로에 있는 Git이 추적중인 파일목록을 출력한다.
 
@@ -1319,7 +1339,7 @@ git ls-tree HEAD ./docs
 - `-r`: 현재 경로 포함, 하위 경로를 재귀한다.
 
 
-## merge
+## git merge
 
 > Git의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다.
 >
@@ -1381,7 +1401,7 @@ git merge --squash TARGET_BRANCH
 [이 블로그 내부 링크 \| Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 
-## merge-base
+## git merge-base
 
 지정한 두 커밋 사이에서 머지 작업의 기준점이 되는 공통 조상(good common ancestors)을 찾는다.
 
@@ -1411,7 +1431,7 @@ git merge-base dev stage
 - `--fork-point`: 두 커밋 중 하나가 다른 브랜치에서 갈라져 나온 지점(fork point)을 찾는다.
 
 
-## mv
+## git mv
 
 파일 이동 혹은 파일명 변경
 
@@ -1420,7 +1440,7 @@ git mv FILE_FROM FILE_TO
 ```
 
 
-## pull
+## git pull
 
 fetch 후 자동 머지.
 
@@ -1439,7 +1459,7 @@ git pull --rebase  # fetch 후 머지 대신 리베이스
 명시한 리모트 브랜치를 현재 브랜치로 pull 한다는 점에 주의할 것. 브랜치를 명시하지 않으면 업스트림 브랜치를 현재 브랜치에 자동으로 머지한다. 옵션을 따로 지정하지 않았다면, 가능한 경우 FF 머지를 시도한다.
 
 
-## push
+## git push
 
 로컬 저장소의 데이터를 리모트 저장소에 업로드한다.
 
@@ -1516,7 +1536,7 @@ git push --tags  # 생성한 태그를 모두 업로드
 ```
 
 
-## rebase
+## git rebase
 
 `rebase`의 기본 기능은 현재 브랜치를 다른 브랜치에 머지하는 것이지만, 옵션을 사용해 여러 커밋을 하나로 합치거나 커밋 메시지를 수정하기도 한다.
 
@@ -1601,7 +1621,7 @@ pick 7715f75fa (HEAD)
 - [이 블로그 내부 링크 \| Git 커밋 합치기](/git/git-커밋-합치기-squash-merge/)
 
 
-## reflog
+## git reflog
 
 `log`와 비슷하지만 `log`가 커밋 이력을 출력한다면 `reflog`는 헤드 이동 이력을 출력한다.
 
@@ -1635,7 +1655,7 @@ git reflog -10 --pretty
 ```
 
 
-## remote
+## git remote
 
 추적중인 저장소를 관리하는 명령어
 
@@ -1704,7 +1724,7 @@ git remote prune 리모트저장소
 어쨋든 이 명령은 로컬을 정리하는 것이지, 리모트의 뭔가를 지우는게 아니니 안심하고 실행해도 된다.
 
 
-## reset
+## git reset
 
 헤드를 이동한다.
 
@@ -1733,7 +1753,7 @@ git reset HEAD -- # 모든 파일 스테이징 취소
 체크섬이나 `HEAD~숫자`를 사용해서 헤드가 지난 커밋을 가리키게 할 수 있다. 사실 이것은 되돌리기보단 지난 커밋으로 이동한다고 보는게 더 정확한 표현이다.
 
 
-## restore
+## git restore
 
 2.23 버전에서 `switch`와 함께 새로 나온 명령어. 워킹 트리 혹은 스테이징 영역을 되돌린다. new file은 되돌리지 않는다.
 
@@ -1767,7 +1787,7 @@ git restore -S -W . # 워킹 트리와 인덱스의 모든 파일을 되돌림
 `-W`와 `-S`는 워킹 트리와 스테이징 영역 중 어느쪽을 되돌릴지 지정하는 옵션인데, 만약 둘 다 되돌리고 싶다면 그냥 둘 다 쓰면 된다.
 
 
-## revert
+## git revert
 
 변경 사항을 정확히 반전시킨 새 커밋을 생성하는 명령어.
 
@@ -1814,7 +1834,7 @@ git revert fc30cf -m 1
 여기서 1이란 `git log`에서 보이는 부모 커밋 중 가장 왼쪽을 의미한다. 위 예시에선 `7be20ca`가 되돌리지 않을 커밋이 되며 `ca433d3`의 변경 사항이 되돌려진다.
 
 
-## rev-list
+## git rev-list
 
 커밋 목록을 검색할 때 사용하는 명령어. 주로 특정 범위나 특정 조건에 맞는 커밋을 찾을 때 사용한다. `--reverse` 옵션이 없으면 가장 최신 커밋부터 차례대로 출력된다.
 
@@ -1839,7 +1859,7 @@ git rev-list --max-count=1 HEAD
 - `--all`: 모든 브랜치의 커밋 출력
 
 
-## rev-parse
+## git rev-parse
 
 커밋이나 브랜치, 태그, 파일같은 Git 저장소 객체(혹은 레퍼런스)의 해시값(= revision)을 계산하고 출력하는 명령어. 일반적으로 쓸 일은 거의 없다.
 
@@ -1864,7 +1884,7 @@ git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
 ```
 
 
-## rm
+## git rm
 
 remove. 워킹 트리와 스테이징 영역에서 파일을 삭제한다.
 
@@ -1896,7 +1916,7 @@ git rm *md  # 이름이 'md'로 끝나는 파일 모두 삭제
 ```
 
 
-## show
+## git show
 
 커밋 정보 조회
 
@@ -1917,7 +1937,7 @@ git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명�
 - `--pretty[=<format>]` `--format=<format>`: `log`의 옵션과 같으므로 `log` 항목 참고
 
 
-## show-ref
+## git show-ref
 
 로컬 저장소의 모든 레퍼런스(로컬 브랜치 + 리모트 트래킹 브랜치 + 태그) 출력.
 
@@ -1932,7 +1952,7 @@ git show-ref --head
 - `--tags`: 태그만 출력
 
 
-## stash
+## git stash
 
 커밋이나 스테이징 영역이 아닌 별도의 공간에 변경 사항을 임시 저장하거나 저장한 내용을 다시 불러오는 명령어.
 
@@ -2005,7 +2025,7 @@ git stash push -- FILE_NAME_1.md FILE_NAME_2.md
 ```
 
 
-## status
+## git status
 
 저장소 상태 확인
 
@@ -2014,7 +2034,7 @@ git status
 ```
 
 
-## switch
+## git switch
 
 ```
 git switch [<options>] [--no-guess] <branch>
@@ -2055,7 +2075,7 @@ git switch -c abc 4d0dc05b1f # 4d0dc05b1f 커밋에서 abc 브랜치 생성하�
 - `--no-recurse-submodules`
 
 
-## svn
+## git svn
 
 #### SVN 저장소 복제
 
@@ -2125,7 +2145,7 @@ git svn blame 파일
 ```
 
 
-## tag
+## git tag
 
 태그 조회와 생성
 
@@ -2187,7 +2207,7 @@ git tag -d v0.9
 ```
 
 
-## update-index
+## git update-index
 
 파일을 인덱스(= 스테이징 영역)에 등록하거나 수정한다.
 
@@ -2223,7 +2243,7 @@ git update-index --really-refresh
 ```
 
 
-## worktree
+## git worktree
 
 `worktree`는 하나의 Git 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
 
