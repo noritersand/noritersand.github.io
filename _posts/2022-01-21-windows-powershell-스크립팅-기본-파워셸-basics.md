@@ -937,7 +937,7 @@ $hash.Number
 
 PowerShell 7.6.4 부터 기록
 
-- <kbd>ctrl + shift + p</kbd>: 커멘드 팔레트 열기
+- <kbd>ctrl + shift + p</kbd>: 커맨드 팔레트 열기
 - <kbd>ctrl + shift + 숫자</kbd>: (숫자별로 정해진 프로필로) 새 탭 열기
 - <kbd>ctrl + shift + w</kbd>: 현재 탭 닫기
 - <kbd>ctrl + alt + 숫자</kbd>: 해당 번호의 탭으로 포커스 이동

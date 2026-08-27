@@ -125,6 +125,32 @@ tsc --build --watch
 ```
 
 
+## 타입 체크
+
+```bash
+tsc --noEmit
+```
+
+`--noEmit` 옵션을 붙이면 타입 검사만 하고 빌드는 생략한다. 
+
+보통 이런식으로:
+
+```json
+{
+  "name": "some-typescript-app",
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  },
+  "scripts": {
+    "type": "tsc --noEmit"
+  },
+  "packageManager": "yarn@4.18.0"
+}
+```
+
+TypeScript 프로젝트에서 타입 에러만 빠르게 확인할 때 쓴다.
+
+
 ## 사용 가능한 타입 목록
 
 - 원시 타입:

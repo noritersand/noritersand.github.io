@@ -532,6 +532,9 @@ Yarn은 `yarn.lock`이라는 별도의 락 파일(패키지 잠금 파일이라�
 ```bash
 # nodeLinker 필드의 값을 pnp로 설정
 yarn config set nodeLinker pnp
+
+# nodeLinker를 node-modules로 설정
+yarn config set nodeLinker node-modules
 ```
 
 주요 필드로:
@@ -718,7 +721,7 @@ PnP는 기존보다 적은 용량으로 더 빠르게 설치되며, 의존성 �
 
 PnP는 Yarn 버전 2.x 이상이며 `.yarnrc.yml` 파일이 있고 `nodeLinker` 필드가 `pnp`일 때, 혹은 `.yarnrc.yml` 파일이 아예 없을 때 자동으로 활성화된다. 활성화 상태라면 `yarn install` 시 `.yarn` 디렉터리, `.pnp.cjs`, `.pnp.loader.mjs` 파일 등이 자동으로 생성된다.
 
-ℹ️ Yarn PnP는 아직(2026-08-07) 호환성 문제가 있다. 특히 Next.js나 Remix 최신 버전은 빌드 문제가 발생하기 때문에 `nodeLinker: node-modules` 설정을 추가해야 한다.
+ℹ️ Yarn PnP는 아직(🗓️ 2026-08-07) 호환성 문제가 있다. 특히 Next.js나 Remix 최신 버전은 빌드 문제가 발생하기 때문에 `nodeLinker: node-modules` 설정을 추가해야 한다.
 
 `yarn --version`으로 버전을 확인했을 때 2.x 아래면 `yarn set version berry` 명령으로 상위 버전을 지정하면 된다. 이 명령은 `package.json`의 `packageManager` 필드 값을 Yarn의 최신 버전으로 변경한다.
 

@@ -258,18 +258,18 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 - [cloudtype](https://cloudtype.io/): 최스님이 알려줌. 안써봄
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
-- ✨[Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. [무료 플랜](https://www.netlify.com/pricing/)에선 월 100GB의 트래픽 제한이 있다.
+- ✨[Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. 💰 무료 사용 중엔 월 100GB의 트래픽 제한이 있다.
 - ✨[Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 웹 애플리케이션 개발 플랫폼. Workers 기반의 서버리스 컴퓨팅을 중심으로, 정적 사이트 호스팅(Pages), 오브젝트 스토리지(R2), 데이터베이스(D1) 등을 제공한다.
 
 ### IaaS (Infrastructure as a Service)
 
 인프라만 제공하는 클라우드 서비스.
 
-- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 제한적인 무료 티어를 제공함
+- [AWS](https://aws.amazon.com/): 아마존의 the AWS. 💰 무료 제공량 있음
 - [Google Cloud Platform (GCP)](https://cloud.google.com/?hl=ko)
 - [Azure](https://azure.microsoft.com/)
-- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 얘네도 무료 티어가 있음
-- [Pulumi](https://www.pulumi.com/}): JavaScript 코드로 클라우드 인프라를 관리하는 IaC 서비스. 개인 용도는 무료(2023-09-13)
+- [Oracle Cloud Infrastructure (OCI)](https://www.oracle.com/kr/cloud/): 오라클 OCI. 💰 얘네도 무료 제공량이 있음
+- [Pulumi](https://www.pulumi.com/}): JavaScript 코드로 클라우드 인프라를 관리하는 IaC 서비스. 개인 용도는 무료(🗓️ 2023-09-13)
 
 ℹ️ IaC(Infrastructure as Code): 코드를 사용하여 수동 프로세스가 아닌 자동으로 인프라를 정의하고 관리하는 방법론의 일종
 
@@ -278,8 +278,9 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - [Firebase](https://firebase.google.com/): Google의 BaaS 플랫폼.
-- [Supabase](https://supabase.com/): PostgreSQL 기반의 백엔드 기능을 제공하는 BaaS 플랫폼. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공한다.
+- ⭐[Supabase](https://supabase.com/): PostgreSQL을 중심으로 전반적인 백엔드를 제공하는 BaaS 플랫폼. 인증, 데이터베이스, 파일 저장소, 서버리스 기능 등을 제공한다. 💰 무료 제공량 있음
 - [PocketBase](https://pocketbase.io/): 오픈 소스 백엔드 서비스. 실시간 데이터베이스, 인증, 파일 저장소, 어드민 대시보드를 파일 하나로 만들어준다. 다른 서비스와 다르게 클라우드가 아니라 서버를 직접 구축하는 방식이다.
+- ⭐[Neon](https://neon.com/): PostgreSQL을 기반으로 한 서버리스 데이터베이스 플랫폼이다. Compute 자동 확장과 Scale to Zero를 제공해 사용량에 따라 데이터베이스 컴퓨팅 자원을 탄력적으로 운영할 수 있어 'serverless'를 표방한다. 이 외에 Supabase에 비해 데이터베이스 자체에 집중하는 편이며, DB 브랜칭, Neon Auth 등을 제공한다. 최근(🗓️ 2026-08-26)에는 Auth 등 백엔드 영역으로 서비스를 확장하며 Supabase와 겹치는 영역도 점차 넓어지고 있다. 💰 무료 제공량이 넉넉한 편
 
 ### Web Server/WAS
 
@@ -338,7 +339,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 유닛 테스트 프레임워크
 
-- [JUnit](https://junit.org): Java 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (2023-02-15)
+- [JUnit](https://junit.org): Java 테스팅 프레임워크. JUnit Platform + JUnit Jupiter + JUnit Vintage 세 개를 합친 JUnit 5 버전이 나왔음. (🗓️ 2023-02-15)
 - [AssertJ Core](https://assertj.github.io/doc/): 테스트용 Java 라이브러리. Spring boot starter 라이브러리에 포함돼 있다. (사실 JUnit도 같이 있음) 들리는 말로는 요게 더 좋다고 함.
 - [Mocha](https://mochajs.org/): 오래된 JavaScript 테스팅 프레임워크. 이하 모카
 - [Chai](https://www.chaijs.com/): JavaScript용 Assertion 라이브러리. 가독성 좋고 유연한 문법을 제공한다. 보통 모카와 같이 쓴다.
@@ -376,9 +377,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 9. 보안, 인증
 
-- [Let's Encrypt](https://letsencrypt.org/): 비영리 단체인 [ISRG, Internet Security Research Group](https://www.abetterinternet.org/)에서 제공하는 TLS(SSL) 인증서 무료 발급 사이트. 
-- [certbot](https://certbot.eff.org/): *Let's Encrypt*에서 발급하는 TLS 인증서를 쉽게 관리하게 도와주는 오픈 소스 소프트웨어. [EFF(Electronic Frontier Foundation)](https://www.eff.org/)에서 만들었고 인증서 자동 갱신 같은 작업을 지원한다.
+- ✨[Let's Encrypt](https://letsencrypt.org/): 비영리 단체인 [ISRG, Internet Security Research Group](https://www.abetterinternet.org/)에서 제공하는 TLS(SSL) 인증서 무료 발급 사이트. 
+- ✨[certbot](https://certbot.eff.org/): *Let's Encrypt*에서 발급하는 TLS 인증서를 쉽게 관리하게 도와주는 오픈 소스 소프트웨어. [EFF(Electronic Frontier Foundation)](https://www.eff.org/)에서 만들었고 인증서 자동 갱신 같은 작업을 지원한다.
 - [HashiCorp Vault](https://www.vaultproject.io/): 비밀번호 관리, 암호화 키 관리, 접근 제어 등을 통합 제공하는 오픈 소스. 암호화 키를 관리하는 용도로 쓴다. 클라우드, 온프레미스 모두 지원한다. 엔터프라이즈 버전은 전용 서버가 제공되지만 무료 버전은 직접 설치해야 한다.
+- ✨[Bitwarden](https://bitwarden.com/): 비밀번호/인증정보 관리 서비스. 암호화된 저장소(Vault)에 인증정보를 저장하고, 브라우저 확장이나 앱을 통해 로그인할 때 자동으로 입력한다. 로그인 비밀번호, 패스키, OTP 등을 관리하는 Password Manager와 API key, 데이터베이스 비밀번호 등을 관리하는 Secrets Manager로 나뉜다. 오픈소스라 서버에 직접 설치해 운영할 수도 있다.
 
 
 ## 10. 프로그래밍 언어 Programming Language
@@ -420,12 +422,12 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 다이어그램, UML
 
-- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 앱. 좋지만 무료 플랜이 없는 게 💰 단점
+- [Balsamiq](https://balsamiq.com/wireframes/): UML, 와이어프레임 등을 위한 드로잉 앱. 좋지만 💰 무료 요금제가 없는 게 단점
 - [Draw.io](http://www.draw.io)
 - [Gliffy](http://www.gliffy.com)
 - [StarUML](http://staruml.sourceforge.net/ko)
 - ✨[chart.xkcd](https://timqian.com/chart.xkcd/): JavaScript로 만드는 차트. 결과물은 svg로 나옴. 발로 그린 것 같은 모양새가 특징
-- [eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 앱을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 무료 플랜 제공
+- [eraser](https://www.eraser.io/pricing): 마크다운 노트와 드로잉 앱을 합체시킨 신박한 물건. 엔지니어링 팀을 위한 화이트보드라 소개된다. 키보드로 플로우 차트 그리기 수월하다. Diagram as Code, 코멘트 기능 지원. 💰 무료 요금제 있음
 - ⭐[Excalidraw](https://excalidraw.com/): 웹 전용 드로잉 앱. eraser에 비해 가볍게 쓰기 좋다. 기본 기능은 무료로 사용 가능하고 워크스페이스나 자동 클라우드 동기화 같은 건 💰 유료
 - [Mermaid](https://mermaid.js.org/): 간단한 텍스트 구문을 이용해 다이어그램을 생성해주는 JavaScript 기반 라이브러리. 이런걸 Diagram as Code라고 한다. 플로우 차트, 간트 차트, 클래스 다이어그램, Git 그래프, 시퀀스 다이어그램, 클래스 다이어그램, ERD 등을 지원한다. 더 자세한 내용은 [여기](https://mermaid.js.org/intro/)서 확인.
 - ⭐[tree.nathanfriend.com](https://tree.nathanfriend.com/): 트리 구조의 텍스트 기반 다이어그램을 생성해주는 사이트. 입력한 값은 URL의 쿼리 스트링에 포함되기 때문에 공유가 쉽다.
@@ -441,7 +443,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Moqups](https://moqups.com/)
 - [Cacoo](https://nulab.com/cacoo/)
 - [Wireframe.cc](https://wireframe.cc/)
-- [Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 앱. 무료 플랜은 없다. 가격은 월 25달러(2024-07-11)
+- [Axure](https://www.axure.com/): 기획안/와이어프레임 작성에 사용하는 앱. 💰 무료 요금제는 없다. 가격은 월 25달러(🗓️ 2024-07-11)
 
 ### 디자인 리소스
 
@@ -491,6 +493,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트. 속도는 느리지만 편의성은 탑. 💰 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다.
 - [gitui](https://github.com/gitui-org/gitui): Mdir(?) 스타일의 GUI 앱. 옛날 갬성이 좋으면 쓸만하다. 단점으로 커밋 그래프 기능이 없고, 셸에서 저장소 경로로 이동하여 실행하는 방식이라 여러 저장소를 관리하기 불편하다.
 - [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능이 없다.
+- ⭐[gitignore.io](https://www.toptal.com/developers/gitignore): 사용하는 프레임워크, 라이브러리, 런타임을 입력하면 그에 맞는 `.gitignore` 파일을 만들어주는 사이트
 
 
 ## 16. 코드 하이라이팅
@@ -506,7 +509,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 일정, TODO
 
 - ⭐[Workflowy](https://workflowy.com/): 온라인 할 일 관리 도구
-- ✨[ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 무료 플랜도 쓸만하고 간트 차트를 제공한다.
+- ✨[ClickUp](https://app.clickup.com/): 온라인 프로젝트 관리 도구. 💰 무료 요금제도 쓸만하고 간트 차트를 제공한다.
 - [Calendly](https://calendly.com): 일정 예약 + 스케줄링 자동화 도구. 메일로 일정 맞추는 신박한 기능도 있다.
 - [Linear](https://linear.app/): 소프트웨어 개발팀용 이슈 트래커/프로젝트 관리 도구
 - [Markwhen: Project planning example](https://markwhen.com/): 코드로 프로젝트 일정 표를 만드는 사이트
@@ -547,10 +550,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 챗봇, LLM
 
+- [ChatGPT](https://chat.openai.com/): OpenAI의 LLM 챗봇
+- [Claude](https://claude.ai/): Anthropic의 LLM 챗봇. 발음은 '클로드'
 - [Gemini](https://gemini.google.com/): Google의 LLM 챗봇
 - [NotebookLM](https://gemini.google.com/): 젬미니 기반의 메모 및 리서치 도구. 일반적인 챗봇이 인터넷이나 미리 학습한 데이터를 기반으로 답변하는 것과 다르게, 사용자가 직접 업로드한 자료(PDF, 텍스트, 웹사이트 등) 내에서만 데이터를 찾아 답변하는 게 특징이다.
-- [Claude](https://claude.ai/): Anthropic의 LLM 챗봇. 발음은 '클로드'
-- [ChatGPT](https://chat.openai.com/): OpenAI의 LLM 챗봇
 - [Grok](https://grok.com/): xAI의 LLM 챗봇
 
 ### 코딩 에이전트
@@ -562,32 +565,30 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Junie](https://www.jetbrains.com/junie/): JetBrains의 코딩 에이전트
 - ⭐[v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다.
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰 코드 생성부터는 유료다. 
-  - [Stitch](https://stitch.withgoogle.com/)
-  - [Readdy](https://readdy.ai/)
+- [Stitch](https://stitch.withgoogle.com/)
+- [Readdy](https://readdy.ai/)
 
-### 로컬 자율 실행형 에이전트
+### 자율 실행형 에이전트
 
 - [OpenClaw](https://openclaw.ai/): 로컬 환경에서 돌아가는 오픈 소스 자율 AI 에이전트. 단순 대화형 챗봇이 아니라 사용자 OS를 직접 제어할 수 있는 권한을 가지고 있어서, 텔레그램/슬랙/디스코드 같은 메신저로 원격에서 명령을 내려 로컬 작업을 수행하게 할 수 있다. 앤트로픽과의 상표권 문제로 Clawdbot -> Moltbot을 거쳐 지금 이름으로 정착함. 주요 사용자층은 일반 사용자와 개발자
 - ⭐[Hermes Agent](https://hermes-agent.nousresearch.com/): Nous Research의 자율형 오픈 소스 AI 에이전트. 작업하면서 얻은 경험을 바탕으로 **스스로 스킬을 만들고 개선해나가는 학습 루프를 내장**하고 있음. CLI, Docker, 백엔드 서버 환경에서 독자적으로 구동되고, 다른 에이전트 플랫폼의 백엔드 실행 엔진으로도 많이 쓰임. 💰 에이전트 자체는 무료지만, 연결하는 모델에 따라 API 사용료나 구독 비용이 별도로 발생함.
-- [Hermit](https://hermit-ai.com/): Hermes 모델과 에이전트 구조를 기반으로 만든, 파일 중심(File-first)의 로컬 자율 실행 에이전트 런타임. Hermes가 자율 구동/스킬 생성/기억 기능을 담당하는 엔진이라면, Hermit은 그 위에 사용자 인터페이스, 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 얹어서 다루기 쉽게 만든 프로젝트다. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터
+- [Hermit](https://hermit-ai.com/): Hermes 모델과 에이전트 구조를 기반으로 만든, 파일 중심(File-first)의 자율 실행 에이전트 런타임. Hermes가 자율 구동/스킬 생성/기억 기능을 담당하는 엔진이라면, Hermit은 그 위에 사용자 인터페이스, 마크다운 기반 데이터스토어, 워크스페이스 관리 기능을 얹어서 다루기 쉽게 만든 프로젝트다. 주요 사용자층은 OpenClaw와 비슷한 엔드유저, 프론트엔드/웹 개발자, 크리에이터
 - [Claude Cowork](https://claude.com/product/cowork): Claude 기반 로컬 에이전트 서비스. 오픈 소스 에이전트들과 달리 앤트로픽의 모델과 스킬/플러그인 생태계를 그대로 활용함. 여러 서브에이전트에게 작업을 병렬로 나눠서 자동 처리하는 데 특화되어 있음. 주요 사용자층은 기획자, 마케터, 재무/법무 담당자 같은 일반 사무직과 대학원생/교수 같은 지식 노동자
 
-#### ADE(Agentic Development Environment, 에이전트 개발 환경)
+### 에이전트 개발 환경(ADE) / 오케스트레이션
 
-- ⭐[Orca](https://www.onorca.dev/): 여러 AI 코딩 에이전트를 실행/관리하는 ADE. Claude Code, Codex, OpenCode 같은 에이전트를 각각 독립된 Git worktree에서 병렬로 실행하고, 에이전트별 작업 상태와 코드 변경 사항을 한곳에서 관리할 수 있다. 💰 Orca 자체는 오픈 소스이고 무료지만, 연결한 에이전트는 각 서비스의 구독이나 API 비용을 별도로 부담해야 한다.
+### ADE, Agentic Development Environment
+
+- ✨[Orca](https://www.onorca.dev/): 여러 AI 코딩 에이전트의 CLI를 실행/관리하는 오픈 소스 ADE. 여러 에이전트를 각각 독립된 Git worktree에서 병렬로 실행하고, 작업 상태와 코드 diff 등을 한곳에서 관리할 수 있다. ⚠️ 에이전트들을 대신 오케스트레이션하거나, 사용량 소진을 감지하고 자동 전환하는 에이전트 라우터는 아니다. 그리고 Orca 자체는 GUI 툴이지만 에이전트는 CLI로 실행하기 때문에 CLI에 익숙하지 않으면 영 그렇다.
 - [Google Antigravity](https://antigravity.google/): Google의 에이전트 중심 개발 플랫폼. CLI와 IDE가 합쳐진 환경에서 여러 에이전트가 동시에 에디터, 터미널, 브라우저를 직접 조작하며 코드 작성부터 빌드, 테스트까지 알아서 처리한다. Orca와 달리 외부 코딩 에이전트를 연결해 관리하기보다는 Google의 에이전트와 Gemini 모델을 중심으로 개발 환경을 구성한다.
 
-### AI 모델용 API 게이트웨이
+### 에이전트 오케스트레이션
 
-공통적으로 비용과 가용성을 고려해 요청을 적절한 provider로 라우팅하거나, 요청 실패 시 다른 provider로 전환하는 routing/fallback 기능을 제공한다.
-
-- ✨[OpenRouter](https://openrouter.ai/): 여러 AI 모델의 API를 하나로 묶어 제공하는 AI 모델용 API 게이트웨이. 하나의 API와 사용법으로 Claude, GPT, Gemini, Llama 등 다양한 모델을 사용할 수 있다. 💰 게이트웨이 API는 유료임
-- [LiteLLM](https://www.litellm.ai/): 오픈 소스 AI 게이트웨이. 직접 서버를 띄워서 사용하는 방식이라, 모델 추론 비용에 별도의 게이트웨이 비용이 추가(markup)되지 않는다.
-- [Portkey](https://portkey.ai/): AI API의 운영 및 관리에 초점을 둔 AI 게이트웨이 플랫폼. 캐싱, 가드레일, 사용량 및 비용 관리 등의 기능을 제공하며, 게이트웨이 자체는 오픈 소스로도 제공한다. 💰 프리미엄 버전의 게이트웨이 너낌
+- 🚧[claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 🚧 2026년 2월 18일부터 archived 상태다.
 
 ### ADK, Agent Development Kit
 
-ℹ️ ADK는 AI 에이전트를 조립하고 관리하는 개발 도구를 말한다.
+ℹ️ ADK: AI 에이전트를 조립하고 관리하는 개발 프레임워크
 
 #### Framework/Harness 레이어
 
@@ -604,43 +605,52 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - ✨[Cloudflare Agents SDK](https://developers.cloudflare.com/agents/): Cloudflare의 서버 인프라(Workers + Durable Objects) 위에서 AI 에이전트를 실행할 수 있게 해주는 SDK. 상태 저장, 실시간 연결(WebSocket), 스케줄링 등을 쉽게 구현할 수 있게 해줌. 단, 에이전트가 어떻게 생각하고 행동할지는 SDK가 정해주지 않음. Framework/harness 계열 ADK와 함께 사용할 수 있는 하부 인프라 역할이라 보면 됨. 💰 SDK 자체는 무료인데, Cloudflare 인프라 사용량에 따라 과금될 수 있음.
 
-### AI 엔지니어링 스택
+### AI 모델용 API 게이트웨이
 
-- [Teachable Machine](https://teachablemachine.withgoogle.com/): Google 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(2023-12-28)은 오디오나 이미지 정도만 지원함.
-- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
-- [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
-- 🚧[claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 이런 걸 AI 오케스트레이션 레이어(AI Orchestration Layer)라고 하는 모양이다.
-- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
-- [Hugging Face](https://huggingface.co/): 머신러닝계의 깃허브. AI 모델, 데이터셋, 머신러닝 코드를 공유하고 활용할 수 있는 AI 플랫폼이다. 다양한 오픈 소스 AI 모델을 검색/다운로드하거나 API를 통해 사용할 수 있고, 모델 학습과 평가에 필요한 데이터셋도 제공한다.
+공통적으로 비용과 가용성을 고려해 요청을 적절한 provider로 라우팅하거나, 요청 실패 시 다른 provider로 전환하는 routing/fallback 기능을 제공한다.
 
-#### 에이전트용 프롬프트/스킬 라이브러리
+- ✨[OpenRouter](https://openrouter.ai/): 여러 AI 모델의 API를 하나로 묶어 제공하는 AI 모델용 API 게이트웨이. 하나의 API와 사용법으로 Claude, GPT, Gemini, Llama 등 다양한 모델을 사용할 수 있다. 💰 게이트웨이 API는 유료임
+- [LiteLLM](https://www.litellm.ai/): 오픈 소스 AI 게이트웨이. 직접 서버를 띄워서 사용하는 방식이라, 모델 추론 비용에 별도의 게이트웨이 비용이 추가(markup)되지 않는다.
+- [Portkey](https://portkey.ai/): AI API의 운영 및 관리에 초점을 둔 AI 게이트웨이 플랫폼. 캐싱, 가드레일, 사용량 및 비용 관리 등의 기능을 제공하며, 게이트웨이 자체는 오픈 소스로도 제공한다. 💰 프리미엄 버전의 게이트웨이 너낌
 
-- ✨[Taste Skill](https://www.tasteskill.dev/): 코딩 에이전트가 흔하고 촌스러운(generic slop) UI 대신 감각적이고 고품질의 프론트엔드 디자인을 생성하도록 지시어(prompt) 및 규칙을 제공한다. (🤔 요즘 엄청 인기던데, 다들 이거 쓰면 이제 오히려 '전형적이고 흔한' 스타일 되는 거 아님?)
-- ✨[Hallmark](https://www.usehallmark.com/): AI가 생성하는 진부하고 전형적인 디자인 스타일을 회피하도록 하는 AI 코딩 에이전트용 규칙 및 지침 패키지
+### AI 개발 도구
 
-#### 분석
+#### 프롬프트/스킬
+
+- [Taste Skill](https://www.tasteskill.dev/): 코딩 에이전트가 흔하고 촌스러운(generic slop) UI 대신 감각적이고 고품질의 프론트엔드 디자인을 생성하도록 지시어(prompt) 및 규칙을 제공한다. (🤔 요즘 엄청 인기던데, 다들 이거 쓰면 이제 오히려 '전형적이고 흔한' 스타일 되는 거 아님?)
+- [Hallmark](https://www.usehallmark.com/): AI가 생성하는 진부하고 전형적인 디자인 스타일을 회피하도록 하는 AI 코딩 에이전트용 규칙 및 지침 패키지
+
+#### 코드/프로젝트 분석
 
 - ⭐[Repomix](https://repomix.com/): 코드베이스를 분석해서 XML이나 마크다운 파일 하나로 묶어주는 Node.js 패키지로 AI가 읽기 좋은 구조로 만들어준다. 에이전트를 쓰지 않거나, 비공개 저장소일 때 유용하다. 웹 버전도 제공한다. `.gitignore` 설정이 있으면 알아서 제외해준다. 로컬에서도 사용할 수 있는데, AI한테 요약 파일 만들어줄거면 마크다운보다 XML이 좋다. AI 토큰 아끼고 싶으면 이런 옵션들 쓰면 되는데: `repomix  --remove-empty-lines --remove-comments --no-file-summary --compress --include 포함하길원하는파일을앤트패턴으로`, 압축 옵션인 `--compress`는 Java 어노테이션도 지워버리니 주의해서 사용해야 함. `repomix.config.json`로 구체적인 설정을 추가하거나 `.repomixignore`로 무시할 파일을 지정할 수 있다. 자세한 내용은 [도움말](https://repomix.com/guide/configuration "Configuration | Repomix") 참고.
 - [Design Extractor](https://www.design-extractor.com/): 웹사이트 디자인 파쿠리 서비스. URL을 입력하면 색상 팔레트, 타이포그래피, 여백, CSS 변수, Tailwind 토큰, shadcn/ui 테마 등을 분석해 `DESIGN.md` 문서로 정리해준다.
 - [designlang](https://www.designlang.app/): 웹사이트 디자인 파쿠리 서비스 2. 로컬 설치형 CLI 툴이고 🎁 오픈 소스다.
 - [getdesign.md](https://getdesign.md/): AI 코딩 에이전트에 적용할 디자인 시스템 라이브러리. 유명 브랜드의 색상같은 주요 스타일과 타이포그래피, 컴포넌트 명세 등을 마크다운 파일로 정리해 제공한다. 💰 일부 브랜드와 심화 기능은 유료다. ℹ️Figma에서 동일한 기능을 무료로 제공한다는 정보가 있음.
 
-#### 압축
+#### 웹 데이터 수집/정제
 
 에이전트와 MCP로 연결해 웹 정보를 정제하고 불필요한 토큰 사용을 줄일 수 있게 해주는 서비스들이다.
 
-- ✨[Firecrawl](https://firecrawl.dev): 웹사이트의 구조와 데이터를 마크다운이나 JSON 형태로 만들어주는 API 기반 웹 스크래핑/크롤링 서비스. JavaScript 기반 동적 페이지 렌더링, 프록시 로테이션, 안티봇 대응 등을 지원한다. 💰 무료 플랜 제공함
+- ✨[Firecrawl](https://firecrawl.dev): 웹사이트의 구조와 데이터를 마크다운이나 JSON 형태로 만들어주는 API 기반 웹 스크래핑/크롤링 서비스. JavaScript 기반 동적 페이지 렌더링, 프록시 로테이션, 안티봇 대응 등을 지원한다. 💰 무료 제공량 있음
 - [Crawl4AI](https://docs.crawl4ai.com/): 오픈 소스 LLM용 웹 크롤러/스크래퍼. 🔧 로컬에 설치해 사용하는 방식이라 요금 부담은 없지만, 프록시/안티봇 대응 등의 부가 기능은 직접 구성해야 하는 것이 단점
-- [Apify](https://apify.com/): 웹 스크래핑, 데이터 추출, 브라우저 자동화 등을 제공하는 웹 데이터 플랫폼. 💰 무료 플랜 제공
-- [Tavily](https://tavily.com/): AI 에이전트용 웹 검색/콘텐츠 추출/크롤링 API. 💰 무료 플랜 제공
+- [Apify](https://apify.com/): 웹 스크래핑, 데이터 추출, 브라우저 자동화 등을 제공하는 웹 데이터 플랫폼. 💰 무료 제공량 있음
+- [Tavily](https://tavily.com/): AI 에이전트용 웹 검색/콘텐츠 추출/크롤링 API. 💰 무료 제공량 있음
 - [Jina Reader](https://jina.ai/reader/): URL을 입력하면 웹페이지를 LLM 친화적인 Markdown으로 변환해주는 웹 콘텐츠 추출 API.
-- [ZenRows](https://www.zenrows.com/): 동적/차단된 웹사이트에서도 데이터를 가져올 수 있는 API 기반 웹 스크래핑 서비스. 💰 무료 플랜 제공
+- [ZenRows](https://www.zenrows.com/): 동적/차단된 웹사이트에서도 데이터를 가져올 수 있는 API 기반 웹 스크래핑 서비스. 💰 무료 제공량 있음
 
-#### GitHub Source Code
+#### GitHub 코드 탐색
 
 - ✨[GitMCP](https://gitmcp.io/): GitHub 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. GitHub 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
 - [Gitingest](https://gitingest.com/): Git 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. GitHub 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
 - ✨[DeepWiki](https://deepwiki.org/): Git 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰 유료인지 아닌지는 안해봐서 몰?루
+
+#### 기타
+
+- [Teachable Machine](https://teachablemachine.withgoogle.com/): Google 티처블 머신. 초등학생도 사용할 수 있는 웹 기반 머신 러닝 도구다. 아직(🗓️ 2023-12-28)은 오디오나 이미지 정도만 지원함.
+- [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
+- [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
+- [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
+- [Hugging Face](https://huggingface.co/): 머신러닝계의 깃허브. AI 모델, 데이터셋, 머신러닝 코드를 공유하고 활용할 수 있는 AI 플랫폼이다. 다양한 오픈 소스 AI 모델을 검색/다운로드하거나 API를 통해 사용할 수 있고, 모델 학습과 평가에 필요한 데이터셋도 제공한다.
 
 
 ## 19. 모바일
@@ -675,12 +685,12 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [RunCat](https://runcat-dev.github.io/RunCat365/): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
 - ⭐[SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 - ⭐[Meld](https://meldmerge.org/): Windows 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
-- ⭐[Everything](https://www.voidtools.com/ko-kr/): Windows용 파일 검색 유틸리티. 파일 100만 개 색인이 1분 정도면 끝나는 미친 성능을 자랑한다. ~~마소는대체뭐하냐~~ 설정에서 `탐색기에 우클릭 메뉴 추가` 체크하고 사용할 것. 검색 연산자는 [여기](https://www.voidtools.com/ko-kr/support/everything/search_syntax/ "Search Syntax") 참고
+- ⭐[Everything](https://www.voidtools.com/ko-kr/): Windows용 파일 검색 유틸리티. 파일 100만 개 색인이 1분 정도면 끝나는 미친 성능을 자랑한다. ~~마소는대체뭐하냐~~ 설정에서 `탐색기에 우클릭 메뉴 추가` 체크하고 사용할 것. 검색 연산자도 제공하는데, 예를 들어 파일명이 `A`이고 `B`라는 내용을 포함하는 파일을 찾으려면 `A content:B`라고 쓴다. 더 많은 내용은 [여기](https://www.voidtools.com/ko-kr/support/everything/search_syntax/ "Search Syntax") 참고.
 - [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 도구. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
 - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.
 - [OCCT](https://www.ocbase.com/download): 오버클럭 테스트용으로 사용하는 과부하 앱인데, 밴치마킹, 모니터링, 안정성 테스트, 시스템 정보 확인 등의 기능도 제공한다.
-- [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(2023-08-09) 버전은 3.1
+- [한국표준과학연구원: 표준시각 맞추기](https://www.kriss.re.kr/menu.es?mid=a10305020000): 한국표준과학연구원에서 제공하는 현재 시간 및 세계 시간 확인/동기화 유틸리티. 설치형이고 앱 이름은 UTCk, 현재(🗓️ 2023-08-09) 버전은 3.1
 - [Revo Uninstaller](https://www.revouninstaller.com/): 앱을 삭제할 때 레지스트리 같은 일종의 찌꺼기(?)도 완전히 삭제해 준다는 언인스톨러. 상용인 Pro 버전이 따로 있음.
 - ⭐[구라제거기](https://teus.me): 악성 코드 제거 도구
 
@@ -713,12 +723,12 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 브라우저
 
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/): 불여시 브라우저. 개발자용 불여시는 [여기로](https://www.mozilla.org/en-US/firefox/developer/). `about:config`에서 `browser.uidensity`를 1로 해볼 것
+- [Firefox](https://www.firefox.com/en-US/): 불여시 브라우저. 개발자용 불여시는 [여기로](https://www.firefox.com/en-US/channel/desktop/developer/). `about:config`에서 `browser.uidensity`를 1로 해볼 것
 - [DuckDuckGo browser](https://duckduckgo.com/app)
 - [Brave](https://brave.com/): 프라이버시와 성능에 중점을 둔 크로미움 기반 브라우저
 - [Ladybird](https://ladybird.org/): 다른 브라우저의 코드를 사용하지 않는 독립적인 웹 브라우저 겸 엔진. 2026년 여름 정식 출시 예정
-- [Nyxt](https://nyxt.atlas.engineer/): 해커용 브라우저(?). 고급 사용자를 위한 브라우저로, 키보드 탐색, 점프 헤딩, 쉬운 탭 관리, 명령 퍼지 검색, 내장 REPL, 스마트 북마크 검색, 사용자 정의 가능한 자동 완성, 클립보드 기록, 트리 기반의 방문 페이지 기록 등의 기능을 제공한다고 함. 🗓️ 2024-12-09 기준 Windows는 아직 미지원.
-- [Chromium](https://www.chromium.org/): Google의 오픈 소스 웹 브라우저 프로젝트. Chrome의 기반 코드이며 요즘(2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
+- [Nyxt](https://nyxt.atlas.engineer/): 해커용 브라우저(?). 고급 사용자를 위한 브라우저로, 키보드 탐색, 점프 헤딩, 쉬운 탭 관리, 명령 퍼지 검색, 내장 REPL, 스마트 북마크 검색, 사용자 정의 가능한 자동 완성, 클립보드 기록, 트리 기반의 방문 페이지 기록 등의 기능을 제공한다고 함. 🗓️ 2026-08-24 기준 Windows는 아직 미지원.
+- [Chromium](https://www.chromium.org/): Google의 오픈 소스 웹 브라우저 프로젝트. Chrome의 기반 코드이며 요즘(🗓️ 2023-09-13) 점유율 높은 브라우저들은 대부분 Chromiun 코드베이스를 사용한다.
 
 ### Firefox 플러그인
 
@@ -754,7 +764,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 23. 문서 작성 도구
 
-- [WPS Office](https://www.wps.com): 무료 플랜은 기본 기능과 1GB 클라우드 사용 가능.
+- [WPS Office](https://www.wps.com): 💰 무료 요금제에선 기본 기능과 1GB 클라우드 사용 가능
 - [LibreOffice](http://ko.libreoffice.org/download)
 
 ### 프레젠테이션 Presentation

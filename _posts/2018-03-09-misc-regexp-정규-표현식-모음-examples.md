@@ -19,6 +19,8 @@ tags:
 
 ## RegExp 인스턴스 모음
 
+
+
 ### 빈 줄(empty/blank line)
 
 ```js
@@ -101,11 +103,32 @@ nameCard NameCard name-card name--card NAME_CARD NAME___CARD
 /\w+_/
 ```
 
-### 날짜 포맷: yyyy-MM-dd
+### 날짜 찾기
 
-```js
+#### yyyy-MM-dd 패턴
+
+```
+\d{4}-\d{2}-\d{2}
 /[12][0-9]{3}-[0-9]{2}-[0-9]{2}/
 /[12][0-9]{3}-[01][0-9]-[0-3][0-9]/
+```
+
+#### 바로 앞에 'date: '가 없는 yyyy-MM-dd 패턴
+
+```
+(?<!date: )\d{4}-\d{2}-\d{2}
+```
+
+#### yyyy-MM-dd 아닌 입력 제한
+
+```js
+format = /[12][0-9]{3}-[01][0-9]-[0-3][0-9]/; //YYYY-MM-DD 검사표현식
+//if(f.birth.value.search(format)==-1)
+if (! format.test(f.birth.value)) {
+  alert("생년월일을 정확하게 입력하세요");
+  f.birth.focus();
+  return;
+}
 ```
 
 ### 이미지 태그 찾기
@@ -299,18 +322,6 @@ function isValidNumber(data) {
 
 ```js
 'a12345'.match(/[^0-9]/) != null // 숫자가 아닌 문자가 있을 경우 true
-```
-
-### yyyy-MM-dd 날짜 입력 제한
-
-```js
-format = /[12][0-9]{3}-[01][0-9]-[0-3][0-9]/; //YYYY-MM-DD 검사표현식
-//if(f.birth.value.search(format)==-1)
-if (! format.test(f.birth.value)) {
-  alert("생년월일을 정확하게 입력하세요");
-  f.birth.focus();
-  return;
-}
 ```
 
 ### 숫자만 입력하게 함

@@ -25,7 +25,7 @@ tags:
 
 #### 테스트 환경 정보
 
-- 2022-01-24 작성
+- 🗓️ 2022-01-24 작성
 - Windows 11 (21H2)
 - PowerShell 7.x
 - NVM 1.1.9
@@ -266,7 +266,7 @@ AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되�
 
 ### [react-native-reanimated](https://docs.swmansion.com/react-native-reanimated/)를 쓰는 경우 리모트 디버깅 불가능
 
-2022-02-15 확인:
+🗓️ 2022-02-15 확인:
 
 > As the library uses JSI for synchronous native methods access, remote debugging is no longer possible. You can use Flipper for debugging your JS code, however connecting debugger to JS context which runs on the UI > thread is not currently supported.
 >

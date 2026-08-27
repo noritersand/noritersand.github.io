@@ -20,9 +20,9 @@ tags:
 
 Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
-- Settings(<kbd>ctrl + ,</kbd>)에서 'Accept Suggestion On Commit Character'를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
-- Settings(<kbd>ctrl + ,</kbd>)에서 'Accept Suggestion On Enter'를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
-- 자동으로 나타나는 추천창이 귀찮으면 Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 'Preferences: Open User Settings (JSON)' 입력 후 열리는 setting.json에 아래를 추가한다:
+- 설정에서 `Accept Suggestion On Commit Character`를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
+- 설정에서 `Accept Suggestion On Enter`를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
+- 자동으로 나타나는 추천창이 귀찮으면 커맨드 팔레트에서 `Preferences: Open User Settings (JSON)` 입력 후 열리는 `setting.json`에 아래를 추가한다:
 
 ```json
 "editor.quickSuggestions": {
@@ -32,9 +32,13 @@ Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그
 }
 ```
 
+### 파일 저장 시 마지막 빈 줄 확보
+
+설정에서 `Files: Insert Final Newline` 검색하고 켜면 됨
+
 ### 타이틀에 파일 전체 경로 표시
 
-Settings(<kbd>ctrl + ,</kbd>)에서 'window.title' 검색 후 입력란에 아래 추가:
+설정에서 `window.title` 검색 후 입력란에 아래 추가:
 
 ```
 ${activeEditorLong}${separator}${rootName}
@@ -42,7 +46,7 @@ ${activeEditorLong}${separator}${rootName}
 
 ### 들여쓰기 설정 변경
 
-Settings(<kbd>ctrl + ,</kbd>)에서 'indentation'검색 후:
+설정에서 `indentation`검색 후:
 
 - `Detect Indentation`은 체크 해제
 - `Insert Spaces`나 `Tab Size`는 취향껏...
@@ -50,7 +54,7 @@ Settings(<kbd>ctrl + ,</kbd>)에서 'indentation'검색 후:
 
 ### 파일 제외하기
 
-Settings(<kbd>ctrl + ,</kbd>)에서 'exclude' 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
+설정에서 `exclude` 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
 
 ## 팁
@@ -59,7 +63,7 @@ Settings(<kbd>ctrl + ,</kbd>)에서 'exclude' 검색 후 추가하면 된다. `F
 
 [공식 도움말 링크](https://code.visualstudio.com/docs/editor/userdefinedsnippets)
 
-Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
+커맨드 팔레트에서 `Snippets: Configure User Snippets` 입력 후 원하는 영역(전역인지, 현재 파일 전용인지, 특정 언어 전용인지...)을 선택하면 json 파일이 하나 열리는데, 여기에 다음처럼 작성하면:
 
 ```js
 {
@@ -73,7 +77,7 @@ Show All Commands(<kbd>ctrl + shift + p</kbd>)에서 `Snippets: Configure User S
 }
 ```
 
-`prefix` 'cl'에 자동 완성이 반응한다. 'console.log'는 자동 완성 창에 보여질 설명이다.
+prefix인 `cl`에 자동 완성이 반응한다. `"console.log"`는 자동 완성 창에 보여질 설명이다.
 
 `body`의 내용은 여러 줄일 수 있으며, `$1`와 `$2`는 탭으로 이동가능한 위치를 의미한다. 위에는 없지만 `$0`이 있는데 이것은 탭으로 이동할 최종 위치다. 탭 이동 순서는 `$1 > $2 > $0` 순인데, 이럴 거면 그냥 3으로 하지 왜 0인지는 몲. `${1:msg}`에서 `msg`는 문자 그대로 출력되는 일종의 placeholder다.
 

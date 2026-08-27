@@ -47,7 +47,7 @@ mapper.readValue(arg, new ArrayList<HashMap<String, String>>().getClass());
 mapper.readValue(arg, new TypeReference<ArrayList<HashMap<String, String>>>() {});
 ```
 
-ℹ️ Java 최근(2025-03-16) 버전에선 `mapper.readValue(result, new TypeReference<>() {})` 라고만 해도 변수의 타입에 맞춰서 알아서 작동한다.
+ℹ️ Java 최근(🗓️ 2025-03-16) 버전에선 `mapper.readValue(result, new TypeReference<>() {})` 라고만 해도 변수의 타입에 맞춰서 알아서 작동한다.
 
 ### map
 

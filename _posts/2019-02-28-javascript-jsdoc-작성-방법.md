@@ -142,7 +142,7 @@ Shoe.prototype.setColor = function (color) {
 };
 ```
 
-`@param`이 블록 태그고 `{@link}`가 인라인 태그다. 현재(2024-02-19) 인라인 태그는 `@link`(별칭: `@linkcode`, `@linkplain`)와 `@tutorial`만 지원한다.
+`@param`이 블록 태그고 `{@link}`가 인라인 태그다. 현재(🗓️ 2024-02-19) 인라인 태그는 `@link`(별칭: `@linkcode`, `@linkplain`)와 `@tutorial`만 지원한다.
 
 
 ## 파일 코멘트

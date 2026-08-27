@@ -103,7 +103,7 @@ Find Action(<kbd>ctrl + shift + a</kbd>)에서 'Edit Custom VM Options'을 실�
 
 ## 프로젝트별 배경 화면 다르게
 
-원래는 테마를 프로젝트별로 설정하려고 했으나 현재(2023-07-09) 지원하지 않는다. 
+원래는 테마를 프로젝트별로 설정하려고 했으나 현재(🗓️ 2023-07-09) 지원하지 않는다. 
 
 우선 식별용 이미지 몇 장을 적당히 마련한 뒤, Find Action(<kbd>ctrl + shift + a</kbd>)에서 `Set Background Image`를 실행한다. `This project only` 항목에 체크하고 이미지를 설정하면 끝.
 

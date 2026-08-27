@@ -80,7 +80,7 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 
 ## CRA, Create React App
 
-🚨 CRA는 [2025-02-26부터 지원이 중단되었다](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). Next.js, Vite, React Router, Remix 등으로 대체할 것.
+🚨 CRA는 [🗓️ 2025-02-26부터 지원이 중단되었다](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). Next.js, Vite, React Router, Remix 등으로 대체할 것.
 
 ---
 
@@ -680,7 +680,7 @@ root.render(<Newbie/>);
 
 ℹ️ 주의: 컴포넌트의 이름은 항상 대문자로 시작해야 함
 
-ℹ️ 최신 버전에서(2024-03-03) [클래스 대신 함수로 컴포넌트를 정의하도록 권장](https://react.dev/reference/react/Component)하고 있다.
+ℹ️ 최신 버전에서(🗓️ 2024-03-03) [클래스 대신 함수로 컴포넌트를 정의하도록 권장](https://react.dev/reference/react/Component)하고 있다.
 
 
 ## state
@@ -1243,7 +1243,7 @@ function App() {
 export default App;
 ```
 
-최신(2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
+최신(🗓️ 2024-03-31 기준) 버전인 6.x에선 많이 달라졌다:
 
 ```jsx
 // index.js

@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2024-06-01 21:25:07 +0900
-title: '[Web] 데이터 URL(data URLs)'
+title: '[Web] 데이터 URL(Data URLs)'
 categories:
   - web
 tags:

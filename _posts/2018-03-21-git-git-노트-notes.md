@@ -115,7 +115,7 @@ To add an exception for this directory, call:
   git config --global --add safe.directory '%(prefix)///wsl.localhost/Ubuntu/home/fixalot/repo/bun-testbed'
 ```
 
-WSL에 있는 로컬 저장소를 호스트의 git으로 접근하려 할 때 이런 메시지와 오류가 발생한다. git이 알려주는대로 `safe.directory` 설정을 추가하면 바로 해결된다.
+WSL에 있는 로컬 저장소를 호스트의 git으로 접근하려 할 때 이런 메시지와 오류가 발생한다. Git이 알려주는대로 `safe.directory` 설정을 추가하면 바로 해결된다.
 
 
 ## Git Credential Helper

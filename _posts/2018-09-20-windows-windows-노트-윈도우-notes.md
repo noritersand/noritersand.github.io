@@ -131,7 +131,7 @@ icacls .\test\
 
 Microsoft Sysinternals에 포함된 빌드 도구로, Windows에서 어떤 프로세스가 파일이나 디렉터리 등의 리소스를 사용 중인지 확인하는 유틸리티다.
 
-⚠️ 이 유틸리티로도 프로세스를 못찾는 경우가 많음 🤨
+⚠️ 이 유틸리티로도 프로세스를 못찾는 경우가 많음. 🤨 PowerToys에 비슷한 기능을 제공하는 [File Locksmith](https://learn.microsoft.com/ko-kr/windows/powertoys/file-locksmith)가 있는데, 이 쪽이 더 잘 찾는다.
 
 별도로 설치해야 실행할 수 있으니 Chocolatey로 설치하자:
 

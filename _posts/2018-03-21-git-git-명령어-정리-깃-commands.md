@@ -1110,10 +1110,13 @@ git help -a # 모든 명령어 보기
 
 ## git init
 
-#### 디렉터리를 git 저장소로 만들기
+#### 디렉터리를 Git 저장소로 만들기
 
 ```bash
 git init
+
+# 시작 브랜치 이름을 main으로
+git init -b main
 ```
 
 #### bare Git repository

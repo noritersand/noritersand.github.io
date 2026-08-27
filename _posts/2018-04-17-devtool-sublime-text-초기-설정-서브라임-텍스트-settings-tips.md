@@ -136,9 +136,9 @@ console.debug('${1:msg}:', ${2:msg});
 
 패키지는 서브라임 커뮤니티에서 공유되는 확장 기능이다.
 
-일단 package control을 설치한다. 커맨드 팔레트(<kbd>ctrl + shift + p</kbd>)에서 'install package control' 입력 후 엔터.
+일단 `package control`을 설치한다. 커맨드 팔레트에서 `install package control` 입력 후 엔터.
 
-설치가 끝나면 (<kbd>ctrl + `</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 'Package Control: Install Package' 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
+설치가 끝나면 (<kbd>ctrl + `</kbd> 눌러서 확인 가능) 다시 커맨드 팔레트에서 `Package Control: Install Package` 입력하면 패키지 검색 창이 뜬다. 여기서 원하는 패키지 검색 후 엔터 누르면 됨.
 
 ### 추천 패키지
 
@@ -167,7 +167,7 @@ console.debug('${1:msg}:', ${2:msg});
 - InsertDate: 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기
   - <kbd>f5</kbd>: 기본 단축키
   - <kbd>alt + f5</kbd>: [strftime](https://www.strfti.me) 포맷 커스텀 입력
-- ⭐Case Conversion: 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 'case convert' 치면 주르륵 나옴.
+- ⭐Case Conversion: 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 `case convert` 치면 주르륵 나옴.
   - 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 `{"detect_acronyms": false}` 이걸 붙여넣으면 된다.
 - CommandsBrowser: 서브라임(특히 Sublime Merge가)은 명령어 도움말이 부실하다. 이거 설치 후 커맨드 팔레트에서 `CommandsBrowser` 입력해보자
 - ⭐rainbow_csv: CSV Syntax를 지원하는 패키지. 열을 기준으로 알록달록하게 보여줌

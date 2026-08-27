@@ -16,7 +16,7 @@ tags:
 
 - [Git - 수정하고 저장소에 저장하기](https://git-scm.com/book/ko/Git의-기초-수정하고-저장소에-저장하기#파일-무시하기)
 
-.gitignore 파일을 만들고 무시할 파일패턴을 명시하면 패턴에 따라 해당파일을 git이 자동으로 추가하거나 추적하지 않게 된다.
+`.gitignore` 파일을 만들고 무시할 파일패턴을 명시하면 패턴에 따라 해당파일을 Git이 자동으로 추가하거나 추적하지 않게 된다.
 
 ```bash
 *.[oa]
@@ -24,6 +24,15 @@ tags:
 ```
 
 첫 번째 줄은 확장자가 .o 나 .a인 파일을 Git이 무시하라는 것이고 둘째 줄은 ~로 끝나는 모든 파일을 무시하라는 것이다.
+
+
+## 🚨 주의 사항
+
+이미 버전 관리 대상으로 등록한(= 추적 중인) 파일은 `.gitignore`에 추가해도 아무런 변화가 없다. 이럴 때는 `git rm --cached` 명령으로 실제 파일은 그대로 둔 채 Git의 관리 대상에서만 지우는 방법을 쓴다:
+
+```bash
+git rm --cached FILE_NAME
+```
 
 
 ## Pattern
@@ -39,8 +48,7 @@ tags:
 - `?`: 문자 하나
 - `[0~9]`: 캐릭터 사이에 있는 문자 하나
 
-
-## example
+### 패턴 예시
 
 ```bash
 # 확장자가 .a인 파일 무시
@@ -66,10 +74,28 @@ doc/**/*.txt
 ```
 
 
-## 주의 사항
+## Snippets
 
-이미 버전 관리 대상으로 등록한(= 추적 중인) 파일은 .gitignore에 추가해도 아무런 변화가 없다. 이럴 때는 `rm --cached` 명령으로 실제 파일은 그대로 둔 채 Git의 관리 대상에서만 지우는 방법을 쓴다:
+[gitignore.io](https://www.toptal.com/developers/gitignore)에서 안만들어주는 것만 적어둠.
 
 ```bash
-git rm --cached FILE_NAME
+# JetBrains
+.idea
+
+# Claude Code Local Configuration
+.claude/*.local.md
+.claude/*.local.json
+
+# Next.js local env files
+.env*.local
+
+# Sass
+public/styles/**/*.css
+public/styles/**/*.css.map
+public/pages/**/*.css
+public/pages/**/*.css.map
+
+# Repomix
+repomix-output.xml
+repomix-output.md
 ```
