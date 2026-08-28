@@ -1,9 +1,5 @@
 # AGENTS.md
 
-## Response Style
-
-- Respond concisely.
-
 ## Hard Rules
 
 - Git 관련 작업은 아무것도 하지 말 것
@@ -18,3 +14,7 @@
 - jekyll
 - ruby
 - GitHub pages
+
+## Response Style
+
+- Respond concisely.
