@@ -48,6 +48,7 @@ choco install powershell-core -y
 Get-Host | Select-Object Version
 ```
 
+
 ## 환경 변수
 
 ℹ️ Windows Terminal은 새 탭이나 새 창을 열어도 환경 변수가 갱신되지 않으니 필요하면 앱을 재시작할 것
@@ -70,7 +71,7 @@ echo $env:path
 # 이렇게만 쳐도 됨 (암묵적인 출력은 Write-Output이 처리함)
 $env:path
 
-# ; 단위로 줄 바꾸기
+# ; 단위로 줄 바꿔서 출력
 $env:path -split ';'
 ```
 
@@ -331,11 +332,50 @@ https://learn.microsoft.com/en-us/dotnet/visual-basic/programming-guide/language
 
 ### [특수 연산자 Special Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.2#special-operators)
 
-#### 그룹화 연산자 Grouping operator `( )`
+#### Grouping operator `( )` 그룹화 연산자
 
-**TODO** https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.6#grouping-operator--
+그룹화 연산자의 기본 기능은 연산 우선 순위를 강제로 지정하는 것.
 
-#### 하위 식 연산자 Subexpression operator `$( )`
+```powershell
+$result = (2 + 2) * 3
+$result -eq 12
+
+# True
+```
+
+그리고 추가로 3가지 기능이 있는데,
+
+**명령의 결과를 표현식에 참여시킴**:
+
+```powershell
+(Get-Item *.txt).Count -gt 10
+
+# False
+```
+
+`Get-Item *.txt`는 표현식이 아니지만 `()`로 감싸면 객체로 취급돼서 연산자나 멤버 접근이 가능해진다.
+
+**파이프라인 맨 앞에서 쓰면 결과를 전부 메모리에 모은 뒤 전달**:
+
+보통 파이프는 객체를 하나씩 흘려보내는데, `()`로 감싼 명령을 파이프 맨 앞에 두면 그 명령을 끝까지 실행해서 결과를 전부 모은 다음에 파이프로 넘긴다.
+
+뒤 단계 처리가 앞 단계의 열거(enumeration)를 방해하지 못하게 보장하는 효과도 있음.
+
+**대입문(assignment)을 감싸면 그 값이 출력됨**:
+
+```powershell
+($var = 1 + 2)
+
+# 3
+
+($var = 1 + 2) -eq 3
+
+# True
+```
+
+원래 `$var = 1 + 2`는 아무것도 출력하지 않는데, `()`로 감싸면 대입된 값이 통과(pass through)돼서 출력되고, 다른 표현식에도 쓸 수 있게 된다.
+
+#### Subexpression operator `$( )` 하위 식 연산자
 
 괄호 안 표현식의 실행 결과를 반환한다. 명령의 결과를 문자열 혹은 또다른 명령에 포함시킬 때 사용한다:
 

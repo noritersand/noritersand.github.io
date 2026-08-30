@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2024-02-16 14:50:30 +0900
-title: '[Web] CSP, Content Security Policy'
+title: '[Web] CSP (Content Security Policy)'
 categories:
   - web
 tags:

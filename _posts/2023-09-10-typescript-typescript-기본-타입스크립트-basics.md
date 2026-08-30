@@ -108,7 +108,7 @@ tsc --build
 만약 TypeScript 패키지를 전역으로 설치하지 않았고, `tsconfig.json`이 없다면?
 
 ```bash
-# NPM: tsc 앞 뒤의 --는 outdir 옵션 처리를 위한 것
+# npm: tsc 앞 뒤의 --는 outdir 옵션 처리를 위한 것
 npm exec -- tsc -- .\src\test\tsc-me.ts --outdir ./dist
 
 # Yarn

@@ -147,7 +147,7 @@ var a = (
 
 ## HTML 문서에 JavaScript 포함시키기
 
-### linked(external)
+### linked (external)
 
 별도의 스크립트 파일의 경로를 지정하여 불러오는 방식. `<body>`에 사용해도 가능하지만 보통은 `<head>`에 위치한다.
 
@@ -163,7 +163,7 @@ var a = (
 
 HTML5 표준에 있는 내용은 아니지만, `<script>`는 `<head>`, `<body>` 내부에 위치하는 것이 좋다.
 
-### embedded(internal)
+### embedded (internal)
 
 별도의 파일이 아니라 스크립트 블록`<script></script>` 안에 직접 작성한 스크립트를 말한다.
 

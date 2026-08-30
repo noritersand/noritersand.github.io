@@ -116,7 +116,27 @@ Use plan mode for changes under `src/billing/`.
 ```
 
 
-## 작성 예시
+## Snippets
+
+### 알아서 커밋하기
+
+🚨 미미하더라도 유료 사용량을 추가로 소모하니 주의
+
+작업 끝나고 알아서 커밋해주는 게 편하면 아래 추가:
+
+```
+## Version Control
+
+- `code-update-by-agent` 브랜치가 없으면 생성한다.
+- 하나의 요청에 해당하는 작업이 완료되면 `code-update-by-agent` 브랜치에 즉시 커밋한다.
+- `code-update-by-agent` 브랜치가 current branch보다 뒤에 있는 경우 `code-update-by-agent` 브랜치를 재생성한다.
+- 사용자가 rebase를 했을 수 있으므로 `code-update-by-agent`의 커밋이 사라지거나 히스토리가 바뀌어 있어도 정상적인 상황으로 간주한다.
+- 커밋 메시지 첫 줄은 `<type>: <short summary>` 형태로 작성하고, `type`은 다음 중 하나를 선택한다: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
+- 나머지 메시지는 한국어로 작성한다.
+```
+
+
+## 전체 작성 예시
 
 ℹ️ Next.js 같은 프레임워크가 생성하는 자동 생성 문구는 위치랑 공백, 줄 바꿈까지 그대로 두는 편이 좋다.
 
@@ -125,7 +145,7 @@ Use plan mode for changes under `src/billing/`.
 ```
 # AGENTS.md
 
-## Agents Docs
+## Agent Guidelines
 
 - [개발 지침](docs/agents/development.md)
 - [디자인/마크업 지침](docs/agents/design.md)
@@ -143,6 +163,8 @@ Use plan mode for changes under `src/billing/`.
 
 ## Approval Required
 
+다음 작업은 실행 전에 사용자 승인을 받을 것:
+
 - 패키지 설치/삭제
 - E2E 테스트 실행
 - DB 스키마 변경
@@ -155,15 +177,14 @@ Use plan mode for changes under `src/billing/`.
 
 ## Stack
 
-- front: Next.js 14 + TypeScript + Tailwind
-- back: Next.js + TypeScript
+- Next.js + TypeScript + Tailwind
 - app: Ionic/Capacitor (추후 개발 기능. 아직 생성하지 말 것)
 - database: Supabase
 - 배포 플랫폼: Vercel
 
 ## Response Style
 
-- Respond concisely(for saving tokens).
+- Respond concisely.
 ```
 
 #### docs/agents/design.md
@@ -179,6 +200,8 @@ Use plan mode for changes under `src/billing/`.
 ## Static Markup
 
 ## Feature Implementation
+
+- 페이지를 구성하는 기능 컴포넌트(`화면 한 블록을 담당하는 컴포넌트)는 최상위 요소에 `data-component="이름"` 속성을 붙인다. 브라우저 Inspect로 컴포넌트 경계와 이름을 바로 확인하기 위한 용도이며, 값은 해당 컴포넌트의 역할을 나타내는 한국어 명사로 작성한다(예: `SiteHeader` → `사이트헤더`, `WeeklySchedule` → `주간일정`).
 
 ```
 

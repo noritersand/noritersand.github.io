@@ -67,7 +67,7 @@ tags:
 ![](/images/dbms-normalization-6.png)
 
 
-## BCNF(Boyce–Codd normal form)
+## BCNF (Boyce–Codd normal form)
 
 제 3정규형인 테이블 R에서 `X->Y` 관계인 모든 X와 Y에 대하여 Y가 X의 부분집합이거나 X가 후보키인 정규형이다. 간단하게 말해서 테이블의 모든 결정자가 후보키일 때 BCNF를 만족한다.
 

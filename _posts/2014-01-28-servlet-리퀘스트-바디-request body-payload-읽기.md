@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2014-01-28 14:05:00 +0900
-title: '[Servlet] 리퀘스트 바디(request body, payload) 읽기'
+title: '[Servlet] 리퀘스트 바디 (request body, payload) 읽기'
 categories:
   - servlet
 tags:

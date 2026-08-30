@@ -675,27 +675,6 @@ git config --local core.editor
 git config --global alias.사용할키워드 '명령어'
 ```
 
-```bash
-git config --global alias.ss 'status'
-git config --global alias.br 'branch'
-git config --global alias.ck 'checkout'
-git config --global alias.sw 'switch'
-git config --global alias.rs 'restore'
-git config --global alias.cp 'cherry-pick'
-git config --global alias.wt 'worktree'
-git config --global alias.unstage 'reset HEAD --'
-git config --global alias.visual '!gitk'
-git config --global alias.hide 'update-index --assume-unchanged'
-git config --global alias.unhide 'update-index --no-assume-unchanged'
-git config --global alias.hidden '! git ls-files -v | grep "^h" | cut -c3-'
-git config --global alias.f 'fetch'
-git config --global alias.fp 'fetch --prune'
-git config --global alias.log2 'log --pretty=oneline'
-git config --global alias.log2all 'log --all --pretty=oneline'
-git config --global alias.log3 'log --graph --pretty=oneline'
-git config --global alias.log3all 'log --all --graph --pretty=oneline'
-```
-
 #### 단축어 목록 보기
 
 ```bash
@@ -1273,6 +1252,14 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 
 스테이징 영역이나 워킹 트리에 있는 파일들의 정보를 출력한다. 기본적으로 명령을 실행한 경로를 기준으로 재귀 탐색한다.
 
+```bash
+# DIR_NAME과 하위 파일들의 상태 태그 출력
+git ls-files -t DIR_NAME
+
+# assumed unchanged 파일만 출력
+git ls-files -v | grep ^h
+```
+
 #### Options
 
 - `-t`: 현재 경로와 하위 모든 파일을 상태 태그(status tags)와 함께 출력
@@ -1283,14 +1270,6 @@ git log --pretty="%h - %s" --author=gitster --since="2008-10-01" \ --before="200
 - `-i` `--ignored`
 - `-s` `--stage`
 - `-v`: 파일의 상태를 표시하되 '실제로는 변경되었으나 그렇지 않은것으로 간주된(assumed unchanged)' 파일은 소문자로 표시한다.
-
-```bash
-# DIR_NAME과 하위 파일들의 상태 태그 출력
-git ls-files -t DIR_NAME
-
-# assumed unchanged 파일만 출력
-git ls-files -v | grep ^h
-```
 
 #### 상태 태그
 

@@ -51,7 +51,7 @@ npm과 Yarn 사용법 간단 정리
 - `version`: 버전. 배포 시 필수
 - `description`: 프로젝트 설명
 - `main`:
-- `scripts`: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. (npm help scripts로 확인할 것)
+- `scripts`: 프로젝트에서 자주 실행될 명령어를 스크립트로 작성한다. ℹ️ 보통 'npm scripts'라고 부른다. `npm help scripts`로 도움말 열 수 있음.
 - `author`: 작성자
 - `license`:
 - `dependencies`: 의존하는 패키지 정보를 적는다. `npm install` 명령으로 자동 설치된다.
@@ -172,7 +172,7 @@ npm과 Yarn 사용법 간단 정리
 'Hello world!'
 ```
 
-`npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 때문에 스크립트로 등록하는 편이 좋다.
+`npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 때문에 npm 스크립트로 등록하는 편이 좋다.
 
 ### 모듈을 디렉터리 단위로 관리하기
 
@@ -208,20 +208,20 @@ PS > npm
 npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
-이 문제는 PowerShell의 실행 정책(Execution Policy) 때문에 발생한다. PowerShell은 기본적으로 보안을 위해 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 스크립트 파일이 차단되어 에러가 발생하는 것.
+이 문제는 PowerShell의 실행 정책(Execution Policy) 때문에 발생한다. PowerShell은 기본적으로 보안을 위해 파워셸 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 파워셸 스크립트 파일이 차단되어 에러가 발생하는 것.
 
 아래 명령으로 실행 정책을 변경해주면 해결된다:
 
 ```bash
 # PowerShell 실행 정책 변경: 
 # - 현재 사용자에게만 적용
-# - 스크립트를 로컬에서 직접 작성했거나 신뢰할 수 있는 게시자가 서명한 경우에만 실행
+# - 파워셸 스크립트를 로컬에서 직접 작성했거나 신뢰할 수 있는 게시자가 서명한 경우에만 실행
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
-### ⚠️ 해킹 방지 부적(?)
+### 🚨 해킹 방지 부적(?)
 
-npm의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고 설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데 Supply Chanin Attack 이라 한다고... 
+npm의 패키지 관리와 종속성을 처리하는 방식은 해킹에 매우 취약하여 공격자의 npm 스크립트가 개발자의 PC에서 실행될 수 있다. 수없이 얽히고설킨 종속 패키지 중 하나를 이용해 공격하는 방식이 주로 사용되는데, 이를 **Supply Chain Attack**이라고 한다.
 
 이를 방지하기 위해 아래 방법들이 권장된다:
 
@@ -331,7 +331,26 @@ npm update [패키지명] -g
 npm update --save
 ```
 
-패키지가 아니라 Node.js 클라이언트의 버전을 올리고 싶으면 [NVM](https://github.com/nvm-sh/nvm)을 설치할 것.
+패키지가 아니라 Node.js 클라이언트의 버전을 올리고 싶으면 [NVM (Node Version Manager)](https://github.com/nvm-sh/nvm)을 설치할 것.
+
+### 참고: nvm 명령어
+
+```bash
+# LTS 버전으로 node 설치
+nvm install --lts
+
+# 최신버전으로 node 설치
+nvm install node
+
+# 특정 버전으로 node 설치
+nvm install 10.15.1
+
+# 설치된 node 버전 목록과 상태를 표시
+nvm ls
+
+# node 10.15.1 버전 활성화
+nvm use 10.15.1
+```
 
 ### 패키지 삭제
 
@@ -439,7 +458,9 @@ npm init vite@latest
 
 ## Yarn
 
-npm과 같은 역할을 하는 패키지 매니저. Plug'n'Play를 활성화하면 pnpm이나 npm보다 빠르다. (다만 아직 안정성 문제가 있음)
+npm과 같은 역할을 하는 패키지 매니저. Plug'n'Play를 활성화하면 pnpm이나 npm보다 빠르다.
+
+Supply Chain Attack에 취약할 수 있는 npm에 비해 Yarn은 설치 스크립트 실행 방지와 체크섬 검증 등의 보안 기능이 기본으로 제공되어 비교적 안전한 편.
 
 ```bash
 # ✅ 코어팩 설치(Node.js 25 이후)
@@ -477,7 +498,7 @@ yarn add PACKAGE_NAME
 # 지정한 버전 번호와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@1.2.3
 
-# 지정한 태그(e.g. beta, next, latest)와 일치하는 버전으로 설치
+# 지정한 태그(e.g., beta, next, latest)와 일치하는 버전으로 설치
 yarn add PACKAGE_NAME@TAG_NAME
 
 # 개발환경(devDependencies)에서만 유효한 패키지 설치
@@ -623,22 +644,22 @@ yarn run live-server --open=out
 만약 `script`가 npm scripts에 정의되어 있지 않은 키워드라면, 로컬에 설치된 패키지의 실행 파일(`node_modules`가 있다면 `/.bin/`의 바이너리 파일같은)을 찾는다.
 
 ```bash
-# 실행 가능한 스크립트 모두 표시
+# 실행 가능한 npm 스크립트 모두 표시
 yarn run
 ```
 
-이 명령을 추가 인자 없이 실행하면, 현재 프로젝트에서 사용할 수 있는 모든 스크립트와 의존성 바이너리의 목록이 표시된다.
+이 명령을 추가 인자 없이 실행하면, 현재 프로젝트에서 사용할 수 있는 모든 npm 스크립트와 의존성 바이너리의 목록이 표시된다.
 
 ```bash
 # api 워크스페이스의 build 스크립트 실행
 yarn run api:build
 ```
 
-`script`에 지정한 이름이 콜론`:`이 포함되어 있으면, 프로젝트 내의 특정 워크스페이스에서만 스크립트를 찾아 실행한다. 예를 들어 모노레포 구조에서 `packages/api`와 `packages/web` 두 개의 워크스페이스가 있고, 각각 build 스크립트를 가지고 있다고 가정했을 때, `yarn run api:build`를 실행하면 `packages/api` 워크스페이스의 build 스크립트가 실행되는 식이다.
+`script`에 지정한 이름이 콜론`:`이 포함되어 있으면, 프로젝트 내의 특정 워크스페이스에서만 npm 스크립트를 찾아 실행한다. 예를 들어 모노레포 구조에서 `packages/api`와 `packages/web` 두 개의 워크스페이스가 있고, 각각 `build` 스크립트를 가지고 있다고 가정했을 때, `yarn run api:build`를 실행하면 `packages/api` 워크스페이스의 `build` 스크립트가 실행되는 식이다.
 
 ### yarn dlx
 
-`dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고 (바이너리 스크립트가 포함된 패키지인 경우) 실행하는 명령이다. DLX는 아마도 DownLoad and Execute의 줄임말...?
+`dlx`는 `npx`처럼 어떤 패키지를 임시 환경에 설치하고, 해당 패키지가 실행 파일(binary)을 제공하는 경우 이를 실행하는 명령이다. DLX는 아마도 DownLoad and Execute의 줄임말...?
 
 ⚠️ Yarn을 npm 글로벌로 설치했으면 `yarn dlx`를 실행할 때 `package.json`이 없다는 에러가 발생한다. 글로벌로 설치된 Yarn은 지우고 `corepack enable`로 코어팩을 활성화 할 것
 
@@ -711,7 +732,7 @@ yarn dedup [PACKAGE_NAME]
 - 패키지 A의 요구사항: `lodash ^3.0.0` (3.0.0 이상 4.0.0 미만의 모든 버전 허용)
 - 패키지 B의 요구사항: `lodash ^4.0.0` (4.0.0 이상 5.0.0 미만의 모든 버전 허용)
 
-### Yarn PnP(Plug'n'Play)
+### Yarn PnP (Plug'n'Play)
 
 [Plug'n'Play \| Yarn](https://yarnpkg.com/features/pnp)
 
@@ -795,7 +816,7 @@ nodemon --watch ../ server.js
 nodemon --ext me,pug
 ```
 
-`--exec` 옵션은 변경을 감지했을 때 실행할 명령어를 지정할 때 사용한다. 지정된 명령어는 스크립트 실행을 대체한다:
+`--exec` 옵션은 변경을 감지했을 때 실행할 명령어를 지정할 때 사용한다. 지정한 명령어는 기본 실행 명령을 대신한다.
 
 ```bash
 # 파일이 변경되면 tsc 실행

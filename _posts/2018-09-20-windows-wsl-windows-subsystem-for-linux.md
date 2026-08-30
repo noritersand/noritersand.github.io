@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2018-09-20 10:54:00 +0900
-title: '[Windows] WSL, Windows Subsystem for Linux'
+title: '[Windows] WSL (Windows Subsystem for Linux)'
 categories:
   - windows
 tags:
@@ -94,8 +94,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # zsh 실행
 zsh
 
-# bash로 돌아가기
+# bash 실행
 bash
+
+# 돌아가기
+exit
 ```
 
 그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.
@@ -108,9 +111,15 @@ Windows 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-Git 소스를 받은 다음 `~/.zshrc` 파일에 `ZSH_THEME="powerlevel10k/powerlevel10k"` 설정. 터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
+Git 소스를 받은 다음 테마 설정: 
 
-마지막으로 ls color는 아래 실행:
+```bash
+sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
+```
+
+터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
+
+마지막으로 `ls` color는 아래 실행:
 
 ```bash
 echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
@@ -118,23 +127,11 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 
 하면 끗.
 
-기본 셸 Zsh로 변경하려면 아래 실행:
+ℹ️ 기본 셸이 Bash로 되돌려진 경우, 다시 Zsh로 변경하려면 아래 실행:
 
 ```bash
 # 로그인 셸을 Zsh로 바꾸기
 chsh -s $(which zsh)
-```
-
-
-## WSL용 셸 사용자 정의 설정 모음
-
-```bash
-# .bashrc 또는 .zshrc 파일에 추가
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
-# alias adb='adb.exe'
 ```
 
 
@@ -144,11 +141,11 @@ alias sb='/mnt/c/Program\ Files/Sublime\ Text/subl.exe'
 
 WSL에서 Windows의 환경 변수를 사용하지 않는 방법이다.
 
-루트 계정으로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
+루트 유저로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
 
 ```bash
 [interop]
-  appendWindowsPath=false
+appendWindowsPath = false
 ```
 
 그리고 WSL 재시작:
@@ -175,12 +172,11 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 
 ## WSL 기본 로그인 유저 바꾸기
 
-우분투인 경우:
+`/etc/wsl.conf`의 `[user] default` 항목을 수정한 뒤 WSL을 재시작한다.
+
+
+## 처음부터 루트로 로그인하기
 
 ```js
-ubuntu config --default-user 유저_아이디
+wsl -u root
 ```
-
-비밀번호를 잊어버려 재설정 할 때 쓴다.
-
-

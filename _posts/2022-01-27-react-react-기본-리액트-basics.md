@@ -78,7 +78,7 @@ SFC 방식으로 웹 앱을 구축하려면, 자주 쓰는 패키지와 필수 �
 ℹ️ [React DOM](https://www.npmjs.com/package/react-dom)은 React 애플리케이션의 렌더링과 DOM 상호작용을 담당하는 핵심 라이브러리로, React 컴포넌트를 브라우저의 실제 DOM 요소로 변환하고, UI 업데이트와 이벤트 관리를 수행한다.
 
 
-## CRA, Create React App
+## CRA (Create React App)
 
 🚨 CRA는 [🗓️ 2025-02-26부터 지원이 중단되었다](https://react.dev/blog/2025/02/14/sunsetting-create-react-app). Next.js, Vite, React Router, Remix 등으로 대체할 것.
 

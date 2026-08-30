@@ -51,7 +51,7 @@ PostgreSQL의 권한 시스템은 대체로 Oracle과 유사하다.
 스키마(schema)는 테이블, 뷰, 시퀀스, 함수 등을 논리적으로 그룹화하는 일종의 네임스페이스(namespace)다. 개발자 입장에서는 패키지처럼 객체를 정리하고 이름 충돌을 방지하는 데 사용한다. 스키마도 객체이기 때문에 소유자가 존재하며 권한이 있어야 접근할 수 있다. 객체는 스키마간 이동이 가능하다.
 
 
-## RLS, Row-Level Security
+## RLS (Row-Level Security)
 
 로우 단위로 접근 제한을 설정하는 PostgreSQL의 보안 기능. RLS가 활성화되면 기본적으로 superuser나 테이블 소유자 외엔 아무도 데이터에 접근할 수 없다.
 
@@ -130,7 +130,7 @@ select current_setting('tx.current_user_id', true); -- 'fixalot'
 ℹ️ 정책을 정의할 때는 바인딩 파라미터를 사용할 수 없기 때문에 이 방법을 쓴다.
 
 
-## GUC, Global Unified Configuration
+## GUC (Global Unified Configuration)
 
 PostgreSQL은 내부적으로 설정값을 GUC이라 부르는데, 이 GUC는 아래처럼 유효 범위(scope)가 나뉜다:
 

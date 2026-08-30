@@ -27,7 +27,7 @@ tags:
 
 현재 페이지
 
-### rowsPerPage(혹은 pageLength, pageSize)
+### rowsPerPage (또는 pageLength, pageSize)
 
 한 페이지 당 출력할 게시물. 고정값으로 처리하거나 사용자가 선택한 값을 받는다.
 
@@ -35,7 +35,7 @@ tags:
 
 total number of rows, 모든 데이터의 개수. `SELECT COUNT(*)`의 값을 의미한다.
 
-### totalNumberOfPages(totalPages, maxPage)
+### totalNumberOfPages (또는 totalPages, maxPage)
 
 총 페이지 수를 의미하며 아래처럼 계산한다:
 
@@ -50,7 +50,7 @@ totalNumberOfPages = totalRows / rowsPerPage + ((totalRows % rowsPerPage == 0) ?
 totalNumberOfPages = Math.ceil(totalRows / rowsPerPage)
 ```
 
-### pageNumbersLength(indexesPerPage)
+### pageNumbersLength (또는 indexesPerPage)
 
 Number of indexes per page, 한 페이지에서 표시 가능한 최대 인덱스 수. totalNumberOfPages가 이 값보다 큰 경우 페이지 자체도 인덱싱이 가능해야 한다.
 
