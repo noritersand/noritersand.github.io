@@ -57,7 +57,7 @@ tags:
 
 - [MITRE \| CVE](https://cve.mitre.org): 공통 취약점 아카이빙 사이트
 - [CVE.report](https://cve.report)
-- [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런식으로 [https://devhub.checkmarx.com/cve-details/CVE-2016-1000027](https://devhub.checkmarx.com/cve-details/CVE-2016-1000027) 맨 뒤 path만 바꿔서 조회하면 편하다.
+- [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런식으로 <https://devhub.checkmarx.com/cve-details/CVE-2016-1000027> 맨 뒤 path만 바꿔서 조회하면 편하다.
 
 
 ## 2. 유닉스/리눅스 Unix/Linux
@@ -482,9 +482,9 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### IP 확인
 
-- [https://icanhazip.com](https://icanhazip.com): 내 공인 IP만 텍스트로 응답하는 사이트.
-- [https://whatismyipaddress.com](https://whatismyipaddress.com): 접속한 PC의 IP 관련 정보를 보여주는 사이트. 예전에 bot이 있었는데 사라짐.
-- [https://ipinfo.io](https://ipinfo.io): 접속한 PC의 IP 관련 정보를 보여주는 사이트
+- <https://icanhazip.com>: 내 공인 IP만 텍스트로 응답하는 사이트.
+- <https://whatismyipaddress.com>: 접속한 PC의 IP 관련 정보를 보여주는 사이트. 예전에 bot이 있었는데 사라짐.
+- <https://ipinfo.io>: 접속한 PC의 IP 관련 정보를 보여주는 사이트
 
 
 ## 15. 버전 관리
