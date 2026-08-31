@@ -15,9 +15,9 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements>
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling>
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration>
 
 
 ## 조건문
@@ -260,7 +260,7 @@ for (변수 in 객체) {
 
 > The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.
 >
-> [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in)
+> <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in>
 
 객체가 소유한 프로퍼티의 길이만큼 반복하며, 각 반복 회차마다 객체의 프로퍼티를 하나씩 꺼내 지정한 변수에 할당한다.
 

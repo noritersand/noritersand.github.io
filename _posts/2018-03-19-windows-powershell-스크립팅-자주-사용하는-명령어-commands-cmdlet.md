@@ -445,6 +445,20 @@ ls SOME_FILE | Select-Object -Property Directory, Name
 Get-Process | Select-Object -Property ProcessName, Id, WS
 ```
 
+그룹화 연산자`()`로 `Select-Object` 비슷한 결과를 얻을 수 있다:
+
+```powershell
+PS c:\dev> Get-Command claude | Select-Object Source
+
+Source
+------
+C:\ProgramData\chocolatey\bin\claude.exe
+
+PS C:\dev> (Get-Command claude).source
+
+C:\ProgramData\chocolatey\bin\claude.exe
+```
+
 #### Parameters
 
 - `-First`: 선택할 입력 객체의 수를 지정한다.
@@ -553,7 +567,8 @@ Write-Output $null >> dummy-for-commit.txt
 ℹ️ PowerShell에서 호스트란 PowerShell 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
 
 ```powershell
-PS > Write-Host '$abc:'$abc
+PS C:\dev> Write-Host '$abc:'$abc
+
 $abc: 123
 ```
 

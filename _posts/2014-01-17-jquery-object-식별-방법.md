@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [https://learn.jquery.com/using-jquery-core/jquery-object/](https://learn.jquery.com/using-jquery-core/jquery-object/)
+- <https://learn.jquery.com/using-jquery-core/jquery-object/>
 
 ## selector가 문자열인지 객체인지 판단
 

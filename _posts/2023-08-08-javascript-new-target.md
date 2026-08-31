@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/new.target>
 
 #### 브라우저 호환
 

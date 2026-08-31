@@ -144,7 +144,7 @@ Icacls $Key
 Remove-Variable -Name Key
 ```
 
-스크립트 출처: [https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open](https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open)
+스크립트 출처: <https://superuser.com/questions/1296024/windows-ssh-permissions-for-private-key-are-too-open>
 
 #### REMOTE HOST IDENTIFICATION HAS CHANGED
 
@@ -178,7 +178,7 @@ ssh-keygen
 RSA 키 페어를 생성하는 명령어. 명령 실행 시 이름과 비밀번호를 묻는 프롬프트가 나타나며, 입력을 마치면 현재 경로에 공개키와 비공개키 하나씩 생성된다. 생성 단계에서 묻는 비밀번호는 2단계 인증용 비밀번호이며 입력하지 않아도 된다.
 
 ```powershell
-PS > ssh-keygen
+PS C:\dev> ssh-keygen
 
 Generating public/private rsa key pair.
 Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
@@ -246,7 +246,8 @@ sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME
 업로드는 `put`, 다운로드는 `get`이다.
 
 ```powershell
-PS > sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+PS C:\dev> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+
 Connected to 101.202.303.404.
 
 sftp> cd temp
@@ -257,6 +258,7 @@ DOWNLOAD.me
 
 # 로컬의 파일 목록 보기
 sftp> lls
+
  Volume in drive C is Windows
  Volume Serial Number is 84E5-F770
 
@@ -268,21 +270,25 @@ sftp> lls
 
 # 업로드
 sftp> put ./UPLOAD.me
+
 Uploading ./UPLOAD.me to /home/ubuntu/temp/UPLOAD.me
 UPLOAD.me                                        100%    6     0.1KB/s   00:00
 
 # 경로와 이름 지정하며 업로드
 sftp> put ./UPLOAD.me /home/ubuntu/UPLOAD2.me
+
 Uploading ./UPLOAD.me to /home/ubuntu/UPLOAD2.me
 UPLOAD.me                                        100%    6     0.1KB/s   00:00
 
 # 다운로드
 sftp> get DOWNLOAD.me
+
 Fetching /home/ubuntu/DOWNLOAD.me to DOWNLOAD.me
 DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
 
 # 경로와 이름 지정하며 다운로드
 sftp> get DOWNLOAD.me c:/dev/temp/DOWNLOAD2.me
+
 Fetching /home/ubuntu/DOWNLOAD.me to c:/dev/temp/DOWNLOAD2.me
 DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
 

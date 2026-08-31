@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
+- <https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>
 
 #### 테스트 환경 정보
 

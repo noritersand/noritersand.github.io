@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSetMetaData.html](http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSetMetaData.html)
+- <http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSetMetaData.html>
 
 메타 데이터란 저장된 데이터 그 자체는 아니지만, 해당 데이터에 대한 정보를 갖고 있는 데이터를 의미한다. 즉, DB 내의 데이터에 대한 데이터의 소유, 데이터의 크기에 관련된 정보들이다.
 

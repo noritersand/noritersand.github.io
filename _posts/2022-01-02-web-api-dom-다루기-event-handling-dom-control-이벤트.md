@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', (event) => console.log('DOM fully 
 
 #### 왜 MDN의 DOMContentLoaded 문서는 두 개일까? 🤔
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event)
-- [https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event](https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event)
+- <https://developer.mozilla.org/en-US/docs/Web/API/Window/DOMContentLoaded_event>
+- <https://developer.mozilla.org/en-US/docs/Web/API/Document/DOMContentLoaded_event>
 
 이벤트의 실제 발생 타깃은 **Document**다. 하지만 DOM 이벤트의 버블링 특성에 의해 Document에서 발생한 이벤트가 상위인 Window까지 전파된다. 
 
@@ -225,8 +225,8 @@ window.addEventListener('pageshow', (event) => {
 
 ### Window: beforeunload event
 
-- [https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event)
-- [https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload](https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload)
+- <https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event>
+- <https://developer.mozilla.org/en-US/docs/Web/API/WindowEventHandlers/onbeforeunload>
 
 문서가 언로드 되기 직전에 발생하는 이벤트. 이 이벤트를 사용하면 사용자가 페이지를 떠날 때 확인 대화 상자를 띄울 수 있다:
 
@@ -243,7 +243,7 @@ window.addEventListener('beforeunload', (event) => {
 
 ### Window: hashchange event
 
-[https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event](https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event)
+<https://developer.mozilla.org/en-US/docs/Web/API/Window/hashchange_event>
 
 URL의 해시가 변경됐을 때 발생하는 이벤트
 

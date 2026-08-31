@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [https://code.google.com/p/json-simple/](https://code.google.com/p/json-simple/)
+- <https://code.google.com/p/json-simple/>
 
 서블릿에서 JSON 형태의 문자열을 클라이언트로 전달하는 방법 정리.
 

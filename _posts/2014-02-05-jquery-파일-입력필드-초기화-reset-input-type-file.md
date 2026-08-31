@@ -18,7 +18,7 @@ tags:
 
 #### 참고 문서
 
-- [https://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/1043969#1043969](https://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/1043969#1043969)
+- <https://stackoverflow.com/questions/1043957/clearing-input-type-file-using-jquery/1043969#1043969>
 
 ```html
 <script>

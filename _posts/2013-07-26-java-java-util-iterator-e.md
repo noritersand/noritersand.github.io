@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html](http://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html)
+- <http://docs.oracle.com/javase/10/docs/api/java/util/Iterator.html>
 
 ## java.util.Iterator
 

@@ -14,8 +14,8 @@ tags:
 
 #### 참고 문서
 
-- [https://www.sublimetext.com/docs/index.html](https://www.sublimetext.com/docs/index.html)
-- [https://docs.sublimetext.io/guide/](https://docs.sublimetext.io/guide/)
+- <https://www.sublimetext.com/docs/index.html>
+- <https://docs.sublimetext.io/guide/>
 
 #### 버전 정보
 

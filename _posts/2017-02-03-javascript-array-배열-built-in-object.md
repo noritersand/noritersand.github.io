@@ -17,7 +17,7 @@ tags:
 #### 참고 문서
 
 - [Array \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-- [http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm](http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm)
+- <http://www.bennadel.com/blog/1796-javascript-array-methods-unshift-shift-push-and-pop.htm>
 - [Array 객체에서 놓치기 쉬운 6개의 메서드](http://programmingsummaries.tistory.com/357)
 
 

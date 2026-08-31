@@ -159,7 +159,7 @@ set local foo = 'bar';               -- ❌ 점(.) 없음
 
 ## 데이터 타입
 
-[https://www.postgresql.org/docs/current/datatype.html](https://www.postgresql.org/docs/current/datatype.html)
+<https://www.postgresql.org/docs/current/datatype.html>
 
 ### text와 varchar의 타입
 

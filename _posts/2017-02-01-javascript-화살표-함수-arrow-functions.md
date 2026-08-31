@@ -162,7 +162,7 @@ MDN을 보면 이런 말이 있는데:
 > \- Arrow functions cannot be used as constructors.  
 > \- Arrow functions cannot use yield, within its body.  
 >
-> [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+> <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions>
 
 [여기 참고](https://developer.mozilla.org/en-US/docs/Glossary/Method)할 것.
 

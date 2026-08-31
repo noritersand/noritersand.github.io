@@ -15,8 +15,8 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html](http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html)
-- [https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html)
+- <http://docs.oracle.com/javase/8/docs/api/java/util/Formatter.html>
+- <https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html>
 
 
 ## 개요

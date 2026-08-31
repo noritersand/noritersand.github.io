@@ -382,7 +382,7 @@ certutil -hashfile .\example.txt MD5
 
 ### WinGet, Windows Package Manager Client
 
-[https://github.com/microsoft/winget-cli](https://github.com/microsoft/winget-cli)
+<https://github.com/microsoft/winget-cli>
 
 Windows OS의 패키지 관리용 공식 CLI 툴. 리눅스의 `apt`와 비슷하다. Windows 버전에 따라 미리 설치되어 있기도 하다.
 
@@ -423,6 +423,79 @@ winget upgrade PACKAGE_NAME
 - `winget import`: 패키지 목록이 담긴 파일을 읽어 지정된 패키지를 설치한다.
 - `winget pin`: 특정 패키지의 업데이트를 제한하거나 버전을 고정한다.
 - `winget configure`: 구성 파일을 읽어 Windows 환경을 원하는 상태로 설정한다.
+
+
+## rg
+
+강력한 터미널용 텍스트 검색 도구. 오픈소스 프로그램인 [ripgrep](https://github.com/burntsushi/ripgrep)을 설치하면 사용할 수 있다.
+
+Windows 기본 프로그램이 아니라 별도로 설치해야 한다:
+
+```powershell
+# Chocolatey
+choco install ripgrep
+
+# Scoop
+scoop install ripgrep
+
+# Winget
+winget install BurntSushi.ripgrep.MSVC
+```
+
+이 도구는 `--files` 옵션을 사용하지 않으면 기본적으로 **파일의 내용 안에서** 주어진 검색어를 검색한다.
+
+그리고 `-F` 옵션을 사용하지 않으면 주어진 검색어를 기본적으로 **정규식으로 해석한다.**
+
+```powershell
+# 현재 폴더와 그 하위를 재귀 검색
+rg "useState"
+
+# 특정 폴더에서 검색
+rg "TODO" src/
+
+# 특정 파일에서 검색
+rg "useState" App.tsx
+
+# 여러 검색어를 OR 조건으로 검색
+rg "TODO|FIXME|HACK"
+
+# 정규식으로 검색
+rg "use[A-Z]\w+"
+rg "^# " docs/
+
+# 특정 확장자만 검색
+rg "useState" -g "*.tsx"
+
+# 여러 확장자 지정
+rg "useState" -g "*.ts" -g "*.tsx"
+
+# 특정 파일이나 디렉터리 제외
+rg "TODO" -g "!*.test.tsx"
+rg "TODO" -g "!node_modules"
+
+# 검색 결과 주변 줄까지 출력
+rg -C 2 "useState"
+
+# 특정 문자열이 포함된 파일의 개수 확인
+rg --count-matches "useState"
+```
+
+#### Options
+
+- `-l` `--files-with-matches`: 일치하는 내용이 있는 파일의 이름만 출력한다.
+- `-L` `--files-without-match`: 일치하는 내용이 없는 파일의 이름만 출력한다.
+- `-i` `--ignore-case`: 대소문자를 구분하지 않고 검색한다.
+- `-n` `--line-number`: 검색 결과에 줄 번호를 표시한다. 기본 옵션.
+- `-N` `--no-line-number`: 검색 결과에서 줄 번호를 표시하지 않는다.
+- `-g` `--glob`: 특정 파일 패턴만 검색하거나 제외한다. 예: `-g "*.tsx"`
+- `-w` `--word-regexp`: 단어 단위로 일치하는 경우만 검색한다.
+- `-F` `--fixed-strings`: 검색어를 정규식이 아닌 일반 문자열로 취급한다.
+- `-C` `--context`: 검색 결과 주변의 지정한 줄 수를 함께 출력한다. 예: `-C 2`
+- `--count-matches`: 각 파일에서 검색어가 일치한 횟수를 출력한다.
+- `--files`: 파일 내용을 검색하지 않고 검색 대상 파일 목록만 출력한다.
+- `--hidden`: 숨김 파일과 디렉터리도 검색한다.
+- `--glob '!<패턴>'`: 특정 파일이나 디렉터리를 검색 대상에서 제외한다.
+- `-v` `--invert-match`: 검색어와 일치하지 않는 줄을 출력한다.
 
 
 ## 환경 변수

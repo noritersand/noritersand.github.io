@@ -14,11 +14,11 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html](http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html)
-- [http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html](http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html)
-- [http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html](http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html)
-- [https://docs.oracle.com/javase/tutorial/reflect/](https://docs.oracle.com/javase/tutorial/reflect/)
-- [http://gyrfalcon.tistory.com/entry/Java-Reflection](http://gyrfalcon.tistory.com/entry/Java-Reflection)
+- <http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html>
+- <http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html>
+- <http://docs.oracle.com/javase/7/docs/api/java/lang/Class.html>
+- <https://docs.oracle.com/javase/tutorial/reflect/>
+- <http://gyrfalcon.tistory.com/entry/Java-Reflection>
 
 
 ## 개요

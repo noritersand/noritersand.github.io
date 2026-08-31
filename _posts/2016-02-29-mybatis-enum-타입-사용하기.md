@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o](https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o)
+- <https://groups.google.com/forum/#!topic/mybatis-user/uKz_aOYMz4o>
 
 #### 테스트 환경
 

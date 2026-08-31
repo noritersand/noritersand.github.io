@@ -17,8 +17,8 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.microsoft.com/en-us/sysinternals/](https://docs.microsoft.com/en-us/sysinternals/)
-- [https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault](https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault)
+- <https://docs.microsoft.com/en-us/sysinternals/>
+- <https://docs.microsoft.com/en-us/sysinternals/downloads/notmyfault>
 
 ![](/images/not-my-fault.png)
 

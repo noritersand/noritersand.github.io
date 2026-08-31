@@ -163,11 +163,11 @@ npm과 Yarn 사용법 간단 정리
 }
 ```
 
-```bash
-> npm run hello
+```powershell
+PS C:\dev> npm run hello
 
-> lab-js@1.0.0 hello
-> echo 'Hello world!'
+PS C:\dev> lab-js@1.0.0 hello
+PS C:\dev> echo 'Hello world!'
 
 'Hello world!'
 ```
@@ -203,8 +203,9 @@ npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키�
 
 ### ℹ️ PowerShell에서 npm 명령이 실행되지 않을 때
 
-```bash
-PS > npm
+```powershell
+PS C:\dev> npm
+
 npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
@@ -212,7 +213,7 @@ npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scrip
 
 아래 명령으로 실행 정책을 변경해주면 해결된다:
 
-```bash
+```powershell
 # PowerShell 실행 정책 변경: 
 # - 현재 사용자에게만 적용
 # - 파워셸 스크립트를 로컬에서 직접 작성했거나 신뢰할 수 있는 게시자가 서명한 경우에만 실행
@@ -584,9 +585,9 @@ packageExtensions:
 
 참고: 
 
-- [https://classic.yarnpkg.com/en/docs/cli/global](https://classic.yarnpkg.com/en/docs/cli/global)
-- [https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global](https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global)
-- [https://github.com/yarnpkg/berry/issues/821](https://github.com/yarnpkg/berry/issues/821)
+- <https://classic.yarnpkg.com/en/docs/cli/global>
+- <https://yarnpkg.com/migration/guide#use-yarn-dlx-instead-of-yarn-global>
+- <https://github.com/yarnpkg/berry/issues/821>
 
 ### yarn up
 
@@ -791,8 +792,8 @@ yarn dedupe baseline-browser-mapping
 
 ### nodemon
 
-- [https://nodemon.io/](https://nodemon.io/)
-- [https://github.com/remy/nodemon](https://github.com/remy/nodemon)
+- <https://nodemon.io/>
+- <https://github.com/remy/nodemon>
 
 ```bash
 nodemon server.js
@@ -825,13 +826,13 @@ nodemon --exec 'tsc'
 
 ### Node-Tap
 
-[https://www.npmjs.com/package/tap](https://www.npmjs.com/package/tap)
+<https://www.npmjs.com/package/tap>
 
 웹 애플리케이션 백엔드 코드용 테스트 프레임워크
 
 ### figlet
 
-[https://www.npmjs.com/package/figlet](https://www.npmjs.com/package/figlet)
+<https://www.npmjs.com/package/figlet>
 
 요 아래처럼 생긴 FIGFont를 만들어주는 패키지
 

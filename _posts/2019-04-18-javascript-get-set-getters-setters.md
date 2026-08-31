@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get>
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set>
 
 #### 브라우저 호환
 

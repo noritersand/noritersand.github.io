@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git/5201642](https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git/5201642)
+- <https://stackoverflow.com/questions/5189560/squash-my-last-x-commits-together-using-git/5201642>
 - [커밋 메시지를 여러 개 수정하기](https://git-scm.com/book/ko/Git-도구-히스토리-단장하기#_changing_multiple)
 
 

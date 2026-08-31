@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [https://github.com/blueimp/jQuery-File-Upload](https://github.com/blueimp/jQuery-File-Upload)
+- <https://github.com/blueimp/jQuery-File-Upload>
 
 #### required
 

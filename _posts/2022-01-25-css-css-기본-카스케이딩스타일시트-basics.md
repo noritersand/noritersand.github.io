@@ -157,19 +157,19 @@ table tr td {
 
 ## 상속
 
-- [https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
-- [https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade](https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade)
+- <https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance>
+- <https://developer.mozilla.org/en-US/docs/Web/CSS/Cascade>
 
 자식 엘리먼트가 부모 엘리먼트의 CSS 프로퍼티 값을 그대로 사용하는 것을 말함.
 
 모든 프로퍼티가 상속되는 것은 아님. (e.g., `width: 50%`)
 
 
-[https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance](https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance)
+<https://developer.mozilla.org/ko/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance>
 
 ### 상속 제어
 
-[https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance)
+<https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance#controlling_inheritance>
 
 CSS는 상속을 제어하기 위한 특수 범용 프로퍼티 값(special universal property values)을 제공한다. 모든 CSS 프로퍼티에서 유효하다.
 

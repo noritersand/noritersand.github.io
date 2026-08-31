@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing](http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing)
+- <http://stackoverflow.com/questions/4599857/are-eval-and-new-function-the-same-thing>
 
 
 ```js

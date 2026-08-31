@@ -242,7 +242,7 @@ AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되�
 
 ### 웹 버전 디버거 Chrome Developer Tools
 
-디버그 모드 상태에서 Chrome으로 [http://localhost:8081/debugger-ui](http://localhost:8081/debugger-ui)에 접속하면 된다.
+디버그 모드 상태에서 Chrome으로 <http://localhost:8081/debugger-ui>에 접속하면 된다.
 
 디버그 모드는 메트로에서 <kbd>d</kbd>를 눌러 developer menu를 열고 'Debug' 혹은 'Debug JS Remotely'를 선택해 활성화한다. 요러면 기본 브라우저에서 자동으로 디버거 페이지에 접속됨.
 
@@ -270,7 +270,7 @@ AVD에선 잘 되는데 실 기기로 테스트 했을 때는 연결이 안 되�
 
 > As the library uses JSI for synchronous native methods access, remote debugging is no longer possible. You can use Flipper for debugging your JS code, however connecting debugger to JS context which runs on the UI > thread is not currently supported.
 >
-> [https://docs.swmansion.com/react-native-reanimated/docs/#library-overview](https://docs.swmansion.com/react-native-reanimated/docs/#library-overview)
+> <https://docs.swmansion.com/react-native-reanimated/docs/#library-overview>
 
 
 {% endraw %}

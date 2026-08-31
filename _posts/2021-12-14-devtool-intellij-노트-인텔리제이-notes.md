@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [https://www.jetbrains.com/help/idea/getting-started.html](https://www.jetbrains.com/help/idea/getting-started.html)
+- <https://www.jetbrains.com/help/idea/getting-started.html>
 
 #### 테스트 환경 정보
 
@@ -45,7 +45,7 @@ JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시
 
 ## IDE log 파일 위치
 
-[https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files](https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files)
+<https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files>
 
 요런 `C:\Users\fixal\AppData\Local\JetBrains\IntelliJIdea2022.3\log` 경로에 있는데 정확히 어디에 있는지는 Help 메뉴의 Show Log In Explorer를 누르면 나옴.
 
@@ -208,7 +208,7 @@ private static final Logger logger = LoggerFactory.getLogger($className$.class);
 
 exploded artifacts는 이 패키징 파일의 압축 해제 상태를 의미한다.
 
-톰캣 플러그인과 외부 톰캣을 사용한다면 `Run/Debug Configurations`에서 배포할 artifact를 지정해야 하며, IntelliJ는 artifact를 Tomcat의 webapps 디렉토리에 복사하거나 참조하도록 설정된다. `out/artifacts/` 디렉터리가 이 과정에서 사용된다.
+톰캣 플러그인과 외부 톰캣을 사용한다면 `Run/Debug Configurations`에서 배포할 artifact를 지정해야 하며, IntelliJ는 artifact를 Tomcat의 webapps 디렉터리에 복사하거나 참조하도록 설정된다. `out/artifacts/` 디렉터리가 이 과정에서 사용된다.
 
 ### Modules
 
@@ -280,7 +280,6 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>ctrl + f4</kbd>: 창 닫기
 - <kbd>alt + home</kbd>: 파일 트리 탐색으로 포커스
 - <kbd>ctrl + shift + f</kbd>: Find in Files 파일 내용으로 검색
-- <kbd>ctrl + shift + f12</kbd>: Hide All Tool Windows
 - <kbd>ctrl + shift + \ </kbd>: Go to URL Mapping
 
 ### 북마크
@@ -304,6 +303,7 @@ Artifacts는 모듈의 컴파일된 결과물(클래스 파일, 리소스 등)�
 - <kbd>alt + 0</kbd>: Commit 윈도우로 포커싱
 - <kbd>ctrl + h</kbd>: Hierarchy 윈도우로 포커싱
 - <kbd>shift + esc</kbd>: 현재 윈도우 최소화
+- <kbd>ctrl + shift + f12</kbd>: `Hide All Tool Windows`. 에디터 외 모든 윈도우 최소화
 - <kbd>ctrl + shift + '</kbd>: 현재 윈도우 최대화, 다시 누르면 원래 크기로
 - <kbd>ctrl + alt + shift + left</kbd> <kbd>ctrl + alt + shift + right</kbd>: Stretch to Left/Right. 창을 좌측 혹은 우측으로 늘리거나 줄임. 코드 에디터 화면에선 (가능할 경우에만) Move Element Left/Right 기능으로 작동한다.
 

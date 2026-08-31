@@ -16,7 +16,7 @@ tags:
 
 #### 참고 문서
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number>
 
 Standard built-in Objects: Number
 

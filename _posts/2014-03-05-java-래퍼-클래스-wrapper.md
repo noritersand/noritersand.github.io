@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html](https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html)
+- <https://javarevisited.blogspot.com/2015/09/difference-between-primitive-and-reference-variable-java.html>
 
 
 ## 개요

@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html](http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html)
+- <http://docs.oracle.com/javase/8/docs/technotes/tools/windows/javap.html>
 
 클래스 파일의 바이트 코드를 확인할 수 있는 명령어. 컴파일 후 사용한다.
 
@@ -26,9 +26,9 @@ javap -c 클래스명
 
 #### example
 
-```bash
-> javac TestClass.java
-> javap -c TestClass
+```powershell
+PS C:\dev> javac TestClass.java
+PS C:\dev> javap -c TestClass
 
 Compiled from "TestClass.java"
 public class TestClass {
@@ -83,10 +83,9 @@ public class TestClass {
 }
 ```
 
-여기서 사용한 TestClass는 요렇게 생겼다:
+여기서 사용한 `TestClass`는 요렇게 생겼다:
 
 ```java
-TestClass
 public class TestClass {
 
     public String concatTest1() {

@@ -148,7 +148,7 @@ https://developer.mozilla.org/en-US/docs/Web/API/Response/json
 
 ## example #1
 
-소스 출처: [https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest](https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest)
+소스 출처: <https://stackoverflow.com/questions/9713058/send-post-data-using-xmlhttprequest>
 
 ```js
 let resp = await fetch('http://127.0.0.1:8080/test/doughnutList', {

@@ -41,8 +41,8 @@ data:image/png;base64,iVBORw0KGgoAAAANSU....
 관련 문서:
 
 - [Wikipedia \| Data_URI_scheme](https://en.wikipedia.org/wiki/Data_URI_scheme)
-- [https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image](https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image)
-- [https://datatracker.ietf.org/doc/html/rfc2397](https://datatracker.ietf.org/doc/html/rfc2397)
+- <https://stackoverflow.com/questions/19696418/what-does-it-means-dataimage-png-in-the-source-of-an-image>
+- <https://datatracker.ietf.org/doc/html/rfc2397>
 
 이미지의 소스를 URL로 링크하는 대신, 직접 HTML 혹은 CSS 코드에 인라인으로 포함시킬 때 사용한다.
 

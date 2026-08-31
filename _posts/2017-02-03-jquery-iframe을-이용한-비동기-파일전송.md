@@ -17,7 +17,7 @@ tags:
 
 #### 참고 문서
 
-- [http://hayageek.com/jquery-ajax-form-submit/](http://hayageek.com/jquery-ajax-form-submit/)
+- <http://hayageek.com/jquery-ajax-form-submit/>
 
 #### 브라우저 호환
 

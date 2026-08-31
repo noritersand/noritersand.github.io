@@ -16,7 +16,7 @@ tags:
 
 #### required
 
-- jQuery form plugin: [http://malsup.com/jquery/form/#download](http://malsup.com/jquery/form/#download)
+- jQuery form plugin: <http://malsup.com/jquery/form/#download>
 
 ```html
 <!-- DB 저장 폼 -->

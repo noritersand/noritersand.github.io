@@ -18,9 +18,9 @@ tags:
 
 - [JSON \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 - [Object.assign() \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign)
-- [https://medium.com/better-programming/3-ways-to-clone-objects-in-javascript-f752d148054d](https://medium.com/better-programming/3-ways-to-clone-objects-in-javascript-f752d148054d)
-- [https://www.codementor.io/junedlanja/copy-javascript-object-right-way-ohppc777d](https://www.codementor.io/junedlanja/copy-javascript-object-right-way-ohppc777d)
-- [https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/](https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/)
+- <https://medium.com/better-programming/3-ways-to-clone-objects-in-javascript-f752d148054d>
+- <https://www.codementor.io/junedlanja/copy-javascript-object-right-way-ohppc777d>
+- <https://hyunseob.github.io/2016/02/08/copy-object-in-javascript/>
 - [jQuery: jQuery.extend()](https://api.jquery.com/jquery.extend/)
 
 

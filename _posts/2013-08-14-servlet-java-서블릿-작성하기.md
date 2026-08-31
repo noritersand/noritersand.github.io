@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [http://www.oracle.com/technetwork/java/javaee/documentation/index.html](http://www.oracle.com/technetwork/java/javaee/documentation/index.html)
-- [http://docs.oracle.com/javaee/7/api/](http://docs.oracle.com/javaee/7/api/)
+- <http://www.oracle.com/technetwork/java/javaee/documentation/index.html>
+- <http://docs.oracle.com/javaee/7/api/>
 
 ## life cycle
 

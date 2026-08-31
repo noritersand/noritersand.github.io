@@ -497,7 +497,7 @@ Quantifiers는 찾으려는 문자나 문자열 패턴이 몇 번 반복될 것�
 
 `.+`와 조합한 `.+?` 패턴이 있다. `.+?`는 lazy quantifier 혹은 non-greedy, reluctant, minimal, ungreedy quantifier 등으로 알려져 있다. 간단히 요약하면 가능한 모든 것을 찾는 것과, 한 개 찾으면 관두는 것 정도의 차이다. 예를 들어 'waaagh'에서  `wa.+`는 'waaagh' 전체를 선택하지만 `wa.+?`는 'waa'까지만 선택한다. (모든 문자`.`를 만족하는 'a' 하나만 더 있으면 일치하는 패턴이기 때문)
 
-관련 글: [https://stackoverflow.com/questions/14213848/difference-between-and](https://stackoverflow.com/questions/14213848/difference-between-and)
+관련 글: <https://stackoverflow.com/questions/14213848/difference-between-and>
 
 어쨋든 `.+?`는 최소 한 개 이상의 문자 중 가장 짧은 것을 의미한다. 이 패턴은 얼핏 보면 `.{1}`와 같은 것처럼 보이는데, 뒤에 정규식이 조금 더 붙으면 얘기가 달라진다. 가령 'waaagh'에서 `wa.{1}h` 패턴과 일치하지 않지만 `wa.+?h` 패턴과는 일치한다. (무조건 하나를 의미하는 게 아니라 '한 개 이상인 것 중 가장 짧은 것'이기 때문이다)
 

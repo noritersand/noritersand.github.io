@@ -167,14 +167,17 @@ AOF는 로그 방식이라고 부르며, 수신된 모든 쓰기 작업을 디�
 
 일반적인 문자열을 생각하면 되는데, `set` 명령은 공백으로 인자를 구분하기 때문에 값이 공백이 있는 경우 따옴표로 감싸야 함:
 
-```bash
-set mykey 'qwer asdf'
+```powershell
+> set mykey 'qwer asdf'
+
 OK
 
-get mykey
+> get mykey
+
 "qwer asdf"
 
-set mykey2 qwer asdf
+> set mykey2 qwer asdf
+
 (error) ERR syntax error
 ```
 
@@ -237,9 +240,11 @@ set mykey2 qwer asdf
 
 ⚠️ `MONITOR`는 서버 부하를 크게 증가시키니 운영 환경에서는 주의해서 사용할 것
 
-```bash
-# 스프링 부트 서버가 시작될 때의 레디스 로그
+ℹ️ 스프링 부트 서버가 시작될 때의 레디스 로그:
+
+```powershell
 > monitor
+
 OK
 1766146681.448195 [0 127.0.0.1:41184] "HELLO" "3"
 1766146681.459792 [0 127.0.0.1:41184] "CLIENT" "SETINFO" "lib-name" "Lettuce"
@@ -282,28 +287,29 @@ info section section2 section3 ...
 
 설정값을 변경하거나 가져온다.
 
-```bash
-config get dir
+```powershell
+> config get dir
+
 1) "dir"
 2) "/var/lib/redis"
 
 # databases 설정 조회
-config get databases
+> config get databases
 
 # user가 포함된 모든 설정 조회
-config get *user*
+> config get *user*
 ```
 
 ### SELECT
 
 데이터베이스를 선택하는 명령이다.
 
-```bash
+```powershell
 # 첫 번째 데이터베이스 선택
-select 0
+> select 0
 
 # 두 번째 데이터베이스 선택
-select 1
+> select 1
 ```
 
 레디스에는 (건드린 게 없다면) 16개의 데이터베이스가 있고, 접속 시 첫 번째(index=0) 데이터베이스가 기본값으로 선택된다. 
@@ -314,18 +320,18 @@ select 1
 
 데이터를 즉시 디스크에 저장(dump the dataset to disk)하도록 하는 명령어. 저장된 파일의 경로는 설정을 건드리지 않았으면 `/var/lib/redis/dump.rdb`이다. 
 
-```bash
+```powershell
 # 즉시 저장(완료될 때까지 기다림)
-save
+> save
 
 # 백그라운드 저장(안기다림)
-bgsave
+> bgsave
 ```
 
 예약을 걸 수도 있는데, 다음 명령은:
 
-```bash
-save 60 1000
+```powershell
+> save 60 1000
 ```
 
 매 60초 마다 천 건의 키가 변경된 경우 자동으로 디스크에 저장한다.
@@ -334,8 +340,8 @@ save 60 1000
 
 현재 선택한 데이터베이스를 포함한 모든 데이터베이스의 키를 전부 삭제한다.
 
-```bash
-flushall
+```powershell
+> flushall
 ```
 
 ### KEYS
@@ -348,8 +354,9 @@ KEYS pattern
 
 - `pattern`: 찾으려는 키의 패턴. 생략할 수 없고 모든 키를 반환하게 하려면 `*` 라고 작성한다.
 
-```bash
-keys *
+```powershell
+> keys *
+
 1) "qwe"
 2) "asd"
 ```
@@ -369,26 +376,27 @@ SCAN cursor [MATCH pattern] [COUNT count] [TYPE type]
 - `count`: 반환되는 데이터의 수를 지정하는 옵션. `SCAN`은 `count`로 지정된 만큼 반환하려고 하지만 내부 알고리즘과 데이터베이스의 상태에 따라 근사치로 반환될 수 있다. 이 옵션을 생략하면 대략 10개 씩 가져옴.
 - `type`: **TODO**
 
-```bash
+```powershell
 # 커서 위치 10부터 모든 키 스캔
-scan 10
+> scan 10
 
 # 이름이 정확히 'aaa'인 키를 커서 0부터 20개 스캔
-scan 0 match aaa count 20
+> scan 0 match aaa count 20
 
 # 이름이 'mykey:'로 시작하는 모든 키를 커서 0부터 스캔
-scan 0 match mykey:*
+> scan 0 match mykey:*
 
 # 이름이 세 글자이고 두 번째 문자가 'a'인 키를 커서 5부터 스캔
-scan 5 match ?a?
+> scan 5 match ?a?
 ```
 
 🚨 명령을 여러 번 실행하는 게 번거롭다고 `count`를 `99999`로 지정하면 안됨. 99999개를 한 번에 처리하기 위해 CPU를 점유하게 되기 때문
 
 #### 점진적 탐색 알고리즘:
 
-```
+```powershell
 > scan 0
+
 1) "7"
 2)  1) "If you ask me."
     2) "qwe"
@@ -404,8 +412,9 @@ scan 5 match ?a?
 
 `SCAN`은 검색 패턴과 일치하는 키를 일정량 만큼 반환하며, 현재 위치를 의미하는 커서 값을 반환한다. 위 예시에서는 `7`이 반환됐는데, 아직 탐색할 데이터가 남았으니 `7`부터 다시 찾으라는 말로 이해하면 된다.
 
-```
+```powershell
 > scan 7
+
 1) "0"
 2) 1) "Hello there!"
    2) "qwe:zxc"
@@ -417,12 +426,14 @@ scan 5 match ?a?
 
 범위가 좁은 패턴을 입력했다 해도 SCAN의 특성상 빈 배열과 커서 위치만 알려주는 경우가 있다:
 
-```
+```powershell
 > scan 0 match aaa
+
 1) "5"
 2) (empty array)
 
 > scan 5 match aaa
+
 1) "0"
 2) 1) "aaa"
 ```
@@ -440,31 +451,33 @@ SET key value [NX | XX | IFEQ ifeq-value | IFNE ifne-value |
   PXAT unix-time-milliseconds | KEEPTTL]
 ```
 
-```bash
-set mykey 'qwer'
+```powershell
+> set mykey 'qwer'
 
-set q:w:e:r 1234
+> set q:w:e:r 1234
 ```
 
 만료시간을 지정하려면 `ex` 혹은 `px` 옵션을 덧붙인다:
 
-```bash
+```powershell
 # 만료시간 5초 설정(초 단위)
-set qwe 'asd' ex 5
+> set qwe 'asd' ex 5
 
 # 만료시간 5초 설정(밀리초 단위)
-set foo 'bar' px 5000
+> set foo 'bar' px 5000
 ```
 
 ### GET
 
 지정한 키로 저장된 문자열 값을 반환한다.
 
-```bash
-get mykey
+```powershell
+> get mykey
+
 "qwer"
 
-get q:w:e:r
+> get q:w:e:r
+
 "1234"
 ```
 
@@ -472,8 +485,8 @@ get q:w:e:r
 
 특정 키의 데이터 타입을 문자열로 반환한다.
 
-```bash
-type mykey
+```powershell
+> type mykey
 ```
 
 키가 없으면 `none`, 키가 있으면 `string`, `list`, `set`, `zset`, `hash`, `stream` 중에 하나를 반환한다.
@@ -482,9 +495,9 @@ type mykey
 
 특정 키를 삭제한다.
 
-```bash
-del mykey
-del mykey1 mykey2 mykey3
+```powershell
+> del mykey
+> del mykey1 mykey2 mykey3
 ```
 
 삭제에 성공하면 1, 지정한 키를 찾을 수 없으면 `0`을 반환한다.
@@ -495,18 +508,18 @@ del mykey1 mykey2 mykey3
 
 `DEL`처럼 지정한 키를 삭제하되, 메모리 회수를 백그라운드에서 수행한다.
 
-```bash
-unlink mykey
-unlink mykey1 mykey2 mykey3
+```powershell
+> unlink mykey
+> unlink mykey1 mykey2 mykey3
 ```
 
 ### EXPIRE
 
 특정 키에 저장된 데이터의 만료시간을 설정하고, 시간이 지나면 자동으로 삭제하게 하는 명령어. 초 단위로 지정한다.
 
-```bash
+```powershell
 # mykey의 만료시간을 30초로 설정
-expire mykey 30
+> expire mykey 30
 ```
 
 없는 키를 지정하면 `0`이 반환된다.
@@ -566,17 +579,18 @@ offset이 `-3 2`면 끝에서 3번째 요소부터 처음에서 3번째 요소�
 
 지정한 키의 셋(Sets)에 멤버(member, 셋의 구성 요소를 의미함)를 추가한다. 
 
-```bash
-sadd foo var
-sadd foo var2
+```powershell
+> sadd foo var
+> sadd foo var2
 ```
 
 ### SMEMBERS
 
 지정한 키로 저장된 셋의 모든 멤버를 반환한다.
 
-```bash
-smembers foo
+```powershell
+> smembers foo
+
 1) "var2"
 2) "var"
 ```
@@ -601,8 +615,9 @@ smembers foo
 SSCAN key cursor [MATCH pattern] [COUNT count]
 ```
 
-```bash
+```powershell
 > sscan foo 0 MATCH var*
+
 1) "0"
 2) 1) "var1"
    2) "var2"
@@ -619,9 +634,9 @@ HSET key field value field2 value2
 ...
 ```
 
-```bash
-hset map a 'aaa'
-hset map b 'bbb' c 'ccc'
+```powershell
+> hset map a 'aaa'
+> hset map b 'bbb' c 'ccc'
 ```
 
 ### HGET
@@ -632,20 +647,23 @@ hset map b 'bbb' c 'ccc'
 HGET key field
 ```
 
-```bash
+```powershell
 > hset map a 'aaa'
 
 > hget map a
+
 "aaa"
 ```
 
 ⚠️ 해시를 `GET`으로 꺼내려 하면 타입 에러가 발생한다:
 
-```bash
+```powershell
 > hset something a 'bcd'
+
 (integer) 1
 
 > get something
+
 (error) WRONGTYPE Operation against a key holding the wrong kind of value
 ```
 
@@ -657,16 +675,19 @@ HGET key field
 HDEL key field [field ...]
 ```
 
-```bash
+```powershell
 # 새로 저장
 > hset something a 'bcd'
+
 (integer) 1
 
 # 특정 필드 삭제
 > hdel something a
+
 (integer) 1
 
 > hget something a
+
 (nil)
 ```
 
@@ -686,10 +707,11 @@ HKEYS key
 HGETALL key
 ```
 
-```bash
+```powershell
 > hset map a 'aaa' b 'bbb'
 
 > hgetall map
+
 1) "a"
 2) "aaa"
 3) "b"
@@ -704,10 +726,11 @@ HGETALL key
 HSCAN key cursor [MATCH pattern] [COUNT count]
 ```
 
-```bash
+```powershell
 > hset map a 'aaa'
 
 > hscan map 0 match a
+
 1) "0"
 2) 1) "a"
    2) "aaa"
@@ -725,48 +748,48 @@ sorted sets 타입 패턴 검색 명령어
 
 `ACL`은 레디스 6.0 버전에 추가된 권한 관리 기능이다. ACL을 통해 각각 다른 권한을 가진 여러 사용자를 생성할 수 있으며, 특정 명령어 또는 키에 대한 액세스 권한을 제어할 수 있다.
 
-```bash
+```powershell
 # 모든 키에 대한 set 명령어 사용 권한이 있는 verginia 사용자 생성
 # 이 사용자는 활성상태가 되며, 이미 존재하는 사용자면 활성상태로 바꾸고 set 권한을 부여한다
-acl setuser user_name on allkeys +set
+> acl setuser user_name on allkeys +set
 
 # 사용자에게 get 명령어 사용 권한을 부여한다
 # 하지만 어떤 키에도 접근할 수 없어서 get 사용은 불가
-acl setuser user_name +get
+> acl setuser user_name +get
 
 # 사용자 활성화(활성화 전에는 로그인 불가)
-acl setuser user_name on
+> acl setuser user_name on
 
 # 사용자 비활성화
-acl setuser user_name off
+> acl setuser user_name off
 
 # 사용자 삭제
-acl deluser user_name
+> acl deluser user_name
 
 # 현재 연결이 인증된(로그인한) 사용자의 이름을 반환한다
-acl whoami
+> acl whoami
 
 # 사용자의 비밀번호를 1234로 설정한다. 
 # `>` 기호가 비밀번호를 나타낸다.
-acl setuser user_name >1234
+> acl setuser user_name >1234
 
 # user_name에게 모든 키(~*)에 대한 모든 명령어 사용 권한 부여
-acl setuser user_name on +@all ~*
+> acl setuser user_name on +@all ~*
 
 # user_name에게 모든 키(~*)에 대해 read 카테고리 read 카테고리에서 fast 카테고리를 제외한 명령어의 사용 권한 부여
-acl setuser user_name on +@read -@fast ~*
+> acl setuser user_name on +@read -@fast ~*
 ```
 
 ### AUTH
 
 일종의 로그인 기능. `ACL`이 누가 어떤 명령어를 쓸 수 있는지 제한하는 기능이라면, `AUTH`는 해당 정책을 적용받기 위해 신원을 증명하는 절차다. 만약 모든 명령어가 사용자 `SUPER`에게 할당되어 있다면, `SUPER`에 로그인하기 전에는 아무 명령도 실행할 수 없다.
 
-```bash
+```powershell
 # USER_NAME 사용자의 연결을 인증(= 로그인)한다. 이 때 비밀번호로 1234를 사용한다.
-auth USER_NAME 1234
+> auth USER_NAME 1234
 
 # 비밀번호가 없는 사용자 로그인 방법
-auth default nopass
+> auth default nopass
 ```
 
 
@@ -782,7 +805,7 @@ auth default nopass
 
 우선 `SUBSCRIBE`로 `notice.published` 채널을 구독한다:
 
-```
+```powershell
 > SUBSCRIBE notice.published
 
 1) "subscribe"
@@ -793,7 +816,7 @@ Reading messages... (press Ctrl-C to quit or any key to type command)
 
 이제 이 터미널은 그대로 두고 새 터미널을 열어서, `PUBLISH`로 `notice.published` 채널에 메시지를 발행한다:
 
-```
+```powershell
 > PUBLISH notice.published hello
 
 (integer) 1
@@ -801,7 +824,7 @@ Reading messages... (press Ctrl-C to quit or any key to type command)
 
 문제가 없다면, 구독중이던 터미널에서 다음처럼 출력된다:
 
-```
+```powershell
 1) "message"
 2) "notice.published"
 3) "hello"
@@ -809,22 +832,22 @@ Reading messages... (press Ctrl-C to quit or any key to type command)
 
 ### 관련 명령어
 
-```bash
+```powershell
 # 특정 채널 구독
-SUBSCRIBE channel [channel ...]
+> SUBSCRIBE channel [channel ...]
 
 # 특정 채널 구독 해제
-UNSUBSCRIBE [channel [channel ...]]
+> UNSUBSCRIBE [channel [channel ...]]
 
 # 채널 이름 패턴으로 구독
-PSUBSCRIBE pattern [pattern ...]
+> PSUBSCRIBE pattern [pattern ...]
 
 # 채널 이름 패턴으로 구독 해제
-PUNSUBSCRIBE [pattern [pattern ...]]
+> PUNSUBSCRIBE [pattern [pattern ...]]
 
 # pubsub 명령어 도움말 보기
-PUBSUB HELP
+> PUBSUB HELP
 
 # 패턴으로 모든 활성화 채널 조회. 누군가가 구독중이어야 활성화 채널로 간주함
-PUBSUB CHANNELS [pattern]
+> PUBSUB CHANNELS [pattern]
 ```

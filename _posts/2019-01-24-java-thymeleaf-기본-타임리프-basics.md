@@ -16,9 +16,9 @@ tags:
 
 #### 참고 문서
 
-- [https://www.thymeleaf.org/](https://www.thymeleaf.org/)
-- [https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html)
-- [https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html)
+- <https://www.thymeleaf.org/>
+- <https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html>
+- <https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/expressions.html>
 
 
 ## 개요

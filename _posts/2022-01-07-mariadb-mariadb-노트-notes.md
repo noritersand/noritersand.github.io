@@ -16,8 +16,8 @@ tags:
 
 #### 참고 문서
 
-- [https://mariadb.com/kb/en/](https://mariadb.com/kb/en/)
-- [https://dbschema.com/documentation/MariaDb/#introduction](https://dbschema.com/documentation/MariaDb/#introduction)
+- <https://mariadb.com/kb/en/>
+- <https://dbschema.com/documentation/MariaDb/#introduction>
 
 
 #### 테스트 환경 정보
@@ -225,8 +225,8 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 
 #### 데이터베이스 생성/보기/선택
 
-```bash
-> status # 현재 상태 보기
+```powershell
+PS C:\dev> status # 현재 상태 보기
 ```
 
 ```sql
@@ -362,7 +362,7 @@ drop index INDEX_NAME on TABLE_NAME;
 
 ### 테이블 조인 JOIN
 
-[https://mariadb.com/kb/en/join-syntax](https://mariadb.com/kb/en/join-syntax)
+<https://mariadb.com/kb/en/join-syntax>
 
 #### outer join 중 inner join을 먼저 수행하고 싶을 때
 
@@ -539,7 +539,7 @@ order by (
 
 ### WITH
 
-[https://mariadb.com/kb/en/with/](https://mariadb.com/kb/en/with/)
+<https://mariadb.com/kb/en/with/>
 
 `WITH`는 CTE(Common Table Expression)를 나타내는 키워드다. MariaDB 10.2.1 버전부터 쓸 수 있다.
 
@@ -667,7 +667,7 @@ on duplicate key update
 
 ### group_concat: data concatenation
 
-[https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/](https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/)
+<https://www.mariadbtutorial.com/mariadb-aggregate-functions/mariadb-group_concat/>
 
 한 건 이상의 데이터를 하나의 문자열로 연결해 표현하는 방법을 말함. `GROUP_CONCAT()` 함수를 쓴다.
 

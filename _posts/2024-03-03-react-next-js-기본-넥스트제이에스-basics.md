@@ -351,8 +351,9 @@ DB_USER=myuser
 DB_PASS=mypassword
 ```
 
-```bash
-> yarn dev
+```powershell
+PS C:\dev> yarn dev
+
 yarn run v1.22.22
 $ next dev
    ▲ Next.js 14.1.4

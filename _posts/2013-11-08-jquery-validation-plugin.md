@@ -15,9 +15,9 @@ tags:
 
 #### 참고 문서
 
-- [http://jqueryvalidation.org/documentation/](http://jqueryvalidation.org/documentation/)
-- [http://jqueryvalidation.org/documentation/#link-demos](http://jqueryvalidation.org/documentation/#link-demos)
-- [https://github.com/jzaefferer/jquery-validation/releases](https://github.com/jzaefferer/jquery-validation/releases)
+- <http://jqueryvalidation.org/documentation/>
+- <http://jqueryvalidation.org/documentation/#link-demos>
+- <https://github.com/jzaefferer/jquery-validation/releases>
 
 
 #### 필수 라이브러리

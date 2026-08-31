@@ -15,8 +15,8 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html](https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html)
-- [https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3](https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3)
+- <https://docs.oracle.com/javase/7/docs/technotes/guides/language/static-import.html>
+- <https://docs.oracle.com/javase/specs/jls/se7/html/jls-7.html#jls-7.5.3>
 
 ## static import
 

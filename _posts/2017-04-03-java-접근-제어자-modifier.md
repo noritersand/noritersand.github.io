@@ -36,7 +36,7 @@ tags:
 
 ## 제어자 작성 순서
 
-[http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1](http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1)
+<http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.3.1>
 
 #### For fields:
 

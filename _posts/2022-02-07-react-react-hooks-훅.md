@@ -700,7 +700,7 @@ export default function App() {
 
 ℹ️ React 19부터 `forwardRef` 대신 함수 컴포넌트의 `props.ref`를 통해 접근할 수 있다:
 
-[https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19](https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19)
+<https://react.dev/blog/2024/12/05/react-19#improvements-in-react-19>
 
 ```jsx
 function MyInput({placeholder, ref}) {

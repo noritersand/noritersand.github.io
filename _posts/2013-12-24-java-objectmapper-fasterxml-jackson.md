@@ -14,8 +14,8 @@ tags:
 
 #### 참고 문서
 
-- [http://fasterxml.com](http://fasterxml.com)
-- [https://github.com/FasterXML](https://github.com/FasterXML)
+- <http://fasterxml.com>
+- <https://github.com/FasterXML>
 
 **jackson은 1.x 버전과 2.x 버전의 패키지가 다르다.**
 - 1.x: org.codehaus.jackson

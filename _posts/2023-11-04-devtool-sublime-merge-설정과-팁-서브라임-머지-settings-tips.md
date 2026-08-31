@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [https://www.sublimemerge.com/docs/](https://www.sublimemerge.com/docs/)
+- <https://www.sublimemerge.com/docs/>
 
 #### 버전 정보
 

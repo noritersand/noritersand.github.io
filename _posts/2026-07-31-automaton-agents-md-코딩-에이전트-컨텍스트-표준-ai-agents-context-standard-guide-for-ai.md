@@ -64,9 +64,9 @@ Use plan mode for changes under `src/billing/`.
 
 ## 실제 작성 사례들
 
-- [https://github.com/onflow/flow-go/blob/master/AGENTS.md](https://github.com/onflow/flow-go/blob/master/AGENTS.md)
-- [https://github.com/promptfoo/promptfoo/blob/main/AGENTS.md](https://github.com/promptfoo/promptfoo/blob/main/AGENTS.md)
-- [https://github.com/redis/lettuce/blob/main/AGENTS.md](https://github.com/redis/lettuce/blob/main/AGENTS.md)
+- <https://github.com/onflow/flow-go/blob/master/AGENTS.md>
+- <https://github.com/promptfoo/promptfoo/blob/main/AGENTS.md>
+- <https://github.com/redis/lettuce/blob/main/AGENTS.md>
 
 
 ## 분리 방식

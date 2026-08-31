@@ -214,7 +214,7 @@ JavaScript 구현체(= 브라우저 등)마다 예외가 있을 수 있다. 예�
 
 ## extends
 
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends)
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends>
 
 **TODO** 상속(확장)
 

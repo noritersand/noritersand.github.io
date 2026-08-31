@@ -17,7 +17,7 @@ tags:
 
 #### 참고 문서
 
-- [http://www.mybatis.org/mybatis-3/](http://www.mybatis.org/mybatis-3/)
+- <http://www.mybatis.org/mybatis-3/>
 
 ## 컬럼명과 필드명의 불일치의 해결은 아주 간단.
 

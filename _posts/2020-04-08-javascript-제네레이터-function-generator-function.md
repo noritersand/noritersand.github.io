@@ -19,8 +19,8 @@ tags:
 
 - [Generator \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator)
 - [function\* \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*)
-- [https://wonism.github.io/javascript-generator/](https://wonism.github.io/javascript-generator/)
-- [https://meetup.nhncloud.com/posts/73](https://meetup.nhncloud.com/posts/73)
+- <https://wonism.github.io/javascript-generator/>
+- <https://meetup.nhncloud.com/posts/73>
 
 #### 브라우저 호환
 

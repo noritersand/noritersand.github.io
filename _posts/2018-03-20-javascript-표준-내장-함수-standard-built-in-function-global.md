@@ -17,8 +17,8 @@ tags:
 
 - [Standard built-in objects \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects)
 - [JavaScript reference \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference)
-- [http://www.w3schools.com/jsref/jsref_obj_global.asp](http://www.w3schools.com/jsref/jsref_obj_global.asp)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>
+- <http://www.w3schools.com/jsref/jsref_obj_global.asp>
 
 
 ## eval(), uneval()

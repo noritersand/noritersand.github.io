@@ -14,8 +14,8 @@ tags:
 
 #### 참고 문서
 
-- [https://www.w3schools.com/cssref/css3_pr_opacity.asp](https://www.w3schools.com/cssref/css3_pr_opacity.asp)
-- [https://www.w3schools.com/css/css_image_transparency.asp](https://www.w3schools.com/css/css_image_transparency.asp)
+- <https://www.w3schools.com/cssref/css3_pr_opacity.asp>
+- <https://www.w3schools.com/css/css_image_transparency.asp>
 
 ```html
 <div style="filter:alpha(opacity=15); opacity:0.15;

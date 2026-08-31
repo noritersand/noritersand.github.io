@@ -73,7 +73,7 @@ HTML5 관련 다 모음.
 - [data-\* \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)
 - [HTMLElement.dataset \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset)
 - [w3schools: HTML data-* Attributes](http://www.w3schools.com/tags/att_global_data.asp)
-- [http://www.sitepoint.com/managing-custom-data-html5-dataset-api/](http://www.sitepoint.com/managing-custom-data-html5-dataset-api/)
+- <http://www.sitepoint.com/managing-custom-data-html5-dataset-api/>
 
 HTML5에서 정의된 global attribute 중 하나. '사용자 정의 속성' 혹은 '전용 데이터 속성'이라 부른다.
 
@@ -91,9 +91,9 @@ document.querySelector('#soldier').dataset; // DOMStringMap {recentStatus: "idle
 
 ## required attribute
 
-- [http://www.w3schools.com/tags/att_input_required.asp](http://www.w3schools.com/tags/att_input_required.asp)
-- [https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity)
-- [https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity)
+- <http://www.w3schools.com/tags/att_input_required.asp>
+- <https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/checkValidity>
+- <https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/reportValidity>
 
 required는 HTML5부터 추가된 유효성 검사 속성이다. 적용 가능한 HTML 태그는 다음과 같다:
 
@@ -146,7 +146,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 ## button
 
 - [The Button element \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)
-- [https://www.w3schools.com/tags/tag_button.asp](https://www.w3schools.com/tags/tag_button.asp)
+- <https://www.w3schools.com/tags/tag_button.asp>
 
 `<button>`태그에 type 속성을 명시하지 않을 경우 type의 기본값은 submit으로 설정된다. 이 때문에 `<form>`안에 위치하게 되면 버튼 클릭 시 `HTMLFormElement.submit()` 메서드가 작동하게 된다.
 
@@ -162,7 +162,7 @@ form 바깥에 있는 버튼과 스크립트만으로 required를 작동시킬 �
 ## form
 
 - [The Form element \| MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form)
-- [https://www.w3schools.com/tags/tag_form.asp](https://www.w3schools.com/tags/tag_form.asp)
+- <https://www.w3schools.com/tags/tag_form.asp>
 
 **TODO**
 

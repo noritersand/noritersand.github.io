@@ -54,12 +54,12 @@ git fetch origin feature/login:feature/auth
 
 ## Windows에 Git 서버 설치하기
 
-- [http://gitblit.com/](http://gitblit.com/)
-- [http://www.lesstif.com/pages/viewpage.action?pageId=26084460](http://www.lesstif.com/pages/viewpage.action?pageId=26084460)
+- <http://gitblit.com/>
+- <http://www.lesstif.com/pages/viewpage.action?pageId=26084460>
 
 ### git 서버 설치/구동
 
-[http://www.lesstif.com/pages/viewpage.action?pageId=26084460](http://www.lesstif.com/pages/viewpage.action?pageId=26084460)
+<http://www.lesstif.com/pages/viewpage.action?pageId=26084460>
 위 링크 참고. (한 줄 요약: jetty가 내장된 gitblit으로 git 서버 구동.)
 
 ### JCE 설치
@@ -69,7 +69,7 @@ git fetch origin feature/login:feature/auth
 
 ## git filter-repo
 
-[https://github.com/newren/git-filter-repo](https://github.com/newren/git-filter-repo)
+<https://github.com/newren/git-filter-repo>
 
 Git 히스토리를 재작성하기 위한 서드파티 툴. 예를 들어 특정 파일이나 민감한 정보 등을 히스토리에서 제거할 때 사용한다.
 
@@ -240,7 +240,7 @@ A가 대소문자를 무시한 상태로 커밋을 올렸더니 feature 대신 F
 
 ## 오토 패킹이 자주 발동하면
 
-[https://stackoverflow.com/questions/8633981/what-does-auto-packing-the-repository-for-optimum-performance-mean/16233094](https://stackoverflow.com/questions/8633981/what-does-auto-packing-the-repository-for-optimum-performance-mean/16233094)
+<https://stackoverflow.com/questions/8633981/what-does-auto-packing-the-repository-for-optimum-performance-mean/16233094>
 
 dangling object가 많으면 이런 현상이 있다고 함. `git fsck`로 확인했을 때, dangling commit이 너무 많다고 판단되면 `git gc --prune=now`로 날리는 방법이 있다고 함.
 
@@ -288,12 +288,12 @@ git log -1 --pretty=fuller
 
 ## git으로 파일내용이나 커밋로그 검색하기
 
-[https://blog.outsider.ne.kr/849](https://blog.outsider.ne.kr/849)
+<https://blog.outsider.ne.kr/849>
 
 
 ## merge, rebase, cherry-pick의 차이
 
-[http://dogfeet.github.io/articles/2012/git-delta.html#-merge-rebase-cherry-pick-](http://dogfeet.github.io/articles/2012/git-delta.html#-merge-rebase-cherry-pick-)
+<http://dogfeet.github.io/articles/2012/git-delta.html#-merge-rebase-cherry-pick->
 
 
 ## 기본 에디터 변경하기

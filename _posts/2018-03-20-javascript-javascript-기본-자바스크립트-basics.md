@@ -36,7 +36,7 @@ JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 �
 
 라이브러리나 프레임워크를 사용하지 않는 순수 JavaScript를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임워크가 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절...하지 않을까?
 
-참고: [https://plainjs.com/](https://plainjs.com/) jQuery를 대체하는 순수 JavaScript API 소개 사이트
+참고: <https://plainjs.com/> jQuery를 대체하는 순수 JavaScript API 소개 사이트
 
 
 ## 개념 정리
@@ -347,7 +347,7 @@ test2();
 
 ## 리터럴 Literal
 
-리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. [http://www.terms.co.kr/literal.htm](http://www.terms.co.kr/literal.htm)
+리터럴이란 정의되어 있는 그대로 해석되어야 하는 값을 말한다. 숫자 혹은 문자로 표현된다. <http://www.terms.co.kr/literal.htm>
 
 ### 정수 리터럴
 
@@ -461,7 +461,7 @@ obj.c.d; // 3
 
 #### 프로퍼티 접근자 Property accessors
 
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors)
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Property_Accessors>
 
 객체의 프로퍼티에 접근하는 방법은 두 가지로 점 표기법(dot notation, `obj.prop`)과 대괄호 표기법(bracket notation, `obj['prop']`)이 있다.
 

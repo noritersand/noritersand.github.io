@@ -16,10 +16,10 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
-- [https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html)
-- [http://blog.naver.com/PostView.nhn?blogId=dethgray&logNo=80087298541](http://blog.naver.com/PostView.nhn?blogId=dethgray&logNo=80087298541)
-- [http://blog.saltfactory.net/191](http://blog.saltfactory.net/191)
+- <https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html>
+- <https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html>
+- <http://blog.naver.com/PostView.nhn?blogId=dethgray&logNo=80087298541>
+- <http://blog.saltfactory.net/191>
 
 중첩 클래스란 클래스 내부에 또 다른 클래스를 선언하는 기법을 말한다. 클래스를 클래스의 멤버처럼 취급하며 프로그램의 구조를 간략화하는 특징이 있다. 제한적인 지역에서만 필요한 클래스를 선언할 때 사용한다. 중첩 클래스라고도 한다.
 

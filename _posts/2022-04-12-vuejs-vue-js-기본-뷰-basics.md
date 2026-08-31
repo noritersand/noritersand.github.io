@@ -19,7 +19,7 @@ tags:
 
 - [Vue.js \| Introduction](https://vuejs.org/guide/introduction.html)
 - [Vue.js \| API](https://vuejs.org/api/)
-- [https://v3-docs.vuejs-korea.org/](https://v3-docs.vuejs-korea.org/)
+- <https://v3-docs.vuejs-korea.org/>
 
 #### 테스트 환경 정보
 
@@ -289,7 +289,7 @@ data() {
 
 ### 속성 바인딩 Attribute Bindings
 
-[https://vuejs.org/api/built-in-directives.html#v-bind](https://vuejs.org/api/built-in-directives.html#v-bind)
+<https://vuejs.org/api/built-in-directives.html#v-bind>
 
 `v-` 접두어가 붙는 사용자 속성은 *디렉티브*라고 하는데, 속성 바인딩에는 `v-bind` 디렉티브를 사용한다.
 
@@ -610,7 +610,7 @@ createApp({
 <a @click.stop.prevent="doThat"></a>
 ```
 
-key modifier와 mouse button modifier, system modifier도 있다. [https://vuejs.org/guide/essentials/event-handling.html#key-modifiers](https://vuejs.org/guide/essentials/event-handling.html#key-modifiers)
+key modifier와 mouse button modifier, system modifier도 있다. <https://vuejs.org/guide/essentials/event-handling.html#key-modifiers>
 
 Key Modifiers:
 
@@ -719,7 +719,7 @@ export default {
 
 ### Modifiers
 
-[https://vuejs.org/guide/essentials/forms.html#modifiers](https://vuejs.org/guide/essentials/forms.html#modifiers)
+<https://vuejs.org/guide/essentials/forms.html#modifiers>
 
 v-model에도 Event Modifiers와 같은 modifier가 제공된다.
 
@@ -1047,9 +1047,9 @@ export default {
 
 ## 비동기 컴포넌트 제어: 특정 컴포넌트의 렌더링 멈추기
 
-- [https://vuejs.org/guide/components/async.html](https://vuejs.org/guide/components/async.html)
-- [https://vuejs.org/guide/built-ins/suspense.html#suspense](https://vuejs.org/guide/built-ins/suspense.html#suspense)
-- [https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/](https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/)
+- <https://vuejs.org/guide/components/async.html>
+- <https://vuejs.org/guide/built-ins/suspense.html#suspense>
+- <https://vueschool.io/articles/vuejs-tutorials/suspense-everything-you-need-to-know/>
 
 **TODO** `<Suspense>`와 `async setup`을 이용해서 컴포넌트 렌더링 타이밍을 제어할 수 있다고 한다.
 

@@ -18,9 +18,9 @@ tags:
 
 #### 참고 문서
 
-- [https://tomcat.apache.org/tomcat-8.0-doc/config/context.html](https://tomcat.apache.org/tomcat-8.0-doc/config/context.html)
-- [https://tomcat.apache.org/tomcat-9.0-doc/config/context.html](https://tomcat.apache.org/tomcat-9.0-doc/config/context.html)
-- [http://blog.daum.net/naline1213/7592254](http://blog.daum.net/naline1213/7592254)
+- <https://tomcat.apache.org/tomcat-8.0-doc/config/context.html>
+- <https://tomcat.apache.org/tomcat-9.0-doc/config/context.html>
+- <http://blog.daum.net/naline1213/7592254>
 
 #### 테스트 환경
 

@@ -14,7 +14,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-소스 출처: [https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript](https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript)
+소스 출처: <https://stackoverflow.com/questions/105034/create-guid-uuid-in-javascript>
 
 빠른 순으로 적음.
 

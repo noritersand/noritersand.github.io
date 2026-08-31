@@ -11,7 +11,7 @@ tags:
 
 인바운드를 줄이려는지 페이지 찾기 겁나 힘들게 해놨다.
 
-- 우리말: [https://support.microsoft.com/ko-kr/contactus/](https://support.microsoft.com/ko-kr/contactus/)
-- 미쿡어: [https://support.microsoft.com/en-us/contactus/](https://support.microsoft.com/en-us/contactus/)
+- 우리말: <https://support.microsoft.com/ko-kr/contactus/>
+- 미쿡어: <https://support.microsoft.com/en-us/contactus/>
 
 Windows 10이라면 도움말 앱을 실행할 것. `시작` > '도움말' 타이핑 > `엔터`

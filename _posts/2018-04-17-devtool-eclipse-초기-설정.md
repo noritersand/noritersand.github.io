@@ -14,9 +14,9 @@ tags:
 
 #### 참고 문서
 
-- [http://www.eclipse.org/downloads](http://www.eclipse.org/downloads)
-- [http://tomcat.apache.org](http://tomcat.apache.org)
-- [https://wiki.eclipse.org/Eclipse.ini](https://wiki.eclipse.org/Eclipse.ini)
+- <http://www.eclipse.org/downloads>
+- <http://tomcat.apache.org>
+- <https://wiki.eclipse.org/Eclipse.ini>
 
 
 ## VM arguments 설정

@@ -15,11 +15,11 @@ tags:
 #### 참고 문서
 
 - [CSS color \| MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/color)
-- [https://www.w3schools.com/cssref/css_colors_legal.asp](https://www.w3schools.com/cssref/css_colors_legal.asp)
-- [https://htmlcolorcodes.com/](https://htmlcolorcodes.com/)
-- [https://www.w3schools.com/colors/colors_rgb.asp](https://www.w3schools.com/colors/colors_rgb.asp)
-- [https://www.w3schools.com/colors/colors_hexadecimal.asp](https://www.w3schools.com/colors/colors_hexadecimal.asp)
-- [https://www.w3schools.com/colors/colors_hsl.asp](https://www.w3schools.com/colors/colors_hsl.asp)
+- <https://www.w3schools.com/cssref/css_colors_legal.asp>
+- <https://htmlcolorcodes.com/>
+- <https://www.w3schools.com/colors/colors_rgb.asp>
+- <https://www.w3schools.com/colors/colors_hexadecimal.asp>
+- <https://www.w3schools.com/colors/colors_hsl.asp>
 
 
 ## 개요

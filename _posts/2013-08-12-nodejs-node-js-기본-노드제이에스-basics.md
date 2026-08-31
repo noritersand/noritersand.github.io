@@ -15,10 +15,11 @@ tags:
 
 #### 참고 문서
 
-- [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
-- [http://www.nodebeginner.org/index-kr.html](http://www.nodebeginner.org/index-kr.html)
+- <https://nodejs.org/en/docs/>
+- <http://www.nodebeginner.org/index-kr.html>
 
 ![](/images/node-js-1.png)
+
 > node에서는 모든게 병렬로 수행된다. 당신 code만 빼고
 
 
@@ -27,7 +28,7 @@ tags:
 ### 설치
 
 아래 링크에서 OS에 맞는 파일을 받아 설치한다.
-[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+<https://nodejs.org/en/download/>
 
 안될 경우 `NODE_PATH = C:\Users\noriter\AppData\Roaming\npm\node_modules` 패스 추가.
 
@@ -156,8 +157,9 @@ console.log('dbinfo.user:', dbinfo.user);
 console.log('dbinfo.password:', dbinfo.password);
 ```
 
-```bash
-PS > node .\run-me.js
+```powershell
+PS C:\dev> node .\run-me.js
+
 dbinfo.connectString: 10.20.30.40:1234/QADB
 dbinfo.user: fixalot
 dbinfo.password: 1234abcd!

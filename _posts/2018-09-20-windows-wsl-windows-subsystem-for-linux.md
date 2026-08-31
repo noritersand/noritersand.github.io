@@ -137,7 +137,7 @@ chsh -s $(which zsh)
 
 ## WSL에서 Windows의 환경 변수 사용하지 않기
 
-[https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl](https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl)
+<https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl>
 
 WSL에서 Windows의 환경 변수를 사용하지 않는 방법이다.
 

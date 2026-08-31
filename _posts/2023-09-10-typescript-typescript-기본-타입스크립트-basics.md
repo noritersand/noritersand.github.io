@@ -795,13 +795,13 @@ getWaldo('Waldo').age = 128;
 
 ### 생성자 시그니처 Construct Signatures
 
-[https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures](https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures)
+<https://www.typescriptlang.org/docs/handbook/2/functions.html#construct-signatures>
 
 **TODO**
 
 ### 함수 오버로드 Function Overloads
 
-[https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads](https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads)
+<https://www.typescriptlang.org/docs/handbook/2/functions.html#function-overloads>
 
 **TODO**
 

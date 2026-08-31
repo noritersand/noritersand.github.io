@@ -15,7 +15,7 @@ tags:
 
 #### 참고 문서
 
-- [http://www.w3schools.com/Js/js_function_definition.asp](http://www.w3schools.com/Js/js_function_definition.asp)
+- <http://www.w3schools.com/Js/js_function_definition.asp>
 - [Function \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)
 
 

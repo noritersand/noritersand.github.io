@@ -29,7 +29,7 @@ Winget에서 좀 더 발전된 패키지(혹은 애플리케이션) 관리 툴. 
 
 ## 설치
 
-[https://chocolatey.org/install#individual](https://chocolatey.org/install#individual)
+<https://chocolatey.org/install#individual>
 
 PowerShell(관리자 권한)에서 다음 줄 실행:
 

@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
+- <https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html>
 
 #### since
 

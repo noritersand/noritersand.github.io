@@ -201,8 +201,8 @@ Boolean(false ^ 1); // true
 
 #### Double NOT `~~`
 
-- [https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript](https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript)
-- [http://rocha.la/JavaScript-bitwise-operators-in-practice](http://rocha.la/JavaScript-bitwise-operators-in-practice)
+- <https://stackoverflow.com/questions/5971645/what-is-the-double-tilde-operator-in-javascript>
+- <http://rocha.la/JavaScript-bitwise-operators-in-practice>
 
 ```js
 ~~2 === Math.floor(2); // true
@@ -284,7 +284,7 @@ y = (y++, y);
 console.log('y:', y);
 ```
 
-**TODO** [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator)
+**TODO** <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Comma_Operator>
 
 
 ## instanceof
@@ -457,7 +457,7 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## 지수 연산자 Exponentiation `**`
 
-[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation)
+<https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Exponentiation>
 
 첫 번째 피연산자를 두 번째 피연산자로 거듭제곱한 결과를 반환한다. [Math.pow()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/pow) 함수를 사용하는 것과 거의 동일하다.
 
@@ -475,8 +475,8 @@ void(); // SyntaxError: expected expression, got ')'
 
 ## Optional Chaining `?.`
 
-- [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)
-- [https://tc39.es/proposal-optional-chaining/#top](https://tc39.es/proposal-optional-chaining/#top)
+- <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining>
+- <https://tc39.es/proposal-optional-chaining/#top>
 
 다른 언어에 Elvis Operator`?:`라는 뇨솤이 있는데 이와 비슷한 기능이 추가되었다. 대신 JavaScript에선 `?.`라고 쓴다.
 
@@ -555,7 +555,7 @@ fn()?.[0].a.b.c; // undefined
 
 ## 널 병합 연산자 Nullish coalescing operator `??`
 
-- [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator)
+- <https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator>
 
 ```
 leftExpr ?? rightExpr

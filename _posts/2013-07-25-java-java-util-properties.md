@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/10/docs/api/java/util/Properties.html](http://docs.oracle.com/javase/10/docs/api/java/util/Properties.html)
+- <http://docs.oracle.com/javase/10/docs/api/java/util/Properties.html>
 
 Java Properties 클래스의 간단한 사용방법을 기술한 글.
 

@@ -51,7 +51,7 @@ CSS의 함수와 At-rules 모음.
 
 ### var()
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/var](https://developer.mozilla.org/en-US/docs/Web/CSS/var)
+<https://developer.mozilla.org/en-US/docs/Web/CSS/var>
 
 사용자가 정의한 커스텀 프로퍼티의 값을 반환하는 함수.
 
@@ -105,7 +105,7 @@ CSS가 어떻게 작동해야하는지를 정의하는 지시어.
 
 ### @supports
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/@supports](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
+<https://developer.mozilla.org/en-US/docs/Web/CSS/@supports>
 
 브라우저가 어떤 프로퍼티(+ 프로퍼티 값까지)을 지원하거나 지원하지 않을 때 적용할 스타일을 정의하는 방법이다.
 
@@ -172,11 +172,11 @@ CSS가 어떻게 작동해야하는지를 정의하는 지시어.
 }
 ```
 
-2022년에 정의된 표준이라 현재(🗓️ 2023-03-26)는 파이어폭스만 모두 지원하고, 나머지 브라우저는 일부 기능만 지원한다. [https://caniuse.com/?search=%40supports](https://caniuse.com/?search=%40supports)
+2022년에 정의된 표준이라 현재(🗓️ 2023-03-26)는 파이어폭스만 모두 지원하고, 나머지 브라우저는 일부 기능만 지원한다. <https://caniuse.com/?search=%40supports>
 
 ### @property
 
-[https://developer.mozilla.org/en-US/docs/Web/CSS/@property](https://developer.mozilla.org/en-US/docs/Web/CSS/@property)
+<https://developer.mozilla.org/en-US/docs/Web/CSS/@property>
 
 **TODO**
 

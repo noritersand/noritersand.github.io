@@ -14,9 +14,9 @@ tags:
 
 #### 참고 문서
 
-- [https://www.python.org/](https://www.python.org/)
-- [https://pypi.org/project/pip/](https://pypi.org/project/pip/)
-- [https://python-poetry.org/](https://python-poetry.org/)
+- <https://www.python.org/>
+- <https://pypi.org/project/pip/>
+- <https://python-poetry.org/>
 
 #### 테스트 환경 정보
 

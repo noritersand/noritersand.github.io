@@ -419,7 +419,7 @@ echo "$count개"
 예를 들어 유틸리티 모듈에는 `Format-List`라는 리스트를 세로 목록으로 출력하는 명령이 있는데, 파이프를 활용하면:
 
 ```powershell
-PS > Get-FileHash .\upload.me | Format-list
+PS C:\dev> Get-FileHash .\upload.me | Format-list
 
 Algorithm : SHA256
 Hash      : 90B56139615DA8FE23201FD4C5FFE6E40EB16A8D544387B8056D2E1CF8D4AFF9
@@ -922,22 +922,22 @@ PowerShell에서 지원하는 데이터 타입은 아래와 같다:
 참고로 데이터 타입은 `GetType()` 메서드로 확인할 수 있음:
 
 ```powershell
-PS > $n1 = 1
-PS > $n1.GetType()
+PS C:\dev> $n1 = 1
+PS C:\dev> $n1.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     Int32                                    System.ValueType
 
-PS > $n2 = 2.3
-PS > $n2.GetType()
+PS C:\dev> $n2 = 2.3
+PS C:\dev> $n2.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
 True     True     Double                                   System.ValueType
 
-PS > $s1 = 'Hello'
-PS > $s1.GetType()
+PS C:\dev> $s1 = 'Hello'
+PS C:\dev> $s1.GetType()
 
 IsPublic IsSerial Name                                     BaseType
 -------- -------- ----                                     --------
@@ -947,27 +947,30 @@ True     True     String                                   System.Object
 ### 해시 테이블 Hashtables
 
 ```powershell
-$hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
+PS C:\dev> $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
+PS C:\dev> $hash
 
-$hash
-# Name                           Value
-# ----                           -----
-# Number                         1
-# Color                          Blue
-# Shape                          Square
+Name                           Value
+----                           -----
+Number                         1
+Shape                          Square
+Color                          Blue
 
-$hash.keys
-# Number
-# Shape
-# Color
+PS C:\dev> $hash.keys
 
-$hash.values
-# 1
-# Square
-# Blue
+Number
+Shape
+Color
 
-$hash.Number
-# 1
+PS C:\dev> $hash.values
+
+1
+Square
+Blue
+
+PS C:\dev> $hash.Number
+
+1
 ```
 
 **TODO**

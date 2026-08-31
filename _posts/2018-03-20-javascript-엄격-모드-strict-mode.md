@@ -16,7 +16,7 @@ tags:
 #### 참고 문서
 
 - [Strict mode \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)
-- [http://www.w3schools.com/js/js_strict.asp](http://www.w3schools.com/js/js_strict.asp)
+- <http://www.w3schools.com/js/js_strict.asp>
 - 자바스크립트 완벽 가이드 (데이비드 플래너건, 인사이트)
 
 #### 테스트 환경

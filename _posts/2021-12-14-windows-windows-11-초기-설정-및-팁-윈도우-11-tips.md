@@ -233,7 +233,7 @@ Get-AppxPackage *microsoft.549981C3F5F10* | Remove-AppxPackage
 - <kbd>win + ctrl + v</kbd> 사운드 출력. 여러 출력 장치 중 하나를 선택하거나 음향 효과를 지정하는 창을 띄운다.
 - <kbd>win + esc</kbd>: 돋보기가 켜졌을 때 누르면 꺼짐
 - <kbd>win + space</kbd>: 입력기 변환
-- ✂️<kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능. PowerToys를 설치하고 `명령 도구 모음 > 명령 팔레트 열기` 단축키로 변경할 것
+- ✏️<kbd>alt + space</kbd>: 원래는 창 시스템 메뉴 열기 기능. PowerToys를 설치하고 `명령 도구 모음 > 명령 팔레트 열기` 단축키로 변경할 것
 - <kbd>alt + esc</kbd>: 창을 연 순서대로 거꾸로 순환. 아쉬운 대로 현재 활성화된 창을 안 보이게 숨기는 기능으로 사용할 수 있음. (최소화 단축키 좀 만들어줘... 😟)
 - <kbd>alt + shift + esc</kbd>: 창을 연 순서대로 순환
 

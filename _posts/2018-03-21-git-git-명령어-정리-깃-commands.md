@@ -266,18 +266,21 @@ git cat-file <type> <object>
 - `<type>`: 출력한 객체의 타입을 지정한다. `blob`, `tree`, `commit`, `tag` 중에 하나여야 한다. 특정 옵션(`-t`, `-s`, `-e`, `-p`)이 사용될 경우 생략한다.
 - `<object>`: 출력할 객체의 이름을 지정한다. 해시값, 브랜치 이름, 태그 이름 등이 올 수 있다.
 
-```bash
-> git cat-file commit HEAD
+```powershell
+PS C:\dev> git cat-file commit HEAD
+
 tree ea7c8ddae40680c568200315a95a2396b40a3987
 parent 7afef7cd4dd84f9ffe3ccb5c87edbd72b419d3b0
 author noritersand <noritersand@example.com> 1701656020 +0900
 committer noritersand <noritersand@example.com> 1701656020 +0900
 
-> git cat-file -p ea7c8d
+PS C:\dev> git cat-file -p ea7c8d
+
 100644 blob a1c2a238a965f004ff76978ac1086aa6fe95caea    .gitignore
 100644 blob 69cbd2c12c118753a225c378ed269e3215ec96bd    README.md
 
-> git cat-file -t 69cbd2
+PS C:\dev> git cat-file -t 69cbd2
+
 blob
 ```
 
@@ -1325,7 +1328,7 @@ git ls-tree HEAD ./docs
 
 > Git의 머지는 두 개의 부모 커밋을 가리키는 특별한 커밋을 만들어 낸다. 두 개의 부모가 있는 커밋은 '한 부모의 모든 작업과 나머지 부모의 모든 작업, 그리고 그 두 부모의 모든 부모들의 작업을 포함한다'라는 의미가 있다.
 >
-> [https://learngitbranching.js.org/](https://learngitbranching.js.org/)
+> <https://learngitbranching.js.org/>
 
 현재 브랜치에 다른 브랜치를 머지한다. 만약 충돌(conflict)이 발생하면 Git은 자동으로 머지를 중단하고 충돌이 발생한 파일에 각 커밋의 내용을 출력한다.
 

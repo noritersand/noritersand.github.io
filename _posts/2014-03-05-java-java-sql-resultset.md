@@ -14,7 +14,7 @@ tags:
 
 #### 참고 문서
 
-- [http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html](http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html)
+- <http://docs.oracle.com/javase/7/docs/api/java/sql/ResultSet.html>
 
 ## 주요 상수
 
