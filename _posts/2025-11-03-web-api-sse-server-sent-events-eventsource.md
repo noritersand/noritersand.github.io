@@ -1,7 +1,7 @@
 ---
 layout: post
 date: 2025-11-03 14:39:19 +0900
-title: '[Web API] SSE(Server-sent events)'
+title: '[Web API] SSE (Server-sent events)'
 categories:
   - web-api
 tags:

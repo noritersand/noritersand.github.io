@@ -72,30 +72,3 @@ doc/*.txt
 # doc 디렉터리 아래의 모든 .txt 파일을 무시
 doc/**/*.txt
 ```
-
-
-## Snippets
-
-[gitignore.io](https://www.toptal.com/developers/gitignore)에서 안만들어주는 것만 적어둠.
-
-```bash
-# JetBrains
-.idea
-
-# Claude Code Local Configuration
-.claude/*.local.md
-.claude/*.local.json
-
-# Next.js local env files
-.env*.local
-
-# Sass
-public/styles/**/*.css
-public/styles/**/*.css.map
-public/pages/**/*.css
-public/pages/**/*.css.map
-
-# Repomix
-repomix-output.xml
-repomix-output.md
-```

@@ -120,8 +120,9 @@ tags:
 
 ### UI 개발 및 리소스
 
-- [Storybook](https://storybook.js.org/): 프론트엔드 워크샵이라고 한다(그게뭐야). UI 컴포넌트나 페이지를 만들 때 쓴다는데 아직 몲
-- [Vitebook](https://vitebook.dev/): 이것도 UI 컴포넌트를 개발하고 문서화하는 워크샵 도구
+- ✨[Storybook](https://storybook.js.org/): 프론트엔드 UI 컴포넌트를 개발하고 문서화하기 위한 도구. 애플리케이션의 실제 화면이나 비즈니스 로직과 분리해서 컴포넌트를 독립적으로 확인하고 테스트할 수 있다. 각 컴포넌트의 다양한 상태를 `Story`로 정의해 모아볼 수 있어 UI 컴포넌트 라이브러리나 디자인 시스템을 구축할 때 유용하다. 흔히 '프론트엔드 워크샵'이라고 표현한다.
+- [Vitebook](https://vitebook.dev/): UI 컴포넌트를 개발하고 문서화하기 위한 워크샵 도구. Vite를 기반으로 돌아가며, 컴포넌트를 실제 애플리케이션과 분리된 환경에서 독립적으로 확인하고 개발할 수 있다. Storybook과 비슷한 목적을 가지지만 더 가볍고 단순한 구성을 지향한다.
+
 
 
 ## 4. 프레임워크, 라이브러리
@@ -186,7 +187,7 @@ tags:
 - [sharp](https://sharp.pixelplumbing.com/): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://pptr.dev/): Google에서 개발한 headless 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 headless 모드(시각적 화면인 GUI가 없다는 의미)로 작동하지만, head 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
-- ✨[Playwright](https://playwright.dev/): Microsoft에서 개발한 오픈 소스 웹 자동화 프레임워크로, Puppeteer의 핵심 개발진이 이적하여 제작한 **직계 후속** 도구다. Chrome/Chromium에 한정되지 않고 Firefox와 WebKit(Safari)을 모두 단일 API로 제어하며, Node.js 외에도 Python, Java, `C#`을 공식 지원한다. 요소 준비 상태를 검증하는 자동 대기(Auto-waiting), 독립 세션 고속 생성(Browser Context), 사용자 동작 녹화(Codegen), 타임라인 기반 디버깅(Trace Viewer) 등 테스트에 특화된 기능을 제공한다.
+- ✨[Playwright](https://playwright.dev/): Microsoft에서 개발한 오픈 소스 웹 자동화 프레임워크로, Puppeteer의 핵심 개발진이 이적하여 제작한 **직계 후속** 도구다. Chrome/Chromium에 한정되지 않고 Firefox와 WebKit(Safari)을 모두 단일 API로 제어하며, Node.js 외에도 Python, Java, `C#`을 공식 지원한다. 요소 준비 상태를 검증하는 자동 대기(Auto-waiting), 독립 세션 고속 생성(Browser Context), 사용자 행동 녹화(Codegen), 타임라인 기반 디버깅(Trace Viewer) 등 테스트에 특화된 기능을 제공한다.
 - ✨[fullPage.js](https://alvarotrigo.com/fullPage/): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹사이트(단일 페이지 웹사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - ✨[Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
@@ -563,7 +564,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - ⭐[Claude Code](https://claude.com/ko/product/claude-code): Anthropic의 CLI 기반 에이전트 서비스. 별도의 GUI 툴 없이 로컬 터미널 환경에서 실행된다. 💰 유료 플랜 전용
 - [Codex](https://openai.com/codex/): OpenAI의 ChatGPT 기반 AI 코딩 에이전트 서비스. IDE의 플러그인이나 CLI 형태로 사용할 수 있다.
 - [Junie](https://www.jetbrains.com/junie/): JetBrains의 코딩 에이전트
-- [v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다. 웹 기반이라 그런건지, 좀 느리고 프로젝트의 커밋과 파일을 잘 인식하지 못한다. 🗓️ 2026-08-29 기준, 체감상 Mini 모델은 성능이 너무 떨어지고 Pro 부터는 크레딧 소모가 너무 빠르다. 일일 충전 크레딧도 적고... 😒
+- [v0](https://v0.app/): Vercel의 프론트엔드에 특화된 UI 생성 플랫폼. 자연어로 만들고 싶은 웹 화면이나 컴포넌트를 설명하면 React, Next.js, Tailwind CSS, Shadcn UI 등을 활용하여 실제로 작동하는 웹 코드를 즉시 생성해 준다. 웹 기반이라 그런건지, 좀 느리고 프로젝트의 커밋과 파일을 잘 인식하지 못한다. 🗓️ 2026-08-29 기준, 체감상 Mini 모델은 성능이 너무 떨어지고 Pro는 겨우 Claude Sonnet 5 쓰면서 크레딧 소모가 너무 빠르다. (디자인 작업 바이브 코딩은 원래 그런건지...? 🤔)
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰 코드 생성부터는 유료다. 
 - [Stitch](https://stitch.withgoogle.com/)
 - [Readdy](https://readdy.ai/)

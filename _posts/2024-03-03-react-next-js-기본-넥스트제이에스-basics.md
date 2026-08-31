@@ -440,6 +440,23 @@ ENV_VARIABLE="server_only_variable"
 NEXT_PUBLIC_ENV_VARIABLE="public_variable"
 ```
 
+### Vercel System Environment Variables
+
+`production`과 `preview/development`를 구분하고 싶을 땐?
+
+```js
+process.env.NODE_ENV == 'production' // ⚠️
+```
+
+`process.env.NODE_ENV`는 Next.js가 알아서 주입하는 값이고 변경할 수 없는 환경 변수다. (`next dev` -> `development`, `next build/start` -> `production`) 문제는 이 값이 진짜 production 배포인지 preview 배포인지는 구분 못 한다는 것. 둘 다 `next start`라서 똑같이 `production`으로 찍힘.
+
+그래서 production이 아닌 preview를 구분하고 싶을 땐 `NODE_ENV` 대신 `VERCEL_ENV` 또는 `NEXT_PUBLIC_VERCEL_ENV`를 사용해야 한다.
+
+- `VERCEL_ENV`: 서버 코드(서버 컴포넌트, 라우트 핸들러)에서 사용. 항상 자동 주입됨.
+- `NEXT_PUBLIC_VERCEL_ENV`: 클라이언트 코드(`'use client'` 컴포넌트)에서 사용. `Vercel 대시보드 > Settings > Environment Variables`의 `Enable access to System Environment Variables` 체크박스가 켜져 있어야 값이 채워짐. (기본값으로 체크되어 있음)
+
+⚠️ 로컬 환경(`npm run dev`)에서는 Vercel이 개입하지 않아서 위 두 변수는 존재하지 않는(`undefined`) 값이 된다. `!== 'production'` 조건이면 로컬에서도 자연스럽게 "production 아님"으로 처리되니 별도 처리 불필요.
+
 
 ## 클라이언트 렌더링
 

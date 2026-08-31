@@ -43,7 +43,7 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 choco install powershell-core -y
 ```
 
-```
+```powershell
 # PowerShell 버전 확인하기
 Get-Host | Select-Object Version
 ```
