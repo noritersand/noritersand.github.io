@@ -106,13 +106,13 @@ C:\Program Files\Git\bin\bash.exe
 스크립트를 수정한 거라면 Dot sourcing operator`.`로 갱신 가능함.
 
 
-## Windows Command-Line Program 윈도우 명령줄 프로그램
+## Windows Command-Line Utilities 윈도우 명령줄 유틸리티
 
-Windows에서 명령줄 인터페이스를 통해 실행할 수 있는 독립적인 프로그램이다. 셸에 내장된 명령이 아니며, Windows에 기본 제공되는 프로그램이 많다. 대체로 `C:\Windows\System32\` 또는 `C:\Windows\SysWOW64\`에 위치한다.
+Windows에서 명령줄 인터페이스를 통해 실행할 수 있는 독립적인 유틸리티다. 셸에 내장된 명령이 아니며, Windows에 기본 제공되는 유틸리티가 많다. 대체로 `C:\Windows\System32\` 또는 `C:\Windows\SysWOW64\`에 위치한다.
 
 ### icacls
 
-파일/디렉터리의 권한(ACL)을 조회하고 수정하는 명령줄 프로그램.
+파일/디렉터리의 권한(ACL)을 조회하고 수정하는 명령줄 유틸리티.
 
 ```powershell
 icacls .\test\
@@ -200,7 +200,7 @@ handle.exe -au $env:temp\handle-test.txt
 
 ### where.exe
 
-명령이나 실행 파일의 위치를 찾는 명령줄 프로그램.
+명령이나 실행 파일의 위치를 찾는 명령줄 유틸리티.
 
 ```bash
 where.exe node
@@ -215,7 +215,7 @@ where.exe node
 
 ### find
 
-특정 문자열을 검색하는 프로그램. 다른 명령과 파이프로 연결해 출력을 필터링하는 용도로도 사용함.
+특정 문자열을 검색하는 유틸리티. 다른 명령과 파이프로 연결해 출력을 필터링하는 용도로도 사용함.
 
 ```bash
 dir | find "Videos" # "Videos"를 포함하는 행 출력
@@ -225,7 +225,7 @@ dir | find "Videos" # "Videos"를 포함하는 행 출력
 
 ### findstr
 
-`find`와 비슷하지만 정규식 검색이 기본값인 프로그램.
+`find`와 비슷하지만 정규식 검색이 기본값인 유틸리티.
 
 ```bash
 # '8081'로 필터링
@@ -234,7 +234,7 @@ netstat -nao | findstr '8081'
 
 ### xcopy
 
-파일과 폴더 트리를 복사하는 프로그램.
+파일과 폴더 트리를 복사하는 유틸리티.
 
 ```bash
 xcopy SOURCE DESTINATION /s /e /y
@@ -246,9 +246,27 @@ xcopy SOURCE DESTINATION /s /e /y
 - `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사. /S /E 스위치와 같다.
 - `/Y`: 기존 대상 파일을 덮어쓸지 여부를 묻지 않는다.
 
+### robocopy
+
+파일과 폴더 트리를 복사하는 유틸리티. `xcopy`의 후속 격으로, 재시도/미러링/멀티스레드 복사 등 더 강력한 기능을 제공한다.
+
+```bash
+robocopy SOURCE DESTINATION /e /z /mt
+```
+
+#### Options
+
+- `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사.
+- `/MIR`: 대상을 원본과 동일하게 미러링한다(원본에 없는 대상 파일/폴더는 삭제됨). ⚠️ 대상 경로를 잘못 지정하면 파일이 삭제될 수 있으니 주의.
+- `/Z`: 네트워크 재시작 모드로 복사. 전송이 끊겨도 이어받기가 가능하다.
+- `/MT[:N]`: 멀티스레드로 복사한다. `N`을 생략하면 기본값 8개 스레드 사용.
+- `/R:N`: 실패 시 재시도 횟수 지정. 기본값은 100만 번으로 매우 크므로 보통 낮춰서 씀.
+- `/W:N`: 재시도 간 대기 시간(초). 기본값은 30초.
+- `/LOG:파일`: 진행 상황을 지정한 파일에 기록한다.
+
 ### netstat
 
-현재 컴퓨터의 네트워크 연결과 포트 상태를 보여주는 프로그램.
+현재 컴퓨터의 네트워크 연결과 포트 상태를 보여주는 유틸리티.
 
 ```bash
 # PID와 함께 모든 연결과 수신 대기 포트를 숫자 형식으로 출력하되
@@ -260,7 +278,7 @@ netstat -nao | findstr '8081'
 
 ### [nslookup](https://docs.microsoft.com/ko-kr/windows-server/administration/windows-commands/nslookup)
 
-DNS 서버에서 도메인 정보를 조회하는 프로그램.
+DNS 서버에서 도메인 정보를 조회하는 유틸리티.
 
 ```bash
 # noritersand.github.io 도메인에 대한 DNS 정보 조회
@@ -272,7 +290,7 @@ nslookup icanhazip.com dns.google.com
 
 ### tasklist
 
-실행 중인 프로세스 목록을 출력하는 프로그램.
+실행 중인 프로세스 목록을 출력하는 유틸리티.
 
 ```bash
 # 프로세스 목록을 출력하되 '18292'로 필터링
@@ -281,7 +299,7 @@ tasklist | findstr '18292'
 
 ### taskkill
 
-실행 중인 프로세스를 종료하는 프로그램.
+실행 중인 프로세스를 종료하는 유틸리티.
 
 ```bash
 # PID가 5888인 프로세스 중지
@@ -290,7 +308,7 @@ taskkill /f /pid 5888
 
 ### diskpart
 
-Windows 전통의 디스크 관리 프로그램. 디스크, 파티션, 볼륨 등을 확인하고 지정/변경할 수 있다.
+Windows 전통의 디스크 관리 유틸리티. 디스크, 파티션, 볼륨 등을 확인하고 지정/변경할 수 있다.
 
 ```bash
 diskpart
@@ -328,7 +346,7 @@ DISKPART> list partition
 
 ### route
 
-라우팅 테이블을 출력하거나 수정하는 프로그램
+라우팅 테이블을 출력하거나 수정하는 유틸리티
 
 ```bash
 # 도움말 보기
@@ -340,7 +358,7 @@ route PRINT
 
 ### ping
 
-특정 IP나 도메인에 연결 확인용 데이터(ICMP Echo 요청)를 보내 응답 여부와 응답 시간을 확인하는 프로그램. ICMP(Internet Control Message Protocol)를 사용하기 때문에 상대 컴퓨터에서 ICMP를 차단하면 네트워크 연결이 정상이어도 `ping`은 작동하지 않는다.
+특정 IP나 도메인에 연결 확인용 데이터(ICMP Echo 요청)를 보내 응답 여부와 응답 시간을 확인하는 유틸리티. ICMP(Internet Control Message Protocol)를 사용하기 때문에 상대 컴퓨터에서 ICMP를 차단하면 네트워크 연결이 정상이어도 `ping`은 작동하지 않는다.
 
 ```bash
 # KT 서버에 중단없이 연결 테스트 + 현재 시각 출력
@@ -364,7 +382,7 @@ tree /f /a
 
 ### [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
 
-파일의 해시값을 계산하거나 인증서 관련 정보를 관리하는 프로그램.
+파일의 해시값을 계산하거나 인증서 관련 정보를 관리하는 유틸리티.
 
 ```bash
 certutil -hashfile 파일명 [해시알고리즘]
