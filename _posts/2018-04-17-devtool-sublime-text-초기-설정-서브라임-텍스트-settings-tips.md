@@ -142,7 +142,8 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 추천 패키지
 
-- ⭐MarkdownEditing: 원래는 마크다운 편집을 돕는 패키지인데, PowerShell 코드 하이라이팅 때문에 설치함. 그냥 쓰면 여러모로 귀찮으니 설정에 `"mde.auto_fold_link.enabled": false, "mde.list_auto_bullets": false` 추가.
+- ⭐[MarkdownEditing](https://packagecontrol.io/packages/MarkdownEditing): 마크다운 편집을 돕는 패키지. 그냥 쓰면 여러모로 귀찮으니 설정에 `"mde.auto_fold_link.enabled": false, "mde.list_auto_bullets": false` 추가.
+- ⭐[PowerShell](https://packagecontrol.io/packages/PowerShell): PowerShell 스크립트 지원 패키지. 문법 강조(syntax highlighting), 코드 스니펫, 심볼 탐색, 빌드 시스템, 들여쓰기 및 코드 접기 등의 언어 지원 기능을 제공한다. (사실 마크다운의 powershell syntax 하나 보고 설치했지만... 😏)
 - StyleToken: 파일 내에서 특정 단어별 하이라이팅
 - FileDiffs: 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
 - ConvertToUTF8: `EUC-KR`로 작성된 파일을 `UTF-8`로 전환해서 열어주는 패키지. 이 패키지를 활성화하면 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음
@@ -150,24 +151,24 @@ console.debug('${1:msg}:', ${2:msg});
 - Sync View Scroll: 여러 view의 스크롤을 동기화하는 패키지. 심지어 좌우 스크롤도 동기화된다.
 - ⭐URLEncode: URL 인코드-디코드 기능 제공.
 - ⭐HexViewer: 주기능은 HEX 파일 뷰어, 부기능으로 HEX-텍스트간 변환과 해시 생성 등을 지원하는 패키지. 좌측에 HEX, 우측에 일반 텍스트를 동시에 표시해줘서 포커스된 문자를 하이라이팅 해주는 등 뷰어 기능이 쓸만함.
-- ⭐SideBarEnhancements: 서브라임의 단순한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
+- ⭐[SideBarEnhancements](https://packagecontrol.io/packages/SideBarEnhancements): 서브라임의 단순한 사이드바(파일 탐색기) 기능을 보충해주는 패키지.
 - MarkdownPreview: 마크다운 파일 브라우저로 미리보기
 - ⭐Emmet: 예전 이름은 Zen coding이었던 축약어로 마크업을 완성해주는 Emmet 지원 패키지. [Emmet 문법은 여기](https://docs.emmet.io/)를 보면 됨.
 - Log Highlight: 로그 파일 가독성이 아주 약간 좋아짐.
 - ⭐Pretty JSON: JSON 문자열을 한 줄로 압축하거나 반대로 예쁘게 포맷해주는 플러그인
-- ⭐MoveTab: 탭의 위치를 좌우로 이동하는 단축키를 추가한다. 이 플러그인을 설치하면 기본 단축키인 next view extend(다음 탭을 현재 화면에 나눠서 보기)을 덮어쓴다.
+- ⭐[MoveTab](https://packagecontrol.io/packages/MoveTab): 탭의 위치를 좌우로 이동하는 단축키를 추가한다. 이 플러그인을 설치하면 기본 단축키인 next view extend(다음 탭을 현재 화면에 나눠서 보기)을 덮어쓴다.
   - <kbd>ctrl + shift + pageup</kbd>: 현재 탭의 위치를 왼쪽으로 이동
   - <kbd>ctrl + shift + pagedown</kbd>: 현재 탭의 위치를 오른쪽으로 이동
-- ⭐Insert Nums: 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음
+- ⭐[Insert Nums](https://packagecontrol.io/packages/Insert%20Nums): 늘어난 캐럿만큼 순번을 자동으로 입력해줌. 시작 번호와 증가치를 지정할 수 있음
   - <kbd>ctrl + alt + n</kbd>: 순번 입력하기 
   - <kbd>ctrl + alt + shift + n</kbd>: 미리보기 없이 순번 입력하기 
 - Compare Side-By-Side: FileDiffs보다 보기 좋은 diff 뷰어. 단축키는 alt + n(다음), alt + p(이전)
-- ⭐Open URL: 하이퍼링크를 바로 브라우저로 열어주는 패키지
+- ⭐[Open URL](https://packagecontrol.io/packages/Open%20URL): 하이퍼링크를 바로 브라우저로 열어주는 패키지
   - <kbd>ctrl + alt + u</kbd>: 캐럿 위치의 URL을 브라우저로 바로 열기. <kbd>alt + 더블클릭</kbd>하거나 우클릭 해도 됨
 - InsertDate: 2015년이 마지막 커밋이지만 서브라임4에서도 잘 작동하는 날짜 + 시간 입력기
   - <kbd>f5</kbd>: 기본 단축키
   - <kbd>alt + f5</kbd>: [strftime](https://www.strfti.me) 포맷 커스텀 입력
-- ⭐Case Conversion: 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 `case convert` 치면 주르륵 나옴.
+- ⭐[Case Conversion](https://packagecontrol.io/packages/Case%20Conversion): 영단어 케이스 변환 기능 제공. 사용 방법은 커맨트 팔레트에서 `case convert` 치면 주르륵 나옴.
   - 두문자어를 무시('userID'를 'userId'로 변환)하고 싶은 경우 `Preferences > Package Settings > Case Conversion > Settings`로 진입한 뒤 `{"detect_acronyms": false}` 이걸 붙여넣으면 된다.
 - CommandsBrowser: 서브라임(특히 Sublime Merge가)은 명령어 도움말이 부실하다. 이거 설치 후 커맨드 팔레트에서 `CommandsBrowser` 입력해보자
 - ⭐rainbow_csv: CSV Syntax를 지원하는 패키지. 열을 기준으로 알록달록하게 보여줌
@@ -182,7 +183,7 @@ Build 3126 이후부터 기록함.
 ### 선택
 
 - <kbd>ctrl + l</kbd>: 캐럿이 위치한 라인 전체를 선택한다.
-- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바`_`를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
+- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바(`_`)를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
 - <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: 보조 단어(subwords) 단위의 선택 영역을 확장한다. 단어와 다르게 보조 단어는 앞단어와 다른 대소문자와 모든 특수문자로 구분된다.
 - <kbd>ctrl + .</kbd>: next_modification. 현재 파일의 이전 변경사항을 덩어리로 선택한다.
 - <kbd>ctrl + ,</kbd>: prev_modification. 현재 파일의 다음 변경사항을 덩어리로 선택한다.

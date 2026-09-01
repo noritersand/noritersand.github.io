@@ -342,7 +342,7 @@ root.render(React.createElement(ShoppingList, null));
 
 ### JavaScript 표현식 삽입
 
-JSX에서 JavaScript 표현식을 사용하려면 중괄호`{}`(Curly Braces)로 감싸면 된다:
+JSX에서 JavaScript 표현식을 사용하려면 중괄호(`{}`)(Curly Braces)로 감싸면 된다:
 
 ```jsx
 const element = <img src={user.avatarUrl}></img>;

@@ -656,7 +656,7 @@ yarn run
 yarn run api:build
 ```
 
-`script`에 지정한 이름이 콜론`:`이 포함되어 있으면, 프로젝트 내의 특정 워크스페이스에서만 npm 스크립트를 찾아 실행한다. 예를 들어 모노레포 구조에서 `packages/api`와 `packages/web` 두 개의 워크스페이스가 있고, 각각 `build` 스크립트를 가지고 있다고 가정했을 때, `yarn run api:build`를 실행하면 `packages/api` 워크스페이스의 `build` 스크립트가 실행되는 식이다.
+`script`에 지정한 이름이 콜론(`:`)이 포함되어 있으면, 프로젝트 내의 특정 워크스페이스에서만 npm 스크립트를 찾아 실행한다. 예를 들어 모노레포 구조에서 `packages/api`와 `packages/web` 두 개의 워크스페이스가 있고, 각각 `build` 스크립트를 가지고 있다고 가정했을 때, `yarn run api:build`를 실행하면 `packages/api` 워크스페이스의 `build` 스크립트가 실행되는 식이다.
 
 ### yarn dlx
 

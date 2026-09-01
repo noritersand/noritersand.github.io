@@ -448,13 +448,13 @@ winget install BurntSushi.ripgrep.MSVC
 
 ```powershell
 # 현재 폴더와 그 하위를 재귀 검색
-rg "useState"
+rg useState
 
 # 특정 폴더에서 검색
-rg "TODO" src/
+rg TODO src/
 
 # 특정 파일에서 검색
-rg "useState" App.tsx
+rg useState App.tsx
 
 # 여러 검색어를 OR 조건으로 검색
 rg "TODO|FIXME|HACK"
@@ -464,21 +464,23 @@ rg "use[A-Z]\w+"
 rg "^# " docs/
 
 # 특정 확장자만 검색
-rg "useState" -g "*.tsx"
+rg useState -g "*.tsx"
 
 # 여러 확장자 지정
-rg "useState" -g "*.ts" -g "*.tsx"
+rg useState -g "*.ts" -g "*.tsx"
 
 # 특정 파일이나 디렉터리 제외
-rg "TODO" -g "!*.test.tsx"
-rg "TODO" -g "!node_modules"
+rg TODO -g "!*.test.tsx"
+rg TODO -g "!node_modules"
 
 # 검색 결과 주변 줄까지 출력
-rg -C 2 "useState"
+rg -C 2 useState
 
 # 특정 문자열이 포함된 파일의 개수 확인
-rg --count-matches "useState"
+rg --count-matches useState
 ```
+
+ℹ️ 검색어는 따옴표가 없어도 되지만, PowerShell에서는 `|`, `$`, `*` 같은 특수문자가 의미를 가질 수 있으니 이 경우에 한하여 따옴표로 감싸는 게 권장된다.
 
 #### Options
 

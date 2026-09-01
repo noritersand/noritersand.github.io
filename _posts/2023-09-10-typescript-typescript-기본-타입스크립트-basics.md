@@ -244,7 +244,7 @@ const person2: Developer = {
 };
 ```
 
-ℹ️ 객체 타입을 정의할 땐 프로퍼티 구분자로 쉼표`,` 대신 세미콜론`;`이 권장된다. (둘 다 가능하긴 함)
+ℹ️ 객체 타입을 정의할 땐 프로퍼티 구분자로 쉼표(`,`) 대신 세미콜론`;`이 권장된다. (둘 다 가능하긴 함)
 
 #### 인터페이스의 프로퍼티를 타입 제한에 사용하기
 
@@ -262,7 +262,7 @@ function fn123(str: SomeInterface['option']) {
 
 ### 유니언 Unions
 
-여러 타입 중 하나일 수 있음을 나타내는 방법이다. 허용할 타입들은 파이프`|`로 구분한다.
+여러 타입 중 하나일 수 있음을 나타내는 방법이다. 허용할 타입들은 파이프(`|`)로 구분한다.
 
 ```ts
 type MyNumber = number | string;
@@ -360,7 +360,7 @@ foo1 = 123; // ❌ error TS2322: Type 'number' is not assignable to type 'never'
 
 제네릭은 함수, 클래스, 인터페이스, 타입 별칭을 정의할 때 내부에서 사용할 변수의 타입을 나중에 지정할 수 있게 하는 기능이다. 타입을 파라미터로 받는 재사용 가능한 코드를 작성할 때 사용한다. 
 
-제네릭 타입을 정의하려면 타입 이름 뒤에 제네릭 타입 변수(Generic type variables)를 홑화살괄호`<>`와 함께 표기하면 된다. 제네릭 타입 변수의 이름은 흔히들 `T`나 `Type`으로 작성한다.
+제네릭 타입을 정의하려면 타입 이름 뒤에 제네릭 타입 변수(Generic type variables)를 홑화살괄호(`<>`)와 함께 표기하면 된다. 제네릭 타입 변수의 이름은 흔히들 `T`나 `Type`으로 작성한다.
 
 ```ts
 function doSomething<T>(arg: T): T { 
@@ -500,7 +500,7 @@ let foo2: string = 123; // ❌ error TS2322: Type 'number' is not assignable to 
 
 ### 배열 Array
 
-배열을 구성하는 요소의 타입을 제어하는 방식이다. 타입 뒤에 대괄호`[]`를 표기하여 선언한다:
+배열을 구성하는 요소의 타입을 제어하는 방식이다. 타입 뒤에 대괄호(`[]`)를 표기하여 선언한다:
 
 ```ts
 let arr: number[];
@@ -549,7 +549,7 @@ one = 2; // ❌ error TS2322: Type '2' is not assignable to type '1'.
 
 ### 객체 리터럴의 프로퍼티
 
-식별자명 바로 뒤에 콜론`:`과 함께 어떤 타입인지를 선언한다:
+식별자명 바로 뒤에 콜론(`:`)과 함께 어떤 타입인지를 선언한다:
 
 ```ts
 let obj: {name: string} = {
@@ -609,7 +609,7 @@ console.log(obj[b]); // 2
 
 ### 타입 단언 Type Assertions
 
-컴파일러에게 특정 값의 타입을 명시적으로 알려주는 방법이다. `as` 혹은 홑화살괄호`<>`로 표기한다:
+컴파일러에게 특정 값의 타입을 명시적으로 알려주는 방법이다. `as` 혹은 홑화살괄호(`<>`)로 표기한다:
 
 ```ts
 let myCanvas = document.querySelector('#myCanvas') as HTMLCanvasElement;
@@ -666,7 +666,7 @@ function getNotice(noticeNo: number = null) {
 
 ### 객체 타입의 매개변수
 
-얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표`,` 혹은 세미콜론`;`을 사용한다.
+얼핏 보면 구조분해 처럼 보이지만 사실은 객체 프로퍼티에 대한 타입을 표기한 것이다. 각 프로퍼티를 구분할 땐 쉼표(`,`) 혹은 세미콜론`;`을 사용한다.
 
 ```ts
 function printFooBar(foobar: {foo: string; bar: number}) {
@@ -708,7 +708,7 @@ function addAtoB({a = 0, b = 1}: {a: number; b: number}) {
 
 ### 반환값의 타입 선언
 
-다른 것과 비슷하게 콜론`:`을 사용한다:
+다른 것과 비슷하게 콜론(`:`)을 사용한다:
 
 ```ts
 // 함수 정의식

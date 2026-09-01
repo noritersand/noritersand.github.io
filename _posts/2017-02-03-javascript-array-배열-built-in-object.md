@@ -548,7 +548,7 @@ array.join()
 array.join(separator)
 ```
 
-- `separator`: 구분자로 사용할 문자열. 생략하면 쉼표`,`가 사용된다.
+- `separator`: 구분자로 사용할 문자열. 생략하면 쉼표(`,`)가 사용된다.
 
 ```js
 var arr = ['a', 'b', 'c'];

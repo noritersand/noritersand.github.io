@@ -157,7 +157,7 @@ gv abc
 
 ### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
 
-PowerShell에서 작은따옴표`''`로 감싸진 문자열은 (큰따옴표`""`와 다르게) 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
+PowerShell에서 작은따옴표(`''`)로 감싸진 문자열은 큰따옴표(`""`)와 다르게 문자 그대로 취급되며, 이 안에 포함된 변수나 표현식은 평가되지 않고 그대로 출력된다:
 
 ```powershell
 $i = 5
@@ -182,6 +182,49 @@ $i = 5
 
 따옴표간 차이는 이 정도고, 나머지는 대체로 동일한 의미로 쓰인다.
 
+### 백틱 ``` ` ```
+
+[about_Special_Characters - PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_special_characters)
+
+특수 문자 시퀀스(special character sequences, 이스케이프 시퀀스라고도 함)를 만드는 데 사용하는 문자.
+
+주로 큰따옴표 문자열에서 줄바꿈 등의 특수 문자를 표현하기 위해 사용된다. 작은따옴표 문자열에서는 이스케이프 시퀀스가 해석되지 않는다:
+
+```powershell
+PS C:\dev> echo "a `n b"
+
+a
+ b
+
+PS C:\dev> echo 'a `n b'
+
+a `n b
+```
+
+#### PowerShell의 특수 문자 시퀀스
+
+- ``` `0 ```: Null
+- ``` `a ```: Alert
+- ``` `b ```: Backspace
+- ``` `e ```: Escape (added in PowerShell 6)
+- ``` `f ```: Form feed
+- ``` `n ```: New line
+- ``` `r ```: Carriage return
+- ``` `t ```: Horizontal tab
+- ``` `u{x} ```: Unicode escape sequence (added in PowerShell 6)
+- ``` `v ```: Vertical tab
+
+특수 문자 시퀀스가 아닌 문자가 백틱 뒤에 오면 원래 문자 그대로 취급된다:
+
+```powershell
+PS C:\dev> echo ''
+
+
+PS C:\dev> echo `'`'
+
+''
+```
+
 ### 중괄호 `{}`
 
 **TODO**
@@ -205,7 +248,7 @@ Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
 
 ### 줄 바꿈
 
-줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱``` ` ```을 붙인다:
+줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱(``` ` ```)을 붙인다:
 
 ```powershell
 # js 파일을 찾아서 temp.md에 파일 이름을 작성하는 스크립트
@@ -220,7 +263,7 @@ Get-ChildItem `
 # Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
 ```
 
-줄 끝이 파이프`|`일 땐 백틱``` ` ```을 생략해도 된다:
+줄 끝이 파이프(`|`)일 땐 백틱(``` ` ```)을 생략해도 된다:
 
 ```powershell
 Get-ChildItem |
@@ -700,7 +743,7 @@ Test-Fn -Param2 abc -Param1 def
 # $Param2: abc
 ```
 
-하나의 파라미터는 쉼표`,`로 구분된 값 여러 개를 전달할 수 있다. 이 때 해당 파라미터는 배열처럼 다룰 수 있다:
+하나의 파라미터는 쉼표(`,`)로 구분된 값 여러 개를 전달할 수 있다. 이 때 해당 파라미터는 배열처럼 다룰 수 있다:
 
 ```powershell
 function Test-Fn($Param1) {
@@ -729,7 +772,7 @@ Test-Fn2 4, 5, 6
 
 ### 타입 제한
 
-파라미터의 이름 앞에 대괄호`[]`로 감싸고 타입을 지정한다. 이렇게 하면 해당 타입이 아닌 값이 전달됐을 때 메시지와 함께 에러가 발생한다:
+파라미터의 이름 앞에 대괄호(`[]`)로 감싸고 타입을 지정한다. 이렇게 하면 해당 타입이 아닌 값이 전달됐을 때 메시지와 함께 에러가 발생한다:
 
 ```powershell
 function Test-Fn3([string]$Param1) {}

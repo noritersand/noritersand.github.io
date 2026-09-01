@@ -117,7 +117,7 @@ Unsafe Keyword Values:
 Hosts Values:
 
 - Host: 특정 호스트의 출처를 허용하는 방식. 이 값은 와일드 카드`*`로 범위를 지정할 수 있고, 스킴(= 프로토콜), 포트번호, path(도메인 다음의 경로)를 특정할 수 있다. (예시: `example.com`, `*.example.com`, `https://*.example.com:12/path/to/file.js`) 슬래시`/`로 끝나는 path는 접두어처럼 작동하지만, 이 외의 path는 완전히 일치해야만 한다. 예를 들어 `example.com/api/`는 `example.com/api/users/new`와 일치한다. 그리고 `example.com/file.js`는 `https://example.com/file.js`와 일치하지만, `https://example.com/file.js.old`와는 일치하지 않는다.
-- Scheme: 특정 스킴을 모두 허용하는 방식이다. 항상 콜론`:`으로 끝나야 한다. (예시: `https:`, `data:`, `blob:`)
+- Scheme: 특정 스킴을 모두 허용하는 방식이다. 항상 콜론(`:`)으로 끝나야 한다. (예시: `https:`, `data:`, `blob:`)
 
 Other Values:
 
