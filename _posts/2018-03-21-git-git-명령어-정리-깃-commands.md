@@ -1306,17 +1306,35 @@ git ls-remote -h https://github.com/noritersand/noritersand.github.io
 
 ## git ls-tree
 
-지정한 경로에 있는 Git이 추적중인 파일목록을 출력한다.
+커밋이 가리키는 Git tree 객체의 내용을 조회하는 명령이다. 파일 자체보다는 Git이 특정 시점의 저장소 구조를 어떻게 기록하고 있는지 확인할 때 쓴다.
 
 ```bash
+# origin/main의 최상위 디렉터리만 출력
 git ls-tree -d origin/main
+
+# 특정 커밋의 모든 트리 항목을 재귀적으로 출력
 git ls-tree c29acb72a600 -r
+
+# HEAD에서 ./docs 디렉터리의 트리 항목을 출력
 git ls-tree HEAD ./docs
+
+# HEAD의 모든 파일을 재귀적으로 출력
+git ls-tree -r HEAD
 ```
 
 경로는 생략하면 명령을 실행하는 현재 경로를 기준으로 출력하지만, 커밋(공식 문서에선 `tree-ish`로 표현)은 생략할 수 없다.
 
-아직 어떻게 쓸 수 있는지는 잘 몲... 있어야 하는 파일이 없을 때 확인하는 용도로 쓰려나?
+```bash
+# 출력 예시
+# 순서대로 mode, object type, object hash, path
+100644 blob edbf5a768cb29bafc0702332f73eb01c5f87f04a    images/wuuuuut.png
+100644 blob 4982264493b9671aae8896eb5d1f5d9bf276683a    sync-files.bat
+```
+
+- `mode`: 파일 종류와 권한
+- `object type`: `blob`(파일) 또는 `tree`(디렉터리)
+- `object hash`: 해당 객체의 `SHA-1`/`SHA-256` 해시
+- `path`: 파일/디렉터리의 경로
 
 #### Options
 
