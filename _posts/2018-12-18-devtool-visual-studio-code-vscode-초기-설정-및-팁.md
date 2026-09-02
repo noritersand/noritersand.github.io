@@ -56,8 +56,9 @@ ${activeEditorLong}${separator}${rootName}
 
 설정에서 `exclude` 검색 후 추가하면 된다. `Files: Exclude`는 Explorer에서 표시 제외, `Search: Exclude`는 빠른 열기와 검색에서 제외임.
 
+### 하위 디렉터리의 Git 저장소 자동 탐색 끄기
 
-## 팁
+설정에서 `git.autoRepositoryDetection` 검색 후 `off`로 설정
 
 ### 코드 스니펫 추가하기
 

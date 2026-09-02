@@ -30,7 +30,7 @@ tags:
 <Resource name="jdbc/myoracle" type="javax.sql.DataSource"
     driverClassName="oracle.jdbc.driver.OracleDriver"
     url="jdbc:oracle:thin:@127.0.0.1:1521:orcl"
-    username="noritersand" password="java301$!" maxActive="20" maxIdle="10"
+    username="noritersand" password="java1234$!" maxActive="20" maxIdle="10"
     maxWait="-1" />
 </Context>
 <!-- 이후 connection 정보가 바뀔때는 이 파일만 수정한다. -->

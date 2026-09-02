@@ -129,7 +129,7 @@ console.debug('${1:msg}:', ${2:msg});
 
 `%APPDATA%\Sublime Text\Local` 경로에 있는 `Session.sublime_session` 파일을 지우면 마지막으로 열었던 정보, 최근 열었던 프로젝트 같은 임시 데이터가 초기화되는데... 
 
-최근 프로젝트만 지우고 싶으면 해당 파일을 열어서 `workspaces > recent_workspaces` 내용을 수정하는 게 낫다. ⚠️ 벗뜨 수정하는 순간 `Auto Save Session.sublime_session` 파일이 자동생성되면서 서브라임을 닫을 때 복구돼버린다. 메커니즘이 어떻게 된 건지 이 파일을 삭제해도 소용없다. 그래서 `Session.sublime_session` 내용을 수정하고 싶다면 다른 디렉터리로 옮겨서 수정한 뒤 서브라임을 끄고 원래 경로에 덮어써야 한다.
+최근 프로젝트만 지우고 싶으면 해당 파일을 열어서 `workspaces > recent_workspaces` 내용을 수정하는 게 낫다. ⚠️ 벗뜨 수정하는 순간 `Auto Save Session.sublime_session` 파일이 자동생성되면서 서브라임을 닫을 때 복구되니까 이 파일을 수정할 때는 다른 에디터를 쓸 것
 
 
 ## 패키지(플러그인) Sublime Text Packages

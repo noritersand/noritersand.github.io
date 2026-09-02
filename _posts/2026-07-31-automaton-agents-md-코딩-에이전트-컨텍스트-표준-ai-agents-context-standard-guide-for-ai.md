@@ -54,11 +54,10 @@ Use plan mode for changes under `src/billing/`.
 
 ## 다른 문서 언급하기
 
-`import` 같은 문법이 없어서 그냥 자연어로 언급하면 된다.
+그냥 자연어로 쓰면 됨:
 
 ````
-- 서비스 정책은 `docs/SERVICE-POLICY-2.0.md` 파일 참고
-- 서비스 정책은 [서비스 정책](docs/policies/SERVICE-POLICY-2.0.md) 파일 참고
+- 서비스 정책은 `docs/policies/SERVICE-POLICY-2.0.md` 파일 참고
 ````
 
 
@@ -116,6 +115,19 @@ Use plan mode for changes under `src/billing/`.
 ```
 
 
+## 권장 사항
+
+### 하이퍼링크
+
+```
+- 개발 지침: [docs/agents/development.md](docs/agents/development.md)
+```
+
+마크다운 링크 형식이 좋다. 어쨋든 `AGENTS.md`도 사람이 읽어야 하는 파일이고, 하이퍼링크로 해석되는 게 편하기 때문. 사실 극한의 효율성을 중시한다면 백틱으로 감싸는 게 더 좋긴 하다. 마크다운 링크 형식은 실제 주소를 분리/해석해야 하는 오버헤드가 발생하기 때문인데, 무시해도 될 수준.
+
+경로 시작 부분에 `/`는 쓰지 않는다. 에이전트 입장에선 프로젝트 루트인지 OS의 루트인지 불확실하기 떄문이다.
+
+
 ## Snippets
 
 ### 버전 관리
@@ -140,6 +152,7 @@ Use plan mode for changes under `src/billing/`.
 - 사용자가 rebase를 했을 수 있으므로 `code-update-by-agent`의 커밋이 사라지거나 히스토리가 바뀌어 있어도 정상적인 상황으로 간주한다.
 - 커밋 메시지 첫 줄은 `<type>: <short summary>` 형태로 작성하고, `type`은 다음 중 하나를 선택한다: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
 - 나머지 메시지는 한국어로 작성한다.
+- 작업 내용은 명사형으로 간결하게 작성한다.
 ````
 
 
@@ -154,13 +167,13 @@ Use plan mode for changes under `src/billing/`.
 
 ## Agent Guidelines
 
-- [개발 지침](docs/agents/development.md)
-- [디자인/마크업 지침](docs/agents/design.md)
-- [데이터베이스 지침](docs/agents/database.md)
+- 개발 지침: [docs/agents/development.md](docs/agents/development.md)
+- 디자인/마크업 지침: [docs/agents/design.md](docs/agents/design.md)
+- 데이터베이스 지침: [docs/agents/database.md](docs/agents/database.md)
 
 ## References
 
-- [서비스 정책](docs/policies/SERVICE-POLICY-2.0.md)
+- 서비스 정책: [docs/policies/SERVICE-POLICY-2.0.md](docs/policies/SERVICE-POLICY-2.0.md)
 
 ## Hard Rules
 

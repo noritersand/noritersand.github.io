@@ -13,6 +13,102 @@ tags:
 {:toc .toc}
 
 
+## GPG 키 설정하기
+
+#### gnupg, pass 설치
+
+```bash
+sudo apt update
+sudo apt install -y gnupg pass
+
+gpg --version
+pass --version
+```
+
+#### GPG 키 생성
+
+다음 실행:
+
+```bash
+gpg --full-generate-key
+```
+
+프롬프트가 뜨면 아래처럼 설정한다:
+
+- 유형: RSA and RSA
+- RSA 비트 길이 4096
+- 키 만료: 원하는 기간
+- Real name: 원하는 이름
+- Email address: 원하는 이메일
+- Passphrase: 이 GPG 키를 가져올 때 사용하는 비밀번호(8자 이상 권장)
+
+그리고 다음을 실행했을 때:
+
+```bash
+gpg --list-secret-keys --keyid-format=long
+```
+
+`uid` 오른쪽(상단에 위치할 수도 있음)이 생성한 키의 아이디다.
+
+#### pass 초기화
+
+```
+pass init <위에서생성한GPG키의UID>
+```
+
+`~/.password-store` 파일이 생성된다. 파일 존재만 확인하면 됨:
+
+```bash
+# 확인
+ls -la ~/.password-store
+```
+
+#### GPG TTY 설정
+
+```
+echo 'export GPG_TTY=$(tty)' >> ~/.bashrc
+export GPG_TTY=$(tty)
+```
+
+#### Git Credential Manager
+
+Git Credential Manager 설치 확인:
+
+```
+git credential-manager --version
+```
+
+없으면 설치 방법 검색해서 설치할 것.
+
+```bash
+# Git credential 설정 확인
+git config --global --get-regexp '^credential\.'
+
+# GCM을 GPG로 설정하기
+git config --global credential.credentialStore gpg
+```
+
+#### 인증
+
+```bash
+git fetch
+```
+
+원격 저장소에 따라 다르지만, GitHub인 경우 GUI가 뜬다. 여기에 아이디/비번이든 토큰이든 입력해서 인증하면, 해당 값이 GPG로 암호화된다.
+
+그리고 한 번 더 `git fetch`를 실행하면 passphrase를 물어보는데, 아까 입력했던 비밀번호를 입력하면 끗.
+
+#### 키 저장 확인
+
+```bash
+find ~/.password-store -type f
+
+# 또는
+
+pass
+```
+
+
 ## 서브모듈(submodule) 초기화 하기
 
 ```
@@ -118,20 +214,46 @@ To add an exception for this directory, call:
 WSL에 있는 로컬 저장소를 호스트의 git으로 접근하려 할 때 이런 메시지와 오류가 발생한다. Git이 알려주는대로 `safe.directory` 설정을 추가하면 바로 해결된다.
 
 
-## Git Credential Helper
+## Git Credential
 
-### 비번을 계속 물어볼 땐
+### Host Provider
 
-credential helper 설정을 확인하고:
+Git Credential Manager(GCM)가 원격 저장소 URL을 보고 GitHub, GitLab, Bitbucket, Azure Repos 등 어떤 호스팅 서비스인지 자동으로 판별해 그에 맞는 인증 방식(OAuth, 개인 액세스 토큰 등)을 적용해주는 기능. 자동 판별이 실패하거나 강제로 지정하고 싶으면 `credential.provider` 설정으로 직접 명시할 수 있다. 생략했을 때의 기본값은 `auto`다.
+
+ℹ️ 호스팅 서비스를 판별한 뒤 그에 맞는 인증 흐름(브라우저 팝업, 기기 코드 등)을 고르는 데 관여하는 설정이다.
 
 ```bash
-git config --global credential.helper
+git config --global credential.provider github
 ```
 
-없으면 `manager`로 설정한다:
+예를 들어 Provider가 GitHub일 때는(자동 판별이든 직접 지정이든) 세부 인증 방식을 `credential.gitHubAuthModes`로 지정할 수 있다. 값으로는 `browser`(웹 브라우저로 OAuth 로그인), `device`(기기 코드 인증), `pat`(개인 액세스 토큰 직접 입력) 등이 가능하다.
+
+```bash
+git config --global credential.gitHubAuthModes browser
+```
+
+### Helper
+
+Git이 원격 저장소 인증 시 아이디/비밀번호(또는 토큰)를 어떤 방식으로 받아오고 캐싱할지 정하는 설정. `manager`, `cache`, `store` 등의 값으로 설정할 수 있고, 생략했을 때의 기본값은 환경에 따라 다르다.
+
+아이디/비번을 매번 물어보는 경우가 있는데, 최신 버전에선 보통 이럴 일이 없지만 혹시 발생하면 일단 `제어판 > 사용자 계정 > 자격 증명 관리자`의 `Windows 자격 증명`에서 Git 항목을 확인해보자. 그래도 안되면 helper를 `manager`로 설정한다:
 
 ```bash
 git config --global credential.helper manager
+```
+
+ℹ️ 아래처럼 절대 경로로 실행 파일을 직접 지정하면 Host와 WSL의 인증을 분리할 수 있음:
+
+```
+credential.helper=/usr/local/bin/git-credential-manager
+```
+
+### Store
+
+credential helper(manager)가 인증 정보를 실제로 어디에 저장할지 지정하는 설정. `gpg`, `wincredman`, `plaintext` 등의 값으로 설정할 수 있고, 생략했을 때의 기본값은 환경에 따라 다르다. (Windows는 `wincredman`)
+
+```bash
+git config --global credential.credentialStore gpg
 ```
 
 ### git-credential-manager-core.exe: No such file or directory
@@ -169,10 +291,12 @@ WSL에서는 `credential.helper`를 지정하지 않으면, 매번 비밀번호(
 git config --global credential.helper "/mnt/c/Program\\ Files/Git/mingw64/libexec/git-core/git-credential-wincred.exe"
 ```
 
+⚠️ 이렇게 설명하면 Host의 자격 증명을 같이 사용함. Host와 WSL의 인증을 분리하고 싶다면 이 방법을 사용하면 안됨.
+
 
 ## 자격 증명 관리자 Credential Manager
 
-Windows에선 보통 git을 설치할 때 'Git Credential Manager for Windows'를 같이 설치하는데, 요걸로 권한이 필요한 저장소에 접속할 때 필요한 자격증명을 관리한다.
+Windows에선 보통 Git을 설치할 때 'Git Credential Manager for Windows'를 같이 설치하는데, 요걸로 권한이 필요한 저장소에 접속할 때 필요한 자격증명을 관리한다.
 
 문제는 다른 계정으로 바꾸는 방법을 모르겠다는 건데... 임시 방편으로 Windows 설정 메뉴인 '자격 증명 관리자'를 열어서 지워버리거나 직접 수정하는 방법이 있다.
 
