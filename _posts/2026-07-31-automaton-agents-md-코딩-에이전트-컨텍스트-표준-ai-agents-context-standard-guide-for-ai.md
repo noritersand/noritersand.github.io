@@ -117,13 +117,17 @@ Use plan mode for changes under `src/billing/`.
 
 ## 권장 사항
 
-### 하이퍼링크
+### 링크
 
-```
-- 개발 지침: [docs/agents/development.md](docs/agents/development.md)
-```
+````
+1. 개발 지침: [docs/agents/development.md](docs/agents/development.md) ❌
+2. [개발 지침](docs/agents/development.md) ❌
+3. 개발 지침: `docs/agents/development.md` ✅
+````
 
-마크다운 링크 형식이 좋다. 어쨋든 `AGENTS.md`도 사람이 읽어야 하는 파일이고, 하이퍼링크로 해석되는 게 편하기 때문. 사실 극한의 효율성을 중시한다면 백틱으로 감싸는 게 더 좋긴 하다. 마크다운 링크 형식은 실제 주소를 분리/해석해야 하는 오버헤드가 발생하기 때문인데, 무시해도 될 수준.
+사람을 위한 문서라면 1번이 HTML로 렌더링된 상태에서 주소까지 보이고 하이퍼링크로 작동되서 가장 좋다.
+
+하지만 지침 문서는 에이전트가 몇 번이고 읽어야 하는 파일이니 3번이 낫다. 마크다운 링크는 코드에 비해 실제 주소를 분리/해석하는 오버헤드가 발생한다.
 
 경로 시작 부분에 `/`는 쓰지 않는다. 에이전트 입장에선 프로젝트 루트인지 OS의 루트인지 불확실하기 떄문이다.
 
@@ -167,13 +171,13 @@ Use plan mode for changes under `src/billing/`.
 
 ## Agent Guidelines
 
-- 개발 지침: [docs/agents/development.md](docs/agents/development.md)
-- 디자인/마크업 지침: [docs/agents/design.md](docs/agents/design.md)
-- 데이터베이스 지침: [docs/agents/database.md](docs/agents/database.md)
+- 개발 지침: `docs/agents/development.md`
+- 디자인/마크업 지침: `docs/agents/design.md`
+- 데이터베이스 지침: `docs/agents/database.md`
 
 ## References
 
-- 서비스 정책: [docs/policies/SERVICE-POLICY-2.0.md](docs/policies/SERVICE-POLICY-2.0.md)
+- 서비스 정책: `docs/policies/SERVICE-POLICY-2.0.md`
 
 ## Hard Rules
 
