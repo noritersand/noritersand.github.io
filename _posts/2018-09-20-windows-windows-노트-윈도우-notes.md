@@ -536,72 +536,40 @@ rg --count-matches useState
 - `JAVA_HOME`: `C:\Program Files\Java\jdk1.8.0_112`
 
 
-## shell: 프로토콜
+## shell: shortcuts
 
-Windows의 특수 폴더(special folder)에 접근하는데 사용하는 명령어. 'shell: protocol' 혹은 'shell: commands'라 부른다. 
+Windows의 known folder에 접근하는데 사용하는 명령어. 셸 명령어(Shell Commands) 또는 셸 바로가기('shell: shortcuts')라 부른다. 
 
-이 특수 폴더들은 일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 
+known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 
-그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, PowerShell에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
+이 폴더들은 일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, PowerShell에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
 
-아래는 `shell:` 프로토콜로 접근 가능한 특수 폴더의 목록이다:
+#### 현재 로그인 사용자
 
-- `shell:3D Objects`
 - `shell:AccountPictures`
-- `shell:AddNewProgramsFolder`
-- `shell:Administrative Tools`
-- `shell:AppData`: AppData 디렉터리
+- `shell:AppData`: `C:\Users\fixal\AppData\Roaming` AppData 디렉터리
 - `shell:AppDataDesktop`
 - `shell:AppDataDocuments`
 - `shell:AppDataFavorites`
 - `shell:AppDataProgramData`
-- `shell:AppMods`
-- `shell:AppUpdatesFolder`
 - `shell:Application Shortcuts`
 - `shell:AppsFolder`: 앱 실행 링크 파일 모여있는 곳
-- `shell:CD Burning`
-- `shell:CSCFolder`
-- `shell:Cache`
 - `shell:Camera Roll`
 - `shell:CameraRollLibrary`
 - `shell:Captures`
-- `shell:ChangeRemoveProgramsFolder`
-- `shell:Common Administrative Tools`
-- `shell:Common AppData`
-- `shell:Common Desktop`
-- `shell:Common Documents`
-- `shell:Common Programs`
-- `shell:Common Start Menu`
-- `shell:Common Start Menu Places`
-- `shell:Common Startup`
-- `shell:Common Templates`
-- `shell:CommonDownloads`
-- `shell:CommonMusic`
-- `shell:CommonPictures`
-- `shell:CommonRingtones`
-- `shell:CommonVideo`
-- `shell:ConflictFolder`
-- `shell:ConnectionsFolder`
 - `shell:Contacts`
-- `shell:ControlPanelFolder`
 - `shell:Cookies`
 - `shell:CredentialManager`
 - `shell:CryptoKeys`
 - `shell:Desktop`
 - `shell:Development Files`
-- `shell:Device Metadata Store`
 - `shell:DocumentsLibrary`
 - `shell:Downloads`
 - `shell:DpapiKeys`
 - `shell:Favorites`
-- `shell:Fonts`
 - `shell:GameTasks`
 - `shell:History`
-- `shell:HomeGroupCurrentUserFolder`
-- `shell:HomeGroupFolder`
 - `shell:ImplicitAppShortcuts`
-- `shell:InternetFolder`
-- `shell:Libraries`
 - `shell:Links`
 - `shell:Local AppData`
 - `shell:Local Documents`
@@ -610,17 +578,14 @@ Windows의 특수 폴더(special folder)에 접근하는데 사용하는 명령�
 - `shell:Local Pictures`
 - `shell:Local Videos`
 - `shell:LocalAppDataLow`
-- `shell:LocalizedResourcesDir`
 - `shell:MAPIFolder`
 - `shell:MusicLibrary`
 - `shell:My Music`
 - `shell:My Pictures`
 - `shell:My Video`
-- `shell:MyComputerFolder`
 - `shell:NetHood`
-- `shell:NetworkPlacesFolder`
 - `shell:OEM Links`
-- `shell:OneDrive`: 원드라이브
+- `shell:OneDrive`
 - `shell:OneDriveCameraRoll`
 - `shell:OneDriveDocuments`
 - `shell:OneDriveMusic`
@@ -631,26 +596,12 @@ Windows의 특수 폴더(special folder)에 접근하는데 사용하는 명령�
 - `shell:PicturesLibrary`
 - `shell:Playlists`
 - `shell:PrintHood`
-- `shell:PrintersFolder`
 - `shell:Profile`
-- `shell:ProgramFiles`
-- `shell:ProgramFilesCommon`
-- `shell:ProgramFilesCommonX64`
-- `shell:ProgramFilesCommonX86`
-- `shell:ProgramFilesX64`
-- `shell:ProgramFilesX86`
-- `shell:Programs`: 시작 메뉴의 프로그램 폴더
-- `shell:Public`
-- `shell:PublicAccountPictures`
-- `shell:PublicGameTasks`
-- `shell:PublicLibraries`
+- `shell:Programs`: `C:\Users\사용자이름\AppData\Roaming\Microsoft\Windows\Start Menu\Programs` 시작 메뉴의 프로그램 폴더
 - `shell:Quick Launch`
 - `shell:Recent`
 - `shell:Recorded Calls`
 - `shell:RecordedTVLibrary`
-- `shell:RecycleBinFolder`
-- `shell:ResourceDir`
-- `shell:Retail Demo`
 - `shell:Ringtones`
 - `shell:Roamed Tile Images`
 - `shell:Roaming Tiles`
@@ -661,25 +612,82 @@ Windows의 특수 폴더(special folder)에 접근하는데 사용하는 명령�
 - `shell:SearchHistoryFolder`
 - `shell:SearchHomeFolder`
 - `shell:SearchTemplatesFolder`
-- `shell:SearchTemplatesFolder`
 - `shell:Searches`
 - `shell:SendTo`
-- `shell:Start Menu`
-- `shell:Startup`: 시작 프로그램 폴더
-- `shell:SyncCenterFolder`
+- `shell:Start Menu`: `C:\Users\사용자이름\AppData\Roaming\Microsoft\Windows\Start Menu` 현재 사용자의 시작 메뉴 루트
+- `shell:Startup`: `C:\Users\fixal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 시작 프로그램 폴더
 - `shell:SyncResultsFolder`
 - `shell:SyncSetupFolder`
-- `shell:System`
-- `shell:SystemCertificates`
-- `shell:SystemX86`
 - `shell:Templates`
-- `shell:ThisDeviceFolder`
-- `shell:ThisPCDesktopFolder`
 - `shell:User Pinned`
-- `shell:UserProfiles`
 - `shell:UserProgramFiles`
 - `shell:UserProgramFilesCommon`
 - `shell:UsersFilesFolder`
-- `shell:UsersLibrariesFolder`
 - `shell:VideosLibrary`
+
+#### 모든 사용자/공용
+
+- `shell:Common Administrative Tools`
+- `shell:Common AppData`
+- `shell:Common Desktop`
+- `shell:Common Documents`
+- `shell:Common Programs`: `C:\ProgramData\Microsoft\Windows\Start Menu\Programs` 모든 사용자 프로그램 메뉴
+- `shell:Common Start Menu`: `C:\ProgramData\Microsoft\Windows\Start Menu` 모든 사용자 시작 메뉴 루트
+- `shell:Common Start Menu Places`
+- `shell:Common Startup`
+- `shell:Common Templates`
+- `shell:CommonDownloads`
+- `shell:CommonMusic`
+- `shell:CommonPictures`
+- `shell:CommonRingtones`
+- `shell:CommonVideo`
+- `shell:Public`
+- `shell:PublicAccountPictures`
+- `shell:PublicGameTasks`
+- `shell:PublicLibraries`
+
+#### 시스템 실제 경로
+
+- `shell:Fonts`
+- `shell:ProgramFiles`: `C:\Program Files`
+- `shell:ProgramFilesCommon`: `C:\Program Files\Common Files`
+- `shell:ProgramFilesCommonX64`
+- `shell:ProgramFilesCommonX86`: `C:\Program Files (x86)\Common Files`
+- `shell:ProgramFilesX64`: `C:\Program Files`
+- `shell:ProgramFilesX86`: `C:\Program Files (x86)`
+- `shell:ResourceDir`
+- `shell:System`
+- `shell:SystemCertificates`
+- `shell:SystemX86`
 - `shell:Windows`
+
+#### 가상 셸 경로
+
+- `shell:3D Objects`
+- `shell:AddNewProgramsFolder`
+- `shell:Administrative Tools`
+- `shell:AppMods`
+- `shell:AppUpdatesFolder`
+- `shell:CD Burning`
+- `shell:CSCFolder`
+- `shell:Cache`
+- `shell:ChangeRemoveProgramsFolder`
+- `shell:ConflictFolder`
+- `shell:ConnectionsFolder`
+- `shell:ControlPanelFolder`: `제어판 > 모든 제어판 항목` 메뉴
+- `shell:Device Metadata Store`
+- `shell:HomeGroupCurrentUserFolder`
+- `shell:HomeGroupFolder`
+- `shell:InternetFolder`
+- `shell:Libraries`
+- `shell:LocalizedResourcesDir`
+- `shell:MyComputerFolder`
+- `shell:NetworkPlacesFolder`
+- `shell:PrintersFolder`
+- `shell:RecycleBinFolder`
+- `shell:Retail Demo`
+- `shell:SyncCenterFolder`
+- `shell:ThisDeviceFolder`
+- `shell:ThisPCDesktopFolder`
+- `shell:UserProfiles`
+- `shell:UsersLibrariesFolder`

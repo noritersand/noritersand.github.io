@@ -156,6 +156,7 @@ git blame -C -C 파일
 - `-v` `--verbose`: 마지막 커밋의 커밋 해시와 커밋 제목을 출력한다.
 - `-vv`: `-v` 옵션에 추가로 업스트림 브랜치 정보도 출력한다.
 - `-u <upstream>` `--set-upstream-to=<upstream>`: 현재 브랜치의 업스트림 브랜치를 설정하는 옵션. `push` 명령어에도 비슷한 옵션이 있는데, 그 쪽은 `--set-upstream-to`가 아니라 `--set-upstream`이다. 😒
+- `t` `--track[=(direct|inherit)]`: 새 로컬 브랜치를 만들면서 특정 리모트 브랜치를 업스트림으로 설정하는 옵션
 
 #### 브랜치 생성
 
@@ -189,7 +190,8 @@ Git이 리모트 저장소의 특정 브랜치를 추적하도록 설정한다. 
 
 ```bash
 git branch -u origin/test3  # origin 리모트의 test3 브랜치로 업스트림 브랜치 설정
-git branch --set-upstream-to=origin/test3  # 같음
+
+git branch --track test3 origin/test3  # origin/test3을 추적하는 test3 로컬 브랜치 생성
 ```
 
 단, 이 방법은 설정하려는 브랜치에 미리 리모트에 만들어져 있는 상태여야만 가능하다. 만약 로컬에서 새로 생성한 브랜치를 업스트림으로 설정하고 싶다면, `git push --set-upstream`을 사용한다.
