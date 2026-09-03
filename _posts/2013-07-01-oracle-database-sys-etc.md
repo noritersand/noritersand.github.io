@@ -37,7 +37,7 @@ SQL> startup
 
 ```bash
 # 리스너컨트롤 시작하기
-C:\>lsnrctl
+lsnrctl
 
 # 리스너 관련 명령어들
 LSNRCTL> start
@@ -46,12 +46,11 @@ LSNRCTL> reload
 LSNRCTL> status
 LSNRCTL> help
 
-# 혹은
+# lsnrctl 하위 명령어
+lsnrctl start # start | stop | status
 
-c:\> lsnrctl start # start | stop | status
-
-# SID 확인
-c:\> lsnrctl services
+# SID 확인하기
+lsnrctl services
 ```
 
 

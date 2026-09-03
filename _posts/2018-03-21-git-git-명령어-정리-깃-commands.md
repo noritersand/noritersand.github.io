@@ -1030,14 +1030,15 @@ git gc --force --prune=now --aggressive
 GC 중 다음과 같은 메시지가 나타날 수 있는데:
 
 ```bash
-PS C:\dev\git\noritersand.github.io> git gc --prune=now
-Enumerating objects: 396731, done.
-Counting objects: 100% (396731/396731), done.
-Delta compression using up to 8 threads
-Compressing objects: 100% (110001/110001), done.
-Writing objects: 100% (396731/396731), done.
-Total 396731 (delta 254114), reused 396729 (delta 254112), pack-reused 0
-Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.pack' failed. Should I try again? (y/n)
+git gc --prune=now
+
+# Enumerating objects: 396731, done.
+# Counting objects: 100% (396731/396731), done.
+# Delta compression using up to 8 threads
+# Compressing objects: 100% (110001/110001), done.
+# Writing objects: 100% (396731/396731), done.
+# Total 396731 (delta 254114), reused 396729 (delta 254112), pack-reused 0
+# Unlink of file '.git/objects/pack/pack-08670f85649525b5541e3f6725eca14532346f6b.pack' failed. Should I try again? (y/n)
 ```
 
 여기선 그냥 `N`을 입력해주면 된다. 하지만 이게 어쩔 땐 한도 끝도 없이 나올 때가 있다. 이런 경우:

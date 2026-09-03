@@ -215,10 +215,10 @@ and constraint_type = 'unique';
 
 #### root로 접속
 
-설치 경로에서 `mariadb.exe -u root -p` 실행:
+설치 경로에서 아래 실행:
 
 ```bash
-PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
+mariadb.exe -u root -p
 ```
 
 혹은 같이 설치된 MySQL Client 실행.

@@ -180,7 +180,7 @@ $stream = [System.IO.File]::Open(
 handle.exe -au $env:temp\handle-test.txt
 
 # ...
-# pwsh.exe           pid: 26616  type: File          10B4: C:\Users\fixal\AppData\Local\Temp\handle-test.txt
+# pwsh.exe           pid: 26616  type: File          10B4: C:\Users\사용자이름\AppData\Local\Temp\handle-test.txt
 ```
 
 이제 첫 번째 파워셸에서 스트림을 닫으면:
@@ -531,7 +531,7 @@ rg --count-matches useState
 
 그리고 이런거 추가해두면 개발에 모기 주둥이만큼 도움 됨:
 
-- `desktop`: `C:\Users\fixalot\Desktop`
+- `desktop`: `C:\Users\사용자이름\Desktop`
 - `tomcat-plugin`: `C:\project\workspace\.metadata\.plugins\org.eclipse.wst.server.core`
 - `JAVA_HOME`: `C:\Program Files\Java\jdk1.8.0_112`
 
@@ -547,7 +547,7 @@ known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 #### 현재 로그인 사용자
 
 - `shell:AccountPictures`
-- `shell:AppData`: `C:\Users\fixal\AppData\Roaming` AppData 디렉터리
+- `shell:AppData`: `C:\Users\사용자이름\AppData\Roaming` AppData 디렉터리
 - `shell:AppDataDesktop`
 - `shell:AppDataDocuments`
 - `shell:AppDataFavorites`
@@ -615,7 +615,7 @@ known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 - `shell:Searches`
 - `shell:SendTo`
 - `shell:Start Menu`: `C:\Users\사용자이름\AppData\Roaming\Microsoft\Windows\Start Menu` 현재 사용자의 시작 메뉴 루트
-- `shell:Startup`: `C:\Users\fixal\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 시작 프로그램 폴더
+- `shell:Startup`: `C:\Users\사용자이름\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup` 시작 프로그램 폴더
 - `shell:SyncResultsFolder`
 - `shell:SyncSetupFolder`
 - `shell:Templates`

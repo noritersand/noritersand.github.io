@@ -90,7 +90,6 @@ Windows 10과 11에선 새 버전의 IME를 사용하는데, 이 입력기가 �
 셸(관리자 권한)에서 아래 실행:
 
 ```bash
-# PS C:\> pkgmgr /iu:"TelnetClient" # pkgmgr.exe는 deprecated 되었음.
 dism /online /Enable-Feature /FeatureName:TelnetClient
 
 # localhost:4000 텔넷 접속
