@@ -142,8 +142,9 @@ console.debug('${1:msg}:', ${2:msg});
 
 ### 추천 패키지
 
-- ⭐[MarkdownEditing](https://packagecontrol.io/packages/MarkdownEditing): 마크다운 편집을 돕는 패키지. 그냥 쓰면 여러모로 귀찮으니 설정에 `"mde.auto_fold_link.enabled": false, "mde.list_auto_bullets": false` 추가.
-- ⭐[PowerShell](https://packagecontrol.io/packages/PowerShell): PowerShell 스크립트 지원 패키지. 문법 강조(syntax highlighting), 코드 스니펫, 심볼 탐색, 빌드 시스템, 들여쓰기 및 코드 접기 등의 언어 지원 기능을 제공한다. (사실 마크다운의 powershell syntax 하나 보고 설치했지만... 😏)
+- ⭐[Terminal](https://packagecontrol.io/packages/Terminal): 현재 파일의 위치를 터미널로 열어주는 패키지. Windows Terminal로 열게 하려면 패키지 설정으로 `"terminal": "wt.exe", "parameters": ["-d", "%CWD%"]` 추가하면 됨.
+- ⭐[MarkdownEditing](https://packagecontrol.io/packages/MarkdownEditing): 마크다운 편집을 돕는 패키지. 그냥 쓰면 여러모로 귀찮으니 패키지 설정에 `"mde.auto_fold_link.enabled": false, "mde.list_auto_bullets": false` 추가.
+- ⭐[PowerShell](https://packagecontrol.io/packages/PowerShell): PowerShell 스크립트 지원 패키지. 문법 강조(syntax highlighting), 자동 완성을 위한 코드 스니펫, 심볼 탐색, 빌드 시스템 등의 언어 지원 기능을 제공한다. (사실 마크다운의 powershell syntax 하나 보고 설치했지만... 😏)
 - StyleToken: 파일 내에서 특정 단어별 하이라이팅
 - FileDiffs: 간단한 diff 뷰어. diff 성능 자체는 그닥... (shell의 기본 diff와 거의 비슷)
 - ConvertToUTF8: `EUC-KR`로 작성된 파일을 `UTF-8`로 전환해서 열어주는 패키지. 이 패키지를 활성화하면 파일을 열때마다 인코딩을 물어봐서 좀 귀찮음

@@ -164,12 +164,12 @@ npm과 Yarn 사용법 간단 정리
 ```
 
 ```powershell
-PS C:\dev> npm run hello
+npm run hello
 
-PS C:\dev> lab-js@1.0.0 hello
-PS C:\dev> echo 'Hello world!'
+lab-js@1.0.0 hello
+echo 'Hello world!'
 
-'Hello world!'
+# 'Hello world!'
 ```
 
 `npx`를 사용하고 싶지 않을때는 `npm exec`를 사용해야 하는데, 이러면 명령어의 옵션 지정이 굉장히 번거롭기 때문에 npm 스크립트로 등록하는 편이 좋다.
@@ -204,9 +204,9 @@ npm(~~Node Package Manager~~ npm is not an acronym)은 Node.js의 공식 패키�
 ### ℹ️ PowerShell에서 npm 명령이 실행되지 않을 때
 
 ```powershell
-PS C:\dev> npm
+npm
 
-npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
+# ❌ npm: File C:\Program Files\nodejs\npm.ps1 cannot be loaded because running scripts is disabled on this system. For more information, see about_Execution_Policies at https://go.microsoft.com/fwlink/?LinkID=135170.
 ```
 
 이 문제는 PowerShell의 실행 정책(Execution Policy) 때문에 발생한다. PowerShell은 기본적으로 보안을 위해 파워셸 스크립트 파일(`.ps1`)의 실행을 제한하고 있고, `npm` 명령을 실행할 때 필요한 파워셸 스크립트 파일이 차단되어 에러가 발생하는 것.
@@ -454,7 +454,7 @@ npm init <@scope> (same as `npx <@scope>/create`)
 npm init vite@latest
 ```
 
-이런식으로 패키지를 지정하면 `npm exec` 명령으로 바뀐다고 한다. [자세한 내용은 이 링크를 보자](https://docs.npmjs.com/cli/v9/commands/npm-init#description).
+이런 식으로  패키지를 지정하면 `npm exec` 명령으로 바뀐다고 한다. [자세한 내용은 이 링크를 보자](https://docs.npmjs.com/cli/v9/commands/npm-init#description).
 
 
 ## Yarn

@@ -81,7 +81,7 @@ Windows 10, 11에서 공통 사항 분리한 글
 }
 ```
 
-이런식으로 `startingDirectory`를 추가하면 된다.
+이런 식으로  `startingDirectory`를 추가하면 된다.
 
 참고로 이 설정 파일에서 `list` 배열 안에 있는 객체들의 순서가 바로:
 

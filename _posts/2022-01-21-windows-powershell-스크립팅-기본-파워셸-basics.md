@@ -57,7 +57,7 @@ Get-Host | Select-Object Version
 
 ```powershell
 # 모든 환경 변수 보기,
-Get-ChildItem Env:
+Get-ChildItem env:
 
 # 위와 같음
 ls env:
@@ -139,21 +139,55 @@ pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
 
 ## 기본 문법
 
-### 변수선언과 사용
+### 변수 선언과 사용
 
 ```powershell
+# 모든 변수 조회
+Get-Variable
+
+# 변수 선언
 $abc = 1234
 
 $abc
+
 # 1234
 
 gv abc
+
 # Name      Value
 # ----      -----
 # abc       1234
 ```
 
-관련 Cmdlet은 저 밑에 링크에서 확인.
+#### 스니펫: 현재 경로를 로컬 변수로 만들기
+
+```powershell
+cd C:\dev\temp\
+$d1 = (pwd).path
+$d1
+
+# C:\dev\temp
+```
+
+#### 스니펫: 현재 경로를 프로필 변수로 만들기
+
+```powershell
+ac $PROFILE "`$d2 = '$((pwd).Path)'"
+. $profile
+
+ac $PROFILE "`$d2 = '$((pwd).Path)'"
+. $profile
+$d2
+
+# C:\dev\test
+```
+
+🐶복잡한데 설명을 해보자면:
+
+- 일단 큰따옴표로 감싸는 건 필수: `ac $PROFILE "..."`
+- 선언할 변수 이름 이스케이프 되지 않도록 백틱 붙임 ``` `$d2 ```
+- `$()` 로 하위 연산식을 만들어서 거기서 현재 경로 가져오기: `$((pwd).Path)`
+- 경로에 빈 칸이 있을 수 있어서 오류를 방지하기 위해 작은따옴표 감싸기: `'$((pwd).Path)'`
 
 ### [따옴표](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.2) `""` `''`
 
@@ -191,14 +225,14 @@ $i = 5
 주로 큰따옴표 문자열에서 줄바꿈 등의 특수 문자를 표현하기 위해 사용된다. 작은따옴표 문자열에서는 이스케이프 시퀀스가 해석되지 않는다:
 
 ```powershell
-PS C:\dev> echo "a `n b"
+echo "a `n b"
 
-a
- b
+# a
+#  b
 
-PS C:\dev> echo 'a `n b'
+echo 'a `n b'
 
-a `n b
+# a `n b
 ```
 
 #### PowerShell의 특수 문자 시퀀스
@@ -217,12 +251,13 @@ a `n b
 특수 문자 시퀀스가 아닌 문자가 백틱 뒤에 오면 원래 문자 그대로 취급된다:
 
 ```powershell
-PS C:\dev> echo ''
+echo ''
 
+# 출력 없음
 
-PS C:\dev> echo `'`'
+echo `'`'
 
-''
+# ''
 ```
 
 ### 중괄호 `{}`
@@ -462,11 +497,11 @@ echo "$count개"
 예를 들어 유틸리티 모듈에는 `Format-List`라는 리스트를 세로 목록으로 출력하는 명령이 있는데, 파이프를 활용하면:
 
 ```powershell
-PS C:\dev> Get-FileHash .\upload.me | Format-list
+Get-FileHash .\upload.me | Format-list
 
-Algorithm : SHA256
-Hash      : 90B56139615DA8FE23201FD4C5FFE6E40EB16A8D544387B8056D2E1CF8D4AFF9
-Path      : C:\dev\upload.me
+# Algorithm : SHA256
+# Hash      : 90B56139615DA8FE23201FD4C5FFE6E40EB16A8D544387B8056D2E1CF8D4AFF9
+# Path      : C:\dev\upload.me
 ```
 
 이렇게 된다.
@@ -478,15 +513,15 @@ Path      : C:\dev\upload.me
 JavaScript의 `eval()`과 비슷하다. 예를 들어 서브라임의 실행 파일을 전체 경로로 실행하려고 할 때, 공백을 포함한 전체 경로를 지정하려면 다음처럼 해야하는데:
 
 ```powershell
-'C:\Program Files\Sublime Text\subl.exe'
 # C:\Program Files\Sublime Text\subl.exe 출력됨
+'C:\Program Files\Sublime Text\subl.exe'
 ```
 
 이러면 파일을 실행하는게 아니라 문자열을 출력해 버린다. 이럴 땐 호출 연산자를 앞에 붙여서 문자열을 스크립트로 실행하도록 하면 된다:
 
 ```powershell
-& 'C:\Program Files\Sublime Text\subl.exe'
 # 서브라임을 실행함
+& 'C:\Program Files\Sublime Text\subl.exe'
 ```
 
 그런데 호출 연산자는 문자열을 **구문 분석** 하지 않는다고 한다. 그래서 명령어의 파라미터를 사용할 수 없다:
@@ -495,7 +530,8 @@ JavaScript의 `eval()`과 비슷하다. 예를 들어 서브라임의 실행 파
 $c = "Get-Service -Name Spooler"
 
 & $c
-# &: The term 'Get-Service -Name Spooler' is not recognized as a name of a cmdlet, function, script file, or executable program.
+
+# ❌ &: The term 'Get-Service -Name Spooler' is not recognized as a name of a cmdlet, function, script file, or executable program.
 # Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
 ```
 
@@ -503,6 +539,7 @@ $c = "Get-Service -Name Spooler"
 
 ```powershell
 Invoke-Expression $c
+
 # Status   Name               DisplayName
 # ------   ----               -----------
 # Running  Spooler            Print Spooler
@@ -516,6 +553,7 @@ Invoke-Expression $c
 # https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.3#background-operator-
 
 Get-Process -Name pwsh &
+
 # 위와 같음
 Start-Job -ScriptBlock {Get-Process -Name pwsh}
 ```
@@ -716,9 +754,11 @@ function Test-Fn($Param1) {
 }
 
 Test-Fn 123
+
 # 123
 
 Test-Fn -Param1 789
+
 # 789
 ```
 
@@ -735,10 +775,12 @@ function Test-Fn($Param1, $Param2) {
 
 ```powershell
 Test-Fn abc def
+
 # $Param1: abc
 # $Param2: def
 
 Test-Fn -Param2 abc -Param1 def
+
 # $Param1: def
 # $Param2: abc
 ```
@@ -751,9 +793,11 @@ function Test-Fn($Param1) {
 }
 
 Test-Fn 1, 2, 3
+
 # $Param1: 1 2 3
 
 Test-Fn 1,2,3
+
 # $Param1: 1 2 3
 
 function Test-Fn2($Param1) {
@@ -764,6 +808,7 @@ function Test-Fn2($Param1) {
 }
 
 Test-Fn2 4, 5, 6
+
 # $Param1[0]: 4
 # $ele: 4
 # $ele: 5
@@ -784,14 +829,17 @@ function Test-Fn4([number]$Param1) {}
 
 Test-Fn3 123
 Test-Fn3 a
+
 # InvalidOperation: Unable to find type [number].
 
 function Test-Fn5([boolean]$Param1) {}
 
 Test-Fn5 true
+
 # Test-Fn5: Cannot process argument transformation on parameter 'Param1'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as $True, $False, 1 or 0.
 
 Test-Fn5 True
+
 # Test-Fn5: Cannot process argument transformation on parameter 'Param1'. Cannot convert value "System.String" to type "System.Boolean". Boolean parameters accept only Boolean values and numbers, such as $True, $False, 1 or 0.
 
 Test-Fn5 $True
@@ -823,6 +871,7 @@ function Test-Fn7 {
 }
 
 Test-Fn7
+
 # cmdlet Test-Fn7 at command pipeline position 1
 # Supply values for the following parameters:
 # Param1:
@@ -838,6 +887,7 @@ Test-Fn7 -Param1 1
 $Param1: 1
 
 Test-Fn7 -Param1 1, 2, 3
+
 # Test-Fn7: Cannot process argument transformation on parameter 'Param1'. Cannot convert value to type System.String.
 ```
 
@@ -855,6 +905,7 @@ function Test-Fn9 {
 }
 
 Test-Fn9
+
 # $Param1: default value
 ```
 
@@ -873,9 +924,11 @@ function Test-Fn10 {
 }
 
 Test-Fn10 -Server production
+
 # Chosen one: production
 
 Test-Fn10 -Server my-server
+
 # Test-Fn10: Cannot validate argument on parameter 'Server'. The argument "my-server" does not belong to the set "production,stage,test,vpn" specified by the ValidateSet attribute. Supply an argument that is in the set and then try the command again.
 ```
 
@@ -965,55 +1018,56 @@ PowerShell에서 지원하는 데이터 타입은 아래와 같다:
 참고로 데이터 타입은 `GetType()` 메서드로 확인할 수 있음:
 
 ```powershell
-PS C:\dev> $n1 = 1
-PS C:\dev> $n1.GetType()
+$n1 = 1
+$n1.GetType()
 
-IsPublic IsSerial Name                                     BaseType
--------- -------- ----                                     --------
-True     True     Int32                                    System.ValueType
+# IsPublic IsSerial Name                                     BaseType
+# -------- -------- ----                                     --------
+# True     True     Int32                                    System.ValueType
 
-PS C:\dev> $n2 = 2.3
-PS C:\dev> $n2.GetType()
+$n2 = 2.3
+$n2.GetType()
 
-IsPublic IsSerial Name                                     BaseType
--------- -------- ----                                     --------
-True     True     Double                                   System.ValueType
+# IsPublic IsSerial Name                                     BaseType
+# -------- -------- ----                                     --------
+# True     True     Double                                   System.ValueType
 
-PS C:\dev> $s1 = 'Hello'
-PS C:\dev> $s1.GetType()
+$s1 = 'Hello'
+$s1.GetType()
 
-IsPublic IsSerial Name                                     BaseType
--------- -------- ----                                     --------
-True     True     String                                   System.Object
+# IsPublic IsSerial Name                                     BaseType
+# -------- -------- ----                                     --------
+# True     True     String                                   System.Object
 ```
 
 ### 해시 테이블 Hashtables
 
 ```powershell
-PS C:\dev> $hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
-PS C:\dev> $hash
+$hash = [ordered]@{ Number = 1; Shape = "Square"; Color = "Blue"}
 
-Name                           Value
-----                           -----
-Number                         1
-Shape                          Square
-Color                          Blue
+$hash
 
-PS C:\dev> $hash.keys
+# Name                           Value
+# ----                           -----
+# Number                         1
+# Shape                          Square
+# Color                          Blue
 
-Number
-Shape
-Color
+$hash.keys
 
-PS C:\dev> $hash.values
+# Number
+# Shape
+# Color
 
-1
-Square
-Blue
+$hash.values
 
-PS C:\dev> $hash.Number
+# 1
+# Square
+# Blue
 
-1
+$hash.Number
+
+# 1
 ```
 
 **TODO**
@@ -1030,3 +1084,4 @@ PowerShell 7.6.4 부터 기록
 - <kbd>ctrl + shift + k</kbd>: `버퍼 지우기`. 현재 화면과 스크롤백 버퍼에 저장된 출력을 삭제한다. `clear` 명령 실행과 결과 같음
 - <kbd>ctrl + shift + f</kbd>: `찾기`. 현재 화면과 스크롤백 버퍼의 텍스트를 검색한다.
 - <kbd>ctrl + shift + up/down/pageup/pagedown/home/end</kbd>: 스크롤 이동
+

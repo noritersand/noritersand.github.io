@@ -178,37 +178,37 @@ ssh-keygen
 RSA 키 페어를 생성하는 명령어. 명령 실행 시 이름과 비밀번호를 묻는 프롬프트가 나타나며, 입력을 마치면 현재 경로에 공개키와 비공개키 하나씩 생성된다. 생성 단계에서 묻는 비밀번호는 2단계 인증용 비밀번호이며 입력하지 않아도 된다.
 
 ```powershell
-PS C:\dev> ssh-keygen
+ssh-keygen
 
-Generating public/private rsa key pair.
-Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in noritersand-test.
-Your public key has been saved in noritersand-test.pub.
-The key fingerprint is:
-SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@noritersand-desktop
-The key\'s randomart image is:
-+---[RSA 2048]----+
-| .             o |
-|o .         . =  |
-| =   .       + . |
-|. o +  .      o E|
-| ..oo.. S      =.|
-|.. +.o..      . o|
-|+ o o... +     .o|
-|*. +    + .. . o%|
-|+ ..o    .. o..*%|
-+----[SHA256]-----+
-
-PS C:\Users\user\.ssh> ls
-
-    디렉터리: C:\Users\user\.ssh
-
-Mode                LastWriteTime         Length Name
-----                -------------         ------ ----
--a----     2021-02-02  오후 12:48           1766 noritersand-test
--a----     2021-02-02  오후 12:48            403 noritersand-test.pub
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (C:\Users\user/.ssh/id_rsa): noritersand-test
+# Enter passphrase (empty for no passphrase):
+# Enter same passphrase again:
+# Your identification has been saved in noritersand-test.
+# Your public key has been saved in noritersand-test.pub.
+# The key fingerprint is:
+# SHA256:uDDyhvysiAgiFBxuX47fZ+P3drfdtn3Ws8eFXTIkl/k user@noritersand-desktop
+# The key\'s randomart image is:
+# +---[RSA 2048]----+
+# | .             o |
+# |o .         . =  |
+# | =   .       + . |
+# |. o +  .      o E|
+# | ..oo.. S      =.|
+# |.. +.o..      . o|
+# |+ o o... +     .o|
+# |*. +    + .. . o%|
+# |+ ..o    .. o..*%|
+# +----[SHA256]-----+
+# 
+# PS C:\Users\user\.ssh> ls
+# 
+#     디렉터리: C:\Users\user\.ssh
+# 
+# Mode                LastWriteTime         Length Name
+# ----                -------------         ------ ----
+# -a----     2021-02-02  오후 12:48           1766 noritersand-test
+# -a----     2021-02-02  오후 12:48            403 noritersand-test.pub
 ```
 
 
@@ -246,54 +246,48 @@ sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404:SOME_DIRECTORY/DOWNLOAD_ME
 업로드는 `put`, 다운로드는 `get`이다.
 
 ```powershell
-PS C:\dev> sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
+sftp -i .\PRIVATE_KEY_FILE.pem ubuntu@101.202.303.404
 
-Connected to 101.202.303.404.
+# Connected to 101.202.303.404.
 
 sftp> cd temp
 
-# 원격지의 파일 목록 보기
-sftp> ls
-DOWNLOAD.me
+sftp> ls # 원격지의 파일 목록 보기
 
-# 로컬의 파일 목록 보기
-sftp> lls
+# DOWNLOAD.me
 
- Volume in drive C is Windows
- Volume Serial Number is 84E5-F770
+sftp> lls # 로컬의 파일 목록 보기
 
- Directory of C:\dev
+#  Volume in drive C is Windows
+#  Volume Serial Number is 84E5-F770
+# 
+#  Directory of C:\dev
+# 
+# 2024-12-09  14:13    <DIR>          .
+# 2024-12-09  14:13    <DIR>          temp
+# 2024-12-09  14:19                 2 UPLOAD.me
 
-2024-12-09  14:13    <DIR>          .
-2024-12-09  14:13    <DIR>          temp
-2024-12-09  14:19                 2 UPLOAD.me
+sftp> put ./UPLOAD.me # 업로드
 
-# 업로드
-sftp> put ./UPLOAD.me
+# Uploading ./UPLOAD.me to /home/ubuntu/temp/UPLOAD.me
+# UPLOAD.me                                        100%    6     0.1KB/s   00:00
 
-Uploading ./UPLOAD.me to /home/ubuntu/temp/UPLOAD.me
-UPLOAD.me                                        100%    6     0.1KB/s   00:00
+sftp> put ./UPLOAD.me /home/ubuntu/UPLOAD2.me # 경로와 이름 지정하며 업로드
 
-# 경로와 이름 지정하며 업로드
-sftp> put ./UPLOAD.me /home/ubuntu/UPLOAD2.me
+# Uploading ./UPLOAD.me to /home/ubuntu/UPLOAD2.me
+# UPLOAD.me                                        100%    6     0.1KB/s   00:00
 
-Uploading ./UPLOAD.me to /home/ubuntu/UPLOAD2.me
-UPLOAD.me                                        100%    6     0.1KB/s   00:00
+sftp> get DOWNLOAD.me # 다운로드
 
-# 다운로드
-sftp> get DOWNLOAD.me
+# Fetching /home/ubuntu/DOWNLOAD.me to DOWNLOAD.me
+# DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
 
-Fetching /home/ubuntu/DOWNLOAD.me to DOWNLOAD.me
-DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
+sftp> get DOWNLOAD.me c:/dev/temp/DOWNLOAD2.me # 경로와 이름 지정하며 다운로드
 
-# 경로와 이름 지정하며 다운로드
-sftp> get DOWNLOAD.me c:/dev/temp/DOWNLOAD2.me
+# Fetching /home/ubuntu/DOWNLOAD.me to c:/dev/temp/DOWNLOAD2.me
+# DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
 
-Fetching /home/ubuntu/DOWNLOAD.me to c:/dev/temp/DOWNLOAD2.me
-DOWNLOAD.me                                      100%    5     0.1KB/s   00:00
-
-# 나가기(별칭: bye, quit)
-sftp> exit
+sftp> exit # 나가기(별칭: bye, quit)
 ```
 
 #### put과 get의 Options

@@ -27,60 +27,60 @@ javap -c 클래스명
 #### example
 
 ```powershell
-PS C:\dev> javac TestClass.java
-PS C:\dev> javap -c TestClass
+javac TestClass.java
+javap -c TestClass
 
-Compiled from "TestClass.java"
-public class TestClass {
-  public TestClass();
-    Code:
-       0: aload_0
-       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
-       4: return
-
-  public java.lang.String concatTest1();
-    Code:
-       0: ldc           #2                  // String 111222333
-       2: astore_1
-       3: aload_1
-       4: areturn
-
-  public java.lang.String concatTest2();
-    Code:
-       0: ldc           #3                  // String 444
-       2: astore_1
-       3: new           #4                  // class java/lang/StringBuilder
-       6: dup
-       7: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
-      10: aload_1
-      11: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-      14: ldc           #7                  // String 555
-      16: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-      19: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-      22: astore_1
-      23: new           #4                  // class java/lang/StringBuilder
-      26: dup
-      27: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
-      30: aload_1
-      31: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-      34: ldc           #9                  // String 666
-      36: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
-      39: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
-      42: astore_1
-      43: aload_1
-      44: areturn
-
-  public java.lang.String concatTest3();
-    Code:
-       0: ldc           #10                 // String 777
-       2: ldc           #11                 // String 888
-       4: invokevirtual #12                 // Method java/lang/String.concat:(Ljava/lang/String;)Ljava/lang/String;
-       7: ldc           #13                 // String 999
-       9: invokevirtual #12                 // Method java/lang/String.concat:(Ljava/lang/String;)Ljava/lang/String;
-      12: astore_1
-      13: aload_1
-      14: areturn
-}
+# Compiled from "TestClass.java"
+# public class TestClass {
+#   public TestClass();
+#     Code:
+#        0: aload_0
+#        1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+#        4: return
+# 
+#   public java.lang.String concatTest1();
+#     Code:
+#        0: ldc           #2                  // String 111222333
+#        2: astore_1
+#        3: aload_1
+#        4: areturn
+# 
+#   public java.lang.String concatTest2();
+#     Code:
+#        0: ldc           #3                  // String 444
+#        2: astore_1
+#        3: new           #4                  // class java/lang/StringBuilder
+#        6: dup
+#        7: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+#       10: aload_1
+#       11: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+#       14: ldc           #7                  // String 555
+#       16: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+#       19: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+#       22: astore_1
+#       23: new           #4                  // class java/lang/StringBuilder
+#       26: dup
+#       27: invokespecial #5                  // Method java/lang/StringBuilder."<init>":()V
+#       30: aload_1
+#       31: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+#       34: ldc           #9                  // String 666
+#       36: invokevirtual #6                  // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+#       39: invokevirtual #8                  // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+#       42: astore_1
+#       43: aload_1
+#       44: areturn
+# 
+#   public java.lang.String concatTest3();
+#     Code:
+#        0: ldc           #10                 // String 777
+#        2: ldc           #11                 // String 888
+#        4: invokevirtual #12                 // Method java/lang/String.concat:(Ljava/lang/String;)Ljava/lang/String;
+#        7: ldc           #13                 // String 999
+#        9: invokevirtual #12                 // Method java/lang/String.concat:(Ljava/lang/String;)Ljava/lang/String;
+#       12: astore_1
+#       13: aload_1
+#       14: areturn
+# }
 ```
 
 여기서 사용한 `TestClass`는 요렇게 생겼다:

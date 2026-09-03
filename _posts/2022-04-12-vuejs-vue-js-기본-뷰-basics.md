@@ -701,7 +701,7 @@ export default {
 export default {
   data() {
     return {
-      multipleSelected: [] // ['A', 'B'] 이런식으로 할당됨
+      multipleSelected: [] // ['A', 'B'] 이런 식으로  할당됨
     };
   }
 }

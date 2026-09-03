@@ -57,7 +57,7 @@ tags:
 
 - [MITRE \| CVE](https://cve.mitre.org): 공통 취약점 아카이빙 사이트
 - [CVE.report](https://cve.report)
-- [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런식으로 <https://devhub.checkmarx.com/cve-details/CVE-2016-1000027> 맨 뒤 path만 바꿔서 조회하면 편하다.
+- [DevHub Advisory](https://devhub.checkmarx.com/advisories/): mitre 보다 읽기 좋은 형식으로 설명해주는 사이트인데, 이런 식으로  <https://devhub.checkmarx.com/cve-details/CVE-2016-1000027> 맨 뒤 path만 바꿔서 조회하면 편하다.
 
 
 ## 2. 유닉스/리눅스 Unix/Linux
@@ -717,7 +717,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
 - [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 GitHub 설명을 보면 Python으로 실행하는 모양
 - [OpenCut](https://opencut.app/): 오픈 소스 영상 편집기. React 기반의 웹 애플리케이션이며 소스를 받아 로컬 서버를 띄워 사용하는 방식이다.
-- [fre:ac](https://www.freac.org/): 무료 오디오 포맷 컨버터. `freaccmd -e fdkaac -d .\results .\bgms\*.mp3` 이런식으로 CLI로 실행함.
+- [fre:ac](https://www.freac.org/): 무료 오디오 포맷 컨버터. `freaccmd -e fdkaac -d .\results .\bgms\*.mp3` 이런 식으로  CLI로 실행함.
 
 ### 원격 연결
 

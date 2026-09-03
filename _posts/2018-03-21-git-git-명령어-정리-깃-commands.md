@@ -267,21 +267,21 @@ git cat-file <type> <object>
 - `<object>`: 출력할 객체의 이름을 지정한다. 해시값, 브랜치 이름, 태그 이름 등이 올 수 있다.
 
 ```powershell
-PS C:\dev> git cat-file commit HEAD
+git cat-file commit HEAD
 
-tree ea7c8ddae40680c568200315a95a2396b40a3987
-parent 7afef7cd4dd84f9ffe3ccb5c87edbd72b419d3b0
-author noritersand <noritersand@example.com> 1701656020 +0900
-committer noritersand <noritersand@example.com> 1701656020 +0900
+# tree ea7c8ddae40680c568200315a95a2396b40a3987
+# parent 7afef7cd4dd84f9ffe3ccb5c87edbd72b419d3b0
+# author noritersand <noritersand@example.com> 1701656020 +0900
+# committer noritersand <noritersand@example.com> 1701656020 +0900
 
-PS C:\dev> git cat-file -p ea7c8d
+git cat-file -p ea7c8d
 
-100644 blob a1c2a238a965f004ff76978ac1086aa6fe95caea    .gitignore
-100644 blob 69cbd2c12c118753a225c378ed269e3215ec96bd    README.md
+# 100644 blob a1c2a238a965f004ff76978ac1086aa6fe95caea    .gitignore
+# 100644 blob 69cbd2c12c118753a225c378ed269e3215ec96bd    README.md
 
-PS C:\dev> git cat-file -t 69cbd2
+git cat-file -t 69cbd2
 
-blob
+# blob
 ```
 
 #### Options
@@ -1879,7 +1879,7 @@ git rev-parse HEAD
 # HEAD의 README.md 파일 해시 출력
 git rev-parse HEAD:README.md
 
-# HEAD의 ./ 디렉터리에 대한 해시 출력. 이 값은 트리 해시라고도 함
+# HEAD의 ./ 디렉터리에 대한 해시 출력. 이 값은 트리 해시(tree hash)라고도 함
 git rev-parse HEAD:./
 
 # 대상을 여러 개 지정하기

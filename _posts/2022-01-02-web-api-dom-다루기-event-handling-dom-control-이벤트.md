@@ -133,7 +133,7 @@ element.removeEventListener('click', clickHandler);
 
 ### EventTarget.prototype.dispatchEvent()
 
-DOM 이벤트를 수동으로 발동한다. 이런식으로 발생하는 이벤트를 '인공 이벤트(synthetic events)'라고 한댄다.
+DOM 이벤트를 수동으로 발동한다. 이런 식으로  발생하는 이벤트를 '인공 이벤트(synthetic events)'라고 한댄다.
 
 ```
 target.dispatchEvent(event)

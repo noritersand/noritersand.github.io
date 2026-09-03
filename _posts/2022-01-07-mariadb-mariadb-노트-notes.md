@@ -226,7 +226,7 @@ PS C:\Program Files\MariaDB 10.7\bin> .\mariadb.exe -u root -p
 #### 데이터베이스 생성/보기/선택
 
 ```powershell
-PS C:\dev> status # 현재 상태 보기
+status # 현재 상태 보기
 ```
 
 ```sql

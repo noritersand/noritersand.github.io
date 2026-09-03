@@ -158,11 +158,11 @@ console.log('dbinfo.password:', dbinfo.password);
 ```
 
 ```powershell
-PS C:\dev> node .\run-me.js
+node .\run-me.js
 
-dbinfo.connectString: 10.20.30.40:1234/QADB
-dbinfo.user: fixalot
-dbinfo.password: 1234abcd!
+# dbinfo.connectString: 10.20.30.40:1234/QADB
+# dbinfo.user: fixalot
+# dbinfo.password: 1234abcd!
 ```
 
 ### require로 코드 줄이기

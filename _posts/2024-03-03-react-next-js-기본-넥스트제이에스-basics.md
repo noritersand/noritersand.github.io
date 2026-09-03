@@ -46,7 +46,7 @@ npx create-next-app@latest PROJECT_NAME
 npx create-next-app@latest nextjs-dashboard --use-yarn --example "https://github.com/vercel/next-learn/tree/main/dashboard/starter-example"
 ```
 
-이런식으로 저장소의 URL을 `--example` 옵션값으로 지정하면 됨
+이런 식으로  저장소의 URL을 `--example` 옵션값으로 지정하면 됨
 
 ### 초기 파일 구조
 
@@ -352,17 +352,17 @@ DB_PASS=mypassword
 ```
 
 ```powershell
-PS C:\dev> yarn dev
+yarn dev
 
-yarn run v1.22.22
-$ next dev
-   ▲ Next.js 14.1.4
-   - Local:        http://localhost:3000
-   - Environments: .env.local, .env.development, .env
-
- ✓ Ready in 3.2s
- ○ Compiling /_error ...
- ✓ Compiled /_error in 966ms (288 modules)
+# yarn run v1.22.22
+# $ next dev
+#    ▲ Next.js 14.1.4
+#    - Local:        http://localhost:3000
+#    - Environments: .env.local, .env.development, .env
+# 
+#  ✓ Ready in 3.2s
+#  ○ Compiling /_error ...
+#  ✓ Compiled /_error in 966ms (288 modules)
 ```
 
 그리고 `process.env.[환경변수이름]`으로 접근한다:

@@ -13,7 +13,7 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
-테이블이나 컬럼에 COMMENT을 달아두면 여러모로 편리하다. Toad 같은 경우엔 컬럼에 달린 COMMENT을 이런식으로 보여주기도 한다.
+테이블이나 컬럼에 COMMENT을 달아두면 여러모로 편리하다. Toad 같은 경우엔 컬럼에 달린 COMMENT을 이런 식으로  보여주기도 한다.
 
 ![](/images/oracle-comment.png)
 
