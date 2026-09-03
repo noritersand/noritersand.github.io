@@ -117,7 +117,7 @@ Remove-Item Env:\test
 ```
 
 
-## 스크립트 파일의 바로가기 만들기
+## `.bat`으로 PowerShell 스크립트의 바로가기 만들기
 
 아래는 Sound Switch 프로세스를 강제로 재시작하는 스크립트다:
 
@@ -127,14 +127,18 @@ Stop-Process -Name 'SoundSwitch'
 Start-Process -FilePath 'C:\Program Files\SoundSwitch\SoundSwitch.exe'
 ```
 
-이 스크립트를 실행하면 되는데, 문제는 PowerShell 스크립트 파일은 터미널 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일을 추가로 만들고 거기서 스크립트를 실행한다:
+이 스크립트를 실행하면 되는데, 문제는 PowerShell 스크립트 파일은 PowerShell 환경이 아니면 직접 실행할 수 없다는 것. 그래서 배치 파일(`.bat`)을 추가로 만들고 거기서 스크립트를 실행한다:
 
 ```powershell
 # restart-soundswitch.bat
-pwsh -executionpolicy remotesigned -File .\restart-soundswitch.ps1
+@echo off
+powershell -Executionpolicy Remotesigned -File .\restart-soundswitch.ps1
+
 ```
 
 이제 배치 파일의 바로가기를 만들어서 적절한 곳에 두면 끝. 혹시라도 `pwsh`가 안 되면 `Powershell` 혹은 `Powershell.exe`로 바꾸면 됨.
+
+ℹ️ `-ExecutionPolicy RemoteSigned`는 로컬 스크립트는 허용하고, 인터넷에서 받은 스크립트는 서명을 요구한다는 의미다. 실행 정책을 완전히 무시하는 `-ExecutionPolicy Bypass`도 있음.
 
 
 ## 기본 문법
