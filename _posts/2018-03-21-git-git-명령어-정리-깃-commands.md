@@ -2289,7 +2289,7 @@ git worktree add ../another-repo main
 git worktree list
 
 # 워킹 트리 삭제
-git worktree remove another-repo
+git worktree remove ../another-repo
 
 # 쓰레기 데이터 정리
 git worktree prune
@@ -2298,6 +2298,8 @@ git worktree prune
 생성한 워킹 트리 목록 확인은 `worktree list`로, 삭제는 `worktree remove`로 하면 됨. 워킹 트리를 삭제할 때 실제 디렉터리도 전부 삭제되니 변경사항을 날려먹지 않도록 주의하자.
 
 `worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, Git은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
+
+ℹ️ 작업 완료 후의 머지는 Git 저장소를 공유하니까 원래의 워킹 트리에서 평범하게 하면 됨.
 
 
 끗.

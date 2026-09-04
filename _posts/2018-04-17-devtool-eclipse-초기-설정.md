@@ -182,7 +182,7 @@ remote system explorer operation 관련 프로세스 계속 띄우던 기능이 
 
 ## 추천 확장 기능
 
-- ~~Eclipse Quicksearch~~: ~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드 카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
+- ~~Eclipse Quicksearch~~: ~~STS의 기본기능인 Quicksearch와 같은 증분 검색(글자를 입력하는 도중에 계속 검색) 확장 기능. ~~검색 범위를 지정할 수 없기 때문에 활성화된 프로젝트와 파일 개수가 많을 수록 검색 속도가 느려지는 단점이 있다.~~ 최근 업데이트로 와일드카드를 사용해서 파일명이나 확장자를 지정할 수 있도록 범위 설정 기능이 추가되었다. Spring Tools 확장 기능에 포함되어 있기도 하다.~~ 최근 버전에선(2019-09 확인) 플러그인 설치 없이 기본 기능으로 사용 가능.
 - AnyEditTools: 잡다한 유틸리가 있는 확장 기능. 주로 표기법 치환(HTML 기호 <-> entities, camelCase <-> SCREAMING_SNAKE_CASE 등)용으로 쓰임. **설치 후 아래 설정할 것:**
   - `Window > Preferences > General > Editors > AnyEdit Tools > Auto Convert`에서 'Remove trailing whitespace' 체크 해제
   - 키 설정에서 'AnyEdit Tools' 카테고리 중 'Convert Camel <-> Underscores', 'Convert Chars to Html Entities' **빼고 다** 삭제

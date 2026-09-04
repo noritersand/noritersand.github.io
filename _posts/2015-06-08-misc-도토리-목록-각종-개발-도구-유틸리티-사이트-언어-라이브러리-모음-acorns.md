@@ -690,7 +690,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [RunCat](https://runcat-dev.github.io/RunCat365/): CPU 사용량이 높을 수록 다리가 빨라지는 고양이. 트레이에 거주함.
 - ⭐[SoundSwitch](https://soundswitch.aaflalo.me): 오디오 장치가 둘 이상일 때 출력 선택을 단축키로 변경할 수 있음
 - ⭐[Meld](https://meldmerge.org/): Windows 용 GUI diff 앱. 파일 비교 후 머지까지 할 수 있고 3-way merge도 가능. macOS는 아직 지원 안함.
-- ⭐[Everything](https://www.voidtools.com/ko-kr/): Windows용 파일 검색 유틸리티. 파일 100만 개 색인이 1분 정도면 끝나는 미친 성능을 자랑한다. ~~마소는대체뭐하냐~~ 설정에서 `탐색기에 우클릭 메뉴 추가` 체크하고 사용할 것. 검색 연산자도 제공하는데, 예를 들어 파일명이 `A`이고 `B`라는 내용을 포함하는 파일을 찾으려면 `A content:B`라고 쓴다. 더 많은 내용은 [여기](https://www.voidtools.com/ko-kr/support/everything/search_syntax/ "Search Syntax") 참고.
+- ⭐[Everything](https://www.voidtools.com/ko-kr/): Windows용 파일 검색 유틸리티. 파일 100만 개 색인이 1분 정도면 끝나는 미친 성능을 자랑한다. ~~마소는대체뭐하냐~~ 설정에서 `탐색기에 우클릭 메뉴 추가` 체크하고 사용할 것. 검색 연산자도 제공하는데, 예를 들어 파일이나 디렉터리가 `A`이고 `B`라는 내용을 포함하는 파일을 찾으려면 `A content:B`라고 쓴다. 더 많은 내용은 [여기](https://www.voidtools.com/ko-kr/support/everything/search_syntax/ "Search Syntax") 참고.
 - [FFmpeg](https://ffmpeg.org/): CLI 방식의 동영상 변환/편집 도구. [니콜라스 유튜브 \| FFmpeg 소개 영상](https://www.youtube.com/watch?v=z2iodiQW0fg)
 - [CPU-Z](https://www.cpuid.com/softwares/cpu-z.html): 설치된 컴퓨터의 하드웨어 스펙 조회 유틸리티. 칩셋, 캐시, 메인보드, 메모리, 그래픽카드의 모델명과 스펙이 표시됨.
 - [HWMonitor](https://www.cpuid.com/softwares/hwmonitor.html): 하드웨어 모니터링 유틸리티. 쿨링 팬 속도, 사용 전압, 온도 등을 실시간으로 보여 줌.

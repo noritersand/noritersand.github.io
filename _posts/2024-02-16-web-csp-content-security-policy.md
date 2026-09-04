@@ -54,7 +54,7 @@ Content-Security-Policy: directive <value> ...; directive <value> ...; ...
 
 ### Directive
 
-디렉티브는 출처를 제한할 리소스의 유형을 나타내는 항목이다. 한 번에 여러 디렉티브를 지정할 수 있고, 디렉티브 사이의 구분은 세미콜론`;`으로 한다.
+디렉티브는 출처를 제한할 리소스의 유형을 나타내는 항목이다. 한 번에 여러 디렉티브를 지정할 수 있고, 디렉티브 사이의 구분은 세미콜론(`;`)으로 한다.
 
 현재(🗓️ 2024-02-16) 디렉티브는 총 29개(...)가 있고, 주요 디렉티브는 다음과 같다.
 
@@ -116,13 +116,13 @@ Unsafe Keyword Values:
 
 Hosts Values:
 
-- Host: 특정 호스트의 출처를 허용하는 방식. 이 값은 와일드 카드`*`로 범위를 지정할 수 있고, 스킴(= 프로토콜), 포트번호, path(도메인 다음의 경로)를 특정할 수 있다. (예시: `example.com`, `*.example.com`, `https://*.example.com:12/path/to/file.js`) 슬래시`/`로 끝나는 path는 접두어처럼 작동하지만, 이 외의 path는 완전히 일치해야만 한다. 예를 들어 `example.com/api/`는 `example.com/api/users/new`와 일치한다. 그리고 `example.com/file.js`는 `https://example.com/file.js`와 일치하지만, `https://example.com/file.js.old`와는 일치하지 않는다.
+- Host: 특정 호스트의 출처를 허용하는 방식. 이 값은 와일드카드(`*`)로 범위를 지정할 수 있고, 스킴(= 프로토콜), 포트번호, path(도메인 다음의 경로)를 특정할 수 있다. (예시: `example.com`, `*.example.com`, `https://*.example.com:12/path/to/file.js`) 슬래시`/`로 끝나는 path는 접두어처럼 작동하지만, 이 외의 path는 완전히 일치해야만 한다. 예를 들어 `example.com/api/`는 `example.com/api/users/new`와 일치한다. 그리고 `example.com/file.js`는 `https://example.com/file.js`와 일치하지만, `https://example.com/file.js.old`와는 일치하지 않는다.
 - Scheme: 특정 스킴을 모두 허용하는 방식이다. 항상 콜론(`:`)으로 끝나야 한다. (예시: `https:`, `data:`, `blob:`)
 
 Other Values:
 
 - `'nonce-*'`: **TODO**
-- `'sha*-*'`: sha256, sha384, sha512 중에 하나. 하이픈`-` 다음에 이어지는 값은 스크립트나 스타일 코드에 대한 해시값이다. (예시: `'sha256-abc123'`) 특정 인라인 코드를 허용할 때 사용한다. `eval()`은 해당 없음
+- `'sha*-*'`: sha256, sha384, sha512 중에 하나. 하이픈(`-`) 다음에 이어지는 값은 스크립트나 스타일 코드에 대한 해시값이다. (예시: `'sha256-abc123'`) 특정 인라인 코드를 허용할 때 사용한다. `eval()`은 해당 없음
 
 
 ## 예시

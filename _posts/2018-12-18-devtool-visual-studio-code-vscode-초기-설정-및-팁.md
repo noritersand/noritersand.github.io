@@ -20,7 +20,7 @@ tags:
 
 Suggestions(IntelliSense)는 매우 좋은 기능이긴 하지만, 기본값 그대로 사용하기엔 약간 번거로운 면이 있다.
 
-- 설정에서 `Accept Suggestion On Commit Character`를 체크해제하면 세미콜론`;`이나 소괄호`()` 등의 입력에 반응하지 않는다.
+- 설정에서 `Accept Suggestion On Commit Character`를 체크해제하면 세미콜론(`;`)이나 소괄호(`()`) 등의 입력에 반응하지 않는다.
 - 설정에서 `Accept Suggestion On Enter`를 `off`로 변경하면 오직 <kbd>Tab</kbd>키에 의해서만 추천단어가 선택된다.
 - 자동으로 나타나는 추천창이 귀찮으면 커맨드 팔레트에서 `Preferences: Open User Settings (JSON)` 입력 후 열리는 `setting.json`에 아래를 추가한다:
 
@@ -119,7 +119,7 @@ prefix인 `cl`에 자동 완성이 반응한다. `"console.log"`는 자동 완�
 - <kbd>f12</kbd>: Go To Definition. 선언부로 이동
 - <kbd>shift + f12</kbd>: Go To References. 함수 등을 참조하고 있는 코드로 이동(혹은 작은 팝업으로 보여줌)
 - <kbd>ctrl + shift + r</kbd>: Refactor... 현재 캐럿이 위치에 따라 가능한 코드 리팩터링 옵션을 보여준다.
-- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더바(`_`)를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
+- <kbd>ctrl + shift + left</kbd> <kbd>ctrl + shift + right</kbd>: 단어(words) 단위의 선택 영역을 좌우로 확장한다. 단어란 언더스코어(`_`)를 포함한 연속적인 단어 구성 문자를 의미한다. (abc, abcDef, ABC_DEF, ...)
 - <kbd>alt + shift + left</kbd> <kbd>alt + shift + right</kbd>: Expand/Shrink Selection. 단어보다 더 넓은 범위로 선택 영역을 확장하거나 좁힌다. (서브라임 텍스트에서는 보조 단어(subwords) 단위의 선택 영역을 좌우로 확장하는 단축키임)
 - <kbd>ctrl + shift + \ </kbd> Go To Bracket. 여는 괄호와 닫는 괄호를 번갈아 이동한다. (근데 뭔가 잘 안되네)
 

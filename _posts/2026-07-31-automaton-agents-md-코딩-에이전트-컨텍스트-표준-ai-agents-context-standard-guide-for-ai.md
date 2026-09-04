@@ -120,9 +120,9 @@ Use plan mode for changes under `src/billing/`.
 ### 링크
 
 ````
-1. 개발 지침: [docs/agents/development.md](docs/agents/development.md) ❌
-2. [개발 지침](docs/agents/development.md) ❌
-3. 개발 지침: `docs/agents/development.md` ✅
+1. 개발/구현 지침: [docs/agents/development.md](docs/agents/development.md) ❌
+2. [개발/구현 지침](docs/agents/development.md) ❌
+3. 개발/구현 지침: `docs/agents/development.md` ✅
 ````
 
 사람을 위한 문서라면 1번이 HTML로 렌더링된 상태에서 주소까지 보이고 하이퍼링크로 작동되서 가장 좋다.
@@ -153,10 +153,11 @@ Use plan mode for changes under `src/billing/`.
 - `code-update-by-agent` 브랜치가 없으면 생성한다.
 - 하나의 요청에 해당하는 작업이 완료되면 `code-update-by-agent` 브랜치에 즉시 커밋한다.
 - `code-update-by-agent` 브랜치가 current branch보다 뒤에 있는 경우 `code-update-by-agent` 브랜치를 재생성한다.
-- 사용자가 rebase를 했을 수 있으므로 `code-update-by-agent`의 커밋이 사라지거나 히스토리가 바뀌어 있어도 정상적인 상황으로 간주한다.
+- `code-update-by-agent`의 커밋이 사라지거나 히스토리가 바뀌어 있어도 원인을 조사하지 말고, 위 정책에 따라 그냥 커밋하거나 브랜치를 재생성한다.
 - 커밋 메시지 첫 줄은 `<type>: <short summary>` 형태로 작성하고, `type`은 다음 중 하나를 선택한다: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
 - 나머지 메시지는 한국어로 작성한다.
 - 작업 내용은 명사형으로 간결하게 작성한다.
+- 커밋 완료 후 원래의 브랜치로 switch 하지 않는다.
 ````
 
 
@@ -171,7 +172,7 @@ Use plan mode for changes under `src/billing/`.
 
 ## Agent Guidelines
 
-- 개발 지침: `docs/agents/development.md`
+- 개발/구현 지침: `docs/agents/development.md`
 - 디자인/마크업 지침: `docs/agents/design.md`
 - 데이터베이스 지침: `docs/agents/database.md`
 

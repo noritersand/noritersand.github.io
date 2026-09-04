@@ -56,7 +56,7 @@ document.cookie = "cookieName=value; samesite=strict; secure"  // HTTPS 전송�
 
 ### value로 허용되는 특수 문자
 
-쿠키의 값에는 쉼표(`,`)와 세미콜론`;`을 직접 포함할 수 없다. [http - Is comma a valid character in cookie-value - Stack Overflow](https://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value).
+쿠키의 값에는 쉼표(`,`)와 세미콜론(`;`)을 직접 포함할 수 없다. [http - Is comma a valid character in cookie-value - Stack Overflow](https://stackoverflow.com/questions/25387340/is-comma-a-valid-character-in-cookie-value).
 
 이 문자들을 포함하려면 URL 인코딩(`,` -> `%2C`, `;` -> `%3B`)을 해야 한다.
 

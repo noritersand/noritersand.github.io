@@ -189,7 +189,7 @@ $d2
 🐶복잡한데 설명을 해보자면:
 
 - 일단 큰따옴표로 감싸는 건 필수: `ac $PROFILE "..."`
-- 선언할 변수 이름 이스케이프 되지 않도록 백틱 붙임 ``` `$d2 ```
+- 선언할 변수 이름이 변수로 해석(치환)되지 않고 `$`가 그대로 출력되도록 백틱으로 이스케이프함 `` `$d2 ``
 - `$()` 로 하위 연산식을 만들어서 거기서 현재 경로 가져오기: `$((pwd).Path)`
 - 경로에 빈 칸이 있을 수 있어서 오류를 방지하기 위해 작은따옴표 감싸기: `'$((pwd).Path)'`
 
@@ -220,13 +220,13 @@ $i = 5
 
 따옴표간 차이는 이 정도고, 나머지는 대체로 동일한 의미로 쓰인다.
 
-### 백틱 ``` ` ```
+### 백틱 `` ` ``
 
 [about_Special_Characters - PowerShell \| Microsoft Learn](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_special_characters)
 
 특수 문자 시퀀스(special character sequences, 이스케이프 시퀀스라고도 함)를 만드는 데 사용하는 문자.
 
-주로 큰따옴표 문자열에서 줄바꿈 등의 특수 문자를 표현하기 위해 사용된다. 작은따옴표 문자열에서는 이스케이프 시퀀스가 해석되지 않는다:
+주로 큰따옴표 문자열에서 줄 바꿈 등의 특수 문자를 표현하기 위해 사용된다 (작은따옴표 문자열에서는 이스케이프 시퀀스가 해석되지 않는다):
 
 ```powershell
 echo "a `n b"
@@ -241,16 +241,16 @@ echo 'a `n b'
 
 #### PowerShell의 특수 문자 시퀀스
 
-- ``` `0 ```: Null
-- ``` `a ```: Alert
-- ``` `b ```: Backspace
-- ``` `e ```: Escape (added in PowerShell 6)
-- ``` `f ```: Form feed
-- ``` `n ```: New line
-- ``` `r ```: Carriage return
-- ``` `t ```: Horizontal tab
-- ``` `u{x} ```: Unicode escape sequence (added in PowerShell 6)
-- ``` `v ```: Vertical tab
+- `` `0 ``: Null
+- `` `a ``: Alert
+- `` `b ``: Backspace
+- `` `e ``: Escape (added in PowerShell 6)
+- `` `f ``: Form feed
+- `` `n ``: New line
+- `` `r ``: Carriage return
+- `` `t ``: Horizontal tab
+- `` `u{x} ``: Unicode escape sequence (added in PowerShell 6)
+- `` `v ``: Vertical tab
 
 특수 문자 시퀀스가 아닌 문자가 백틱 뒤에 오면 원래 문자 그대로 취급된다:
 
@@ -287,7 +287,7 @@ Get-ChildItem -Path C:\Logs -Filter *.log | Select-String -Pattern "Error"
 
 ### 줄 바꿈
 
-줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱(``` ` ```)을 붙인다:
+줄을 바꿔도 명령을 이어가도록 하려면 줄 마지막에 한 칸을 띄우고 백틱(`` ` ``)을 붙인다:
 
 ```powershell
 # js 파일을 찾아서 temp.md에 파일 이름을 작성하는 스크립트
@@ -302,7 +302,7 @@ Get-ChildItem `
 # Get-ChildItem -Path . -Recurse -Filter *.js | Select-Object -Property FullName > temp.md
 ```
 
-줄 끝이 파이프(`|`)일 땐 백틱(``` ` ```)을 생략해도 된다:
+줄 끝이 파이프(`|`)일 땐 백틱(`` ` ``)을 생략해도 된다:
 
 ```powershell
 Get-ChildItem |
@@ -311,7 +311,7 @@ Get-ChildItem |
 
 ### 한 줄에 여러 명령어 작성하기
 
-세미콜론`;`으로 각 명령어를 구분할 수 있음:
+세미콜론(`;`)으로 각 명령어를 구분할 수 있음:
 
 ```powershell
 Get-Process; Get-Service
@@ -897,7 +897,7 @@ Test-Fn7 -Param1 1, 2, 3
 
 ### 기본값 지정
 
-기본값은 `ValidateNotNullOrEmpty()`과 함께 등호`=`로 할당한다:
+기본값은 `ValidateNotNullOrEmpty()`과 함께 등호(`=`)로 할당한다:
 
 ```powershell
 function Test-Fn9 {

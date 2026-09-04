@@ -47,7 +47,7 @@ public class Connector {
 }
 ```
 
-위 코드의 conn 처럼 `try` 키워드 다음에 오는 괄호`()` 안에서 선언된 변수에 대해 close를 자동으로 수행한다. 그러니까 명시적으로 close를 하지 않아도 된다는 말이다. 단, 해당 인스턴스의 클래스가 AutoCloseable의 구현체일 때만 가능하다.
+위 코드의 conn 처럼 `try` 키워드 다음에 오는 괄호(`()`) 안에서 선언된 변수에 대해 close를 자동으로 수행한다. 그러니까 명시적으로 close를 하지 않아도 된다는 말이다. 단, 해당 인스턴스의 클래스가 AutoCloseable의 구현체일 때만 가능하다.
 
 예를 들어 java.sql.Connection은 다음처럼 선언되어있고:
 

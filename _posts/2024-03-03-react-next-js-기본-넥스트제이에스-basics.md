@@ -154,7 +154,7 @@ export default async function Layout({
 
 ### 라우트 그룹 Route Groups
 
-파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 소괄호`()`로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
+파일을 디렉터리로 분리하고 싶지만 URL에는 노출하고 싶지 않을 수도 있는데 이 때 사용하는 기능이다. 디렉터리 이름을 소괄호(`()`)로 감싸면 된다. e.g., `(product)`, `(overview)`, ...
 
 🚨 아래처럼 동일한 최종 경로(`/C`)를 차지하는 라우트 그룹은 넥스트가 어느 라우트를 렌더링해야 할지 판단할 수 없어 빌드 에러를 일으킨다:
 
@@ -309,7 +309,7 @@ module.exports = {
 - `destination`: 보낼 주소
 - `permanent`: 브라우저에 이 리디렉션이 영구적인지 아닌지를 결정한다. `true`면 308 Permanent Redirect로 응답하고 `false`면 307 Temporary Redirect로 응답한다.
 
-`source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
+`source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다. 예를 들면 `source`에 `/blog/:slug*`를, `destination`에 `/news/:slug*`라고 작성하면, 요청 경로 중 `/blob`만 `/news`로 바뀌고 나머지는 그대로인 주소로 리디렉션하게 된다. 
 
 #### rewrites
 
@@ -333,7 +333,7 @@ module.exports = {
 - `source`: rewrites할 요청 경로 패턴
 - `destination`: 매핑할 주소
 
-`redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드`*`와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
+`redirects`와 마찬가지로 `source`와 `destination`에는 와일드카드(`*`)와 정규식을 이용한 패스 매칭(path matches)을 지원한다.
 
 
 ## 환경 변수
@@ -417,7 +417,7 @@ Next.js는 공식적으로 development, production 두 환경만 구분하지만
 
 ### 다른 환경 변수를 참조하기
 
-달러`$`를 사용한다:
+달러(`$`)를 사용한다:
 
 ```bash
 # .env
