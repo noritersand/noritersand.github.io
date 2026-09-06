@@ -34,7 +34,7 @@ git update-git-for-windows
 
 ## 용어
 
-- 워킹 트리(working tree): 버전관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
+- 워킹 트리(working tree): 버전 관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
 - 스테이징 영역(staging area): 인덱스(index)라고도 부른다.
 - 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 예를 들어 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
 - Git 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
@@ -79,7 +79,7 @@ git update-git-for-windows
 
 #### staging / do track
 
-작업폴더의 파일을 Git이 추적하게 하거나 커밋을 위한 준비상태로 만듦.
+워킹 트리의 파일을 Git이 추적하게 하거나 커밋을 위한 준비상태로 만듦.
 
 ```bash
 git add *
@@ -493,14 +493,14 @@ git clean -f .
 git clean -dfx
 ```
 
-`clean.requireForce` 설정이 `true`가 아니면 `clean` 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 기본적으로 현재 폴더를 기준으로 하위를 재귀 검색하기 때문에 recursive 옵션은 따로 없다.
+`clean.requireForce` 설정이 `true`가 아니면 `clean` 명령은 항상 `-f`, `-i`, `-n` 옵션 중 하나가 명시되어야 실행된다. 기본적으로 현재 디렉터리를 기준으로 하위를 재귀 검색하기 때문에 recursive 옵션은 따로 없다.
 
 #### Options
 
 - `-f` `--force`: 삭제 기본 옵션. 설정에 따라 생략할 수도 있다.
 - `-i` `--interactive`: 대화 모드로 삭제
 - `-n` `--dry-run`: 지워질 파일 목록 미리보기
-- `-d`: 폴더도 삭제한다.
+- `-d`: 디렉터리도 삭제한다.
 - `-x`: ignore 룰이 적용된 파일**도** 삭제한다.
 - `-X`: ignore 룰이 적용된 파일**만** 삭제한다.
 
@@ -1117,7 +1117,7 @@ git init --bare
 
 LFS(Large File Storage)는 대용량 파일을 더 효율적으로 관리할 수 있게 도와주는 Git의 확장이다. [여기](https://git-lfs.com/)서 별도로 다운로드 할 수 있지만, Git 클라이언트에 포함되어 있으니 설치할 때 'Select Components' 단계에서 제외한 게 아니라면 그냥 쓸 수 있다.
 
-어쨋든, LFS를 적용하려면 아래처럼 LFS를 초기화하고 `git lfs track` 명령으로 특정 파일이나 패턴을 추적하게 한다. 그러면 추적 대상을 기록하는 `.gitattributes` 파일이 생성되는데, 이 파일을 버전관리 대상으로 추가한 다음 평소처럼 쓰면 된다:
+어쨋든, LFS를 적용하려면 아래처럼 LFS를 초기화하고 `git lfs track` 명령으로 특정 파일이나 패턴을 추적하게 한다. 그러면 추적 대상을 기록하는 `.gitattributes` 파일이 생성되는데, 이 파일을 버전 관리 대상으로 추가한 다음 평소처럼 쓰면 된다:
 
 ```bash
 # LFS를 초기화
@@ -1894,13 +1894,13 @@ git rev-parse HEAD:a.md HEAD:b.md HEAD:.gitignore
 
 remove. 워킹 트리와 스테이징 영역에서 파일을 삭제한다.
 
-#### 파일/폴더 삭제
+#### 파일/디렉터리 삭제
 
 ```bash
 git rm readme.txt
 ```
 
-rm 명령어는 Git이 추적중인 파일 혹은 폴더에만 사용할 수 있다.
+rm 명령어는 Git이 추적중인 파일 혹은 디렉터리에만 사용할 수 있다.
 
 #### Git의 추적을 중단시키기
 
@@ -2091,7 +2091,7 @@ git svn clone SVN저장소주소
 
 #### 표준 레이아웃 SVN 저장소 복제
 
-표준 레이아웃(trunk와 branches, tags 폴더가 같은 위치에 있는 구조)을 사용하는 SVN 저장소를 복제할 때 사용한다.
+표준 레이아웃(trunk와 branches, tags 디렉터리가 같은 위치에 있는 구조)을 사용하는 SVN 저장소를 복제할 때 사용한다.
 
 ```bash
 git svn clone -s SVN저장소주소
@@ -2099,7 +2099,7 @@ git svn clone -s SVN저장소주소
 
 #### 비표준 레이아웃 SVN 저장소 복제
 
-trunk와 branches, tags 폴더의 위치를 각각 지정하는 방식이다.
+trunk와 branches, tags 디렉터리의 위치를 각각 지정하는 방식이다.
 
 ```bash
 git svn clone -T 트렁크경로\
@@ -2251,7 +2251,7 @@ git update-index --really-refresh
 
 ## git worktree
 
-`worktree`는 하나의 Git 저장소에서 여러 개의 워킹 트리를 동시에 다룰 수 있게 해주는 명령어다.
+`git worktree`는 하나의 Git 저장소에서 여러 개의 워킹 트리(working tree)를 동시에 다룰 수 있게 해주는 명령어다.
 
 ```
 git worktree add [-f] [--detach] [--checkout] [--lock [--reason <string>]] [--orphan] [(-b | -B) <new-branch>] <path> [<commit-ish>]
@@ -2264,17 +2264,19 @@ git worktree repair [<path>…]
 git worktree unlock <worktree>
 ```
 
-원래 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 한다. 여기서 `worktree`를 사용하면 **기존 워킹 트리를 그대로 두고** 새로운 디렉터리에서 다른 브랜치로 전환하여 작업할 수 있다. 이 방식은 예를 들어 긴급한 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
+원래 브랜치를 전환하려면 변경사항을 커밋하거나 스태시에 임시 저장해야 한다. 여기서 `git worktree`를 사용하면 기존 워킹 트리를 그대로 두고 새로운 디렉터리에 별도의 워킹 트리를 만들어 다른 브랜치로 작업할 수 있다. 이 방식은 예를 들어 긴급한 수정이 필요할 때, 기존 작업을 건드리지 않고 새 브랜치를 빠르게 체크아웃해 수정할 수 있다는 점에서 매우 유용하다.
+
+#### 워킹 트리 생성
 
 ```bash
-# 새 워킹 트리 생성 #1: 현재 작업 중인 브랜치를 기준으로 새 브랜치 'test1'를 만들고, ../another-repo 폴더에 연결
+# 새 워킹 트리 생성 #1: 현재 작업 중인 브랜치를 기준으로 새 브랜치 'test1'를 만들고, ../another-repo 디렉터리에 연결
 git worktree add -b test1 ../another-repo
 
-# 새 워킹 트리 생성 #2: 원격 저장소의 origin/main를 기준으로 로컬 브랜치 'test2'를 새로 만들고, 이를 ../another-repo 폴더에 연결함.
+# 새 워킹 트리 생성 #2: 원격 저장소의 origin/main를 기준으로 로컬 브랜치 'test2'를 새로 만들고, 이를 ../another-repo 디렉터리에 연결함.
 git worktree add -b test2 ../another-repo origin/main
 
 # 새 워킹 트리 생성 #3: 로컬 main 브랜치를(없으면 원격의 main를 찾음) 체크아웃한 새 워킹 트리를 생성한다. 
-# ⚠️ 기존 워킹트리가 main 브랜치를 보고 있으면 실행 안됨
+# ⚠️ 기존 워킹 트리가 main 브랜치를 보고 있으면 실행 안됨
 git worktree add ../another-repo main
 ```
 
@@ -2282,7 +2284,9 @@ git worktree add ../another-repo main
 
 새 워킹 트리는 가능한 한 기존 워킹 트리의 하위 디렉터리가 아닌, 별도의 경로로 지정하는 것이 좋다. 기존 경로 하위에 만들면 Git이 마치 새 파일들이 잔뜩 생긴 것처럼 인식하기 때문.
 
-생성된 워킹 트리는 겉보기에 독립된 Git 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 Git 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음) 그래서 다른 워킹트리가 이미 체크아웃한 브랜치로는 전환할 수 없다.
+#### 새 워킹 트리 확인/삭제
+
+생성된 워킹 트리는 겉보기에 독립된 Git 저장소처럼 보이지만, 실제로는 기존 워킹 트리와 같은 Git 저장소를 공유한다. (디렉터리 내부를 살펴보면 `.git/` 대신 기존 저장소를 가리키는 `.git` 파일이 존재하는 것을 확인할 수 있음) 그래서 다른 워킹 트리가 이미 체크아웃한 브랜치로는 전환할 수 없다.
 
 ```bash
 # 생성한 워킹 트리 목록 확인
@@ -2295,11 +2299,31 @@ git worktree remove ../another-repo
 git worktree prune
 ```
 
-생성한 워킹 트리 목록 확인은 `worktree list`로, 삭제는 `worktree remove`로 하면 됨. 워킹 트리를 삭제할 때 실제 디렉터리도 전부 삭제되니 변경사항을 날려먹지 않도록 주의하자.
+생성한 워킹 트리 목록 확인은 `git worktree list`로, 삭제는 `git worktree remove`로 하면 된다. 워킹 트리를 삭제할 때 실제 디렉터리도 전부 삭제되니 변경사항을 날려먹지 않도록 주의하자.
 
-`worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, Git은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
+`git worktree prune`은 이미 디렉터리는 삭제되었지만 `.git/worktrees/` 아래에 남아 있는 메타데이터만 정리한다. 예를 들어 워킹 트리를 수동으로 삭제한 경우, Git은 해당 워킹 트리가 여전히 존재하는 것으로 간주하므로 `prune`으로 정리해야 한다.
 
 ℹ️ 작업 완료 후의 머지는 Git 저장소를 공유하니까 원래의 워킹 트리에서 평범하게 하면 됨.
+
+#### 워킹 트리와 git worktree
+
+워킹 트리(working tree)는 현재 작업 중인 파일과 디렉터리 상태를, `git worktree`는 하나의 Git 저장소에서 여러 개의 워킹 트리를 관리할 수 있게 해주는 기능을 의미한다.
+
+즉, `git worktree add`를 사용하면 새로운 워킹 트리가 추가된다.
+
+#### 현재 경로가 추가된 워킹 트리인지 확인하는 방법
+
+`git rev-parse --git-dir` 명령을 실행했을 때의 결과가 다르다.
+
+```bash
+git rev-parse --git-dir
+
+# 원본 워킹 트리일 때
+.git
+
+# 추가한 워킹 트리일 때
+C:/dev/git-test/.git/worktrees/another-repo
+```
 
 
 끗.

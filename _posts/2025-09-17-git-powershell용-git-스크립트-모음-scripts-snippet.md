@@ -64,19 +64,19 @@ if ($Help) {
     Write-Host "=== Git 브랜치 정리 대상 식별 도구 v4.8 - 도움말 ===" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "설명:" -ForegroundColor Yellow
-    Write-Host "  지정된 경로의 모든 하위 폴더를 재귀적으로 검색하여, 머지된 지 오래된"
+    Write-Host "  지정된 경로의 모든 하위 디렉터리를 재귀적으로 검색하여, 머지된 지 오래된"
     Write-Host "  원격 브랜치를 찾아 목록을 출력합니다. 브랜치를 삭제하지 않습니다."
     Write-Host ""
     
     Write-Host "기본 사용법:" -ForegroundColor Yellow
-    Write-Host "  .\show-merged-branches.ps1           # 기본 설정으로 실행 (현재 폴더와 하위)"
+    Write-Host "  .\show-merged-branches.ps1           # 기본 설정으로 실행 (현재 디렉터리와 하위)"
     Write-Host "  .\show-merged-branches.ps1 -Help     # 이 도움말 표시"
     Write-Host "  .\show-merged-branches.ps1 -Path 'C:\my-projects'  # 특정 경로의 모든 하위 저장소 검색" -ForegroundColor Gray
     Write-Host ""
     
     Write-Host "주요 옵션:" -ForegroundColor Yellow
     Write-Host "  -Days <숫자>                    # 기준 일수 (기본값: 30)"
-    Write-Host "  -Path <경로>                    # 검색할 폴더 경로 (기본값: 현재 폴더)"
+    Write-Host "  -Path <경로>                    # 검색할 디렉터리 경로 (기본값: 현재 디렉터리)"
     Write-Host "  -DefaultBranch <브랜치명>       # 기본 브랜치명 (기본값: main)"
     Write-Host "  -RemoteName <원격저장소명>      # 원격 저장소 이름 (기본값: origin)"
     Write-Host "  -ExcludeBranches <패턴들>       # 제외할 브랜치 패턴 배열"

@@ -61,7 +61,7 @@ JSTL은 태생이 커스텀태그이기 때문에 jsp와 밀접하게 관계가 
 
 <http://tomcat.apache.org/taglibs/standard/>
 
-혹은 `톰캣설치폴더/webapps/examples/WEB-INF/lib` 에서 가져온다.
+혹은 `톰캣설치디렉터리/webapps/examples/WEB-INF/lib` 에서 가져온다.
 
 1.2 버전은 톰캣 6.0부터, 1.1버전은 톰캣 5.5부터 사용가능.
 

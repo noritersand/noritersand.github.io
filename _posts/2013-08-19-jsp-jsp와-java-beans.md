@@ -53,11 +53,11 @@ public class Temp {
 
 ## 작성 위치
 
-Beans 클래스 파일은 `웹 애플리케이션\WEB-INF\classes` 폴더에 존재해야 한다. 따라서 일반적으로 src 폴더를 하나 더 만들고 소스는 src 폴더 작성하고 컴파일 한 후 해당 클래스 파일은 classes 폴더 아래 패키지 폴더를 만들고 만들어진 패키지 폴더에 복사한다.
+Beans 클래스 파일은 `웹 애플리케이션\WEB-INF\classes` 디렉터리에 존재해야 한다. 따라서 일반적으로 src 디렉터리를 하나 더 만들고 소스는 src 디렉터리 작성하고 컴파일 한 후 해당 클래스 파일은 classes 디렉터리 아래 패키지 디렉터리를 만들고 만들어진 패키지 디렉터리에 복사한다.
 
-예를 들어 `톰캣루트\webapps\study`에서 작업을 하는 경우 `톰캣루트\webapps\study\WEB-INF\classes` 폴더 및 `톰캣루트\webapps\study\WEB-INF\web.xml` 파일을 작성한다. web.xml 파일은 `톰캣루트\webapps\ROOT\WEB-INF` 파일을 복사한다.
+예를 들어 `톰캣루트\webapps\study`에서 작업을 하는 경우 `톰캣루트\webapps\study\WEB-INF\classes` 디렉터리 및 `톰캣루트\webapps\study\WEB-INF\web.xml` 파일을 작성한다. web.xml 파일은 `톰캣루트\webapps\ROOT\WEB-INF` 파일을 복사한다.
 
-폴더를 작성하지 않고 컴파일 하는 경우에는 -d 옵션을 사용하여 컴파일 하면 자동으로 폴더를 생성해 준다.
+디렉터리를 작성하지 않고 컴파일 하는 경우에는 -d 옵션을 사용하여 컴파일 하면 자동으로 디렉터리를 생성해 준다.
 
 ```bash
 javac -d . Test.java
@@ -67,7 +67,7 @@ javac -d . Test.java
 
 ## example 1
 
-`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더를 작성하고 HelloBean.java 파일을 작성하여 컴파일한다.
+`톰캣루트\webapps\study\WEB-INF\classes\src` 디렉터리를 작성하고 HelloBean.java 파일을 작성하여 컴파일한다.
 
 ```java
 package com.test.bean;
@@ -87,9 +87,9 @@ public class HelloBean {
 }
 ```
 
-`톰캣루트\webapps\study\WEB-INF\classes\com\test\bean` 폴더를 작성하고 컴파일 하여 생성된 HelloBean.class 파일을 복사한다.
+`톰캣루트\webapps\study\WEB-INF\classes\com\test\bean` 디렉터리를 작성하고 컴파일 하여 생성된 HelloBean.class 파일을 복사한다.
 
-JSP 파일 작성 - HelloBean.jsp(study 폴더에 저장)
+JSP 파일 작성 - HelloBean.jsp(study 디렉터리에 저장)
 
 ```html
 <%@ page contentType="text/html;charset=utf-8"%>
@@ -110,7 +110,7 @@ JSP 파일 작성 - HelloBean.jsp(study 폴더에 저장)
 
 ## example 2
 
-`톰캣루트\webapps\study\WEB-INF\classes\src` 폴더에 MemBean.java 파일을 작성하여 컴파일한다.
+`톰캣루트\webapps\study\WEB-INF\classes\src` 디렉터리에 MemBean.java 파일을 작성하여 컴파일한다.
 
 ```java
 package com.test.bean;
@@ -148,9 +148,9 @@ public class MemBean {
 }
 ```
 
-`톰캣루트\webapps\study\WEB-INF\classes\com\test\bean` 폴더를 작성하고 컴파일 하여 생성된 MemBean.class 파일을 복사한다.
+`톰캣루트\webapps\study\WEB-INF\classes\com\test\bean` 디렉터리를 작성하고 컴파일 하여 생성된 MemBean.class 파일을 복사한다.
 
-회원 가입 폼 작성 - propertyTest.html(study 폴더에 저장)
+회원 가입 폼 작성 - propertyTest.html(study 디렉터리에 저장)
 
 ```html
 <html>
@@ -172,7 +172,7 @@ public class MemBean {
 </html>
 ```
 
-JSP 파일 작성 - propertyTest.jsp(study 폴더에 저장)
+JSP 파일 작성 - propertyTest.jsp(study 디렉터리에 저장)
 
 ```html
 <%@ page contentType="text/html;charset=utf-8"%>

@@ -126,9 +126,9 @@ icacls .\test\
 
 #### 권한 태그
 
-- `I`: Inherited. 상위 폴더에서 상속된 권한
+- `I`: Inherited. 상위 디렉터리에서 상속된 권한
 - `OI`: Object Inherit. 하위 파일로 권한 상속
-- `CI`: Container Inherit. 하위 폴더로 권한 상속
+- `CI`: Container Inherit. 하위 디렉터리로 권한 상속
 - `F`: Full control
 - `M`: Modify
 - `RX`: Read & execute
@@ -234,7 +234,7 @@ netstat -nao | findstr '8081'
 
 ### xcopy
 
-파일과 폴더 트리를 복사하는 유틸리티.
+파일과 디렉터리 트리를 복사하는 유틸리티.
 
 ```bash
 xcopy SOURCE DESTINATION /s /e /y
@@ -242,13 +242,13 @@ xcopy SOURCE DESTINATION /s /e /y
 
 #### Options
 
-- `/S`: 비어 있지 않은 폴더와 하위 폴더를 복사.
-- `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사. /S /E 스위치와 같다.
+- `/S`: 비어 있지 않은 디렉터리와 하위 디렉터리를 복사.
+- `/E`: 비어 있는 경우를 포함하여 디렉터리와 하위 디렉터리를 복사. /S /E 스위치와 같다.
 - `/Y`: 기존 대상 파일을 덮어쓸지 여부를 묻지 않는다.
 
 ### robocopy
 
-파일과 폴더 트리를 복사하는 유틸리티. `xcopy`의 후속 격으로, 재시도/미러링/멀티스레드 복사 등 더 강력한 기능을 제공한다.
+파일과 디렉터리 트리를 복사하는 유틸리티. `xcopy`의 후속 격으로, 재시도/미러링/멀티스레드 복사 등 더 강력한 기능을 제공한다.
 
 ```bash
 robocopy SOURCE DESTINATION /e /z /mt
@@ -256,8 +256,8 @@ robocopy SOURCE DESTINATION /e /z /mt
 
 #### Options
 
-- `/E`: 비어 있는 경우를 포함하여 폴더와 하위 폴더를 복사.
-- `/MIR`: 대상을 원본과 동일하게 미러링한다(원본에 없는 대상 파일/폴더는 삭제됨). ⚠️ 대상 경로를 잘못 지정하면 파일이 삭제될 수 있으니 주의.
+- `/E`: 비어 있는 경우를 포함하여 디렉터리와 하위 디렉터리를 복사.
+- `/MIR`: 대상을 원본과 동일하게 미러링한다(원본에 없는 대상 파일/디렉터리는 삭제됨). ⚠️ 대상 경로를 잘못 지정하면 파일이 삭제될 수 있으니 주의.
 - `/Z`: 네트워크 재시작 모드로 복사. 전송이 끊겨도 이어받기가 가능하다.
 - `/MT[:N]`: 멀티스레드로 복사한다. `N`을 생략하면 기본값 8개 스레드 사용.
 - `/R:N`: 실패 시 재시도 횟수 지정. 기본값은 100만 번으로 매우 크므로 보통 낮춰서 씀.
@@ -465,10 +465,10 @@ winget install BurntSushi.ripgrep.MSVC
 그리고 `-F` 옵션을 사용하지 않으면 주어진 검색어를 기본적으로 **정규식으로 해석한다.**
 
 ```powershell
-# 현재 폴더와 그 하위를 재귀 검색
+# 현재 디렉터리와 그 하위를 재귀 검색
 rg useState
 
-# 특정 폴더에서 검색
+# 특정 디렉터리에서 검색
 rg TODO src/
 
 # 특정 파일에서 검색
@@ -522,8 +522,8 @@ rg --count-matches useState
 
 ### 미리 설정되어 있는 Windows 환경 변수
 
-- `%USERPROFILE%`: 사용자 홈 폴더
-- `%HOMEPATH%`: 사용자 홈 폴더2, userprofile하고 뭔 차이인지...
+- `%USERPROFILE%`: 사용자 홈 디렉터리
+- `%HOMEPATH%`: 사용자 홈 디렉터리2, `USERPROFILE`하고 뭔 차이인지...
 - `%APPDATA%`: 사용자 홈 + `\AppData\Roaming`
 - `%LOCALAPPDATA%`: 사용자 홈 + `AppData\Local`
 - `%PROGRAMDATA%`: `C:\ProgramData`
@@ -536,18 +536,24 @@ rg --count-matches useState
 - `JAVA_HOME`: `C:\Program Files\Java\jdk1.8.0_112`
 
 
-## shell: shortcuts
+## Shell Folders 셸 폴더
 
-Windows의 known folder에 접근하는데 사용하는 명령어. 셸 명령어(Shell Commands) 또는 셸 바로가기('shell: shortcuts')라 부른다. 
+```
+shell:Profile
+shell:startup
+shell:programs
+```
 
-known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
+Windows의 known folder에 접근하는데 사용하는 명령어. [Known folder](https://learn.microsoft.com/en-us/windows/win32/shell/knownfolderid)를 shell 문법으로 참조하는 형태다.
 
-이 폴더들은 일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 그래서 그런지 파일 탐색기에서만 작동한다. 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, PowerShell에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로만 가능하다.
+일종의 가상 폴더라서 실제 파일 시스템 경로가 없으며, 환경 변수처럼 직접 경로나 값을 읽을 수 없다. 그래서 그런지 파일 탐색기와 실행창에서만 작동한다. 
+
+ℹ️ 아직 셸에서 직접 경로를 얻는 방법은 못찾음. 셸에서 굳이 쓰겠다면, PowerShell에서는 `explorer shell:AppData`, CMD에서는 `start shell:appsfolder`와 같은 형태로 실행하는 방식으로 가능함.
 
 #### 현재 로그인 사용자
 
 - `shell:AccountPictures`
-- `shell:AppData`: `C:\Users\사용자이름\AppData\Roaming` AppData 디렉터리
+- `shell:AppData`: `C:\Users\사용자이름\AppData\Roaming` AppData 폴더
 - `shell:AppDataDesktop`
 - `shell:AppDataDocuments`
 - `shell:AppDataFavorites`
@@ -596,7 +602,7 @@ known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 - `shell:PicturesLibrary`
 - `shell:Playlists`
 - `shell:PrintHood`
-- `shell:Profile`
+- `shell:Profile`: 사용자 폴더
 - `shell:Programs`: `C:\Users\사용자이름\AppData\Roaming\Microsoft\Windows\Start Menu\Programs` 시작 메뉴의 프로그램 폴더
 - `shell:Quick Launch`
 - `shell:Recent`
@@ -646,7 +652,7 @@ known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 - `shell:PublicGameTasks`
 - `shell:PublicLibraries`
 
-#### 시스템 실제 경로
+#### 시스템 레벨 경로
 
 - `shell:Fonts`
 - `shell:ProgramFiles`: `C:\Program Files`
@@ -661,7 +667,7 @@ known folder의 canonical name을 `shell:` 뒤에 붙인 형태다.
 - `shell:SystemX86`
 - `shell:Windows`
 
-#### 가상 셸 경로
+#### 가상 경로
 
 - `shell:3D Objects`
 - `shell:AddNewProgramsFolder`

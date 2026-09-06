@@ -60,7 +60,7 @@ web.xml은 deployment descriptor의 한 종류로 톰캣의 환경설정 파일�
 </web-app>
 ```
 
-`톰캣설치폴더/conf` 아래에 web.xml의 샘플이 있으니 참고할 것.
+`톰캣설치디렉터리/conf` 아래에 web.xml의 샘플이 있으니 참고할 것.
 
 ## URL pattern 유형
 

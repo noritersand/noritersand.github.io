@@ -102,10 +102,10 @@ include 디렉티브의 처리과정은 정적으로 include 지시자를 사용
 경로는 파일 시스템의 일반적인 규칙을 따르며 해당 경로에 물리적인 파일이 존재해야 한다:
 
 ```java
-<%@ include file="company.jsp"%> <!-- 같은 폴더의 company.jsp  -->
-<%@ include file="./company.jsp"%> <!-- 같은 폴더의 company.jsp -->
-<%@ include file="../cart/cart.jsp"%> <!-- 한 단계 상위 폴더에서 cart/cart.jsp 탐색 -->
-<%@ include file="../../jsp/cs/notice.jsp"%> <!-- 두 단계 상위 폴더에서 jsp/cs/notice.jsp 탐색 -->
+<%@ include file="company.jsp"%> <!-- 같은 디렉터리의 company.jsp  -->
+<%@ include file="./company.jsp"%> <!-- 같은 디렉터리의 company.jsp -->
+<%@ include file="../cart/cart.jsp"%> <!-- 한 단계 상위 디렉터리에서 cart/cart.jsp 탐색 -->
+<%@ include file="../../jsp/cs/notice.jsp"%> <!-- 두 단계 상위 디렉터리에서 jsp/cs/notice.jsp 탐색 -->
 <%@ include file="/WEB-INF/jsp/company/agreement.jsp"%> <!-- root에서 탐색한다. ex) WebContent -->
 ```
 

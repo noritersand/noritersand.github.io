@@ -89,7 +89,7 @@ public class BoardServlet extends HttpServlet {
 
         File f = new File(pathname);
         if (!f.exists()) {
-            // 폴더가 존재하지 않으면 폴더 생성
+            // 디렉터리가 존재하지 않으면 디렉터리 생성
             f.mkdirs();
         }
 

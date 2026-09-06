@@ -333,7 +333,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### ERD
 
 - [dbdiagram.io](https://dbdiagram.io/): 데이터베이스 ERD 전용. 웹 버전만 있긴 하지만 쓸만함. 별도의 스키마 문법을 사용하는 건 안좋음.
-- ⭐[erd-editor](https://github.com/dineug/erd-editor): VSCode에서 사용하기 좋은 무료 ERD 에디터. IntelliJ와 웹 버전도 지원한다.
+- ⭐[erd-editor](https://github.com/dineug/erd-editor): VSCode에서 사용하기 좋은 무료 ERD 에디터. IntelliJ와 웹 버전도 지원한다. DBML을 지원한다.
 
 
 ## 7. 테스트, 품질 관리
@@ -651,7 +651,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [FUTUREPEDIA](https://www.futurepedia.io/): AI 관련 도구 모음 사이트
 - [GPTForge](https://gptforge.net/): GPT를 활용한 웹앱, 툴, 앱 등을 모아놓은 사이트. 누가 따로 모으는 게 아니라 만든 사람들이 껴달라고 신청하는 것 같다.
 - [Tabnine](https://www.tabnine.com/): 코파일럿 같은 코드 어시스턴트. 특징으로는 내 코드에서 모델을 학습한다는 것. 개인의 코딩 패턴, 팀 전체의 코딩 스타일 등을 학습하고 여기에 맞춰 코드를 추천해 준다고 한다. 로컬 기반 학습이라 데이터 유출 문제에서도 안심등심.
-- [Hugging Face](https://huggingface.co/): 머신러닝계의 깃허브. AI 모델, 데이터셋, 머신러닝 코드를 공유하고 활용할 수 있는 AI 플랫폼이다. 다양한 오픈 소스 AI 모델을 검색/다운로드하거나 API를 통해 사용할 수 있고, 모델 학습과 평가에 필요한 데이터셋도 제공한다.
+- [Hugging Face](https://huggingface.co/): AI 모델, 데이터셋, 머신러닝 코드를 공유하고 활용할 수 있는 AI 플랫폼이다. 다양한 오픈 소스 AI 모델을 검색/다운로드하거나 API를 통해 사용할 수 있고, 모델 학습과 평가에 필요한 데이터셋도 제공한다.
 
 
 ## 19. 모바일

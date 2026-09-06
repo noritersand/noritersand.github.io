@@ -65,7 +65,7 @@ c:\dev\code-workspace>copy main.code-workspace main2.code-workspace
 ### mklink
 
 ```bash
-# 실제 경로는 \dest 폴더인 \slink 바로가기 링크 생성 (관리자 권한 필요)
+# 실제 경로는 \dest 디렉터리인 \slink 바로가기 링크 생성 (관리자 권한 필요)
 mklink /d \slink \dest
 ```
 
