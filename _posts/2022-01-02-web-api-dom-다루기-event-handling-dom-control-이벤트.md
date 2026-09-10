@@ -273,7 +273,7 @@ window.addEventListener('popstate', (event) => {
 
 키보드의 아무 키나 누를 때마다 발생하는 이벤트. 키보드 관련 이벤트 중 가장 먼저 발생한다.
 
-`keydown` 이벤트 핸들러에서 `event.preventDefault()`를 호출하면 키 입력 자체(텍스트 상자에 문자가 찍히는 동작 등)를 취소시킬 수 있다.
+`keydown` 이벤트 핸들러에서 `event.preventDefault()`를 호출하면 키 입력 자체를 취소시킬 수 있다.
 
 키를 누르고 있으면(Hold) 이벤트가 계속 반복해서 발생한다. 이 때 `event.repeat` 속성이 `true`가 된다.
 

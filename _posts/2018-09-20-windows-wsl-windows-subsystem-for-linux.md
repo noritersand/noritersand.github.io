@@ -26,21 +26,47 @@ tags:
 WSL은 가상 머신 등의 설정 없이 Windows 상에서 리눅스 명령어를 직접 실행할 수 있는 환경을 말한다. 2020년엔 버전업 된 [WSL 2](https://docs.microsoft.com/ko-kr/windows/wsl/compare-versions)가 나왔다.
 
 
-## 설치
+## WSL 설치
 
 이제 그냥 요거 한 방으로 됨:
 
 ```bash
-# 기본 OS인 Ubuntu로 wsl 설치
+# 기본 OS인 Ubuntu로 WSL 설치
 wsl --install
 
-# 설치 된 wsl 목록(도커 포함)과 버전 확인
+# 설치 된 배포판 목록(도커 포함)과 버전 출력
 wsl -l -v
 ```
 
 버전 확인해서 2가 아니면 뭔가 잘못된 거니까 가이드 보고 다시 설치하자.
 
 그 다음 새로 생성된 Ubuntu 앱 바로가기를 누르던지, 아니면 PowerShell이나 CMD에서 `wsl`을 치면 WSL 터미널로 진입한다.
+
+
+## WSL 제거와 재설치
+
+배포판만 재설치:
+
+```bash
+# 배포판 확인
+wsl -l -v
+
+# 배포판 제거
+wsl --unregister Ubuntu
+
+# Ubuntu 배포판 설치
+wsl --install -d Ubuntu
+```
+
+WSL 통째로 재설치:
+
+```bash
+# WSL 기능 제거
+wsl --uninstall
+
+# 재설치
+wsl --install
+```
 
 
 ## 서브시스템의 실제 경로

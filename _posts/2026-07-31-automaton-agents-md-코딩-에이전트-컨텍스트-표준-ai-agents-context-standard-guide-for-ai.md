@@ -129,7 +129,7 @@ Use plan mode for changes under `src/billing/`.
 
 하지만 지침 문서는 에이전트가 몇 번이고 읽어야 하는 파일이니 3번이 낫다. 마크다운 링크는 코드에 비해 실제 주소를 분리/해석하는 오버헤드가 발생한다.
 
-경로 시작 부분에 `/`는 쓰지 않는다. 에이전트 입장에선 프로젝트 루트인지 OS의 루트인지 불확실하기 떄문이다.
+경로 시작 부분에 `/`는 쓰지 않는다. 에이전트 입장에선 프로젝트 루트인지 OS의 루트인지 불확실하기 때문이다.
 
 
 ## 작성 예시
@@ -145,10 +145,35 @@ Use plan mode for changes under `src/billing/`.
 - 디자인/마크업 지침: `docs/agents/design.md`
 - 데이터베이스 지침: `docs/agents/database.md`
 
+## Documentation
+
+- 모든 문서는 문어체 + 반말로 작성한다.
+- `README.md`는 개발 환경 설정 방법, 디렉터리 구조 설명 등 사람을 위한 문서
+- `AGENTS.md`와 `docs/agents/`는 AI 에이전트를 위한 지침과 가이드 문서
+
 ## Hard Rules
 
-- 비즈니스 로직(할인율 계산, 권한 판단, 워크플로우 분기 등)은 애플리케이션 코드에 작성한다. DB 함수(트리거, 저장 프로시저)에 넣지 않는다.
+- 페이지별 UI 구현이나 모바일 전용 컴포넌트를 새로 만들지 않는다.
+- Iframe을 사용하지 않는다.
 - secret(API key, database password 등)을 클라이언트 레이어에 절대 노출하지 말 것
+
+## Version Control
+
+- 하나의 작업이 완료되면 현재 브랜치에 즉시 커밋한다.
+- 커밋 메시지 첫 줄은 `<type>: <short summary>` 형태로 작성하고, `type`은 다음 중 하나를 선택한다: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
+- 나머지 메시지는 한국어로 작성한다.
+- 작업 내용은 명사형으로 간결하게 작성한다.
+
+## Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Database: Postgres + Drizzle ORM
+
+## Response Style
+
+- Respond concisely.
 
 ...
 
