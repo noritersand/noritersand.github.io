@@ -213,6 +213,8 @@ src/
 
 `uv python`은 Python 설치와 버전 관리는 담당하는 하위 명령어다.
 
+⚠️ 🗓️ 2026-09-12 기준, `uv python`으로 설치한 Python은 서명이 없어서 Windows 스마트 앱 컨트롤에 의해 차단됨. 별도의 인스톨러로 설치하는 게 좋음
+
 ```bash
 # 설치 가능한 Python 목록과 이미 설치된 목록 표시
 uv python list

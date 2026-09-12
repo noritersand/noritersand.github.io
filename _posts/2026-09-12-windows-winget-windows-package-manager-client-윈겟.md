@@ -41,28 +41,28 @@ winget
 winget list --help
 
 # KEYWORD로 패키지 검색
-winget search <KEYWORD>
+winget search KEYWORD
 
 # KEYWORD로 NAME 부분일치 검색
-winget search --name <KEYWORD>
+winget search --name KEYWORD
 
 # KEYWORD로 ID 부분일치 검색
-winget search --id <KEYWORD>
+winget search --id KEYWORD
 
 # NAME이 KEYWORD와 정확히 일치하는 패키지만 보기(-e가 앞에 있어야 정상 작동함)
-winget search -e --name <KEYWORD>
+winget search -e --name KEYWORD
 
 # PACKAGE 설치
-winget install <PACKAGE>
+winget install PACKAGE
 
 # ID가 PACKAGE과 정확히 일치하는 패키지 설치
-winget install -e --id <PACKAGE>
+winget install -e --id PACKAGE
 
 # PACKAGE 제거
-winget uninstall <PACKAGE>
+winget uninstall PACKAGE
 
 # PACKAGE 패키지의 상세정보 보기
-winget show <PACKAGE>
+winget show PACKAGE
 
 # 설치된 패키지 목록을 출력. 버전 업그레이드가 가능한지도 표시됨
 winget list
@@ -71,7 +71,7 @@ winget list
 winget upgrade
 
 # 특정 패키지만 버전 업그레이드
-winget upgrade <PACKAGE>
+winget upgrade PACKAGE
 
 # 모든 패키지의 버전 업그레이드
 winget upgrade --all

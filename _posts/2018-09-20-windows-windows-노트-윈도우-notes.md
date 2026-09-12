@@ -59,6 +59,10 @@ Windows 10, 11에서 공통 사항 분리한 글
 
 `설정 > 작업 메뉴`를 열어서 변경해도 되...는데, 이렇게 했더니 셸의 안에서 <kbd>f1</kbd> 입력이 필요할 때 안되길래 되돌림. 예를 들어 `htop`에선 <kbd>f1</kbd> 입력으로 도움말을 연다.
 
+### 클립보드 자동 복사
+
+`설정 > 상호 작용`에서 `선택 영역을 클립보드에 자동으로 복사` 켜기
+
 ### 시작 위치 변경
 
 ℹ️ Windows 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음. `새 탭 메뉴`를 열어서 프로필 순서를 바꿔주면 된다. (없으면 하단의 `+` 표시를 눌러서 등록할 것)
@@ -426,38 +430,38 @@ scoop install ripgrep
 
 그리고 `-F` 옵션을 사용하지 않으면 주어진 검색어를 기본적으로 **정규식으로 해석한다.**
 
-```powershell
+```bash
 # 현재 디렉터리와 그 하위를 재귀 검색
-rg useState
+rg KEYWORD
 
 # 특정 디렉터리에서 검색
-rg TODO src/
+rg KEYWORD src/
 
 # 특정 파일에서 검색
-rg useState App.tsx
+rg KEYWORD App.tsx
 
 # 여러 검색어를 OR 조건으로 검색
-rg "TODO|FIXME|HACK"
+rg "A|B|C"
 
 # 정규식으로 검색
 rg "use[A-Z]\w+"
 rg "^# " docs/
 
 # 특정 확장자만 검색
-rg useState -g "*.tsx"
+rg KEYWORD -g "*.tsx"
 
 # 여러 확장자 지정
-rg useState -g "*.ts" -g "*.tsx"
+rg KEYWORD -g "*.ts" -g "*.tsx"
 
 # 특정 파일이나 디렉터리 제외
-rg TODO -g "!*.test.tsx"
-rg TODO -g "!node_modules"
+rg KEYWORD -g "!*.test.tsx"
+rg KEYWORD -g "!node_modules"
 
 # 검색 결과 주변 줄까지 출력
-rg -C 2 useState
+rg -C 2 KEYWORD
 
 # 특정 문자열이 포함된 파일의 개수 확인
-rg --count-matches useState
+rg --count-matches KEYWORD
 ```
 
 ℹ️ 검색어는 따옴표가 없어도 되지만, PowerShell에서는 `|`, `$`, `*` 같은 특수문자가 의미를 가질 수 있으니 이 경우에 한하여 따옴표로 감싸는 게 권장된다.
