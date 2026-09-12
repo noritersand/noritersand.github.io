@@ -380,7 +380,9 @@ tree /f /a
 - `/F`: 각 디렉터리의 파일 이름도 같이 출력한다.
 - `/A`: 계층을 표현하는 특수문자를 ASCII 문자로 대체한다.
 
-### [certutil](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil)
+### certutil
+
+<https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/certutil>
 
 파일의 해시값을 계산하거나 인증서 관련 정보를 관리하는 유틸리티.
 
@@ -400,70 +402,7 @@ certutil -hashfile .\example.txt MD5
 
 ### WinGet (Windows Package Manager Client)
 
-<https://github.com/microsoft/winget-cli>
-
-Windows OS의 패키지 관리용 공식 CLI 툴. 리눅스의 `apt`와 비슷하다. Windows 버전에 따라 다르긴 하지만, 대체로 이미 설치되어 바로 사용할 수 있다.
-
-```bash
-# 기본 도움말 보기
-winget
-
-# list 명의 도움말 보기
-winget list --help
-
-# KEYWORD로 패키지 검색
-winget search KEYWORD
-
-# KEYWORD로 NAME 부분일치 검색
-winget search --name KEYWORD
-
-# KEYWORD로 ID 부분일치 검색
-winget search --id KEYWORD
-
-# NAME이 KEYWORD와 정확히 일치하는 패키지만 보기(-e가 앞에 있어야 정상 작동함)
-winget search -e --name KEYWORD
-
-# PACKAGE_NAME 설치
-winget install PACKAGE_NAME
-
-# ID가 PACKAGE_NAME과 정확히 일치하는 패키지 설치
-winget install -e --id PACKAGE_NAME
-
-# PACKAGE_NAME 제거
-winget uninstall PACKAGE_NAME
-
-# PACKAGE_NAME 패키지의 상세정보 보기
-winget show PACKAGE_NAME
-
-# 설치된 패키지 목록을 출력. 버전 업그레이드가 가능한지도 표시됨
-winget list
-
-# 새 버전이 있는 패키지 보기
-winget upgrade
-
-# 특정 패키지만 버전 업그레이드
-winget upgrade PACKAGE_NAME
-
-# 모든 패키지의 버전 업그레이드
-winget upgrade --all
-
-# WinGet으로 설치한 모든 패키지 버전 업그레이드
-winget upgrade --all --source winget
-```
-
-이 외에 이런 하위 명령어가 있음:
-
-- `winget source`: 패키지 데이터의 출처를 관리할 때 씀
-- `winget hash`: 설치 관리자에 대한 SHA256 해시를 생성
-- `winget validate`: 매니페스트 파일의 유효성 검사
-- `winget settings`: WinGet 설정 파일을 열거나 관리자 설정을 관리한다.
-- `winget features`: 실험적 기능의 상태 표시
-- `winget export`: 설치된 패키지 목록 내보내기
-- `winget import`: 패키지 목록이 담긴 파일을 읽어 지정된 패키지를 설치한다.
-- `winget pin`: 특정 패키지의 업데이트를 제한하거나 버전을 고정한다.
-- `winget configure`: 구성 파일을 읽어 Windows 환경을 원하는 상태로 설정한다.
-
-Chocolatey와 다르게 공식 웹 카탈로그가 없다. <https://winget.run/>이 있는데, 공식이 아니라 서드파티라서 정확도가 좀...
+- [이 블로그 내부 링크 \| WinGet](/windows/windows-winget-windows-package-manager-client-윈겟/)
 
 
 ## rg
