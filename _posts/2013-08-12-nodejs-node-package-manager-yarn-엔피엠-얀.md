@@ -338,7 +338,7 @@ npm update --save
 
 ```bash
 # LTS 버전으로 node 설치
-nvm install --lts
+nvm install lts
 
 # 최신버전으로 node 설치
 nvm install node

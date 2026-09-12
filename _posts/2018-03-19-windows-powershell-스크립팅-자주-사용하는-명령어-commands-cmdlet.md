@@ -118,7 +118,7 @@ Invoke-History 132 # 위와 같음
 
 ### Where-Object
 
-프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
+프로퍼티를 기준으로 컬렉션에서 개체를 선택한다. 기본 별칭은 `?`, `where`
 
 ```powershell
 # name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
@@ -448,15 +448,15 @@ Get-Process | Select-Object -Property ProcessName, Id, WS
 그룹화 연산자`()`로 `Select-Object` 비슷한 결과를 얻을 수 있다:
 
 ```powershell
-Get-Command claude | Select-Object Source
+Get-Command uv | Select-Object Source
 
 # Source
 # ------
-# C:\ProgramData\chocolatey\bin\claude.exe
+# C:\Users\fixal\AppData\Local\Microsoft\WinGet\Links\uv.exe
 
-(Get-Command claude).source
+(Get-Command uv).source
 
-# C:\ProgramData\chocolatey\bin\claude.exe
+# C:\Users\fixal\AppData\Local\Microsoft\WinGet\Links\uv.exe
 ```
 
 #### Parameters

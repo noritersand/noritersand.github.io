@@ -49,7 +49,7 @@ NVM은 여러 버전의 Node.js를 설치하고 선택할 수 있게 하는 툴�
 
 ```bash
 # PowerShell에서
-choco install nvm
+winget install -e --id CoreyButler.NVMforWindows
 ```
 
 ```bash

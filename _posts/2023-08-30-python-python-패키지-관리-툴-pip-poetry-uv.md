@@ -102,11 +102,8 @@ poetry shell
 
 ### uv 설치
 
-설치는 [choco](https://chocolatey.org/install#individual)로 한다:
-
 ```bash
-# 관리자 권한 획득 후
-choco install uv
+winget install -e --id astral-sh.uv
 ```
 
 ### 기본 명령어

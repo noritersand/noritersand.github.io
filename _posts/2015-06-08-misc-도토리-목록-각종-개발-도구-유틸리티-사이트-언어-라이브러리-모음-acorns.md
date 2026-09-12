@@ -103,7 +103,7 @@ tags:
 
 ### 의존성 관리(라이브러리 설치/조회/삭제)
 
-- [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 도구인 [Winget](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
+- [Chocolatey](https://chocolatey.org/): Windows OS용 패키지 관리 도구. NuGet 기반으로 만들어졌다 한다. 비슷한 것으로 MS 공식 도구인 [WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/)이 있다.
 - [Scoop](https://scoop.sh/): Chocolatey보다 규모와 사용자는 적지만, 개발자 커뮤니티가 매우 활성화되어 있다고 함.
 - [uv](https://docs.astral.sh/uv/): `pip`, `virtualenv`, `pip-tools`를 기능을 하나로 통합한 패키지 및 가상 환경 관리 도구. Rust 기반이고 실행속도가 매우 빠르다.
 
@@ -578,7 +578,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 에이전트 개발 환경(ADE) / 오케스트레이션
 
-### ADE, Agentic Development Environment
+### ADE (Agentic Development Environment)
 
 - ✨[Orca](https://www.onorca.dev/): 여러 AI 코딩 에이전트의 CLI를 실행/관리하는 오픈 소스 ADE. 여러 에이전트를 각각 독립된 Git worktree에서 병렬로 실행하고, 작업 상태와 코드 diff 등을 한곳에서 관리할 수 있다. ⚠️ 에이전트들을 대신 오케스트레이션하거나, 사용량 소진을 감지하고 자동 전환하는 에이전트 라우터는 아니다. 그리고 Orca 자체는 GUI 툴이지만 에이전트는 CLI로 실행하기 때문에 CLI에 익숙하지 않으면 영 그렇다.
 - [Google Antigravity](https://antigravity.google/): Google의 에이전트 중심 개발 플랫폼. CLI와 IDE가 합쳐진 환경에서 여러 에이전트가 동시에 에디터, 터미널, 브라우저를 직접 조작하며 코드 작성부터 빌드, 테스트까지 알아서 처리한다. Orca와 달리 외부 코딩 에이전트를 연결해 관리하기보다는 Google의 에이전트와 Gemini 모델을 중심으로 개발 환경을 구성한다.
@@ -587,7 +587,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 - 🚧[claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 🚧 2026년 2월 18일부터 archived 상태다.
 
-### ADK, Agent Development Kit
+### ADK (Agent Development Kit)
 
 ℹ️ ADK: AI 에이전트를 조립하고 관리하는 개발 프레임워크
 

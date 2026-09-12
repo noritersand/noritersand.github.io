@@ -329,7 +329,7 @@ limit 2 offset 5
 
 [PostgreSQL: Documentation: 17: Chapter 8. Data Types](https://www.postgresql.org/docs/current/datatype.html)
 
-### timestamptz, timestamp with time zone
+### timestamptz (timestamp with time zone)
 
 특정 시간대를 기준으로 해석되어야 하는 시각 정보를 저장하는 데이터 타입. 시간값 뒤에 `+XX:XX`로 시간대를 표시하지만, 실제 저장흔 항상 UTC 기준이다.
 

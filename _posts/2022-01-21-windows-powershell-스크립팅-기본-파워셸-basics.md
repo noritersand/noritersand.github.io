@@ -37,10 +37,10 @@ PowerShell에서 스크립트를 작성하고 사용하는 방법과 문법 등�
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
 
-사실 Chocolatey로 설치하는 게 낫다:
+WinGet으로 설치할 수도 있음:
 
 ```bash
-choco install powershell-core -y
+winget install -e --id Microsoft.PowerShell
 ```
 
 ```powershell
