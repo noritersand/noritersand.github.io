@@ -87,18 +87,18 @@ wjb -> Wait-Job                   write -> Write-Output
 
 PowerShell 환경 자체의 핵심 엔진 및 기본 기능을 제공하는 모듈
 
-### Get-Command
+### Get-Command (gcm)
 
-명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다. 별칭은 `gcm`
+명령어(cmdlet), 함수, 별칭을 가져온다. 특정 명령어의 실제 실행 파일 위치 찾을 때도 쓰인다.
 
 ```powershell
 # 명령어 explorer의 명령어타입, 이름, 버전, 소스(경로) 출력
 Get-Command explorer
 ```
 
-### Get-History
+### Get-History (history)
 
-명령어 실행 이력 보기. 기본 별칭 `history`
+명령어 실행 이력 보기.
 
 ```powershell
 Get-History # 모든 명령어 이력 보기
@@ -106,9 +106,9 @@ Get-History 10 # 열 번째로 실행한 명령어 보기
 Get-History -Count 10 # 명령어 이력을 마지막에서 거꾸로 10개만 보기
 ```
 
-### Invoke-History
+### Invoke-History (r, ihy)
 
-기본 별칭 `r`, `ihy`
+사용자 입력 히스토리 조회하기.
 
 ```powershell
 Invoke-History # 마지막 명령어 실행
@@ -116,9 +116,9 @@ Invoke-History -Id 132 # 132번 명령어 실행
 Invoke-History 132 # 위와 같음
 ```
 
-### Where-Object
+### Where-Object (?, where)
 
-프로퍼티를 기준으로 컬렉션에서 개체를 선택한다. 기본 별칭은 `?`, `where`
+프로퍼티를 기준으로 컬렉션에서 개체를 선택한다.
 
 ```powershell
 # name 프로퍼티가 'httpd.exe'인 개체 선택해서 출력
@@ -133,9 +133,9 @@ Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js
 
 운영체제(Windows)의 시스템 자원 및 파일 시스템을 제어하는 모듈
 
-### Set-Clipboard
+### Set-Clipboard (scb)
 
-지정한 문자열이나 데이터를 Windows 클립보드에 복사한다. 기본 별칭은 `scb`
+지정한 문자열이나 데이터를 Windows 클립보드에 복사한다.
 
 ```powershell
 # 'Hello World'를 클립보드에 저장
@@ -147,7 +147,7 @@ Set-Clipboard "Hello World"
 
 ℹ️ `Get-Clipboard` 명령도 있음.
 
-### New-Item
+### New-Item (ni)
 
 파일이나 디렉터리, 심볼릭 링크 등을 생성한다.
 
@@ -162,9 +162,9 @@ New-Item -ItemType SymbolicLink -Path "LINK" -Target "TARGET_PATH"
 - `-Path`: 생성할 심볼릭 링크의 이름
 - `-Target`: 심볼릭 링크가 가리킬 대상 디렉터리
 
-### Move-Item
+### Move-Item (mi, move, mv)
 
-현 위치에서 다른 위치로 항목 이동하기. 기본 별칭은 `mi`, `move`, `mv`
+현 위치에서 다른 위치로 항목 이동하기.
 
 ```powershell
 # 현재 경로의 모든 html 파일을 aaa/bbb 아래로 이동
@@ -187,9 +187,9 @@ Get-ChildItem -Path . -Exclude 'aaa' | Move-Item -Destination ./aaa/bbb/
 - `-Destination`: 목적지 경로를 지정한다. 생략하면 현재 경로로 설정된다. 와일드카드는 허용되지 않는다. 이동하려는 항목의 이름을 바꾸려면 이 매개변수의 값으로 새 이름을 지정한다.
 - `-Filter`: `Path` 매개변수의 필터를 지정한다.
 
-### Get-Process
+### Get-Process (ps, gps)
 
-프로세스 가져오기. 기본 별칭은 `ps`와 `gps`.
+프로세스 가져오기.
 
 ```powershell
 # PID가 2832 혹은 836인 프로세스 출력
@@ -204,51 +204,51 @@ Get-Process 'SoundSwitch'
 - `-Id`: 하나 이상의 PID를 특정해서 필터링. 여러 개일 땐 쉼표(`,`)로 구분함
 - `-Name`: 하나 이상의 프로세스 이름을 특정해서 필터링. 여러 개일 땐 쉼표(`,`)로 구분하며 `-Name` 키워드는 생략해도 됨.
 
-### Start-Process
+### Start-Process (saps)
 
-프로세스 시작. 기본 별칭은 `saps`.
+프로세스 시작.
 
 ```powershell
 Start-Process powershell –verb runAs # 관리자 권한으로 PowerShell 실행
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
-### Stop-Process
+### Stop-Process (kill)
 
-하나 이상의 프로세스를 중지하는 명령어. 기본 별칭은 `kill`.
+하나 이상의 프로세스를 중지하는 명령어.
 
 ```powershell
 # 이름이 SoundSwitch인 프로세스를 중지. (Get-Process랑 다르게 -Name 생략 불가)
 Stop-Process -Name 'SoundSwitch'
 ```
 
-### Get-Service
+### Get-Service (gsv)
 
-서비스 가져오기. 기본 별칭은 `gsv`.
+서비스 가져오기.
 
 #### Parameters
 
 - `-Name`: 매개변수의 값으로 서비스 이름을 특정한다. 와일드카드 사용 가능.
 
-### Stop-Service
+### Stop-Service (spsv)
 
-하나 이상의 서비스를 중지하는 명령어. 기본 별칭은 `spsv`.
+하나 이상의 서비스를 중지하는 명령어.
 
 ```powershell
 Stop-Service -Name "sysmonlog"
 ```
 
-### Get-Content
+### Get-Content (type)
 
-기본 별칭 `type`
+파일의 내용을 읽어 PowerShell 파이프라인으로 가져오는 명령어.
 
 ```powershell
 Get-Content -Path nexus-2.14.5-02\logs\wrapper.log -Wait # 'tail -f'와 같음
 ```
 
-### Get-ChildItem
+### Get-ChildItem (ls)
 
-지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 파일 검색에 사용한다. 기본 별칭은 `ls`. 
+지정된 위치의 아이템이나 하위 아이템의 객체 정보를 가져온다. 파일 검색에 사용한다.
 
 ℹ️ 아이템: 파일이나 디렉터리
 
@@ -292,17 +292,17 @@ Get-ChildItem -Path _posts,_drafts,_hidden -File -Recurse | Where-Object { $_.Na
 - `Force`: ?
 - `Directory`: 디렉터리 목록만 출력
 
-### Copy-Item
+### Copy-Item (copy)
 
-기본 별칭 `copy`
+파일이나 폴더를 복사하는 명령어.
 
 ```powershell
 Copy-Item .\dummy-for-copy.txt .\copy\clone.txt
 ```
 
-### Remove-Item
+### Remove-Item (del, erase, rd, ri, rm, rmdir)
 
-지정된 항목을 삭제한다. 기본 별칭은 `del`, `erase`, `rd`, `ri`, `rm`, `rmdir` ~~많기도하네~~
+지정된 항목을 삭제한다. 기본 별칭이 많기도 하다. 🤔
 
 ```powershell
 Remove-Item .\copy\ -r -Force
@@ -314,7 +314,7 @@ Remove-Item .\copy\ -r -Force
 - `-Recurse`: 디렉터리 재귀 삭제
 - `-WhatIf`: 명령이 실행되면 어떻게 될지 보여주기만 하고 실제로 삭제하지는 않음
 
-### Get-Member
+### Get-Member (gm)
 
 객체의 속성이나 메서드를 가져오는 명령어. 
 
@@ -340,9 +340,9 @@ Get-ChildItem | Select-String foobar
 
 - `-MemberType`: 가져올 멤버의 타입을 지정한다.
 
-### Resolve-Path
+### Resolve-Path (rvpa)
 
-지정된 아이템의 전체 경로를 출력한다. 기본 별칭은 `rvpa`.
+지정된 아이템의 전체 경로를 출력한다.
 
 ```powershell
 # 홈 디렉터리의 경로 출력
@@ -380,9 +380,9 @@ ping -t 168.126.63.1 | Foreach{"{0} - {1}" -f (Get-Date),$_}
 
 데이터의 가공, 변환, 출력 및 포맷팅을 담당하는 유틸리티 모듈
 
-### Set-Variable
+### Set-Variable (set, sv)
 
-현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함. 기본 별칭은 `set`, `sv`
+현재 콘솔에 변수를 추가하거나 재할당한다. 유효범위가 세션이 아니라 콘솔이라서 새 탭이나 새 창의 터미널은 해당 변수를 공유하지 못함.
 
 ```powershell
 Set-Variable test abcd
@@ -394,9 +394,9 @@ $qwer
 # 1234
 ```
 
-### Get-Variable
+### Get-Variable (gv)
 
-변수 출력 명령어. 기본 별칭은 `gv`. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes).
+변수 출력 명령어. 스코프를 지정하지 않으면 기본값은 로컬이다. 스코프에 대한 내용은 [여기에서 확인](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_scopes).
 
 ```powershell
 # 로컬 스코프의 모든 변수 출력
@@ -430,7 +430,7 @@ Get-Host | Select-Object Version
 Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 ```
 
-### Select-Object
+### Select-Object (select)
 
 객체나 객체의 프로퍼티를 선택하는 명령어. 보통은 다른 명령어와 파이프라인 입력으로 연결하여 사용한다.
 
@@ -465,7 +465,7 @@ Get-Command uv | Select-Object Source
 - `-Property`: 선택할 프로퍼티를 지정함
 - `-Unique`: (보통은 파이프에 의해) 입력된 객체의 특정 프로퍼티를 기준으로 유일한 멤버만 선택
 
-### Select-String
+### Select-String (sls)
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
@@ -490,7 +490,7 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 - `-SimpleMatch`: 정규식 일치가 아니라 단순 일치로 필터링.
 - TODO
 
-#### Select-String AND, OR, NOT
+#### Select-String + (AND/OR/NOT)
 
 ```powershell
 # AND: 'c'와 '1'이 모두 포함된 라인만 출력
@@ -503,9 +503,9 @@ Get-ChildItem | Out-String -Stream | Select-String 'httpd'
 'xyz', 'abc', 'abc123' | Select-String -NotMatch 'abc'
 ```
 
-### Get-Alias
+### Get-Alias (gal, alias)
 
-기본 별칭은 `gal`, `alias`. 설정된 별칭 목록을 출력한다.
+설정된 별칭 목록을 출력한다.
 
 ```powershell
 Get-Alias # 설정된 모든 별칭 출력
@@ -513,7 +513,7 @@ alias | Select-String -Pattern 'jb' -CaseSensitive # 소문자 jb가 포함된 �
 gal -Definition Get-Alias # 설정된 별칭 중에 Get-Alias의 별칭 출력
 ```
 
-### Set-Alias
+### Set-Alias (sal)
 
 신규 별칭 추가하거나 재할당한다. [New-Alias](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-alias)도 있는데 요건 재할당이 안 되서 이미 있는 별칭이라면 에러가 발생한다.
 
@@ -546,9 +546,9 @@ Set-Alias -Name ll -Value Get-FilesIncludeHidden
 
 함수를 정의하고 호출하도록 작성해야 한다. [관련문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-alias#example-5--create-an-alias-for-a-command-with-parameters), [관련문서2](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions).
 
-### Write-Output
+### Write-Output (echo, write)
 
-기본 별칭은 `echo`. 특정 객체를 파이프라인에 쓴다. 다른 cmdlet으로 파이프하거나 변수에 할당할 수 있다. 만약 `Write-Output`이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다.
+특정 객체를 파이프라인에 쓴다. 다른 cmdlet으로 파이프하거나 변수에 할당할 수 있다. 만약 `Write-Output`이 파이프라인의 마지막 명령인 경우 콘솔에 출력한다.
 
 다른 명령어나 스크립트에서 발생하는 암묵적인 출력은 `Write-Output`을 통한 출력이다.
 
@@ -562,7 +562,7 @@ Write-Output $null >> dummy-for-commit.txt
 
 ### Write-Host
 
-기본 별칭은 없음. 오직 호스트 출력만을 위한 명령어. `Write-Output`과 달리 파이프라인에 보내지 않고 호스트에 직접 쓴다. 따라서 다른 cmdlet으로 파이프하거나 변수 할당은 불가능. 대신 색이나 구분자 등을 지정할 수 있다.
+오직 호스트 출력만을 위한 명령어. `Write-Output`과 달리 파이프라인에 보내지 않고 호스트에 직접 쓴다. 따라서 다른 cmdlet으로 파이프하거나 변수 할당은 불가능. 대신 색이나 구분자 등을 지정할 수 있다.
 
 ℹ️ PowerShell에서 호스트란 PowerShell 엔진이 실행되는 환경이다. 일반적으로 명령줄, 즉 콘솔이나 터미널을 의미함.
 
@@ -572,9 +572,9 @@ Write-Host '$abc:'$abc
 # $abc: 123
 ```
 
-### Out-Host
+### Out-Host (oh)
 
-기본 별칭은 `oh`. 호스트에 출력한다. 이 명령은 보통 출력 내용이 너무 길어서 페이징 처리가 필요할 때 사용한다.
+호스트에 출력한다. 이 명령은 보통 출력 내용이 너무 길어서 페이징 처리가 필요할 때 사용한다.
 
 ```powershell
 # 하위 디렉터리를 한 페이지씩 출력
@@ -604,9 +604,21 @@ tree | Out-File -Encoding utf8 -FilePath tree.md
 - `-WhatIf`: 명령을 실제로 수행하지는 않고 어떻게 될지만 표시한다.
 - `-Width`: 각 출력 줄의 최대 문자 수를 지정하는 매개변수. 이 값보다 길면 다음 줄에 출력한다.
 
-### Invoke-WebRequest
+### Invoke-Expression (iex)
 
-웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다. 기본 별칭은 `iwr`.
+문자열을 PowerShell 명령어로 해석하여 실행하는 명령어.
+
+```powershell
+Invoke-Expression -Command "Get-Process -ProcessName *terminal*"
+
+# NPM(K)    PM(M)      WS(M)     CPU(s)      Id  SI ProcessName
+# ------    -----      -----     ------      --  -- -----------
+#     38    39.66      94.82       4.59    5476   3 WindowsTerminal
+```
+
+### Invoke-WebRequest (iwr)
+
+웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다.
 
 ```powershell
 # 단순 요청
@@ -621,6 +633,23 @@ Invoke-WebRequest -Method Get -Uri https://google.com/search `
 # 파일 다운로드. OutFile 옵션으로 저장할 파일명을 지정함.
 Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" -OutFile "vscode.exe"
 ```
+
+### Invoke-RestMethod (irm)
+
+HTTP 요청을 보내고 응답을 PowerShell 객체로 반환하는 명령어.
+
+```powershell
+Invoke-RestMethod -Uri "https://httpbin.org/uuid"
+
+# uuid
+# ----
+# cdf9c2b3-f9ae-4d2c-8840-1ef99ab1b52a
+```
+
+#### iwr vs irm
+
+- `iwr`: HTTP 응답 자체를 다루는 데 적합. HTML, 헤더, 상태 코드 등을 확인할 때 사용.
+- `irm`: API 호출에 적합. JSON 응답을 PowerShell 객체로 자동 변환.
 
 ### Get-Filehash
 

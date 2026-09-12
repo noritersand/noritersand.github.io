@@ -8,6 +8,7 @@ tags:
   - os
   - winget
   - package-manager
+  - chocolatey
 ---
 
 * Kramdown table of contents
@@ -40,28 +41,28 @@ winget
 winget list --help
 
 # KEYWORD로 패키지 검색
-winget search KEYWORD
+winget search <KEYWORD>
 
 # KEYWORD로 NAME 부분일치 검색
-winget search --name KEYWORD
+winget search --name <KEYWORD>
 
 # KEYWORD로 ID 부분일치 검색
-winget search --id KEYWORD
+winget search --id <KEYWORD>
 
 # NAME이 KEYWORD와 정확히 일치하는 패키지만 보기(-e가 앞에 있어야 정상 작동함)
-winget search -e --name KEYWORD
+winget search -e --name <KEYWORD>
 
-# PACKAGE_NAME 설치
-winget install PACKAGE_NAME
+# PACKAGE 설치
+winget install <PACKAGE>
 
-# ID가 PACKAGE_NAME과 정확히 일치하는 패키지 설치
-winget install -e --id PACKAGE_NAME
+# ID가 PACKAGE과 정확히 일치하는 패키지 설치
+winget install -e --id <PACKAGE>
 
-# PACKAGE_NAME 제거
-winget uninstall PACKAGE_NAME
+# PACKAGE 제거
+winget uninstall <PACKAGE>
 
-# PACKAGE_NAME 패키지의 상세정보 보기
-winget show PACKAGE_NAME
+# PACKAGE 패키지의 상세정보 보기
+winget show <PACKAGE>
 
 # 설치된 패키지 목록을 출력. 버전 업그레이드가 가능한지도 표시됨
 winget list
@@ -70,7 +71,7 @@ winget list
 winget upgrade
 
 # 특정 패키지만 버전 업그레이드
-winget upgrade PACKAGE_NAME
+winget upgrade <PACKAGE>
 
 # 모든 패키지의 버전 업그레이드
 winget upgrade --all
@@ -92,3 +93,25 @@ winget upgrade --all --source winget
 - `winget configure`: 구성 파일을 읽어 Windows 환경을 원하는 상태로 설정한다.
 
 Chocolatey와 다르게 공식 웹 카탈로그가 없다. <https://winget.run/>이 있는데, 공식이 아니라 서드파티라서 정확도가 좀...
+
+
+## WinGet 패키지 등록
+
+우선 WingetCreate를 설치한다:
+
+```bash
+winget install -e --id Microsoft.WingetCreate
+```
+
+그 다음 절차를 간단히 요약하면:
+
+1. 앱 설치 파일을 준비한다. (`.exe`, `.msi` 등)
+2. GitHub Releases 등에 버전별 설치 파일을 올린다.
+3. `wingetcreate`로 manifest를 생성한다.
+4. `winget validate`로 manifest를 검증하고 실제 설치도 테스트한다.
+5. [microsoft/winget-pkgs](https://github.com/microsoft/winget-pkgs)에 pull request를 등록한다.
+6. 자동 검증과 리뷰를 통과하면 merge된다.
+7. 이후 사용자는 `winget install <PACKAGE>`로 설치할 수 있다.
+
+
+끗.

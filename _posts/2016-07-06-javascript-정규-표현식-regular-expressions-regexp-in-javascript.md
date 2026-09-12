@@ -452,7 +452,7 @@ X가 나타내는 제어 문자를 찾는다. `\cM`은 `Control-M`, 즉 캐리�
 정규식 내에서의 그룹 참조는 `\숫자` 형태로 작성한다:
 
 ```js
-'aabbcc'.replace(/(.+)\1/, 'a'); // abbcc
+'aabbcc'.replace(/(b)\1/, 'aa'); // bb를 찾아서 aa로 바꾸기 -> aaaacc
 ```
 
 `String.replace(regexp, replaceText)`의 `replaceText`에선 그룹 참조를 `$숫자` 형태로 작성할 수 있다:

@@ -578,12 +578,12 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 에이전트 개발 환경(ADE) / 오케스트레이션
 
-### ADE (Agentic Development Environment)
+#### ADE (Agentic Development Environment)
 
 - ✨[Orca](https://www.onorca.dev/): 여러 AI 코딩 에이전트의 CLI를 실행/관리하는 오픈 소스 ADE. 여러 에이전트를 각각 독립된 Git worktree에서 병렬로 실행하고, 작업 상태와 코드 diff 등을 한곳에서 관리할 수 있다. ⚠️ 에이전트들을 대신 오케스트레이션하거나, 사용량 소진을 감지하고 자동 전환하는 에이전트 라우터는 아니다. 그리고 Orca 자체는 GUI 툴이지만 에이전트는 CLI로 실행하기 때문에 CLI에 익숙하지 않으면 영 그렇다.
 - [Google Antigravity](https://antigravity.google/): Google의 에이전트 중심 개발 플랫폼. CLI와 IDE가 합쳐진 환경에서 여러 에이전트가 동시에 에디터, 터미널, 브라우저를 직접 조작하며 코드 작성부터 빌드, 테스트까지 알아서 처리한다. Orca와 달리 외부 코딩 에이전트를 연결해 관리하기보다는 Google의 에이전트와 Gemini 모델을 중심으로 개발 환경을 구성한다.
 
-### 에이전트 오케스트레이션
+#### 에이전트 오케스트레이션
 
 - 🚧[claude-code-mux](https://github.com/9j/claude-code-mux): 다중 AI 모델의 통합 관리와 모델 자동 변환을 Rust로 구현한 고성능 라우팅 프록시. 사용자용 AI 서비스 엔드 포인트와 AI 모델 사이에서, 실시간으로 상황에 맞게 모델을 선택해주는 일종의 게이트웨이이자 미들웨어 역할을 한다. 비용 최적화와 서비스 안정성 향상 목적으로 사용한다. 🚧 2026년 2월 18일부터 archived 상태다.
 
@@ -641,9 +641,9 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 #### GitHub 코드 탐색
 
-- ✨[GitMCP](https://gitmcp.io/): GitHub 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. GitHub 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
+- [GitMCP](https://gitmcp.io/): GitHub 저장소의 전체 코드베이스를 MCP 서버(AI-accessible documentation hubs)로 만들어준다. Gitingest가 만드는 파일은 용량이 매우 커서 LLM에 그대로 제출하면 토큰을 많이 잡아먹는데, 만약 LLM 토큰을 아끼고 싶다면 이쪽이 좋다. GitHub 저장소 URL에서 `hub.com`을 `mcp.io`로만 바꿔주면 결과가 나온다.
 - [Gitingest](https://gitingest.com/): Git 저장소의 전체 코드베이스를 LLM에 최적화된(prompt-friendly text) 마크다운 파일 하나로 만들어주는 사이트. GitHub 저장소 URL에서 `hub`만 `ingest`로 바꿔주면 바로 결과를 받아볼 수 있다.
-- ✨[DeepWiki](https://deepwiki.org/): Git 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰 유료인지 아닌지는 안해봐서 몰?루
+- [DeepWiki](https://deepwiki.org/): Git 저장소를 분석해서 사람이 읽기 위한 개요 문서를 만들어준다. 이 문서는 해당 코드베이스가 어떻게 작동하는지, 구조가 어떤지를 다이어그램과 함께 설명한다. 추가 질문을 답변해주는 AI 채팅도 지원함. 비공개 저장소는 Devin 계정과 연결해야 하는데, 💰 유료인지 아닌지는 안해봐서 몰?루
 
 #### 기타
 

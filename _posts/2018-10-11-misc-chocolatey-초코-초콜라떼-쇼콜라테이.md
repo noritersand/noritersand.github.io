@@ -6,6 +6,7 @@ categories:
   - misc
 tags:
   - misc
+  - package-manager
   - chocolatey
 ---
 
