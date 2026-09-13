@@ -37,8 +37,8 @@ Windows OS의 패키지 관리용 공식 CLI 툴. 리눅스의 `apt`, macOS의 `
 # 기본 도움말 보기
 winget
 
-# list 명의 도움말 보기
-winget list --help
+# winget list의 도움말 보기
+winget list -h
 
 # KEYWORD로 패키지 검색
 winget search KEYWORD
@@ -80,7 +80,7 @@ winget upgrade --all
 winget upgrade --all --source winget
 ```
 
-이 외에 이런 하위 명령어가 있음:
+나머지:
 
 - `winget source`: 패키지 데이터의 출처를 관리할 때 씀
 - `winget hash`: 설치 관리자에 대한 SHA256 해시를 생성
@@ -91,8 +91,12 @@ winget upgrade --all --source winget
 - `winget import`: 패키지 목록이 담긴 파일을 읽어 지정된 패키지를 설치한다.
 - `winget pin`: 특정 패키지의 업데이트를 제한하거나 버전을 고정한다.
 - `winget configure`: 구성 파일을 읽어 Windows 환경을 원하는 상태로 설정한다.
+- `winget download`: 앱을 설치하지 않고 설치 파일만 다운로드한다. 다운로드 경로는 사용자의 `Downloads` 폴더
+- `winget repair`: 지정한 앱을 재설치 없이 복구한다.
+- `winget dscv3`: PowerShell DSC v3에서 WinGet 리소스를 이용해 앱 설치 상태를 관리하는 하위 명령어. DSC(Desired State Configuration)는 Windows 시스템 설정을 코드로 관리할 수 있게 해주는 구성 관리 방식이다.
+- `winget mcp`: WinGet MCP 서버의 실행 경로와 설정 정보를 출력한다.
 
-Chocolatey와 다르게 공식 웹 카탈로그가 없다. <https://winget.run/>이 있는데, 공식이 아니라 서드파티라서 정확도가 좀...
+WinGet은 Chocolatey와 다르게 공식 웹 카탈로그가 없다. <https://winget.run/>이 있는데, 공식이 아니라 서드파티라서 정확도가 좀...
 
 
 ## WinGet 패키지 등록
