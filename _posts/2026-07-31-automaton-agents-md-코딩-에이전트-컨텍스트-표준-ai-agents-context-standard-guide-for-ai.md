@@ -139,17 +139,16 @@ Use plan mode for changes under `src/billing/`.
 ````
 # AGENTS.md
 
-## Agent Guidelines
+## Agents Docs
 
 - 개발/구현 지침: `docs/agents/development.md`
 - 디자인/마크업 지침: `docs/agents/design.md`
 - 데이터베이스 지침: `docs/agents/database.md`
 
-## Documentation
+## Response/Writing Style
 
+- Respond concisely.
 - 모든 문서는 문어체 + 반말로 작성한다.
-- `README.md`는 개발 환경 설정 방법, 디렉터리 구조 설명 등 사람을 위한 문서
-- `AGENTS.md`와 `docs/agents/`는 AI 에이전트를 위한 지침과 가이드 문서
 
 ## Hard Rules
 
@@ -170,10 +169,6 @@ Use plan mode for changes under `src/billing/`.
 - TypeScript
 - Tailwind CSS
 - Database: Postgres + Drizzle ORM
-
-## Response Style
-
-- Respond concisely.
 
 ...
 
