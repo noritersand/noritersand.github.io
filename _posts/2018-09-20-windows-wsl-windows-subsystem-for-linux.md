@@ -80,7 +80,7 @@ WSL1: 루트의 실제 경로는 설치한 서브시스템별로 다르지만, �
 
 ## WSL에서 호스트 디렉터리 접근
 
-우분투 말고는 설치를 안해봐서 정확하진 않으나 `/mnt` 아래에 있는 드라이브들이 호스트(WSL이 설치된 Windows의 루트 경로) 디렉터리다.
+`/mnt` 아래에 있는 드라이브들이 호스트(WSL이 설치된 Windows의 루트 경로) 디렉터리다. (배포판이 Ubuntu인 경우임. 다른 건 안써봐서 몲...)
 
 ```bash
 $ df -h
@@ -100,6 +100,22 @@ dir | wsl grep git
 ```
 
 리눅스 명령어 앞에 `wsl`을 붙이면 된다.
+
+
+## WSL 설치 후 패키지 업그레이드
+
+#### Ubuntu
+
+```bash
+# apt 저장소 업데이트
+sudo apt update
+
+# 업그레이드 가능 패키지 확인
+sudo apt list --upgradeable
+
+# 모든 패키지 업그레이드
+sudo apt full-upgrade
+```
 
 
 ## 우분투 터미널 꾸미기: Zsh, Powerlevel10k, ls color
@@ -161,13 +177,17 @@ chsh -s $(which zsh)
 ```
 
 
-## WSL에서 Windows의 환경 변수 사용하지 않기
+## WSL에서 Windows의 Path 환경 변수 사용하지 않기
 
 <https://stackoverflow.com/questions/51336147/how-to-remove-the-win10s-path-from-wsl>
 
-WSL에서 Windows의 환경 변수를 사용하지 않는 방법이다.
+루트 권한으로 `/etc/wsl.conf` 파일을 열어서:
 
-루트 유저로 전환해서 `/etc/wsl.conf` 파일을 만들고 아래처럼 작성한다:
+```bash
+sudo vi /etc/wsl.conf
+```
+
+아래를 추가한다:
 
 ```bash
 [interop]

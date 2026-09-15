@@ -27,12 +27,12 @@ tags:
 Windows 10, 11에서 공통 사항 분리한 글
 
 
-## Windows 터미널
+## Windows Terminal
 
-- [Windows 터미널 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)
-- [Windows 터미널 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
+- [Windows Terminal 개요](https://docs.microsoft.com/ko-kr/windows/terminal/)
+- [Windows Terminal 설치](https://docs.microsoft.com/ko-kr/windows/terminal/get-started)
 
-2020년인가... 새로 나온 Windows용 터미널. 앱 하나에서 Windows의 각종 셸(CMD, PowerShell, PowerShell Core, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능(이게 세션도 분리되는건지는 아직 몲)을 지원함.
+2020년 쯤 새로 나온 Windows용 터미널. 앱 하나에서 Windows의 각종 셸(CMD, PowerShell, PowerShell Core, Azure Cloud Shell, WSL 등)을 동시에 사용할 수 있고, 창 쪼개기 기능을 지원함.
 
 [이 링크](https://www.microsoft.com/ko-kr/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab)에서 설치하거나, 스토어에서 'Windows Terminal'을 검색하면 나온다.
 
@@ -65,8 +65,6 @@ Windows 10, 11에서 공통 사항 분리한 글
 
 ### 시작 위치 변경
 
-ℹ️ Windows 터미널 버전이 올라가면서 GUI 설정으로도 변경할 수 있게 되었음. `새 탭 메뉴`를 열어서 프로필 순서를 바꿔주면 된다. (없으면 하단의 `+` 표시를 눌러서 등록할 것)
-
 터미널의 시작 위치를 변경하려면 설정 파일 `settings.json`을 아래처럼 수정한다. 해당 파일은 터미널 앱의 설정에서 좌측 하단 `Json 파일 열기`를 누르면 열림:
 
 ```js
@@ -92,6 +90,8 @@ Windows 10, 11에서 공통 사항 분리한 글
 ![](/images/windows-terminal-new-tabs.png)
 
 터미널에서 새 탭을 열 때 선택할 수 있는 뇨솤들의 순서다.
+
+설정의 `새 탭 메뉴`에서 프로필(없으면 하단의 `+` 표시를 눌러서 등록할 것) 순서를 지정하는 방법도 있긴 한데, 새 탭 열기 단축키는 `settings.json`에 의존하는지 단축키 순서가 안바뀐다...
 
 ### Git Bash 추가하기
 
