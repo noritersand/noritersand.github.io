@@ -128,6 +128,97 @@ Get-ChildItem | Where-Object name -eq 'httpd.exe'
 Get-ChildItem | Where-Object { $_.Extension -eq '.jsp' -or $_.Extension -eq '.js' }
 ```
 
+### Get-Job (gjb) ⭐
+
+현재 세션에서 실행 중이거나 완료된 백그라운드 작업(Job)을 가져온다.
+
+```powershell
+# 현재 세션의 모든 Job을 출력
+Get-Job
+```
+
+#### Parameters
+
+- `-Id`: 지정한 ID의 Job을 가져온다.
+- `-Name`: 지정한 이름의 Job을 가져온다.
+- `-State`: 지정한 상태의 Job만 가져온다.
+
+### Receive-Job (rcjb)
+
+백그라운드 작업의 결과를 가져온다.
+
+```powershell
+# ID가 1인 Job의 결과를 가져온다
+Receive-Job -Id 1
+```
+
+#### Parameters
+
+- `-Id`: 결과를 가져올 Job의 ID를 지정한다.
+- `-Name`: 결과를 가져올 Job의 이름을 지정한다.
+- `-Keep`: 가져온 결과를 삭제하지 않고 유지해서, 이후에 다시 조회할 수 있게 한다. 기본적으로는 한 번 가져온 결과는 Job에서 제거된다.
+
+### Remove-Job (rjb)
+
+백그라운드 작업을 삭제한다.
+
+```powershell
+# ID가 1인 Job을 삭제한다
+Remove-Job -Id 1
+```
+
+#### Parameters
+
+- `-Id`: 삭제할 Job의 ID를 지정한다.
+- `-Name`: 삭제할 Job의 이름을 지정한다.
+- `-Force`: State가 Running인 Job도 삭제한다. 기본적으로는 실행 중인 Job은 삭제되지 않는다.
+
+### Start-Job (sajb)
+
+백그라운드에서 PowerShell 작업을 시작한다.
+
+```powershell
+# 백그라운드에서 Get-Process를 실행한다
+Start-Job -ScriptBlock { Get-Process }
+```
+
+#### Parameters
+
+- `-ScriptBlock`: 백그라운드에서 실행할 PowerShell 코드를 지정한다.
+- `-Name`: Job의 이름을 지정한다.
+- `-ArgumentList`: ScriptBlock에 전달할 인수를 지정한다.
+
+### Stop-Job (spjb) ⭐
+
+실행 중인 백그라운드 작업을 중지한다.
+
+```powershell
+# ID가 1인 Job을 중지한다
+Stop-Job -Id 1
+```
+
+#### Parameters
+
+- `-Id`: 중지할 Job의 ID를 지정한다.
+- `-Name`: 중지할 Job의 이름을 지정한다.
+- `-Force`: 이미 중지 신호가 전달됐지만 아직 종료되지 않은 Job에 대해 중지 명령을 재시도한다.
+
+### Wait-Job (wjb)
+
+백그라운드 작업이 완료될 때까지 기다린다.
+
+```powershell
+# ID가 1인 Job이 완료될 때까지 기다린다
+Wait-Job -Id 1
+```
+
+#### Parameters
+
+- `-Id`: 기다릴 Job의 ID를 지정한다.
+- `-Name`: 기다릴 Job의 이름을 지정한다.
+- `-Timeout`: 기다릴 최대 시간을 초 단위로 지정한다.
+- `-Any`: 지정한 Job 중 하나라도 완료되면 대기를 해제한다. 지정하지 않으면 모든 Job이 완료될 때까지 기다린다.
+
 
 ## Microsoft.PowerShell.Management Module
 
@@ -213,7 +304,7 @@ Start-Process powershell –verb runAs # 관리자 권한으로 PowerShell 실�
 Start-Process explorer . # 현재 경로로 탐색기 실행(Start-Process는 생략 가능)
 ```
 
-### Stop-Process (kill)
+### Stop-Process (kill) ⭐
 
 하나 이상의 프로세스를 중지하는 명령어.
 
@@ -430,7 +521,7 @@ Get-Host | Select-Object Version
 Get-Process -Name pwsh | Out-String | Set-Content -Path ./result.txt
 ```
 
-### Select-Object (select)
+### Select-Object (select) ⭐
 
 객체나 객체의 프로퍼티를 선택하는 명령어. 보통은 다른 명령어와 파이프라인 입력으로 연결하여 사용한다.
 
@@ -465,7 +556,7 @@ Get-Command uv | Select-Object Source
 - `-Property`: 선택할 프로퍼티를 지정함
 - `-Unique`: (보통은 파이프에 의해) 입력된 객체의 특정 프로퍼티를 기준으로 유일한 멤버만 선택
 
-### Select-String (sls)
+### Select-String (sls) ⭐
 
 문자열이나 파일에서 특정 문자를 찾는 명령어. `grep`이나 `findstr`과 비슷하다.
 
@@ -604,7 +695,7 @@ tree | Out-File -Encoding utf8 -FilePath tree.md
 - `-WhatIf`: 명령을 실제로 수행하지는 않고 어떻게 될지만 표시한다.
 - `-Width`: 각 출력 줄의 최대 문자 수를 지정하는 매개변수. 이 값보다 길면 다음 줄에 출력한다.
 
-### Invoke-Expression (iex)
+### Invoke-Expression (iex) ⭐
 
 문자열을 PowerShell 명령어로 해석하여 실행하는 명령어.
 
@@ -616,7 +707,7 @@ Invoke-Expression -Command "Get-Process -ProcessName *terminal*"
 #     38    39.66      94.82       4.59    5476   3 WindowsTerminal
 ```
 
-### Invoke-WebRequest (iwr)
+### Invoke-WebRequest (iwr) ⭐
 
 웹 요청을 날리는 명령어. 리눅스의 `wget` 혹은 `curl`에 해당한다.
 
@@ -634,7 +725,7 @@ Invoke-WebRequest -Method Get -Uri https://google.com/search `
 Invoke-WebRequest -Uri "https://code.visualstudio.com/sha/download?build=stable&os=win32-x64" -OutFile "vscode.exe"
 ```
 
-### Invoke-RestMethod (irm)
+### Invoke-RestMethod (irm) ⭐
 
 HTTP 요청을 보내고 응답을 PowerShell 객체로 반환하는 명령어.
 
@@ -684,6 +775,9 @@ Get-AppxPackage *Calculator*
 
 # 시스템 전체 사용자(AllUsers) 기준으로 설치된 패키지 조회
 Get-AppxPackage -AllUsers
+
+# Windows Terminal 프리뷰의 설치 경로 출력
+Get-AppxPackage Microsoft.WindowsTerminalPreview | Select-Object InstallLocation
 ```
 
 
