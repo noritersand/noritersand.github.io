@@ -46,6 +46,7 @@ tags:
 - [0.30000000000000004.com](https://0.30000000000000004.com/): 부동소수점에 대해 설명하는 문서
 - [link anatomy](http://bl.ocks.org/abernier/3070589): `location` 해부학(?)
 - [JS Is Weird](https://jsisweird.com/): JavaScript의 혼돈의 카오스 같은 여러 현상들을 퀴즈 형식으로 설명하는 사이트
+- [VanillaJS](http://vanilla-js.com/): JavaScript를 '세상에서 가장 빠르고 가벼운 프레임워크'라고 홍보하는 패러디 사이트. 다운로드 버튼을 누르면 사실상 빈 파일(0바이트)이 받아지고, 벤치마크 페이지에서 jQuery 등 다른 라이브러리와 속도를 비교하며 항상 가장 빠른 걸로 나온다. 개발자식 유우머에 속아서 10년 동안 진짜 프레임워크인 줄 알았던 건 비밀... 😏
 
 ### HTTP 표준
 
@@ -135,7 +136,7 @@ tags:
 - [React Native](https://reactnative.dev/): React 기반의 크로스 플랫폼 개발 프레임워크. JavaScript 코드 하나로 안드로이드와 iOS에서 작동하는 앱을 빌드할 수 있다.
 - [Svelte](https://svelte.dev/): 프론트엔드 프레임워크. 가볍고 단순한 게 특징. 일반적인 프레임워크와 다르게 런타임 대신 컴파일러로 작동한다. 이 말은 빌드 후에 별도로 불러오는 라이브러리가 없어 성능과 로딩 속도에서 이점이 있다는 뜻이다.
 - [Flutter](https://flutter.dev/): Google이 만든 UI 툴킷(SDK) 겸 크로스 플랫폼 개발 프레임워크. 지원되는 플랫폼은 Windows, macOS, 웹이다. 사용언어는 Dart
-- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 도구. React, Vue, Svelte와 순수 JavaScript를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
+- [Vite](https://vitejs.dev/): 모던 프론트엔드 프로젝트를 위한 빌드 도구. React, Vue, Svelte와 vanilla JavaScript를 모두 지원한다. 빠른 콜드 스타트, 핫 모듈 교체, 빌드 최적화, 플러그인 시스템 등이 특징이다.
 - [Gatsby](https://www.gatsbyjs.com/): React 기반의 정적 사이트 생성(SSG, Static Site Generation) 프레임워크. 오픈 소스다.
 - ⭐[Next.js](https://nextjs.org/): React 기반 풀스택 프레임워크. SSR, SSG, CSR을 모두 지원한다. 주로 프론트엔드 개발에 사용된다.
 - [React Router](https://reactrouter.com/): React 애플리케이션에서 클라이언트 사이드 라우팅을 구현하기 위해 사용되는 라이브러리. 7.x 버전부터는 Remix 3와 통합된 프레임워크 모드를 지원한다.
@@ -224,7 +225,7 @@ tags:
 ### UI 컴포넌트 라이브러리
 
 - [AG Grid](https://www.ag-grid.com): 주변 사람이 추천한 💰 유료 그리드
-- [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 컴포넌트. 순수 JavaScript 기반이며, 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
+- [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 컴포넌트. vanilla JavaScript 기반이며, 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Ant Design](https://ant.design/): React용 UI 컴포넌트 라이브러리
 - [ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Headless UI](https://headlessui.dev/): React와 Vue용 UI 컴포넌트
@@ -235,7 +236,7 @@ tags:
 - [Reach UI](https://reach.tech/): React와 Vue용 UI 컴포넌트
 - [React Bits](https://reactbits.dev/): React 기반 웹/앱에서 쓸 수 있는 애니메이션 + 인터렉티브 UI 컴포넌트 모음
 - [Toast UI Grid](https://ui.toast.com/tui-grid): 줄여서 TUI Grid. NHN에서 만들었고 MIT 라이선스의 오픈 소스 그리드. 가볍게 쓰기 좋지만 대응이 ~~조금~~ 많이 느리다.
-- [Tom Select](https://tom-select.js.org/): 셀렉트박스. 순수 JavaScript 기반
+- [Tom Select](https://tom-select.js.org/): 셀렉트박스. vanilla JavaScript 기반
 - ✨[shadcn/ui](https://ui.shadcn.com/): React용 UI 컴포넌트 컬렉션. 소스 코드를 복사해 커스터마이징하는 방식으로, 전통적인 라이브러리와 차이가 있다. Tailwindd CSS와 [Radix UI](https://www.radix-ui.com/) 기반으로 만들어졌다. 사실 CSS 프레임워크라기보단 UI 컴포넌트 라이브러리에 가깝다.
 
 ### 아이콘 라이브러리
@@ -623,7 +624,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 #### 코드/프로젝트 분석
 
-- ⭐[Repomix](https://repomix.com/): 코드베이스를 분석해서 XML이나 마크다운 파일 하나로 묶어주는 Node.js 패키지로 AI가 읽기 좋은 구조로 만들어준다. 에이전트를 쓰지 않거나, 비공개 저장소일 때 유용하다. 웹 버전도 제공한다. `.gitignore` 설정이 있으면 알아서 제외해준다. 로컬에서도 사용할 수 있는데, AI한테 요약 파일 만들어줄거면 마크다운보다 XML이 좋다. AI 토큰 아끼고 싶으면 이런 옵션들 쓰면 되는데: `repomix  --remove-empty-lines --remove-comments --no-file-summary --compress --include 포함하길원하는파일을앤트패턴으로`, 압축 옵션인 `--compress`는 Java 어노테이션도 지워버리니 주의해서 사용해야 함. `repomix.config.json`로 구체적인 설정을 추가하거나 `.repomixignore`로 무시할 파일을 지정할 수 있다. 자세한 내용은 [도움말](https://repomix.com/guide/configuration "Configuration | Repomix") 참고.
+- ⭐[Repomix](https://repomix.com/): 코드베이스를 분석해서 XML이나 마크다운 파일 하나로 묶어주는 Node.js 패키지로, AI가 읽기 좋은 구조로 만들어준다. 에이전트를 쓰지 않거나, 비공개 저장소일 때 유용하다. 웹 버전도 제공한다. `.gitignore` 설정이 있으면 알아서 제외해준다. 로컬에서도 사용할 수 있는데, AI한테 요약 파일 만들어줄거면 마크다운보다 XML이 좋다. AI 토큰 아끼고 싶으면 이런 옵션들 쓰면 되는데: `repomix  --remove-empty-lines --remove-comments --no-file-summary --compress --include 포함하길원하는파일을앤트패턴으로`, 압축 옵션인 `--compress`는 Java 어노테이션도 지워버리니 주의해서 사용해야 함. `repomix.config.json`로 구체적인 설정을 추가하거나 `.repomixignore`로 무시할 파일을 지정할 수 있다. 자세한 내용은 [도움말](https://repomix.com/guide/configuration "Configuration | Repomix") 참고.
 - [Design Extractor](https://www.design-extractor.com/): 웹사이트 디자인 파쿠리 서비스. URL을 입력하면 색상 팔레트, 타이포그래피, 여백, CSS 변수, Tailwind 토큰, shadcn/ui 테마 등을 분석해 `DESIGN.md` 문서로 정리해준다.
 - [designlang](https://www.designlang.app/): 웹사이트 디자인 파쿠리 서비스 2. 로컬 설치형 CLI 툴이고 🎁 오픈 소스다.
 - [getdesign.md](https://getdesign.md/): AI 코딩 에이전트에 적용할 디자인 시스템 라이브러리. 유명 브랜드의 색상같은 주요 스타일과 타이포그래피, 컴포넌트 명세 등을 마크다운 파일로 정리해 제공한다. 💰 일부 브랜드와 심화 기능은 유료다. ℹ️Figma에서 동일한 기능을 무료로 제공한다는 정보가 있음.
@@ -659,6 +660,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [troy](http://troy.labs.daum.net)
 - [Adobe Edge Inspect](https://creative.adobe.com/ko/products/inspect)
 - [browser-deeplink](https://github.com/hampusohlsson/browser-deeplink): 브라우저에서 앱 실행
+- [Samsung DeX](https://www.samsung.com/us/apps/dex/): 삼성 갤럭시 기기를 모니터에 연결해 데스크톱과 유사한 멀티 윈도우 환경으로 확장해주는 갤럭시 전용 기능. 연결하면 모니터엔 데스크톱 워크스페이스가, 기기 화면엔 트랙패드/키보드가 뜨는 화면 확장 방식이라 단순 미러링과는 다르다. 2017년 갤럭시 S8에 처음 탑재됐고, USB-C 케이블이나 Miracast 기반 무선으로 연결한다. Windows/macOS용 DeX PC 앱은 One UI 7부터 단종됐지만, 기기 자체에서 진입하는 DeX 모드는 계속 지원된다. 한때 지원하던 "Linux on DeX"는 안드로이드 10부터 중단됐다.
 
 
 ## 20. 기타 유틸리티
@@ -729,6 +731,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 원격 연결
 
 - ⭐[RustDesk](https://rustdesk.com/): TeamViewer나 AnyDesk 같은 원격 데스크톱 프로그램을 대체하는 오픈 소스 원격 제어 소프트웨어. 기본적으로 공용 서버를 사용하지만, 안정성과 보안성 확보를 위해 전용 서버를 직접 구축할 수 있다.
+- [RealVNC](https://www.realvnc.com/): VNC(RFB 프로토콜) 기반의 원격 데스크톱 제어 앱. VNC를 처음 개발한 팀이 만든 원조 구현체이며, 다른 VNC 구현체(TigerVNC, TightVNC 등)의 뷰어/서버와도 대체로 호환된다. 승인 기반 접속 요구, AES 암호화, 액티브 디렉터리 연동 등 보안 기능을 상용 패키지로 제공한다. 💰 개인 무료 플랜이 있지만 기기 대수와 기능이 제한적이고, 팀/엔터프라이즈용은 유료다.
 
 
 ## 21. 브라우저, 플러그인

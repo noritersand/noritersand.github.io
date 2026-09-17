@@ -28,7 +28,7 @@ tags:
 
 Windows OS의 패키지 관리용 공식 CLI 툴. 리눅스의 `apt`, macOS의 `brew`와 비슷하다. Windows 10 이상이면 기본으로 설치되어 있어서 바로 사용할 수 있다.
 
-2021년에 정식 출시했고, 초기에는 Chocolatey나 Scoop에 비해 등록된 패키지가 많지 않았지만, 지금(🗓️ 2026-09-12)은 패키지 생태계와 버전 관리가 크게 개선되어 순수 패키지 수에서도 WinGet이 Chocolatey를 앞질렀다. 일반적인 Windows 개발 환경이라면 이제 Chocolatey나 Scoop 대신 WinGet으로 갈아타도 될 수준.
+2021년에 정식 출시했고, 초기에는 Chocolatey나 Scoop에 비해 등록된 패키지가 많지 않았지만, 지금(🗓️ 2026-09-12)은 패키지 생태계와 버전 관리가 크게 개선되어 패키지 수에서도 WinGet이 Chocolatey를 앞질렀다. 일반적인 Windows 개발 환경이라면 이제 Chocolatey나 Scoop 대신 WinGet으로 갈아타도 될 수준.
 
 
 ## 명령어

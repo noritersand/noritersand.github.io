@@ -25,21 +25,20 @@ tags:
 - [Object initializer \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer)
 
 
-## 버전 넘버링
+## 개념 정리
+
+### Vanilla/Plain JavaScript
+
+라이브러리나 프레임워크를 사용하지 않는 순수한 JavaScript를 의미한다. Pure는 pure.js라는 템플릿 엔진이 있어서 오해를 부르니 쓰지 말 것(이놈들은 왜 이름을 이따구로 지어서 지롤 😒).
+
+- [VanillaJS](http://vanilla-js.com/): 라이브러리 없이 JavaScript와 브라우저 표준 API만으로 개발하라는 메시지를 전달하는 패러디 사이트.
+- <https://plainjs.com/>: jQuery를 대체하는 vanilla JavaScript API 소개 사이트.
+
+### 버전 넘버링
 
 JavaScript는 ECMAScript 표준을 따른다. ECMAScript의 버전은 ES5, ES6 같은 단순 넘버링이었다가 표준이 만들어진 연도를 이름으로 사용하도록 변경되었다. ES2015(ES6), ES2016(ES7), ... 대충 2009를 더하면 된다. (6 + 2009 = 2015)
 
 이 글을 수정한 시점 기준으로 가장 최근 버전은 ES2019인데, 이 경우 ES2019 라고만 적어도 되지만 ES2019(ES10) 이렇게 이전 방식의 버전을 병기하기도 한다.
-
-
-## Plain JavaScript
-
-라이브러리나 프레임워크를 사용하지 않는 순수 JavaScript를 의미한다. Pure JavaScript 혹은 Vanilla JavaScript 라고도 하는데, pure.js라는 템플릿 엔진과, Vanilla JS라는 프레임워크가 있어서(이놈들은 왜 이름을 이따구로 지어서 지롤 😒) plain이 가장 적절...하지 않을까?
-
-참고: <https://plainjs.com/> jQuery를 대체하는 순수 JavaScript API 소개 사이트
-
-
-## 개념 정리
 
 ### 호출 스택 Call Stack
 
