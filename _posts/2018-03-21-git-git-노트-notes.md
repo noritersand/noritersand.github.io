@@ -12,6 +12,44 @@ tags:
 * Kramdown table of contents
 {:toc .toc}
 
+#### 참고 문서
+
+- <https://git-scm.com/book/ko/Git맞춤-Git-설정하기>
+
+
+## Git LFS
+
+Git LFS(Large File Storage)는 Git에서 대용량 바이너리 파일을 별도로 저장하여 저장소의 크기와 성능 문제를 줄이는 확장 기능이다. 
+
+GitHub에서 제공하는 Git LFS는 월간 저장 용량과 다운로드 bandwidth 제한이 있으며, 파일을 다운로드하거나 `Include Git LFS objects in archives`를 활성화한 상태에서 ZIP을 다운로드하면 실제 파일 크기만큼 bandwidth가 차감된다. 무료 할당량을 초과하면 결제 설정에 따라 추가 요금이 발생하거나 LFS 다운로드가 제한될 수 있다.
+
+| GitHub 플랜       | LFS 저장공간    | LFS 다운로드 대역폭   |
+|------------------ |-------------:  |--------------------: |
+| Free              |    10 GiB/월   |           10 GiB/월  |
+| Pro               |    10 GiB/월   |           10 GiB/월  |
+| Team              |   250 GiB/월   |          250 GiB/월  |
+| Enterprise Cloud  |   250 GiB/월   |          250 GiB/월  |
+
+
+## .gitattributes
+
+- [이 블로그 내부 링크 \| 제목](/카테고리/날짜와_확장자를_제외한_파일명/)
+
+
+## core.autocrlf
+
+커밋할 때 Git이 자동으로 CRLF를 LF로 변환해주고, 반대로 체크아웃할 때 LF를 CRLF로 변환해 주는 기능이다.
+
+```bash
+git config --system core.autocrlf true
+```
+
+보통은 Git 설치 시 자동으로 설정되기 때문에(중간에 물어보긴 하는데 기본값으로 선택되어 있음) 이 명령을 실행할 일은 없다.
+
+`true` 대신 `input`으로 설정하면 커밋할 때만 CRLF를 LF로 변환한다.
+
+`false`로 설정하면 이 기능이 꺼지고 CRLF 그대로 커밋하고, 체크아웃할 때도 그대로 가져온다.
+
 
 ## Git Credential
 

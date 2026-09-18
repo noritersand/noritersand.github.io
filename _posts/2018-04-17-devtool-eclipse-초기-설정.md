@@ -152,7 +152,8 @@ ${cursor}
 
 ### auto crlf 저장소별 설정
 
-[Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다. core.autocrlf 설정으로 이 기능을 켤 수 있다.](https://git-scm.com/book/ko/Git맞춤-Git-설정하기)
+Git은 커밋할 때 자동으로 CRLF를 LF로 변환해주고 반대로 Checkout할 때 LF를 CRLF로 변환해 주는 기능이 있다. [core.autocrlf](https://git-scm.com/book/ko/Git맞춤-Git-설정하기) 설정으로 이 기능을 켤 수 있다.
+
 이클립스에서 설정하는 방법은:
 `Window > Preferences > Version Control > Git > Configuration`에서 `core.autocrlf=true`를 추가.
 

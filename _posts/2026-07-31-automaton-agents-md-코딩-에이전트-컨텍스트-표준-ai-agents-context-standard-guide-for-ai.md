@@ -134,7 +134,7 @@ Use plan mode for changes under `src/billing/`.
 
 ## 작성 예시
 
-ℹ️ Next.js 같은 프레임워크가 생성하는 자동 생성 문구는 위치랑 공백, 줄 바꿈까지 처음 작성된 그대로 두는 편이 좋음
+ℹ️ Next.js 같은 프레임워크가 생성하는 자동 생성 문구는 처음 작성된 그대로 두는 편이 좋음
 
 ````
 # AGENTS.md
@@ -158,7 +158,6 @@ Use plan mode for changes under `src/billing/`.
 
 ## Version Control
 
-- 하나의 작업이 완료되면 현재 브랜치에 즉시 커밋한다.
 - 커밋 메시지 첫 줄은 `<type>: <short summary>` 형태로 작성하고, `type`은 다음 중 하나를 선택한다: `build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test`
 - 나머지 메시지는 한국어로 작성한다.
 - 작업 내용은 명사형으로 간결하게 작성한다.

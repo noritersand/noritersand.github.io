@@ -34,16 +34,45 @@ git update-git-for-windows
 
 ## 용어
 
-- 워킹 트리(working tree): 버전 관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
-- 스테이징 영역(staging area): 인덱스(index)라고도 부른다.
-- 헤드(HEAD): 엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 예를 들어 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
-- Git 디렉터리(git directory): git 사용에 필요한 모든 정보가 있는 로컬 저장소.
-- 델타(delta): 변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
-- 리모트 트래킹 브랜치(remote-tracking branches): 리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
-
 ![](/images/git-local-operations.png)
 
 [이미지 출처](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+
+#### 워킹 트리(working tree)
+
+버전 관리되는 파일이 실제로 존재하는 공간. 이전의 공식 명칭은 working directory였으나 [변경되었다](https://github.com/git/git/commit/2a0e6cdedab306eccbd297c051035c13d0266343).
+
+#### 스테이징 영역(staging area)
+
+인덱스(index)라고도 부른다.
+
+#### 헤드(HEAD)
+
+엄밀히 말하면 '현재 바라보고 있는 커밋'이지만 '현재 브랜치'란 의미로도 쓰임. 명령어에서 `HEAD~숫자` 처럼 쓰이는 경우, 숫자는 HEAD 기준 ~회 전의 커밋을 의미한다. 예를 들어 `HEAD~2`는 HEAD 기준 2회 전 커밋이다.
+
+#### Git 디렉터리(git directory)
+
+git 사용에 필요한 모든 정보가 있는 로컬 저장소.
+
+#### 델타(delta)
+
+변경 사항 혹은 변경 내용. 이전 버전과 다음 버전의 차이를 의미함.
+
+#### 리모트 트래킹 브랜치(remote-tracking branches)
+
+리모트 저장소에 있는 브랜치를 추적하는 레퍼런스. `fetch`는 리모트 트래킹 브랜치를 리모트 저장소의 내용대로 갱신하는 명령이다.
+
+#### 체크아웃(checkout)
+
+`git checkout` 명령 외에도 Git이 저장소(objects)에 저장된 파일 내용을 워킹 디렉터리로 꺼내 쓰는 행위 전반을 의미한다. 
+
+다음 명령이 모두 체크아웃에 해당하는 작업이다:
+
+- `git checkout <branch>` / `git switch <branch>`: 브랜치 전환
+- `git checkout <file>` / `git restore <file>`: 특정 파일 복원
+- `git clone`: 워킹 트리 생성
+- `git pull`, `git merge`: 병합 결과 반영
+- `git reset --hard`
 
 
 ## [공통 옵션](https://git-scm.com/docs/git#_options)

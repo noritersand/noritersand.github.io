@@ -575,7 +575,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [OpenClaw](https://openclaw.ai/): 로컬 환경에서 돌아가는 오픈 소스 자율 AI 에이전트. 단순 대화형 챗봇이 아니라 사용자 OS를 직접 제어할 수 있는 권한을 가지고 있어서, 텔레그램/슬랙/디스코드 같은 메신저로 원격에서 명령을 내려 로컬 작업을 수행하게 할 수 있다. 앤트로픽과의 상표권 문제로 Clawdbot -> Moltbot을 거쳐 지금 이름으로 정착함.
 - ⭐[Hermes Agent](https://hermes-agent.nousresearch.com/): Nous Research의 자율형 오픈 소스 AI 에이전트. 작업 경험을 바탕으로 스스로 스킬을 만들고 개선하며, 기억을 축적하는 학습 루프를 내장하고 있음. CLI, Docker, 백엔드 서버 환경 등에서 독립적으로 실행할 수 있고, 메신저 봇이나 API 서버 형태로도 활용할 수 있음. 💰 에이전트 자체는 무료지만, 연결하는 모델이나 외부 서비스에 따라 API 사용료나 구독 비용이 별도로 발생함.
 - [Hermit](https://hermit-ai.com/): 파일 중심(File-first)의 자율형 AI 애플리케이션 런타임. Git 저장소 안에서 에이전트의 역할, 데이터, 워크플로 등을 파일로 관리하며, Hermes와 비슷하게 자신의 프롬프트/스킬/워크플로를 개선하는 학습 루프를 내장하고 있음. 자율 에이전트이면서 파일과 Git을 기반으로 지속적으로 진화하는 애플리케이션 시스템을 만드는 데 초점을 둔 프로젝트. 📅 아직 
-- [Claude Cowork](https://claude.com/product/cowork): Claude 기반의 로컬 환경 연동형 자율 에이전트. 일반적인 대화형 Claude와 달리 사용자가 작업 목표만 지정하면 로컬 파일과 외부 도구를 직접 다루면서 여러 단계의 작업을 자율적으로 수행함. Anthropic의 Claude 모델, Skills, Plugins, Connectors를 그대로 활용할 수 있으며, 복잡한 작업은 서브에이전트로 분할해 병렬 처리하는 데 강점이 있음. 장시간 실행, 로컬 파일 작업, 웹 브라우저 사용, 예약 작업(Scheduled Tasks) 등도 지원해 반복적인 지식 작업을 자동화하는 데 초점을 둔 서비스임. 💰 유료 플랜 전용 서비스
+- [Claude Cowork](https://claude.com/product/cowork): Claude Code의 에이전틱 아키텍처를 코딩 밖 업무로 확장한 서비스. 작업 목표만 지정하면 로컬 파일과 외부 도구를 다루며 여러 단계 작업을 자율 수행함. 클라우드 세션(베타)이라 데스크톱을 닫아도 계속되고 웹/데스크톱/모바일을 오가며 이어 쓸 수 있음. Skills, Plugins, Connectors를 활용하며 서브에이전트 병렬 처리가 강점. 💰 유료 플랜 전용 🗓️ 2026-09, [Cowork 브랜드는 사라지고 일반 채팅에 통합되는 중](https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork).
 
 ### 에이전트 개발 환경(ADE) / 오케스트레이션
 
