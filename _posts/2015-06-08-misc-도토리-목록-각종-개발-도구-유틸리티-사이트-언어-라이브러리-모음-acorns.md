@@ -188,14 +188,15 @@ tags:
 - [sharp](https://sharp.pixelplumbing.com/): 고성능의 이미지 처리 Node.js 패키지. 이미지 최적화에 주로 사용된다. 제공되는 기능은 이미지 크기 조정, 포맷 변환, 자르기, 회전, 반전, 필터 적용 등.
 - [Execa](https://github.com/sindresorhus/execa): Node.js 환경에서 외부 명령어를 실행할 수 있게 도와주는 프로세스 실행 패키지. `child_process` 모듈의 개선된 대안으로, 더 나은 API를 제공하며 명령어 실행 결과를 쉽게 다루고, 비동기 작업과 오류 처리 등을 효율적으로 처리할 수 있다.
 - [Puppeteer](https://pptr.dev/): Google에서 개발한 headless 브라우저 제어 Node.js 패키지, Chrome 또는 Chromium 브라우저를 프로그래밍 방식으로 제어할 수 있게 해준다. 브라우저를 자동화하거나 웹 스크래핑, UI 테스트, PDF 생성, 스크린샷 찍기, 성능 측정 등의 작업을 수행할 수 있다. 기본적으로 headless 모드(시각적 화면인 GUI가 없다는 의미)로 작동하지만, head 모드로 실제 브라우저 창을 띄워 작업을 실행할 수도 있다.
-- ✨[Playwright](https://playwright.dev/): Microsoft에서 개발한 오픈 소스 웹 자동화 프레임워크로, Puppeteer의 핵심 개발진이 이적하여 제작한 **직계 후속** 도구다. Chrome/Chromium에 한정되지 않고 Firefox와 WebKit(Safari)을 모두 단일 API로 제어하며, Node.js 외에도 Python, Java, `C#`을 공식 지원한다. 요소 준비 상태를 검증하는 자동 대기(Auto-waiting), 독립 세션 고속 생성(Browser Context), 사용자 행동 녹화(Codegen), 타임라인 기반 디버깅(Trace Viewer) 등 테스트에 특화된 기능을 제공한다.
-- ✨[fullPage.js](https://alvarotrigo.com/fullPage/): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹사이트(단일 페이지 웹사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
+- ⭐[Playwright](https://playwright.dev/): Microsoft에서 개발한 오픈 소스 웹 자동화 프레임워크로, Puppeteer의 핵심 개발진이 이적하여 제작한 **직계 후속** 도구다. Chrome/Chromium에 한정되지 않고 Firefox와 WebKit(Safari)을 모두 단일 API로 제어하며, Node.js 외에도 Python, Java, `C#`을 공식 지원한다. 요소 준비 상태를 검증하는 자동 대기(Auto-waiting), 독립 세션 고속 생성(Browser Context), 사용자 행동 녹화(Codegen), 타임라인 기반 디버깅(Trace Viewer) 등 테스트에 특화된 기능을 제공한다.
+- [fullPage.js](https://alvarotrigo.com/fullPage/): 어떤 게임의 이벤트 페이지에서 줏어온 거. 전체 화면 스크롤 웹사이트(단일 페이지 웹사이트 또는 단일 페이지 사이트라고도 함)를 만들고 사이트 섹션 내에 가로 방향 슬라이더를 추가하는 간단하고 사용하기 쉽다...는데 사실 뭔지 잘 몲.
 - ✨[Dexie.js](https://dexie.org/): 브라우저의 IndexedDB를 다루는 서드 파티 중 가장 인기 있는 라이브러리. Promise 기반 API를 제공한다.
 - [pug](https://pugjs.org/api/getting-started.html): Node.js 기반 템플릿 엔진. HTML을 서버 사이드 렌더링할 때 사용한다. 예전 이름은 Jade
 - ✨[json-server](https://github.com/typicode/json-server): JSON 파일만으로 API 서버를 제공하고 싶을 때 사용하는 fake API server 라이브러리.
 - ⭐[live-server](https://tapiov.net/live-server/): 로컬 전용 웹 서버가 필요할 때 설치하는 패키지. 페이지 새로고침을 자동으로 해주는 live reload 기능을 제공하며 index 파일이 필요 없어서 편하다.
 - ⭐[serve](https://github.com/vercel/serve): 빠르고 가벼운 정적 파일 제공용 웹 서버. 프로덕션 환경을 미리 보고 싶을 때 사용한다. (Live reload 기능은 없음)
 - ✨[Video.js](https://videojs.org/): HTML5 기반 비디오 플레이어 프레임워크. 모듈형 UI 컴포넌트, 스트리밍 프로토콜 지원, 넓은 확장성, CSS 스킨 시스템이 특징. 오픈 소스 프로젝트다.
+- ✨[TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 페칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하기도 함. 예전 이름은 React Query였음. 뮤테이션, 쿼리 키 기반 캐시 무효화, 무한 쿼리, devtools까지 갖춘 풀 패키지라 SWR보다 무겁지만 할 수 있는 게 많다. React 외에 Vue, Svelte, Solid, Angular도 지원한다. 단순 조회와 재검증만 필요하면 SWR, 클라이언트에서 캐시를 세밀하게 제어해야 하면 이쪽을 고르면 된다.
 
 ### React 전용 라이브러리
 
@@ -203,13 +204,13 @@ tags:
 - [Redux](https://www.github.com/reduxjs/redux): 리덕스. 상태(reactive state) 관리 라이브러리. 모든 상태 변화가 중앙에서 관리되기 때문에 예측과 디버깅 등 유지보수에 도움이 된다고 한다. React에서는 복잡한 계층 구조를 가진 컴포넌트들 사이에서 state의 변화를 전달할 때 *props drilling*이라 불리는 번거로운 작업이 필요한데, Redux는 이러한 작업을 간소화할 수 있는 라이브러리다. 그런데 문법이 너무 복잡한 탓인지 인기가 점점 시들해진다고...
 - ⭐[zustand](https://zustand-demo.pmnd.rs/): 상태 관리 라이브러리. 리덕스와 마찬가지로 props drilling 문제를 방지하고 상태를 전역으로 관리할 수 있게 해준다. 리덕스보다 코드 작성이 간결하다.
 - 🚧[recoiljs](https://recoiljs.org/): 상태 관리 라이브러리... 인데 2023년부터 업데이트가 없는 걸로 보임
+- [Legend-State](https://legendapp.com/open-source/state/): Fine-grained reactivity가 특징인 프록시 기반의 React 상태 관리 라이브러리. 상태의 특정 부분이 변경될 때 해당 부분을 사용하는 컴포넌트만 리렌더링해서 성능이 좋다. Fine-grained reactivity에 대해선 [이 글](https://yozm.wishket.com/magazine/detail/3294/?data=8YxZrHl21HwdZpRI0O8P3A00cy25KUkklgTYMHWWUWg%3D) 참고.
 - [Jotai](https://jotai.org/):  상태 관리 라이브러리
 - [React Hook Form](https://react-hook-form.com/): 입력 폼을 쉽게 다루게 해주는 라이브러리. 쓰기 좀 복잡하긴 한데 챗피티가 자꾸 좋다고 들이댐.
 - [useHooks](https://usehooks.com/): 훅 모음. React 개발에서 자주 반복되는 기본적인 로직(클립보드 복사, 디바운스, 로컬 스토리지 관리 등)을 커스텀 훅 형태로 모아놓은 라이브러리다. 아래의 react-use에 비해 비교적 간단하고 필수적인 훅 위주로 모아져있다. [usehooks.com](https://usehooks.com/)는 원래 React의 커스텀 훅을 직접 만들어보며 학습할 수 있도록 예시와 개념을 설명하는 튜토리얼 사이트였음.
 - [react-use](https://streamich.github.io/react-use/): 훅 모음. 이 패키지도 React 개발에서 자주 반복되는 로직(브라우저 API 연동, 상태 관리, UI 상호작용 등)을 훅 형태로 모아놓은 라이브러리다. useHooks 보다 방대하고 폭 넓은 훅들을 제공한다.
-- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 페칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하기도 함. 예전 이름은 React Query였음.
-- ⭐[SWR](https://vercel.com/oss/swr): 데이터 페칭과 캐싱을 간편히 처리해주는 라이브러리
-- [Legend-State](https://legendapp.com/open-source/state/): Fine-grained reactivity가 특징인 프록시 기반의 React 상태 관리 라이브러리. 상태의 특정 부분이 변경될 때 해당 부분을 사용하는 컴포넌트만 리렌더링해서 성능이 좋다. Fine-grained reactivity에 대해선 [이 글](https://yozm.wishket.com/magazine/detail/3294/?data=8YxZrHl21HwdZpRI0O8P3A00cy25KUkklgTYMHWWUWg%3D) 참고.
+- ⭐[SWR](https://vercel.com/oss/swr): 데이터 페칭과 캐싱을 간편히 처리해주는 Vercel의 React 훅 라이브러리. Next.js App Router에서 서버 컴포넌트로 데이터를 가져오는 경우엔 캐싱과 재검증을 Next가 이미 처리하므로 필요 없다. 다만 라우터 방식과 무관하게 클라이언트에서 데이터를 가져와야 하는 경우, 즉 폴링이나 포커스/재연결 시 자동 재검증이 필요한 화면, 검색어나 필터처럼 클라이언트 상태에 따라 쿼리가 계속 바뀌는 경우, 무한 스크롤(`useSWRInfinite`), 브라우저에서 외부 API를 직접 호출해야 하는 경우엔 여전히 유용하다. **서버 컴포넌트가 없는 Pages Router라면 사실상 필수**. 뮤테이션과 캐시 무효화 등 기능이 더 필요하면 TanStack Query 쪽이 낫고, 가볍게 쓸 거면 SWR이 낫다.
+- ✨[Recharts](https://recharts.github.io/): React와 D3 기반의 오픈 소스(MIT) 차트 라이브러리. LineChart, XAxis, Tooltip 같은 선언형 컴포넌트를 조합해 차트를 만들고, 네이티브 SVG를 사용한다. TypeScript 타입을 내장하고 있다.
 
 ### Vue 전용 라이브러리
 
