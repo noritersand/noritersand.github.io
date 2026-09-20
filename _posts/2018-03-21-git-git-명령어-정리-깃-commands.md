@@ -2189,8 +2189,8 @@ git svn blame 파일
 태그 조회와 생성
 
 ```bash
-# 조회
-git tag
+# 모든 태그 목록 표시(태그 메시지 포함)
+git tag -ln
 
 # 태그 생성
 git tag TAG_NAME

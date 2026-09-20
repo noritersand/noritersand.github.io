@@ -262,7 +262,9 @@ PaaS 중에 유명한 것들은 대체로 웹 앱 소스를 올리면 대신 빌
 - [smolsite](https://smolsite.zip): 스몰사이트, ZIP으로 압축해서 업로드하면 무료로 호스팅 해줌
 - [Vercel](https://vercel.com/): 프론트엔드용 클라우드 플랫폼. Next.js의 개발사이기도 하다. 정적 사이트와 Jamstack 이키텍처에 최적화되어 있다고 한다.
 - ✨[Netlify](https://www.netlify.com/): 정적 웹사이트 및 프론트엔드 애플리케이션을 빠르고 쉽게 배포할 수 있는 클라우드 기반 플랫폼. 웹 앱 배포 및 관리를 위한 다양한 기능을 제공한다. 주요 특징으로 자동 빌드 및 배포, 서버리스, 글로벌 CDN, 커스텀 도메인, 무료 SSL 인증서 등이 있다. 뭔지 모르겠지만 JAMstack(?) 아키텍처와 잘 맞는다고 함. 💰 무료 사용 중엔 월 100GB의 트래픽 제한이 있다.
-- ✨[Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 웹 애플리케이션 개발 플랫폼. Workers 기반의 서버리스 컴퓨팅을 중심으로, 정적 사이트 호스팅(Pages), 오브젝트 스토리지(R2), 데이터베이스(D1) 등을 제공한다.
+- ✨[Cloudflare Developer Platform](https://www.cloudflare.com/ko-kr/developer-platform/): Cloudflare의 엣지 기반 웹 애플리케이션 개발 플랫폼. V8 아이솔레이트 기반 서버리스 런타임 Workers가 중심이라 콜드 스타트가 거의 없다. 정적 호스팅(Pages), S3 호환 오브젝트 스토리지(R2, 이그레스 요금 없음), 키-값 저장소(KV), 상태 저장 객체(Durable Objects), 메시지 큐(Queues), 벡터 DB(Vectorize)를 조합해 쓴다. DB인 D1은 SQLite 기반으로 30일 내 시점 복구(Time Travel)와 읽기 복제본을 지원하며, Durable Objects의 내장 스토리지도 SQLite다. 💰 무료 플랜 있음. Workers 하루 10만 요청 무료, 유료는 월 최소 $5(🗓️ 2026-09-20)
+
+ℹ️ 콜드 스타트(cold start): 서버리스에서 요청을 처리할 실행 환경이 아직 없는 상태에서, 새로 환경을 띄우느라 첫 요청이 느려지는 현상이다.
 
 ### IaaS (Infrastructure as a Service)
 
@@ -531,7 +533,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [stibee](https://www.stibee.com/): 메일 마케팅 서비스. 읽기 쉬운 메일 작성 지원
 - [Mailgun](https://www.mailgun.com/): 클라우드 기반 메일 인프라 서비스. 웹 API를 통해서 메일을 발송할 수 있다. 하루 100건은 무료
 - [SendGrid](https://sendgrid.com/en-us): 클라우드 기반 SMTP 서비스
-- [Resend](https://resend.com/): 개발자 친화적인 이메일 발송 플랫폼. 기존 SendGrid, Mailgun 같은 서비스를 대체하는 현대적인 이메일 API 서비스. Node.js, Python, Go, Rust 등 다양한 언어용 SDK와 깔끔한 REST API/SMTP를 제공해 연동이 쉽다. 💰 3000개 까지 무료 발송
+- [Resend](https://resend.com/): 개발자 친화적인 이메일 발송 플랫폼. 기존 SendGrid, Mailgun 같은 서비스를 대체하는 현대적인 이메일 API 서비스. Node.js, Python, Go, Rust 등 다양한 언어용 SDK와 깔끔한 REST API/SMTP를 제공해 연동이 쉽다. 💰 무료 플랜은 월 3000개, 하루 100개까지 발송 가능
 
 #### 임시 메일
 
@@ -799,3 +801,4 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Namelix](https://namelix.com/): 키워드와 선호하는 네이밍 스타일을 선택하면 브랜드 이름을 만들어주는 서비스
 - [DuckDuckGo HTML](https://html.duckduckgo.com/html/): DuckDuckGo의 JavaScript와 이미지 등을 거의 사용하지 않는 경량 HTML 검색 인터페이스. 브라우저나 자동화 도구에서 단순한 HTML 형태로 검색 결과를 가져올 때 유용함. curl 같은 CLI HTTP 클라이언트로도 접근할 수 있어 자동화나 텍스트 기반 환경에서 활용하기 좋다.
 - [DuckDuckGo Lite](https://lite.duckduckgo.com/lite/): DuckDuckGo의 초경량 검색 인터페이스. HTML 버전보다 더 단순한 페이지 구조로 제공되어 저사양 환경이나 텍스트 기반 브라우징에 적합함.
+- [크레페 CREPE](https://crepe.cm/ko): 그림, 글, 수공예, 디자인, 점술, 사운드 등 창작 커미션을 중개하는 국내 플랫폼. 커미션주가 작업 유형과 가격을 "타입"으로 등록하면 신청자가 골라 신청하는 구조임. 대금을 플랫폼이 보관했다가 작업물 전달 후 정산하는 에스크로 방식이고, 포트폴리오, 후기, 슬롯 관리, 분쟁 중재 기능을 제공함. 💰 신청자 결제 수수료는 없고 커미션주 수익금에서 10%를 공제하는 방식
