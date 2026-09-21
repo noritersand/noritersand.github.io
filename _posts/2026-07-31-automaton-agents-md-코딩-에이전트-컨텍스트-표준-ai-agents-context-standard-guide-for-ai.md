@@ -154,7 +154,6 @@ Use plan mode for changes under `src/billing/`.
 
 - 페이지별 UI 구현이나 모바일 전용 컴포넌트를 새로 만들지 않는다.
 - Iframe을 사용하지 않는다.
-- secret(API key, database password 등)을 클라이언트 레이어에 절대 노출하지 말 것
 
 ## Version Control
 
