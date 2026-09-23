@@ -145,15 +145,14 @@ Use plan mode for changes under `src/billing/`.
 - 디자인/마크업 지침: `docs/agents/design.md`
 - 데이터베이스 지침: `docs/agents/database.md`
 
-## Response/Writing Style
-
-- Respond concisely.
-- 모든 문서는 문어체 + 반말로 작성한다.
-
 ## Hard Rules
 
 - 페이지별 UI 구현이나 모바일 전용 컴포넌트를 새로 만들지 않는다.
 - Iframe을 사용하지 않는다.
+
+## Document Writing Style
+
+- 모든 문서는 문어체 + 반말로 작성한다.
 
 ## Version Control
 

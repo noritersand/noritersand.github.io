@@ -115,6 +115,7 @@ tags:
 
 ### JSON
 
+- ⭐[jq](https://jqlang.org/): CLI용 JSON 프로세서. `sed`나 `awk`로 텍스트를 편집하는 것처럼, `jq`로 JSON을 잘라내고 걸러내고 변환할 수 있다. 자체 질의 언어로 중첩된 구조를 탐색하거나 재구성하는 프로그램을 짧게 작성할 수 있고, API 응답을 파이프로 넘겨받아 가공하는 용도로 쓰기 좋다. 런타임 의존성 없는 C 바이너리라 Linux/macOS/Windows 모두 동일하게 쓸 수 있다. 온라인 플레이그라운드(<https://play.jqlang.org>)도 제공한다.
 - ✨[JSON Placeholder](https://jsonplaceholder.typicode.com/): JSON 응답을 받아야하는데 백엔드를 만들기 귀찮으면 쓰는 Free Fake JSON API 서버
 - [jsoneditoronline.org](https://www.jsoneditoronline.org): JSON 편집 및 뷰어
 - [jsonviewer.codeplex.com](https://jsonviewer.codeplex.com): JSON 뷰어
@@ -123,7 +124,6 @@ tags:
 
 - ✨[Storybook](https://storybook.js.org/): 프론트엔드 UI 컴포넌트를 개발하고 문서화하기 위한 도구. 애플리케이션의 실제 화면이나 비즈니스 로직과 분리해서 컴포넌트를 독립적으로 확인하고 테스트할 수 있다. 각 컴포넌트의 다양한 상태를 `Story`로 정의해 모아볼 수 있어 UI 컴포넌트 라이브러리나 디자인 시스템을 구축할 때 유용하다. 흔히 '프론트엔드 워크샵'이라고 표현한다.
 - [Vitebook](https://vitebook.dev/): UI 컴포넌트를 개발하고 문서화하기 위한 워크샵 도구. Vite를 기반으로 돌아가며, 컴포넌트를 실제 애플리케이션과 분리된 환경에서 독립적으로 확인하고 개발할 수 있다. Storybook과 비슷한 목적을 가지지만 더 가볍고 단순한 구성을 지향한다.
-
 
 
 ## 4. 프레임워크, 라이브러리
@@ -230,7 +230,6 @@ tags:
 - [Ant Design](https://ant.design/): React용 UI 컴포넌트 라이브러리
 - [ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
 - [Headless UI](https://headlessui.dev/): React와 Vue용 UI 컴포넌트
-- [jqxgrid](https://www.jqwidgets.com/jquery-widgets-demo/demos/jqxgrid/index.htm)
 - [Mantine](https://mantine.dev/): React용 UI 컴포넌트 라이브러리
 - [Material UI](https://mui.com/material-ui/): React용 UI 컴포넌트 모음
 - [NextUI](https://nextui.org/): React용 UI 컴포넌트 라이브러리

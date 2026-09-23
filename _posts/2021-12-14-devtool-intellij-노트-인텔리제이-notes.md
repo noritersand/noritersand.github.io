@@ -36,14 +36,19 @@ Java 개발자들 사이에선 인텔리제이 한 번 써보면 다시는 이�
 자세한 내용은 [여기](https://www.jetbrains.com/products/compare/?product=idea&product=idea-ce)에.
 
 
-## 코드의 빨간 밑줄이 안 없어진다면...
+## 트러블 슈팅
+
+### Find Usages 기능이 작동하지 않을 때
+
+`.idea/` 디렉터리에 `<project-name>.iml` 파일이 있는지, 내용은 정상인지 확인한다.
+
+### 코드의 빨간 밑줄이 안 없어진다면...
 
 JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시작하면 해결되지만, 이게 귀찮은 경우 메뉴의 `Code > Inspect Code`를 실행하면 해소되는 경우가 있다.
 
 이래도 안되면 재시작... 🥲
 
-
-## IDE log 파일 위치
+### IDE log 파일 위치
 
 <https://intellij-support.jetbrains.com/hc/en-us/articles/207241085-Locating-IDE-log-files>
 
@@ -51,15 +56,13 @@ JetBrains 제품군에서 종종 발생하는 문제다. 대체로 IDE를 재시
 
 검색으로 해결 안 되는 문제(프리징 현상이라던지)가 발생하면 [지원 페이지](https://intellij-support.jetbrains.com/)로 가서 이 파일을 첨부해 문의하면 된다.
 
-
-## 빌드나 런타임 에러가 발생하면
+### 빌드나 런타임 에러가 발생하면
 
 Project Structure(<kbd>ctrl + alt + shift + s</kbd>)에서 Modules 항목 설정은 이렇게 돼있는지 우선 확인:
 
 ![](/images/intellij-project-settings-2.png)
 
-
-## 한글 깨짐 문제
+### 한글 깨짐 문제
 
 일단 발견한 인코딩 관련 설정은 요렇게 있다.
 
