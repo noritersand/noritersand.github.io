@@ -812,13 +812,13 @@ git diff [<options>] --no-index [--] <path> <path>
 git diff
 
 # staged와 commited의 비교
-git diff --cached
 git diff --staged
+git diff --cached
 ```
 
 #### Options
 
-- `--cached`: 스테이징 영역과 현재 커밋 사이의 차이점을 출력한다. 이 옵션이 없으면 워킹 트리와 커밋 간 차이를 출력한다.
+- `--staged` `--cached`: 스테이징 영역과 현재 커밋 사이의 차이점을 출력한다. 이 옵션이 없으면 워킹 트리와 커밋 간 차이를 출력한다.
 - `--check`: 충돌(conflict) 문자 혹은 공백 오류가 있는지 확인
 - `--name-only`: 변경된 파일의 이름만 출력
 - `--name-status`: 변경된 파일의 이름만 출력하면서 변경 상태를 표시해 줌.
@@ -1508,9 +1508,9 @@ git push  # origin 리모트 저장소에 현재 브랜치를 push
 - `--force-with-lease`: `--force` 옵션과 비슷하지만 다른 사람이 올린 커밋이 있을 땐 강제 push를 취소한다.
 - `-u` `--set-upstream`: 업스트림 브랜치를 특정 리모트의 브랜치로 설정하며 push 한다. `branch` 명령의 비슷한 기능을 하는 옵션은 `--set-upstream-to`로 이름이 약간 다르다.
 - `--all` `--branches`: 모든 브랜치(`refs/heads/` 아래의 모든 참조)를 push 한다. 태그는 포함되지 않는다. 이 옵션을 쓰면 refspec을 따로 지정할 수 없다.
-- `--mirror`: 브랜치, 태그 등의 모든 참조를 원격 저장소에 그대로 push 한다. 로컬과 원격을 완벽히 동일하게 동기화하는 옵션이다. 차이가 있는 부분은 로컬 기준으로 덮어쓰고, 삭제된 ref도 원격에서 삭제된다.
+- `--mirror`: 브랜치, 태그 등의 모든 참조를 리모트 저장소에 그대로 push 한다. 로컬과 원격을 완벽히 동일하게 동기화하는 옵션이다. 차이가 있는 부분은 로컬 기준으로 덮어쓰고, 삭제된 ref도 원격에서 삭제된다.
 
-⚠️ `--all`이나 `--mirror` 옵션을 사용해도 로컬에 없는 리모트 추적 브랜치(`refs/remotes/`)는 올라가지 않는다. 리모트 추적 브랜치를 포함한 모든 참조를 push 하고 싶으면 먼저 로컬 브랜치를 생성하는 작업이 필요하다. `/git/git-git-노트-notes/`에 작성한 스크립트를 참고할 것.
+⚠️ `--all`이나 `--mirror` 옵션을 사용해도 로컬에 없는 리모트 추적 브랜치(`refs/remotes/`)는 올라가지 않는다. 리모트 추적 브랜치를 포함한 모든 참조를 push 하고 싶으면 먼저 로컬 브랜치를 생성하는 작업이 필요하다.
 
 #### 업스트림 브랜치 설정 \#3
 
@@ -1696,7 +1696,7 @@ git reflog -10 --pretty
 
 #### Options
 
-- `-v` `--verbose`: 리모트(원격 저장소)의 추가 정보(URL)도 함께 출력한다.
+- `-v` `--verbose`: 리모트(리모트 저장소)의 추가 정보(URL)도 함께 출력한다.
 
 #### 리모트 저장소 목록
 
@@ -2313,7 +2313,7 @@ git worktree unlock <worktree>
 # 워크트리 생성 #1: 현재 작업 중인 브랜치를 기준으로 새 브랜치 'test1'를 만들고, ../another-repo 디렉터리에 연결
 git worktree add -b test1 ../another-repo
 
-# 워크트리 생성 #2: 원격 저장소의 origin/main를 기준으로 로컬 브랜치 'test2'를 새로 만들고, 이를 ../another-repo 디렉터리에 연결함.
+# 워크트리 생성 #2: 리모트 저장소의 origin/main를 기준으로 로컬 브랜치 'test2'를 새로 만들고, 이를 ../another-repo 디렉터리에 연결함.
 git worktree add -b test2 ../another-repo origin/main
 
 # 워크트리 생성 #3: 로컬 main 브랜치를(없으면 원격의 main를 찾음) 체크아웃한 워크트리를 생성한다. 

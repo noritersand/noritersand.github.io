@@ -78,7 +78,7 @@ if ($Help) {
     Write-Host "  -Days <숫자>                    # 기준 일수 (기본값: 30)"
     Write-Host "  -Path <경로>                    # 검색할 디렉터리 경로 (기본값: 현재 디렉터리)"
     Write-Host "  -DefaultBranch <브랜치명>       # 기본 브랜치명 (기본값: main)"
-    Write-Host "  -RemoteName <원격저장소명>      # 원격 저장소 이름 (기본값: origin)"
+    Write-Host "  -RemoteName <리모트 저장소명>      # 리모트 저장소 이름 (기본값: origin)"
     Write-Host "  -ExcludeBranches <패턴들>       # 제외할 브랜치 패턴 배열"
     Write-Host "  -TimeoutSeconds <숫자>          # 네트워크 타임아웃 (기본값: 600초)"
     Write-Host ""
@@ -214,7 +214,7 @@ $errors = @()
 Write-Host "=== Git 브랜치 정리 대상 식별 도구 v4.8 ===" -ForegroundColor Cyan
 Write-Host "검색 경로: $((Get-Item $Path).FullName)" -ForegroundColor Gray
 Write-Host "기준 날짜: $($thresholdDate.ToString('yyyy-MM-dd')) ($($Days)일 전)" -ForegroundColor Gray
-Write-Host "원격 저장소: $RemoteName" -ForegroundColor Gray
+Write-Host "리모트 저장소: $RemoteName" -ForegroundColor Gray
 if ($ExcludeBranches.Count -gt 0) {
     Write-Host "제외 패턴: $($ExcludeBranches -join ', ')" -ForegroundColor Yellow
 }

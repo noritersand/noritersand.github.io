@@ -63,7 +63,7 @@ Windows에선 보통 Git을 설치할 때 'Git Credential Manager for Windows'�
 
 Git이 자격증명을 저장하거나 조회하는 데 사용하는 프로그램 또는 도구. 
 
-Git이 원격 저장소 인증 시 아이디/비밀번호(또는 토큰)를 어떤 방식으로 캐싱하거나 영구 저장할지 정하는 설정이며, helper에 따라 최초 인증 획득(로그인) 흐름까지 담당하기도 한다. 
+Git이 리모트 저장소 인증 시 아이디/비밀번호(또는 토큰)를 어떤 방식으로 캐싱하거나 영구 저장할지 정하는 설정이며, helper에 따라 최초 인증 획득(로그인) 흐름까지 담당하기도 한다. 
 
 `manager`, `cache`, `store` 등의 값으로 설정할 수 있고, 생략했을 때의 기본값은 환경(플랫폼, Git 배포판)에 따라 다르다.
 
@@ -228,7 +228,7 @@ git config --global credential.credentialStore gpg
 git fetch
 ```
 
-원격 저장소에 따라 다르지만, GitHub인 경우 GUI가 뜬다. 여기에 아이디/비번이든 토큰이든 입력해서 인증하면, 해당 값이 GPG로 암호화된다.
+리모트 저장소에 따라 다르지만, GitHub인 경우 GUI가 뜬다. 여기에 아이디/비번이든 토큰이든 입력해서 인증하면, 해당 값이 GPG로 암호화된다.
 
 그리고 한 번 더 `git fetch`를 실행하면 passphrase를 물어보는데, 아까 입력했던 비밀번호를 입력하면 끗.
 
@@ -312,7 +312,7 @@ git fetch # origin 저장소에서 받아온다.
 
 ### remote의 HEAD
 
-원격 저장소의 default branch를 의미한다.
+리모트 저장소의 default branch를 의미한다.
 
 ### ... have diverged
 

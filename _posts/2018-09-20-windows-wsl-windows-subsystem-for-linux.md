@@ -124,11 +124,15 @@ sudo apt full-upgrade
 
 Zsh는 리눅스 기본 셸인 Bash의 확장 버전이고, Powerlevel10k은 테마 같은거다.
 
-일단 [Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)는:
+#### Zsh
+
+[Zsh](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+
+설치:
 
 ```bash
 # zsh 설치
-apt install zsh
+sudo apt install zsh
 
 # oh-my-zsh 설치
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -143,11 +147,19 @@ bash
 exit
 ```
 
-그리고 Powerlevel10k는 일단 [폰트를 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts), 우분투의 폰트 설정을 변경한다.
+#### 폰트 설치
 
-Windows 터미널의 경우 설정에서 우분투의 폰트를 변경하거나 `settings.json`의 우분투 프로파일에 `"font": { "face": "MesloLGS NF" }`를 추가하면 된다.
+Powerlevel10k를 사용하려면 전용 폰트가 필요하다. [여기서 받고](https://github.com/romkatv/powerlevel10k/#user-content-fonts) 설치한다.
 
-[PowerLevel10k](https://github.com/romkatv/powerlevel10k/#oh-my-zsh) 설치는 아래 명령으로:
+그리고 사용하는 터미널에 폰트 설정까지 해줘야 아이콘 등의 셸 꾸미기 요소가 제대로 보인다.
+
+Windows Terminal의 경우, `설정 > Ubuntu 프로필 > 모양`에서 우분투의 폰트를 변경하거나 `settings.json`의 Ubuntu 프로필에 `"font": { "face": "MesloLGS NF" }`를 추가한다.
+
+#### PowerLevel10k
+
+[PowerLevel10k](https://github.com/romkatv/powerlevel10k/#oh-my-zsh) 
+
+설치는 아래 명령으로:
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
@@ -159,9 +171,11 @@ Git 소스를 받은 다음 테마 설정:
 sed -i 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel10k\/powerlevel10k"/' ~/.zshrc
 ```
 
-터미널 재실행하면 자동으로 powerlevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
+터미널 재실행하면 자동으로 PowerLevel10k 환경설정을 시작한다. 나중에 다시 바꾸려면 `p10k configure`.
 
-마지막으로 `ls` color는 아래 실행:
+#### ls color
+
+마지막으로 `ls` color 변경은 아래 실행:
 
 ```bash
 echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
@@ -169,7 +183,9 @@ echo 'LS_COLORS="ow=01;36;40" && export LS_COLORS' >> ~/.zshrc
 
 하면 끗.
 
-ℹ️ 기본 셸이 Bash로 되돌려진 경우, 다시 Zsh로 변경하려면 아래 실행:
+#### 기본 셸 변경하기
+
+기본 셸이 Bash로 되돌려진 경우, 다시 Zsh로 변경하려면 아래 실행:
 
 ```bash
 # 로그인 셸을 Zsh로 바꾸기
@@ -203,7 +219,19 @@ wsl --shutdown
 그래도 안 되면 [여기](https://docs.microsoft.com/ko-kr/windows/wsl/filesystems#disable-interoperability)를 보자.
 
 
-## WSL에서 Git Credential Manager for Windows 사용하기
+## 알아두기
+
+### 처음부터 루트로 로그인하기
+
+```js
+wsl -u root
+```
+
+### WSL 기본 로그인 유저 바꾸기
+
+`/etc/wsl.conf`의 `[user] default` 항목을 수정한 뒤 WSL을 재시작한다.
+
+### WSL에서 Git Credential Manager for Windows 사용하기
 
 Windows 환경에서는 기본값으로 '자격 증명 관리자'를 사용하는데, 이걸 변경하는 것.
 
@@ -214,15 +242,3 @@ git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/libexec
 ```
 
 [출처](https://stackoverflow.com/questions/45925964/how-to-use-git-credential-store-on-wsl-ubuntu-on-windows)
-
-
-## WSL 기본 로그인 유저 바꾸기
-
-`/etc/wsl.conf`의 `[user] default` 항목을 수정한 뒤 WSL을 재시작한다.
-
-
-## 처음부터 루트로 로그인하기
-
-```js
-wsl -u root
-```

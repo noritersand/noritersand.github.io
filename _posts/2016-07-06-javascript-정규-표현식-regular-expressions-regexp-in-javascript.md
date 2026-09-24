@@ -331,6 +331,17 @@ MDN에서는 [Assertions, Character classes, Groups and backreferences, Quantifi
 
 [Character classes - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Character_classes)
 
+캐릭터 클래스에서 quantifiers는 다음처럼 지정한다:
+
+```
+[0-9]+     # 숫자 1개 이상
+[0-9]*     # 숫자 0개 이상
+[0-9]?     # 숫자 0개 또는 1개
+[0-9]{3}   # 숫자 정확히 3개
+[0-9]{3,5} # 숫자 3~5개
+[0-9]{3,}  # 숫자 3개 이상
+```
+
 #### `[xyz]`
 
 괄호 안의 문자 중 하나를 검색. 예를 들어 정규식 `[a-z]`는 'a'부터 'z'까지를 의미한다. `abc`는 정확히 'abc'를 찾지만 `[abc]`는 'a', 'b', 'c'를 각각 찾는다. `[lmn]`은 'cnj'에서 'n'을 찾는 패턴이다.
@@ -475,7 +486,7 @@ X가 나타내는 제어 문자를 찾는다. `\cM`은 `Control-M`, 즉 캐리�
 
 [Quantifiers - JavaScript \| MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Quantifiers)
 
-Quantifiers는 찾으려는 문자나 문자열 패턴이 몇 번 반복될 것인지를 지정한다. 항상 Quantifiers가 아닌 패턴과 조합해 사용한다.
+Quantifiers는 찾으려는 문자나 문자열 패턴이 몇 번 반복될 것인지를 지정한다. 항상 quantifiers가 아닌 패턴과 조합해 사용한다.
 
 `x*`, `x+`, `x?`, `x{n}`, `x{n,}`, `x{n,m}`
 

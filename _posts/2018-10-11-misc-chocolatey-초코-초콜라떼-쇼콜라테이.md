@@ -99,7 +99,7 @@ choco upgrade chocolatey
 choco upgrade all
 ```
 
-### source(패키지 원격 저장소) 보기/설정
+### source(패키지 리모트 저장소) 보기/설정
 
 ```bash
 # default source 보기
@@ -112,7 +112,7 @@ choco source add -n=bob -s="https://somewhere/out/there/api/v2/"
 ### 패키지 조회/검색
 
 ```bash
-# 원격 저장소에서 패키지 검색
+# 리모트 저장소에서 패키지 검색
 # 별칭은 search
 choco find 패키지이름
 
