@@ -368,6 +368,18 @@ npm uninstall 패키지명
 npm uninstall 패키지명 -g
 ```
 
+### 캐시 정리하기
+
+```bash
+# npm 캐시 삭제
+npm cache clean --force
+
+# 캐시 상태 확인
+npm cache verify
+```
+
+npx는 npm의 캐시를 사용하므로 npm 캐시를 삭제하면 된다.
+
 ### npm exec
 
 [npm Docs \| npm-exec](https://docs.npmjs.com/cli/v8/commands/npm-exec)
