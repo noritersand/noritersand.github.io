@@ -198,6 +198,11 @@ tags:
 - ✨[Video.js](https://videojs.org/): HTML5 기반 비디오 플레이어 프레임워크. 모듈형 UI 컴포넌트, 스트리밍 프로토콜 지원, 넓은 확장성, CSS 스킨 시스템이 특징. 오픈 소스 프로젝트다.
 - ✨[TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview): 데이터 페칭, 캐싱, 상태 업데이트를 간단하고 효율적으로 관리할 수 있게 해주는 라이브러리다. 네트워크 요청과 그 결과를 체계적으로 관리해 주는 '데이터 상태 관리' 솔루션이라 설명하기도 함. 예전 이름은 React Query였음. 뮤테이션, 쿼리 키 기반 캐시 무효화, 무한 쿼리, devtools까지 갖춘 풀 패키지라 SWR보다 무겁지만 할 수 있는 게 많다. React 외에 Vue, Svelte, Solid, Angular도 지원한다. 단순 조회와 재검증만 필요하면 SWR, 클라이언트에서 캐시를 세밀하게 제어해야 하면 이쪽을 고르면 된다.
 
+### 리치 텍스트 에디터
+
+- [Tiptap](https://tiptap.dev/): ProseMirror 기반의 headless 리치 텍스트 에디터 프레임워크. 기본 UI 없이 에디터 로직만 제공해서 툴바나 스타일을 자유롭게 만들 수 있고, 굵게/제목/표/멘션 같은 기능을 extension 단위로 골라 붙이는 구조다. React, Vue, Svelte, 바닐라 JS를 지원하며 Y.js 기반 실시간 공동 편집도 된다. 코어는 MIT 오픈소스다. 💰 클라우드 협업, 댓글, 문서 이력, AI 기능, DOCX 변환 등은 유료 플랫폼 기능이다. (🗓️ 2026-09-25 기준, 월 $49부터)
+- [Lexical](https://lexical.dev/): Meta가 만든 오픈소스(MIT) 리치 텍스트 에디터 프레임워크. Draft.js의 후속 격으로, 기본 UI 없이 가벼운 코어에 플러그인을 붙여 확장하는 headless 구조라 성능과 확장성이 좋다. 프레임워크에 독립적이지만 React용 바인딩(`@lexical/react`)이 가장 잘 갖춰져 있다.
+
 ### React 전용 라이브러리
 
 - [Million](https://million.dev/): React를 빠르게 만들어준다고 함. (무려 70%)
