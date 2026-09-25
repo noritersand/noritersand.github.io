@@ -61,8 +61,11 @@ winget install -e --id PACKAGE
 # PACKAGE 제거
 winget uninstall PACKAGE
 
-# PACKAGE 패키지의 상세정보 보기
+# PACKAGE의 상세정보 보기
 winget show PACKAGE
+
+# PACKAGE의 모든 릴리즈 버전 보기
+winget show --id PACKAGE --versions
 
 # 설치된 패키지 목록을 출력. 버전 업그레이드가 가능한지도 표시됨
 winget list

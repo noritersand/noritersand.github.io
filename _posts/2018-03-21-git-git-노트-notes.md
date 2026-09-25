@@ -549,6 +549,14 @@ A가 대소문자를 무시한 상태로 커밋을 올렸더니 feature 대신 F
 
 이 현상을 해소하기 위해 A는 대소문자를 무시하지 않도록 설정을 변경하고 다시 `push`한다. B는 `.git\refs\remotes\origin\Feature` 디렉터리를 `.git\refs\remotes\origin\feature`로 강제변경한 뒤 `git fetch --prune` 명령을 실행해서 Feature 브랜치가 삭제되도록 한다.
 
+문제가 해결되었다면 설정을 되돌리는 것이 좋다:
+
+```bash
+git config --unset core.ignorecase
+```
+
+ℹ️ 파일명의 대소문자 변경에도 같은 문제가 발생할 수 있는데, 위와 같은 방법으로 해결할 수 있음.
+
 ### 오토 패킹이 자주 발동하면
 
 <https://stackoverflow.com/questions/8633981/what-does-auto-packing-the-repository-for-optimum-performance-mean/16233094>

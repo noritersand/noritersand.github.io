@@ -27,6 +27,23 @@ tags:
 서브라임 텍스트 시리즈의 기본 설정, 단축키 등 정리.
 
 
+## 라이선스 정책
+
+Sublime Text는 3년 업데이트가 포함된 영구 라이선스를 구매하는 방식이다. 만료된 경우 구 버전에 머물러야 하며, 새 버전을 설치할 경우 평가판으로 전환된다.
+
+구 버전 설치는 Winget으로 버전 조회 후 다운로드 받는다:
+
+```bash
+# 모든 릴리즈 버전 보기
+winget show --id SublimeHQ.SublimeText.4 --versions
+
+# 특정 버전으로 설치하기
+winget install -e --id SublimeHQ.SublimeText.4 --version 4.0.0.421300
+```
+
+귀찮으면 [여기서](https://www.sublimetext.com/download) 직접 찾아서 받아도 됨.
+
+
 ## 기본 설정
 
 ### 터미널에서 서브라임 실행하기

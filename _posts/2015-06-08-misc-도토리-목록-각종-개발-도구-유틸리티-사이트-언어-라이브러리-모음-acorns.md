@@ -497,11 +497,19 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ## 15. 버전 관리
 
-- ⭐[Sublime Merge](https://www.sublimemerge.com): Git GUI 클라이언트. 기본적으로 무료 앱이며 다크 모드를 쓰고 싶을 때만 결제하면 된다. 속도가 CLI 수준으로 빠르고 키보드 단축키 지원이 훌륭한 편.
-- [Fork](https://fork.dev): Git GUI 클라이언트. 가볍고 그래프가 보기 좋은게 특징. 무료지만 후원 방식으로 라이선스 구입이 가능하다.
-- [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트. 속도는 느리지만 편의성은 탑. 💰 사설 서버 혹은 비공개 저장소는 유료버전이 아니면 사용할 수 없다.
-- [gitui](https://github.com/gitui-org/gitui): Mdir(?) 스타일의 GUI 앱. 옛날 갬성이 좋으면 쓸만하다. 단점으로 커밋 그래프 기능이 없고, 셸에서 저장소 경로로 이동하여 실행하는 방식이라 여러 저장소를 관리하기 불편하다.
-- [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능이 없다.
+### Git 클라이언트
+
+- ⭐[Sublime Merge](https://www.sublimemerge.com): Git GUI 클라이언트. 속도가 CLI 수준으로 빠르고 키보드 단축키 지원이 훌륭한 편. 커밋 그래프도 나쁘지 않다. 평가 기간 제한을 강제하지 않아 무료로 계속 쓸 수는 있지만 공식적으로는 평가판이다. 💰 다크 테마와 커스텀 테마 선택은 라이선스 구매가 필요하다. (3년 업데이트가 포함된 영구 라이선스)
+- [Fork](https://fork.dev): Git GUI 클라이언트. 가볍고 그래프가 보기 좋은게 특징. 💰 유료 앱이며 무료 평가판을 제공한다.
+- [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트. 편의성은 탑이지만 💰 사설 서버나 비공개 저장소는 유료버전만 가능한 게 단점.
+- [SourceGit](https://github.com/sourcegit-scm/sourcegit): 오픈소스 Git GUI 클라이언트. Windows/macOS/Linux를 지원하고 커밋 그래프, interactive rebase, worktree, 이미지 diff, 다크 테마까지 무료로 쓸 수 있다. 한국어 UI를 지원하며 OpenAI 호환 API로 커밋 메시지를 생성하는 기능도 있다. MSYS Git은 지원하지 않아 Windows에서는 Git for Windows가 필요하다.
+- [lazygit](https://github.com/jesseduffield/lazygit): Go로 만든 Git TUI 앱. 커밋 그래프와 interactive rebase를 지원하고 릴리스도 활발한 편. 줄 단위 스테이징, 체리픽, 이전 커밋 amend, worktree, undo 같은 작업을 단축키 하나로 처리할 수 있다. Windows/macOS/Linux를 지원한다.
+- [gitui](https://github.com/gitui-org/gitui): Mdir 스타일의 TUI(터미널 UI) 앱. 옛날 갬성이 좋으면 쓸만하다. Rust로 만들었고 비동기 git API 덕분에 대형 저장소에서도 빠르고 메모리를 적게 쓴다. Windows/macOS/Linux 모두 지원함.
+- [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능을 제공하지 않으며, Windows와 macOS만 지원한다. Linux는 비공식 포크인 커뮤니티 버전밖에 없다.
+- [GitButler](https://gitbutler.com): 데스크톱 앱과 `but` CLI를 제공하는 Git 클라이언트. Windows/macOS/Linux를 지원한다. 병렬 브랜치, 스택 브랜치, 무제한 undo가 특징이고 커밋 편집을 드래그 앤 드롭으로 처리한다. AI 에이전트 친화적인 CLI가 강점. 현재는 Fair Source 라이선스이고, 각 버전은 공개 2년 후부터 오픈소스(MIT)로 전환된다. 뭔가 UI가 이질적이라서 좀 별루...
+
+### 보조 도구
+
 - ⭐[gitignore.io](https://www.toptal.com/developers/gitignore): 사용하는 프레임워크, 라이브러리, 런타임을 입력하면 그에 맞는 `.gitignore` 파일을 만들어주는 사이트
 
 
