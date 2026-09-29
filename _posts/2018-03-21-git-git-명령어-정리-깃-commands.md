@@ -372,7 +372,7 @@ git checkout 체크섬
 git checkout 6f9021d4a03586a787ebcef2f94dd2eca1aec941
 
 git checkout 태그
-git checkout v0.3.1.5
+git checkout 0.3.1
 ```
 
 브랜치가 아닌 커밋을 체크아웃 하면 이를 '분리된 헤드(detached HEAD)' 상태에 있다고 한다. Git은 이 상태에서 바로 작업하지 말고 별도의 브랜치를 생성하여 작업할 것을 권장하고 있다.
@@ -461,7 +461,7 @@ Switched to a new branch 'serverfix'
 태그(가 가리키는 커밋) 기반의 브랜치를 생성하고 동시에 체크아웃까지 하는 방법이다.
 
 ```bash
-git checkout -b version2 v2.0.0  # v2.0.0 기반 브랜치 version2로 체크아웃
+git checkout -b version2 2.0.0  # 2.0.0 태그 기반으로 브랜치 version2를 생성하고 스위칭
 ```
 
 
@@ -1558,7 +1558,7 @@ git push --set-upstream origin main
 
 ```bash
 git push origin --delete other  # origin 저장소의 other 브랜치 삭제
-git push origin :v0.9  # origin 저장소의 v0.9 태그 삭제(--delete는 콜론으로 대체할 수 있음)
+git push origin :0.9.0  # origin 저장소의 0.9.0 태그 삭제(--delete는 콜론으로 대체할 수 있음)
 ```
 
 #### 생성한 태그 공유
@@ -1566,7 +1566,7 @@ git push origin :v0.9  # origin 저장소의 v0.9 태그 삭제(--delete는 콜�
 push는 태그를 포함하지 않는다. 따라서 명시적인 명령으로 따로 올려야 한다.
 
 ```bash
-git push origin v1.5  # origin 저장소에 v1.5 태그 업로드
+git push origin 1.0.5  # origin 저장소에 1.0.5 태그 업로드
 git push --tags  # 생성한 태그를 모두 업로드
 ```
 
@@ -1961,7 +1961,7 @@ git rm *md  # 이름이 'md'로 끝나는 파일 모두 삭제
 
 ```bash
 git show HEAD  # 헤드 브랜치의 커밋 정보 조회
-git show v1.1  # v1.1 태그의 커밋 정보 조회
+git show 1.0.0  # 1.0.0 태그의 커밋 정보 조회
 git show 1c002dd4b536e7479fe34593e72e6c6c1819e53b  # 체크섬으로 조회
 git show 1c002dd4b  # 체크섬은 중복이 없는한 앞의 일부분만 명시해도 인식한다.
 ```
@@ -2201,7 +2201,7 @@ git tag TAG_NAME
 특정 커밋지점의 포인터를 생성(책갈피와 비슷한 개념)
 
 ```bash
-git tag v2.2  # 현재 브랜치의 마지막 커밋에 v2.2 태그 생성
+git tag 2.1.0  # 현재 브랜치의 마지막 커밋에 2.1.0 태그 생성
 ```
 
 #### annotated 태그 만들기
@@ -2209,7 +2209,7 @@ git tag v2.2  # 현재 브랜치의 마지막 커밋에 v2.2 태그 생성
 이름, 이메일, 날짜, 메시지를 저장하는 태그를 생성함
 
 ```bash
-git tag -a v1.1 -m "my version 1.1"
+git tag -a 1.1 -m "v1.1"
 ```
 
 저장한 메시지는 `git tag` 명령으론 볼 수 없고, `git show TAG_NAME`으로 확인해야 한다.
@@ -2219,7 +2219,7 @@ git tag -a v1.1 -m "my version 1.1"
 체크섬을 알고 있다면 예전 커밋에도 태그할 수 있다.
 
 ```bash
-git tag v0.8 9fceb02
+git tag 0.8.0 9fceb02
 ```
 
 #### 태그에 서명
@@ -2228,7 +2228,7 @@ GPG(GNU Privacy Guard) 개인키로 태그에 서명
 
 ```bash
 git tag -s 태그명 [-m "태그메시지"]
-git tag -s v1.5 -m "my signed 1.5 tag"
+git tag -s 1.0.5 -m "My signed v1.0.5 tag"
 ```
 
 #### 태그 서명 검증
@@ -2236,13 +2236,14 @@ git tag -s v1.5 -m "my signed 1.5 tag"
 태그서명에 사용된 키가 공개키인지 검증한다.
 
 ```bash
-git tag -v v1.0
+git tag -v 1.0.0
 ```
 
 #### 태그 삭제
 
 ```bash
-git tag -d v0.9
+# 0.9.0 태그 삭제
+git tag -d 0.9.0
 ```
 
 

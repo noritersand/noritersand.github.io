@@ -312,7 +312,7 @@ root.render(React.createElement(ShoppingList, null));
 
 ### HTML 문법의 변화
 
-우선 바디 없는 태그의 닫는 슬래시`/`를 생략할 수 없다:
+우선 바디 없는 태그의 닫는 슬래시(`/`)를 생략할 수 없다:
 
 ```jsx
 <input type="text" placeholder="Hours">
