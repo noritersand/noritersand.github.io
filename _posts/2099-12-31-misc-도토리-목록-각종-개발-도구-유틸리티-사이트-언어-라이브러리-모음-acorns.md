@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2015-06-08 18:47:33 +0900
+date: 2099-12-31 18:47:33 +0900
 title: '[misc] 🌰🐿️ 각종 개발 도구, 유틸리티 사이트, 언어, 라이브러리 모음'
 categories:
   - misc
@@ -310,7 +310,16 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ### 호스팅, 터널링
 
 - [ngrok](https://ngrok.com/): 로컬 구동 서버(localhost)를 외부에서 접속할 수 있게 해주는 로컬 터널링 도구. HTTPS 프로토콜도 지원한다. Windows에선 Chocolatey로 설치하고, 별도로 발급 받은 토큰을 `ngrok config add-authtoken MY_TOKEN` 명령으로 등록한 뒤 `ngrok http http://localhost:8080` 명령으로 로컬 서버와 연결하는 식으로 구동한다. expo는 터널링 옵션을 위해 ngrok을 내장하고 있기도 하다.
-- ✨[Hostinger](https://www.hostinger.com/): 리투아니아의 웹 호스팅 서비스 업체. 웹사이트 호스팅, 도메인 등록, 바이브 코딩(Horizons 같은 AI 웹사이트/앱 빌더), VPS 호스팅, 비즈니스 이메일, 이메일 마케팅, AI 에이전트 구축 서비스를 제공한다. 가격이 저렴한 게 특징. 초보자나 소규모 프로젝트에 적합한 서비스다. 💰 무료 플랜은 없음. 🧐 Hermes Agent가 사전 구성된 관리형 상품인 'Managed Hermes Agent'가 있는데, 설치가 간편하고 Hostinger가 서버 운영을 대신 해준다.
+- ✨[Hostinger](https://www.hostinger.com/): 리투아니아의 웹 호스팅 서비스 업체. 웹사이트 호스팅, 도메인 등록, 바이브 코딩(Horizons 같은 AI 웹사이트/앱 빌더), VPS 호스팅, 비즈니스 이메일, 이메일 마케팅, AI 에이전트 구축 서비스를 제공한다. 가격이 저렴한 게 특징이고 초보자나 소규모 프로젝트에 적합한 서비스. 🧐 Hermes Agent가 사전 구성된 관리형 상품인 'Managed Hermes Agent'가 있는데, 설치가 간편하고 Hostinger가 서버 운영을 대신 해준다. 💰 무료 플랜은 없음.
+
+### 도메인 등록(Registrar)과 가격 비교
+
+- ⭐[TLD-List](https://tld-list.com/): 3,500개가 넘는 도메인 확장자(TLD)의 가격을 등록 대행사별로 비교해주는 사이트. 첫해 등록가뿐 아니라 갱신가, 이전가, 3년 총비용 기준 최저가, 쓸 수 있는 프로모션 코드까지 보여줘서 첫해만 싸고 갱신가가 비싼 확장자를 걸러내기 좋다. 도메인 등록 가능 여부도 조회할 수 있다.
+- [Cloudflare Registrar](https://www.cloudflare.com/products/registrar/): Cloudflare의 도메인 등록 서비스. 등록/갱신/이전 가격에 마진을 붙이지 않고 레지스트리와 ICANN 원가로만 받는 게 특징이라 장기 보유 시 갱신비가 가장 저렴한 편이다. WHOIS 개인정보 가림, DNSSEC, 도메인 잠금이 무료로 기본 제공된다. 430개 이상의 TLD를 지원하지만 DNS는 Cloudflare 네임서버를 써야 한다.
+- [Porkbun](https://porkbun.com/): 미국의 도메인 등록 대행사. 갱신가가 저렴한 편이고 WHOIS 개인정보 가림, SSL 인증서, URL/이메일 포워딩, DNS 관리가 무료로 포함된다. 인증 없이 전체 TLD 가격표를 조회할 수 있는 공개 API도 있다. 경매, 만료 도메인 처분 같은 도메인 거래 기능과 간단한 웹 호스팅도 제공한다.
+- [Namecheap](https://www.namecheap.com/): 가장 널리 쓰이는 해외 도메인 등록 대행사 중 하나. 첫해가 저렴하고 WHOIS 개인정보 가림이 무료이며, 대시보드가 초보자도 쓰기 쉬운 편이다. 호스팅, 이메일, SSL 인증서도 함께 판다.
+- ⭐[Spaceship](https://www.spaceship.com/): Namecheap 창업자가 만든 도메인 등록 대행사. 프로모션 코드를 적용한 첫해 등록가가 매우 싸서 가격 비교 사이트 최저가에 자주 오르고, 갱신가도 최저가 축에 속한다.
+- [가비아](https://domain.gabia.com/): 국내 도메인 점유율 1위 업체. `.kr`, `.한국` 같은 국내 도메인을 등록하거나 한국어 고객 지원, 세금계산서 발행이 필요할 때 쓸 만하다. `.com` 같은 범용 도메인은 해외 업체보다 비싼 편.
 
 ### 프로세스 매니저
 
