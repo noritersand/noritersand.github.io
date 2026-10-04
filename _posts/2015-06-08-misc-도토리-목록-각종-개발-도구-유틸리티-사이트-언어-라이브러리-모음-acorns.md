@@ -519,7 +519,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [GitKraken](https://www.gitkraken.com): Git GUI 클라이언트. 편의성은 탑이지만 💰 사설 서버나 비공개 저장소는 유료버전만 가능한 게 단점.
 - [SourceGit](https://github.com/sourcegit-scm/sourcegit): 오픈소스 Git GUI 클라이언트. Windows/macOS/Linux를 지원하고 커밋 그래프, interactive rebase, worktree, 이미지 diff, 다크 테마까지 무료로 쓸 수 있다. 한국어 UI를 지원하며 OpenAI 호환 API로 커밋 메시지를 생성하는 기능도 있다. MSYS Git은 지원하지 않아 Windows에서는 Git for Windows가 필요하다.
 - [GitHub Desktop](https://github.com/apps/desktop): GitHub 공식 GUI 클라이언트. 단점으로 커밋 그래프 기능을 제공하지 않으며, Windows와 macOS만 지원한다. Linux는 비공식 포크인 커뮤니티 버전밖에 없다.
-- [GitButler](https://gitbutler.com): 데스크톱 앱과 `but` CLI를 제공하는 Git 클라이언트. Windows/macOS/Linux를 지원한다. 병렬 브랜치, 스택 브랜치, 무제한 undo가 특징이고 커밋 편집을 드래그 앤 드롭으로 처리한다. AI 에이전트 친화적인 CLI가 강점. 현재는 Fair Source 라이선스이고, 각 버전은 공개 2년 후부터 오픈소스(MIT)로 전환된다. 뭔가 UI가 이질적이라서 좀 별루...
+- [GitButler](https://gitbutler.com): 데스크톱 앱과 `but` CLI를 제공하는 Git 클라이언트. 병렬 브랜치, 스택 브랜치, 무제한 undo가 특징이고 커밋 편집을 드래그 앤 드롭으로 처리한다. AI 에이전트 친화적인 CLI가 강점. 현재는 Fair Source 라이선스이고, 각 버전은 공개 2년 후부터 오픈소스(MIT)로 전환된다. 뭔가 UI가 이질적이라서 좀 별루...
 
 ### 보조 도구
 
@@ -749,13 +749,23 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### 미디어 편집
 
-- ⭐[paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
+#### 오디오
+
 - [Audacity](https://www.audacityteam.org/download/): 간단한 음원 편집기...였는데 뭔가 기능이 덕지덕지 붙으면서 이제 안간단해졌음.
 - [Ocenaudio](https://www.ocenaudio.com/): 간단한 음원 편집기
+- [fre:ac](https://www.freac.org/): 무료 오디오 포맷 컨버터. `freaccmd -e fdkaac -d .\results .\bgms\*.mp3` 이런 식으로  CLI로 실행함.
+
+#### 비디오
+
+- [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve): Blackmagic Design의 전문가용 동영상 편집기. 컷 편집, 색 보정, VFX(Fusion), 오디오 후반 작업(Fairlight)을 앱 하나에서 처리한다. 컬러 페이지의 Power Window와 트래커로 움직이는 대상을 따라가며 블러나 모자이크를 걸 수 있다. 기능이 많고 무거워서 간단한 컷 편집에는 과할 수 있다. 💰 무료 버전 있음(8비트, UHD 60fps까지). 유료 Studio 버전은 일회성 구매이며 Magic Mask 같은 AI 기능과 더 높은 해상도/비트 심도를 지원한다.
+- [OpenCut](https://opencut.app/): 오픈 소스 영상 편집기. React 기반의 웹 애플리케이션이며 소스를 받아 로컬 서버를 띄워 사용하는 방식이다.
+- ✨[Shotcut](https://shotcut.org/): 오픈 소스 크로스 플랫폼(Windows, macOS, Linux) 동영상 편집기. FFmpeg 기반이라 대부분의 포맷을 별도 변환 없이 타임라인에 바로 올려 편집할 수 있다. 자르기, 붙이기, 리플 삭제 같은 기본 편집 외에 Mosaic, Blur, Mask: Simple Shape 필터와 Motion Tracker를 조합해 움직이는 대상에 모자이크를 따라 붙일 수 있다.
+
+#### 사진
+
+- ⭐[paint.net](https://www.getpaint.net): 이미지 편집기. 좋음
 - [PDF2JPG](https://pdf2jpg.net): PDF를 JPG로 변환
 - [Segment Anything](https://segment-anything.com/): AI로 만든 자동 누끼(?) 앱이라는데 아직 안 써봄. 일단 GitHub 설명을 보면 Python으로 실행하는 모양
-- [OpenCut](https://opencut.app/): 오픈 소스 영상 편집기. React 기반의 웹 애플리케이션이며 소스를 받아 로컬 서버를 띄워 사용하는 방식이다.
-- [fre:ac](https://www.freac.org/): 무료 오디오 포맷 컨버터. `freaccmd -e fdkaac -d .\results .\bgms\*.mp3` 이런 식으로  CLI로 실행함.
 
 ### 원격 연결
 
