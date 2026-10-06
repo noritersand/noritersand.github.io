@@ -159,27 +159,26 @@ tags:
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
 - ✨[KeystoneJS](https://keystonejs.com/): Node.js 기반의 오픈 소스 헤드리스 CMS이자 백엔드 프레임워크. TypeScript/JavaScript로 데이터 스키마를 정의하면 데이터베이스와 함께 GraphQL CRUD API와 관리자 UI를 자동으로 생성해준다. 인증/세션, 접근 제어, 관계형 데이터, 마이그레이션, 파일/문서 관리 등을 제공하며, 커스텀 비즈니스 로직이나 GraphQL API 확장도 가능하다. Prisma, PostgreSQL/SQLite, Next.js 등을 기반으로 구성된다. [니콜라스 유튜브 \| KeystoneJS 소개 영상](https://www.youtube.com/watch?v=DlyoFFOcPCg)
 
-### CSS 프레임워크
+### CSS 프레임워크, 스타일링
 
-- [7.css](https://khang-nd.github.io/7.css/): 이건 Windows 7
-- [98.css](https://jdan.github.io/98.css/): 이건 Windows 98
-- [Basscss](https://basscss.com/)
-- [Bojier](https://bojler.slicejack.com/): 메일용
-- [Bootstrap](https://getbootstrap.com/): 범용 프레임워크로 분류됨
-- [Bulma](https://bulma.io/): Flexbox 기반
-- [Chota](https://jenil.github.io/chota/)
-- [daisyUI](https://daisyui.com/): Tailwind CSS의 플러그인으로, 자주 쓰는 클래스를 조합해 만든 컴포넌트 세트를 제공한다. 테일윈드조차 귀찮게 느껴질 때 유용하지만, 복잡한 커스터마이징이 필요한 경우엔 다소 불편할 수 있다.
-- [Foundation Framework](https://get.foundation/)
-- [Materialize CSS](https://materializecss.com/)
-- [MVP.css](https://andybrewer.github.io/mvp/)
-- [NES.css](https://nostalgic-css.github.io/NES.css/): 닌텐도 스타일
-- [Open Props](https://open-props.style/)
-- [Pico.css](https://picocss.com/)
-- [PSone.css](https://micah5.github.io/PSone.css/): 플스 1 스타일
-- [StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. JavaScript 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. React 없이도 쓸 수 있는 것으로 보임.
-- [System.css](https://sakofchit.github.io/system.css/): 레트로 갬성. 애플 시스템 OS와 똑같다고 한다.
-- [Water.css](https://watercss.kognise.dev/)
-- [XP.css](https://botoxparty.github.io/XP.css/): Windows XP
+- [7.css](https://khang-nd.github.io/7.css/): Windows 7 UI를 재현한 CSS 라이브러리.
+- [98.css](https://jdan.github.io/98.css/): Windows 98 UI를 재현한 CSS 라이브러리. JavaScript 의존성이 없다.
+- [Basscss](https://basscss.com/): 단일 목적 클래스로 구성된 저수준 유틸리티 CSS 툴킷. Tailwind 이전의 원조 격 아토믹 CSS다.
+- [Bojler](https://bojler.slicejack.com/): HTML 이메일 제작용 프레임워크. 메일 클라이언트 호환 템플릿과 Sass 기반 빌드를 제공한다.
+- [Bootstrap](https://getbootstrap.com/): 가장 널리 쓰이는 범용 컴포넌트 프레임워크. 그리드와 UI 컴포넌트를 클래스로 제공한다.
+- [Bulma](https://bulma.io/): Flexbox 기반의 CSS 전용 프레임워크. JavaScript 없이 클래스만으로 쓴다.
+- [Chota](https://jenil.github.io/chota/): 3KB 안팎의 초경량 CSS 프레임워크.
+- [Foundation Framework](https://get.foundation/): ZURB가 만든 반응형 프론트엔드 프레임워크. Bootstrap과 비슷한 위치다.
+- [Materialize CSS](https://materializecss.com/): Material Design을 구현한 CSS 프레임워크. 원본은 2018년 1.0.0 이후 업데이트가 멈췄다.
+- [MVP.css](https://andybrewer.github.io/mvp/): 클래스 없이 HTML 요소에 바로 적용되는 미니멀 스타일시트(classless). 프로토타입용.
+- [NES.css](https://nostalgic-css.github.io/NES.css/): 패미컴(NES) 스타일의 8비트 픽셀 UI CSS 프레임워크.
+- [Open Props](https://open-props.style/): 색상, 간격, 그림자 등을 CSS 변수로 제공하는 디자인 토큰 모음.
+- [Pico.css](https://picocss.com/): 시맨틱 HTML에 최소한의 클래스로 스타일을 입히는 미니멀 CSS 프레임워크. classless 버전도 있다.
+- [PSone.css](https://micah5.github.io/PSone.css/): 플레이스테이션 1 스타일 UI를 재현한 CSS 라이브러리.
+- [StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. JavaScript 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. React 없이도 쓸 수 있는 것으로 보임. 빌드 시 아토믹 CSS로 컴파일하는 CSS-in-JS 라이브러리다.
+- [System.css](https://sakofchit.github.io/system.css/): 클래식 Mac OS(Apple System OS) UI를 재현한 레트로 CSS 라이브러리.
+- [Water.css](https://watercss.kognise.dev/): 링크 하나로 기본 요소를 꾸며주는 classless 스타일시트. 라이트/다크 테마 지원.
+- [XP.css](https://botoxparty.github.io/XP.css/): Windows XP UI를 재현한 CSS 라이브러리. 98.css 기반이다.
 - ⭐[Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
 
 ### JavaScript 라이브러리
@@ -238,6 +237,7 @@ tags:
 - [Air Datepicker](https://air-datepicker.com/): 프론트엔드용 달력 컴포넌트. vanilla JavaScript 기반이며, 언어 기본값이 러시아어인 걸 보니 러시아산인 모양
 - [Ant Design](https://ant.design/): React용 UI 컴포넌트 라이브러리
 - [ChakraUI](https://chakra-ui.com/): React 애플리케이션을 위한 간결한 모듈식
+- [daisyUI](https://daisyui.com/): Tailwind CSS의 플러그인으로, 자주 쓰는 클래스를 조합해 만든 컴포넌트 세트를 제공한다. 테일윈드조차 귀찮게 느껴질 때 유용하지만, 복잡한 커스터마이징이 필요한 경우엔 다소 불편할 수 있다.
 - [Headless UI](https://headlessui.dev/): React와 Vue용 UI 컴포넌트
 - [Mantine](https://mantine.dev/): React용 UI 컴포넌트 라이브러리
 - [Material UI](https://mui.com/material-ui/): React용 UI 컴포넌트 모음
@@ -690,6 +690,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [Adobe Edge Inspect](https://creative.adobe.com/ko/products/inspect)
 - [browser-deeplink](https://github.com/hampusohlsson/browser-deeplink): 브라우저에서 앱 실행
 - [Samsung DeX](https://www.samsung.com/us/apps/dex/): 삼성 갤럭시 기기를 모니터에 연결해 데스크톱과 유사한 멀티 윈도우 환경으로 확장해주는 갤럭시 전용 기능. 연결하면 모니터엔 데스크톱 워크스페이스가, 기기 화면엔 트랙패드/키보드가 뜨는 화면 확장 방식이라 단순 미러링과는 다르다. 2017년 갤럭시 S8에 처음 탑재됐고, USB-C 케이블이나 Miracast 기반 무선으로 연결한다. Windows/macOS용 DeX PC 앱은 One UI 7부터 단종됐지만, 기기 자체에서 진입하는 DeX 모드는 계속 지원된다. 한때 지원하던 "Linux on DeX"는 안드로이드 10부터 중단됐다.
+- [Shotluma](https://shotluma.com/): iOS 앱스토어용 스크린샷 세트를 만드는 브라우저 기반 오픈소스 에디터. 앱 설명과 원본 스크린샷을 넣으면 AI 에이전트가 세트 전체를 디자인하는데, 이미지 한 장으로 뭉개지 않고 텍스트, 그라데이션, 도형, 기기 프레임을 편집 가능한 레이어로 배치하므로 생성 후 손으로 고치기 쉽다. AI 기능은 사용자의 AI 제공자 API 키로 작동하며 AI 없이 수동 편집만 해도 된다. 구글 플레이 규격은 아직 미지원이라 수동으로 비율 조정 필요함.
 
 
 ## 20. 기타 유틸리티
