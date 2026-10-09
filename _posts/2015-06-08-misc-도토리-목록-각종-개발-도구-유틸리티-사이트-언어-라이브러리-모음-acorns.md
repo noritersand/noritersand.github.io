@@ -153,7 +153,7 @@ tags:
 
 - ✨[Netty](https://netty.io/): Java 네트워크 앱 개발용 NIO(비동기 입출력) 클라이언트-서버 프레임워크
 - [Spring](https://spring.io/): Java 백엔드의 대명사 격인 Java 서버 애플리케이션 개발 프레임워크
-- [Spring Modulith](https://spring.io/projects/spring-modulith): 하나의 앱 안에 여러 개의 모듈을 구성하고, 모듈 간 명확한 경계를 유지하도록 도와주는 프레임워크. 잘 구조화된 모놀리틱 시스템을 만들고 싶거나, 나중에 MSA로 전환할 계획일 경우 사용하면 된다.
+  - [Spring Modulith](https://spring.io/projects/spring-modulith): 하나의 앱 안에 여러 개의 모듈을 구성하고, 모듈 간 명확한 경계를 유지하도록 도와주는 프레임워크. 잘 구조화된 모놀리틱 시스템을 만들고 싶거나, 나중에 MSA로 전환할 계획일 경우 사용하면 된다.
 - [NestJS](https://nestjs.com/): TypeScript 기반의 백엔드 애플리케이션(= API 서버) 구축을 위한 Node.js 프레임워크. 의존성 관리, 모듈화, 서버 사이드 렌더링, 웹소켓 등을 지원한다.
 - [Tiles](https://tiles.apache.org/): Java에서 사용하는 템플릿 프레임워크. 지금은 retired 상태라서 업데이트는 없다.
 - [SiteMesh](https://struts.apache.org/plugins/sitemesh/): 타일즈와 같은 JSP 템플릿 프레임워크. 오래되긴 마찬가지긴 하지만 가장 최근에 썼었...던가?
@@ -163,6 +163,7 @@ tags:
 
 - [7.css](https://khang-nd.github.io/7.css/): Windows 7 UI를 재현한 CSS 라이브러리.
 - [98.css](https://jdan.github.io/98.css/): Windows 98 UI를 재현한 CSS 라이브러리. JavaScript 의존성이 없다.
+  - [XP.css](https://botoxparty.github.io/XP.css/): Windows XP UI를 재현한 CSS 라이브러리. 98.css 기반이다.
 - [Basscss](https://basscss.com/): 단일 목적 클래스로 구성된 저수준 유틸리티 CSS 툴킷. Tailwind 이전의 원조 격 아토믹 CSS다.
 - [Bojler](https://bojler.slicejack.com/): HTML 이메일 제작용 프레임워크. 메일 클라이언트 호환 템플릿과 Sass 기반 빌드를 제공한다.
 - [Bootstrap](https://getbootstrap.com/): 가장 널리 쓰이는 범용 컴포넌트 프레임워크. 그리드와 UI 컴포넌트를 클래스로 제공한다.
@@ -178,7 +179,6 @@ tags:
 - [StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. JavaScript 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. React 없이도 쓸 수 있는 것으로 보임. 빌드 시 아토믹 CSS로 컴파일하는 CSS-in-JS 라이브러리다.
 - [System.css](https://sakofchit.github.io/system.css/): 클래식 Mac OS(Apple System OS) UI를 재현한 레트로 CSS 라이브러리.
 - [Water.css](https://watercss.kognise.dev/): 링크 하나로 기본 요소를 꾸며주는 classless 스타일시트. 라이트/다크 테마 지원.
-- [XP.css](https://botoxparty.github.io/XP.css/): Windows XP UI를 재현한 CSS 라이브러리. 98.css 기반이다.
 - ⭐[Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
 
 ### JavaScript 라이브러리
@@ -400,7 +400,7 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 ## 9. 보안, 인증
 
 - ✨[Let's Encrypt](https://letsencrypt.org/): 비영리 단체인 [ISRG, Internet Security Research Group](https://www.abetterinternet.org/)에서 제공하는 TLS(SSL) 인증서 무료 발급 사이트. 
-- ✨[certbot](https://certbot.eff.org/): *Let's Encrypt*에서 발급하는 TLS 인증서를 쉽게 관리하게 도와주는 오픈 소스 소프트웨어. [EFF(Electronic Frontier Foundation)](https://www.eff.org/)에서 만들었고 인증서 자동 갱신 같은 작업을 지원한다.
+  - ✨[certbot](https://certbot.eff.org/): *Let's Encrypt*에서 발급하는 TLS 인증서를 쉽게 관리하게 도와주는 오픈 소스 소프트웨어. [EFF(Electronic Frontier Foundation)](https://www.eff.org/)에서 만들었고 인증서 자동 갱신 같은 작업을 지원한다.
 - [HashiCorp Vault](https://www.vaultproject.io/): 비밀번호 관리, 암호화 키 관리, 접근 제어 등을 통합 제공하는 오픈 소스. 암호화 키를 관리하는 용도로 쓴다. 클라우드, 온프레미스 모두 지원한다. 엔터프라이즈 버전은 전용 서버가 제공되지만 무료 버전은 직접 설치해야 한다.
 - ✨[Bitwarden](https://bitwarden.com/): 비밀번호/인증정보 관리 서비스. 암호화된 저장소(Vault)에 인증정보를 저장하고, 브라우저 확장이나 앱을 통해 로그인할 때 자동으로 입력한다. 로그인 비밀번호, 패스키, OTP 등을 관리하는 Password Manager와 API key, 데이터베이스 비밀번호 등을 관리하는 Secrets Manager로 나뉜다. 오픈소스라 서버에 직접 설치해 운영할 수도 있다.
 
@@ -648,8 +648,14 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 #### 프롬프트/스킬
 
-- [Taste Skill](https://www.tasteskill.dev/): 코딩 에이전트가 흔하고 촌스러운(generic slop) UI 대신 감각적이고 고품질의 프론트엔드 디자인을 생성하도록 지시어(prompt) 및 규칙을 제공한다. (🤔 요즘 엄청 인기던데, 다들 이거 쓰면 이제 오히려 '전형적이고 흔한' 스타일 되는 거 아님?)
+- [Taste Skill](https://www.tasteskill.dev/): 코딩 에이전트가 흔하고 촌스러운(generic slop) UI 대신 감각적이고 고품질의 프론트엔드 디자인을 생성하도록 지시어(prompt) 및 규칙을 제공한다. (🤔 요즘 엄청 인기던데, 다들 이거 쓰면 오히려 이게 '전형적이고 흔한' 스타일 되는 거 아님?)
 - [Hallmark](https://www.usehallmark.com/): AI가 생성하는 진부하고 전형적인 디자인 스타일을 회피하도록 하는 AI 코딩 에이전트용 규칙 및 지침 패키지
+- ✨[Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills): Andrej Karpathy가 지적한 LLM 코딩의 고질병(멋대로 가정하기, 과한 추상화, 요청과 무관한 수정)을 막는 `CLAUDE.md` 지침 파일. 코딩 전에 생각하기, 단순함 우선, 필요한 부분만 수정, 검증 가능한 목표 기반 실행의 4가지 원칙으로 구성된다.
+- [Superpowers](https://github.com/obra/superpowers): 코딩 에이전트용 스킬 모음이자 개발 방법론. 바로 코드부터 짜지 않고 브레인스토밍으로 요구사항을 정리한 뒤, 설계 승인, 구현 계획 작성, 서브에이전트 기반 구현, TDD, 코드 리뷰, 브랜치 마무리 순서로 진행하게 한다. 스킬이 상황에 맞춰 자동으로 실행되어 따로 호출할 필요가 없다. Claude Code 공식 플러그인 마켓플레이스에 있고 Codex, Cursor, Gemini CLI 등 여러 에이전트를 지원한다.
+  - ✨[Verification Before Completion](https://github.com/obra/superpowers/blob/main/skills/verification-before-completion/SKILL.md): 에이전트가 작업 완료나 테스트 통과를 주장하기 전에 검증 명령을 직접 실행하고 결과를 확인하도록 강제하는 스킬. 추측성 표현이나 서브에이전트의 성공 보고를 그대로 믿는 것을 경고 신호로 본다. Superpowers에 포함된 스킬로, Superpowers를 이미 설치했다면 별도로 설치하지 않아도 된다.
+- ✨[Attention Span](https://github.com/alexgreensh/attention-span): Claude Code용 ADHD 친화적 출력 스타일(output style) 모음. 코딩 능력은 그대로 두고 답변 방식만 바꿔서, 결론부터 짧게 말하고 훑어보기 쉽게 만든다. Attention-kind, Spartan, Rundown 세 가지 스타일이 있고, 자체 벤치마크 기준 출력량이 평균 43% 정도 줄어든다고 한다.
+- ✨[Anti Slop](https://github.com/dmmulroy/anti-slop): AI가 흔히 만드는 근거 없는 TypeScript/JavaScript 패턴(`unknown` 남용, 연쇄 타입 단언, 모듈 모킹 등)을 막는 Oxlint 규칙 모음. 소스를 저장소에 복사(vendoring)해 고쳐 쓰는 방식이며, 함께 제공하는 에이전트 스킬이 복사와 lint 설정을 대신 해준다.
+  - [anti-slop-py](https://github.com/infoslack/anti-slop-py): Anti Slop을 Python으로 옮긴 lint 규칙 모음. Ruff 설정, mypy strict 옵션, Flake8 플러그인 세 도구에 규칙을 나눠 담았다. `dict[str, Any]`, 설명 없는 `cast`, `mock.patch` 등을 막으며, Pydantic/FastAPI 전용 규칙 그룹도 있다.
 
 #### 코드/프로젝트 분석
 
