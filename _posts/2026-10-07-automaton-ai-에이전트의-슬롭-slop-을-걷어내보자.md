@@ -29,7 +29,7 @@ tags:
 
 [Attention Span](https://github.com/alexgreensh/attention-span)은 코딩 능력은 그대로 두고 답변을 결론부터, 짧게, 훑어보기 쉽게 바꾸는 출력 스타일(output style) 모음이다.
 
-### Claude Code
+### 설치 방법: Claude Code
 
 플러그인을 설치한 뒤 출력 스타일을 고른다.
 
@@ -58,7 +58,7 @@ claude plugin install --scope user attention-span@attention-span
 
 세 스타일 모두 `keep-coding-instructions: true`라서 Claude Code의 코딩 지침은 유지하고 답변 형식만 바꾼다.
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 스타일 파일에서 Claude Code 전용 frontmatter를 잘라내고 본문만 각 에이전트의 지침 파일에 덧붙인다. 아래는 Codex의 `~/.codex/AGENTS.md`에 넣는 예로, 표시 주석으로 감싸 두면 나중에 업데이트하거나 지우기 쉽다. Antigravity CLI는 `~/GEMINI.md`, Devin은 `~/.codeium/windsurf/memories/`에 넣는다.
 
@@ -78,7 +78,7 @@ curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/outp
 
 [Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)는 LLM이 멋대로 가정하고, 코드를 과하게 추상화하고, 요청과 무관한 곳까지 고치는 버릇을 4가지 원칙으로 막는 `CLAUDE.md` 지침 파일.
 
-### Claude Code
+### 설치 방법: Claude Code
 
 플러그인을 사용자 스코프로 설치한다:
 
@@ -100,7 +100,7 @@ irm https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/C
 curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
 ```
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 Cursor는 저장소의 규칙 파일 `.cursor/rules/karpathy-guidelines.mdc`를 프로젝트의 `.cursor/rules/`에 복사하거나, `skills/karpathy-guidelines/SKILL.md`를 `~/.cursor/skills/`에 넣어 개인 스킬로 쓴다. 그 밖의 에이전트는 `CLAUDE.md` 내용을 각자의 지침 파일에 합친다. 아래는 Codex의 사용자 지침 파일 `~/.codex/AGENTS.md`에 넣는 예다.
 
@@ -117,7 +117,7 @@ curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills
 
 [Superpowers](https://github.com/obra/superpowers)는 코딩 에이전트용 스킬 모음이자 개발 방법론이다. 바로 코드부터 짜지 않고 브레인스토밍, 설계 승인, 구현 계획, 서브에이전트 기반 구현, TDD, 코드 리뷰, 브랜치 마무리 순서로 진행하게 한다. 아래의 Verification Before Completion도 여기 포함된 스킬이다.
 
-### Claude Code
+### 설치 방법: Claude Code
 
 공식 마켓플레이스에 있으므로 등록 단계 없이 바로 설치한다.
 
@@ -125,16 +125,18 @@ curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills
 claude plugin install --scope user superpowers@claude-plugins-official
 ```
 
-스킬 15개와 SessionStart 훅으로 구성된다. 훅이 세션을 시작하거나 `/clear`, 컨텍스트 압축을 할 때마다 `using-superpowers` 스킬 본문을 컨텍스트에 주입한다. 이 본문이 작업 전에 맞는 스킬부터 찾아 쓰라고 지시하므로, 스킬을 따로 부르지 않아도 상황에 맞춰 불러온다. 그 대가로 켜 두기만 해도 매 세션 일정량의 토큰을 차지한다. 정확한 값은 `claude plugin details superpowers`의 `Always-on`에서 확인한다.
+스킬 15개와 SessionStart 훅으로 구성된다. 훅이 세션을 시작하거나 `/clear`, 컨텍스트 압축을 할 때마다 `using-superpowers` 스킬 본문을 컨텍스트에 주입한다. 이 본문이 작업 전에 맞는 스킬부터 찾아 쓰라고 지시하므로, 스킬을 따로 부르지 않아도 상황에 맞춰 불러온다. 그 대가로 켜 두기만 해도 매 세션 일정량의 토큰을 차지한다. 정확한 값은 `claude plugin details superpowers`의 `Always-on`에서 확인할 것.
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 각 에이전트의 플러그인(확장) 설치 방식으로 설치한다.
 
 ```bash
 # Codex: /plugins에서 superpowers 검색 후 Install Plugin
+
 # Cursor: 에이전트 채팅에서
 /add-plugin superpowers
+
 # Gemini CLI
 gemini extensions install https://github.com/obra/superpowers
 ```
@@ -146,7 +148,7 @@ gemini extensions install https://github.com/obra/superpowers
 
 [Verification Before Completion](https://github.com/obra/superpowers/blob/main/skills/verification-before-completion/SKILL.md)은 에이전트가 "다 됐다", "테스트 통과했다"고 말하기 전에 검증 명령을 직접 실행하고 결과를 확인하게 만드는 스킬. Superpowers 스킬 모음에 포함되어 있다.
 
-### Claude Code
+### 설치 방법: Claude Code
 
 Superpowers를 설치했다면 이 스킬도 이미 들어 있다. 설치 방법은 위 [Superpowers](#superpowers) 섹션을 참고한다.
 
@@ -164,16 +166,18 @@ curl -fsSL -o ~/.claude/skills/verification-before-completion/SKILL.md \
   https://raw.githubusercontent.com/obra/superpowers/main/skills/verification-before-completion/SKILL.md
 ```
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 위 [Superpowers](#superpowers) 섹션의 방법으로 Superpowers를 설치하면 이 스킬도 함께 들어온다.
 
 
 ## Anti Slop
 
-[Anti Slop](https://github.com/dmmulroy/anti-slop)은 AI가 흔히 만드는 근거 없는 TypeScript/JavaScript 패턴을 막는 Oxlint 규칙 모음이다. Python은 이를 옮긴 [anti-slop-py](https://github.com/infoslack/anti-slop-py)를 쓴다.
+ℹ️ JS/TS 프로젝트에서만 쓰는 규칙 모음.
 
-### Claude Code
+[Anti Slop](https://github.com/dmmulroy/anti-slop)은 AI가 흔히 만드는 근거 없는 JavaScript/TypeScript 패턴을 막는 Oxlint 규칙 모음이다. Python은 이를 옮긴 [anti-slop-py](https://github.com/infoslack/anti-slop-py)를 쓴다.
+
+### 설치 방법: Claude Code
 
 적용할 프로젝트에서 설치용 에이전트 스킬을 프로젝트에 받은 뒤, Claude에게 anti-slop을 설치해 달라고 요청한다. 스킬이 규칙 소스를 프로젝트에 복사하고 Oxlint 의존성과 lint 설정까지 맞춰 준다.
 
@@ -191,7 +195,7 @@ npx skills add dmmulroy/anti-slop --skill install-anti-slop --agent claude-code
 
 `install-anti-slop` 스킬은 나중에 업데이트할 때도 쓰이기 때문에 그냥 두는 게 낫다.
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 설치 방법은 Claude Code와 같다. `skills` CLI가 Codex, Cursor 등 여러 에이전트에 스킬을 설치해 주므로, 적용할 프로젝트에서 같은 명령으로 스킬을 받은 뒤 에이전트에게 설치를 요청한다. 스킬 없이 직접 하려면 프로젝트의 `src/`를 `tools/oxlint/anti-slop/` 같은 위치에 복사하고 `oxlint.config.ts`의 `jsPlugins`와 `rules`에 등록한다.
 
@@ -214,7 +218,7 @@ npx skills add dmmulroy/anti-slop --skill install-anti-slop
 
 [anti-slop-py](https://github.com/infoslack/anti-slop-py)는 Anti Slop을 Python으로 옮긴 lint 규칙 모음이다. Ruff에는 아직 사용자 정의 규칙 API가 없어서 Ruff 설정, mypy strict 옵션, Flake8 플러그인 세 도구에 규칙을 나눠 담았다. Pydantic, FastAPI용 규칙 그룹은 선택해서 켠다.
 
-### Claude Code
+### 설치 방법: Claude Code
 
 적용할 프로젝트에서 플러그인을 프로젝트 스코프로 설치한 뒤, 플러그인에 든 설치 스킬을 실행한다. 스킬이 Flake8 플러그인을 `tools/flake8/anti_slop/`에 복사하고 Ruff, mypy 설정을 기존 설정에 합친다. `pydantic`이나 `fastapi`가 직접 의존성이면 해당 규칙 그룹도 켠다.
 
@@ -229,7 +233,7 @@ claude plugin install --scope project anti-slop-py@anti-slop-py
 /anti-slop-py:install-anti-slop-py
 ```
 
-### 기타 에이전트
+### 설치 방법: 기타 에이전트
 
 Anti Slop과 같이 적용할 프로젝트에서 `skills` CLI로 설치용 스킬을 받은 뒤, 에이전트에게 설치를 요청한다.
 
