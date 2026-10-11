@@ -51,7 +51,7 @@ claude plugin install --scope user attention-span@attention-span
 }
 ```
 
-- `Default`: 출력 스타일을 쓰지 않는 상태. Claude Code의 기본 소프트웨어 엔지니어링 지침만으로 답한다.
+- `Default`: 출력 스타일을 쓰지 않는 상태. Claude Code의 기본 지침만으로 답한다.
 - `attention-span:Attention-kind`: ADHD(🤔) 친화적인 기본형. 쉬운 말로 결론부터 짧게 답하고, 꼭 필요한 부분만 자세히 푼다.
 - `attention-span:Spartan`: 가장 건조한 형태. 결론부터 화살표 목록으로 답하고, 인사말이나 군더더기를 모두 뺀다.
 - `attention-span:Rundown`: 브리핑 형태. TL;DR로 시작하고, 진행 상태는 체크박스로, 선택지는 이모지로 표시한다. 작업 현황 보고나 스탠드업에 맞춘 형태다.
