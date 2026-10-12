@@ -20,9 +20,9 @@ tags:
 
 ## 개요
 
-슬롭(slop)이란 AI가 생성한 저품질의 글이나 이미지, 코드 등을 부르기 시작한 말이다.
+슬롭(slop)이란 AI가 생성한 저품질의 글이나 이미지, 코드 등을 의미하는 말이다.
 
-니콜라스가 이걸 걷어내는 방법을 영상으로 올렸다. 따라해보자.
+[니콜라스가 이걸 걷어내는 방법을 영상](https://www.youtube.com/watch?v=3JCgiVYlLFo)으로 올렸다. 따라해보자.
 
 
 ## Attention Span
@@ -64,11 +64,13 @@ claude plugin install --scope user attention-span@attention-span
 
 ```powershell
 # PowerShell
+New-Item -ItemType Directory -Force "$HOME\.codex" | Out-Null
 $s = irm https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/attention-kind.md
 $body = $s -replace '(?s)^.*?<!-- body-start -->[^\n]*\n', ''
 Add-Content "$HOME\.codex\AGENTS.md" "`n<!-- attention-span:start -->`n$body<!-- attention-span:end -->"
 
 # Ubuntu
+mkdir -p ~/.codex
 curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/attention-kind.md -o /tmp/attention-span.md \
   && { printf '\n<!-- attention-span:start -->\n'; sed '1,/<!-- body-start -->/d' /tmp/attention-span.md; printf '<!-- attention-span:end -->\n'; } >> ~/.codex/AGENTS.md
 ```
@@ -84,7 +86,7 @@ curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/outp
 
 ```bash
 # 마켓플레이스 등록: 마켓플레이스를 등록하고 스냅샷을 로컬로 내려받는 명령
-claude plugin marketplace add forrestchang/andrej-karpathy-skills
+claude plugin marketplace add multica-ai/andrej-karpathy-skills
 
 # 플러그인 설치
 claude plugin install --scope user andrej-karpathy-skills@karpathy-skills
@@ -94,10 +96,10 @@ claude plugin install --scope user andrej-karpathy-skills@karpathy-skills
 
 ```powershell
 # PowerShell
-irm https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.claude\CLAUDE.md"
+irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.claude\CLAUDE.md"
 
 # Ubuntu
-curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
+curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
 ```
 
 ### 설치 방법: 기타 에이전트
@@ -106,10 +108,10 @@ Cursor는 저장소의 규칙 파일 `.cursor/rules/karpathy-guidelines.mdc`를 
 
 ```powershell
 # PowerShell
-irm https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.codex\AGENTS.md"
+irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.codex\AGENTS.md"
 
 # Ubuntu
-curl -fsSL https://raw.githubusercontent.com/forrestchang/andrej-karpathy-skills/main/CLAUDE.md >> ~/.codex/AGENTS.md
+curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.codex/AGENTS.md
 ```
 
 
@@ -150,9 +152,7 @@ gemini extensions install https://github.com/obra/superpowers
 
 ### 설치 방법: Claude Code
 
-Superpowers를 설치했다면 이 스킬도 이미 들어 있다. 설치 방법은 위 [Superpowers](#superpowers) 섹션을 참고한다.
-
-Superpowers는 세션마다 정해진 작업 순서를 따르게 하고, 항상 일정량의 토큰을 차지한다. 이게 부담스러우면 `SKILL.md` 하나만 사용자 스킬 디렉터리에 받아 둔다.
+`SKILL.md` 하나를 사용자 스킬 디렉터리에 받아 둔다.
 
 ```powershell
 # PowerShell
@@ -168,7 +168,11 @@ curl -fsSL -o ~/.claude/skills/verification-before-completion/SKILL.md \
 
 ### 설치 방법: 기타 에이전트
 
-위 [Superpowers](#superpowers) 섹션의 방법으로 Superpowers를 설치하면 이 스킬도 함께 들어온다.
+npm 패키지 [`skills`](https://github.com/vercel-labs/skills)를 `npx`로 실행해 이 스킬을 받는다. 아래는 Codex의 사용자 스코프에 설치하는 예로, 다른 에이전트는 `--agent` 값만 바꾼다.
+
+```bash
+npx skills add obra/superpowers --skill verification-before-completion --agent codex -g
+```
 
 
 ## Anti Slop
@@ -191,25 +195,22 @@ npx skills add dmmulroy/anti-slop --skill install-anti-slop --agent claude-code
 /install-anti-slop
 ```
 
-이렇게 `-g` 없이 설치하면 스킬이 프로젝트의 `.agents/skills/`에 들어가고, `.claude/skills/`에서 이를 링크하며, 설치 기록은 `skills-lock.json`에 남는다. 모든 프로젝트에서 쓰려면 `-g`를 붙여 사용자 스코프(`~/.claude/skills/`)에 설치한다.
+이렇게 `-g` 없이 설치하면 스킬이 프로젝트의 `.claude/skills/`에 복사되고, 설치 기록은 `skills-lock.json`에 남는다. `.agents/skills/`에 넣고 링크하는 방식은 설치 대상 에이전트가 여럿일 때만 쓴다. 모든 프로젝트에서 쓰려면 `-g`를 붙여 사용자 스코프(`~/.claude/skills/`)에 설치한다.
 
-`install-anti-slop` 스킬은 나중에 업데이트할 때도 쓰이기 때문에 그냥 두는 게 낫다.
+ℹ️ `install-anti-slop` 스킬은 나중에 업데이트할 때도 쓰이기 때문에 그냥 두는 게 낫다.
 
 ### 설치 방법: 기타 에이전트
 
-설치 방법은 Claude Code와 같다. `skills` CLI가 Codex, Cursor 등 여러 에이전트에 스킬을 설치해 주므로, 적용할 프로젝트에서 같은 명령으로 스킬을 받은 뒤 에이전트에게 설치를 요청한다. 스킬 없이 직접 하려면 프로젝트의 `src/`를 `tools/oxlint/anti-slop/` 같은 위치에 복사하고 `oxlint.config.ts`의 `jsPlugins`와 `rules`에 등록한다.
+설치용 스킬을 내려받는 것까지는 Claude Code와 같고 `--agent` 값만 바꾼다. 그 뒤 에이전트에게 anti-slop을 설치해 달라고 요청한다. 아래는 Codex에 설치하는 예다.
 
 ```bash
-npx skills add dmmulroy/anti-slop --skill install-anti-slop
+# 프로젝트 루트의 셸
+npx skills add dmmulroy/anti-slop --skill install-anti-slop --agent codex
 ```
 
-`--agent`를 빼면 이 컴퓨터에서 감지된 에이전트 수에 따라 처리가 달라진다(`skills` 1.7.1 기준).
+⚠️ `--agent`를 빼면 이 컴퓨터에서 감지된 에이전트 수에 따라 설치 대상이 달라지므로 반드시 지정할 것.
 
-- 감지된 에이전트가 하나면 묻지 않고 그 에이전트에 설치한다.
-- 없거나 둘 이상이면 고르는 화면이 나온다. 이 화면에는 감지된 것만이 아니라 지원하는 에이전트 전체가 나온다.
-- `-y`를 붙이거나 AI 에이전트 안에서 실행하면 묻지 않고 감지된 에이전트 전부에 설치한다(감지된 게 없으면 지원하는 에이전트 전체).
-
-원하는 에이전트에만 설치하려면 `--agent codex`처럼 직접 지정한다.
+스킬 없이 직접 설치하려면 anti-slop 저장소의 `src/`를 적용할 프로젝트의 `tools/oxlint/anti-slop/` 같은 위치에 복사하고, `oxlint`와 `@oxlint/plugins`를 같은 버전으로 개발 의존성에 추가한다. 복사한 소스가 `@oxlint/plugins`를 불러오므로 이 의존성이 없으면 lint가 실행되지 않는다. 그다음 `oxlint.config.ts`(또는 `.oxlintrc.json`)의 `jsPlugins`와 `rules`에 등록하고, 복사한 경로를 `ignorePatterns`에 넣는다.
 
 
 ## anti-slop-py
@@ -220,7 +221,7 @@ npx skills add dmmulroy/anti-slop --skill install-anti-slop
 
 ### 설치 방법: Claude Code
 
-적용할 프로젝트에서 플러그인을 프로젝트 스코프로 설치한 뒤, 플러그인에 든 설치 스킬을 실행한다. 스킬이 Flake8 플러그인을 `tools/flake8/anti_slop/`에 복사하고 Ruff, mypy 설정을 기존 설정에 합친다. `pydantic`이나 `fastapi`가 직접 의존성이면 해당 규칙 그룹도 켠다.
+적용할 프로젝트에서 플러그인을 프로젝트 스코프로 설치한 뒤, 플러그인에 든 설치 스킬을 실행한다. 스킬은 기본으로 `anti-slop-py`를 개발 의존성으로 설치하고(`uv add --dev anti-slop-py`), `.flake8`에 규칙을 등록하고, Ruff, mypy 설정을 기존 설정에 합친다. Flake8 플러그인을 `tools/flake8/anti_slop/`에 복사하는 방식은 명시적으로 요청할 때만 쓰고, 검사만 해 달라고 하면 프로젝트를 바꾸지 않고 결과만 보고한다. `pydantic`이나 `fastapi`가 직접 의존성이면 해당 규칙 그룹도 켠다.
 
 ```bash
 # 프로젝트 루트의 셸: 마켓플레이스 등록과 플러그인 설치
@@ -235,10 +236,10 @@ claude plugin install --scope project anti-slop-py@anti-slop-py
 
 ### 설치 방법: 기타 에이전트
 
-Anti Slop과 같이 적용할 프로젝트에서 `skills` CLI로 설치용 스킬을 받은 뒤, 에이전트에게 설치를 요청한다.
+Anti Slop과 같이 적용할 프로젝트에서 `npx skills`로 설치용 스킬을 받은 뒤, 에이전트에게 설치를 요청한다. 아래는 Codex에 설치하는 예다.
 
 ```bash
-npx skills add infoslack/anti-slop-py --skill install-anti-slop-py
+npx skills add infoslack/anti-slop-py --skill install-anti-slop-py --agent codex
 ```
 
 에이전트 없이 쓰는 방법도 있다.
