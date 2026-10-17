@@ -72,6 +72,7 @@ tags:
 
 - [Bazel](https://bazel.build/): 멀티 언어 빌드 도구. Maven, Gradle, Webpack 등과 달리 다양한 언어(Java, C++, Python 등)를 하나의 시스템에서 통합 빌드할 수 있다는 점이 특징이다.
 - [JRebel](https://www.jrebel.com/products/jrebel): Java 애플리케이션을 재시작하지 않고 클래스 변경 사항을 실행 중인 JVM에 즉시 반영해 개발 생산성을 높여주는 HotSwap 도구. 애플리케이션 서버를 재기동하는 시간을 줄여 코드 수정과 테스트를 빠르게 반복할 수 있다. 💰 유료다. Java IDE의 제한적인 HotSwap보다 더 다양한 변경 사항을 실행 중인 애플리케이션에 반영할 수 있고, XML 등의 설정 파일 변경도 즉시 적용할 수 있어 편리하지만 돈을 주고 쓸 정도인지는... 🤔
+- ✨[REA](https://rea.tools/): 코딩 에이전트를 위한 리버스 엔지니어링 도구. 소스 코드가 없는 실행 파일, JavaScript/Electron 앱, Android APK, 웹사이트 등을 분석해 내부 동작과 코드 흐름을 파악할 수 있도록 돕는다. MCP를 통해 Codex, Claude Code 등의 코딩 에이전트와 연동하거나, 분석 결과를 바탕으로 기능을 설명하거나 재구현하는 데 활용할 수 있다. 독립적인 CLI도 지원해 터미널에서 직접 분석하거나 스크립트로 자동화하는 것도 가능하다.
 
 ### 코드 에디터, IDE
 
