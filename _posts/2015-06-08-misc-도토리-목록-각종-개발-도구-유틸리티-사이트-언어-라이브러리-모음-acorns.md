@@ -484,12 +484,10 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 
 ### SSH/텔넷/FTP 클라이언트
 
-사실 Windows 10부터는 Windows Terminal이 있어서 이런 거 필요 없지만... 🤭
-
 - [WinSCP](https://winscp.net/eng/download.php)
 - [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty)
-- [Xshell](http://www.netsarang.co.kr/download/main.html): 가장 좋으나 💰 유료 라이선스.
-- [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 아주 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
+- [Xshell](http://www.netsarang.co.kr/download/main.html): 💰 유료 라이선스.
+- [bitvise](https://www.bitvise.com/ssh-client-download): 서버 딱 하나에 붙는 용도로는 좋다. 여러 서버에 붙으려면 매번 프로필들을 불러와야 해서 불편.
 - [MobaXterm](https://mobaxterm.mobatek.net/download.html): 무료 앱 중에서 여러 서버 동시 접속 기능은 그나마...
 
 ### VPN

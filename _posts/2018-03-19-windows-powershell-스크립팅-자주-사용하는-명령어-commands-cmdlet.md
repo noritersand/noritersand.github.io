@@ -620,7 +620,7 @@ Set-Alias -Name grep -Value findstr
 
 이 명령을 터미널에서 직접 실행하면 현재 세션에서만 유효하게 된다. 앞으로의 모든 세션에 적용하려면 [PowerShell 프로필](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_profiles)에 추가한다. [관련 문서](https://stackoverflow.com/questions/24914589/how-to-create-permanent-powershell-aliases).
 
-일단 한 번 추가하면 프로파일의 파일 경로는 `$PROFILE` 변수로 찾을 수 있다:
+일단 한 번 추가하면 프로파일의 경로는 `$PROFILE` 변수로 찾을 수 있다:
 
 ```powershell
 code $PROFILE
