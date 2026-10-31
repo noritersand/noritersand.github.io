@@ -25,6 +25,47 @@ tags:
 [니콜라스가 이걸 걷어내는 방법을 영상](https://www.youtube.com/watch?v=3JCgiVYlLFo)으로 올렸다. 따라해보자.
 
 
+## Karpathy Skills
+
+[Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)은 LLM이 멋대로 가정하고, 코드를 과하게 추상화하고, 요청과 무관한 곳까지 고치는 버릇을 4가지 원칙으로 막는 지침이다.
+
+### 설치 방법: Claude Code
+
+플러그인을 사용자 스코프로 설치한다:
+
+```bash
+# 마켓플레이스 등록: 마켓플레이스를 등록하고 스냅샷을 로컬로 내려받는 명령
+claude plugin marketplace add multica-ai/andrej-karpathy-skills
+
+# 플러그인 설치
+claude plugin install --scope user andrej-karpathy-skills@karpathy-skills
+```
+
+⚠️ 이 플러그인은 훅 없이 `karpathy-guidelines` 스킬 하나만 담고 있어서, Claude가 필요하다고 판단할 때만 불러온다. 항상 적용하고 싶으면 아래처럼 `~/.claude/CLAUDE.md`에 덧붙인다:
+
+```powershell
+# PowerShell
+irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.claude\CLAUDE.md"
+
+# Ubuntu
+curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
+```
+
+### 설치 방법: 기타 에이전트
+
+Cursor는 저장소의 규칙 파일 `.cursor/rules/karpathy-guidelines.mdc`를 프로젝트의 `.cursor/rules/`에 복사하거나, `skills/karpathy-guidelines/SKILL.md`를 `~/.cursor/skills/`에 넣어 개인 스킬로 쓴다. 
+
+그 밖의 에이전트는 `CLAUDE.md` 내용을 각자의 지침 파일에 합친다. 아래는 Codex의 사용자 지침 파일 `~/.codex/AGENTS.md`에 넣는 예다.
+
+```powershell
+# PowerShell
+irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.codex\AGENTS.md"
+
+# Ubuntu
+curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.codex/AGENTS.md
+```
+
+
 ## Attention Span
 
 [Attention Span](https://github.com/alexgreensh/attention-span)은 코딩 능력은 그대로 두고 답변을 결론부터, 짧게, 훑어보기 쉽게 바꾸는 출력 스타일(output style) 모음이다.
@@ -76,48 +117,11 @@ curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/outp
 ```
 
 
-## Karpathy Skills
-
-[Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)은 LLM이 멋대로 가정하고, 코드를 과하게 추상화하고, 요청과 무관한 곳까지 고치는 버릇을 4가지 원칙으로 막는 지침이다.
-
-### 설치 방법: Claude Code
-
-플러그인을 사용자 스코프로 설치한다:
-
-```bash
-# 마켓플레이스 등록: 마켓플레이스를 등록하고 스냅샷을 로컬로 내려받는 명령
-claude plugin marketplace add multica-ai/andrej-karpathy-skills
-
-# 플러그인 설치
-claude plugin install --scope user andrej-karpathy-skills@karpathy-skills
-```
-
-⚠️ 이 플러그인은 훅 없이 `karpathy-guidelines` 스킬 하나만 담고 있어서, Claude가 필요하다고 판단할 때만 불러온다. 항상 적용하고 싶으면 아래처럼 `~/.claude/CLAUDE.md`에 덧붙인다:
-
-```powershell
-# PowerShell
-irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.claude\CLAUDE.md"
-
-# Ubuntu
-curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.claude/CLAUDE.md
-```
-
-### 설치 방법: 기타 에이전트
-
-Cursor는 저장소의 규칙 파일 `.cursor/rules/karpathy-guidelines.mdc`를 프로젝트의 `.cursor/rules/`에 복사하거나, `skills/karpathy-guidelines/SKILL.md`를 `~/.cursor/skills/`에 넣어 개인 스킬로 쓴다. 그 밖의 에이전트는 `CLAUDE.md` 내용을 각자의 지침 파일에 합친다. 아래는 Codex의 사용자 지침 파일 `~/.codex/AGENTS.md`에 넣는 예다.
-
-```powershell
-# PowerShell
-irm https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md | Add-Content "$HOME\.codex\AGENTS.md"
-
-# Ubuntu
-curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/main/CLAUDE.md >> ~/.codex/AGENTS.md
-```
-
-
 ## Superpowers
 
-[Superpowers](https://github.com/obra/superpowers)는 코딩 에이전트용 스킬 모음이자 개발 방법론이다. 바로 코드부터 짜지 않고 브레인스토밍, 설계 승인, 구현 계획, 서브에이전트 기반 구현, TDD, 코드 리뷰, 브랜치 마무리 순서로 진행하게 한다. 아래의 Verification Before Completion도 여기 포함된 스킬이다.
+[Superpowers](https://github.com/obra/superpowers)는 코딩 에이전트용 스킬 모음이자 개발 방법론이다. 바로 코드부터 짜지 않고 브레인스토밍, 설계 승인, 구현 계획, 서브에이전트 기반 구현, TDD, 코드 리뷰, 브랜치 마무리 순서로 진행하게 한다. 
+
+스킬의 사이즈가 조금 큰 편이라서, 부담스러우면 아래의 Verification Before Completion만 설치하는 것도 좋음.
 
 ### 설치 방법: Claude Code
 
@@ -127,7 +131,7 @@ curl -fsSL https://raw.githubusercontent.com/multica-ai/andrej-karpathy-skills/m
 claude plugin install --scope user superpowers@claude-plugins-official
 ```
 
-스킬 15개와 SessionStart 훅으로 구성된다. 훅이 세션을 시작하거나 `/clear`, 컨텍스트 압축을 할 때마다 `using-superpowers` 스킬 본문을 컨텍스트에 주입한다. 이 본문이 작업 전에 맞는 스킬부터 찾아 쓰라고 지시하므로, 스킬을 따로 부르지 않아도 상황에 맞춰 불러온다. 그 대가로 켜 두기만 해도 매 세션 일정량의 토큰을 차지한다. 정확한 값은 `claude plugin details superpowers`의 `Always-on`에서 확인할 것.
+스킬 15개와 SessionStart 훅으로 구성된다. 훅이 세션을 시작하거나 `/clear`, 컨텍스트 압축을 할 때마다 `using-superpowers` 스킬 본문을 컨텍스트에 주입한다. 이 본문이 작업 전에 맞는 스킬부터 찾아 쓰라고 지시하므로, 스킬을 따로 부르지 않아도 상황에 맞춰 불러온다. ⚠️ 그 대가로 켜 두기만 해도 매 세션 일정량의 토큰을 차지한다. 정확한 값은 `claude plugin details superpowers`의 `Always-on`에서 확인할 것.
 
 ### 설치 방법: 기타 에이전트
 
