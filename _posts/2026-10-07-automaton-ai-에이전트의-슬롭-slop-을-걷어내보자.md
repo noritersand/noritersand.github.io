@@ -60,25 +60,25 @@ claude plugin install --scope user attention-span@attention-span
 
 ### 설치 방법: 기타 에이전트
 
-스타일 파일에서 Claude Code 전용 frontmatter를 잘라내고 본문만 각 에이전트의 지침 파일에 덧붙인다. 아래는 Codex의 `~/.codex/AGENTS.md`에 넣는 예로, 표시 주석으로 감싸 두면 나중에 업데이트하거나 지우기 쉽다. Antigravity CLI는 `~/GEMINI.md`, Devin은 `~/.codeium/windsurf/memories/`에 넣는다.
+스타일 파일에서 Claude Code 전용 frontmatter를 잘라내고 본문만 각 에이전트의 지침 파일에 덧붙인다. 아래는 특정 출력 스타일을 Codex의 `~/.codex/AGENTS.md`에 넣는 예로, 표시 주석으로 감싸 두면 나중에 업데이트하거나 지우기 쉽다. Antigravity CLI는 `~/GEMINI.md`, Devin은 `~/.codeium/windsurf/memories/`에 넣는다.
 
 ```powershell
-# PowerShell
+# PowerShell: Spartan 출력 스타일 설정하기
 New-Item -ItemType Directory -Force "$HOME\.codex" | Out-Null
-$s = irm https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/attention-kind.md
+$s = irm https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/spartan.md
 $body = $s -replace '(?s)^.*?<!-- body-start -->[^\n]*\n', ''
 Add-Content "$HOME\.codex\AGENTS.md" "`n<!-- attention-span:start -->`n$body<!-- attention-span:end -->"
 
-# Ubuntu
+# Ubuntu: Spartan 출력 스타일 설정하기
 mkdir -p ~/.codex
-curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/attention-kind.md -o /tmp/attention-span.md \
+curl -sfL https://raw.githubusercontent.com/alexgreensh/attention-span/main/output-styles/spartan.md -o /tmp/attention-span.md \
   && { printf '\n<!-- attention-span:start -->\n'; sed '1,/<!-- body-start -->/d' /tmp/attention-span.md; printf '<!-- attention-span:end -->\n'; } >> ~/.codex/AGENTS.md
 ```
 
 
 ## Karpathy Skills
 
-[Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)는 LLM이 멋대로 가정하고, 코드를 과하게 추상화하고, 요청과 무관한 곳까지 고치는 버릇을 4가지 원칙으로 막는 `CLAUDE.md` 지침 파일.
+[Karpathy Skills](https://github.com/multica-ai/andrej-karpathy-skills)은 LLM이 멋대로 가정하고, 코드를 과하게 추상화하고, 요청과 무관한 곳까지 고치는 버릇을 4가지 원칙으로 막는 지침이다.
 
 ### 설치 방법: Claude Code
 

@@ -178,7 +178,7 @@ tags:
 - [Pico.css](https://picocss.com/): 시맨틱 HTML에 최소한의 클래스로 스타일을 입히는 미니멀 CSS 프레임워크. classless 버전도 있다.
 - [PSone.css](https://micah5.github.io/PSone.css/): 플레이스테이션 1 스타일 UI를 재현한 CSS 라이브러리.
 - [StyleX](https://stylexjs.com/): 메타(페북)에서 만듦. 테일윈드 경쟁자라 함. JavaScript 객체 기반으로 사용한다. 조건부 스타일 설정, 컴파일, 타입 안정성(type safe)이 특징이다. React 없이도 쓸 수 있는 것으로 보임. 빌드 시 아토믹 CSS로 컴파일하는 CSS-in-JS 라이브러리다.
-- [System.css](https://sakofchit.github.io/system.css/): 클래식 Mac OS(Apple System OS) UI를 재현한 레트로 CSS 라이브러리.
+- ⭐[System.css](https://sakofchit.github.io/system.css/): 클래식 Mac OS(Apple System OS) UI를 재현한 레트로 CSS 라이브러리.
 - [Water.css](https://watercss.kognise.dev/): 링크 하나로 기본 요소를 꾸며주는 classless 스타일시트. 라이트/다크 테마 지원.
 - ⭐[Tailwind CSS](https://tailwindcss.com/): 미리 작성된 스타일링 클래스를 제공하는 방식. 유틸리티 기반 프레임워크로 분류됨
 
@@ -597,6 +597,11 @@ BaaS란 백엔드의 전반적인 기능을 제공하는 서비스를 의미함.
 - [MagicPath AI](https://www.magicpath.ai/): 자연어 기반 프롬프트로 실제 작동하는 프로덕션 레벨의 프론트엔드 코드를 생성하는 AI 도구. 완성된 컴포넌트를 브라우저에서 확인하는 건 무료, 💰 코드 생성부터는 유료다. 
 - [Stitch](https://stitch.withgoogle.com/)
 - [Readdy](https://readdy.ai/)
+
+### 코딩 모델 구독
+
+- [OpenCode Go](https://opencode.ai/v2/docs/console/go/): 여러 코딩용 AI 모델을 API 키 하나로 이용하는 구독 서비스. OpenCode뿐 아니라 요청 형식과 세션 식별 요건을 충족하는 다른 코딩 에이전트에서도 사용할 수 있다. 모델별로 5시간, 주간, 월간 사용량 제한이 있다. 💰 월 구독형이며 사용량이 더 많은 Go Plus와 팀용 Go Teams도 제공한다. 🗓️ 2026-10-29 기준.
+- [Command Code GOAT](https://commandcode.ai/docs/plans/goat): Command Code의 코딩 모델 구독 플랜. 여러 오픈 모델과 상용 모델을 CLI에서 골라 쓰거나, OpenAI/Anthropic 호환 API로 다른 에이전트에 연결할 수 있다. 모델마다 제공 크레딧이 다르며 5시간, 주간, 월간 사용량 제한이 있다. 💰 월 구독형이며 한도 초과 시 사용할 크레딧을 별도로 구매할 수 있다. 🗓️ 2026-10-29 기준.
 
 ### 자율 실행형 에이전트
 
